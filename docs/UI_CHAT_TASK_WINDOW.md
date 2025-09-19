@@ -21,9 +21,9 @@
 
 ## 1. Related Documents
 
-- Backend lifecycle and task orchestration: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md:1)
-- Task delegation & subtasking: [`docs/ORCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md:1)
-- UI feature docs (external): see the UI docs under `apps/kilocode-docs` for related user-facing documentation: [`apps/kilocode-docs/docs/features/settings-management.md`](apps/kilocode-docs/docs/features/settings-management.md:1)
+- Backend lifecycle and task orchestration: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1)
+- Task delegation & subtasking: [`ORCHESTRATOR_TASK_DELEGATION.md`](ORCHESTRATOR_TASK_DELEGATION.md:1)
+- UI feature docs (external): see the UI docs under `../apps/kilocode-docs` for related user-facing documentation: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md:1)
 
 [Back to Top](#)
 

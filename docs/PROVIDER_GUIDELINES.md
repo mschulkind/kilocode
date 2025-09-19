@@ -57,4 +57,4 @@ Purpose: provide a concise, implementable contract for provider implementations 
 
 - Reference in PR descriptions for provider changes.
 - Use as acceptance criteria for provider implementations and provider-focused tests.
-- Link from `docs/ORCHESTRATOR_LIFECYCLE.md` and add short checklist items in the repo's test plan.
+- Link from `ORCHESTRATOR_LIFECYCLE.md` and add short checklist items in the repo's test plan.

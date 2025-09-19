@@ -66,11 +66,11 @@ sequenceDiagram
 
 #### Stage 1: Initiation
 
-A task begins when an external caller (e.g., the VS Code extension UI) invokes the [`initiateTaskLoop`](src/core/task/Task.ts:1699) function. At this stage, the `Task` object is created, initial state is set up, and the context for the task is established.
+A task begins when an external caller (e.g., the VS Code extension UI) invokes the [`initiateTaskLoop`](../src/core/task/Task.ts#L1699) function. At this stage, the `Task` object is created, initial state is set up, and the context for the task is established.
 
 #### Stage 2: Prompt Generation
 
-The `Task` engine constructs the initial prompt to be sent to the language model. This is handled by the [`getSystemPrompt`](src/core/task/Task.ts:2499) function, which assembles the user's request, conversation history, available tools, and formatting rules like [`markdownFormattingSection`](src/core/prompts/sections/markdown-formatting.ts:1).
+The `Task` engine constructs the initial prompt to be sent to the language model. This is handled by the [`getSystemPrompt`](../src/core/task/Task.ts#L2499) function, which assembles the user's request, conversation history, available tools, and formatting rules like [`markdownFormattingSection`](../src/core/prompts/sections/markdown-formatting.ts#L1).
 
 #### Stage 3: Model Response & Parsing
 
@@ -78,11 +78,11 @@ The prompt is sent to the model. The orchestrator's `StreamingParser` begins pro
 
 #### Stage 4: Parsing & Execution Loop
 
-This is the core interactive phase of the lifecycle, driven by [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735). When the parser identifies a valid tool call, the `ToolExecutor` validates and runs it. The result of the tool execution is then appended to the conversation history, and the loop continues by sending the updated context back to the model.
+This is the core interactive phase of the lifecycle, driven by [`recursivelyMakeClineRequests`](../src/core/task/Task.ts#L1735). When the parser identifies a valid tool call, the `ToolExecutor` validates and runs it. The result of the tool execution is then appended to the conversation history, and the loop continues by sending the updated context back to the model.
 
 #### Stage 5: Completion
 
-The loop terminates when the model invokes the special [`attemptCompletionTool`](src/core/tools/attemptCompletionTool.ts:35). This signals that the task's objective has been met. The tool is responsible for packaging the final result and setting the task's status to "completed."
+The loop terminates when the model invokes the special [`attemptCompletionTool`](../src/core/tools/attemptCompletionTool.ts#L35). This signals that the task's objective has been met. The tool is responsible for packaging the final result and setting the task's status to "completed."
 
 #### Stage 6: Termination
 
@@ -112,7 +112,7 @@ A task can exist in several states throughout its lifecycle:
 
 <a id="the-execution-loop-recursivelymakeclinerequests"></a>
 
-The function [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735) is the engine of the lifecycle. It is not a simple loop but a recursive function that represents one full turn of the conversation with the model.
+The function [`recursivelyMakeClineRequests`](../src/core/task/Task.ts#L1735) is the engine of the lifecycle. It is not a simple loop but a recursive function that represents one full turn of the conversation with the model.
 
 1.  **Call Model**: Sends the current context (history, tool results) to the model.
 2.  **Parse Response**: The `StreamingParser` processes the output.
@@ -127,12 +127,12 @@ The function [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735) is the
 
 <a id="subtask-lifecycle"></a>
 
-When the model determines a part of the task requires isolated execution, it can use the [`startSubtask`](src/core/task/Task.ts:1628) tool.
+When the model determines a part of the task requires isolated execution, it can use the [`startSubtask`](../src/core/task/Task.ts#L1628) tool.
 
 1.  **Pause Parent**: The parent task's state is set to `awaiting_subtask`.
 2.  **Create Child**: A new `Task` instance is created with a specific, narrowed-down objective. This child task has its own independent lifecycle.
 3.  **Execute Child**: The child task runs through its own initiation, execution, and completion stages.
-4.  **Resume Parent**: Once the child task calls [`completeSubtask`](src/core/task/Task.ts:1669), its result is passed back to the parent. The parent task's state is switched back to `in_progress`, and its execution loop continues, now with the information from the completed subtask.
+4.  **Resume Parent**: Once the child task calls [`completeSubtask`](../src/core/task/Task.ts#L1669), its result is passed back to the parent. The parent task's state is switched back to `in_progress`, and its execution loop continues, now with the information from the completed subtask.
 
 [Back to Top](#orchestrator-task-lifecycle)
 
@@ -154,15 +154,15 @@ End of document.
 
 ### Quick pointer to code
 
-- Task control loop: [`src/core/task/Task.ts:2648`](src/core/task/Task.ts:2648)
-- Message queue: [`src/core/message-queue/MessageQueueService.ts:36`](src/core/message-queue/MessageQueueService.ts:36)
-- Provider entrypoints: `createMessage()` implementations under [`src/api/providers/`](src/api/providers/index.ts:1)
+- Task control loop: [`src/core/task/Task.ts:2648`](../src/core/task/Task.ts#L2648)
+- Message queue: [`src/core/message-queue/MessageQueueService.ts:36`](../src/core/message-queue/MessageQueueService.ts#L36)
+- Provider entrypoints: `createMessage()` implementations under [`src/api/providers/`](../src/api/providers/index.ts#L1)
 
 ### Concrete send patterns (summary)
 
-- OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers: [`src/api/providers/openai.ts:83`](src/api/providers/openai.ts:83), [`src/api/providers/ollama.ts:61`](src/api/providers/ollama.ts:61), etc.)
-- Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE fallback (see [`src/api/providers/openai-native.ts:296`](src/api/providers/openai-native.ts:296)).
-- Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g., [`src/api/providers/anthropic.ts:80`](src/api/providers/anthropic.ts:80), [`src/api/providers/bedrock.ts:420`](src/api/providers/bedrock.ts:420)).
+- OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers: [`src/api/providers/openai.ts:83`](../src/api/providers/openai.ts#L83), [`src/api/providers/ollama.ts:61`](../src/api/providers/ollama.ts#L61), etc.)
+- Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE fallback (see [`src/api/providers/openai-native.ts:296`](../src/api/providers/openai-native.ts#L296)).
+- Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g., [`src/api/providers/anthropic.ts:80`](../src/api/providers/anthropic.ts#L80), [`src/api/providers/bedrock.ts:420`](../src/api/providers/bedrock.ts#L420)).
 - Manual fetch() usages (SSE or JSON): OpenRouter image endpoint, OpenAI Native SSE fallback, Glama polling, etc.
 
 ### Likely causes of duplicate requests (doc summary)

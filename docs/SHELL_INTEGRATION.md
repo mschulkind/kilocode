@@ -21,10 +21,10 @@
 
 ## 1. Related Documents
 
-- Orchestrator lifecycle: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md:1)
-- Terminal integration code: [`src/integrations/terminal/ShellIntegrationManager.ts`](src/integrations/terminal/ShellIntegrationManager.ts:1)
-- Terminal process abstraction: [`src/integrations/terminal/BaseTerminalProcess.ts`](src/integrations/terminal/BaseTerminalProcess.ts:1)
-- UI feature docs (external): [`apps/kilocode-docs/docs/shell-integration/`](apps/kilocode-docs/docs/shell-integration/:1) and settings UI: [`apps/kilocode-docs/docs/features/settings-management.md`](apps/kilocode-docs/docs/features/settings-management.md:1)
+- Orchestrator lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1)
+- Terminal integration code: [`../src/integrations/terminal/ShellIntegrationManager.ts`](../src/integrations/terminal/ShellIntegrationManager.ts:1)
+- Terminal process abstraction: [`../src/integrations/terminal/BaseTerminalProcess.ts`](../src/integrations/terminal/BaseTerminalProcess.ts:1)
+- UI feature docs (external): [`../apps/kilocode-docs/docs/shell-integration/`](../apps/kilocode-docs/docs/shell-integration/:1) and settings UI: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md:1)
 
 [Back to Top](#)
 

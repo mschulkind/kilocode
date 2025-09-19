@@ -50,12 +50,12 @@ The orchestrator is built on a modular, extensible, and state-driven architectur
 
 The architecture comprises several key components that work in concert to execute tasks.
 
-- **Task Engine (`Task.ts`)**: The heart of the orchestrator. It manages the entire lifecycle of a task, from initiation to completion. Its main entry point is [`initiateTaskLoop`](src/core/task/Task.ts:1699).
+- **Task Engine (`Task.ts`)**: The heart of the orchestrator. It manages the entire lifecycle of a task, from initiation to completion. Its main entry point is [`initiateTaskLoop`](../src/core/task/Task.ts#L1699).
 - **Streaming Parser**: This component is responsible for processing the output from the language model in real-time, identifying and extracting tool-call requests.
-- **Tool Executor**: Once a tool call is parsed, this component validates permissions and executes the corresponding tool, such as [`attemptCompletionTool`](src/core/tools/attemptCompletionTool.ts:35).
-- **Mode & Permission Service**: Manages the active operational `Mode` and enforces access control rules, determining which tools are available via [`isToolAllowedForMode`](src/shared/modes.ts:167).
-- **Subtask Manager**: Handles the delegation of work into smaller, isolated subtasks using [`startSubtask`](src/core/task/Task.ts:1628) and [`completeSubtask`](src/core/task/Task.ts:1669).
-- **Prompt Generation**: Constructs the system prompts sent to the model, incorporating rules and context. A key function is [`getSystemPrompt`](src/core/task/Task.ts:2499).
+- **Tool Executor**: Once a tool call is parsed, this component validates permissions and executes the corresponding tool, such as [`attemptCompletionTool`](../src/core/tools/attemptCompletionTool.ts#L35).
+- **Mode & Permission Service**: Manages the active operational `Mode` and enforces access control rules, determining which tools are available via [`isToolAllowedForMode`](../src/shared/modes.ts#L167).
+- **Subtask Manager**: Handles the delegation of work into smaller, isolated subtasks using [`startSubtask`](../src/core/task/Task.ts#L1628) and [`completeSubtask`](../src/core/task/Task.ts#L1669).
+- **Prompt Generation**: Constructs the system prompts sent to the model, incorporating rules and context. A key function is [`getSystemPrompt`](../src/core/task/Task.ts#L2499).
 
 [Back to Top](#orchestrator-architecture)
 

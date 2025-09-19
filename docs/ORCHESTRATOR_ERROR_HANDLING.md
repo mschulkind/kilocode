@@ -54,7 +54,7 @@ Key principles:
     - Runtime exceptions within the tool's logic.
     - I/O failures.
 - **Parsing Errors**: The model produces malformed XML for a tool call that the `StreamingParser` cannot understand.
-- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode. The primary example is [`FileRestrictionError`](src/shared/modes.ts:157).
+- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode. The primary example is [`FileRestrictionError`](../src/shared/modes.ts#L157).
 - **Catastrophic Errors**: Unrecoverable system-level errors that immediately halt the task.
 
 [Back to Top](#orchestrator-error-handling)

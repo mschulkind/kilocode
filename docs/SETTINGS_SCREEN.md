@@ -21,10 +21,10 @@
 
 ## 1. Related Documents
 
-- Orchestrator lifecycle: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md:1)
-- UI settings guide: [`apps/kilocode-docs/docs/features/settings-management.md`](apps/kilocode-docs/docs/features/settings-management.md:1)
-- Settings migration utilities: [`src/utils/migrateSettings.ts`](src/utils/migrateSettings.ts:1)
-- Settings storage & config helpers: [`src/utils/config.ts`](src/utils/config.ts:1)
+- Orchestrator lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1)
+- UI settings guide: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md:1)
+- Settings migration utilities: [`../src/utils/migrateSettings.ts`](../src/utils/migrateSettings.ts:1)
+- Settings storage & config helpers: [`../src/utils/config.ts`](../src/utils/config.ts:1)
 
 [Back to Top](#)
 
