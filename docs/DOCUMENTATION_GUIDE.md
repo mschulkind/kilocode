@@ -99,7 +99,7 @@ graph TD
 - Include H2 and H3 entries only. Do not list H4.
 - Keep the TOC concise; if the document has fewer than three H2s and is under ~800 words, a TOC is optional.
 - Authors may leave the TOC as an HTML comment template while drafting, then replace with final links before publishing:
-    <!--
+      <!--
 - <!-- TOC start: remove this comment and fill with H2/H3 links -->
     -->
 
@@ -123,6 +123,7 @@ Use the following link types depending on target:
 
 - Prefer relative links for doc-to-doc references to preserve portability (LINK-REL).
 - When authoring files inside the documentation directory (`docs/`), do NOT prefix doc-to-doc relative links with `docs/`. Use paths relative to the current docs folder (for example `ORCHESTRATOR_LIFECYCLE.md` or `../SUBDIR/FILE.md`). If you need an absolute repo-root reference to a docs file, use a leading slash like `/docs/FILE.md`.
+- When a document mentions another repository file by name, always include a clickable link to that file (relative link inside `docs/` or `/docs/` repo-root for absolute). This ensures readers can navigate immediately and enables automation to validate references. (Rule: LINK-MENTION)
 - Use absolute repo-root paths for code files when referencing implementation lines (LINK-ABS-CODE).
 - Do not use reference-style links (the `[ref]: url` pattern). This is prohibited unless a repository-wide decision adopts it in future.
 - When linking to a specific line in source, include `#L<line>` (example: `/src/services/marketplace/index.ts#L25`).
@@ -177,9 +178,10 @@ cd src && npx vitest run tests/example.test.ts
     2. Root index (relative)
     3. Related docs (optional)
     4. Source (absolute repo-root link to the file with `#L1` if useful)
+- When listing related files or indexes in the navigation footer or elsewhere in the doc, ensure each mentioned filename is a clickable link (relative doc link). This is required so readers can follow references directly and tooling can validate cross-doc references. (Rule: NAV-LINK)
 - Minimal footer example:
   <a id="navigation-footer"></a>
-- Back: [`ROOT_INDEX.md`](docs/ORCHESTRATOR_INDEX.md:1) · Root: [`INDEX.md`](docs/INDEX.md:1) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
+- Back: [`ROOT_INDEX.md`](ORCHESTRATOR_INDEX.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
 
 ## Review & submission checklist
 
@@ -191,6 +193,7 @@ Before submitting a PR, confirm the following items (answer Yes/No for each):
 - [ ] Headings follow H1→H2→H3 hierarchy (yes/no)
 - [ ] Anchors use lowercase-kebab-case where explicit anchors are used (yes/no)
 - [ ] Docs link with relative links for doc-to-doc (yes/no)
+- [ ] All mentioned docs/files are linked (yes/no)
 - [ ] Code references use absolute repo-root paths (yes/no)
 - [ ] Fenced code blocks include language tags (yes/no)
 - [ ] Mermaid diagrams have textual alternative (yes/no)

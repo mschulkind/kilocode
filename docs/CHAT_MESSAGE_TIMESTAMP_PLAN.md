@@ -48,7 +48,7 @@ This document defines the normative, implementation-ready specification for chat
 
 ## Current state
 
-The current guidance on timestamps is fragmented and inconsistent, primarily located in [`UI_CHAT_TASK_WINDOW.md`](UI_CHAT_TASK_WINDOW.md:1). Key issues include:
+The current guidance on timestamps is fragmented and inconsistent, primarily located in [`UI_CHAT_TASK_WINDOW.md`](UI_CHAT_TASK_WINDOW.md). Key issues include:
 
 - **Inconsistent Terminology:** The document uses phrases like "local ISO-8601 with timezone offset" and "ISO-8601 timestamp (UTC)" without a clear, authoritative definition.
 - **Malformed Examples:** The document contains corrupted sections and duplicated content, making it difficult to parse the intended specification.
@@ -196,7 +196,7 @@ These events will be logged with the following schema:
     - _Acceptance:_ New conversations have persisted timestamps. The `timestampInferred` logic correctly handles old conversations.
 3.  **Phase 3: UI Adoption:** Update the UI components to render the short timestamp, hover tooltip, and day boundary separators.
     - _Acceptance:_ All UI requirements are met and verified across different scenarios.
-4.  **Phase 4: Cleanup:** Remove any legacy timestamp logic and update or remove the now-obsolete sections of [`UI_CHAT_TASK_WINDOW.md`](UI_CHAT_TASK_WINDOW.md:1).
+4.  **Phase 4: Cleanup:** Remove any legacy timestamp logic and update or remove the now-obsolete sections of [`UI_CHAT_TASK_WINDOW.md`](UI_CHAT_TASK_WINDOW.md).
 
 ## Risks & mitigations
 
@@ -226,4 +226,4 @@ These events will be logged with the following schema:
 
 <a id="navigation-footer"></a>
 
-- Back: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1`
+- Back: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: [`/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1`](/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1)
