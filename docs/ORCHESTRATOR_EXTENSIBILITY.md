@@ -87,7 +87,7 @@ This section is marked as a **Gap**. Further details will be provided once the A
 
 This is the most straightforward way to extend and guide the orchestrator's behavior on a per-project basis. The system is designed to load `.md` files from a `.kilocode/rules` directory in the workspace root.
 
-These rule files are injected directly into the system prompt via [`getSystemPrompt`](src/core/task/Task.ts:2499). They can contain any information that helps guide the model, such as:
+These rule files are injected directly into the system prompt via [`getSystemPrompt`](/\src/core/task/Task.ts#L2499). They can contain any information that helps guide the model, such as:
 
 - "Do not use the `any` type in TypeScript."
 - "All new components must be registered in `src/components/index.ts`."

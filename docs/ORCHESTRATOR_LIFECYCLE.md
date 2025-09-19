@@ -160,9 +160,9 @@ End of document.
 
 ### Concrete send patterns (summary)
 
-- OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers: [`src/api/providers/openai.ts:83`](/src/api/providers/openai.ts#L83), [`src/api/providers/ollama.ts:61`](/src/api/providers/ollama.ts#L61), etc.)
-- Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE fallback (see [`src/api/providers/openai-native.ts:296`](/src/api/providers/openai-native.ts#L296)).
-- Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g., [`src/api/providers/anthropic.ts:80`](/src/api/providers/anthropic.ts#L80), [`src/api/providers/bedrock.ts:420`](/src/api/providers/bedrock.ts#L420)).
+- OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers: [`/\src/api/providers/openai.ts#L83`](/src/api/providers/openai.ts#L83), [`/\src/api/providers/ollama.ts#L61`](/src/api/providers/ollama.ts#L61), etc.)
+- Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE fallback (see [`/\src/api/providers/openai-native.ts#L296`](/src/api/providers/openai-native.ts#L296)).
+- Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g., [`/\src/api/providers/anthropic.ts#L80`](/src/api/providers/anthropic.ts#L80), [`/\src/api/providers/bedrock.ts#L420`](/src/api/providers/bedrock.ts#L420)).
 - Manual fetch() usages (SSE or JSON): OpenRouter image endpoint, OpenAI Native SSE fallback, Glama polling, etc.
 
 ### Likely causes of duplicate requests (doc summary)

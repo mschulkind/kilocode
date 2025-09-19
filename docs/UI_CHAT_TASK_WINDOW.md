@@ -95,13 +95,13 @@ Mermaid sequence showing the simplified control loop:
 ```mermaid lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](docs
 sequenceDiagram
 participant U as User
-participant UI/ORCHESTRATOR_LIFECYCLE.md:1)
+participant UI/ORCHESTRATOR_LIFECYCLE.md)
 
 - Task delegation & subtask as Chat UI
   participant O as Orchestrator
   participant APIing: [`ORCHESTRATOR_TASK_DELEGATION.md`](docs/OR as Provider
   U->>UI: submit prompt
-  UI->>O: formatCHESTRATOR_TASK_DELEGATION.md:1)
+  UI->>O: formatCHESTRATOR_TASK_DELEGATION.md)
 - UI-level docs ( message + metadata
   O->>API: send request (external): apps/kilocode-docs feature docs (see `appssingle or streaming)
 API-->>O: partial stream / final/kilocode-docs/docs/`).
@@ -135,7 +135,7 @@ Design intent: metadata, model selection) and hands it to the orchestr the UI is
 
 Back to Top
 
-<a name="/index.ts:1)
+<a name="/index.ts)
 
 ### 3.3 When the UI sends vs orchestratorchat-flow"></a>
 ## 3. Chat Flow & Control Loop
@@ -188,13 +188,13 @@ Back to Top
 1. and provider transform layers.
    -- Guard conditions before issuing:
 
-- There is no active Provider dispatch: [`src/api/providers/index.ts`](src/api/providers/index request for the same chat turn (prevents reentrant.ts:1)
+- There is no active Provider dispatch: [`src/api/providers/index.ts`](src/api/providers/index request for the same chat turn (prevents reentrant.ts)
 
 ### 4.2 Timestamps
 
 - Display format recommendation: sends).
     - The message is in a "ready" state ( local ISO-8601 with timezone offset (e.g. 2025-09-validated, not empty).
-    - The orchestrator evaluates whether the input should create a direct provider call or trigger an internal subtask first (see [`OR19T12:34:56-04:00) for precise debugging.
+    - The orchestrator evaluates whether the input should create a direct provider call or trigger an internal subtask first (see [`OR19T12-04) for precise debugging.
 - UI placement: each message should show a short timestamp (e.g. HHCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md)).
 
 Back to Top
@@ -260,7 +260,7 @@ Example data model (concept to configuration: settings that affect behavior (e.g
   "id": "msg_123",
   "role": "assistant screen described in [`docs/SETTINGS_SCREEN.md`](docs/SETTINGS_SCREEN.md) (when added) and UI docs at",
   "text": "Here's the plan...",
-  "timestamp": "2025-09-19T16:00:19.119Z",
+  "timestamp": "2025-09-19T16.119Z",
   "provider": "openai `apps/kilocode-docs`.
 
 ### 5.2 Rendering notes & rerendering issues
@@ -354,7 +354,7 @@ Where to look:
 
 - Client logs: UI console logs for event handlers and network calls.
 - Or logic) — see orchestration lifecycle: [`docs/ORCHESTRchestrator logs: debug traces that show decision points (enqueueMessage, decideRequestPayloadATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE, sendRequest).
-- Provider logs: provider-side request ids and.md:1).
+- Provider logs: provider-side request ids and.md).
 
 ### 6.4 Typical fixes
 
@@ -397,8 +397,8 @@ Back to Top
 
 ## Navigation Footer timeouts occur, show the fallback behavior (see shell integration fallback docs and provider-level time
 
-- See the orchestrator lifecycle: [`ORCHESTRouts at [`src/api/providers/fetchers/`](src/apiATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md/providers/fetchers:1).
-- For local debugging, enable verbose logging in the settings UI and replicate the action:1)
+- See the orchestrator lifecycle: [`ORCHESTRouts at [`src/api/providers/fetchers/`](src/apiATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md/providers/fetchers).
+- For local debugging, enable verbose logging in the settings UI and replicate the action)
 - See task delegation: [`ORCHESTRATOR_TASK_DELEG while capturing timestamps.
 
 [Back to Top](#)

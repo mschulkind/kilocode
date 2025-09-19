@@ -119,8 +119,8 @@ The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it 
 <a id="key-interactions"></a>
 
 - **Task Initiation to Tool Call**: A user request starts [`initiateTaskLoop`](/src/core/task/Task.ts#L1699). The engine generates a prompt with [`getSystemPrompt`](/src/core/task/Task.ts#L2499), which is sent to the model. The parser identifies a tool call, and the executor invokes it.
-- **Mode Switching**: A tool call to [`switchModeTool`](src/core/tools/switchModeTool.ts:8) instructs the **Mode & Permission Service** to change the active mode, altering the set of available tools for subsequent operations.
-- **Subtask Delegation**: When a task is too complex, the model can invoke [`startSubtask`](src/core/task/Task.ts:1628). This creates a new, nested `Task` instance with its own lifecycle, allowing for recursive problem decomposition. The parent task is paused until [`completeSubtask`](src/core/task/Task.ts:1669) is called.
+- **Mode Switching**: A tool call to [`switchModeTool`](/\src/core/tools/switchModeTool.ts#L8) instructs the **Mode & Permission Service** to change the active mode, altering the set of available tools for subsequent operations.
+- **Subtask Delegation**: When a task is too complex, the model can invoke [`startSubtask`](/\src/core/task/Task.ts#L1628). This creates a new, nested `Task` instance with its own lifecycle, allowing for recursive problem decomposition. The parent task is paused until [`completeSubtask`](/\src/core/task/Task.ts#L1669) is called.
 
 [Back to Top](#orchestrator-architecture)
 

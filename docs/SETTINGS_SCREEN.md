@@ -184,12 +184,12 @@ Diagnostics"></a>
 
 ## 7. Recommendations & Best Practices
 
-- Use.md:1)
+- Use.md)
 - Settings migration utilities: [` a clear "dirty" indicator and require Save to commit changessrc/utils/migrateSettings.ts`](src/utils/migrateSettings.
-- Keep draft and persisted state separate and.ts:1)
+- Keep draft and persisted state separate and.ts)
 - explicit.
 - Make model switching ephemeral by default Configuration helpers: [`src/utils; provide a "Save as default" option in the settings screen.
-- When saving, show a confirmation snackbar/config.ts`](src/utils/config.ts:1)
+- When saving, show a confirmation snackbar/config.ts`](/\src/utils/config.ts#L1)
 - Orchestrator with the changed keys to reassure users.
 - Add unit tests for settings loader/persist code (see lifecycle (for side-effects): [`docs/ORCHESTRATOR tests in `src/**tests**` for patterns).
 
@@ -199,11 +199,11 @@ Diagnostics"></a>
 
 ### Navigation Footer
 
-- Orchestrator lifecycle: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md:1)
+- Orchestrator lifecycle: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md)
 
-/ORCHESTRATOR_LIFECYCLE.md:1)
+/ORCHESTRATOR_LIFECYCLE.md)
 
-- UI settings guide: [`apps/kilocode-docs/docs/features/settings-management.md`](apps/kilocode-docs/docs/features/settings-management.md:1)
+- UI settings guide: [`apps/kilocode-docs/docs/features/settings-management.md`](apps/kilocode-docs/docs/features/settings-management.md)
 
 End of file.
 

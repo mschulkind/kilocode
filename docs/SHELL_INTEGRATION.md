@@ -70,8 +70,8 @@ sequenceDiagram
 
 Implementation pointers:
 
-- Manager: [`src/integrations/terminal/ShellIntegrationManager.ts`](src/integrations/terminal/ShellIntegrationManager.ts:1)
-- Terminal process: [`src/integrations/terminal/BaseTerminalProcess.ts`](src/integrations/terminal/BaseTerminalProcess.ts:1)
+- Manager: [`src/integrations/terminal/ShellIntegrationManager.ts`](/\src/integrations/terminal/ShellIntegrationManager.ts#L1)
+- Terminal process: [`src/integrations/terminal/BaseTerminalProcess.ts`](/\src/integrations/terminal/BaseTerminalProcess.ts#L1)
 - Execution helpers and merging output live-stream into orchestrator messages live in the terminal integration directory.
 
 [Back to Top](#)
@@ -130,7 +130,7 @@ What to log for each shell run:
 Where to look:
 
 - Extension logs (VS Code extension host logs)
-- Terminal manager debug logs: see traces emitted by [`ShellIntegrationManager`](src/integrations/terminal/ShellIntegrationManager.ts:1)
+- Terminal manager debug logs: see traces emitted by [`ShellIntegrationManager`](/\src/integrations/terminal/ShellIntegrationManager.ts#L1)
 - Orchestrator request logs that show dispatch-to-provider timings: see lifecycle docs.
 
 Recommended instrumentation additions to help debug frequent fallbacks:
@@ -155,7 +155,7 @@ If shell integration falls back on almost every attempt, check:
 2. Managed terminal misconfiguration
 
     - Ensure the `ShellIntegrationManager` can spawn processes in the current environment (permissions, PATH).
-    - Check for failures in [`src/integrations/terminal/BaseTerminalProcess.ts`](src/integrations/terminal/BaseTerminalProcess.ts:1).
+    - Check for failures in [`src/integrations/terminal/BaseTerminalProcess.ts`](/\src/integrations/terminal/BaseTerminalProcess.ts#L1).
 
 3. Environment prompting for input
 
@@ -181,7 +181,7 @@ Quick diagnostics:
 
 ### Navigation Footer
 
-- Orchestrator lifecycle: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md:1)
-- UI docs for users: [`apps/kilocode-docs/docs/shell-integration/`](apps/kilocode-docs/docs/shell-integration/:1)
+- Orchestrator lifecycle: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md)
+- UI docs for users: [`apps/kilocode-docs/docs/shell-integration/`](apps/kilocode-docs/docs/shell-integration/)
 
 End of file.
