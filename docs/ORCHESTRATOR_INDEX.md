@@ -44,12 +44,12 @@ The Orchestrator is responsible for managing the end-to-end lifecycle of a user'
 
 - **Mode:** A distinct persona or capability set (e.g., `code`, `architect`) that defines available tools and operational boundaries.
 - **Tool Invocation:** The process by which the model requests to execute a system-provided function (e.g., `read_file`, `apply_diff`).
-- **Subtask:** A discrete unit of work delegated by the Orchestrator to a specialized mode or function, managed via [`startSubtask`](src/core/task/Task.ts:1628) and [`completeSubtask`](src/core/task/Task.ts:1669).
+- **Subtask:** A discrete unit of work delegated by the Orchestrator to a specialized mode or function, managed via [`startSubtask`](/\src/core/task/Task.ts#L1628) and [`completeSubtask`](/\src/core/task/Task.ts#L1669).
 - **Todo Gating:** A mechanism that requires the model to create and follow a plan (`todo list`) for complex tasks, ensuring structured execution.
 - **Streaming Parser:** The component responsible for real-time parsing of the model's output stream to identify and execute tool calls as they arrive.
 - **Mistake Limit:** A configurable threshold for the number of consecutive errors a model can make before the task is halted.
 - **Continuity Metadata:** Information passed between tasks to maintain context, such as the last active file or user selections.
-- **File Restriction:** A security mechanism that limits file system access based on the active mode's permissions, enforced via [`FileRestrictionError`](src/shared/modes.ts:157).
+- **File Restriction:** A security mechanism that limits file system access based on the active mode's permissions, enforced via [`FileRestrictionError`](/\src/shared/modes.ts#L157).
 
 ---
 
@@ -89,14 +89,14 @@ This table maps out the complete Orchestrator documentation suite.
 
 ## Quick Reference Matrix
 
-| Concept          | Primary Symbols                                                                                                          | Linked Detailed Doc                   |
-| :--------------- | :----------------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
-| Mode Permissions | [`isToolAllowedForMode`](src/shared/modes.ts:167), [`FileRestrictionError`](src/shared/modes.ts:157)                     | `ORCHESTRATOR_SECURITY_GOVERNANCE.md` |
-| Task Lifecycle   | [`initiateTaskLoop`](src/core/task/Task.ts:1699), [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735)           | `ORCHESTRATOR_LIFECYCLE.md`           |
-| Subtasking       | [`startSubtask`](src/core/task/Task.ts:1628), [`completeSubtask`](src/core/task/Task.ts:1669)                            | `ORCHESTRATOR_TASK_DELEGATION.md`     |
-| Core Tools       | [`attemptCompletionTool`](src/core/tools/attemptCompletionTool.ts:35), [`newTaskTool`](src/core/tools/newTaskTool.ts:14) | `ORCHESTRATOR_TOOLS_REFERENCE.md`     |
-| Planning         | [`updateTodoListTool`](src/core/tools/updateTodoListTool.ts:156)                                                         | `ORCHESTRATOR_BEST_PRACTICES.md`      |
-| User Interaction | [`askFollowupQuestionTool`](src/core/tools/askFollowupQuestionTool.ts:6)                                                 | `ORCHESTRATOR_LIFECYCLE.md`           |
+| Concept          | Primary Symbols                                                                                                                | Linked Detailed Doc                   |
+| :--------------- | :----------------------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
+| Mode Permissions | [`isToolAllowedForMode`](/\src/shared/modes.ts#L167), [`FileRestrictionError`](/\src/shared/modes.ts#L157)                     | `ORCHESTRATOR_SECURITY_GOVERNANCE.md` |
+| Task Lifecycle   | [`initiateTaskLoop`](/\src/core/task/Task.ts#L1699), [`recursivelyMakeClineRequests`](/\src/core/task/Task.ts#L1735)           | `ORCHESTRATOR_LIFECYCLE.md`           |
+| Subtasking       | [`startSubtask`](/\src/core/task/Task.ts#L1628), [`completeSubtask`](/\src/core/task/Task.ts#L1669)                            | `ORCHESTRATOR_TASK_DELEGATION.md`     |
+| Core Tools       | [`attemptCompletionTool`](/\src/core/tools/attemptCompletionTool.ts#L35), [`newTaskTool`](/\src/core/tools/newTaskTool.ts#L14) | `ORCHESTRATOR_TOOLS_REFERENCE.md`     |
+| Planning         | [`updateTodoListTool`](/\src/core/tools/updateTodoListTool.ts#L156)                                                            | `ORCHESTRATOR_BEST_PRACTICES.md`      |
+| User Interaction | [`askFollowupQuestionTool`](/\src/core/tools/askFollowupQuestionTool.ts#L6)                                                    | `ORCHESTRATOR_LIFECYCLE.md`           |
 
 ---
 
@@ -130,9 +130,9 @@ flowchart TD
 
 The Orchestrator enforces several safety mechanisms to ensure predictable and secure operation:
 
-- **File Restrictions:** Modes are restricted to specific file patterns, preventing unauthorized access. A [`FileRestrictionError`](src/shared/modes.ts:157) is thrown on violation.
+- **File Restrictions:** Modes are restricted to specific file patterns, preventing unauthorized access. A [`FileRestrictionError`](/\src/shared/modes.ts#L157) is thrown on violation.
 - **Single Tool Constraint:** The model is only permitted to call one tool at a time, simplifying parsing and execution logic.
-- **Todo Gating:** For complex tasks, the model must first generate a plan, which is then enforced step-by-step via [`updateTodoListTool`](src/core/tools/updateTodoListTool.ts:156).
+- **Todo Gating:** For complex tasks, the model must first generate a plan, which is then enforced step-by-step via [`updateTodoListTool`](/\src/core/tools/updateTodoListTool.ts#L156).
 - **Missing Parameter Handling:** The system validates that all required parameters for a tool call are present before execution.
 - **Mistake Count:** A task will fail if the model makes too many consecutive mistakes (e.g., malformed tool calls).
 - **Continuity Handling:** State is explicitly passed between tasks to maintain context, avoiding reliance on implicit or hidden state.
@@ -144,7 +144,7 @@ The Orchestrator enforces several safety mechanisms to ensure predictable and se
 To keep documentation synchronized with the codebase, follow these principles:
 
 1.  **Atomic Commits:** All code changes that affect Orchestrator logic MUST be accompanied by corresponding documentation updates in the same commit.
-2.  **Symbol Link Integrity:** When refactoring, ensure all clickable code references like [`initiateTaskLoop`](src/core/task/Task.ts:1699) are updated with correct line numbers.
+2.  **Symbol Link Integrity:** When refactoring, ensure all clickable code references like [`initiateTaskLoop`](/src/core/task/Task.ts#L1699) are updated with correct line numbers.
 3.  **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid diagrams.
 4.  **Rules as Policy:** For automated verification of documentation rules, consider adding checks inspired by `docs/RULES_LOADING_SUMMARY.md`.
 

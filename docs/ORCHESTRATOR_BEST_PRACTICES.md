@@ -52,7 +52,7 @@ When extending the system, adhere to these principles.
 - **Keep Tools Atomic**: A tool should do one thing and do it well. Avoid creating monolithic tools that handle multiple distinct operations. For example, `read_file` and `write_to_file` are separate tools.
 - **Provide Rich Error Feedback**: When a tool fails, it should return a descriptive error message. This is crucial for the model's ability to self-correct.
 - **Define Clear Mode Boundaries**: When creating a new mode, clearly define its purpose and the exact set of tools it should have access to. Use the principle of least privilege, as detailed in the [Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md) document.
-- **Use `FileRestrictionError`**: For modes that have limited file system access, ensure they correctly implement and throw [`FileRestrictionError`](src/shared/modes.ts:157) when a violation occurs.
+- **Use `FileRestrictionError`**: For modes that have limited file system access, ensure they correctly implement and throw [`FileRestrictionError`](/src/shared/modes.ts#L157) when a violation occurs.
 
 [Back to Top](#orchestrator-best-practices)
 
@@ -63,8 +63,8 @@ When extending the system, adhere to these principles.
 <a id="task-management-and-delegation"></a>
 
 - **Favor Delegation for Complexity**: Encourage the model to use subtasks for complex problems. This can be done by structuring prompts in a way that suggests a multi-step process.
-- **Use `updateTodoListTool` for Planning**: For any non-trivial task, the first step should be to create a plan using [`updateTodoListTool`](src/core/tools/updateTodoListTool.ts:156). This provides clarity and makes the task's progress auditable.
-- **Use `switchModeTool` Deliberately**: Mode switching should be a conscious decision to gain necessary permissions. The model should be prompted to provide a reason for the switch, which is captured by the [`switchModeTool`](src/core/tools/switchModeTool.ts:8).
+- **Use `updateTodoListTool` for Planning**: For any non-trivial task, the first step should be to create a plan using [`updateTodoListTool`](/\src/core/tools/updateTodoListTool.ts#L156). This provides clarity and makes the task's progress auditable.
+- **Use `switchModeTool` Deliberately**: Mode switching should be a conscious decision to gain necessary permissions. The model should be prompted to provide a reason for the switch, which is captured by the [`switchModeTool`](/\src/core/tools/switchModeTool.ts#L8).
 
 [Back to Top](#orchestrator-best-practices)
 

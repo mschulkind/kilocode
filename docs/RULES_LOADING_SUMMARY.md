@@ -159,13 +159,13 @@ This document provides a code-referenced description of how rule files under `.k
 
 Lazy (on-demand) loading only:
 
-- [`src/core/prompts/system.ts`](src/core/prompts/system.ts:1)
-- [`src/services/commit-message/CommitMessageProvider.ts`](src/services/commit-message/CommitMessageProvider.ts:1)
-- [`src/shared/modes.ts`](src/shared/modes.ts:1)
-- [`src/core/webview/ClineProvider.ts`](src/core/webview/ClineProvider.ts:1)
-- [`src/core/webview/kilorules.ts`](src/core/webview/kilorules.ts:1)
-- Validation / existence check: [`src/core/task/Task.ts`](src/core/task/Task.ts:2490)
-- Activation: [`src/extension.ts`](src/extension.ts:1) does NOT force load
+- [`src/core/prompts/system.ts`](/\src/core/prompts/system.ts#L1)
+- [`src/services/commit-message/CommitMessageProvider.ts`](/\src/services/commit-message/CommitMessageProvider.ts#L1)
+- [`src/shared/modes.ts`](/\src/shared/modes.ts#L1)
+- [`src/core/webview/ClineProvider.ts`](/\src/core/webview/ClineProvider.ts#L1)
+- [`src/core/webview/kilorules.ts`](/\src/core/webview/kilorules.ts#L1)
+- Validation / existence check: [`src/core/task/Task.ts`](/\src/core/task/Task.ts#L2490)
+- Activation: [`src/extension.ts`](/\src/extension.ts#L1) does NOT force load
 
 Result: no activation-time I/O → faster startup; always current view of disk.
 
@@ -285,10 +285,10 @@ Design bias: resilient enumeration + selective propagation.
 
 ## Test Coverage (Representative Files)
 
-- [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1)
-- [`src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts:1)
-- [`src/core/prompts/__tests__/add-custom-instructions.spec.ts`](src/core/prompts/__tests__/add-custom-instructions.spec.ts:1)
-- [`src/services/roo-config/__tests__/index.spec.ts`](src/services/roo-config/__tests__/index.spec.ts:1)
+- [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts`](/\src/core/prompts/sections/__tests__/custom-instructions.spec.ts#L1)
+- [`src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts`](/\src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts#L1)
+- [`src/core/prompts/__tests__/add-custom-instructions.spec.ts`](/\src/core/prompts/__tests__/add-custom-instructions.spec.ts#L1)
+- [`src/services/roo-config/__tests__/index.spec.ts`](/\src/services/roo-config/__tests__/index.spec.ts#L1)
 
 [Back to Top](#rules-loading-and-usage-summary)
 
@@ -296,7 +296,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ## Related Supplemental Rule/Workflow Toggling
 
-- [`src/core/context/instructions/workflows.ts`](src/core/context/instructions/workflows.ts:1) – Synchronizes workflow toggles for `.kilocode/workflows` (global + local).
+- [`src/core/context/instructions/workflows.ts`](/\src/core/context/instructions/workflows.ts#L1) – Synchronizes workflow toggles for `.kilocode/workflows` (global + local).
 
 [Back to Top](#rules-loading-and-usage-summary)
 
@@ -356,21 +356,21 @@ No caching: prioritizes correctness and freshness over performance.
 
 ## File Index (All Referenced)
 
-- [`src/core/prompts/sections/custom-instructions.ts`](src/core/prompts/sections/custom-instructions.ts:1)
-- [`src/core/prompts/sections/kilo.ts`](src/core/prompts/sections/kilo.ts:1)
-- [`src/core/webview/kilorules.ts`](src/core/webview/kilorules.ts:1)
-- [`src/services/roo-config/index.ts`](src/services/roo-config/index.ts:1)
-- [`src/shared/globalFileNames.ts`](src/shared/globalFileNames.ts:1)
-- [`src/core/prompts/system.ts`](src/core/prompts/system.ts:1)
-- [`src/services/commit-message/CommitMessageProvider.ts`](src/services/commit-message/CommitMessageProvider.ts:1)
-- [`src/shared/modes.ts`](src/shared/modes.ts:1)
-- [`src/core/task/Task.ts`](src/core/task/Task.ts:1)
-- [`src/core/context/instructions/workflows.ts`](src/core/context/instructions/workflows.ts:1)
+- [`src/core/prompts/sections/custom-instructions.ts`](/src/core/prompts/sections/custom-instructions.ts#L1)
+- [`src/core/prompts/sections/kilo.ts`](/src/core/prompts/sections/kilo.ts#L1)
+- [`src/core/webview/kilorules.ts`](/src/core/webview/kilorules.ts#L1)
+- [`src/services/roo-config/index.ts`](/src/services/roo-config/index.ts#L1)
+- [`src/shared/globalFileNames.ts`](/src/shared/globalFileNames.ts#L1)
+- [`src/core/prompts/system.ts`](/src/core/prompts/system.ts#L1)
+- [`src/services/commit-message/CommitMessageProvider.ts`](/src/services/commit-message/CommitMessageProvider.ts#L1)
+- [`src/shared/modes.ts`](/src/shared/modes.ts#L1)
+- [`src/core/task/Task.ts`](/src/core/task/Task.ts#L1)
+- [`src/core/context/instructions/workflows.ts`](/src/core/context/instructions/workflows.ts#L1)
 - Tests:
-    - [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1)
-    - [`src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts:1)
-    - [`src/core/prompts/__tests__/add-custom-instructions.spec.ts`](src/core/prompts/__tests__/add-custom-instructions.spec.ts:1)
-    - [`src/services/roo-config/__tests__/index.spec.ts`](src/services/roo-config/__tests__/index.spec.ts:1)
+    - [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts`](/src/core/prompts/sections/__tests__/custom-instructions.spec.ts#L1)
+    - [`src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts`](/src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts#L1)
+    - [`src/core/prompts/__tests__/add-custom-instructions.spec.ts`](/src/core/prompts/__tests__/add-custom-instructions.spec.ts#L1)
+    - [`src/services/roo-config/__tests__/index.spec.ts`](/src/services/roo-config/__tests__/index.spec.ts#L1)
 
 ---
 

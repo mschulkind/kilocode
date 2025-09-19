@@ -45,7 +45,7 @@ This mode-centric approach provides a clear and auditable trail of why certain a
 
 <a id="modes-as-a-security-boundary"></a>
 
-Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context and a corresponding set of allowed actions. The definitions for these modes and their capabilities are located in [`src/shared/modes.ts`](src/shared/modes.ts:69).
+Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context and a corresponding set of allowed actions. The definitions for these modes and their capabilities are located in [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
 
 Examples of modes and their intended privilege levels:
 
@@ -54,7 +54,7 @@ Examples of modes and their intended privilege levels:
 - **`debug`**: Investigation and analysis. May have read access to most files but limited write access.
 - **`test`**: Running and creating tests. Has access to test runners and can write to test files.
 
-A task can request to change its mode by using the [`switchModeTool`](src/core/tools/switchModeTool.ts:8), but this is an explicit, logged action.
+A task can request to change its mode by using the [`switchModeTool`](/\src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged action.
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -64,7 +64,7 @@ A task can request to change its mode by using the [`switchModeTool`](src/core/t
 
 <a id="tool-permissioning"></a>
 
-Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the [`isToolAllowedForMode`](src/shared/modes.ts:167) function.
+Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the [`isToolAllowedForMode`](/\src/shared/modes.ts#L167) function.
 
 This function checks a mapping that associates each mode with a list of allowed tool names or patterns.
 
@@ -85,7 +85,7 @@ In addition to tool-level permissions, modes can also define file access policie
 
 This is enforced through file path pattern matching. For example, the `test` mode might only be allowed to write to files matching `*.test.ts` or `__mocks__/*.ts`.
 
-When a tool attempts to access a file that violates the current mode's file access policy, a [`FileRestrictionError`](src/shared/modes.ts:157) is thrown. This error is specific and clearly communicates the nature of the violation to the model, allowing it to take corrective action (e.g., switching to an appropriate mode).
+When a tool attempts to access a file that violates the current mode's file access policy, a [`FileRestrictionError`](/\src/shared/modes.ts#L157) is thrown. This error is specific and clearly communicates the nature of the violation to the model, allowing it to take corrective action (e.g., switching to an appropriate mode).
 
 [Back to Top](#orchestrator-security--governance)
 

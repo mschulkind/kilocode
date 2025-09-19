@@ -95,7 +95,7 @@ This category includes tools for communicating with the end-user.
 #### `askFollowupQuestionTool`
 
 - **Purpose**: Pauses the task and asks the user for clarification or additional information. The task will not proceed until the user provides a response.
-- **Source**: [`src/core/tools/askFollowupQuestionTool.ts`](src/core/tools/askFollowupQuestionTool.ts:6)
+- **Source**: [`src/core/tools/askFollowupQuestionTool.ts`](/src/core/tools/askFollowupQuestionTool.ts#L6)
 - **Parameters**:
     - `question`: The question to ask the user.
     - `follow_up`: A list of suggested, actionable answers.
@@ -111,7 +111,7 @@ Tools for managing the internal state and plan of a task.
 #### `updateTodoListTool`
 
 - **Purpose**: Creates or overwrites the task's todo list. This is the primary mechanism for "Todo Gating," where the orchestrator tracks its plan and progress.
-- **Source**: [`src/core/tools/updateTodoListTool.ts`](src/core/tools/updateTodoListTool.ts:156)
+- **Source**: [`src/core/tools/updateTodoListTool.ts`](/src/core/tools/updateTodoListTool.ts#L156)
 - **Parameters**:
     - `todos`: A markdown-formatted checklist of tasks.
 

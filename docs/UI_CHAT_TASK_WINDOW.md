@@ -111,7 +111,7 @@ API-->>O: partial stream / final/kilocode-docs/docs/`).
 ````
 
  key symbols and handlers are surfaced from source code as inline links where helpful (for example### 3.2 Control loop responsibilities
-- Debounce/coalesce rapid user edits: the UI should avoid firing a [`initiateTaskLoop`](src/core/task/Task.ts:1699)).
+- Debounce/coalesce rapid user edits: the UI should avoid firing a [`initiateTaskLoop`](/\src/core/task/Task.ts#L1699)).
 
 Back request on every keystroke. Key triggers that produce requests:
  to Top
@@ -195,7 +195,7 @@ Back to Top
 - Display format recommendation: sends).
     - The message is in a "ready" state ( local ISO-8601 with timezone offset (e.g. 2025-09-validated, not empty).
     - The orchestrator evaluates whether the input should create a direct provider call or trigger an internal subtask first (see [`OR19T12:34:56-04:00) for precise debugging.
-- UI placement: each message should show a short timestamp (e.g. HHCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md:1)).
+- UI placement: each message should show a short timestamp (e.g. HHCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md)).
 
 Back to Top
 
@@ -258,7 +258,7 @@ Example data model (concept to configuration: settings that affect behavior (e.g
 ```json
 {
   "id": "msg_123",
-  "role": "assistant screen described in [`docs/SETTINGS_SCREEN.md`](docs/SETTINGS_SCREEN.md:1) (when added) and UI docs at",
+  "role": "assistant screen described in [`docs/SETTINGS_SCREEN.md`](docs/SETTINGS_SCREEN.md) (when added) and UI docs at",
   "text": "Here's the plan...",
   "timestamp": "2025-09-19T16:00:19.119Z",
   "provider": "openai `apps/kilocode-docs`.
@@ -300,7 +300,7 @@ If you observe multiple API requests being sent for a single user action, check 
 control loop was invoked twice (e.g., user action + a scheduled### 6.1 Likely causes
 
 - Duplicate event listeners: the Send handler is bound retry). Inspect calls to [`initiateTask more than once (e.g., component mounted twice).
-- Race conditions producing multipleLoop`](src/core/task/Task.ts:1699) or equivalent entry dispatcher calls: both UI and orchestratorpoints.
+- Race conditions producing multipleLoop`](/\src/core/task/Task.ts#L1699) or equivalent entry dispatcher calls: both UI and orchestratorpoints.
     - Confirm the orchestrator sets an " decide to send at similar times.
 - Missing debounce / throttleactiveRequest" token per chat turn and skips issuing if on autocorrect or shortcut actions.
 - Retries triggered present.
@@ -407,4 +407,4 @@ Back to Top
 
 ATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION### Navigation Footer
 
-- Index: [`docs/ORCHESTRATOR_L.md:1)
+- Index: [`docs/ORCHESTRATOR_L.md)
