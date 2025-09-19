@@ -74,30 +74,35 @@ This plan supersedes all previous documentation on this topic.
 
 ## Data model
 
-The canonical message object will be extended to include a standardized set of timestamp fields.
+The canonical message object will be extended to include a standardized set of timestamp fields and a few auxiliary fields used by the orchestrator and logging systems. The example below is intentionally explicit so implementers can map UI state -> persisted state -> logs.
 
 ```typescript
-// Pseudo-interface for the chat message object
+// typescript
 interface ChatMessage {
-	id: string // Unique message identifier
+	id: string // Unique message identifier (stable across re-renders)
 	role: "user" | "assistant" | "system" | "tool"
 	text: string
 	provider?: string // e.g., 'openai'
-	requestId?: string // Correlates to a specific request lifecycle
+	requestId?: string // Correlates to a specific request lifecycle (may differ from id for retries)
 
-	// The canonical timestamp for the message event. Persisted.
+	// Canonical persisted timestamp (source: orchestrator). Always UTC ISO.
 	timestamp: string // ISO-8601 UTC format: YYYY-MM-DDTHH:MM:SS.sssZ
 
-	// A derived, non-persisted, memoized value for UI display.
-	localTimestamp?: string // e.g., "14:32"
+	// Display-only: derived per-client (not persisted) to keep UI locale/timezone independent.
+	localTimestamp?: string // e.g., "14:32" (derived with toLocaleTimeString)
 
-	// Detailed lifecycle event timestamps. Persisted.
+	// Detailed lifecycle timestamps (persisted). Keys are optional and added as events occur.
 	lifecycleTimestamps?: {
-		uiEnqueue: string // ISO-8601 UTC
-		orchestratorDispatch: string // ISO-8601 UTC
-		providerFirstChunk: string // ISO-8601 UTC
-		providerCompleted: string // ISO-8601 UTC
+		uiEnqueue?: string // client-side time when user hit Send (UTC ISO)
+		orchestratorDispatch?: string // when orchestrator dispatched to provider (UTC ISO)
+		providerFirstChunk?: string // when first streaming chunk arrived (UTC ISO)
+		providerCompleted?: string // when stream completed (UTC ISO)
 	}
+
+	// Additional orchestrator metadata used for stable ordering and debugging
+	monotonicSeq?: number // server-assigned sequence for tie-breaking
+	channel?: string // logical channel (e.g., "chat.timestamps", "chat.activity") for routing/logging
+	providerRequestId?: string // vendor/provider request id (if available)
 
 	// Optional flags for edge cases
 	timestampInferred?: boolean
@@ -105,8 +110,59 @@ interface ChatMessage {
 }
 ```
 
-- **Persisted:** `timestamp`, `lifecycleTimestamps`.
-- **Transient/Derived:** `localTimestamp`. This is derived on the client during rehydration or rendering to avoid storing user-specific locale information and to ensure the displayed time is always correct for the user's current timezone.
+Why these fields exist (mapping to repo code)
+
+- `monotonicSeq` is used as a deterministic secondary sort key when two messages share the same `timestamp`.
+- `channel` maps to the logger "context" used by the compact logger (see the logger ctx → `c` field in [`src/utils/logging/types.ts`](src/utils/logging/types.ts:1) and the logger implementations in [`src/utils/logging/CompactLogger.ts`](src/utils/logging/CompactLogger.ts:1)).
+- `lifecycleTimestamps` is intentionally persisted so operations (replay, audit, metrics) can reconstruct latency breakdowns.
+
+Example persisted JSON for a single message:
+
+```json
+{
+	"id": "msg_123",
+	"requestId": "req_abc123",
+	"role": "assistant",
+	"text": "Hello",
+	"timestamp": "2025-09-19T20:25:37.331Z",
+	"monotonicSeq": 1024,
+	"lifecycleTimestamps": {
+		"uiEnqueue": "2025-09-19T20:25:36.500Z",
+		"orchestratorDispatch": "2025-09-19T20:25:36.820Z",
+		"providerFirstChunk": "2025-09-19T20:25:37.000Z",
+		"providerCompleted": "2025-09-19T20:25:37.331Z"
+	},
+	"channel": "chat.timestamps"
+}
+```
+
+Diagram (ASCII, simplified): message lifecycle & relationships
+
+```text
+text
++----------------------+          +------------------------+          +------------------+
+|  Client (UI)         |  ----->  |  Orchestrator Service  |  ----->  |  Provider (API)  |
+|  - uiEnqueue (ts)    |          |  - orchestratorDispatch|          |  - providerFirst |
+|  - localTimestamp    |          |  - assigns monotonicSeq|          |  - providerDone  |
++----------------------+          +------------------------+          +------------------+
+         |                                |                                   ^
+         |                                |                                   |
+         |  persisted ChatMessage         |--------------- logs --------------+
+         |  (timestamp, lifecycleTimestamps)                         (providerRequestId)
+         v
+   Chat history storage
+```
+
+Storage notes
+
+- Persist only canonical UTC timestamps and lifecycle objects. Avoid persisting per-user locale strings.
+- When ingesting legacy messages without `timestamp`, set `timestampInferred: true` and set `timestamp` to rehydration time.
+
+Developer pointers
+
+- Logger types and compact entry shape are defined in [`src/utils/logging/types.ts`](src/utils/logging/types.ts:1).
+- The compact logger implementation is in [`src/utils/logging/CompactLogger.ts`](src/utils/logging/CompactLogger.ts:1).
+- Transport (file/console) behaviour is implemented in [`src/utils/logging/CompactTransport.ts`](src/utils/logging/CompactTransport.ts:1).
 
 ## Timestamp generation & normalization
 
@@ -171,8 +227,120 @@ These events will be logged with the following schema:
 
 ## Instrumentation & logging
 
-- **Channel:** All timestamp-related lifecycle events will be logged to a dedicated channel, `chat.timestamps`.
-- **Sampling:** For the initial implementation, all lifecycle events will be logged (100% sampling). The sampling rate can be made configurable in the future if the logging volume is too high.
+This repository uses a compact, structured logging system designed for low-overhead production logging and convenient test-time assertions.
+
+Core components
+
+- Compact logger: [`src/utils/logging/CompactLogger.ts`](src/utils/logging/CompactLogger.ts:1)
+- Transport (console + file): [`src/utils/logging/CompactTransport.ts`](src/utils/logging/CompactTransport.ts:1)
+- Convenience VSCode output logger: [`src/utils/outputChannelLogger.ts`](src/utils/outputChannelLogger.ts:1)
+- Default exported logger selector: [`src/utils/logging/index.ts`](src/utils/logging/index.ts:1)
+
+Concepts and "channels"
+
+- In this codebase "channels" are logical contexts attached to log entries via the logger metadata `ctx` → compact entry `c`.
+    - Use a channel for grouping related events, e.g. `chat.timestamps`, `chat.lifecycle`, `orchestrator`.
+    - Create contextual loggers with `.child({ ctx: "chat.timestamps" })` so the `c` field is automatically set on entries.
+
+What gets written (CompactLogEntry)
+
+- Entries written by the logger are compact objects: `{ t, l, m, c?, d? }`.
+    - `t` is a delta timestamp (transport converts absolute → delta for storage).
+    - `l` is level (`debug|info|warn|error|fatal`).
+    - `m` is a short human message.
+    - `c` is the channel/context (maps to `ctx` in LogMeta).
+    - `d` is a structured payload (use for requestId, phase, monotonicSeq, deltaPrevMs).
+
+Recommended payload for timestamp lifecycle logs
+
+- Use `d` to store structured lifecycle data so consumers can parse logs easily:
+
+Example usage (typescript)
+
+```typescript
+// typescript
+import { logger } from "src/utils/logging/index"
+
+const chatLogger = logger.child?.({ ctx: "chat.timestamps" }) ?? logger
+
+chatLogger.info("lifecycle", {
+	requestId: "req_abc123",
+	phase: "orchestratorDispatch",
+	ts: new Date().toISOString(),
+	monotonicSeq: 1024,
+	deltaPrevMs: 52,
+})
+```
+
+Note: the repo's default `logger` behaves differently depending on environment.
+
+- [`src/utils/logging/index.ts`](src/utils/logging/index.ts:1) exports a `noopLogger` for non-test runtimes and a `CompactLogger` when `NODE_ENV === "test"`. This means:
+    - In normal runtime the default export is a noop (no file writes) to avoid spamming logs unless an explicit logger is created.
+    - For local debugging or CI you can instantiate a `CompactLogger` yourself, or set up the transport explicitly:
+
+Explicit logger with file output (example)
+
+```typescript
+// typescript
+import { CompactLogger } from "src/utils/logging/CompactLogger"
+import { CompactTransport } from "src/utils/logging/CompactTransport"
+
+const transport = new CompactTransport({ level: "debug", fileOutput: { enabled: true, path: "./logs/chat.log" } })
+const fileLogger = new CompactLogger(transport, { ctx: "chat.timestamps" })
+fileLogger.info("instrumentation-enabled", { startedAt: new Date().toISOString() })
+```
+
+Transport behavior and log files
+
+- Default transport writes delta timestamps and appends newline-delimited JSON to the configured file (default `./logs/app.log`) and optionally to stdout (see `CompactTransport` default config in [`src/utils/logging/CompactTransport.ts`](src/utils/logging/CompactTransport.ts:1)).
+- Because `t` becomes a delta in the transport, post-processing tools must reconstruct absolute times by summing deltas starting from the session marker that the transport writes on initialization.
+
+VSCode UI and debugging
+
+- For extension/UI diagnostics prefer `createOutputChannelLogger` / `createDualLogger` in [`src/utils/outputChannelLogger.ts`](src/utils/outputChannelLogger.ts:1). These helpers format arbitrary objects safely for the VSCode Output channel and optionally mirror to console.
+- Use the output channel for verbose developer-only traces; use compact structured logs for production telemetry.
+
+Sampling and volume control
+
+- The compact transport supports a minimum log level (`level` in `CompactTransportConfig`) to reduce volume.
+- For higher-level sampling (e.g., only 1% of `chat.timestamps`) implement a sampling gate in the instrumentation layer before calling the logger (e.g., rand < 0.01).
+
+Guidance: what to log where
+
+- Production telemetry/metrics: use `CompactLogger` -> `CompactTransport` (structured `d` payloads). Keep messages short and structured.
+- Local debugging & extension UI: use `createOutputChannelLogger` or `createDualLogger` for readable output and full object serialization.
+- Tests: rely on `CompactLogger` (exported in test env by index) and assert on compact entries or mock transport (`src/utils/logging/__tests__/MockTransport.ts`).
+- Sensitive data: never log full user prompt or secrets. Log request identifiers and truncated or hashed fingerprints instead.
+
+Example lifecycle log entry (compact)
+
+```json
+{
+	"t": 52,
+	"l": "info",
+	"m": "phase",
+	"c": "chat.timestamps",
+	"d": { "requestId": "req_abc123", "phase": "providerFirstChunk", "monotonicSeq": 1024 }
+}
+```
+
+Operational checklist for enabling timestamp instrumentation
+
+- [ ] Add a child logger in the code path producing lifecycle events: `logger.child({ ctx: "chat.timestamps" })`.
+- [ ] Write structured events as shown above (phase, requestId, ts, monotonicSeq, deltaPrevMs).
+- [ ] For production, enable a `CompactTransport` with an appropriate `level` and `fileOutput.path`.
+- [ ] Add post-processing or log ingestion rules that convert delta `t` back to absolute timestamps for analysis.
+
+Sampling example (pseudo)
+
+```typescript
+// typescript
+if (Math.random() < 0.01) {
+	chatLogger.debug("lifecycle-sampled", {
+		/* ... */
+	})
+}
+```
 
 ## Testing strategy
 
