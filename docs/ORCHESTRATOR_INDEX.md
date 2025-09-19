@@ -17,7 +17,7 @@
 
 ---
 
-## 1. Purpose & Scope
+## Purpose & Scope
 
 This document serves as the master index for the Orchestrator documentation suite. Its purpose is to provide a high-level overview and a centralized entry point into the more detailed documents covering specific aspects of the Orchestrator's functionality. It establishes the conceptual framework and key terminology used throughout the suite.
 
@@ -28,7 +28,7 @@ This document serves as the master index for the Orchestrator documentation suit
 
 ---
 
-## 2. High-Level Responsibilities
+## High-Level Responsibilities
 
 The Orchestrator is responsible for managing the end-to-end lifecycle of a user's task. This includes interpreting the request, executing tools, managing state, and ensuring safe, predictable outcomes.
 
@@ -40,7 +40,7 @@ The Orchestrator is responsible for managing the end-to-end lifecycle of a user'
 
 ---
 
-## 3. Core Concepts At a Glance
+## Core Concepts At a Glance
 
 - **Mode:** A distinct persona or capability set (e.g., `code`, `architect`) that defines available tools and operational boundaries.
 - **Tool Invocation:** The process by which the model requests to execute a system-provided function (e.g., `read_file`, `apply_diff`).
@@ -53,7 +53,7 @@ The Orchestrator is responsible for managing the end-to-end lifecycle of a user'
 
 ---
 
-## 4. Lifecycle Snapshot
+## Lifecycle Snapshot
 
 A typical task follows this orchestrated sequence:
 
@@ -69,7 +69,7 @@ A typical task follows this orchestrated sequence:
 
 ---
 
-## 5. Documentation Map
+## Documentation Map
 
 This table maps out the complete Orchestrator documentation suite.
 
@@ -87,7 +87,7 @@ This table maps out the complete Orchestrator documentation suite.
 
 ---
 
-## 6. Quick Reference Matrix
+## Quick Reference Matrix
 
 | Concept          | Primary Symbols                                                                                                          | Linked Detailed Doc                   |
 | :--------------- | :----------------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
@@ -100,7 +100,7 @@ This table maps out the complete Orchestrator documentation suite.
 
 ---
 
-## 7. Architecture Flow Diagram
+## Architecture Flow Diagram
 
 This diagram illustrates the high-level flow of control within the Orchestrator.
 
@@ -126,7 +126,7 @@ flowchart TD
 
 ---
 
-## 8. Guardrails & Safety Overview
+## Guardrails & Safety Overview
 
 The Orchestrator enforces several safety mechanisms to ensure predictable and secure operation:
 
@@ -139,7 +139,7 @@ The Orchestrator enforces several safety mechanisms to ensure predictable and se
 
 ---
 
-## 9. Change Management & Versioning
+## Change Management & Versioning
 
 To keep documentation synchronized with the codebase, follow these principles:
 
@@ -150,7 +150,7 @@ To keep documentation synchronized with the codebase, follow these principles:
 
 ---
 
-## 10. Glossary
+## Glossary
 
 - **Continuity:** The mechanism for preserving state and context across multiple, related tasks.
 - **Gating:** A checkpoint or condition that must be satisfied before a task can proceed.

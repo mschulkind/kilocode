@@ -17,7 +17,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -29,7 +29,7 @@
 
 ---
 
-### 2. Error Handling Philosophy
+### Error Handling Philosophy
 
 <a id="error-handling-philosophy"></a>
 
@@ -45,7 +45,7 @@ Key principles:
 
 ---
 
-### 3. Types of Errors
+### Types of Errors
 
 <a id="types-of-errors"></a>
 
@@ -61,7 +61,7 @@ Key principles:
 
 ---
 
-### 4. The Recovery Loop
+### The Recovery Loop
 
 <a id="the-recovery-loop"></a>
 
@@ -89,7 +89,7 @@ This loop allows the model to learn from its mistakes within the context of a si
 
 ---
 
-### 5. The "Mistake Limit"
+### The "Mistake Limit"
 
 <a id="the-mistake-limit"></a>
 
@@ -106,7 +106,7 @@ This concept is a crucial guardrail that ensures system stability.
 
 ---
 
-### 6. Specific Error Scenarios
+### Specific Error Scenarios
 
 <a id="specific-error-scenarios"></a>
 
@@ -129,7 +129,7 @@ This concept is a crucial guardrail that ensures system stability.
 
 ---
 
-### 7. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 

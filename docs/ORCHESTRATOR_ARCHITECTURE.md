@@ -17,7 +17,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -29,7 +29,7 @@
 
 ---
 
-### 2. Architectural Philosophy
+### Architectural Philosophy
 
 <a id="architectural-philosophy"></a>
 
@@ -44,7 +44,7 @@ The orchestrator is built on a modular, extensible, and state-driven architectur
 
 ---
 
-### 3. Core Components
+### Core Components
 
 <a id="core-components"></a>
 
@@ -61,7 +61,7 @@ The architecture comprises several key components that work in concert to execut
 
 ---
 
-### 4. Data Flow Diagram
+### Data Flow Diagram
 
 <a id="data-flow-diagram"></a>
 
@@ -94,19 +94,19 @@ sequenceDiagram
 
 ---
 
-### 5. Component Deep Dive
+### Component Deep Dive
 
 <a id="component-deep-dive"></a>
 
-#### 5.1. Task Engine
+#### Task Engine
 
 The `Task` engine is the central coordinator. It maintains the state of the current operation, manages the conversation history with the model, and orchestrates calls to other components. The [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735) function is the primary driver of the iterative execution loop.
 
-#### 5.2. Streaming Parser
+#### Streaming Parser
 
 The parser's role is critical for performance and responsiveness. It scans the model's output stream for XML-like tool-call syntax. This allows the system to act on a tool request before the full model response has been received, enabling parallel execution of long-running tasks.
 
-#### 5.3. Tool Executor & Library
+#### Tool Executor & Library
 
 The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it consults the **Mode & Permission Service**. If a tool is not permitted in the current mode, it throws a [`FileRestrictionError`](src/shared/modes.ts:157) or a similar permissions-related error, which is then handled by the Task Engine.
 
@@ -114,7 +114,7 @@ The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it 
 
 ---
 
-### 6. Key Interactions
+### Key Interactions
 
 <a id="key-interactions"></a>
 
@@ -126,7 +126,7 @@ The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it 
 
 ---
 
-### 7. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 

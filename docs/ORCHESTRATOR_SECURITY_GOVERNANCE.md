@@ -17,7 +17,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -29,7 +29,7 @@
 
 ---
 
-### 2. Security Philosophy
+### Security Philosophy
 
 <a id="security-philosophy"></a>
 
@@ -41,7 +41,7 @@ This mode-centric approach provides a clear and auditable trail of why certain a
 
 ---
 
-### 3. Modes as a Security Boundary
+### Modes as a Security Boundary
 
 <a id="modes-as-a-security-boundary"></a>
 
@@ -60,7 +60,7 @@ A task can request to change its mode by using the [`switchModeTool`](src/core/t
 
 ---
 
-### 4. Tool Permissioning
+### Tool Permissioning
 
 <a id="tool-permissioning"></a>
 
@@ -77,7 +77,7 @@ Some tools, like `askFollowupQuestionTool`, are considered **Always-Available To
 
 ---
 
-### 5. File Access Control
+### File Access Control
 
 <a id="file-access-control"></a>
 
@@ -91,7 +91,7 @@ When a tool attempts to access a file that violates the current mode's file acce
 
 ---
 
-### 6. Governance Workflow Diagram
+### Governance Workflow Diagram
 
 <a id="governance-workflow-diagram"></a>
 
@@ -119,7 +119,7 @@ flowchart TD
 
 ---
 
-### 7. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 

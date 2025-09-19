@@ -17,7 +17,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -30,7 +30,7 @@
 
 ---
 
-### 2. Lifecycle Overview
+### Lifecycle Overview
 
 <a id="lifecycle-overview"></a>
 
@@ -60,7 +60,7 @@ sequenceDiagram
 
 ---
 
-### 3. Lifecycle Stages in Detail
+### Lifecycle Stages in Detail
 
 <a id="lifecycle-stages-in-detail"></a>
 
@@ -92,7 +92,7 @@ The `Task` engine performs final cleanup, persists the final state, and returns 
 
 ---
 
-### 4. State Transitions
+### State Transitions
 
 <a id="state-transitions"></a>
 
@@ -108,7 +108,7 @@ A task can exist in several states throughout its lifecycle:
 
 ---
 
-### 5. The Execution Loop: `recursivelyMakeClineRequests`
+### The Execution Loop: `recursivelyMakeClineRequests`
 
 <a id="the-execution-loop-recursivelymakeclinerequests"></a>
 
@@ -123,7 +123,7 @@ The function [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735) is the
 
 ---
 
-### 6. Subtask Lifecycle
+### Subtask Lifecycle
 
 <a id="subtask-lifecycle"></a>
 
@@ -138,7 +138,7 @@ When the model determines a part of the task requires isolated execution, it can
 
 ---
 
-### 7. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 
@@ -149,3 +149,66 @@ You have reached the end of the lifecycle document. Return to the [Master Index]
 ---
 
 End of document.
+
+## Provider network send points, duplicate-causes, and recommended docs-only changes
+
+### Quick pointer to code
+
+- Task control loop: [`src/core/task/Task.ts:2648`](src/core/task/Task.ts:2648)
+- Message queue: [`src/core/message-queue/MessageQueueService.ts:36`](src/core/message-queue/MessageQueueService.ts:36)
+- Provider entrypoints: `createMessage()` implementations under [`src/api/providers/`](src/api/providers/index.ts:1)
+
+### Concrete send patterns (summary)
+
+- OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers: [`src/api/providers/openai.ts:83`](src/api/providers/openai.ts:83), [`src/api/providers/ollama.ts:61`](src/api/providers/ollama.ts:61), etc.)
+- Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE fallback (see [`src/api/providers/openai-native.ts:296`](src/api/providers/openai-native.ts:296)).
+- Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g., [`src/api/providers/anthropic.ts:80`](src/api/providers/anthropic.ts:80), [`src/api/providers/bedrock.ts:420`](src/api/providers/bedrock.ts:420)).
+- Manual fetch() usages (SSE or JSON): OpenRouter image endpoint, OpenAI Native SSE fallback, Glama polling, etc.
+
+### Likely causes of duplicate requests (doc summary)
+
+1. Orchestrator-level retries + provider internal retries/fallbacks (e.g., OpenAI-native previous_response retry + Task retry).
+2. Token refresh flows that retry the same request (Gemini/Qwen patterns).
+3. Race on conversation continuity (previous_response_id) causing a provider retry and orchestrator retry.
+4. Wrapper/provider switching (VirtualQuotaFallback) without cancelling in-flight streams.
+5. Duplicate or repeated fetchModel calls in provider code paths (observed pattern).
+6. SSE vs SDK fallback paths that can trigger additional network sends on error-handling branches.
+
+### Docs-only recommendations (no code changes)
+
+- Add a "Provider expectations" doc section describing:
+    - Which errors providers should throw vs yield (e.g., THROTTLING -> throw so Task-level retry/backoff runs).
+    - Expected behavior for token refresh flows (single in-flight refresh promise; block concurrent sends while refresh occurs).
+    - Best-effort contract for previous_response_id usage and race mitigation strategy.
+    - How providers should expose cancellation (note the orchestration will supply an AbortSignal when supported).
+    - Where to include request-level metadata (recommended header names and fallbacks).
+- Add a "Tracing & idempotency" doc covering:
+    - Recommended header names (X-KILOCODE-TASK-ID, X-KILOCODE-TIMESTAMP-ISO) and preferred placement in requests.
+    - Per-provider caveats where headers cannot be used (e.g., Bedrock SDK) and fallback options (embed minimal metadata into conversation or system block).
+- Add a "Retry responsibility" doc that states:
+    - Providers may perform idempotent internal retries (token refresh, small SDK-specific fixes).
+    - Providers must rethrow throttling/rate-limit errors to allow Task.ts to perform exponential backoff.
+- Add a "Testing checklist" doc for integration tests:
+    - Simulate concurrent sends to exercise previous_response_id handling.
+    - Simulate token refresh and assert only one successful send occurs.
+    - Simulate provider-switch while a stream is in-flight to validate cancellation behavior.
+    - Verify that handlers that poll (glama) do not cause extra requests on normal success.
+- Create a short "Fast fixes" list for engineers to follow when implementing code changes later:
+    - Centralize header injection plan (docs link to recommended header names).
+    - Standardize error classification mapping for throttling vs non-retriable errors.
+    - Remove duplicate fetchModel calls where observed.
+
+### Suggested doc locations & links (insert these pages)
+
+- docs/PROVIDER_GUIDELINES.md — provider expectations, header names, cancellation contract. (link from here)
+- docs/RETRY_POLICY.md — retry responsibility, orchestrator vs provider, backoff guidelines.
+- docs/TESTING_STRATEGY.md — integration tests to add.
+- Update: [`docs/ORCHESTRATOR_LIFECYCLE.md:1`](docs/ORCHESTRATOR_LIFECYCLE.md:1) to reference the new pages.
+
+### Next doc-step I will take (if you approve)
+
+I will add these markdown files under `docs/` with concise, copy-pasteable guidelines and the testing checklist. Tell me to proceed and I will create:
+
+- `docs/PROVIDER_GUIDELINES.md`
+- `docs/RETRY_POLICY.md`
+- `docs/TESTING_STRATEGY.md`

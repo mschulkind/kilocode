@@ -16,7 +16,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -28,7 +28,7 @@
 
 ---
 
-### 2. Prompt Engineering Best Practices
+### Prompt Engineering Best Practices
 
 <a id="prompt-engineering-best-practices"></a>
 
@@ -43,7 +43,7 @@ The quality of the orchestrator's output is highly dependent on the quality of t
 
 ---
 
-### 3. Tool and Mode Development
+### Tool and Mode Development
 
 <a id="tool-and-mode-development"></a>
 
@@ -58,7 +58,7 @@ When extending the system, adhere to these principles.
 
 ---
 
-### 4. Task Management and Delegation
+### Task Management and Delegation
 
 <a id="task-management-and-delegation"></a>
 
@@ -70,7 +70,7 @@ When extending the system, adhere to these principles.
 
 ---
 
-### 5. Testing and Validation
+### Testing and Validation
 
 <a id="testing-and-validation"></a>
 
@@ -82,7 +82,7 @@ When extending the system, adhere to these principles.
 
 ---
 
-### 6. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 

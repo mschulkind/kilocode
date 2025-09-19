@@ -34,9 +34,9 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 1. Core Implementation Files
+## Core Implementation Files
 
-### 1.1 Primary Loader & Prompt Assembler
+### Primary Loader & Prompt Assembler
 
 - [`src/core/prompts/sections/custom-instructions.ts`](src/core/prompts/sections/custom-instructions.ts:1)  
   Key function blocks (approx line ranges):
@@ -56,7 +56,7 @@ This document provides a code-referenced description of how rule files under `.k
     - `addCustomInstructions` (297–421) – Orchestrates resolution + assembly (legacy, mode-specific, agent, toggle-aware delegation).
     - `shouldIncludeRuleFile` (436–471) – Filename-based exclusion (cache/system/ignored patterns).
 
-### 1.2 Toggle-Aware Loader
+### Toggle-Aware Loader
 
 - [`src/core/prompts/sections/kilo.ts`](src/core/prompts/sections/kilo.ts:60)  
   Functions:
@@ -68,12 +68,12 @@ This document provides a code-referenced description of how rule files under `.k
     - Local path: `path.join(cwd, GlobalFileNames.kiloRules)`
     - Always re-reads; no cache layer.
 
-### 1.3 Shared Constants
+### Shared Constants
 
 - [`src/shared/globalFileNames.ts`](src/shared/globalFileNames.ts:1)  
   Defines canonical names (e.g. `kiloRules`, workflows, custom modes, MCP settings).
 
-### 1.4 Webview Rule Extraction (Supplemental)
+### Webview Rule Extraction (Supplemental)
 
 - [`src/core/webview/kilorules.ts`](src/core/webview/kilorules.ts:1)  
   Supplies enabled rules + workflows to UI (toggle-driven), using `getEnabledRulesFromDirectory` analogs plus state from `ContextProxy`.
@@ -82,7 +82,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 2. Directory Resolution
+## Directory Resolution
 
 - [`src/services/roo-config/index.ts`](src/services/roo-config/index.ts:1)
     - `getGlobalRooDirectory` → `homedir + "/.kilocode"`
@@ -94,9 +94,9 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 3. Rule Discovery & Loading Paths
+## Rule Discovery & Loading Paths
 
-### 3.1 Standard (Non-Toggle) Path
+### Standard (Non-Toggle) Path
 
 1. `addCustomInstructions` chooses path:
     - Toggle state present → delegate to `loadEnabledRules`
@@ -109,13 +109,13 @@ This document provides a code-referenced description of how rule files under `.k
     - Include mode-specific variants (`rules-{mode}` or `.kilocoderules-{mode}`)
     - Include agent rules (`AGENTS.md` / `AGENT.md`)
 
-### 3.2 Toggle-Based Path
+### Toggle-Based Path
 
 - `loadEnabledRules` enumerates global then local `.kilocode/rules`
 - Re-filters by toggle maps
 - Re-reads file bodies (freshness over reuse)
 
-### 3.3 Webview / UI Access
+### Webview / UI Access
 
 - `kilorules.ts` loads enabled rules + workflows for UI, not direct prompt assembly.
 
@@ -123,7 +123,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 4. File Inclusion & Filtering
+## File Inclusion & Filtering
 
 - `shouldIncludeRuleFile` screens ignored/system/cache artifacts
 - Binary detection excludes non-text files
@@ -134,7 +134,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 5. Fallback & Legacy Support
+## Fallback & Legacy Support
 
 - Legacy single-file names: `.kilocoderules`, `.roorules`, `.clinerules`
 - Mode-specific legacy: `.kilocoderules-{mode}`
@@ -145,7 +145,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 6. Agent & Mode-Specific Augmentation
+## Agent & Mode-Specific Augmentation
 
 - Agent rules: search `AGENTS.md` → fallback `AGENT.md`
 - Mode-specific directory: `rules-{mode}`
@@ -155,7 +155,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ---
 
-## 7. Invocation Lifecycle (When Rules Are Loaded)
+## Invocation Lifecycle (When Rules Are Loaded)
 
 Lazy (on-demand) loading only:
 
@@ -173,9 +173,9 @@ Result: no activation-time I/O → faster startup; always current view of disk.
 
 ---
 
-## 8. Data Flow Summary (Diagrams)
+## Data Flow Summary (Diagrams)
 
-### 8.1 Loader Control Flow
+### Loader Control Flow
 
 ```mermaid
 flowchart TD
@@ -197,7 +197,7 @@ flowchart TD
   P --> P4[Webview Listing]
 ```
 
-### 8.2 Invocation Lifecycle
+### Invocation Lifecycle
 
 ```mermaid
 sequenceDiagram
@@ -217,7 +217,7 @@ sequenceDiagram
   Provider-->>User: AI prompt result
 ```
 
-### 8.3 Webview Aggregation
+### Webview Aggregation
 
 ```mermaid
 flowchart LR
@@ -237,7 +237,7 @@ flowchart LR
 
 ---
 
-## 9. Error Handling Characteristics
+## Error Handling Characteristics
 
 | Aspect                    | Behavior                                                         |
 | ------------------------- | ---------------------------------------------------------------- |
@@ -254,7 +254,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 10. Caching & Performance
+## Caching & Performance
 
 | Dimension                   | Status                         |
 | --------------------------- | ------------------------------ |
@@ -268,7 +268,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 11. Edge Cases & Notable Behaviors
+## Edge Cases & Notable Behaviors
 
 | Case                              | Handling                                            |
 | --------------------------------- | --------------------------------------------------- |
@@ -283,7 +283,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 12. Test Coverage (Representative Files)
+## Test Coverage (Representative Files)
 
 - [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1)
 - [`src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions-global.spec.ts:1)
@@ -294,7 +294,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 13. Related Supplemental Rule/Workflow Toggling
+## Related Supplemental Rule/Workflow Toggling
 
 - [`src/core/context/instructions/workflows.ts`](src/core/context/instructions/workflows.ts:1) – Synchronizes workflow toggles for `.kilocode/workflows` (global + local).
 
@@ -302,7 +302,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 14. Security & Robustness Notes
+## Security & Robustness Notes
 
 | Concern                   | Mitigation                                         |
 | ------------------------- | -------------------------------------------------- |
@@ -315,7 +315,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 15. Quick Reference Matrix
+## Quick Reference Matrix
 
 | Loader Path              | Multi-File | Toggles | Symlinks              | Legacy Fallback        | Error Strategy                  | Sorting                        |
 | ------------------------ | ---------- | ------- | --------------------- | ---------------------- | ------------------------------- | ------------------------------ |
@@ -327,7 +327,7 @@ Design bias: resilient enumeration + selective propagation.
 
 ---
 
-## 16. High-Level Summary
+## High-Level Summary
 
 Rules load on demand (no activation cost). Two principal strategies:
 
@@ -341,7 +341,7 @@ No caching: prioritizes correctness and freshness over performance.
 
 ---
 
-## 17. Potential Improvement Opportunities (Non-Implemented)
+## Potential Improvement Opportunities (Non-Implemented)
 
 | Topic                              | Rationale                                  |
 | ---------------------------------- | ------------------------------------------ |
@@ -354,7 +354,7 @@ No caching: prioritizes correctness and freshness over performance.
 
 ---
 
-## 18. File Index (All Referenced)
+## File Index (All Referenced)
 
 - [`src/core/prompts/sections/custom-instructions.ts`](src/core/prompts/sections/custom-instructions.ts:1)
 - [`src/core/prompts/sections/kilo.ts`](src/core/prompts/sections/kilo.ts:1)

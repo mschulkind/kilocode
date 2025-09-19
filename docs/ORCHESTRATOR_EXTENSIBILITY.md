@@ -16,7 +16,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -28,7 +28,7 @@
 
 ---
 
-### 2. Extensibility Philosophy
+### Extensibility Philosophy
 
 <a id="extensibility-philosophy"></a>
 
@@ -44,7 +44,7 @@ The primary extension vectors are:
 
 ---
 
-### 3. Adding New Tools (Gap)
+### Adding New Tools (Gap)
 
 <a id="adding-new-tools-gap"></a>
 
@@ -63,7 +63,7 @@ This section is marked as a **Gap** and will be updated as the formal process is
 
 ---
 
-### 4. Adding New Modes (Gap)
+### Adding New Modes (Gap)
 
 <a id="adding-new-modes-gap"></a>
 
@@ -81,7 +81,7 @@ This section is marked as a **Gap**. Further details will be provided once the A
 
 ---
 
-### 5. Adding Custom Rules
+### Adding Custom Rules
 
 <a id="adding-custom-rules"></a>
 
@@ -99,7 +99,7 @@ For a complete overview of how these rules are discovered and loaded, please ref
 
 ---
 
-### 6. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 

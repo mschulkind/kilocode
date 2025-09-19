@@ -18,7 +18,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -30,7 +30,7 @@
 
 ---
 
-### 2. Tool Philosophy
+### Tool Philosophy
 
 <a id="tool-philosophy"></a>
 
@@ -42,7 +42,7 @@ Tools are the fundamental actions the orchestrator can perform. They are designe
 
 ---
 
-### 3. Core Task Flow Tools
+### Core Task Flow Tools
 
 <a id="core-task-flow-tools"></a>
 
@@ -57,7 +57,7 @@ These tools are fundamental to the execution and completion of tasks.
 
 ---
 
-### 4. Task Management Tools
+### Task Management Tools
 
 <a id="task-management-tools"></a>
 
@@ -86,7 +86,7 @@ These tools control the flow of execution, manage modes, and delegate work.
 
 ---
 
-### 5. User Interaction Tools
+### User Interaction Tools
 
 <a id="user-interaction-tools"></a>
 
@@ -102,7 +102,7 @@ This category includes tools for communicating with the end-user.
 
 ---
 
-### 6. State & Planning Tools
+### State & Planning Tools
 
 <a id="state-planning-tools"></a>
 
@@ -117,7 +117,7 @@ Tools for managing the internal state and plan of a task.
 
 ---
 
-### 7. File System Tools
+### File System Tools
 
 <a id="file-system-tools"></a>
 
@@ -132,7 +132,7 @@ A suite of tools for interacting with the file system. These are typically restr
 
 ---
 
-### 8. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 

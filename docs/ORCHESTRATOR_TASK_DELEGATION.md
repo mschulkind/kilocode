@@ -17,7 +17,7 @@
 
 ---
 
-### 1. Related Documents
+### Related Documents
 
 <a id="related-documents"></a>
 
@@ -29,7 +29,7 @@
 
 ---
 
-### 2. The Philosophy of Delegation
+### The Philosophy of Delegation
 
 <a id="the-philosophy-of-delegation"></a>
 
@@ -46,7 +46,7 @@ This approach has several advantages:
 
 ---
 
-### 3. The Subtask Mechanism
+### The Subtask Mechanism
 
 <a id="the-subtask-mechanism"></a>
 
@@ -61,7 +61,7 @@ The parent task is effectively in an `awaiting_subtask` state while the child ta
 
 ---
 
-### 4. Subtask Workflow Diagram
+### Subtask Workflow Diagram
 
 <a id="subtask-workflow-diagram"></a>
 
@@ -92,7 +92,7 @@ sequenceDiagram
 
 ---
 
-### 5. Key Symbols and Their Roles
+### Key Symbols and Their Roles
 
 <a id="key-symbols-and-their-roles"></a>
 
@@ -104,7 +104,7 @@ sequenceDiagram
 
 ---
 
-### 6. When to Use Subtasks
+### When to Use Subtasks
 
 <a id="when-to-use-subtasks"></a>
 
@@ -119,7 +119,7 @@ The decision to delegate is made by the language model based on the complexity o
 
 ---
 
-### 7. Navigation Footer
+### Navigation Footer
 
 <a id="navigation-footer"></a>
 
