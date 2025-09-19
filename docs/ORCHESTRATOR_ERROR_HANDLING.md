@@ -54,7 +54,7 @@ Key principles:
     - Runtime exceptions within the tool's logic.
     - I/O failures.
 - **Parsing Errors**: The model produces malformed XML for a tool call that the `StreamingParser` cannot understand.
-- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode. The primary example is [`FileRestrictionError`](../src/shared/modes.ts#L157).
+- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode. The primary example is [`FileRestrictionError`](/src/shared/modes.ts#L157).
 - **Catastrophic Errors**: Unrecoverable system-level errors that immediately halt the task.
 
 [Back to Top](#orchestrator-error-handling)
@@ -113,10 +113,10 @@ This concept is a crucial guardrail that ensures system stability.
 #### Scenario: `FileRestrictionError`
 
 1.  **Action**: Model in `architect` mode attempts to call `write_to_file`.
-2.  **Check**: The `ToolExecutor` consults the `Mode & Permission Service` via [`isToolAllowedForMode`](src/shared/modes.ts:167). The check fails.
-3.  **Error**: A [`FileRestrictionError`](src/shared/modes.ts:157) is thrown.
+2.  **Check**: The `ToolExecutor` consults the `Mode & Permission Service` via [`isToolAllowedForMode`](/src/shared/modes.ts#L167). The check fails.
+3.  **Error**: A [`FileRestrictionError`](/src/shared/modes.ts#L157) is thrown.
 4.  **Recovery**: The error message, explaining that `write_to_file` is not allowed in `architect` mode, is passed back to the model.
-5.  **Correction**: The model should then use a tool like [`switchModeTool`](src/core/tools/switchModeTool.ts:8) to change to `code` mode before re-attempting the file write.
+5.  **Correction**: The model should then use a tool like [`switchModeTool`](/src/core/tools/switchModeTool.ts#L8) to change to `code` mode before re-attempting the file write.
 
 #### Scenario: Invalid Regex in `search_files`
 

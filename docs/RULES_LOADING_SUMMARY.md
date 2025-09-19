@@ -38,7 +38,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ### Primary Loader & Prompt Assembler
 
-- [`src/core/prompts/sections/custom-instructions.ts`](src/core/prompts/sections/custom-instructions.ts:1)  
+- [`src/core/prompts/sections/custom-instructions.ts`](/src/core/prompts/sections/custom-instructions.ts#L1)
   Key function blocks (approx line ranges):
     - `safeReadFile` (32–43) – Reads UTF-8 text; swallows `ENOENT` / `EISDIR` returning `""`; rethrows unexpected errors (e.g. permissions).
     - `directoryExists` (48–55) – Boolean `fs.stat` wrapper; returns false on error.
@@ -58,7 +58,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ### Toggle-Aware Loader
 
-- [`src/core/prompts/sections/kilo.ts`](src/core/prompts/sections/kilo.ts:60)  
+- [`src/core/prompts/sections/kilo.ts`](/src/core/prompts/sections/kilo.ts#L60)
   Functions:
     - `loadEnabledRules` (60–66 header) – Public aggregation honoring per-file toggles.
     - `loadEnabledRulesFromDirectory` – Directory existence + listing + formatting.
@@ -70,12 +70,12 @@ This document provides a code-referenced description of how rule files under `.k
 
 ### Shared Constants
 
-- [`src/shared/globalFileNames.ts`](src/shared/globalFileNames.ts:1)  
+- [`src/shared/globalFileNames.ts`](/src/shared/globalFileNames.ts#L1)
   Defines canonical names (e.g. `kiloRules`, workflows, custom modes, MCP settings).
 
 ### Webview Rule Extraction (Supplemental)
 
-- [`src/core/webview/kilorules.ts`](src/core/webview/kilorules.ts:1)  
+- [`src/core/webview/kilorules.ts`](/src/core/webview/kilorules.ts#L1)
   Supplies enabled rules + workflows to UI (toggle-driven), using `getEnabledRulesFromDirectory` analogs plus state from `ContextProxy`.
 
 [Back to Top](#rules-loading-and-usage-summary)
@@ -84,7 +84,7 @@ This document provides a code-referenced description of how rule files under `.k
 
 ## Directory Resolution
 
-- [`src/services/roo-config/index.ts`](src/services/roo-config/index.ts:1)
+- [`src/services/roo-config/index.ts`](/src/services/roo-config/index.ts#L1)
     - `getGlobalRooDirectory` → `homedir + "/.kilocode"`
     - `getProjectRooDirectoryForCwd` → prefers project `.kilocode` (legacy `.roo` support)
     - `getRooDirectoriesForCwd` → ordered `[global, project]`

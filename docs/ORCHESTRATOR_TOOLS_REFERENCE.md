@@ -51,7 +51,7 @@ These tools are fundamental to the execution and completion of tasks.
 #### `attemptCompletionTool`
 
 - **Purpose**: Signals the successful completion of a task. This is a terminal operation that ends the task lifecycle.
-- **Source**: [`src/core/tools/attemptCompletionTool.ts`](src/core/tools/attemptCompletionTool.ts:35)
+- **Source**: [`src/core/tools/attemptCompletionTool.ts`](/src/core/tools/attemptCompletionTool.ts#L35)
 - **Parameters**:
     - `result`: A final message summarizing the work done.
 
@@ -66,7 +66,7 @@ These tools control the flow of execution, manage modes, and delegate work.
 #### `newTaskTool`
 
 - **Purpose**: Creates a new, independent task that runs asynchronously. This is a "fire-and-forget" operation; the parent task does not wait for the new task to complete.
-- **Source**: [`src/core/tools/newTaskTool.ts`](src/core/tools/newTaskTool.ts:14)
+- **Source**: [`src/core/tools/newTaskTool.ts`](/src/core/tools/newTaskTool.ts#L14)
 - **Parameters**:
     - `mode`: The mode in which to start the new task.
     - `message`: The initial user message or instructions for the new task.
@@ -74,7 +74,7 @@ These tools control the flow of execution, manage modes, and delegate work.
 #### `switchModeTool`
 
 - **Purpose**: Changes the active operational mode of the current task. This alters the set of available tools and permissions.
-- **Source**: [`src/core/tools/switchModeTool.ts`](src/core/tools/switchModeTool.ts:8)
+- **Source**: [`src/core/tools/switchModeTool.ts`](/src/core/tools/switchModeTool.ts#L8)
 - **Parameters**:
     - `mode_slug`: The slug of the mode to switch to (e.g., "code", "architect").
     - `reason`: An optional explanation for why the mode switch is necessary.
@@ -82,7 +82,7 @@ These tools control the flow of execution, manage modes, and delegate work.
 #### `startSubtask` / `completeSubtask`
 
 - **Purpose**: Manages the delegation of work to a synchronous, blocking subtask. See [ORCHESTRATOR_TASK_DELEGATION.md](ORCHESTRATOR_TASK_DELEGATION.md) for a detailed explanation.
-- **Source**: [`startSubtask`](src/core/task/Task.ts:1628), [`completeSubtask`](src/core/task/Task.ts:1669)
+- **Source**: [`startSubtask`](/src/core/task/Task.ts#L1628), [`completeSubtask`](/src/core/task/Task.ts#L1669)
 
 ---
 

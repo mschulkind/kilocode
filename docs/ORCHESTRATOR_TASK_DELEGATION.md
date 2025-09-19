@@ -96,9 +96,9 @@ sequenceDiagram
 
 <a id="key-symbols-and-their-roles"></a>
 
-- [`startSubtask`](src/core/task/Task.ts:1628): The entry point for delegation. This function is responsible for pausing the parent task and creating the new child `Task` instance. It takes the instructions for the new subtask as an argument.
-- [`completeSubtask`](src/core/task/Task.ts:1669): The exit point for a subtask. This function packages the subtask's final output and signals the parent task to resume its operation.
-- **`newTaskTool`**: While not strictly for subtasks, the [`newTaskTool`](src/core/tools/newTaskTool.ts:14) can be used to fire off independent, asynchronous tasks that do not block the parent. This is useful for "fire and forget" operations where the result is not immediately needed.
+- [`startSubtask`](/src/core/task/Task.ts#L1628): The entry point for delegation. This function is responsible for pausing the parent task and creating the new child `Task` instance. It takes the instructions for the new subtask as an argument.
+- [`completeSubtask`](/src/core/task/Task.ts#L1669): The exit point for a subtask. This function packages the subtask's final output and signals the parent task to resume its operation.
+- **`newTaskTool`**: While not strictly for subtasks, the [`newTaskTool`](/src/core/tools/newTaskTool.ts#L14) can be used to fire off independent, asynchronous tasks that do not block the parent. This is useful for "fire and forget" operations where the result is not immediately needed.
 
 [Back to Top](#orchestrator-task-delegation)
 

@@ -32,11 +32,11 @@ This document serves as the master index for the Orchestrator documentation suit
 
 The Orchestrator is responsible for managing the end-to-end lifecycle of a user's task. This includes interpreting the request, executing tools, managing state, and ensuring safe, predictable outcomes.
 
-- **System Prompt Assembly:** Constructs the master prompt that guides the model by combining user requests, system instructions, and context. See [`getSystemPrompt`](src/core/task/Task.ts:2499).
-- **Task Execution Loop:** Manages the primary loop that drives a task, from parsing the model's response to tool invocation and state management. See [`initiateTaskLoop`](src/core/task/Task.ts:1699) and [`recursivelyMakeClineRequests`](src/core/task/Task.ts:1735).
-- **Tool Management & Gating:** Provides and validates tools for the model, ensuring that only permitted tools are used by the active mode. Key tools include [`attemptCompletionTool`](src/core/tools/attemptCompletionTool.ts:35), [`newTaskTool`](src/core/tools/newTaskTool.ts:14), [`switchModeTool`](src/core/tools/switchModeTool.ts:8), [`askFollowupQuestionTool`](src/core/tools/askFollowupQuestionTool.ts:6), and [`updateTodoListTool`](src/core/tools/updateTodoListTool.ts:156).
-- **Mode-Based Permissions:** Enforces which tools and file operations are allowed for a given mode, preventing unintended side effects. See [`isToolAllowedForMode`](src/shared/modes.ts:167) and the resulting [`FileRestrictionError`](src/shared/modes.ts:157).
-- **Formatting & Presentation:** Ensures that all model outputs adhere to a strict markdown format for reliable parsing and presentation. See [`markdownFormattingSection`](src/core/prompts/sections/markdown-formatting.ts:1).
+- **System Prompt Assembly:** Constructs the master prompt that guides the model by combining user requests, system instructions, and context. See [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
+- **Task Execution Loop:** Manages the primary loop that drives a task, from parsing the model's response to tool invocation and state management. See [`initiateTaskLoop`](/src/core/task/Task.ts#L1699) and [`recursivelyMakeClineRequests`](/src/core/task/Task.ts#L1735).
+- **Tool Management & Gating:** Provides and validates tools for the model, ensuring that only permitted tools are used by the active mode. Key tools include [`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35), [`newTaskTool`](/src/core/tools/newTaskTool.ts#L14), [`switchModeTool`](/src/core/tools/switchModeTool.ts#L8), [`askFollowupQuestionTool`](/src/core/tools/askFollowupQuestionTool.ts#L6), and [`updateTodoListTool`](/src/core/tools/updateTodoListTool.ts#L156).
+- **Mode-Based Permissions:** Enforces which tools and file operations are allowed for a given mode, preventing unintended side effects. See [`isToolAllowedForMode`](/src/shared/modes.ts#L167) and the resulting [`FileRestrictionError`](/src/shared/modes.ts#L157).
+- **Formatting & Presentation:** Ensures that all model outputs adhere to a strict markdown format for reliable parsing and presentation. See [`markdownFormattingSection`](/src/core/prompts/sections/markdown-formatting.ts#L1).
 
 ---
 
@@ -58,14 +58,14 @@ The Orchestrator is responsible for managing the end-to-end lifecycle of a user'
 A typical task follows this orchestrated sequence:
 
 1.  **User Request:** A user submits a prompt in a specific mode.
-2.  **Mode Resolution:** The system identifies the active mode and its associated permissions from [`src/shared/modes.ts`](src/shared/modes.ts:69).
-3.  **System Prompt Assembly:** The Orchestrator builds the full context for the model using [`getSystemPrompt`](src/core/task/Task.ts:2499).
-4.  **Task Loop Initiation:** The main control loop begins with [`initiateTaskLoop`](src/core/task/Task.ts:1699).
+2.  **Mode Resolution:** The system identifies the active mode and its associated permissions from [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
+3.  **System Prompt Assembly:** The Orchestrator builds the full context for the model using [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
+4.  **Task Loop Initiation:** The main control loop begins with [`initiateTaskLoop`](/src/core/task/Task.ts#L1699).
 5.  **Streaming Parse & Tool Handling:** The model's response is parsed in real-time. Tool calls are identified and dispatched.
-6.  **Gating & Guardrails:** The system checks for `todo` list compliance, file restrictions, and other safety rules like those defined in [`isToolAllowedForMode`](src/shared/modes.ts:167).
-7.  **Subtask Delegation:** If necessary, a subtask is created and managed via [`startSubtask`](src/core/task/Task.ts:1628).
+6.  **Gating & Guardrails:** The system checks for `todo` list compliance, file restrictions, and other safety rules like those defined in [`isToolAllowedForMode`](/src/shared/modes.ts#L167).
+7.  **Subtask Delegation:** If necessary, a subtask is created and managed via [`startSubtask`](/src/core/task/Task.ts#L1628).
 8.  **Result Propagation:** The result of the tool or subtask is fed back into the loop.
-9.  **Completion or Anomaly:** The loop continues until [`attemptCompletionTool`](src/core/tools/attemptCompletionTool.ts:35) is called or an unrecoverable error occurs.
+9.  **Completion or Anomaly:** The loop continues until [`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35) is called or an unrecoverable error occurs.
 
 ---
 

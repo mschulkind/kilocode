@@ -36,7 +36,7 @@ The quality of the orchestrator's output is highly dependent on the quality of t
 
 - **Be Specific and Unambiguous**: Clearly state the goal of the task. Avoid vague language. Instead of "Fix the UI," say "In `src/components/MyComponent.tsx`, align the save button to the right of the cancel button."
 - **Provide Context**: Include relevant file paths, code snippets, and error messages in the initial prompt. The more context the model has, the less it needs to discover on its own.
-- **Leverage System Prompts**: Use the [`getSystemPrompt`](src/core/task/Task.ts:2499) function to its full potential. Ensure that all necessary rules, constraints, and formatting guidelines like [`markdownFormattingSection`](src/core/prompts/sections/markdown-formatting.ts:1) are included.
+- **Leverage System Prompts**: Use the [`getSystemPrompt`](/src/core/task/Task.ts#L2499) function to its full potential. Ensure that all necessary rules, constraints, and formatting guidelines like [`markdownFormattingSection`](/src/core/prompts/sections/markdown-formatting.ts#L1) are included.
 - **Iterate and Refine**: If a task does not perform as expected, analyze the conversation history. Often, a small tweak to the initial prompt or a custom rule can significantly improve performance.
 
 [Back to Top](#orchestrator-best-practices)

@@ -21,10 +21,10 @@
 
 ## 1. Related Documents
 
-- Orchestrator lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1)
-- UI settings guide: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md:1)
-- Settings migration utilities: [`../src/utils/migrateSettings.ts`](../src/utils/migrateSettings.ts:1)
-- Settings storage & config helpers: [`../src/utils/config.ts`](../src/utils/config.ts:1)
+- Orchestrator lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md)
+- UI settings guide: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md)
+- Settings migration utilities: [`src/utils/migrateSettings.ts`](/src/utils/migrateSettings.ts#L1)
+- Settings storage & config helpers: [`src/utils/config.ts`](/src/utils/config.ts#L1)
 
 [Back to Top](#)
 
@@ -42,7 +42,7 @@ Short summary: The settings screen is a form-driven UI that reads persisted conf
 
 ### 2.2 Data flow
 
-- On mount: the screen calls the settings loader to read persisted values (see [`src/utils/config.ts`](src/utils/config.ts:1)).
+- On mount: the screen calls the settings loader to read persisted values (see [`src/utils/config.ts`](/src/utils/config.ts#L1)).
 - The loader populates `initialState` and `draftState`.
 - User edits mutate `draftState` only. Persist is explicit via Save.
 
@@ -82,7 +82,7 @@ sequenceDiagram
 <message>
 You are Code mode. Create a single
 
-- Persistence: use the settings API via [`src/utils/config.ts`](src/utils/config.ts:1) and ensure writes file at docs/SETTINGS are atomic.
+- Persistence: use the settings API via [`src/utils/config.ts`](/src/utils/config.ts#L1) and ensure writes file at docs/SETTINGS are atomic.
 - Validation: run schema checks and surface_SCREEN.md with the exact Markdown content below. Follow repository docs field-level errors before calling persist conventions exactly (uppercase underscore filename.
 
 [Back to Top](#)

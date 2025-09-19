@@ -71,7 +71,7 @@ Creating a new mode allows for the definition of a new security context, tailore
 
 The process for adding a new mode is currently under development. The anticipated steps are:
 
-1.  **Definition**: Defining the new mode's name, purpose, and slug in the central mode registry, likely [`src/shared/modes.ts`](src/shared/modes.ts:69).
+1.  **Definition**: Defining the new mode's name, purpose, and slug in the central mode registry, likely [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
 2.  **Permission Assignment**: Creating a mapping that links the new mode to a specific set of allowed tools.
 3.  **File Access Policy**: Optionally defining a file access policy that restricts the mode's read/write capabilities to certain file patterns.
 

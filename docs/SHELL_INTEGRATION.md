@@ -21,10 +21,10 @@
 
 ## 1. Related Documents
 
-- Orchestrator lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1)
-- Terminal integration code: [`../src/integrations/terminal/ShellIntegrationManager.ts`](../src/integrations/terminal/ShellIntegrationManager.ts:1)
-- Terminal process abstraction: [`../src/integrations/terminal/BaseTerminalProcess.ts`](../src/integrations/terminal/BaseTerminalProcess.ts:1)
-- UI feature docs (external): [`../apps/kilocode-docs/docs/shell-integration/`](../apps/kilocode-docs/docs/shell-integration/:1) and settings UI: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md:1)
+- Orchestrator lifecycle: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md)
+- Terminal integration code: [`src/integrations/terminal/ShellIntegrationManager.ts`](/src/integrations/terminal/ShellIntegrationManager.ts#L1)
+- Terminal process abstraction: [`src/integrations/terminal/BaseTerminalProcess.ts`](/src/integrations/terminal/BaseTerminalProcess.ts#L1)
+- UI feature docs (external): [`../apps/kilocode-docs/docs/shell-integration/`](../apps/kilocode-docs/docs/shell-integration/) and settings UI: [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md)
 
 [Back to Top](#)
 
