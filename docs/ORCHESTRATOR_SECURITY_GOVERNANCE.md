@@ -5,13 +5,13 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [1. Related Documents](#1-related-documents)
-- [2. Security Philosophy](#2-security-philosophy)
-- [3. Modes as a Security Boundary](#3-modes-as-a-security-boundary)
-- [4. Tool Permissioning](#4-tool-permissioning)
-- [5. File Access Control](#5-file-access-control)
-- [6. Governance Workflow Diagram](#6-governance-workflow-diagram)
-- [7. Navigation Footer](#7-navigation-footer)
+- [1. Related Documents](#related-documents)
+- [2. Security Philosophy](#security-philosophy)
+- [3. Modes as a Security Boundary](#modes-as-a-security-boundary)
+- [4. Tool Permissioning](#tool-permissioning)
+- [5. File Access Control](#file-access-control)
+- [6. Governance Workflow Diagram](#governance-workflow-diagram)
+- [7. Navigation Footer](#navigation-footer)
 
 </details>
 
@@ -19,7 +19,7 @@
 
 ### 1. Related Documents
 
-<a id="1-related-documents"></a>
+<a id="related-documents"></a>
 
 - **[ORCHESTRATOR_INDEX.md](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator documentation.
 - **[ORCHESTRATOR_TOOLS_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and their intended functions.
@@ -31,7 +31,7 @@
 
 ### 2. Security Philosophy
 
-<a id="2-security-philosophy"></a>
+<a id="security-philosophy"></a>
 
 The orchestrator's security model is based on the principle of **least privilege**. By default, a task has limited capabilities. Its permissions are elevated based on the specific `Mode` it is operating in. This ensures that the powerful tools, especially those that interact with the file system, are only used when explicitly required for the task at hand.
 
@@ -43,9 +43,9 @@ This mode-centric approach provides a clear and auditable trail of why certain a
 
 ### 3. Modes as a Security Boundary
 
-<a id="3-modes-as-a-security-boundary"></a>
+<a id="modes-as-a-security-boundary"></a>
 
-Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context and a corresponding set of allowed actions. The definitions for these modes and their capabilities are located in [`src/shared/modes.ts`](../src/shared/modes.ts:69).
+Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context and a corresponding set of allowed actions. The definitions for these modes and their capabilities are located in [`src/shared/modes.ts`](src/shared/modes.ts:69).
 
 Examples of modes and their intended privilege levels:
 
@@ -54,7 +54,7 @@ Examples of modes and their intended privilege levels:
 - **`debug`**: Investigation and analysis. May have read access to most files but limited write access.
 - **`test`**: Running and creating tests. Has access to test runners and can write to test files.
 
-A task can request to change its mode by using the [`switchModeTool`](../src/core/tools/switchModeTool.ts:8), but this is an explicit, logged action.
+A task can request to change its mode by using the [`switchModeTool`](src/core/tools/switchModeTool.ts:8), but this is an explicit, logged action.
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -62,9 +62,9 @@ A task can request to change its mode by using the [`switchModeTool`](../src/cor
 
 ### 4. Tool Permissioning
 
-<a id="4-tool-permissioning"></a>
+<a id="tool-permissioning"></a>
 
-Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the [`isToolAllowedForMode`](../src/shared/modes.ts:167) function.
+Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the [`isToolAllowedForMode`](src/shared/modes.ts:167) function.
 
 This function checks a mapping that associates each mode with a list of allowed tool names or patterns.
 
@@ -79,13 +79,13 @@ Some tools, like `askFollowupQuestionTool`, are considered **Always-Available To
 
 ### 5. File Access Control
 
-<a id="5-file-access-control"></a>
+<a id="file-access-control"></a>
 
 In addition to tool-level permissions, modes can also define file access policies. This is a more granular level of control that restricts which files can be read or written, even by permitted tools like `write_to_file`.
 
 This is enforced through file path pattern matching. For example, the `test` mode might only be allowed to write to files matching `*.test.ts` or `__mocks__/*.ts`.
 
-When a tool attempts to access a file that violates the current mode's file access policy, a [`FileRestrictionError`](../src/shared/modes.ts:157) is thrown. This error is specific and clearly communicates the nature of the violation to the model, allowing it to take corrective action (e.g., switching to an appropriate mode).
+When a tool attempts to access a file that violates the current mode's file access policy, a [`FileRestrictionError`](src/shared/modes.ts:157) is thrown. This error is specific and clearly communicates the nature of the violation to the model, allowing it to take corrective action (e.g., switching to an appropriate mode).
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -93,7 +93,7 @@ When a tool attempts to access a file that violates the current mode's file acce
 
 ### 6. Governance Workflow Diagram
 
-<a id="6-governance-workflow-diagram"></a>
+<a id="governance-workflow-diagram"></a>
 
 This diagram shows the decision-making process for executing a tool call.
 
@@ -121,7 +121,7 @@ flowchart TD
 
 ### 7. Navigation Footer
 
-<a id="7-navigation-footer"></a>
+<a id="navigation-footer"></a>
 
 You have reached the end of the security and governance document. Return to the [Master Index](ORCHESTRATOR_INDEX.md) or proceed to the [Best Practices Document](ORCHESTRATOR_BEST_PRACTICES.md).
 

@@ -5,13 +5,13 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [1. Related Documents](#1-related-documents)
-- [2. The Philosophy of Delegation](#2-the-philosophy-of-delegation)
-- [3. The Subtask Mechanism](#3-the-subtask-mechanism)
-- [4. Subtask Workflow Diagram](#4-subtask-workflow-diagram)
-- [5. Key Symbols and Their Roles](#5-key-symbols-and-their-roles)
-- [6. When to Use Subtasks](#6-when-to-use-subtasks)
-- [7. Navigation Footer](#7-navigation-footer)
+- [1. Related Documents](#related-documents)
+- [2. The Philosophy of Delegation](#the-philosophy-of-delegation)
+- [3. The Subtask Mechanism](#the-subtask-mechanism)
+- [4. Subtask Workflow Diagram](#subtask-workflow-diagram)
+- [5. Key Symbols and Their Roles](#key-symbols-and-their-roles)
+- [6. When to Use Subtasks](#when-to-use-subtasks)
+- [7. Navigation Footer](#navigation-footer)
 
 </details>
 
@@ -19,7 +19,7 @@
 
 ### 1. Related Documents
 
-<a id="1-related-documents"></a>
+<a id="related-documents"></a>
 
 - **[ORCHESTRATOR_INDEX.md](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator documentation.
 - **[ORCHESTRATOR_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the overall task lifecycle where delegation occurs.
@@ -31,7 +31,7 @@
 
 ### 2. The Philosophy of Delegation
 
-<a id="2-the-philosophy-of-delegation"></a>
+<a id="the-philosophy-of-delegation"></a>
 
 The orchestrator's task delegation capability is a form of recursive problem decomposition. Instead of attempting to solve a large, multi-faceted problem in a single, long-running task, the system can break it down into a series of smaller, more focused subtasks.
 
@@ -48,7 +48,7 @@ This approach has several advantages:
 
 ### 3. The Subtask Mechanism
 
-<a id="3-the-subtask-mechanism"></a>
+<a id="the-subtask-mechanism"></a>
 
 Task delegation is facilitated by a pair of specialized tools:
 
@@ -63,7 +63,7 @@ The parent task is effectively in an `awaiting_subtask` state while the child ta
 
 ### 4. Subtask Workflow Diagram
 
-<a id="4-subtask-workflow-diagram"></a>
+<a id="subtask-workflow-diagram"></a>
 
 ```mermaid
 sequenceDiagram
@@ -94,11 +94,11 @@ sequenceDiagram
 
 ### 5. Key Symbols and Their Roles
 
-<a id="5-key-symbols-and-their-roles"></a>
+<a id="key-symbols-and-their-roles"></a>
 
-- [`startSubtask`](../src/core/task/Task.ts:1628): The entry point for delegation. This function is responsible for pausing the parent task and creating the new child `Task` instance. It takes the instructions for the new subtask as an argument.
-- [`completeSubtask`](../src/core/task/Task.ts:1669): The exit point for a subtask. This function packages the subtask's final output and signals the parent task to resume its operation.
-- **`newTaskTool`**: While not strictly for subtasks, the [`newTaskTool`](../src/core/tools/newTaskTool.ts:14) can be used to fire off independent, asynchronous tasks that do not block the parent. This is useful for "fire and forget" operations where the result is not immediately needed.
+- [`startSubtask`](src/core/task/Task.ts:1628): The entry point for delegation. This function is responsible for pausing the parent task and creating the new child `Task` instance. It takes the instructions for the new subtask as an argument.
+- [`completeSubtask`](src/core/task/Task.ts:1669): The exit point for a subtask. This function packages the subtask's final output and signals the parent task to resume its operation.
+- **`newTaskTool`**: While not strictly for subtasks, the [`newTaskTool`](src/core/tools/newTaskTool.ts:14) can be used to fire off independent, asynchronous tasks that do not block the parent. This is useful for "fire and forget" operations where the result is not immediately needed.
 
 [Back to Top](#orchestrator-task-delegation)
 
@@ -106,7 +106,7 @@ sequenceDiagram
 
 ### 6. When to Use Subtasks
 
-<a id="6-when-to-use-subtasks"></a>
+<a id="when-to-use-subtasks"></a>
 
 The decision to delegate is made by the language model based on the complexity of the task at hand. Common scenarios for delegation include:
 
@@ -121,7 +121,7 @@ The decision to delegate is made by the language model based on the complexity o
 
 ### 7. Navigation Footer
 
-<a id="7-navigation-footer"></a>
+<a id="navigation-footer"></a>
 
 You have reached the end of the task delegation document. Return to the [Master Index](ORCHESTRATOR_INDEX.md) or proceed to the [Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md).
 

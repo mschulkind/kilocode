@@ -5,13 +5,13 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [1. Related Documents](#1-related-documents)
-- [2. Error Handling Philosophy](#2-error-handling-philosophy)
-- [3. Types of Errors](#3-types-of-errors)
-- [4. The Recovery Loop](#4-the-recovery-loop)
-- [5. The "Mistake Limit"](#5-the-mistake-limit)
-- [6. Specific Error Scenarios](#6-specific-error-scenarios)
-- [7. Navigation Footer](#7-navigation-footer)
+- [1. Related Documents](#related-documents)
+- [2. Error Handling Philosophy](#error-handling-philosophy)
+- [3. Types of Errors](#types-of-errors)
+- [4. The Recovery Loop](#the-recovery-loop)
+- [5. The "Mistake Limit"](#the-mistake-limit)
+- [6. Specific Error Scenarios](#specific-error-scenarios)
+- [7. Navigation Footer](#navigation-footer)
 
 </details>
 
@@ -19,7 +19,7 @@
 
 ### 1. Related Documents
 
-<a id="1-related-documents"></a>
+<a id="related-documents"></a>
 
 - **[ORCHESTRATOR_INDEX.md](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator documentation.
 - **[ORCHESTRATOR_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where errors can occur.
@@ -31,7 +31,7 @@
 
 ### 2. Error Handling Philosophy
 
-<a id="2-error-handling-philosophy"></a>
+<a id="error-handling-philosophy"></a>
 
 The orchestrator is designed to be self-correcting where possible. The core philosophy is that errors are a natural part of a complex, model-driven workflow. Instead of failing immediately, the system attempts to recover by providing the error context back to the language model.
 
@@ -47,14 +47,14 @@ Key principles:
 
 ### 3. Types of Errors
 
-<a id="3-types-of-errors"></a>
+<a id="types-of-errors"></a>
 
 - **Tool Execution Errors**: The most common type. These occur when a tool fails to execute. Examples include:
     - Invalid parameters (e.g., wrong file path).
     - Runtime exceptions within the tool's logic.
     - I/O failures.
 - **Parsing Errors**: The model produces malformed XML for a tool call that the `StreamingParser` cannot understand.
-- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode. The primary example is [`FileRestrictionError`](../src/shared/modes.ts:157).
+- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode. The primary example is [`FileRestrictionError`](src/shared/modes.ts:157).
 - **Catastrophic Errors**: Unrecoverable system-level errors that immediately halt the task.
 
 [Back to Top](#orchestrator-error-handling)
@@ -63,7 +63,7 @@ Key principles:
 
 ### 4. The Recovery Loop
 
-<a id="4-the-recovery-loop"></a>
+<a id="the-recovery-loop"></a>
 
 When a recoverable error occurs, the orchestrator does not terminate the task. Instead, it treats the error as the "result" of the attempted tool call.
 
@@ -91,7 +91,7 @@ This loop allows the model to learn from its mistakes within the context of a si
 
 ### 5. The "Mistake Limit"
 
-<a id="5-the-mistake-limit"></a>
+<a id="the-mistake-limit"></a>
 
 To prevent a task from getting stuck in a perpetual failure loop, the `Task` engine maintains a mistake counter.
 
@@ -108,15 +108,15 @@ This concept is a crucial guardrail that ensures system stability.
 
 ### 6. Specific Error Scenarios
 
-<a id="6-specific-error-scenarios"></a>
+<a id="specific-error-scenarios"></a>
 
 #### Scenario: `FileRestrictionError`
 
 1.  **Action**: Model in `architect` mode attempts to call `write_to_file`.
-2.  **Check**: The `ToolExecutor` consults the `Mode & Permission Service` via [`isToolAllowedForMode`](../src/shared/modes.ts:167). The check fails.
-3.  **Error**: A [`FileRestrictionError`](../src/shared/modes.ts:157) is thrown.
+2.  **Check**: The `ToolExecutor` consults the `Mode & Permission Service` via [`isToolAllowedForMode`](src/shared/modes.ts:167). The check fails.
+3.  **Error**: A [`FileRestrictionError`](src/shared/modes.ts:157) is thrown.
 4.  **Recovery**: The error message, explaining that `write_to_file` is not allowed in `architect` mode, is passed back to the model.
-5.  **Correction**: The model should then use a tool like [`switchModeTool`](../src/core/tools/switchModeTool.ts:8) to change to `code` mode before re-attempting the file write.
+5.  **Correction**: The model should then use a tool like [`switchModeTool`](src/core/tools/switchModeTool.ts:8) to change to `code` mode before re-attempting the file write.
 
 #### Scenario: Invalid Regex in `search_files`
 
@@ -131,7 +131,7 @@ This concept is a crucial guardrail that ensures system stability.
 
 ### 7. Navigation Footer
 
-<a id="7-navigation-footer"></a>
+<a id="navigation-footer"></a>
 
 You have reached the end of the error handling document. Return to the [Master Index](ORCHESTRATOR_INDEX.md) or proceed to the [Security & Governance Document](ORCHESTRATOR_SECURITY_GOVERNANCE.md).
 
