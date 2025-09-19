@@ -33,7 +33,7 @@ _This guide defines normative documentation standards and practices for contribu
 
 ## Executive summary
 
-This guide is the authoritative contributor-facing standard for creating and updating documentation under [`docs/`](docs/:1). It replaces older, inconsistent practices and provides prescriptive rules contributors MUST follow.
+This guide is the authoritative contributor-facing standard for creating and updating documentation under `/docs/`. It replaces older, inconsistent practices and provides prescriptive rules contributors MUST follow.
 
 ## Core principles
 
@@ -64,7 +64,7 @@ This guide is written for contributors, writers, and automation agents that crea
 ## Index & navigation strategy
 
 - Navigation is driven by index files and a navigation footer in each doc (see Navigation footer specification).
-- Maintain a minimal Root Index file at [`docs/ORCHESTRATOR_INDEX.md`](docs/ORCHESTRATOR_INDEX.md:1) to orient readers.
+- Maintain a minimal Root Index file at [`ORCHESTRATOR_INDEX.md`](ORCHESTRATOR_INDEX.md:1) to orient readers.
 
 ## Document structure
 
@@ -99,7 +99,7 @@ graph TD
 - Include H2 and H3 entries only. Do not list H4.
 - Keep the TOC concise; if the document has fewer than three H2s and is under ~800 words, a TOC is optional.
 - Authors may leave the TOC as an HTML comment template while drafting, then replace with final links before publishing:
-  <!--
+    <!--
 - <!-- TOC start: remove this comment and fill with H2/H3 links -->
     -->
 
@@ -114,14 +114,15 @@ graph TD
 
 Use the following link types depending on target:
 
-| Use case            |                                           Example | Allowed                                            | Rule tag        |
-| ------------------- | ------------------------------------------------: | -------------------------------------------------- | --------------- |
-| Doc → Doc           |                                     `../GUIDE.md` | Relative links preferred                           | LINK-REL        |
-| Doc → Code          |          `/src/services/marketplace/index.ts#L25` | Absolute repo-root links for code                  | LINK-ABS-CODE   |
-| Doc → Document line | `docs/ORCHESTRATOR_LIFECYCLE.md#specific-section` | Relative with anchor                               | LINK-REL-ANCHOR |
-| Internal section    |                                   `#section-name` | Auto-derived anchors; explicit only when necessary | LINK-INTERNAL   |
+| Use case            |                                      Example | Allowed                                            | Rule tag        |
+| ------------------- | -------------------------------------------: | -------------------------------------------------- | --------------- |
+| Doc → Doc           |                                `../GUIDE.md` | Relative links preferred                           | LINK-REL        |
+| Doc → Code          |     `/src/services/marketplace/index.ts#L25` | Absolute repo-root links for code                  | LINK-ABS-CODE   |
+| Doc → Document line | `ORCHESTRATOR_LIFECYCLE.md#specific-section` | Relative with anchor                               | LINK-REL-ANCHOR |
+| Internal section    |                              `#section-name` | Auto-derived anchors; explicit only when necessary | LINK-INTERNAL   |
 
 - Prefer relative links for doc-to-doc references to preserve portability (LINK-REL).
+- When authoring files inside the documentation directory (`docs/`), do NOT prefix doc-to-doc relative links with `docs/`. Use paths relative to the current docs folder (for example `ORCHESTRATOR_LIFECYCLE.md` or `../SUBDIR/FILE.md`). If you need an absolute repo-root reference to a docs file, use a leading slash like `/docs/FILE.md`.
 - Use absolute repo-root paths for code files when referencing implementation lines (LINK-ABS-CODE).
 - Do not use reference-style links (the `[ref]: url` pattern). This is prohibited unless a repository-wide decision adopts it in future.
 - When linking to a specific line in source, include `#L<line>` (example: `/src/services/marketplace/index.ts#L25`).
