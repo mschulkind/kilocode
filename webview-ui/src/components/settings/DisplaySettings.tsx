@@ -13,17 +13,22 @@ import { generateSampleTimelineData } from "../../utils/timeline/mockData"
 type DisplaySettingsProps = HTMLAttributes<HTMLDivElement> & {
 	showTaskTimeline?: boolean
 	ghostServiceSettings?: any
-	reasoningBlockCollapsed: boolean
-	setCachedStateField: SetCachedStateField<"showTaskTimeline" | "ghostServiceSettings" | "reasoningBlockCollapsed">
+	showTimestamps?: boolean //kilocode_change
+	reasoningBlockCollapsed?: boolean
+	setCachedStateField: SetCachedStateField<
+		"showTaskTimeline" | "ghostServiceSettings" | "reasoningBlockCollapsed" | "showTimestamps"
+	> // kilocode_change
 }
 
 export const DisplaySettings = ({
 	showTaskTimeline,
 	ghostServiceSettings,
+	showTimestamps,
 	setCachedStateField,
 	reasoningBlockCollapsed,
 	...props
 }: DisplaySettingsProps) => {
+	//kilocode_change
 	const { t } = useAppTranslation()
 
 	// Get the icons base URI for the animated logo
@@ -88,6 +93,20 @@ export const DisplaySettings = ({
 						<div className="font-medium text-vscode-foreground text-xs mb-4">Preview</div>
 						<div className="opacity-60">
 							<TaskTimeline groupedMessages={sampleTimelineData} isTaskActive={false} />
+						</div>
+					</div>
+
+					{/* Show Timestamps checkbox */}
+					<div className="mt-3">
+						<VSCodeCheckbox
+							checked={showTimestamps}
+							onChange={(e: any) => {
+								setCachedStateField("showTimestamps", e.target.checked)
+							}}>
+							<span className="font-medium">{t("settings:display.showTimestamps.label")}</span>
+						</VSCodeCheckbox>
+						<div className="text-vscode-descriptionForeground text-sm mt-1">
+							{t("settings:display.showTimestamps.description")}
 						</div>
 					</div>
 				</div>
