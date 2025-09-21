@@ -1,8 +1,14 @@
 branch="$(git rev-parse --abbrev-ref HEAD)"
+upstream="$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo '')"
 
+# Allow commits to main if it's tracking origin/main, but block if tracking upstream/main
 if [ "$branch" = "main" ]; then
-  echo "You can't commit directly to main - please check out a branch."
-  exit 1
+  if [[ "$upstream" == *"origin/main" ]]; then
+    echo "Allowing commit to main (tracking origin/main)"
+  else
+    echo "You can't commit directly to main - please check out a branch."
+    exit 1
+  fi
 fi
 
 # Detect if running on Windows and use pnpm.cmd, otherwise use pnpm.
