@@ -1,6 +1,8 @@
 branch="$(git rev-parse --abbrev-ref HEAD)"
+remote="$1"
 
-if [ "$branch" = "main" ]; then
+# Allow pushes to origin main, but block pushes to upstream main
+if [ "$branch" = "main" ] && [ "$remote" != "origin" ]; then
   echo "You can't push directly to main - please check out a branch."
   exit 1
 fi
