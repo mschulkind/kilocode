@@ -186,6 +186,7 @@ export interface WebviewMessage {
 		| "showRooIgnoredFiles"
 		| "testBrowserConnection"
 		| "browserConnectionResult"
+		| "laminarConnectionTestResult"
 		| "remoteBrowserEnabled"
 		| "language"
 		| "maxReadFileLine"
@@ -285,6 +286,8 @@ export interface WebviewMessage {
 		| "editQueuedMessage"
 		| "dismissUpsell"
 		| "getDismissedUpsells"
+		| "testLaminarConnection"
+		| "laminarSettings"
 	text?: string
 	editedMessageContent?: string
 	tab?: "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "cloud"

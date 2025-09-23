@@ -2,6 +2,7 @@ import type { AssertEqual, Equals, Keys, Values, ExperimentId, Experiments } fro
 
 export const EXPERIMENT_IDS = {
 	MORPH_FAST_APPLY: "morphFastApply", // kilocode_change
+	LAMINAR_OBSERVABILITY: "laminarObservability", // kilocode_change
 	MULTI_FILE_APPLY_DIFF: "multiFileApplyDiff",
 	POWER_STEERING: "powerSteering",
 	PREVENT_FOCUS_DISRUPTION: "preventFocusDisruption",
@@ -19,6 +20,7 @@ interface ExperimentConfig {
 
 export const experimentConfigsMap: Record<ExperimentKey, ExperimentConfig> = {
 	MORPH_FAST_APPLY: { enabled: false }, // kilocode_change
+	LAMINAR_OBSERVABILITY: { enabled: false }, // kilocode_change
 	MULTI_FILE_APPLY_DIFF: { enabled: false },
 	POWER_STEERING: { enabled: false },
 	PREVENT_FOCUS_DISRUPTION: { enabled: false },

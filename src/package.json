@@ -592,6 +592,41 @@
 					"minimum": 1,
 					"maximum": 200,
 					"description": "%settings.codeIndex.embeddingBatchSize.description%"
+				},
+				"kilo-code.laminar": {
+					"type": "object",
+					"title": "Laminar Observability",
+					"properties": {
+						"apiKey": {
+							"type": "string",
+							"description": "Laminar API key for authentication"
+						},
+						"baseUrl": {
+							"type": "string",
+							"default": "https://api.lmnr.ai",
+							"description": "Base URL for Laminar API server"
+						},
+						"httpPort": {
+							"type": "number",
+							"default": 443,
+							"description": "HTTP port for Laminar API communication"
+						},
+						"grpcPort": {
+							"type": "number",
+							"default": 8443,
+							"description": "gRPC port for Laminar API communication"
+						},
+						"recordIO": {
+							"type": "boolean",
+							"default": true,
+							"description": "Record input/output data in spans"
+						},
+						"enabled": {
+							"type": "boolean",
+							"default": true,
+							"description": "Enable Laminar observability integration"
+						}
+					}
 				}
 			}
 		},

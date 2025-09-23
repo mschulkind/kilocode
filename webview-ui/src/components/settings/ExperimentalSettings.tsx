@@ -17,17 +17,19 @@ import { Section } from "./Section"
 import { ExperimentalFeature } from "./ExperimentalFeature"
 import { MorphSettings } from "./MorphSettings" // kilocode_change: Use global version
 import { ImageGenerationSettings } from "./ImageGenerationSettings"
+import { LaminarSettings } from "./LaminarSettings"
 
 type ExperimentalSettingsProps = HTMLAttributes<HTMLDivElement> & {
 	experiments: Experiments
 	setExperimentEnabled: SetExperimentEnabled
 	// kilocode_change start
 	morphApiKey?: string
-	setCachedStateField: SetCachedStateField<"morphApiKey">
+	setCachedStateField: SetCachedStateField<"morphApiKey" | "laminarSettings">
+	laminarSettings?: any
+	// kilocode_change end
 	kiloCodeImageApiKey?: string
 	setKiloCodeImageApiKey?: (apiKey: string) => void
 	currentProfileKilocodeToken?: string
-	// kilocode_change end
 	apiConfiguration?: any
 	setApiConfigurationField?: any
 	openRouterImageApiKey?: string
@@ -49,6 +51,7 @@ export const ExperimentalSettings = ({
 	// kilocode_change start
 	morphApiKey,
 	setCachedStateField,
+	laminarSettings,
 	setKiloCodeImageApiKey,
 	kiloCodeImageApiKey,
 	currentProfileKilocodeToken,
@@ -104,6 +107,31 @@ export const ExperimentalSettings = ({
 										<MorphSettings
 											setCachedStateField={setCachedStateField}
 											morphApiKey={morphApiKey}
+										/>
+									)}
+								</React.Fragment>
+							)
+						}
+						if (config[0] === "LAMINAR_OBSERVABILITY") {
+							const enabled =
+								experiments[EXPERIMENT_IDS[config[0] as keyof typeof EXPERIMENT_IDS]] ?? false
+							return (
+								<React.Fragment key={config[0]}>
+									<ExperimentalFeature
+										key={config[0]}
+										experimentKey={config[0]}
+										enabled={enabled}
+										onChange={(enabled) =>
+											setExperimentEnabled(
+												EXPERIMENT_IDS[config[0] as keyof typeof EXPERIMENT_IDS],
+												enabled,
+											)
+										}
+									/>
+									{enabled && (
+										<LaminarSettings
+											laminarSettings={laminarSettings}
+											setCachedStateField={setCachedStateField}
 										/>
 									)}
 								</React.Fragment>

@@ -1,0 +1,442 @@
+diff --git a/package.json b/package.json
+index cf0df5b5..8f745b5a 100644
+--- a/package.json
++++ b/package.json
+@@ -434,6 +434,7 @@
+ 		"@google/genai": "1.0.0",
+ 		"@grpc/grpc-js": "^1.9.15",
+ 		"@grpc/reflection": "^1.0.4",
++		"@lmnr-ai/lmnr": "^0.7.0",
+ 		"@mistralai/mistralai": "^1.5.0",
+ 		"@modelcontextprotocol/sdk": "^1.11.1",
+ 		"@opentelemetry/api": "^1.4.1",
+diff --git a/src/common.ts b/src/common.ts
+index 2cf086f7..47d8ae0c 100644
+--- a/src/common.ts
++++ b/src/common.ts
+@@ -11,6 +11,7 @@ import { EmptyRequest } from "./shared/proto/cline/common"
+ import { WebviewProviderType } from "./shared/webview/types"
+ import "./utils/path" // necessary to have access to String.prototype.toPosix
+ 
++import laminarService from "@services/laminar/LaminarService"
+ import { HostProvider } from "@/hosts/host-provider"
+ import { FileContextTracker } from "./core/context/context-tracking/FileContextTracker"
+ import { telemetryService } from "./services/posthog/PostHogClientProvider"
+@@ -36,6 +37,9 @@ export async function initialize(context: vscode.ExtensionContext): Promise<Webv
+ 	}
+ 	PostHogClientProvider.getInstance(distinctId)
+ 
++	// Initialize Laminar tracing
++	await laminarService.initialize()
++
+ 	// Migrate custom instructions to global Cline rules (one-time cleanup)
+ 	await migrateCustomInstructionsToGlobalRules(context)
+ 
+diff --git a/src/core/controller/index.ts b/src/core/controller/index.ts
+index 77e34221..b1194538 100644
+--- a/src/core/controller/index.ts
++++ b/src/core/controller/index.ts
+@@ -21,6 +21,7 @@ import * as vscode from "vscode"
+ import { clineEnvConfig } from "@/config"
+ import { HostProvider } from "@/hosts/host-provider"
+ import { AuthService } from "@/services/auth/AuthService"
++import laminarService from "@/services/laminar/LaminarService"
+ import { PostHogClientProvider, telemetryService } from "@/services/posthog/PostHogClientProvider"
+ import { ShowMessageType } from "@/shared/proto/host/window"
+ import { getLatestAnnouncementId } from "@/utils/announcements"
+@@ -238,6 +239,7 @@ export class Controller {
+ 		this.stateManager.setGlobalState("telemetrySetting", telemetrySetting)
+ 		const isOptedIn = telemetrySetting !== "disabled"
+ 		telemetryService.updateTelemetryState(isOptedIn)
++		laminarService.updateTelemetryState(isOptedIn)
+ 		await this.postStateToWebview()
+ 	}
+ 
+diff --git a/src/core/task/ToolExecutor.ts b/src/core/task/ToolExecutor.ts
+index c0ca2610..f4b75bd0 100644
+--- a/src/core/task/ToolExecutor.ts
++++ b/src/core/task/ToolExecutor.ts
+@@ -4,6 +4,7 @@ import { ClineIgnoreController } from "@core/ignore/ClineIgnoreController"
+ import { DiffViewProvider } from "@integrations/editor/DiffViewProvider"
+ import { BrowserSession } from "@services/browser/BrowserSession"
+ import { UrlContentFetcher } from "@services/browser/UrlContentFetcher"
++import laminarService from "@services/laminar/LaminarService"
+ import { McpHub } from "@services/mcp/McpHub"
+ import { AutoApprovalSettings } from "@shared/AutoApprovalSettings"
+ import { BrowserSettings } from "@shared/BrowserSettings"
+@@ -352,7 +353,13 @@ export class ToolExecutor {
+ 	 */
+ 	private async handleCompleteBlock(block: ToolUse, config: any): Promise<void> {
+ 		// All tools are now fully self-managed and implement IPartialBlockHandler
++		laminarService.startSpan("tool", {
++			name: block.name,
++			spanType: "TOOL",
++			input: block,
++		})
+ 		const result = await this.coordinator.execute(config, block)
++		laminarService.endSpan("tool")
+ 
+ 		await this.saveCheckpoint()
+ 		this.pushToolResult(result, block)
+diff --git a/src/core/task/index.ts b/src/core/task/index.ts
+index 06e35918..04b42de3 100644
+--- a/src/core/task/index.ts
++++ b/src/core/task/index.ts
+@@ -41,6 +41,7 @@ import { TerminalManager } from "@integrations/terminal/TerminalManager"
+ import { BrowserSession } from "@services/browser/BrowserSession"
+ import { UrlContentFetcher } from "@services/browser/UrlContentFetcher"
+ import { listFiles } from "@services/glob/list-files"
++import laminarService, { LaminarAttributes } from "@services/laminar/LaminarService"
+ import { Logger } from "@services/logging/Logger"
+ import { McpHub } from "@services/mcp/McpHub"
+ import { telemetryService } from "@services/posthog/PostHogClientProvider"
+@@ -1195,6 +1196,8 @@ export class Task {
+ 		let nextUserContent = userContent
+ 		let includeFileDetails = true
+ 		while (!this.taskState.abort) {
++			// starting first task.step span for the first turn of conversation
++			laminarService.startSpan("task.step", { name: `task.step`, sessionId: this.taskId, input: userContent }, true)
+ 			const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
+ 			includeFileDetails = false // we only need file details the first time
+ 
+@@ -1228,6 +1231,8 @@ export class Task {
+ 			this.FocusChainManager.checkIncompleteProgressOnCompletion()
+ 		}
+ 
++		laminarService.endSpan("task.step")
++
+ 		this.taskState.abort = true // will stop any autonomously running promises
+ 		this.terminalManager.disposeAll()
+ 		this.urlContentFetcher.closeBrowser()
+@@ -1727,6 +1732,11 @@ export class Task {
+ 			// saves task history item which we use to keep track of conversation history deleted range
+ 		}
+ 
++		laminarService.startSpan("llm", {
++			name: "llm_call",
++			spanType: "LLM",
++			input: [{ role: "system", content: systemPrompt }, ...contextManagementMetadata.truncatedConversationHistory],
++		})
+ 		const stream = this.api.createMessage(systemPrompt, contextManagementMetadata.truncatedConversationHistory)
+ 
+ 		const iterator = stream[Symbol.asyncIterator]()
+@@ -1738,6 +1748,7 @@ export class Task {
+ 			yield firstChunk.value
+ 			this.taskState.isWaitingForFirstChunk = false
+ 		} catch (error) {
++			laminarService.recordExceptionOnSpan("llm", error)
+ 			const isContextWindowExceededError = checkContextWindowExceededError(error)
+ 			const { model, providerId } = this.getCurrentProviderInfo()
+ 			const clineError = errorService.toClineError(error, model.id, providerId)
+@@ -2399,6 +2410,7 @@ export class Task {
+ 					if (this.taskState.abort) {
+ 						console.log("aborting stream...")
+ 						if (!this.taskState.abandoned) {
++							laminarService.endSpan("llm")
+ 							// only need to gracefully abort if this instance isn't abandoned (sometimes openrouter stream hangs, in which case this would affect future instances of cline)
+ 							await abortStream("user_cancelled")
+ 						}
+@@ -2422,6 +2434,7 @@ export class Task {
+ 				}
+ 			} catch (error) {
+ 				// abandoned happens when extension is no longer waiting for the cline instance to finish aborting (error is thrown here when any function in the for loop throws due to this.abort)
++				laminarService.recordExceptionOnSpan("llm", error)
+ 				if (!this.taskState.abandoned) {
+ 					this.abortTask() // if the stream failed, there's various states the task could be in (i.e. could have streamed some tools the user may have executed), so we just resort to replicating a cancel task
+ 					const clineError = errorService.toClineError(error, this.api.getModel().id)
+@@ -2462,6 +2475,8 @@ export class Task {
+ 
+ 			// need to call here in case the stream was aborted
+ 			if (this.taskState.abort) {
++				laminarService.recordExceptionOnSpan("task.step", new Error("Cline instance aborted"))
++				laminarService.endSpan("task.step")
+ 				throw new Error("Cline instance aborted")
+ 			}
+ 
+@@ -2503,6 +2518,20 @@ export class Task {
+ 					totalCost,
+ 				})
+ 
++				laminarService.addLlmAttributesToSpan("llm", {
++					inputTokens,
++					outputTokens,
++					totalCost: totalCost ?? 0,
++					modelId: model.id,
++					providerId,
++					cacheWriteTokens,
++					cacheReadTokens,
++				})
++				laminarService.addAttributesToSpan("llm", {
++					"lmnr.span.output": JSON.stringify([{ role: "assistant", content: assistantMessage }]),
++				})
++				laminarService.endSpan("llm")
++
+ 				await this.messageStateHandler.addToApiConversationHistory({
+ 					role: "assistant",
+ 					content: [{ type: "text", text: assistantMessage }],
+@@ -2518,6 +2547,18 @@ export class Task {
+ 
+ 				await pWaitFor(() => this.taskState.userMessageContentReady)
+ 
++				// Start a new task.step active span for the next turn of conversation when user sends next message.
++				// The new task.step span will only be started if the previous task.step span was ended. Otherwise, this call to startSpan will do nothing.
++				laminarService.startSpan(
++					"task.step",
++					{
++						name: "task.step",
++						sessionId: this.taskId,
++						input: this.taskState.userMessageContent,
++					},
++					true,
++				)
++
+ 				// if the model did not tool use, then we need to tell it to either use a tool or attempt_completion
+ 				const didToolUse = this.taskState.assistantMessageContent.some((block) => block.type === "tool_use")
+ 
+diff --git a/src/core/task/tools/handlers/AttemptCompletionHandler.ts b/src/core/task/tools/handlers/AttemptCompletionHandler.ts
+index 36336841..8a1d8bee 100644
+--- a/src/core/task/tools/handlers/AttemptCompletionHandler.ts
++++ b/src/core/task/tools/handlers/AttemptCompletionHandler.ts
+@@ -6,6 +6,7 @@ import { showSystemNotification } from "@integrations/notifications"
+ import { telemetryService } from "@services/posthog/PostHogClientProvider"
+ import { findLastIndex } from "@shared/array"
+ import { COMPLETION_RESULT_CHANGES_FLAG } from "@shared/ExtensionMessage"
++import laminarService from "@/services/laminar/LaminarService"
+ import type { ToolResponse } from "../../index"
+ import type { IPartialBlockHandler, IToolHandler } from "../ToolExecutorCoordinator"
+ import type { TaskConfig } from "../types/TaskConfig"
+@@ -128,6 +129,8 @@ export class AttemptCompletionHandler implements IToolHandler, IPartialBlockHand
+ 			telemetryService.captureTaskCompleted(config.ulid)
+ 		}
+ 
++		laminarService.endSpan("tool")
++		laminarService.endSpan("task.step")
+ 		// we already sent completion_result says, an empty string asks relinquishes control over button and field
+ 		const { response, text, images, files: completionFiles } = await config.callbacks.ask("completion_result", "", false)
+ 		if (response === "yesButtonClicked") {
+diff --git a/src/integrations/checkpoints/CheckpointTracker.ts b/src/integrations/checkpoints/CheckpointTracker.ts
+index 57953295..db982d4e 100644
+--- a/src/integrations/checkpoints/CheckpointTracker.ts
++++ b/src/integrations/checkpoints/CheckpointTracker.ts
+@@ -1,3 +1,4 @@
++import { observeDecorator } from "@services/laminar/LaminarService"
+ import { telemetryService } from "@services/posthog/PostHogClientProvider"
+ import fs from "fs/promises"
+ import * as path from "path"
+@@ -158,6 +159,7 @@ class CheckpointTracker {
+ 	 * - Initialize simple-git
+ 	 * - Stage or commit files
+ 	 */
++	@observeDecorator({ name: "CheckpointTracker.commit" })
+ 	public async commit(): Promise<string | undefined> {
+ 		try {
+ 			console.info(`Creating new checkpoint commit for task ${this.taskId}`)
+diff --git a/src/services/auth/AuthService.ts b/src/services/auth/AuthService.ts
+index 36ac02da..49ec3a3a 100644
+--- a/src/services/auth/AuthService.ts
++++ b/src/services/auth/AuthService.ts
+@@ -1,3 +1,4 @@
++import laminarService from "@services/laminar/LaminarService"
+ import { featureFlagsService, telemetryService } from "@services/posthog/PostHogClientProvider"
+ import { AuthState, UserInfo } from "@shared/proto/cline/account"
+ import { type EmptyRequest, String } from "@shared/proto/cline/common"
+@@ -324,6 +325,7 @@ export class AuthService {
+ 				// Fetch the feature flags for the user
+ 				if (this._clineAuthInfo?.userInfo?.id) {
+ 					telemetryService.identifyAccount(this._clineAuthInfo.userInfo)
++					laminarService.setUserId(this._clineAuthInfo?.userInfo?.id)
+ 					for (const flag of Object.values(FEATURE_FLAGS)) {
+ 						await featureFlagsService?.isFeatureFlagEnabled(flag)
+ 					}
+diff --git a/src/services/laminar/LaminarService.ts b/src/services/laminar/LaminarService.ts
+new file mode 100644
+index 00000000..1cf3d5c4
+--- /dev/null
++++ b/src/services/laminar/LaminarService.ts
+@@ -0,0 +1,165 @@
++import { Laminar, LaminarAttributes, observe, observeDecorator, Span } from "@lmnr-ai/lmnr"
++import { laminarConfig } from "@shared/services/config/laminar-config"
++import { Logger } from "@/services/logging/Logger"
++
++type SpanType = "LLM" | "DEFAULT" | "TOOL"
++
++class LaminarService {
++	private static instance: LaminarService | undefined
++	private enabled: boolean = false
++	private isInitialized: boolean = false
++	private recordSpanIO: boolean = false
++	private userId?: string
++	private spans = new Map<string, Span>()
++
++	private constructor() {}
++
++	static getInstance(): LaminarService {
++		if (!LaminarService.instance) {
++			LaminarService.instance = new LaminarService()
++		}
++		return LaminarService.instance
++	}
++
++	async initialize(): Promise<void> {
++		if (this.isInitialized) {
++			return
++		}
++
++		this.enabled = laminarConfig.enabled ?? false
++
++		try {
++			Laminar.initialize({
++				projectApiKey: laminarConfig.apiKey,
++			})
++
++			this.isInitialized = true
++			this.recordSpanIO = laminarConfig.recordIO ?? false
++
++			console.info("Laminar instrumentation initialized successfully")
++		} catch (error) {
++			Logger.error(`Failed to initialize Laminar: ${error instanceof Error ? error.message : String(error)}`)
++		}
++	}
++
++	updateTelemetryState(isOptedIn: boolean): void {
++		this.enabled = isOptedIn
++		console.info("Laminar telemetry state updated:", this.enabled)
++	}
++
++	setUserId(userId: string): void {
++		this.userId = userId
++	}
++
++	getSpan(key: string) {
++		return this.spans.get(key)
++	}
++
++	// Start a span and keep track of it in the spans map
++	// We expose this convenience method and track spans in the spans map so that manual spans can be freely started and ended in different parts of the codebase
++	// without passing around the span object.
++	//
++	// Use this method when you want to manually start and end spans. To instrument a full function prefer to use observeDecorator.
++	//
++	// If Laminar is not initialized or the span with the same key already running (i.e. it was not ended), this method will do nothing.
++	//
++	// @param spanKey - The key to use to store the span in the spans map
++	// @param options - The options to pass to the span, such as the name, input, sessionId, and spanType. If spanType is not provided, it will default to "DEFAULT".
++	// @param active - Whether the span should be active. Active span is a powerful feature which sets all spans that are started after it to be children of
++	// 				   the active span without the need to wrap functions in observe wrapper.
++	//
++
++	startSpan(
++		spanKey: string,
++		options: { name: string; spanType?: SpanType; input?: any; sessionId?: string },
++		active?: boolean,
++	): void {
++		if (!this.enabled || this.spans.has(spanKey)) {
++			return
++		}
++
++		const spanOptions = {
++			name: options.name,
++			spanType: options.spanType ?? "DEFAULT",
++			sessionId: options.sessionId,
++			userId: this.userId,
++			...(this.recordSpanIO && options.input && { input: options.input }),
++		}
++
++		const span = active ? Laminar.startActiveSpan(spanOptions) : Laminar.startSpan(spanOptions)
++		this.spans.set(spanKey, span)
++	}
++
++	endSpan(key: string): void {
++		if (!this.enabled) {
++			return
++		}
++
++		const span = this.getSpan(key)
++		if (span) {
++			span.end()
++			this.spans.delete(key)
++		}
++	}
++
++	addAttributesToSpan(key: string, attributes: Record<string, any>): void {
++		if (!this.enabled) {
++			return
++		}
++
++		const span = this.spans.get(key)
++		if (span) {
++			const { "lmnr.span.output": output, ...rest } = attributes
++			const filteredAttributes = this.recordSpanIO ? attributes : rest
++
++			span.setAttributes(filteredAttributes)
++		}
++	}
++
++	addLlmAttributesToSpan(
++		key: string,
++		attributes: {
++			inputTokens: number
++			outputTokens: number
++			totalCost: number
++			modelId: string
++			providerId: string
++			cacheWriteTokens: number
++			cacheReadTokens: number
++		},
++	): void {
++		if (!this.enabled) {
++			return
++		}
++
++		const span = this.spans.get(key)
++		if (span) {
++			span.setAttributes({
++				[LaminarAttributes.INPUT_TOKEN_COUNT]: attributes.inputTokens,
++				[LaminarAttributes.OUTPUT_TOKEN_COUNT]: attributes.outputTokens,
++				[LaminarAttributes.TOTAL_COST]: attributes.totalCost,
++				[LaminarAttributes.REQUEST_MODEL]: attributes.modelId,
++				[LaminarAttributes.PROVIDER]: attributes.providerId,
++				"gen_ai.usage.cache_creation_input_tokens": attributes.cacheWriteTokens,
++				"gen_ai.usage.cache_read_input_tokens": attributes.cacheReadTokens,
++			})
++		}
++	}
++
++	recordExceptionOnSpan(key: string, error: Error): void {
++		if (!this.enabled) {
++			return
++		}
++
++		const span = this.spans.get(key)
++		if (span && this.recordSpanIO) {
++			span.recordException(error)
++		}
++	}
++}
++
++const laminarService = LaminarService.getInstance()
++
++export default laminarService
++
++export { observeDecorator, observe, LaminarAttributes }
+diff --git a/src/shared/services/config/laminar-config.ts b/src/shared/services/config/laminar-config.ts
+new file mode 100644
+index 00000000..ab539f12
+--- /dev/null
++++ b/src/shared/services/config/laminar-config.ts
+@@ -0,0 +1,15 @@
++// Public Laminar key
++const laminarProdConfig = {
++	apiKey: "",
++	recordIO: true,
++	enabled: true,
++}
++
++// Public Laminar key for Development Environment project
++const laminarDevConfig = {
++	apiKey: "",
++	recordIO: true,
++	enabled: true,
++}
++
++export const laminarConfig = process.env.IS_DEV === "true" ? laminarDevConfig : laminarProdConfig

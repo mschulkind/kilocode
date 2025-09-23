@@ -277,6 +277,7 @@ describe("mergeExtensionState", () => {
 				multiFileApplyDiff: true,
 				preventFocusDisruption: false,
 				morphFastApply: false, // kilocode_change
+				laminarObservability: false, // kilocode_change
 				newTaskRequireTodos: false,
 				imageGeneration: false,
 				runSlashCommand: false,

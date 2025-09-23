@@ -1,0 +1,18 @@
+--- a/src/services/auth/AuthService.ts
++++ b/src/services/auth/AuthService.ts
+@@ -1,3 +1,4 @@
++import laminarService from "@services/laminar/LaminarService"
+ import { featureFlagsService, telemetryService } from "@services/posthog/PostHogClientProvider"
+ import { AuthState, UserInfo } from "@shared/proto/cline/account"
+ import { type EmptyRequest, String } from "@shared/proto/cline/common"
+@@ -324,6 +325,7 @@ export class AuthService {
+ 				// Fetch the feature flags for the user
+ 				if (this._clineAuthInfo?.userInfo?.id) {
+ 					telemetryService.identifyAccount(this._clineAuthInfo.userInfo)
++					laminarService.setUserId(this._clineAuthInfo?.userInfo?.id)
+ 					for (const flag of Object.values(FEATURE_FLAGS)) {
+ 						await featureFlagsService?.isFeatureFlagEnabled(flag)
+ 					}
+diff --git a/src/services/laminar/LaminarService.ts b/src/services/laminar/LaminarService.ts
+new file mode 100644
+index 00000000..1cf3d5c4

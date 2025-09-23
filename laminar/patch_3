@@ -1,0 +1,20 @@
+--- a/src/core/controller/index.ts
++++ b/src/core/controller/index.ts
+@@ -21,6 +21,7 @@ import * as vscode from "vscode"
+ import { clineEnvConfig } from "@/config"
+ import { HostProvider } from "@/hosts/host-provider"
+ import { AuthService } from "@/services/auth/AuthService"
++import laminarService from "@/services/laminar/LaminarService"
+ import { PostHogClientProvider, telemetryService } from "@/services/posthog/PostHogClientProvider"
+ import { ShowMessageType } from "@/shared/proto/host/window"
+ import { getLatestAnnouncementId } from "@/utils/announcements"
+@@ -238,6 +239,7 @@ export class Controller {
+ 		this.stateManager.setGlobalState("telemetrySetting", telemetrySetting)
+ 		const isOptedIn = telemetrySetting !== "disabled"
+ 		telemetryService.updateTelemetryState(isOptedIn)
++		laminarService.updateTelemetryState(isOptedIn)
+ 		await this.postStateToWebview()
+ 	}
+ 
+diff --git a/src/core/task/ToolExecutor.ts b/src/core/task/ToolExecutor.ts
+index c0ca2610..f4b75bd0 100644

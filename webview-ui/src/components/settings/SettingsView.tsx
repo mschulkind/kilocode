@@ -225,6 +225,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 		openRouterImageApiKey,
 		kiloCodeImageApiKey,
 		openRouterImageGenerationSelectedModel,
+		laminarSettings,
 	} = cachedState
 
 	const apiConfiguration = useMemo(() => cachedState.apiConfiguration ?? {}, [cachedState.apiConfiguration])
@@ -452,6 +453,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 				type: "openRouterImageGenerationSelectedModel",
 				text: openRouterImageGenerationSelectedModel,
 			})
+			vscode.postMessage({ type: "laminarSettings", values: laminarSettings })
 			// Update cachedState to match the current state to prevent isChangeDetected from being set back to true
 			setCachedState((prevState) => ({ ...prevState, ...extensionState }))
 			setChangeDetected(false)
@@ -900,6 +902,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 							// kilocode_change start
 							setCachedStateField={setCachedStateField}
 							morphApiKey={morphApiKey}
+							laminarSettings={cachedState.laminarSettings}
 							// kilocode_change end
 							apiConfiguration={apiConfiguration}
 							setApiConfigurationField={setApiConfigurationField}

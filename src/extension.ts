@@ -156,6 +156,18 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Initialize the provider *before* the Roo Code Cloud service.
 	const provider = new ClineProvider(context, outputChannel, "sidebar", contextProxy, mdmService)
 
+	// Initialize Laminar settings in global state
+	const laminarConfig = vscode.workspace.getConfiguration("kilo-code.laminar")
+	const laminarSettings = {
+		apiKey: laminarConfig.get<string>("apiKey") || "",
+		baseUrl: laminarConfig.get<string>("baseUrl") || "https://api.lmnr.ai",
+		httpPort: laminarConfig.get<number>("httpPort") || 443,
+		grpcPort: laminarConfig.get<number>("grpcPort") || 8443,
+		recordIO: laminarConfig.get<boolean>("recordIO") ?? true,
+		enabled: laminarConfig.get<boolean>("enabled") ?? true,
+	}
+	await contextProxy.updateGlobalState("laminarSettings", laminarSettings)
+
 	// Initialize Roo Code Cloud service.
 	const postStateListener = () => ClineProvider.getVisibleInstance()?.postStateToWebview()
 

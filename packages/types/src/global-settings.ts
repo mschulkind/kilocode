@@ -141,6 +141,16 @@ export const globalSettingsSchema = z.object({
 	experiments: experimentsSchema.optional(),
 
 	morphApiKey: z.string().optional(), // kilocode_change: Morph fast apply
+	laminarSettings: z
+		.object({
+			apiKey: z.string().optional(),
+			baseUrl: z.string().optional(),
+			httpPort: z.number().optional(),
+			grpcPort: z.number().optional(),
+			recordIO: z.boolean().optional(),
+			enabled: z.boolean().optional(),
+		})
+		.optional(), // kilocode_change: Laminar observability settings
 
 	codebaseIndexModels: codebaseIndexModelsSchema.optional(),
 	codebaseIndexConfig: codebaseIndexConfigSchema.optional(),

@@ -1,0 +1,26 @@
+--- a/src/core/task/ToolExecutor.ts
++++ b/src/core/task/ToolExecutor.ts
+@@ -4,6 +4,7 @@ import { ClineIgnoreController } from "@core/ignore/ClineIgnoreController"
+ import { DiffViewProvider } from "@integrations/editor/DiffViewProvider"
+ import { BrowserSession } from "@services/browser/BrowserSession"
+ import { UrlContentFetcher } from "@services/browser/UrlContentFetcher"
++import laminarService from "@services/laminar/LaminarService"
+ import { McpHub } from "@services/mcp/McpHub"
+ import { AutoApprovalSettings } from "@shared/AutoApprovalSettings"
+ import { BrowserSettings } from "@shared/BrowserSettings"
+@@ -352,7 +353,13 @@ export class ToolExecutor {
+ 	 */
+ 	private async handleCompleteBlock(block: ToolUse, config: any): Promise<void> {
+ 		// All tools are now fully self-managed and implement IPartialBlockHandler
++		laminarService.startSpan("tool", {
++			name: block.name,
++			spanType: "TOOL",
++			input: block,
++		})
+ 		const result = await this.coordinator.execute(config, block)
++		laminarService.endSpan("tool")
+ 
+ 		await this.saveCheckpoint()
+ 		this.pushToolResult(result, block)
+diff --git a/src/core/task/index.ts b/src/core/task/index.ts
+index 06e35918..04b42de3 100644

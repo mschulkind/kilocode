@@ -17,6 +17,7 @@ import { importSettingsWithFeedback } from "../core/config/importExport"
 import { MdmService } from "../services/mdm/MdmService"
 import { t } from "../i18n"
 import { generateTerminalCommand } from "../utils/terminalCommandGenerator" // kilocode_change
+import laminarService from "../services/laminar/LaminarService"
 
 /**
  * Helper to get the visible ClineProvider instance or log if not found.
@@ -71,6 +72,29 @@ export const registerCommands = (options: RegisterCommandOptions) => {
 		const command = getCommand(id as CommandId)
 		context.subscriptions.push(vscode.commands.registerCommand(command, callback))
 	}
+
+	// Additional commands that don't fit into the CommandId map can be
+	// registered directly here. This avoids forcing changes to the CommandId
+	// type while still exposing useful developer utilities.
+	context.subscriptions.push(
+		vscode.commands.registerCommand(getCommand("testLaminarConnection" as unknown as CommandId), async () => {
+			try {
+				const result = await laminarService.testConnection()
+				if (result && result.success) {
+					const details = result.details || {}
+					const baseUrl = (details.baseUrl ?? laminarService) ? (details.baseUrl ?? "") : ""
+					const port = details.httpPort ?? details.grpcPort ?? ""
+					vscode.window.showInformationMessage(
+						`Laminar connection successful${baseUrl || port ? ` — ${baseUrl}:${port}` : ""}`,
+					)
+				} else {
+					vscode.window.showErrorMessage(`Laminar connection failed: ${result?.error ?? "unknown error"}`)
+				}
+			} catch (err) {
+				vscode.window.showErrorMessage(`Laminar connection test threw: ${String(err)}`)
+			}
+		}),
+	)
 }
 
 const getCommandsMap = ({ context, outputChannel }: RegisterCommandOptions): Record<CommandId, any> => ({

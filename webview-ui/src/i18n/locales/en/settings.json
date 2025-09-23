@@ -6,7 +6,9 @@
 		"reset": "Reset",
 		"select": "Select",
 		"add": "Add Header",
-		"remove": "Remove"
+		"remove": "Remove",
+		"enabled": "Enabled",
+		"disabled": "Disabled"
 	},
 	"header": {
 		"title": "Settings",
@@ -770,6 +772,10 @@
 			"apiKey": "Morph API key (optional)",
 			"placeholder": "Enter your Morph API key (optional)"
 		},
+		"LAMINAR_OBSERVABILITY": {
+			"name": "Enable Laminar Observability",
+			"description": "When enabled, Kilo Code will send observability data to Laminar for tracing and monitoring. Requires a Laminar API key and server configuration."
+		},
 		"PREVENT_FOCUS_DISRUPTION": {
 			"name": "Background editing",
 			"description": "Prevent editor focus disruption when enabled. File edits happen in the background without opening diff views or stealing focus. You can continue working uninterrupted while Kilo Code makes changes. Files can be opened without focus to capture diagnostics or kept closed entirely."
@@ -800,6 +806,38 @@
 		"RUN_SLASH_COMMAND": {
 			"name": "Enable model-initiated slash commands",
 			"description": "When enabled, Kilo Code can run your slash commands to execute workflows."
+		}
+	},
+	"laminar": {
+		"enabled": {
+			"label": "Enable Laminar observability integration",
+			"description": "Enable Laminar observability integration for tracing and monitoring"
+		},
+		"apiKey": {
+			"label": "API Key",
+			"description": "Laminar API key for authentication. Get your API key from the Laminar dashboard.",
+			"placeholder": "Enter your Laminar API key"
+		},
+		"baseUrl": {
+			"label": "Base URL",
+			"description": "Base URL for Laminar API server",
+			"placeholder": "https://api.lmnr.ai",
+			"invalidFormat": "Please enter a valid URL"
+		},
+		"httpPort": {
+			"label": "HTTP Port",
+			"invalidRange": "Port must be between 1 and 65535"
+		},
+		"grpcPort": {
+			"label": "gRPC Port",
+			"invalidRange": "Port must be between 1 and 65535"
+		},
+		"recordIO": {
+			"label": "Record input/output data in spans",
+			"description": "When enabled, Kilo Code will capture and store the actual prompts sent to AI models and their responses within Laminar spans. This includes conversation history, file contents, and tool outputs. Useful for debugging AI interactions but may increase data storage requirements. Disable if you have privacy concerns about storing AI conversations."
+		},
+		"testConnection": {
+			"label": "Test Connection"
 		}
 	},
 	"promptCaching": {

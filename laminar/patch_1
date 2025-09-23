@@ -1,0 +1,12 @@
+--- a/package.json
++++ b/package.json
+@@ -434,6 +434,7 @@
+ 		"@google/genai": "1.0.0",
+ 		"@grpc/grpc-js": "^1.9.15",
+ 		"@grpc/reflection": "^1.0.4",
++		"@lmnr-ai/lmnr": "^0.7.0",
+ 		"@mistralai/mistralai": "^1.5.0",
+ 		"@modelcontextprotocol/sdk": "^1.11.1",
+ 		"@opentelemetry/api": "^1.4.1",
+diff --git a/src/common.ts b/src/common.ts
+index 2cf086f7..47d8ae0c 100644

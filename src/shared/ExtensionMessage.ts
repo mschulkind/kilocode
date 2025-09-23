@@ -108,6 +108,7 @@ export interface ExtensionMessage {
 		| "insertTextToChatArea" // kilocode_change
 		| "browserToolEnabled"
 		| "browserConnectionResult"
+		| "laminarConnectionTestResult"
 		| "remoteBrowserEnabled"
 		| "ttsStart"
 		| "ttsStop"
@@ -217,6 +218,7 @@ export interface ExtensionMessage {
 	promptText?: string
 	results?: { path: string; type: "file" | "folder"; label?: string }[]
 	error?: string
+	details?: any
 	mcpMarketplaceCatalog?: McpMarketplaceCatalog // kilocode_change
 	mcpDownloadDetails?: McpDownloadResponse // kilocode_change
 	notificationOptions?: {
@@ -431,6 +433,7 @@ export type ExtensionState = Pick<
 	taskSyncEnabled: boolean
 	featureRoomoteControlEnabled: boolean
 	showTimestamps?: boolean // kilocode_change: Show timestamps in chat mes
+	laminarSettings?: any // kilocode_change: Laminar observability settings
 }
 
 export interface ClineSayTool {

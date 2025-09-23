@@ -72,5 +72,17 @@
 			"form-data": ">=4.0.4",
 			"bluebird": ">=3.7.2"
 		}
+	},
+	"dependencies": {
+		"@lmnr-ai/lmnr": "^0.7.3"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "kilo-code.testLaminarConnection",
+				"title": "Kilo Code: Test Laminar Connection",
+				"category": "Kilo Code"
+			}
+		]
 	}
 }
