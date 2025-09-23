@@ -1,0 +1,483 @@
+# Document Anatomy 🧬
+
+**Purpose:** Detailed breakdown of the standardized document structure that every KiloCode document must follow, ensuring consistency and usability across all documentation.
+
+> **Biology Fun Fact**: Just like how DNA has a specific structure with base pairs, sugar-phosphate backbones, and double helix formation, our documents have a specific structure with purpose statements, content sections, and navigation elements that work together to create functional information! 🧬
+
+<details><summary>Table of Contents</summary>
+
+- [Executive Summary](#executive-summary)
+- [Required Elements](#required-elements)
+- [Element Details](#element-details)
+- [Structure Flow](#structure-flow)
+- [Element Validation](#element-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+
+</details>
+
+## Executive Summary
+
+_Every KiloCode document follows a standardized anatomy with six required elements that work together to create consistent, discoverable, and usable documentation. This structure ensures that both authors and readers know what to expect from any document._
+
+**Required Elements:**
+
+1. **H1 Title** - Single, descriptive title
+2. **Purpose Statement** - Clear purpose and audience
+3. **Collapsible TOC** - Navigation overview
+4. **Executive Summary** - Key highlights
+5. **Body Content** - Detailed information
+6. **Navigation Footer** - Cross-references and links
+
+## Required Elements
+
+**Every document MUST contain these six elements in this exact order:**
+
+### 1. H1 Title
+
+- **Format**: Single H1 heading at the top
+- **Case**: Title Case
+- **Content**: Descriptive, specific title
+- **Purpose**: Identifies the document's main topic
+
+### 2. Purpose Statement
+
+- **Format**: `**Purpose:**` followed by brief description
+- **Content**: Document's purpose and intended audience
+- **Purpose**: Helps readers understand what they'll learn
+
+### 3. Collapsible TOC
+
+- **Format**: `<details><summary>Table of Contents</summary>` with H2/H3 entries
+- **Content**: Links to all H2 and H3 sections
+- **Purpose**: Provides navigation overview
+
+### 4. Executive Summary
+
+- **Format**: H2 heading with italic text
+- **Content**: Key highlights and overview
+- **Purpose**: Gives readers a quick understanding
+
+### 5. Body Content
+
+- **Format**: H2/H3 sections with detailed information
+- **Content**: Main document content
+- **Purpose**: Provides the detailed information
+
+### 6. Navigation Footer
+
+- **Format**: `<a id="navigation-footer"></a>` with back/root/source links
+- **Content**: Cross-references and navigation
+- **Purpose**: Helps users navigate the system
+
+## Element Details
+
+### H1 Title
+
+**Requirements**:
+
+- **Single H1**: Only one H1 per document
+- **Title Case**: Capitalize major words
+- **Descriptive**: Clearly indicates content
+- **Specific**: Avoid generic titles
+
+**Examples**:
+
+```markdown
+# Good: Specific and descriptive
+
+API Duplication Analysis
+State Machine Design Patterns
+Build Process Guide
+
+# Bad: Generic or unclear
+
+Documentation Guide
+Stuff
+Things
+```
+
+### Purpose Statement
+
+**Format**: `**Purpose:**` followed by brief description
+
+**Content Requirements**:
+
+- **Clear Purpose**: What the document does
+- **Target Audience**: Who should read it
+- **Success Criteria**: What readers will learn
+- **Context**: How it fits into the larger system
+
+**Examples**:
+
+```markdown
+# Good: Clear purpose and audience
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations for developers and system architects.
+
+# Bad: Vague or missing context
+
+**Purpose:** This document explains things.
+**Purpose:** Guide for users.
+```
+
+### Collapsible TOC
+
+**Format**: `<details><summary>Table of Contents</summary>` with H2/H3 entries
+
+**Content Requirements**:
+
+- **H2 Entries**: All major sections
+- **H3 Entries**: All subsections
+- **No H4**: Don't include H4 entries
+- **Proper Links**: Use correct anchor links
+
+**Examples**:
+
+```markdown
+<details><summary>Table of Contents</summary>
+
+- [Executive Summary](#executive-summary)
+- [Problem Description](#problem-description)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Solution Recommendations](#solution-recommendations)
+- [Implementation Guide](#implementation-guide)
+
+</details>
+```
+
+### Executive Summary
+
+**Format**: H2 heading with italic text
+
+**Content Requirements**:
+
+- **Key Highlights**: Most important information
+- **Overview**: What the document covers
+- **Context**: How it relates to other content
+- **Actionable**: What readers can do next
+
+**Examples**:
+
+```markdown
+## Executive Summary
+
+_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously, resulting in jumbled responses and confused user experience. This document provides a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for implementation._
+
+## Executive Summary
+
+_This guide provides step-by-step instructions for building the KiloCode project from source, including prerequisites, build steps, and troubleshooting common issues._
+```
+
+### Body Content
+
+**Format**: H2/H3 sections with detailed information
+
+**Content Requirements**:
+
+- **Logical Flow**: Information flows logically
+- **Clear Hierarchy**: Proper H2/H3 structure
+- **Detailed Information**: Comprehensive coverage
+- **Examples**: Code examples and use cases
+
+**Examples**:
+
+```markdown
+## Problem Description
+
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+
+### Symptoms
+
+- Multiple API requests with spinners
+- Jumbled responses in chat interface
+- Confused user experience
+
+### Impact
+
+- Degraded user experience
+- Potential data corruption
+- System instability
+
+## Root Cause Analysis
+
+The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+
+### Technical Details
+
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+```
+
+### Navigation Footer
+
+**Format**: `<a id="navigation-footer"></a>` with back/root/source links
+
+**Content Requirements**:
+
+- **Back Link**: Link to parent index
+- **Root Link**: Link to main INDEX.md
+- **Source Link**: Link to source file with #L1
+- **Proper Paths**: Use correct relative/absolute paths
+
+**Examples**:
+
+```markdown
+<a id="navigation-footer"></a>
+
+- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+
+<a id="navigation-footer"></a>
+
+- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+```
+
+## Structure Flow
+
+**Logical Flow**: The document structure follows a logical flow from general to specific:
+
+1. **Title** → Identifies the topic
+2. **Purpose** → Explains the goal
+3. **TOC** → Shows the structure
+4. **Summary** → Provides overview
+5. **Content** → Delivers details
+6. **Footer** → Enables navigation
+
+**Flow Diagram**:
+
+```mermaid
+graph TD
+    A[H1 Title] --> B[Purpose Statement]
+    B --> C[Collapsible TOC]
+    C --> D[Executive Summary]
+    D --> E[Body Content]
+    E --> F[Navigation Footer]
+
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+```
+
+## Element Validation
+
+**Pre-Submission Checks**: Validate each element before submitting.
+
+**H1 Title Validation**:
+
+- [ ] Single H1 at the top
+- [ ] Title Case formatting
+- [ ] Descriptive and specific
+- [ ] Matches document content
+
+**Purpose Statement Validation**:
+
+- [ ] Uses `**Purpose:**` format
+- [ ] Clear purpose description
+- [ ] Identifies target audience
+- [ ] Includes success criteria
+
+**TOC Validation**:
+
+- [ ] Collapsible format used
+- [ ] Includes all H2 sections
+- [ ] Includes all H3 sections
+- [ ] No H4 entries included
+- [ ] Links work correctly
+
+**Executive Summary Validation**:
+
+- [ ] H2 heading used
+- [ ] Italic text format
+- [ ] Key highlights included
+- [ ] Overview provided
+
+**Body Content Validation**:
+
+- [ ] Logical flow maintained
+- [ ] Proper H2/H3 hierarchy
+- [ ] Detailed information provided
+- [ ] Examples included where appropriate
+
+**Navigation Footer Validation**:
+
+- [ ] Anchor tag present
+- [ ] Back link correct
+- [ ] Root link correct
+- [ ] Source link correct
+- [ ] All links functional
+
+## Common Mistakes
+
+**Structure Mistakes**:
+
+- ❌ Multiple H1 headings
+- ❌ Missing purpose statement
+- ❌ TOC includes H4 entries
+- ❌ Missing navigation footer
+- ❌ Incorrect element order
+
+**Content Mistakes**:
+
+- ❌ Purpose statement doesn't match content
+- ❌ TOC doesn't match actual headings
+- ❌ Executive summary too vague
+- ❌ Body content lacks detail
+- ❌ Navigation footer links broken
+
+**Format Mistakes**:
+
+- ❌ Wrong heading case
+- ❌ Missing italic formatting in summary
+- ❌ Incorrect TOC format
+- ❌ Wrong link paths
+- ❌ Missing required elements
+
+**Examples**:
+
+```markdown
+# Bad: Multiple H1 headings
+
+# Document Title
+
+Content here.
+
+# Another Title
+
+More content here.
+
+# Good: Single H1 heading
+
+# Document Title
+
+Content here.
+
+## Section heading
+
+More content here.
+```
+
+## Implementation Examples
+
+### Complete Document Example
+
+```markdown
+# API Duplication Analysis
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations for developers and system architects.
+
+<details><summary>Table of Contents</summary>
+
+- [Executive Summary](#executive-summary)
+- [Problem Description](#problem-description)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Solution Recommendations](#solution-recommendations)
+- [Implementation Guide](#implementation-guide)
+
+</details>
+
+## Executive Summary
+
+_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously, resulting in jumbled responses and confused user experience. This document provides a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for implementation._
+
+## Problem Description
+
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+
+### Symptoms
+
+- Multiple API requests with spinners
+- Jumbled responses in chat interface
+- Confused user experience
+
+### Impact
+
+- Degraded user experience
+- Potential data corruption
+- System instability
+
+## Root Cause Analysis
+
+The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+
+### Technical Details
+
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+
+## Solution Recommendations
+
+Implement a synchronization mechanism to ensure only one recursive call executes at a time.
+
+### Implementation Strategies
+
+1. **Simple Lock-Based**: Use a mutex to prevent concurrent calls
+2. **Enhanced with Call Tracking**: Track call state and queue additional calls
+3. **Subtask Completion Coordination**: Coordinate subtask completion with main loop
+
+## Implementation Guide
+
+Follow these steps to implement the solution:
+
+1. **Add Synchronization**: Implement lock-based synchronization
+2. **Add Logging**: Add comprehensive debug logging
+3. **Test Thoroughly**: Create automated tests for race conditions
+4. **Monitor Performance**: Ensure solution doesn't impact performance
+
+<a id="navigation-footer"></a>
+
+- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+```
+
+### Minimal Document Example
+
+```markdown
+# Build Process Guide
+
+**Purpose:** Step-by-step instructions for building the KiloCode project from source, including prerequisites, build steps, and troubleshooting common issues.
+
+<details><summary>Table of Contents</summary>
+
+- [Prerequisites](#prerequisites)
+- [Build Steps](#build-steps)
+- [Troubleshooting](#troubleshooting)
+
+</details>
+
+## Executive Summary
+
+_This guide provides step-by-step instructions for building the KiloCode project from source, including prerequisites, build steps, and troubleshooting common issues._
+
+## Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js 18+
+- pnpm
+- Git
+
+## Build Steps
+
+1. Clone the repository
+2. Install dependencies
+3. Run the build command
+4. Verify the build
+
+## Troubleshooting
+
+Common issues and solutions:
+
+- Dependency conflicts
+- Build errors
+- Environment issues
+
+<a id="navigation-footer"></a>
+
+- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+```
+
+---
+
+**Navigation**: [Back to Structure](README.md) · [Next: Headings & Hierarchy](HEADINGS_HIERARCHY.md) · [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
+
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
