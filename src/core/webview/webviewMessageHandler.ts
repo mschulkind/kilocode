@@ -78,6 +78,20 @@ import { setPendingTodoList } from "../tools/updateTodoListTool"
 import { UsageTracker } from "../../utils/usage-tracker"
 import { seeNewChanges } from "../checkpoints/kilocode/seeNewChanges" // kilocode_change
 import { getTaskHistory } from "../../shared/kilocode/getTaskHistory" // kilocode_change
+import laminarService from "../../services/laminar/LaminarService"
+
+// Helper function to load Laminar settings from VS Code configuration
+const loadLaminarSettingsFromVSCode = () => {
+	const config = vscode.workspace.getConfiguration("kilo-code.laminar")
+	return {
+		apiKey: config.get<string>("apiKey") || "",
+		baseUrl: config.get<string>("baseUrl") || "https://api.lmnr.ai",
+		httpPort: config.get<number>("httpPort") || 443,
+		grpcPort: config.get<number>("grpcPort") || 8443,
+		recordIO: config.get<boolean>("recordIO") ?? true,
+		enabled: config.get<boolean>("enabled") ?? true,
+	}
+}
 
 export const webviewMessageHandler = async (
 	provider: ClineProvider,
@@ -520,6 +534,22 @@ export const webviewMessageHandler = async (
 				const isOptedIn = telemetrySetting !== "disabled"
 				TelemetryService.instance.updateTelemetryState(isOptedIn)
 				await TelemetryService.instance.updateIdentity(state.apiConfiguration.kilocodeToken ?? "") // kilocode_change
+
+				// Laminar integration: Update telemetry state with debug logging
+				const logId = `webview-launch-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+				console.log(
+					`[Laminar Telemetry] ${logId} - Webview launch: Preparing to update telemetry state - isOptedIn: ${isOptedIn}, telemetrySetting: ${telemetrySetting}, timestamp: ${new Date().toISOString()}, event: 'webviewDidLaunch', hasKilocodeToken: ${!!state.apiConfiguration.kilocodeToken}`,
+				)
+				try {
+					laminarService.updateTelemetryState(isOptedIn)
+					console.log(
+						`[Laminar Telemetry] ${logId} - Webview launch: Telemetry state updated successfully - isOptedIn: ${isOptedIn}, timestamp: ${new Date().toISOString()}, event: 'webviewDidLaunch', success: true`,
+					)
+				} catch (error) {
+					console.error(
+						`[Laminar Telemetry] ${logId} - Webview launch: Failed to update telemetry state - error: ${error instanceof Error ? error.message : String(error)}, isOptedIn: ${isOptedIn}, timestamp: ${new Date().toISOString()}, event: 'webviewDidLaunch', success: false`,
+					)
+				}
 			})
 
 			provider.isViewLaunched = true
@@ -1595,6 +1625,7 @@ export const webviewMessageHandler = async (
 					...currentState,
 					customModePrompts: updatedPrompts,
 					hasOpenedModeSelector: currentState.hasOpenedModeSelector ?? false,
+					laminarSettings: loadLaminarSettingsFromVSCode(),
 				}
 				provider.postMessageToWebview({ type: "state", state: stateWithPrompts })
 
@@ -2544,6 +2575,24 @@ export const webviewMessageHandler = async (
 					})
 				}
 
+				if (response.data?.user?.id) {
+					const authLogId = `auth-profile-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+					console.log(
+						`[Laminar Auth Debug] ${authLogId} - Starting user ID set for profile data request - userId: ${response.data.user.id}, timestamp: ${new Date().toISOString()}, event: 'fetchProfileDataRequest', authMethod: 'kilocode-token', hasOrganizationId: ${!!apiConfiguration?.kilocodeOrganizationId}, organizationId: ${apiConfiguration?.kilocodeOrganizationId || "none"}`,
+					)
+					try {
+						laminarService.setUserId(response.data.user.id)
+						console.log(
+							`[Laminar Auth Debug] ${authLogId} - Successfully set user ID in laminarService - userId: ${response.data.user.id}, timestamp: ${new Date().toISOString()}, event: 'fetchProfileDataRequest', authMethod: 'kilocode-token', success: true`,
+						)
+					} catch (error) {
+						console.error(
+							`[Laminar Auth Debug] ${authLogId} - Failed to set user ID in laminarService - userId: ${response.data.user.id}, timestamp: ${new Date().toISOString()}, event: 'fetchProfileDataRequest', authMethod: 'kilocode-token', error: ${error instanceof Error ? error.message : String(error)}, success: false`,
+						)
+						provider.log(`Failed to set user ID in laminarService: ${error}`)
+					}
+				}
+
 				provider.postMessageToWebview({
 					type: "profileDataResponse", // Assuming this response type is still appropriate for /api/profile
 					payload: { success: true, data: { kilocodeToken, ...response.data } },
@@ -2739,6 +2788,23 @@ export const webviewMessageHandler = async (
 			const isOptedIn = telemetrySetting === "enabled"
 
 			TelemetryService.instance.updateTelemetryState(isOptedIn)
+
+			// Laminar integration: Update telemetry state with debug logging
+			const logId = `telemetry-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+			console.log(
+				`[Laminar Telemetry] ${logId} - Preparing to update telemetry state - isOptedIn: ${isOptedIn}, telemetrySetting: ${telemetrySetting}, timestamp: ${new Date().toISOString()}, event: 'telemetrySetting', previousSetting: ${getGlobalState("telemetrySetting")}`,
+			)
+			try {
+				laminarService.updateTelemetryState(isOptedIn)
+				console.log(
+					`[Laminar Telemetry] ${logId} - Telemetry state updated successfully - isOptedIn: ${isOptedIn}, timestamp: ${new Date().toISOString()}, event: 'telemetrySetting', success: true`,
+				)
+			} catch (error) {
+				console.error(
+					`[Laminar Telemetry] ${logId} - Failed to update telemetry state - error: ${error instanceof Error ? error.message : String(error)}, isOptedIn: ${isOptedIn}, timestamp: ${new Date().toISOString()}, event: 'telemetrySetting', success: false`,
+				)
+			}
+
 			await provider.postStateToWebview()
 			break
 		}
@@ -2751,6 +2817,24 @@ export const webviewMessageHandler = async (
 			try {
 				TelemetryService.instance.captureEvent(TelemetryEventName.AUTHENTICATION_INITIATED)
 				await CloudService.instance.login()
+				const userInfo = CloudService.instance.getUserInfo()
+				if (userInfo?.id) {
+					const authLogId = `auth-cloud-signin-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+					console.log(
+						`[Laminar Auth Debug] ${authLogId} - Starting user ID set for cloud sign in - userId: ${userInfo.id}, timestamp: ${new Date().toISOString()}, event: 'rooCloudSignIn', authMethod: 'cloud-service', userEmail: ${userInfo.email || "none"}, userName: ${userInfo.name || "none"}`,
+					)
+					try {
+						laminarService.setUserId(userInfo.id)
+						console.log(
+							`[Laminar Auth Debug] ${authLogId} - Successfully set user ID in laminarService - userId: ${userInfo.id}, timestamp: ${new Date().toISOString()}, event: 'rooCloudSignIn', authMethod: 'cloud-service', success: true`,
+						)
+					} catch (error) {
+						console.error(
+							`[Laminar Auth Debug] ${authLogId} - Failed to set user ID in laminarService - userId: ${userInfo.id}, timestamp: ${new Date().toISOString()}, event: 'rooCloudSignIn', authMethod: 'cloud-service', error: ${error instanceof Error ? error.message : String(error)}, success: false`,
+						)
+						provider.log(`Failed to set user ID in laminarService: ${error}`)
+					}
+				}
 			} catch (error) {
 				provider.log(`AuthService#login failed: ${error}`)
 				vscode.window.showErrorMessage("Sign in failed.")
@@ -2759,11 +2843,21 @@ export const webviewMessageHandler = async (
 			break
 		}
 		case "rooCloudSignOut": {
+			const authLogId = `auth-signout-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+			console.log(
+				`[Laminar Auth Debug] ${authLogId} - Starting cloud sign out process - timestamp: ${new Date().toISOString()}, event: 'rooCloudSignOut', authMethod: 'cloud-service'`,
+			)
 			try {
 				await CloudService.instance.logout()
+				console.log(
+					`[Laminar Auth Debug] ${authLogId} - Cloud sign out successful - timestamp: ${new Date().toISOString()}, event: 'rooCloudSignOut', success: true`,
+				)
 				await provider.postStateToWebview()
 				provider.postMessageToWebview({ type: "authenticatedUser", userInfo: undefined })
 			} catch (error) {
+				console.error(
+					`[Laminar Auth Debug] ${authLogId} - Cloud sign out failed - timestamp: ${new Date().toISOString()}, event: 'rooCloudSignOut', error: ${error instanceof Error ? error.message : String(error)}, success: false`,
+				)
 				provider.log(`AuthService#logout failed: ${error}`)
 				vscode.window.showErrorMessage("Sign out failed.")
 			}
@@ -2771,8 +2865,15 @@ export const webviewMessageHandler = async (
 			break
 		}
 		case "rooCloudManualUrl": {
+			const authLogId = `auth-manual-url-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+			console.log(
+				`[Laminar Auth Debug] ${authLogId} - Starting manual URL authentication - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', hasCallbackUrl: ${!!message.text}`,
+			)
 			try {
 				if (!message.text) {
+					console.log(
+						`[Laminar Auth Debug] ${authLogId} - Manual URL authentication failed - no URL provided - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', success: false`,
+					)
 					vscode.window.showErrorMessage(t("common:errors.manual_url_empty"))
 					break
 				}
@@ -2782,6 +2883,9 @@ export const webviewMessageHandler = async (
 				const uri = vscode.Uri.parse(callbackUrl)
 
 				if (!uri.query) {
+					console.log(
+						`[Laminar Auth Debug] ${authLogId} - Manual URL authentication failed - no query parameters - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', success: false`,
+					)
 					throw new Error(t("common:errors.manual_url_no_query"))
 				}
 
@@ -2791,8 +2895,15 @@ export const webviewMessageHandler = async (
 				const organizationId = query.get("organizationId")
 
 				if (!code || !state) {
+					console.log(
+						`[Laminar Auth Debug] ${authLogId} - Manual URL authentication failed - missing required parameters - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', hasCode: ${!!code}, hasState: ${!!state}, success: false`,
+					)
 					throw new Error(t("common:errors.manual_url_missing_params"))
 				}
+
+				console.log(
+					`[Laminar Auth Debug] ${authLogId} - Processing manual URL authentication - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', hasOrganizationId: ${!!organizationId}, organizationId: ${organizationId || "none"}`,
+				)
 
 				// Reuse the existing authentication flow
 				await CloudService.instance.handleAuthCallback(
@@ -2801,8 +2912,14 @@ export const webviewMessageHandler = async (
 					organizationId === "null" ? null : organizationId,
 				)
 
+				console.log(
+					`[Laminar Auth Debug] ${authLogId} - Manual URL authentication successful - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', success: true`,
+				)
 				await provider.postStateToWebview()
 			} catch (error) {
+				console.error(
+					`[Laminar Auth Debug] ${authLogId} - Manual URL authentication failed - timestamp: ${new Date().toISOString()}, event: 'rooCloudManualUrl', error: ${error instanceof Error ? error.message : String(error)}, success: false`,
+				)
 				provider.log(`ManualUrl#handleAuthCallback failed: ${error}`)
 				const errorMessage = error instanceof Error ? error.message : t("common:errors.manual_url_auth_failed")
 
@@ -3587,6 +3704,114 @@ export const webviewMessageHandler = async (
 				type: "dismissedUpsells",
 				list: dismissedUpsells,
 			})
+			break
+		}
+		case "testLaminarConnection": {
+			try {
+				// If test connection includes values, use them for testing
+				if (message.values) {
+					console.log("[LAMINAR DEBUG] Testing connection with provided values:", {
+						...message.values,
+						apiKey: message.values.apiKey ? message.values.apiKey.substring(0, 8) + "..." : "undefined",
+						apiKeyLength: message.values.apiKey ? message.values.apiKey.length : 0,
+						baseUrl: message.values.baseUrl,
+						httpPort: message.values.httpPort,
+						grpcPort: message.values.grpcPort,
+						recordIO: message.values.recordIO,
+						enabled: message.values.enabled,
+					})
+					console.log("[LAMINAR DEBUG] Raw message.values object:", message.values)
+					console.log("[LAMINAR DEBUG] Message values types:", {
+						apiKey: typeof message.values.apiKey,
+						baseUrl: typeof message.values.baseUrl,
+						httpPort: typeof message.values.httpPort,
+						grpcPort: typeof message.values.grpcPort,
+						recordIO: typeof message.values.recordIO,
+						enabled: typeof message.values.enabled,
+					})
+
+					// Create a temporary config for testing
+					const testConfig = {
+						apiKey: message.values.apiKey || "",
+						baseUrl: message.values.baseUrl || "https://api.lmnr.ai",
+						httpPort: message.values.httpPort || 443,
+						grpcPort: message.values.grpcPort || 8443,
+						recordIO: message.values.recordIO ?? true,
+						enabled: message.values.enabled ?? true,
+					}
+
+					console.log("[LAMINAR DEBUG] Created test config:", {
+						...testConfig,
+						apiKey: testConfig.apiKey ? testConfig.apiKey.substring(0, 8) + "..." : "undefined",
+						apiKeyLength: testConfig.apiKey ? testConfig.apiKey.length : 0,
+					})
+
+					// Test with the provided configuration
+					const result = await laminarService.testConnectionWithConfig(testConfig)
+					await provider.postMessageToWebview({
+						type: "laminarConnectionTestResult",
+						success: result.success,
+						error: result.error,
+						details: result.details,
+					})
+				} else {
+					// Fallback to using saved settings
+					await laminarService.initialize()
+					const result = await laminarService.testConnection()
+					await provider.postMessageToWebview({
+						type: "laminarConnectionTestResult",
+						success: result.success,
+						error: result.error,
+						details: result.details,
+					})
+				}
+			} catch (error) {
+				await provider.postMessageToWebview({
+					type: "laminarConnectionTestResult",
+					success: false,
+					error: error instanceof Error ? error.message : String(error),
+				})
+			}
+			break
+		}
+		case "laminarSettings": {
+			try {
+				const laminarSettings = message.values
+				console.log("[LAMINAR DEBUG] Received laminar settings:", {
+					...laminarSettings,
+					apiKey: laminarSettings?.apiKey ? laminarSettings.apiKey.substring(0, 8) + "..." : "undefined",
+				})
+				if (laminarSettings) {
+					// Update VS Code settings
+					const config = vscode.workspace.getConfiguration("kilo-code.laminar")
+
+					if (laminarSettings.apiKey !== undefined) {
+						await config.update("apiKey", laminarSettings.apiKey, vscode.ConfigurationTarget.Global)
+					}
+					if (laminarSettings.baseUrl !== undefined) {
+						await config.update("baseUrl", laminarSettings.baseUrl, vscode.ConfigurationTarget.Global)
+					}
+					if (laminarSettings.httpPort !== undefined) {
+						await config.update("httpPort", laminarSettings.httpPort, vscode.ConfigurationTarget.Global)
+					}
+					if (laminarSettings.grpcPort !== undefined) {
+						await config.update("grpcPort", laminarSettings.grpcPort, vscode.ConfigurationTarget.Global)
+					}
+					if (laminarSettings.recordIO !== undefined) {
+						await config.update("recordIO", laminarSettings.recordIO, vscode.ConfigurationTarget.Global)
+					}
+					if (laminarSettings.enabled !== undefined) {
+						await config.update("enabled", laminarSettings.enabled, vscode.ConfigurationTarget.Global)
+					}
+
+					// Reload Laminar service configuration
+					await laminarService.reloadConfiguration()
+
+					console.log("Laminar settings updated successfully")
+				}
+			} catch (error) {
+				console.error("Failed to update Laminar settings:", error)
+			}
 			break
 		}
 	}

@@ -5,6 +5,7 @@ import crypto from "crypto"
 import EventEmitter from "events"
 
 import { Anthropic } from "@anthropic-ai/sdk"
+import { Laminar } from "@lmnr-ai/lmnr"
 import delay from "delay"
 import pWaitFor from "p-wait-for"
 import { serializeError } from "serialize-error"
@@ -117,6 +118,7 @@ import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rule
 import { getMessagesSinceLastSummary, summarizeConversation } from "../condense"
 import { Gpt5Metadata, ClineMessageWithMetadata } from "./types"
 import { MessageQueueService } from "../message-queue/MessageQueueService"
+import laminarService from "../../services/laminar/LaminarService"
 
 import { AutoApprovalHandler } from "./AutoApprovalHandler"
 import { isAnyRecognizedKiloCodeError, isPaymentRequiredError } from "../../shared/kilocode/errorUtils"
@@ -309,6 +311,9 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 	private tokenUsageSnapshot?: TokenUsage
 	private tokenUsageSnapshotAt?: number
 
+	// Laminar Span Tracking
+	private taskStepSpanId?: string
+
 	constructor({
 		context, // kilocode_change
 		provider,
@@ -338,7 +343,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 		this.taskId = historyItem ? historyItem.id : crypto.randomUUID()
 		this.taskIsFavorited = historyItem?.isFavorited // kilocode_change
-		this.rootTaskId = historyItem ? historyItem.rootTaskId : rootTask?.taskId
+		this.rootTaskId = historyItem ? historyItem.rootTaskId : rootTask?.rootTaskId || rootTask?.taskId
 		this.parentTaskId = historyItem ? historyItem.parentTaskId : parentTask?.taskId
 		this.childTaskId = undefined
 
@@ -1715,30 +1720,71 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 		this.emit(RooCodeEventName.TaskStarted)
 
-		while (!this.abort) {
-			const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
-			includeFileDetails = false // We only need file details the first time.
+		// Start root span for the entire task execution
+		const rootSpanId = crypto.randomUUID()
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Starting root task span`, {
+			spanId: rootSpanId,
+			taskId: this.taskId,
+			sessionId: this.taskId,
+			spanType: "task.root",
+		})
+		laminarService.startSpan(
+			"DEFAULT",
+			{
+				name: `${this.taskId}-task.root`,
+				sessionId: this.rootTaskId || this.taskId,
+				input: userContent,
+			},
+			true, // Make this the active span
+		)
 
-			// The way this agentic loop works is that cline will be given a
-			// task that he then calls tools to complete. Unless there's an
-			// attempt_completion call, we keep responding back to him with his
-			// tool's responses until he either attempt_completion or does not
-			// use anymore tools. If he does not use anymore tools, we ask him
-			// to consider if he's completed the task and then call
-			// attempt_completion, otherwise proceed with completing the task.
-			// There is a MAX_REQUESTS_PER_TASK limit to prevent infinite
-			// requests, but Cline is prompted to finish the task as efficiently
-			// as he can.
+		// Add root task attributes
+		laminarService.addAttributesToSpan(`${this.taskId}-task.root`, {
+			"task.id": this.taskId,
+			"task.rootId": this.rootTaskId || this.taskId,
+			"task.parentId": this.parentTaskId,
+			"task.number": this.taskNumber,
+			"task.type": this.parentTask ? "subtask" : "root",
+			"task.mode": this._taskMode || "default",
+			"task.timestamp": new Date().toISOString(),
+		})
 
-			if (didEndLoop) {
-				// For now a task never 'completes'. This will only happen if
-				// the user hits max requests and denies resetting the count.
-				break
-			} else {
-				nextUserContent = [{ type: "text", text: formatResponse.noToolsUsed() }]
-				this.consecutiveMistakeCount++
+		// Wrap the entire task execution with the root span
+		await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, async () => {
+			while (!this.abort) {
+				const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
+				includeFileDetails = false // We only need file details the first time.
+
+				// The way this agentic loop works is that cline will be given a
+				// task that he then calls tools to complete. Unless there's an
+				// attempt_completion call, we keep responding back to him with his
+				// tool's responses until he either attempt_completion or does not
+				// use anymore tools. If he does not use anymore tools, we ask him
+				// to consider if he's completed the task and then call
+				// attempt_completion, otherwise proceed with completing the task.
+				// There is a MAX_REQUESTS_PER_TASK limit to prevent infinite
+				// requests, but Cline is prompted to finish the task as efficiently
+				// as he can.
+
+				if (didEndLoop) {
+					// For now a task never 'completes'. This will only happen if
+					// the user hits max requests and denies resetting the count.
+					break
+				} else {
+					nextUserContent = [{ type: "text", text: formatResponse.noToolsUsed() }]
+					this.consecutiveMistakeCount++
+				}
 			}
-		}
+		})
+
+		// End the root span
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Ending root task span`, {
+			spanId: rootSpanId,
+			taskId: this.taskId,
+			reason: "task_completed",
+			spanType: "task.root",
+		})
+		laminarService.endSpan(`${this.taskId}-task.root`)
 	}
 
 	public async recursivelyMakeClineRequests(
@@ -1987,6 +2033,34 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 				// Yields only if the first chunk is successful, otherwise will
 				// allow the user to retry the request (most likely due to rate
 				// limit error, which gets thrown on the first chunk).
+				this.taskStepSpanId = crypto.randomUUID()
+				console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Starting task.step span`, {
+					spanId: this.taskStepSpanId,
+					taskId: this.taskId,
+					sessionId: this.taskId,
+					inputLength: JSON.stringify(currentUserContent).length,
+					inputPreview: JSON.stringify(currentUserContent).substring(0, 200) + "...",
+					spanType: "task.step",
+				})
+				laminarService.startSpan(
+					"DEFAULT",
+					{
+						name: `${this.taskId}-task.step`,
+						sessionId: this.rootTaskId || this.taskId,
+						input: currentUserContent,
+					},
+					true,
+				)
+				// Add task hierarchy attributes for better tracking
+				laminarService.addAttributesToSpan(`${this.taskId}-task.step`, {
+					"task.id": this.taskId,
+					"task.rootId": this.rootTaskId || this.taskId,
+					"task.parentId": this.parentTaskId,
+					"task.number": this.taskNumber,
+					"task.type": this.parentTask ? "subtask" : "root",
+					"task.mode": this._taskMode || "default",
+					"task.timestamp": new Date().toISOString(),
+				})
 				const stream = this.attemptApiRequest()
 				let assistantMessage = ""
 				let reasoningMessage = ""
@@ -2226,6 +2300,17 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 							}
 						} catch (error) {
 							console.error("Error draining stream for usage data:", error)
+							// Record exception on LLM span
+							console.log(
+								`[LAMINAR DEBUG] ${new Date().toISOString()} - Recording exception on LLM span (background usage)`,
+								{
+									taskId: this.taskId,
+									exceptionType: error.name || "Unknown",
+									exceptionMessage: error.message || "No message",
+									spanType: "llm_call",
+								},
+							)
+							laminarService.recordExceptionOnSpan("llm_call", error)
 							// Still try to capture whatever usage data we have collected so far
 							if (
 								bgInputTokens > 0 ||
@@ -2416,6 +2501,13 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 				}
 
 				// If we reach here without continuing, return false (will always be false for now)
+				console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Ending task.step span (normal completion)`, {
+					spanId: this.taskStepSpanId,
+					taskId: this.taskId,
+					reason: "normal_completion",
+					spanType: "task.step",
+				})
+				laminarService.endSpan(`${this.taskId}-task.step`)
 				return false
 			} catch (error) {
 				// This should never happen since the only thing that can throw an
@@ -2424,11 +2516,25 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 				// task and destroy this instance. However to avoid unhandled
 				// promise rejection, we will end this loop which will end execution
 				// of this instance (see `startTask`).
+				console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Ending task.step span (error/abort)`, {
+					spanId: this.taskStepSpanId,
+					taskId: this.taskId,
+					reason: "error_abort",
+					spanType: "task.step",
+				})
+				laminarService.endSpan(`${this.taskId}-task.step`)
 				return true // Needs to be true so parent loop knows to end task.
 			}
 		}
 
 		// If we exit the while loop normally (stack is empty), return false
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Ending task.step span (loop exit)`, {
+			spanId: this.taskStepSpanId,
+			taskId: this.taskId,
+			reason: "loop_exit",
+			spanType: "task.step",
+		})
+		laminarService.endSpan(`${this.taskId}-task.step`)
 		return false
 	}
 
@@ -2660,6 +2766,14 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 	}
 
 	public async *attemptApiRequest(retryAttempt: number = 0): ApiStream {
+		// Initialize variables at the method level so they can be accessed by addLlmAttributesToSpan
+		let cacheWriteTokens = 0
+		let cacheReadTokens = 0
+		let inputTokens = 0
+		let outputTokens = 0
+		let totalCost: number | undefined
+		let assistantMessage = ""
+
 		const state = await this.providerRef.deref()?.getState()
 
 		const {
@@ -2847,7 +2961,32 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			this.skipPrevResponseIdOnce = false
 		}
 
-		const stream = this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
+		const llmSpanId = crypto.randomUUID()
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Starting LLM span`, {
+			spanId: llmSpanId,
+			taskId: this.taskId,
+			modelId: this.api.getModel().id,
+			providerId: this.apiConfiguration.apiProvider,
+			inputTokens: cleanConversationHistory.length,
+			systemPromptLength: systemPrompt.length,
+			spanType: "llm_call",
+		})
+
+		// Nest LLM span under the current task step span
+		const stream = await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, async () => {
+			laminarService.startSpan("LLM", {
+				name: `${this.taskId}-llm_call`,
+				spanType: "LLM",
+				sessionId: this.rootTaskId || this.taskId,
+				input: laminarService.getRecordSpanIO()
+					? [
+							{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
+							...cleanConversationHistory,
+						]
+					: undefined,
+			})
+			return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
+		})
 		const iterator = stream[Symbol.asyncIterator]()
 
 		try {
@@ -2858,6 +2997,18 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			this.isWaitingForFirstChunk = false
 		} catch (error) {
 			this.isWaitingForFirstChunk = false
+			// Record exception on LLM span
+			console.log(
+				`[LAMINAR DEBUG] ${new Date().toISOString()} - Recording exception on LLM span (first chunk failure)`,
+				{
+					spanId: llmSpanId,
+					taskId: this.taskId,
+					exceptionType: error.name || "Unknown",
+					exceptionMessage: error.message || "No message",
+					spanType: "llm_call",
+				},
+			)
+			laminarService.recordExceptionOnSpan("llm_call", error)
 			// kilocode_change start
 			if (apiConfiguration?.apiProvider === "kilocode" && isAnyRecognizedKiloCodeError(error)) {
 				const { response } = await (isPaymentRequiredError(error)
@@ -2977,6 +3128,47 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		// effectively passes along all subsequent chunks from the original
 		// stream.
 		yield* iterator
+
+		// Add LLM attributes and end span after API response
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Adding LLM attributes to span`, {
+			spanId: llmSpanId,
+			taskId: this.taskId,
+			inputTokens: inputTokens || 0,
+			outputTokens: outputTokens || 0,
+			totalCost: totalCost ?? 0,
+			modelId: this.api.getModel().id,
+			providerId: this.apiConfiguration.apiProvider,
+			cacheWriteTokens: cacheWriteTokens || 0,
+			cacheReadTokens: cacheReadTokens || 0,
+			spanType: "llm_call",
+		})
+		laminarService.addLlmAttributesToSpan(`${this.taskId}-llm_call`, {
+			inputTokens: inputTokens || 0,
+			outputTokens: outputTokens || 0,
+			totalCost: totalCost ?? 0,
+			modelId: this.api.getModel().id,
+			providerId: this.apiConfiguration.apiProvider,
+			cacheWriteTokens: cacheWriteTokens || 0,
+			cacheReadTokens: cacheReadTokens || 0,
+		})
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Adding output attributes to LLM span`, {
+			spanId: llmSpanId,
+			taskId: this.taskId,
+			outputLength: (assistantMessage || "").length,
+			outputPreview: (assistantMessage || "").substring(0, 200) + "...",
+			spanType: "llm_call",
+		})
+		laminarService.addAttributesToSpan(`${this.taskId}-llm_call`, {
+			"lmnr.span.output": JSON.stringify([{ role: "assistant", content: assistantMessage || "" }]),
+		})
+		console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Ending LLM span`, {
+			spanId: llmSpanId,
+			taskId: this.taskId,
+			totalTokens: (inputTokens || 0) + (outputTokens || 0),
+			totalCost: totalCost ?? 0,
+			spanType: "llm_call",
+		})
+		laminarService.endSpan(`${this.taskId}-llm_call`)
 	}
 
 	// Checkpoints
