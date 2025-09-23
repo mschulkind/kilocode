@@ -2,6 +2,8 @@
 
 **Purpose:** Detailed technical analysis of all subsystems, components, and architectural patterns in the KiloCode system with comprehensive research status and implementation details.
 
+> **Dinosaur Fun Fact**: The KiloCode system is like a dinosaur ecosystem - each subsystem is like a different species (T-Rex for the core engine, Triceratops for the UI, Pterodactyl for the API layer), all working together in a complex but harmonious prehistoric world! 🦕
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
@@ -691,6 +693,34 @@ graph TB
 10. **JetBrains Plugin** - Cross-IDE support
 11. **Browser Automation** - Web integration features
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding System Architecture:**
+
+- **Next**: [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](./repository/CORE_SYSTEMS.md) → [External Dependencies](./EXTERNAL_DEPENDENCIES.md)
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [State Machines](./state-machines/README.md) for behavior modeling
+
+**Investigating Current Issues:**
+
+- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
+
+**Implementing System Features:**
+
+- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
+- **Related**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) for development patterns
+
+**Planning Improvements:**
+
+- **Next**: [Prioritized Architecture Improvements](./PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md) → [Branch Analyses](./branches/README.md) → [Implementation Plans](../plans/README.md)
+- **Related**: [Consolidation Plan](./CONSOLIDATION_PLAN.md) for documentation improvements
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](./README.md) for guidance.
+
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
+**Navigation**: [← Back to Architecture Documentation](./README.md) · [→ Repository Overview](./REPOSITORY_OVERVIEW.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
