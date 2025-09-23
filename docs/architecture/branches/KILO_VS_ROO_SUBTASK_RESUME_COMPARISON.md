@@ -115,3 +115,30 @@ Tests (Kilo vs Roo)
 - Roo implemented the necessary rehydration/resume behavior and added tests around reconstruction—a stronger basis than Kilo had at the time of failure.
 - Both codebases still need a concurrency-safe selection model. Applying the Request Arbiter + idempotency + eligibility gates will harmonize behavior, prevent races, and keep navigation fixes.
 - Action: Port Kilo’s cleanup proposal (arbiter model, idempotency, policy) to Roo; keep Roo’s tests and add concurrency-specific tests.
+
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Architecture:**
+
+- **Next**: Check related architecture documentation in the same directory
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+
+**Implementing Architecture Features:**
+
+- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+**Troubleshooting Architecture Issues:**
+
+- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+
+---
+
+**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

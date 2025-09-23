@@ -2,6 +2,8 @@
 
 **Purpose:** High-level overview of the KiloCode repository organization and directory structure.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Executive Summary
 
 The KiloCode repository is a comprehensive VS Code extension for AI-powered coding assistance, featuring a multi-layered architecture with extensive tooling, testing, and deployment infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages, applications, and services.

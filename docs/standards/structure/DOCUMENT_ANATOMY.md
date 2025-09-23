@@ -208,6 +208,29 @@ The race condition occurs when both the main task loop and subtask completion ca
 The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
 ```
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Documentation Standards:**
+
+- **Next**: Check related standards documentation in the same directory
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+
+**Implementing Documentation Standards:**
+
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+**Applying Standards to Documentation:**
+
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) → [Architecture Documentation](../architecture/README.md) → [Orchestrator Documentation](../orchestrator/README.md)
+- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current issues
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Standards Documentation](README.md) for guidance.
+
 ### Navigation Footer
 
 **Format**: `<a id="navigation-footer"></a>` with back/root/source links

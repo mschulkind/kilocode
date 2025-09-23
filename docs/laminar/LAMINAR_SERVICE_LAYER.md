@@ -2,6 +2,8 @@
 
 **Purpose:** This document describes the LaminarService singleton implementation, detailing span lifecycle management, exception recording, telemetry integration, and the core infrastructure that enables observability across Kilo Code subsystems.
 
+> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates instant connections between distant parts of the system, allowing us to observe the entire state from any single point! ⚛️
+
 <details><summary>Table of Contents</summary>
 
 - [Overview](#overview)
@@ -381,3 +383,30 @@ try {
 <a id="navigation-footer"></a>
 
 - Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/LAMINAR_SERVICE_LAYER.md#L1`
+
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Laminar Observability:**
+
+- **Next**: Check related Laminar documentation in the same directory
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+
+**Implementing Observability Features:**
+
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+**Troubleshooting Observability Issues:**
+
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
+
+---
+
+**Navigation**: [← Back to Laminar Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

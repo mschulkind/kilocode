@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive overview of the build and CI/CD pipelines used in KiloCode.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Build System Overview
 
 KiloCode uses a sophisticated build system with multiple pipelines and deployment strategies:

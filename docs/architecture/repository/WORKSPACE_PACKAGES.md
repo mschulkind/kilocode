@@ -2,6 +2,8 @@
 
 **Purpose:** Detailed overview of the workspace packages and shared libraries in the KiloCode monorepo.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Package Overview
 
 The KiloCode monorepo contains 7 core packages that provide shared functionality across the entire codebase:

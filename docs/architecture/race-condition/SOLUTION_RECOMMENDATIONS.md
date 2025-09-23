@@ -2,6 +2,8 @@
 
 **Purpose:** Detailed recommendations for solving the API duplication race condition issue.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Solution Overview
 
 The race condition can be solved by implementing a **synchronization mechanism** that ensures only one `recursivelyMakeClineRequests` call executes at a time, regardless of whether it's called from the main task loop or subtask completion.

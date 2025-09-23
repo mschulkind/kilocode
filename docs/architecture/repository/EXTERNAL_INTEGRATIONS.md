@@ -2,6 +2,8 @@
 
 **Purpose:** Overview of external service integrations and third-party dependencies used in KiloCode.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Integration Overview
 
 KiloCode integrates with various external services and platforms to provide comprehensive functionality:
