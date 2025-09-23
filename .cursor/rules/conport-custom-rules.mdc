@@ -1,0 +1,155 @@
+---
+description: "Custom rules for Conport context portal system integration"
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Conport Custom Rules Template
+
+This file contains custom rules for the Conport context portal system. Add your specific rules below.
+
+## Project Context Rules
+
+### KiloCode Project Structure
+- This is a VS Code extension project with TypeScript/React frontend
+- Main source code is in `src/` directory
+- Webview UI is in `webview-ui/` directory
+- Uses monorepo structure with multiple packages
+- Follows existing patterns for services, API, and UI components
+
+### Code Style and Patterns
+- Use TypeScript with strict type checking
+- Follow existing naming conventions (camelCase for variables, PascalCase for classes)
+- Prefer composition over inheritance
+- Use async/await over promises when possible
+- Follow existing error handling patterns
+- Use existing logging utilities from the project
+
+### Architecture Guidelines
+- Follow the existing service architecture patterns
+- Use dependency injection where applicable
+- Maintain separation between UI, services, and core logic
+- Follow existing API patterns and interfaces
+- Use existing type definitions from `packages/types`
+
+### Testing Requirements
+- Write unit tests for new functionality
+- Follow existing test patterns and utilities
+- Use Vitest for testing framework
+- Maintain test coverage for critical paths
+
+### Conport-Specific Rules
+
+#### Context Portal Integration
+- Maintain compatibility with existing conport database schema
+- Follow existing vector data storage patterns
+- Use established conport API endpoints
+- Respect existing context portal authentication and permissions
+
+#### Data Handling
+- Follow existing data validation patterns
+- Use established error handling for database operations
+- Maintain data consistency and integrity
+- Follow existing logging patterns for debugging
+
+#### Performance Considerations
+- Optimize database queries for large datasets
+- Use appropriate indexing strategies
+- Implement caching where beneficial
+- Monitor and log performance metrics
+
+### Security Guidelines
+- Follow existing authentication patterns
+- Validate all input data
+- Use existing authorization mechanisms
+- Follow secure coding practices
+- Sanitize user inputs appropriately
+
+### Documentation Requirements
+- Update relevant documentation when making changes
+- Follow existing documentation patterns
+- Include code comments for complex logic
+- Update API documentation as needed
+
+## Custom Rules
+
+### ConPort Integration Rules
+
+#### Context Management
+- Rule: Use `mcp_conport_get_product_context` to retrieve current project context before making changes
+- Rule: Use `mcp_conport_get_active_context` to understand current working focus and recent changes
+- Rule: Log important decisions using `mcp_conport_log_decision` with proper tags and rationale
+- Rule: Track progress using `mcp_conport_log_progress` for complex tasks and features
+
+#### Data Storage and Retrieval
+- Rule: Use `mcp_conport_log_custom_data` for storing project-specific configuration and metadata
+- Rule: Use `mcp_conport_get_custom_data` to retrieve stored project data
+- Rule: Organize custom data by categories (e.g., 'ProjectGlossary', 'Architecture', 'Dependencies')
+- Rule: Use semantic search (`mcp_conport_semantic_search_conport`) for finding relevant context
+
+#### System Patterns and Documentation
+- Rule: Log reusable patterns using `mcp_conport_log_system_pattern` for common coding patterns
+- Rule: Use `mcp_conport_get_system_patterns` to retrieve established patterns before implementing new features
+- Rule: Link related items using `mcp_conport_link_conport_items` to build knowledge graphs
+- Rule: Export context using `mcp_conport_export_conport_to_markdown` for documentation
+
+#### Known Issues and Workarounds
+- Rule: **PATCH_CONTENT ISSUE**: The `mcp_conport_update_product_context` and `mcp_conport_update_active_context` tools have a bug where `patch_content` parameter is not properly deserialized
+- Rule: **WORKAROUND**: Use `content` parameter with full context object instead of `patch_content` for partial updates
+- Rule: **ALTERNATIVE**: Use `mcp_conport_log_custom_data` to store incremental updates and merge them when needed
+
+#### Database Operations
+- Rule: Always use transactions for multi-step database operations
+- Rule: Validate data before database insertion/updates
+- Rule: Use ConPort's built-in data validation patterns
+
+#### API Endpoints
+- Rule: Follow RESTful conventions
+- Rule: Include proper error handling and status codes
+- Rule: Use ConPort's logging patterns for API calls
+
+#### UI Components
+- Rule: Use existing design system components
+- Rule: Follow accessibility guidelines
+- Rule: Implement proper loading and error states
+- Rule: Log UI patterns in ConPort for reuse
+
+#### Error Handling
+- Rule: Use structured error objects
+- Rule: Log errors with appropriate context using ConPort logging
+- Rule: Provide user-friendly error messages
+- Rule: Track error patterns using ConPort custom data
+
+#### Performance
+- Rule: Implement pagination for large data sets
+- Rule: Use lazy loading where appropriate
+- Rule: Optimize database queries
+- Rule: Log performance metrics in ConPort for analysis
+
+#### Security
+- Rule: Validate all user inputs
+- Rule: Use parameterized queries
+- Rule: Implement rate limiting where needed
+- Rule: Log security-related decisions in ConPort
+
+## Usage Instructions
+
+1. Replace the "Your Custom Rules Here" section with your specific rules
+2. Organize rules by category (Database, API, UI, etc.)
+3. Use clear, actionable language for each rule
+4. Update rules as the project evolves
+5. Keep rules focused and specific to your use case
+
+## Rule Format
+
+Each rule should follow this format:
+```markdown
+- Rule: [Clear, actionable description of what to do or avoid]
+```
+
+Or for more complex rules:
+```markdown
+### [Category Name]
+- Rule: [Description]
+- Rule: [Another description]
+```
