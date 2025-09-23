@@ -6,9 +6,20 @@ Welcome to the KiloCode documentation! 🦕 This is your central hub for underst
 
 ### Quick Start Paths
 
-- **Emergency Response**: Start with [Architecture Documentation](architecture/README.md) for critical issues and race conditions
-- **Deep Dive Research**: Begin with [Documentation Standards](DOCUMENTATION_GUIDE.md) for understanding our documentation approach
-- **Implementation Journey**: Follow the [Plans](plans/README.md) for active investigations and development work
+- **🚨 Emergency Response**: Start with [Race Condition Analysis](architecture/race-condition/README.md) for critical API duplication issues
+- **🔬 Deep Dive Research**: Begin with [Architecture Overview](architecture/README.md) for system understanding
+- **🛠️ Implementation Journey**: Follow the [Investigation Plans](plans/README.md) for active development work
+- **📚 New to Codebase**: Start with [Technical Glossary](GLOSSARY.md) for terminology, then [Repository Overview](architecture/repository/README.md)
+
+### Expert Engineer Onboarding
+
+**For experienced engineers new to KiloCode:**
+
+1. **Start Here**: [Technical Glossary](GLOSSARY.md) - Essential terminology and concepts
+2. **System Overview**: [Architecture Documentation](architecture/README.md) - High-level system design
+3. **Current Issues**: [Race Condition Analysis](architecture/race-condition/README.md) - Active problems and solutions
+4. **Implementation**: [Orchestrator Documentation](orchestrator/README.md) - Core execution patterns
+5. **Development**: [Repository Structure](architecture/repository/README.md) - Codebase organization
 
 ### Current Focus
 
@@ -69,11 +80,45 @@ This directory serves as the central repository for all KiloCode documentation, 
 
 The documentation follows our established standards for discoverability, linkability, and user journey optimization.
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding System Architecture:**
+
+- **Next**: [Architecture Overview](architecture/README.md) → [State Machines](architecture/state-machines/README.md) → [Race Condition Analysis](architecture/race-condition/README.md)
+- **Related**: [Orchestrator Documentation](orchestrator/README.md) for execution patterns
+
+**Investigating Issues:**
+
+- **Next**: [Race Condition Analysis](architecture/race-condition/README.md) → [Root Cause Analysis](architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Investigation Plans](plans/README.md) for active debugging work
+
+**Implementing Solutions:**
+
+- **Next**: [Solution Recommendations](architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) → [Testing Strategy](architecture/race-condition/TESTING_STRATEGY.md) → [Implementation Guide](architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- **Related**: [Orchestrator Best Practices](orchestrator/ORCHESTRATOR_BEST_PRACTICES.md)
+
+**Understanding Codebase:**
+
+- **Next**: [Repository Overview](architecture/repository/README.md) → [Core Systems](architecture/repository/CORE_SYSTEMS.md) → [Source Code](../src/)
+- **Related**: [Build Pipelines](architecture/repository/BUILD_PIPELINES.md) for development workflow
+
+### No Dead Ends Policy
+
+Every documentation page provides:
+
+- **Clear next steps** based on your current context
+- **Related concepts** for deeper understanding
+- **Cross-references** to relevant implementation details
+- **Breadcrumb navigation** showing your current location
+
 ## 🔗 Cross-References
 
 - **Source Code**: See [../src/](../src/) for implementation details
 - **Configuration**: See [../packages/](../packages/) for package configurations
 - **Context Portal**: See [../context_portal/](../context_portal/) for ConPort integration
+- **Technical Terms**: See [Technical Glossary](GLOSSARY.md) for definitions and concepts
 
 ## 🦕 Dinosaur Analogy
 
