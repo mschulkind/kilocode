@@ -14,6 +14,7 @@
 
 | Document                                                                     | Description                                                      | Priority    |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------- |
+| **[GETTING_STARTED.md](GETTING_STARTED.md)**                                 | Complete setup and development guide for new contributors        | 🔴 Critical |
 | **[SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md)**                                 | Complete system architecture and component overview              | 🔴 Critical |
 | **[REPOSITORY_OVERVIEW.md](REPOSITORY_OVERVIEW.md)**                         | Repository structure, packages, and organization                 | 🔴 Critical |
 | **[EXTERNAL_DEPENDENCIES.md](EXTERNAL_DEPENDENCIES.md)**                     | Comprehensive catalog of all external dependencies and libraries | 🟡 High     |
@@ -26,7 +27,7 @@
 
 | Document                                                           | Description                      | Layer               |
 | ------------------------------------------------------------------ | -------------------------------- | ------------------- |
-| **[UI_LAYER_SYSTEM.md](UI_LAYER_SYSTEM.md)**                       | UI components and interactions   | UI Layer            |
+| **[UI Layer System](../ui/UI_LAYER_SYSTEM.md)**                    | UI components and interactions   | UI Layer            |
 | **[COMMUNICATION_LAYER_SYSTEM.md](COMMUNICATION_LAYER_SYSTEM.md)** | UI-backend communication         | Communication Layer |
 | **[ORCHESTRATION_LAYER_SYSTEM.md](ORCHESTRATION_LAYER_SYSTEM.md)** | Task management and coordination | Orchestration Layer |
 | **[PROVIDER_LAYER_SYSTEM.md](PROVIDER_LAYER_SYSTEM.md)**           | External API communication       | Provider Layer      |
@@ -53,6 +54,7 @@
 
 **🎯 Quick Navigation:**
 
+- **New to KiloCode?** → Start with [GETTING_STARTED.md](GETTING_STARTED.md)
 - **New to Architecture?** → Start with [SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md)
 - **Understanding Layers?** → Review [Layer-Specific Architecture](#system-architecture-layers)
 - **Troubleshooting Issues?** → Check [Critical Issues & Analysis](#critical-issues--analysis)
@@ -60,7 +62,7 @@
 
 **📊 Documentation Status:**
 
-- **Total Documents:** 10
+- **Total Documents:** 11
 - **Coverage:** 100%
 - **Last Updated:** $(date)
 
