@@ -34,58 +34,48 @@ Automate repetitive doc tasks with a small, composable toolchain:
 
 ### TOC Generation
 
-- doctoc (CLI)
+- [doctoc](https://github.com/thlorenz/doctoc) (CLI)
     - Pros: Simple, fast, works in-place
     - Cons: Less configurable formatting
-    - Link: `https://github.com/thlorenz/doctoc`
-- remark-toc (Node/remark)
+- [remark-toc](https://github.com/remarkjs/remark-toc) (Node/remark)
     - Pros: Part of unified/remark pipeline, customizable
     - Cons: Requires Node pipeline setup
-    - Link: `https://github.com/remarkjs/remark-toc`
 
 ### Link Checking
 
-- lychee (Rust CLI, GitHub Action)
+- [lychee](https://github.com/lycheeverse/lychee) (Rust CLI, [GitHub Action](https://github.com/lycheeverse/lychee-action))
     - Pros: Very fast, robust ignore rules, great CI action
     - Cons: Rust binary dependency
-    - Link: `https://github.com/lycheeverse/lychee` · `https://github.com/lycheeverse/lychee-action`
-- markdown-link-check (Node)
+- [markdown-link-check](https://github.com/tcort/markdown-link-check) (Node)
     - Pros: Simple, JSON config
     - Cons: Slower, less robust vs lychee
-    - Link: `https://github.com/tcort/markdown-link-check`
 
 ### Prose/Style Linting
 
-- Vale (Prose linter)
+- [Vale](https://vale.sh/) (Prose linter)
     - Pros: Customizable styles, tech writing rules, CI ready
     - Cons: Style authoring effort
-    - Link: `https://vale.sh/`
-- markdownlint (MD style)
+- [markdownlint](https://github.com/DavidAnson/markdownlint-cli2) (MD style)
     - Pros: Enforces Markdown best practices, quick fixes
     - Cons: Not prose-aware
-    - Link: `https://github.com/DavidAnson/markdownlint-cli2`
 
 ### Templating: Footers/Headers/Blocks
 
-- remark + plugins (e.g., remark-directive, remark-frontmatter)
+- [remark](https://github.com/remarkjs/remark) + plugins (e.g., remark-directive, remark-frontmatter)
     - Pros: Scriptable Markdown transforms (inject nav footers across files)
     - Cons: Build a small pipeline
-    - Link: `https://github.com/remarkjs/remark`
-- MkDocs + mkdocs-macros-plugin
+- [MkDocs](https://www.mkdocs.org/) + [mkdocs-macros-plugin](https://mkdocs-macros-plugin.readthedocs.io/)
     - Pros: Robust templating, partials, variables, build-time includes
     - Cons: External site build; not in-place file edits
-    - Link: `https://www.mkdocs.org/` · `https://mkdocs-macros-plugin.readthedocs.io/`
-- Static site generators (Docusaurus, VitePress)
+- Static site generators ([Docusaurus](https://docusaurus.io/), [VitePress](https://vitepress.dev/))
     - Pros: Full theme control, powerful plugin ecosystems
     - Cons: Heavier; diverges from plain Markdown in-repo
-    - Links: `https://docusaurus.io/`, `https://vitepress.dev/`
 
 ### Diagram Validation
 
-- mermaid-cli
+- [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)
     - Pros: Catch syntax errors early by attempting renders
     - Cons: Requires Node/Playwright deps
-    - Link: `https://github.com/mermaid-js/mermaid-cli`
 
 ### Cross-File Consistency Checks
 
