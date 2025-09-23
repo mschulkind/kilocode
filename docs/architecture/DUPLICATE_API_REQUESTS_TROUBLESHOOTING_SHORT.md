@@ -1,0 +1,85 @@
+# Duplicate API Requests Troubleshooting (Short)
+
+Purpose: Fast, field-ready triage for multiple spinners / jumbled responses.
+
+## Triage Flow
+
+1. Observe symptoms
+
+- Multiple spinners at once
+- Responses out of order / corrupted XML
+- Often after subtask completion
+
+2. Collect quick data
+
+- Check DevTools/console for JSON logs with `Task.recursivelyMakeClineRequests`
+- Capture reasons: main-loop | subtask-completion | user-request
+- Note timestamps for overlaps
+
+3. Identify scenario
+
+- Two-request race: main-loop + subtask-completion close together
+- Three-request race: add user-request after premature green text
+
+4. Confirm lock status
+
+- If lock enabled: expect no overlaps, only queued waits
+- If lock disabled: expect overlaps (bug)
+
+## Quick Fixes
+
+- Enable lock feature flag for `recursivelyMakeClineRequests`
+- Restart the chat session if corruption occurred
+- If three-request variant triggered, avoid immediate resend; wait for UI to settle
+
+## Where It Breaks
+
+- Parent and subtask both calling `recursivelyMakeClineRequests` concurrently
+- Introduced by navigation recovery change (`continueParentTask`)
+
+## Minimal Commands / Checks
+
+- Grep for call starts:
+
+```bash
+rg 'Task.recursivelyMakeClineRequests".*"start"' src webview-ui | cat
+```
+
+- Verify single active span per task in Laminar
+- Inspect UI flags: `sendingDisabled`, `isStreaming` transitions
+
+## Instrumentation Essentials
+
+- Use the SHORT debug implementation: `API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md`
+- Tag every call with `reason`
+- Record `start`, `end`, `duration_ms`, `queue_wait_ms`
+
+## Known Triggers
+
+- Subtask completes and parent continues in background (same chat)
+- Subtask prematurely thinks it's done (green text), then user resends
+- Navigation away/back resumes parent (intended), but can overlap without lock
+
+## Decision Tree
+
+- Overlap detected?
+
+    - Yes → Lock missing/misconfigured → Enable lock, retest
+    - No → Investigate jumbled UI rendering, ordering logic, or tool result routing
+
+- Triple overlap?
+    - Yes → Confirm premature completion; educate UI flow; add guard to suppress extra calls when `green end` recently emitted
+
+## Preventive Measures
+
+- Keep lock permanently for recursive calls
+- Add idempotent guards on parent resume when already running
+- CI test for overlap (see `TESTING_STRATEGY.md`)
+
+## Links
+
+- [Root Cause Analysis of Duplicate API Requests](./race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [Code Flow and Execution Analysis](./race-condition/CODE_FLOW_ANALYSIS.md)
+- [Solution Options and Synchronization Strategies](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [Testing Strategy and Validation Plan](./race-condition/TESTING_STRATEGY.md)
+- [Prevention and Monitoring Measures](./race-condition/PREVENTION_MEASURES.md)

@@ -19,9 +19,9 @@
 
 **New to KiloCode?** Start here:
 
+- 🚀 **[Getting Started Guide](architecture/GETTING_STARTED.md)** - Complete setup and development guide
 - 🏗️ **[System Architecture](architecture/SYSTEM_OVERVIEW.md)** - High-level system overview
 - 📚 **[Repository Overview](architecture/REPOSITORY_OVERVIEW.md)** - Repository structure and organization
-- 🚀 **[Getting Started Guide](architecture/GETTING_STARTED.md)** - Quick start and setup _(planned)_
 
 **Common Tasks:**
 
@@ -33,6 +33,7 @@
 
 | Document                                                                               | Description                                                      | Status      |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------- |
+| **[Getting Started Guide](architecture/GETTING_STARTED.md)**                           | Complete setup and development guide for new contributors        | ✅ Complete |
 | **[System Overview](architecture/SYSTEM_OVERVIEW.md)**                                 | Complete system architecture and component overview              | ✅ Complete |
 | **[Repository Overview](architecture/REPOSITORY_OVERVIEW.md)**                         | Repository structure, packages, and organization                 | ✅ Complete |
 | **[External Dependencies](architecture/EXTERNAL_DEPENDENCIES.md)**                     | Comprehensive catalog of all external dependencies and libraries | ✅ Complete |
@@ -103,11 +104,11 @@
 
 ### External System Integrations
 
-| Document                                                     | Description                             | Status      |
-| ------------------------------------------------------------ | --------------------------------------- | ----------- |
-| **[Tree Sitter](integrations/TREE_SITTER_SERVICE.md)**       | Code parsing and language analysis      | ✅ Complete |
-| **[Browser Automation](integrations/BROWSER_AUTOMATION.md)** | Web interaction and automation          | ✅ Complete |
-| **[Shell Integration](integrations/SHELL_INTEGRATION.md)**   | Shell integration and command execution | ✅ Complete |
+| Document                                                         | Description                               | Status      |
+| ---------------------------------------------------------------- | ----------------------------------------- | ----------- |
+| **[Tree Sitter](integrations/TREE_SITTER_SERVICE.md)**           | Code parsing and language analysis        | ✅ Complete |
+| **[Browser Automation](integrations/BROWSER_AUTOMATION.md)**     | Web interaction and automation            | ✅ Complete |
+| **[Terminal Integration](integrations/TERMINAL_INTEGRATION.md)** | Terminal management and shell integration | ✅ Complete |
 
 ## Development
 
@@ -159,7 +160,7 @@
 
 - Start with [System Overview](architecture/SYSTEM_OVERVIEW.md)
 - Review [Tool System Architecture](tools/TOOL_SYSTEM_ARCHITECTURE.md)
-- Check [Contributing Guidelines](development/CONTRIBUTING.md) _(planned)_
+- Check [Documentation Guide](DOCUMENTATION_GUIDE.md) for contribution standards
 
 **🔧 System Administrator:**
 

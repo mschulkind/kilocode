@@ -146,7 +146,7 @@ To keep documentation synchronized with the codebase, follow these principles:
 1.  **Atomic Commits:** All code changes that affect Orchestrator logic MUST be accompanied by corresponding documentation updates in the same commit.
 2.  **Symbol Link Integrity:** When refactoring, ensure all clickable code references like [`initiateTaskLoop`](/src/core/task/Task.ts#L1699) are updated with correct line numbers.
 3.  **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid diagrams.
-4.  **Rules as Policy:** For automated verification of documentation rules, consider adding checks inspired by `docs/RULES_LOADING_SUMMARY.md`.
+4.  **Rules as Policy:** For automated verification of documentation rules, consider adding checks inspired by the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
 
 ---
 

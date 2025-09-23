@@ -518,4 +518,4 @@ export class BridgeOrchestrator {
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/services/CLOUD_SERVICES_ARCHITECTURE.md#L1`
+- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/services/CLOUD_SERVICES_ARCHITECTURE.md#L1`

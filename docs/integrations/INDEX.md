@@ -8,7 +8,7 @@
 - [External System Integrations](#external-system-integrations)
 - [Integration Categories](#integration-categories)
 - [Navigation](#navigation)
-      </details>
+    </details>
 
 ## Development Environment Integrations
 
@@ -20,11 +20,11 @@
 
 ## External System Integrations
 
-| Document                                             | Description                             | System Type   |
-| ---------------------------------------------------- | --------------------------------------- | ------------- |
-| **[TREE_SITTER_SERVICE.md](TREE_SITTER_SERVICE.md)** | Code parsing and language analysis      | Code Analysis |
-| **[BROWSER_AUTOMATION.md](BROWSER_AUTOMATION.md)**   | Web interaction and automation          | Web Browser   |
-| **[SHELL_INTEGRATION.md](SHELL_INTEGRATION.md)**     | Shell integration and command execution | Shell/CLI     |
+| Document                                               | Description                             | System Type   |
+| ------------------------------------------------------ | --------------------------------------- | ------------- |
+| **[TREE_SITTER_SERVICE.md](TREE_SITTER_SERVICE.md)**   | Code parsing and language analysis      | Code Analysis |
+| **[BROWSER_AUTOMATION.md](BROWSER_AUTOMATION.md)**     | Web interaction and automation          | Web Browser   |
+| **[TERMINAL_INTEGRATION.md](TERMINAL_INTEGRATION.md)** | Shell integration and command execution | Shell/CLI     |
 
 ## Integration Categories
 
@@ -40,7 +40,7 @@
 | Document                                               | Description                | Features                                                 |
 | ------------------------------------------------------ | -------------------------- | -------------------------------------------------------- |
 | **[TERMINAL_INTEGRATION.md](TERMINAL_INTEGRATION.md)** | Terminal management system | Process management, shell integration, command execution |
-| **[SHELL_INTEGRATION.md](SHELL_INTEGRATION.md)**       | Shell integration features | Command execution, safety controls, timeout management   |
+| **[TERMINAL_INTEGRATION.md](TERMINAL_INTEGRATION.md)** | Shell integration features | Command execution, safety controls, timeout management   |
 
 ### 🔍 Code Analysis Integrations
 

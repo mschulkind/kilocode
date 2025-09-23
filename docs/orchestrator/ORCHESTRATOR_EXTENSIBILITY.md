@@ -22,7 +22,7 @@
 
 - **[ORCHESTRATOR_INDEX.md](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator documentation.
 - **[ORCHESTRATOR_BEST_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices for developing new tools and modes.
-- **[docs/RULES_LOADING_SUMMARY.md](RULES_LOADING_SUMMARY.md)**: Provides a detailed look at the rule-loading mechanism.
+- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
 
@@ -93,7 +93,7 @@ These rule files are injected directly into the system prompt via [`getSystemPro
 - "All new components must be registered in `src/components/index.ts`."
 - "API calls to the billing service must be routed through the `BillingAPIClient`."
 
-For a complete overview of how these rules are discovered and loaded, please refer to **[docs/RULES_LOADING_SUMMARY.md](RULES_LOADING_SUMMARY.md)**.
+For a complete overview of how these rules are discovered and loaded, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
 

@@ -447,4 +447,4 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/testing/TESTING_STRATEGY.md#L1`
+- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/testing/TESTING_STRATEGY.md#L1`

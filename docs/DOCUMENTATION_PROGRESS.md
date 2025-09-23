@@ -83,7 +83,7 @@ _This document provides a comprehensive overview of the documentation progress f
 
 #### External System Integrations
 
-- **`SHELL_INTEGRATION.md`** - Shell integration and command execution
+- **`TERMINAL_INTEGRATION.md`** - Terminal management and shell integration
 
 ### UI/UX Systems (3/3 Complete)
 

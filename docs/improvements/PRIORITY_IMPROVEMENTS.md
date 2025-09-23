@@ -272,4 +272,4 @@ _This document catalogs all improvement opportunities identified through compreh
 
 <a id="navigation-footer"></a>
 
-- Back: [`IMPROVEMENT_LOG.md`](../IMPROVEMENT_LOG.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/improvements/PRIORITY_IMPROVEMENTS.md#L1`
+- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/improvements/PRIORITY_IMPROVEMENTS.md#L1`

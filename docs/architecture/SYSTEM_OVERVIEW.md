@@ -130,7 +130,7 @@ graph TB
 **Documentation**:
 
 - [`COMMUNICATION_LAYER_SYSTEM.md`](COMMUNICATION_LAYER_SYSTEM.md)
-- [`UI_LAYER_SYSTEM.md`](UI_LAYER_SYSTEM.md)
+- [`UI_LAYER_SYSTEM.md`](../ui/UI_LAYER_SYSTEM.md)
 
 ### 3. Message Queue System (`src/core/message-queue/`) ✅ **FULLY DOCUMENTED**
 
@@ -484,8 +484,8 @@ graph TB
 
 **Documentation**:
 
-- [`UI_LAYER_SYSTEM.md`](UI_LAYER_SYSTEM.md)
-- [`UI_MESSAGE_FLOW_SYSTEM.md`](UI_MESSAGE_FLOW_SYSTEM.md)
+- [`UI_LAYER_SYSTEM.md`](../ui/UI_LAYER_SYSTEM.md)
+- [`UI_MESSAGE_FLOW_SYSTEM.md`](../ui/UI_MESSAGE_FLOW_SYSTEM.md)
 
 ## Testing & Quality Assurance
 
@@ -693,4 +693,4 @@ graph TB
 
 <a id="navigation-footer"></a>
 
-- Back: [`REPOSITORY_OVERVIEW.md`](REPOSITORY_OVERVIEW.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/SYSTEM_OVERVIEW.md#L1`
+- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
