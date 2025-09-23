@@ -351,4 +351,4 @@ interface StreamProcessor {
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/integrations/TERMINAL_INTEGRATION.md#L1`
+- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/integrations/TERMINAL_INTEGRATION.md#L1`

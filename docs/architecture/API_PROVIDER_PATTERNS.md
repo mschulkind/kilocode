@@ -430,4 +430,4 @@ interface ProviderConfiguration {
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/architecture/API_PROVIDER_PATTERNS.md#L1`
+- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/architecture/API_PROVIDER_PATTERNS.md#L1`

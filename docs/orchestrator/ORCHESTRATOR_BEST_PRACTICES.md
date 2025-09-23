@@ -22,7 +22,7 @@
 
 - **[ORCHESTRATOR_INDEX.md](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator documentation.
 - **[ORCHESTRATOR_EXTENSIBILITY.md](ORCHESTRATOR_EXTENSIBILITY.md)**: Provides the technical details for creating new tools and modes.
-- **[docs/RULES_LOADING_SUMMARY.md](RULES_LOADING_SUMMARY.md)**: Explains how to define and use workspace-specific rules.
+- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-best-practices)
 

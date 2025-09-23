@@ -9,7 +9,7 @@
 - [Integration Services](#integration-services)
 - [Specialized Services](#specialized-services)
 - [Navigation](#navigation)
-      </details>
+    </details>
 
 ## Core Services
 
@@ -39,11 +39,11 @@
 
 ## Specialized Services
 
-| Document                                                               | Description                          | Specialization |
-| ---------------------------------------------------------------------- | ------------------------------------ | -------------- |
-| **[LAMINAR_DEDUPLICATION_SYSTEM.md](LAMINAR_DEDUPLICATION_SYSTEM.md)** | Laminar service deduplication        | Performance    |
-| **[UI_MESSAGE_FLOW_SYSTEM.md](UI_MESSAGE_FLOW_SYSTEM.md)**             | UI message flow and state management | UI             |
-| **[TASK_LIFECYCLE_DEDUPLICATION.md](TASK_LIFECYCLE_DEDUPLICATION.md)** | Task lifecycle and message queue     | Orchestration  |
+| Document                                                                               | Description                          | Specialization |
+| -------------------------------------------------------------------------------------- | ------------------------------------ | -------------- |
+| **[LAMINAR_DEDUPLICATION_SYSTEM.md](../laminar/LAMINAR_DEDUPLICATION_SYSTEM.md)**      | Laminar service deduplication        | Performance    |
+| **[UI_MESSAGE_FLOW_SYSTEM.md](../ui/UI_MESSAGE_FLOW_SYSTEM.md)**                       | UI message flow and state management | UI             |
+| **[TASK_LIFECYCLE_DEDUPLICATION.md](../architecture/TASK_LIFECYCLE_DEDUPLICATION.md)** | Task lifecycle and message queue     | Orchestration  |
 
 ## Service Categories
 
@@ -66,8 +66,8 @@
 
 ### 📊 Performance & Optimization
 
-- **[LAMINAR_DEDUPLICATION_SYSTEM.md](LAMINAR_DEDUPLICATION_SYSTEM.md)** - Performance optimization
-- **[TASK_LIFECYCLE_DEDUPLICATION.md](TASK_LIFECYCLE_DEDUPLICATION.md)** - Queue optimization
+- **[LAMINAR_DEDUPLICATION_SYSTEM.md](../laminar/LAMINAR_DEDUPLICATION_SYSTEM.md)** - Performance optimization
+- **[TASK_LIFECYCLE_DEDUPLICATION.md](../architecture/TASK_LIFECYCLE_DEDUPLICATION.md)** - Queue optimization
 
 ## Navigation
 
