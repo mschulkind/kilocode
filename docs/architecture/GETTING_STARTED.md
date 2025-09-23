@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive guide for new developers, contributors, and users to understand and get started with KiloCode development.
 
+> **Cartography Fun Fact**: Getting started with KiloCode is like learning to read a map - once you understand the landmarks (core concepts), routes (development workflow), and compass (testing), you can navigate anywhere in the codebase! 🗺️
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
@@ -777,6 +779,34 @@ console.log("Debug info:", debugData)
 
 Happy coding! 🚀
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**New to KiloCode Development:**
+
+- **Next**: [System Overview](./SYSTEM_OVERVIEW.md) → [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](./repository/CORE_SYSTEMS.md)
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) for advanced topics
+
+**Setting Up Development Environment:**
+
+- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
+- **Related**: [External Dependencies](./EXTERNAL_DEPENDENCIES.md) for dependency management
+
+**Understanding Current Issues:**
+
+- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
+
+**Contributing to KiloCode:**
+
+- **Next**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) → [Testing Strategy](./race-condition/TESTING_STRATEGY.md) → [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- **Related**: [Investigation Plans](../plans/README.md) for active development work
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](./README.md) for guidance.
+
 <a id="navigation-footer"></a>
 
-- Back: [`REPOSITORY_OVERVIEW.md`](REPOSITORY_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/architecture/GETTING_STARTED.md#L1`
+**Navigation**: [← Back to Architecture Documentation](./README.md) · [→ System Overview](./SYSTEM_OVERVIEW.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
