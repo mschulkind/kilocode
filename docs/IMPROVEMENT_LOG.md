@@ -248,3 +248,64 @@ Every page provides clear next steps based on your research goals. If you're uns
 ---
 
 **Navigation**: [← Back to Documentation Hub](../../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+
+## Recent Documentation Overhaul (Completed)
+
+### Summary of Changes
+
+- Implemented the "No Dead Ends Policy" across all docs with Research Context & Next Steps sections.
+- Added navigation footers with links back to directory `README.md`, the glossary, and local TOCs.
+- Enhanced expert-onboarding flow: quick-start paths, cross-links, and glossary proximity improvements.
+- Split/rewrote large pages into focused files where appropriate; added `README.md` indices for all dirs.
+- Fixed Mermaid syntax and standardized code block formatting and link text.
+
+### Highlights by Area
+
+- Architecture: Core overviews, provider patterns, communication layer, system overview, getting started.
+- Orchestrator: Lifecycle, architecture, best practices, error handling; linked to race-condition docs.
+- Race Condition: Split into modular pages with state machines and scenario analyses.
+- Laminar: Added observability framing and navigation improvements across all subsystem docs.
+- Standards: Introduced structured standards tree and cross-linking policies; enforced descriptive anchors.
+
+### Follow-ups (Nice-to-have)
+
+- Standardize all Mermaid diagrams to a shared theme and lint with a CI step.
+- Add per-directory badges (coverage of nav, glossary links, TOC presence) via CI reports.
+
+## Split/Merge Proposals (Readability & Clarity)
+
+Note: Proposals may exceed the 200–300 line guideline where it improves comprehension.
+
+- docs/architecture/SYSTEM_OVERVIEW.md (merge):
+
+    - Merge selected sections from `REPOSITORY_OVERVIEW.md` to reduce duplication about high-level layers.
+    - Keep deep repository internals in `repository/` subdocs; link from overview.
+
+- docs/architecture/repository (split):
+
+    - Split `DEVELOPMENT_GUIDE.md` into: `WORKFLOWS.md` (day-to-day), `ENVIRONMENTS.md` (local/CI), `DEBUGGING.md`.
+    - Move package-specific content into per-package stubs in each workspace package README and link back.
+
+- docs/orchestrator (merge):
+
+    - Fold repeated lifecycle narration in `ORCHESTRATOR_ARCHITECTURE.md` into `ORCHESTRATOR_LIFECYCLE.md` and keep a short architectural overview; cross-link for depth.
+
+- docs/architecture/race-condition (split):
+
+    - Extract "Green text / end-of-turn semantics" to `TURN_SEMANTICS.md` referenced by state machines and UI message flow.
+    - Extract "Triple concurrent variant" into `TRIPLE_CONCURRENT_CASE.md` with focused reproduction and mitigations.
+
+- docs/laminar (merge):
+
+    - Combine `LAMINAR_SPAN_NESTING.md` and `LAMINAR_SPAN_NESTING_SYSTEM.md` into a single authoritative page.
+
+- docs/standards (split):
+
+    - Move checklists from `STRUCTURE_VALIDATION.md` into `checklists/` as atomic checklists; keep summary in the parent file.
+
+- docs/ui (merge):
+
+    - Consolidate `UI_MESSAGE_FLOW_SYSTEM.md` and overlapping parts of `UI_LAYER_SYSTEM.md`; keep `UI_CHAT_TASK_WINDOW.md` focused on UX semantics and turns.
+
+- docs/services (split):
+    - Split `PROMPT_SYSTEM.md` into `PROMPT_TEMPLATE_MODEL.md` and `PROMPT_RUNTIME_PIPELINE.md` for clearer mental model.
