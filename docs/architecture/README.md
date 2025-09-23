@@ -14,18 +14,40 @@ The architecture directory contains comprehensive documentation for understandin
 - **State Machines** - Task, Session, and Recursive Call state management
 - **Architectural Improvements** - Prioritized roadmap for system enhancements
 
-## Quick Start
+## 🚀 Quick Start Paths
 
-- [Race Condition Analysis (Master Index)](./API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-  Master entry point summarizing the duplicate-API-request problem, symptoms, and links to detailed state machines, flows, and mitigations. Read this first to understand the overall landscape. It also contains navigation for emergency response, deep dives, and implementation journeys.
-- [Short Debug Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
-  A concise playbook to instrument, reproduce, and verify race conditions with minimal code changes. Includes logging snippets, span guidance, and quick checks. Use during active triage.
-- [Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md)
-  Field triage checklist for multi-spinner/jumbled-response incidents. Walks through scenario identification, lock status, and quick mitigations. Includes links to deeper analysis.
-- [State Machines Index and Diagrams](./state-machines/INDEX.md)
-  Central index for Task, Session, Recursive Call, and Race-Condition state machines. Each page explains states, transitions, and diagrams with notes. Use as the source of truth for runtime behavior.
-- [Repository Overview (Master Index)](./REPOSITORY_OVERVIEW.md)
-  High-level map of major systems, packages, and applications. Explains monorepo structure and links to focused repository documentation. Ideal to orient new contributors.
+### For Expert Engineers New to KiloCode
+
+**Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology before diving deeper
+
+**Then Choose Your Path:**
+
+1. **🚨 Emergency Response** (Something's Broken)
+
+    - [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+    - [Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) for immediate triage
+
+2. **🔬 Deep Dive Research** (Understanding the System)
+
+    - [Repository Overview](./repository/README.md) → [Core Systems](./repository/CORE_SYSTEMS.md) → [State Machines](./state-machines/README.md)
+    - [Race Condition Analysis](./race-condition/README.md) for current issues
+
+3. **🛠️ Implementation Journey** (Building Solutions)
+    - [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md) → [Testing Strategy](./race-condition/TESTING_STRATEGY.md) → [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+
+## 📚 Core Documentation
+
+### Critical Analysis & Current Issues
+
+- **[Race Condition Analysis](./race-condition/README.md)** - Master index for API duplication issues, symptoms, and solutions
+- **[Short Debug Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)** - Concise playbook for instrumentation and verification
+- **[Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md)** - Field triage checklist for incidents
+
+### System Understanding
+
+- **[State Machines](./state-machines/README.md)** - Task, Session, and Recursive Call state definitions and transitions
+- **[Repository Overview](./repository/README.md)** - High-level system map and monorepo structure
+- **[Core Systems](./repository/CORE_SYSTEMS.md)** - Detailed breakdown of major system components
 
 ## Planning & Improvements
 
@@ -34,16 +56,42 @@ The architecture directory contains comprehensive documentation for understandin
 - [Branch Analyses and Proposals](./branches/README.md)
   Index of branch-specific analyses, proposals, and cross-fork comparisons. Useful for reviewing historical context and the rationale for corrective PRs. Links include detailed before/after diffs.
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Race Conditions:**
+
+- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Code Flow Analysis](./race-condition/CODE_FLOW_ANALYSIS.md)
+- **Related**: [State Machines](./state-machines/README.md) for behavior modeling, [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
+
+**Understanding System Architecture:**
+
+- **Next**: [Repository Overview](./repository/README.md) → [Core Systems](./repository/CORE_SYSTEMS.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
+- **Related**: [State Machines](./state-machines/README.md) for runtime behavior, [Technical Glossary](../GLOSSARY.md) for terminology
+
+**Implementing Solutions:**
+
+- **Next**: [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md) → [Testing Strategy](./race-condition/TESTING_STRATEGY.md) → [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- **Related**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md), [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md)
+
+**Planning Improvements:**
+
+- **Next**: [Prioritized Architecture Improvements](./PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md) → [Branch Analyses](./branches/README.md) → [Implementation Plans](../plans/README.md)
+- **Related**: [Consolidation Plan](./CONSOLIDATION_PLAN.md) for documentation improvements
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to this README for guidance.
+
 ## Navigation
 
-- [Race Condition Documentation](./race-condition/README.md)
-  Directory index for all race-condition-specific docs, including timelines, flows, and solutions. Helpful when focused narrowly on this issue family.
-- [Orchestrator Documentation](../orchestrator/README.md)
-  Overview of orchestrator responsibilities, lifecycles, and best practices with navigation to deeper topics. Start here to understand task coordination.
-- [Repository Documentation](./repository/README.md)
-  Index for repository-wide structure and submodules (core, webview, packages, apps). Each subpage details responsibilities and navigation.
-- [Observability Layer System](./OBSERVABILITY_LAYER_SYSTEM.md)
-  Explains observability architecture (spans, metrics, logs) and how to instrument flows. Reference for adding traceability to new or refactored paths.
+- **[Race Condition Documentation](./race-condition/README.md)** - Complete analysis of API duplication issues, root causes, and solutions
+- **[Orchestrator Documentation](../orchestrator/README.md)** - Task coordination, lifecycle management, and execution patterns
+- **[Repository Documentation](./repository/README.md)** - Codebase structure, packages, and development workflow
+- **[State Machine Documentation](./state-machines/README.md)** - System behavior modeling and state transition definitions
+- **[Technical Glossary](../GLOSSARY.md)** - Essential terminology and system concepts
+- **[Observability Layer System](./OBSERVABILITY_LAYER_SYSTEM.md)** - Tracing, metrics, and instrumentation patterns
 
 ## Notes
 

@@ -204,41 +204,61 @@ graph TD
 
 ## Navigation & User Experience
 
-**Purpose**: Create intuitive navigation paths for different user types and scenarios.
+**Purpose**: Create intuitive navigation paths for different user types and scenarios, optimized for expert engineers new to the KiloCode codebase.
 
 ### Quick Start Paths
 
 Every major documentation area MUST include quick start paths for different user scenarios:
 
-**Emergency Response** (Something's Broken!):
+**🚨 Emergency Response** (Something's Broken!):
 
-1. Problem identification and symptoms
-2. Root cause analysis
-3. Solution implementation
-4. Verification steps
+1. **Start Here**: [Technical Glossary](GLOSSARY.md) for terminology
+2. Problem identification and symptoms
+3. Root cause analysis
+4. Solution implementation
+5. Verification steps
 
-**Deep Dive Research** (Understanding the System):
+**🔬 Deep Dive Research** (Understanding the System):
 
-1. Conceptual overview
-2. Detailed technical analysis
-3. Related systems and interactions
-4. Advanced topics
+1. **Start Here**: [Technical Glossary](GLOSSARY.md) for terminology
+2. Conceptual overview
+3. Detailed technical analysis
+4. Related systems and interactions
+5. Advanced topics
 
-**Implementation Journey** (Building the Fix):
+**🛠️ Implementation Journey** (Building the Fix):
 
-1. Solution recommendations
-2. Technical implementation details
-3. Testing and validation
-4. Deployment and monitoring
+1. **Start Here**: [Technical Glossary](GLOSSARY.md) for terminology
+2. Solution recommendations
+3. Technical implementation details
+4. Testing and validation
+5. Deployment and monitoring
+
+**📚 New to Codebase** (Expert Engineer Onboarding):
+
+1. **Start Here**: [Technical Glossary](GLOSSARY.md) - Essential terminology
+2. **System Overview**: [Architecture Documentation](architecture/README.md) - High-level design
+3. **Current Issues**: [Race Condition Analysis](architecture/race-condition/README.md) - Active problems
+4. **Implementation**: [Orchestrator Documentation](orchestrator/README.md) - Core patterns
+5. **Development**: [Repository Structure](architecture/repository/README.md) - Codebase organization
 
 ### Navigation Guidelines
 
+**No Dead Ends Policy**: Every documentation page MUST provide:
+
+- **Clear next steps** based on current context and research goals
+- **Related concepts** for deeper understanding
+- **Cross-references** to relevant implementation details
+- **Breadcrumb navigation** showing current location
+- **Research Context sections** with contextual next steps
+
 **Cross-References**: Every document MUST include:
 
-- "Next Steps" sections pointing to related topics
+- "Research Context & Next Steps" sections pointing to related topics
 - "Related Documentation" at the bottom of each page
 - Navigation breadcrumbs to trace user paths
 - Quick links for common scenarios
+- Links to [Technical Glossary](GLOSSARY.md) for terminology
 
 **User Journey Optimization**: Structure content to support different user types:
 

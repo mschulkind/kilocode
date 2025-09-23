@@ -28,15 +28,19 @@ The orchestrator directory contains comprehensive documentation for understandin
 
 #### 🎵 **Understanding the Symphony** (How It Works)
 
-1. Start here: [Orchestrator Index](ORCHESTRATOR_INDEX.md)
-2. Learn the lifecycle: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md)
-3. See the problem: [Race Condition Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+**For Expert Engineers New to KiloCode:**
+
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task, Subtask, etc.)
+2. **System Overview**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) - High-level architecture and responsibilities
+3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns and state management
+4. **Current Issues**: [Race Condition Analysis](../architecture/race-condition/README.md) - API duplication problems
 
 #### 🚨 **Emergency Response** (Something's Broken!)
 
-1. Start here: [Race Condition Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-2. Understand the flow: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md)
-3. Find the fix: [State Machines](../architecture/state-machines/)
+1. **Quick Diagnosis**: [Race Condition Analysis](../architecture/race-condition/README.md) - Current API duplication issues
+2. **Understand Flow**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Execution patterns and state transitions
+3. **Find Solutions**: [State Machines](../architecture/state-machines/README.md) - Behavior modeling and fixes
+4. **Implementation**: [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Detailed fixes
 
 ## 🦕 Dinosaur Analogy
 
@@ -72,8 +76,36 @@ The orchestrator creates subtasks, but when they complete, both the main orchest
 
 We need to synchronize these calls so only one can execute at a time, like a conductor ensuring only one section of the orchestra plays at a time.
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Orchestrator Architecture:**
+
+- **Next**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) → [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) → [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
+- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior modeling, [Technical Glossary](../GLOSSARY.md) for terminology
+
+**Investigating Execution Issues:**
+
+- **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) → [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+**Implementing Orchestrator Features:**
+
+- **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) → [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for codebase patterns
+
+**Understanding Current Problems:**
+
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to this README for guidance.
+
 ---
 
-**Navigation**: [Back to Architecture](../architecture/) · [Next: Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [Race Condition Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+**Navigation**: [← Back to Documentation Hub](../README.md) · [→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-navigation-map)
 
 _"The best orchestras have a conductor who knows when to let each section play, and when to bring them all together. Our system needs the same kind of coordination."_ 🎼
