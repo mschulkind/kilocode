@@ -55,8 +55,8 @@ _This guide is the authoritative contributor-facing standard for creating and up
 
 **Directory Structure**:
 
-- Root level: `INDEX.md` as the master navigation hub
-- Subdirectories: Each major domain has its own directory with an `INDEX.md`
+- Root level: `README.md` as the master navigation hub
+- Subdirectories: Each major domain has its own directory with a `README.md`
 - Examples: `architecture/`, `services/`, `orchestrator/`, `laminar/`, `ui/`, `tools/`, `testing/`
 
 **Index Files**:
@@ -77,8 +77,8 @@ _This guide is the authoritative contributor-facing standard for creating and up
 - For every link in a "Related context" section (to files outside the directory), provide a 1-sentence description explaining relevance.
 - Keep descriptions concrete and scannable; avoid repeating entire content (link to the canonical page instead).
 - Prefer descriptive anchor text for all links (no bare file paths). Example:
-    - Good: `[State Machines Index and Diagrams](./state-machines/INDEX.md)`
-    - Bad: `state-machines/INDEX.md`
+    - Good: `[State Machines Index and Diagrams](./state-machines/README.md)`
+    - Bad: `state-machines/README.md`
 
 ## Document Structure
 
@@ -128,7 +128,7 @@ graph TD
 **Examples**:
 
 - `[System Overview](architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
-- `[Architecture Index](../architecture/INDEX.md)` (from subdirectory)
+- `[Architecture Index](../architecture/README.md)` (from subdirectory)
 - `[Getting Started](GETTING_STARTED.md)` (same directory)
 
 **Code References**: Use absolute repo-root paths for code files.
@@ -374,19 +374,19 @@ enum ExampleState {
 ```
 <a id="navigation-footer"></a>
 
-- Back: [`PARENT_INDEX.md`](PARENT_INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/FILENAME.md#L1`
+- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
 ```
 
 **Link Requirements**:
 
 1. **Back**: Link to parent index (relative path)
-2. **Root**: Link to main [`INDEX.md`](INDEX.md) (relative path)
+2. **Root**: Link to main [`README.md`](README.md) (relative path)
 3. **Source**: Link to source file (absolute repo-root path with `#L1`)
 
 **Examples**:
 
-- From root docs/: `Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
-- From subdirectory: `Back: [`INDEX.md`](../INDEX.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
+- From root docs/: `Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
+- From subdirectory: `Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
 
 **Link Validation**: All mentioned filenames must be clickable links for direct navigation and tooling validation.
 
