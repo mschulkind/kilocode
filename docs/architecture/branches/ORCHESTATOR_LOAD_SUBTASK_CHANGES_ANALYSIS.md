@@ -8,6 +8,22 @@ Purpose: Analyze all notable changes on `catrielmuller/orchestator-load-subtask`
 - [Navigation Scenario and Parent Resumption Context](../race-condition/NAVIGATION_SCENARIO.md)
 - [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md)
 
+## Race Condition Details
+
+**The Specific Race Condition Created:**
+
+- **Problem**: Concurrent calls to `recursivelyMakeClineRequests` from both the main orchestrator loop and the new `continueParentTask` method
+- **Trigger**: When a subtask completes while the parent orchestrator is still actively running (no navigation occurred)
+- **Symptoms**: Multiple simultaneous API requests with spinners, jumbled responses, XML corruption in chat history
+- **Severity**: 2-request race condition (common) and 3-request race condition (severe, causes cascading failures)
+
+**Detailed Analysis Links:**
+
+- [Race Condition State Machine](../race-condition/README.md) - Understanding the concurrent execution states
+- [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask architecture works
+- [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) - Severity and user experience impact
+- [Testing Strategy](../race-condition/TESTING_STRATEGY.md) - How to reproduce and validate fixes
+
 ## Summary of Intent
 
 - Goal: Ensure that when a subtask finishes after the user navigated away and returned, the parent orchestrator reliably continues execution.
@@ -65,6 +81,7 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 ### Side Effect
 
 - When user never navigated away (parent already running), this created a second, concurrent call to `recursivelyMakeClineRequests` racing with the main loop.
+- **Race Condition Details**: See [Race Condition State Machine](../race-condition/README.md) for the specific concurrent execution states and [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for severity analysis.
 
 ## Change 2: Parent Task Initialization Logic
 
@@ -114,6 +131,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ### Side Effect
 
 - Fire-and-forget makes concurrency invisible and hard to coordinate; increases chance of overlap with main loop.
+- **Concurrency Analysis**: See [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) for detailed explanation of how the orchestrator-subtask architecture creates this race condition.
 
 ## Change 4: Messaging/Conversation History Additions
 
@@ -137,6 +155,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 
 - Intended scenario (navigation away/back): improved.
 - Active scenario (no navigation): created duplicate, concurrent recursive calls (2-request, and in edge cases 3-request).
+- **Detailed Impact Analysis**: See [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for comprehensive analysis of user experience impact and severity levels.
 
 ## Recommendations
 
