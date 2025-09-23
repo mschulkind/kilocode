@@ -140,6 +140,13 @@ graph TD
 
 **External Links**: Use absolute HTTPS URLs for external references.
 
+**Link Descriptions**: All links in navigation sections (Quick Navigation, Research Context, etc.) MUST include 1-2 sentence descriptions explaining what the linked document contains and why it's relevant.
+
+**Examples**:
+
+- `[Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md) - Detailed investigation of the concurrent recursive calls race condition, including the problematic commit and code changes that created the issue. Provides comprehensive analysis of how the continueParentTask method introduced concurrent execution paths.`
+- `[Solution Options](race-condition/SOLUTION_RECOMMENDATIONS.md) - Proposes multiple approaches to fix the race condition, including lock-based solutions, call tracking, and subtask completion coordination. Includes implementation strategies and testing approaches for each solution.`
+
 **GitHub-Specific Considerations**:
 
 - All links will be viewed on GitHub.com, so ensure they work in the GitHub markdown renderer

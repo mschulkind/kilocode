@@ -4,9 +4,9 @@ Purpose: Analyze all notable changes on `catrielmuller/orchestator-load-subtask`
 
 ## Quick Navigation
 
-- [Root Cause Analysis of Duplicate API Requests](../race-condition/ROOT_CAUSE_ANALYSIS.md)
-- [Navigation Scenario and Parent Resumption Context](../race-condition/NAVIGATION_SCENARIO.md)
-- [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [Root Cause Analysis of Duplicate API Requests](../race-condition/ROOT_CAUSE_ANALYSIS.md) - Detailed investigation of the concurrent recursive calls race condition, including the problematic commit and code changes that created the issue. Provides comprehensive analysis of how the `continueParentTask` method introduced concurrent execution paths.
+- [Navigation Scenario and Parent Resumption Context](../race-condition/NAVIGATION_SCENARIO.md) - Explains why the problematic change was made, focusing on the navigation state loss problem and parent reinitialization. Details the specific scenario where users navigate away from chat and return to resume subtasks.
+- [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md) - Proposes multiple approaches to fix the race condition, including lock-based solutions, call tracking, and subtask completion coordination. Includes implementation strategies and testing approaches for each solution.
 
 ## Race Condition Details
 
