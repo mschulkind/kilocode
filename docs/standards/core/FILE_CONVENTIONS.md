@@ -1,0 +1,254 @@
+# File & Directory Conventions 📁
+
+**Purpose:** Comprehensive rules for naming, organizing, and structuring documentation files and directories to ensure consistency and discoverability across the KiloCode project.
+
+> **Geology Fun Fact**: The Earth's crust is organized into distinct layers and formations, each with its own characteristics and purpose. Our file conventions are like the "geological classification system" that helps us organize our documentation into logical, discoverable structures! 🌍
+
+<details><summary>Table of Contents</summary>
+
+- [Executive Summary](#executive-summary)
+- [Filename Standards](#filename-standards)
+- [Directory Structure](#directory-structure)
+- [Index File Conventions](#index-file-conventions)
+- [Naming Patterns](#naming-patterns)
+- [Organization Principles](#organization-principles)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+
+</details>
+
+## Executive Summary
+
+_Consistent file and directory conventions are essential for discoverability and maintainability. These rules ensure that contributors can quickly find and understand the organization of our documentation system._
+
+**Key Standards:**
+
+- **Filename Format**: UPPERCASE_SNAKE_CASE.md for all documentation files
+- **Directory Structure**: Hierarchical organization with clear domain boundaries
+- **Index Files**: Navigation hubs at each level of the hierarchy
+- **Naming Patterns**: Descriptive, searchable names that indicate content purpose
+
+## Filename Standards
+
+**Format**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII letters, numbers, and underscores only.
+
+**Character Rules**:
+
+- **Allowed**: A-Z, 0-9, underscore (\_)
+- **Forbidden**: Spaces, hyphens, special characters, non-ASCII characters
+- **Case**: All uppercase letters
+- **Separators**: Underscores only
+
+**Examples**:
+
+- ✅ `API_DUPLICATION_ANALYSIS.md`
+- ✅ `STATE_MACHINE_DESIGN.md`
+- ✅ `BUILD_PROCESS_GUIDE.md`
+- ❌ `api-duplication-analysis.md` (hyphens not allowed)
+- ❌ `ApiDuplicationAnalysis.md` (mixed case not allowed)
+- ❌ `API Duplication Analysis.md` (spaces not allowed)
+
+**Length Guidelines**:
+
+- **Minimum**: 5 characters (e.g., `INDEX.md`)
+- **Maximum**: 50 characters (including .md extension)
+- **Optimal**: 20-40 characters for readability
+
+## Directory Structure
+
+**Root Level**: All canonical documentation lives in the `docs/` directory.
+
+**Hierarchical Organization**:
+
+```
+docs/
+├── INDEX.md                    # Master navigation hub
+├── standards/                  # Documentation standards
+│   ├── INDEX.md
+│   ├── core/
+│   ├── structure/
+│   └── navigation/
+├── architecture/               # System architecture
+│   ├── INDEX.md
+│   ├── state-machines/
+│   └── orchestrator/
+├── services/                   # Service documentation
+│   ├── INDEX.md
+│   └── laminar/
+└── ui/                        # User interface docs
+    ├── INDEX.md
+    └── components/
+```
+
+**Domain Boundaries**: Each major domain has its own directory with clear boundaries:
+
+- **Architecture**: System design, patterns, and high-level concepts
+- **Services**: Individual service documentation and APIs
+- **Standards**: Documentation standards and guidelines
+- **UI**: User interface components and patterns
+
+## Index File Conventions
+
+**Purpose**: Index files serve as navigation hubs and content aggregators.
+
+**Naming**: Always use `INDEX.md` (not `index.md` or `Index.md`)
+
+**Placement**:
+
+- **Root Level**: `docs/INDEX.md` as the master navigation hub
+- **Subdirectories**: `INDEX.md` in each subdirectory when it contains multiple topical docs
+- **Optional**: Skip `INDEX.md` for directories with only 1-2 files
+
+**Content Requirements**:
+
+- **Navigation Overview**: Clear description of the directory's purpose
+- **Content Listing**: Links to all documents in the directory
+- **Quick Start Paths**: Different user journey options
+- **Cross-References**: Links to related directories and concepts
+
+**Example Structure**:
+
+```markdown
+# Architecture Documentation
+
+**Purpose:** System architecture and design patterns for KiloCode.
+
+## Quick Start Paths
+
+- [Emergency Response](#emergency-response)
+- [Deep Dive Research](#deep-dive-research)
+
+## Core Systems
+
+- [API Duplication Analysis](./API_DUPLICATION_ANALYSIS.md)
+- [State Machines](./state-machines/)
+
+## Related Areas
+
+- [Services](../services/) - Service-specific documentation
+- [Standards](../standards/) - Documentation standards
+```
+
+## Naming Patterns
+
+**Descriptive Names**: Filenames should clearly indicate the document's content and purpose.
+
+**Pattern Categories**:
+
+- **Analysis**: `PROBLEM_ANALYSIS.md`, `ROOT_CAUSE_ANALYSIS.md`
+- **Guides**: `IMPLEMENTATION_GUIDE.md`, `DEPLOYMENT_GUIDE.md`
+- **Standards**: `CODING_STANDARDS.md`, `DOCUMENTATION_STANDARDS.md`
+- **Processes**: `BUILD_PROCESS.md`, `TESTING_PROCESS.md`
+- **Architecture**: `SYSTEM_ARCHITECTURE.md`, `DATA_FLOW_DIAGRAM.md`
+
+**Avoid Generic Names**:
+
+- ❌ `README.md` (use `INDEX.md` instead)
+- ❌ `GUIDE.md` (too generic)
+- ❌ `DOCS.md` (too generic)
+- ❌ `INFO.md` (too generic)
+
+**Use Specific Names**:
+
+- ✅ `API_DUPLICATION_ANALYSIS.md`
+- ✅ `STATE_MACHINE_DESIGN.md`
+- ✅ `BUILD_PROCESS_GUIDE.md`
+- ✅ `DEPLOYMENT_CHECKLIST.md`
+
+## Organization Principles
+
+**Single Responsibility**: Each directory should have a clear, focused purpose.
+
+**Logical Grouping**: Group related documents together in the same directory.
+
+**Hierarchical Depth**: Limit directory depth to 3-4 levels maximum.
+
+**Scalability**: Structure should accommodate growth without becoming unwieldy.
+
+**Examples**:
+
+```
+# Good: Clear, focused purpose
+docs/architecture/state-machines/
+├── INDEX.md
+├── TASK_STATE_MACHINE.md
+├── SESSION_STATE_MACHINE.md
+└── RECURSIVE_CALL_STATE_MACHINE.md
+
+# Bad: Too many levels, unclear purpose
+docs/architecture/state-machines/task-states/individual-states/
+```
+
+## Common Mistakes
+
+**Filename Issues**:
+
+- ❌ Using hyphens instead of underscores
+- ❌ Mixed case instead of all uppercase
+- ❌ Spaces in filenames
+- ❌ Special characters or non-ASCII characters
+- ❌ Generic names that don't describe content
+
+**Directory Issues**:
+
+- ❌ Too many nested levels
+- ❌ Unclear directory purposes
+- ❌ Missing index files
+- ❌ Inconsistent naming patterns
+- ❌ Mixing unrelated content
+
+**Organization Issues**:
+
+- ❌ Documents in wrong directories
+- ❌ Missing cross-references
+- ❌ Inconsistent structure
+- ❌ Poor navigation design
+
+## Implementation Examples
+
+**Good Examples**:
+
+```
+docs/standards/
+├── INDEX.md                           # Clear navigation hub
+├── core/
+│   ├── INDEX.md                       # Subdirectory index
+│   ├── PRINCIPLES.md                  # Descriptive name
+│   ├── FILE_CONVENTIONS.md            # Clear purpose
+│   └── LINKING_POLICY.md              # Specific topic
+└── structure/
+    ├── INDEX.md
+    ├── DOCUMENT_ANATOMY.md
+    └── HEADINGS_HIERARCHY.md
+```
+
+**Bad Examples**:
+
+```
+docs/standards/
+├── readme.md                          # Wrong case
+├── core/
+│   ├── index.md                       # Wrong case
+│   ├── principles.md                  # Wrong case
+│   ├── file-conventions.md            # Wrong separator
+│   └── linking policy.md              # Spaces not allowed
+└── structure/
+    ├── docs.md                        # Too generic
+    └── guide.md                       # Too generic
+```
+
+**Migration Example**:
+
+```bash
+# Before (incorrect)
+docs/standards/core/principles.md
+
+# After (correct)
+docs/standards/core/PRINCIPLES.md
+```
+
+---
+
+**Navigation**: [Back to Core Standards](README.md) · [Next: Linking Policy](LINKING_POLICY.md) · [Source: `/docs/standards/core/FILE_CONVENTIONS.md#L1`](FILE_CONVENTIONS.md#L1)
+
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
