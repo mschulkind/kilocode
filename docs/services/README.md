@@ -2,12 +2,23 @@
 
 Welcome to the services documentation! ⚙️ This directory covers all the microservices and service layers that power KiloCode's functionality.
 
+## Directory Context
+
+The services directory contains comprehensive documentation for understanding KiloCode's service layer architecture and patterns. This includes core services (cloud, authentication, AI interaction), AI & ML services (prompt systems, code indexing), integration services (external APIs, data flows), and specialized services (monitoring, observability). Essential for understanding how individual services operate within the larger system architecture.
+
+### Key Focus Areas
+
+- **Core Services** - Cloud authentication, prompt systems, and code indexing
+- **AI & ML Services** - AI interaction, context management, and semantic search
+- **Integration Services** - External API connections and data flow patterns
+- **Specialized Services** - Monitoring, observability, and system-specific services
+
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
 
 - **Something's Broken**: Check specific service docs for troubleshooting
-- **Need to Understand**: Start with [INDEX.md](INDEX.md) for an overview
+- **Need to Understand**: Start with this README for an overview
 - **Implementation Journey**: Follow service architecture and integration guides
 
 ### Current Focus

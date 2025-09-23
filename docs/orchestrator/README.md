@@ -4,6 +4,17 @@ Welcome to the **conductor's podium** of our system! The orchestrator is like th
 
 > **Geology Fun Fact**: The orchestrator is like the "continental drift" of our system - it moves large pieces (tasks) around, and sometimes the plates don't align properly, causing seismic activity (race conditions)! 🌍
 
+## Directory Context
+
+The orchestrator directory contains comprehensive documentation for understanding KiloCode's task management, lifecycle coordination, and orchestration patterns. This includes core orchestrator system architecture, lifecycle management, extensibility patterns, and security governance. Critical for understanding how tasks are created, managed, and executed within the main execution flow and subtask coordination.
+
+### Key Focus Areas
+
+- **Core Orchestrator System** - Architecture, lifecycle management, and state handling
+- **Architecture & Design** - Design principles, extensibility, and security patterns
+- **Implementation Guidelines** - Best practices for orchestrator development and integration
+- **Specialized Features** - Advanced orchestration capabilities and patterns
+
 ## 🗺️ Navigation Map
 
 ### Core Concepts

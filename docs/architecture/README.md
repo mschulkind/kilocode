@@ -1,6 +1,18 @@
 # Architecture Documentation
 
-Overview and navigation for system architecture.
+Overview and navigation for system architecture, design patterns, and critical system analysis.
+
+## Directory Context
+
+The architecture directory contains comprehensive documentation for understanding KiloCode's system design, component relationships, and architectural patterns. This includes critical analysis of race conditions, state machines, repository structure, and architectural improvements. Essential for understanding how components interact and identifying system-level issues.
+
+### Key Focus Areas
+
+- **System Architecture Layers** - UI, Communication, Orchestration, Provider, and Observability layers
+- **Critical Issues & Analysis** - Race conditions, API duplication, and system reliability
+- **Repository Structure** - Monorepo organization, packages, and build systems
+- **State Machines** - Task, Session, and Recursive Call state management
+- **Architectural Improvements** - Prioritized roadmap for system enhancements
 
 ## Quick Start
 

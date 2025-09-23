@@ -43,7 +43,31 @@ Welcome to the KiloCode documentation! 🦕 This is your central hub for underst
 
 ## Directory Context
 
-This directory serves as the central repository for all KiloCode documentation, following a structured approach with clear navigation paths and consistent standards. Each subdirectory provides focused coverage of specific domains while maintaining cross-references and contextual guidance. The documentation follows our established standards for discoverability, linkability, and user journey optimization.
+This directory serves as the central repository for all KiloCode documentation, following a structured approach with clear navigation paths and consistent standards. Each subdirectory provides focused coverage of specific domains while maintaining cross-references and contextual guidance.
+
+### Specialized Documentation Areas
+
+- **`architecture/`** - System design, component relationships, and architectural patterns. Contains critical analysis of race conditions, state machines, and repository structure. Essential for understanding how components interact and identifying system-level issues.
+
+- **`orchestrator/`** - Task management, lifecycle coordination, and orchestration patterns. Focuses on how tasks are created, managed, and executed. Critical for understanding the main execution flow and subtask coordination.
+
+- **`plans/`** - Active investigation plans and development roadmaps. Contains detailed analysis of current issues and proposed solutions. Use for tracking ongoing research and debugging efforts.
+
+- **`services/`** - Individual service documentation and integration patterns. Covers specific services and their responsibilities within the larger system architecture.
+
+- **`tools/`** - Tool system architecture and development guidelines. Documents how tools are created, integrated, and managed within the execution environment.
+
+- **`integrations/`** - External system integrations and API patterns. Covers third-party service connections, data flows, and integration best practices.
+
+- **`testing/`** - Testing strategies, frameworks, and best practices. Documents how to test various system components and ensure reliability.
+
+- **`ui/`** - User interface components and interaction patterns. Covers frontend architecture, user experience design, and component relationships.
+
+- **`laminar/`** - Observability and monitoring system documentation. Details the Laminar service for tracing, metrics, and system observability.
+
+- **`improvements/`** - Historical improvement logs and enhancement documentation. Tracks system evolution, lessons learned, and technical debt management.
+
+The documentation follows our established standards for discoverability, linkability, and user journey optimization.
 
 ## 🔗 Cross-References
 
