@@ -2,6 +2,8 @@
 
 **Purpose:** This document provides a detailed, step-by-step description of the orchestrator's task lifecycle, from the moment a request is received to its final completion. It covers state transitions, the execution loop, and subtask management.
 
+> **Geology Fun Fact**: The orchestrator lifecycle is like the rock cycle - tasks start as molten magma (CREATED), cool into solid rock (RUNNING), get weathered by external forces (PAUSED), and eventually erode back into sediment (COMPLETED)! 🪨
+
 <details>
 <summary>Table of Contents</summary>
 
@@ -204,6 +206,34 @@ End of document.
 - docs/RETRY_POLICY.md — retry responsibility, orchestrator vs provider, backoff guidelines.
 - docs/TESTING_STRATEGY.md — integration tests to add.
 - Update: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md) to reference the new pages.
+
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Orchestrator Lifecycle:**
+
+- **Next**: [Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md) → [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) → [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [State Machines](../architecture/state-machines/README.md) for behavior modeling
+
+**Investigating Race Conditions:**
+
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) → [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+**Implementing Orchestrator Features:**
+
+- **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) → [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for codebase patterns
+
+**Understanding Current Problems:**
+
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Orchestrator Documentation](README.md) for guidance.
 
 ### Next doc-step I will take (if you approve)
 
