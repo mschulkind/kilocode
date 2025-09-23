@@ -61,29 +61,35 @@ Transform our documentation standards into automated linters and maintenance too
 ### TOC Generation
 
 - [doctoc](https://github.com/thlorenz/doctoc) (CLI)
-    - Pros: Simple, fast, works in-place
-    - Cons: Less configurable formatting
+    - **Pros**: Simple, fast, works in-place, supports `--notitle`, `--maxlevel`, `--check` modes
+    - **Cons**: Less configurable formatting, limited customization options
+    - **Configuration**: `.doctocrc` file for settings, supports GitHub-style TOCs
 - [remark-toc](https://github.com/remarkjs/remark-toc) (Node/remark)
-    - Pros: Part of unified/remark pipeline, customizable
-    - Cons: Requires Node pipeline setup
+    - **Pros**: Part of unified/remark pipeline, highly customizable, supports heading depth control
+    - **Cons**: Requires Node pipeline setup, more complex configuration
+    - **Configuration**: remark config with `toc: { heading: 'contents', maxDepth: 3 }`
 
 ### Link Checking
 
 - [lychee](https://github.com/lycheeverse/lychee) (Rust CLI, [GitHub Action](https://github.com/lycheeverse/lychee-action))
-    - Pros: Very fast, robust ignore rules, great CI action
-    - Cons: Rust binary dependency
+    - **Pros**: Very fast, robust ignore rules, great CI action, supports caching, parallel processing
+    - **Cons**: Rust binary dependency, requires installation
+    - **Configuration**: `lychee.toml` for ignore patterns, timeout settings, custom headers
 - [markdown-link-check](https://github.com/tcort/markdown-link-check) (Node)
-    - Pros: Simple, JSON config
-    - Cons: Slower, less robust vs lychee
+    - **Pros**: Simple, JSON config, easy integration, supports authentication
+    - **Cons**: Slower than lychee, less robust error handling
+    - **Configuration**: `.markdown-link-check.json` for ignore patterns, timeout settings
 
 ### Prose/Style Linting
 
 - [Vale](https://vale.sh/) (Prose linter)
-    - Pros: Customizable styles, tech writing rules, CI ready
-    - Cons: Style authoring effort
+    - **Pros**: Customizable styles, tech writing rules, CI ready, supports multiple file formats
+    - **Cons**: Style authoring effort, requires `.vale.ini` configuration
+    - **Configuration**: `.vale.ini` for styles, rules, and file patterns
 - [markdownlint](https://github.com/DavidAnson/markdownlint-cli2) (MD style)
-    - Pros: Enforces Markdown best practices, quick fixes
-    - Cons: Not prose-aware
+    - **Pros**: Enforces Markdown best practices, quick fixes, GitHub Flavored Markdown support
+    - **Cons**: Not prose-aware, limited to Markdown syntax
+    - **Configuration**: `.markdownlint.json` for rule customization, supports GFM features
 
 ### Templating: Footers/Headers/Blocks
 
@@ -100,8 +106,9 @@ Transform our documentation standards into automated linters and maintenance too
 ### Diagram Validation
 
 - [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)
-    - Pros: Catch syntax errors early by attempting renders
-    - Cons: Requires Node/Playwright deps
+    - **Pros**: Catch syntax errors early by attempting renders, supports multiple output formats
+    - **Cons**: Requires Node/Playwright deps, slower validation
+    - **Configuration**: Command-line options for theme, output format, and validation mode
 
 ### Cross-File Consistency Checks
 
@@ -109,17 +116,28 @@ Transform our documentation standards into automated linters and maintenance too
     - Pros: Tailored checks (e.g., ensure Research Context exists, glossary links present)
     - Cons: Maintenance cost, needs tests
 
+### GitHub Flavored Markdown (GFM) Validation
+
+- [markdownlint](https://github.com/DavidAnson/markdownlint-cli2) (Primary GFM validator)
+    - **Pros**: Native GFM support, validates tables, task lists, strikethrough, autolinks
+    - **Cons**: Limited to syntax validation, not content quality
+    - **Configuration**: `.markdownlint.json` with GFM-specific rules (MD013, MD033, etc.)
+- [remark-lint](https://github.com/remarkjs/remark-lint) (Comprehensive GFM validation)
+    - **Pros**: Extensive plugin ecosystem, validates GFM extensions, customizable
+    - **Cons**: Requires remark pipeline setup, more complex configuration
+    - **Configuration**: `.remarkrc` with `remark-preset-lint-recommended` and GFM plugins
+
 ### Additional Tools
 
 - [textlint](https://textlint.github.io/) (Japanese-focused but extensible)
-    - Pros: Plugin ecosystem, custom rules
-    - Cons: Primarily Japanese, complex setup
+    - **Pros**: Plugin ecosystem, custom rules, supports multiple languages
+    - **Cons**: Primarily Japanese, complex setup, limited English support
 - [write-good](https://github.com/btford/write-good) (Simple prose linting)
-    - Pros: Simple, focused on readability
-    - Cons: Limited customization
+    - **Pros**: Simple, focused on readability, lightweight
+    - **Cons**: Limited customization, basic rule set
 - [alex](https://alexjs.com/) (Inclusive language checking)
-    - Pros: Catches insensitive language
-    - Cons: May be overly strict for technical docs
+    - **Pros**: Catches insensitive language, promotes inclusive writing
+    - **Cons**: May be overly strict for technical docs, limited customization
 
 ## Documentation Standards as Linters
 
@@ -153,6 +171,15 @@ Transform our documentation standards into automated linters and maintenance too
 - ✅ **Image Alt Text**: Accessibility compliance
 - ✅ **Spelling**: Consistent terminology
 - ✅ **Readability**: Appropriate sentence length
+
+**GitHub Flavored Markdown (GFM) Rules:**
+
+- ✅ **Table Syntax**: Proper pipe alignment and formatting
+- ✅ **Task Lists**: Correct `- [ ]` and `- [x]` syntax
+- ✅ **Strikethrough**: Proper `~~text~~` formatting
+- ✅ **Autolinks**: Valid URL and email autolink detection
+- ✅ **Code Fences**: Proper triple backtick syntax with language tags
+- ✅ **Heading Hierarchy**: Consistent H1-H6 usage without skipping levels
 
 ### Custom Linter Implementation
 
@@ -228,10 +255,10 @@ function remarkDocStandards(options) {
 
 **Tools:**
 
-- [doctoc](https://github.com/thlorenz/doctoc) - TOC generation
-- [lychee](https://github.com/lycheeverse/lychee) - Link checking
-- [markdownlint](https://github.com/DavidAnson/markdownlint-cli2) - Basic formatting
-- Custom Node script - Structure validation
+- [doctoc](https://github.com/thlorenz/doctoc) - TOC generation with `--notitle` and `--check` modes
+- [lychee](https://github.com/lycheeverse/lychee) - Fast link checking with caching and parallel processing
+- [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) - GitHub Flavored Markdown validation
+- Custom Node script - Structure validation (Research Context, navigation footers)
 
 **Implementation:**
 
@@ -239,16 +266,42 @@ function remarkDocStandards(options) {
 # package.json scripts
 {
   "scripts": {
-    "docs:toc": "doctoc docs/ --notitle",
-    "docs:links": "lychee docs/ --verbose --cache",
-    "docs:lint": "markdownlint docs/ --fix",
-    "docs:structure": "node scripts/docs/lint-structure.js",
-    "docs:all": "npm run docs:toc && npm run docs:lint && npm run docs:structure"
+    "docs:toc": "doctoc docs/ --notitle --maxlevel 3",
+    "docs:toc:check": "doctoc docs/ --notitle --check",
+    "docs:lint": "markdownlint-cli2 docs/ --fix",
+    "docs:links": "lychee docs/ --verbose --cache --threads 4",
+    "docs:gfm": "markdownlint-cli2 docs/ --config .markdownlint-gfm.json",
+    "docs:structure": "node scripts/docs/structure.js",
+    "docs:mermaid": "node scripts/docs/mermaid.js",
+    "docs:all": "npm run docs:toc:check && npm run docs:lint && npm run docs:links && npm run docs:structure",
+    "docs:fix": "npm run docs:toc && npm run docs:lint"
   }
 }
 ```
 
-**Pros:** Fast setup, minimal dependencies, easy to understand
+**Configuration Files:**
+
+```json
+// .markdownlint.json
+{
+	"default": true,
+	"MD013": { "line_length": 120 },
+	"MD033": false,
+	"MD041": false
+}
+```
+
+```toml
+# lychee.toml
+[input]
+include = ["**/*.md"]
+exclude = ["node_modules/**", "dist/**"]
+
+[output]
+format = "detailed"
+```
+
+**Pros:** Fast setup, minimal dependencies, comprehensive GFM validation, easy to understand
 **Cons:** Limited customization, manual rule implementation
 **Time to implement:** 1-2 days
 
@@ -257,8 +310,9 @@ function remarkDocStandards(options) {
 **Tools:**
 
 - [remark](https://github.com/remarkjs/remark) + custom plugins - Structure validation
+- [remark-lint](https://github.com/remarkjs/remark-lint) - Comprehensive GFM validation
 - [Vale](https://vale.sh/) - Prose linting with custom styles
-- [lychee](https://github.com/lycheeverse/lychee) - Link checking
+- [lychee](https://github.com/lycheeverse/lychee) - Link checking with advanced caching
 - [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) - Diagram validation
 - Custom remark plugins - KiloCode-specific rules
 
@@ -271,14 +325,24 @@ const remarkDocStandards = require("./plugins/remark-doc-standards")
 const remarkMermaid = require("./plugins/remark-mermaid-validate")
 
 module.exports = remark()
+	.use(require("remark-preset-lint-recommended"))
+	.use(require("remark-lint-no-dead-urls"))
+	.use(require("remark-validate-links"))
 	.use(remarkDocStandards)
 	.use(remarkMermaid)
-	.use(require("remark-lint"))
-	.use(require("remark-validate-links"))
 ```
 
-**Pros:** Highly customizable, comprehensive validation, extensible
-**Cons:** More complex setup, requires Node.js knowledge
+```ini
+# .vale.ini
+StylesPath = styles
+MinAlertLevel = suggestion
+
+[*.md]
+BasedOnStyles = Vale, Microsoft, write-good
+```
+
+**Pros:** Highly customizable, comprehensive validation, extensible, full GFM support
+**Cons:** More complex setup, requires Node.js knowledge, multiple configuration files
 **Time to implement:** 1-2 weeks
 
 ### Option 3: Enterprise Setup (Full Automation)
