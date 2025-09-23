@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive documentation of the Communication Layer system, including Webview Bridge and Message Handler components that facilitate communication between the UI and backend systems.
 
+> **Quantum Physics Fun Fact**: The communication layer is like quantum entanglement - when the UI changes state, the backend instantly knows about it, just as entangled particles instantly affect each other regardless of distance! ⚛️
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
@@ -501,6 +503,34 @@ class MessageQueue {
 }
 ```
 
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Communication Architecture:**
+
+- **Next**: [UI Layer System](./UI_LAYER_SYSTEM.md) → [Orchestration Layer System](./ORCHESTRATION_LAYER_SYSTEM.md) → [System Overview](./SYSTEM_OVERVIEW.md)
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Repository Overview](./repository/README.md) for codebase structure
+
+**Implementing Communication Features:**
+
+- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+**Troubleshooting Communication Issues:**
+
+- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+**Understanding Current Problems:**
+
+- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Code Flow Analysis](./race-condition/CODE_FLOW_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [State Machines](./state-machines/README.md) for behavior analysis
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](./README.md) for guidance.
+
 <a id="navigation-footer"></a>
 
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/COMMUNICATION_LAYER_SYSTEM.md#L1`
+**Navigation**: [← Back to Architecture Documentation](./README.md) · [→ UI Layer System](./UI_LAYER_SYSTEM.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
