@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive guide for developing and contributing to KiloCode.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Getting Started
 
 ### Prerequisites

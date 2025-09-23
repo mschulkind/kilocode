@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive documentation of the Orchestration Layer system, including Task Engine, Message Queue Service, and Orchestrator components that manage task execution and coordination.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)

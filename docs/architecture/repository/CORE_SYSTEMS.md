@@ -2,6 +2,8 @@
 
 **Purpose:** Detailed overview of the core systems and services that power KiloCode.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## System Architecture Overview
 
 KiloCode is built on a multi-layered architecture with clear separation of concerns:

@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive guide for managing code transfer and feature porting between KiloCode, Roo Code, and Cline repositories.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)

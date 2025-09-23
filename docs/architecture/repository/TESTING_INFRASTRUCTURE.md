@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive overview of the testing infrastructure and frameworks used in KiloCode.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Testing Overview
 
 KiloCode employs a comprehensive testing strategy with multiple testing layers and frameworks:
