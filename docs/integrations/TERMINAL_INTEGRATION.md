@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive documentation of the terminal integration system for command execution, shell integration, and terminal management in KiloCode.
 
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)

@@ -2,6 +2,8 @@
 
 **Purpose:** Overview of the development tools and utilities used in KiloCode development.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Development Tools Overview
 
 KiloCode uses a comprehensive set of development tools for efficient development and maintenance:

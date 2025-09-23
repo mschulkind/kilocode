@@ -2,6 +2,8 @@
 
 **Purpose:** Documentation of the Tree Sitter code parsing service and language-specific parsing capabilities in the KiloCode system.
 
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)

@@ -2,6 +2,8 @@
 
 **Purpose:** Overview of the standalone applications and interfaces in the KiloCode monorepo.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Application Overview
 
 The KiloCode monorepo contains 8 standalone applications that provide different interfaces and functionality:

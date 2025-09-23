@@ -338,3 +338,30 @@ standards/
 **Navigation**: [Back to Core Standards](README.md) · [Next: Document Structure](../structure/README.md) · [Source: `/docs/standards/core/CONTENT_ORGANIZATION.md#L1`](CONTENT_ORGANIZATION.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+
+## 🔍 Research Context & Next Steps
+
+### When You're Here, You Can:
+
+**Understanding Documentation Standards:**
+
+- **Next**: Check related standards documentation in the same directory
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+
+**Implementing Documentation Standards:**
+
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+**Applying Standards to Documentation:**
+
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) → [Architecture Documentation](../architecture/README.md) → [Orchestrator Documentation](../orchestrator/README.md)
+- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current issues
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Standards Documentation](README.md) for guidance.
+
+---
+
+**Navigation**: [← Back to Standards Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

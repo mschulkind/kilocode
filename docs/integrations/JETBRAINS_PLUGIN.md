@@ -2,6 +2,8 @@
 
 **Purpose:** Documentation of the JetBrains IDE plugin architecture and host-plugin communication system in the KiloCode ecosystem.
 
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)

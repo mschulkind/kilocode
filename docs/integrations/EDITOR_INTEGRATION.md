@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive documentation of the editor integration system for VS Code editor interaction, diff visualization, and editor utilities in KiloCode.
 
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)

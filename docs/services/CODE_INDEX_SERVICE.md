@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive documentation of the Code Index service for semantic code search, embedding management, and vector-based code analysis in KiloCode.
 
+> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a specific function, but they all work together to keep the system healthy and functioning! 🧬
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
