@@ -2,6 +2,8 @@
 
 **Purpose:** Comprehensive catalog of all external dependencies, libraries, and conventions for using them in the KiloCode project.
 
+> **Biology Fun Fact**: External dependencies are like symbiotic relationships in nature - each library provides specific functionality (like how mitochondria provide energy), and together they create a thriving ecosystem! 🧬
+
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
