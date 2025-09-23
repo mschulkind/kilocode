@@ -2,6 +2,8 @@
 
 **Purpose:** This document provides a detailed overview of the Kilo Code Orchestrator's architecture, including its core components, their interactions, and the flow of data through the system.
 
+> **Quantum Physics Fun Fact**: The orchestrator architecture is like quantum superposition - it exists in multiple states simultaneously (CREATED, RUNNING, PAUSED) until observed (measured), at which point it collapses into a single definite state! ⚛️
+
 <details>
 <summary>Table of Contents</summary>
 
@@ -130,10 +132,34 @@ The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it 
 
 <a id="navigation-footer"></a>
 
-You have reached the end of the architecture document. Return to the [Master Index](ORCHESTRATOR_INDEX.md) or proceed to the [Lifecycle Document](ORCHESTRATOR_LIFECYCLE.md).
+## 🔍 Research Context & Next Steps
 
-[Back to Top](#orchestrator-architecture)
+### When You're Here, You Can:
+
+**Understanding Orchestrator Architecture:**
+
+- **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) → [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) → [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [State Machines](../architecture/state-machines/README.md) for behavior modeling
+
+**Investigating Race Conditions:**
+
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) → [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+**Implementing Orchestrator Features:**
+
+- **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) → [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for codebase patterns
+
+**Understanding Current Problems:**
+
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Orchestrator Documentation](README.md) for guidance.
 
 ---
 
-End of document.
+**Navigation**: [← Back to Orchestrator Documentation](README.md) · [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

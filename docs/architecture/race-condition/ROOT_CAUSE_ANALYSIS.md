@@ -2,6 +2,8 @@
 
 **Purpose:** Detailed investigation of the root cause of the API duplication race condition issue.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## The Problematic Change
 
 **Commit**: `749f3d22a` - "fix children task loading to continue the execution of the parent after finished"  

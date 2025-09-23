@@ -2,6 +2,8 @@
 
 **Purpose:** Long-term strategies for preventing race conditions and maintaining system reliability.
 
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+
 ## Prevention Strategy Overview
 
 The prevention strategy focuses on three key areas:

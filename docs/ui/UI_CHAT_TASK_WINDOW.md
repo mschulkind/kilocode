@@ -2,6 +2,8 @@
 
 **Purpose:** Describe the chat / task window UI, how user actions map to orchestrator actions, the control loop that decides when to fire API requests (including payload construction), how messages are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
 
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+
 <details>
 <summary>Table of contents</summary>
 
