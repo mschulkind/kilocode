@@ -181,6 +181,10 @@ Transform our documentation standards into automated linters and maintenance too
 - ✅ **Code Fences**: Proper triple backtick syntax with language tags
 - ✅ **Heading Hierarchy**: Consistent H1-H6 usage without skipping levels
 
+**Real-World Example:**
+
+- ✅ **Race Condition Analysis**: [Orchestrator Load Subtask Changes Analysis](../architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md) - Detailed case study of how a specific code change created concurrent API requests and documentation of the fix
+
 ### Custom Linter Implementation
 
 **Node.js Script Approach:**
@@ -734,6 +738,11 @@ function validateNavigationFooter(content, filePath) {
 
 - **Next**: [Integration Plan](#integration-plan) → [Custom Linter Development](#custom-linter-development) → [Future Enhancements](#future-enhancements)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for debugging patterns
+
+**Understanding Race Conditions in Documentation:**
+
+- **Specific Example**: [Orchestrator Load Subtask Changes Analysis](../architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md) - Detailed analysis of how a specific change created a race condition with concurrent API requests
+- **Related**: [Race Condition Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) for the broader context
 
 ### No Dead Ends Policy
 
