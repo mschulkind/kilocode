@@ -1,10 +1,28 @@
 # Core Systems
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 **Purpose:** Detailed overview of the core systems and services that power KiloCode.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## System Architecture Overview
+
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
 
 KiloCode is built on a multi-layered architecture with clear separation of concerns:
 
@@ -360,3 +378,10 @@ graph TD
 - [← Back to Repository Home](README.md)
 - [→ Workspace Packages](WORKSPACE_PACKAGES.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#core-systems)

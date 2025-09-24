@@ -1,8 +1,13 @@
 # Documentation Standards 🏗️
 
-**Purpose:** Comprehensive documentation standards and practices for KiloCode contributors, organized into focused, cross-linked modules for efficient research and implementation.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-> **Cartography Fun Fact**: The word "cartography" comes from the Greek words "chartis" (map) and "graphein" (to write). We're essentially writing maps of our codebase and the problems we need to solve! 🗺️
+**Purpose:** Comprehensive documentation standards and practices for KiloCode contributors,
+organized into focused, cross-linked modules for efficient research and implementation.
+
+> **Cartography Fun Fact**: The word "cartography" comes from the Greek words "chartis" (map) and
+> "graphein" (to write). We're essentially writing maps of our codebase and the problems we need to
+> solve! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -21,7 +26,22 @@
 
 ## Executive Summary
 
-_This is the master navigation hub for all documentation standards. Each section links to detailed, focused modules that can be studied independently or as part of a comprehensive research journey._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_This is the master navigation hub for all documentation standards. Each section links to detailed,
+focused modules that can be studied independently or as part of a comprehensive research journey._
 
 **Key Standards:**
 
@@ -35,31 +55,35 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ### 🚨 **Emergency Response** (Something's Broken!)
 
-1. **Start here**: [Core Standards](core/README.md) - Essential rules and principles
-2. **Check structure**: [Document Structure](structure/README.md) - Basic document anatomy
-3. **Fix navigation**: [Navigation & User Experience](navigation/README.md) - User journey optimization
-4. **Verify compliance**: [Implementation Checklists](checklists/README.md) - Pre-submission validation
+1. **Start here**: [Core Standards](README.md) - Essential rules and principles
+2. **Check structure**: [Document Structure](README.md) - Basic document anatomy
+3. **Fix navigation**: [Navigation & User Experience](README.md) - User journey
+   optimization
+4. **Verify compliance**: [Implementation Checklists](README.md) - Pre-submission
+   validation
 
 ### 🔍 **Deep Dive Research** (Understanding the System)
 
-1. **Start here**: [Core Standards](core/README.md) - Foundational principles
-2. **Explore structure**: [Document Structure](structure/README.md) - Detailed anatomy and hierarchy
-3. **Understand navigation**: [Navigation & User Experience](navigation/README.md) - User journey design
-4. **Study code docs**: [Code Documentation](code/README.md) - Technical documentation standards
-5. **Learn engagement**: [Engagement & Accessibility](engagement/README.md) - Making docs accessible
+1. **Start here**: [Core Standards](README.md) - Foundational principles
+2. **Explore structure**: [Document Structure](README.md) - Detailed anatomy and hierarchy
+3. **Understand navigation**: [Navigation & User Experience](README.md) - User journey
+   design
+4. **Study code docs**: [Code Documentation](README.md) - Technical documentation standards
+5. **Learn engagement**: [Engagement & Accessibility](README.md) - Making docs accessible
 
 ### 🛠️ **Implementation Journey** (Building the Fix)
 
-1. **Start here**: [Core Standards](core/README.md) - Essential rules
-2. **Plan structure**: [Document Structure](structure/README.md) - Document anatomy
-3. **Design navigation**: [Navigation & User Experience](navigation/README.md) - User experience
-4. **Document code**: [Code Documentation](code/README.md) - Technical documentation
-5. **Add engagement**: [Engagement & Accessibility](engagement/README.md) - Accessibility and engagement
-6. **Validate work**: [Implementation Checklists](checklists/README.md) - Quality assurance
+1. **Start here**: [Core Standards](README.md) - Essential rules
+2. **Plan structure**: [Document Structure](README.md) - Document anatomy
+3. **Design navigation**: [Navigation & User Experience](README.md) - User experience
+4. **Document code**: [Code Documentation](README.md) - Technical documentation
+5. **Add engagement**: [Engagement & Accessibility](README.md) - Accessibility and
+   engagement
+6. **Validate work**: [Implementation Checklists](README.md) - Quality assurance
 
 ## Core Standards
 
-**Essential Foundation**: [Core Standards](core/README.md)
+**Essential Foundation**: [Core Standards](README.md)
 
 - **Purpose-driven**: Every document starts with clear purpose and audience
 - **Discoverable**: Predictable filenames, headings, and navigation elements
@@ -75,7 +99,7 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ## Document Structure
 
-**Document Anatomy**: [Document Structure](structure/README.md)
+**Document Anatomy**: [Document Structure](README.md)
 
 - **Standardized Format**: H1 → Purpose → TOC → Summary → Content → Footer
 - **Hierarchy Rules**: H1 → H2 → H3 only, with specific case requirements
@@ -91,7 +115,7 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ## Navigation & User Experience
 
-**User Journey Design**: [Navigation & User Experience](navigation/README.md)
+**User Journey Design**: [Navigation & User Experience](README.md)
 
 - **Quick Start Paths**: Emergency response, deep dive research, implementation
 - **Cross-References**: Next steps, related docs, navigation breadcrumbs
@@ -106,7 +130,7 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ## Code Documentation
 
-**Technical Documentation**: [Code Documentation](code/README.md)
+**Technical Documentation**: [Code Documentation](README.md)
 
 - **Inline Comments**: Required for complex data structures
 - **Code Snippets**: Organized with contextual explanations
@@ -121,7 +145,7 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ## Engagement & Accessibility
 
-**Making Docs Accessible**: [Engagement & Accessibility](engagement/README.md)
+**Making Docs Accessible**: [Engagement & Accessibility](README.md)
 
 - **Analogies**: Strategic use of metaphors for complex concepts
 - **Fun Facts**: Relevant educational content
@@ -136,7 +160,7 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ## Technical Glossary
 
-**Terminology Reference**: [Technical Glossary](glossary/README.md)
+**Terminology Reference**: [Technical Glossary](README.md)
 
 - **Core Concepts**: Turn, race condition, state machine, synchronization
 - **System Terms**: Orchestrator, subtask, recursive call, API request
@@ -147,11 +171,11 @@ _This is the master navigation hub for all documentation standards. Each section
 
 - [Core Concepts](glossary/CORE_CONCEPTS.md) - Fundamental terminology
 - [System-Specific Terms](glossary/SYSTEM_TERMS.md) - KiloCode-specific vocabulary
-- [Cross-Reference Index](glossary/CROSS_REFERENCE_INDEX.md) - Concept relationships
+- [Cross-Reference Index](glossary/CROSS_REFERENCE_README.md) - Concept relationships
 
 ## Implementation Checklists
 
-**Quality Assurance**: [Implementation Checklists](checklists/README.md)
+**Quality Assurance**: [Implementation Checklists](README.md)
 
 - **Pre-Submission**: Comprehensive validation checklist
 - **Structure Validation**: Document anatomy verification
@@ -166,7 +190,7 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ## Examples & Templates
 
-**Implementation Guides**: [Examples & Templates](examples/README.md)
+**Implementation Guides**: [Examples & Templates](README.md)
 
 - **Document Templates**: Ready-to-use markdown templates
 - **Code Examples**: Commented code snippets and data structures
@@ -183,18 +207,28 @@ _This is the master navigation hub for all documentation standards. Each section
 
 ### **Emergency Response Path**
 
-1. [Core Standards](core/README.md) → [Document Structure](structure/README.md) → [Navigation & User Experience](navigation/README.md) → [Implementation Checklists](checklists/README.md)
+1. [Core Standards](README.md) → [Document Structure](README.md) →
+   [Navigation & User Experience](README.md) →
+   [Implementation Checklists](README.md)
 
 ### **Deep Research Path**
 
-1. [Core Standards](core/README.md) → [Document Structure](structure/README.md) → [Code Documentation](code/README.md) → [Engagement & Accessibility](engagement/README.md) → [Technical Glossary](glossary/README.md)
+1. [Core Standards](README.md) → [Document Structure](README.md) →
+   [Code Documentation](README.md) → [Engagement & Accessibility](README.md) →
+   [Technical Glossary](README.md)
 
 ### **Implementation Path**
 
-1. [Core Standards](core/README.md) → [Document Structure](structure/README.md) → [Code Documentation](code/README.md) → [Examples & Templates](examples/README.md) → [Implementation Checklists](checklists/README.md)
+1. [Core Standards](README.md) → [Document Structure](README.md) →
+   [Code Documentation](README.md) → [Examples & Templates](README.md) →
+   [Implementation Checklists](README.md)
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [Back to Docs Root](../) · [Next: Core Standards](core/README.md) · [Source: `/docs/standards/README.md#L1`](README.md#L1)
+**Navigation**: [Back to Docs Root](../) · [Next: Core Standards](README.md) ·
+[Source: `/docs/standards/README.md#L1`](README.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

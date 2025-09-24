@@ -1,13 +1,30 @@
 # Prioritized Architecture Improvements
 
-Purpose: High-impact, near-to-mid term improvements around task/orchestrator, recursion, session management, and API execution. Complements the race-condition work with strategic upgrades.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+Purpose: High-impact, near-to-mid term improvements around task/orchestrator, recursion, session
+management, and API execution. Complements the race-condition work with strategic upgrades.
 
 ## Quick Navigation
 
-- [Request Arbiter and Declarative Execution Model](./race-condition/SOLUTION_RECOMMENDATIONS.md)
-- [Code Flow and Execution Analysis](./race-condition/CODE_FLOW_ANALYSIS.md)
-- [State Machine Index and Diagrams](./state-machines/INDEX.md)
-- [Repository Structure Overview](./repository/REPOSITORY_STRUCTURE.md)
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+- [Request Arbiter and Declarative Execution Model]race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [Code Flow and Execution Analysis]race-condition/CODE_FLOW_ANALYSIS.md)
+- [State Machine Index and Diagrams](README.md)
+- [Repository Structure Overview](../architecture/repository/REPOSITORY_STRUCTURE.md)
 
 ## Top Priorities (Tier 0–1)
 
@@ -15,13 +32,14 @@ Purpose: High-impact, near-to-mid term improvements around task/orchestrator, re
 
 - Problem: Multiple producers can trigger execution; a lock masks ambiguity.
 - Outcome: Only one SelectedAction at a time; producers submit intents; executor runs the choice.
-- Link: [Solution Options and Synchronization Strategies](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- Link:
+  [Solution Options and Synchronization Strategies]race-condition/SOLUTION_RECOMMENDATIONS.md)
 
 2. Parent Initialization as a First-Class Precondition
 
 - Auto-insert InitializeParent intent gated by eligibility before any continuation.
 - Ensures correctness after navigation without scattered checks.
-- Link: [Navigation Scenario and Parent Resumption Context](./race-condition/NAVIGATION_SCENARIO.md)
+- Link: [Navigation Scenario and Parent Resumption Context]race-condition/NAVIGATION_SCENARIO.md)
 
 3. Idempotent API/Tool Execution Contract
 
@@ -32,7 +50,7 @@ Purpose: High-impact, near-to-mid term improvements around task/orchestrator, re
 
 - Promote Task/Session/RecursiveCall charts to enforce transitions at runtime.
 - Reject illegal concurrent transitions; log violations.
-- Link: [State Machine Index and Diagrams](./state-machines/INDEX.md)
+- Link: [State Machine Index and Diagrams](README.md)
 
 5. Single Writer Principle per TaskId
 
@@ -46,7 +64,8 @@ Purpose: High-impact, near-to-mid term improvements around task/orchestrator, re
 
 7. Standardized Reconstruction
 
-- Canonical loader restores messages, API history, FSM, pending intents; RA resumes deterministically.
+- Canonical loader restores messages, API history, FSM, pending intents; RA resumes
+  deterministically.
 
 8. UI State Contract and Spinner Semantics
 
@@ -112,8 +131,8 @@ Purpose: High-impact, near-to-mid term improvements around task/orchestrator, re
 ## Related Reading
 
 - [Race Condition Analysis (Master Index)](./API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-- [Solution Options and Synchronization Strategies](./race-condition/SOLUTION_RECOMMENDATIONS.md)
-- [Testing Strategy and Validation Plan](./race-condition/TESTING_STRATEGY.md)
+- [Solution Options and Synchronization Strategies]race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [Testing Strategy and Validation Plan]race-condition/TESTING_STRATEGY.md)
 - [Repository Overview (Master Index)](./REPOSITORY_OVERVIEW.md)
 
 ## 🔍 Research Context & Next Steps
@@ -123,22 +142,30 @@ Purpose: High-impact, near-to-mid term improvements around task/orchestrator, re
 **Understanding Architecture:**
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](README.md) for context
 
 **Implementing Architecture Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Architecture Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

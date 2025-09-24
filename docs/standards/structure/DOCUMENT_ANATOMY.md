@@ -1,8 +1,14 @@
 # Document Anatomy 🧬
 
-**Purpose:** Detailed breakdown of the standardized document structure that every KiloCode document must follow, ensuring consistency and usability across all documentation.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Biology Fun Fact**: Just like how DNA has a specific structure with base pairs, sugar-phosphate backbones, and double helix formation, our documents have a specific structure with purpose statements, content sections, and navigation elements that work together to create functional information! 🧬
+**Purpose:** Detailed breakdown of the standardized document structure that every KiloCode document
+must follow, ensuring consistency and usability across all documentation.
+
+> **Biology Fun Fact**: Just like how DNA has a specific structure with base pairs, sugar-phosphate
+> backbones, and double helix formation, our documents have a specific structure with purpose
+> statements, content sections, and navigation elements that work together to create functional
+> information! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -12,13 +18,29 @@
 - [Structure Flow](#structure-flow)
 - [Element Validation](#element-validation)
 - [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_Every KiloCode document follows a standardized anatomy with six required elements that work together to create consistent, discoverable, and usable documentation. This structure ensures that both authors and readers know what to expect from any document._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_Every KiloCode document follows a standardized anatomy with six required elements that work
+together to create consistent, discoverable, and usable documentation. This structure ensures that
+both authors and readers know what to expect from any document._
 
 **Required Elements:**
 
@@ -86,15 +108,15 @@ _Every KiloCode document follows a standardized anatomy with six required elemen
 ```markdown
 # Good: Specific and descriptive
 
-API Duplication Analysis
-State Machine Design Patterns
-Build Process Guide
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
+API Duplication Analysis State Machine Design Patterns Build Process Guide
 
 # Bad: Generic or unclear
 
-Documentation Guide
-Stuff
-Things
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+Documentation Guide Stuff Things
 ```
 
 ### Purpose Statement
@@ -113,12 +135,17 @@ Things
 ```markdown
 # Good: Clear purpose and audience
 
-**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations for developers and system architects.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
+identification, impact assessment, and solution recommendations for developers and system
+architects.
 
 # Bad: Vague or missing context
 
-**Purpose:** This document explains things.
-**Purpose:** Guide for users.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
+**Purpose:** This document explains things. **Purpose:** Guide for users.
 ```
 
 ### Collapsible TOC
@@ -138,9 +165,9 @@ Things
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
 
 </details>
@@ -162,11 +189,15 @@ Things
 ```markdown
 ## Executive Summary
 
-_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously, resulting in jumbled responses and confused user experience. This document provides a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for implementation._
+_The API duplication issue is caused by a race condition where multiple API calls are made
+simultaneously, resulting in jumbled responses and confused user experience. This document provides
+a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for
+implementation._
 
 ## Executive Summary
 
-_This guide provides step-by-step instructions for building the KiloCode project from source, including prerequisites, build steps, and troubleshooting common issues._
+_This guide provides step-by-step instructions for building the KiloCode project from source,
+including prerequisites, build steps, and troubleshooting common issues._
 ```
 
 ### Body Content
@@ -185,7 +216,8 @@ _This guide provides step-by-step instructions for building the KiloCode project
 ```markdown
 ## Problem Description
 
-The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat
+interface.
 
 ### Symptoms
 
@@ -201,11 +233,13 @@ The issue manifests as multiple API requests with spinners appearing simultaneou
 
 ## Root Cause Analysis
 
-The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+The race condition occurs when both the main task loop and subtask completion call
+`recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
 
-The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to
+the parent task.
 ```
 
 ## 🔍 Research Context & Next Steps
@@ -215,21 +249,27 @@ The issue is introduced in commit `749f3d22a` where subtask completion triggers 
 **Understanding Documentation Standards:**
 
 - **Next**: Check related standards documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 **Implementing Documentation Standards:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Applying Standards to Documentation:**
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) → [Architecture Documentation](../architecture/README.md) → [Orchestrator Documentation](../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current issues
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
+- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+  issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Standards Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Standards Documentation](README.md) for guidance.
 
 ### Navigation Footer
 
@@ -238,7 +278,7 @@ Every page provides clear next steps based on your research goals. If you're uns
 **Content Requirements**:
 
 - **Back Link**: Link to parent index
-- **Root Link**: Link to main INDEX.md
+- **Root Link**: Link to main README.md
 - **Source Link**: Link to source file with #L1
 - **Proper Paths**: Use correct relative/absolute paths
 
@@ -247,11 +287,13 @@ Every page provides clear next steps based on your research goals. If you're uns
 ```markdown
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+  `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
 
 ## Structure Flow
@@ -362,17 +404,27 @@ graph TD
 ```markdown
 # Bad: Multiple H1 headings
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 # Document Title
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Content here.
 
 # Another Title
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 More content here.
 
 # Good: Single H1 heading
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 # Document Title
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 Content here.
 
@@ -388,25 +440,33 @@ More content here.
 ```markdown
 # API Duplication Analysis
 
-**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations for developers and system architects.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
+identification, impact assessment, and solution recommendations for developers and system
+architects.
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
 
 </details>
 
 ## Executive Summary
 
-_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously, resulting in jumbled responses and confused user experience. This document provides a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for implementation._
+_The API duplication issue is caused by a race condition where multiple API calls are made
+simultaneously, resulting in jumbled responses and confused user experience. This document provides
+a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for
+implementation._
 
 ## Problem Description
 
-The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat
+interface.
 
 ### Symptoms
 
@@ -422,11 +482,13 @@ The issue manifests as multiple API requests with spinners appearing simultaneou
 
 ## Root Cause Analysis
 
-The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+The race condition occurs when both the main task loop and subtask completion call
+`recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
 
-The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to
+the parent task.
 
 ## Solution Recommendations
 
@@ -449,7 +511,8 @@ Follow these steps to implement the solution:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+  `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
 ### Minimal Document Example
@@ -457,7 +520,10 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
-**Purpose:** Step-by-step instructions for building the KiloCode project from source, including prerequisites, build steps, and troubleshooting common issues.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+**Purpose:** Step-by-step instructions for building the KiloCode project from source, including
+prerequisites, build steps, and troubleshooting common issues.
 
 <details><summary>Table of Contents</summary>
 
@@ -469,7 +535,8 @@ Follow these steps to implement the solution:
 
 ## Executive Summary
 
-_This guide provides step-by-step instructions for building the KiloCode project from source, including prerequisites, build steps, and troubleshooting common issues._
+_This guide provides step-by-step instructions for building the KiloCode project from source,
+including prerequisites, build steps, and troubleshooting common issues._
 
 ## Prerequisites
 
@@ -496,11 +563,14 @@ Common issues and solutions:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
 
 ---
 
-**Navigation**: [Back to Structure](README.md) · [Next: Headings & Hierarchy](HEADINGS_HIERARCHY.md) · [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
+**Navigation**: [Back to Structure](README.md) · [Next: Headings & Hierarchy](HEADINGS_HIERARCHY.md)
+· [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

@@ -1,12 +1,31 @@
 # Applications
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 **Purpose:** Overview of the standalone applications and interfaces in the KiloCode monorepo.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Application Overview
 
-The KiloCode monorepo contains 8 standalone applications that provide different interfaces and functionality:
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+The KiloCode monorepo contains 8 standalone applications that provide different interfaces and
+functionality:
 
 ```mermaid
 graph TB
@@ -401,3 +420,10 @@ graph TD
 - [← Back to Repository Home](README.md)
 - [→ Testing Infrastructure](TESTING_INFRASTRUCTURE.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#applications)

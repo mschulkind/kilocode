@@ -1,8 +1,12 @@
 # MCP Integration
 
-**Purpose:** Comprehensive documentation of Model Context Protocol (MCP) integration, server management, and tool discovery in the KiloCode system.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a specific function, but they all work together to keep the system healthy and functioning! 🧬
+**Purpose:** Comprehensive documentation of Model Context Protocol (MCP) integration, server
+management, and tool discovery in the KiloCode system.
+
+> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
+> specific function, but they all work together to keep the system healthy and functioning! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -12,15 +16,16 @@
 - [Tool Discovery](#tool-discovery)
 - [Resource Management](#resource-management)
 - [Communication Protocols](#communication-protocols)
-- [Error Handling](#error-handling)
+- Error Handling
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The MCP Integration system provides comprehensive Model Context Protocol support for KiloCode, enabling seamless integration with external tools and resources through standardized MCP servers._
+_The MCP Integration system provides comprehensive Model Context Protocol support for KiloCode,
+enabling seamless integration with external tools and resources through standardized MCP servers._
 
 The MCP Integration consists of:
 
@@ -86,8 +91,7 @@ graph TB
 
 ### MCP Hub
 
-**Implementation**: `src/services/mcp/McpHub.ts`
-**Features**:
+**Implementation**: `src/services/mcp/McpHub.ts` **Features**:
 
 - Server registration and management
 - Tool and resource discovery
@@ -101,8 +105,7 @@ graph TB
 - Resource access coordination
 - Communication protocol handling
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Implementation Details**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
 **McpHub Architecture**:
 
@@ -133,8 +136,7 @@ export class McpHub {
 
 ### Server Manager
 
-**Implementation**: `src/services/mcp/McpServerManager.ts`
-**Features**:
+**Implementation**: `src/services/mcp/McpServerManager.ts` **Features**:
 
 - Individual server management
 - Server configuration
@@ -158,8 +160,8 @@ stateDiagram-v2
     Stopped --> [*]: Uninstall
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Server lifecycle management, configuration handling, status monitoring
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Server lifecycle
+management, configuration handling, status monitoring
 
 ## Tool Discovery
 
@@ -187,8 +189,8 @@ interface MCPToolMetadata {
 }
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Tool registry architecture, metadata management, capability tracking
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Tool registry
+architecture, metadata management, capability tracking
 
 ### Tool Discovery Process
 
@@ -217,8 +219,8 @@ sequenceDiagram
     MCP Hub-->>Client: Available Tools
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Discovery mechanisms, tool registration, capability queries
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Discovery mechanisms,
+tool registration, capability queries
 
 ## Resource Management
 
@@ -245,8 +247,8 @@ interface MCPResourceMetadata {
 }
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Resource registry architecture, metadata management, access control
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource registry
+architecture, metadata management, access control
 
 ### Resource Access
 
@@ -264,8 +266,8 @@ interface MCPResourceMetadata {
 - **Rate Limiting**: Access rate limiting
 - **Audit Logging**: Access audit logging
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Resource access patterns, access control, security measures
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource access patterns,
+access control, security measures
 
 ## Communication Protocols
 
@@ -285,8 +287,8 @@ interface MCPResourceMetadata {
 - **Event Notifications**: Server event notifications
 - **Error Responses**: Error handling responses
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Protocol implementation, message handling, communication patterns
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Protocol implementation,
+message handling, communication patterns
 
 ### Communication Flow
 
@@ -307,8 +309,8 @@ sequenceDiagram
     MCP Hub-->>Client: Final Response
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Communication flow, request handling, response processing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Communication flow,
+request handling, response processing
 
 ## Error Handling
 
@@ -328,8 +330,8 @@ sequenceDiagram
 - **Error Reporting**: Error reporting and logging
 - **Error Prevention**: Proactive error prevention
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Error handling framework, recovery strategies, error reporting
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Error handling framework,
+recovery strategies, error reporting
 
 ### Error Recovery
 
@@ -348,8 +350,8 @@ sequenceDiagram
 4. **Recovery Execution**: Recovery action execution
 5. **Recovery Validation**: Recovery success verification
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Recovery mechanisms, fallback strategies, circuit breaker patterns
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Recovery mechanisms,
+fallback strategies, circuit breaker patterns
 
 ## Common Issues and Solutions
 
@@ -361,8 +363,8 @@ sequenceDiagram
 - Communication timeouts
 - Server unavailability
 
-**Root Cause**: Network issues or server configuration problems
-**Solution**: Implement robust connection management and retry logic
+**Root Cause**: Network issues or server configuration problems **Solution**: Implement robust
+connection management and retry logic
 
 ### Issue 2: Tool Discovery Issues
 
@@ -372,8 +374,8 @@ sequenceDiagram
 - Tool registration failures
 - Capability mismatches
 
-**Root Cause**: Discovery mechanism failures or server compatibility issues
-**Solution**: Implement comprehensive discovery validation and error handling
+**Root Cause**: Discovery mechanism failures or server compatibility issues **Solution**: Implement
+comprehensive discovery validation and error handling
 
 ### Issue 3: Resource Access Problems
 
@@ -383,8 +385,8 @@ sequenceDiagram
 - Resource not found
 - Access permission errors
 
-**Root Cause**: Access control issues or resource configuration problems
-**Solution**: Implement proper access control and resource validation
+**Root Cause**: Access control issues or resource configuration problems **Solution**: Implement
+proper access control and resource validation
 
 ### Issue 4: Protocol Communication Errors
 
@@ -394,9 +396,17 @@ sequenceDiagram
 - Protocol version mismatches
 - Communication failures
 
-**Root Cause**: Protocol implementation issues or version incompatibilities
-**Solution**: Implement robust protocol handling and version management
+**Root Cause**: Protocol implementation issues or version incompatibilities **Solution**: Implement
+robust protocol handling and version management
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/services/MCP_INTEGRATION.md#L1`
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+  · Source: `/docs/services/MCP_INTEGRATION.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [services](../docs/services/) ·
+[↑ Table of Contents](#mcp-integration)

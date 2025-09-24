@@ -1,12 +1,33 @@
 # Repository Structure
 
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 **Purpose:** High-level overview of the KiloCode repository organization and directory structure.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Executive Summary
 
-The KiloCode repository is a comprehensive VS Code extension for AI-powered coding assistance, featuring a multi-layered architecture with extensive tooling, testing, and deployment infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages, applications, and services.
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+The KiloCode repository is a comprehensive VS Code extension for AI-powered coding assistance,
+featuring a multi-layered architecture with extensive tooling, testing, and deployment
+infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages,
+applications, and services.
 
 **Key Statistics:**
 
@@ -272,3 +293,10 @@ graph TB
 - [← Back to Repository Home](README.md)
 - [→ Core Systems](CORE_SYSTEMS.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#repository-structure)

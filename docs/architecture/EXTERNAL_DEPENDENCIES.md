@@ -1,8 +1,13 @@
 # External Dependencies
 
-**Purpose:** Comprehensive catalog of all external dependencies, libraries, and conventions for using them in the KiloCode project.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Biology Fun Fact**: External dependencies are like symbiotic relationships in nature - each library provides specific functionality (like how mitochondria provide energy), and together they create a thriving ecosystem! 🧬
+**Purpose:** Comprehensive catalog of all external dependencies, libraries, and conventions for
+using them in the KiloCode project.
+
+> **Biology Fun Fact**: External dependencies are like symbiotic relationships in nature - each
+> library provides specific functionality (like how mitochondria provide energy), and together they
+> create a thriving ecosystem! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -17,13 +22,28 @@
 - [Utilities & Helpers](#utilities--helpers)
 - [Dependency Management](#dependency-management)
 - [Security & Conventions](#security--conventions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The KiloCode project utilizes over 100 external dependencies across multiple categories, from AI/ML libraries to UI frameworks, with strict version management and security conventions._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_The KiloCode project utilizes over 100 external dependencies across multiple categories, from AI/ML
+libraries to UI frameworks, with strict version management and security conventions._
 
 **Key Statistics:**
 
@@ -556,6 +576,9 @@ function validateTask(data: unknown): Task {
 
 ```yaml
 # pnpm-workspace.yaml
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 packages:
     - src
     - webview-ui
@@ -615,12 +638,21 @@ onlyBuiltDependencies:
 
 ```bash
 # Run security audit
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm audit
 
 # Fix vulnerabilities
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 pnpm audit --fix
 
 # Check for outdated packages
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 pnpm outdated
 ```
 
@@ -694,4 +726,12 @@ type Config = z.infer<typeof ConfigSchema>
 
 <a id="navigation-footer"></a>
 
-- Back: [`REPOSITORY_OVERVIEW.md`](REPOSITORY_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/architecture/EXTERNAL_DEPENDENCIES.md#L1`
+- Back: [`REPOSITORY_OVERVIEW.md`](REPOSITORY_OVERVIEW.md) · Root: [`README.md`](../README.md) ·
+  Source: `/docs/architecture/EXTERNAL_DEPENDENCIES.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
+[↑ Table of Contents](#external-dependencies)

@@ -1,5 +1,7 @@
 # Build Pipeline Architecture
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 **Purpose:** Comprehensive documentation of build pipeline architecture, dependency management, and deployment strategies in the KiloCode system.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
@@ -15,13 +17,13 @@
 - [Deployment Strategies](#deployment-strategies)
 - [Performance Optimization](#performance-optimization)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Build Pipeline Architecture provides comprehensive build, packaging, and deployment infrastructure for the KiloCode monorepo, ensuring efficient development workflows and reliable releases._
+*The Build Pipeline Architecture provides comprehensive build, packaging, and deployment infrastructure for the KiloCode monorepo, ensuring efficient development workflows and reliable releases.*
 
 The Build Pipeline consists of:
 
@@ -41,44 +43,44 @@ graph TB
         ESBUILD[ESBuild Bundler]
         VITE[Vite Bundler]
     end
-    
+
     subgraph "Build Targets"
         VSC[VS Code Extension]
         WEBVIEW[Webview UI]
         PACKAGES[Workspace Packages]
         DOCS[Documentation]
     end
-    
+
     subgraph "Build Tools"
         TSC[TypeScript Compiler]
         ESLINT[ESLint Linter]
         PRETTIER[Prettier Formatter]
         VSCE[VS Code Extension CLI]
     end
-    
+
     subgraph "Quality Gates"
         LINT[Linting]
         TYPE[Type Checking]
         TEST[Testing]
         BUILD[Building]
     end
-    
+
     TURBO --> PNPM
     TURBO --> ESBUILD
     TURBO --> VITE
-    
+
     PNPM --> VSC
     PNPM --> WEBVIEW
     PNPM --> PACKAGES
     PNPM --> DOCS
-    
+
     ESBUILD --> TSC
     VITE --> TSC
-    
+
     TSC --> ESLINT
     TSC --> PRETTIER
     TSC --> VSCE
-    
+
     ESLINT --> LINT
     TSC --> TYPE
     TURBO --> TEST
@@ -91,25 +93,27 @@ graph TB
 
 **Configuration**: `pnpm-workspace.yaml`
 **Workspace Structure**:
+
 ```yaml
 packages:
-  - src
-  - webview-ui
-  - apps/*
-  - packages/*
-  - jetbrains/host
-  - jetbrains/plugin
+- src
+- webview-ui
+- apps/*
+- packages/*
+- jetbrains/host
+- jetbrains/plugin
 
 onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - '@vscode/vsce-sign'
-  - core-js
-  - esbuild
-  - keytar
-  - puppeteer-chromium-resolver
+- '@tailwindcss/oxide'
+- '@vscode/vsce-sign'
+- core-js
+- esbuild
+- keytar
+- puppeteer-chromium-resolver
 ```
 
 **Workspace Packages**:
+
 - **Core Extension** (`src/`): Main VS Code extension
 - **Webview UI** (`webview-ui/`): React-based UI
 - **Applications** (`apps/*`): Documentation, testing, web apps
@@ -120,6 +124,7 @@ onlyBuiltDependencies:
 **Key Implementation Details**:
 
 **Turbo Configuration**:
+
 ```json
 {
     "tasks": {
@@ -144,6 +149,7 @@ onlyBuiltDependencies:
 ```
 
 **Core Features**:
+
 - **Task Dependencies**: Proper dependency resolution between packages
 - **Caching Strategy**: Intelligent caching with cache invalidation
 - **Output Management**: Output directory specification and management
@@ -155,12 +161,14 @@ onlyBuiltDependencies:
 ### Dependency Management
 
 **Dependency Types**:
+
 - **Root Dependencies**: Shared across all packages
 - **Package Dependencies**: Package-specific dependencies
 - **Dev Dependencies**: Development-only dependencies
 - **Peer Dependencies**: External dependencies
 
 **Dependency Resolution**:
+
 - Hoisting strategy
 - Version resolution
 - Conflict resolution
@@ -175,6 +183,7 @@ onlyBuiltDependencies:
 
 **Configuration**: `turbo.json`
 **Build Tasks**:
+
 ```json
 {
   "tasks": {
@@ -195,6 +204,7 @@ onlyBuiltDependencies:
 ```
 
 **Build Orchestration**:
+
 - Task dependencies
 - Parallel execution
 - Caching strategies
@@ -207,12 +217,14 @@ onlyBuiltDependencies:
 
 **Configuration**: `src/esbuild.mjs`
 **Features**:
+
 - Fast bundling
 - TypeScript compilation
 - Code splitting
 - Minification
 
 **Build Targets**:
+
 - VS Code extension bundle
 - Node.js compatibility
 - Browser compatibility
@@ -224,12 +236,14 @@ onlyBuiltDependencies:
 
 **Configuration**: `webview-ui/vite.config.ts`
 **Features**:
+
 - Hot module replacement
 - Fast builds
 - TypeScript support
 - React support
 
 **Build Features**:
+
 - Development server
 - Production builds
 - Asset optimization
@@ -243,12 +257,14 @@ onlyBuiltDependencies:
 ### Workspace Organization
 
 **Root Level**:
+
 - `package.json`: Root package configuration
 - `pnpm-workspace.yaml`: Workspace configuration
 - `turbo.json`: Build orchestration
 - `tsconfig.json`: TypeScript configuration
 
 **Package Structure**:
+
 ```
 packages/
 ├── build/          # Build utilities
@@ -262,6 +278,7 @@ packages/
 ```
 
 **Application Structure**:
+
 ```
 apps/
 ├── kilocode-docs/  # Documentation site
@@ -278,12 +295,14 @@ apps/
 ### Build Coordination
 
 **Build Dependencies**:
+
 - Type checking before building
 - Linting before testing
 - Testing before deployment
 - Package builds before application builds
 
 **Parallel Execution**:
+
 - Independent package builds
 - Parallel testing
 - Concurrent linting
@@ -297,12 +316,14 @@ apps/
 ### GitHub Actions Workflow
 
 **Workflow Stages**:
+
 1. **Code Quality**: Linting, type checking, formatting
 2. **Testing**: Unit tests, integration tests, E2E tests
 3. **Building**: Package builds, application builds
 4. **Deployment**: VS Code extension packaging, publishing
 
 **Workflow Configuration**:
+
 ```yaml
 name: CI/CD Pipeline
 on:
@@ -332,12 +353,14 @@ jobs:
 ### Quality Gates
 
 **Quality Checks**:
+
 - **Linting**: ESLint code quality checks
 - **Type Checking**: TypeScript type validation
 - **Testing**: Comprehensive test suite execution
 - **Building**: Successful build verification
 
 **Quality Thresholds**:
+
 - Linting: Zero errors, zero warnings
 - Type Checking: Zero type errors
 - Testing: 100% test pass rate
@@ -351,11 +374,13 @@ jobs:
 ### VS Code Extension Packaging
 
 **Packaging Tools**:
+
 - **@vscode/vsce**: VS Code extension CLI
 - **ovsx**: Open VSX Registry CLI
 - **Custom scripts**: Build automation
 
 **Packaging Process**:
+
 1. Build all packages
 2. Bundle VS Code extension
 3. Package as .vsix file
@@ -368,12 +393,14 @@ jobs:
 ### Release Management
 
 **Release Types**:
+
 - **Production Releases**: Stable releases to marketplace
 - **Nightly Releases**: Development builds
 - **Pre-releases**: Beta and RC releases
 - **Hotfixes**: Emergency patches
 
 **Release Process**:
+
 1. Version bumping
 2. Changelog generation
 3. Build and test
@@ -388,12 +415,14 @@ jobs:
 ### Build Performance
 
 **Optimization Strategies**:
+
 - **Caching**: Turbo build caching
 - **Parallel Execution**: Concurrent builds
 - **Incremental Builds**: Only rebuild changed packages
 - **Build Splitting**: Separate build targets
 
 **Performance Metrics**:
+
 - Build time
 - Cache hit rate
 - Memory usage
@@ -405,12 +434,14 @@ jobs:
 ### Bundle Optimization
 
 **Bundle Strategies**:
+
 - **Code Splitting**: Dynamic imports
 - **Tree Shaking**: Dead code elimination
 - **Minification**: Code compression
 - **Asset Optimization**: Image and resource optimization
 
 **Bundle Analysis**:
+
 - Bundle size analysis
 - Dependency analysis
 - Performance profiling
@@ -424,6 +455,7 @@ jobs:
 ### Issue 1: Build Failures
 
 **Symptoms**:
+
 - Build process failures
 - Dependency resolution errors
 - Type checking failures
@@ -434,6 +466,7 @@ jobs:
 ### Issue 2: Slow Builds
 
 **Symptoms**:
+
 - Long build times
 - High resource usage
 - Inefficient builds
@@ -444,6 +477,7 @@ jobs:
 ### Issue 3: Deployment Issues
 
 **Symptoms**:
+
 - Deployment failures
 - Package validation errors
 - Marketplace publishing issues
@@ -454,6 +488,7 @@ jobs:
 ### Issue 4: Cache Issues
 
 **Symptoms**:
+
 - Stale cache problems
 - Build inconsistencies
 - Cache corruption
@@ -463,4 +498,10 @@ jobs:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/build/BUILD_PIPELINE_ARCHITECTURE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source: `/docs/build/BUILD_PIPELINE_ARCHITECTURE.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [build](../docs/build/) · [↑ Table of Contents](#build-pipeline-architecture)

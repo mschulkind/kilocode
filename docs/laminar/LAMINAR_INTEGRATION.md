@@ -1,13 +1,16 @@
 # Laminar Integration
 
-Comprehensive observability and tracing system for Kilo Code, enabling detailed monitoring of task execution, tool usage, and LLM interactions.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+Comprehensive observability and tracing system for Kilo Code, enabling detailed monitoring of task
+execution, tool usage, and LLM interactions.
 
 <details><summary>Table of Contents</summary>
 
 - [What is Laminar?](#what-is-laminar)
 - [Purpose in Kilo Code](#purpose-in-kilo-code)
 - [Integration with Telemetry Systems](#integration-with-telemetry-systems)
-- [Key Components](#key-components)
+- Key Components
 - [Effects on Codebase](#effects-on-codebase)
 - [Configuration](#configuration)
 - [Code Examples](#code-examples)
@@ -17,7 +20,10 @@ Comprehensive observability and tracing system for Kilo Code, enabling detailed 
 
 ## What is Laminar?
 
-Laminar is an open-source observability platform specifically designed for Large Language Model (LLM) applications. It provides comprehensive tracing capabilities to monitor and analyze the execution flow of AI-powered systems, including function calls, LLM API interactions, and custom spans.
+Laminar is an open-source observability platform specifically designed for Large Language Model
+(LLM) applications. It provides comprehensive tracing capabilities to monitor and analyze the
+execution flow of AI-powered systems, including function calls, LLM API interactions, and custom
+spans.
 
 The Laminar TypeScript SDK (`@lmnr-ai/lmnr`) offers:
 
@@ -29,15 +35,19 @@ The Laminar TypeScript SDK (`@lmnr-ai/lmnr`) offers:
 
 ## Purpose in Kilo Code
 
-As a fork of Cline (which itself is an AI coding assistant), Kilo Code integrates Laminar to enhance observability beyond the basic telemetry provided by PostHog. Laminar enables:
+As a fork of Cline (which itself is an AI coding assistant), Kilo Code integrates Laminar to enhance
+observability beyond the basic telemetry provided by PostHog. Laminar enables:
 
-- **Detailed task lifecycle tracing**: Track the complete execution flow from user input to task completion
-- **Tool execution monitoring**: Monitor which tools are invoked, their performance, and success rates
+- **Detailed task lifecycle tracing**: Track the complete execution flow from user input to task
+  completion
+- **Tool execution monitoring**: Monitor which tools are invoked, their performance, and success
+  rates
 - **LLM interaction analysis**: Capture token usage, costs, and response quality metrics
 - **Error diagnosis**: Record exceptions and failures with full context
 - **Performance optimization**: Identify bottlenecks in task execution and tool handling
 
-This integration provides developers and maintainers with deep insights into how Kilo Code processes requests, enabling data-driven improvements to the AI assistant's capabilities.
+This integration provides developers and maintainers with deep insights into how Kilo Code processes
+requests, enabling data-driven improvements to the AI assistant's capabilities.
 
 ## Integration with Telemetry Systems
 
@@ -45,9 +55,11 @@ Laminar integrates seamlessly with Kilo Code's existing PostHog-based telemetry 
 
 - **Unified opt-in/opt-out**: Laminar respects the same telemetry settings as PostHog
 - **User identification**: Shares authenticated user IDs for consistent attribution
-- **Complementary data**: PostHog handles high-level usage analytics while Laminar provides detailed execution traces
+- **Complementary data**: PostHog handles high-level usage analytics while Laminar provides detailed
+  execution traces
 
-The integration is controlled by the `updateTelemetryState` method in the controller, ensuring users have consistent control over their data sharing preferences.
+The integration is controlled by the `updateTelemetryState` method in the controller, ensuring users
+have consistent control over their data sharing preferences.
 
 ## Key Components
 
@@ -223,19 +235,23 @@ try {
 
 ## Differences from Cline
 
-Kilo Code's Laminar integration is a new addition not present in the original Cline codebase. Key differences:
+Kilo Code's Laminar integration is a new addition not present in the original Cline codebase. Key
+differences:
 
-- **Enhanced observability**: Cline relied primarily on PostHog for telemetry; Kilo Code adds detailed execution tracing
+- **Enhanced observability**: Cline relied primarily on PostHog for telemetry; Kilo Code adds
+  detailed execution tracing
 - **LLM metrics**: Comprehensive tracking of token usage, costs, and model performance
 - **Tool monitoring**: Granular visibility into tool execution patterns
 - **Error context**: Rich exception data with full execution context
 - **User attribution**: Consistent user identification across all trace data
 
-This integration positions Kilo Code for better debugging, performance optimization, and user experience improvements compared to the base Cline implementation.
+This integration positions Kilo Code for better debugging, performance optimization, and user
+experience improvements compared to the base Cline implementation.
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/LAMINAR_INTEGRATION.md#L1`
+- Back: [`README.md`](README.md:1) · Root: [`README.md`](README.md:1) · Source:
+  `/docs/LAMINAR_INTEGRATION.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
@@ -244,22 +260,30 @@ This integration positions Kilo Code for better debugging, performance optimizat
 **Understanding Laminar Observability:**
 
 - **Next**: Check related Laminar documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Laminar Documentation](README.md) for context
 
 **Implementing Observability Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Observability Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Laminar Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Laminar Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,18 +1,39 @@
 # Navigation Scenario Analysis
 
-**Purpose:** Detailed analysis of why the problematic change was made and the navigation scenario it was designed to solve.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+**Purpose:** Detailed analysis of why the problematic change was made and the navigation scenario it
+was designed to solve.
+
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Why This Change Was Made
 
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
 ### The Original Problem
 
-The commit message reveals the intended purpose: **"fix children task loading to continue the execution of the parent after finished"**
+The commit message reveals the intended purpose: **"fix children task loading to continue the
+execution of the parent after finished"**
 
 **Critical Navigation Scenario Being Solved:**
 
-The fix was specifically needed for a complex user workflow where task state could be lost during navigation:
+The fix was specifically needed for a complex user workflow where task state could be lost during
+navigation:
 
 1. **Orchestrator creates subtask** → **Subtask starts executing**
 2. **User navigates away** by switching to a different chat/task
@@ -22,7 +43,9 @@ The fix was specifically needed for a complex user workflow where task state cou
 
 ### The Navigation State Loss Problem
 
-**Root Issue**: When users navigate away from a running subtask and then return, the task stack reconstruction process was incomplete, causing the parent orchestrator to lose its execution context.
+**Root Issue**: When users navigate away from a running subtask and then return, the task stack
+reconstruction process was incomplete, causing the parent orchestrator to lose its execution
+context.
 
 **Technical Details:**
 
@@ -56,7 +79,8 @@ async finishSubTask(lastMessage: string) {
 2. **Properly initialized** with saved messages and API conversation
 3. **NOT continuing execution** - it was just sitting there waiting
 
-**The Missing Piece**: The orchestrator needed to be told to continue its execution loop after the subtask completed, especially when loaded from a navigation scenario.
+**The Missing Piece**: The orchestrator needed to be told to continue its execution loop after the
+subtask completed, especially when loaded from a navigation scenario.
 
 ## The Navigation Flow Diagram
 
@@ -89,7 +113,8 @@ graph TD
 
 ## The Solution Approach
 
-**The Fix**: Add logic to continue parent execution after subtask completion, especially for navigation scenarios:
+**The Fix**: Add logic to continue parent execution after subtask completion, especially for
+navigation scenarios:
 
 ```typescript
 private async continueParentTask(lastMessage: string): Promise<void> {
@@ -125,14 +150,18 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 
 ### The Unintended Consequence
 
-**The Problem**: The fix was designed for **navigation scenarios** but also affects **active execution scenarios**:
+**The Problem**: The fix was designed for **navigation scenarios** but also affects **active
+execution scenarios**:
 
 - **Navigation Scenario**: User navigates away and back (intended use case)
-- **Active Execution Scenario**: User stays in chat during subtask execution (unintended side effect)
+- **Active Execution Scenario**: User stays in chat during subtask execution (unintended side
+  effect)
 
-**The Race Condition**: In active execution, both the main task loop and subtask completion can call `recursivelyMakeClineRequests` simultaneously, causing the API duplication issue.
+**The Race Condition**: In active execution, both the main task loop and subtask completion can call
+`recursivelyMakeClineRequests` simultaneously, causing the API duplication issue.
 
-**The Challenge**: The fix is necessary for navigation scenarios but causes problems in active execution scenarios.
+**The Challenge**: The fix is necessary for navigation scenarios but causes problems in active
+execution scenarios.
 
 ### The Complete Solution
 
@@ -142,11 +171,13 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 2. **Prevents the race condition** - no concurrent API calls in active execution
 3. **Maintains user experience** - seamless workflow in both scenarios
 
-**The Answer**: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests` call executes at a time, regardless of the scenario.
+**The Answer**: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests` call
+executes at a time, regardless of the scenario.
 
 ## Why the Stack Differs Based on Navigation Path
 
-**The Core Issue**: The task stack state depends entirely on **how you arrived** at viewing a given task, not just which task you're viewing.
+**The Core Issue**: The task stack state depends entirely on **how you arrived** at viewing a given
+task, not just which task you're viewing.
 
 ### Path 1: Active Execution (Normal Flow)
 

@@ -1,8 +1,14 @@
 # Laminar Deduplication System
 
-**Purpose:** Detailed documentation of the Laminar service deduplication mechanisms, span management, and system prompt optimization to prevent duplicate observability data and improve performance.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates instant connections between distant parts of the system, allowing us to observe the entire state from any single point! ⚛️
+**Purpose:** Detailed documentation of the Laminar service deduplication mechanisms, span
+management, and system prompt optimization to prevent duplicate observability data and improve
+performance.
+
+> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
+> instant connections between distant parts of the system, allowing us to observe the entire state
+> from any single point! ⚛️
 
 <details><summary>Table of Contents</summary>
 
@@ -14,13 +20,15 @@
 - [Configuration and Control](#configuration-and-control)
 - [Common Issues and Solutions](#common-issues-and-solutions)
 - [Performance Impact](#performance-impact)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Laminar Deduplication System manages observability spans and prevents duplicate data collection, particularly for system prompts which can be large and repetitive. This system is crucial for maintaining performance and reducing data storage costs in the observability pipeline._
+_The Laminar Deduplication System manages observability spans and prevents duplicate data
+collection, particularly for system prompts which can be large and repetitive. This system is
+crucial for maintaining performance and reducing data storage costs in the observability pipeline._
 
 The Laminar service implements several deduplication mechanisms to prevent:
 
@@ -182,7 +190,8 @@ private _startSpanNow(
 
 ### The Duplication Problem
 
-System prompts in KiloCode can be extremely large (10KB+), and storing them in full for every LLM span creates significant overhead:
+System prompts in KiloCode can be extremely large (10KB+), and storing them in full for every LLM
+span creates significant overhead:
 
 ```typescript
 // Without optimization - full system prompt stored
@@ -541,4 +550,12 @@ const processingMetrics = {
 
 <a id="navigation-footer"></a>
 
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
+- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
+  Root: [`README.md`](README.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [laminar](../docs/laminar/) ·
+[↑ Table of Contents](#laminar-deduplication-system)

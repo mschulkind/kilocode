@@ -1,8 +1,13 @@
 # Getting Started Guide
 
-**Purpose:** Comprehensive guide for new developers, contributors, and users to understand and get started with KiloCode development.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Cartography Fun Fact**: Getting started with KiloCode is like learning to read a map - once you understand the landmarks (core concepts), routes (development workflow), and compass (testing), you can navigate anywhere in the codebase! 🗺️
+**Purpose:** Comprehensive guide for new developers, contributors, and users to understand and get
+started with KiloCode development.
+
+> **Cartography Fun Fact**: Getting started with KiloCode is like learning to read a map - once you
+> understand the landmarks (core concepts), routes (development workflow), and compass (testing),
+> you can navigate anywhere in the codebase! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -17,13 +22,28 @@
 - [Contributing](#contributing)
 - [Troubleshooting](#troubleshooting)
 - [Next Steps](#next-steps)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_KiloCode is a comprehensive VS Code extension for AI-powered coding assistance. This guide provides everything needed to understand, set up, and contribute to the project._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_KiloCode is a comprehensive VS Code extension for AI-powered coding assistance. This guide provides
+everything needed to understand, set up, and contribute to the project._
 
 **What You'll Learn:**
 
@@ -56,13 +76,22 @@ _KiloCode is a comprehensive VS Code extension for AI-powered coding assistance.
 
 ```bash
 # Install Node.js 20.19.2
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 nvm install 20.19.2
 nvm use 20.19.2
 
 # Install pnpm
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 npm install -g pnpm@10.8.1
 
 # Verify installations
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 node --version  # Should be 20.19.2
 pnpm --version  # Should be 10.8.1+
 ```
@@ -71,22 +100,38 @@ pnpm --version  # Should be 10.8.1+
 
 ```bash
 # Prerequisites: Docker Desktop + VS Code + Dev Containers extension
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 # Clone repository
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 git clone https://github.com/Kilo-Org/kilocode.git
 cd kilocode
 
 # Open in VS Code and select "Reopen in Container"
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 # All dependencies automatically installed
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 ```
 
 #### Option 3: Nix Flake (NixOS/Nix users)
 
 ```bash
 # Prerequisites: Nix with flakes + direnv
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 git clone https://github.com/Kilo-Org/kilocode.git
 cd kilocode
 
 # Automatic environment setup
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 direnv allow
 ```
 
@@ -96,13 +141,22 @@ direnv allow
 
 ```bash
 # Fork and clone the repository
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 git clone https://github.com/YOUR-USERNAME/kilocode.git
 cd kilocode
 
 # Install dependencies
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 pnpm install
 
 # Build the extension
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 pnpm build
 ```
 
@@ -110,10 +164,18 @@ pnpm build
 
 ```bash
 # Open in VS Code
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 code .
 
 # Press F5 to start debugging
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 # This opens a new VS Code window with KiloCode loaded
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 ```
 
 ### 3. Verify Installation
@@ -150,6 +212,9 @@ code .
 
 ```bash
 # .env.development
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 NODE_ENV=development
 ENABLE_DEBUG_LOGGING=true
 ENABLE_HOT_RELOAD=true
@@ -159,9 +224,15 @@ ENABLE_HOT_RELOAD=true
 
 ```bash
 # Setup Git hooks
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 git config core.hooksPath .husky
 
 # Configure remotes (if contributing)
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 git remote add upstream https://github.com/Kilo-Org/kilocode.git
 ```
 
@@ -372,12 +443,21 @@ const response = await provider.generateResponse(prompt, options)
 
 ```bash
 # Watch mode for webview
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 cd webview-ui && pnpm dev
 
 # Watch mode for extension
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 cd src && pnpm watch:tsc
 
 # Full development build
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 pnpm build
 ```
 
@@ -420,12 +500,21 @@ console.log("UI state:", uiState)
 
 ```bash
 # Run all tests
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 pnpm test
 
 # Run specific test file
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm test src/core/task/Task.test.ts
 
 # Watch mode
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm test --watch
 ```
 
@@ -433,9 +522,15 @@ pnpm test --watch
 
 ```bash
 # Run E2E tests
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm playwright
 
 # Run VS Code extension tests
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm test:extension
 ```
 
@@ -446,6 +541,9 @@ pnpm test:extension
 ```bash
 pnpm build
 # Creates development .vsix file
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 ```
 
 **Production Build:**
@@ -453,12 +551,18 @@ pnpm build
 ```bash
 pnpm build:production
 # Creates optimized .vsix file
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 ```
 
 **Install Locally:**
 
 ```bash
 # Install the built extension
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 code --install-extension bin/kilo-code-*.vsix
 ```
 
@@ -480,15 +584,27 @@ code --install-extension bin/kilo-code-*.vsix
 
 ```bash
 # Run all tests
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm test
 
 # Run with coverage
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm test:coverage
 
 # Run E2E tests
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm playwright
 
 # Run specific test suite
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm test --grep "Task lifecycle"
 ```
 
@@ -498,9 +614,15 @@ pnpm test --grep "Task lifecycle"
 
 ```bash
 # Run ESLint
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm lint
 
 # Fix auto-fixable issues
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 pnpm lint --fix
 ```
 
@@ -508,9 +630,15 @@ pnpm lint --fix
 
 ```bash
 # Check TypeScript types
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 pnpm check-types
 
 # Watch mode
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm watch:types
 ```
 
@@ -518,9 +646,15 @@ pnpm watch:types
 
 ```bash
 # Format code with Prettier
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm format
 
 # Check formatting
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm format:check
 ```
 
@@ -544,10 +678,16 @@ pnpm format:check
 
 ```bash
 # Fork on GitHub, then clone
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 git clone https://github.com/YOUR-USERNAME/kilocode.git
 cd kilocode
 
 # Add upstream remote
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 git remote add upstream https://github.com/Kilo-Org/kilocode.git
 ```
 
@@ -555,12 +695,22 @@ git remote add upstream https://github.com/Kilo-Org/kilocode.git
 
 ```bash
 # Create and switch to feature branch
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 git checkout -b feature/your-feature-name
 
 # Make your changes
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 # ... edit files ...
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 # Commit changes
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 git add .
 git commit -m "feat: add your feature description"
 ```
@@ -569,11 +719,21 @@ git commit -m "feat: add your feature description"
 
 ```bash
 # Push to your fork
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 git push origin feature/your-feature-name
 
 # Create PR on GitHub
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 # Fill out PR template
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 # Request review
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 ```
 
 ### 4. Code Review Process
@@ -616,35 +776,67 @@ type(scope): description
 
 ```bash
 # Check VS Code Developer Tools
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 # Help > Toggle Developer Tools > Console
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 # Common causes:
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 # - Missing dependencies
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 # - TypeScript errors
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 # - VS Code version incompatibility
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 ```
 
 #### 2. Webview Not Updating
 
 ```bash
 # Check webview developer tools
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 # Right-click in webview > Inspect Element
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 # Common causes:
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 # - Message handler errors
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 # - React component errors
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 # - State management issues
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 ```
 
 #### 3. Build Failures
 
 ```bash
 # Clear build cache
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm clean
 rm -rf node_modules
 pnpm install
 
 # Check Node.js version
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 node --version  # Should be 20.19.2
 ```
 
@@ -652,9 +844,15 @@ node --version  # Should be 20.19.2
 
 ```bash
 # Run tests with verbose output
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 pnpm test --verbose
 
 # Check test environment
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 pnpm test --run --reporter=verbose
 ```
 
@@ -685,8 +883,15 @@ console.log("Debug info:", debugData)
 
 ```bash
 # VS Code extension logs
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 # Help > Toggle Developer Tools > Console
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 # Look for "KiloCode" or "kilo-code" messages
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 ```
 
 ### Getting Help
@@ -720,9 +925,9 @@ console.log("Debug info:", debugData)
     - Build and test locally
 
 3. **Understand Architecture:**
-    - Study the [Task Engine](orchestrator/INDEX.md)
+    - Study the [Task Engine](README.md)
     - Review [Tool System](tools/TOOL_SYSTEM_ARCHITECTURE.md)
-    - Explore [Service Layer](services/INDEX.md)
+    - Explore [Service Layer](README.md)
 
 ### Learning Paths
 
@@ -785,28 +990,39 @@ Happy coding! 🚀
 
 **New to KiloCode Development:**
 
-- **Next**: [System Overview](./SYSTEM_OVERVIEW.md) → [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](./repository/CORE_SYSTEMS.md)
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) for advanced topics
+- **Next**: [System Overview](./SYSTEM_OVERVIEW.md) →
+  [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](../architecture/repository/CORE_SYSTEMS.md)
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for advanced topics
 
 **Setting Up Development Environment:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md) →
+  [Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)
 - **Related**: [External Dependencies](./EXTERNAL_DEPENDENCIES.md) for dependency management
 
 **Understanding Current Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md) →
+  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
 
 **Contributing to KiloCode:**
 
-- **Next**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) → [Testing Strategy](./race-condition/TESTING_STRATEGY.md) → [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- **Next**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) →
+  [Testing Strategy]race-condition/TESTING_STRATEGY.md) →
+  [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
 - **Related**: [Investigation Plans](../plans/README.md) for active development work
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](./README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](./README.md) for guidance.
 
 <a id="navigation-footer"></a>
 
-**Navigation**: [← Back to Architecture Documentation](./README.md) · [→ System Overview](./SYSTEM_OVERVIEW.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](./README.md) ·
+[→ System Overview](./SYSTEM_OVERVIEW.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+[↑ Table of Contents](#-research-context--next-steps)

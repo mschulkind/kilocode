@@ -1,10 +1,28 @@
 # Build Pipelines
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 **Purpose:** Comprehensive overview of the build and CI/CD pipelines used in KiloCode.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Build System Overview
+
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
 
 KiloCode uses a sophisticated build system with multiple pipelines and deployment strategies:
 
@@ -207,6 +225,9 @@ export default defineConfig({
 
 ```yaml
 # .github/workflows/ci.yml
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 name: CI/CD Pipeline
 
 on:
@@ -445,3 +466,10 @@ jobs:
 - [← Back to Repository Home](README.md)
 - [→ Development Tools](DEVELOPMENT_TOOLS.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#build-pipelines)

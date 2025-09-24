@@ -1,8 +1,13 @@
 # Document Structure 🏗️
 
-**Purpose:** Comprehensive standards for structuring individual documents, ensuring consistent anatomy and hierarchy across all KiloCode documentation.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Architecture Fun Fact**: Just like how buildings have a foundation, framework, and finishing details, our documents have a standardized structure that provides stability, organization, and usability! 🏗️
+**Purpose:** Comprehensive standards for structuring individual documents, ensuring consistent
+anatomy and hierarchy across all KiloCode documentation.
+
+> **Architecture Fun Fact**: Just like how buildings have a foundation, framework, and finishing
+> details, our documents have a standardized structure that provides stability, organization, and
+> usability! 🏗️
 
 <details><summary>Table of Contents</summary>
 
@@ -10,16 +15,32 @@
 - [Document Anatomy](#document-anatomy)
 - [Headings & Hierarchy](#headings--hierarchy)
 - [Table of Contents](#table-of-contents)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 - [Structure Validation](#structure-validation)
 - [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_Every KiloCode document follows a standardized structure that ensures consistency, discoverability, and usability. This structure provides a predictable framework that helps both authors and readers navigate content effectively._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_Every KiloCode document follows a standardized structure that ensures consistency, discoverability,
+and usability. This structure provides a predictable framework that helps both authors and readers
+navigate content effectively._
 
 **Key Components:**
 
@@ -43,6 +64,8 @@ _Every KiloCode document follows a standardized structure that ensures consisten
 
 ```markdown
 # Document Title
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 **Purpose:** Brief description of the document's purpose and audience.
 
@@ -68,12 +91,14 @@ More content here.
 
 <a id="navigation-footer"></a>
 
-- Back: [`PARENT_INDEX.md`](PARENT_INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/FILENAME.md#L1`
+- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/FILENAME.md#L1`
 ```
 
 ## Headings & Hierarchy
 
-**Allowed Hierarchy**: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a single file.
+**Allowed Hierarchy**: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a
+single file.
 
 **Heading Case**:
 
@@ -86,6 +111,8 @@ More content here.
 
 ```markdown
 # Document Title (H1 - Title Case)
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Major section heading (H2 - Sentence case)
 
@@ -112,47 +139,30 @@ This section covers another main topic.
 
 ## Table of Contents
 
-**Placement**: Add the collapsible TOC immediately after the purpose statement.
-
-**Content**: Include H2 and H3 entries only. Do not list H4.
-
-**Format**: Use the standard `<details><summary>Table of Contents</summary>` format.
-
-**Optional**: If the document has fewer than three H2s and is under ~800 words, a TOC is optional.
-
-**TOC Examples**:
-
-```markdown
-<details><summary>Table of Contents</summary>
-
-- [Executive Summary](#executive-summary)
-- [Document Anatomy](#document-anatomy)
-- [Headings & Hierarchy](#headings--hierarchy)
-- [Table of Contents](#table-of-contents)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 - [Structure Validation](#structure-validation)
 - [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
-
-</details>
-```
+- Implementation Examples
+    - [Complete Document Example](#complete-document-example)
+    - [Minimal Document Example](#minimal-document-example)
 
 ## Navigation Footer
 
-**Required**: Every document MUST include a navigation footer at the end with the anchor `<a id="navigation-footer"></a>`.
+**Required**: Every document MUST include a navigation footer at the end with the anchor
+`<a id="navigation-footer"></a>`.
 
 **Standard Format**:
 
 ```
 <a id="navigation-footer"></a>
 
-- Back: [`PARENT_INDEX.md`](PARENT_INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/FILENAME.md#L1`
+- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
 ```
 
 **Link Requirements**:
 
 1. **Back**: Link to parent index (relative path)
-2. **Root**: Link to main [`INDEX.md`](INDEX.md) (relative path)
+2. **Root**: Link to main [`README.md`](README.md) (relative path)
 3. **Source**: Link to source file (absolute repo-root path with `#L1`)
 
 **Footer Examples**:
@@ -160,15 +170,24 @@ This section covers another main topic.
 ```markdown
 # From root docs/
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/DOCUMENTATION_GUIDE.md#L1`
 
 # From subdirectory
 
-- Back: [`INDEX.md`](../INDEX.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
+  `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
 
 # From nested subdirectory
 
-- Back: [`INDEX.md`](../README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/standards/core/PRINCIPLES.md#L1`
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+  `/docs/standards/core/PRINCIPLES.md#L1`
 ```
 
 ## Structure Validation
@@ -214,17 +233,27 @@ This section covers another main topic.
 ```markdown
 # Bad: Multiple H1 headings
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 # Document Title
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Content here.
 
 # Another Title
 
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 More content here.
 
 # Good: Single H1 heading
 
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 # Document Title
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 Content here.
 
@@ -240,25 +269,30 @@ More content here.
 ```markdown
 # API Duplication Analysis
 
-**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
+identification, impact assessment, and solution recommendations.
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
 
 </details>
 
 ## Executive Summary
 
-_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously, resulting in jumbled responses and confused user experience._
+_The API duplication issue is caused by a race condition where multiple API calls are made
+simultaneously, resulting in jumbled responses and confused user experience._
 
 ## Problem Description
 
-The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat
+interface.
 
 ### Symptoms
 
@@ -274,11 +308,13 @@ The issue manifests as multiple API requests with spinners appearing simultaneou
 
 ## Root Cause Analysis
 
-The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+The race condition occurs when both the main task loop and subtask completion call
+`recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
 
-The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to
+the parent task.
 
 ## Solution Recommendations
 
@@ -301,13 +337,16 @@ Follow these steps to implement the solution:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+  `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
 ### Minimal Document Example
 
 ```markdown
 # Build Process Guide
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 **Purpose:** Step-by-step instructions for building the KiloCode project from source.
 
@@ -336,11 +375,14 @@ Common issues and solutions:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
 
 ---
 
-**Navigation**: [Back to Standards](../README.md) · [Next: Document Anatomy](DOCUMENT_ANATOMY.md) · [Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
+**Navigation**: [Back to Standards](../README.md) · [Next: Document Anatomy](DOCUMENT_ANATOMY.md) ·
+[Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

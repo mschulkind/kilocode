@@ -1,8 +1,13 @@
 # Core Principles 🎯
 
-**Purpose:** Detailed explanation of the foundational principles that guide all KiloCode documentation decisions and practices.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Quantum Physics Fun Fact**: In quantum mechanics, particles can exist in a "superposition" of states until observed. Our documentation principles are like the "quantum field" that governs how all our content behaves - they exist in multiple states until we apply them! 🔬
+**Purpose:** Detailed explanation of the foundational principles that guide all KiloCode
+documentation decisions and practices.
+
+> **Quantum Physics Fun Fact**: In quantum mechanics, particles can exist in a "superposition" of
+> states until observed. Our documentation principles are like the "quantum field" that governs how
+> all our content behaves - they exist in multiple states until we apply them! 🔬
 
 <details><summary>Table of Contents</summary>
 
@@ -19,7 +24,23 @@
 
 ## Executive Summary
 
-_These principles form the philosophical foundation of our documentation system. They guide every decision about content, structure, and user experience, ensuring consistency and quality across all documentation._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_These principles form the philosophical foundation of our documentation system. They guide every
+decision about content, structure, and user experience, ensuring consistency and quality across all
+documentation._
 
 **Core Principles:**
 
@@ -31,9 +52,11 @@ _These principles form the philosophical foundation of our documentation system.
 
 ## Purpose-Driven Documentation
 
-**Definition**: Every document starts with a clear purpose and intended audience. This is the **"compass"** that guides all content decisions.
+**Definition**: Every document starts with a clear purpose and intended audience. This is the
+**"compass"** that guides all content decisions.
 
-**Why It Matters**: Without a clear purpose, documents become unfocused, confusing, and difficult to maintain. A clear purpose helps:
+**Why It Matters**: Without a clear purpose, documents become unfocused, confusing, and difficult to
+maintain. A clear purpose helps:
 
 - **Authors** know what to include and exclude
 - **Readers** understand what they'll learn
@@ -49,7 +72,8 @@ _These principles form the philosophical foundation of our documentation system.
 **Example**:
 
 ```markdown
-**Purpose:** Defines the core principles that guide all KiloCode documentation decisions, helping contributors understand the philosophical foundation of our documentation system.
+**Purpose:** Defines the core principles that guide all KiloCode documentation decisions, helping
+contributors understand the philosophical foundation of our documentation system.
 ```
 
 **Common Mistakes**:
@@ -61,9 +85,11 @@ _These principles form the philosophical foundation of our documentation system.
 
 ## Discoverable Content
 
-**Definition**: Use predictable filenames, headings, and navigation elements. Think of this as the **"map legend"** that helps users navigate the documentation.
+**Definition**: Use predictable filenames, headings, and navigation elements. Think of this as the
+**"map legend"** that helps users navigate the documentation.
 
-**Why It Matters**: Users need to find information quickly and intuitively. Predictable patterns reduce cognitive load and improve user experience.
+**Why It Matters**: Users need to find information quickly and intuitively. Predictable patterns
+reduce cognitive load and improve user experience.
 
 **Implementation**:
 
@@ -93,9 +119,11 @@ _These principles form the philosophical foundation of our documentation system.
 
 ## Linkable Architecture
 
-**Definition**: Prefer stable anchors and cross-references. This creates the **"trail system"** that connects related concepts.
+**Definition**: Prefer stable anchors and cross-references. This creates the **"trail system"** that
+connects related concepts.
 
-**Why It Matters**: Information doesn't exist in isolation. Effective linking creates a web of knowledge that helps users understand relationships and discover related information.
+**Why It Matters**: Information doesn't exist in isolation. Effective linking creates a web of
+knowledge that helps users understand relationships and discover related information.
 
 **Implementation**:
 
@@ -127,9 +155,11 @@ _These principles form the philosophical foundation of our documentation system.
 
 ## Focused Scope
 
-**Definition**: Single-responsibility documents with clear content splits. Each document should be like a **"specialized tool"** - good at one thing.
+**Definition**: Single-responsibility documents with clear content splits. Each document should be
+like a **"specialized tool"** - good at one thing.
 
-**Why It Matters**: Focused documents are easier to write, maintain, and use. They reduce cognitive load and make information more digestible.
+**Why It Matters**: Focused documents are easier to write, maintain, and use. They reduce cognitive
+load and make information more digestible.
 
 **Implementation**:
 
@@ -161,9 +191,11 @@ _These principles form the philosophical foundation of our documentation system.
 
 ## Accessible Design
 
-**Definition**: Semantic structure and descriptive text throughout. This ensures the documentation is **"inclusive"** for all users.
+**Definition**: Semantic structure and descriptive text throughout. This ensures the documentation
+is **"inclusive"** for all users.
 
-**Why It Matters**: Accessible documentation is usable by everyone, regardless of their abilities or the tools they use to access content.
+**Why It Matters**: Accessible documentation is usable by everyone, regardless of their abilities or
+the tools they use to access content.
 
 **Implementation**:
 
@@ -197,16 +229,21 @@ _These principles form the philosophical foundation of our documentation system.
 
 ## Principle Interactions
 
-**How Principles Work Together**: These principles don't exist in isolation - they interact and reinforce each other.
+**How Principles Work Together**: These principles don't exist in isolation - they interact and
+reinforce each other.
 
-**Purpose + Focus**: A clear purpose helps maintain focus, and focused scope makes the purpose clearer.
+**Purpose + Focus**: A clear purpose helps maintain focus, and focused scope makes the purpose
+clearer.
 
-**Discoverable + Linkable**: Good navigation makes linking more effective, and effective linking improves discoverability.
+**Discoverable + Linkable**: Good navigation makes linking more effective, and effective linking
+improves discoverability.
 
-**Accessible + All Others**: Accessibility principles enhance all other principles by making content more usable.
+**Accessible + All Others**: Accessibility principles enhance all other principles by making content
+more usable.
 
-**Example Interaction**:
-A document with a clear purpose (Purpose-driven) about a specific topic (Focused) with good navigation (Discoverable) and effective cross-references (Linkable) that's easy to read (Accessible) creates an optimal user experience.
+**Example Interaction**: A document with a clear purpose (Purpose-driven) about a specific topic
+(Focused) with good navigation (Discoverable) and effective cross-references (Linkable) that's easy
+to read (Accessible) creates an optimal user experience.
 
 ## Implementation Guidelines
 
@@ -233,11 +270,16 @@ A document with a clear purpose (Purpose-driven) about a specific topic (Focused
 - **Process-Step**: Break down processes into clear steps
 - **Reference-Implementation**: Provide reference information with implementation details
 
+## Navigation Footer
+
 ---
 
-**Navigation**: [Back to Core Standards](README.md) · [Next: File & Directory Conventions](FILE_CONVENTIONS.md) · [Source: `/docs/standards/core/PRINCIPLES.md#L1`](PRINCIPLES.md#L1)
+**Navigation**: [Back to Core Standards](README.md) ·
+[Next: File & Directory Conventions](FILE_CONVENTIONS.md) ·
+[Source: `/docs/standards/core/PRINCIPLES.md#L1`](PRINCIPLES.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 ## 🔍 Research Context & Next Steps
 
@@ -246,22 +288,29 @@ A document with a clear purpose (Purpose-driven) about a specific topic (Focused
 **Understanding Documentation Standards:**
 
 - **Next**: Check related standards documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 **Implementing Documentation Standards:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Applying Standards to Documentation:**
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) → [Architecture Documentation](../architecture/README.md) → [Orchestrator Documentation](../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current issues
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
+- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+  issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Standards Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Standards Documentation](README.md) for guidance.
 
 ---
 
-**Navigation**: [← Back to Standards Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Standards Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

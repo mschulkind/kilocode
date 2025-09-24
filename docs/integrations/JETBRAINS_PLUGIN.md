@@ -1,8 +1,12 @@
 # JetBrains Plugin
 
-**Purpose:** Documentation of the JetBrains IDE plugin architecture and host-plugin communication system in the KiloCode ecosystem.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Documentation of the JetBrains IDE plugin architecture and host-plugin communication
+system in the KiloCode ecosystem.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -13,13 +17,14 @@
 - [Communication Protocol](#communication-protocol)
 - [Development Workflow](#development-workflow)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The JetBrains Plugin provides KiloCode functionality within JetBrains IDEs through a dual-component architecture consisting of a TypeScript host application and a Kotlin plugin implementation._
+_The JetBrains Plugin provides KiloCode functionality within JetBrains IDEs through a dual-component
+architecture consisting of a TypeScript host application and a Kotlin plugin implementation._
 
 The JetBrains Plugin consists of:
 
@@ -80,8 +85,7 @@ graph TB
 
 ### TypeScript Host
 
-**Implementation**: `jetbrains/host/`
-**Features**:
+**Implementation**: `jetbrains/host/` **Features**:
 
 - **TypeScript Implementation**: Modern TypeScript codebase
 - **IPC Client**: Communication with Kotlin plugin
@@ -99,8 +103,8 @@ interface HostApplication {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Host architecture, IPC implementation, API design
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Host architecture, IPC
+implementation, API design
 
 ### Host API
 
@@ -111,15 +115,14 @@ interface HostApplication {
 - **State Management**: Host application state management
 - **Error Handling**: Comprehensive error handling
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: API design patterns, state management, error handling
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: API design patterns,
+state management, error handling
 
 ## Plugin Implementation
 
 ### Kotlin Plugin
 
-**Implementation**: `jetbrains/plugin/`
-**Features**:
+**Implementation**: `jetbrains/plugin/` **Features**:
 
 - **Kotlin Implementation**: Native Kotlin plugin code
 - **IDE Integration**: Deep JetBrains IDE integration
@@ -136,8 +139,8 @@ class KiloCodePlugin : Plugin {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Plugin architecture, IDE integration, service implementation
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Plugin architecture, IDE
+integration, service implementation
 
 ### Plugin UI
 
@@ -148,8 +151,8 @@ class KiloCodePlugin : Plugin {
 - **Settings UI**: Plugin configuration interface
 - **Status Indicators**: Plugin status and progress indicators
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: UI architecture, action handling, settings management
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: UI architecture, action
+handling, settings management
 
 ## Communication Protocol
 
@@ -172,8 +175,8 @@ interface IPCProtocol {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Protocol design, message formats, synchronization patterns
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Protocol design, message
+formats, synchronization patterns
 
 ### Message Types
 
@@ -184,8 +187,8 @@ interface IPCProtocol {
 - **Event Messages**: Event notification messages
 - **Response Messages**: Command response messages
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Message type design, serialization, error handling
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Message type design,
+serialization, error handling
 
 ## Development Workflow
 
@@ -213,8 +216,8 @@ interface IPCProtocol {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Build configuration, packaging, testing strategies
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Build configuration,
+packaging, testing strategies
 
 ### Development Tools
 
@@ -225,8 +228,8 @@ interface IPCProtocol {
 - **Testing**: Unit and integration testing
 - **Documentation**: Development documentation
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Development tools, debugging setup, testing framework
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Development tools,
+debugging setup, testing framework
 
 ## Common Issues and Solutions
 
@@ -238,8 +241,8 @@ interface IPCProtocol {
 - Message delivery failures
 - State synchronization issues
 
-**Root Cause**: IPC protocol or implementation issues
-**Solution**: Implement robust error handling and retry mechanisms
+**Root Cause**: IPC protocol or implementation issues **Solution**: Implement robust error handling
+and retry mechanisms
 
 ### Issue 2: IDE Integration Issues
 
@@ -249,8 +252,8 @@ interface IPCProtocol {
 - UI components not displaying
 - Action handlers not working
 
-**Root Cause**: IDE integration or plugin configuration issues
-**Solution**: Improve plugin configuration and IDE integration
+**Root Cause**: IDE integration or plugin configuration issues **Solution**: Improve plugin
+configuration and IDE integration
 
 ### Issue 3: Performance Issues
 
@@ -260,8 +263,8 @@ interface IPCProtocol {
 - High resource usage
 - UI responsiveness issues
 
-**Root Cause**: Inefficient implementation or resource management
-**Solution**: Optimize performance and implement proper resource management
+**Root Cause**: Inefficient implementation or resource management **Solution**: Optimize performance
+and implement proper resource management
 
 ### Issue 4: Build and Deployment Issues
 
@@ -271,9 +274,17 @@ interface IPCProtocol {
 - Plugin packaging errors
 - Distribution issues
 
-**Root Cause**: Build configuration or packaging issues
-**Solution**: Fix build configuration and improve packaging process
+**Root Cause**: Build configuration or packaging issues **Solution**: Fix build configuration and
+improve packaging process
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/integrations/JETBRAINS_PLUGIN.md#L1`
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+  · Source: `/docs/integrations/JETBRAINS_PLUGIN.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [integrations](../docs/integrations/) ·
+[↑ Table of Contents](#jetbrains-plugin)

@@ -1,8 +1,12 @@
 # Browser Automation
 
-**Purpose:** Documentation of browser automation capabilities and web interaction features in the KiloCode system.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Documentation of browser automation capabilities and web interaction features in the
+KiloCode system.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -12,13 +16,14 @@
 - [Web Interaction](#web-interaction)
 - [Content Processing](#content-processing)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Browser Automation system provides comprehensive web browsing capabilities for KiloCode, enabling web content access, interaction, and processing through automated browser sessions._
+_The Browser Automation system provides comprehensive web browsing capabilities for KiloCode,
+enabling web content access, interaction, and processing through automated browser sessions._
 
 The Browser Automation consists of:
 
@@ -102,8 +107,8 @@ interface BrowserSession {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Session management, browser control, configuration patterns
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Session management,
+browser control, configuration patterns
 
 ### Browser Discovery
 
@@ -124,8 +129,8 @@ interface BrowserDiscovery {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Browser detection algorithms, compatibility checking, path resolution
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Browser detection
+algorithms, compatibility checking, path resolution
 
 ## Web Interaction
 
@@ -149,8 +154,8 @@ interface WebInteraction {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Interaction patterns, element selection, action handling
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Interaction patterns,
+element selection, action handling
 
 ### Content Processing
 
@@ -172,8 +177,8 @@ interface ContentProcessor {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Content extraction algorithms, text processing, formatting strategies
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Content extraction
+algorithms, text processing, formatting strategies
 
 ## Content Processing
 
@@ -196,8 +201,8 @@ interface UrlContentFetcher {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: HTTP handling, error management, content validation
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: HTTP handling, error
+management, content validation
 
 ### Content Formatting
 
@@ -208,8 +213,8 @@ interface UrlContentFetcher {
 - **Markdown Conversion**: HTML to Markdown conversion
 - **Content Structure**: Content structure analysis and formatting
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Text processing, HTML parsing, markdown conversion
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Text processing, HTML
+parsing, markdown conversion
 
 ## Common Issues and Solutions
 
@@ -221,8 +226,8 @@ interface UrlContentFetcher {
 - Session timeouts
 - Browser crashes
 
-**Root Cause**: Browser configuration or resource issues
-**Solution**: Implement robust browser management and error recovery
+**Root Cause**: Browser configuration or resource issues **Solution**: Implement robust browser
+management and error recovery
 
 ### Issue 2: Content Extraction Issues
 
@@ -232,8 +237,8 @@ interface UrlContentFetcher {
 - Malformed content
 - Extraction failures
 
-**Root Cause**: Content parsing or extraction algorithm issues
-**Solution**: Improve content extraction algorithms and error handling
+**Root Cause**: Content parsing or extraction algorithm issues **Solution**: Improve content
+extraction algorithms and error handling
 
 ### Issue 3: Performance Issues
 
@@ -243,8 +248,8 @@ interface UrlContentFetcher {
 - High resource usage
 - Session timeouts
 
-**Root Cause**: Inefficient browser management or resource constraints
-**Solution**: Optimize browser configuration and resource management
+**Root Cause**: Inefficient browser management or resource constraints **Solution**: Optimize
+browser configuration and resource management
 
 ### Issue 4: Compatibility Issues
 
@@ -254,9 +259,17 @@ interface UrlContentFetcher {
 - Feature detection failures
 - Version conflicts
 
-**Root Cause**: Browser version or capability mismatches
-**Solution**: Implement proper browser detection and compatibility checking
+**Root Cause**: Browser version or capability mismatches **Solution**: Implement proper browser
+detection and compatibility checking
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/integrations/BROWSER_AUTOMATION.md#L1`
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+  · Source: `/docs/integrations/BROWSER_AUTOMATION.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [integrations](../docs/integrations/) ·
+[↑ Table of Contents](#browser-automation)

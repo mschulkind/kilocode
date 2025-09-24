@@ -1,10 +1,28 @@
 # Development Tools
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 **Purpose:** Overview of the development tools and utilities used in KiloCode development.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Development Tools Overview
+
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
 
 KiloCode uses a comprehensive set of development tools for efficient development and maintenance:
 
@@ -285,6 +303,9 @@ export default defineConfig({
 
 ```yaml
 # pnpm-workspace.yaml
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 packages:
     - "packages/*"
     - "apps/*"
@@ -486,6 +507,9 @@ export default defineConfig({
 
 ```dockerfile
 # Dockerfile
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -554,3 +578,10 @@ CMD ["npm", "start"]
 - [← Back to Repository Home](README.md)
 - [→ External Integrations](EXTERNAL_INTEGRATIONS.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#development-tools)

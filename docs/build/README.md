@@ -1,15 +1,19 @@
 # Build System Documentation
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 Welcome to the build system documentation! 🏗️ This directory contains comprehensive information about how KiloCode is built, packaged, and deployed.
 
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
+
 - **Something's Broken**: Start with [Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md) for troubleshooting and system context.
 - **Need to Understand**: Review this README’s structure section for an overview and links.
 - **Implementation Journey**: Follow the build pipeline from source to deployment.
 
 ### Current Focus
+
 - Build pipeline architecture and optimization
 - Deployment strategies and configurations
 - Build performance monitoring
@@ -34,6 +38,6 @@ Think of the build system like a dinosaur's digestive system - it takes raw mate
 
 ## 🧭 Navigation Footer
 
-- [← Back to Documentation Home](../INDEX.md)
+- [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
-- [↑ Table of Contents](../INDEX.md)
+- [↑ Table of Contents](../README.md)

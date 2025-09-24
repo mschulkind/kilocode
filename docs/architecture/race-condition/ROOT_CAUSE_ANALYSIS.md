@@ -1,14 +1,31 @@
 # Root Cause Analysis
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 **Purpose:** Detailed investigation of the root cause of the API duplication race condition issue.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## The Problematic Change
 
-**Commit**: `749f3d22a` - "fix children task loading to continue the execution of the parent after finished"  
-**Date**: September 10, 2025  
-**Author**: Catriel Müller
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+**Commit**: `749f3d22a` - "fix children task loading to continue the execution of the parent after
+finished" **Date**: September 10, 2025 **Author**: Catriel Müller
 
 ### Before the Change
 
@@ -23,7 +40,8 @@ async finishSubTask(lastMessage: string) {
 }
 ```
 
-**Behavior**: Only called `completeSubtask()` which added the subtask result to the parent's conversation history.
+**Behavior**: Only called `completeSubtask()` which added the subtask result to the parent's
+conversation history.
 
 ### After the Change
 
@@ -62,13 +80,15 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 }
 ```
 
-**Behavior**: Now calls `completeSubtask()` AND then calls `recursivelyMakeClineRequests([], false)`.
+**Behavior**: Now calls `completeSubtask()` AND then calls
+`recursivelyMakeClineRequests([], false)`.
 
 ## The Race Condition
 
 ### Two Execution Paths
 
-The race condition occurs because there are now **two independent execution paths** that can call `recursivelyMakeClineRequests`:
+The race condition occurs because there are now **two independent execution paths** that can call
+`recursivelyMakeClineRequests`:
 
 #### Path 1: Main Task Loop
 
@@ -243,3 +263,10 @@ The fix solved the navigation problem but created a new race condition:
 - [← Back to Race Condition Home](README.md)
 - [→ Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[race-condition](../docs/architecture/race-condition/) · ↑ Table of Contents

@@ -1,8 +1,13 @@
 # Structure Validation ✅
 
-**Purpose:** Comprehensive validation checklist and guidelines for ensuring document structure compliance across all KiloCode documentation.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Quantum Physics Fun Fact**: Just like how quantum mechanics requires precise measurements and validation to ensure particles behave correctly, our documentation structure requires precise validation to ensure it behaves correctly for all users! 🔬
+**Purpose:** Comprehensive validation checklist and guidelines for ensuring document structure
+compliance across all KiloCode documentation.
+
+> **Quantum Physics Fun Fact**: Just like how quantum mechanics requires precise measurements and
+> validation to ensure particles behave correctly, our documentation structure requires precise
+> validation to ensure it behaves correctly for all users! 🔬
 
 <details><summary>Table of Contents</summary>
 
@@ -13,13 +18,29 @@
 - [Validation Tools](#validation-tools)
 - [Pre-Submission Process](#pre-submission-process)
 - [Quality Assurance](#quality-assurance)
-- [Implementation Examples](#implementation-examples)
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_Structure validation ensures that all KiloCode documentation follows consistent standards and provides optimal user experience. This comprehensive validation process helps maintain quality and consistency across the entire documentation system._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_Structure validation ensures that all KiloCode documentation follows consistent standards and
+provides optimal user experience. This comprehensive validation process helps maintain quality and
+consistency across the entire documentation system._
 
 **Key Standards:**
 
@@ -227,25 +248,33 @@ _Structure validation ensures that all KiloCode documentation follows consistent
 ```markdown
 # API Duplication Analysis
 
-**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations for developers and system architects.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
+identification, impact assessment, and solution recommendations for developers and system
+architects.
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
 
 </details>
 
 ## Executive Summary
 
-_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously, resulting in jumbled responses and confused user experience. This document provides a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for implementation._
+_The API duplication issue is caused by a race condition where multiple API calls are made
+simultaneously, resulting in jumbled responses and confused user experience. This document provides
+a comprehensive analysis of the problem, identifies the root cause, and recommends solutions for
+implementation._
 
 ## Problem Description
 
-The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat
+interface.
 
 ### Symptoms
 
@@ -261,15 +290,17 @@ The issue manifests as multiple API requests with spinners appearing simultaneou
 
 ## Root Cause Analysis
 
-The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+The race condition occurs when both the main task loop and subtask completion call
+`recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
 
-The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to
+the parent task.
 
 ### Code Analysis
 
-The problematic code is located in the [ask method](/src/core/task/Task.ts#L739) of `Task.ts`.
+The problematic code is located in the [ask method](`[FILE_MOVED_OR_RENAMED]`#L739) of `Task.ts`.
 
 ## Solution Recommendations
 
@@ -292,7 +323,8 @@ Follow these steps to implement the solution:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+  `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
 ### Validation Checklist for Above Example
@@ -326,6 +358,8 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 **Purpose:** Step-by-step instructions for building the KiloCode project from source.
 
 ## Prerequisites
@@ -355,7 +389,8 @@ Common issues and solutions:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
 
 ### Validation Checklist for Minimal Example
@@ -381,8 +416,13 @@ Common issues and solutions:
 - [x] All links are functional
 - [x] Proper path conventions used
 
+## Navigation Footer
+
 ---
 
-**Navigation**: [Back to Structure](README.md) · [Next: Navigation & User Experience](../navigation/README.md) · [Source: `/docs/standards/structure/STRUCTURE_VALIDATION.md#L1`](STRUCTURE_VALIDATION.md#L1)
+**Navigation**: [Back to Structure](README.md) ·
+[Next: Navigation & User Experience](../navigation/README.md) ·
+[Source: `/docs/standards/structure/STRUCTURE_VALIDATION.md#L1`](STRUCTURE_VALIDATION.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

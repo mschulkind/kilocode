@@ -1,8 +1,12 @@
 # UI Layer System
 
-**Purpose:** Comprehensive documentation of the UI Layer system components, including Chat UI, Send Button, and Message Queue UI components and their interactions.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Comprehensive documentation of the UI Layer system components, including Chat UI, Send
+Button, and Message Queue UI components and their interactions.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -14,13 +18,15 @@
 - [State Management](#state-management)
 - [Event Handling](#event-handling)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The UI Layer system manages all user interface components for the chat interface, including the main chat view, send button controls, and message queue display. This layer is responsible for user interactions, state visualization, and communication with the backend systems._
+_The UI Layer system manages all user interface components for the chat interface, including the
+main chat view, send button controls, and message queue display. This layer is responsible for user
+interactions, state visualization, and communication with the backend systems._
 
 The UI Layer consists of three main components:
 
@@ -462,4 +468,11 @@ const validateButtonState = useCallback(() => {
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/ui/UI_LAYER_SYSTEM.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+  `/docs/ui/UI_LAYER_SYSTEM.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [ui](../docs/ui/) · [↑ Table of Contents](#ui-layer-system)
