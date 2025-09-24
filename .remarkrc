@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    "remark-preset-lint-recommended",
+    "remark-gfm",
+    "remark-frontmatter",
+    "remark-toc",
+    "remark-validate-links",
+    "./plugins/remark-kilocode-standards.js",
+    "./plugins/remark-kilocode-comprehensive.js"
+  ],
+  "settings": {
+    "bullet": "-",
+    "emphasis": "*",
+    "fence": "`",
+    "listItemIndent": "one",
+    "rule": "-",
+    "ruleRepetition": 3,
+    "ruleSpaces": false,
+    "strong": "*"
+  },
+  "validateLinks": {
+    "repository": "roo-ai/kilo-code",
+    "branches": ["main", "master"],
+    "ignore": [
+      "https://github.com/roo-ai/kilo-code/issues/*",
+      "https://github.com/roo-ai/kilo-code/discussions/*"
+    ]
+  }
+}

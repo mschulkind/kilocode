@@ -23,5 +23,67 @@
 	"markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
 	"markdown.copyFiles.destination": {
 		"**/*": "/static/img/${documentBaseName}/${documentBaseName}.${fileName/(.*)\\.(.*)/$2/}"
-	}
+	},
+	// Markdown validation and remark configuration
+	"markdown.validate.enabled": true,
+	"markdown.validate.links.enabled": true,
+	"markdown.validate.fragments.enabled": true,
+	"markdown.validate.fileLinks.enabled": true,
+	"markdown.validate.references.enabled": true,
+	"markdown.validate.ignore": ["**/node_modules/**", "**/dist/**", "**/out/**"],
+	// Markdown All in One settings
+	"markdown.extension.toc.levels": "1..6",
+	"markdown.extension.toc.orderedList": false,
+	"markdown.extension.toc.updateOnSave": true,
+	"markdown.extension.toc.plaintext": false,
+	"markdown.extension.toc.detectIndentation": true,
+	"markdown.extension.toc.omittedFromToc": {
+		"**/*.md": ["# Table of Contents", "# TOC", "# Contents"]
+	},
+	// Markdownlint settings
+	"markdownlint.config": {
+		"MD013": false,
+		"MD033": false,
+		"MD041": false,
+		"MD024": false,
+		"MD029": {
+			"style": "ordered"
+		},
+		"MD007": {
+			"indent": 2
+		},
+		"MD012": {
+			"maximum": 1
+		}
+	},
+	// Auto-fix on save for markdown
+	"editor.codeActionsOnSave": {
+		"source.fixAll.markdownlint": "explicit"
+	},
+	// File associations for remark
+	"files.associations": {
+		"*.md": "markdown",
+		"*.mdx": "mdx"
+	},
+	// Real-time validation with custom remark plugins
+	"markdown.validate.customRules": true,
+	"markdown.validate.remarkPlugins": [
+		"./plugins/remark-kilocode-standards.js",
+		"./plugins/remark-kilocode-comprehensive.js"
+	],
+	// Performance settings for real-time validation
+	"markdown.validate.performance": {
+		"maxFileSize": 1048576, // 1MB
+		"timeout": 5000, // 5 seconds
+		"concurrent": 5
+	},
+	// Real-time error display
+	"problems.decorations.enabled": true,
+	"problems.showCurrentInStatus": true,
+	// Auto-save and validation triggers
+	"files.autoSave": "afterDelay",
+	"files.autoSaveDelay": 1000,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": false
 }

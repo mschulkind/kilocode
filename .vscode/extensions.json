@@ -7,6 +7,9 @@
 		"csstools.postcss",
 		"bradlc.vscode-tailwindcss",
 		"connor4312.esbuild-problem-matchers",
-		"yoavbls.pretty-ts-errors"
+		"yoavbls.pretty-ts-errors",
+		"yzhang.markdown-all-in-one",
+		"davidanson.vscode-markdownlint",
+		"unifiedjs.vscode-mdx"
 	]
 }

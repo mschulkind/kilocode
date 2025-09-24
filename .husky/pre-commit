@@ -31,3 +31,13 @@ fi
 
 $npx_cmd lint-staged
 $pnpm_cmd lint
+
+# Documentation validation and fixing (unified approach)
+echo "🔍 Running unified documentation validation and fixing..."
+if ! $pnpm_cmd docs:fix; then
+  echo "❌ Documentation validation and fixing failed."
+  echo "💡 The docs-fixer automatically fixes issues and validates. Check the output above."
+  exit 1
+fi
+
+echo "✅ Documentation validation and fixing completed successfully!"
