@@ -2,7 +2,7 @@
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-**Purpose:** Overview of the development tools and utilities used in KiloCode development.
+- _Purpose:_\* Overview of the development tools and utilities used in KiloCode development.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -12,17 +12,12 @@
 
 ## Research Context
 
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
+- _Purpose:_\* \[Describe the purpose and scope of this document]
+- _Background:_\* \[Provide relevant background information]
+- _Research Questions:_\* \[List key questions this document addresses]
+- _Methodology:_\* \[Describe the approach or methodology used]
+- _Findings:_\* \[Summarize key findings or conclusions]
+- \*\*
 
 KiloCode uses a comprehensive set of development tools for efficient development and maintenance:
 
@@ -73,18 +68,14 @@ graph TB
 
 ### ESLint
 
-**Purpose**: JavaScript and TypeScript linting
-
-**Configuration**: `@roo-code/config-eslint`
-
-**Key Features**:
-
+- _Purpose_\*: JavaScript and TypeScript linting
+- _Configuration_\*: `@roo-code/config-eslint`
+- _Key Features_\*:
 - **Code Linting**: JavaScript and TypeScript code linting
 - **Rule Enforcement**: Enforce coding standards
 - **Error Detection**: Detect potential errors and bugs
 - **Code Consistency**: Ensure code consistency
-
-**Configuration**:
+- _Configuration_\*:
 
 ```javascript
 // eslint.config.js
@@ -98,22 +89,18 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Prettier
 
-**Purpose**: Code formatting
-
-**Configuration**: Shared Prettier configuration
-
-**Key Features**:
-
+- _Purpose_\*: Code formatting
+- _Configuration_\*: Shared Prettier configuration
+- _Key Features_\*:
 - **Code Formatting**: Automatic code formatting
 - **Consistent Style**: Consistent code style
 - **Editor Integration**: Editor integration
 - **CI Integration**: CI/CD integration
-
-**Configuration**:
+- _Configuration_\*:
 
 ```json
 {
@@ -126,22 +113,18 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### TypeScript
 
-**Purpose**: Type checking and compilation
-
-**Configuration**: `@roo-code/config-typescript`
-
-**Key Features**:
-
+- _Purpose_\*: Type checking and compilation
+- _Configuration_\*: `@roo-code/config-typescript`
+- _Key Features_\*:
 - **Type Checking**: Static type checking
 - **Compilation**: TypeScript to JavaScript compilation
 - **Declaration Files**: Declaration file generation
 - **IDE Support**: IDE support and IntelliSense
-
-**Configuration**:
+- _Configuration_\*:
 
 ```json
 {
@@ -154,22 +137,18 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Husky
 
-**Purpose**: Git hooks management
-
-**Configuration**: Git hooks configuration
-
-**Key Features**:
-
+- _Purpose_\*: Git hooks management
+- _Configuration_\*: Git hooks configuration
+- _Key Features_\*:
 - **Pre-commit Hooks**: Pre-commit code quality checks
 - **Pre-push Hooks**: Pre-push validation
 - **Commit Message Hooks**: Commit message validation
 - **Automated Checks**: Automated quality checks
-
-**Configuration**:
+- _Configuration_\*:
 
 ```json
 {
@@ -183,24 +162,20 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ## Build Tools
 
 ### Turbo
 
-**Purpose**: Monorepo build orchestration
-
-**Configuration**: `turbo.json`
-
-**Key Features**:
-
+- _Purpose_\*: Monorepo build orchestration
+- _Configuration_\*: `turbo.json`
+- _Key Features_\*:
 - **Parallel Execution**: Parallel build execution
 - **Caching**: Intelligent build caching
 - **Dependency Management**: Dependency-aware builds
 - **Task Orchestration**: Task orchestration and coordination
-
-**Configuration**:
+- _Configuration_\*:
 
 ```json
 {
@@ -220,22 +195,18 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Webpack
 
-**Purpose**: Module bundling
-
-**Configuration**: Webpack configuration files
-
-**Key Features**:
-
+- _Purpose_\*: Module bundling
+- _Configuration_\*: Webpack configuration files
+- _Key Features_\*:
 - **Module Bundling**: JavaScript module bundling
 - **Asset Processing**: Asset processing and optimization
 - **Code Splitting**: Code splitting and lazy loading
 - **Hot Reloading**: Hot module replacement
-
-**Configuration**:
+- _Configuration_\*:
 
 ```javascript
 // webpack.config.js
@@ -256,22 +227,18 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Vite
 
-**Purpose**: Fast build tool
-
-**Configuration**: `vite.config.ts`
-
-**Key Features**:
-
+- _Purpose_\*: Fast build tool
+- _Configuration_\*: `vite.config.ts`
+- _Key Features_\*:
 - **Fast Development**: Fast development server
 - **Hot Module Replacement**: HMR for development
 - **Optimized Production**: Optimized production builds
 - **Plugin System**: Extensible plugin system
-
-**Configuration**:
+- _Configuration_\*:
 
 ```typescript
 // vite.config.ts
@@ -284,22 +251,18 @@ export default defineConfig({
 })
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### PNPM
 
-**Purpose**: Package management
-
-**Configuration**: `pnpm-workspace.yaml`
-
-**Key Features**:
-
+- _Purpose_\*: Package management
+- _Configuration_\*: `pnpm-workspace.yaml`
+- _Key Features_\*:
 - **Fast Installation**: Fast package installation
 - **Disk Efficiency**: Efficient disk usage
 - **Workspace Support**: Monorepo workspace support
 - **Strict Dependencies**: Strict dependency management
-
-**Configuration**:
+- _Configuration_\*:
 
 ```yaml
 # pnpm-workspace.yaml
@@ -307,30 +270,26 @@ export default defineConfig({
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 packages:
-    - "packages/*"
-    - "apps/*"
-    - "src"
-    - "webview-ui"
+  - "packages/*"
+  - "apps/*"
+  - "src"
+  - "webview-ui"
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ## Testing Tools
 
 ### Vitest
 
-**Purpose**: Unit and integration testing
-
-**Configuration**: `vitest.config.ts`
-
-**Key Features**:
-
+- _Purpose_\*: Unit and integration testing
+- _Configuration_\*: `vitest.config.ts`
+- _Key Features_\*:
 - **Fast Execution**: Fast test execution
 - **TypeScript Support**: Native TypeScript support
 - **Mocking**: Built-in mocking capabilities
 - **Coverage**: Code coverage reporting
-
-**Configuration**:
+- _Configuration_\*:
 
 ```typescript
 // vitest.config.ts
@@ -346,22 +305,18 @@ export default defineConfig({
 })
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Playwright
 
-**Purpose**: End-to-end testing
-
-**Configuration**: `playwright.config.ts`
-
-**Key Features**:
-
+- _Purpose_\*: End-to-end testing
+- _Configuration_\*: `playwright.config.ts`
+- _Key Features_\*:
 - **Multi-browser Testing**: Chrome, Firefox, Safari support
 - **Cross-platform Testing**: Windows, macOS, Linux support
 - **Visual Testing**: Visual regression testing
 - **Performance Testing**: Performance testing capabilities
-
-**Configuration**:
+- _Configuration_\*:
 
 ```typescript
 // playwright.config.ts
@@ -377,22 +332,18 @@ export default defineConfig({
 })
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Jest
 
-**Purpose**: Performance and specialized testing
-
-**Configuration**: `jest.config.js`
-
-**Key Features**:
-
+- _Purpose_\*: Performance and specialized testing
+- _Configuration_\*: `jest.config.js`
+- _Key Features_\*:
 - **Performance Testing**: Performance testing capabilities
 - **Memory Testing**: Memory leak detection
 - **Stress Testing**: Stress testing capabilities
 - **Benchmarking**: Performance benchmarking
-
-**Configuration**:
+- _Configuration_\*:
 
 ```javascript
 // jest.config.js
@@ -403,22 +354,18 @@ module.exports = {
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Cypress
 
-**Purpose**: Web application testing
-
-**Configuration**: `cypress.config.ts`
-
-**Key Features**:
-
+- _Purpose_\*: Web application testing
+- _Configuration_\*: `cypress.config.ts`
+- _Key Features_\*:
 - **Web Testing**: Web application testing
 - **Real Browser Testing**: Real browser testing
 - **Visual Testing**: Visual regression testing
 - **API Testing**: API testing capabilities
-
-**Configuration**:
+- _Configuration_\*:
 
 ```typescript
 // cypress.config.ts
@@ -431,24 +378,21 @@ export default defineConfig({
 })
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ## Development Environment
 
 ### VS Code
 
-**Purpose**: Primary development environment
-
-**Extensions**:
-
+- _Purpose_\*: Primary development environment
+- _Extensions_\*:
 - **TypeScript**: TypeScript support
 - **ESLint**: ESLint integration
 - **Prettier**: Prettier integration
 - **GitLens**: Git integration
 - **Thunder Client**: API testing
 - **REST Client**: REST API testing
-
-**Configuration**:
+- _Configuration_\*:
 
 ```json
 {
@@ -460,22 +404,18 @@ export default defineConfig({
 }
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Git
 
-**Purpose**: Version control
-
-**Configuration**: Git configuration
-
-**Key Features**:
-
+- _Purpose_\*: Version control
+- _Configuration_\*: Git configuration
+- _Key Features_\*:
 - **Version Control**: Source code version control
 - **Branch Management**: Branch management and merging
 - **Commit Management**: Commit management and history
 - **Collaboration**: Team collaboration and code review
-
-**Configuration**:
+- _Configuration_\*:
 
 ```gitconfig
 [user]
@@ -488,22 +428,18 @@ export default defineConfig({
   default = simple
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### Docker
 
-**Purpose**: Containerization
-
-**Configuration**: `Dockerfile`
-
-**Key Features**:
-
+- _Purpose_\*: Containerization
+- _Configuration_\*: `Dockerfile`
+- _Key Features_\*:
 - **Containerization**: Application containerization
 - **Environment Consistency**: Consistent development environments
 - **Deployment**: Container-based deployment
 - **Isolation**: Process and resource isolation
-
-**Configuration**:
+- _Configuration_\*:
 
 ```dockerfile
 # Dockerfile
@@ -520,21 +456,18 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ### GitHub
 
-**Purpose**: Code hosting and collaboration
-
-**Features**:
-
+- _Purpose_\*: Code hosting and collaboration
+- _Features_\*:
 - **Code Hosting**: Git repository hosting
 - **Issue Tracking**: Issue and bug tracking
 - **Pull Requests**: Code review and collaboration
 - **Actions**: CI/CD automation
 - **Projects**: Project management
-
-**Status**: ✅ **Fully Implemented**
+- _Status_\*: ✅ **Fully Implemented**
 
 ## Development Workflow
 
@@ -579,9 +512,19 @@ CMD ["npm", "start"]
 - [→ External Integrations](EXTERNAL_INTEGRATIONS.md)
 - [↑ Table of Contents](README.md)
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
 
----
-
-**Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#development-tools)
+- \*\*
+- _Navigation_\*: [docs](../../) · [architecture](../../architecture/) ·
+  [repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#development-tools)

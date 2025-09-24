@@ -5,18 +5,12 @@
 ## Overview
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The Race Condition State Machine specifically models the states involved in the API duplication race
 condition, showing the problem states and the solution states.
@@ -25,52 +19,50 @@ condition, showing the problem states and the solution states.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> NormalExecution
+  [*] --> NormalExecution
 
-    state NormalExecution {
-        [*] --> SingleCall
-        SingleCall --> CallComplete
-        CallComplete --> SingleCall : next call
-        CallComplete --> [*] : execution ends
-    }
+  state NormalExecution {
+  [*] --> SingleCall
+  SingleCall --> CallComplete
+  CallComplete --> SingleCall : next call
+  CallComplete --> [*] : execution ends
+  }
 
-    state RaceCondition {
-        [*] --> ConcurrentCalls
-        ConcurrentCalls --> APICall1 : Main loop call
-        ConcurrentCalls --> APICall2 : Subtask completion call
-        APICall1 --> APIResponse1 : Response 1
-        APICall2 --> APIResponse2 : Response 2
-        APIResponse1 --> JumbledState : Responses mixed
-        APIResponse2 --> JumbledState : Responses mixed
-        JumbledState --> ChatConfusion : UI gets confused
-    }
+  state RaceCondition {
+  [*] --> ConcurrentCalls
+  ConcurrentCalls --> APICall1 : Main loop call
+  ConcurrentCalls --> APICall2 : Subtask completion call
+  APICall1 --> APIResponse1 : Response 1
+  APICall2 --> APIResponse2 : Response 2
+  APIResponse1 --> JumbledState : Responses mixed
+  APIResponse2 --> JumbledState : Responses mixed
+  JumbledState --> ChatConfusion : UI gets confused
+  }
 
-    state SynchronizedExecution {
-        [*] --> LockAcquired
-        LockAcquired --> SequentialCalls : Calls processed one by one
-        SequentialCalls --> CleanResponses : Responses come back clean
-        CleanResponses --> NormalUI : UI works correctly
-    }
+  state SynchronizedExecution {
+  [*] --> LockAcquired
+  LockAcquired --> SequentialCalls : Calls processed one by one
+  SequentialCalls --> CleanResponses : Responses come back clean
+  CleanResponses --> NormalUI : UI works correctly
+  }
 
-    NormalExecution --> RaceCondition : Navigation fix triggers
-    RaceCondition --> SynchronizedExecution : Proper synchronization added
-    SynchronizedExecution --> NormalExecution : Execution continues normally
+  NormalExecution --> RaceCondition : Navigation fix triggers
+  RaceCondition --> SynchronizedExecution : Proper synchronization added
+  SynchronizedExecution --> NormalExecution : Execution continues normally
 
-    note right of RaceCondition : "PROBLEM - Multiple API calls"
-    note right of SynchronizedExecution : "SOLUTION - Lock-based synchronization"
+  note right of RaceCondition : "PROBLEM - Multiple API calls"
+  note right of SynchronizedExecution : "SOLUTION - Lock-based synchronization"
 ```
 
 ## State Descriptions
 
 ### NormalExecution State
-
 - **SingleCall**: One recursive call is active
 - **CallComplete**: Call finishes successfully
 - **Next Call**: Another call can be made
 - **Execution Ends**: All calls completed
 
 ### RaceCondition State
-
 - **ConcurrentCalls**: Multiple calls start simultaneously
 - **APICall1**: Main task loop API call
 - **APICall2**: Subtask completion API call
@@ -79,7 +71,6 @@ stateDiagram-v2
 - **ChatConfusion**: UI gets confused
 
 ### SynchronizedExecution State
-
 - **LockAcquired**: Lock is held for exclusive access
 - **SequentialCalls**: Calls processed one at a time
 - **CleanResponses**: Responses come back in order
@@ -181,19 +172,16 @@ class RaceConditionSynchronizer {
 ## State Transition Triggers
 
 ### NormalExecution → RaceCondition
-
 - **Trigger**: Navigation fix causes concurrent calls
 - **Condition**: `recursivelyMakeClineRequests()` called from both main loop and subtask completion
 - **Result**: Multiple API calls active simultaneously
 
 ### RaceCondition → SynchronizedExecution
-
 - **Trigger**: Synchronization mechanism implemented
 - **Condition**: Lock-based system prevents concurrent calls
 - **Result**: Calls processed sequentially
 
 ### SynchronizedExecution → NormalExecution
-
 - **Trigger**: Synchronization removed or bypassed
 - **Condition**: System returns to normal operation
 - **Result**: Single calls processed normally
@@ -248,23 +236,18 @@ class RaceConditionMonitor {
 ```
 
 ## Key States
-
 - **NormalExecution**: Safe, single-call execution
 - **RaceCondition**: **PROBLEM** - Multiple concurrent calls
 - **SynchronizedExecution**: **SOLUTION** - Lock-based synchronization
 
 ## Prevention Strategies
-
 1. **Lock-Based Synchronization**: Ensure only one call at a time
 2. **Call Queuing**: Queue additional calls when lock is held
 3. **Race Condition Detection**: Monitor for concurrent calls
 4. **Timeout Handling**: Handle lock acquisition timeouts gracefully
 5. **Event Logging**: Track race condition events for debugging
-
----
-
-**Related Documentation:**
-
+- \*\*
+- *Related Documentation:*\*
 - [Task State Machine](TASK_STATE_MACHINE.md)
 - [Session State Machine](SESSION_STATE_MACHINE.md)
 - [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
@@ -274,24 +257,18 @@ class RaceConditionMonitor {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Architecture:**
-
+- *Understanding Architecture:*\*
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../../../../../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-
-**Implementing Architecture Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Architecture Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- *Implementing Architecture Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Architecture Issues:*\*
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -299,9 +276,17 @@ class RaceConditionMonitor {
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

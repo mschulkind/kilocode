@@ -8,36 +8,32 @@ system that provides deep insights into KiloCode's execution.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-
-- **Something's Broken**: Start with [LAMINAR_SERVICE_LAYER.md](LAMINAR_SERVICE_LAYER.md) for
+- **Something's Broken**: Start with [LAMINAR\_SERVICE\_LAYER.md](LAMINAR_SERVICE_LAYER.md) for
   troubleshooting
 - **Need to Understand**: Begin with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow the Laminar integration from setup to advanced usage
 
 ### Current Focus
-
 - Span nesting and trace management
 - Authentication and configuration systems
 - LLM integration and tool tracking
 - Testing and debugging capabilities
 
 ## 📚 Documentation Structure
-
 - **[Repository Overview](README.md)** - Master index of all Laminar documentation
-- **[LAMINAR_SERVICE_LAYER.md](LAMINAR_SERVICE_LAYER.md)** - Core service layer architecture
-- **[LAMINAR_SPAN_NESTING_SYSTEM.md](LAMINAR_SPAN_NESTING_SYSTEM.md)** - Span nesting and hierarchy
-- **[LAMINAR_AUTHENTICATION_SYSTEM.md](LAMINAR_AUTHENTICATION_SYSTEM.md)** - Authentication and
+- **[LAMINAR\_SERVICE\_LAYER.md](LAMINAR_SERVICE_LAYER.md)** - Core service layer architecture
+- **[LAMINAR\_SPAN\_NESTING\_SYSTEM.md](LAMINAR_SPAN_NESTING_SYSTEM.md)** - Span nesting and hierarchy
+- **[LAMINAR\_AUTHENTICATION\_SYSTEM.md](LAMINAR_AUTHENTICATION_SYSTEM.md)** - Authentication and
   security
-- **[LAMINAR_CONFIGURATION_SYSTEM.md](LAMINAR_CONFIGURATION_SYSTEM.md)** - Configuration management
-- **[LAMINAR_LLM_INTEGRATION.md](LAMINAR_LLM_INTEGRATION.md)** - LLM tracing and monitoring
-- **[LAMINAR_TOOL_SYSTEM.md](LAMINAR_TOOL_SYSTEM.md)** - Tool execution tracking
-- **[LAMINAR_TESTING_SYSTEM.md](LAMINAR_TESTING_SYSTEM.md)** - Testing and validation
+- **[LAMINAR\_CONFIGURATION\_SYSTEM.md](LAMINAR_CONFIGURATION_SYSTEM.md)** - Configuration management
+- **[LAMINAR\_LLM\_INTEGRATION.md](LAMINAR_LLM_INTEGRATION.md)** - LLM tracing and monitoring
+- **[LAMINAR\_TOOL\_SYSTEM.md](LAMINAR_TOOL_SYSTEM.md)** - Tool execution tracking
+- **[LAMINAR\_TESTING\_SYSTEM.md](LAMINAR_TESTING_SYSTEM.md)** - Testing and validation
 
 ## 🔗 Cross-References
-
-- **Architecture**: See [../architecture/](../architecture/) for system architecture
-- **Services**: See [../services/](../services/) for related services
-- **Standards**: See [../standards/](../standards/) for observability standards
+- **Architecture**: See [Architecture Documentation](../../architecture/) for system architecture
+- **Services**: See [Services Documentation](../../services/) for related services
+- **Standards**: See [Standards Documentation](../../standards////////) for observability standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -48,7 +44,17 @@ complete life story of a dinosaur through the fossil record, we can trace the co
 story of our code through the span hierarchy!
 
 ## 🧭 Navigation Footer
-
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+## Navigation
+- [← Main Documentation](README.md)
+- [← Project Root](README.md)
+- [← Architecture](architecture/README.md)
+- [← Orchestrator](orchestrator/README.md)
+- [← Standards](standards/README.md)
+- [← Plans](plans/README.md)
+- [← Tools](tools/README.md)
+- [← Improvements](improvements/README.md)
+- [← Integrations](integrations/README.md)

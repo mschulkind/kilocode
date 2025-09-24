@@ -1,16 +1,14 @@
 # Getting Started Guide
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-**Purpose:** Comprehensive guide for new developers, contributors, and users to understand and get
-started with KiloCode development.
+- *Purpose:*\* Comprehensive guide for new developers, contributors, and users to understand and get
+  started with KiloCode development.
 
 > **Cartography Fun Fact**: Getting started with KiloCode is like learning to read a map - once you
 > understand the landmarks (core concepts), routes (development workflow), and compass (testing),
 > you can navigate anywhere in the codebase! 🗺️
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [Prerequisites](#prerequisites)
 - [Quick Start](#quick-start)
@@ -29,42 +27,30 @@ started with KiloCode development.
 ## Executive Summary
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-_KiloCode is a comprehensive VS Code extension for AI-powered coding assistance. This guide provides
-everything needed to understand, set up, and contribute to the project._
-
-**What You'll Learn:**
-
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- KiloCode is a comprehensive VS Code extension for AI-powered coding assistance. This guide provides
+  everything needed to understand, set up, and contribute to the project.\*
+- *What You'll Learn:*\*
 - How to set up a development environment
 - Core architecture and key concepts
 - Development workflow and best practices
 - How to contribute effectively
-
-**Time to Complete:** 30-45 minutes
+- *Time to Complete:*\* 30-45 minutes
 
 ## Prerequisites
 
 ### Required Knowledge
-
 - **JavaScript/TypeScript** - Intermediate level
 - **Node.js** - Basic understanding
 - **VS Code Extension Development** - Helpful but not required
 - **Git** - Basic version control
 
 ### System Requirements
-
 - **Node.js**: 20.19.2 (see `.nvmrc`)
 - **pnpm**: 10.8.1+ (package manager)
 - **Git**: Latest stable version
@@ -179,7 +165,6 @@ code .
 ```
 
 ### 3. Verify Installation
-
 1. **Open the new VS Code window** (Extension Development Host)
 2. **Open Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`)
 3. **Type "Kilo Code"** - you should see KiloCode commands
@@ -188,12 +173,9 @@ code .
 ## Development Environment Setup
 
 ### VS Code Extensions (Recommended)
-
-**Required Extensions:**
-
+- *Required Extensions:*\*
 - [ESBuild Problem Matchers](https://marketplace.visualstudio.com/items?itemName=connor4312.esbuild-problem-matchers)
-
-**Recommended Extensions:**
+- *Recommended Extensions:*\*
 
 ```json
 {
@@ -207,8 +189,7 @@ code .
 ```
 
 ### Environment Configuration
-
-**Development Configuration:**
+- *Development Configuration:*\*
 
 ```bash
 # .env.development
@@ -219,8 +200,7 @@ NODE_ENV=development
 ENABLE_DEBUG_LOGGING=true
 ENABLE_HOT_RELOAD=true
 ```
-
-**Git Configuration:**
+- *Git Configuration:*\*
 
 ```bash
 # Setup Git hooks
@@ -257,28 +237,28 @@ kilocode/
 
 ```mermaid
 graph TB
-    subgraph "VS Code Extension"
-        UI[Webview UI<br/>React Frontend]
-        EXT[Extension Host<br/>Node.js Backend]
-    end
+  subgraph "VS Code Extension"
+  UI[Webview UI<br/>React Frontend]
+  EXT[Extension Host<br/>Node.js Backend]
+  end
 
-    subgraph "Core Systems"
-        TASK[Task Engine<br/>Orchestration]
-        MSG[Message Queue<br/>Communication]
-        TOOLS[Tool System<br/>AI Tools]
-    end
+  subgraph "Core Systems"
+  TASK[Task Engine<br/>Orchestration]
+  MSG[Message Queue<br/>Communication]
+  TOOLS[Tool System<br/>AI Tools]
+  end
 
-    subgraph "External Services"
-        AI[AI Providers<br/>Claude, GPT, etc.]
-        CLOUD[Cloud Services<br/>Authentication]
-    end
+  subgraph "External Services"
+  AI[AI Providers<br/>Claude, GPT, etc.]
+  CLOUD[Cloud Services<br/>Authentication]
+  end
 
-    UI <--> EXT
-    EXT --> TASK
-    TASK --> MSG
-    TASK --> TOOLS
-    TOOLS --> AI
-    EXT --> CLOUD
+  UI <--> EXT
+  EXT --> TASK
+  TASK --> MSG
+  TASK --> TOOLS
+  TOOLS --> AI
+  EXT --> CLOUD
 ```
 
 ### Key Components
@@ -318,31 +298,25 @@ export function ChatView() {
   const [messages, setMessages] = useState<Message[]>([])
 
   return (
-    <div className="chat-container">
-      <MessageList messages={messages} />
-      <ChatInput onSend={handleSend} />
-    </div>
+  <div className="chat-container">
+  <MessageList messages={messages} />
+  <ChatInput onSend={handleSend} />
+  </div>
   )
 }
 ```
 
 ### File Organization
-
-**Core Extension Files:**
-
+- *Core Extension Files:*\*
 - `src/extension.ts` - Main extension entry point
 - `src/core/webview/ClineProvider.ts` - Webview management
 - `src/core/task/Task.ts` - Task orchestration
 - `src/core/webview/webviewMessageHandler.ts` - Message handling
-
-**Frontend Files:**
-
+- *Frontend Files:*\*
 - `webview-ui/src/components/chat/ChatView.tsx` - Main chat interface
 - `webview-ui/src/components/settings/SettingsView.tsx` - Settings UI
 - `webview-ui/src/utils/` - Utility functions
-
-**Service Files:**
-
+- *Service Files:*\*
 - `src/services/laminar/LaminarService.ts` - Observability
 - `src/services/cloud/CloudService.ts` - Cloud integration
 - `src/api/providers/` - AI provider implementations
@@ -353,26 +327,25 @@ export function ChatView() {
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant UI
-    participant Task
-    participant AI
-    participant Tools
+  participant User
+  participant UI
+  participant Task
+  participant AI
+  participant Tools
 
-    User->>UI: Send message
-    UI->>Task: Create task
-    Task->>AI: Generate response
-    AI->>Task: Response with tools
-    Task->>Tools: Execute tools
-    Tools->>Task: Tool results
-    Task->>AI: Continue with results
-    AI->>Task: Final response
-    Task->>UI: Display result
+  User->>UI: Send message
+  UI->>Task: Create task
+  Task->>AI: Generate response
+  AI->>Task: Response with tools
+  Task->>Tools: Execute tools
+  Tools->>Task: Tool results
+  Task->>AI: Continue with results
+  AI->>Task: Final response
+  Task->>UI: Display result
 ```
 
 ### 2. Message Flow
-
-**UI to Extension:**
+- *UI to Extension:*\*
 
 ```typescript
 // Webview sends message
@@ -382,8 +355,7 @@ vscode.postMessage({
 	images: selectedImages,
 })
 ```
-
-**Extension to UI:**
+- *Extension to UI:*\*
 
 ```typescript
 // Extension responds
@@ -396,8 +368,7 @@ webview.postMessage({
 ```
 
 ### 3. Tool System
-
-**Tool Definition:**
+- *Tool Definition:*\*
 
 ```typescript
 export async function writeToFileTool(
@@ -415,8 +386,7 @@ export async function writeToFileTool(
 ```
 
 ### 4. AI Provider Integration
-
-**Provider Abstraction:**
+- *Provider Abstraction:*\*
 
 ```typescript
 interface AIProvider {
@@ -432,14 +402,11 @@ const response = await provider.generateResponse(prompt, options)
 ## Development Workflow
 
 ### 1. Making Changes
-
-**Hot Reloading:**
-
+- *Hot Reloading:*\*
 - **Webview changes**: Automatically reload
 - **Extension changes**: Auto-reload extension host
 - **Configuration changes**: Restart required
-
-**Development Commands:**
+- *Development Commands:*\*
 
 ```bash
 # Watch mode for webview
@@ -462,8 +429,7 @@ pnpm build
 ```
 
 ### 2. Debugging
-
-**Extension Debugging:**
+- *Extension Debugging:*\*
 
 ```typescript
 // Use console.log for debugging
@@ -473,16 +439,14 @@ console.log("Message received:", message)
 // Check VS Code Developer Tools
 // Help > Toggle Developer Tools
 ```
-
-**Webview Debugging:**
+- *Webview Debugging:*\*
 
 ```typescript
 // Right-click in webview > "Inspect Element"
 // Use browser developer tools
 console.log("UI state:", uiState)
 ```
-
-**Debug Configuration:**
+- *Debug Configuration:*\*
 
 ```json
 {
@@ -495,8 +459,7 @@ console.log("UI state:", uiState)
 ```
 
 ### 3. Testing Changes
-
-**Unit Tests:**
+- *Unit Tests:*\*
 
 ```bash
 # Run all tests
@@ -517,8 +480,7 @@ pnpm test src/core/task/Task.test.ts
 
 pnpm test --watch
 ```
-
-**Integration Tests:**
+- *Integration Tests:*\*
 
 ```bash
 # Run E2E tests
@@ -535,8 +497,7 @@ pnpm test:extension
 ```
 
 ### 4. Building and Packaging
-
-**Development Build:**
+- *Development Build:*\*
 
 ```bash
 pnpm build
@@ -545,8 +506,7 @@ pnpm build
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 ```
-
-**Production Build:**
+- *Production Build:*\*
 
 ```bash
 pnpm build:production
@@ -555,8 +515,7 @@ pnpm build:production
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ```
-
-**Install Locally:**
+- *Install Locally:*\*
 
 ```bash
 # Install the built extension
@@ -569,18 +528,13 @@ code --install-extension bin/kilo-code-*.vsix
 ## Testing & Quality
 
 ### Test Structure
-
-**Unit Tests:**
-
+- *Unit Tests:*\*
 - `src/**/*.test.ts` - Core functionality tests
 - `webview-ui/src/**/*.test.tsx` - UI component tests
-
-**Integration Tests:**
-
+- *Integration Tests:*\*
 - `apps/playwright-e2e/` - End-to-end browser tests
 - `apps/vscode-e2e/` - VS Code extension tests
-
-**Test Commands:**
+- *Test Commands:*\*
 
 ```bash
 # Run all tests
@@ -609,8 +563,7 @@ pnpm test --grep "Task lifecycle"
 ```
 
 ### Code Quality
-
-**Linting:**
+- *Linting:*\*
 
 ```bash
 # Run ESLint
@@ -625,8 +578,7 @@ pnpm lint
 
 pnpm lint --fix
 ```
-
-**Type Checking:**
+- *Type Checking:*\*
 
 ```bash
 # Check TypeScript types
@@ -641,8 +593,7 @@ pnpm check-types
 
 pnpm watch:types
 ```
-
-**Formatting:**
+- *Formatting:*\*
 
 ```bash
 # Format code with Prettier
@@ -659,15 +610,11 @@ pnpm format:check
 ```
 
 ### Quality Gates
-
-**Pre-commit Hooks:**
-
+- *Pre-commit Hooks:*\*
 - Type generation
 - Linting and formatting
 - Basic tests
-
-**Pre-push Hooks:**
-
+- *Pre-push Hooks:*\*
 - Full type checking
 - Test suite
 - Changeset validation
@@ -737,29 +684,23 @@ git push origin feature/your-feature-name
 ```
 
 ### 4. Code Review Process
-
-**Review Checklist:**
-
-- [ ] Code follows project conventions
-- [ ] Tests added/updated
-- [ ] Documentation updated
-- [ ] No breaking changes (or properly documented)
-- [ ] Performance impact considered
+- *Review Checklist:*\*
+- \[ ] Code follows project conventions
+- \[ ] Tests added/updated
+- \[ ] Documentation updated
+- \[ ] No breaking changes (or properly documented)
+- \[ ] Performance impact considered
 
 ### 5. Contribution Guidelines
-
-**Commit Message Format:**
+- *Commit Message Format:*\*
 
 ```
 type(scope): description
-
 - Detailed description
 - Breaking changes (if any)
 - Resolves #issue-number
 ```
-
-**Types:**
-
+- *Types:*\*
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -857,16 +798,14 @@ pnpm test --run --reporter=verbose
 ```
 
 ### Debugging Tips
-
-**Enable Debug Logging:**
+- *Enable Debug Logging:*\*
 
 ```typescript
 // In development mode
 process.env.NODE_ENV = "development"
 console.log("Debug info:", debugData)
 ```
-
-**Use VS Code Debugger:**
+- *Use VS Code Debugger:*\*
 
 ```json
 // .vscode/launch.json
@@ -878,8 +817,7 @@ console.log("Debug info:", debugData)
 	"args": ["--extensionDevelopmentPath=${workspaceFolder}"]
 }
 ```
-
-**Check Extension Logs:**
+- *Check Extension Logs:*\*
 
 ```bash
 # VS Code extension logs
@@ -895,15 +833,11 @@ console.log("Debug info:", debugData)
 ```
 
 ### Getting Help
-
-**Documentation:**
-
+- *Documentation:*\*
 - [System Overview](SYSTEM_OVERVIEW.md) - Architecture details
 - [Repository Overview](REPOSITORY_OVERVIEW.md) - Codebase structure
 - [API Provider Patterns](API_PROVIDER_PATTERNS.md) - AI integration
-
-**Community:**
-
+- *Community:*\*
 - [GitHub Issues](https://github.com/Kilo-Org/kilocode/issues) - Bug reports
 - [GitHub Discussions](https://github.com/Kilo-Org/kilocode/discussions) - Questions
 - [Discord](https://discord.gg/Ja6BkfyTzJ) - Real-time chat
@@ -911,36 +845,29 @@ console.log("Debug info:", debugData)
 ## Next Steps
 
 ### Immediate Next Steps
-
 1. **Explore the Codebase:**
-
-    - Read [System Overview](SYSTEM_OVERVIEW.md)
-    - Review [Repository Overview](REPOSITORY_OVERVIEW.md)
-    - Check [External Dependencies](EXTERNAL_DEPENDENCIES.md)
-
+- Read [System Overview](SYSTEM_OVERVIEW.md)
+- Review [Repository Overview](REPOSITORY_OVERVIEW.md)
+- Check [External Dependencies](EXTERNAL_DEPENDENCIES.md)
 2. **Try Development:**
-
-    - Make a small change (e.g., update a UI text)
-    - Run tests to verify
-    - Build and test locally
-
+- Make a small change (e.g., update a UI text)
+- Run tests to verify
+- Build and test locally
 3. **Understand Architecture:**
-    - Study the [Task Engine](README.md)
-    - Review [Tool System](tools/TOOL_SYSTEM_ARCHITECTURE.md)
-    - Explore [Service Layer](README.md)
+- Study the [Task Engine](README.md)
+- Review [Tool System](tools/TOOL_SYSTEM_ARCHITECTURE.md)
+- Explore [Service Layer](README.md)
 
 ### Learning Paths
 
 #### For New Contributors
-
 1. [Getting Started Guide](GETTING_STARTED.md) ← You are here
 2. [System Overview](SYSTEM_OVERVIEW.md)
 3. [Repository Overview](REPOSITORY_OVERVIEW.md)
 4. [Tool System Architecture](tools/TOOL_SYSTEM_ARCHITECTURE.md)
-5. [Documentation Guide](../DOCUMENTATION_GUIDE.md) - Contribution standards
+5. [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) - Contribution standards
 
 #### For Experienced Developers
-
 1. [System Overview](SYSTEM_OVERVIEW.md)
 2. [API Provider Patterns](API_PROVIDER_PATTERNS.md)
 3. [External Dependencies](EXTERNAL_DEPENDENCIES.md)
@@ -948,35 +875,25 @@ console.log("Debug info:", debugData)
 5. [Priority Improvements](../improvements/PRIORITY_IMPROVEMENTS.md)
 
 #### For System Administrators
-
 1. [Repository Overview](REPOSITORY_OVERVIEW.md)
 2. [Build Pipeline Architecture](../build/BUILD_PIPELINE_ARCHITECTURE.md)
 3. [Testing Strategy](../testing/TESTING_STRATEGY.md)
 4. [External Dependencies](EXTERNAL_DEPENDENCIES.md)
 
 ### Recommended Reading
-
-**Essential Documents:**
-
+- *Essential Documents:*\*
 - [System Overview](SYSTEM_OVERVIEW.md) - Complete architecture
 - [Repository Overview](REPOSITORY_OVERVIEW.md) - Codebase structure
 - [External Dependencies](EXTERNAL_DEPENDENCIES.md) - Dependencies and libraries
-
-**Advanced Topics:**
-
+- *Advanced Topics:*\*
 - [Upstream/Downstream Integration](UPSTREAM_DOWNSTREAM_INTEGRATION.md) - Code transfer processes
 - [Priority Improvements](../improvements/PRIORITY_IMPROVEMENTS.md) - Development roadmap
 - [Technical Debt](../improvements/TECHNICAL_DEBT.md) - Known issues and solutions
-
-**Troubleshooting:**
-
+- *Troubleshooting:*\*
 - [Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md)
-
----
-
-**🎉 Congratulations!** You're now ready to start developing with KiloCode. Remember to:
-
+- [Error Handling](../../../../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md)
+- \*\*
+- *🎉 Congratulations!*\* You're now ready to start developing with KiloCode. Remember to:
 - Follow the development workflow
 - Write tests for your changes
 - Update documentation as needed
@@ -987,34 +904,26 @@ Happy coding! 🚀
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**New to KiloCode Development:**
-
+- *New to KiloCode Development:*\*
 - **Next**: [System Overview](./SYSTEM_OVERVIEW.md) →
-  [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](../architecture/repository/CORE_SYSTEMS.md)
+  [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](../architecture/../repository/CORE_SYSTEMS.md)
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for advanced topics
-
-**Setting Up Development Environment:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md) →
-  [Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)
+  [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) for advanced topics
+- *Setting Up Development Environment:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md) →
+  [Build Pipelines](../architecture/../repository/BUILD_PIPELINES.md)
 - **Related**: [External Dependencies](./EXTERNAL_DEPENDENCIES.md) for dependency management
-
-**Understanding Current Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md) →
-  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
-
-**Contributing to KiloCode:**
-
-- **Next**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) →
-  [Testing Strategy]race-condition/TESTING_STRATEGY.md) →
+- *Understanding Current Issues:*\*
+- **Next**: \[Race Condition Analysis]../race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
+  \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
+- **Related**: [Orchestrator Documentation](../../../../../../../orchestrator/README.md) for execution patterns
+- *Contributing to KiloCode:*\*
+- **Next**: [Orchestrator Best Practices](../../../../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) →
+  \[Testing Strategy]race-condition/TESTING\_STRATEGY.md) →
   [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- **Related**: [Investigation Plans](../plans/README.md) for active development work
+- **Related**: [Investigation Plans](../plans////////README.md) for active development work
 
 ### No Dead Ends Policy
 
@@ -1022,7 +931,25 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](./README.md) for guidance.
 
 <a id="navigation-footer"></a>
+- *Navigation*\*: [← Back to Architecture Documentation](./README.md) ·
+  [→ System Overview](./SYSTEM_OVERVIEW.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+  [↑ Table of Contents](#-research-context--next-steps)
 
-**Navigation**: [← Back to Architecture Documentation](./README.md) ·
-[→ System Overview](./SYSTEM_OVERVIEW.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
-[↑ Table of Contents](#-research-context--next-steps)
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
+
+## Navigation Footer
+- *Navigation*\*:
+- [← Back to Documentation Overview](../../../../../../../README.md)
+- [Architecture Documentation](../../../../../../../../architecture/README.md)
+- [Standards Documentation](../standards////////README.md)
+- *Related*\*:
+- [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md)
+- [Glossary](../GLOSSARY.md)

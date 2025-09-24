@@ -7,14 +7,11 @@ This guide helps you resolve common issues with KiloCode's documentation automat
 ## Common Issues
 
 ### 1. Validation Not Running
-
-**Symptoms:**
-
+- *Symptoms:*\*
 - No validation errors shown in VS Code
 - `pnpm docs:validate` command fails
 - No Problems panel entries
-
-**Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check if remark is installed
@@ -35,40 +32,32 @@ cat .remarkrc
 
 npx remark docs/README.md
 ```
-
-**Solutions:**
-
+- *Solutions:*\*
 1. **Install Dependencies**
 
-    ```bash
-    pnpm install
-    ```
-
+   ```bash
+   pnpm install
+   ```
 2. **Check VS Code Extensions**
-
-    - Ensure Markdown All in One is installed
-    - Verify markdownlint extension is active
-    - Reload VS Code window
-
+- Ensure Markdown All in One is installed
+- Verify markdownlint extension is active
+- Reload VS Code window
 3. **Verify Configuration**
 
-    ```bash
-    # Check .remarkrc exists and is valid
-    cat .remarkrc
+   ```bash
+   # Check .remarkrc exists and is valid
+   cat .remarkrc
 
-    # Test configuration
-    npx remark --config .remarkrc docs/
-    ```
+   # Test configuration
+   npx remark --config .remarkrc docs/
+   ```
 
 ### 2. Auto-fix Not Working
-
-**Symptoms:**
-
+- *Symptoms:*\*
 - Auto-fix on save doesn't work
 - Manual fix commands fail
 - Validation errors persist
-
-**Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check VS Code settings
@@ -83,44 +72,36 @@ grep -A 5 "codeActionsOnSave" .vscode/settings.json
 
 npx remark --use remark-stringify docs/
 ```
-
-**Solutions:**
-
+- *Solutions:*\*
 1. **Enable Auto-fix**
 
-    ```json
-    {
-    	"editor.codeActionsOnSave": {
-    		"source.fixAll.markdownlint": "explicit"
-    	}
-    }
-    ```
-
+   ```json
+   {
+   	"editor.codeActionsOnSave": {
+   		"source.fixAll.markdownlint": "explicit"
+   	}
+   }
+   ```
 2. **Check Extension Status**
-
-    - Open Extensions panel
-    - Verify markdownlint is enabled
-    - Restart VS Code if needed
-
+- Open Extensions panel
+- Verify markdownlint is enabled
+- Restart VS Code if needed
 3. **Manual Fix**
 
-    ```bash
-    # Fix specific file
-    npx remark --use remark-stringify docs/file.md
+   ```bash
+   # Fix specific file
+   npx remark --use remark-stringify docs/file.md
 
-    # Fix all files
-    npx remark --use remark-stringify docs/
-    ```
+   # Fix all files
+   npx remark --use remark-stringify docs/
+   ```
 
 ### 3. Performance Issues
-
-**Symptoms:**
-
+- *Symptoms:*\*
 - Slow validation
 - VS Code becomes unresponsive
 - Long processing times
-
-**Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check file counts
@@ -135,38 +116,31 @@ find docs/ -name "*.md" | wc -l
 
 find docs/ -name "*.md" -exec wc -c {} + | sort -n
 ```
-
-**Solutions:**
-
+- *Solutions:*\*
 1. **Exclude Large Directories**
 
-    ```json
-    {
-    	"markdown.validate.ignore": ["**/node_modules/**", "**/dist/**", "**/out/**", "**/large-docs/**"]
-    }
-    ```
-
+   ```json
+   {
+   	"markdown.validate.ignore": ["**/node_modules/**", "**/dist/**", "**/out/**", "**/large-docs/**"]
+   }
+   ```
 2. **Use Incremental Validation**
 
-    ```bash
-    # Only validate changed files
-    git diff --name-only HEAD~1 | grep '\.md$' | xargs npx remark
-    ```
-
+   ```bash
+   # Only validate changed files
+   git diff --name-only HEAD~1 | grep '\.md$' | xargs npx remark
+   ```
 3. **Optimize Configuration**
-    - Disable expensive rules for large files
-    - Use caching for repeated validations
-    - Process files in parallel
+- Disable expensive rules for large files
+- Use caching for repeated validations
+- Process files in parallel
 
 ### 4. Link Validation Errors
-
-**Symptoms:**
-
+- *Symptoms:*\*
 - False positive broken links
 - External links marked as broken
 - Internal links not found
-
-**Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check specific link
@@ -181,52 +155,45 @@ npx remark-validate-links docs/file.md
 
 curl -I https://example.com
 ```
-
-**Solutions:**
-
+- *Solutions:*\*
 1. **Internal Links**
 
-    ```markdown
-    <!-- Use relative paths -->
+   ```markdown
+   <!-- Use relative paths -->
 
-    [Link Text](./relative/path/file.md)
+   [Link Text](./relative/path/file.md)
 
-    <!-- Check file exists -->
+   <!-- Check file exists -->
 
-    ls -la docs/relative/path/file.md
-    ```
-
+   ls -la docs/relative/path/file.md
+   ```
 2. **External Links**
 
-    ```markdown
-    <!-- Use descriptive text -->
+   ```markdown
+   <!-- Use descriptive text -->
 
-    [Example Website](https://example.com)
+   [Example Website](https://example.com)
 
-    <!-- Check if site is accessible -->
+   <!-- Check if site is accessible -->
 
-    curl -I https://example.com
-    ```
-
+   curl -I https://example.com
+   ```
 3. **Configure Link Validation**
-    ```json
-    {
-    	"remark-validate-links": {
-    		"skipExternalLinks": true,
-    		"skipInternalLinks": false
-    	}
-    }
-    ```
+   ```json
+   {
+   	"remark-validate-links": {
+   		"skipExternalLinks": true,
+   		"skipInternalLinks": false
+   	}
+   }
+   ```
 
 ### 5. Extension Conflicts
-
-**Symptoms:**
-
+- *Symptoms:*\*
 - Multiple validation errors
 - Conflicting rules
 - Inconsistent behavior
-
-**Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check installed extensions
@@ -241,40 +208,34 @@ code --list-extensions | grep -i markdown
 
 grep -r "markdown" .vscode/
 ```
-
-**Solutions:**
-
+- *Solutions:*\*
 1. **Disable Conflicting Extensions**
-
-    - Keep only Markdown All in One and markdownlint
-    - Disable other markdown extensions temporarily
-
+- Keep only Markdown All in One and markdownlint
+- Disable other markdown extensions temporarily
 2. **Resolve Settings Conflicts**
 
-    ```json
-    {
-    	"markdownlint.config": {
-    		"MD013": false,
-    		"MD033": false
-    	}
-    }
-    ```
-
+   ```json
+   {
+   	"markdownlint.config": {
+   		"MD013": false,
+   		"MD033": false
+   	}
+   }
+   ```
 3. **Reset Configuration**
 
-    ```bash
-    # Backup current settings
-    cp .vscode/settings.json .vscode/settings.json.backup
+   ```bash
+   # Backup current settings
+   cp .vscode/settings.json .vscode/settings.json.backup
 
-    # Reset to defaults
-    git checkout .vscode/settings.json
-    ```
+   # Reset to defaults
+   git checkout .vscode/settings.json
+   ```
 
 ## Advanced Troubleshooting
 
 ### 1. Debug Mode
-
-**Enable Debug Logging:**
+- *Enable Debug Logging:*\*
 
 ```bash
 # Set debug environment
@@ -289,17 +250,14 @@ export DEBUG=remark*
 
 npx remark docs/ --verbose
 ```
-
-**VS Code Debug:**
-
+- *VS Code Debug:*\*
 1. Open Command Palette (`Ctrl+Shift+P`)
 2. Run "Developer: Toggle Developer Tools"
 3. Check Console for error messages
 4. Look for "remark" or "markdownlint" entries
 
 ### 2. Configuration Issues
-
-**Check .remarkrc:**
+- *Check .remarkrc:*\*
 
 ```bash
 # Validate JSON syntax
@@ -314,8 +272,7 @@ cat .remarkrc | jq .
 
 npx remark --config .remarkrc docs/
 ```
-
-**Check Package.json:**
+- *Check Package.json:*\*
 
 ```bash
 # Verify scripts exist
@@ -332,8 +289,7 @@ pnpm list | grep remark
 ```
 
 ### 3. File System Issues
-
-**Permissions:**
+- *Permissions:*\*
 
 ```bash
 # Check file permissions
@@ -348,8 +304,7 @@ ls -la docs/
 
 chmod -R 644 docs/
 ```
-
-**Encoding Issues:**
+- *Encoding Issues:*\*
 
 ```bash
 # Check file encoding
@@ -368,25 +323,20 @@ iconv -f ISO-8859-1 -t UTF-8 docs/file.md > docs/file-utf8.md
 ## Getting Help
 
 ### 1. Self-Diagnosis
-
-**Check These First:**
-
-- [ ] Dependencies installed: `pnpm install`
-- [ ] VS Code extensions active
-- [ ] Configuration files valid
-- [ ] File permissions correct
-- [ ] No conflicting extensions
+- *Check These First:*\*
+- \[ ] Dependencies installed: `pnpm install`
+- \[ ] VS Code extensions active
+- \[ ] Configuration files valid
+- \[ ] File permissions correct
+- \[ ] No conflicting extensions
 
 ### 2. Log Analysis
-
-**VS Code Logs:**
-
+- *VS Code Logs:*\*
 1. Help → Toggle Developer Tools
 2. Console tab
 3. Look for error messages
 4. Check network requests
-
-**Terminal Logs:**
+- *Terminal Logs:*\*
 
 ```bash
 # Run with verbose output
@@ -403,16 +353,12 @@ npx remark docs/ 2>&1 | grep -i error
 ```
 
 ### 3. Team Support
-
-**Before Asking for Help:**
-
+- *Before Asking for Help:*\*
 1. Check this troubleshooting guide
 2. Try the suggested solutions
 3. Gather error messages and logs
 4. Document steps to reproduce
-
-**When Asking for Help:**
-
+- *When Asking for Help:*\*
 - Include error messages
 - Describe what you were trying to do
 - Share relevant configuration
@@ -421,64 +367,59 @@ npx remark docs/ 2>&1 | grep -i error
 ## Prevention
 
 ### 1. Regular Maintenance
-
-**Weekly:**
-
+- *Weekly:*\*
 - Run `pnpm docs:validate`
 - Check for new validation errors
 - Update outdated links
 - Review team feedback
-
-**Monthly:**
-
+- *Monthly:*\*
 - Review configuration settings
 - Update dependencies
 - Check extension compatibility
 - Optimize performance
 
 ### 2. Best Practices
-
-**File Management:**
-
+- *File Management:*\*
 - Use consistent naming
 - Keep files organized
 - Regular cleanup
 - Version control properly
-
-**Configuration:**
-
+- *Configuration:*\*
 - Document custom settings
 - Test changes before committing
 - Keep configurations simple
 - Regular backups
 
 ### 3. Team Training
-
-**New Members:**
-
+- *New Members:*\*
 - Complete onboarding checklist
 - Review best practices
 - Practice with sample files
 - Ask questions early
-
-**Regular Updates:**
-
+- *Regular Updates:*\*
 - Share new features
 - Update procedures
 - Review common issues
 - Improve processes
 
 ## Related Documentation
-
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
 - [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [tools](../docs/tools/) ·
-[↑ Table of Contents](#troubleshooting-guide)
+- \*\*
+- *Navigation*\*: [docs](../) · [tools](../../docs/tools/) ·
+  [↑ Table of Contents](#troubleshooting-guide)

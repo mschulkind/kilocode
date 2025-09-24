@@ -1,10 +1,9 @@
 # Orchestrator Architecture
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-**Purpose:** This document provides a detailed overview of the Kilo Code Orchestrator's
-architecture, including its core components, their interactions, and the flow of data through the
-system.
+- *Purpose:*\* This document provides a detailed overview of the Kilo Code Orchestrator's
+  architecture, including its core components, their interactions, and the flow of data through the
+  system.
 
 > **Quantum Physics Fun Fact**: The orchestrator architecture is like quantum superposition - it
 > exists in multiple states simultaneously (CREATED, RUNNING, PAUSED) until observed (measured), at
@@ -12,33 +11,29 @@ system.
 
 <details>
 <summary>Table of Contents</summary>
-
 - [1. Related Documents](#related-documents)
 - [2. Architectural Philosophy](#architectural-philosophy)
 - [3. Core Components](#core-components)
 - [4. Data Flow Diagram](#data-flow-diagram)
 - [5. Component Deep Dive](#component-deep-dive)
 - [6. Key Interactions](#key-interactions)
-- [7. Navigation Footer
+- \[7. Navigation Footer
 
 </details>
+- \*\*
 
----
+## Related Documents
 
-### Related Documents
-
-<a id="related-documents"></a>](7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
-
+<a id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 - **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
   documentation.
-- **[ORCHESTRATOR_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Provides a step-by-step breakdown of
+- **[Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)**: Provides a step-by-step breakdown of
   the task execution lifecycle.
 - **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Details the
   security model, including modes and permissions.
 
 [Back to Top](#orchestrator-architecture)
-
----
+- \*\*
 
 ### Architectural Philosophy
 
@@ -46,7 +41,6 @@ system.
 
 The orchestrator is built on a modular, extensible, and state-driven architecture. The primary
 design goals are:
-
 - **Decoupling**: Components are designed to be independent, allowing for isolated testing and
   maintenance. The `Task` engine, for instance, is not directly aware of specific tool
   implementations.
@@ -58,15 +52,13 @@ design goals are:
   through the central `Task` loop.
 
 [Back to Top](#orchestrator-architecture)
-
----
+- \*\*
 
 ### Core Components
 
 <a id="core-components"></a>
 
 The architecture comprises several key components that work in concert to execute tasks.
-
 - **Task Engine (`Task.ts`)**: The heart of the orchestrator. It manages the entire lifecycle of a
   task, from initiation to completion. Its main entry point is
   [`initiateTaskLoop`](/src/core/task/Task.ts#L1699).
@@ -84,8 +76,7 @@ The architecture comprises several key components that work in concert to execut
   context. A key function is [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
 
 [Back to Top](#orchestrator-architecture)
-
----
+- \*\*
 
 ### Data Flow Diagram
 
@@ -95,30 +86,29 @@ The following diagram illustrates how data and control flow between the core com
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant TaskEngine
-    participant StreamingParser
-    participant ToolExecutor
-    participant ToolLibrary
+  participant User
+  participant TaskEngine
+  participant StreamingParser
+  participant ToolExecutor
+  participant ToolLibrary
 
-    User->>TaskEngine: Initiate Task
-    TaskEngine->>TaskEngine: call initiateTaskLoop()
-    TaskEngine->>StreamingParser: Send Prompt (via recursivelyMakeClineRequests)
-    StreamingParser-->>TaskEngine: Stream Tool Call XML
-    TaskEngine->>ToolExecutor: Execute Parsed Tool
-    ToolExecutor->>ToolLibrary: Invoke Tool (e.g., write_to_file)
-    ToolLibrary-->>ToolExecutor: Return Result
-    ToolExecutor-->>TaskEngine: Forward Result
-    TaskEngine->>StreamingParser: Send Updated Context
-    Note right of StreamingParser: Loop continues until...
-    TaskEngine->>ToolExecutor: Execute attemptCompletionTool
-    ToolExecutor-->>TaskEngine: Final Result
-    TaskEngine-->>User: Present Completion
+  User->>TaskEngine: Initiate Task
+  TaskEngine->>TaskEngine: call initiateTaskLoop()
+  TaskEngine->>StreamingParser: Send Prompt (via recursivelyMakeClineRequests)
+  StreamingParser-->>TaskEngine: Stream Tool Call XML
+  TaskEngine->>ToolExecutor: Execute Parsed Tool
+  ToolExecutor->>ToolLibrary: Invoke Tool (e.g., write_to_file)
+  ToolLibrary-->>ToolExecutor: Return Result
+  ToolExecutor-->>TaskEngine: Forward Result
+  TaskEngine->>StreamingParser: Send Updated Context
+  Note right of StreamingParser: Loop continues until...
+  TaskEngine->>ToolExecutor: Execute attemptCompletionTool
+  ToolExecutor-->>TaskEngine: Final Result
+  TaskEngine-->>User: Present Completion
 ```
 
 [Back to Top](#orchestrator-architecture)
-
----
+- \*\*
 
 ### Component Deep Dive
 
@@ -145,13 +135,11 @@ The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it 
 which is then handled by the Task Engine.
 
 [Back to Top](#orchestrator-architecture)
-
----
+- \*\*
 
 ### Key Interactions
 
 <a id="key-interactions"></a>
-
 - **Task Initiation to Tool Call**: A user request starts
   [`initiateTaskLoop`](/src/core/task/Task.ts#L1699). The engine generates a prompt with
   [`getSystemPrompt`](/src/core/task/Task.ts#L2499), which is sent to the model. The parser
@@ -165,8 +153,7 @@ which is then handled by the Task Engine.
   moved/renamed) is called.
 
 [Back to Top](#orchestrator-architecture)
-
----
+- \*\*
 
 ### Navigation Footer
 
@@ -175,32 +162,24 @@ which is then handled by the Task Engine.
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Orchestrator Architecture:**
-
-- **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
+- *Understanding Orchestrator Architecture:*\*
+- **Next**: [Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
   [State Machines](../architecture/state-machines/README.md) for behavior modeling
-
-**Investigating Race Conditions:**
-
+- *Investigating Race Conditions:*\*
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
-
-**Implementing Orchestrator Features:**
-
+- *Implementing Orchestrator Features:*\*
 - **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
-  [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
+  [Orchestrator Task Delegation](../orchestrator/ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 - **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for
   codebase patterns
-
-**Understanding Current Problems:**
-
+- *Understanding Current Problems:*\*
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
@@ -210,9 +189,16 @@ which is then handled by the Task Engine.
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Orchestrator Documentation](README.md) for guidance.
+- \*\*
+- *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
+  [→ Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../../../../../../../GLOSSARY.md) ·
+  [↑ Table of Contents](#-research-context--next-steps)
 
----
-
-**Navigation**: [← Back to Orchestrator Documentation](README.md) ·
-[→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
-[↑ Table of Contents](#-research-context--next-steps)
+## Navigation Footer
+- *Navigation*\*:
+- [← Back to Documentation Overview](../../../../../../../../README.md)
+- [Architecture Documentation](../architecture/README.md)
+- [Standards Documentation](../../standards////////README.md)
+- *Related*\*:
+- [Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md)
+- [Glossary](../../../../../../../../GLOSSARY.md)

@@ -1,15 +1,13 @@
 # UI Layer System
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-**Purpose:** Comprehensive documentation of the UI Layer system components, including Chat UI, Send
-Button, and Message Queue UI components and their interactions.
+- *Purpose:*\* Comprehensive documentation of the UI Layer system components, including Chat UI, Send
+  Button, and Message Queue UI components and their interactions.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [System Architecture](#system-architecture)
 - [Chat UI Component](#chat-ui-component)
@@ -23,13 +21,11 @@ Button, and Message Queue UI components and their interactions.
 </details>
 
 ## Executive Summary
-
-_The UI Layer system manages all user interface components for the chat interface, including the
-main chat view, send button controls, and message queue display. This layer is responsible for user
-interactions, state visualization, and communication with the backend systems._
+- The UI Layer system manages all user interface components for the chat interface, including the
+  main chat view, send button controls, and message queue display. This layer is responsible for user
+  interactions, state visualization, and communication with the backend systems.\*
 
 The UI Layer consists of three main components:
-
 1. **Chat UI** - Main chat interface and message display
 2. **Send Button** - User input controls and request initiation
 3. **Message Queue UI** - Visual representation of queued messages
@@ -78,17 +74,13 @@ graph TB
 ## Chat UI Component
 
 ### ChatView Component
-
-**Location**: `webview-ui/src/components/chat/ChatView.tsx`
-
-**Responsibilities**:
-
+- *Location*\*: `webview-ui/src/components/chat/ChatView.tsx`
+- *Responsibilities*\*:
 - Main chat interface container
 - Message display and rendering
 - State coordination between components
 - Communication with backend via webview
-
-**Key Features**:
+- *Key Features*\*:
 
 ```typescript
 export interface ChatViewProps {
@@ -102,8 +94,7 @@ export interface ChatViewRef {
 	focusInput: () => void
 }
 ```
-
-**State Management**:
+- *State Management*\*:
 
 ```typescript
 const [inputValue, setInputValue] = useState("")
@@ -113,15 +104,11 @@ const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 ```
 
 ### Message Display
-
-**Component**: `ChatRow`
-
+- *Component*\*: `ChatRow`
 - Displays individual messages
 - Handles different message types (user, assistant, system)
 - Manages message formatting and rendering
-
-**Features**:
-
+- *Features*\*:
 - Markdown rendering
 - Code syntax highlighting
 - Image display
@@ -131,18 +118,14 @@ const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 ## Send Button Component
 
 ### ChatTextArea Component
-
-**Location**: `webview-ui/src/components/chat/ChatTextArea.tsx`
-
-**Responsibilities**:
-
+- *Location*\*: `webview-ui/src/components/chat/ChatTextArea.tsx`
+- *Responsibilities*\*:
 - Text input area
 - Send button control
 - Image selection
 - Mode and profile selection
 - Input validation
-
-**Interface**:
+- *Interface*\*:
 
 ```typescript
 interface ChatTextAreaProps {
@@ -166,8 +149,7 @@ interface ChatTextAreaProps {
 ```
 
 ### Send Button Logic
-
-**State-Dependent Behavior**:
+- *State-Dependent Behavior*\*:
 
 ```typescript
 const handleSendMessage = useCallback(
@@ -192,8 +174,7 @@ const handleSendMessage = useCallback(
 	[sendingDisabled],
 )
 ```
-
-**Button State Management**:
+- *Button State Management*\*:
 
 ```typescript
 <button
@@ -219,19 +200,14 @@ const handleSendMessage = useCallback(
 ## Message Queue UI
 
 ### QueuedMessages Component
-
-**Location**: `webview-ui/src/components/chat/QueuedMessages.tsx`
-
-**Purpose**: Visual representation of queued messages when the system is busy
-
-**Features**:
-
+- *Location*\*: `webview-ui/src/components/chat/QueuedMessages.tsx`
+- *Purpose*\*: Visual representation of queued messages when the system is busy
+- *Features*\*:
 - Display queued message count
 - Show message previews
 - Allow message removal
 - Allow message editing
-
-**Implementation**:
+- *Implementation*\*:
 
 ```typescript
 export const QueuedMessages: React.FC<QueuedMessagesProps> = ({
@@ -262,8 +238,7 @@ export const QueuedMessages: React.FC<QueuedMessagesProps> = ({
 ```
 
 ### Queue State Integration
-
-**Connection to Backend**:
+- *Connection to Backend*\*:
 
 ```typescript
 useEffect(() => {
@@ -285,8 +260,7 @@ useEffect(() => {
 ## State Management
 
 ### State Variables
-
-**Primary State**:
+- *Primary State*\*:
 
 ```typescript
 const [sendingDisabled, setSendingDisabled] = useState(false)
@@ -314,8 +288,7 @@ stateDiagram-v2
 ```
 
 ### State Synchronization
-
-**Task State Integration**:
+- *Task State Integration*\*:
 
 ```typescript
 useEffect(() => {
@@ -338,8 +311,7 @@ useEffect(() => {
 ## Event Handling
 
 ### Message Send Events
-
-**Primary Handler**:
+- *Primary Handler*\*:
 
 ```typescript
 const handleSendMessage = useCallback(
@@ -361,8 +333,7 @@ const handleSendMessage = useCallback(
 ```
 
 ### Keyboard Events
-
-**Enter Key Handling**:
+- *Enter Key Handling*\*:
 
 ```typescript
 const handleKeyDown = useCallback(
@@ -379,9 +350,7 @@ const handleKeyDown = useCallback(
 ```
 
 ### Webview Communication
-
-**Message Types**:
-
+- *Message Types*\*:
 - `newTask` - Create new task with message
 - `queueMessage` - Queue message for later processing
 - `removeQueuedMessage` - Remove queued message
@@ -390,16 +359,12 @@ const handleKeyDown = useCallback(
 ## Common Issues and Solutions
 
 ### Issue 1: Send Button Stuck Disabled
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Send button remains disabled after request completion
 - User cannot send new messages
 - UI appears frozen
-
-**Root Cause**: `sendingDisabled` state not properly reset
-
-**Solution**:
+- *Root Cause*\*: `sendingDisabled` state not properly reset
+- *Solution*\*:
 
 ```typescript
 // Ensure proper state reset
@@ -419,16 +384,12 @@ useEffect(() => {
 ```
 
 ### Issue 2: Multiple Messages Queued
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Same message appears multiple times in queue
 - Multiple API requests for single user action
 - Queue UI shows duplicates
-
-**Root Cause**: Message queued multiple times due to rapid user interaction
-
-**Solution**:
+- *Root Cause*\*: Message queued multiple times due to rapid user interaction
+- *Solution*\*:
 
 ```typescript
 // Implement debounced message queuing
@@ -442,16 +403,12 @@ const debouncedQueueMessage = useMemo(
 ```
 
 ### Issue 3: Button State Inconsistency
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Button appears enabled but request is blocked
 - Button appears disabled but request goes through
 - Visual state doesn't match actual state
-
-**Root Cause**: State updates not properly synchronized
-
-**Solution**:
+- *Root Cause*\*: State updates not properly synchronized
+- *Solution*\*:
 
 ```typescript
 // Implement state validation
@@ -467,12 +424,9 @@ const validateButtonState = useCallback(() => {
 ```
 
 <a id="navigation-footer"></a>
-
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/ui/UI_LAYER_SYSTEM.md#L1`
 
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [ui](../docs/ui/) · [↑ Table of Contents](#ui-layer-system)
+- \*\*
+- *Navigation*\*: [docs](../) · [ui](../../docs/ui/) · [↑ Table of Contents](#ui-layer-system)

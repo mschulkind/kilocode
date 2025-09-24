@@ -56,6 +56,40 @@ Kilo Code is a direct fork from Roo Code, and also includes the following featur
 - Editing previous messages
 - Assisted commit messages: we write git commit messages for you based on what changed
 
+## Documentation
+
+KiloCode uses automated documentation validation and maintenance to ensure consistent, high-quality documentation.
+
+### Quick Start
+
+```bash
+# Validate all documentation
+
+pnpm docs:validate
+
+# Run automated maintenance
+
+pnpm docs:maintain
+
+# Generate validation report
+
+pnpm docs:report
+```
+
+### Documentation Standards
+
+- **Required Sections**: Research Context, Navigation Footer, Table of Contents (for files >500 words)
+- **Style Requirements**: Consistent formatting, proper heading hierarchy, descriptive link text
+- **VS Code Integration**: Real-time validation, auto-fix on save, live link validation
+
+### Resources
+
+- [Documentation Guide](docs/DOCUMENTATION_GUIDE.md) - Complete documentation standards
+- [Development Workflow](docs/architecture/repository/DEVELOPMENT_GUIDE.md) - Development process including documentation automation
+- [Remark Workflow Overview](docs/tools/REMARK_WORKFLOW_OVERVIEW.md) - Detailed workflow guide
+- [Validation Errors Guide](docs/tools/VALIDATION_ERRORS_GUIDE.md) - Common errors and fixes
+- [Troubleshooting Guide](docs/tools/TROUBLESHOOTING_GUIDE.md) - Problem resolution
+
 ## Extension Development
 
 For details on building and developing the extension, see [DEVELOPMENT.md](/DEVELOPMENT.md)

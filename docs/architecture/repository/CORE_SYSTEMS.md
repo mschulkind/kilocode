@@ -1,8 +1,7 @@
 # Core Systems
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-**Purpose:** Detailed overview of the core systems and services that power KiloCode.
+- *Purpose:*\* Detailed overview of the core systems and services that power KiloCode.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -11,18 +10,12 @@
 ## System Architecture Overview
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 KiloCode is built on a multi-layered architecture with clear separation of concerns:
 
@@ -67,171 +60,119 @@ graph TB
 ## Core Services
 
 ### 1. Orchestrator Service
-
-**Purpose**: Manages task execution and coordination
-
-**Key Responsibilities**:
-
+- *Purpose*\*: Manages task execution and coordination
+- *Key Responsibilities*\*:
 - Task lifecycle management
 - Subtask creation and coordination
 - Execution flow control
 - State management
-
-**Key Files**:
-
+- *Key Files*\*:
 - `src/core/task/Task.ts` - Main task implementation
 - `src/core/task/TaskManager.ts` - Task management
 - `src/core/orchestrator/` - Orchestrator logic
-
-**Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
 ### 2. API Service
-
-**Purpose**: Handles communication with external AI services
-
-**Key Responsibilities**:
-
+- *Purpose*\*: Handles communication with external AI services
+- *Key Responsibilities*\*:
 - API request management
 - Response processing
 - Error handling
 - Rate limiting
-
-**Key Files**:
-
+- *Key Files*\*:
 - `src/api/` - API service implementations
 - `src/core/api/` - Core API logic
-
-**Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
 ### 3. Message Queue Service
-
-**Purpose**: Manages message queuing and processing
-
-**Key Responsibilities**:
-
+- *Purpose*\*: Manages message queuing and processing
+- *Key Responsibilities*\*:
 - Message queuing
 - Message processing
 - Queue management
 - Message persistence
-
-**Key Files**:
-
+- *Key Files*\*:
 - `src/core/message-queue/` - Message queue implementation
-
-**Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
 ### 4. Laminar Service
-
-**Purpose**: Provides observability and tracing capabilities
-
-**Key Responsibilities**:
-
+- *Purpose*\*: Provides observability and tracing capabilities
+- *Key Responsibilities*\*:
 - Span management
 - Trace collection
 - Performance monitoring
 - Error tracking
-
-**Key Files**:
-
+- *Key Files*\*:
 - `src/services/laminar/` - Laminar service implementation
-
-**Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
 ### 5. Prompt Service
-
-**Purpose**: Manages prompt engineering and template management
-
-**Key Responsibilities**:
-
+- *Purpose*\*: Manages prompt engineering and template management
+- *Key Responsibilities*\*:
 - Prompt templates
 - Context management
 - Prompt optimization
 - Template rendering
-
-**Key Files**:
-
+- *Key Files*\*:
 - `src/services/prompt/` - Prompt service implementation
-
-**Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
 ### 6. Tool Service
-
-**Purpose**: Manages AI tool execution and coordination
-
-**Key Responsibilities**:
-
+- *Purpose*\*: Manages AI tool execution and coordination
+- *Key Responsibilities*\*:
 - Tool registration
 - Tool execution
 - Tool coordination
 - Tool results processing
-
-**Key Files**:
-
+- *Key Files*\*:
 - `src/services/tools/` - Tool service implementation
-
-**Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
 ## System Components
 
 ### Task Management System
-
-**Components**:
-
+- *Components*\*:
 - **Task**: Individual task execution unit
 - **TaskManager**: Task lifecycle management
 - **TaskQueue**: Task queuing and scheduling
 - **TaskState**: Task state management
-
-**Key Features**:
-
+- *Key Features*\*:
 - Task creation and initialization
 - Task execution and monitoring
 - Task completion and cleanup
 - Task state persistence
 
 ### Message Processing System
-
-**Components**:
-
+- *Components*\*:
 - **MessageQueue**: Message queuing system
 - **MessageProcessor**: Message processing logic
 - **MessageHandler**: Message handling and routing
 - **MessageStorage**: Message persistence
-
-**Key Features**:
-
+- *Key Features*\*:
 - Asynchronous message processing
 - Message prioritization
 - Message retry logic
 - Message persistence
 
 ### API Integration System
-
-**Components**:
-
+- *Components*\*:
 - **APIClient**: API client implementation
 - **APIHandler**: API request handling
 - **APIResponse**: Response processing
 - **APIConfig**: API configuration
-
-**Key Features**:
-
+- *Key Features*\*:
 - Multiple API provider support
 - Request/response handling
 - Error handling and retry
 - Rate limiting and throttling
 
 ### Observability System
-
-**Components**:
-
+- *Components*\*:
 - **SpanManager**: Span lifecycle management
 - **TraceCollector**: Trace collection and storage
 - **MetricsCollector**: Metrics collection
 - **LogManager**: Log management
-
-**Key Features**:
-
+- *Key Features*\*:
 - Distributed tracing
 - Performance monitoring
 - Error tracking
@@ -263,15 +204,11 @@ graph TD
 ```
 
 ### Service Communication
-
-**Synchronous Communication**:
-
+- *Synchronous Communication*\*:
 - Direct method calls
 - Event-driven communication
 - Shared state management
-
-**Asynchronous Communication**:
-
+- *Asynchronous Communication*\*:
 - Message queuing
 - Event publishing
 - Callback mechanisms
@@ -279,7 +216,6 @@ graph TD
 ## Data Flow
 
 ### Request Flow
-
 1. **User Input** → Webview UI
 2. **UI Event** → Message Queue
 3. **Message Processing** → Orchestrator
@@ -289,7 +225,6 @@ graph TD
 7. **Result Display** → Webview UI
 
 ### Response Flow
-
 1. **API Response** → API Service
 2. **Response Processing** → Task Manager
 3. **State Update** → Orchestrator
@@ -300,88 +235,72 @@ graph TD
 ## Performance Characteristics
 
 ### Scalability
-
-**Horizontal Scaling**: Service-based architecture supports horizontal scaling
-
-**Vertical Scaling**: Individual services can be scaled independently
-
-**Load Distribution**: Message queuing enables load distribution
+- *Horizontal Scaling*\*: Service-based architecture supports horizontal scaling
+- *Vertical Scaling*\*: Individual services can be scaled independently
+- *Load Distribution*\*: Message queuing enables load distribution
 
 ### Reliability
-
-**Fault Tolerance**: Service isolation prevents cascading failures
-
-**Error Handling**: Comprehensive error handling at each layer
-
-**Recovery**: Automatic recovery and retry mechanisms
+- *Fault Tolerance*\*: Service isolation prevents cascading failures
+- *Error Handling*\*: Comprehensive error handling at each layer
+- *Recovery*\*: Automatic recovery and retry mechanisms
 
 ### Monitoring
-
-**Health Checks**: Service health monitoring
-
-**Performance Metrics**: Response time and throughput monitoring
-
-**Error Tracking**: Comprehensive error tracking and alerting
+- *Health Checks*\*: Service health monitoring
+- *Performance Metrics*\*: Response time and throughput monitoring
+- *Error Tracking*\*: Comprehensive error tracking and alerting
 
 ## Configuration Management
 
 ### Service Configuration
-
-**Configuration Sources**:
-
+- *Configuration Sources*\*:
 - Environment variables
 - Configuration files
 - Runtime configuration
 - User preferences
-
-**Configuration Types**:
-
+- *Configuration Types*\*:
 - Service-specific configuration
 - Global configuration
 - Environment-specific configuration
 - User-specific configuration
 
 ### Configuration Validation
-
-**Schema Validation**: Configuration schema validation
-
-**Type Safety**: TypeScript-based configuration types
-
-**Runtime Validation**: Runtime configuration validation
+- *Schema Validation*\*: Configuration schema validation
+- *Type Safety*\*: TypeScript-based configuration types
+- *Runtime Validation*\*: Runtime configuration validation
 
 ## Security Considerations
 
 ### Authentication
-
-**Service Authentication**: Service-to-service authentication
-
-**User Authentication**: User authentication and authorization
-
-**API Authentication**: API key and token management
+- *Service Authentication*\*: Service-to-service authentication
+- *User Authentication*\*: User authentication and authorization
+- *API Authentication*\*: API key and token management
 
 ### Authorization
-
-**Role-Based Access**: Role-based access control
-
-**Permission Management**: Fine-grained permission management
-
-**Resource Access**: Resource access control
+- *Role-Based Access*\*: Role-based access control
+- *Permission Management*\*: Fine-grained permission management
+- *Resource Access*\*: Resource access control
 
 ## Next Steps
-
-1. **Explore Workspace Packages**: See [WORKSPACE_PACKAGES.md](WORKSPACE_PACKAGES.md)
-2. **Understand Applications**: See [APPLICATIONS.md](APPLICATIONS.md)
-3. **Learn Development**: See [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
+1. **Explore Workspace Packages**: See [WORKSPACE\_PACKAGES.md](WORKSPACE_PACKAGES.md)
+2. **Understand Applications**: See [Applications](APPLICATIONS.md)
+3. **Learn Development**: See [DEVELOPMENT\_GUIDE.md](DEVELOPMENT_GUIDE.md)
 
 ## 🧭 Navigation Footer
-
 - [← Back to Repository Home](README.md)
 - [→ Workspace Packages](WORKSPACE_PACKAGES.md)
 - [↑ Table of Contents](README.md)
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#core-systems)
+- \*\*
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#core-systems)

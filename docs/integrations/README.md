@@ -8,32 +8,28 @@ how KiloCode connects with other systems.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-
 - **Something's Broken**: Check specific integration docs for troubleshooting
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow integration setup guides
 
 ### Current Focus
-
 - Editor integration (VS Code, JetBrains)
 - Terminal integration and shell commands
 - Browser automation capabilities
 - Tree-sitter service integration
 
 ## 📚 Documentation Structure
-
 - **[Repository Overview](README.md)** - Master index of all integration documentation
-- **[EDITOR_INTEGRATION.md](EDITOR_INTEGRATION.md)** - VS Code and editor integration
-- **[JETBRAINS_PLUGIN.md](JETBRAINS_PLUGIN.md)** - JetBrains IDE plugin
-- **[TERMINAL_INTEGRATION.md](TERMINAL_INTEGRATION.md)** - Terminal and shell integration
-- **[BROWSER_AUTOMATION.md](BROWSER_AUTOMATION.md)** - Browser automation capabilities
-- **[TREE_SITTER_SERVICE.md](TREE_SITTER_SERVICE.md)** - Tree-sitter parsing service
+- **[EDITOR\_INTEGRATION.md](EDITOR_INTEGRATION.md)** - VS Code and editor integration
+- **[JETBRAINS\_PLUGIN.md](JETBRAINS_PLUGIN.md)** - JetBrains IDE plugin
+- **[TERMINAL\_INTEGRATION.md](TERMINAL_INTEGRATION.md)** - Terminal and shell integration
+- **[BROWSER\_AUTOMATION.md](BROWSER_AUTOMATION.md)** - Browser automation capabilities
+- **[TREE\_SITTER\_SERVICE.md](TREE_SITTER_SERVICE.md)** - Tree-sitter parsing service
 
 ## 🔗 Cross-References
-
-- **Architecture**: See [../architecture/](../architecture/) for integration architecture
-- **Services**: See [../services/](../services/) for integration services
-- **Standards**: See [../standards/](../standards/) for integration standards
+- **Architecture**: See [Architecture Documentation](../../architecture/) for integration architecture
+- **Services**: See [Services Documentation](../../services/) for integration services
+- **Standards**: See [Standards Documentation](../../standards////////) for integration standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -44,7 +40,11 @@ environments (editors, terminals, browsers). Each integration is like a differen
 adapted to its specific niche!
 
 ## 🧭 Navigation Footer
-
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+## Navigation
+- [← Integrations Overview](README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

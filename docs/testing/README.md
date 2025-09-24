@@ -8,28 +8,24 @@ best practices for ensuring KiloCode's quality and reliability.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-
-- **Something's Broken**: Check [TESTING_STRATEGY.md](TESTING_STRATEGY.md) for troubleshooting
+- **Something's Broken**: Check [Testing Strategy](TESTING_STRATEGY.md) for troubleshooting
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow testing setup and execution guides
 
 ### Current Focus
-
 - Unit testing strategies and frameworks
 - Integration testing approaches
 - End-to-end testing with Playwright
 - Test coverage and quality metrics
 
 ## 📚 Documentation Structure
-
 - **[Repository Overview](README.md)** - Master index of all testing documentation
-- **[TESTING_STRATEGY.md](TESTING_STRATEGY.md)** - Comprehensive testing strategy and approach
+- **[Testing Strategy](TESTING_STRATEGY.md)** - Comprehensive testing strategy and approach
 
 ## 🔗 Cross-References
-
-- **Architecture**: See [../architecture/](../architecture/) for testing architecture
-- **Services**: See [../services/](../services/) for service testing
-- **Standards**: See [../standards/](../standards/) for testing standards
+- **Architecture**: See [Architecture Documentation](../../architecture/) for testing architecture
+- **Services**: See [Services Documentation](../../services/) for service testing
+- **Standards**: See [Standards Documentation](../../standards////////) for testing standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -40,7 +36,17 @@ e2e tests) to verify the correctness and reliability of our code. Each test is l
 validation technique, and together they give us confidence in our system!
 
 ## 🧭 Navigation Footer
-
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+## Navigation
+- [← Main Documentation](README.md)
+- [← Project Root](README.md)
+- [← Architecture](architecture/README.md)
+- [← Orchestrator](orchestrator/README.md)
+- [← Standards](standards/README.md)
+- [← Plans](plans/README.md)
+- [← Tools](tools/README.md)
+- [← Improvements](improvements/README.md)
+- [← Integrations](integrations/README.md)

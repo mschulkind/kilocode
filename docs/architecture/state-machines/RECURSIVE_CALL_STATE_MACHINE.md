@@ -5,18 +5,12 @@
 ## Overview
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The Recursive Call State Machine manages the execution of recursive API calls, including the
 detection and prevention of race conditions. This is the **"quantum field controller"** of our
@@ -30,17 +24,15 @@ system - it manages the delicate balance between order and chaos in our API call
 ## 🗺️ Navigation
 
 ### Quick Links
-
 - **Something's broken?** → [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 - **Need to understand the flow?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
 - **Ready to implement a fix?** → Synchronization Implementation
 
 ### Key Concepts
-
 - **IDLE** is the safe state (the "vacuum state" - empty but ready)
 - **RUNNING** is normal execution (the "stable particle" - predictable)
 - **CONCURRENT** is the danger zone (the "quantum entanglement gone wrong")
-- **TRIPLE_CONCURRENT** is catastrophic (the "nuclear meltdown" - XML apocalypse!)
+- **TRIPLE\_CONCURRENT** is catastrophic (the "nuclear meltdown" - XML apocalypse!)
 
 ## Recursive Call States
 
@@ -166,51 +158,50 @@ const RECURSIVE_CALL_STATE_PROPERTIES: Record<RecursiveCallState, RecursiveCallS
 
 ```mermaid
 stateDiagram-v2
-    [*] --> IDLE : System start
+  [*] --> IDLE : System start
 
-    IDLE --> RUNNING : recursivelyMakeClineRequests()
-    IDLE --> CONCURRENT : Multiple calls simultaneously (RACE CONDITION)
-    IDLE --> TRIPLE_CONCURRENT : 3+ calls simultaneously (SEVERE RACE CONDITION)
+  IDLE --> RUNNING : recursivelyMakeClineRequests()
+  IDLE --> CONCURRENT : Multiple calls simultaneously (RACE CONDITION)
+  IDLE --> TRIPLE_CONCURRENT : 3+ calls simultaneously (SEVERE RACE CONDITION)
 
-    RUNNING --> IDLE : Call completes
-    RUNNING --> QUEUED : Second call arrives
-    RUNNING --> CONCURRENT : Second call bypasses lock (RACE CONDITION)
-    RUNNING --> TRIPLE_CONCURRENT : Third call bypasses lock (SEVERE RACE CONDITION)
+  RUNNING --> IDLE : Call completes
+  RUNNING --> QUEUED : Second call arrives
+  RUNNING --> CONCURRENT : Second call bypasses lock (RACE CONDITION)
+  RUNNING --> TRIPLE_CONCURRENT : Third call bypasses lock (SEVERE RACE CONDITION)
 
-    CONCURRENT --> IDLE : All calls complete
-    CONCURRENT --> RUNNING : One call completes
-    CONCURRENT --> CONCURRENT : More calls arrive (RACE CONDITION)
-    CONCURRENT --> TRIPLE_CONCURRENT : Third call arrives (SEVERE RACE CONDITION)
+  CONCURRENT --> IDLE : All calls complete
+  CONCURRENT --> RUNNING : One call completes
+  CONCURRENT --> CONCURRENT : More calls arrive (RACE CONDITION)
+  CONCURRENT --> TRIPLE_CONCURRENT : Third call arrives (SEVERE RACE CONDITION)
 
-    TRIPLE_CONCURRENT --> IDLE : All calls complete
-    TRIPLE_CONCURRENT --> RUNNING : One call completes
-    TRIPLE_CONCURRENT --> CONCURRENT : Two calls complete
-    TRIPLE_CONCURRENT --> TRIPLE_CONCURRENT : More calls arrive (SEVERE RACE CONDITION)
+  TRIPLE_CONCURRENT --> IDLE : All calls complete
+  TRIPLE_CONCURRENT --> RUNNING : One call completes
+  TRIPLE_CONCURRENT --> CONCURRENT : Two calls complete
+  TRIPLE_CONCURRENT --> TRIPLE_CONCURRENT : More calls arrive (SEVERE RACE CONDITION)
 
-    QUEUED --> LOCKED : Lock acquired
-    QUEUED --> TIMEOUT : Lock timeout
-    QUEUED --> CONCURRENT : Lock bypassed (RACE CONDITION)
+  QUEUED --> LOCKED : Lock acquired
+  QUEUED --> TIMEOUT : Lock timeout
+  QUEUED --> CONCURRENT : Lock bypassed (RACE CONDITION)
 
-    LOCKED --> IDLE : Call completes, no queued calls
-    LOCKED --> QUEUED : Call completes, queued calls exist
-    LOCKED --> RUNNING : Call completes, process next queued call
+  LOCKED --> IDLE : Call completes, no queued calls
+  LOCKED --> QUEUED : Call completes, queued calls exist
+  LOCKED --> RUNNING : Call completes, process next queued call
 
-    TIMEOUT --> IDLE : Timeout handled
-    TIMEOUT --> RUNNING : Retry successful
+  TIMEOUT --> IDLE : Timeout handled
+  TIMEOUT --> RUNNING : Retry successful
 
-    note right of IDLE : Safe state
-    note right of RUNNING : Normal execution
-    note right of CONCURRENT : RACE CONDITION!
-    note right of TRIPLE_CONCURRENT : SEVERE RACE CONDITION!
-    note right of QUEUED : Synchronized execution
-    note right of LOCKED : Processing with lock
+  note right of IDLE : Safe state
+  note right of RUNNING : Normal execution
+  note right of CONCURRENT : RACE CONDITION!
+  note right of TRIPLE_CONCURRENT : SEVERE RACE CONDITION!
+  note right of QUEUED : Synchronized execution
+  note right of LOCKED : Processing with lock
 ```
 
 ## Race Condition Detection
 
 The race condition occurs when the system transitions from `IDLE` to `CONCURRENT`, bypassing the
 proper `RUNNING` state. This happens when:
-
 1. **Main Task Loop**: Calls `recursivelyMakeClineRequests()`
 2. **Subtask Completion**: Also calls `recursivelyMakeClineRequests()` via `continueParentTask()`
 3. **Concurrent Execution**: Both calls reach the API simultaneously
@@ -219,24 +210,21 @@ proper `RUNNING` state. This happens when:
 ### 3-Request Race Condition
 
 The most severe form involves **3 simultaneous API requests** triggered by:
-
 1. **Subtask Premature Completion**: Subtask incorrectly thinks it's done and outputs green text
 2. **Subtask Stops**: Subtask stops execution prematurely
 3. **User Request**: User sends another request to the agent
 4. **Triple Concurrent Calls**:
-    - Main orchestrator loop call
-    - Subtask completion call (from premature completion)
-    - New user request call
+- Main orchestrator loop call
+- Subtask completion call (from premature completion)
+- New user request call
 5. **Severe Corruption**: XML appears in chat, permanent session damage
 
 This 3-request scenario is particularly destructive because it causes:
-
 - **XML Corruption**: Chat history becomes severely broken
 - **Permanent Damage**: Session requires restart to recover
 - **Cascading Failure**: All subsequent requests become corrupted
 
 ## Synchronization States
-
 - **QUEUED**: Calls are queued when a lock is already held
 - **LOCKED**: A call is actively processing with the lock held
 - **TIMEOUT**: Lock acquisition timed out, call is abandoned
@@ -293,7 +281,6 @@ class RecursiveCallStateManager {
 ```
 
 ## Key States
-
 - **IDLE**: Safe state, no active calls
 - **RUNNING**: Normal execution, single call active
 - **CONCURRENT**: **RACE CONDITION** - multiple calls active simultaneously
@@ -303,16 +290,12 @@ class RecursiveCallStateManager {
 ## Race Condition Prevention
 
 To prevent race conditions:
-
 1. **Check State**: Before making a call, check if another call is already running
 2. **Acquire Lock**: Use a lock mechanism to ensure only one call at a time
 3. **Queue Calls**: If lock is held, queue the call for later execution
 4. **Detect Concurrent**: Monitor for concurrent calls and handle appropriately
-
----
-
-**Related Documentation:**
-
+- \*\*
+- *Related Documentation:*\*
 - [Task State Machine](TASK_STATE_MACHINE.md)
 - [Session State Machine](SESSION_STATE_MACHINE.md)
 - [Combined State Machine](COMBINED_STATE_MACHINE.md)
@@ -321,24 +304,18 @@ To prevent race conditions:
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Architecture:**
-
+- *Understanding Architecture:*\*
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../../../../../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-
-**Implementing Architecture Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Architecture Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- *Implementing Architecture Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Architecture Issues:*\*
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -346,9 +323,17 @@ To prevent race conditions:
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -6,7 +6,6 @@ Comprehensive observability and tracing system for Kilo Code, enabling detailed 
 execution, tool usage, and LLM interactions.
 
 <details><summary>Table of Contents</summary>
-
 - [What is Laminar?](#what-is-laminar)
 - [Purpose in Kilo Code](#purpose-in-kilo-code)
 - [Integration with Telemetry Systems](#integration-with-telemetry-systems)
@@ -26,7 +25,6 @@ execution flow of AI-powered systems, including function calls, LLM API interact
 spans.
 
 The Laminar TypeScript SDK (`@lmnr-ai/lmnr`) offers:
-
 - **Automatic tracing** of LLM calls with token counts, costs, and model information
 - **Manual span creation** for custom operations
 - **Decorator-based instrumentation** for functions
@@ -37,7 +35,6 @@ The Laminar TypeScript SDK (`@lmnr-ai/lmnr`) offers:
 
 As a fork of Cline (which itself is an AI coding assistant), Kilo Code integrates Laminar to enhance
 observability beyond the basic telemetry provided by PostHog. Laminar enables:
-
 - **Detailed task lifecycle tracing**: Track the complete execution flow from user input to task
   completion
 - **Tool execution monitoring**: Monitor which tools are invoked, their performance, and success
@@ -52,7 +49,6 @@ requests, enabling data-driven improvements to the AI assistant's capabilities.
 ## Integration with Telemetry Systems
 
 Laminar integrates seamlessly with Kilo Code's existing PostHog-based telemetry system:
-
 - **Unified opt-in/opt-out**: Laminar respects the same telemetry settings as PostHog
 - **User identification**: Shares authenticated user IDs for consistent attribution
 - **Complementary data**: PostHog handles high-level usage analytics while Laminar provides detailed
@@ -66,7 +62,6 @@ have consistent control over their data sharing preferences.
 ### LaminarService
 
 The central service managing all Laminar operations in Kilo Code. It provides:
-
 - **Singleton pattern** for consistent state management
 - **Initialization** with project API keys
 - **Span lifecycle management** (start, end, attribute setting)
@@ -76,7 +71,6 @@ The central service managing all Laminar operations in Kilo Code. It provides:
 ### Spans
 
 Spans represent units of work in the tracing system:
-
 - **Task spans**: Track overall task execution (`task.step`)
 - **Tool spans**: Monitor individual tool invocations (`tool`)
 - **LLM spans**: Capture language model interactions (`llm`)
@@ -85,7 +79,6 @@ Spans represent units of work in the tracing system:
 ### Decorators
 
 The `observeDecorator` enables automatic instrumentation of functions:
-
 - **Method decoration**: Applied to class methods like `CheckpointTracker.commit`
 - **Automatic span creation**: Wraps function execution with tracing
 - **Input/output capture**: Records function parameters and return values (when enabled)
@@ -93,7 +86,6 @@ The `observeDecorator` enables automatic instrumentation of functions:
 ### Configuration
 
 Environment-specific configuration in `laminar-config.ts`:
-
 - **API keys**: Separate keys for development and production projects
 - **IO recording**: Controls whether span inputs/outputs are captured
 - **Feature flags**: Enable/disable tracing based on environment
@@ -103,7 +95,6 @@ Environment-specific configuration in `laminar-config.ts`:
 ### Task Execution
 
 Laminar traces the complete task lifecycle:
-
 - **Step initialization**: New spans created for each conversation turn
 - **LLM calls**: Detailed tracking of model interactions with token counts and costs
 - **Exception handling**: Records errors in task processing
@@ -112,7 +103,6 @@ Laminar traces the complete task lifecycle:
 ### Tool Handling
 
 Tool execution is wrapped with tracing:
-
 - **Span creation**: Each tool invocation gets its own span
 - **Input capture**: Tool parameters are recorded
 - **Execution timing**: Performance metrics are tracked
@@ -121,7 +111,6 @@ Tool execution is wrapped with tracing:
 ### Authentication
 
 User context is integrated into traces:
-
 - **User ID setting**: Authenticated users are associated with their traces
 - **Session tracking**: Links traces to specific user sessions
 - **Privacy compliance**: Respects telemetry opt-out preferences
@@ -129,7 +118,6 @@ User context is integrated into traces:
 ### Checkpoints
 
 Checkpoint operations are instrumented:
-
 - **Decorator application**: `CheckpointTracker.commit` uses `observeDecorator`
 - **Operation tracing**: Git operations are monitored for performance
 - **Error capture**: Checkpoint failures are recorded with context
@@ -153,9 +141,7 @@ const laminarProdConfig = {
 	enabled: true,
 }
 ```
-
-**Setup steps:**
-
+- *Setup steps:*\*
 1. Create projects in Laminar dashboard for dev and prod
 2. Obtain API keys from project settings
 3. Update `laminar-config.ts` with the keys
@@ -237,7 +223,6 @@ try {
 
 Kilo Code's Laminar integration is a new addition not present in the original Cline codebase. Key
 differences:
-
 - **Enhanced observability**: Cline relied primarily on PostHog for telemetry; Kilo Code adds
   detailed execution tracing
 - **LLM metrics**: Comprehensive tracking of token usage, costs, and model performance
@@ -249,28 +234,21 @@ This integration positions Kilo Code for better debugging, performance optimizat
 experience improvements compared to the base Cline implementation.
 
 <a id="navigation-footer"></a>
-
 - Back: [`README.md`](README.md:1) · Root: [`README.md`](README.md:1) · Source:
   `/docs/LAMINAR_INTEGRATION.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Laminar Observability:**
-
+- *Understanding Laminar Observability:*\*
 - **Next**: Check related Laminar documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
-
-**Implementing Observability Features:**
-
+- *Implementing Observability Features:*\*
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Observability Issues:**
-
+- *Troubleshooting Observability Issues:*\*
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -282,8 +260,6 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Laminar Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

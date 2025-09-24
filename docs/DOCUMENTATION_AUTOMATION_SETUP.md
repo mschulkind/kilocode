@@ -9,7 +9,6 @@ system for KiloCode.
 
 The documentation automation system uses Remark to validate markdown files and ensure they meet
 KiloCode's documentation standards. It includes:
-
 - Automated validation of markdown files
 - Proactive maintenance tools
 - Custom KiloCode-specific validation rules
@@ -19,7 +18,6 @@ KiloCode's documentation standards. It includes:
 ## Installation
 
 The documentation automation dependencies are already installed in the workspace. They include:
-
 - `remark-cli` - Command-line interface for remark
 - `remark-preset-lint-recommended` - Recommended linting rules
 - `remark-validate-links` - Link validation
@@ -62,7 +60,6 @@ The system is configured via `.remarkrc` in the project root:
 ## Usage
 
 ### Available Scripts
-
 - `pnpm docs:validate` - Validate all documentation files (quiet mode)
 - `pnpm docs:validate:verbose` - Validate all documentation files with detailed output
 - `pnpm docs:fix` - Auto-fix common documentation issues
@@ -107,17 +104,14 @@ pushes.
 #### GitHub Actions Workflow
 
 The documentation validation workflow (`.github/workflows/docs-validation.yml`) runs on:
-
 - **Push events** to main/master branches when markdown files are changed
 - **Pull request events** to main/master branches when markdown files are changed
 
 The workflow includes two jobs:
-
 1. **Documentation Validation**: Validates all documentation files using remark
 2. **Documentation Maintenance**: Auto-fixes common issues and commits changes back to PRs
 
 #### Workflow Features
-
 - Validates documentation on every PR and push
 - Generates detailed validation reports on failure
 - Auto-maintains documentation by fixing common issues
@@ -131,7 +125,6 @@ VS Code integration provides real-time validation as you edit markdown files.
 ## Troubleshooting
 
 ### Common Issues
-
 1. **Link validation errors**: Ensure all internal links use relative paths and external links are
    valid
 2. **Literal URL warnings**: Wrap bare URLs in angle brackets `<url>`
@@ -140,7 +133,6 @@ VS Code integration provides real-time validation as you edit markdown files.
 ### Getting Help
 
 For issues with the documentation automation system:
-
 1. Check the validation output for specific error messages
 2. Review the documentation standards in `docs/DOCUMENTATION_GUIDE.md`
 3. Use `pnpm docs:validate:verbose` for detailed error information
@@ -148,7 +140,6 @@ For issues with the documentation automation system:
 ## Next Steps
 
 After setup, the system will:
-
 1. Validate all documentation on every commit
 2. Provide real-time feedback in your IDE
 3. Generate reports on documentation quality
@@ -158,7 +149,5 @@ For advanced configuration and custom rules, see the Phase 1 implementation plan
 `context/doc_automation/phase1.md`.
 
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)
+- \*\*
+- *Navigation*\*: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)

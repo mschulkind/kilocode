@@ -1,9 +1,8 @@
 # Repository Overview
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-**Purpose:** Master index for comprehensive information about the KiloCode repository structure,
-systems, and components.
+- *Purpose:*\* Master index for comprehensive information about the KiloCode repository structure,
+  systems, and components.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -12,27 +11,19 @@ systems, and components.
 ## 🗺️ Navigation Guide
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ### Quick Start Paths
-
-- **Need an Overview**: Start with [Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)
-- **Understanding Systems**: Begin with [Core Systems](../architecture/repository/CORE_SYSTEMS.md)
-- **Development Journey**: Follow [Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md)
+- **Need an Overview**: Start with [Repository Structure](../../architecture/../repository/REPOSITORY_STRUCTURE.md)
+- **Understanding Systems**: Begin with [Core Systems](../architecture/../repository/CORE_SYSTEMS.md)
+- **Development Journey**: Follow [Development Guide](../repository/DEVELOPMENT_GUIDE.md)
 
 ### Current Focus
-
 - Repository structure and organization
 - Core systems and architecture
 - Development tools and workflows
@@ -44,21 +35,19 @@ This overview has been split into focused, manageable documents for better navig
 understanding:
 
 ### Core Documentation
-
-- **[Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)** - High-level repository
+- **[Repository Structure](../../architecture/../repository/REPOSITORY_STRUCTURE.md)** - High-level repository
   organization
-- **[Core Systems](../architecture/repository/CORE_SYSTEMS.md)** - Core systems and services
-- **[Workspace Packages](../architecture/repository/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
-- **[Applications](../architecture/repository/APPLICATIONS.md)** - Applications and interfaces
+- **[Core Systems](../architecture/../repository/CORE_SYSTEMS.md)** - Core systems and services
+- **[Workspace Packages](../architecture/../repository/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
+- **[Applications](../architecture/../repository/APPLICATIONS.md)** - Applications and interfaces
 
 ### Development & Infrastructure
-
-- **[Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and
+- **[Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and
   frameworks
-- **[Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)** - Build and CI/CD systems
-- **[Development Tools](../architecture/repository/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
-- **[External Integrations](../architecture/repository/EXTERNAL_INTEGRATIONS.md)** - External service integrations
-- **[Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
+- **[Build Pipelines](../architecture/../repository/BUILD_PIPELINES.md)** - Build and CI/CD systems
+- **[Development Tools](../architecture/../repository/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
+- **[External Integrations](../architecture/../repository/EXTERNAL_INTEGRATIONS.md)** - External service integrations
+- **[Development Guide](../repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
 
 ## Executive Summary
 
@@ -66,9 +55,7 @@ The KiloCode repository is a comprehensive VS Code extension for AI-powered codi
 featuring a multi-layered architecture with extensive tooling, testing, and deployment
 infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages,
 applications, and services.
-
-**Key Statistics:**
-
+- *Key Statistics:*\*
 - **Total Files**: 1,120+ TypeScript files
 - **Workspace Packages**: 7 core packages
 - **Applications**: 8 applications (docs, testing, web interfaces)
@@ -79,7 +66,6 @@ applications, and services.
 ## Quick Reference
 
 ### Repository Structure
-
 - **Core Extension**: `src/` - Main VS Code extension implementation
 - **Webview UI**: `webview-ui/` - React-based user interface
 - **Workspace Packages**: `packages/` - Shared libraries and utilities
@@ -87,7 +73,6 @@ applications, and services.
 - **Documentation**: `docs/` - Comprehensive documentation system
 
 ### Core Systems
-
 - **Orchestrator Service**: Task execution and coordination
 - **API Service**: External AI service communication
 - **Message Queue Service**: Message queuing and processing
@@ -96,7 +81,6 @@ applications, and services.
 - **Tool Service**: AI tool execution and coordination
 
 ### Development Workflow
-
 - **Monorepo Management**: PNPM workspace with Turbo orchestration
 - **Code Quality**: ESLint, Prettier, TypeScript strict mode
 - **Testing**: Vitest, Playwright, Jest for comprehensive testing
@@ -104,10 +88,9 @@ applications, and services.
 - **Deployment**: VS Code Marketplace, NPM registry, web hosting
 
 ## 🔗 Cross-References
-
-- **Architecture**: See [Architecture Documentation](../README.md) for system architecture
-- **Standards**: See [../standards/](../standards/) for development standards
-- **Plans**: See [../../plans/](../../plans/) for development plans
+- **Architecture**: See [Architecture Documentation](../../../../../../../README.md) for system architecture
+- **Standards**: See [Standards Documentation](../standards////////) for development standards
+- **Plans**: See [Plans Documentation](../plans////////) for development plans
 
 ## 🦕 Dinosaur Analogy
 
@@ -118,14 +101,21 @@ architectural layer. Each directory is like a different excavation site, reveali
 of the system's structure!
 
 ## 🧭 Navigation Footer
+- [← Back to Architecture Home](../../../../../../../README.md)
+- [→ Repository Structure](../../architecture/../repository/REPOSITORY_STRUCTURE.md)
+- [↑ Table of Contents](../../../../../../../README.md)
 
-- [← Back to Architecture Home](../README.md)
-- [→ Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)
-- [↑ Table of Contents](../README.md)
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
 
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#repository-overview)
+- \*\*
+- *Navigation*\*: [docs](../) · [architecture](../../docs/architecture/) ·
+  [↑ Table of Contents](#repository-overview)

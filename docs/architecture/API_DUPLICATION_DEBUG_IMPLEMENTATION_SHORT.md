@@ -6,34 +6,26 @@
 
 Purpose: Practical, minimal playbook to instrument, reproduce, and verify the duplicate-API-call
 race conditions. This is a condensed version. See the full guide in
-`API_DUPLICATION_DEBUG_IMPLEMENTATION.md`. (\[Development Guide]\(../architecture/repository/DEVELOPMENT_GUIDE.md))
+`API_DUPLICATION_DEBUG_IMPLEMENTATION.md`. (\[Development Guide]\(../architecture/repository/DEVELOPMENT\_GUIDE.md))
 
 ## Quick Links
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-- \[Root Cause Analysis of Duplicate API Requests]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- \[Code Flow and Execution Analysis]race-condition/CODE_FLOW_ANALYSIS.md)
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- \[Root Cause Analysis of Duplicate API Requests]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- \[Code Flow and Execution Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md)
 - [State Machine Index and Diagrams](README.md)
-- \[Solution Options and Synchronization Strategies]race-condition/SOLUTION_RECOMMENDATIONS.md)
-- \[Testing Strategy and Validation Plan]race-condition/TESTING_STRATEGY.md) (\[Testing Infrastructure]\(../architecture/repository/TESTING_INFRASTRUCTURE.md))
+- \[Solution Options and Synchronization Strategies]race-condition/SOLUTION\_RECOMMENDATIONS.md)
+- \[Testing Strategy and Validation Plan]race-condition/TESTING\_STRATEGY.md) (\[Testing Infrastructure]\(../architecture/repository/TESTING\_INFRASTRUCTURE.md))
 
 ## Goals
-
 - Detect concurrent `recursivelyMakeClineRequests` invocations.
-- Attribute each call (reason: main-loop | subtask-completion | user-request). (\[Orchestrator Documentation]\(../orchestrator/README.md))
+- Attribute each call (reason: main-loop | subtask-completion | user-request). (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
 - Capture timings to prove interleaving (race) vs sequence.
 - Tie logs to spans for end-to-end traces (Laminar).
 
@@ -84,37 +76,31 @@ private logJSON(obj: unknown) {
 ```
 
 ## Minimal Reproduction Scenarios
-
 1. Two-request race (most common)
-
-- Start orchestrator task with a plan that spawns a subtask. (\[Orchestrator Documentation]\(../orchestrator/README.md))
+- Start orchestrator task with a plan that spawns a subtask. (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
 - Keep UI on the same chat (no navigation).
-- At subtask completion, observe two starts close in time: (\[Orchestrator Documentation]\(../orchestrator/README.md))
-    - start { reason: "main-loop" }
-    - start { reason: "subtask-completion" }
+- At subtask completion, observe two starts close in time: (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
+- start { reason: "main-loop" }
+- start { reason: "subtask-completion" }
 - Expect jumbled responses/spinners if lock is not present.
-
 2. Three-request variant (severe)
-
 - Subtask prematurely ends (green text).
 - User sends another message immediately.
 - Observe three nearly-simultaneous starts:
-    - main-loop, subtask-completion, user-request.
+- main-loop, subtask-completion, user-request.
 - Expect XML/corruption symptoms without synchronization.
 
 ## Verification Checklist
-
 - Confirm exactly one active call at any timestamp after lock is enabled.
 - Ensure `end` of a call precedes the `start` of the next one (except queued scenarios).
-- Laminar trace shows a single active `recursiveCall` span at a time per task. (\[Orchestrator Documentation]\(../orchestrator/README.md))
+- Laminar trace shows a single active `recursiveCall` span at a time per task. (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
 
 ## Metrics to Capture
-
-- call_count by reason
-- concurrent_call_detected (boolean)
-- max_parallelism (expect 1 after fix)
-- duration_ms per call
-- queue_wait_ms when lock is contended
+- call\_count by reason
+- concurrent\_call\_detected (boolean)
+- max\_parallelism (expect 1 after fix)
+- duration\_ms per call
+- queue\_wait\_ms when lock is contended
 
 ## Log Patterns (for grep/jq)
 
@@ -141,49 +127,39 @@ jq -r 'select(.at=="Task.recursivelyMakeClineRequests" and .evt=="start") | [.re
 ```
 
 ## Laminar Spans
-
 - Parent span: task execution
 - Child span: recursiveCall (tagged with reason, callId)
-- Add marks: start/end; record attributes duration_ms, wait_ms
+- Add marks: start/end; record attributes duration\_ms, wait\_ms
 
 ## Expected Outcomes After Fix
-
 - No concurrent starts for the same task.
 - Queued attempts visible as wait time, not overlap.
 - 2-request/3-request scenarios disappear in logs and UI.
 
 ## Rollback Plan
-
 - Feature flag the lock.
 - If throughput regressions are reported, toggle flag off and investigate.
 
 ## Where to Go Next
-
-- \[Navigation Scenario and Parent Resumption Context]race-condition/NAVIGATION_SCENARIO.md)
-- \[Complete Solution Options and Tradeoffs]race-condition/SOLUTION_RECOMMENDATIONS.md)
-- \[Tests to Add for Race Prevention]race-condition/TESTING_STRATEGY.md) (\[Testing Infrastructure]\(../architecture/repository/TESTING_INFRASTRUCTURE.md))
+- \[Navigation Scenario and Parent Resumption Context]race-condition/NAVIGATION\_SCENARIO.md)
+- \[Complete Solution Options and Tradeoffs]race-condition/SOLUTION\_RECOMMENDATIONS.md)
+- \[Tests to Add for Race Prevention]race-condition/TESTING\_STRATEGY.md) (\[Testing Infrastructure]\(../architecture/repository/TESTING\_INFRASTRUCTURE.md))
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Architecture:**
-
-- **Next**: Check related architecture documentation in the same directory (\[Architecture Documentation]\(../README.md))
+- *Understanding Architecture:*\*
+- **Next**: Check related architecture documentation in the same directory (\[Architecture Documentation]\(../../../../../../../README.md))
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-
-**Implementing Architecture Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Architecture Issues:**
-
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
-  \[Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- *Implementing Architecture Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../../../../../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Architecture Issues:*\*
+- **Next**: \[Race Condition Analysis]../race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../../../../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -191,9 +167,17 @@ jq -r 'select(.at=="Task.recursivelyMakeClineRequests" and .evt=="start") | [.re
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

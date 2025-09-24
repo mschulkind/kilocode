@@ -1,15 +1,13 @@
 # Custom Modes System
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-**Purpose:** Comprehensive documentation of the Custom Modes system for managing AI behavior
-configurations and custom prompt strategies in KiloCode.
+- *Purpose:*\* Comprehensive documentation of the Custom Modes system for managing AI behavior
+  configurations and custom prompt strategies in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
 > specific function, but they all work together to keep the system healthy and functioning! 🧬
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [System Architecture](#system-architecture)
 - [Mode Configuration](#mode-configuration)
@@ -23,12 +21,10 @@ configurations and custom prompt strategies in KiloCode.
 </details>
 
 ## Executive Summary
-
-_The Custom Modes System provides comprehensive management of AI behavior configurations, custom
-prompt strategies, and mode-based customization for different development contexts in KiloCode._
+- The Custom Modes System provides comprehensive management of AI behavior configurations, custom
+  prompt strategies, and mode-based customization for different development contexts in KiloCode.\*
 
 The Custom Modes System consists of:
-
 1. **CustomModesManager** - Core mode management and configuration
 2. **Mode Configuration** - YAML-based mode definitions and rules
 3. **Import/Export System** - Mode sharing and distribution
@@ -90,8 +86,7 @@ graph TB
 ## Mode Configuration
 
 ### Mode Schema
-
-**Mode Configuration Structure**:
+- *Mode Configuration Structure*\*:
 
 ```typescript
 interface ModeConfig {
@@ -103,8 +98,7 @@ interface ModeConfig {
 	metadata?: Record<string, any>
 }
 ```
-
-**Implementation Details**:
+- *Implementation Details*\*:
 
 ```typescript
 export class CustomModesManager {
@@ -116,9 +110,7 @@ export class CustomModesManager {
 	private cachedAt: number = 0
 }
 ```
-
-**Core Features**:
-
+- *Core Features*\*:
 - **YAML Configuration**: Human-readable YAML configuration format
 - **Schema Validation**: Comprehensive schema validation with Zod
 - **Prompt Components**: Modular prompt component system
@@ -126,16 +118,12 @@ export class CustomModesManager {
 - **Metadata Support**: Extensible metadata for mode customization
 
 ### Mode Types
-
-**Mode Categories**:
-
+- *Mode Categories*\*:
 - **Workspace Modes**: Project-specific mode configurations
 - **Global Modes**: User-wide mode configurations
 - **Template Modes**: Reusable mode templates
 - **Custom Modes**: User-defined custom modes
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **File-based Configuration**: `.kilocodemodes` file support
 - **Hierarchical Override**: Workspace modes override global modes
 - **Template System**: Reusable mode templates
@@ -144,8 +132,7 @@ export class CustomModesManager {
 ## Import/Export System
 
 ### Export Functionality
-
-**Export Implementation**:
+- *Export Implementation*\*:
 
 ```typescript
 interface ExportResult {
@@ -158,17 +145,14 @@ interface ExportedModeConfig extends ModeConfig {
 	rulesFiles?: RuleFile[]
 }
 ```
-
-**Export Features**:
-
+- *Export Features*\*:
 - **YAML Export**: Complete mode configuration export
 - **Rules File Inclusion**: Associated rules file export
 - **Metadata Preservation**: Full metadata preservation
 - **Error Handling**: Comprehensive error reporting
 
 ### Import Functionality
-
-**Import Implementation**:
+- *Import Implementation*\*:
 
 ```typescript
 interface ImportResult {
@@ -180,16 +164,12 @@ interface ImportData {
 	customModes: ExportedModeConfig[]
 }
 ```
-
-**Import Features**:
-
+- *Import Features*\*:
 - **YAML Import**: Mode configuration import
 - **Validation**: Import-time validation and error checking
 - **Conflict Resolution**: Automatic conflict resolution
 - **Rollback Support**: Import rollback on failure
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Marketplace Integration**: Integration with marketplace system
 - **Validation**: Comprehensive import validation
 - **Error Recovery**: Robust error handling and recovery
@@ -198,41 +178,33 @@ interface ImportData {
 ## File Management
 
 ### File System Integration
-
-**File Management Features**:
-
+- *File Management Features*\*:
 - **Workspace Detection**: Automatic workspace mode file detection
 - **Global Configuration**: User-wide mode configuration
 - **File Watching**: Automatic file change detection
 - **Backup System**: Automatic backup creation
-
-**File Operations**:
+- *File Operations*\*:
 
 ```typescript
 private async getWorkspaceRoomodes(): Promise<string | undefined>
 private async getGlobalRoomodes(): Promise<string>
 private async ensureSettingsDirectoryExists(): Promise<void>
 ```
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Atomic Operations**: Atomic file write operations
 - **Queue Management**: Write queue for concurrent operations
 - **Error Handling**: Comprehensive file operation error handling
 - **Performance Optimization**: Efficient file operations and caching
 
 ### Caching System
-
-**Cache Implementation**:
+- *Cache Implementation*\*:
 
 ```typescript
 private cachedModes: ModeConfig[] | null = null
 private cachedAt: number = 0
 private static readonly cacheTTL = 10_000
 ```
-
-**Cache Features**:
-
+- *Cache Features*\*:
 - **TTL-based Caching**: Time-to-live based cache invalidation
 - **Write Queue**: Concurrent write operation management
 - **Cache Invalidation**: Automatic cache invalidation on file changes
@@ -241,8 +213,7 @@ private static readonly cacheTTL = 10_000
 ## Validation & Error Handling
 
 ### Schema Validation
-
-**Validation Implementation**:
+- *Validation Implementation*\*:
 
 ```typescript
 const customModesSettingsSchema = z.object({
@@ -257,25 +228,19 @@ const modeConfigSchema = z.object({
 	rules: z.array(z.string()),
 })
 ```
-
-**Validation Features**:
-
+- *Validation Features*\*:
 - **Zod Schema Validation**: Type-safe schema validation
 - **Error Reporting**: Detailed validation error messages
 - **Partial Validation**: Support for partial mode validation
 - **Custom Validators**: Extensible validation system
 
 ### Error Handling
-
-**Error Management**:
-
+- *Error Management*\*:
 - **Graceful Degradation**: Graceful handling of validation errors
 - **User Feedback**: Clear error messages and recovery suggestions
 - **Logging**: Comprehensive error logging and debugging
 - **Recovery**: Automatic error recovery where possible
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Comprehensive Validation**: Multi-layer validation system
 - **Error Recovery**: Automatic error recovery mechanisms
 - **User Experience**: Clear error messages and guidance
@@ -284,23 +249,17 @@ const modeConfigSchema = z.object({
 ## Performance & Caching
 
 ### Performance Optimization
-
-**Optimization Strategies**:
-
+- *Optimization Strategies*\*:
 - **Lazy Loading**: Lazy loading of mode configurations
 - **Write Queuing**: Efficient write operation queuing
 - **Cache Management**: Intelligent cache management
 - **File Watching**: Efficient file change detection
-
-**Performance Metrics**:
-
+- *Performance Metrics*\*:
 - **Cache Hit Rate**: Mode configuration cache effectiveness
 - **Load Time**: Mode loading performance
 - **Write Performance**: File write operation performance
 - **Memory Usage**: Memory consumption optimization
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Efficient Caching**: TTL-based caching with automatic invalidation
 - **Write Optimization**: Queued write operations for performance
 - **Memory Management**: Efficient memory usage patterns
@@ -309,57 +268,52 @@ const modeConfigSchema = z.object({
 ## Common Issues and Solutions
 
 ### Issue 1: Mode Configuration Validation Failures
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Mode configuration errors
 - Import/export failures
 - Validation errors
-
-**Root Cause**: Schema validation or configuration format issues **Solution**: Implement
-comprehensive validation with clear error messages
+- *Root Cause*\*: Schema validation or configuration format issues **Solution**: Implement
+  comprehensive validation with clear error messages
 
 ### Issue 2: File System Issues
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - File read/write failures
 - Permission errors
 - File corruption
-
-**Root Cause**: File system or permission issues **Solution**: Implement robust file handling with
-error recovery
+- *Root Cause*\*: File system or permission issues **Solution**: Implement robust file handling with
+  error recovery
 
 ### Issue 3: Cache Inconsistency
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Stale mode configurations
 - Cache invalidation failures
 - Performance issues
-
-**Root Cause**: Cache management or invalidation issues **Solution**: Implement proper cache
-invalidation and consistency checks
+- *Root Cause*\*: Cache management or invalidation issues **Solution**: Implement proper cache
+  invalidation and consistency checks
 
 ### Issue 4: Import/Export Failures
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Import/export errors
 - Data corruption
 - Validation failures
-
-**Root Cause**: Import/export process or validation issues **Solution**: Implement robust
-import/export with validation and rollback
+- *Root Cause*\*: Import/export process or validation issues **Solution**: Implement robust
+  import/export with validation and rollback
 
 <a id="navigation-footer"></a>
-
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+- Back: [`SYSTEM_OVERVIEW.md`](../../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
   · Source: `/docs/services/CUSTOM_MODES_SYSTEM.md#L1`
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [services](../docs/services/) ·
-[↑ Table of Contents](#custom-modes-system)
+- \*\*
+- *Navigation*\*: [docs](../) · [services](../../docs/services/) ·
+  [↑ Table of Contents](#custom-modes-system)

@@ -214,14 +214,1050 @@ This plan implements documentation automation in four phases, prioritizing early
     module.exports = remarkKiloCodeStandards
     ```
 
-2. **Add Advanced Validation**
+2. **Implement KiloCode Content Rules Linter**
+
+    ```javascript
+    // plugins/remark-lint-kilocode-content.js
+    import { visit } from "unist-util-visit"
+    import { VFileMessage } from "vfile-message"
+
+    const remarkLintKilocodeContent = () => {
+    	return (tree, file) => {
+    		const filePath = file.path || file.filename || ""
+
+    		// Skip validation for certain files
+    		if (shouldSkipContentValidation(filePath)) {
+    			return
+    		}
+
+    		// Check for required sections
+    		validateRequiredSections(tree, file)
+
+    		// Check for fun facts/engagement elements
+    		validateEngagementElements(tree, file)
+
+    		// Check for descriptive link text
+    		validateDescriptiveLinks(tree, file)
+
+    		// Check heading hierarchy
+    		validateHeadingHierarchy(tree, file)
+
+    		// Check content quality metrics
+    		validateContentQuality(tree, file)
+    	}
+    }
+
+    function shouldSkipContentValidation(filePath) {
+    	const skipPatterns = [
+    		/README\.md$/i,
+    		/index\.md$/i,
+    		/GLOSSARY\.md$/i,
+    		/CONTRIBUTING\.md$/i,
+    		/LICENSE\.md$/i,
+    		/CHANGELOG\.md$/i,
+    	]
+    	return skipPatterns.some((pattern) => pattern.test(filePath))
+    }
+
+    function validateRequiredSections(tree, file) {
+    	const requiredSections = [
+    		"🔍 Research Context & Next Steps",
+    		"### No Dead Ends Policy",
+    		"### When You're Here, You Can:",
+    	]
+
+    	requiredSections.forEach((section) => {
+    		let found = false
+    		visit(tree, "heading", (node) => {
+    			if (getTextContent(node) === section) {
+    				found = true
+    			}
+    		})
+
+    		if (!found) {
+    			file.message(`Missing required section: ${section}`, {
+    				ruleId: "kilocode-content-missing-section",
+    				source: "remark-lint-kilocode-content",
+    			})
+    		}
+    	})
+    }
+
+    function validateEngagementElements(tree, file) {
+    	let hasFunFact = false
+    	visit(tree, "blockquote", (node) => {
+    		const text = getTextContent(node)
+    		if (text.toLowerCase().includes("fun fact") || text.includes("🎯") || text.includes("💡")) {
+    			hasFunFact = true
+    		}
+    	})
+
+    	if (!hasFunFact) {
+    		file.message("Document should include engagement elements (fun facts, insights, or visual elements)", {
+    			ruleId: "kilocode-content-engagement",
+    			source: "remark-lint-kilocode-content",
+    		})
+    	}
+    }
+
+    function validateDescriptiveLinks(tree, file) {
+    	visit(tree, "link", (node) => {
+    		const linkText = getTextContent(node)
+    		const url = node.url || ""
+
+    		// Check for non-descriptive link text
+    		if (
+    			linkText === url ||
+    			linkText === "here" ||
+    			linkText === "click here" ||
+    			linkText.match(/^[A-Z_]+\.md$/) ||
+    			linkText.length < 3
+    		) {
+    			file.message("Link text should be descriptive and meaningful", {
+    				ruleId: "kilocode-content-descriptive-links",
+    				source: "remark-lint-kilocode-content",
+    			})
+    		}
+    	})
+    }
+
+    function validateHeadingHierarchy(tree, file) {
+    	let lastHeadingLevel = 0
+
+    	visit(tree, "heading", (node) => {
+    		const currentLevel = node.depth
+
+    		// Check for heading level jumps (e.g., H1 -> H3)
+    		if (currentLevel > lastHeadingLevel + 1) {
+    			file.message(`Heading hierarchy should not skip levels (H${lastHeadingLevel} -> H${currentLevel})`, {
+    				ruleId: "kilocode-content-heading-hierarchy",
+    				source: "remark-lint-kilocode-content",
+    			})
+    		}
+
+    		lastHeadingLevel = currentLevel
+    	})
+    }
+
+    function validateContentQuality(tree, file) {
+    	let totalWords = 0
+    	let totalLinks = 0
+    	let totalHeadings = 0
+
+    	visit(tree, "text", (node) => {
+    		totalWords += (node.value || "").split(/\s+/).length
+    	})
+
+    	visit(tree, "link", () => {
+    		totalLinks++
+    	})
+
+    	visit(tree, "heading", () => {
+    		totalHeadings++
+    	})
+
+    	// Check for minimum content length
+    	if (totalWords < 100) {
+    		file.message("Document should have sufficient content (minimum 100 words)", {
+    			ruleId: "kilocode-content-minimum-length",
+    			source: "remark-lint-kilocode-content",
+    		})
+    	}
+
+    	// Check for appropriate link density
+    	const linkDensity = totalLinks / (totalWords / 100)
+    	if (linkDensity > 20) {
+    		file.message("Document has high link density. Consider reducing links or expanding content.", {
+    			ruleId: "kilocode-content-link-density",
+    			source: "remark-lint-kilocode-content",
+    		})
+    	}
+    }
+
+    function getTextContent(node) {
+    	if (node.type === "text") {
+    		return node.value
+    	}
+    	if (node.children) {
+    		return node.children.map((child) => getTextContent(child)).join("")
+    	}
+    	return ""
+    }
+
+    export default remarkLintKilocodeContent
+    ```
+
+3. **Implement KiloCode Navigation Linter**
+
+    ```javascript
+    // plugins/remark-lint-kilocode-navigation.js
+    import { visit } from "unist-util-visit"
+    import { VFileMessage } from "vfile-message"
+
+    const remarkLintKilocodeNavigation = () => {
+    	return (tree, file) => {
+    		const filePath = file.path || file.filename || ""
+
+    		// Skip validation for certain files
+    		if (shouldSkipNavigationValidation(filePath)) {
+    			return
+    		}
+
+    		// Check if document has navigation footer
+    		const hasNavigation = hasNavigationFooter(tree)
+
+    		if (!hasNavigation) {
+    			file.message("Document should have a navigation footer for better discoverability", {
+    				ruleId: "kilocode-navigation-footer",
+    				source: "remark-lint-kilocode-navigation",
+    			})
+    		} else {
+    			// Validate navigation footer structure
+    			validateNavigationStructure(tree, file)
+    		}
+    	}
+    }
+
+    function shouldSkipNavigationValidation(filePath) {
+    	const skipPatterns = [
+    		/README\.md$/i,
+    		/index\.md$/i,
+    		/GLOSSARY\.md$/i,
+    		/CONTRIBUTING\.md$/i,
+    		/LICENSE\.md$/i,
+    		/CHANGELOG\.md$/i,
+    	]
+    	return skipPatterns.some((pattern) => pattern.test(filePath))
+    }
+
+    function hasNavigationFooter(tree) {
+    	let hasNavigationSection = false
+    	let hasNavigationLinks = false
+
+    	visit(tree, "heading", (node) => {
+    		if (node.depth === 2 && getTextContent(node).toLowerCase().includes("navigation")) {
+    			hasNavigationSection = true
+    		}
+    	})
+
+    	if (hasNavigationSection) {
+    		visit(tree, "link", (node) => {
+    			const linkText = getTextContent(node)
+    			if (linkText.includes("←") || linkText.includes("→") || linkText.includes("↑")) {
+    				hasNavigationLinks = true
+    			}
+    		})
+    	}
+
+    	return hasNavigationSection && hasNavigationLinks
+    }
+
+    function validateNavigationStructure(tree, file) {
+    	let inNavigationSection = false
+    	let navigationLinks = []
+
+    	visit(tree, "heading", (node) => {
+    		if (node.depth === 2 && getTextContent(node).toLowerCase().includes("navigation")) {
+    			inNavigationSection = true
+    		}
+    		if (inNavigationSection && node.depth <= 2) {
+    			inNavigationSection = false
+    		}
+    	})
+
+    	if (inNavigationSection) {
+    		visit(tree, "link", (node) => {
+    			if (inNavigationSection) {
+    				const linkText = getTextContent(node)
+    				const linkUrl = node.url || ""
+
+    				// Check for proper navigation link format
+    				if (!linkText.includes("←") && !linkText.includes("→") && !linkText.includes("↑")) {
+    					file.message("Navigation links should use arrows (←, →, ↑) for better UX", {
+    						ruleId: "kilocode-navigation-arrow",
+    						source: "remark-lint-kilocode-navigation",
+    					})
+    				}
+
+    				// Check for descriptive link text
+    				if (linkText.length < 3) {
+    					file.message("Navigation links should have descriptive text", {
+    						ruleId: "kilocode-navigation-descriptive",
+    						source: "remark-lint-kilocode-navigation",
+    					})
+    				}
+
+    				navigationLinks.push({ text: linkText, url: linkUrl })
+    			}
+    		})
+    	}
+
+    	// Validate minimum navigation links
+    	if (navigationLinks.length < 1) {
+    		file.message("Navigation footer should have at least one navigation link", {
+    			ruleId: "kilocode-navigation-minimum",
+    			source: "remark-lint-kilocode-navigation",
+    		})
+    	}
+    }
+
+    function getTextContent(node) {
+    	if (node.type === "text") {
+    		return node.value
+    	}
+    	if (node.children) {
+    		return node.children.map((child) => getTextContent(child)).join("")
+    	}
+    	return ""
+    }
+
+    export default remarkLintKilocodeNavigation
+    ```
+
+4. **Implement Documentation Fixer System**
+
+    Build automated fixers that resolve common documentation issues:
+
+    ```javascript
+    // scripts/docs-fixes/src/docs-fixer.js
+    import { remark } from "remark"
+    import { visit } from "unist-util-visit"
+
+    export async function fixPathIssues(content) {
+    	// AST-based path fixes for precision
+    	const processor = remark().use(fixPathIssuesAST)
+    	const result = await processor.process(content)
+    	return { content: result.toString(), fixesApplied: result.data?.fixesApplied || 0 }
+    }
+
+    export async function fixLinkText(content) {
+    	// AST-based link text improvements
+    	const processor = remark().use(fixLinkTextAST)
+    	const result = await processor.process(content)
+    	return { content: result.toString(), fixesApplied: result.data?.fixesApplied || 0 }
+    }
+
+    export function fixListIndentation(content) {
+    	// Regex-based list formatting fixes
+    	let fixesApplied = 0
+
+    	// Remove leading spaces from list items (remark-lint requirement)
+    	const fixedContent = content.replace(/^(\s*)([-*+])\s+/gm, (match, spaces, bullet) => {
+    		if (spaces.length > 0) {
+    			fixesApplied++
+    			return `${bullet} `
+    		}
+    		return match
+    	})
+
+    	return { content: fixedContent, fixesApplied }
+    }
+
+    export function addNavigationFooter(content, filePath) {
+    	// Add context-aware navigation footers
+    	if (hasNavigationFooter(content)) {
+    		return { content, fixesApplied: 0 }
+    	}
+
+    	const template = getNavigationTemplate(filePath)
+    	const newContent = `${content}\n\n${template}`
+
+    	return { content: newContent, fixesApplied: 1 }
+    }
+
+    // AST-based fixers for precision
+    function fixPathIssuesAST() {
+    	return (tree) => {
+    		let fixesApplied = 0
+
+    		visit(tree, "link", (node) => {
+    			if (node.url && typeof node.url === "string") {
+    				// Fix GLOSSARY.md path references
+    				if (node.url.includes("../../GLOSSARY.md")) {
+    					node.url = node.url.replace("../../GLOSSARY.md", "../GLOSSARY.md")
+    					fixesApplied++
+    				}
+
+    				// Fix architecture cross-references
+    				if (node.url.includes("../architecture/repository/DEVELOPMENT_GUIDE.md")) {
+    					node.url = node.url.replace("../architecture/repository/", "")
+    					fixesApplied++
+    				}
+    			}
+    		})
+
+    		tree.data = { fixesApplied }
+    	}
+    }
+
+    function fixLinkTextAST() {
+    	return (tree) => {
+    		let fixesApplied = 0
+
+    		visit(tree, "link", (node) => {
+    			const linkText = getTextContent(node)
+
+    			// Improve non-descriptive link text
+    			if (linkText === "README.md") {
+    				node.children[0].value = "Project Overview"
+    				fixesApplied++
+    			} else if (linkText === "DEVELOPMENT_GUIDE.md") {
+    				node.children[0].value = "Development Guide"
+    				fixesApplied++
+    			} else if (linkText.includes("../orchestrator/")) {
+    				node.children[0].value = "Orchestrator Documentation"
+    				fixesApplied++
+    			}
+    		})
+
+    		tree.data = { fixesApplied }
+    	}
+    }
+
+    function getTextContent(node) {
+    	if (node.type === "text") {
+    		return node.value
+    	}
+    	if (node.children) {
+    		return node.children.map((child) => getTextContent(child)).join("")
+    	}
+    	return ""
+    }
+
+    function hasNavigationFooter(content) {
+    	return (
+    		content.includes("## Navigation") &&
+    		(content.includes("←") || content.includes("→") || content.includes("↑"))
+    	)
+    }
+
+    function getNavigationTemplate(filePath) {
+    	const templates = {
+    		architecture: `
+    ## Navigation
+    
+    - [← Architecture Overview](../README.md)
+    - [→ Repository Structure](repository/README.md)
+    - [↑ Up to System Overview](../../README.md)
+    `,
+    		orchestrator: `
+    ## Navigation
+    
+    - [← Orchestrator Overview](README.md)
+    - [→ Error Handling](ERROR_HANDLING.md)
+    - [↑ Up to System Overview](../README.md)
+    `,
+    		default: `
+    ## Navigation
+    
+    - [← Back to Documentation](../README.md)
+    - [↑ Up to System Overview](../../README.md)
+    `,
+    	}
+
+    	if (filePath.includes("/architecture/")) {
+    		return templates.architecture
+    	} else if (filePath.includes("/orchestrator/")) {
+    		return templates.orchestrator
+    	}
+
+    	return templates.default
+    }
+    ```
+
+5. **Implement Comprehensive Test Suite**
+
+    Create ultra-simplified test architecture with lint integration:
+
+    ```javascript
+    // scripts/docs-fixes/test/test-helpers.js
+    export async function validateFixerResolvesLintErrors({
+    	before,
+    	linter,
+    	fixer,
+    	fixerArgs = [],
+    	testName,
+    	description,
+    	testExamples = null,
+    	exampleKey = null,
+    }) {
+    	// Import the lint validator
+    	const { testFixerWithLinting } = await import("./lint-validator.js")
+
+    	// Run the generic test with lint validation
+    	const result = await testFixerWithLinting(before, linter, fixer, fixerArgs, {
+    		testName,
+    		description,
+    		storeExample: true,
+    	})
+
+    	// Assert that the before content actually had linting errors
+    	if (result.before.lintingResult.hasErrors) {
+    		console.log(
+    			`✅ Before content has ${result.before.lintingResult.errorTypes.length} linting errors as expected`,
+    		)
+    	} else {
+    		console.log(
+    			`⚠️  Before content has no linting errors for ${linter.join(", ")} - this might indicate test content needs adjustment`,
+    		)
+    	}
+
+    	// Assert that the after content has no linting errors
+    	if (result.after.lintingResult.hasErrors) {
+    		throw new Error(
+    			`After content should have no linting errors but still has: ${result.after.lintingResult.summary}`,
+    		)
+    	} else {
+    		console.log(`✅ After content has no linting errors as expected`)
+    	}
+
+    	// Store example data for documentation generation if requested
+    	if (testExamples && exampleKey) {
+    		testExamples[exampleKey] = {
+    			testName: result.testName,
+    			description: result.description,
+    			before: result.before.content,
+    			after: result.after.content,
+    			expectedErrorTypes: result.linterRules,
+    			fixesApplied: result.fixesApplied,
+    		}
+    	}
+
+    	// Log test success
+    	console.log(`✅ ${testName} test passed!`)
+    	console.log(`   Applied ${result.fixesApplied} fixes`)
+
+    	return result
+    }
+
+    // Custom assertion helpers
+    export function assertFixCount(actual, expected, name) {
+    	if (actual !== expected) {
+    		throw new Error(`${name}: Expected ${expected} fixes, got ${actual}`)
+    	}
+    }
+
+    export function assertNavigationTemplate(template, expectedContent, templateType) {
+    	if (!template.includes(expectedContent)) {
+    		throw new Error(`${templateType} template is missing expected content: ${expectedContent}`)
+    	}
+    	if (!template) {
+    		throw new Error(`${templateType} template is missing`)
+    	}
+    }
+    ```
+
+    ```javascript
+    // scripts/docs-fixes/test/lint-validator.js
+    import { remark } from "remark"
+    import remarkLintListItemBulletIndent from "remark-lint-list-item-bullet-indent"
+    import remarkLintNoLiteralUrls from "remark-lint-no-literal-urls"
+    import remarkLintHeadingIncrement from "remark-lint-heading-increment"
+    import remarkLintKilocodeContent from "../plugins/remark-lint-kilocode-content.js"
+    import remarkLintKilocodeNavigation from "../plugins/remark-lint-kilocode-navigation.js"
+
+    export async function testFixerWithLinting(beforeText, linterRules, fixerFunction, fixerArgs = [], options = {}) {
+    	// Create processor with specified linters
+    	const processor = remark()
+
+    	// Add linters based on rules
+    	linterRules.forEach((rule) => {
+    		switch (rule) {
+    			case "list-item-bullet-indent":
+    				processor.use(remarkLintListItemBulletIndent)
+    				break
+    			case "no-literal-urls":
+    				processor.use(remarkLintNoLiteralUrls)
+    				break
+    			case "heading-increment":
+    				processor.use(remarkLintHeadingIncrement)
+    				break
+    			case "kilocode-content":
+    				processor.use(remarkLintKilocodeContent)
+    				break
+    			case "kilocode-navigation":
+    				processor.use(remarkLintKilocodeNavigation)
+    				break
+    		}
+    	})
+
+    	// Test before content
+    	const beforeResult = await processor.process(beforeText)
+    	const beforeLintingResult = {
+    		hasErrors: beforeResult.messages.length > 0,
+    		errorTypes: beforeResult.messages.map((msg) => msg.ruleId || msg.source),
+    		summary: beforeResult.messages.map((msg) => msg.message).join("; "),
+    	}
+
+    	// Apply fixer
+    	const fixerResult = fixerFunction(beforeText, ...fixerArgs)
+    	const afterContent = fixerResult.content || fixerResult
+
+    	// Test after content
+    	const afterResult = await processor.process(afterContent)
+    	const afterLintingResult = {
+    		hasErrors: afterResult.messages.length > 0,
+    		errorTypes: afterResult.messages.map((msg) => msg.ruleId || msg.source),
+    		summary: afterResult.messages.map((msg) => msg.message).join("; "),
+    	}
+
+    	return {
+    		before: { content: beforeText, lintingResult: beforeLintingResult },
+    		after: { content: afterContent, lintingResult: afterLintingResult },
+    		linterRules,
+    		fixesApplied: fixerResult.fixesApplied || 0,
+    		testName: options.testName || "Test",
+    		description: options.description || "Test description",
+    	}
+    }
+    ```
+
+    ```javascript
+    // scripts/docs-fixes/test/docs-fixer.test.js
+    import { validateFixerResolvesLintErrors, assertFixCount, assertNavigationTemplate } from "./test-helpers.js"
+
+    // Test examples registry - single source of truth for documentation examples
+    export const TEST_EXAMPLES = {
+    	listIndentation: null,
+    	pathFixes: null,
+    	linkText: null,
+    	navigationFooter: null,
+    }
+
+    export async function runTests() {
+    	const testSuite = new TestSuite("KiloCode Documentation Fixer Tests")
+
+    	// Test 1: Path fixes for architecture files
+    	testSuite.addTest("Path fixes for architecture files", async () => {
+    		const { fixPathIssues } = await import("../src/docs-fixer.js")
+
+    		const testResult = await validateFixerResolvesLintErrors({
+    			before: `
+    # Test File
+    
+    - [GLOSSARY](../../GLOSSARY.md)
+    - [Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md)
+    - [README](../README.md)
+    `,
+    			linter: ["missing-file"], // Will be handled by remark-validate-links
+    			fixer: fixPathIssues,
+    			testName: "Path fixes for architecture files",
+    			description: "Fix path depth issues and cross-references",
+    			testExamples: TEST_EXAMPLES,
+    			exampleKey: "pathFixes",
+    		})
+
+    		assertFixCount(testResult.fixesApplied, 3, "Path fixes")
+    	})
+
+    	// Test 2: Link text improvements
+    	testSuite.addTest("Link text improvements", async () => {
+    		const { fixLinkText } = await import("../src/docs-fixer.js")
+
+    		await validateFixerResolvesLintErrors({
+    			before: `
+    # Test File
+    
+    - [README.md](README.md)
+    - [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
+    - [../orchestrator/](../orchestrator/)
+    - https://example.com
+    `,
+    			linter: ["no-literal-urls"],
+    			fixer: fixLinkText,
+    			testName: "Link text improvements",
+    			description: "Fix non-descriptive link text",
+    			testExamples: TEST_EXAMPLES,
+    			exampleKey: "linkText",
+    		})
+    	})
+
+    	// Test 3: List indentation fixes
+    	testSuite.addTest("List indentation fixes", async () => {
+    		const { fixListIndentation } = await import("../src/docs-fixer.js")
+
+    		await validateFixerResolvesLintErrors({
+    			before: `
+    # Test File
+    
+    - Item 1
+       - Sub item 1
+       - Sub item 2
+    - Item 2
+       - Sub item 3
+    `,
+    			linter: ["list-item-bullet-indent"],
+    			fixer: fixListIndentation,
+    			testName: "List indentation fixes",
+    			description: "Fix list indentation issues",
+    			testExamples: TEST_EXAMPLES,
+    			exampleKey: "listIndentation",
+    		})
+    	})
+
+    	// Test 4: Navigation footer addition
+    	testSuite.addTest("Navigation footer addition", async () => {
+    		const { addNavigationFooter, getNavigationTemplate } = await import("../src/docs-fixer.js")
+
+    		const testFile = "docs/architecture/test-file.md"
+    		const beforeContent = `
+    # Test File
+    
+    This is a test file without navigation.
+    `
+
+    		const result = addNavigationFooter(beforeContent, testFile)
+
+    		assertFixCount(result.fixesApplied, 1, "Navigation footer addition")
+
+    		// Test navigation template selection
+    		const archTemplate = getNavigationTemplate("docs/architecture/README.md")
+    		assertNavigationTemplate(archTemplate, "[← Architecture Overview]", "Architecture")
+
+    		// Store example data for documentation generation
+    		TEST_EXAMPLES.navigationFooter = {
+    			testName: "Navigation footer addition",
+    			description: "Add context-aware navigation footers",
+    			before: beforeContent.trim(),
+    			after: result.content.trim(),
+    			expectedErrorTypes: ["kilocode-navigation-footer"],
+    			fixesApplied: result.fixesApplied,
+    		}
+    	})
+
+    	// Run all tests
+    	await testSuite.run()
+    	console.log("📊 All documentation fixer tests completed!")
+    }
+    ```
+
+6. **Implement Auto-Generated Documentation System**
+
+    Create documentation that automatically stays in sync with tests:
+
+    ```javascript
+    // scripts/docs-fixes/docs/generate-examples.js
+    import { runTests, TEST_EXAMPLES } from "../test/docs-fixer.test.js"
+    import fs from "fs"
+
+    export async function generateDocumentationExamples() {
+    	console.log("🧪 Running tests to populate example registry...")
+
+    	// Run tests to populate TEST_EXAMPLES registry
+    	await runTests()
+
+    	console.log("📝 Generating documentation from test examples...")
+
+    	// Generate comprehensive documentation
+    	const documentation = generateComprehensiveDocumentation(TEST_EXAMPLES)
+
+    	// Write to file
+    	fs.writeFileSync("scripts/docs-fixes/COMPREHENSIVE_FIXERS.md", documentation)
+
+    	console.log("✅ Documentation examples generated successfully!")
+    	console.log("   📄 Updated: scripts/docs-fixes/COMPREHENSIVE_FIXERS.md")
+    }
+
+    function generateComprehensiveDocumentation(examples) {
+    	let doc = `# Comprehensive Documentation Fixers
+    
+    This document provides detailed information about all available documentation fixers, including implementation details, examples, and usage patterns.
+    
+    > **Auto-Generated**: This documentation is automatically generated from test examples to ensure accuracy and consistency.
+    
+    ## Overview
+    
+    The documentation fixer system provides automated solutions for common documentation issues, with both AST-based precision fixes and regex-based formatting improvements.
+    
+    ## Available Fixers
+    
+    `
+
+    	// Generate sections for each fixer
+    	Object.entries(examples).forEach(([key, example]) => {
+    		if (example) {
+    			doc += `### ${example.testName}
+    
+    **Purpose**: ${example.description}
+    
+    **Implementation**: Located in \`src/docs-fixer.js\`
+    
+    **Linter Rules**: ${example.expectedErrorTypes.join(", ")}
+    
+    **Before**:
+    \`\`\`markdown
+    ${example.before}
+    \`\`\`
+    
+    **After**:
+    \`\`\`markdown
+    ${example.after}
+    \`\`\`
+    
+    **Fixes Applied**: ${example.fixesApplied}
+    
+    ---
+    
+    `
+    		}
+    	})
+
+    	doc += `## Test Coverage
+    
+    All fixers have comprehensive unit tests in \`test/docs-fixer.test.js\` using an ultra-simplified test structure:
+    
+    ### Test Architecture
+    
+    - **Ultra-Simplified Pattern**: All tests use the \`validateFixerResolvesLintErrors\` helper function
+    - **Lint Integration**: Tests validate that "before" content has linting errors and "after" content is clean
+    - **Single Source of Truth**: Test data drives both validation and documentation examples
+    - **Custom Assertions**: Specialized assertion helpers in \`test/test-helpers.js\`
+    
+    ### Test Structure Example
+    
+    \`\`\`javascript
+    // Ultra-simplified test pattern
+    await validateFixerResolvesLintErrors({
+    	before: \`...\`,                    // Content with linting errors
+    	linter: ['list-item-bullet-indent'], // Expected lint rules
+    	fixer: fixListIndentation,        // Fixer function to test
+    	testName: 'List indentation fixes',
+    	description: 'Fix list indentation issues',
+    	testExamples: TEST_EXAMPLES,      // Auto-populate docs
+    	exampleKey: 'listIndentation'
+    });
+    \`\`\`
+    
+    ## Source Code Structure
+    
+    \`\`\`
+    scripts/docs-fixes/
+    ├── src/
+    │   └── docs-fixer.js          # Main implementation
+    ├── test/
+    │   ├── docs-fixer.test.js     # Comprehensive test suite
+    │   ├── test-helpers.js        # Custom assertion helpers
+    │   ├── lint-validator.js      # Lint integration utilities
+    │   └── run-tests.js           # Test runner
+    ├── plugins/
+    │   ├── remark-lint-kilocode-content.js      # Content validation
+    │   └── remark-lint-kilocode-navigation.js   # Navigation validation
+    ├── docs/
+    │   ├── generate-docs.js       # Documentation generator
+    │   ├── generate-examples.js   # Example generator
+    │   └── generated/             # Auto-generated docs
+    ├── README.md                  # Quick start guide
+    └── COMPREHENSIVE_FIXERS.md    # This detailed documentation
+    \`\`\`
+    
+    ## Benefits
+    
+    - **Single Source of Truth**: Tests drive both validation and documentation
+    - **Automatic Sync**: Documentation stays current with implementation
+    - **Comprehensive Coverage**: All fixers have detailed examples
+    - **Developer Friendly**: Clear before/after examples for each fixer
+    - **Maintainable**: Changes to fixers automatically update documentation
+    
+    ## Usage
+    
+    To regenerate this documentation:
+    
+    \`\`\`bash
+    cd scripts/docs-fixes
+    npm run docs:generate-examples
+    \`\`\`
+    
+    Or run the generator directly:
+    
+    \`\`\`bash
+    node docs/generate-examples.js
+    \`\`\`
+    `
+
+    	return doc
+    }
+    ```
+
+7. **Implement Link Text Linter**
+
+    Add comprehensive link text validation to detect and fix non-descriptive link text:
+
+    ```javascript
+    // plugins/remark-lint-kilocode-link-text.js
+    import { visit } from "unist-util-visit"
+    import { VFileMessage } from "vfile-message"
+
+    const remarkLintKilocodeLinkText = () => {
+    	return (tree, file) => {
+    		const filePath = file.path || file.filename || ""
+
+    		// Skip validation for certain files
+    		if (shouldSkipLinkTextValidation(filePath)) {
+    			return
+    		}
+
+    		// Check for non-descriptive link text
+    		validateLinkText(tree, file)
+    	}
+    }
+
+    function shouldSkipLinkTextValidation(filePath) {
+    	const skipPatterns = [
+    		/README\.md$/i,
+    		/index\.md$/i,
+    		/GLOSSARY\.md$/i,
+    		/CONTRIBUTING\.md$/i,
+    		/LICENSE\.md$/i,
+    		/CHANGELOG\.md$/i,
+    	]
+    	return skipPatterns.some((pattern) => pattern.test(filePath))
+    }
+
+    function validateLinkText(tree, file) {
+    	visit(tree, "link", (node) => {
+    		const linkText = getTextContent(node)
+    		const url = node.url || ""
+
+    		// Check for non-descriptive link text patterns
+    		if (
+    			linkText === url ||
+    			linkText === "here" ||
+    			linkText === "click here" ||
+    			linkText === "read more" ||
+    			linkText === "see more" ||
+    			linkText.match(/^[A-Z_]+\.md$/) ||
+    			linkText.match(/^https?:\/\//) ||
+    			linkText.length < 3 ||
+    			(linkText.match(/^[a-z]+$/) && linkText.length < 4)
+    		) {
+    			file.message(
+    				`Link text should be descriptive and meaningful. Consider: "${suggestLinkText(linkText, url)}"`,
+    				{
+    					ruleId: "kilocode-link-text-descriptive",
+    					source: "remark-lint-kilocode-link-text",
+    				},
+    			)
+    		}
+    	})
+    }
+
+    function suggestLinkText(originalText, url) {
+    	// Generate better link text suggestions based on URL and context
+    	if (url.includes("README.md")) {
+    		return "Project Overview"
+    	} else if (url.includes("DEVELOPMENT_GUIDE.md")) {
+    		return "Development Guide"
+    	} else if (url.includes("GLOSSARY.md")) {
+    		return "Technical Glossary"
+    	} else if (url.includes("orchestrator")) {
+    		return "Orchestrator Documentation"
+    	} else if (url.includes("architecture")) {
+    		return "Architecture Documentation"
+    	} else if (url.match(/^https?:\/\//)) {
+    		return "External Resource"
+    	} else {
+    		return "Descriptive Link Text"
+    	}
+    }
+
+    function getTextContent(node) {
+    	if (node.type === "text") {
+    		return node.value
+    	}
+    	if (node.children) {
+    		return node.children.map((child) => getTextContent(child)).join("")
+    	}
+    	return ""
+    }
+
+    export default remarkLintKilocodeLinkText
+    ```
+
+    **Integration with existing fixer system:**
+
+    ```javascript
+    // scripts/docs-fixes/src/docs-fixer.js
+    export async function fixLinkText(content) {
+    	// AST-based link text improvements
+    	const processor = remark().use(fixLinkTextAST)
+    	const result = await processor.process(content)
+    	return { content: result.toString(), fixesApplied: result.data?.fixesApplied || 0 }
+    }
+
+    function fixLinkTextAST() {
+    	return (tree) => {
+    		let fixesApplied = 0
+
+    		visit(tree, "link", (node) => {
+    			const linkText = getTextContent(node)
+    			const url = node.url || ""
+
+    			// Improve non-descriptive link text
+    			if (linkText === "README.md" || linkText === "README") {
+    				node.children[0].value = "Project Overview"
+    				fixesApplied++
+    			} else if (linkText === "DEVELOPMENT_GUIDE.md" || linkText === "DEVELOPMENT_GUIDE") {
+    				node.children[0].value = "Development Guide"
+    				fixesApplied++
+    			} else if (linkText === "GLOSSARY.md" || linkText === "GLOSSARY") {
+    				node.children[0].value = "Technical Glossary"
+    				fixesApplied++
+    			} else if (linkText.includes("../orchestrator/") || linkText === "orchestrator") {
+    				node.children[0].value = "Orchestrator Documentation"
+    				fixesApplied++
+    			} else if (linkText.includes("../architecture/") || linkText === "architecture") {
+    				node.children[0].value = "Architecture Documentation"
+    				fixesApplied++
+    			} else if (linkText === "here" || linkText === "click here") {
+    				node.children[0].value = "Learn More"
+    				fixesApplied++
+    			} else if (linkText.match(/^https?:\/\//)) {
+    				node.children[0].value = "External Resource"
+    				fixesApplied++
+    			}
+    		})
+
+    		tree.data = { fixesApplied }
+    	}
+    }
+    ```
+
+    **Test integration:**
+
+    ```javascript
+    // scripts/docs-fixes/test/docs-fixer.test.js
+    // Test 2: Link text improvements
+    testSuite.addTest("Link text improvements", async () => {
+    	const { fixLinkText } = await import("../src/docs-fixer.js")
+
+    	await validateFixerResolvesLintErrors({
+    		before: `
+    # Test File
+    
+    - [README.md](README.md)
+    - [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
+    - [here](https://example.com)
+    - [click here](../orchestrator/)
+    - https://example.com
+    `,
+    		linter: ["kilocode-link-text-descriptive"],
+    		fixer: fixLinkText,
+    		testName: "Link text improvements",
+    		description: "Fix non-descriptive link text",
+    		testExamples: TEST_EXAMPLES,
+    		exampleKey: "linkText",
+    	})
+    })
+    ```
+
+8. **Add Advanced Validation**
 
     - Link validation with repository context
     - Heading hierarchy enforcement
     - Fun fact presence checking
     - TOC generation validation
 
-3. **Create Validation Reports**
+9. **Create Validation Reports**
 
     ```javascript
     // scripts/docs/validation-report.js
@@ -242,6 +1278,14 @@ This plan implements documentation automation in four phases, prioritizing early
 **Deliverables:**
 
 - Custom KiloCode validation plugin
+- KiloCode content rules linter (`remark-lint-kilocode-content`)
+- KiloCode navigation linter (`remark-lint-kilocode-navigation`)
+- Custom KiloCode link text linter (`remark-lint-kilocode-link-text`) with comprehensive non-descriptive link detection
+- Documentation fixer system with AST-based precision fixes
+- Comprehensive test suite with lint integration
+- Ultra-simplified test architecture (`validateFixerResolvesLintErrors`)
+- Custom assertion helpers and lint validator utilities
+- Auto-generated documentation system (single source of truth)
 - Enhanced validation rules
 - Validation reporting system
 - Updated team training
@@ -349,73 +1393,78 @@ This plan implements documentation automation in four phases, prioritizing early
 
 1. **Comprehensive Standards Enforcement**
 
+    Build upon the custom linters from Phase 1 to create a comprehensive validation system:
+
+    **Note**: A custom bullet style linter (`remark-lint-kilocode-bullet-style`) is needed to test bullet type standardization (`*` and `+` → `-`). The existing `remark-lint-list-item-style` linter checks punctuation, not bullet types. This should be implemented as a custom linter in Phase 2.
+
+    **Known Issue**: Custom plugins (`remark-kilocode-standards.js` and `remark-kilocode-comprehensive.js`) do not display rule IDs in validation output, unlike built-in remark-lint plugins. This is because they are general remark plugins rather than proper remark-lint plugins. To fix this, the custom plugins need to be restructured using `unified-lint-rule` or similar remark-lint plugin architecture. This ensures all warnings show the responsible linter name for better debugging and user experience.
+
     ```javascript
-    // plugins/remark-kilocode-comprehensive.js
-    const visit = require("unist-util-visit")
+    // .remarkrc configuration
+    {
+      "plugins": [
+        "remark-preset-lint-recommended",
+        "remark-validate-links",
+        "./plugins/remark-lint-kilocode-content",
+        "./plugins/remark-lint-kilocode-navigation",
+        "remark-toc",
+        "remark-gfm"
+      ],
+      "settings": {
+        "listItemIndent": "space",
+        "maximumLineLength": 120,
+        "noConsecutiveBlankLines": true
+      }
+    }
+    ```
 
-    function remarkKiloCodeComprehensive(options = {}) {
-    	return (tree, file) => {
-    		const errors = []
-    		const warnings = []
+    **Integration with existing linters:**
 
-    		// Check for required sections
-    		const requiredSections = [
-    			"🔍 Research Context & Next Steps",
-    			"### No Dead Ends Policy",
-    			"### When You're Here, You Can:",
-    		]
+    ```javascript
+    // scripts/docs/comprehensive-validation.js
+    const remark = require("remark")
+    const remarkLintKilocodeContent = require("./plugins/remark-lint-kilocode-content")
+    const remarkLintKilocodeNavigation = require("./plugins/remark-lint-kilocode-navigation")
 
-    		requiredSections.forEach((section) => {
-    			let found = false
-    			visit(tree, "heading", (node) => {
-    				if (node.children[0]?.value === section) {
-    					found = true
-    				}
-    			})
+    async function runComprehensiveValidation() {
+    	const processor = remark()
+    		.use(require("remark-preset-lint-recommended"))
+    		.use(require("remark-validate-links"))
+    		.use(remarkLintKilocodeContent)
+    		.use(remarkLintKilocodeNavigation)
 
-    			if (!found) {
-    				errors.push(new Error(`Missing required section: ${section}`))
-    			}
-    		})
+    	const results = await processor.process("docs/**/*.md")
 
-    		// Check for fun facts
-    		let hasFunFact = false
-    		visit(tree, "blockquote", (node) => {
-    			if (
-    				node.children.some(
-    					(child) =>
-    						child.type === "paragraph" &&
-    						child.children.some(
-    							(grandchild) => grandchild.type === "text" && grandchild.value.includes("Fun Fact"),
-    						),
-    				)
-    			) {
-    				hasFunFact = true
-    			}
-    		})
-
-    		if (!hasFunFact) {
-    			warnings.push(new Error("Missing engagement element (fun fact)"))
-    		}
-
-    		// Check for descriptive links
-    		visit(tree, "link", (node) => {
-    			if (node.url && !node.children[0]?.value) {
-    				errors.push(new Error("Link missing descriptive text"))
-    			}
-    		})
-
-    		if (errors.length > 0) {
-    			file.message(errors.join(", "))
-    		}
-
-    		if (warnings.length > 0) {
-    			file.info(warnings.join(", "))
-    		}
-    	}
+    	// Generate comprehensive report
+    	generateValidationReport(results)
     }
 
-    module.exports = remarkKiloCodeComprehensive
+    function generateValidationReport(results) {
+    	const report = {
+    		totalFiles: results.length,
+    		contentViolations: 0,
+    		navigationViolations: 0,
+    		linkViolations: 0,
+    		standardsCompliance: 0,
+    	}
+
+    	results.forEach((result) => {
+    		result.messages.forEach((message) => {
+    			if (message.source === "remark-lint-kilocode-content") {
+    				report.contentViolations++
+    			} else if (message.source === "remark-lint-kilocode-navigation") {
+    				report.navigationViolations++
+    			} else if (message.ruleId?.includes("validate-links")) {
+    				report.linkViolations++
+    			}
+    		})
+    	})
+
+    	report.standardsCompliance = calculateComplianceScore(report)
+    	return report
+    }
+
+    module.exports = { runComprehensiveValidation }
     ```
 
 2. **Content Quality Analysis**
@@ -434,9 +1483,11 @@ This plan implements documentation automation in four phases, prioritizing early
 **Deliverables:**
 
 - Comprehensive validation plugin
+- Integration with existing fixer system from Phase 1
 - Content quality analysis
 - Link management system
 - Advanced validation rules
+- Automated documentation maintenance pipeline
 
 ### Week 6: Development Tool Integration
 
@@ -466,11 +1517,38 @@ This plan implements documentation automation in four phases, prioritizing early
 3. **Automated Fixes**
 
     - Auto-fix for common issues
-    - TOC generation on save
-    - Link validation in real-time
-    - Formatting standardization
 
-4. **Git Integration**
+4. **Fix Custom Plugin Rule ID Display**
+
+    **Problem**: Custom plugins (`remark-kilocode-standards.js` and `remark-kilocode-comprehensive.js`) do not display rule IDs in validation output, unlike built-in remark-lint plugins.
+
+    **Root Cause**: Custom plugins are general remark plugins rather than proper remark-lint plugins. Remark only displays rule IDs for plugins that follow the remark-lint plugin architecture.
+
+    **Solution**: Restructure custom plugins using `unified-lint-rule` package:
+
+    ```javascript
+    // plugins/remark-lint-kilocode-standards.js
+    import { lintRule } from "unified-lint-rule"
+
+    const remarkLintKilocodeStandards = lintRule("remark-lint-kilocode-standards", (tree, file, options = {}) => {
+    	// Existing validation logic here
+    	// Rule IDs will now display automatically
+    })
+
+    export default remarkLintKilocodeStandards
+    ```
+
+    **Implementation Steps**:
+
+    1. Install `unified-lint-rule` package
+    2. Convert existing custom plugins to use `lintRule` wrapper
+    3. Update `.remarkrc` to use new plugin structure
+    4. Test that rule IDs display correctly in validation output
+    5. Update documentation to reflect new plugin architecture
+
+    **Expected Outcome**: All warnings will show responsible linter names (e.g., `remark-lint-kilocode-standards:kilocode-navigation-footer-required`) for better debugging and user experience.
+
+5. **Git Integration**
     - Pre-commit validation
     - Commit message validation
     - Branch protection rules
@@ -481,6 +1559,7 @@ This plan implements documentation automation in four phases, prioritizing early
 - VS Code extension configuration
 - Real-time validation setup
 - Automated fix capabilities
+- Custom plugin rule ID display fix (using `unified-lint-rule`)
 - Git integration complete
 
 ### Week 7: Quality Metrics & Reporting
@@ -587,6 +1666,137 @@ This plan implements documentation automation in four phases, prioritizing early
 - Optimized workflow
 - Integrated feedback
 - Phase 2 completion report
+
+## Phase 2 Manual Testing Instructions
+
+The steps below validate that Phase 2 features work end-to-end on a fresh checkout. Run from repository root.
+
+**File Processing:** All commands process the same set of files: `docs/**/*.md` (excluding node_modules, .git, dist, build directories)
+
+1. Prerequisites
+
+    - Node.js 18+ and pnpm installed
+    - Install deps:
+        ```bash
+        pnpm install
+        ```
+
+2. Run full documentation validation
+
+    - Validate all Markdown with custom Remark rules (processes `docs/**/*.md`):
+        ```bash
+        pnpm docs:validate
+        ```
+    - Expected: exit code 0 (no fatal errors). Warnings may appear for engagement/fun-fact suggestions.
+
+3. Auto-fix common issues and re-validate
+
+    ```bash
+        pnpm docs:fix
+        pnpm docs:validate
+    ```
+
+    - Expected: formatting/toc/link-text fixes applied; validation still passes.
+
+4. VS Code real-time validation sanity check
+
+    - Open the repo in VS Code and ensure the following:
+        - Problems panel shows Remark/markdownlint feedback while editing.
+        - Auto-format on save runs (per `.vscode/settings.json`).
+    - Make a temporary link with URL-only text and confirm it surfaces a warning, then fix it.
+
+5. Git hooks enforcement
+
+    - Stage a Markdown change and attempt to commit with a bad message (missing required format). Expected: commit rejected by `.husky/commit-msg`.
+    - Commit again with a valid message (see hook examples). Expected: pre-commit runs doc validation and maintenance; commit proceeds only if passing.
+
+6. Link and quality checks (optional deep checks)
+
+    - Run comprehensive validation report (processes `docs/**/*.md`, may take a few minutes):
+        ```bash
+        timeout 60s pnpm docs:report || echo "Report generation timed out or completed"
+        ```
+    - Expected: Detailed validation report with quality metrics and link analysis.
+
+7. Metrics and automated reporting
+
+    - Collect metrics and generate reports (processes `docs/**/*.md`):
+        ```bash
+        timeout 30s pnpm docs:metrics || echo "Metrics collection completed or timed out"
+        timeout 60s pnpm docs:report || echo "Report generation completed or timed out"
+        ```
+    - Expected: Metrics collection and validation report generation.
+
+8. Performance monitoring
+
+    - Run performance monitoring (processes `docs/**/*.md`):
+        ```bash
+        timeout 30s pnpm docs:performance || echo "Performance monitoring completed or timed out"
+        ```
+    - Expected: Performance metrics and optimization recommendations.
+
+9. Training materials presence
+
+    - Confirm training docs exist and render: `docs/tools/TRAINING_MATERIALS_INDEX.md`, `BASIC_VALIDATION_TRAINING.md`, `SKILL_ASSESSMENT_QUIZ.md`.
+
+10. Feedback loop
+
+    - Submit a sample feedback item and generate analysis:
+        ```bash
+        node scripts/docs/feedback-system.js collect "tester" "rule" "validation" "medium" "Rule clarity" "Link text guidance could be clearer"
+        node scripts/docs/feedback-system.js analyze
+        ```
+    - Expected: Feedback collection and analysis report generation.
+
+11. Additional validation commands
+    - Test individual file validation (same files as pnpm commands):
+        ```bash
+        remark docs/README.md
+        remark docs/tools/README.md
+        ```
+    - Test maintenance utilities (processes `docs/**/*.md`):
+        ```bash
+        pnpm docs:maintain
+        ```
+    - Validate configuration consistency:
+        ```bash
+        pnpm docs:validate-config
+        ```
+    - Expected: Individual file validation, maintenance tasks, and configuration validation complete successfully.
+
+Notes
+
+- If validation fails in pre-commit, run `pnpm docs:fix` and re-commit.
+- Large-file TOCs are maintained by maintenance utilities invoked in hooks.
+- Some scripts may run silently or take time to complete - this is normal.
+- All commands are designed to work from the repository root and process the `docs/` directory by default.
+- File patterns and commands are centrally defined in `scripts/docs/config.js` to prevent divergence.
+- All pnpm commands use the exact same file filtering: `docs/**/*.md` (excluding node_modules, .git, dist, build).
+
+## Launch Announcement (Slack Draft)
+
+Hey team! We’re rolling out our new Documentation Automation system to keep our docs consistent, accurate, and easy to maintain. This tooling continuously checks Markdown files for structure, link health, and style, and offers auto-fixes where possible. You don’t need to be a docs expert—just write in Markdown and the system guides you.
+
+What you’ll notice:
+
+- Real-time feedback in VS Code (problems panel, auto-format on save)
+- Pre-commit checks that catch issues before they land
+- Clear commit message guidance and validation
+- Automated weekly reports and compliance snapshots for visibility
+
+Why this matters:
+
+- Faster authoring with fewer review cycles
+- Consistent structure across all docs (titles, required sections, navigation)
+- Healthier links and improved readability for everyone
+
+How to start:
+
+- Open the repo in VS Code and write/edit Markdown as usual
+- If a check fails, use the suggestion or run `pnpm docs:fix`
+- New to the workflow? See Training at `docs/tools/TRAINING_MATERIALS_INDEX.md`
+
+Questions or feedback? Drop a note in #documentation or submit via the built-in feedback tool (`scripts/docs/feedback-system.js`). Thanks for helping us level up our docs! 🚀
 
 ## Phase 3: MkDocs Integration (Weeks 9-12)
 
@@ -1170,6 +2380,183 @@ This plan implements documentation automation in four phases, prioritizing early
 - **Week 15**: Maintenance optimization
 - **Week 16**: Final integration & optimization
 
+## Validation Tests to Prevent Regression
+
+### Critical Tests for List Indentation Fixes
+
+Based on the audit of commit `3b77aa0b2` that incorrectly flattened nested list structures, the following tests MUST be implemented to prevent similar regressions:
+
+#### Test 1: YAML Code Block Structure Preservation
+
+**Purpose**: Ensure list indentation fixes don't break YAML syntax in code blocks.
+
+**Test Content**:
+
+````markdown
+```yaml
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+              with:
+                  node-version: "18"
+                  cache: "pnpm"
+          - run: pnpm install
+          - run: pnpm build
+          - run: pnpm test
+```
+````
+
+````
+
+**Validation**:
+- YAML syntax must remain valid after any list indentation fixes
+- Nested list items in code blocks must preserve their indentation
+- GitHub Actions workflow structure must not be flattened
+
+#### Test 2: Nested List Hierarchy Preservation
+**Purpose**: Ensure nested lists maintain proper hierarchy and don't get flattened.
+
+**Test Content**:
+```markdown
+2. **Check Problems panel**:
+ - Look for validation errors
+ - Note the error types and locations
+````
+
+**Validation**:
+
+- Sub-items must remain properly indented under parent items
+- List hierarchy must be preserved during fixes
+- Only flat lists should have leading spaces removed
+
+#### Test 3: Configuration File Structure Preservation
+
+**Purpose**: Ensure configuration examples (JSON, YAML, etc.) maintain proper structure.
+
+**Test Content**:
+
+```markdown
+packages:
+
+- "packages/\*"
+- "apps/\*"
+- "src"
+- "webview-ui"
+```
+
+**Validation**:
+
+- Array items in configuration examples must preserve indentation
+- YAML/JSON structure must remain valid
+- Only actual markdown lists should be affected by list fixes
+
+#### Test 4: Code Example Preservation
+
+**Purpose**: Ensure code examples with nested structures aren't broken.
+
+**Test Content**:
+
+```markdown
+### Example
+
+- Good: `[State Machines Index and Diagrams](README.md)`
+- Bad: `state-machines/README.md`
+```
+
+**Validation**:
+
+- Example lists must maintain proper indentation
+- Code examples within lists must be preserved
+- Only actual markdown formatting issues should be fixed
+
+#### Test 5: Mixed Content Structure
+
+**Purpose**: Ensure fixes work correctly when lists are mixed with other content.
+
+**Test Content**:
+
+````markdown
+## Section Title
+
+Some text here.
+
+- Item 1
+    - Sub item 1
+    - Sub item 2
+
+More text here.
+
+```javascript
+const config = {
+	items: ["item1", "item2"],
+}
+```
+````
+
+```
+
+**Validation**:
+- List fixes must not affect code blocks
+- Mixed content structure must be preserved
+- Only markdown list formatting should be modified
+
+### Implementation Requirements
+
+#### Automated Test Suite
+Create a comprehensive test suite that validates:
+
+1. **Before/After Validation**: Every list indentation fix must be tested with before/after content validation
+2. **Syntax Preservation**: YAML, JSON, and code blocks must remain syntactically valid
+3. **Structure Integrity**: Nested hierarchies must be preserved
+4. **Regression Detection**: Tests must catch the specific issues from commit `3b77aa0b2`
+
+#### Test Integration
+- **Pre-commit Hooks**: Run validation tests before any commits
+- **CI/CD Integration**: Automated testing in GitHub Actions
+- **Documentation Validation**: Tests run as part of `pnpm docs:validate`
+
+#### Test Categories
+1. **Positive Tests**: Verify correct fixes are applied
+2. **Negative Tests**: Verify incorrect fixes are prevented
+3. **Edge Cases**: Test complex nested structures
+4. **Regression Tests**: Specifically test the issues from commit `3b77aa0b2`
+
+### Test Implementation Priority
+
+#### Phase 1 (Immediate - Week 1)
+- Implement YAML structure preservation tests
+- Add nested list hierarchy tests
+- Create configuration file structure tests
+
+#### Phase 2 (Week 2)
+- Add mixed content structure tests
+- Implement code example preservation tests
+- Create comprehensive regression test suite
+
+#### Phase 3 (Week 3)
+- Integrate tests with CI/CD pipeline
+- Add automated test reporting
+- Create test documentation and guidelines
+
+### Success Criteria
+
+- **Zero Regression**: No list indentation fixes should break existing structure
+- **Comprehensive Coverage**: All types of nested content must be tested
+- **Automated Validation**: Tests must run automatically on every change
+- **Clear Failure Messages**: Test failures must clearly indicate what was broken
+
+### Monitoring and Alerting
+
+- **Test Failure Alerts**: Immediate notification when tests fail
+- **Regression Tracking**: Track any new issues that slip through
+- **Performance Monitoring**: Ensure tests don't slow down development workflow
+- **Coverage Reporting**: Monitor test coverage for list indentation scenarios
+
+This comprehensive test suite will prevent the specific issues identified in the audit from recurring and ensure that list indentation fixes are applied correctly without breaking existing documentation structure.
+
 ## Research Context & Next Steps
 
 ### When You're Here, You Can:
@@ -1181,7 +2568,7 @@ This plan implements documentation automation in four phases, prioritizing early
 
 **Implementing Documentation Automation:**
 
-- **Next**: [Phase 1: Remark Foundation](#phase-1-remark-foundation-weeks-1-4) → [Week 1: Setup & Basic Validation](#week-1-setup--basic-validation) → [Install Dependencies](#tasks)
+- **Next**: [Phase 1: Remark Foundation](#phase-1-remark-foundation-weeks-1-4) → [Week 1: Setup & Basic Validation](#week-1-setup--basic-validation) → [Install Dependencies](#week-1-setup--basic-validation)
 - **Related**: [Repository Development Guide](../docs/architecture/repository/DEVELOPMENT_GUIDE.md) for technical setup
 
 **Planning Documentation Strategy:**
@@ -1201,3 +2588,4 @@ Every page provides clear next steps based on your research goals. If you're uns
 ---
 
 **Navigation**: [← Back to Plans Documentation](README.md) · [📚 Technical Glossary](../docs/GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+```

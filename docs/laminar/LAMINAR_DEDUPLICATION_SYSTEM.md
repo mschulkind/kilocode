@@ -1,17 +1,15 @@
 # Laminar Deduplication System
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-**Purpose:** Detailed documentation of the Laminar service deduplication mechanisms, span
-management, and system prompt optimization to prevent duplicate observability data and improve
-performance.
+- *Purpose:*\* Detailed documentation of the Laminar service deduplication mechanisms, span
+  management, and system prompt optimization to prevent duplicate observability data and improve
+  performance.
 
 > **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
 > instant connections between distant parts of the system, allowing us to observe the entire state
 > from any single point! ⚛️
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [System Architecture](#system-architecture)
 - [Span Management](#span-management)
@@ -25,13 +23,11 @@ performance.
 </details>
 
 ## Executive Summary
-
-_The Laminar Deduplication System manages observability spans and prevents duplicate data
-collection, particularly for system prompts which can be large and repetitive. This system is
-crucial for maintaining performance and reducing data storage costs in the observability pipeline._
+- The Laminar Deduplication System manages observability spans and prevents duplicate data
+  collection, particularly for system prompts which can be large and repetitive. This system is
+  crucial for maintaining performance and reducing data storage costs in the observability pipeline.\*
 
 The Laminar service implements several deduplication mechanisms to prevent:
-
 1. **Span Duplication** - Multiple spans for the same operation
 2. **System Prompt Duplication** - Large system prompts stored multiple times
 3. **Input/Output Data Duplication** - Redundant data in span inputs
@@ -359,16 +355,12 @@ public async updateConfig(newConfig: Partial<LaminarConfig>): Promise<void> {
 ## Common Issues and Solutions
 
 ### Issue 1: Multiple Spans for Same Operation
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Multiple spans created for single LLM call
 - Duplicate observability data
 - Performance degradation
-
-**Root Cause**: Active span check not working properly
-
-**Solution**:
+- *Root Cause*\*: Active span check not working properly
+- *Solution*\*:
 
 ```typescript
 // Enhanced active span check
@@ -391,16 +383,12 @@ public startSpan(spanType: SpanType, options: {...}, isActive: boolean = false):
 ```
 
 ### Issue 2: System Prompt Still Duplicated
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Large system prompts still stored in spans
 - High memory usage
 - Slow span processing
-
-**Root Cause**: `recordSpanIO` flag not properly checked
-
-**Solution**:
+- *Root Cause*\*: `recordSpanIO` flag not properly checked
+- *Solution*\*:
 
 ```typescript
 // Ensure proper recordSpanIO check
@@ -416,16 +404,12 @@ if (laminarService.getRecordSpanIO() && spanInput) {
 ```
 
 ### Issue 3: Span Cleanup Issues
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Spans not properly cleaned up
 - Memory leaks
 - Active span count growing
-
-**Root Cause**: Span disposal not handled properly
-
-**Solution**:
+- *Root Cause*\*: Span disposal not handled properly
+- *Solution*\*:
 
 ```typescript
 // Enhanced span cleanup
@@ -549,13 +533,10 @@ const processingMetrics = {
 ```
 
 <a id="navigation-footer"></a>
-
 - Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
 
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [laminar](../docs/laminar/) ·
-[↑ Table of Contents](#laminar-deduplication-system)
+- \*\*
+- *Navigation*\*: [docs](../) · [laminar](../../docs/laminar/) ·
+  [↑ Table of Contents](#laminar-deduplication-system)

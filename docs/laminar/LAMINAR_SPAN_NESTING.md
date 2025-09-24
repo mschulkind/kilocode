@@ -1,16 +1,14 @@
 # Laminar Span Nesting and Queuing Mechanism
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-**Purpose:** This document explains how span nesting works in the Laminar observability system, why
-spans are queued before initialization, and how this affects chat history visibility.
+- *Purpose:*\* This document explains how span nesting works in the Laminar observability system, why
+  spans are queued before initialization, and how this affects chat history visibility.
 
 > **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
 > instant connections between distant parts of the system, allowing us to observe the entire state
 > from any single point! ⚛️
 
 <details><summary>Table of Contents</summary>
-
 - [Overview](#overview)
 - [Span Nesting Hierarchy](#span-nesting-hierarchy)
 - [Queuing Mechanism](#queuing-mechanism)
@@ -41,7 +39,6 @@ Root Task Span (task.root)
 ```
 
 Each span represents a specific operation and contains:
-
 - Operation name and type
 - Start/end timestamps
 - Custom attributes
@@ -53,7 +50,6 @@ Each span represents a specific operation and contains:
 ### Why Queue Spans?
 
 The LaminarService queues spans before initialization because:
-
 1. **SDK Dependency**: The Laminar SDK must be initialized before spans can be created
 2. **Configuration Requirements**: API keys, base URLs, and ports must be loaded
 3. **Race Condition Prevention**: Early span requests during task startup
@@ -93,7 +89,6 @@ Only "test connection" spans appear in the observability dashboard. Chat history
 despite being created.
 
 ### Root Cause Analysis
-
 1. **Span Naming Mismatch**: Chat spans may use different naming conventions
 2. **Initialization Timing**: Spans created before service initialization may be lost
 3. **Session ID Issues**: Chat spans may not have proper session identification
@@ -121,14 +116,12 @@ laminarService.startSpan("DEFAULT", {
 ## Current Implementation
 
 ### LaminarService Key Methods
-
 - `startSpan()`: Public API for creating spans
 - `initialize()`: Sets up Laminar SDK connection
 - `_startSpanNow()`: Internal span creation after initialization
 - `endSpan()`: Completes span lifecycle
 
 ### Span Lifecycle
-
 1. **Creation**: `startSpan()` or queued request
 2. **Initialization**: SDK setup if needed
 3. **Execution**: Span becomes active
@@ -145,9 +138,8 @@ Initialize LaminarService during extension activation:
 // In extension activation
 await laminarService.initialize()
 ```
-
-**Pros:** Eliminates queuing, ensures all spans are captured **Cons:** Potential startup delay,
-requires valid configuration
+- *Pros:*\* Eliminates queuing, ensures all spans are captured **Cons:** Potential startup delay,
+  requires valid configuration
 
 ### 2. Improved Error Handling
 
@@ -251,7 +243,6 @@ console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Starting span: ${span
 ```
 
 ### Common Issues
-
 1. **Spans not appearing**: Check initialization status
 2. **Missing session IDs**: Verify task ID generation
 3. **Failed transmissions**: Check network connectivity
@@ -294,28 +285,21 @@ private validateSpanConfig(options: SpanOptions): boolean {
 ```
 
 <a id="navigation-footer"></a>
-
 - Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
   [`README.md`](README.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Laminar Observability:**
-
+- *Understanding Laminar Observability:*\*
 - **Next**: Check related Laminar documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
-
-**Implementing Observability Features:**
-
+- *Implementing Observability Features:*\*
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Observability Issues:**
-
+- *Troubleshooting Observability Issues:*\*
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -327,8 +311,6 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Laminar Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -13,7 +13,6 @@ documentation before commits are accepted.
 
 The project uses Husky v9.1.7 for Git hook management. The pre-commit hook is located at
 `.husky/pre-commit` and includes:
-
 1. **Branch Protection**: Prevents direct commits to main branch (unless tracking origin/main)
 2. **Lint-staged**: Runs linting on staged files
 3. **General Linting**: Runs project-wide linting
@@ -46,14 +45,12 @@ The project uses Husky v9.1.7 for Git hook management. The pre-commit hook is lo
 The pre-commit hook runs the following documentation checks:
 
 ### Validation Commands
-
 - `pnpm docs:validate` - Validates all markdown files using remark with custom KiloCode plugins
 - `pnpm docs:maintain` - Automatically maintains documentation structure (TOC, navigation, etc.)
 
 ### Validation Rules
 
 The documentation validation enforces:
-
 - **KiloCode Standards**: Custom validation rules specific to KiloCode documentation
 - **Markdown Standards**: Standard markdown linting rules
 - **Link Validation**: Internal and external link validation
@@ -63,7 +60,6 @@ The documentation validation enforces:
 ### Auto-fix Capabilities
 
 Some documentation issues can be automatically fixed:
-
 - Table of Contents generation
 - Navigation footer updates
 - Research context sections
@@ -76,7 +72,6 @@ Run `pnpm docs:fix` to automatically fix fixable issues.
 ### Validation Failures
 
 If documentation validation fails:
-
 1. **Commit is blocked** - The commit will not proceed
 2. **Error details shown** - Specific validation errors are displayed
 3. **Fix suggestions provided** - Guidance on how to resolve issues
@@ -139,51 +134,43 @@ git commit --no-verify --no-edit
 ## Troubleshooting
 
 ### Hook Not Running
-
 1. **Check permissions**: Ensure `.husky/pre-commit` is executable
 
-    ```bash
-    chmod +x .husky/pre-commit
-    ```
-
+   ```bash
+   chmod +x .husky/pre-commit
+   ```
 2. **Verify Husky installation**: Run `pnpm prepare` to reinstall hooks
-
 3. **Check Git configuration**: Ensure hooks directory is correct
-    ```bash
-    git config core.hooksPath
-    ```
+   ```bash
+   git config core.hooksPath
+   ```
 
 ### Performance Issues
 
 If validation is slow:
-
 1. **Run validation on specific files**:
 
-    ```bash
-    pnpm docs:validate path/to/file.md
-    ```
-
+   ```bash
+   pnpm docs:validate path/to/file.md
+   ```
 2. **Use quiet mode**:
 
-    ```bash
-    pnpm docs:validate --quiet
-    ```
-
+   ```bash
+   pnpm docs:validate --quiet
+   ```
 3. **Skip maintenance temporarily**:
-    ```bash
-    # Edit .husky/pre-commit to comment out docs:maintain
-    ```
+   ```bash
+   # Edit .husky/pre-commit to comment out docs:maintain
+   ```
 
 ### Validation Errors
 
 #### Too Many Warnings
-
 - Focus on errors first, warnings can be addressed later
 - Use `--quiet` flag to reduce output
 - Consider updating validation rules if warnings are not actionable
 
 #### False Positives
-
 - Report false positives to the team
 - Consider updating validation rules
 - Use inline comments to suppress specific warnings
@@ -191,29 +178,25 @@ If validation is slow:
 ## Best Practices
 
 ### Before Committing
-
 1. **Run validation manually**:
 
-    ```bash
-    pnpm docs:validate
-    pnpm docs:maintain
-    ```
-
+   ```bash
+   pnpm docs:validate
+   pnpm docs:maintain
+   ```
 2. **Fix issues early**:
 
-    ```bash
-    pnpm docs:fix
-    ```
-
+   ```bash
+   pnpm docs:fix
+   ```
 3. **Review changes**:
-    ```bash
-    git diff
-    ```
+   ```bash
+   git diff
+   ```
 
 ### Commit Messages
 
 Use descriptive commit messages that include:
-
 - Type of change (docs, fix, feat, etc.)
 - Brief description
 - Reference to documentation standards if applicable
@@ -222,7 +205,6 @@ Example:
 
 ```bash
 git commit -m "docs: add pre-commit hooks documentation
-
 - Document pre-commit hook configuration
 - Add troubleshooting guide
 - Include best practices for documentation validation
@@ -233,7 +215,6 @@ Implements: T009 · Phase 1 Task 3.1: Implement Pre-commit Hooks"
 ## Integration with CI/CD
 
 The pre-commit hooks complement the CI/CD pipeline:
-
 - **Pre-commit**: Fast local validation and auto-fixes
 - **CI/CD**: Comprehensive validation and reporting
 - **Both**: Ensure documentation quality and consistency
@@ -241,17 +222,15 @@ The pre-commit hooks complement the CI/CD pipeline:
 ## Maintenance
 
 ### Updating Hook Configuration
-
 1. **Edit `.husky/pre-commit`**
 2. **Test changes**:
-    ```bash
-    ./.husky/pre-commit
-    ```
+   ```bash
+   ./.husky/pre-commit
+   ```
 3. **Commit changes**
 4. **Update documentation**
 
 ### Adding New Validation Rules
-
 1. **Update validation plugins**
 2. **Test with sample files**
 3. **Update documentation**
@@ -260,7 +239,6 @@ The pre-commit hooks complement the CI/CD pipeline:
 ## Support
 
 For issues with pre-commit hooks:
-
 1. **Check this documentation**
 2. **Review error messages carefully**
 3. **Try suggested fixes**
@@ -268,8 +246,6 @@ For issues with pre-commit hooks:
 5. **Report bugs or false positives**
 
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)
+- \*\*
+- *Navigation*\*: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)

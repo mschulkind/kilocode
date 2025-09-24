@@ -8,29 +8,25 @@ and priority improvements for the KiloCode project.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-
-- **Something's Broken**: Check [TECHNICAL_DEBT.md](TECHNICAL_DEBT.md) for known issues
+- **Something's Broken**: Check [TECHNICAL\_DEBT.md](TECHNICAL_DEBT.md) for known issues
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
-- **Research Journey**: Explore [RESEARCH_GAPS.md](RESEARCH_GAPS.md) for areas needing investigation
+- **Research Journey**: Explore [RESEARCH\_GAPS.md](RESEARCH_GAPS.md) for areas needing investigation
 
 ### Current Focus
-
 - API duplication race condition investigation
 - Documentation standards implementation
 - System architecture improvements
 
 ## 📚 Documentation Structure
-
 - **[Repository Overview](README.md)** - Master index of all improvement-related documentation
-- **[PRIORITY_IMPROVEMENTS.md](PRIORITY_IMPROVEMENTS.md)** - High-priority improvements and fixes
-- **[RESEARCH_GAPS.md](RESEARCH_GAPS.md)** - Areas requiring further research
-- **[TECHNICAL_DEBT.md](TECHNICAL_DEBT.md)** - Known technical debt and refactoring needs
+- **[PRIORITY\_IMPROVEMENTS.md](PRIORITY_IMPROVEMENTS.md)** - High-priority improvements and fixes
+- **[RESEARCH\_GAPS.md](RESEARCH_GAPS.md)** - Areas requiring further research
+- **[TECHNICAL\_DEBT.md](TECHNICAL_DEBT.md)** - Known technical debt and refactoring needs
 
 ## 🔗 Cross-References
-
-- **Architecture**: See [../architecture/](../architecture/) for system architecture issues
-- **Plans**: See [../../plans/](../../plans/) for investigation plans
-- **Standards**: See [../standards/](../standards/) for documentation improvements
+- **Architecture**: See [Architecture Documentation](../../architecture/) for system architecture issues
+- **Plans**: See [../../plans////////](../../plans////////) for investigation plans
+- **Standards**: See [Standards Documentation](../../standards////////) for documentation improvements
 
 ## 🦕 Dinosaur Analogy
 
@@ -40,7 +36,11 @@ signs of erosion (technical debt). Our job is to carefully excavate and preserve
 cleaning up the problematic layers!
 
 ## 🧭 Navigation Footer
-
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+## Navigation
+- [← Improvements Overview](README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

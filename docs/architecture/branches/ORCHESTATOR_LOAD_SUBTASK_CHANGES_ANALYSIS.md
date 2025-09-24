@@ -8,19 +8,12 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 ## Quick Navigation
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - [Root Cause Analysis of Duplicate API Requests](race-condition/ROOT_CAUSE_ANALYSIS.md) -
   Detailed investigation of the concurrent recursive calls race condition, including the problematic
   commit and code changes that created the issue. Provides comprehensive analysis of how the
@@ -35,9 +28,7 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
   approaches for each solution.
 
 ## Race Condition Details
-
-**The Specific Race Condition Created:**
-
+- *The Specific Race Condition Created:*\*
 - **Problem**: Concurrent calls to `recursivelyMakeClineRequests` from both the main orchestrator
   loop and the new `continueParentTask` method
 - **Trigger**: When a subtask completes while the parent orchestrator is still actively running (no
@@ -46,9 +37,7 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
   in chat history
 - **Severity**: 2-request race condition (common) and 3-request race condition (severe, causes
   cascading failures)
-
-**Detailed Analysis Links:**
-
+- *Detailed Analysis Links:*\*
 - [Race Condition State Machine](README.md) - Understanding the concurrent
   execution states
 - [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
@@ -57,7 +46,6 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 - [Testing Strategy](race-condition/TESTING_STRATEGY.md) - How to reproduce and validate fixes
 
 ## Summary of Intent
-
 - Goal: Ensure that when a subtask finishes after the user navigated away and returned, the parent
   orchestrator reliably continues execution.
 - Approach: Modify subtask completion flow to (a) rehydrate parent; (b) continue execution.
@@ -108,11 +96,9 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 ```
 
 ### Motivation
-
 - Guarantee parent rehydration and continuation when returning from history view.
 
 ### Side Effect
-
 - When user never navigated away (parent already running), this created a second, concurrent call to
   `recursivelyMakeClineRequests` racing with the main loop.
 - **Race Condition Details**: See [Race Condition State Machine](README.md) for
@@ -122,7 +108,6 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 ## Change 2: Parent Task Initialization Logic
 
 ### Before
-
 - Initialization happened implicitly in normal flow; rehydration during navigation was incomplete or
   scattered.
 
@@ -137,18 +122,15 @@ if (!parentTask.isInitialized) {
 ```
 
 ### Motivation
-
 - Robustly restore parent state after navigation.
 
 ### Side Effect
-
 - Correct and needed for navigation; safe when gated, but paired with unconditional continuation
   caused races in active sessions.
 
 ## Change 3: Background Continuation Pattern
 
 ### Before
-
 - Parent continuation relied on the main orchestrator loop.
 
 ### After
@@ -163,11 +145,9 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ```
 
 ### Motivation
-
 - Avoid blocking UI thread; resume parent promptly.
 
 ### Side Effect
-
 - Fire-and-forget makes concurrency invisible and hard to coordinate; increases chance of overlap
   with main loop.
 - **Concurrency Analysis**: See [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) for
@@ -176,23 +156,18 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ## Change 4: Messaging/Conversation History Additions
 
 ### Before
-
 - `completeSubtask` appended results to parent history.
 
 ### After (unchanged semantics, different call site)
-
 - Still appends, but now followed by an extra resume trigger.
 
 ### Motivation
-
 - Ensure result is visible before continuation.
 
 ### Side Effect
-
 - None by itself; duplication issues stem from extra resume call.
 
 ## Net Impact
-
 - Intended scenario (navigation away/back): improved.
 - Active scenario (no navigation): created duplicate, concurrent recursive calls (2-request, and in
   edge cases 3-request).
@@ -200,7 +175,6 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
   comprehensive analysis of user experience impact and severity levels.
 
 ## Recommendations
-
 - Move continuation decision into a single authority (Request Arbiter) rather than firing from
   provider.
 - Treat parent initialization as an explicit precondition; if unmet, synthesize an init step first.
@@ -210,24 +184,18 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Architecture:**
-
+- *Understanding Architecture:*\*
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-
-**Implementing Architecture Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Architecture Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- *Implementing Architecture Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Architecture Issues:*\*
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -235,9 +203,17 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

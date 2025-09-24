@@ -1,16 +1,14 @@
 # Communication Layer System
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-**Purpose:** Comprehensive documentation of the Communication Layer system, including Webview Bridge
-and Message Handler components that facilitate communication between the UI and backend systems.
+- *Purpose:*\* Comprehensive documentation of the Communication Layer system, including Webview Bridge
+  and Message Handler components that facilitate communication between the UI and backend systems.
 
 > **Quantum Physics Fun Fact**: The communication layer is like quantum entanglement - when the UI
 > changes state, the backend instantly knows about it, just as entangled particles instantly affect
 > each other regardless of distance! ⚛️
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [System Architecture](#system-architecture)
 - [Webview Bridge](#webview-bridge)
@@ -26,25 +24,17 @@ and Message Handler components that facilitate communication between the UI and 
 ## Executive Summary
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-_The Communication Layer system manages all communication between the UI layer and the backend
-orchestration systems. It consists of the Webview Bridge for message passing and the Message Handler
-for routing and processing incoming messages._
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- The Communication Layer system manages all communication between the UI layer and the backend
+  orchestration systems. It consists of the Webview Bridge for message passing and the Message Handler
+  for routing and processing incoming messages.\*
 
 The Communication Layer consists of two main components:
-
 1. **Webview Bridge** - Bidirectional message passing between UI and backend
 2. **Message Handler** - Message routing, processing, and state synchronization
 
@@ -52,37 +42,37 @@ The Communication Layer consists of two main components:
 
 ```mermaid
 graph TB
-    subgraph "Communication Layer"
-        WV[Webview Bridge]
-        MSG[Message Handler]
-        ROUTE[Message Router]
-        SYNC[State Synchronizer]
-    end
+  subgraph "Communication Layer"
+  WV[Webview Bridge]
+  MSG[Message Handler]
+  ROUTE[Message Router]
+  SYNC[State Synchronizer]
+  end
 
-    subgraph "UI Layer"
-        UI[Chat UI]
-        BTN[Send Button]
-    end
+  subgraph "UI Layer"
+  UI[Chat UI]
+  BTN[Send Button]
+  end
 
-    subgraph "Backend Systems"
-        TASK[Task Engine]
-        MQ[Message Queue]
-        API[API Provider]
-    end
+  subgraph "Backend Systems"
+  TASK[Task Engine]
+  MQ[Message Queue]
+  API[API Provider]
+  end
 
-    UI --> WV
-    BTN --> WV
-    WV --> MSG
-    MSG --> ROUTE
-    ROUTE --> TASK
-    ROUTE --> MQ
-    ROUTE --> API
+  UI --> WV
+  BTN --> WV
+  WV --> MSG
+  MSG --> ROUTE
+  ROUTE --> TASK
+  ROUTE --> MQ
+  ROUTE --> API
 
-    TASK --> SYNC
-    MQ --> SYNC
-    API --> SYNC
-    SYNC --> WV
-    WV --> UI
+  TASK --> SYNC
+  MQ --> SYNC
+  API --> SYNC
+  SYNC --> WV
+  WV --> UI
 ```
 
 ## Webview Bridge
@@ -91,12 +81,10 @@ graph TB
 
 The Webview Bridge facilitates communication between the VS Code extension (backend) and the webview
 (frontend) using the `vscode.postMessage` API.
-
-**Location**: Used throughout `webview-ui/src/` components
+- *Location*\*: Used throughout `webview-ui/src/` components
 
 ### Message Sending
-
-**From UI to Backend**:
+- *From UI to Backend*\*:
 
 ```typescript
 // In UI components
@@ -118,8 +106,7 @@ vscode.postMessage({
 ```
 
 ### Message Receiving
-
-**From Backend to UI**:
+- *From Backend to UI*\*:
 
 ```typescript
 // In webview components
@@ -151,8 +138,7 @@ useEffect(() => {
 ```
 
 ### VSCode Integration
-
-**Setup in Extension**:
+- *Setup in Extension*\*:
 
 ```typescript
 // In extension.ts or webview provider
@@ -171,8 +157,7 @@ webviewView.webview.onDidReceiveMessage(
 
 The Message Handler processes incoming messages from the UI and routes them to appropriate backend
 systems.
-
-**Location**: `src/core/webview/webviewMessageHandler.ts`
+- *Location*\*: `src/core/webview/webviewMessageHandler.ts`
 
 ### Handler Structure
 
@@ -201,48 +186,45 @@ export const webviewMessageHandler = async (
 ```
 
 ### Message Processing
-
-**New Task Creation**:
+- *New Task Creation*\*:
 
 ```typescript
 case "newTask":
-    try {
-        await provider.createTask(message.text, message.images)
-        // Task created successfully - notify UI to reset
-        await provider.postMessageToWebview({
-            type: "invoke",
-            invoke: "newChat",
-        })
-    } catch (error) {
-        // For all errors, reset UI and show error
-        await provider.postMessageToWebview({
-            type: "invoke",
-            invoke: "newChat",
-        })
-    }
-    break
+  try {
+  await provider.createTask(message.text, message.images)
+  // Task created successfully - notify UI to reset
+  await provider.postMessageToWebview({
+      type: "invoke",
+      invoke: "newChat",
+  })
+  } catch (error) {
+  // For all errors, reset UI and show error
+  await provider.postMessageToWebview({
+      type: "invoke",
+      invoke: "newChat",
+  })
+  }
+  break
 ```
-
-**Message Queuing**:
+- *Message Queuing*\*:
 
 ```typescript
 case "queueMessage": {
-    provider.getCurrentTask()?.messageQueueService.addMessage(
-        message.text ?? "",
-        message.images
-    )
-    break
+  provider.getCurrentTask()?.messageQueueService.addMessage(
+  message.text ?? "",
+  message.images
+  )
+  break
 }
 ```
-
-**Message Removal**:
+- *Message Removal*\*:
 
 ```typescript
 case "removeQueuedMessage": {
-    provider.getCurrentTask()?.messageQueueService.removeMessage(
-        message.text ?? ""
-    )
-    break
+  provider.getCurrentTask()?.messageQueueService.removeMessage(
+  message.text ?? ""
+  )
+  break
 }
 ```
 
@@ -293,8 +275,7 @@ if (isTaskCreationMessage(message.type)) {
 ## State Synchronization
 
 ### Global State Management
-
-**State Proxy**:
+- *State Proxy*\*:
 
 ```typescript
 // Access to global state
@@ -303,8 +284,7 @@ const getGlobalState = <K extends keyof GlobalState>(key: K) => provider.context
 const updateGlobalState = async <K extends keyof GlobalState>(key: K, value: GlobalState[K]) =>
 	await provider.contextProxy.setValue(key, value)
 ```
-
-**State Updates**:
+- *State Updates*\*:
 
 ```typescript
 // Update UI state
@@ -321,27 +301,25 @@ await provider.postMessageToWebview({
 ```
 
 ### Bidirectional Sync
-
-**Backend → UI State Updates**:
+- *Backend → UI State Updates*\*:
 
 ```typescript
 // In ClineProvider
 public postStateToWebview(): void {
-    const currentTask = this.getCurrentTask()
-    if (!currentTask) return
+  const currentTask = this.getCurrentTask()
+  if (!currentTask) return
 
-    const state = {
-        taskId: currentTask.taskId,
-        isStreaming: currentTask.isStreaming,
-        queuedMessages: currentTask.queuedMessages,
-        // ... other state
-    }
+  const state = {
+  taskId: currentTask.taskId,
+  isStreaming: currentTask.isStreaming,
+  queuedMessages: currentTask.queuedMessages,
+  // ... other state
+  }
 
-    this.postMessageToWebview({ type: "state", state })
+  this.postMessageToWebview({ type: "state", state })
 }
 ```
-
-**UI → Backend State Updates**:
+- *UI → Backend State Updates*\*:
 
 ```typescript
 // In UI components
@@ -356,8 +334,7 @@ const updateBackendState = useCallback((updates: Partial<UIState>) => {
 ## Error Handling
 
 ### Message Validation
-
-**Input Validation**:
+- *Input Validation*\*:
 
 ```typescript
 const validateMessage = (message: WebviewMessage): boolean => {
@@ -388,8 +365,7 @@ const validateMessage = (message: WebviewMessage): boolean => {
 ```
 
 ### Error Recovery
-
-**Message Processing Errors**:
+- *Message Processing Errors*\*:
 
 ```typescript
 try {
@@ -405,8 +381,7 @@ try {
 	})
 }
 ```
-
-**Connection Errors**:
+- *Connection Errors*\*:
 
 ```typescript
 // Handle webview connection issues
@@ -425,16 +400,12 @@ const handleConnectionError = async (error: Error) => {
 ## Common Issues and Solutions
 
 ### Issue 1: Message Loss
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Messages sent from UI not reaching backend
 - State updates not reflected in UI
 - Intermittent communication failures
-
-**Root Cause**: Message handler errors or connection issues
-
-**Solution**:
+- *Root Cause*\*: Message handler errors or connection issues
+- *Solution*\*:
 
 ```typescript
 // Implement message queuing with retry
@@ -455,16 +426,12 @@ const sendMessageWithRetry = async (message: WebviewMessage, maxRetries = 3) => 
 ```
 
 ### Issue 2: State Desynchronization
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - UI state doesn't match backend state
 - Buttons enabled when they should be disabled
 - Inconsistent behavior
-
-**Root Cause**: State updates not properly synchronized
-
-**Solution**:
+- *Root Cause*\*: State updates not properly synchronized
+- *Solution*\*:
 
 ```typescript
 // Implement state reconciliation
@@ -482,16 +449,12 @@ const reconcileState = async () => {
 ```
 
 ### Issue 3: Message Handler Overload
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Slow message processing
 - UI becoming unresponsive
 - High CPU usage
-
-**Root Cause**: Too many concurrent messages or heavy processing
-
-**Solution**:
+- *Root Cause*\*: Too many concurrent messages or heavy processing
+- *Solution*\*:
 
 ```typescript
 // Implement message queuing and throttling
@@ -529,35 +492,27 @@ class MessageQueue {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Communication Architecture:**
-
+- *Understanding Communication Architecture:*\*
 - **Next**: [UI Layer System](./UI_LAYER_SYSTEM.md) →
   [Orchestration Layer System](./ORCHESTRATION_LAYER_SYSTEM.md) →
   [System Overview](./SYSTEM_OVERVIEW.md)
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Repository Overview](../architecture/repository/README.md) for codebase structure
-
-**Implementing Communication Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md) →
-  [Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Communication Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md) →
-  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  [Repository Overview](../architecture/../repository/README.md) for codebase structure
+- *Implementing Communication Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md) →
+  [Build Pipelines](../architecture/../repository/BUILD_PIPELINES.md)
+- **Related**: [Orchestrator Documentation](../../../../../../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Communication Issues:*\*
+- **Next**: \[Race Condition Analysis]../race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
+  \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
+- **Related**: [Orchestrator Error Handling](../../../../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
-
-**Understanding Current Problems:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Code Flow Analysis]race-condition/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
+- *Understanding Current Problems:*\*
+- **Next**: \[Race Condition Analysis]../race-condition/README.md) →
+  \[Code Flow Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md) →
+  \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
 - **Related**: [State Machines](README.md) for behavior analysis
 
 ### No Dead Ends Policy
@@ -566,7 +521,25 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](./README.md) for guidance.
 
 <a id="navigation-footer"></a>
+- *Navigation*\*: [← Back to Architecture Documentation](./README.md) ·
+  [→ UI Layer System](./UI_LAYER_SYSTEM.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+  [↑ Table of Contents](#-research-context--next-steps)
 
-**Navigation**: [← Back to Architecture Documentation](./README.md) ·
-[→ UI Layer System](./UI_LAYER_SYSTEM.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
-[↑ Table of Contents](#-research-context--next-steps)
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
+
+## Navigation Footer
+- *Navigation*\*:
+- [← Back to Documentation Overview](../../../../../../../README.md)
+- [Architecture Documentation](../../../../../../../../architecture/README.md)
+- [Standards Documentation](../standards////////README.md)
+- *Related*\*:
+- [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md)
+- [Glossary](../GLOSSARY.md)

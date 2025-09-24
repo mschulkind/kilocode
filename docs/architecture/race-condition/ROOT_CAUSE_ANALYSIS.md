@@ -1,8 +1,7 @@
 # Root Cause Analysis
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-**Purpose:** Detailed investigation of the root cause of the API duplication race condition issue.
+- *Purpose:*\* Detailed investigation of the root cause of the API duplication race condition issue.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -11,25 +10,17 @@
 ## The Problematic Change
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-**Commit**: `749f3d22a` - "fix children task loading to continue the execution of the parent after
-finished" **Date**: September 10, 2025 **Author**: Catriel Müller
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- *Commit*\*: `749f3d22a` - "fix children task loading to continue the execution of the parent after
+  finished" **Date**: September 10, 2025 **Author**: Catriel Müller
 
 ### Before the Change
-
-**Original `finishSubTask` method** (`/src/core/webview/ClineProvider.ts:466`):
+- *Original `finishSubTask` method*\* (`/src/core/webview/ClineProvider.ts:466`):
 
 ```typescript
 async finishSubTask(lastMessage: string) {
@@ -39,13 +30,11 @@ async finishSubTask(lastMessage: string) {
     await this.getCurrentTask()?.completeSubtask(lastMessage)
 }
 ```
-
-**Behavior**: Only called `completeSubtask()` which added the subtask result to the parent's
-conversation history.
+- *Behavior*\*: Only called `completeSubtask()` which added the subtask result to the parent's
+  conversation history.
 
 ### After the Change
-
-**New `finishSubTask` method** with `continueParentTask`:
+- *New `finishSubTask` method*\* with `continueParentTask`:
 
 ```typescript
 async finishSubTask(lastMessage: string) {
@@ -79,9 +68,8 @@ private async continueParentTask(lastMessage: string): Promise<void> {
     }
 }
 ```
-
-**Behavior**: Now calls `completeSubtask()` AND then calls
-`recursivelyMakeClineRequests([], false)`.
+- *Behavior*\*: Now calls `completeSubtask()` AND then calls
+  `recursivelyMakeClineRequests([], false)`.
 
 ## The Race Condition
 
@@ -105,16 +93,12 @@ await parentTask.recursivelyMakeClineRequests([], false)
 ```
 
 ### The Timing Problem
-
-**Normal Execution (No Race)**:
-
+- \*Normal Execution (No Race)\*\*:
 1. Main task loop calls `recursivelyMakeClineRequests`
 2. API call completes
 3. Subtask completion calls `recursivelyMakeClineRequests`
 4. Second API call completes
-
-**Race Condition (Concurrent Execution)**:
-
+- \*Race Condition (Concurrent Execution)\*\*:
 1. Main task loop calls `recursivelyMakeClineRequests`
 2. **Simultaneously**: Subtask completion calls `recursivelyMakeClineRequests`
 3. **Both API calls happen at the same time**
@@ -123,7 +107,6 @@ await parentTask.recursivelyMakeClineRequests([], false)
 ### Why This Happens
 
 The race condition occurs because:
-
 1. **Asynchronous Execution**: Both calls are asynchronous and can interleave
 2. **No Synchronization**: There's no mechanism to prevent concurrent calls
 3. **Background Execution**: The subtask completion call runs in the background
@@ -176,14 +159,13 @@ continueParentTask()
 ### Recursive Call States
 
 The system can be in different states regarding recursive calls:
-
 - **IDLE**: No recursive calls in progress
 - **RUNNING**: One recursive call in progress
 - **CONCURRENT**: Multiple recursive calls in progress (RACE CONDITION!)
 - **QUEUED**: Calls waiting for execution
 - **LOCKED**: Synchronization lock acquired
 - **TIMEOUT**: Call timed out
-- **TRIPLE_CONCURRENT**: 3 simultaneous calls (severe corruption)
+- **TRIPLE\_CONCURRENT**: 3 simultaneous calls (severe corruption)
 
 ### State Transitions
 
@@ -205,7 +187,6 @@ stateDiagram-v2
 ### The Original Problem
 
 The fix was needed to solve a **navigation scenario** where:
-
 1. User starts orchestrator task
 2. Orchestrator creates subtask
 3. User navigates away from chat
@@ -215,7 +196,6 @@ The fix was needed to solve a **navigation scenario** where:
 ### The Navigation State Loss
 
 When users navigate away and return:
-
 - **Task Stack**: Gets cleared and reconstructed from history
 - **Parent Reference**: Can be lost during reconstruction
 - **Execution Context**: Parent task stops executing
@@ -224,7 +204,6 @@ When users navigate away and return:
 ### The Solution Trade-off
 
 The fix solved the navigation problem but created a new race condition:
-
 - **✅ Fixed**: Navigation scenarios work correctly
 - **❌ Created**: Race condition in active execution scenarios
 - **Challenge**: Need both to work without conflicts
@@ -234,39 +213,42 @@ The fix solved the navigation problem but created a new race condition:
 ### Severity Levels
 
 #### Level 1: 2-Request Race Condition
-
 - **Impact**: Moderate
 - **Symptoms**: Jumbled responses, confused UI
 - **Recovery**: Usually self-corrects
 
 #### Level 2: 3-Request Race Condition
-
 - **Impact**: Severe
 - **Symptoms**: XML corruption, permanent damage
 - **Recovery**: Requires new chat session
 
 ### User Experience Impact
-
 - **Confusion**: Users don't understand what's happening
 - **Frustration**: Workflow gets interrupted
 - **Lost Work**: Sometimes need to restart conversations
 - **Trust Issues**: System appears unreliable
 
 ## Next Steps
-
-1. **Understand the Code Flow**: See [CODE_FLOW_ANALYSIS.md](CODE_FLOW_ANALYSIS.md)
-2. **Explore the Navigation Scenario**: See [NAVIGATION_SCENARIO.md](NAVIGATION_SCENARIO.md)
-3. **Find the Solution**: See [SOLUTION_RECOMMENDATIONS.md](SOLUTION_RECOMMENDATIONS.md)
+1. **Understand the Code Flow**: See [CODE\_FLOW\_ANALYSIS.md](CODE_FLOW_ANALYSIS.md)
+2. **Explore the Navigation Scenario**: See [NAVIGATION\_SCENARIO.md](NAVIGATION_SCENARIO.md)
+3. **Find the Solution**: See [SOLUTION\_RECOMMENDATIONS.md](SOLUTION_RECOMMENDATIONS.md)
 
 ## 🧭 Navigation Footer
-
-- [← Back to Race Condition Home](README.md)
+- [← Back to Race Condition Home](../README.md)
 - [→ Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
-- [↑ Table of Contents](README.md)
+- [↑ Table of Contents](../README.md)
+
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/../README.md).
 
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[race-condition](../docs/architecture/race-condition/) · ↑ Table of Contents
+- \*\*
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [race-condition](../docs/architecture/race-condition/) · ↑ Table of Contents

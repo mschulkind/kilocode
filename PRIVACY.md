@@ -26,3 +26,7 @@ For any privacy-related questions, soon you can reach out to us at support@kilo
 ---
 
 By using Kilo Code, you agree to this Privacy Policy.
+
+---
+
+**Navigation**: [↑ Table of Contents](#privacy)

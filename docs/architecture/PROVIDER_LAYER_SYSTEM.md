@@ -1,16 +1,14 @@
 # Provider Layer System
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-**Purpose:** Comprehensive documentation of the Provider Layer system, including API Provider and
-Language Model components that handle external API communication and request processing.
+- *Purpose:*\* Comprehensive documentation of the Provider Layer system, including API Provider and
+  Language Model components that handle external API communication and request processing.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
 > time! 🦕
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [System Architecture](#system-architecture)
 - [API Provider](#api-provider)
@@ -26,25 +24,17 @@ Language Model components that handle external API communication and request pro
 ## Executive Summary
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-_The Provider Layer system manages external API communication, request processing, and language
-model integration. It handles API requests, streaming responses, error recovery, and retry logic for
-reliable communication with external services._
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- The Provider Layer system manages external API communication, request processing, and language
+  model integration. It handles API requests, streaming responses, error recovery, and retry logic for
+  reliable communication with external services.\*
 
 The Provider Layer consists of two main components:
-
 1. **API Provider** - External API communication and request management
 2. **Language Model** - Language model integration and response processing
 
@@ -52,49 +42,49 @@ The Provider Layer consists of two main components:
 
 ```mermaid
 graph TB
-    subgraph "Provider Layer"
-        AP[API Provider]
-        LM[Language Model]
-    end
+  subgraph "Provider Layer"
+  AP[API Provider]
+  LM[Language Model]
+  end
 
-    subgraph "API Management"
-        RC[Request Creation]
-        RS[Request Streaming]
-        RH[Request Handling]
-        RR[Request Routing]
-    end
+  subgraph "API Management"
+  RC[Request Creation]
+  RS[Request Streaming]
+  RH[Request Handling]
+  RR[Request Routing]
+  end
 
-    subgraph "Model Integration"
-        MI[Model Interface]
-        MP[Model Processing]
-        MR[Model Response]
-        MC[Model Configuration]
-    end
+  subgraph "Model Integration"
+  MI[Model Interface]
+  MP[Model Processing]
+  MR[Model Response]
+  MC[Model Configuration]
+  end
 
-    subgraph "External Services"
-        OAI[OpenAI API]
-        ANTH[Anthropic API]
-        KC[KiloCode API]
-        CUSTOM[Custom APIs]
-    end
+  subgraph "External Services"
+  OAI[OpenAI API]
+  ANTH[Anthropic API]
+  KC[KiloCode API]
+  CUSTOM[Custom APIs]
+  end
 
-    AP --> RC
-    AP --> RS
-    AP --> RH
-    AP --> RR
+  AP --> RC
+  AP --> RS
+  AP --> RH
+  AP --> RR
 
-    LM --> MI
-    LM --> MP
-    LM --> MR
-    LM --> MC
+  LM --> MI
+  LM --> MP
+  LM --> MR
+  LM --> MC
 
-    RR --> OAI
-    RR --> ANTH
-    RR --> KC
-    RR --> CUSTOM
+  RR --> OAI
+  RR --> ANTH
+  RR --> KC
+  RR --> CUSTOM
 
-    RS --> MR
-    MP --> MR
+  RS --> MR
+  MP --> MR
 ```
 
 ## API Provider
@@ -103,12 +93,10 @@ graph TB
 
 The API Provider manages communication with external APIs, handling request creation, streaming, and
 response processing.
-
-**Location**: `src/api/providers/`
+- *Location*\*: `src/api/providers/`
 
 ### Provider Interface
-
-**Base Provider Interface**:
+- *Base Provider Interface*\*:
 
 ```typescript
 export interface ApiProvider {
@@ -124,65 +112,63 @@ export interface ApiProvider {
 ```
 
 ### Request Creation
-
-**Message Creation Process**:
+- *Message Creation Process*\*:
 
 ```typescript
 // In Task.ts - attemptApiRequest method
 public async *attemptApiRequest(retryAttempt: number = 0): ApiStream {
-    // Get system prompt and conversation history
-    const systemPrompt = await this.getSystemPrompt()
-    const cleanConversationHistory = this.getCleanConversationHistory()
+  // Get system prompt and conversation history
+  const systemPrompt = await this.getSystemPrompt()
+  const cleanConversationHistory = this.getCleanConversationHistory()
 
-    // Create request metadata
-    const metadata: RequestMetadata = {
-        taskId: this.taskId,
-        timestamp: new Date().toISOString(),
-        retryAttempt,
-        model: this.apiConfiguration.model,
-        temperature: this.apiConfiguration.temperature,
-        maxTokens: this.apiConfiguration.maxTokens,
-    }
+  // Create request metadata
+  const metadata: RequestMetadata = {
+  taskId: this.taskId,
+  timestamp: new Date().toISOString(),
+  retryAttempt,
+  model: this.apiConfiguration.model,
+  temperature: this.apiConfiguration.temperature,
+  maxTokens: this.apiConfiguration.maxTokens,
+  }
 
-    // Create API request with Laminar span
-    const stream = await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, async () => {
-        laminarService.startSpan("LLM", {
-            name: `${this.taskId}-llm_call`,
-            spanType: "LLM",
-            sessionId: this.rootTaskId || this.taskId,
-            input: laminarService.getRecordSpanIO()
-                ? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, ...cleanConversationHistory]
-                : undefined,
-        })
-        return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
-    })
+  // Create API request with Laminar span
+  const stream = await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, async () => {
+  laminarService.startSpan("LLM", {
+      name: `${this.taskId}-llm_call`,
+      spanType: "LLM",
+      sessionId: this.rootTaskId || this.taskId,
+      input: laminarService.getRecordSpanIO()
+          ? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, ...cleanConversationHistory]
+          : undefined,
+  })
+  return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
+  })
 
-    // Process streaming response
-    const iterator = stream[Symbol.asyncIterator]()
+  // Process streaming response
+  const iterator = stream[Symbol.asyncIterator]()
 
-    try {
-        this.isWaitingForFirstChunk = true
-        const firstChunk = await iterator.next()
-        yield firstChunk.value
-        this.isWaitingForFirstChunk = false
+  try {
+  this.isWaitingForFirstChunk = true
+  const firstChunk = await iterator.next()
+  yield firstChunk.value
+  this.isWaitingForFirstChunk = false
 
-        // Continue processing remaining chunks
-        let item = await iterator.next()
-        while (!item.done) {
-            yield item.value
-            item = await iterator.next()
-        }
-    } catch (error) {
-        this.isWaitingForFirstChunk = false
-        // Handle error and potentially retry
-        yield* this.handleApiError(error, retryAttempt)
-    }
+  // Continue processing remaining chunks
+  let item = await iterator.next()
+  while (!item.done) {
+      yield item.value
+      item = await iterator.next()
+  }
+  } catch (error) {
+  this.isWaitingForFirstChunk = false
+  // Handle error and potentially retry
+  yield* this.handleApiError(error, retryAttempt)
+  }
 }
 ```
 
 ### Request Metadata
-
-**Request Configuration**:
+- *Request Configuration*\*:
 
 ```typescript
 interface RequestMetadata {
@@ -201,8 +187,7 @@ interface RequestMetadata {
 ## Language Model Integration
 
 ### Model Interface
-
-**Model Abstraction**:
+- *Model Abstraction*\*:
 
 ```typescript
 export interface LanguageModel {
@@ -229,8 +214,7 @@ interface ModelConfiguration {
 ```
 
 ### Model Processing
-
-**Response Processing**:
+- *Response Processing*\*:
 
 ```typescript
 // Stream processing in recursivelyMakeClineRequests
@@ -274,8 +258,7 @@ try {
 ```
 
 ### Model Configuration
-
-**Configuration Management**:
+- *Configuration Management*\*:
 
 ```typescript
 // API Configuration
@@ -299,8 +282,7 @@ interface ApiConfiguration {
 ## Request Processing
 
 ### Streaming Response Handling
-
-**Stream Processing**:
+- *Stream Processing*\*:
 
 ```typescript
 // Stream chunk processing
@@ -338,8 +320,7 @@ const processStreamChunk = (chunk: StreamChunk) => {
 ```
 
 ### Request Routing
-
-**Provider Selection**:
+- *Provider Selection*\*:
 
 ```typescript
 // Provider routing based on configuration
@@ -360,51 +341,49 @@ const routeRequest = (config: ApiConfiguration): ApiProvider => {
 ## Error Handling
 
 ### API Error Types
-
-**Error Classification**:
+- *Error Classification*\*:
 
 ```typescript
 // API Error types
 interface ApiError extends Error {
-    status?: number
-    code?: string
-    retryable?: boolean
-    rateLimited?: boolean
-    quotaExceeded?: boolean
+  status?: number
+  code?: string
+  retryable?: boolean
+  rateLimited?: boolean
+  quotaExceeded?: boolean
 }
 
 // Error handling in attemptApiRequest
 const handleApiError = async (error: ApiError, retryAttempt: number) => {
-    // Log error details
-    console.error(`API request failed (attempt ${retryAttempt}):`, {
-        error: error.message,
-        status: error.status,
-        code: error.code,
-        taskId: this.taskId
-    })
+  // Log error details
+  console.error(`API request failed (attempt ${retryAttempt}):`, {
+  error: error.message,
+  status: error.status,
+  code: error.code,
+  taskId: this.taskId
+  })
 
-    // Determine if error is retryable
-    if (error.retryable && retryAttempt < MAX_RETRIES) {
-        // Implement exponential backoff
-        const delay = Math.pow(2, retryAttempt) * 1000
-        await new Promise(resolve => setTimeout(resolve, delay))
+  // Determine if error is retryable
+  if (error.retryable && retryAttempt < MAX_RETRIES) {
+  // Implement exponential backoff
+  const delay = Math.pow(2, retryAttempt) * 1000
+  await new Promise(resolve => setTimeout(resolve, delay))
 
-        // Retry the request
-        yield* this.attemptApiRequest(retryAttempt + 1)
-    } else {
-        // Non-retryable error - handle appropriately
-        yield {
-            type: 'error',
-            error: error,
-            content: `Request failed: ${error.message}`
-        }
-    }
+  // Retry the request
+  yield* this.attemptApiRequest(retryAttempt + 1)
+  } else {
+  // Non-retryable error - handle appropriately
+  yield {
+      type: 'error',
+      error: error,
+      content: `Request failed: ${error.message}`
+  }
+  }
 }
 ```
 
 ### Error Recovery
-
-**Recovery Strategies**:
+- *Recovery Strategies*\*:
 
 ```typescript
 // Error recovery strategies
@@ -428,8 +407,7 @@ const implementErrorRecovery = async (error: ApiError) => {
 ## Retry Logic
 
 ### Retry Implementation
-
-**Exponential Backoff**:
+- *Exponential Backoff*\*:
 
 ```typescript
 // Retry logic with exponential backoff
@@ -463,8 +441,7 @@ const retryWithBackoff = async <T>(
 ```
 
 ### Circuit Breaker Pattern
-
-**Circuit Breaker Implementation**:
+- *Circuit Breaker Implementation*\*:
 
 ```typescript
 class CircuitBreaker {
@@ -513,16 +490,12 @@ class CircuitBreaker {
 ## Common Issues and Solutions
 
 ### Issue 1: API Rate Limiting
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Frequent 429 errors
 - Requests being throttled
 - Inconsistent response times
-
-**Root Cause**: Exceeding API rate limits
-
-**Solution**:
+- *Root Cause*\*: Exceeding API rate limits
+- *Solution*\*:
 
 ```typescript
 // Rate limiting implementation
@@ -557,16 +530,12 @@ class RateLimiter {
 ```
 
 ### Issue 2: Connection Timeouts
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Requests timing out
 - Incomplete responses
 - Network errors
-
-**Root Cause**: Network connectivity issues or slow responses
-
-**Solution**:
+- *Root Cause*\*: Network connectivity issues or slow responses
+- *Solution*\*:
 
 ```typescript
 // Timeout handling
@@ -586,16 +555,12 @@ const response = await createTimeoutPromise(
 ```
 
 ### Issue 3: Stream Interruption
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Incomplete responses
 - Partial message content
 - Streaming errors
-
-**Root Cause**: Network interruptions or API issues during streaming
-
-**Solution**:
+- *Root Cause*\*: Network interruptions or API issues during streaming
+- *Solution*\*:
 
 ```typescript
 // Stream recovery
@@ -631,13 +596,20 @@ const processStreamWithRecovery = async function* (stream: AsyncGenerator<Stream
 ```
 
 <a id="navigation-footer"></a>
-
 - Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/PROVIDER_LAYER_SYSTEM.md#L1`
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#provider-layer-system)
+- \*\*
+- *Navigation*\*: [docs](../) · [architecture](../../docs/architecture/) ·
+  [↑ Table of Contents](#provider-layer-system)

@@ -5,18 +5,12 @@
 ## Overview
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The Combined State Machine shows how Task, Session, and Recursive Call state machines interact to
 create the overall system behavior, including the race condition and its solution.
@@ -25,77 +19,73 @@ create the overall system behavior, including the race condition and its solutio
 
 ```mermaid
 stateDiagram-v2
-    [*] --> SystemStart
+  [*] --> SystemStart
 
-    state SystemStart {
-        [*] --> NewSession
-        NewSession --> ActiveSession : startTask()
-    }
+  state SystemStart {
+  [*] --> NewSession
+  NewSession --> ActiveSession : startTask()
+  }
 
-    state ActiveSession {
-        [*] --> TaskRunning
-        TaskRunning --> TaskPaused : user navigates away
-        TaskRunning --> TaskCompleted : task finishes
-        TaskPaused --> TaskRunning : user returns
-        TaskPaused --> TaskCompleted : task finishes while paused
-    }
+  state ActiveSession {
+  [*] --> TaskRunning
+  TaskRunning --> TaskPaused : user navigates away
+  TaskRunning --> TaskCompleted : task finishes
+  TaskPaused --> TaskRunning : user returns
+  TaskPaused --> TaskCompleted : task finishes while paused
+  }
 
-    state TaskCompleted {
-        [*] --> SessionInactive
-        SessionInactive --> TaskReconstruction : user resumes
-        TaskReconstruction --> TaskRunning : reconstruction complete
-    }
+  state TaskCompleted {
+  [*] --> SessionInactive
+  SessionInactive --> TaskReconstruction : user resumes
+  TaskReconstruction --> TaskRunning : reconstruction complete
+  }
 
-    state RaceCondition {
-        [*] --> ConcurrentCalls
-        ConcurrentCalls --> APIDuplication : both calls reach API
-        APIDuplication --> JumbledResponses : responses come back mixed
-        JumbledResponses --> ChatConfusion : UI gets confused
-    }
+  state RaceCondition {
+  [*] --> ConcurrentCalls
+  ConcurrentCalls --> APIDuplication : both calls reach API
+  APIDuplication --> JumbledResponses : responses come back mixed
+  JumbledResponses --> ChatConfusion : UI gets confused
+  }
 
-    state SynchronizedExecution {
-        [*] --> LockAcquired
-        LockAcquired --> SequentialCalls : calls processed one by one
-        SequentialCalls --> CleanResponses : responses come back clean
-        CleanResponses --> NormalUI : UI works correctly
-    }
+  state SynchronizedExecution {
+  [*] --> LockAcquired
+  LockAcquired --> SequentialCalls : calls processed one by one
+  SequentialCalls --> CleanResponses : responses come back clean
+  CleanResponses --> NormalUI : UI works correctly
+  }
 
-    SystemStart --> ActiveSession
-    ActiveSession --> TaskCompleted
-    TaskCompleted --> SystemStart : new session
-    ActiveSession --> RaceCondition : navigation fix triggers
-    RaceCondition --> SynchronizedExecution : proper synchronization
-    SynchronizedExecution --> ActiveSession : execution continues
+  SystemStart --> ActiveSession
+  ActiveSession --> TaskCompleted
+  TaskCompleted --> SystemStart : new session
+  ActiveSession --> RaceCondition : navigation fix triggers
+  RaceCondition --> SynchronizedExecution : proper synchronization
+  SynchronizedExecution --> ActiveSession : execution continues
 
-    note right of RaceCondition : "PROBLEM: Concurrent API calls"
-    note right of SynchronizedExecution : "SOLUTION: Proper locking"
+  note right of RaceCondition : "PROBLEM: Concurrent API calls"
+  note right of SynchronizedExecution : "SOLUTION: Proper locking"
 ```
 
 ## State Interactions
 
 ### SystemStart → ActiveSession
-
 - **Trigger**: User starts a new task
 - **Task State**: CREATED → INITIALIZING → RUNNING
 - **Session State**: NEW → ACTIVE
 - **Recursive Call State**: IDLE → RUNNING
 
 ### ActiveSession → TaskCompleted
-
 - **Trigger**: Task finishes naturally
 - **Task State**: RUNNING → COMPLETED
 - **Session State**: ACTIVE → COMPLETED
 - **Recursive Call State**: RUNNING → IDLE
 
 ### ActiveSession → RaceCondition
-
 - **Trigger**: Navigation fix causes concurrent calls
 - **Task State**: RUNNING (concurrent)
 - **Session State**: ACTIVE
 - **Recursive Call State**: RUNNING → CONCURRENT
 
 ### RaceCondition → SynchronizedExecution
-
 - **Trigger**: Proper synchronization implemented
 - **Task State**: RUNNING (synchronized)
 - **Session State**: ACTIVE
@@ -105,52 +95,52 @@ stateDiagram-v2
 
 ```mermaid
 sequenceDiagram
-    participant ML as Main Loop
-    participant API as API Layer
-    participant ST as Subtask
-    participant SC as Subtask Completion
-    participant EL as Event Loop
+  participant ML as Main Loop
+  participant API as API Layer
+  participant ST as Subtask
+  participant SC as Subtask Completion
+  participant EL as Event Loop
 
-    Note over ML,EL: Race Condition Execution
-    ML->>API: recursivelyMakeClineRequests()
-    Note over ML,EL: Function yields to event loop
-    API-->>EL: API Call 1 Started
-    ST->>SC: finishSubTask()
-    SC->>SC: completeSubtask()
-    SC->>API: recursivelyMakeClineRequests()
-    Note over SC,EL: RACE CONDITION!
-    API-->>EL: API Call 2 Started
-    Note over API,EL: Both calls active simultaneously
-    API-->>ML: Response 1
-    API-->>SC: Response 2
-    Note over ML,SC: Responses come back jumbled
-    ML->>ML: Process Jumbled Response
-    SC->>ML: Continue with Jumbled State
+  Note over ML,EL: Race Condition Execution
+  ML->>API: recursivelyMakeClineRequests()
+  Note over ML,EL: Function yields to event loop
+  API-->>EL: API Call 1 Started
+  ST->>SC: finishSubTask()
+  SC->>SC: completeSubtask()
+  SC->>API: recursivelyMakeClineRequests()
+  Note over SC,EL: RACE CONDITION!
+  API-->>EL: API Call 2 Started
+  Note over API,EL: Both calls active simultaneously
+  API-->>ML: Response 1
+  API-->>SC: Response 2
+  Note over ML,SC: Responses come back jumbled
+  ML->>ML: Process Jumbled Response
+  SC->>ML: Continue with Jumbled State
 ```
 
 ## Synchronized Execution Flow
 
 ```mermaid
 sequenceDiagram
-    participant ML as Main Loop
-    participant API as API Layer
-    participant ST as Subtask
-    participant SC as Subtask Completion
-    participant LK as Lock Manager
+  participant ML as Main Loop
+  participant API as API Layer
+  participant ST as Subtask
+  participant SC as Subtask Completion
+  participant LK as Lock Manager
 
-    Note over ML,LK: Synchronized Execution
-    ML->>LK: acquireLock()
-    LK-->>ML: lock acquired
-    ML->>API: recursivelyMakeClineRequests()
-    API-->>ML: Response 1
-    ML->>LK: releaseLock()
-    ST->>SC: finishSubTask()
-    SC->>LK: acquireLock()
-    LK-->>SC: lock acquired
-    SC->>API: recursivelyMakeClineRequests()
-    API-->>SC: Response 2
-    SC->>LK: releaseLock()
-    Note over ML,SC: Clean, sequential execution
+  Note over ML,LK: Synchronized Execution
+  ML->>LK: acquireLock()
+  LK-->>ML: lock acquired
+  ML->>API: recursivelyMakeClineRequests()
+  API-->>ML: Response 1
+  ML->>LK: releaseLock()
+  ST->>SC: finishSubTask()
+  SC->>LK: acquireLock()
+  LK-->>SC: lock acquired
+  SC->>API: recursivelyMakeClineRequests()
+  API-->>SC: Response 2
+  SC->>LK: releaseLock()
+  Note over ML,SC: Clean, sequential execution
 ```
 
 ## State Machine Manager
@@ -202,41 +192,33 @@ class CombinedStateMachineManager {
 ## Key Transitions
 
 ### Normal Flow
-
 1. **SystemStart** → **ActiveSession**: User starts task
 2. **ActiveSession** → **TaskCompleted**: Task finishes
 3. **TaskCompleted** → **SystemStart**: New session
 
 ### Race Condition Flow
-
 1. **ActiveSession** → **RaceCondition**: Navigation fix triggers
 2. **RaceCondition**: Concurrent API calls cause jumbled responses
 3. **RaceCondition** → **SynchronizedExecution**: Fix implemented
 
 ### Synchronized Flow
-
 1. **SynchronizedExecution**: Calls processed with locks
 2. **SynchronizedExecution** → **ActiveSession**: Normal execution continues
 
 ## Problem and Solution
 
 ### Problem (RaceCondition State)
-
 - **Concurrent API Calls**: Multiple `recursivelyMakeClineRequests()` calls
 - **Jumbled Responses**: API responses come back mixed up
 - **Chat Confusion**: UI gets confused by jumbled state
 
 ### Solution (SynchronizedExecution State)
-
 - **Lock-Based Synchronization**: Only one call at a time
 - **Sequential Processing**: Calls processed in order
 - **Clean Responses**: API responses come back clean
 - **Normal UI**: Chat interface works correctly
-
----
-
-**Related Documentation:**
-
+- \*\*
+- *Related Documentation:*\*
 - [Task State Machine](TASK_STATE_MACHINE.md)
 - [Session State Machine](SESSION_STATE_MACHINE.md)
 - [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
@@ -245,24 +227,18 @@ class CombinedStateMachineManager {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Architecture:**
-
+- *Understanding Architecture:*\*
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../../../../../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-
-**Implementing Architecture Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Architecture Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- *Implementing Architecture Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Architecture Issues:*\*
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -270,9 +246,17 @@ class CombinedStateMachineManager {
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

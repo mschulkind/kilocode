@@ -9,31 +9,22 @@ control.
 ## Quick Navigation
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - [Branch Changes Analysis](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
 - [Solution Options and Synchronization Strategies](race-condition/SOLUTION_RECOMMENDATIONS.md)
 - [Testing Strategy and Validation Plan](race-condition/TESTING_STRATEGY.md)
 
 ## Objectives
-
 - Preserve: parent resume after navigation away/back.
 - Fix: eliminate concurrent `recursivelyMakeClineRequests` from multiple sources.
 - Improve: idempotency, observability, and explicit preconditions.
 
 ## Design Overview
-
 - Add a `RequestArbiter` per TaskId to select exactly one next action.
 - Producers (main loop, subtask completion, user) submit `Intent`s.
 - Executor performs the selected action and emits lifecycle events.
@@ -90,7 +81,6 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 ```
 
 Motivation
-
 - Centralize selection and sequencing; remove fire-and-forget recursion from the provider.
 
 ### 2) Task: Wrap recursion in arbiter-aware executor
@@ -115,7 +105,6 @@ this.requestArbiter.submit({
 ```
 
 Motivation
-
 - Main loop becomes a producer of intents, not an executor; single writer enforces sequencing.
 
 ### 3) Arbiter: Single selection with explicit preconditions
@@ -168,7 +157,6 @@ export class RequestArbiter {
 ```
 
 Motivation
-
 - Exactly one selected action at a time; eligibility guarantees proper ordering (e.g., init first).
 
 ### 4) Executor: Idempotent recursion + parent init intent
@@ -216,53 +204,42 @@ export class Executor {
 ```
 
 Motivation
-
 - Enforce initialization before recursion; add idempotency to prevent duplicates.
 
 ## Testing Plan
-
 - Determinism: one selected action at a time.
 - Navigation: initialize-parent → continuation ordering guaranteed.
 - No-overlap: concurrent producers result in queued intents, not concurrent recursion.
 - E2E: no multiple spinners; no XML corruption.
 
 ## Migration Plan
-
 - Feature-flag RA/Executor path; submit intents in parallel with existing path for logging-only
   validation.
 - Switch providers and task to intent submission; remove direct recursion calls.
 - Remove temporary lock once RA proves stable.
 
 ## Rollback
-
 - Disable RA flag; revert providers to direct flow (kept in code for the rollout window only).
 
 ## Expected Outcomes
-
 - Race class eliminated by design.
 - Clear audit trail of decisions; improved UX and stability.
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-
-**Understanding Architecture:**
-
+- *Understanding Architecture:*\*
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-
-**Implementing Architecture Features:**
-
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-**Troubleshooting Architecture Issues:**
-
-- **Next**: [Race Condition Analysis]race-condition/README.md) →
-  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- *Implementing Architecture Features:*\*
+- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- *Troubleshooting Architecture Issues:*\*
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -270,9 +247,17 @@ Motivation
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- \*\*
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

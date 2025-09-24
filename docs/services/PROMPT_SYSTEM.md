@@ -1,15 +1,13 @@
 # Prompt System
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-**Purpose:** Comprehensive documentation of the prompt system for AI interaction, system prompt
-generation, and context management in KiloCode.
+- *Purpose:*\* Comprehensive documentation of the prompt system for AI interaction, system prompt
+  generation, and context management in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
 > specific function, but they all work together to keep the system healthy and functioning! 🧬
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [System Architecture](#system-architecture)
 - [Prompt Generation](#prompt-generation)
@@ -22,12 +20,10 @@ generation, and context management in KiloCode.
 </details>
 
 ## Executive Summary
-
-_The Prompt System provides comprehensive AI interaction capabilities through dynamic prompt
-generation, context management, and response processing in the KiloCode system._
+- The Prompt System provides comprehensive AI interaction capabilities through dynamic prompt
+  generation, context management, and response processing in the KiloCode system.\*
 
 The Prompt System consists of:
-
 1. **Prompt Generation** - Dynamic system prompt creation and management
 2. **Context Management** - Intelligent context assembly and optimization
 3. **Instruction System** - Rule-based instruction processing and validation
@@ -85,15 +81,12 @@ graph TB
 ## Prompt Generation
 
 ### System Prompt Generation
-
-**Implementation**: `src/core/prompts/system.ts` **Features**:
-
+- *Implementation*\*: `src/core/prompts/system.ts` **Features**:
 - **Dynamic Prompt Assembly**: Context-aware prompt generation
 - **Component Integration**: Modular prompt component system
 - **Customization Support**: Mode-specific prompt customization
 - **Performance Optimization**: Efficient prompt generation
-
-**Prompt Components**:
+- *Prompt Components*\*:
 
 ```typescript
 interface PromptComponent {
@@ -103,24 +96,19 @@ interface PromptComponent {
 	condition?: (context: PromptContext) => boolean
 }
 ```
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Modular Architecture**: Component-based prompt construction
 - **Context Awareness**: Intelligent context integration
 - **Performance Optimization**: Efficient prompt generation
 - **Customization**: Flexible prompt customization
 
 ### Context Integration
-
-**Context Types**:
-
+- *Context Types*\*:
 - **File Context**: Current file and related files
 - **Code Context**: Relevant code snippets and definitions
 - **History Context**: Conversation history and previous interactions
 - **Environment Context**: System environment and configuration
-
-**Context Assembly**:
+- *Context Assembly*\*:
 
 ```typescript
 interface ContextAssembler {
@@ -129,9 +117,7 @@ interface ContextAssembler {
 	validateContext: (context: Context) => ValidationResult
 }
 ```
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Intelligent Assembly**: Smart context selection and assembly
 - **Optimization**: Context size and relevance optimization
 - **Validation**: Context quality and completeness validation
@@ -140,15 +126,12 @@ interface ContextAssembler {
 ## Context Management
 
 ### File Context Tracking
-
-**Implementation**: `src/core/context-tracking/FileContextTracker.ts` **Features**:
-
+- *Implementation*\*: `src/core/context-tracking/FileContextTracker.ts` **Features**:
 - **File Monitoring**: Real-time file change tracking
 - **Context Caching**: Efficient context caching and retrieval
 - **Relationship Mapping**: File relationship and dependency tracking
 - **Change Detection**: Intelligent change detection and processing
-
-**Context Tracking**:
+- *Context Tracking*\*:
 
 ```typescript
 interface FileContextTracker {
@@ -158,25 +141,19 @@ interface FileContextTracker {
 	invalidateContext: (filePath: string) => void
 }
 ```
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Real-time Tracking**: Live file change monitoring
 - **Efficient Caching**: Smart context caching strategies
 - **Relationship Management**: File dependency tracking
 - **Change Optimization**: Intelligent change processing
 
 ### Context Optimization
-
-**Optimization Strategies**:
-
+- *Optimization Strategies*\*:
 - **Size Management**: Context size optimization and limits
 - **Relevance Filtering**: Intelligent relevance-based filtering
 - **Priority Ranking**: Context priority and importance ranking
 - **Compression**: Context compression and deduplication
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Smart Filtering**: Relevance-based context filtering
 - **Size Optimization**: Efficient context size management
 - **Priority Management**: Intelligent context prioritization
@@ -185,15 +162,12 @@ interface FileContextTracker {
 ## Instruction System
 
 ### Rule Processing
-
-**Implementation**: `src/core/context/instructions/` **Features**:
-
+- *Implementation*\*: `src/core/context/instructions/` **Features**:
 - **Rule Engine**: Flexible rule processing and validation
 - **Workflow Management**: Complex workflow orchestration
 - **Validation System**: Comprehensive rule validation
 - **Customization Support**: Extensible rule system
-
-**Rule Types**:
+- *Rule Types*\*:
 
 ```typescript
 interface Rule {
@@ -204,25 +178,19 @@ interface Rule {
 	priority: number
 }
 ```
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Flexible Rules**: Dynamic rule processing and execution
 - **Workflow Support**: Complex workflow orchestration
 - **Validation**: Comprehensive rule validation
 - **Extensibility**: Easy rule addition and modification
 
 ### Instruction Validation
-
-**Validation Features**:
-
+- *Validation Features*\*:
 - **Syntax Validation**: Rule syntax and format validation
 - **Logic Validation**: Rule logic and consistency validation
 - **Performance Validation**: Rule performance and efficiency validation
 - **Security Validation**: Rule security and safety validation
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Comprehensive Validation**: Multi-layer validation system
 - **Error Detection**: Early error detection and reporting
 - **Performance Monitoring**: Rule performance tracking
@@ -231,15 +199,12 @@ interface Rule {
 ## Response Processing
 
 ### Assistant Message Parsing
-
-**Implementation**: `src/core/assistant-message/` **Features**:
-
+- *Implementation*\*: `src/core/assistant-message/` **Features**:
 - **Message Parsing**: Comprehensive message parsing and validation
 - **Format Support**: Multiple message format support
 - **Error Handling**: Robust error handling and recovery
 - **Performance Optimization**: Efficient parsing and processing
-
-**Parser Types**:
+- *Parser Types*\*:
 
 ```typescript
 interface AssistantMessageParser {
@@ -248,25 +213,19 @@ interface AssistantMessageParser {
 	format: (message: ParsedMessage) => FormattedMessage
 }
 ```
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Multi-format Support**: Support for various message formats
 - **Robust Parsing**: Reliable message parsing and validation
 - **Error Recovery**: Graceful error handling and recovery
 - **Performance**: Optimized parsing performance
 
 ### Response Validation
-
-**Validation Features**:
-
+- *Validation Features*\*:
 - **Content Validation**: Response content quality validation
 - **Format Validation**: Response format and structure validation
 - **Safety Validation**: Response safety and security validation
 - **Performance Validation**: Response performance and efficiency validation
-
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 - **Quality Assurance**: Comprehensive response quality validation
 - **Safety Checks**: Security and safety validation
 - **Performance Monitoring**: Response performance tracking
@@ -275,57 +234,52 @@ interface AssistantMessageParser {
 ## Common Issues and Solutions
 
 ### Issue 1: Prompt Generation Performance
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Slow prompt generation
 - High memory usage
 - Context assembly delays
-
-**Root Cause**: Inefficient prompt generation or context processing **Solution**: Implement prompt
-caching and context optimization
+- *Root Cause*\*: Inefficient prompt generation or context processing **Solution**: Implement prompt
+  caching and context optimization
 
 ### Issue 2: Context Size Issues
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Context too large for AI models
 - Context truncation problems
 - Poor context relevance
-
-**Root Cause**: Inadequate context size management or relevance filtering **Solution**: Implement
-smart context filtering and size optimization
+- *Root Cause*\*: Inadequate context size management or relevance filtering **Solution**: Implement
+  smart context filtering and size optimization
 
 ### Issue 3: Response Parsing Errors
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Malformed response parsing
 - Parsing failures
 - Inconsistent response handling
-
-**Root Cause**: Robust parsing or response format issues **Solution**: Improve parsing algorithms
-and error handling
+- *Root Cause*\*: Robust parsing or response format issues **Solution**: Improve parsing algorithms
+  and error handling
 
 ### Issue 4: Rule Processing Issues
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Rule execution failures
 - Inconsistent rule behavior
 - Performance problems
-
-**Root Cause**: Rule engine or validation issues **Solution**: Implement robust rule processing and
-validation
+- *Root Cause*\*: Rule engine or validation issues **Solution**: Implement robust rule processing and
+  validation
 
 <a id="navigation-footer"></a>
-
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/services/PROMPT_SYSTEM.md#L1`
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [services](../docs/services/) ·
-[↑ Table of Contents](#prompt-system)
+- \*\*
+- *Navigation*\*: [docs](../) · [services](../../docs/services/) ·
+  [↑ Table of Contents](#prompt-system)

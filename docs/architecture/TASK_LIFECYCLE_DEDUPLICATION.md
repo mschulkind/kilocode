@@ -1,16 +1,14 @@
 # Task Lifecycle Deduplication
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-**Purpose:** Detailed documentation of task lifecycle management, message queue processing, and
-deduplication mechanisms to prevent duplicate task creation and concurrent execution issues.
+- *Purpose:*\* Detailed documentation of task lifecycle management, message queue processing, and
+  deduplication mechanisms to prevent duplicate task creation and concurrent execution issues.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
 > time! 🦕
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [Task Lifecycle Overview](#task-lifecycle-overview)
 - [Message Queue Integration](#message-queue-integration)
@@ -26,25 +24,17 @@ deduplication mechanisms to prevent duplicate task creation and concurrent execu
 ## Executive Summary
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-_The Task Lifecycle Deduplication system manages task creation, message queue processing, and
-prevents duplicate task execution. This system is critical for maintaining system stability and
-preventing resource conflicts in the KiloCode orchestrator._
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- The Task Lifecycle Deduplication system manages task creation, message queue processing, and
+  prevents duplicate task execution. This system is critical for maintaining system stability and
+  preventing resource conflicts in the KiloCode orchestrator.\*
 
 The Task Lifecycle system implements several deduplication mechanisms:
-
 1. **Task Creation Deduplication** - Prevents multiple task instances for single request
 2. **Message Queue Processing** - Coordinates message processing to prevent duplicates
 3. **State Synchronization** - Ensures consistent state across task lifecycle
@@ -56,42 +46,42 @@ The Task Lifecycle system implements several deduplication mechanisms:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Created: Task Creation
-    Created --> Initializing: Start Initialization
-    Initializing --> Ready: Initialization Complete
-    Ready --> Processing: Start Processing
-    Processing --> Streaming: Response Received
-    Streaming --> Processing: Continue Processing
-    Processing --> Completed: Task Complete
-    Streaming --> Completed: Stream Complete
-    Processing --> Error: Error Occurred
-    Streaming --> Error: Stream Error
-    Error --> Ready: Retry
-    Completed --> [*]
-    Error --> [*]
+  [*] --> Created: Task Creation
+  Created --> Initializing: Start Initialization
+  Initializing --> Ready: Initialization Complete
+  Ready --> Processing: Start Processing
+  Processing --> Streaming: Response Received
+  Streaming --> Processing: Continue Processing
+  Processing --> Completed: Task Complete
+  Streaming --> Completed: Stream Complete
+  Processing --> Error: Error Occurred
+  Streaming --> Error: Stream Error
+  Error --> Ready: Retry
+  Completed --> [*]
+  Error --> [*]
 ```
 
 ### Task Creation Flow
 
 ```mermaid
 sequenceDiagram
-    participant UI
-    participant WV as Webview Handler
-    participant CP as ClineProvider
-    participant Task as Task Engine
-    participant MQ as Message Queue
+  participant UI
+  participant WV as Webview Handler
+  participant CP as ClineProvider
+  participant Task as Task Engine
+  participant MQ as Message Queue
 
-    UI->>WV: newTask message
-    WV->>CP: createTask()
-    CP->>CP: Check existing task
-    alt No existing task
-        CP->>Task: new Task()
-        Task->>MQ: Initialize queue
-        Task->>Task: Start processing
-    else Existing task
-        CP->>MQ: addMessage()
-        MQ->>Task: Process queue
-    end
+  UI->>WV: newTask message
+  WV->>CP: createTask()
+  CP->>CP: Check existing task
+  alt No existing task
+  CP->>Task: new Task()
+  Task->>MQ: Initialize queue
+  Task->>Task: Start processing
+  else Existing task
+  CP->>MQ: addMessage()
+  MQ->>Task: Process queue
+  end
 ```
 
 ## Message Queue Integration
@@ -150,15 +140,15 @@ export class Task extends EventEmitter {
   private messageQueueStateChangedHandler: (() => void) | undefined
 
   constructor(...) {
-    // Initialize message queue service
-    this.messageQueueService = new MessageQueueService()
+  // Initialize message queue service
+  this.messageQueueService = new MessageQueueService()
 
-    this.messageQueueStateChangedHandler = () => {
-      this.emit(RooCodeEventName.TaskUserMessage, this.taskId)
-      this.providerRef.deref()?.postStateToWebview()
-    }
+  this.messageQueueStateChangedHandler = () => {
+  this.emit(RooCodeEventName.TaskUserMessage, this.taskId)
+  this.providerRef.deref()?.postStateToWebview()
+  }
 
-    this.messageQueueService.on("stateChanged", this.messageQueueStateChangedHandler)
+  this.messageQueueService.on("stateChanged", this.messageQueueStateChangedHandler)
   }
 }
 ```
@@ -169,18 +159,18 @@ export class Task extends EventEmitter {
 // Task.ts - Queue processing
 public processQueuedMessages(): void {
   try {
-    if (!this.messageQueueService.isEmpty()) {
-      const queued = this.messageQueueService.dequeueMessage()
-      if (queued) {
-        setTimeout(() => {
-          this.submitUserMessage(queued.text, queued.images).catch((err) =>
-            console.error(`[Task] Failed to submit queued message:`, err),
-          )
-        }, 0)
-      }
-    }
+  if (!this.messageQueueService.isEmpty()) {
+  const queued = this.messageQueueService.dequeueMessage()
+  if (queued) {
+  setTimeout(() => {
+    this.submitUserMessage(queued.text, queued.images).catch((err) =>
+      console.error(`[Task] Failed to submit queued message:`, err),
+    )
+  }, 0)
+  }
+  }
   } catch (error) {
-    console.error("[Task] Error processing queued messages:", error)
+  console.error("[Task] Error processing queued messages:", error)
   }
 }
 ```
@@ -204,20 +194,20 @@ public async createTask(
   const currentTask = this.getCurrentTask()
 
   if (currentTask && !currentTask.isCompleted && !currentTask.abandoned) {
-    // If there's an active task, queue the message instead of creating new task
-    console.log(`[ClineProvider] Active task exists (${currentTask.taskId}), queuing message`)
-    currentTask.messageQueueService.addMessage(text || "", images)
-    return currentTask
+  // If there's an active task, queue the message instead of creating new task
+  console.log(`[ClineProvider] Active task exists (${currentTask.taskId}), queuing message`)
+  currentTask.messageQueueService.addMessage(text || "", images)
+  return currentTask
   }
 
   // Create new task
   const task = new Task(
-    this,
-    text,
-    images,
-    parentTask,
-    options,
-    configuration,
+  this,
+  text,
+  images,
+  parentTask,
+  options,
+  configuration,
   )
 
   await this.addClineToStack(task)
@@ -241,10 +231,10 @@ private async addClineToStack(task: Task): Promise<void> {
 
   // Ensure only one task is active at a time
   if (this.clineStack.length > 1) {
-    // Pause previous tasks
-    for (let i = 0; i < this.clineStack.length - 1; i++) {
-      this.clineStack[i].isPaused = true
-    }
+  // Pause previous tasks
+  for (let i = 0; i < this.clineStack.length - 1; i++) {
+  this.clineStack[i].isPaused = true
+  }
   }
 }
 ```
@@ -275,18 +265,18 @@ export class Task extends EventEmitter {
 public async ask(type: string, text?: string, images?: string[]): Promise<void> {
   // Check if task can process requests
   if (!this.canProcessRequests()) {
-    console.log(`[Task] Cannot process request - streaming: ${this.isStreaming}, waiting: ${this.isWaitingForFirstChunk}`)
-    return
+  console.log(`[Task] Cannot process request - streaming: ${this.isStreaming}, waiting: ${this.isWaitingForFirstChunk}`)
+  return
   }
 
   // Set processing state
   this.isWaitingForFirstChunk = true
 
   try {
-    // Process request
-    await this.processRequest(type, text, images)
+  // Process request
+  await this.processRequest(type, text, images)
   } finally {
-    this.isWaitingForFirstChunk = false
+  this.isWaitingForFirstChunk = false
   }
 }
 ```
@@ -301,17 +291,17 @@ public async ask(type: string, text?: string, images?: string[]): Promise<void> 
   const isStatusMutable = !partial && isBlocking && !isMessageQueued
 
   if (isMessageQueued) {
-    console.log("Task#ask will process message queue")
+  console.log("Task#ask will process message queue")
 
-    const message = this.messageQueueService.dequeueMessage()
-    if (message) {
-      // Process queued message
-      setTimeout(() => {
-        this.submitUserMessage(message.text, message.images).catch((err) =>
-          console.error(`[Task] Failed to submit queued message:`, err),
-        )
-      }, 0)
-    }
+  const message = this.messageQueueService.dequeueMessage()
+  if (message) {
+  // Process queued message
+  setTimeout(() => {
+  this.submitUserMessage(message.text, message.images).catch((err) =>
+    console.error(`[Task] Failed to submit queued message:`, err),
+  )
+  }, 0)
+  }
   }
 }
 ```
@@ -330,9 +320,9 @@ private async updateTaskState(newState: Partial<TaskState>): Promise<void> {
 
   // Emit state change event
   this.emit(RooCodeEventName.TaskStateChanged, {
-    oldState,
-    newState: this.getCurrentState(),
-    taskId: this.taskId
+  oldState,
+  newState: this.getCurrentState(),
+  taskId: this.taskId
   })
 
   // Notify provider of state change
@@ -349,11 +339,11 @@ public postStateToWebview(): void {
   if (!currentTask) return
 
   const state = {
-    taskId: currentTask.taskId,
-    isStreaming: currentTask.isStreaming,
-    isWaitingForFirstChunk: currentTask.isWaitingForFirstChunk,
-    queuedMessages: currentTask.queuedMessages,
-    // ... other state
+  taskId: currentTask.taskId,
+  isStreaming: currentTask.isStreaming,
+  isWaitingForFirstChunk: currentTask.isWaitingForFirstChunk,
+  queuedMessages: currentTask.queuedMessages,
+  // ... other state
   }
 
   this.postMessageToWebview({ type: "state", state })
@@ -363,16 +353,12 @@ public postStateToWebview(): void {
 ## Common Issues and Solutions
 
 ### Issue 1: Multiple Task Instances
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Multiple task IDs for single request
 - Concurrent task execution
 - Resource conflicts
-
-**Root Cause**: Task creation not properly checking for existing tasks
-
-**Solution**:
+- *Root Cause*\*: Task creation not properly checking for existing tasks
+- *Solution*\*:
 
 ```typescript
 // Enhanced task creation check
@@ -381,27 +367,27 @@ public async createTask(text?: string, images?: string[]): Promise<Task> {
 
   // More comprehensive check
   if (currentTask &&
-      !currentTask.isCompleted &&
-      !currentTask.abandoned &&
-      !currentTask.isPaused) {
+  !currentTask.isCompleted &&
+  !currentTask.abandoned &&
+  !currentTask.isPaused) {
 
-    console.log(`[ClineProvider] Active task exists, queuing message instead`)
-    currentTask.messageQueueService.addMessage(text || "", images)
-    return currentTask
+  console.log(`[ClineProvider] Active task exists, queuing message instead`)
+  currentTask.messageQueueService.addMessage(text || "", images)
+  return currentTask
   }
 
   // Check for any pending tasks in stack
   const hasPendingTasks = this.clineStack.some(task =>
-    !task.isCompleted && !task.abandoned
+  !task.isCompleted && !task.abandoned
   )
 
   if (hasPendingTasks) {
-    console.log(`[ClineProvider] Pending tasks exist, queuing message`)
-    const activeTask = this.clineStack.find(task => !task.isPaused)
-    if (activeTask) {
-      activeTask.messageQueueService.addMessage(text || "", images)
-      return activeTask
-    }
+  console.log(`[ClineProvider] Pending tasks exist, queuing message`)
+  const activeTask = this.clineStack.find(task => !task.isPaused)
+  if (activeTask) {
+  activeTask.messageQueueService.addMessage(text || "", images)
+  return activeTask
+  }
   }
 
   // Create new task
@@ -410,43 +396,39 @@ public async createTask(text?: string, images?: string[]): Promise<Task> {
 ```
 
 ### Issue 2: Message Queue Duplication
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - Same message processed multiple times
 - Queue growing indefinitely
 - Duplicate API requests
-
-**Root Cause**: Message deduplication not working properly
-
-**Solution**:
+- *Root Cause*\*: Message deduplication not working properly
+- *Solution*\*:
 
 ```typescript
 // Enhanced message deduplication
 public addMessage(text: string, images?: string[]): QueuedMessage | undefined {
   if (!text && !images?.length) {
-    return undefined
+  return undefined
   }
 
   // More sophisticated duplicate detection
   const messageSignature = this.createMessageSignature(text, images)
 
   const existingMessage = this._messages.find(msg =>
-    this.createMessageSignature(msg.text, msg.images) === messageSignature
+  this.createMessageSignature(msg.text, msg.images) === messageSignature
   )
 
   if (existingMessage) {
-    console.log("Duplicate message detected, updating timestamp instead")
-    existingMessage.timestamp = Date.now()
-    this.emit("stateChanged", this._messages)
-    return existingMessage
+  console.log("Duplicate message detected, updating timestamp instead")
+  existingMessage.timestamp = Date.now()
+  this.emit("stateChanged", this._messages)
+  return existingMessage
   }
 
   const message: QueuedMessage = {
-    timestamp: Date.now(),
-    id: uuidv4(),
-    text,
-    images,
+  timestamp: Date.now(),
+  id: uuidv4(),
+  text,
+  images,
   }
 
   this._messages.push(message)
@@ -460,16 +442,12 @@ private createMessageSignature(text: string, images?: string[]): string {
 ```
 
 ### Issue 3: State Desynchronization
-
-**Symptoms**:
-
+- *Symptoms*\*:
 - UI state doesn't match task state
 - Buttons enabled when they should be disabled
 - Inconsistent behavior
-
-**Root Cause**: State updates not properly synchronized
-
-**Solution**:
+- *Root Cause*\*: State updates not properly synchronized
+- *Solution*\*:
 
 ```typescript
 // Comprehensive state validation
@@ -478,22 +456,22 @@ public validateState(): { isValid: boolean; issues: string[] } {
 
   // Check streaming state consistency
   if (this.isStreaming && this.isWaitingForFirstChunk) {
-    issues.push("Cannot be streaming and waiting for first chunk simultaneously")
+  issues.push("Cannot be streaming and waiting for first chunk simultaneously")
   }
 
   // Check queue state consistency
   if (!this.messageQueueService.isEmpty() && !this.canProcessRequests()) {
-    issues.push("Messages queued but task cannot process requests")
+  issues.push("Messages queued but task cannot process requests")
   }
 
   // Check paused state consistency
   if (this.isPaused && this.isStreaming) {
-    issues.push("Cannot be paused and streaming simultaneously")
+  issues.push("Cannot be paused and streaming simultaneously")
   }
 
   return {
-    isValid: issues.length === 0,
-    issues
+  isValid: issues.length === 0,
+  issues
   }
 }
 
@@ -502,16 +480,16 @@ public autoCorrectState(): void {
   const validation = this.validateState()
 
   if (!validation.isValid) {
-    console.warn("State validation issues detected, auto-correcting:", validation.issues)
+  console.warn("State validation issues detected, auto-correcting:", validation.issues)
 
-    // Auto-correct common issues
-    if (this.isStreaming && this.isWaitingForFirstChunk) {
-      this.isWaitingForFirstChunk = false
-    }
+  // Auto-correct common issues
+  if (this.isStreaming && this.isWaitingForFirstChunk) {
+  this.isWaitingForFirstChunk = false
+  }
 
-    if (this.isPaused && this.isStreaming) {
-      this.isStreaming = false
-    }
+  if (this.isPaused && this.isStreaming) {
+  this.isStreaming = false
+  }
   }
 }
 ```
@@ -584,13 +562,20 @@ const stateMetrics = {
 ```
 
 <a id="navigation-footer"></a>
-
 - Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/TASK_LIFECYCLE_DEDUPLICATION.md#L1`
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#task-lifecycle-deduplication)
+- \*\*
+- *Navigation*\*: [docs](../) · [architecture](../../docs/architecture/) ·
+  [↑ Table of Contents](#task-lifecycle-deduplication)

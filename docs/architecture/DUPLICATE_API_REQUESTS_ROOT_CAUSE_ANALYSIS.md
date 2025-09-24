@@ -1,16 +1,14 @@
 # Duplicate API Requests - Root Cause Analysis
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-**Purpose:** Deep technical analysis of the actual root cause of duplicate API request issues in
-KiloCode, based on detailed code examination.
+- *Purpose:*\* Deep technical analysis of the actual root cause of duplicate API request issues in
+  KiloCode, based on detailed code examination.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
 > time! 🦕
 
 <details><summary>Table of Contents</summary>
-
 - [Executive Summary](#executive-summary)
 - [Root Cause Identified](#root-cause-identified)
 - [Race Condition Analysis](#race-condition-analysis)
@@ -26,22 +24,15 @@ KiloCode, based on detailed code examination.
 ## Executive Summary
 
 ## Research Context
-
-**Purpose:** \[Describe the purpose and scope of this document]
-
-**Background:** \[Provide relevant background information]
-
-**Research Questions:** \[List key questions this document addresses]
-
-**Methodology:** \[Describe the approach or methodology used]
-
-**Findings:** \[Summarize key findings or conclusions]
-
----
-
-_After deep code examination, I have identified the actual root cause of duplicate API requests in
-KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where
-message queue processing can trigger multiple concurrent API calls._
+- *Purpose:*\* \[Describe the purpose and scope of this document]
+- *Background:*\* \[Provide relevant background information]
+- *Research Questions:*\* \[List key questions this document addresses]
+- *Methodology:*\* \[Describe the approach or methodology used]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- After deep code examination, I have identified the actual root cause of duplicate API requests in
+  KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where
+  message queue processing can trigger multiple concurrent API calls.\*
 
 ## Root Cause Identified
 
@@ -49,7 +40,6 @@ message queue processing can trigger multiple concurrent API calls._
 
 The duplicate API request issue is caused by a **race condition in the `ask` method** of `Task.ts`
 at lines 883-903. Here's what happens:
-
 1. **Multiple concurrent `ask` calls** can occur during task execution
 2. **Each `ask` call checks for queued messages** using
    `isMessageQueued = !this.messageQueueService.isEmpty()`
@@ -62,25 +52,25 @@ at lines 883-903. Here's what happens:
 ```typescript
 // src/core/task/Task.ts lines 883-903
 } else if (isMessageQueued) {
-    console.log("Task#ask will process message queue")
+  console.log("Task#ask will process message queue")
 
-    const message = this.messageQueueService.dequeueMessage()
+  const message = this.messageQueueService.dequeueMessage()
 
-    if (message) {
-        // Check if this is a tool approval ask that needs to be handled
-        if (
-            type === "tool" ||
-            type === "command" ||
-            type === "browser_action_launch" ||
-            type === "use_mcp_server"
-        ) {
-            // For tool approvals, we need to approve first, then send the message if there's text/images
-            this.handleWebviewAskResponse("yesButtonClicked", message.text, message.images)
-        } else {
-            // For other ask types (like followup), fulfill the ask directly
-            this.setMessageResponse(message.text, message.images)
-        }
-    }
+  if (message) {
+  // Check if this is a tool approval ask that needs to be handled
+  if (
+      type === "tool" ||
+      type === "command" ||
+      type === "browser_action_launch" ||
+      type === "use_mcp_server"
+  ) {
+      // For tool approvals, we need to approve first, then send the message if there's text/images
+      this.handleWebviewAskResponse("yesButtonClicked", message.text, message.images)
+  } else {
+      // For other ask types (like followup), fulfill the ask directly
+      this.setMessageResponse(message.text, message.images)
+  }
+  }
 }
 ```
 
@@ -90,24 +80,23 @@ at lines 883-903. Here's what happens:
 
 ```mermaid
 sequenceDiagram
-    participant Ask1 as Ask Call #1
-    participant Ask2 as Ask Call #2
-    participant MQ as Message Queue
-    participant API as API Provider
+  participant Ask1 as Ask Call #1
+  participant Ask2 as Ask Call #2
+  participant MQ as Message Queue
+  participant API as API Provider
 
-    Note over Ask1,API: Race Condition Window
-    Ask1->>MQ: isEmpty() → false (message exists)
-    Ask2->>MQ: isEmpty() → false (same message exists)
-    Ask1->>MQ: dequeueMessage() → gets message
-    Ask2->>MQ: dequeueMessage() → gets undefined (already dequeued)
-    Ask1->>API: submitUserMessage() → API Call #1
-    Ask2->>API: submitUserMessage() → API Call #2 (if message exists)
+  Note over Ask1,API: Race Condition Window
+  Ask1->>MQ: isEmpty() → false (message exists)
+  Ask2->>MQ: isEmpty() → false (same message exists)
+  Ask1->>MQ: dequeueMessage() → gets message
+  Ask2->>MQ: dequeueMessage() → gets undefined (already dequeued)
+  Ask1->>API: submitUserMessage() → API Call #1
+  Ask2->>API: submitUserMessage() → API Call #2 (if message exists)
 
-    Note over Ask1,API: Result: Duplicate API calls
+  Note over Ask1,API: Result: Duplicate API calls
 ```
 
 ### Why This Happens
-
 1. **Concurrent `ask` calls**: Multiple parts of the system can call `ask` simultaneously
 2. **Non-atomic queue check**: `isEmpty()` and `dequeueMessage()` are separate operations
 3. **No synchronization**: No locks or mutexes prevent concurrent access
@@ -142,7 +131,6 @@ const message = this.messageQueueService.dequeueMessage() // gets undefined
 ```
 
 ### Where Concurrent `ask` Calls Come From
-
 1. **Tool execution completion**: Tools call `processQueuedMessages()` which can trigger `ask`
 2. **Multiple tool executions**: When multiple tools complete simultaneously
 3. **Streaming completion**: When streaming completes and triggers follow-up asks
@@ -151,8 +139,7 @@ const message = this.messageQueueService.dequeueMessage() // gets undefined
 ## Critical Bug Locations
 
 ### 1. Primary Race Condition
-
-**File**: `src/core/task/Task.ts` **Lines**: 883-903 **Issue**: Non-atomic message queue processing
+- *File*\*: `src/core/task/Task.ts` **Lines**: 883-903 **Issue**: Non-atomic message queue processing
 
 ```typescript
 // BUG: Race condition here
@@ -162,40 +149,37 @@ const message = this.messageQueueService.dequeueMessage()
 ```
 
 ### 2. Message Queue Service
-
-**File**: `src/core/message-queue/MessageQueueService.ts` **Lines**: 80-84 **Issue**: No
-synchronization for concurrent access
+- *File*\*: `src/core/message-queue/MessageQueueService.ts` **Lines**: 80-84 **Issue**: No
+  synchronization for concurrent access
 
 ```typescript
 public dequeueMessage(): QueuedMessage | undefined {
-    const message = this._messages.shift()  // Not thread-safe
-    this.emit("stateChanged", this._messages)
-    return message
+  const message = this._messages.shift()  // Not thread-safe
+  this.emit("stateChanged", this._messages)
+  return message
 }
 ```
 
 ### 3. Process Queued Messages
-
-**File**: `src/core/task/Task.ts` **Lines**: 3297-3312 **Issue**: Async processing without
-synchronization
+- *File*\*: `src/core/task/Task.ts` **Lines**: 3297-3312 **Issue**: Async processing without
+  synchronization
 
 ```typescript
 public processQueuedMessages(): void {
-    if (!this.messageQueueService.isEmpty()) {
-        const queued = this.messageQueueService.dequeueMessage()
-        if (queued) {
-            setTimeout(() => {
-                this.submitUserMessage(queued.text, queued.images)  // Can create duplicates
-            }, 0)
-        }
-    }
+  if (!this.messageQueueService.isEmpty()) {
+  const queued = this.messageQueueService.dequeueMessage()
+  if (queued) {
+      setTimeout(() => {
+          this.submitUserMessage(queued.text, queued.images)  // Can create duplicates
+      }, 0)
+  }
+  }
 }
 ```
 
 ### 4. Tool Completion Triggers
-
-**Files**: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.) **Lines**: Various
-**Issue**: Tools call `processQueuedMessages()` without coordination
+- *Files*\*: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.) **Lines**: Various
+- *Issue*\*: Tools call `processQueuedMessages()` without coordination
 
 ```typescript
 // In multiple tool files:
@@ -206,7 +190,6 @@ cline.processQueuedMessages() // Can be called concurrently
 ## Proof of Concept
 
 ### Scenario That Triggers the Bug
-
 1. **User sends message** → UI queues it (sendingDisabled = true)
 2. **Task starts processing** → calls `ask("tool", ...)`
 3. **Tool executes** → calls `cline.processQueuedMessages()`
@@ -239,7 +222,6 @@ describe("Duplicate API Request Race Condition", () => {
 ## Impact Assessment
 
 ### Severity: **CRITICAL**
-
 1. **User Experience**: Multiple spinning animations, confusing responses
 2. **Resource Waste**: Unnecessary API calls consume credits/quotas
 3. **Data Corruption**: Interleaved responses can corrupt conversation state
@@ -247,7 +229,6 @@ describe("Duplicate API Request Race Condition", () => {
 5. **Debugging Difficulty**: Intermittent nature makes it hard to reproduce
 
 ### Affected Components
-
 1. **UI Layer**: Multiple spinning animations
 2. **API Layer**: Duplicate HTTP requests
 3. **Task Engine**: Corrupted conversation state
@@ -261,22 +242,22 @@ describe("Duplicate API Request Race Condition", () => {
 ```typescript
 // Fix the race condition in Task.ts
 public async ask(type: string, text?: string, images?: string[], ...): Promise<AskResult> {
-    // ... existing code ...
+  // ... existing code ...
 
-    // ATOMIC: Check and dequeue in single operation
-    const queuedMessage = this.messageQueueService.dequeueMessageIfAvailable()
+  // ATOMIC: Check and dequeue in single operation
+  const queuedMessage = this.messageQueueService.dequeueMessageIfAvailable()
 
-    if (queuedMessage) {
-        console.log("Task#ask processing queued message atomically")
+  if (queuedMessage) {
+  console.log("Task#ask processing queued message atomically")
 
-        if (isToolApprovalAsk(type)) {
-            this.handleWebviewAskResponse("yesButtonClicked", queuedMessage.text, queuedMessage.images)
-        } else {
-            this.setMessageResponse(queuedMessage.text, queuedMessage.images)
-        }
-    }
+  if (isToolApprovalAsk(type)) {
+      this.handleWebviewAskResponse("yesButtonClicked", queuedMessage.text, queuedMessage.images)
+  } else {
+      this.setMessageResponse(queuedMessage.text, queuedMessage.images)
+  }
+  }
 
-    // ... rest of method ...
+  // ... rest of method ...
 }
 ```
 
@@ -285,21 +266,21 @@ public async ask(type: string, text?: string, images?: string[], ...): Promise<A
 ```typescript
 // Add atomic dequeue operation
 public dequeueMessageIfAvailable(): QueuedMessage | undefined {
-    // Use a simple lock mechanism
-    if (this._isProcessing) {
-        return undefined
-    }
+  // Use a simple lock mechanism
+  if (this._isProcessing) {
+  return undefined
+  }
 
-    this._isProcessing = true
-    try {
-        const message = this._messages.shift()
-        if (message) {
-            this.emit("stateChanged", this._messages)
-        }
-        return message
-    } finally {
-        this._isProcessing = false
-    }
+  this._isProcessing = true
+  try {
+  const message = this._messages.shift()
+  if (message) {
+      this.emit("stateChanged", this._messages)
+  }
+  return message
+  } finally {
+  this._isProcessing = false
+  }
 }
 ```
 
@@ -310,28 +291,28 @@ public dequeueMessageIfAvailable(): QueuedMessage | undefined {
 private _isProcessingQueue = false
 
 public processQueuedMessages(): void {
-    if (this._isProcessingQueue) {
-        console.log("Queue processing already in progress, skipping")
-        return
-    }
+  if (this._isProcessingQueue) {
+  console.log("Queue processing already in progress, skipping")
+  return
+  }
 
-    this._isProcessingQueue = true
-    try {
-        if (!this.messageQueueService.isEmpty()) {
-            const queued = this.messageQueueService.dequeueMessageIfAvailable()
-            if (queued) {
-                setTimeout(() => {
-                    this.submitUserMessage(queued.text, queued.images)
-                        .finally(() => {
-                            this._isProcessingQueue = false
-                        })
-                }, 0)
-            }
-        }
-    } catch (e) {
-        this._isProcessingQueue = false
-        console.error(`[Task] Queue processing error:`, e)
-    }
+  this._isProcessingQueue = true
+  try {
+  if (!this.messageQueueService.isEmpty()) {
+      const queued = this.messageQueueService.dequeueMessageIfAvailable()
+      if (queued) {
+          setTimeout(() => {
+              this.submitUserMessage(queued.text, queued.images)
+                  .finally(() => {
+                      this._isProcessingQueue = false
+                  })
+          }, 0)
+      }
+  }
+  } catch (e) {
+  this._isProcessingQueue = false
+  console.error(`[Task] Queue processing error:`, e)
+  }
 }
 ```
 
@@ -395,7 +376,6 @@ processing logic of the `ask` method. This is a **high-priority bug** that requi
 attention as it affects core functionality, user experience, and system reliability.
 
 The fix requires:
-
 1. **Atomic message queue operations**
 2. **Thread-safe synchronization**
 3. **Coordinated tool completion handling**
@@ -404,13 +384,20 @@ The fix requires:
 This analysis provides the exact locations and fixes needed to resolve the issue permanently.
 
 <a id="navigation-footer"></a>
-
 - Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md#L1`
 
+## No Dead Ends Policy
+
+This document is designed to provide value and connect to the broader KiloCode ecosystem:
+- **Purpose**: \[Brief description of document purpose]
+- **Connections**: Links to related documents and resources
+- **Next Steps**: Clear guidance on how to use this information
+- **Related Documentation**: References to complementary materials
+
+For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
+
 ## Navigation Footer
-
----
-
-**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#duplicate-api-requests---root-cause-analysis)
+- \*\*
+- *Navigation*\*: [docs](../) · [architecture](../../docs/architecture/) ·
+  [↑ Table of Contents](#duplicate-api-requests---root-cause-analysis)

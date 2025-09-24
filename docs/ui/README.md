@@ -8,30 +8,26 @@ and task window management in KiloCode.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-
-- **Something's Broken**: Check [UI_LAYER_SYSTEM.md](UI_LAYER_SYSTEM.md) for troubleshooting
+- **Something's Broken**: Check [UI Layer System](UI_LAYER_SYSTEM.md) for troubleshooting
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow UI architecture and component guides
 
 ### Current Focus
-
 - Chat interface and message flow
 - Task window management
 - UI component architecture
 - User experience optimization
 
 ## 📚 Documentation Structure
-
 - **[Repository Overview](README.md)** - Master index of all UI documentation
-- **[UI_LAYER_SYSTEM.md](UI_LAYER_SYSTEM.md)** - UI layer architecture and design
-- **[UI_CHAT_TASK_WINDOW.md](UI_CHAT_TASK_WINDOW.md)** - Chat and task window components
-- **[UI_MESSAGE_FLOW_SYSTEM.md](UI_MESSAGE_FLOW_SYSTEM.md)** - Message flow and state management
+- **[UI Layer System](UI_LAYER_SYSTEM.md)** - UI layer architecture and design
+- **[UI Chat Task Window](UI_CHAT_TASK_WINDOW.md)** - Chat and task window components
+- **[UI Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)** - Message flow and state management
 
 ## 🔗 Cross-References
-
-- **Architecture**: See [../architecture/](../architecture/) for system architecture
-- **Services**: See [../services/](../services/) for UI-related services
-- **Standards**: See [../standards/](../standards/) for UI standards
+- **Architecture**: See [Architecture Documentation](../../architecture/) for system architecture
+- **Services**: See [Services Documentation](../../services/) for UI-related services
+- **Standards**: See [Standards Documentation](../../standards////////) for UI standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -42,7 +38,17 @@ dinosaur's mouth - the primary way it communicates with the world. The task wind
 dinosaur's eyes - focused views of specific information!
 
 ## 🧭 Navigation Footer
-
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+## Navigation
+- [← Main Documentation](README.md)
+- [← Project Root](README.md)
+- [← Architecture](architecture/README.md)
+- [← Orchestrator](orchestrator/README.md)
+- [← Standards](standards/README.md)
+- [← Plans](plans/README.md)
+- [← Tools](tools/README.md)
+- [← Improvements](improvements/README.md)
+- [← Integrations](integrations/README.md)
