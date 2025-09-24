@@ -89,3 +89,7 @@ For WebStorm, PyCharm, PhpStorm, RubyMine, CLion, GoLand, DataGrip, and Rider:
     - Enable any JCEF-related options
 
 _For general Kilo Code support and documentation, visit [kilocode.ai/docs](https://kilocode.ai/docs)_
+
+---
+
+**Navigation**: [apps](../../../apps/) · [kilocode-docs](../../apps/kilocode-docs/) · [docs](../apps/kilocode-docs/docs/) · [↑ Table of Contents](#jetbrains-troubleshooting)

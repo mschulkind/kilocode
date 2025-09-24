@@ -47,3 +47,7 @@ MCP 为 AI 系统与外部工具服务的交互提供了标准化方式，使复
 - [在 Kilo Code 中使用 MCP](/features/mcp/using-mcp-in-kilo-code) - 包含创建简单服务器的入门指导
 - [MCP vs 传统 API](/features/mcp/mcp-vs-api) - 相比传统 API 的技术优势
 - [STDIO 与 SSE 传输协议](/features/mcp/server-transports) - 本地与云端部署模式对比
+
+---
+
+**Navigation**: [apps](../../../../../../../../apps/) · [kilocode-docs](../../../../../../../apps/kilocode-docs/) · [i18n](../../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [features](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/) · [mcp](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/mcp/) · [↑ Table of Contents](#what-is-mcp)

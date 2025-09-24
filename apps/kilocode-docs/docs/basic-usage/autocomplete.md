@@ -92,3 +92,7 @@ However, you can:
 ## Related Features
 
 - [Code Actions](../features/code-actions) - Context menu options for common coding tasks
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [basic-usage](../apps/kilocode-docs/docs/basic-usage/) · [↑ Table of Contents](#autocomplete)

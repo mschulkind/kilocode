@@ -109,3 +109,7 @@ All costs are displayed in USD with detailed precision, helping you:
 - [Learn about team roles and permissions](/teams/roles-permissions)
 
 The usage analytics provide the insights needed to optimize your team's AI usage while maintaining visibility into costs and activity patterns.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#analytics)

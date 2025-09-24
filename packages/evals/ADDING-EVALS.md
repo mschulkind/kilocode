@@ -289,9 +289,11 @@ Modify [`packages/evals/Dockerfile.runner`](../packages/evals/Dockerfile.runner)
 
 ```dockerfile
 # Install your new language runtime
+
 RUN apt update && apt install -y your-language-runtime
 
 # Or for languages that need special installation:
+
 ARG YOUR_LANGUAGE_VERSION=1.0.0
 RUN curl -sSL https://install-your-language.sh | sh -s -- --version ${YOUR_LANGUAGE_VERSION}
 ```
@@ -303,3 +305,7 @@ If your language requires special test execution, update [`packages/evals/src/cl
 ### Step 5: Create Initial Exercises
 
 Create at least 2-3 exercises for the new language following the structure described in the previous section.
+
+---
+
+**Navigation**: [packages](../../packages/) · [evals](../packages/evals/) · [↑ Table of Contents](#adding-evals)

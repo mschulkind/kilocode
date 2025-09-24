@@ -252,3 +252,7 @@ For macOS or Linux, you would use a different configuration:
 :::
 
 The same approach can be used for other MCP servers on Windows, adjusting the package name as needed for different server types.
+
+---
+
+**Navigation**: [apps](../../../../../apps/) · [kilocode-docs](../../../../apps/kilocode-docs/) · [docs](../../../apps/kilocode-docs/docs/) · [features](../../apps/kilocode-docs/docs/features/) · [mcp](../apps/kilocode-docs/docs/features/mcp/) · [↑ Table of Contents](#using-mcp-in-kilo-code)

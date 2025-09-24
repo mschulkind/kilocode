@@ -47,3 +47,7 @@ Ready to dig deeper? Check out these guides:
 - [Using MCP in Kilo Code](/features/mcp/using-mcp-in-kilo-code) - Get started with MCP in Kilo Code, including creating simple servers
 - [MCP vs API](/features/mcp/mcp-vs-api) - Technical advantages compared to traditional APIs
 - [STDIO & SSE Transports](/features/mcp/server-transports) - Local vs. hosted deployment models
+
+---
+
+**Navigation**: [apps](../../../../../apps/) · [kilocode-docs](../../../../apps/kilocode-docs/) · [docs](../../../apps/kilocode-docs/docs/) · [features](../../apps/kilocode-docs/docs/features/) · [mcp](../apps/kilocode-docs/docs/features/mcp/) · [↑ Table of Contents](#what-is-mcp)

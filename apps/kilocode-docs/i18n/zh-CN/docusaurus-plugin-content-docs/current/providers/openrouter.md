@@ -32,6 +32,10 @@ OpenRouter提供[可选的"middle-out"消息转换](https://openrouter.ai/docs/f
 
 ## 提示和注意事项
 
-* **模型选择:** OpenRouter提供多种模型。尝试找到最适合你需求的模型。
-* **定价:** OpenRouter根据基础模型的定价收费。详情请参阅[OpenRouter模型页面](https://openrouter.ai/models)。
-* **提示缓存:** 部分供应商支持提示缓存。请参阅OpenRouter文档了解支持的模型。
+- **模型选择:** OpenRouter提供多种模型。尝试找到最适合你需求的模型。
+- **定价:** OpenRouter根据基础模型的定价收费。详情请参阅[OpenRouter模型页面](https://openrouter.ai/models)。
+- **提示缓存:** 部分供应商支持提示缓存。请参阅OpenRouter文档了解支持的模型。
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [providers](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/providers/) · [↑ Table of Contents](#openrouter)

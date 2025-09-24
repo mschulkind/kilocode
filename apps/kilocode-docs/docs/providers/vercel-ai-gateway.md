@@ -74,3 +74,7 @@ Vercel AI Gateway supports automatic prompt caching for select models including 
 - **Temperature:** The default temperature is `0.7` and is configurable per model.
 - **Bring Your Own Key (BYOK):** The Vercel AI Gateway has **no markup** if you decide to use your own key for the underlying service.
 - **More info:** Vercel does not add rate limits. Upstream providers may. New accounts receive $5 credits every 30 days until the first payment.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [providers](../apps/kilocode-docs/docs/providers/) · [↑ Table of Contents](#vercel-ai-gateway)

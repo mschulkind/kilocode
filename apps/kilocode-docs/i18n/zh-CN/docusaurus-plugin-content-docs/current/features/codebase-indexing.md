@@ -72,16 +72,16 @@ docker run -p 6333:6333 qdrant/qdrant
 **使用 Docker Compose：**
 
 ```yaml
-version: '3.8'
+version: "3.8"
 services:
-  qdrant:
-    image: qdrant/qdrant
-    ports:
-      - '6333:6333'
-    volumes:
-      - qdrant_storage:/qdrant/storage
+    qdrant:
+        image: qdrant/qdrant
+        ports:
+            - "6333:6333"
+        volumes:
+            - qdrant_storage:/qdrant/storage
 volumes:
-  qdrant_storage:
+    qdrant_storage:
 ```
 
 ### 生产部署
@@ -228,3 +228,7 @@ volumes:
 - 增强的过滤和配置选项
 - 团队共享功能
 - 与 VS Code 本机搜索集成
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [features](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/) · [↑ Table of Contents](#codebase-indexing)

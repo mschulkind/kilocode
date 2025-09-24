@@ -90,3 +90,7 @@ You can find the dedicated Teams support methods directly on your Organaization'
 - [Learn about team roles and permissions](/teams/roles-permissions)
 - [Explore the dashboard features](/teams/dashboard)
 - [Set up team management policies](/teams/team-management)
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#getting-started)

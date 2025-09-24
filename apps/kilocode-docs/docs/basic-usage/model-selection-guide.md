@@ -82,3 +82,7 @@ Optimizing for different project scales:
 ## Community Choice
 
 The AI model landscape changes quicky to stay up to date [**👉 check Kilo Code Community Favorites on OpenRouter**](https://openrouter.ai/apps?url=https%3A%2F%2Fkilocode.ai%2F)
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [basic-usage](../apps/kilocode-docs/docs/basic-usage/) · [↑ Table of Contents](#model-selection-guide)

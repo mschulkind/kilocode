@@ -21,9 +21,11 @@ Kilo Code 包含一些仍在开发中的实验性功能。这些功能可能不�
 目前提供以下实验性功能：
 
 ## 自动完成
+
 启用后，Kilo Code 将在您键入时提供内联代码建议。目前，这需要 Kilo Code API 提供商才能使用。
 
 ## 并发文件编辑
+
 启用后，Kilo Code 可以在单个请求中编辑多个文件。禁用后，Kilo Code 必须一次编辑一个文件。禁用此功能有助于在使用功能较弱的模型时或当您希望对文件修改进行更多控制时。
 
 ### 强力转向
@@ -35,3 +37,7 @@ Kilo Code 包含一些仍在开发中的实验性功能。这些功能可能不�
 如果你在使用实验性功能时遇到任何问题，或有改进建议，请在 [Kilo Code Code GitHub Issues 页面](https://github.com/Kilo-Org/kilocode) 上报告。
 
 你的反馈对我们非常宝贵，将帮助我们改进 Kilo Code！
+
+---
+
+**Navigation**: [apps](../../../../../../../../apps/) · [kilocode-docs](../../../../../../../apps/kilocode-docs/) · [i18n](../../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [features](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/) · [experimental](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/experimental/) · [↑ Table of Contents](#experimental-features)

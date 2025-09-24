@@ -11,23 +11,24 @@ Kilo Code 支持通过 Mistral AI API 访问模型，包括标准 Mistral 模型
 ## 获取 API 密钥
 
 1.  **注册/登录：** 访问 [Mistral 平台](https://console.mistral.ai/)。创建帐户或登录。您可能需要通过验证过程。
-2.  **创建 API 密钥：**  
-    - [La Plateforme API 密钥](https://console.mistral.ai/api-keys/)和/或 
+2.  **创建 API 密钥：**
+    - [La Plateforme API 密钥](https://console.mistral.ai/api-keys/)和/或
     - [Codestral API 密钥](https://console.mistral.ai/codestral)
 
 ## 支持的模型
 
 Kilo Code 支持以下 Mistral 模型：
 
-| 模型 ID | 模型默认温度 | 函数调用 | 视觉/图像支持 |
-|------------------------|-------------------------|------------------|--------|
-| codestral-latest | 0.3 | ✅ | ❌ |
-| devstral | 0.3 | ✅ | ❌ |
-| mistral-large-latest | 0.7 | ✅ | ❌ |
-| ministral-8b-latest | 0.3 | ✅ | ❌ |
-| ministral-3b-latest | 0.3 | ✅ | ❌ |
-| mistral-small-latest | 0.3 | ✅ | ❌ |
-| pixtral-large-latest | 0.7 | ✅ | ✅ |
+| 模型 ID              | 模型默认温度 | 函数调用 | 视觉/图像支持 |
+| -------------------- | ------------ | -------- | ------------- |
+| codestral-latest     | 0.3          | ✅       | ❌            |
+| devstral             | 0.3          | ✅       | ❌            |
+| mistral-large-latest | 0.7          | ✅       | ❌            |
+| ministral-8b-latest  | 0.3          | ✅       | ❌            |
+| ministral-3b-latest  | 0.3          | ✅       | ❌            |
+| mistral-small-latest | 0.3          | ✅       | ❌            |
+| pixtral-large-latest | 0.7          | ✅       | ✅            |
+
 Kilo Code中的默认模型温度为0.0，因此您应该考虑尝试[调整温度](/features/model-temperature)！
 
 **注意:** 模型的可用性和规格可能会发生变化。
@@ -51,3 +52,7 @@ Kilo Code中的默认模型温度为0.0，因此您应该考虑尝试[调整温�
 1. **选择"Mistral"作为API提供商。**
 2. **选择Codestral模型**
 3. **输入您的Codestral (codestral.mistral.ai)或La Plateforme (api.mistral.ai) API密钥。**
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [providers](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/providers/) · [↑ Table of Contents](#mistral)

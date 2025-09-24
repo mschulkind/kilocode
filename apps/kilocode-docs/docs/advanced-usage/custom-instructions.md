@@ -25,15 +25,15 @@ Custom Instructions are IDE-wide and are applied across all workspaces and maint
 Mode-specific instructions can be set using the Modes Tab
 
     <img src="/docs/img/custom-instructions/custom-instructions-3.png" alt="Kilo Code Modes tab showing mode-specific custom instructions interface" width="600" />
-    * **Open Tab:** Click the <Codicon name="organization" /> icon in the Kilo Code top menu bar
-    * **Select Mode:** Under the Modes heading, click the button for the mode you want to customize
-    * **Enter Instructions:** Enter your instructions in the text area under "Mode-specific Custom Instructions (optional)"
-    * **Save Changes:** Click "Done" to save your changes
 
-        :::info Global Mode Rules
-        If the mode itself is global (not workspace-specific), any custom instructions you set for it will also apply globally for that mode across all workspaces.
-        :::
+- **Open Tab:** Click the <Codicon name="organization" /> icon in the Kilo Code top menu bar
+- **Select Mode:** Under the Modes heading, click the button for the mode you want to customize
+- **Enter Instructions:** Enter your instructions in the text area under "Mode-specific Custom Instructions (optional)"
+- **Save Changes:** Click "Done" to save your changes
 
+            :::info Global Mode Rules
+            If the mode itself is global (not workspace-specific), any custom instructions you set for it will also apply globally for that mode across all workspaces.
+            :::
 
 ## Related Features
 
@@ -41,3 +41,7 @@ Mode-specific instructions can be set using the Modes Tab
 - [Custom Rules](/advanced-usage/custom-rules)
 - [Settings Management](/docs/features/settings-management)
 - [Auto-Approval Settings](/docs/features/auto-approving-actions)
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [advanced-usage](../apps/kilocode-docs/docs/advanced-usage/) · [↑ Table of Contents](#custom-instructions)

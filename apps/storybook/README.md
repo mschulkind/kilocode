@@ -6,9 +6,11 @@ Component library and design system documentation for the VS Code extension.
 
 ```bash
 # Install dependencies
+
 pnpm install
 
 # Run Storybook
+
 pnpm storybook
 ```
 

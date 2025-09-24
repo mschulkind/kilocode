@@ -69,3 +69,7 @@ With the Kilo Code provider, if you sign up with Google you can also connect oth
 - **Support Available:** Contact [hi@kilocode.ai](mailto:hi@kilocode.ai) for questions about pricing or tokens
 
 For detailed setup instructions, see [Setting up Kilo Code](/getting-started/setting-up).
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [providers](../apps/kilocode-docs/docs/providers/) · [↑ Table of Contents](#kilocode)

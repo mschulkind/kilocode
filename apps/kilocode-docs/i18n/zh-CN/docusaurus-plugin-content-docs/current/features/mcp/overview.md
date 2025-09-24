@@ -11,10 +11,11 @@ sidebar_label: MCP概览
 
 本文档分为以下几个部分：
 
-* [**在Kilo Code中使用MCP**](/features/mcp/using-mcp-in-kilo-code) - 在Kilo Code中配置、启用和管理MCP服务器的综合指南。包括服务器设置、工具批准和故障排除。
+- [**在Kilo Code中使用MCP**](/features/mcp/using-mcp-in-kilo-code) - 在Kilo Code中配置、启用和管理MCP服务器的综合指南。包括服务器设置、工具批准和故障排除。
+- [**什么是MCP？**](/features/mcp/what-is-mcp) - 解释模型上下文协议、其客户端-服务器架构以及如何使AI系统与外部工具交互。
+- [**STDIO与SSE传输**](/features/mcp/server-transports) - 详细比较本地（STDIO）和远程（SSE）传输机制，以及每种方法的部署考虑。
+- [**MCP与API**](/features/mcp/mcp-vs-api) - 分析MCP与REST API的根本区别，解释它们如何在不同的抽象层为AI系统工作。
 
-* [**什么是MCP？**](/features/mcp/what-is-mcp) - 解释模型上下文协议、其客户端-服务器架构以及如何使AI系统与外部工具交互。
+---
 
-* [**STDIO与SSE传输**](/features/mcp/server-transports) - 详细比较本地（STDIO）和远程（SSE）传输机制，以及每种方法的部署考虑。
-
-* [**MCP与API**](/features/mcp/mcp-vs-api) - 分析MCP与REST API的根本区别，解释它们如何在不同的抽象层为AI系统工作。
+**Navigation**: [apps](../../../../../../../../apps/) · [kilocode-docs](../../../../../../../apps/kilocode-docs/) · [i18n](../../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [features](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/) · [mcp](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/mcp/) · [↑ Table of Contents](#overview)

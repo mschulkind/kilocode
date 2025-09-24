@@ -141,3 +141,7 @@ Manage your Kilo for Teams plan and seat allocation.
 - [Learn about team management](/teams/team-management)
 - [Understand billing and credits](/teams/billing)
 - [Explore usage analytics](/teams/analytics)
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#dashboard)

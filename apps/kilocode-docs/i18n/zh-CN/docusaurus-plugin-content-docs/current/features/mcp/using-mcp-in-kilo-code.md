@@ -28,29 +28,32 @@ MCP服务器配置可以在两个级别进行管理：
 1.  单击 Kilo Code 窗格顶部导航栏中的 <Codicon name="gear" /> 图标以打开 `Settings`。
 2.  单击左侧的 `MCP Servers` 选项卡
 3.  选择 `Installed` 服务器
-3.  单击相应的按钮：
-    *   **`Edit Global MCP`**：打开全局 `mcp_settings.json` 文件。
-    *   **`Edit Project MCP`**：打开项目特定的 `.kilocode/mcp.json` 文件。如果此文件不存在，Kilo Code 将为您创建它。
+4.  单击相应的按钮：
 
-  <img src="/docs/img/using-mcp-in-kilo-code/mcp-installed-config.png" alt="编辑全局 MCP 和编辑项目 MCP 按钮" width="600" />
+- **`Edit Global MCP`**：打开全局 `mcp_settings.json` 文件。
+- **`Edit Project MCP`**：打开项目特定的 `.kilocode/mcp.json` 文件。如果此文件不存在，Kilo Code 将为您创建它。
+
+      <img src="/docs/img/using-mcp-in-kilo-code/mcp-installed-config.png" alt="编辑全局 MCP 和编辑项目 MCP 按钮" width="600" />
 
 两个文件都使用JSON格式，其中包含一个`mcpServers`对象，包含命名的服务器配置：
-  ```json
-  {
-    "mcpServers": {
-      "server1": {
-        "command": "python",
-        "args": ["/path/to/server.py"],
-        "env": {
-          "API_KEY": "your_api_key"
-        },
-        "alwaysAllow": ["tool1", "tool2"],
-        "disabled": false
-      }
-    }
-  }
+
+```json
+{
+	"mcpServers": {
+		"server1": {
+			"command": "python",
+			"args": ["/path/to/server.py"],
+			"env": {
+				"API_KEY": "your_api_key"
+			},
+			"alwaysAllow": ["tool1", "tool2"],
+			"disabled": false
+		}
+	}
+}
 ```
-*Kilo Code中的MCP服务器配置示例（STDIO传输）*
+
+_Kilo Code中的MCP服务器配置示例（STDIO传输）_
 
 ### 理解传输类型
 
@@ -60,28 +63,29 @@ MCP支持两种服务器通信的传输类型：
 
 用于在本地机器上运行的服务器：
 
-* 通过标准输入/输出流通信
-* 延迟更低（无网络开销）
-* 安全性更好（无网络暴露）
-* 设置更简单（不需要HTTP服务器）
-* 作为本地机器上的子进程运行
+- 通过标准输入/输出流通信
+- 延迟更低（无网络开销）
+- 安全性更好（无网络暴露）
+- 设置更简单（不需要HTTP服务器）
+- 作为本地机器上的子进程运行
 
 有关STDIO传输工作原理的深入信息，请参见[STDIO传输](/features/mcp/server-transports#stdio-transport)。
 
 STDIO配置示例：
+
 ```json
 {
-  "mcpServers": {
-    "local-server": {
-      "command": "node",
-      "args": ["/path/to/server.js"],
-      "env": {
-        "API_KEY": "your_api_key"
-      },
-      "alwaysAllow": ["tool1", "tool2"],
-      "disabled": false
-    }
-  }
+	"mcpServers": {
+		"local-server": {
+			"command": "node",
+			"args": ["/path/to/server.js"],
+			"env": {
+				"API_KEY": "your_api_key"
+			},
+			"alwaysAllow": ["tool1", "tool2"],
+			"disabled": false
+		}
+	}
 }
 ```
 
@@ -89,11 +93,11 @@ STDIO配置示例：
 
 用于通过HTTP/HTTPS访问的远程服务器：
 
-* 通过服务器发送事件协议通信
-* 可以托管在不同的机器上
-* 支持多个客户端连接
-* 需要网络访问
-* 允许集中部署和管理
+- 通过服务器发送事件协议通信
+- 可以托管在不同的机器上
+- 支持多个客户端连接
+- 需要网络访问
+- 允许集中部署和管理
 
 有关SSE传输工作原理的深入信息，请参见[SSE传输](/features/mcp/server-transports#sse-transport)。
 
@@ -101,16 +105,16 @@ SSE配置示例：
 
 ```json
 {
-  "mcpServers": {
-    "remote-server": {
-      "url": "https://your-server-url.com/mcp",
-      "headers": {
-        "Authorization": "Bearer your-token"
-      },
-      "alwaysAllow": ["tool3"],
-      "disabled": false
-    }
-  }
+	"mcpServers": {
+		"remote-server": {
+			"url": "https://your-server-url.com/mcp",
+			"headers": {
+				"Authorization": "Bearer your-token"
+			},
+			"alwaysAllow": ["tool3"],
+			"disabled": false
+		}
+	}
 }
 ```
 
@@ -119,7 +123,7 @@ SSE配置示例：
 1. 点击要删除的MCP服务器旁边的<Codicon name="trash" />
 2. 在确认框中点击`删除`按钮
 
-   <img src="/docs/img/using-mcp-in-kilo-code/using-mcp-in-kilo-code-5.png" alt="删除确认框" width="400" />
+ <img src="/docs/img/using-mcp-in-kilo-code/using-mcp-in-kilo-code-5.png" alt="删除确认框" width="400" />
 
 ### 重启服务器
 
@@ -153,9 +157,9 @@ MCP工具自动批准按工具进行，默认禁用。要配置自动批准：
 
 Kilo Code不附带任何预安装的MCP服务器。你需要单独查找并安装它们。
 
-* **社区仓库**：在GitHub上查看社区维护的MCP服务器列表
-* **询问Kilo Code**：你可以请Kilo Code帮助你查找甚至创建MCP服务器（当"[启用MCP服务器创建](#enabling-or-disabling-mcp-server-creation)"启用时）
-* **自行构建**：使用SDK创建自定义MCP服务器，使用你自己的工具扩展Kilo Code
+- **社区仓库**：在GitHub上查看社区维护的MCP服务器列表
+- **询问Kilo Code**：你可以请Kilo Code帮助你查找甚至创建MCP服务器（当"[启用MCP服务器创建](#enabling-or-disabling-mcp-server-creation)"启用时）
+- **自行构建**：使用SDK创建自定义MCP服务器，使用你自己的工具扩展Kilo Code
 
 有关完整的SDK文档，请访问[MCP GitHub仓库](https://github.com/modelcontextprotocol/)。
 
@@ -173,10 +177,10 @@ Kilo Code不附带任何预安装的MCP服务器。你需要单独查找并安�
 
 常见问题及解决方案：
 
-* **服务器无响应**：检查服务器进程是否正在运行并验证网络连接
-* **权限错误**：确保在`mcp_settings.json`（用于全局设置）或`.kilocode/mcp.json`（用于项目设置）中配置了正确的API密钥和凭据。
-* **工具不可用**：确认服务器是否正确实现了该工具且未在设置中禁用
-* **性能缓慢**：尝试调整特定MCP服务器的网络超时值
+- **服务器无响应**：检查服务器进程是否正在运行并验证网络连接
+- **权限错误**：确保在`mcp_settings.json`（用于全局设置）或`.kilocode/mcp.json`（用于项目设置）中配置了正确的API密钥和凭据。
+- **工具不可用**：确认服务器是否正确实现了该工具且未在设置中禁用
+- **性能缓慢**：尝试调整特定MCP服务器的网络超时值
 
 ## 平台特定的MCP配置示例
 
@@ -186,21 +190,17 @@ Kilo Code不附带任何预安装的MCP服务器。你需要单独查找并安�
 
 ```json
 {
-  "mcpServers": {
-    "puppeteer": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-puppeteer"
-      ]
-    }
-  }
+	"mcpServers": {
+		"puppeteer": {
+			"command": "cmd",
+			"args": ["/c", "npx", "-y", "@modelcontextprotocol/server-puppeteer"]
+		}
+	}
 }
 ```
 
 此Windows特定配置：
+
 - 使用`cmd`命令访问Windows命令提示符
 - 使用`/c`告诉cmd执行命令然后终止
 - 使用`npx`运行包而无需永久安装
@@ -209,19 +209,22 @@ Kilo Code不附带任何预安装的MCP服务器。你需要单独查找并安�
 
 :::note
 对于macOS或Linux，你将使用不同的配置：
+
 ```json
 {
-  "mcpServers": {
-    "puppeteer": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-puppeteer"
-      ]
-    }
-  }
+	"mcpServers": {
+		"puppeteer": {
+			"command": "npx",
+			"args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+		}
+	}
 }
 ```
+
 :::
 
 相同的方法可以用于Windows上的其他MCP服务器，根据需要调整包名称以匹配不同的服务器类型。
+
+---
+
+**Navigation**: [apps](../../../../../../../../apps/) · [kilocode-docs](../../../../../../../apps/kilocode-docs/) · [i18n](../../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [features](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/) · [mcp](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/mcp/) · [↑ Table of Contents](#using-mcp-in-kilo-code)

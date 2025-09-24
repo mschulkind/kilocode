@@ -281,3 +281,7 @@ When you need more capability than free models provide, these options deliver ex
 - Faster development cycles
 
 By combining free models, strategic budget model usage, and smart optimization techniques, you can harness the full power of AI-assisted development while keeping costs minimal. Start with free options and gradually incorporate budget models as your needs and comfort with costs grow.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [advanced-usage](../apps/kilocode-docs/docs/advanced-usage/) · [↑ Table of Contents](#free-and-budget-models)

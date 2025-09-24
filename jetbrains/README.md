@@ -46,9 +46,11 @@ The dependency check runs automatically as part of the build process, but you ca
 
 ```bash
 # Run dependency check manually
+
 ./jetbrains/scripts/check-dependencies.sh
 
 # Or as part of JetBrains host build process
+
 cd jetbrains/host && pnpm run deps:check
 ```
 
@@ -68,6 +70,7 @@ If you prefer to set up dependencies manually:
 
 ```bash
 # From project root
+
 git submodule update --init --recursive
 ```
 
@@ -79,12 +82,14 @@ java -version
 
 javac -version
 # Should show javac 17.x.x
+
 ```
 
 ### 3. Install Node Dependencies
 
 ```bash
 # From project root
+
 pnpm install
 ```
 
@@ -151,9 +156,11 @@ The plugin supports three build modes controlled by the `debugMode` property:
 
 ```bash
 # From project root
+
 pnpm jetbrains:run
 
 # Or manually:
+
 cd jetbrains/plugin
 ./gradlew runIde -PdebugMode=idea
 ```
@@ -162,10 +169,12 @@ cd jetbrains/plugin
 
 ```bash
 # Generate platform files first (if needed)
+
 cd jetbrains/plugin
 ./gradlew genPlatform
 
 # Build plugin
+
 ./gradlew buildPlugin -PdebugMode=release
 ```
 
@@ -173,9 +182,11 @@ cd jetbrains/plugin
 
 ```bash
 # From jetbrains/host directory
+
 pnpm build
 
 # Or with Turbo from project root
+
 pnpm --filter @kilo-code/jetbrains-host build
 ```
 
@@ -206,17 +217,21 @@ Turbo automatically handles:
 
 ```bash
 # Install SDKMAN if not already installed
+
 curl -s "https://get.sdkman.io" | bash
 source ~/.sdkman/bin/sdkman-init.sh
 
 # Install and use Java 17
+
 sdk install java 17.0.12-tem
 sdk use java 17.0.12-tem
 
 # Make Java 17 default (optional)
+
 sdk default java 17.0.12-tem
 
 # Verify version
+
 java -version  # Should show OpenJDK 17.x.x
 ```
 
@@ -224,15 +239,19 @@ java -version  # Should show OpenJDK 17.x.x
 
 ```bash
 # Install Java 17
+
 brew install openjdk@17
 
 # Set JAVA_HOME for current session
+
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 # Add to shell profile for persistence
+
 echo 'export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home' >> ~/.zshrc
 
 # Verify version
+
 java -version
 ```
 
@@ -240,9 +259,11 @@ java -version
 
 ```bash
 # Find Java 17 installation
+
 /usr/libexec/java_home -V
 
 # Set JAVA_HOME to Java 17 path
+
 export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 ```
 
@@ -253,9 +274,11 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 ```bash
 # Initialize submodule
+
 git submodule update --init --recursive
 
 # Verify submodule is populated
+
 ls deps/vscode/src  # Should contain VSCode source files
 ```
 
@@ -276,8 +299,10 @@ cd jetbrains/plugin
 
 ```bash
 # Use Node.js 20.x
+
 nvm use 20  # if using nvm
 # or
+
 node --version  # should show v20.x.x
 ```
 
@@ -290,27 +315,34 @@ node --version  # should show v20.x.x
 
 ```bash
 # Navigate to resources directory and rebuild native modules
+
 cd jetbrains/resources
 
 # Clean existing modules
+
 rm -rf node_modules package-lock.json
 
 # Copy package.json from host
+
 cp ../host/package.json .
 
 # Install dependencies with npm (not pnpm to avoid workspace conflicts)
+
 npm install
 
 # Verify native modules are built for correct architecture
+
 file node_modules/@vscode/spdlog/build/Release/spdlog.node
 file node_modules/native-watchdog/build/Release/watchdog.node
 # Should show "Mach-O 64-bit bundle arm64" on Apple Silicon or appropriate arch
 
 # Update production dependency list
+
 cd ../plugin
 npm ls --omit=dev --all --parseable --prefix ../resources > ./prodDep.txt
 
 # Rebuild plugin
+
 ./gradlew buildPlugin -PdebugMode=none
 ```
 
@@ -323,10 +355,12 @@ npm ls --omit=dev --all --parseable --prefix ../resources > ./prodDep.txt
 
 ```bash
 # Clean and rebuild
+
 ./gradlew clean
 ./gradlew build --refresh-dependencies
 
 # Check Gradle daemon
+
 ./gradlew --stop
 ./gradlew build
 ```

@@ -117,3 +117,7 @@ If payment fails repeatedly:
 - [Learn about team management](/teams/team-management)
 
 Transparent billing ensures you always know exactly what you're paying for, with no hidden fees or surprise charges.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#billing)

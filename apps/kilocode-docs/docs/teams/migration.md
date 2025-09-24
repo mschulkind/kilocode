@@ -373,3 +373,7 @@ _Actual savings vary based on usage patterns and team efficiency gains._
 - [Understand billing and pricing](/teams/billing)
 
 Ready to make the switch? Contact our migration team at migrations@kilocode.ai to plan your transition to transparent AI coding.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#migration)

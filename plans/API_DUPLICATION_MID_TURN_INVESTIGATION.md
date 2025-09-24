@@ -2,11 +2,25 @@
 
 **Purpose:** Investigation plan for API request duplication that occurs in the middle of a turn without queued messages, after many back and forths.
 
-**Status:** ACTIVE INVESTIGATION  
-**Created:** 2024-12-19  
+**Status:** ACTIVE INVESTIGATION
+**Created:** 2024-12-19
 **Priority:** CRITICAL
 
 ## Problem Description
+
+## Research Context
+
+**Purpose:** [Describe the purpose and scope of this document]
+
+**Background:** [Provide relevant background information]
+
+**Research Questions:** [List key questions this document addresses]
+
+**Methodology:** [Describe the approach or methodology used]
+
+**Findings:** [Summarize key findings or conclusions]
+
+---
 
 ### Actual Symptoms
 
@@ -456,6 +470,10 @@ The key insight is that subtask completion can trigger new recursive calls while
 
 ---
 
-**Contact:** Development Team  
-**Last Updated:** 2024-12-19  
+**Contact:** Development Team
+**Last Updated:** 2024-12-19
 **Status:** Ready for Implementation
+
+---
+
+**Navigation**: [plans](../plans/) · [↑ Table of Contents](#api-duplication-mid-turn-investigation)

@@ -9,11 +9,13 @@
 ## 如何触发待办事项列表
 
 **自动触发**：
+
 - 包含多个步骤的复杂任务
 - 在 Architect 模式下工作
 - 具有依赖关系的多阶段工作流
 
 **手动触发**：
+
 - 要求 Kilo“使用 [update_todo_list 工具](/features/tools/update-todo-list)”
 - 说“创建待办事项列表”
 
@@ -38,6 +40,7 @@
 
 **2. 交互式工具块**
 聊天中的完整待办事项界面，您可以在其中：
+
 - 查看所有项目及其状态
 - 当 Kilo 请求批准时编辑描述
 - 使用“编辑”按钮暂存更改
@@ -91,3 +94,7 @@ Kilo 通常会跳过简单任务的待办事项列表。开销不值得。
 **缺点**：控制较少，但执行速度更快。
 
 :::
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [basic-usage](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/basic-usage/) · [↑ Table of Contents](#task-todo-list)

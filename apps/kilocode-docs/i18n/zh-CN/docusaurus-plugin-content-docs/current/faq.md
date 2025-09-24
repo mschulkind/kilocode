@@ -175,3 +175,7 @@ Kilo Code使用VS Code内置的文件编辑功能。你可以使用标准的"撤
 ### 如何报告bug或建议功能？
 
 请在Kilo Code的[问题页面](https://github.com/Kilo-Org/kilocode/issues)和[功能请求页面](https://github.com/Kilo-Org/kilocode/discussions/categories/ideas)上报告bug或建议功能。
+
+---
+
+**Navigation**: [apps](../../../../../../apps/) · [kilocode-docs](../../../../../apps/kilocode-docs/) · [i18n](../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [↑ Table of Contents](#faq)

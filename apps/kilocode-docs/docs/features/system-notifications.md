@@ -40,9 +40,11 @@ For enhanced notifications with custom icons, install terminal-notifier:
 
 ```bash
 # Install via Homebrew
+
 brew install terminal-notifier
 
 # Or install via npm
+
 npm install -g terminal-notifier
 ```
 
@@ -58,9 +60,11 @@ Open PowerShell as Administrator and run:
 
 ```powershell
 # Check current execution policy
+
 Get-ExecutionPolicy
 
 # Set execution policy to allow local scripts
+
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
@@ -90,10 +94,12 @@ Linux notifications require the `libnotify` package and `notify-send` command.
 
 ```bash
 # Install libnotify
+
 sudo apt update
 sudo apt install libnotify-bin
 
 # Verify installation
+
 which notify-send
 ```
 
@@ -101,12 +107,15 @@ which notify-send
 
 ```bash
 # RHEL/CentOS
+
 sudo yum install libnotify
 
 # Fedora
+
 sudo dnf install libnotify
 
 # Verify installation
+
 which notify-send
 ```
 
@@ -114,9 +123,11 @@ which notify-send
 
 ```bash
 # Install libnotify
+
 sudo pacman -S libnotify
 
 # Verify installation
+
 which notify-send
 ```
 
@@ -139,13 +150,16 @@ For minimal window managers, you may need to start a notification daemon:
 
 ```bash
 # Install and start dunst (lightweight notification daemon)
+
 sudo apt install dunst  # Ubuntu/Debian
 sudo pacman -S dunst    # Arch Linux
 
 # Start dunst manually
+
 dunst &
 
 # Or add to your window manager startup script
+
 echo "dunst &" >> ~/.xinitrc
 ```
 
@@ -157,9 +171,11 @@ echo "dunst &" >> ~/.xinitrc
 
 ```bash
 # Test AppleScript method
+
 osascript -e 'display notification "Test message" with title "Test Title" sound name "Tink"'
 
 # Test terminal-notifier (if installed)
+
 terminal-notifier -message "Test message" -title "Test Title" -sound Tink
 ```
 
@@ -167,6 +183,7 @@ terminal-notifier -message "Test message" -title "Test Title" -sound Tink
 
 ```powershell
 # Test PowerShell notification
+
 $template = @"
 <toast>
     <visual>
@@ -190,9 +207,11 @@ $toast = [Windows.UI.Notifications.ToastNotification]::new($xml)
 
 ```bash
 # Test notify-send
+
 notify-send "Test Title" "Test message"
 
 # Test with icon (optional)
+
 notify-send -i dialog-information "Test Title" "Test message"
 ```
 
@@ -249,3 +268,7 @@ notify-send -i dialog-information "Test Title" "Test message"
 
 - **Solution:** Ensure your user has access to the display server
 - **Check:** `echo $DISPLAY` should return something like `:0`
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [features](../apps/kilocode-docs/docs/features/) · [↑ Table of Contents](#system-notifications)

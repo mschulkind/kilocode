@@ -13,3 +13,7 @@ Click the paperclip in the text area or use @ to add context.
 Go beyond the default modes by creating your own. Tailor them to your workflow with specific instructions or focus areas.
 
 Click mode switcher in the text area or use / to switch modes.
+
+---
+
+**Navigation**: [src](../../src/) · [walkthrough](../src/walkthrough/) · [↑ Table of Contents](#step5)

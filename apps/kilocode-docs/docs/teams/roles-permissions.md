@@ -179,3 +179,7 @@ Every team member has one of three roles that determine their access level and c
 - [Configure billing and credits](/teams/billing)
 
 Understanding roles and permissions ensures your team operates securely and efficiently with clear accountability.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#roles-permissions)

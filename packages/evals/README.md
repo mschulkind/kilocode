@@ -105,6 +105,7 @@ If you need to use different ports, you can customize them by creating a `.env.l
 
 ```sh
 # Copy the example file and customize as needed
+
 cp packages/evals/.env.local.example packages/evals/.env.local
 ```
 
@@ -112,11 +113,13 @@ Then edit `.env.local` to set your preferred ports:
 
 ```sh
 # Custom port configuration
+
 EVALS_DB_PORT=5434
 EVALS_REDIS_PORT=6381
 EVALS_WEB_PORT=3447
 
 # Optional: Override database URL if needed
+
 DATABASE_URL=postgres://postgres:password@localhost:5434/evals_development
 ```
 

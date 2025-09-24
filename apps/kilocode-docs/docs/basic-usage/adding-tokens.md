@@ -26,3 +26,7 @@ We're continuously working to improve Kilo Code and expand our offerings:
 :::tip Need Help?
 If you have any questions about pricing or tokens, please reach out to our [support team](mailto:hi@kilocode.ai) or ask in our <a href={DISCORD_URL} target='_blank'>Discord community</a>.
 :::
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [basic-usage](../apps/kilocode-docs/docs/basic-usage/) · [↑ Table of Contents](#adding-tokens)

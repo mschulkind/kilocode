@@ -264,3 +264,7 @@ We welcome contributions to Kilo Code! Here's how you can help:
 Your contributions are welcome! For questions or ideas, please join our Discord server: https://discord.gg/Ja6BkfyTzJ
 
 We look forward to your contributions and feedback!
+
+---
+
+**Navigation**: [↑ Table of Contents](#development)

@@ -2,8 +2,8 @@
 
 **Purpose:** Comprehensive plan to track down and resolve the issue where multiple API requests with spinners appear simultaneously in the chat view, particularly after subtask completion in the orchestrator.
 
-**Status:** ACTIVE INVESTIGATION  
-**Created:** 2024-12-19  
+**Status:** ACTIVE INVESTIGATION
+**Created:** 2024-12-19
 **Priority:** CRITICAL
 
 <details><summary>Table of Contents</summary>
@@ -53,6 +53,20 @@
 </details>
 
 ## Executive Summary
+
+## Research Context
+
+**Purpose:** [Describe the purpose and scope of this document]
+
+**Background:** [Provide relevant background information]
+
+**Research Questions:** [List key questions this document addresses]
+
+**Methodology:** [Describe the approach or methodology used]
+
+**Findings:** [Summarize key findings or conclusions]
+
+---
 
 Based on analysis of the reported symptoms (mid-turn API duplication without queued messages), the root cause has been identified as a **concurrent recursive calls race condition** where the main task loop and subtask completion both call `recursivelyMakeClineRequests` simultaneously, each making their own API request. This plan provides a systematic approach to:
 
@@ -1311,5 +1325,9 @@ The plan balances thorough investigation with practical implementation, ensuring
 4. Deploy debug version for testing
 5. Collect and analyze initial data
 
-**Contact:** Development Team  
+**Contact:** Development Team
 **Last Updated:** 2024-12-19
+
+---
+
+**Navigation**: [plans](../plans/) · [↑ Table of Contents](#api-duplication-investigation-plan)

@@ -27,4 +27,8 @@ Unbound 允许您在应用程序中配置支持的模型列表，Kilo Code 会�
 
 ## 提示和注意事项
 
-* **安全重点:** Unbound 强调企业级的安全功能。如果您的组织对 AI 使用有严格的安全要求，Unbound 可能是一个不错的选择。
+- **安全重点:** Unbound 强调企业级的安全功能。如果您的组织对 AI 使用有严格的安全要求，Unbound 可能是一个不错的选择。
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [providers](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/providers/) · [↑ Table of Contents](#unbound)

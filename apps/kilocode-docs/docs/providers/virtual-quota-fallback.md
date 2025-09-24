@@ -76,3 +76,7 @@ Kilo Code will send all requests to Chutes AI. Once your usage exceeds 5,000 tok
 - **Priority is Key:** Always double-check the order of your profiles. The intended primary or free-tier providers should be at the top.
 - **Error-Based Fallback:** If you don't set any limits for a profile, fallback will only occur if the provider's API returns an error (e.g., a hard rate limit from the service itself, a network issue, or an invalid API key).
 - **No Nesting:** You cannot select another "Virtual Quota Fallback" profile within this provider's configuration, as this would create a circular dependency.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [providers](../apps/kilocode-docs/docs/providers/) · [↑ Table of Contents](#virtual-quota-fallback)

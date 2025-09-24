@@ -25,15 +25,15 @@
 模式特定指令可以使用提示标签设置
 
     <img src="/docs/img/custom-instructions/custom-instructions-3.png" alt="Kilo Code 提示标签显示模式特定自定义指令界面" width="600" />
-    * **打开标签：** 点击 Kilo Code 顶部菜单栏中的 <Codicon name="notebook" /> 图标
-    * **选择模式：** 在模式标题下，点击你想要自定义的模式按钮
-    * **输入指令：** 在 "模式特定自定义指令（可选）" 下的文本区域输入你的指令
-    * **保存更改：** 点击 "完成" 保存你的更改
 
-        :::info 全局模式规则
-        如果模式本身是全局的（非工作区特定），你为其设置的任何自定义指令也将全局适用于所有工作区的该模式。
-        :::
+- **打开标签：** 点击 Kilo Code 顶部菜单栏中的 <Codicon name="notebook" /> 图标
+- **选择模式：** 在模式标题下，点击你想要自定义的模式按钮
+- **输入指令：** 在 "模式特定自定义指令（可选）" 下的文本区域输入你的指令
+- **保存更改：** 点击 "完成" 保存你的更改
 
+            :::info 全局模式规则
+            如果模式本身是全局的（非工作区特定），你为其设置的任何自定义指令也将全局适用于所有工作区的该模式。
+            :::
 
 ## 相关功能
 
@@ -41,3 +41,7 @@
 - [自定义规则](/advanced-usage/custom-rules)
 - [设置管理](/features/settings-management)
 - [自动批准设置](/features/auto-approving-actions)
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [advanced-usage](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/advanced-usage/) · [↑ Table of Contents](#custom-instructions)

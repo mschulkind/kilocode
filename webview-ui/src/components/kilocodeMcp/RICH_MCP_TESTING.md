@@ -680,3 +680,7 @@ https://<strong>dextools</strong>.apiable.io/(Only
 498. https://bp0.blogger.com
 499. https://box.com
 500. https://nhk.or.jp
+
+---
+
+**Navigation**: [webview-ui](../../../../webview-ui/) · [src](../../../webview-ui/src/) · [components](../../webview-ui/src/components/) · [kilocodeMcp](../webview-ui/src/components/kilocodeMcp/) · [↑ Table of Contents](#rich-mcp-testing)

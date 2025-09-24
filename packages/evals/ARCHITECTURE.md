@@ -280,3 +280,7 @@ The architecture supports horizontal scaling:
 - **Event Auditing**: Complete task lifecycle tracking for accountability
 
 This architecture provides a robust, scalable platform for evaluating AI coding capabilities across multiple programming languages while maintaining strict isolation and comprehensive monitoring.
+
+---
+
+**Navigation**: [packages](../../packages/) · [evals](../packages/evals/) · [↑ Table of Contents](#architecture)

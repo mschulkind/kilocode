@@ -26,3 +26,7 @@ import { DISCORD_URL } from '@site/src/constants.ts'
 :::tip 需要帮助？
 如果你对定价或 tokens 有任何疑问，请联系我们的[支持团队](mailto:hi@kilocode.ai) 或在我们的 <a href={DISCORD_URL} target='_blank'>Discord 社区</a>中提问。
 :::
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [basic-usage](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/basic-usage/) · [↑ Table of Contents](#adding-tokens)

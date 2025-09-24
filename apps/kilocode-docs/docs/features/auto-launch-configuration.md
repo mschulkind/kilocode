@@ -149,3 +149,7 @@ This file should be at the root of your workspace (the same level as your main p
 1. Verify the mode name is valid (code, architect, ask, debug, test)
 2. For custom modes, use the exact mode slug from your configuration
 3. Mode names are case-sensitive and should be lowercase
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [features](../apps/kilocode-docs/docs/features/) · [↑ Table of Contents](#auto-launch-configuration)

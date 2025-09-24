@@ -37,3 +37,7 @@ Requesty 提供了对多种模型的访问。Kilo Code 会自动获取最新的�
 
 - [Requesty Youtube 频道](https://www.youtube.com/@requestyAI):
 - [Requesty Discord](https://requesty.ai/discord)
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [providers](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/providers/) · [↑ Table of Contents](#requesty)

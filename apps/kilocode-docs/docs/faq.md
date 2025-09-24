@@ -178,3 +178,7 @@ Kilo Code uses VS Code's built-in file editing capabilities. You can use the sta
 ### How do I report a bug or suggest a feature?
 
 Please report bugs or suggest features on the Kilo Code [Issues page](https://github.com/Kilo-Org/kilocode/issues) and [Feature Requests page](https://github.com/Kilo-Org/kilocode/discussions/categories/ideas).
+
+---
+
+**Navigation**: [apps](../../../apps/) · [kilocode-docs](../../apps/kilocode-docs/) · [docs](../apps/kilocode-docs/docs/) · [↑ Table of Contents](#faq)

@@ -190,3 +190,7 @@ These hooks help maintain code quality and consistency. If you encounter issues 
 - Use `console.log()` statements in your code for debugging
 - Check the Output panel in VSCode (View > Output) and select "Kilo Code" from the dropdown
 - For webview issues, use the browser developer tools in the webview (right-click > "Inspect Element")
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [extending](../apps/kilocode-docs/docs/extending/) · [↑ Table of Contents](#development-environment)

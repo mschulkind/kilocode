@@ -162,3 +162,7 @@ Promote or demote team members as needed:
 - [Learn about team roles and permissions](/teams/roles-permissions)
 
 Effective team management ensures your organization maximizes the benefits of AI-assisted development while maintaining cost control and security.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [teams](../apps/kilocode-docs/docs/teams/) · [↑ Table of Contents](#team-management)

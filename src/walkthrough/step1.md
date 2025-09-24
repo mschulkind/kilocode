@@ -13,3 +13,7 @@ Kilo Code will write the code, generate the files, and run the project for you.
 ## Kilo Code has many Modes ...
 
 <img src="images/modes.gif" width='200' alt="Kilo Code modes" />
+
+---
+
+**Navigation**: [src](../../src/) · [walkthrough](../src/walkthrough/) · [↑ Table of Contents](#step1)

@@ -97,3 +97,7 @@ but this is not recommended as it changes the context for all models and the env
 ## Further Reading
 
 Refer to the [Ollama documentation](https://ollama.com/docs) for more information on installing, configuring and using Ollama.
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [providers](../apps/kilocode-docs/docs/providers/) · [↑ Table of Contents](#ollama)

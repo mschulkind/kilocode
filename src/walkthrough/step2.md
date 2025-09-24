@@ -5,3 +5,7 @@
 Have a question about your code? Switch to Ask mode and type it out. Kilo Code will scan your codebase and give you a clear, accurate explanation.
 
 Tip: Reference specific files or functions for more precise answers.
+
+---
+
+**Navigation**: [src](../../src/) · [walkthrough](../src/walkthrough/) · [↑ Table of Contents](#step2)

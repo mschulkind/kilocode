@@ -2,7 +2,6 @@
 sidebar_label: Additional Features
 ---
 
-
 # 附加功能
 
 Kilo Code 的附加功能简化了日常任务并提高了可访问性。
@@ -10,12 +9,14 @@ Kilo Code 的附加功能简化了日常任务并提高了可访问性。
 ## 建议回复
 
 Kilo Code 提供建议回复，让您减少打字时间。
+
 - 提问后，聊天框下方会出现按钮。
 - 单击按钮可将其用作您的下一个提示。
 
 ## 文本转语音
 
 文本转语音功能让 Kilo Code 可以朗读回复。
+
 1.  在设置中启用 TTS。
 2.  单击任何回复旁边的扬声器图标即可开始收听。
 
@@ -39,3 +40,7 @@ Kilo Code 支持 14 种语言：
 - 加泰罗尼亚语
 
 在**高级设置 > 语言**下更改语言。
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [features](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/features/) · [↑ Table of Contents](#more-features)

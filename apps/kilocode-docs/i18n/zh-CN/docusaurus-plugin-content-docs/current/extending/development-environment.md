@@ -90,7 +90,7 @@ npm run build
 在开发模式下（NODE_ENV="development"），更改核心代码将触发 `workbench.action.reloadWindow` 命令，因此不再需要手动启动/停止调试器和任务。
 
 > **重要提示**：在生产构建中，更改核心扩展代码时，你需要：
-> 
+>
 > 1. 停止调试过程
 > 2. 终止任何在后台运行的 npm 任务（见下图）
 > 3. 重新开始调试
@@ -190,3 +190,7 @@ npm run check-types   # 运行 TypeScript 类型检查
 - 在代码中使用 `console.log()` 语句进行调试
 - 检查 VSCode 中的输出面板（View > Output）并从下拉菜单中选择 "Kilo Code"
 - 对于 Webview 问题，请在 Webview 中使用浏览器开发者工具（右键点击 > "Inspect Element"）
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [extending](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/extending/) · [↑ Table of Contents](#development-environment)

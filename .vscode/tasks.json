@@ -156,6 +156,56 @@
 			"problemMatcher": [],
 			"label": "docs: build",
 			"detail": "Build the Docusaurus site for production"
+		},
+		{
+			"label": "docs: validate",
+			"type": "shell",
+			"command": "pnpm docs:validate",
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": {
+				"owner": "remark",
+				"fileLocation": "relative",
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "docs: maintain",
+			"type": "shell",
+			"command": "pnpm docs:maintain",
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "docs: report",
+			"type": "shell",
+			"command": "pnpm docs:report",
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"problemMatcher": []
 		}
 	]
 }

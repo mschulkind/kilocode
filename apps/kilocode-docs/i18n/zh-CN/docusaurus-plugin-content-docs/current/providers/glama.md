@@ -18,9 +18,9 @@ Glama 通过统一的 API 提供了对多种语言模型的访问，包括来自
 
 Kilo Code 会自动尝试从 Glama API 获取可用模型的列表。通常通过 Glama 提供的一些模型包括：
 
-* **Anthropic Claude 模型：** （例如，`anthropic/claude-3-5-sonnet`）这些通常推荐用于与 Kilo Code 的最佳性能。
-* **OpenAI 模型：** （例如，`openai/o3-mini-high`）
-* **其他提供商和开源模型**
+- **Anthropic Claude 模型：** （例如，`anthropic/claude-3-5-sonnet`）这些通常推荐用于与 Kilo Code 的最佳性能。
+- **OpenAI 模型：** （例如，`openai/o3-mini-high`）
+- **其他提供商和开源模型**
 
 请参阅 [Glama 文档](https://glama.ai/models) 获取最新支持的模型列表。
 
@@ -33,5 +33,9 @@ Kilo Code 会自动尝试从 Glama API 获取可用模型的列表。通常通�
 
 ## 提示和注意事项
 
-* **定价：** Glama 采用按使用量计费的模式。根据您选择的模型，定价会有所不同。
-* **提示缓存：** Glama 支持提示缓存，这可以显著降低成本并提高重复提示的性能。
+- **定价：** Glama 采用按使用量计费的模式。根据您选择的模型，定价会有所不同。
+- **提示缓存：** Glama 支持提示缓存，这可以显著降低成本并提高重复提示的性能。
+
+---
+
+**Navigation**: [apps](../../../../../../../apps/) · [kilocode-docs](../../../../../../apps/kilocode-docs/) · [i18n](../../../../../apps/kilocode-docs/i18n/) · [zh-CN](../../../../apps/kilocode-docs/i18n/zh-CN/) · [docusaurus-plugin-content-docs](../../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/) · [current](../../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/) · [providers](../apps/kilocode-docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/providers/) · [↑ Table of Contents](#glama)

@@ -79,3 +79,7 @@ sidebar_label: Overview
 All API keys use VS Code's Secret Storage—never stored in plain text. Industry-standard security practices protect your credentials.
 
 **Ready to start?** → [Connect your first provider](/getting-started/connecting-api-provider) or jump to [advanced profiles](/features/api-configuration-profiles).
+
+---
+
+**Navigation**: [apps](../../../../apps/) · [kilocode-docs](../../../apps/kilocode-docs/) · [docs](../../apps/kilocode-docs/docs/) · [basic-usage](../apps/kilocode-docs/docs/basic-usage/) · [↑ Table of Contents](#connecting-providers)
