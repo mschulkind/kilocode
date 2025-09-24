@@ -1,17 +1,51 @@
 # Kilo Code Logging Documentation
 
-This document provides comprehensive information about Kilo Code's logging system, including how to write logs, where messages are routed, viewing options, and configuration settings.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+This document provides comprehensive information about Kilo Code's logging system, including how to
+write logs, where messages are routed, viewing options, and configuration settings.
 
 ## Table of Contents
 
-1. [Writing to Logs from Code](#writing-to-logs-from-code)
-2. [Log Message Routing](#log-message-routing)
-3. [Viewing Logs](#viewing-logs)
-4. [Configuration and Filtering](#configuration-and-filtering)
+- [Writing to Logs from Code](#writing-to-logs-from-code)
+    - [1. Console Logging](#1-console-logging)
+    - [2. Custom Logger (CompactLogger)](#2-custom-logger-compactlogger)
+    - [3. VSCode Output Channel Logger](#3-vscode-output-channel-logger)
+    - [4. Forwarding Logger (JetBrains)](#4-forwarding-logger-jetbrains)
+    - [5. API Event Logging](#5-api-event-logging)
+- [Log Message Routing](#log-message-routing)
+    - [VSCode Environment Routing](#vscode-environment-routing)
+    - [JetBrains Environment Routing](#jetbrains-environment-routing)
+    - [Routing Logic](#routing-logic)
+- [Viewing Logs](#viewing-logs)
+    - [VSCode Environment](#vscode-environment)
+    - [JetBrains Environment](#jetbrains-environment)
+    - [Log Analysis Tools](#log-analysis-tools)
+- [Configuration and Filtering](#configuration-and-filtering)
+    - [Environment Variables](#environment-variables)
+    - [Log Level Configuration](#log-level-configuration)
+    - [Platform-Specific Configuration](#platform-specific-configuration)
+    - [File Output Configuration](#file-output-configuration)
+    - [Conditional Logging](#conditional-logging)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Performance Considerations](#performance-considerations)
+- [Best Practices](#best-practices)
+    - [1. Choose the Right Logging Method](#1-choose-the-right-logging-method)
+    - [2. Log Levels and Filtering](#2-log-levels-and-filtering)
+    - [3. Structured Logging](#3-structured-logging)
+    - [4. Error Handling](#4-error-handling)
+    - [5. Performance](#5-performance)
+- [Troubleshooting](#troubleshooting)
+    - [Common Issues](#common-issues)
+    - [Debug Commands](#debug-commands)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
 
 ## Writing to Logs from Code
 
-Kilo Code supports multiple logging methods and channels, each suited for different use cases and environments.
+Kilo Code supports multiple logging methods and channels, each suited for different use cases and
+environments.
 
 ### 1. Console Logging
 
@@ -139,7 +173,8 @@ logApiEvent("task_failed", { taskId: "123", error: "timeout" })
 
 ## Log Message Routing
 
-Log messages are routed to different destinations based on platform, configuration, and message type.
+Log messages are routed to different destinations based on platform, configuration, and message
+type.
 
 ### VSCode Environment Routing
 
@@ -294,12 +329,18 @@ Comprehensive configuration options for controlling logging behavior.
 
 ```bash
 # API Configuration
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 LMNR_API_KEY=your_api_key
 LMNR_BASE_URL=https://api.lmnr.ai
 LMNR_HTTP_PORT=443
 LMNR_GRPC_PORT=8443
 
 # Service Control
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 LMNR_RECORD_IO=true          # Record span I/O (default: true)
 LMNR_ENABLED=true           # Enable Laminar service (default: true)
 ```
@@ -308,9 +349,15 @@ LMNR_ENABLED=true           # Enable Laminar service (default: true)
 
 ```bash
 # Development mode
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 NODE_ENV=development         # Enables additional console logging
 
 # IPC Communication
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 KILO_IPC_SOCKET_PATH=/tmp/kilo.sock    # Enables IPC logging
 ROO_CODE_IPC_SOCKET_PATH=/tmp/roo.sock # Alternative IPC path
 ```
@@ -534,18 +581,30 @@ logger.info("User action", {
 
 ```bash
 # Check environment variables
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 echo $NODE_ENV
 echo $KILO_IPC_SOCKET_PATH
 
 # View log files
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 tail -f ./logs/app.log
 cat /tmp/kilo-code-messages.log
 
 # Check VSCode output channels
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 # View → Output → Kilo-Code
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 ```
 
-This logging system provides comprehensive coverage for development, debugging, and production monitoring across both VSCode and JetBrains platforms.
+This logging system provides comprehensive coverage for development, debugging, and production
+monitoring across both VSCode and JetBrains platforms.
 
 ## 🔍 Research Context & Next Steps
 
@@ -554,22 +613,30 @@ This logging system provides comprehensive coverage for development, debugging, 
 **Understanding This System:**
 
 - **Next**: Check related documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](../architecture/README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../architecture/README.md) for context
 
 **Implementing Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to the appropriate README for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to the appropriate README for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Documentation Hub](../../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Documentation Hub](../../README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

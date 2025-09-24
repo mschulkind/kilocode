@@ -1,10 +1,17 @@
 # Services Documentation
 
-Welcome to the services documentation! ⚙️ This directory covers all the microservices and service layers that power KiloCode's functionality.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
+Welcome to the services documentation! ⚙️ This directory covers all the microservices and service
+layers that power KiloCode's functionality.
 
 ## Directory Context
 
-The services directory contains comprehensive documentation for understanding KiloCode's service layer architecture and patterns. This includes core services (cloud, authentication, AI interaction), AI & ML services (prompt systems, code indexing), integration services (external APIs, data flows), and specialized services (monitoring, observability). Essential for understanding how individual services operate within the larger system architecture.
+The services directory contains comprehensive documentation for understanding KiloCode's service
+layer architecture and patterns. This includes core services (cloud, authentication, AI
+interaction), AI & ML services (prompt systems, code indexing), integration services (external APIs,
+data flows), and specialized services (monitoring, observability). Essential for understanding how
+individual services operate within the larger system architecture.
 
 ### Key Focus Areas
 
@@ -30,7 +37,7 @@ The services directory contains comprehensive documentation for understanding Ki
 
 ## 📚 Documentation Structure
 
-- **[INDEX.md](INDEX.md)** - Master index of all service documentation
+- **[Repository Overview](README.md)** - Master index of all service documentation
 - **[CLOUD_SERVICES_ARCHITECTURE.md](CLOUD_SERVICES_ARCHITECTURE.md)** - Cloud service architecture
 - **[CODE_INDEX_SERVICE.md](CODE_INDEX_SERVICE.md)** - Code indexing and search
 - **[CUSTOM_MODES_SYSTEM.md](CUSTOM_MODES_SYSTEM.md)** - Custom mode management
@@ -48,10 +55,14 @@ The services directory contains comprehensive documentation for understanding Ki
 
 ## 🦕 Dinosaur Analogy
 
-Think of services like the different organ systems in a dinosaur's body. Each service is like a specialized organ - the code index service is like the brain (memory and retrieval), the cloud services are like the circulatory system (transporting data), and the marketplace is like the digestive system (processing and distributing resources). Just as dinosaurs needed all their organ systems working together to survive, our system needs all services working in harmony!
+Think of services like the different organ systems in a dinosaur's body. Each service is like a
+specialized organ - the code index service is like the brain (memory and retrieval), the cloud
+services are like the circulatory system (transporting data), and the marketplace is like the
+digestive system (processing and distributing resources). Just as dinosaurs needed all their organ
+systems working together to survive, our system needs all services working in harmony!
 
 ## 🧭 Navigation Footer
 
-- [← Back to Documentation Home](../INDEX.md)
+- [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
-- [↑ Table of Contents](../INDEX.md)
+- [↑ Table of Contents](../README.md)

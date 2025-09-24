@@ -1,14 +1,20 @@
 # Provider Instance Explanation
 
-This document provides a detailed explanation of what a "provider instance" refers to in the context of the Kilo Code extension's rules loading system.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
+This document provides a detailed explanation of what a "provider instance" refers to in the context
+of the Kilo Code extension's rules loading system.
 
 ## Definition
 
-A **provider instance** refers to an instance of the `ClineProvider` class (located at `src/core/webview/ClineProvider.ts`), which serves as the central coordinator and main entry point for the VS Code extension's functionality.
+A **provider instance** refers to an instance of the `ClineProvider` class (located at
+`src/core/webview/ClineProvider.ts`), which serves as the central coordinator and main entry point
+for the VS Code extension's functionality.
 
 ## Role and Responsibilities
 
-The provider instance acts as the primary orchestrator in the system, with the following key responsibilities:
+The provider instance acts as the primary orchestrator in the system, with the following key
+responsibilities:
 
 ### 1. Request Handling
 
@@ -87,11 +93,15 @@ The provider instance is invoked during:
 
 ## Summary
 
-The provider instance is the "brain" of the Kilo Code extension - it receives requests, coordinates the complex process of gathering and assembling rules from multiple sources, and returns the final instructions to the user. It serves as the essential bridge between VS Code's extension framework and the sophisticated rules loading system.
+The provider instance is the "brain" of the Kilo Code extension - it receives requests, coordinates
+the complex process of gathering and assembling rules from multiple sources, and returns the final
+instructions to the user. It serves as the essential bridge between VS Code's extension framework
+and the sophisticated rules loading system.
 
 ---
 
-_This document was created to provide clarity on the provider instance concept in response to questions about the rules loading system architecture._
+_This document was created to provide clarity on the provider instance concept in response to
+questions about the rules loading system architecture._
 
 ## 🔍 Research Context & Next Steps
 
@@ -100,22 +110,30 @@ _This document was created to provide clarity on the provider instance concept i
 **Understanding This System:**
 
 - **Next**: Check related documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](../architecture/README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../architecture/README.md) for context
 
 **Implementing Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to the appropriate README for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to the appropriate README for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Documentation Hub](../../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Documentation Hub](../../README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

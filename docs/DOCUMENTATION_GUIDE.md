@@ -1,6 +1,10 @@
 # Documentation Standards Guide
 
-**Purpose:** Defines normative documentation standards and practices for contributors editing files in the `docs/` directory, ensuring consistency and discoverability across all KiloCode documentation.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
+**Purpose:** Defines normative documentation standards and practices for contributors editing files
+in the `docs/` directory, ensuring consistency and discoverability across all KiloCode
+documentation.
 
 <details><summary>Table of Contents</summary>
 
@@ -20,13 +24,15 @@
 - [Navigation Footer Specification](#navigation-footer-specification)
 - [Review & Submission Checklist](#review--submission-checklist)
 - [Implementation Guidelines](#implementation-guidelines)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_This guide is the authoritative contributor-facing standard for creating and updating documentation under `/docs/`. It replaces older, inconsistent practices and provides prescriptive rules contributors MUST follow._
+_This guide is the authoritative contributor-facing standard for creating and updating documentation
+under `/docs/`. It replaces older, inconsistent practices and provides prescriptive rules
+contributors MUST follow._
 
 **Key Standards:**
 
@@ -35,7 +41,8 @@ _This guide is the authoritative contributor-facing standard for creating and up
 - **Linking**: Relative links for doc-to-doc references, absolute paths for code references
 - **Navigation**: Consistent footer with back/root/source links across all documents
 - **Content**: Focused, single-topic documents with clear hierarchy and accessibility
-- **User Experience**: Navigation guides, quick start paths, and cross-references for different user journeys
+- **User Experience**: Navigation guides, quick start paths, and cross-references for different user
+  journeys
 - **Code Documentation**: Inline comments for complex data structures and long code snippets
 - **Engagement**: Strategic use of analogies, fun facts, and accessible explanations
 
@@ -49,9 +56,11 @@ _This guide is the authoritative contributor-facing standard for creating and up
 
 ## File & Directory Conventions
 
-**Location**: All canonical documentation lives in the `docs/` directory. Ancillary or generated artifacts may live elsewhere but must link back to the main documentation.
+**Location**: All canonical documentation lives in the `docs/` directory. Ancillary or generated
+artifacts may live elsewhere but must link back to the main documentation.
 
-**Filename Standard**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII letters, numbers, and underscores only.
+**Filename Standard**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII
+letters, numbers, and underscores only.
 
 **Directory Structure**:
 
@@ -61,12 +70,16 @@ _This guide is the authoritative contributor-facing standard for creating and up
 
 **Index Files**:
 
-- **Mandatory**: Every `docs/` subdirectory MUST have a `README.md` file serving as the directory index
-- **Root Requirement**: The `docs/` directory itself MUST have a `README.md` file as the central documentation hub
+- **Mandatory**: Every `docs/` subdirectory MUST have a `README.md` file serving as the directory
+  index
+- **Root Requirement**: The `docs/` directory itself MUST have a `README.md` file as the central
+  documentation hub
 - **Purpose**: Provides immediate context and navigation when users land in any directory
-- **Content**: Overview, quick start paths, current focus, documentation structure, cross-references, directory context
+- **Content**: Overview, quick start paths, current focus, documentation structure,
+  cross-references, directory context
 - **Format**: Follows the standard document anatomy with navigation footer
-- Index files must provide clear navigation and categorization with multi-sentence descriptions for each linked file
+- Index files must provide clear navigation and categorization with multi-sentence descriptions for
+  each linked file
 
 ### README Index Description Rules
 
@@ -74,10 +87,12 @@ _This guide is the authoritative contributor-facing standard for creating and up
     1. what the file covers;
     2. why/when to use it;
     3. how it relates to adjacent docs.
-- For every link in a "Related context" section (to files outside the directory), provide a 1-sentence description explaining relevance.
-- Keep descriptions concrete and scannable; avoid repeating entire content (link to the canonical page instead).
+- For every link in a "Related context" section (to files outside the directory), provide a
+  1-sentence description explaining relevance.
+- Keep descriptions concrete and scannable; avoid repeating entire content (link to the canonical
+  page instead).
 - Prefer descriptive anchor text for all links (no bare file paths). Example:
-    - Good: `[State Machines Index and Diagrams](./state-machines/README.md)`
+    - Good: `[State Machines Index and Diagrams](README.md)`
     - Bad: `state-machines/README.md`
 
 ## Document Structure
@@ -102,7 +117,8 @@ graph TD
 
 ## Headings & Hierarchy
 
-**Allowed Hierarchy**: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a single file.
+**Allowed Hierarchy**: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a
+single file.
 
 **Heading Case**:
 
@@ -119,7 +135,7 @@ graph TD
 
 **Format**: Use the standard `<details><summary>Table of Contents</summary>` format.
 
-**Optional**: If the document has fewer than three H2s and is under ~800 words, a TOC is optional.
+**Optional**: If the document has fewer than three H2s and is under \~800 words, a TOC is optional.
 
 ## Linking Policy
 
@@ -136,11 +152,13 @@ graph TD
 **Examples**:
 
 - `/src/services/marketplace/index.ts#L25` (specific line)
-- `/src/core/task/Task.ts` (file reference)
+- `[FILE_MOVED_OR_RENAMED]` (file reference)
 
 **External Links**: Use absolute HTTPS URLs for external references.
 
-**Link Descriptions**: All links in navigation sections (Quick Navigation, Research Context, etc.) MUST include 1-2 sentence descriptions explaining what the linked document contains and why it's relevant.
+**Link Descriptions**: All links in navigation sections (Quick Navigation, Research Context, etc.)
+MUST include 1-2 sentence descriptions explaining what the linked document contains and why it's
+relevant.
 
 **Examples**:
 
@@ -181,6 +199,9 @@ export function slugify(input: string): string {
 
 ```bash
 # Run tests for a single file
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 cd src && npx vitest run tests/example.test.ts
 ```
 
@@ -196,11 +217,13 @@ graph TD
 
 ## Content Organization
 
-**Single Topic Focus**: Aim for single-topic documents. If a file exceeds ~1500 words or covers more than three distinct concerns, split it.
+**Single Topic Focus**: Aim for single-topic documents. If a file exceeds \~1500 words or covers
+more than three distinct concerns, split it.
 
 **Domain Indexes**: Use domain indexes to aggregate short docs rather than creating long monoliths.
 
-**Content Splitting**: When splitting content, create a redirecting top-level doc linking to subdocs and maintain consistent naming.
+**Content Splitting**: When splitting content, create a redirecting top-level doc linking to subdocs
+and maintain consistent naming.
 
 **Accessibility Standards**:
 
@@ -211,7 +234,8 @@ graph TD
 
 ## Navigation & User Experience
 
-**Purpose**: Create intuitive navigation paths for different user types and scenarios, optimized for expert engineers new to the KiloCode codebase.
+**Purpose**: Create intuitive navigation paths for different user types and scenarios, optimized for
+expert engineers new to the KiloCode codebase.
 
 ### Quick Start Paths
 
@@ -244,10 +268,12 @@ Every major documentation area MUST include quick start paths for different user
 **📚 New to Codebase** (Expert Engineer Onboarding):
 
 1. **Start Here**: [Technical Glossary](GLOSSARY.md) - Essential terminology
-2. **System Overview**: [Architecture Documentation](architecture/README.md) - High-level design
-3. **Current Issues**: [Race Condition Analysis](architecture/race-condition/README.md) - Active problems
-4. **Implementation**: [Orchestrator Documentation](orchestrator/README.md) - Core patterns
-5. **Development**: [Repository Structure](architecture/repository/README.md) - Codebase organization
+2. **System Overview**: [Architecture Documentation](README.md) - High-level design
+3. **Current Issues**: [Race Condition Analysis](README.md) - Active
+   problems
+4. **Implementation**: [Orchestrator Documentation](README.md) - Core patterns
+5. **Development**: [Repository Structure](README.md) - Codebase
+   organization
 
 ### Navigation Guidelines
 
@@ -316,7 +342,8 @@ enum ExampleState {
 
 ## Engagement & Accessibility
 
-**Purpose**: Make technical documentation engaging and accessible through strategic use of analogies, fun facts, and clear explanations.
+**Purpose**: Make technical documentation engaging and accessible through strategic use of
+analogies, fun facts, and clear explanations.
 
 ### Analogies and Metaphors
 
@@ -364,37 +391,56 @@ enum ExampleState {
 - **AI Output**: The final response back to the user
 - **Turn Boundary**: The point where the AI indicates it's finished and waiting for user input
 
-**Important**: A turn is NOT defined by the number of API calls or tool invocations. A single turn can include multiple API calls, tool executions, and intermediate responses, but represents one complete user-AI interaction cycle.
+**Important**: A turn is NOT defined by the number of API calls or tool invocations. A single turn
+can include multiple API calls, tool executions, and intermediate responses, but represents one
+complete user-AI interaction cycle.
 
-**Green Text**: A visual indicator in the chat interface that signals the end of an AI turn. This typically appears as green-colored text and indicates that the AI has finished processing and is waiting for the next user input. It's the visual cue that the turn boundary has been reached.
+**Green Text**: A visual indicator in the chat interface that signals the end of an AI turn. This
+typically appears as green-colored text and indicates that the AI has finished processing and is
+waiting for the next user input. It's the visual cue that the turn boundary has been reached.
 
-**Race Condition**: A situation where multiple processes or threads access shared resources concurrently, leading to unpredictable behavior. In our context, this occurs when multiple API calls are made simultaneously, causing responses to be interleaved and corrupted.
+**Race Condition**: A situation where multiple processes or threads access shared resources
+concurrently, leading to unpredictable behavior. In our context, this occurs when multiple API calls
+are made simultaneously, causing responses to be interleaved and corrupted.
 
-**State Machine**: A computational model that describes how a system behaves in response to events, transitioning between different states based on current state and input. Each state represents a specific condition or mode of operation.
+**State Machine**: A computational model that describes how a system behaves in response to events,
+transitioning between different states based on current state and input. Each state represents a
+specific condition or mode of operation.
 
-**Synchronization**: The coordination of multiple processes to ensure they don't interfere with each other when accessing shared resources. This typically involves locks, semaphores, or other coordination mechanisms.
+**Synchronization**: The coordination of multiple processes to ensure they don't interfere with each
+other when accessing shared resources. This typically involves locks, semaphores, or other
+coordination mechanisms.
 
-**Concurrent Execution**: Multiple operations happening simultaneously, which can lead to race conditions if not properly synchronized.
+**Concurrent Execution**: Multiple operations happening simultaneously, which can lead to race
+conditions if not properly synchronized.
 
-**Sequential Execution**: Operations happening one after another in a specific order, which prevents race conditions but may reduce performance.
+**Sequential Execution**: Operations happening one after another in a specific order, which prevents
+race conditions but may reduce performance.
 
 ### System-Specific Terms
 
-**Orchestrator**: The main task coordinator that manages the overall execution flow and creates subtasks.
+**Orchestrator**: The main task coordinator that manages the overall execution flow and creates
+subtasks.
 
-**Subtask**: A secondary task created by the orchestrator to handle specific parts of a larger operation.
+**Subtask**: A secondary task created by the orchestrator to handle specific parts of a larger
+operation.
 
-**Recursive Call**: A function that calls itself, in our context referring to the `recursivelyMakeClineRequests` method that can call itself to continue processing.
+**Recursive Call**: A function that calls itself, in our context referring to the
+`recursivelyMakeClineRequests` method that can call itself to continue processing.
 
-**Message Queue**: A data structure that holds messages waiting to be processed, ensuring they're handled in order.
+**Message Queue**: A data structure that holds messages waiting to be processed, ensuring they're
+handled in order.
 
-**API Request**: A call to an external service (like Anthropic's API) to process user input and generate responses.
+**API Request**: A call to an external service (like Anthropic's API) to process user input and
+generate responses.
 
-**Tool Invocation**: The execution of a specific function or tool by the AI system to accomplish a task.
+**Tool Invocation**: The execution of a specific function or tool by the AI system to accomplish a
+task.
 
 ## Navigation Footer Specification
 
-**Required**: Every document MUST include a navigation footer at the end with the anchor `<a id="navigation-footer"></a>`.
+**Required**: Every document MUST include a navigation footer at the end with the anchor
+`<a id="navigation-footer"></a>`.
 
 **Standard Format**:
 
@@ -412,10 +458,13 @@ enum ExampleState {
 
 **Examples**:
 
-- From root docs/: `Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
-- From subdirectory: `Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
+- From root docs/:
+  `Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1\`
+- From subdirectory:
+  `Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source: `/docs/architecture/SYSTEM_OVERVIEW\.md#L1\`
 
-**Link Validation**: All mentioned filenames must be clickable links for direct navigation and tooling validation.
+**Link Validation**: All mentioned filenames must be clickable links for direct navigation and
+tooling validation.
 
 ## Review & Submission Checklist
 
@@ -466,6 +515,8 @@ Before submitting a PR, confirm the following items:
 ```markdown
 # Document Title
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 **Purpose:** Brief description of the document's purpose and audience.
 
 <details><summary>Table of Contents</summary>
@@ -490,7 +541,8 @@ More content here.
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/DOCUMENTATION_GUIDE.md#L1`
 ```
 
 **Key Standards**:
@@ -503,4 +555,5 @@ More content here.
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/DOCUMENTATION_GUIDE.md#L1`

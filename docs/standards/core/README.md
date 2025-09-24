@@ -1,8 +1,13 @@
 # Core Standards 🎯
 
-**Purpose:** Essential foundational principles and rules that govern all KiloCode documentation, providing the bedrock upon which all other standards are built.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Geology Fun Fact**: The Earth's crust is made up of tectonic plates that move slowly over time. Our core standards are like the bedrock - the stable foundation that everything else builds upon! 🌍
+**Purpose:** Essential foundational principles and rules that govern all KiloCode documentation,
+providing the bedrock upon which all other standards are built.
+
+> **Geology Fun Fact**: The Earth's crust is made up of tectonic plates that move slowly over time.
+> Our core standards are like the bedrock - the stable foundation that everything else builds upon!
+> 🌍
 
 <details><summary>Table of Contents</summary>
 
@@ -18,7 +23,22 @@
 
 ## Executive Summary
 
-_These are the fundamental rules that every KiloCode contributor MUST follow. They form the foundation for all other documentation standards and ensure consistency across the entire project._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_These are the fundamental rules that every KiloCode contributor MUST follow. They form the
+foundation for all other documentation standards and ensure consistency across the entire project._
 
 **Essential Rules:**
 
@@ -30,32 +50,39 @@ _These are the fundamental rules that every KiloCode contributor MUST follow. Th
 
 ## Core Principles
 
-**Purpose-driven**: Every document starts with a clear purpose and intended audience. This is the **"compass"** that guides all content decisions.
+**Purpose-driven**: Every document starts with a clear purpose and intended audience. This is the
+**"compass"** that guides all content decisions.
 
-**Discoverable**: Use predictable filenames, headings, and navigation elements. Think of this as the **"map legend"** that helps users navigate the documentation.
+**Discoverable**: Use predictable filenames, headings, and navigation elements. Think of this as the
+**"map legend"** that helps users navigate the documentation.
 
-**Linkable**: Prefer stable anchors and cross-references. This creates the **"trail system"** that connects related concepts.
+**Linkable**: Prefer stable anchors and cross-references. This creates the **"trail system"** that
+connects related concepts.
 
-**Focused**: Single-responsibility documents with clear content splits. Each document should be like a **"specialized tool"** - good at one thing.
+**Focused**: Single-responsibility documents with clear content splits. Each document should be like
+a **"specialized tool"** - good at one thing.
 
-**Accessible**: Semantic structure and descriptive text throughout. This ensures the documentation is **"inclusive"** for all users.
+**Accessible**: Semantic structure and descriptive text throughout. This ensures the documentation
+is **"inclusive"** for all users.
 
 ## File & Directory Conventions
 
-**Location**: All canonical documentation lives in the `docs/` directory. Ancillary or generated artifacts may live elsewhere but must link back to the main documentation.
+**Location**: All canonical documentation lives in the `docs/` directory. Ancillary or generated
+artifacts may live elsewhere but must link back to the main documentation.
 
-**Filename Standard**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII letters, numbers, and underscores only.
+**Filename Standard**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII
+letters, numbers, and underscores only.
 
 **Directory Structure**:
 
-- Root level: `INDEX.md` as the master navigation hub
-- Subdirectories: Each major domain has its own directory with an `INDEX.md`
+- Root level: `README.md` as the master navigation hub
+- Subdirectories: Each major domain has its own directory with an `README.md`
 - Examples: `architecture/`, `services/`, `orchestrator/`, `laminar/`, `ui/`, `tools/`, `testing/`
 
 **Index Files**:
 
-- Maintain a top-level [`INDEX.md`](../INDEX.md) that lists domain indexes
-- Use `INDEX.md` in subdirectories when a directory contains multiple topical docs
+- Maintain a top-level [`README.md`](../README.md) that lists domain indexes
+- Use `README.md` in subdirectories when a directory contains multiple topical docs
 - Index files should provide clear navigation and categorization
 
 ## Linking Policy
@@ -65,7 +92,7 @@ _These are the fundamental rules that every KiloCode contributor MUST follow. Th
 **Examples**:
 
 - `[System Overview](../architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
-- `[Architecture Index](../../architecture/INDEX.md)` (from subdirectory)
+- `[Architecture Index](../architecture/README.md)` (from subdirectory)
 - `[Getting Started](GETTING_STARTED.md)` (same directory)
 
 **Code References**: Use absolute repo-root paths for code files.
@@ -73,7 +100,7 @@ _These are the fundamental rules that every KiloCode contributor MUST follow. Th
 **Examples**:
 
 - `/src/services/marketplace/index.ts#L25` (specific line)
-- `/src/core/task/Task.ts` (file reference)
+- `[FILE_MOVED_OR_RENAMED]` (file reference)
 
 **External Links**: Use absolute HTTPS URLs for external references.
 
@@ -94,11 +121,13 @@ _These are the fundamental rules that every KiloCode contributor MUST follow. Th
 
 ## Content Organization
 
-**Single Topic Focus**: Aim for single-topic documents. If a file exceeds ~1500 words or covers more than three distinct concerns, split it.
+**Single Topic Focus**: Aim for single-topic documents. If a file exceeds \~1500 words or covers
+more than three distinct concerns, split it.
 
 **Domain Indexes**: Use domain indexes to aggregate short docs rather than creating long monoliths.
 
-**Content Splitting**: When splitting content, create a redirecting top-level doc linking to subdocs and maintain consistent naming.
+**Content Splitting**: When splitting content, create a redirecting top-level doc linking to subdocs
+and maintain consistent naming.
 
 **Accessibility Standards**:
 
@@ -140,8 +169,13 @@ _These are the fundamental rules that every KiloCode contributor MUST follow. Th
 - [Linking Policy](LINKING_POLICY.md) - Comprehensive linking standards
 - [Content Organization](CONTENT_ORGANIZATION.md) - Organization principles
 
+## Navigation Footer
+
 ---
 
-**Navigation**: [Back to Standards](../README.md) · [Next: Document Structure](../structure/README.md) · [Source: `/docs/standards/core/README.md#L1`](README.md#L1)
+**Navigation**: [Back to Standards](../README.md) ·
+[Next: Document Structure](../structure/README.md) ·
+[Source: `/docs/standards/core/README.md#L1`](README.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

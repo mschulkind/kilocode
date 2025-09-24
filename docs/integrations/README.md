@@ -1,13 +1,16 @@
 # Integrations Documentation
 
-Welcome to the integrations documentation! 🔌 This directory covers all external integrations and how KiloCode connects with other systems.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
+Welcome to the integrations documentation! 🔌 This directory covers all external integrations and
+how KiloCode connects with other systems.
 
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
 
 - **Something's Broken**: Check specific integration docs for troubleshooting
-- **Need to Understand**: Start with [INDEX.md](INDEX.md) for an overview
+- **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow integration setup guides
 
 ### Current Focus
@@ -19,7 +22,7 @@ Welcome to the integrations documentation! 🔌 This directory covers all extern
 
 ## 📚 Documentation Structure
 
-- **[INDEX.md](INDEX.md)** - Master index of all integration documentation
+- **[Repository Overview](README.md)** - Master index of all integration documentation
 - **[EDITOR_INTEGRATION.md](EDITOR_INTEGRATION.md)** - VS Code and editor integration
 - **[JETBRAINS_PLUGIN.md](JETBRAINS_PLUGIN.md)** - JetBrains IDE plugin
 - **[TERMINAL_INTEGRATION.md](TERMINAL_INTEGRATION.md)** - Terminal and shell integration
@@ -34,10 +37,14 @@ Welcome to the integrations documentation! 🔌 This directory covers all extern
 
 ## 🦕 Dinosaur Analogy
 
-Think of integrations like the complex ecosystem relationships between dinosaurs and their environment. Just as different dinosaurs had specialized adaptations for different environments (aquatic, terrestrial, aerial), our integrations are specialized for different development environments (editors, terminals, browsers). Each integration is like a different species, perfectly adapted to its specific niche!
+Think of integrations like the complex ecosystem relationships between dinosaurs and their
+environment. Just as different dinosaurs had specialized adaptations for different environments
+(aquatic, terrestrial, aerial), our integrations are specialized for different development
+environments (editors, terminals, browsers). Each integration is like a different species, perfectly
+adapted to its specific niche!
 
 ## 🧭 Navigation Footer
 
-- [← Back to Documentation Home](../INDEX.md)
+- [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
-- [↑ Table of Contents](../INDEX.md)
+- [↑ Table of Contents](../README.md)

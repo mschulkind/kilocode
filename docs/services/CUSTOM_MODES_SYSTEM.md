@@ -1,8 +1,12 @@
 # Custom Modes System
 
-**Purpose:** Comprehensive documentation of the Custom Modes system for managing AI behavior configurations and custom prompt strategies in KiloCode.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a specific function, but they all work together to keep the system healthy and functioning! 🧬
+**Purpose:** Comprehensive documentation of the Custom Modes system for managing AI behavior
+configurations and custom prompt strategies in KiloCode.
+
+> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
+> specific function, but they all work together to keep the system healthy and functioning! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -14,13 +18,14 @@
 - [Validation & Error Handling](#validation--error-handling)
 - [Performance & Caching](#performance--caching)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Custom Modes System provides comprehensive management of AI behavior configurations, custom prompt strategies, and mode-based customization for different development contexts in KiloCode._
+_The Custom Modes System provides comprehensive management of AI behavior configurations, custom
+prompt strategies, and mode-based customization for different development contexts in KiloCode._
 
 The Custom Modes System consists of:
 
@@ -129,8 +134,7 @@ export class CustomModesManager {
 - **Template Modes**: Reusable mode templates
 - **Custom Modes**: User-defined custom modes
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **File-based Configuration**: `.kilocodemodes` file support
 - **Hierarchical Override**: Workspace modes override global modes
@@ -184,8 +188,7 @@ interface ImportData {
 - **Conflict Resolution**: Automatic conflict resolution
 - **Rollback Support**: Import rollback on failure
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Marketplace Integration**: Integration with marketplace system
 - **Validation**: Comprehensive import validation
@@ -211,8 +214,7 @@ private async getGlobalRoomodes(): Promise<string>
 private async ensureSettingsDirectoryExists(): Promise<void>
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Atomic Operations**: Atomic file write operations
 - **Queue Management**: Write queue for concurrent operations
@@ -272,8 +274,7 @@ const modeConfigSchema = z.object({
 - **Logging**: Comprehensive error logging and debugging
 - **Recovery**: Automatic error recovery where possible
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Comprehensive Validation**: Multi-layer validation system
 - **Error Recovery**: Automatic error recovery mechanisms
@@ -298,8 +299,7 @@ const modeConfigSchema = z.object({
 - **Write Performance**: File write operation performance
 - **Memory Usage**: Memory consumption optimization
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Efficient Caching**: TTL-based caching with automatic invalidation
 - **Write Optimization**: Queued write operations for performance
@@ -316,8 +316,8 @@ const modeConfigSchema = z.object({
 - Import/export failures
 - Validation errors
 
-**Root Cause**: Schema validation or configuration format issues
-**Solution**: Implement comprehensive validation with clear error messages
+**Root Cause**: Schema validation or configuration format issues **Solution**: Implement
+comprehensive validation with clear error messages
 
 ### Issue 2: File System Issues
 
@@ -327,8 +327,8 @@ const modeConfigSchema = z.object({
 - Permission errors
 - File corruption
 
-**Root Cause**: File system or permission issues
-**Solution**: Implement robust file handling with error recovery
+**Root Cause**: File system or permission issues **Solution**: Implement robust file handling with
+error recovery
 
 ### Issue 3: Cache Inconsistency
 
@@ -338,8 +338,8 @@ const modeConfigSchema = z.object({
 - Cache invalidation failures
 - Performance issues
 
-**Root Cause**: Cache management or invalidation issues
-**Solution**: Implement proper cache invalidation and consistency checks
+**Root Cause**: Cache management or invalidation issues **Solution**: Implement proper cache
+invalidation and consistency checks
 
 ### Issue 4: Import/Export Failures
 
@@ -349,9 +349,17 @@ const modeConfigSchema = z.object({
 - Data corruption
 - Validation failures
 
-**Root Cause**: Import/export process or validation issues
-**Solution**: Implement robust import/export with validation and rollback
+**Root Cause**: Import/export process or validation issues **Solution**: Implement robust
+import/export with validation and rollback
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/services/CUSTOM_MODES_SYSTEM.md#L1`
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+  · Source: `/docs/services/CUSTOM_MODES_SYSTEM.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [services](../docs/services/) ·
+[↑ Table of Contents](#custom-modes-system)

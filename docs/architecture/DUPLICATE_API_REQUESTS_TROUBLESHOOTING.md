@@ -1,28 +1,52 @@
 # Duplicate API Requests Troubleshooting Guide
 
-**Purpose:** Comprehensive guide for diagnosing and resolving issues where KiloCode fires multiple API requests simultaneously, causing spinning status animations, interleaved responses, and system confusion.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+**Purpose:** Comprehensive guide for diagnosing and resolving issues where KiloCode fires multiple
+API requests simultaneously, causing spinning status animations, interleaved responses, and system
+confusion.
+
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
 - [System Architecture Overview](#system-architecture-overview)
-- [Root Cause Analysis](#root-cause-analysis)
+- Root Cause Analysis
 - [Diagnostic Procedures](#diagnostic-procedures)
 - [Subsystem Deep Dives](#subsystem-deep-dives)
 - [Common Failure Patterns](#common-failure-patterns)
 - [Resolution Strategies](#resolution-strategies)
-- [Prevention Measures](#prevention-measures)
-- [Navigation Footer](#navigation-footer)
+- Prevention Measures
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_This document provides a comprehensive troubleshooting guide for duplicate API request issues in KiloCode. The problem manifests as multiple simultaneous API calls, resulting in spinning animations, interleaved responses, and system confusion. This guide covers all subsystems involved, diagnostic procedures, and resolution strategies._
+## Research Context
 
-Duplicate API request issues in KiloCode typically stem from failures in the request deduplication mechanisms across multiple subsystems. The primary systems involved are:
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_This document provides a comprehensive troubleshooting guide for duplicate API request issues in
+KiloCode. The problem manifests as multiple simultaneous API calls, resulting in spinning
+animations, interleaved responses, and system confusion. This guide covers all subsystems involved,
+diagnostic procedures, and resolution strategies._
+
+Duplicate API request issues in KiloCode typically stem from failures in the request deduplication
+mechanisms across multiple subsystems. The primary systems involved are:
 
 1. **UI Control Layer** - Button state management and event handling
 2. **Message Queue System** - Request queuing and deduplication
@@ -32,7 +56,8 @@ Duplicate API request issues in KiloCode typically stem from failures in the req
 
 ## System Architecture Overview
 
-Understanding the complete request flow is essential for diagnosing duplicate request issues. The following diagram shows the key systems and their interactions:
+Understanding the complete request flow is essential for diagnosing duplicate request issues. The
+following diagram shows the key systems and their interactions:
 
 ```mermaid
 graph TB
@@ -110,7 +135,10 @@ sequenceDiagram
 
 ## Root Cause Analysis
 
-> **CRITICAL**: After deep code examination, the actual root cause has been identified as a **race condition in the `ask` method** of `Task.ts`. See [`DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) for the complete technical analysis.
+> **CRITICAL**: After deep code examination, the actual root cause has been identified as a **race
+> condition in the `ask` method** of `Task.ts`. See
+> [`DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+> for the complete technical analysis.
 
 ### Primary Failure Points
 
@@ -783,4 +811,12 @@ const featureFlags = {
 
 <a id="navigation-footer"></a>
 
-- Back: [`ORCHESTRATOR_INDEX.md`](ORCHESTRATOR_INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md#L1`
+- Back: [`ORCHESTRATOR_INDEX.md`](ORCHESTRATOR_INDEX.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
+[↑ Table of Contents](#duplicate-api-requests-troubleshooting-guide)

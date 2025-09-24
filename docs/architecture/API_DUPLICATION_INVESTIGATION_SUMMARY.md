@@ -1,16 +1,34 @@
 # API Duplication Investigation Summary
 
-**Purpose:** Executive summary of the API request duplication investigation plan and implementation strategy.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+**Purpose:** Executive summary of the API request duplication investigation plan and implementation
+strategy.
 
-**Status:** INVESTIGATION PLAN COMPLETE  
-**Created:** 2024-12-19  
-**Priority:** CRITICAL
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
+
+**Status:** INVESTIGATION PLAN COMPLETE **Created:** 2024-12-19 **Priority:** CRITICAL
 
 ## Problem Statement
 
-KiloCode frequently experiences multiple API requests with spinners appearing simultaneously in the chat view. The responses come back jumbled, confusing the chat interface. This issue:
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+KiloCode frequently experiences multiple API requests with spinners appearing simultaneously in the
+chat view. The responses come back jumbled, confusing the chat interface. This issue:
 
 - Occurs after many back-and-forth interactions
 - Is particularly noticeable after subtask completion in the orchestrator
@@ -19,12 +37,14 @@ KiloCode frequently experiences multiple API requests with spinners appearing si
 
 ## Root Cause Analysis
 
-Based on existing analysis in `docs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`, the issue is a **race condition in the `ask` method** of `Task.ts` (lines 883-903).
+Based on existing analysis in `docs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`, the
+issue is a **race condition in the `ask` method** of `Task.ts` (lines 883-903).
 
 ### The Core Issue
 
 1. **Multiple concurrent `ask` calls** can occur during task execution
-2. **Each `ask` call checks for queued messages** using `isMessageQueued = !this.messageQueueService.isEmpty()`
+2. **Each `ask` call checks for queued messages** using
+   `isMessageQueued = !this.messageQueueService.isEmpty()`
 3. **Multiple `ask` calls can see the same queued message** and process it simultaneously
 4. **Each processing triggers `submitUserMessage`** which creates new API requests
 5. **Result: Multiple API calls for the same user input**
@@ -33,7 +53,8 @@ Based on existing analysis in `docs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAU
 
 - **Message Queue Race Condition**: Non-atomic `isEmpty()` and `dequeueMessage()` operations
 - **Thread Safety Issues**: No synchronization for concurrent access to message queue
-- **Tool Completion Concurrency**: Multiple tools calling `processQueuedMessages()` without coordination
+- **Tool Completion Concurrency**: Multiple tools calling `processQueuedMessages()` without
+  coordination
 - **UI State Desynchronization**: `sendingDisabled` state not properly managed
 
 ## Investigation Plan Overview
@@ -206,9 +227,12 @@ Based on existing analysis in `docs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAU
 
 ## Conclusion
 
-This investigation plan provides a systematic approach to resolving the API request duplication issue. The plan is based on existing analysis that has already identified the root cause as a race condition in the message queue processing logic.
+This investigation plan provides a systematic approach to resolving the API request duplication
+issue. The plan is based on existing analysis that has already identified the root cause as a race
+condition in the message queue processing logic.
 
-The implementation strategy balances thorough investigation with practical implementation, ensuring we can quickly identify and resolve the issue while building robust monitoring for the future.
+The implementation strategy balances thorough investigation with practical implementation, ensuring
+we can quickly identify and resolve the issue while building robust monitoring for the future.
 
 **Key Success Factors:**
 
@@ -217,13 +241,12 @@ The implementation strategy balances thorough investigation with practical imple
 3. **Quick implementation** to resolve user impact
 4. **Long-term monitoring** to prevent recurrence
 
-The plan is ready for immediate implementation and should result in a complete resolution of the API duplication issue within 2-4 weeks.
+The plan is ready for immediate implementation and should result in a complete resolution of the API
+duplication issue within 2-4 weeks.
 
 ---
 
-**Contact:** Development Team  
-**Last Updated:** 2024-12-19  
-**Status:** Ready for Implementation
+**Contact:** Development Team **Last Updated:** 2024-12-19 **Status:** Ready for Implementation
 
 ## 🔍 Research Context & Next Steps
 
@@ -232,22 +255,30 @@ The plan is ready for immediate implementation and should result in a complete r
 **Understanding Architecture:**
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](README.md) for context
 
 **Implementing Architecture Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Architecture Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

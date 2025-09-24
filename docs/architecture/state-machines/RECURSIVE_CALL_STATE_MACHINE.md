@@ -1,10 +1,31 @@
 # Recursive Call State Machine
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 ## Overview
 
-The Recursive Call State Machine manages the execution of recursive API calls, including the detection and prevention of race conditions. This is the **"quantum field controller"** of our system - it manages the delicate balance between order and chaos in our API calls!
+## Research Context
 
-> **Quantum Physics Fun Fact**: In quantum mechanics, particles can exist in a "superposition" of states until observed. Our API calls can exist in multiple states (IDLE, RUNNING, CONCURRENT) until we "observe" them with proper synchronization! The key is knowing when to "collapse the wave function" (acquire the lock). 🔬
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+The Recursive Call State Machine manages the execution of recursive API calls, including the
+detection and prevention of race conditions. This is the **"quantum field controller"** of our
+system - it manages the delicate balance between order and chaos in our API calls!
+
+> **Quantum Physics Fun Fact**: In quantum mechanics, particles can exist in a "superposition" of
+> states until observed. Our API calls can exist in multiple states (IDLE, RUNNING, CONCURRENT)
+> until we "observe" them with proper synchronization! The key is knowing when to "collapse the wave
+> function" (acquire the lock). 🔬
 
 ## 🗺️ Navigation
 
@@ -12,7 +33,7 @@ The Recursive Call State Machine manages the execution of recursive API calls, i
 
 - **Something's broken?** → [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 - **Need to understand the flow?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
-- **Ready to implement a fix?** → [Synchronization Implementation](#synchronization-implementation)
+- **Ready to implement a fix?** → Synchronization Implementation
 
 ### Key Concepts
 
@@ -187,7 +208,8 @@ stateDiagram-v2
 
 ## Race Condition Detection
 
-The race condition occurs when the system transitions from `IDLE` to `CONCURRENT`, bypassing the proper `RUNNING` state. This happens when:
+The race condition occurs when the system transitions from `IDLE` to `CONCURRENT`, bypassing the
+proper `RUNNING` state. This happens when:
 
 1. **Main Task Loop**: Calls `recursivelyMakeClineRequests()`
 2. **Subtask Completion**: Also calls `recursivelyMakeClineRequests()` via `continueParentTask()`
@@ -303,22 +325,30 @@ To prevent race conditions:
 **Understanding Architecture:**
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](README.md) for context
 
 **Implementing Architecture Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Architecture Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

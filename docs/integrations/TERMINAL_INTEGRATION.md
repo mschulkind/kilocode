@@ -1,8 +1,12 @@
 # Terminal Integration
 
-**Purpose:** Comprehensive documentation of the terminal integration system for command execution, shell integration, and terminal management in KiloCode.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Comprehensive documentation of the terminal integration system for command execution,
+shell integration, and terminal management in KiloCode.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -13,13 +17,14 @@
 - [Command Execution](#command-execution)
 - [Performance & Optimization](#performance--optimization)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Terminal Integration system provides comprehensive terminal management, command execution, and shell integration capabilities for seamless development workflow integration in KiloCode._
+_The Terminal Integration system provides comprehensive terminal management, command execution, and
+shell integration capabilities for seamless development workflow integration in KiloCode._
 
 The Terminal Integration consists of:
 
@@ -81,8 +86,7 @@ graph TB
 
 ### Terminal Registry
 
-**Implementation**: `src/integrations/terminal/TerminalRegistry.ts`
-**Features**:
+**Implementation**: `src/integrations/terminal/TerminalRegistry.ts` **Features**:
 
 - **Terminal Lifecycle**: Complete terminal lifecycle management
 - **Process Tracking**: Active process monitoring and tracking
@@ -100,8 +104,7 @@ interface TerminalRegistry {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Lifecycle Management**: Complete terminal lifecycle control
 - **Process Tracking**: Comprehensive process monitoring
@@ -110,8 +113,7 @@ interface TerminalRegistry {
 
 ### Base Terminal
 
-**Implementation**: `src/integrations/terminal/BaseTerminal.ts`
-**Features**:
+**Implementation**: `src/integrations/terminal/BaseTerminal.ts` **Features**:
 
 - **Terminal Interface**: Standardized terminal interface
 - **Event Handling**: Terminal event processing and handling
@@ -130,8 +132,7 @@ interface BaseTerminal {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Standardized Interface**: Consistent terminal interface
 - **Event Processing**: Comprehensive event handling
@@ -142,8 +143,7 @@ interface BaseTerminal {
 
 ### Shell Integration Manager
 
-**Implementation**: `src/integrations/terminal/ShellIntegrationManager.ts`
-**Features**:
+**Implementation**: `src/integrations/terminal/ShellIntegrationManager.ts` **Features**:
 
 - **Shell Detection**: Automatic shell detection and configuration
 - **Integration Setup**: Shell integration configuration and setup
@@ -161,8 +161,7 @@ interface ShellIntegration {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Multi-shell Support**: Support for multiple shell types
 - **Automatic Detection**: Intelligent shell detection
@@ -190,8 +189,7 @@ interface ShellFeatures {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Platform Support**: Cross-platform shell support
 - **Feature Detection**: Shell capability detection
@@ -202,8 +200,7 @@ interface ShellFeatures {
 
 ### Command Execution Engine
 
-**Implementation**: `src/integrations/terminal/ExecaTerminal.ts`
-**Features**:
+**Implementation**: `src/integrations/terminal/ExecaTerminal.ts` **Features**:
 
 - **Safe Execution**: Secure command execution with validation
 - **Timeout Management**: Command timeout and cancellation
@@ -220,8 +217,7 @@ interface CommandExecutor {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Secure Execution**: Safe command execution with validation
 - **Timeout Control**: Command timeout and cancellation
@@ -250,8 +246,7 @@ interface TerminalProcess {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Lifecycle Management**: Complete process lifecycle control
 - **Stream Processing**: Efficient stream handling
@@ -280,8 +275,7 @@ interface StreamProcessor {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Processing**: Live stream processing
 - **Buffer Optimization**: Efficient buffer management
@@ -297,8 +291,7 @@ interface StreamProcessor {
 - **Connection Pooling**: Terminal connection pooling
 - **Garbage Collection**: Optimized garbage collection patterns
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Resource Efficiency**: Optimized resource utilization
 - **Pool Management**: Efficient resource pooling
@@ -315,8 +308,8 @@ interface StreamProcessor {
 - Terminal crashes
 - Command timeouts
 
-**Root Cause**: Process management or shell integration issues
-**Solution**: Implement robust process management and error recovery
+**Root Cause**: Process management or shell integration issues **Solution**: Implement robust
+process management and error recovery
 
 ### Issue 2: Shell Integration Problems
 
@@ -326,8 +319,8 @@ interface StreamProcessor {
 - Integration setup errors
 - Command execution issues
 
-**Root Cause**: Shell-specific integration or configuration issues
-**Solution**: Improve shell detection and integration setup
+**Root Cause**: Shell-specific integration or configuration issues **Solution**: Improve shell
+detection and integration setup
 
 ### Issue 3: Stream Processing Issues
 
@@ -337,8 +330,8 @@ interface StreamProcessor {
 - Stream processing errors
 - Memory leaks
 
-**Root Cause**: Stream handling or buffer management issues
-**Solution**: Implement robust stream processing and memory management
+**Root Cause**: Stream handling or buffer management issues **Solution**: Implement robust stream
+processing and memory management
 
 ### Issue 4: Performance Problems
 
@@ -348,9 +341,17 @@ interface StreamProcessor {
 - High memory usage
 - Terminal lag
 
-**Root Cause**: Inefficient processing or resource management
-**Solution**: Optimize processing algorithms and resource utilization
+**Root Cause**: Inefficient processing or resource management **Solution**: Optimize processing
+algorithms and resource utilization
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/integrations/TERMINAL_INTEGRATION.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+  `/docs/integrations/TERMINAL_INTEGRATION.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [integrations](../docs/integrations/) ·
+[↑ Table of Contents](#terminal-integration)

@@ -1,8 +1,12 @@
 # Ghost Service
 
-**Purpose:** Comprehensive documentation of the Ghost Service for AI-powered code completion, inline suggestions, and intelligent code assistance in KiloCode.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a specific function, but they all work together to keep the system healthy and functioning! 🧬
+**Purpose:** Comprehensive documentation of the Ghost Service for AI-powered code completion, inline
+suggestions, and intelligent code assistance in KiloCode.
+
+> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
+> specific function, but they all work together to keep the system healthy and functioning! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -13,13 +17,15 @@
 - [UI Integration](#ui-integration)
 - [Performance & Optimization](#performance--optimization)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Ghost Service provides comprehensive AI-powered code completion, inline suggestions, and intelligent code assistance through multiple completion strategies and real-time UI integration in KiloCode._
+_The Ghost Service provides comprehensive AI-powered code completion, inline suggestions, and
+intelligent code assistance through multiple completion strategies and real-time UI integration in
+KiloCode._
 
 The Ghost Service consists of:
 
@@ -137,8 +143,7 @@ export class GhostProvider {
 - **Error Fixes**: Automatic error detection and fixing
 - **Refactoring**: Code refactoring suggestions
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Processing**: Real-time completion generation
 - **Context Awareness**: Intelligent context analysis
@@ -186,8 +191,7 @@ class UserRequestStrategy extends BasePromptStrategy
 - **Performance Monitoring**: Strategy performance monitoring
 - **Adaptive Learning**: Strategy selection improvement over time
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Multi-strategy Architecture**: Flexible strategy system
 - **Context Intelligence**: Smart context-based strategy selection
@@ -226,8 +230,7 @@ class GhostGutterAnimation extends vscode.Disposable
 - **Customizable**: User-customizable completion behavior
 - **Accessible**: Accessible completion interface
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Updates**: Live completion updates and feedback
 - **Visual Polish**: Smooth animations and visual transitions
@@ -263,8 +266,7 @@ private isRequestCancelled: boolean = false
 - **Debouncing**: Input debouncing for performance
 - **Batch Processing**: Batch completion processing
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Performance Monitoring**: Comprehensive performance tracking
 - **Cost Management**: AI API cost optimization
@@ -281,8 +283,8 @@ private isRequestCancelled: boolean = false
 - Irrelevant completions
 - Missing context awareness
 
-**Root Cause**: Strategy selection or context analysis issues
-**Solution**: Improve context analysis and strategy selection algorithms
+**Root Cause**: Strategy selection or context analysis issues **Solution**: Improve context analysis
+and strategy selection algorithms
 
 ### Issue 2: Performance Issues
 
@@ -292,8 +294,8 @@ private isRequestCancelled: boolean = false
 - High resource usage
 - UI lag and freezing
 
-**Root Cause**: Inefficient processing or resource management
-**Solution**: Implement performance optimization and resource management
+**Root Cause**: Inefficient processing or resource management **Solution**: Implement performance
+optimization and resource management
 
 ### Issue 3: UI Integration Issues
 
@@ -303,8 +305,8 @@ private isRequestCancelled: boolean = false
 - Decoration rendering issues
 - Animation problems
 
-**Root Cause**: UI component or rendering issues
-**Solution**: Fix UI components and improve rendering performance
+**Root Cause**: UI component or rendering issues **Solution**: Fix UI components and improve
+rendering performance
 
 ### Issue 4: Strategy Selection Problems
 
@@ -314,9 +316,17 @@ private isRequestCancelled: boolean = false
 - Poor completion quality
 - Context misinterpretation
 
-**Root Cause**: Strategy selection or context analysis issues
-**Solution**: Improve strategy selection algorithms and context analysis
+**Root Cause**: Strategy selection or context analysis issues **Solution**: Improve strategy
+selection algorithms and context analysis
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/services/GHOST_SERVICE.md#L1`
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+  · Source: `/docs/services/GHOST_SERVICE.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [services](../docs/services/) ·
+[↑ Table of Contents](#ghost-service)

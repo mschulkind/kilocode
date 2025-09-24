@@ -1,8 +1,13 @@
 # Table of Contents 📑
 
-**Purpose:** Standards for creating and formatting table of contents (TOC) elements to ensure consistent navigation and discoverability across all KiloCode documentation.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Cartography Fun Fact**: Just like how a map legend helps you understand the symbols and features on a map, our table of contents helps you understand the structure and navigate the content of our documents! 🗺️
+**Purpose:** Standards for creating and formatting table of contents (TOC) elements to ensure
+consistent navigation and discoverability across all KiloCode documentation.
+
+> **Cartography Fun Fact**: Just like how a map legend helps you understand the symbols and features
+> on a map, our table of contents helps you understand the structure and navigate the content of our
+> documents! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -14,13 +19,34 @@
 - [Optional TOC Criteria](#optional-toc-criteria)
 - [TOC Validation](#toc-validation)
 - [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_Table of contents elements provide essential navigation for readers, helping them understand document structure and quickly locate specific information. These standards ensure consistent TOC formatting and content across all KiloCode documentation._
+## Research Context
+
+**Purpose:** Define standards for table of contents (TOC) creation and formatting to improve
+document navigation and discoverability across all KiloCode documentation.
+
+**Background:** Inconsistent TOC formatting and missing TOCs in longer documents were making it
+difficult for users to navigate and find information efficiently.
+
+**Research Questions:** What format should TOCs use? When are TOCs required? What content should be
+included?
+
+**Methodology:** Analysis of documentation length patterns, user navigation needs, and markdown best
+practices to determine optimal TOC standards.
+
+**Findings:** Collapsible format with H2/H3 entries only, required for documents with 3+ H2s and
+800+ words, provides optimal navigation without cluttering shorter documents.
+
+---
+
+_Table of contents elements provide essential navigation for readers, helping them understand
+document structure and quickly locate specific information. These standards ensure consistent TOC
+formatting and content across all KiloCode documentation._
 
 **Key Standards:**
 
@@ -122,11 +148,11 @@ _Table of contents elements provide essential navigation for readers, helping th
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
-- [Testing Strategy](#testing-strategy)
+- Testing Strategy
 - [Performance Considerations](#performance-considerations)
 
 </details>
@@ -149,6 +175,8 @@ _Table of contents elements provide essential navigation for readers, helping th
 
 ```markdown
 # Document Title
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 **Purpose:** Brief description of the document's purpose and audience.
 
@@ -175,7 +203,7 @@ More content here.
 
 ## Optional TOC Criteria
 
-**Skip TOC When**: Document has fewer than three H2s and is under ~800 words.
+**Skip TOC When**: Document has fewer than three H2s and is under \~800 words.
 
 **Criteria for Skipping**:
 
@@ -188,6 +216,8 @@ More content here.
 
 ```markdown
 # Build Process Guide (Simple, focused)
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 **Purpose:** Step-by-step instructions for building the project.
 
@@ -215,16 +245,18 @@ More content here.
 ```markdown
 # API Duplication Analysis (Complex, multiple topics)
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 **Purpose:** Comprehensive analysis of the API duplication race condition.
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
-- [Testing Strategy](#testing-strategy)
+- Testing Strategy
 - [Performance Considerations](#performance-considerations)
 
 </details>
@@ -295,12 +327,16 @@ More content here.
 ```markdown
 # Bad: Non-collapsible format
 
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 ## Table of Contents
 
 - [Section 1](#section-1)
 - [Section 2](#section-2)
 
 # Good: Collapsible format
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 <details><summary>Table of Contents</summary>
 
@@ -310,6 +346,8 @@ More content here.
 </details>
 
 # Bad: Including H4 entries
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 <details><summary>Table of Contents</summary>
 
@@ -321,6 +359,8 @@ More content here.
 </details>
 
 # Good: Only H2 and H3 entries
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 <details><summary>Table of Contents</summary>
 
@@ -338,29 +378,34 @@ More content here.
 ```markdown
 # API Duplication Analysis
 
-**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause identification, impact assessment, and solution recommendations.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+**Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
+identification, impact assessment, and solution recommendations.
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
-- [Testing Strategy](#testing-strategy)
+- Testing Strategy
 - [Performance Considerations](#performance-considerations)
 - [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously._
+_The API duplication issue is caused by a race condition where multiple API calls are made
+simultaneously._
 
 ## Problem Description
 
-The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat
+interface.
 
 ### Symptoms
 
@@ -376,11 +421,13 @@ The issue manifests as multiple API requests with spinners appearing simultaneou
 
 ## Root Cause Analysis
 
-The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+The race condition occurs when both the main task loop and subtask completion call
+`recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
 
-The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to
+the parent task.
 
 ### Code Analysis
 
@@ -425,13 +472,16 @@ Examples of how to implement the solution.
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+  `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
 ### Minimal TOC Example
 
 ```markdown
 # Build Process Guide
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 **Purpose:** Step-by-step instructions for building the KiloCode project from source.
 
@@ -470,13 +520,16 @@ Common issues and solutions:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
 
 ### No TOC Example
 
 ```markdown
 # Quick Reference
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 **Purpose:** Quick reference for common commands and shortcuts.
 
@@ -500,11 +553,16 @@ Common issues and solutions:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/QUICK_REFERENCE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/QUICK_REFERENCE.md#L1`
 ```
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [Back to Structure](README.md) · [Next: Navigation Footer](NAVIGATION_FOOTER.md) · [Source: `/docs/standards/structure/TABLE_OF_CONTENTS.md#L1`](TABLE_OF_CONTENTS.md#L1)
+**Navigation**: [Back to Structure](README.md) · [Next: Navigation Footer](NAVIGATION_FOOTER.md) ·
+[Source: `/docs/standards/structure/TABLE_OF_CONTENTS.md#L1`](TABLE_OF_CONTENTS.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

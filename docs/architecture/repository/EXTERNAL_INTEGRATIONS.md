@@ -1,12 +1,32 @@
 # External Integrations
 
-**Purpose:** Overview of external service integrations and third-party dependencies used in KiloCode.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+**Purpose:** Overview of external service integrations and third-party dependencies used in
+KiloCode.
+
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Integration Overview
 
-KiloCode integrates with various external services and platforms to provide comprehensive functionality:
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+KiloCode integrates with various external services and platforms to provide comprehensive
+functionality:
 
 ```mermaid
 graph TB
@@ -273,6 +293,9 @@ const gcp = new GoogleCloud({
 
 ```yaml
 # .github/workflows/ci.yml
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 name: CI/CD Pipeline
 on:
     push:
@@ -307,6 +330,9 @@ jobs:
 
 ```dockerfile
 # Dockerfile
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -467,3 +493,10 @@ const analytics = new AnalyticsClient({
 - [← Back to Repository Home](README.md)
 - [→ Repository Structure](REPOSITORY_STRUCTURE.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#external-integrations)

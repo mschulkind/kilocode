@@ -1,31 +1,60 @@
 # Laminar Task System Integration
 
-**Mission:** To provide comprehensive documentation of the Task System's integration with Laminar observability, detailing how task lifecycle tracing, LLM interactions, and performance monitoring enable detailed insights into Kilo Code's execution flow while maintaining system reliability and user privacy.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
+**Mission:** To provide comprehensive documentation of the Task System's integration with Laminar
+observability, detailing how task lifecycle tracing, LLM interactions, and performance monitoring
+enable detailed insights into Kilo Code's execution flow while maintaining system reliability and
+user privacy.
 
 ## Table of Contents
 
-1. [Overview](#1-overview)
-2. [Task System Architecture](#2-task-system-architecture)
-3. [Laminar Integration Points](#3-laminar-integration-points)
-4. [LLM Integration Within Tasks](#4-llm-integration-within-tasks)
-5. [Authentication and User Context](#5-authentication-and-user-context)
-6. [Performance Considerations](#6-performance-considerations)
-7. [Error Handling and Recovery](#7-error-handling-and-recovery)
-8. [Integration with Other Subsystems](#8-integration-with-other-subsystems)
-9. [Code Reference Matrix](#9-code-reference-matrix)
-10. [Implementation Timeline](#10-implementation-timeline)
-
----
+- [Overview](#overview)
+    - [Role in Kilo Code](#role-in-kilo-code)
+    - [Laminar Integration Scope](#laminar-integration-scope)
+- [Task System Architecture](#task-system-architecture)
+    - [Core Components](#core-components)
+- [Laminar Integration Points](#laminar-integration-points)
+    - [Task Lifecycle Tracing](#task-lifecycle-tracing)
+    - [Span Hierarchy](#span-hierarchy)
+    - [Span Metadata](#span-metadata)
+- [LLM Integration Within Tasks](#llm-integration-within-tasks)
+    - [Token Usage Tracking](#token-usage-tracking)
+    - [Cost Tracking and Model Information](#cost-tracking-and-model-information)
+    - [Cache Usage Tracking](#cache-usage-tracking)
+- [Authentication and User Context](#authentication-and-user-context)
+    - User Context Integration
+    - [Privacy Considerations](#privacy-considerations)
+- [Performance Considerations](#performance-considerations)
+    - [Overhead Minimization](#overhead-minimization)
+    - [Resource Management](#resource-management)
+    - [Performance Metrics](#performance-metrics)
+- [Error Handling and Recovery](#error-handling-and-recovery)
+    - [Error Classification](#error-classification)
+    - [Recovery Mechanisms](#recovery-mechanisms)
+    - [Monitoring and Alerting](#monitoring-and-alerting)
+- [Integration with Other Subsystems](#integration-with-other-subsystems)
+    - [Tools Subsystem Integration](#tools-subsystem-integration)
+    - [Checkpoints Subsystem Integration](#checkpoints-subsystem-integration)
+    - [Service Layer Integration](#service-layer-integration)
+- Code Reference Matrix
+- Implementation Timeline
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
 
 ## Overview
 
-The Task System in Kilo Code serves as the core execution engine, managing the lifecycle of user-initiated tasks from creation through completion. Task.ts implements the central Task class that orchestrates LLM interactions, tool execution, and state management.
+The Task System in Kilo Code serves as the core execution engine, managing the lifecycle of
+user-initiated tasks from creation through completion. Task.ts implements the central Task class
+that orchestrates LLM interactions, tool execution, and state management.
 
 ### Role in Kilo Code
 
 The Task System is responsible for:
 
-- **Task Lifecycle Management:** Coordinating the complete execution flow from user request to task completion
+- **Task Lifecycle Management:** Coordinating the complete execution flow from user request to task
+  completion
 - **LLM Integration:** Managing API calls, token usage tracking, and response processing
 - **Tool Orchestration:** Executing and monitoring tool invocations with error handling
 - **State Persistence:** Maintaining conversation history and task metadata across sessions
@@ -127,7 +156,8 @@ Each span includes comprehensive metadata:
 
 ## LLM Integration Within Tasks
 
-The Task System provides deep integration with LLM providers, tracking all aspects of API interactions:
+The Task System provides deep integration with LLM providers, tracking all aspects of API
+interactions:
 
 ### Token Usage Tracking
 
@@ -180,7 +210,8 @@ case "usage":
 
 - [`recursivelyMakeClineRequests`](src/core/task/Task.ts#L1749): Main LLM interaction loop
 - [`attemptApiRequest`](src/core/task/Task.ts#L2667): API request execution
-- [`drainStreamInBackgroundToFindAllUsage`](src/core/task/Task.ts#L2092): Background usage collection
+- [`drainStreamInBackgroundToFindAllUsage`](src/core/task/Task.ts#L2092): Background usage
+  collection
 
 ---
 
@@ -390,7 +421,8 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 
 <a id="navigation-footer"></a>
 
-- Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/LAMINAR_TASK_SYSTEM.md#L1`
+- Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
+  [`README.md`](README.md:1) · Source: `/docs/LAMINAR_TASK_SYSTEM.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
@@ -399,22 +431,30 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 **Understanding Laminar Observability:**
 
 - **Next**: Check related Laminar documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Laminar Documentation](README.md) for context
 
 **Implementing Observability Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Observability Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Laminar Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Laminar Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
