@@ -1,16 +1,37 @@
 # Task State Machine
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 ## Overview
 
-The Task State Machine manages the lifecycle of individual tasks in the system, from creation to completion or destruction. Think of it as the **"dinosaur life cycle tracker"** - we need to know if our digital creatures are eggs, hatchlings, adults, or fossils!
+## Research Context
 
-> **Geology Fun Fact**: The Grand Canyon reveals 2 billion years of geological history in its layers. Our task states reveal the entire lifecycle of a digital task in just 10 states - much more efficient! 🗺️
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+The Task State Machine manages the lifecycle of individual tasks in the system, from creation to
+completion or destruction. Think of it as the **"dinosaur life cycle tracker"** - we need to know if
+our digital creatures are eggs, hatchlings, adults, or fossils!
+
+> **Geology Fun Fact**: The Grand Canyon reveals 2 billion years of geological history in its
+> layers. Our task states reveal the entire lifecycle of a digital task in just 10 states - much
+> more efficient! 🗺️
 
 ## 🗺️ Navigation
 
 ### Quick Links
 
-- **Need to understand the problem?** → [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+- **Need to understand the problem?** →
+  [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 - **Want to see how this fits together?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
 - **Ready to implement a fix?** → [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
 
@@ -267,22 +288,30 @@ The task state machine is crucial for understanding the race condition because:
 **Understanding Architecture:**
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](README.md) for context
 
 **Implementing Architecture Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Architecture Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

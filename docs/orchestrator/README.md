@@ -1,12 +1,23 @@
 # Orchestrator System Documentation 🎼
 
-Welcome to the **conductor's podium** of our system! The orchestrator is like the maestro of a digital symphony - it coordinates all the different instruments (tasks) to create beautiful music (functionality). But sometimes, like a conductor with too many musicians playing at once, things can get chaotic!
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Geology Fun Fact**: The orchestrator is like the "continental drift" of our system - it moves large pieces (tasks) around, and sometimes the plates don't align properly, causing seismic activity (race conditions)! 🌍
+Welcome to the **conductor's podium** of our system! The orchestrator is like the maestro of a
+digital symphony - it coordinates all the different instruments (tasks) to create beautiful music
+(functionality). But sometimes, like a conductor with too many musicians playing at once, things can
+get chaotic!
+
+> **Geology Fun Fact**: The orchestrator is like the "continental drift" of our system - it moves
+> large pieces (tasks) around, and sometimes the plates don't align properly, causing seismic
+> activity (race conditions)! 🌍
 
 ## Directory Context
 
-The orchestrator directory contains comprehensive documentation for understanding KiloCode's task management, lifecycle coordination, and orchestration patterns. This includes core orchestrator system architecture, lifecycle management, extensibility patterns, and security governance. Critical for understanding how tasks are created, managed, and executed within the main execution flow and subtask coordination.
+The orchestrator directory contains comprehensive documentation for understanding KiloCode's task
+management, lifecycle coordination, and orchestration patterns. This includes core orchestrator
+system architecture, lifecycle management, extensibility patterns, and security governance. Critical
+for understanding how tasks are created, managed, and executed within the main execution flow and
+subtask coordination.
 
 ### Key Focus Areas
 
@@ -20,9 +31,13 @@ The orchestrator directory contains comprehensive documentation for understandin
 ### Core Concepts
 
 - **[Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md)** - How the conductor manages the symphony
-  Describes initialization, running, pausing, subtask spawning, waiting, and completion. Shows when control moves between parent and child tasks and where continuation points live. Use this to trace execution over time.
+  Describes initialization, running, pausing, subtask spawning, waiting, and completion. Shows when
+  control moves between parent and child tasks and where continuation points live. Use this to trace
+  execution over time.
 - **[Orchestrator Index](ORCHESTRATOR_INDEX.md)** - The complete score of our orchestration system
-  High-level map of orchestrator responsibilities, interfaces, and integration points. Links to lifecycle, tools, delegation, and error-handling pages. Start here for a complete understanding before diving deeper.
+  High-level map of orchestrator responsibilities, interfaces, and integration points. Links to
+  lifecycle, tools, delegation, and error-handling pages. Start here for a complete understanding
+  before diving deeper.
 
 ### Quick Start Paths
 
@@ -30,27 +45,38 @@ The orchestrator directory contains comprehensive documentation for understandin
 
 **For Expert Engineers New to KiloCode:**
 
-1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task, Subtask, etc.)
-2. **System Overview**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) - High-level architecture and responsibilities
-3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns and state management
-4. **Current Issues**: [Race Condition Analysis](../architecture/race-condition/README.md) - API duplication problems
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
+   Subtask, etc.)
+2. **System Overview**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) - High-level architecture and
+   responsibilities
+3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns
+   and state management
+4. **Current Issues**: [Race Condition Analysis](../architecture/race-condition/README.md) - API
+   duplication problems
 
 #### 🚨 **Emergency Response** (Something's Broken!)
 
-1. **Quick Diagnosis**: [Race Condition Analysis](../architecture/race-condition/README.md) - Current API duplication issues
-2. **Understand Flow**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Execution patterns and state transitions
-3. **Find Solutions**: [State Machines](../architecture/state-machines/README.md) - Behavior modeling and fixes
-4. **Implementation**: [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Detailed fixes
+1. **Quick Diagnosis**: [Race Condition Analysis](../architecture/race-condition/README.md) -
+   Current API duplication issues
+2. **Understand Flow**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Execution patterns and
+   state transitions
+3. **Find Solutions**: [State Machines](../architecture/state-machines/README.md) - Behavior
+   modeling and fixes
+4. **Implementation**:
+   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Detailed
+   fixes
 
 ## 🦕 Dinosaur Analogy
 
 Think of the orchestrator like different types of dinosaurs:
 
-- **Main Orchestrator** = **Tyrannosaurus Rex** - The apex predator, always running and hunting (executing tasks)
+- **Main Orchestrator** = **Tyrannosaurus Rex** - The apex predator, always running and hunting
+  (executing tasks)
 - **Subtask** = **Velociraptor** - Fast, coordinated, but can cause chaos when they swarm
 - **Task Coordination** = **Brontosaurus** - The gentle giant, managing the overall environment
 
-When they work together, it's like a well-coordinated dinosaur pack. When they don't... well, that's when we get our race condition "extinction event"!
+When they work together, it's like a well-coordinated dinosaur pack. When they don't... well, that's
+when we get our race condition "extinction event"!
 
 ## 🔬 Research Areas
 
@@ -70,11 +96,13 @@ When they work together, it's like a well-coordinated dinosaur pack. When they d
 
 ### The Problem
 
-The orchestrator creates subtasks, but when they complete, both the main orchestrator and the subtask completion can trigger API calls simultaneously, causing a race condition.
+The orchestrator creates subtasks, but when they complete, both the main orchestrator and the
+subtask completion can trigger API calls simultaneously, causing a race condition.
 
 ### The Solution
 
-We need to synchronize these calls so only one can execute at a time, like a conductor ensuring only one section of the orchestra plays at a time.
+We need to synchronize these calls so only one can execute at a time, like a conductor ensuring only
+one section of the orchestra plays at a time.
 
 ## 🔍 Research Context & Next Steps
 
@@ -82,30 +110,46 @@ We need to synchronize these calls so only one can execute at a time, like a con
 
 **Understanding Orchestrator Architecture:**
 
-- **Next**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) → [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) → [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior modeling, [Technical Glossary](../GLOSSARY.md) for terminology
+- **Next**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) →
+  [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
+  [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
+- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior modeling,
+  [Technical Glossary](../GLOSSARY.md) for terminology
 
 **Investigating Execution Issues:**
 
-- **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) → [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
+  [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
 **Implementing Orchestrator Features:**
 
-- **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) → [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for codebase patterns
+- **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
+  [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
+  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for
+  codebase patterns
 
 **Understanding Current Problems:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) → [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 - **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to this README for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to this README for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Documentation Hub](../README.md) · [→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-navigation-map)
+**Navigation**: [← Back to Documentation Hub](../README.md) ·
+[→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md)
+· [↑ Table of Contents](#-navigation-map)
 
-_"The best orchestras have a conductor who knows when to let each section play, and when to bring them all together. Our system needs the same kind of coordination."_ 🎼
+_"The best orchestras have a conductor who knows when to let each section play, and when to bring
+them all together. Our system needs the same kind of coordination."_ 🎼

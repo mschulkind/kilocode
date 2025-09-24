@@ -1,18 +1,39 @@
 # Solution Recommendations
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 **Purpose:** Detailed recommendations for solving the API duplication race condition issue.
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## Solution Overview
 
-The race condition can be solved by implementing a **synchronization mechanism** that ensures only one `recursivelyMakeClineRequests` call executes at a time, regardless of whether it's called from the main task loop or subtask completion.
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+The race condition can be solved by implementing a **synchronization mechanism** that ensures only
+one `recursivelyMakeClineRequests` call executes at a time, regardless of whether it's called from
+the main task loop or subtask completion.
 
 ## Solution Strategy
 
 ### Core Principle
 
-**Single Execution**: Only one `recursivelyMakeClineRequests` call should be active at any given time.
+**Single Execution**: Only one `recursivelyMakeClineRequests` call should be active at any given
+time.
 
 **Preserve Functionality**: The solution must maintain both:
 
@@ -175,7 +196,12 @@ Combine the simplicity of Approach 1 with the observability of Approach 2:
 // Task.ts
 export class Task {
 	private recursiveCallLock = new AsyncLock()
-	private callHistory: Array<{ id: string; reason: string; startTime: number; endTime?: number }> = []
+	private callHistory: Array<{
+		id: string
+		reason: string
+		startTime: number
+		endTime?: number
+	}> = []
 
 	async recursivelyMakeClineRequests(
 		nextUserContent: string[],
@@ -372,3 +398,10 @@ If code changes are needed:
 - [← Back to Race Condition Home](README.md)
 - [→ Testing Strategy](TESTING_STRATEGY.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[race-condition](../docs/architecture/race-condition/) · ↑ Table of Contents

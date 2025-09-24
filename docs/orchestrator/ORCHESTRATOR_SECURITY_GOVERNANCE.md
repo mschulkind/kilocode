@@ -1,8 +1,13 @@
 # Orchestrator Security & Governance
 
-**Purpose:** This document details the security model of the Kilo Code Orchestrator, focusing on mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe and predictable operation.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** This document details the security model of the Kilo Code Orchestrator, focusing on
+mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe
+and predictable operation.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details>
 <summary>Table of Contents</summary>
@@ -13,7 +18,7 @@
 - [4. Tool Permissioning](#tool-permissioning)
 - [5. File Access Control](#file-access-control)
 - [6. Governance Workflow Diagram](#governance-workflow-diagram)
-- [7. Navigation Footer](#navigation-footer)
+- [7. Navigation Footer
 
 </details>
 
@@ -21,11 +26,14 @@
 
 ### Related Documents
 
-<a id="related-documents"></a>
+<a id="related-documents"></a>](7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[ORCHESTRATOR_INDEX.md](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator documentation.
-- **[ORCHESTRATOR_TOOLS_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and their intended functions.
-- **[ORCHESTRATOR_ERROR_HANDLING.md](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how permission errors are handled.
+- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+  documentation.
+- **[ORCHESTRATOR_TOOLS_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and their
+  intended functions.
+- **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how permission
+  errors are handled.
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -35,9 +43,13 @@
 
 <a id="security-philosophy"></a>
 
-The orchestrator's security model is based on the principle of **least privilege**. By default, a task has limited capabilities. Its permissions are elevated based on the specific `Mode` it is operating in. This ensures that the powerful tools, especially those that interact with the file system, are only used when explicitly required for the task at hand.
+The orchestrator's security model is based on the principle of **least privilege**. By default, a
+task has limited capabilities. Its permissions are elevated based on the specific `Mode` it is
+operating in. This ensures that the powerful tools, especially those that interact with the file
+system, are only used when explicitly required for the task at hand.
 
-This mode-centric approach provides a clear and auditable trail of why certain actions were permitted.
+This mode-centric approach provides a clear and auditable trail of why certain actions were
+permitted.
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -47,16 +59,20 @@ This mode-centric approach provides a clear and auditable trail of why certain a
 
 <a id="modes-as-a-security-boundary"></a>
 
-Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context and a corresponding set of allowed actions. The definitions for these modes and their capabilities are located in [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
+Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context
+and a corresponding set of allowed actions. The definitions for these modes and their capabilities
+are located in [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
 
 Examples of modes and their intended privilege levels:
 
 - **`architect`**: High-level planning and structuring. Typically has no file system write access.
 - **`code`**: Implementation and file modification. Has broad access to file system tools.
-- **`debug`**: Investigation and analysis. May have read access to most files but limited write access.
+- **`debug`**: Investigation and analysis. May have read access to most files but limited write
+  access.
 - **`test`**: Running and creating tests. Has access to test runners and can write to test files.
 
-A task can request to change its mode by using the [`switchModeTool`](/\src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged action.
+A task can request to change its mode by using the
+[`switchModeTool`](/src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged action.
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -66,14 +82,18 @@ A task can request to change its mode by using the [`switchModeTool`](/\src/core
 
 <a id="tool-permissioning"></a>
 
-Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the [`isToolAllowedForMode`](/\src/shared/modes.ts#L167) function.
+Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the
+[`isToolAllowedForMode`](/src/shared/modes.ts#L167) function.
 
-This function checks a mapping that associates each mode with a list of allowed tool names or patterns.
+This function checks a mapping that associates each mode with a list of allowed tool names or
+patterns.
 
 - If the tool is in the allowed list for the current mode, execution proceeds.
-- If the tool is not in the list, the function returns `false`, and the `ToolExecutor` throws a permission error.
+- If the tool is not in the list, the function returns `false`, and the `ToolExecutor` throws a
+  permission error.
 
-Some tools, like `askFollowupQuestionTool`, are considered **Always-Available Tools** and are permitted in all modes.
+Some tools, like `askFollowupQuestionTool`, are considered **Always-Available Tools** and are
+permitted in all modes.
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -83,11 +103,17 @@ Some tools, like `askFollowupQuestionTool`, are considered **Always-Available To
 
 <a id="file-access-control"></a>
 
-In addition to tool-level permissions, modes can also define file access policies. This is a more granular level of control that restricts which files can be read or written, even by permitted tools like `write_to_file`.
+In addition to tool-level permissions, modes can also define file access policies. This is a more
+granular level of control that restricts which files can be read or written, even by permitted tools
+like `write_to_file`.
 
-This is enforced through file path pattern matching. For example, the `test` mode might only be allowed to write to files matching `*.test.ts` or `__mocks__/*.ts`.
+This is enforced through file path pattern matching. For example, the `test` mode might only be
+allowed to write to files matching `*.test.ts` or `__mocks__/*.ts`.
 
-When a tool attempts to access a file that violates the current mode's file access policy, a [`FileRestrictionError`](/\src/shared/modes.ts#L157) is thrown. This error is specific and clearly communicates the nature of the violation to the model, allowing it to take corrective action (e.g., switching to an appropriate mode).
+When a tool attempts to access a file that violates the current mode's file access policy, a
+[`FileRestrictionError`](/src/shared/modes.ts#L157) is thrown. This error is specific and clearly
+communicates the nature of the violation to the model, allowing it to take corrective action (e.g.,
+switching to an appropriate mode).
 
 [Back to Top](#orchestrator-security--governance)
 
@@ -128,30 +154,42 @@ flowchart TD
 **Understanding This System:**
 
 - **Next**: Check related documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](../architecture/README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../architecture/README.md) for context
 
 **Implementing Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to the appropriate README for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to the appropriate README for guidance.
 
 ### Navigation Footer
 
 <a id="navigation-footer"></a>
 
-You have reached the end of the security and governance document. Return to the [Master Index](ORCHESTRATOR_INDEX.md) or proceed to the [Best Practices Document](ORCHESTRATOR_BEST_PRACTICES.md).
+You have reached the end of the security and governance document. Return to the
+[Master Index](ORCHESTRATOR_INDEX.md) or proceed to the
+[Best Practices Document](ORCHESTRATOR_BEST_PRACTICES.md).
 
 [Back to Top](#orchestrator-security--governance)
 
 ---
 
 End of document.
+
+---
+
+**Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
+[↑ Table of Contents](#orchestrator-security--governance)

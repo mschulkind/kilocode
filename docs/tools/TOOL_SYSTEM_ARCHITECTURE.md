@@ -1,8 +1,12 @@
 # Tool System Architecture
 
-**Purpose:** Comprehensive documentation of the AI tool system architecture, execution patterns, validation mechanisms, and safety protocols in the KiloCode system.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Comprehensive documentation of the AI tool system architecture, execution patterns,
+validation mechanisms, and safety protocols in the KiloCode system.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -16,13 +20,16 @@
 - [Performance Optimization](#performance-optimization)
 - [Tool Development Guidelines](#tool-development-guidelines)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Tool System Architecture provides the foundation for AI-powered operations in KiloCode, including file operations, command execution, code analysis, and external integrations. The system features a plugin-based architecture with comprehensive validation, safety mechanisms, and error recovery._
+_The Tool System Architecture provides the foundation for AI-powered operations in KiloCode,
+including file operations, command execution, code analysis, and external integrations. The system
+features a plugin-based architecture with comprehensive validation, safety mechanisms, and error
+recovery._
 
 The Tool System consists of:
 
@@ -96,8 +103,7 @@ graph TB
 - **searchAndReplaceTool.ts**: Search and replace operations
 - **insertContentTool.ts**: Content insertion at specific positions
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Implementation Details**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
 **Tool Interface Pattern**:
 
@@ -132,8 +138,7 @@ export async function writeToFileTool(
 - **runSlashCommandTool.ts**: Slash command execution
 - **Command validation and safety**: Input sanitization and execution limits
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Implementation Details**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
 **Command Execution Pattern**:
 
@@ -168,8 +173,8 @@ export async function executeCommandTool(
 - **searchFilesTool.ts**: File search operations
 - **listCodeDefinitionNamesTool.ts**: Code definition discovery
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Search indexing strategies, performance optimization, result ranking
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Search indexing
+strategies, performance optimization, result ranking
 
 ### AI Integration Tools
 
@@ -180,8 +185,8 @@ export async function executeCommandTool(
 - **generateImageTool.ts**: Image generation
 - **askFollowupQuestionTool.ts**: Interactive questioning
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: AI tool orchestration, resource management, response handling
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: AI tool orchestration,
+resource management, response handling
 
 ## Tool Execution Engine
 
@@ -217,8 +222,8 @@ interface ToolExecution {
 - Error propagation and chain interruption
 - Rollback coordination across tool chains
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Chain dependency resolution, parallel execution patterns, error handling
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Chain dependency
+resolution, parallel execution patterns, error handling
 
 ## Tool Validation & Safety
 
@@ -238,8 +243,7 @@ interface ToolExecution {
 - Resource usage monitoring
 - User permission validation
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Implementation Details**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
 **Tool Repetition Detection**:
 
@@ -281,31 +285,28 @@ export class ToolRepetitionDetector {
 - Execution timeout limits
 - Output filtering
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Safety framework design, threat modeling, mitigation strategies
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Safety framework design,
+threat modeling, mitigation strategies
 
 ## Tool Composition Patterns
 
 ### Sequential Composition
 
-**Pattern**: Tools execute in sequence with data passing
-**Use Cases**: Multi-step file operations, complex transformations
-**Implementation**: Chain execution with intermediate result passing
+**Pattern**: Tools execute in sequence with data passing **Use Cases**: Multi-step file operations,
+complex transformations **Implementation**: Chain execution with intermediate result passing
 
 ### Parallel Composition
 
-**Pattern**: Independent tools execute simultaneously
-**Use Cases**: Multiple file operations, concurrent searches
-**Implementation**: Promise-based parallel execution
+**Pattern**: Independent tools execute simultaneously **Use Cases**: Multiple file operations,
+concurrent searches **Implementation**: Promise-based parallel execution
 
 ### Conditional Composition
 
-**Pattern**: Tools execute based on conditions
-**Use Cases**: Error handling, feature flags, user preferences
-**Implementation**: Conditional execution with branching logic
+**Pattern**: Tools execute based on conditions **Use Cases**: Error handling, feature flags, user
+preferences **Implementation**: Conditional execution with branching logic
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Composition patterns, dependency resolution, execution optimization
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Composition patterns,
+dependency resolution, execution optimization
 
 ## Error Handling & Rollback
 
@@ -332,8 +333,8 @@ export class ToolRepetitionDetector {
 - State restoration
 - Cleanup procedures
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Rollback framework design, state management, recovery procedures
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Rollback framework
+design, state management, recovery procedures
 
 ## Performance Optimization
 
@@ -355,8 +356,8 @@ export class ToolRepetitionDetector {
 - Garbage collection optimization
 - Resource cleanup
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Performance profiling, optimization strategies, resource management
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance profiling,
+optimization strategies, resource management
 
 ## Tool Development Guidelines
 
@@ -385,8 +386,8 @@ interface Tool {
 - Extensive testing coverage
 - Documentation and examples
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Development standards, testing patterns, documentation requirements
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Development standards,
+testing patterns, documentation requirements
 
 ## Common Issues and Solutions
 
@@ -398,8 +399,8 @@ interface Tool {
 - Inconsistent results across runs
 - Resource exhaustion
 
-**Root Cause**: Insufficient validation or resource management
-**Solution**: Implement comprehensive validation and resource monitoring
+**Root Cause**: Insufficient validation or resource management **Solution**: Implement comprehensive
+validation and resource monitoring
 
 ### Issue 2: Tool Chain Deadlocks
 
@@ -409,8 +410,8 @@ interface Tool {
 - Resource conflicts between tools
 - Circular dependencies
 
-**Root Cause**: Poor dependency resolution or resource contention
-**Solution**: Implement proper dependency analysis and resource locking
+**Root Cause**: Poor dependency resolution or resource contention **Solution**: Implement proper
+dependency analysis and resource locking
 
 ### Issue 3: Security Vulnerabilities
 
@@ -420,9 +421,17 @@ interface Tool {
 - Command injection vulnerabilities
 - Permission escalation
 
-**Root Cause**: Insufficient security validation
-**Solution**: Implement comprehensive security checks and access controls
+**Root Cause**: Insufficient security validation **Solution**: Implement comprehensive security
+checks and access controls
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/tools/TOOL_SYSTEM_ARCHITECTURE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+  `/docs/tools/TOOL_SYSTEM_ARCHITECTURE.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [tools](../docs/tools/) ·
+[↑ Table of Contents](#tool-system-architecture)

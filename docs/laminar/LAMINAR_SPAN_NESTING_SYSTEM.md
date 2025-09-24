@@ -1,8 +1,14 @@
 # Laminar Span Nesting System
 
-**Purpose:** This document explains the span nesting architecture in Kilo Code's Laminar observability system, detailing how spans are created, nested, and queued, with specific focus on why chat history spans may not appear while test connection spans do.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates instant connections between distant parts of the system, allowing us to observe the entire state from any single point! ⚛️
+**Purpose:** This document explains the span nesting architecture in Kilo Code's Laminar
+observability system, detailing how spans are created, nested, and queued, with specific focus on
+why chat history spans may not appear while test connection spans do.
+
+> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
+> instant connections between distant parts of the system, allowing us to observe the entire state
+> from any single point! ⚛️
 
 <details><summary>Table of Contents</summary>
 
@@ -12,14 +18,17 @@
 - [Queuing Mechanism](#queuing-mechanism)
 - [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
 - [Troubleshooting Span Issues](#troubleshooting-span-issues)
-- [Code Reference Matrix](#code-reference-matrix)
+- Code Reference Matrix
 - [Implementation Details](#implementation-details)
 
 </details>
 
 ## Overview
 
-The Laminar span nesting system provides hierarchical observability for Kilo Code operations, creating nested spans that track the execution flow from high-level tasks down to individual tool invocations. The system uses a queuing mechanism to handle spans created before service initialization completes.
+The Laminar span nesting system provides hierarchical observability for Kilo Code operations,
+creating nested spans that track the execution flow from high-level tasks down to individual tool
+invocations. The system uses a queuing mechanism to handle spans created before service
+initialization completes.
 
 ### Key Components
 
@@ -153,7 +162,8 @@ if (this.pendingSpanRequests.length > 0) {
 
 ### Root Cause Analysis
 
-**Primary Issue:** Task spans are created during task initialization but may be queued indefinitely if the Laminar service fails to initialize properly.
+**Primary Issue:** Task spans are created during task initialization but may be queued indefinitely
+if the Laminar service fails to initialize properly.
 
 **Failure Scenarios:**
 
@@ -264,12 +274,12 @@ console.log = console.log.bind(console)
 
 ## Code Reference Matrix
 
-| Component              | Primary Functions                           | Key Files                                  | Integration Points |
-| ---------------------- | ------------------------------------------- | ------------------------------------------ | ------------------ |
-| Service Initialization | `initialize()`, `getInstance()`             | `/src/services/laminar/LaminarService.ts`  | Extension startup  |
-| Span Management        | `startSpan()`, `endSpan()`                  | `/src/services/laminar/LaminarService.ts`  | All operations     |
-| Task Integration       | `initiateTaskLoop()`, `attemptApiRequest()` | `/src/core/task/Task.ts`                   | Task execution     |
-| Tool Integration       | `attemptCompletionTool()`                   | `/src/core/tools/attemptCompletionTool.ts` | Tool completion    |
+| Component              | Primary Functions                           | Key Files                                 | Integration Points |
+| ---------------------- | ------------------------------------------- | ----------------------------------------- | ------------------ |
+| Service Initialization | `initialize()`, `getInstance()`             | `/src/services/laminar/LaminarService.ts` | Extension startup  |
+| Span Management        | `startSpan()`, `endSpan()`                  | `/src/services/laminar/LaminarService.ts` | All operations     |
+| Task Integration       | `initiateTaskLoop()`, `attemptApiRequest()` | `[FILE_MOVED_OR_RENAMED]`                 | Task execution     |
+| Tool Integration       | `attemptCompletionTool()`                   | `[FILE_MOVED_OR_RENAMED]`                 | Tool completion    |
 
 ## Implementation Details
 
@@ -334,7 +344,8 @@ try {
 
 <a id="navigation-footer"></a>
 
-- Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING_SYSTEM.md#L1`
+- Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
+  [`README.md`](README.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING_SYSTEM.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
@@ -343,22 +354,30 @@ try {
 **Understanding Laminar Observability:**
 
 - **Next**: Check related Laminar documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Laminar Documentation](README.md) for context
 
 **Implementing Observability Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Observability Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Laminar Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Laminar Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

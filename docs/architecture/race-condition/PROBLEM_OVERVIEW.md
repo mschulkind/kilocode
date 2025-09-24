@@ -1,19 +1,42 @@
 # Problem Overview
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 **Purpose:** Executive summary and problem description for the API duplication race condition issue.
 
 ## Executive Summary
 
-The API duplication issue is caused by a **race condition** introduced in commit `749f3d22a` where both the main task loop and subtask completion can simultaneously call `recursivelyMakeClineRequests`, each making their own API request. This results in multiple simultaneous API calls with spinners appearing in the chat interface, causing jumbled responses and confused user experience.
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+The API duplication issue is caused by a **race condition** introduced in commit `749f3d22a` where
+both the main task loop and subtask completion can simultaneously call
+`recursivelyMakeClineRequests`, each making their own API request. This results in multiple
+simultaneous API calls with spinners appearing in the chat interface, causing jumbled responses and
+confused user experience.
 
 **Key Findings:**
 
-- **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution paths
+- **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution
+  paths
 - **Trigger**: Recent change to subtask completion handling in `ClineProvider.ts`
 - **Impact**: Multiple API requests, jumbled responses, confused chat interface
 - **Solution**: Synchronization mechanism to ensure only one recursive call executes at a time
 
-> **Quantum Physics Fun Fact**: This is like having two particles in a quantum superposition - they can exist in multiple states simultaneously until we "observe" them (synchronize them). The key is knowing when to "collapse the wave function" (acquire the lock)! 🔬
+> **Quantum Physics Fun Fact**: This is like having two particles in a quantum superposition - they
+> can exist in multiple states simultaneously until we "observe" them (synchronize them). The key is
+> knowing when to "collapse the wave function" (acquire the lock)! 🔬
 
 ## 🗺️ Navigation Guide
 
@@ -21,24 +44,26 @@ The API duplication issue is caused by a **race condition** introduced in commit
 
 #### 🚨 **Emergency Response** (Something's Broken!)
 
-1. **Start here**: [Problem Description](#problem-description)
-2. **Understand the race**: [Root Cause Analysis](../race-condition/ROOT_CAUSE_ANALYSIS.md)
+1. **Start here**: Problem Description
+2. **Understand the race**: [Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md)
 3. **See the flow**: [State Machines](../state-machines/)
-4. **Find the fix**: [Solution Recommendations](../race-condition/SOLUTION_RECOMMENDATIONS.md)
+4. **Find the fix**: [Solution Recommendations](race-condition/SOLUTION_RECOMMENDATIONS.md)
 
 #### 🔍 **Deep Dive Research** (Understanding the System)
 
-1. **Start here**: [State Machines Index](../state-machines/INDEX.md)
-2. **Explore the problem**: [Race Condition State Machine](../state-machines/RACE_CONDITION_STATE_MACHINE.md)
-3. **Understand the flow**: [Orchestrator Lifecycle](../../orchestrator/ORCHESTRATOR_LIFECYCLE.md)
+1. **Start here**: [State Machines Index](../state-machines/README.md)
+2. **Explore the problem**:
+   [Race Condition State Machine](../state-machines/RACE_CONDITION_STATE_MACHINE.md)
+3. **Understand the flow**: [Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)
 4. **See the big picture**: [Combined State Machine](../state-machines/COMBINED_STATE_MACHINE.md)
 
 #### 🛠️ **Implementation Journey** (Building the Fix)
 
-1. **Start here**: [Solution Recommendations](../race-condition/SOLUTION_RECOMMENDATIONS.md)
-2. **Understand synchronization**: [Recursive Call State Machine](../state-machines/RECURSIVE_CALL_STATE_MACHINE.md)
-3. **Plan the implementation**: [Testing Strategy](../race-condition/TESTING_STRATEGY.md)
-4. **Deploy with confidence**: [Prevention Measures](../race-condition/PREVENTION_MEASURES.md)
+1. **Start here**: [Solution Recommendations](race-condition/SOLUTION_RECOMMENDATIONS.md)
+2. **Understand synchronization**:
+   [Recursive Call State Machine](../state-machines/RECURSIVE_CALL_STATE_MACHINE.md)
+3. **Plan the implementation**: [Testing Strategy](race-condition/TESTING_STRATEGY.md)
+4. **Deploy with confidence**: [Prevention Measures](race-condition/PREVENTION_MEASURES.md)
 
 ## Problem Description
 
@@ -52,9 +77,12 @@ The API duplication issue is caused by a **race condition** introduced in commit
 - **NOT related to queued messages** - happens during active processing
 - **NOT related to user input** - happens during system processing
 - **3-request variant**: Sometimes 3 simultaneous requests occur, causing severe corruption
-- **Green text trigger**: 3-request scenario often triggered when subtask incorrectly thinks it's done and outputs green text (end of turn indicator)
-- **XML corruption**: After 3-request scenario, chat history becomes severely broken with XML appearing
-- **Cascading failure**: Once 3-request scenario occurs, subsequent requests continue to be corrupted
+- **Green text trigger**: 3-request scenario often triggered when subtask incorrectly thinks it's
+  done and outputs green text (end of turn indicator)
+- **XML corruption**: After 3-request scenario, chat history becomes severely broken with XML
+  appearing
+- **Cascading failure**: Once 3-request scenario occurs, subsequent requests continue to be
+  corrupted
 
 ### Technical Context
 
@@ -66,9 +94,11 @@ This issue occurs in the **orchestrator-subtask-orchestrator execution flow** wh
 
 ### 3-Request Race Condition Variant
 
-The most severe form of this issue involves **3 simultaneous API requests** and is triggered by a specific sequence:
+The most severe form of this issue involves **3 simultaneous API requests** and is triggered by a
+specific sequence:
 
-1. **Subtask Completion with Green Text**: A subtask incorrectly thinks it's done and outputs green text (indicating end of turn)
+1. **Subtask Completion with Green Text**: A subtask incorrectly thinks it's done and outputs green
+   text (indicating end of turn)
 2. **Subtask Stops Prematurely**: The subtask stops execution even though it should continue
 3. **User Sends Another Request**: User sends a new request to the agent
 4. **3 Simultaneous Requests**: The system makes 3 concurrent API calls:
@@ -95,17 +125,21 @@ A **turn** is a complete user-AI interaction cycle:
 3. **AI outputs green text** (end of AI turn indicator)
 4. **System waits for next user input**
 
-Multiple API calls or tool invocations can occur within a single AI turn, but they're all part of the same interaction cycle.
+Multiple API calls or tool invocations can occur within a single AI turn, but they're all part of
+the same interaction cycle.
 
 ### What is Green Text?
 
-**Green text** is a visual indicator that appears in the chat interface to signal the end of an AI turn. It's like a "conversation punctuation mark" that tells the user "I'm done with my response, it's your turn now."
+**Green text** is a visual indicator that appears in the chat interface to signal the end of an AI
+turn. It's like a "conversation punctuation mark" that tells the user "I'm done with my response,
+it's your turn now."
 
 ### Race Condition vs. Sequential Execution
 
 - **Sequential Execution**: Operations happen one after another in a predictable order
 - **Race Condition**: Multiple operations happen simultaneously, and the outcome depends on timing
-- **Concurrent Execution**: Multiple operations happen at the same time but are properly synchronized
+- **Concurrent Execution**: Multiple operations happen at the same time but are properly
+  synchronized
 
 ## Impact Assessment
 
@@ -141,3 +175,10 @@ Multiple API calls or tool invocations can occur within a single AI turn, but th
 - [← Back to Race Condition Home](README.md)
 - [→ Root Cause Analysis](ROOT_CAUSE_ANALYSIS.md)
 - [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[race-condition](../docs/architecture/race-condition/) · [↑ Table of Contents](#problem-overview)

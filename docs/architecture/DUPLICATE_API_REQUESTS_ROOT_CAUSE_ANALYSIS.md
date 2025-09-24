@@ -1,8 +1,13 @@
 # Duplicate API Requests - Root Cause Analysis
 
-**Purpose:** Deep technical analysis of the actual root cause of duplicate API request issues in KiloCode, based on detailed code examination.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+**Purpose:** Deep technical analysis of the actual root cause of duplicate API request issues in
+KiloCode, based on detailed code examination.
+
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 <details><summary>Table of Contents</summary>
 
@@ -14,22 +19,40 @@
 - [Proof of Concept](#proof-of-concept)
 - [Impact Assessment](#impact-assessment)
 - [Immediate Fix Required](#immediate-fix-required)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_After deep code examination, I have identified the actual root cause of duplicate API requests in KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where message queue processing can trigger multiple concurrent API calls._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_After deep code examination, I have identified the actual root cause of duplicate API requests in
+KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where
+message queue processing can trigger multiple concurrent API calls._
 
 ## Root Cause Identified
 
 ### The Core Issue
 
-The duplicate API request issue is caused by a **race condition in the `ask` method** of `Task.ts` at lines 883-903. Here's what happens:
+The duplicate API request issue is caused by a **race condition in the `ask` method** of `Task.ts`
+at lines 883-903. Here's what happens:
 
 1. **Multiple concurrent `ask` calls** can occur during task execution
-2. **Each `ask` call checks for queued messages** using `isMessageQueued = !this.messageQueueService.isEmpty()`
+2. **Each `ask` call checks for queued messages** using
+   `isMessageQueued = !this.messageQueueService.isEmpty()`
 3. **Multiple `ask` calls can see the same queued message** and process it simultaneously
 4. **Each processing triggers `submitUserMessage`** which creates new API requests
 5. **Result: Multiple API calls for the same user input**
@@ -129,9 +152,7 @@ const message = this.messageQueueService.dequeueMessage() // gets undefined
 
 ### 1. Primary Race Condition
 
-**File**: `src/core/task/Task.ts`  
-**Lines**: 883-903  
-**Issue**: Non-atomic message queue processing
+**File**: `src/core/task/Task.ts` **Lines**: 883-903 **Issue**: Non-atomic message queue processing
 
 ```typescript
 // BUG: Race condition here
@@ -142,9 +163,8 @@ const message = this.messageQueueService.dequeueMessage()
 
 ### 2. Message Queue Service
 
-**File**: `src/core/message-queue/MessageQueueService.ts`  
-**Lines**: 80-84  
-**Issue**: No synchronization for concurrent access
+**File**: `src/core/message-queue/MessageQueueService.ts` **Lines**: 80-84 **Issue**: No
+synchronization for concurrent access
 
 ```typescript
 public dequeueMessage(): QueuedMessage | undefined {
@@ -156,9 +176,8 @@ public dequeueMessage(): QueuedMessage | undefined {
 
 ### 3. Process Queued Messages
 
-**File**: `src/core/task/Task.ts`  
-**Lines**: 3297-3312  
-**Issue**: Async processing without synchronization
+**File**: `src/core/task/Task.ts` **Lines**: 3297-3312 **Issue**: Async processing without
+synchronization
 
 ```typescript
 public processQueuedMessages(): void {
@@ -175,8 +194,7 @@ public processQueuedMessages(): void {
 
 ### 4. Tool Completion Triggers
 
-**Files**: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.)  
-**Lines**: Various  
+**Files**: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.) **Lines**: Various
 **Issue**: Tools call `processQueuedMessages()` without coordination
 
 ```typescript
@@ -372,7 +390,9 @@ describe("Concurrent Load Tests", () => {
 
 ## Conclusion
 
-The duplicate API request issue is caused by a **critical race condition** in the message queue processing logic of the `ask` method. This is a **high-priority bug** that requires immediate attention as it affects core functionality, user experience, and system reliability.
+The duplicate API request issue is caused by a **critical race condition** in the message queue
+processing logic of the `ask` method. This is a **high-priority bug** that requires immediate
+attention as it affects core functionality, user experience, and system reliability.
 
 The fix requires:
 
@@ -385,4 +405,12 @@ This analysis provides the exact locations and fixes needed to resolve the issue
 
 <a id="navigation-footer"></a>
 
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md#L1`
+- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
+  Root: [`README.md`](README.md) · Source: `/docs/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
+[↑ Table of Contents](#duplicate-api-requests---root-cause-analysis)

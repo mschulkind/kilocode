@@ -1,8 +1,14 @@
 # User Journey Design 🗺️
 
-**Purpose:** Comprehensive standards for designing user journeys that optimize the experience for different types of users with different goals, contexts, and expertise levels.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Geology Fun Fact**: Just like how different types of rock formations require different exploration strategies - some need careful excavation, others need seismic analysis, and some need core sampling - different user journeys require different navigation strategies based on user needs and context! 🌍
+**Purpose:** Comprehensive standards for designing user journeys that optimize the experience for
+different types of users with different goals, contexts, and expertise levels.
+
+> **Geology Fun Fact**: Just like how different types of rock formations require different
+> exploration strategies - some need careful excavation, others need seismic analysis, and some need
+> core sampling - different user journeys require different navigation strategies based on user
+> needs and context! 🌍
 
 <details><summary>Table of Contents</summary>
 
@@ -11,15 +17,17 @@
 - [Journey Optimization](#journey-optimization)
 - [Context Awareness](#context-awareness)
 - [Journey Patterns](#journey-patterns)
-- [Experience Design](#experience-design)
-- [Journey Validation](#journey-validation)
-- [Implementation Examples](#implementation-examples)
+- Experience Design
+- Journey Validation
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_User journey design creates optimal experiences for different types of users by understanding their goals, constraints, and context. These standards ensure that documentation provides the right information at the right time in the right format for each user type._
+_User journey design creates optimal experiences for different types of users by understanding their
+goals, constraints, and context. These standards ensure that documentation provides the right
+information at the right time in the right format for each user type._
 
 **Key Standards:**
 
@@ -34,11 +42,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Emergency Responders
 
-**Profile**: Developers, system administrators, support staff
-**Goals**: Quickly identify and fix problems
-**Constraints**: Time pressure, immediate action required
-**Expertise**: Intermediate to advanced
-**Context**: Production issues, system failures, user complaints
+**Profile**: Developers, system administrators, support staff **Goals**: Quickly identify and fix
+problems **Constraints**: Time pressure, immediate action required **Expertise**: Intermediate to
+advanced **Context**: Production issues, system failures, user complaints
 
 **Needs**:
 
@@ -56,11 +62,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Researchers
 
-**Profile**: Architects, researchers, new team members
-**Goals**: Comprehensive understanding of system architecture
-**Constraints**: No immediate time pressure, learning focus
-**Expertise**: Beginner to advanced
-**Context**: System design, architecture decisions, learning
+**Profile**: Architects, researchers, new team members **Goals**: Comprehensive understanding of
+system architecture **Constraints**: No immediate time pressure, learning focus **Expertise**:
+Beginner to advanced **Context**: System design, architecture decisions, learning
 
 **Needs**:
 
@@ -78,11 +82,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Implementers
 
-**Profile**: Developers, implementers, maintainers
-**Goals**: Implement solutions and maintain system
-**Constraints**: Project timeline, implementation focus
-**Expertise**: Intermediate to advanced
-**Context**: Development, implementation, maintenance
+**Profile**: Developers, implementers, maintainers **Goals**: Implement solutions and maintain
+system **Constraints**: Project timeline, implementation focus **Expertise**: Intermediate to
+advanced **Context**: Development, implementation, maintenance
 
 **Needs**:
 
@@ -100,11 +102,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### New Users
 
-**Profile**: New team members, beginners, students
-**Goals**: Learn the system and understand basics
-**Constraints**: Learning curve, need for context
-**Expertise**: Beginner
-**Context**: Onboarding, learning, training
+**Profile**: New team members, beginners, students **Goals**: Learn the system and understand basics
+**Constraints**: Learning curve, need for context **Expertise**: Beginner **Context**: Onboarding,
+learning, training
 
 **Needs**:
 
@@ -126,10 +126,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Progressive Disclosure
 
-**Principle**: Start with overview, then provide details
-**Benefits**: Users get context before diving into details
-**Implementation**: Use hierarchical information structure
-**Examples**: Executive summary → detailed sections → examples
+**Principle**: Start with overview, then provide details **Benefits**: Users get context before
+diving into details **Implementation**: Use hierarchical information structure **Examples**:
+Executive summary → detailed sections → examples
 
 **Structure**:
 
@@ -145,10 +144,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Multiple Entry Points
 
-**Principle**: Provide different ways to access the same information
-**Benefits**: Users can start from their preferred context
-**Implementation**: Create multiple navigation paths
-**Examples**: Problem-based, concept-based, process-based, reference-based
+**Principle**: Provide different ways to access the same information **Benefits**: Users can start
+from their preferred context **Implementation**: Create multiple navigation paths **Examples**:
+Problem-based, concept-based, process-based, reference-based
 
 **Entry Points**:
 
@@ -159,10 +157,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Context Awareness
 
-**Principle**: Adapt content based on user context
-**Benefits**: Users get relevant information for their situation
-**Implementation**: Use conditional content and smart navigation
-**Examples**: Experience level, time constraints, goals, tools
+**Principle**: Adapt content based on user context **Benefits**: Users get relevant information for
+their situation **Implementation**: Use conditional content and smart navigation **Examples**:
+Experience level, time constraints, goals, tools
 
 **Context Factors**:
 
@@ -177,10 +174,9 @@ _User journey design creates optimal experiences for different types of users by
 
 ### Experience Level Adaptation
 
-**Beginner**: More explanation, simpler language, more examples
-**Intermediate**: Balanced approach, moderate detail
-**Advanced**: Technical focus, quick reference
-**Expert**: Streamlined, implementation-focused
+**Beginner**: More explanation, simpler language, more examples **Intermediate**: Balanced approach,
+moderate detail **Advanced**: Technical focus, quick reference **Expert**: Streamlined,
+implementation-focused
 
 **Implementation**:
 
@@ -189,23 +185,22 @@ _User journey design creates optimal experiences for different types of users by
 
 This section provides a gentle introduction to the concept.
 
-**What is a race condition?**
-A race condition occurs when multiple processes try to access the same resource simultaneously.
+**What is a race condition?** A race condition occurs when multiple processes try to access the same
+resource simultaneously.
 
 ## For Advanced Users
 
 This section provides technical details for experienced developers.
 
-**Race Condition Analysis**:
-The race condition occurs in the `ask` method when both main loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+**Race Condition Analysis**: The race condition occurs in the `ask` method when both main loop and
+subtask completion call `recursivelyMakeClineRequests` simultaneously.
 ```
 
 ### Time Constraint Adaptation
 
-**Immediate**: Emergency response path, quick fixes
-**Short**: Quick reference, essential information
-**Medium**: Standard path, balanced detail
-**Long**: Comprehensive path, complete coverage
+**Immediate**: Emergency response path, quick fixes **Short**: Quick reference, essential
+information **Medium**: Standard path, balanced detail **Long**: Comprehensive path, complete
+coverage
 
 **Implementation**:
 
@@ -227,10 +222,9 @@ The race condition occurs in the `ask` method when both main loop and subtask co
 
 ### Goal-Based Adaptation
 
-**Problem Solving**: Focus on diagnosis and solutions
-**Learning**: Focus on concepts and understanding
-**Implementation**: Focus on practical guidance
-**Reference**: Focus on specific information
+**Problem Solving**: Focus on diagnosis and solutions **Learning**: Focus on concepts and
+understanding **Implementation**: Focus on practical guidance **Reference**: Focus on specific
+information
 
 **Implementation**:
 
@@ -238,7 +232,7 @@ The race condition occurs in the `ask` method when both main loop and subtask co
 ## Problem Solving Path
 
 - [Problem Identification](#problem-identification)
-- [Root Cause Analysis](#root-cause-analysis)
+- Root Cause Analysis
 - [Solution Implementation](#solution-implementation)
 - [Verification](#verification)
 
@@ -256,10 +250,9 @@ The race condition occurs in the `ask` method when both main loop and subtask co
 
 ### Problem-Solution Pattern
 
-**Use**: When users need to solve specific problems
-**Structure**: Problem → Analysis → Solution → Verification
-**Benefits**: Clear progression from problem to solution
-**Examples**: Bug fixes, system issues, user complaints
+**Use**: When users need to solve specific problems **Structure**: Problem → Analysis → Solution →
+Verification **Benefits**: Clear progression from problem to solution **Examples**: Bug fixes,
+system issues, user complaints
 
 **Implementation**:
 
@@ -270,7 +263,8 @@ Users are seeing multiple API requests with spinners appearing simultaneously.
 
 ## Analysis: Root Cause
 
-The race condition occurs when both main loop and subtask completion call `recursivelyMakeClineRequests`.
+The race condition occurs when both main loop and subtask completion call
+`recursivelyMakeClineRequests`.
 
 ## Solution: Synchronization
 
@@ -283,10 +277,9 @@ Test the solution to ensure it works correctly.
 
 ### Learning Pattern
 
-**Use**: When users need to understand concepts
-**Structure**: Overview → Concepts → Details → Examples
-**Benefits**: Progressive learning from general to specific
-**Examples**: System architecture, design patterns, new features
+**Use**: When users need to understand concepts **Structure**: Overview → Concepts → Details →
+Examples **Benefits**: Progressive learning from general to specific **Examples**: System
+architecture, design patterns, new features
 
 **Implementation**:
 
@@ -312,10 +305,9 @@ State machines are used for task lifecycle management.
 
 ### Implementation Pattern
 
-**Use**: When users need to implement solutions
-**Structure**: Design → Implementation → Testing → Maintenance
-**Benefits**: Clear progression from design to maintenance
-**Examples**: Feature development, system integration, bug fixes
+**Use**: When users need to implement solutions **Structure**: Design → Implementation → Testing →
+Maintenance **Benefits**: Clear progression from design to maintenance **Examples**: Feature
+development, system integration, bug fixes
 
 **Implementation**:
 
@@ -339,10 +331,9 @@ Monitor performance and update as needed.
 
 ### Reference Pattern
 
-**Use**: When users need specific information
-**Structure**: Quick Access → Details → Examples → Related
-**Benefits**: Fast access to specific information
-**Examples**: API references, configuration guides, troubleshooting
+**Use**: When users need specific information **Structure**: Quick Access → Details → Examples →
+Related **Benefits**: Fast access to specific information **Examples**: API references,
+configuration guides, troubleshooting
 
 **Implementation**:
 
@@ -378,6 +369,7 @@ const response = await task.ask("user_input", "Hello world")
 **Purpose**: Design user experiences that are intuitive, efficient, and satisfying.
 
 ### Intuitive Navigation
+
 **Principle**: Users should be able to navigate without thinking
 **Implementation**: Use familiar patterns and clear labels
 **Benefits**: Reduced cognitive load, faster navigation
@@ -390,6 +382,7 @@ const response = await task.ask("user_input", "Hello world")
 - **Consistent Design**: Maintain consistent design throughout
 
 ### Efficient Access
+
 **Principle**: Users should be able to find information quickly
 **Implementation**: Provide multiple ways to access information
 **Benefits**: Faster information discovery, better user satisfaction
@@ -402,6 +395,7 @@ const response = await task.ask("user_input", "Hello world")
 - **Cross-References**: Links to related information
 
 ### Contextual Help
+
 **Principle**: Provide help when and where users need it
 **Implementation**: Use contextual help and progressive disclosure
 **Benefits**: Better user experience, reduced frustration
@@ -418,6 +412,7 @@ const response = await task.ask("user_input", "Hello world")
 **Purpose**: Ensure user journeys are effective and user-friendly.
 
 ### Validation Criteria
+
 **Effectiveness**: Journeys should help users achieve their goals
 **Efficiency**: Journeys should be time-efficient
 **Satisfaction**: Users should be satisfied with the experience
@@ -430,6 +425,7 @@ const response = await task.ask("user_input", "Hello world")
 - **Error Rate**: Percentage of users who encounter errors
 
 ### Validation Methods
+
 **User Testing**: Test journeys with real users
 **Expert Review**: Review journeys with subject matter experts
 **Analytics**: Use analytics to track user behavior
@@ -444,6 +440,7 @@ const response = await task.ask("user_input", "Hello world")
 6. **Implement Improvements**: Make improvements based on findings
 
 ### Continuous Improvement
+
 **Purpose**: Continuously improve user journeys based on feedback and data
 **Process**: Regular review and improvement cycle
 **Frequency**: Monthly or quarterly reviews
@@ -464,15 +461,17 @@ const response = await task.ask("user_input", "Hello world")
 ```markdown
 # API Duplication Analysis
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 **Purpose:** Comprehensive analysis of the API duplication race condition.
 
 <details><summary>Table of Contents</summary>
 
 - [Executive Summary](#executive-summary)
 - [Quick Start Paths](#quick-start-paths)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Recommendations](#solution-recommendations)
+- Problem Description
+- Root Cause Analysis
+- Solution Recommendations
 - [Implementation Guide](#implementation-guide)
 - [User Journey Examples](#user-journey-examples)
 
@@ -485,47 +484,54 @@ _The API duplication issue is caused by a race condition where multiple API call
 ## Quick Start Paths
 
 ### 🚨 Emergency Response (5-10 minutes)
+
 **For**: Developers fixing production issues
-**Path**: [Problem Identification](#problem-description) → [Root Cause Analysis](#root-cause-analysis) → [Solution Implementation](#solution-recommendations) → [Verification](#implementation-guide)
+**Path**: Problem Identification → Root Cause Analysis → Solution Implementation → [Verification](#implementation-guide)
 
 ### 🔍 Deep Dive Research (30-60 minutes)
+
 **For**: Architects understanding system design
-**Path**: [System Overview](architecture/README.md) → [State Machines](architecture/state-machines/README.md) → [Race Condition Analysis](#root-cause-analysis) → [Advanced Topics](#solution-recommendations)
+**Path**: [System Overview](README.md) → [State Machines](README.md) → Race Condition Analysis → Advanced Topics
 
 ### 🛠️ Implementation Journey (1-2 hours)
+
 **For**: Developers implementing solutions
-**Path**: [Solution Design](#solution-recommendations) → [Code Implementation](#implementation-guide) → [Testing Strategy](testing/README.md) → [Maintenance Guide](maintenance/README.md)
+**Path**: Solution Design → [Code Implementation](#implementation-guide) → [Testing Strategy](README.md) → [Maintenance Guide](README.md)
 
 ## Problem Description
 
 The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
 
 ### Symptoms
+
 - Multiple API requests with spinners
 - Jumbled responses in chat interface
 - Confused user experience
 
 ### Impact
+
 - Degraded user experience
 - Potential data corruption
 - System instability
 
-**Next Steps**: [Root Cause Analysis](#root-cause-analysis) for technical details.
+**Next Steps**: Root Cause Analysis for technical details.
 
 ## Root Cause Analysis
 
 The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
+
 The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
 
-**Code Reference**: See [ask method implementation](/src/core/task/Task.ts#L739) for detailed analysis.
+**Code Reference**: See [ask method implementation](`[FILE_MOVED_OR_RENAMED]`#L739) for detailed analysis.
 
 ## Solution Recommendations
 
 Implement a synchronization mechanism to ensure only one recursive call executes at a time.
 
 ### Implementation Strategies
+
 1. **Simple Lock-Based**: Use a mutex to prevent concurrent calls
 2. **Enhanced with Call Tracking**: Track call state and queue additional calls
 3. **Subtask Completion Coordination**: Coordinate subtask completion with main loop
@@ -541,44 +547,47 @@ Follow these steps to implement the solution:
 3. **Test Thoroughly**: Create automated tests for race conditions
 4. **Monitor Performance**: Ensure solution doesn't impact performance
 
-**Prerequisites**: Before starting, ensure you understand [Root Cause Analysis](#root-cause-analysis).
+**Prerequisites**: Before starting, ensure you understand Root Cause Analysis.
 
-**Next Steps**: After implementation, see [Testing Strategy](testing/README.md) for validation.
+**Next Steps**: After implementation, see [Testing Strategy](README.md) for validation.
 
 ## User Journey Examples
 
 ### Emergency Responder Journey
+
 **Scenario**: Production issue with API duplication
 **Time**: 5-10 minutes
 **Steps**:
 1. **Problem Identification**: See symptoms in chat interface
-2. **Quick Diagnosis**: Check [Problem Description](#problem-description)
-3. **Root Cause**: Understand [Root Cause Analysis](#root-cause-analysis)
-4. **Quick Fix**: Apply [Solution Recommendations](#solution-recommendations)
+2. **Quick Diagnosis**: Check Problem Description
+3. **Root Cause**: Understand Root Cause Analysis
+4. **Quick Fix**: Apply Solution Recommendations
 5. **Verification**: Test the fix
 
 ### Researcher Journey
+
 **Scenario**: Understanding system architecture
 **Time**: 30-60 minutes
 **Steps**:
-1. **Overview**: Start with [System Architecture](architecture/README.md)
-2. **Deep Dive**: Explore [State Machines](architecture/state-machines/README.md)
-3. **Analysis**: Study [Race Condition Analysis](#root-cause-analysis)
-4. **Related**: Check [Orchestrator System](orchestrator/README.md)
-5. **Advanced**: Review [Advanced Topics](#solution-recommendations)
+1. **Overview**: Start with [System Architecture](README.md)
+2. **Deep Dive**: Explore [State Machines](README.md)
+3. **Analysis**: Study Race Condition Analysis
+4. **Related**: Check [Orchestrator System](README.md)
+5. **Advanced**: Review Advanced Topics
 
 ### Implementer Journey
+
 **Scenario**: Implementing a fix for the race condition
 **Time**: 1-2 hours
 **Steps**:
-1. **Design**: Review [Solution Recommendations](#solution-recommendations)
+1. **Design**: Review Solution Recommendations
 2. **Implementation**: Follow [Implementation Guide](#implementation-guide)
-3. **Testing**: Use [Testing Strategy](testing/README.md)
-4. **Maintenance**: Plan [Maintenance Guide](maintenance/README.md)
+3. **Testing**: Use [Testing Strategy](README.md)
+4. **Maintenance**: Plan [Maintenance Guide](README.md)
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](../architecture/README.md) · Root: [`INDEX.md`](../../INDEX.md) · Source: `/docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source: `/docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
 ````
 
 ### Minimal User Journey Example
@@ -586,19 +595,22 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 **Purpose:** Step-by-step instructions for building the KiloCode project.
 
 ## Quick Start Paths
 
 ### 🚀 Quick Build (5 minutes)
 
-**For**: Developers who just want to build the project
-**Path**: [Prerequisites](#prerequisites) → [Build Steps](#build-steps) → [Verification](#troubleshooting)
+**For**: Developers who just want to build the project **Path**: [Prerequisites](#prerequisites) →
+[Build Steps](#build-steps) → [Verification](#troubleshooting)
 
 ### 🔍 Detailed Setup (15-30 minutes)
 
-**For**: New developers setting up their environment
-**Path**: [Development Environment](DEVELOPMENT_ENVIRONMENT.md) → [Prerequisites](#prerequisites) → [Build Steps](#build-steps) → [Testing](TESTING_GUIDE.md)
+**For**: New developers setting up their environment **Path**:
+[Development Environment](DEVELOPMENT_ENVIRONMENT.md) → [Prerequisites](#prerequisites) →
+[Build Steps](#build-steps) → [Testing](TESTING_GUIDE.md)
 
 ## Prerequisites
 
@@ -608,7 +620,8 @@ Ensure you have the following installed:
 - pnpm
 - Git
 
-**Setup Guide**: See [Development Environment](DEVELOPMENT_ENVIRONMENT.md) for detailed setup instructions.
+**Setup Guide**: See [Development Environment](DEVELOPMENT_ENVIRONMENT.md) for detailed setup
+instructions.
 
 ## Build Steps
 
@@ -633,14 +646,19 @@ Common issues and solutions:
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`INDEX.md`](INDEX.md) · Source: `/docs/BUILD_PROCESS_GUIDE.md#L1`
+- Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [Back to Navigation](README.md) · [Next: Code Documentation](../code/README.md) · [Source: `/docs/standards/navigation/USER_JOURNEY_DESIGN.md#L1`](USER_JOURNEY_DESIGN.md#L1)
+**Navigation**: [Back to Navigation](README.md) · [Next: Code Documentation](../code/README.md) ·
+[Source: `/docs/standards/navigation/USER_JOURNEY_DESIGN.md#L1`](USER_JOURNEY_DESIGN.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 ## 🔍 Research Context & Next Steps
 
@@ -649,22 +667,29 @@ Common issues and solutions:
 **Understanding Documentation Standards:**
 
 - **Next**: Check related standards documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 **Implementing Documentation Standards:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Applying Standards to Documentation:**
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) → [Architecture Documentation](../architecture/README.md) → [Orchestrator Documentation](../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current issues
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
+- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+  issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Standards Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Standards Documentation](README.md) for guidance.
 
 ---
 
-**Navigation**: [← Back to Standards Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Standards Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

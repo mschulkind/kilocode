@@ -1,13 +1,18 @@
 # UI_CHAT_TASK_WINDOW
 
-**Purpose:** Describe the chat / task window UI, how user actions map to orchestrator actions, the control loop that decides when to fire API requests (including payload construction), how messages are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Describe the chat / task window UI, how user actions map to orchestrator actions, the
+control loop that decides when to fire API requests (including payload construction), how messages
+are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details>
 <summary>Table of contents</summary>
 
--   1. Related Documents
+- [1. Related Documents
 -   2. UI Overview
 -   3. Message Flow & Control Loop
 -   4. Request Payloads & Timing (timestamps)
@@ -22,11 +27,12 @@
 
 <a name="related-docs"></a>
 
-## 1. Related Documents
+## 1. Related Documents](1-related-documents---2-ui-overview---3-message-flow-control-loop---4-request-payloads-timing-timestamps---5-state-persistence-rendering---6-debugging-duplicate-api-requests---7-instrumentation-logs---8-troubleshooting-ux-notes---navigation-footer-summary-details-a-namerelated-docsa-1-related-documents-)
 
 - Backend lifecycle and task orchestration: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md)
 - Task delegation & subtasking: [`ORCHESTRATOR_TASK_DELEGATION.md`](ORCHESTRATOR_TASK_DELEGATION.md)
-- UI feature docs (external): [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md)
+- UI feature docs (external):
+  [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md)
 
 [Back to Top](#)
 
@@ -80,8 +86,10 @@ sequenceDiagram
 ### 3.2 When requests are issued
 
 - UI-initiated: user presses Send (explicit) or uses a shortcut (explicit).
-- Orchestrator-initiated: subtasks, follow-ups or scheduled actions trigger initiateTaskLoop() in the orchestrator.
-- Guard conditions before issuing: no activeRequest for same chat turn, request payload validated, and requestId generated.
+- Orchestrator-initiated: subtasks, follow-ups or scheduled actions trigger initiateTaskLoop() in
+  the orchestrator.
+- Guard conditions before issuing: no activeRequest for same chat turn, request payload validated,
+  and requestId generated.
 - Debounce UI actions (100–250ms) for rapid input events; do not fire on every keystroke.
 
 [Back to Top](#)
@@ -108,7 +116,8 @@ sequenceDiagram
     - provider_start_timestamp: when provider sends first token
     - provider_response_timestamp: when final response received
 - Log requestId with each timestamp to correlate events across layers.
-- Display timestamps in UI as local-time derived from ISO-8601 UTC stored on messages (e.g. 2025-09-19T20:47:27Z).
+- Display timestamps in UI as local-time derived from ISO-8601 UTC stored on messages (e.g.
+  2025-09-19T20:47:27Z).
 
 [Back to Top](#)
 
@@ -119,13 +128,16 @@ sequenceDiagram
 ### 5.1 In-memory vs persisted state
 
 - In-memory UI state: draft message, temporary streaming buffers, UI flags (send disabled).
-- Persisted state: conversation history, message timestamps, model/profile preferences, saved drafts.
-- Best practice: persist conversation messages and request metadata so re-renders or reconstructions keep consistent times and ids.
+- Persisted state: conversation history, message timestamps, model/profile preferences, saved
+  drafts.
+- Best practice: persist conversation messages and request metadata so re-renders or reconstructions
+  keep consistent times and ids.
 
 ### 5.2 Rendering notes
 
 - Preserve edit buffer across rerenders; use controlled components.
-- Include data attributes on message elements: data-request-id, data-provider-id to assist debugging.
+- Include data attributes on message elements: data-request-id, data-provider-id to assist
+  debugging.
 - Render streaming chunks progressively and finalize when stream completes.
 
 [Back to Top](#)
@@ -144,7 +156,8 @@ If multiple API requests are observed for a single user action, check:
 
 ### 6.1 Diagnostics
 
-- Add logging at: UI.enqueue(requestId), Orchestrator.dispatch(requestId), Provider.start(requestId).
+- Add logging at: UI.enqueue(requestId), Orchestrator.dispatch(requestId),
+  Provider.start(requestId).
 - Correlate request timestamps and requestIds across logs.
 - Search for multiple UI.enqueue events for same action.
 
@@ -152,7 +165,8 @@ If multiple API requests are observed for a single user action, check:
 
 - Disable send button on click and re-enable after complete/error.
 - Add debounce (100–250ms) or guard flag activeRequest per chat turn.
-- Attach and check client-generated requestId; orchestrator should skip if activeRequest exists for same id.
+- Attach and check client-generated requestId; orchestrator should skip if activeRequest exists for
+  same id.
 - Use cancellation tokens to cancel in-flight provider calls when superseded.
 
 [Back to Top](#)
@@ -184,3 +198,10 @@ Navigation:
 
 - Index: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md)
 - Task delegation: [`docs/ORCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [ui](../docs/ui/) ·
+[↑ Table of Contents](#uichattaskwindow)

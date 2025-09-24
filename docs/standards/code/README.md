@@ -1,8 +1,14 @@
 # Code Documentation 📝
 
-**Purpose:** Comprehensive standards for documenting code, data structures, and technical content to ensure clarity, maintainability, and accessibility for all users.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-> **Biology Fun Fact**: Just like how DNA contains the genetic code that determines how living organisms function, our code documentation contains the "genetic code" that determines how our software functions - and just like DNA, it needs to be well-organized and clearly documented to be useful! 🧬
+**Purpose:** Comprehensive standards for documenting code, data structures, and technical content to
+ensure clarity, maintainability, and accessibility for all users.
+
+> **Biology Fun Fact**: Just like how DNA contains the genetic code that determines how living
+> organisms function, our code documentation contains the "genetic code" that determines how our
+> software functions - and just like DNA, it needs to be well-organized and clearly documented to be
+> useful! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -18,7 +24,23 @@
 
 ## Executive Summary
 
-_Effective code documentation makes complex technical content accessible and understandable for all users. These standards ensure that code, data structures, and technical concepts are clearly documented with appropriate context and explanations._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_Effective code documentation makes complex technical content accessible and understandable for all
+users. These standards ensure that code, data structures, and technical concepts are clearly
+documented with appropriate context and explanations._
 
 **Key Standards:**
 
@@ -56,10 +78,9 @@ enum ExampleState {
 
 ### Comment Types
 
-**Purpose Comments**: Explain what the code does
-**Context Comments**: Explain how it relates to other concepts
-**Constraint Comments**: Explain limitations and requirements
-**Example Comments**: Provide usage examples
+**Purpose Comments**: Explain what the code does **Context Comments**: Explain how it relates to
+other concepts **Constraint Comments**: Explain limitations and requirements **Example Comments**:
+Provide usage examples
 
 **Implementation**:
 
@@ -404,8 +425,12 @@ class RecursiveCallManager {
 - [ ] Code snippets are properly formatted
 - [ ] Examples are relevant and useful
 
+## Navigation Footer
+
 ---
 
-**Navigation**: [Back to Standards](../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md) · [Source: `/docs/standards/code/README.md#L1`](README.md#L1)
+**Navigation**: [Back to Standards](../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md) ·
+[Source: `/docs/standards/code/README.md#L1`](README.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️

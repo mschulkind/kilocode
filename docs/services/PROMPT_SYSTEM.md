@@ -1,8 +1,12 @@
 # Prompt System
 
-**Purpose:** Comprehensive documentation of the prompt system for AI interaction, system prompt generation, and context management in KiloCode.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a specific function, but they all work together to keep the system healthy and functioning! 🧬
+**Purpose:** Comprehensive documentation of the prompt system for AI interaction, system prompt
+generation, and context management in KiloCode.
+
+> **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
+> specific function, but they all work together to keep the system healthy and functioning! 🧬
 
 <details><summary>Table of Contents</summary>
 
@@ -13,13 +17,14 @@
 - [Instruction System](#instruction-system)
 - [Response Processing](#response-processing)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Prompt System provides comprehensive AI interaction capabilities through dynamic prompt generation, context management, and response processing in the KiloCode system._
+_The Prompt System provides comprehensive AI interaction capabilities through dynamic prompt
+generation, context management, and response processing in the KiloCode system._
 
 The Prompt System consists of:
 
@@ -81,8 +86,7 @@ graph TB
 
 ### System Prompt Generation
 
-**Implementation**: `src/core/prompts/system.ts`
-**Features**:
+**Implementation**: `src/core/prompts/system.ts` **Features**:
 
 - **Dynamic Prompt Assembly**: Context-aware prompt generation
 - **Component Integration**: Modular prompt component system
@@ -100,8 +104,7 @@ interface PromptComponent {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Modular Architecture**: Component-based prompt construction
 - **Context Awareness**: Intelligent context integration
@@ -127,8 +130,7 @@ interface ContextAssembler {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Intelligent Assembly**: Smart context selection and assembly
 - **Optimization**: Context size and relevance optimization
@@ -139,8 +141,7 @@ interface ContextAssembler {
 
 ### File Context Tracking
 
-**Implementation**: `src/core/context-tracking/FileContextTracker.ts`
-**Features**:
+**Implementation**: `src/core/context-tracking/FileContextTracker.ts` **Features**:
 
 - **File Monitoring**: Real-time file change tracking
 - **Context Caching**: Efficient context caching and retrieval
@@ -158,8 +159,7 @@ interface FileContextTracker {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Tracking**: Live file change monitoring
 - **Efficient Caching**: Smart context caching strategies
@@ -175,8 +175,7 @@ interface FileContextTracker {
 - **Priority Ranking**: Context priority and importance ranking
 - **Compression**: Context compression and deduplication
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Smart Filtering**: Relevance-based context filtering
 - **Size Optimization**: Efficient context size management
@@ -187,8 +186,7 @@ interface FileContextTracker {
 
 ### Rule Processing
 
-**Implementation**: `src/core/context/instructions/`
-**Features**:
+**Implementation**: `src/core/context/instructions/` **Features**:
 
 - **Rule Engine**: Flexible rule processing and validation
 - **Workflow Management**: Complex workflow orchestration
@@ -207,8 +205,7 @@ interface Rule {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Flexible Rules**: Dynamic rule processing and execution
 - **Workflow Support**: Complex workflow orchestration
@@ -224,8 +221,7 @@ interface Rule {
 - **Performance Validation**: Rule performance and efficiency validation
 - **Security Validation**: Rule security and safety validation
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Comprehensive Validation**: Multi-layer validation system
 - **Error Detection**: Early error detection and reporting
@@ -236,8 +232,7 @@ interface Rule {
 
 ### Assistant Message Parsing
 
-**Implementation**: `src/core/assistant-message/`
-**Features**:
+**Implementation**: `src/core/assistant-message/` **Features**:
 
 - **Message Parsing**: Comprehensive message parsing and validation
 - **Format Support**: Multiple message format support
@@ -254,8 +249,7 @@ interface AssistantMessageParser {
 }
 ```
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Multi-format Support**: Support for various message formats
 - **Robust Parsing**: Reliable message parsing and validation
@@ -271,8 +265,7 @@ interface AssistantMessageParser {
 - **Safety Validation**: Response safety and security validation
 - **Performance Validation**: Response performance and efficiency validation
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Features**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Quality Assurance**: Comprehensive response quality validation
 - **Safety Checks**: Security and safety validation
@@ -289,8 +282,8 @@ interface AssistantMessageParser {
 - High memory usage
 - Context assembly delays
 
-**Root Cause**: Inefficient prompt generation or context processing
-**Solution**: Implement prompt caching and context optimization
+**Root Cause**: Inefficient prompt generation or context processing **Solution**: Implement prompt
+caching and context optimization
 
 ### Issue 2: Context Size Issues
 
@@ -300,8 +293,8 @@ interface AssistantMessageParser {
 - Context truncation problems
 - Poor context relevance
 
-**Root Cause**: Inadequate context size management or relevance filtering
-**Solution**: Implement smart context filtering and size optimization
+**Root Cause**: Inadequate context size management or relevance filtering **Solution**: Implement
+smart context filtering and size optimization
 
 ### Issue 3: Response Parsing Errors
 
@@ -311,8 +304,8 @@ interface AssistantMessageParser {
 - Parsing failures
 - Inconsistent response handling
 
-**Root Cause**: Robust parsing or response format issues
-**Solution**: Improve parsing algorithms and error handling
+**Root Cause**: Robust parsing or response format issues **Solution**: Improve parsing algorithms
+and error handling
 
 ### Issue 4: Rule Processing Issues
 
@@ -322,9 +315,17 @@ interface AssistantMessageParser {
 - Inconsistent rule behavior
 - Performance problems
 
-**Root Cause**: Rule engine or validation issues
-**Solution**: Implement robust rule processing and validation
+**Root Cause**: Rule engine or validation issues **Solution**: Implement robust rule processing and
+validation
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/services/PROMPT_SYSTEM.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+  `/docs/services/PROMPT_SYSTEM.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [services](../docs/services/) ·
+[↑ Table of Contents](#prompt-system)

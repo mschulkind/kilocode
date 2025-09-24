@@ -1,8 +1,14 @@
 # File & Directory Conventions 📁
 
-**Purpose:** Comprehensive rules for naming, organizing, and structuring documentation files and directories to ensure consistency and discoverability across the KiloCode project.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Geology Fun Fact**: The Earth's crust is organized into distinct layers and formations, each with its own characteristics and purpose. Our file conventions are like the "geological classification system" that helps us organize our documentation into logical, discoverable structures! 🌍
+**Purpose:** Comprehensive rules for naming, organizing, and structuring documentation files and
+directories to ensure consistency and discoverability across the KiloCode project.
+
+> **Geology Fun Fact**: The Earth's crust is organized into distinct layers and formations, each
+> with its own characteristics and purpose. Our file conventions are like the "geological
+> classification system" that helps us organize our documentation into logical, discoverable
+> structures! 🌍
 
 <details><summary>Table of Contents</summary>
 
@@ -13,13 +19,29 @@
 - [Naming Patterns](#naming-patterns)
 - [Organization Principles](#organization-principles)
 - [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
+- Implementation Examples
 
 </details>
 
 ## Executive Summary
 
-_Consistent file and directory conventions are essential for discoverability and maintainability. These rules ensure that contributors can quickly find and understand the organization of our documentation system._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_Consistent file and directory conventions are essential for discoverability and maintainability.
+These rules ensure that contributors can quickly find and understand the organization of our
+documentation system._
 
 **Key Standards:**
 
@@ -30,7 +52,8 @@ _Consistent file and directory conventions are essential for discoverability and
 
 ## Filename Standards
 
-**Format**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII letters, numbers, and underscores only.
+**Format**: Use `UPPERCASE_SNAKE_CASE.md` for all file names. Filenames MUST use ASCII letters,
+numbers, and underscores only.
 
 **Character Rules**:
 
@@ -50,7 +73,7 @@ _Consistent file and directory conventions are essential for discoverability and
 
 **Length Guidelines**:
 
-- **Minimum**: 5 characters (e.g., `INDEX.md`)
+- **Minimum**: 5 characters (e.g., `README.md`)
 - **Maximum**: 50 characters (including .md extension)
 - **Optimal**: 20-40 characters for readability
 
@@ -62,21 +85,21 @@ _Consistent file and directory conventions are essential for discoverability and
 
 ```
 docs/
-├── INDEX.md                    # Master navigation hub
+├── README.md                    # Master navigation hub
 ├── standards/                  # Documentation standards
-│   ├── INDEX.md
+│   ├── README.md
 │   ├── core/
 │   ├── structure/
 │   └── navigation/
 ├── architecture/               # System architecture
-│   ├── INDEX.md
+│   ├── README.md
 │   ├── state-machines/
 │   └── orchestrator/
 ├── services/                   # Service documentation
-│   ├── INDEX.md
+│   ├── README.md
 │   └── laminar/
 └── ui/                        # User interface docs
-    ├── INDEX.md
+    ├── README.md
     └── components/
 ```
 
@@ -91,13 +114,13 @@ docs/
 
 **Purpose**: Index files serve as navigation hubs and content aggregators.
 
-**Naming**: Always use `INDEX.md` (not `index.md` or `Index.md`)
+**Naming**: Always use `README.md` (not `index.md` or `Index.md`)
 
 **Placement**:
 
-- **Root Level**: `docs/INDEX.md` as the master navigation hub
-- **Subdirectories**: `INDEX.md` in each subdirectory when it contains multiple topical docs
-- **Optional**: Skip `INDEX.md` for directories with only 1-2 files
+- **Root Level**: `docs/README.md` as the master navigation hub
+- **Subdirectories**: `README.md` in each subdirectory when it contains multiple topical docs
+- **Optional**: Skip `README.md` for directories with only 1-2 files
 
 **Content Requirements**:
 
@@ -110,6 +133,8 @@ docs/
 
 ```markdown
 # Architecture Documentation
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 **Purpose:** System architecture and design patterns for KiloCode.
 
@@ -143,7 +168,7 @@ docs/
 
 **Avoid Generic Names**:
 
-- ❌ `README.md` (use `INDEX.md` instead)
+- ❌ `README.md` (use `README.md` instead)
 - ❌ `GUIDE.md` (too generic)
 - ❌ `DOCS.md` (too generic)
 - ❌ `INFO.md` (too generic)
@@ -169,13 +194,19 @@ docs/
 
 ```
 # Good: Clear, focused purpose
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 docs/architecture/state-machines/
-├── INDEX.md
+├── README.md
 ├── TASK_STATE_MACHINE.md
 ├── SESSION_STATE_MACHINE.md
 └── RECURSIVE_CALL_STATE_MACHINE.md
 
 # Bad: Too many levels, unclear purpose
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 docs/architecture/state-machines/task-states/individual-states/
 ```
 
@@ -210,14 +241,14 @@ docs/architecture/state-machines/task-states/individual-states/
 
 ```
 docs/standards/
-├── INDEX.md                           # Clear navigation hub
+├── README.md                           # Clear navigation hub
 ├── core/
-│   ├── INDEX.md                       # Subdirectory index
+│   ├── README.md                       # Subdirectory index
 │   ├── PRINCIPLES.md                  # Descriptive name
 │   ├── FILE_CONVENTIONS.md            # Clear purpose
 │   └── LINKING_POLICY.md              # Specific topic
 └── structure/
-    ├── INDEX.md
+    ├── README.md
     ├── DOCUMENT_ANATOMY.md
     └── HEADINGS_HIERARCHY.md
 ```
@@ -241,17 +272,27 @@ docs/standards/
 
 ```bash
 # Before (incorrect)
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
 docs/standards/core/principles.md
 
 # After (correct)
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 docs/standards/core/PRINCIPLES.md
 ```
 
+## Navigation Footer
+
 ---
 
-**Navigation**: [Back to Core Standards](README.md) · [Next: Linking Policy](LINKING_POLICY.md) · [Source: `/docs/standards/core/FILE_CONVENTIONS.md#L1`](FILE_CONVENTIONS.md#L1)
+**Navigation**: [Back to Core Standards](README.md) · [Next: Linking Policy](LINKING_POLICY.md) ·
+[Source: `/docs/standards/core/FILE_CONVENTIONS.md#L1`](FILE_CONVENTIONS.md#L1)
 
-\_"The best way to understand a complex system is to map it like a geologist maps rock formations - layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+\_"The best way to understand a complex system is to map it like a geologist maps rock formations -
+layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 ## 🔍 Research Context & Next Steps
 
@@ -260,22 +301,29 @@ docs/standards/core/PRINCIPLES.md
 **Understanding Documentation Standards:**
 
 - **Next**: Check related standards documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 **Implementing Documentation Standards:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Applying Standards to Documentation:**
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) → [Architecture Documentation](../architecture/README.md) → [Orchestrator Documentation](../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current issues
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
+- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+  issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Standards Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Standards Documentation](README.md) for guidance.
 
 ---
 
-**Navigation**: [← Back to Standards Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Standards Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,8 +1,13 @@
 # Communication Layer System
 
-**Purpose:** Comprehensive documentation of the Communication Layer system, including Webview Bridge and Message Handler components that facilitate communication between the UI and backend systems.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Quantum Physics Fun Fact**: The communication layer is like quantum entanglement - when the UI changes state, the backend instantly knows about it, just as entangled particles instantly affect each other regardless of distance! ⚛️
+**Purpose:** Comprehensive documentation of the Communication Layer system, including Webview Bridge
+and Message Handler components that facilitate communication between the UI and backend systems.
+
+> **Quantum Physics Fun Fact**: The communication layer is like quantum entanglement - when the UI
+> changes state, the backend instantly knows about it, just as entangled particles instantly affect
+> each other regardless of distance! ⚛️
 
 <details><summary>Table of Contents</summary>
 
@@ -12,15 +17,31 @@
 - [Message Handler](#message-handler)
 - [Message Types and Routing](#message-types-and-routing)
 - [State Synchronization](#state-synchronization)
-- [Error Handling](#error-handling)
+- Error Handling
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Communication Layer system manages all communication between the UI layer and the backend orchestration systems. It consists of the Webview Bridge for message passing and the Message Handler for routing and processing incoming messages._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_The Communication Layer system manages all communication between the UI layer and the backend
+orchestration systems. It consists of the Webview Bridge for message passing and the Message Handler
+for routing and processing incoming messages._
 
 The Communication Layer consists of two main components:
 
@@ -68,7 +89,8 @@ graph TB
 
 ### Overview
 
-The Webview Bridge facilitates communication between the VS Code extension (backend) and the webview (frontend) using the `vscode.postMessage` API.
+The Webview Bridge facilitates communication between the VS Code extension (backend) and the webview
+(frontend) using the `vscode.postMessage` API.
 
 **Location**: Used throughout `webview-ui/src/` components
 
@@ -147,7 +169,8 @@ webviewView.webview.onDidReceiveMessage(
 
 ### Overview
 
-The Message Handler processes incoming messages from the UI and routes them to appropriate backend systems.
+The Message Handler processes incoming messages from the UI and routes them to appropriate backend
+systems.
 
 **Location**: `src/core/webview/webviewMessageHandler.ts`
 
@@ -509,28 +532,41 @@ class MessageQueue {
 
 **Understanding Communication Architecture:**
 
-- **Next**: [UI Layer System](./UI_LAYER_SYSTEM.md) → [Orchestration Layer System](./ORCHESTRATION_LAYER_SYSTEM.md) → [System Overview](./SYSTEM_OVERVIEW.md)
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Repository Overview](./repository/README.md) for codebase structure
+- **Next**: [UI Layer System](./UI_LAYER_SYSTEM.md) →
+  [Orchestration Layer System](./ORCHESTRATION_LAYER_SYSTEM.md) →
+  [System Overview](./SYSTEM_OVERVIEW.md)
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Repository Overview](../architecture/repository/README.md) for codebase structure
 
 **Implementing Communication Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md) →
+  [Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Communication Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md) →
+  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 **Understanding Current Problems:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Code Flow Analysis](./race-condition/CODE_FLOW_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [State Machines](./state-machines/README.md) for behavior analysis
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Code Flow Analysis]race-condition/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Related**: [State Machines](README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](./README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](./README.md) for guidance.
 
 <a id="navigation-footer"></a>
 
-**Navigation**: [← Back to Architecture Documentation](./README.md) · [→ UI Layer System](./UI_LAYER_SYSTEM.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](./README.md) ·
+[→ UI Layer System](./UI_LAYER_SYSTEM.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+[↑ Table of Contents](#-research-context--next-steps)

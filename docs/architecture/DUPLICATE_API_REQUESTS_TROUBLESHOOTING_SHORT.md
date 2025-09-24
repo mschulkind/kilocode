@@ -1,8 +1,24 @@
 # Duplicate API Requests Troubleshooting (Short)
 
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 Purpose: Fast, field-ready triage for multiple spinners / jumbled responses.
 
 ## Triage Flow
+
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
 
 1. Observe symptoms
 
@@ -68,7 +84,8 @@ rg 'Task.recursivelyMakeClineRequests".*"start"' src webview-ui | cat
     - No → Investigate jumbled UI rendering, ordering logic, or tool result routing
 
 - Triple overlap?
-    - Yes → Confirm premature completion; educate UI flow; add guard to suppress extra calls when `green end` recently emitted
+    - Yes → Confirm premature completion; educate UI flow; add guard to suppress extra calls when
+      `green end` recently emitted
 
 ## Preventive Measures
 
@@ -78,11 +95,11 @@ rg 'Task.recursivelyMakeClineRequests".*"start"' src webview-ui | cat
 
 ## Links
 
-- [Root Cause Analysis of Duplicate API Requests](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- [Code Flow and Execution Analysis](./race-condition/CODE_FLOW_ANALYSIS.md)
-- [Solution Options and Synchronization Strategies](./race-condition/SOLUTION_RECOMMENDATIONS.md)
-- [Testing Strategy and Validation Plan](./race-condition/TESTING_STRATEGY.md)
-- [Prevention and Monitoring Measures](./race-condition/PREVENTION_MEASURES.md)
+- [Root Cause Analysis of Duplicate API Requests]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [Code Flow and Execution Analysis]race-condition/CODE_FLOW_ANALYSIS.md)
+- [Solution Options and Synchronization Strategies]race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [Testing Strategy and Validation Plan]race-condition/TESTING_STRATEGY.md)
+- [Prevention and Monitoring Measures]race-condition/PREVENTION_MEASURES.md)
 
 ## 🔍 Research Context & Next Steps
 
@@ -91,22 +108,30 @@ rg 'Task.recursivelyMakeClineRequests".*"start"' src webview-ui | cat
 **Understanding Architecture:**
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](README.md) for context
 
 **Implementing Architecture Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Architecture Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
