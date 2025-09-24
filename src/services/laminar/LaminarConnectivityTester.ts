@@ -354,7 +354,7 @@ export class LaminarConnectivityTester {
 					socket.write(httpRequest)
 				})
 
-				socket.on("data", (data) => {
+				socket.on("data", (data: Buffer) => {
 					responseData += data.toString()
 					console.log(
 						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Received data chunk:`,
@@ -366,7 +366,7 @@ export class LaminarConnectivityTester {
 								.substring(0, 200)
 								.replace(/[\r\n]/g, "\\n"),
 							firstBytes: Array.from(data.slice(0, 20))
-								.map((b) => b.toString(16).padStart(2, "0"))
+								.map((b: number) => b.toString(16).padStart(2, "0"))
 								.join(" "),
 						},
 					)
@@ -444,7 +444,7 @@ export class LaminarConnectivityTester {
 					}
 				})
 
-				socket.on("error", (err) => {
+				socket.on("error", (err: Error) => {
 					clearTimeout(timeout)
 					console.log(
 						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Socket error: ${err.message}`,
