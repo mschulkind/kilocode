@@ -293,14 +293,14 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup Node.js
+- uses: actions/checkout@v3
+- name: Setup Node.js
         uses: actions/setup-node@v3
-    - name: Install dependencies
+- name: Install dependencies
         run: pnpm install
-    - name: Lint
+- name: Lint
         run: pnpm lint
-    - name: Type check
+- name: Type check
         run: pnpm check-types
 ```
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION**
