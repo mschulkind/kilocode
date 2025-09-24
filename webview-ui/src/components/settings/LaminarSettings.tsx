@@ -29,6 +29,14 @@ export const LaminarSettings = ({ laminarSettings, setCachedStateField }: Lamina
 	const [testStatus, setTestStatus] = useState<TestStatus>("idle")
 	const [testMessage, setTestMessage] = useState<string>("")
 
+	// Debug logging for component lifecycle
+	console.log("[LAMINAR SETTINGS DEBUG] LaminarSettings component rendered:", {
+		timestamp: new Date().toISOString(),
+		laminarSettings,
+		props: { laminarSettings, setCachedStateField: !!setCachedStateField },
+		callStack: new Error().stack?.split("\n").slice(0, 5),
+	})
+
 	// Use local state for form fields to ensure immediate updates
 	const [localApiKey, setLocalApiKey] = useState("")
 	const [localBaseUrl, setLocalBaseUrl] = useState("https://api.lmnr.ai")
@@ -47,15 +55,58 @@ export const LaminarSettings = ({ laminarSettings, setCachedStateField }: Lamina
 
 	// Sync local state with props when they change
 	React.useEffect(() => {
+		console.log("[LAMINAR SETTINGS DEBUG] Syncing local state with props:", {
+			timestamp: new Date().toISOString(),
+			previousValues: {
+				apiKey: localApiKey,
+				baseUrl: localBaseUrl,
+				httpPort: localHttpPort,
+				grpcPort: localGrpcPort,
+				recordIO: localRecordIO,
+			},
+			newValues: {
+				apiKey,
+				baseUrl,
+				httpPort,
+				grpcPort,
+				recordIO,
+			},
+			laminarSettings,
+		})
+
 		setLocalApiKey(apiKey)
 		setLocalBaseUrl(baseUrl)
 		setLocalHttpPort(httpPort)
 		setLocalGrpcPort(grpcPort)
 		setLocalRecordIO(recordIO)
-	}, [apiKey, baseUrl, httpPort, grpcPort, recordIO])
+	}, [
+		laminarSettings,
+		apiKey,
+		baseUrl,
+		httpPort,
+		grpcPort,
+		recordIO,
+		localApiKey,
+		localBaseUrl,
+		localHttpPort,
+		localGrpcPort,
+		localRecordIO,
+	])
 
 	const updateField = useCallback(
 		(field: keyof LaminarSettingsData, value: any) => {
+			console.log("[LAMINAR SETTINGS DEBUG] updateField called:", {
+				timestamp: new Date().toISOString(),
+				field,
+				value,
+				currentLaminarSettings: laminarSettings,
+				newLaminarSettings: {
+					...laminarSettings,
+					[field]: value,
+				},
+				callStack: new Error().stack?.split("\n").slice(0, 5),
+			})
+
 			setCachedStateField("laminarSettings", {
 				...laminarSettings,
 				[field]: value,
@@ -65,6 +116,18 @@ export const LaminarSettings = ({ laminarSettings, setCachedStateField }: Lamina
 	)
 
 	const handleTestConnection = useCallback(async () => {
+		console.log("[LAMINAR SETTINGS DEBUG] handleTestConnection called:", {
+			timestamp: new Date().toISOString(),
+			currentFormValues: {
+				localApiKey,
+				localBaseUrl,
+				localHttpPort,
+				localGrpcPort,
+				localRecordIO,
+			},
+			currentLaminarSettings: laminarSettings,
+		})
+
 		setTestStatus("testing")
 		setTestMessage("")
 
@@ -127,14 +190,31 @@ export const LaminarSettings = ({ laminarSettings, setCachedStateField }: Lamina
 				})
 			})
 
-			console.log("[LAMINAR DEBUG] Test connection response received:", {
+			console.log("[LAMINAR SETTINGS DEBUG] Test connection response received:", {
+				timestamp: new Date().toISOString(),
 				success: response.success,
 				error: response.error,
 				details: response.details,
 				fullResponse: response,
+				testValuesUsed: {
+					apiKey: localApiKey ? localApiKey.substring(0, 8) + "..." : "undefined",
+					baseUrl: localBaseUrl,
+					httpPort: localHttpPort,
+					grpcPort: localGrpcPort,
+					recordIO: localRecordIO,
+					enabled,
+				},
 			})
 
 			if (response.success) {
+				console.log("[LAMINAR SETTINGS DEBUG] Connection test successful:", {
+					timestamp: new Date().toISOString(),
+					httpConnectivity: response.details?.httpConnectivity,
+					grpcConnectivity: response.details?.grpcConnectivity,
+					baseUrl: response.details?.baseUrl,
+					httpPort: response.details?.httpPort,
+				})
+
 				setTestStatus("success")
 				const httpStatus = response.details?.httpConnectivity?.success ? "✓" : "✗"
 				const grpcStatus = response.details?.grpcConnectivity?.success ? "✓" : "✗"
@@ -142,6 +222,18 @@ export const LaminarSettings = ({ laminarSettings, setCachedStateField }: Lamina
 					`Connection successful — ${response.details?.baseUrl}:${response.details?.httpPort} (HTTP: ${httpStatus}, gRPC: ${grpcStatus})`,
 				)
 			} else {
+				console.log("[LAMINAR SETTINGS DEBUG] Connection test failed:", {
+					timestamp: new Date().toISOString(),
+					error: response.error,
+					details: response.details,
+					testValuesUsed: {
+						apiKey: localApiKey ? localApiKey.substring(0, 8) + "..." : "undefined",
+						baseUrl: localBaseUrl,
+						httpPort: localHttpPort,
+						grpcPort: localGrpcPort,
+					},
+				})
+
 				setTestStatus("error")
 				setTestMessage(response.error || "Connection failed")
 			}
@@ -149,7 +241,7 @@ export const LaminarSettings = ({ laminarSettings, setCachedStateField }: Lamina
 			setTestStatus("error")
 			setTestMessage(`Test failed: ${error}`)
 		}
-	}, [enabled, localApiKey, localBaseUrl, localGrpcPort, localHttpPort, localRecordIO])
+	}, [laminarSettings, enabled, localApiKey, localBaseUrl, localGrpcPort, localHttpPort, localRecordIO])
 
 	const validateUrl = (url: string): boolean => {
 		try {

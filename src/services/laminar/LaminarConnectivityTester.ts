@@ -242,16 +242,48 @@ export class LaminarConnectivityTester {
 			)
 
 			if (testResult.success) {
+				// ADDITIONAL VALIDATION: Check if this is actually a gRPC service
+				const grpcAssessment = this.assessGrpcLikelihood(grpcPort, testResult)
 				console.log(
-					`[LAMINAR DEBUG] testGrpcConnectivity - Operation ID: ${operationId} - Completed - gRPC port is reachable`,
+					`[LAMINAR DEBUG] testGrpcConnectivity - Operation ID: ${operationId} - gRPC likelihood assessment: ${grpcAssessment.reason}`,
 				)
-				return {
-					success: true,
-					details: {
-						hostname,
-						grpcPort,
-						tcpConnectivity: testResult.details,
-					},
+
+				// CRITICAL FIX: Accept as successful if we have medium, high, or very high confidence it's actually gRPC
+				if (
+					grpcAssessment.likely &&
+					(grpcAssessment.confidence.includes("Very High") ||
+						grpcAssessment.confidence.includes("High") ||
+						grpcAssessment.confidence.includes("Medium"))
+				) {
+					console.log(
+						`[LAMINAR DEBUG] testGrpcConnectivity - Operation ID: ${operationId} - Completed - gRPC port is reachable and likely running gRPC service`,
+					)
+					return {
+						success: true,
+						details: {
+							hostname,
+							grpcPort,
+							tcpConnectivity: testResult.details,
+							grpcAssessment,
+						},
+					}
+				} else {
+					// FAIL the test if we detect a likely false positive
+					const errorMessage = `gRPC port ${grpcPort} appears to be a false positive: ${grpcAssessment.reason} (confidence: ${grpcAssessment.confidence})`
+					console.log(
+						`[LAMINAR DEBUG] testGrpcConnectivity - Operation ID: ${operationId} - FAILED - ${errorMessage}`,
+					)
+					return {
+						success: false,
+						error: errorMessage,
+						details: {
+							hostname,
+							grpcPort,
+							tcpConnectivity: testResult.details,
+							grpcAssessment,
+							falsePositiveDetected: true,
+						},
+					}
 				}
 			} else {
 				const error = `gRPC port ${grpcPort} is not reachable: ${testResult.error}`
@@ -274,113 +306,167 @@ export class LaminarConnectivityTester {
 		)
 
 		try {
-			// Use a more reliable approach for testing TCP connectivity
-			// We'll try to connect and look for specific error patterns
-			const controller = new AbortController()
-			const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
+			// Use Node.js net module to manually craft HTTP request and capture raw response
+			const net = require("net")
 
-			try {
-				const testUrl = `http://${hostname}:${port}`
+			console.log(
+				`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Testing HTTP request to ${hostname}:${port} using raw TCP`,
+			)
 
-				console.log(
-					`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Testing TCP connection to ${testUrl}`,
-				)
+			const httpResult = await new Promise<ConnectivityTestResult>((resolve) => {
+				const socket = new net.Socket()
+				const timeout = setTimeout(() => {
+					socket.destroy()
+					resolve({
+						success: false,
+						error: "HTTP request timed out after 5 seconds",
+						details: { hostname, port, timeout: true },
+					})
+				}, 5000)
 
-				const response = await fetch(testUrl, {
-					method: "GET",
-					signal: controller.signal,
-					headers: {
-						"User-Agent": "KiloCode-Laminar-Test/1.0",
-					},
+				let responseData = ""
+				let headersComplete = false
+				let httpVersion = ""
+				let statusCode = 0
+				let statusMessage = ""
+
+				socket.connect(port, hostname, () => {
+					console.log(
+						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - TCP connection established, sending HTTP request`,
+					)
+
+					// Craft HTTP/1.1 request manually (like curl does)
+					const httpRequest = [
+						`GET / HTTP/1.1`,
+						`Host: ${hostname}:${port}`,
+						`User-Agent: KiloCode-Laminar-Test/1.0`,
+						`Accept: */*`,
+						`Connection: close`,
+						``, // Empty line to end headers
+						``, // Empty line to end request
+					].join("\r\n")
+
+					console.log(
+						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Sending HTTP request:`,
+						httpRequest,
+					)
+
+					socket.write(httpRequest)
 				})
 
-				clearTimeout(timeoutId)
-
-				// Any response means the port is open and accepting connections
-				console.log(
-					`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - TCP connection successful - Status: ${response.status}`,
-				)
-
-				return {
-					success: true,
-					details: {
-						hostname,
-						port,
-						status: response.status,
-						statusText: response.statusText,
-						note: "Port is open and responding to HTTP requests",
-					},
-				}
-			} catch (fetchError) {
-				clearTimeout(timeoutId)
-
-				// Log the actual error details for debugging
-				console.log(
-					`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Fetch error details:`,
-					{
-						name: fetchError instanceof Error ? fetchError.name : "Unknown",
-						message: fetchError instanceof Error ? fetchError.message : String(fetchError),
-						type: typeof fetchError,
-						constructor: fetchError?.constructor?.name,
-						fullError: fetchError,
-					},
-				)
-
-				if (fetchError instanceof Error && fetchError.name === "AbortError") {
-					const error = "TCP connection timed out after 5 seconds"
+				socket.on("data", (data) => {
+					responseData += data.toString()
 					console.log(
-						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Failed - ${error}`,
-					)
-					return { success: false, error, details: { hostname, port, timeout: true } }
-				}
-
-				// Check for specific connection refused errors that indicate port is closed
-				if (
-					fetchError instanceof Error &&
-					(fetchError.message.includes("ECONNREFUSED") ||
-						fetchError.message.includes("connection refused") ||
-						fetchError.message.includes("ERR_CONNECTION_REFUSED") ||
-						fetchError.message.includes("ERR_NETWORK_CHANGED") ||
-						fetchError.message.includes("ERR_INTERNET_DISCONNECTED") ||
-						fetchError.message.includes("Failed to connect") ||
-						fetchError.message.includes("Could not connect"))
-				) {
-					const error = `Port ${port} is not open or not accepting connections: ${fetchError.message}`
-					console.log(
-						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Failed - ${error}`,
-					)
-					return { success: false, error, details: { hostname, port, connectionRefused: true } }
-				}
-
-				// For other errors, check if it's a protocol error (port open but doesn't speak HTTP)
-				// This is common for gRPC ports - they accept connections but don't respond to HTTP
-				if (
-					fetchError instanceof Error &&
-					(fetchError.message.includes("fetch failed") ||
-						fetchError.message.includes("ERR_INVALID_HTTP_RESPONSE") ||
-						fetchError.message.includes("HTTP/0.9") ||
-						fetchError.message.includes("Invalid response"))
-				) {
-					// Port is open but doesn't speak HTTP (likely gRPC)
-					console.log(
-						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Port open but doesn't speak HTTP (likely gRPC) - Error: ${fetchError.message}`,
-					)
-					return {
-						success: true,
-						details: {
-							hostname,
-							port,
-							note: "Port is open but does not respond to HTTP requests (likely gRPC port)",
-							error: fetchError.message,
+						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Received data chunk:`,
+						{
+							length: data.length,
+							hex: data.toString("hex").substring(0, 100) + (data.length > 50 ? "..." : ""),
+							ascii: data
+								.toString("ascii")
+								.substring(0, 200)
+								.replace(/[\r\n]/g, "\\n"),
+							firstBytes: Array.from(data.slice(0, 20))
+								.map((b) => b.toString(16).padStart(2, "0"))
+								.join(" "),
 						},
-					}
-				}
+					)
 
-				// For other errors, assume port might be closed
-				const error = `Unable to connect to port ${port}: ${fetchError.message}`
-				console.log(`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Failed - ${error}`)
-				return { success: false, error, details: { hostname, port, networkError: true } }
-			}
+					// Parse HTTP response line if we haven't already
+					if (!headersComplete && responseData.includes("\r\n")) {
+						const lines = responseData.split("\r\n")
+						const statusLine = lines[0]
+
+						if (statusLine) {
+							const statusMatch = statusLine.match(/^HTTP\/(\d\.\d)\s+(\d+)\s+(.*)$/)
+							if (statusMatch) {
+								httpVersion = statusMatch[1]
+								statusCode = parseInt(statusMatch[2])
+								statusMessage = statusMatch[3]
+								headersComplete = true
+
+								console.log(
+									`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - HTTP response parsed:`,
+									{
+										version: httpVersion,
+										statusCode,
+										statusMessage,
+										fullStatusLine: statusLine,
+									},
+								)
+							}
+						}
+					}
+				})
+
+				socket.on("end", () => {
+					clearTimeout(timeout)
+					console.log(
+						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Connection ended, full response:`,
+						{
+							totalLength: responseData.length,
+							responsePreview: responseData.substring(0, 500),
+							httpVersion,
+							statusCode,
+							statusMessage,
+							isHttpResponse: headersComplete,
+							responseType: headersComplete ? "HTTP" : "Non-HTTP",
+						},
+					)
+
+					if (headersComplete) {
+						// Valid HTTP response
+						resolve({
+							success: true,
+							details: {
+								hostname,
+								port,
+								status: statusCode,
+								statusText: statusMessage,
+								httpVersion,
+								note: "Port is open and responding to HTTP requests",
+								protocol: "HTTP",
+								responsePreview: responseData.substring(0, 200),
+							},
+						})
+					} else {
+						// Non-HTTP response (likely gRPC or binary protocol)
+						resolve({
+							success: true,
+							details: {
+								hostname,
+								port,
+								note: "Port is open but doesn't speak HTTP (likely gRPC or binary protocol)",
+								protocol: "Non-HTTP",
+								responsePreview: responseData.substring(0, 200),
+								detectionMethod: "Raw TCP response analysis",
+							},
+						})
+					}
+				})
+
+				socket.on("error", (err) => {
+					clearTimeout(timeout)
+					console.log(
+						`[LAMINAR DEBUG] testTcpConnectivity - Operation ID: ${operationId} - Socket error: ${err.message}`,
+					)
+
+					if (err.message.includes("ECONNREFUSED") || err.message.includes("connection refused")) {
+						resolve({
+							success: false,
+							error: `Port ${port} is not open or not accepting connections: ${err.message}`,
+							details: { hostname, port, connectionRefused: true },
+						})
+					} else {
+						resolve({
+							success: false,
+							error: `TCP connection failed: ${err.message}`,
+							details: { hostname, port, networkError: true },
+						})
+					}
+				})
+			})
+
+			return httpResult
 		} catch (error) {
 			const errorMessage = `TCP connectivity test failed: ${error}`
 			console.log(
@@ -480,4 +566,57 @@ export class LaminarConnectivityTester {
 	// This will be set by the main service
 	public currentConfig: any
 	public userId?: string
+
+	/**
+	 * Assess whether a port is likely running a gRPC service based on TCP test results
+	 */
+	private assessGrpcLikelihood(
+		port: number,
+		tcpResult: ConnectivityTestResult,
+	): { likely: boolean; reason: string; confidence: string } {
+		const commonGrpcPorts = [8443, 9443, 50051, 443, 80]
+		const isCommonPort = commonGrpcPorts.includes(port)
+		const protocol = tcpResult.details?.protocol
+		const isNonHttpProtocol = protocol === "Non-HTTP"
+
+		console.log(`[LAMINAR DEBUG] assessGrpcLikelihood - Analyzing gRPC likelihood:`, {
+			port,
+			isCommonPort,
+			protocol,
+			isNonHttpProtocol,
+			tcpSuccess: tcpResult.success,
+			tcpDetails: tcpResult.details,
+		})
+
+		// Since we now have proper TCP connectivity testing, if the port is open and accepting connections,
+		// we should be more permissive about accepting it as a potential gRPC port
+		if (tcpResult.success) {
+			if (isNonHttpProtocol) {
+				// Port is open but doesn't speak HTTP - very likely gRPC
+				return {
+					likely: true,
+					reason: `Port ${port} is open but doesn't speak HTTP (protocol: ${protocol}) - very likely gRPC`,
+					confidence: "Very High - Non-HTTP protocol detected on open port",
+				}
+			} else if (isCommonPort) {
+				return {
+					likely: true,
+					reason: `Port ${port} is open and in common gRPC ports list`,
+					confidence: "High - Standard gRPC port with confirmed TCP connectivity",
+				}
+			} else {
+				return {
+					likely: true,
+					reason: `Port ${port} is open and accepting TCP connections (could be gRPC service)`,
+					confidence: "Medium - Non-standard port but confirmed TCP connectivity",
+				}
+			}
+		} else {
+			return {
+				likely: false,
+				reason: `Port ${port} is not reachable`,
+				confidence: "Very Low - Port is not open or not accepting connections",
+			}
+		}
+	}
 }

@@ -81,15 +81,15 @@ import { getTaskHistory } from "../../shared/kilocode/getTaskHistory" // kilocod
 import laminarService from "../../services/laminar/LaminarService"
 
 // Helper function to load Laminar settings from VS Code configuration
-const loadLaminarSettingsFromVSCode = () => {
-	const config = vscode.workspace.getConfiguration("kilo-code.laminar")
+export const loadLaminarSettingsFromVSCode = () => {
+	const config = vscode.workspace.getConfiguration("kilo-code")
 	return {
-		apiKey: config.get<string>("apiKey") || "",
-		baseUrl: config.get<string>("baseUrl") || "https://api.lmnr.ai",
-		httpPort: config.get<number>("httpPort") || 443,
-		grpcPort: config.get<number>("grpcPort") || 8443,
-		recordIO: config.get<boolean>("recordIO") ?? true,
-		enabled: config.get<boolean>("enabled") ?? true,
+		apiKey: config.get<string>("laminar.apiKey") || "",
+		baseUrl: config.get<string>("laminar.baseUrl") || "https://api.lmnr.ai",
+		httpPort: config.get<number>("laminar.httpPort") || 443,
+		grpcPort: config.get<number>("laminar.grpcPort") || 8443,
+		recordIO: config.get<boolean>("laminar.recordIO") ?? true,
+		enabled: config.get<boolean>("laminar.enabled") ?? true,
 	}
 }
 
@@ -3747,7 +3747,27 @@ export const webviewMessageHandler = async (
 					})
 
 					// Test with the provided configuration
+					console.log("[LAMINAR CONNECTION DEBUG] Starting connection test with config:", {
+						timestamp: new Date().toISOString(),
+						testConfig: {
+							...testConfig,
+							apiKey: testConfig.apiKey ? testConfig.apiKey.substring(0, 8) + "..." : "undefined",
+							apiKeyLength: testConfig.apiKey ? testConfig.apiKey.length : 0,
+						},
+					})
+
 					const result = await laminarService.testConnectionWithConfig(testConfig)
+
+					console.log("[LAMINAR CONNECTION DEBUG] Connection test completed:", {
+						timestamp: new Date().toISOString(),
+						result: {
+							success: result.success,
+							error: result.error,
+							details: result.details,
+						},
+						fullResult: result,
+					})
+
 					await provider.postMessageToWebview({
 						type: "laminarConnectionTestResult",
 						success: result.success,
@@ -3756,8 +3776,28 @@ export const webviewMessageHandler = async (
 					})
 				} else {
 					// Fallback to using saved settings
+					console.log("[LAMINAR CONNECTION DEBUG] No values provided, using saved settings:", {
+						timestamp: new Date().toISOString(),
+					})
+
 					await laminarService.initialize()
+
+					console.log("[LAMINAR CONNECTION DEBUG] Starting connection test with saved settings:", {
+						timestamp: new Date().toISOString(),
+					})
+
 					const result = await laminarService.testConnection()
+
+					console.log("[LAMINAR CONNECTION DEBUG] Connection test with saved settings completed:", {
+						timestamp: new Date().toISOString(),
+						result: {
+							success: result.success,
+							error: result.error,
+							details: result.details,
+						},
+						fullResult: result,
+					})
+
 					await provider.postMessageToWebview({
 						type: "laminarConnectionTestResult",
 						success: result.success,
@@ -3766,6 +3806,13 @@ export const webviewMessageHandler = async (
 					})
 				}
 			} catch (error) {
+				console.error("[LAMINAR CONNECTION DEBUG] Connection test failed with error:", {
+					timestamp: new Date().toISOString(),
+					error: error instanceof Error ? error.message : String(error),
+					errorStack: error instanceof Error ? error.stack : undefined,
+					messageValues: message.values,
+				})
+
 				await provider.postMessageToWebview({
 					type: "laminarConnectionTestResult",
 					success: false,
@@ -3777,40 +3824,232 @@ export const webviewMessageHandler = async (
 		case "laminarSettings": {
 			try {
 				const laminarSettings = message.values
-				console.log("[LAMINAR DEBUG] Received laminar settings:", {
-					...laminarSettings,
-					apiKey: laminarSettings?.apiKey ? laminarSettings.apiKey.substring(0, 8) + "..." : "undefined",
+				console.log("[LAMINAR SETTINGS DEBUG] Received laminar settings message:", {
+					timestamp: new Date().toISOString(),
+					messageType: message.type,
+					values: {
+						...laminarSettings,
+						apiKey: laminarSettings?.apiKey ? laminarSettings.apiKey.substring(0, 8) + "..." : "undefined",
+						apiKeyLength: laminarSettings?.apiKey ? laminarSettings.apiKey.length : 0,
+					},
+					fullMessage: message,
 				})
+
 				if (laminarSettings) {
+					// Get current VS Code settings before update
+					const currentConfig = vscode.workspace.getConfiguration("kilo-code")
+					console.log("[LAMINAR SETTINGS DEBUG] Current VS Code settings before update:", {
+						timestamp: new Date().toISOString(),
+						currentSettings: {
+							apiKey: currentConfig.get<string>("laminar.apiKey")
+								? currentConfig.get<string>("laminar.apiKey")!.substring(0, 8) + "..."
+								: "undefined",
+							baseUrl: currentConfig.get<string>("laminar.baseUrl"),
+							httpPort: currentConfig.get<number>("laminar.httpPort"),
+							grpcPort: currentConfig.get<number>("laminar.grpcPort"),
+							recordIO: currentConfig.get<boolean>("laminar.recordIO"),
+							enabled: currentConfig.get<boolean>("laminar.enabled"),
+						},
+					})
+
+					// Debug: Check if the configuration section exists
+					const extension = vscode.extensions.getExtension("kilocode.kilo-code")
+					const packageJson = extension?.packageJSON
+					const contributes = packageJson?.contributes
+					const configuration = contributes?.configuration
+					const properties = configuration?.properties
+					const laminarConfig = properties?.["kilo-code.laminar"]
+
+					console.log("[LAMINAR SETTINGS DEBUG] Configuration section check:", {
+						timestamp: new Date().toISOString(),
+						hasLaminarSection: !!vscode.workspace.getConfiguration("kilo-code.laminar"),
+						allKiloCodeConfigs: vscode.workspace.getConfiguration("kilo-code").get("laminar"),
+						extensionId: extension?.id,
+						isActive: extension?.isActive,
+						extensionVersion: extension?.packageJSON?.version,
+						hasPackageJson: !!packageJson,
+						hasContributes: !!contributes,
+						hasConfiguration: !!configuration,
+						hasProperties: !!properties,
+						hasLaminarConfig: !!laminarConfig,
+						laminarConfigStructure: laminarConfig,
+						allConfigurationKeys: Object.keys(properties || {}),
+						extensionManifest: {
+							id: extension?.id,
+							name: extension?.packageJSON?.name,
+							version: extension?.packageJSON?.version,
+							publisher: extension?.packageJSON?.publisher,
+						},
+					})
+
+					// Try to access the configuration directly
+					try {
+						const directConfig = vscode.workspace.getConfiguration("kilo-code.laminar")
+						const canRead = directConfig.get("apiKey")
+						console.log("[LAMINAR SETTINGS DEBUG] Direct configuration access:", {
+							timestamp: new Date().toISOString(),
+							canReadApiKey: canRead,
+							configObject: directConfig,
+						})
+
+						// Try to inspect the configuration schema more deeply
+						console.log("[LAMINAR SETTINGS DEBUG] Configuration schema inspection:", {
+							timestamp: new Date().toISOString(),
+							extensionManifest: extension?.packageJSON,
+							contributesSection: extension?.packageJSON?.contributes,
+							configurationSection: extension?.packageJSON?.contributes?.configuration,
+							propertiesSection: extension?.packageJSON?.contributes?.configuration?.properties,
+							laminarProperty:
+								extension?.packageJSON?.contributes?.configuration?.properties?.["kilo-code.laminar"],
+						})
+					} catch (directAccessError) {
+						console.error("[LAMINAR SETTINGS DEBUG] Direct configuration access failed:", {
+							timestamp: new Date().toISOString(),
+							error:
+								directAccessError instanceof Error
+									? directAccessError.message
+									: String(directAccessError),
+						})
+					}
+
 					// Update VS Code settings
-					const config = vscode.workspace.getConfiguration("kilo-code.laminar")
+					const config = vscode.workspace.getConfiguration("kilo-code")
 
 					if (laminarSettings.apiKey !== undefined) {
-						await config.update("apiKey", laminarSettings.apiKey, vscode.ConfigurationTarget.Global)
+						console.log("[LAMINAR SETTINGS DEBUG] Updating apiKey:", {
+							timestamp: new Date().toISOString(),
+							value: laminarSettings.apiKey
+								? laminarSettings.apiKey.substring(0, 8) + "..."
+								: "undefined",
+							valueLength: laminarSettings.apiKey ? laminarSettings.apiKey.length : 0,
+						})
+						try {
+							// Try Global first
+							await config.update(
+								"laminar.apiKey",
+								laminarSettings.apiKey,
+								vscode.ConfigurationTarget.Global,
+							)
+							console.log("[LAMINAR SETTINGS DEBUG] apiKey updated successfully (Global)")
+						} catch (apiKeyError) {
+							console.error("[LAMINAR SETTINGS DEBUG] Failed to update apiKey (Global):", {
+								timestamp: new Date().toISOString(),
+								error: apiKeyError instanceof Error ? apiKeyError.message : String(apiKeyError),
+								errorStack: apiKeyError instanceof Error ? apiKeyError.stack : undefined,
+								value: laminarSettings.apiKey
+									? laminarSettings.apiKey.substring(0, 8) + "..."
+									: "undefined",
+							})
+
+							// Try Workspace as fallback
+							try {
+								await config.update(
+									"laminar.apiKey",
+									laminarSettings.apiKey,
+									vscode.ConfigurationTarget.Workspace,
+								)
+								console.log("[LAMINAR SETTINGS DEBUG] apiKey updated successfully (Workspace)")
+							} catch (workspaceError) {
+								console.error("[LAMINAR SETTINGS DEBUG] Failed to update apiKey (Workspace):", {
+									timestamp: new Date().toISOString(),
+									error:
+										workspaceError instanceof Error
+											? workspaceError.message
+											: String(workspaceError),
+									errorStack: workspaceError instanceof Error ? workspaceError.stack : undefined,
+									value: laminarSettings.apiKey
+										? laminarSettings.apiKey.substring(0, 8) + "..."
+										: "undefined",
+								})
+								throw apiKeyError // Re-throw the original error
+							}
+						}
 					}
 					if (laminarSettings.baseUrl !== undefined) {
-						await config.update("baseUrl", laminarSettings.baseUrl, vscode.ConfigurationTarget.Global)
+						console.log("[LAMINAR SETTINGS DEBUG] Updating baseUrl:", {
+							timestamp: new Date().toISOString(),
+							value: laminarSettings.baseUrl,
+						})
+						await config.update(
+							"laminar.baseUrl",
+							laminarSettings.baseUrl,
+							vscode.ConfigurationTarget.Global,
+						)
 					}
 					if (laminarSettings.httpPort !== undefined) {
-						await config.update("httpPort", laminarSettings.httpPort, vscode.ConfigurationTarget.Global)
+						console.log("[LAMINAR SETTINGS DEBUG] Updating httpPort:", {
+							timestamp: new Date().toISOString(),
+							value: laminarSettings.httpPort,
+						})
+						await config.update(
+							"laminar.httpPort",
+							laminarSettings.httpPort,
+							vscode.ConfigurationTarget.Global,
+						)
 					}
 					if (laminarSettings.grpcPort !== undefined) {
-						await config.update("grpcPort", laminarSettings.grpcPort, vscode.ConfigurationTarget.Global)
+						console.log("[LAMINAR SETTINGS DEBUG] Updating grpcPort:", {
+							timestamp: new Date().toISOString(),
+							value: laminarSettings.grpcPort,
+						})
+						await config.update(
+							"laminar.grpcPort",
+							laminarSettings.grpcPort,
+							vscode.ConfigurationTarget.Global,
+						)
 					}
 					if (laminarSettings.recordIO !== undefined) {
-						await config.update("recordIO", laminarSettings.recordIO, vscode.ConfigurationTarget.Global)
+						console.log("[LAMINAR SETTINGS DEBUG] Updating recordIO:", {
+							timestamp: new Date().toISOString(),
+							value: laminarSettings.recordIO,
+						})
+						await config.update(
+							"laminar.recordIO",
+							laminarSettings.recordIO,
+							vscode.ConfigurationTarget.Global,
+						)
 					}
 					if (laminarSettings.enabled !== undefined) {
-						await config.update("enabled", laminarSettings.enabled, vscode.ConfigurationTarget.Global)
+						console.log("[LAMINAR SETTINGS DEBUG] Updating enabled:", {
+							timestamp: new Date().toISOString(),
+							value: laminarSettings.enabled,
+						})
+						await config.update(
+							"laminar.enabled",
+							laminarSettings.enabled,
+							vscode.ConfigurationTarget.Global,
+						)
 					}
 
 					// Reload Laminar service configuration
+					console.log("[LAMINAR SETTINGS DEBUG] Reloading Laminar service configuration:", {
+						timestamp: new Date().toISOString(),
+					})
 					await laminarService.reloadConfiguration()
 
-					console.log("Laminar settings updated successfully")
+					// Verify settings were updated
+					const updatedConfig = vscode.workspace.getConfiguration("kilo-code")
+					console.log("[LAMINAR SETTINGS DEBUG] Settings update completed successfully:", {
+						timestamp: new Date().toISOString(),
+						updatedSettings: {
+							apiKey: updatedConfig.get<string>("laminar.apiKey")
+								? updatedConfig.get<string>("laminar.apiKey")!.substring(0, 8) + "..."
+								: "undefined",
+							baseUrl: updatedConfig.get<string>("laminar.baseUrl"),
+							httpPort: updatedConfig.get<number>("laminar.httpPort"),
+							grpcPort: updatedConfig.get<number>("laminar.grpcPort"),
+							recordIO: updatedConfig.get<boolean>("laminar.recordIO"),
+							enabled: updatedConfig.get<boolean>("laminar.enabled"),
+						},
+					})
 				}
 			} catch (error) {
-				console.error("Failed to update Laminar settings:", error)
+				console.error("[LAMINAR SETTINGS DEBUG] Failed to update Laminar settings:", {
+					timestamp: new Date().toISOString(),
+					error: error instanceof Error ? error.message : String(error),
+					errorStack: error instanceof Error ? error.stack : undefined,
+					messageValues: message.values,
+				})
 			}
 			break
 		}

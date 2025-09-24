@@ -89,7 +89,7 @@ import { CustomModesManager } from "../config/CustomModesManager"
 import { Task } from "../task/Task"
 import { getSystemPromptFilePath } from "../prompts/sections/custom-system-prompt"
 
-import { webviewMessageHandler } from "./webviewMessageHandler"
+import { webviewMessageHandler, loadLaminarSettingsFromVSCode } from "./webviewMessageHandler"
 import { getNonce } from "./getNonce"
 import { getUri } from "./getUri"
 
@@ -2235,6 +2235,7 @@ export class ClineProvider
 			openRouterImageGenerationSelectedModel,
 			openRouterUseMiddleOutTransform,
 			featureRoomoteControlEnabled,
+			laminarSettings: loadLaminarSettingsFromVSCode(),
 		}
 	}
 
