@@ -1,13 +1,16 @@
 # Testing Documentation
 
-Welcome to the testing documentation! 🧪 This directory covers testing strategies, frameworks, and best practices for ensuring KiloCode's quality and reliability.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
+Welcome to the testing documentation! 🧪 This directory covers testing strategies, frameworks, and
+best practices for ensuring KiloCode's quality and reliability.
 
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
 
 - **Something's Broken**: Check [TESTING_STRATEGY.md](TESTING_STRATEGY.md) for troubleshooting
-- **Need to Understand**: Start with [INDEX.md](INDEX.md) for an overview
+- **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow testing setup and execution guides
 
 ### Current Focus
@@ -19,7 +22,7 @@ Welcome to the testing documentation! 🧪 This directory covers testing strateg
 
 ## 📚 Documentation Structure
 
-- **[INDEX.md](INDEX.md)** - Master index of all testing documentation
+- **[Repository Overview](README.md)** - Master index of all testing documentation
 - **[TESTING_STRATEGY.md](TESTING_STRATEGY.md)** - Comprehensive testing strategy and approach
 
 ## 🔗 Cross-References
@@ -30,10 +33,14 @@ Welcome to the testing documentation! 🧪 This directory covers testing strateg
 
 ## 🦕 Dinosaur Analogy
 
-Think of testing like the fossil validation process in paleontology. Just as paleontologists use multiple techniques (carbon dating, comparative anatomy, geological analysis) to verify the authenticity and age of fossils, we use multiple testing approaches (unit tests, integration tests, e2e tests) to verify the correctness and reliability of our code. Each test is like a different validation technique, and together they give us confidence in our system!
+Think of testing like the fossil validation process in paleontology. Just as paleontologists use
+multiple techniques (carbon dating, comparative anatomy, geological analysis) to verify the
+authenticity and age of fossils, we use multiple testing approaches (unit tests, integration tests,
+e2e tests) to verify the correctness and reliability of our code. Each test is like a different
+validation technique, and together they give us confidence in our system!
 
 ## 🧭 Navigation Footer
 
-- [← Back to Documentation Home](../INDEX.md)
+- [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
-- [↑ Table of Contents](../INDEX.md)
+- [↑ Table of Contents](../README.md)

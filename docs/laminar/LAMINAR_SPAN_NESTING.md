@@ -1,8 +1,13 @@
 # Laminar Span Nesting and Queuing Mechanism
 
-**Purpose:** This document explains how span nesting works in the Laminar observability system, why spans are queued before initialization, and how this affects chat history visibility.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates instant connections between distant parts of the system, allowing us to observe the entire state from any single point! ⚛️
+**Purpose:** This document explains how span nesting works in the Laminar observability system, why
+spans are queued before initialization, and how this affects chat history visibility.
+
+> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
+> instant connections between distant parts of the system, allowing us to observe the entire state
+> from any single point! ⚛️
 
 <details><summary>Table of Contents</summary>
 
@@ -19,7 +24,9 @@
 
 ## Overview
 
-The LaminarService implements a sophisticated span nesting system that creates hierarchical traces of operations within Kilo Code. However, there's a critical issue where chat history spans are not appearing in the observability dashboard, only "test connection" spans are visible.
+The LaminarService implements a sophisticated span nesting system that creates hierarchical traces
+of operations within Kilo Code. However, there's a critical issue where chat history spans are not
+appearing in the observability dashboard, only "test connection" spans are visible.
 
 ## Span Nesting Hierarchy
 
@@ -82,7 +89,8 @@ if (this.pendingSpanRequests.length > 0) {
 
 ### Problem Description
 
-Only "test connection" spans appear in the observability dashboard. Chat history spans are missing despite being created.
+Only "test connection" spans appear in the observability dashboard. Chat history spans are missing
+despite being created.
 
 ### Root Cause Analysis
 
@@ -138,8 +146,8 @@ Initialize LaminarService during extension activation:
 await laminarService.initialize()
 ```
 
-**Pros:** Eliminates queuing, ensures all spans are captured
-**Cons:** Potential startup delay, requires valid configuration
+**Pros:** Eliminates queuing, ensures all spans are captured **Cons:** Potential startup delay,
+requires valid configuration
 
 ### 2. Improved Error Handling
 
@@ -236,6 +244,9 @@ Enable detailed logging to track span lifecycle:
 
 ```bash
 # Set log level to debug
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Starting span: ${spanName}`)
 ```
 
@@ -284,7 +295,8 @@ private validateSpanConfig(options: SpanOptions): boolean {
 
 <a id="navigation-footer"></a>
 
-- Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root: [`INDEX.md`](INDEX.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING.md#L1`
+- Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
+  [`README.md`](README.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
@@ -293,22 +305,30 @@ private validateSpanConfig(options: SpanOptions): boolean {
 **Understanding Laminar Observability:**
 
 - **Next**: Check related Laminar documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Laminar Documentation](README.md) for context
 
 **Implementing Observability Features:**
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Observability Issues:**
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) → [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
+  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Laminar Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Laminar Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,16 +1,35 @@
 # Repository Overview
 
-**Purpose:** Master index for comprehensive information about the KiloCode repository structure, systems, and components.
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer tells us about the evolution of our system, helping us understand how it grew and changed over time! 🦕
+**Purpose:** Master index for comprehensive information about the KiloCode repository structure,
+systems, and components.
+
+> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
+> tells us about the evolution of our system, helping us understand how it grew and changed over
+> time! 🦕
 
 ## 🗺️ Navigation Guide
 
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
 ### Quick Start Paths
 
-- **Need an Overview**: Start with [Repository Structure](./repository/REPOSITORY_STRUCTURE.md)
-- **Understanding Systems**: Begin with [Core Systems](./repository/CORE_SYSTEMS.md)
-- **Development Journey**: Follow [Development Guide](./repository/DEVELOPMENT_GUIDE.md)
+- **Need an Overview**: Start with [Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)
+- **Understanding Systems**: Begin with [Core Systems](../architecture/repository/CORE_SYSTEMS.md)
+- **Development Journey**: Follow [Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md)
 
 ### Current Focus
 
@@ -21,26 +40,32 @@
 
 ## 📚 Documentation Structure
 
-This overview has been split into focused, manageable documents for better navigation and understanding:
+This overview has been split into focused, manageable documents for better navigation and
+understanding:
 
 ### Core Documentation
 
-- **[Repository Structure](./repository/REPOSITORY_STRUCTURE.md)** - High-level repository organization
-- **[Core Systems](./repository/CORE_SYSTEMS.md)** - Core systems and services
-- **[Workspace Packages](./repository/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
-- **[Applications](./repository/APPLICATIONS.md)** - Applications and interfaces
+- **[Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)** - High-level repository
+  organization
+- **[Core Systems](../architecture/repository/CORE_SYSTEMS.md)** - Core systems and services
+- **[Workspace Packages](../architecture/repository/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
+- **[Applications](../architecture/repository/APPLICATIONS.md)** - Applications and interfaces
 
 ### Development & Infrastructure
 
-- **[Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and frameworks
-- **[Build Pipelines](./repository/BUILD_PIPELINES.md)** - Build and CI/CD systems
-- **[Development Tools](./repository/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
-- **[External Integrations](./repository/EXTERNAL_INTEGRATIONS.md)** - External service integrations
-- **[Development Guide](./repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
+- **[Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and
+  frameworks
+- **[Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)** - Build and CI/CD systems
+- **[Development Tools](../architecture/repository/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
+- **[External Integrations](../architecture/repository/EXTERNAL_INTEGRATIONS.md)** - External service integrations
+- **[Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
 
 ## Executive Summary
 
-The KiloCode repository is a comprehensive VS Code extension for AI-powered coding assistance, featuring a multi-layered architecture with extensive tooling, testing, and deployment infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages, applications, and services.
+The KiloCode repository is a comprehensive VS Code extension for AI-powered coding assistance,
+featuring a multi-layered architecture with extensive tooling, testing, and deployment
+infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages,
+applications, and services.
 
 **Key Statistics:**
 
@@ -80,16 +105,27 @@ The KiloCode repository is a comprehensive VS Code extension for AI-powered codi
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [../README.md](../README.md) for system architecture
+- **Architecture**: See [Architecture Documentation](../README.md) for system architecture
 - **Standards**: See [../standards/](../standards/) for development standards
 - **Plans**: See [../../plans/](../../plans/) for development plans
 
 ## 🦕 Dinosaur Analogy
 
-Think of the repository like a dinosaur fossil site - it contains many different layers and components that tell the story of how the system evolved. Just as paleontologists carefully catalog and organize fossils by type, age, and location, we organize our code by function, purpose, and architectural layer. Each directory is like a different excavation site, revealing different aspects of the system's structure!
+Think of the repository like a dinosaur fossil site - it contains many different layers and
+components that tell the story of how the system evolved. Just as paleontologists carefully catalog
+and organize fossils by type, age, and location, we organize our code by function, purpose, and
+architectural layer. Each directory is like a different excavation site, revealing different aspects
+of the system's structure!
 
 ## 🧭 Navigation Footer
 
 - [← Back to Architecture Home](../README.md)
-- [→ Repository Structure](./repository/REPOSITORY_STRUCTURE.md)
+- [→ Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)
 - [↑ Table of Contents](../README.md)
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
+[↑ Table of Contents](#repository-overview)

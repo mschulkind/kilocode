@@ -1,8 +1,26 @@
 # Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation
 
-Purpose: Compare Kilo’s analysis/proposal to the Roo-Code branch `catrielmuller/fix-orchestator-load-subtask`, relative to Roo `origin/main`. Highlight base differences, touched files, behavioral deltas, and alignment/variance with our cleanup plan.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+Purpose: Compare Kilo’s analysis/proposal to the Roo-Code branch
+`catrielmuller/fix-orchestator-load-subtask`, relative to Roo `origin/main`. Highlight base
+differences, touched files, behavioral deltas, and alignment/variance with our cleanup plan.
 
 ## Quick Navigation
+
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
 
 - [Branch Analysis: orchestator-load-subtask (Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
 - [Cleanup Proposal: Replace orchestator-load-subtask (Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md)
@@ -26,7 +44,8 @@ Purpose: Compare Kilo’s analysis/proposal to the Roo-Code branch `catrielmulle
 
 Inference (from paths):
 
-- Roo mirrors the same change loci as Kilo (Task.ts, ClineProvider.ts) and adds targeted tests for stack/task reconstruction (good practice and a base difference vs Kilo at the time of the break).
+- Roo mirrors the same change loci as Kilo (Task.ts, ClineProvider.ts) and adds targeted tests for
+  stack/task reconstruction (good practice and a base difference vs Kilo at the time of the break).
 
 ## Conceptual Before/After (Kilo vs Roo)
 
@@ -41,16 +60,21 @@ Kilo (observed)
 
 Roo (observed by diff scope)
 
-- Touches the same two core files, so likely similar structural change: parent rehydration + a resume call post-subtask completion.
+- Touches the same two core files, so likely similar structural change: parent rehydration + a
+  resume call post-subtask completion.
 - Adds tests around stack and task reconstruction:
     - Suggests Roo codified the navigation scenario and validates reconstruction correctness.
-- Minimal deletions vs large insertions indicate additive behavior (rehydration/resume) rather than refactors.
+- Minimal deletions vs large insertions indicate additive behavior (rehydration/resume) rather than
+  refactors.
 
 ## Base Differences That Matter
 
-- Tests present in Roo: Roo has specific `__tests__/ClineProvider.*` validating reconstruction; Kilo lacked these until our new plan.
-- Naming and branch intent: Roo’s branch name is aligned with the fix; Kilo’s local changes were integrated without tests initially, causing regressions.
-- Divergence age: Forks have evolved separately; code structure differences may exist in providers/services.
+- Tests present in Roo: Roo has specific `__tests__/ClineProvider.*` validating reconstruction; Kilo
+  lacked these until our new plan.
+- Naming and branch intent: Roo’s branch name is aligned with the fix; Kilo’s local changes were
+  integrated without tests initially, causing regressions.
+- Divergence age: Forks have evolved separately; code structure differences may exist in
+  providers/services.
 
 ## Alignment With Our Cleanup Proposal
 
@@ -61,7 +85,9 @@ Where Roo aligns out of the box
 
 Where differences may remain
 
-- Concurrent recursion prevention: Roo’s diff shows changes only in `Task.ts` and `ClineProvider.ts`. Without a central arbiter/guard, Roo may still allow concurrent calls if both main loop and completion trigger continuation.
+- Concurrent recursion prevention: Roo’s diff shows changes only in `Task.ts` and
+  `ClineProvider.ts`. Without a central arbiter/guard, Roo may still allow concurrent calls if both
+  main loop and completion trigger continuation.
 - Idempotency: No evidence of an idempotency layer from the paths alone.
 - Single-writer model: No new central module is present in the changed files list.
 - Policy/cooldown around “green text end-of-turn”: Not evident from paths.
@@ -75,7 +101,8 @@ Where differences may remain
 
 2. Parent Initialization as Eligibility
 
-- Move rehydration into arbiter/executor eligibility checks; treat it as an `initialize-parent` intent that always precedes continuation.
+- Move rehydration into arbiter/executor eligibility checks; treat it as an `initialize-parent`
+  intent that always precedes continuation.
 
 3. Idempotent Execution Keys
 
@@ -85,7 +112,8 @@ Where differences may remain
 
 - Keep Roo’s reconstruction tests; add tests for:
     - No concurrent recursion under concurrent producers.
-    - Deterministic selection under competing intents (user > recovery > subtask-completion > main-loop).
+    - Deterministic selection under competing intents (user > recovery > subtask-completion >
+      main-loop).
     - Triple-request prevention when green text is emitted prematurely.
 
 5. Observability
@@ -108,13 +136,17 @@ Task (Kilo vs Roo)
 Tests (Kilo vs Roo)
 
 - Roo: added meaningful tests for reconstruction.
-- Kilo: our plan adds both reconstruction and concurrency tests; Roo should adopt the concurrency suite.
+- Kilo: our plan adds both reconstruction and concurrency tests; Roo should adopt the concurrency
+  suite.
 
 ## Conclusion
 
-- Roo implemented the necessary rehydration/resume behavior and added tests around reconstruction—a stronger basis than Kilo had at the time of failure.
-- Both codebases still need a concurrency-safe selection model. Applying the Request Arbiter + idempotency + eligibility gates will harmonize behavior, prevent races, and keep navigation fixes.
-- Action: Port Kilo’s cleanup proposal (arbiter model, idempotency, policy) to Roo; keep Roo’s tests and add concurrency-specific tests.
+- Roo implemented the necessary rehydration/resume behavior and added tests around reconstruction—a
+  stronger basis than Kilo had at the time of failure.
+- Both codebases still need a concurrency-safe selection model. Applying the Request Arbiter +
+  idempotency + eligibility gates will harmonize behavior, prevent races, and keep navigation fixes.
+- Action: Port Kilo’s cleanup proposal (arbiter model, idempotency, policy) to Roo; keep Roo’s tests
+  and add concurrency-specific tests.
 
 ## 🔍 Research Context & Next Steps
 
@@ -123,22 +155,30 @@ Tests (Kilo vs Roo)
 **Understanding Architecture:**
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Architecture Documentation](README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](README.md) for context
 
 **Implementing Architecture Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 **Troubleshooting Architecture Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+  common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](README.md) for guidance.
+
+## Navigation Footer
 
 ---
 
-**Navigation**: [← Back to Architecture Documentation](README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

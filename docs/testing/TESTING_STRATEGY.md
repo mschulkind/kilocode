@@ -1,8 +1,12 @@
 # Testing Strategy
 
-**Purpose:** Comprehensive documentation of testing infrastructure, strategies, and patterns across the KiloCode system.
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Comprehensive documentation of testing infrastructure, strategies, and patterns across
+the KiloCode system.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -16,13 +20,14 @@
 - [Test Coverage Analysis](#test-coverage-analysis)
 - [Performance Testing](#performance-testing)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Testing Strategy provides comprehensive testing infrastructure and patterns for the KiloCode system, ensuring code quality, reliability, and maintainability across all components._
+_The Testing Strategy provides comprehensive testing infrastructure and patterns for the KiloCode
+system, ensuring code quality, reliability, and maintainability across all components._
 
 The Testing Strategy consists of:
 
@@ -85,9 +90,8 @@ graph TB
 
 ### Vitest Framework
 
-**Framework**: Vitest
-**Location**: Test files across all packages
-**Configuration**: `vitest.config.ts` in each package
+**Framework**: Vitest **Location**: Test files across all packages **Configuration**:
+`vitest.config.ts` in each package
 
 **Test Structure**:
 
@@ -112,8 +116,7 @@ describe("ComponentName", () => {
 - **Utility Tests**: Utility function testing
 - **Model Tests**: Data model testing
 
-**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED**
-**Key Implementation Details**:
+**Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
 **Test File Structure**:
 
@@ -139,8 +142,7 @@ src/__tests__/
 
 ### Core Extension Tests
 
-**Location**: `src/__tests__/`
-**Test Files**:
+**Location**: `src/__tests__/` **Test Files**:
 
 - `command-integration.spec.ts`: Command integration testing
 - `command-mentions.spec.ts`: Command mention testing
@@ -155,13 +157,12 @@ src/__tests__/
 - Settings management
 - Message handling
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Extension testing patterns, VS Code API mocking
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Extension testing
+patterns, VS Code API mocking
 
 ### Webview UI Tests
 
-**Location**: `webview-ui/src/__tests__/`
-**Test Files**:
+**Location**: `webview-ui/src/__tests__/` **Test Files**:
 
 - `App.spec.tsx`: Main app testing
 - `command-autocomplete.spec.ts`: Command autocomplete testing
@@ -175,8 +176,8 @@ src/__tests__/
 - State management
 - Error handling
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: React testing patterns, component mocking, state testing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: React testing patterns,
+component mocking, state testing
 
 ## Integration Testing
 
@@ -203,8 +204,8 @@ describe("API Integration", () => {
 })
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: API testing patterns, service mocking, integration strategies
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: API testing patterns,
+service mocking, integration strategies
 
 ### Service Integration Tests
 
@@ -215,16 +216,15 @@ describe("API Integration", () => {
 - State synchronization
 - Error propagation
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Service integration patterns, mock services, data flow testing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Service integration
+patterns, mock services, data flow testing
 
 ## End-to-End Testing
 
 ### Playwright E2E Tests
 
-**Location**: `apps/playwright-e2e/`
-**Framework**: Playwright
-**Configuration**: `playwright.config.ts`
+**Location**: `apps/playwright-e2e/` **Framework**: Playwright **Configuration**:
+`playwright.config.ts`
 
 **Test Files**:
 
@@ -239,14 +239,13 @@ describe("API Integration", () => {
 - Cross-browser testing
 - Performance testing
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: E2E testing patterns, browser automation, workflow testing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: E2E testing patterns,
+browser automation, workflow testing
 
 ### VS Code E2E Tests
 
-**Location**: `apps/vscode-e2e/`
-**Framework**: VS Code Extension Testing
-**Configuration**: VS Code extension test configuration
+**Location**: `apps/vscode-e2e/` **Framework**: VS Code Extension Testing **Configuration**: VS Code
+extension test configuration
 
 **Test Categories**:
 
@@ -255,8 +254,8 @@ describe("API Integration", () => {
 - Webview communication testing
 - Settings integration testing
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: VS Code extension testing, extension lifecycle, webview testing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: VS Code extension
+testing, extension lifecycle, webview testing
 
 ## Test Infrastructure
 
@@ -284,8 +283,8 @@ const mockVSCode = {
 }
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Mock patterns, VS Code API mocking, service mocking
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Mock patterns, VS Code
+API mocking, service mocking
 
 ### Test Helpers
 
@@ -296,8 +295,8 @@ const mockVSCode = {
 - **Assertion Helpers**: Custom assertions
 - **Utility Helpers**: Test utilities
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Helper patterns, test utilities, assertion helpers
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Helper patterns, test
+utilities, assertion helpers
 
 ## Mock and Fixture Patterns
 
@@ -320,8 +319,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 })
 ```
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Factory patterns, mock creation, test data generation
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Factory patterns, mock
+creation, test data generation
 
 ### Test Fixtures
 
@@ -332,8 +331,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - **Data Fixtures**: Test data fixtures
 - **Configuration Fixtures**: Configuration test fixtures
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Fixture patterns, test data management, configuration testing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Fixture patterns, test
+data management, configuration testing
 
 ## Test Coverage Analysis
 
@@ -353,8 +352,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Utilities: 95%+ coverage
 - UI components: 80%+ coverage
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Coverage analysis, coverage targets, coverage reporting
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Coverage analysis,
+coverage targets, coverage reporting
 
 ### Coverage Reporting
 
@@ -365,8 +364,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Coverage thresholds
 - Coverage badges
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Coverage reporting, visualization, threshold management
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Coverage reporting,
+visualization, threshold management
 
 ## Performance Testing
 
@@ -386,8 +385,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Memory usage
 - CPU usage
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Performance testing patterns, load testing, memory testing
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance testing
+patterns, load testing, memory testing
 
 ### Benchmark Testing
 
@@ -398,8 +397,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - **Extension Performance**: Extension activation benchmarks
 - **Memory Benchmarks**: Memory usage benchmarks
 
-**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Needed**: Benchmark patterns, performance measurement, optimization
+**Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Benchmark patterns,
+performance measurement, optimization
 
 ## Common Issues and Solutions
 
@@ -411,8 +410,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Race conditions in tests
 - Timing-dependent failures
 
-**Root Cause**: Asynchronous operations or timing issues
-**Solution**: Implement proper async handling and deterministic timing
+**Root Cause**: Asynchronous operations or timing issues **Solution**: Implement proper async
+handling and deterministic timing
 
 ### Issue 2: Mock Complexity
 
@@ -422,8 +421,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Mock maintenance overhead
 - Mock brittleness
 
-**Root Cause**: Over-complex mocking strategies
-**Solution**: Implement factory patterns and simplified mocking
+**Root Cause**: Over-complex mocking strategies **Solution**: Implement factory patterns and
+simplified mocking
 
 ### Issue 3: Test Performance
 
@@ -433,8 +432,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - High memory usage
 - Test timeouts
 
-**Root Cause**: Inefficient test patterns or resource leaks
-**Solution**: Optimize test patterns and implement proper cleanup
+**Root Cause**: Inefficient test patterns or resource leaks **Solution**: Optimize test patterns and
+implement proper cleanup
 
 ### Issue 4: Coverage Gaps
 
@@ -444,9 +443,16 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Untested edge cases
 - Coverage regressions
 
-**Root Cause**: Insufficient test coverage or missing test cases
-**Solution**: Implement comprehensive test coverage and coverage monitoring
+**Root Cause**: Insufficient test coverage or missing test cases **Solution**: Implement
+comprehensive test coverage and coverage monitoring
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/testing/TESTING_STRATEGY.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+  `/docs/testing/TESTING_STRATEGY.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [testing](../docs/testing/) · ↑ Table of Contents

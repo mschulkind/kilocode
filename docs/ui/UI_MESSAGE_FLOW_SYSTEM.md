@@ -1,8 +1,12 @@
 # UI Message Flow System
 
-**Purpose:** Detailed documentation of the UI message flow system, including send button state management, message queuing, and request deduplication mechanisms.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Detailed documentation of the UI message flow system, including send button state
+management, message queuing, and request deduplication mechanisms.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -13,15 +17,18 @@
 - [Request Flow Control](#request-flow-control)
 - [Common Issues and Solutions](#common-issues-and-solutions)
 - [Debugging Procedures](#debugging-procedures)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The UI Message Flow System manages user interactions with the chat interface, including send button state, message queuing, and request deduplication. This system is critical for preventing duplicate API requests and maintaining consistent user experience._
+_The UI Message Flow System manages user interactions with the chat interface, including send button
+state, message queuing, and request deduplication. This system is critical for preventing duplicate
+API requests and maintaining consistent user experience._
 
-The UI Message Flow System consists of several interconnected components that work together to manage user input and prevent duplicate requests:
+The UI Message Flow System consists of several interconnected components that work together to
+manage user input and prevent duplicate requests:
 
 1. **ChatView Component** - Main chat interface controller
 2. **ChatTextArea Component** - Input area with send button
@@ -430,4 +437,12 @@ const handleSendMessage = useCallback(
 
 <a id="navigation-footer"></a>
 
-- Back: [`INDEX.md`](INDEX.md) · Root: [`../INDEX.md`](../INDEX.md) · Source: `/docs/ui/UI_MESSAGE_FLOW_SYSTEM.md#L1`
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+  `/docs/ui/UI_MESSAGE_FLOW_SYSTEM.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [ui](../docs/ui/) ·
+[↑ Table of Contents](#ui-message-flow-system)

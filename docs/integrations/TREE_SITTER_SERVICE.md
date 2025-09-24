@@ -1,8 +1,12 @@
 # Tree Sitter Service
 
-**Purpose:** Documentation of the Tree Sitter code parsing service and language-specific parsing capabilities in the KiloCode system.
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you can go, and how to get there without getting lost! 🗺️
+**Purpose:** Documentation of the Tree Sitter code parsing service and language-specific parsing
+capabilities in the KiloCode system.
+
+> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 
@@ -12,13 +16,15 @@
 - [Query System](#query-system)
 - [Performance Optimization](#performance-optimization)
 - [Common Issues and Solutions](#common-issues-and-solutions)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The Tree Sitter Service provides comprehensive code parsing and analysis capabilities for multiple programming languages, enabling semantic code understanding and analysis within the KiloCode system._
+_The Tree Sitter Service provides comprehensive code parsing and analysis capabilities for multiple
+programming languages, enabling semantic code understanding and analysis within the KiloCode
+system._
 
 The Tree Sitter Service consists of:
 
@@ -102,8 +108,8 @@ interface LanguageParser {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Parser implementation details, language-specific features, AST structure
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Parser implementation
+details, language-specific features, AST structure
 
 ### Parser Configuration
 
@@ -114,8 +120,8 @@ interface LanguageParser {
 - **Performance Tuning**: Parser performance optimization
 - **Memory Management**: Efficient memory usage for large files
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Configuration patterns, performance tuning, memory optimization
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Configuration patterns,
+performance tuning, memory optimization
 
 ## Query System
 
@@ -139,8 +145,8 @@ interface QueryPattern {
 }
 ```
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Query pattern design, capture groups, semantic analysis
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Query pattern design,
+capture groups, semantic analysis
 
 ### Query Execution
 
@@ -151,8 +157,8 @@ interface QueryPattern {
 - **Performance Optimization**: Query execution optimization
 - **Result Formatting**: Structured result formatting
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Query execution engine, optimization strategies, result processing
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Query execution engine,
+optimization strategies, result processing
 
 ## Performance Optimization
 
@@ -172,8 +178,8 @@ interface QueryPattern {
 - **Cache Hit Rate**: Parser cache effectiveness
 - **Query Performance**: Query execution time
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Performance measurement, optimization techniques, benchmarking
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Performance measurement,
+optimization techniques, benchmarking
 
 ### Caching Strategy
 
@@ -191,8 +197,8 @@ interface QueryPattern {
 - **Cache Persistence**: Persistent cache storage
 - **Cache Statistics**: Cache performance monitoring
 
-**Implementation Status**: 🔍 **PARTIALLY RESEARCHED**
-**Research Needed**: Cache implementation, invalidation strategies, persistence patterns
+**Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Cache implementation,
+invalidation strategies, persistence patterns
 
 ## Common Issues and Solutions
 
@@ -204,8 +210,8 @@ interface QueryPattern {
 - High memory usage
 - Parser timeouts
 
-**Root Cause**: Inefficient parsing or memory management
-**Solution**: Implement incremental parsing and memory optimization
+**Root Cause**: Inefficient parsing or memory management **Solution**: Implement incremental parsing
+and memory optimization
 
 ### Issue 2: Language Detection Failures
 
@@ -215,8 +221,8 @@ interface QueryPattern {
 - Parser selection errors
 - Query execution failures
 
-**Root Cause**: Language detection algorithm issues
-**Solution**: Improve language detection and fallback mechanisms
+**Root Cause**: Language detection algorithm issues **Solution**: Improve language detection and
+fallback mechanisms
 
 ### Issue 3: Query Pattern Errors
 
@@ -226,8 +232,8 @@ interface QueryPattern {
 - Incorrect query results
 - Performance degradation
 
-**Root Cause**: Query pattern syntax or logic errors
-**Solution**: Implement query validation and error handling
+**Root Cause**: Query pattern syntax or logic errors **Solution**: Implement query validation and
+error handling
 
 ### Issue 4: Memory Leaks
 
@@ -237,9 +243,17 @@ interface QueryPattern {
 - Performance degradation
 - System instability
 
-**Root Cause**: Parser or AST memory leaks
-**Solution**: Implement proper memory management and cleanup
+**Root Cause**: Parser or AST memory leaks **Solution**: Implement proper memory management and
+cleanup
 
 <a id="navigation-footer"></a>
 
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`INDEX.md`](../INDEX.md) · Source: `/docs/integrations/TREE_SITTER_SERVICE.md#L1`
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+  · Source: `/docs/integrations/TREE_SITTER_SERVICE.md#L1`
+
+## Navigation Footer
+
+---
+
+**Navigation**: [docs](../) · [integrations](../docs/integrations/) ·
+[↑ Table of Contents](#tree-sitter-service)

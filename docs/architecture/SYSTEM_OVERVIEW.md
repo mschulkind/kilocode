@@ -1,8 +1,13 @@
 # System Overview
 
-**Purpose:** Detailed technical analysis of all subsystems, components, and architectural patterns in the KiloCode system with comprehensive research status and implementation details.
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Dinosaur Fun Fact**: The KiloCode system is like a dinosaur ecosystem - each subsystem is like a different species (T-Rex for the core engine, Triceratops for the UI, Pterodactyl for the API layer), all working together in a complex but harmonious prehistoric world! 🦕
+**Purpose:** Detailed technical analysis of all subsystems, components, and architectural patterns
+in the KiloCode system with comprehensive research status and implementation details.
+
+> **Dinosaur Fun Fact**: The KiloCode system is like a dinosaur ecosystem - each subsystem is like a
+> different species (T-Rex for the core engine, Triceratops for the UI, Pterodactyl for the API
+> layer), all working together in a complex but harmonious prehistoric world! 🦕
 
 <details><summary>Table of Contents</summary>
 
@@ -17,13 +22,30 @@
 - [Build & Deployment Systems](#build--deployment-systems)
 - [External Integrations](#external-integrations)
 - [Research Status Matrix](#research-status-matrix)
-- [Navigation Footer](#navigation-footer)
+- Navigation Footer
 
 </details>
 
 ## Executive Summary
 
-_The KiloCode system is a sophisticated AI-powered coding assistant built as a VS Code extension with a comprehensive ecosystem of tools, services, and integrations. The architecture follows a layered approach with clear separation of concerns between the core engine, service layer, UI components, and external integrations._
+## Research Context
+
+**Purpose:** \[Describe the purpose and scope of this document]
+
+**Background:** \[Provide relevant background information]
+
+**Research Questions:** \[List key questions this document addresses]
+
+**Methodology:** \[Describe the approach or methodology used]
+
+**Findings:** \[Summarize key findings or conclusions]
+
+---
+
+_The KiloCode system is a sophisticated AI-powered coding assistant built as a VS Code extension
+with a comprehensive ecosystem of tools, services, and integrations. The architecture follows a
+layered approach with clear separation of concerns between the core engine, service layer, UI
+components, and external integrations._
 
 **Architecture Highlights**:
 
@@ -87,9 +109,8 @@ graph TB
 
 ### 1. Task Engine (`src/core/task/`) ✅ **FULLY DOCUMENTED**
 
-**Status**: ✅ **COMPREHENSIVE DOCUMENTATION**
-**Research Level**: Complete
-**Files**: 7 TypeScript files
+**Status**: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 7 TypeScript
+files
 
 **Components**:
 
@@ -112,9 +133,8 @@ graph TB
 
 ### 2. Webview System (`src/core/webview/`) ✅ **FULLY DOCUMENTED**
 
-**Status**: ✅ **COMPREHENSIVE DOCUMENTATION**
-**Research Level**: Complete
-**Files**: 18 TypeScript files
+**Status**: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 18 TypeScript
+files
 
 **Components**:
 
@@ -136,9 +156,8 @@ graph TB
 
 ### 3. Message Queue System (`src/core/message-queue/`) ✅ **FULLY DOCUMENTED**
 
-**Status**: ✅ **COMPREHENSIVE DOCUMENTATION**
-**Research Level**: Complete
-**Files**: 1 TypeScript file
+**Status**: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 1 TypeScript
+file
 
 **Components**:
 
@@ -157,9 +176,8 @@ graph TB
 
 ### 4. Tool System (`src/core/tools/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS COMPREHENSIVE DOCUMENTATION**
-**Research Level**: Moderate
-**Files**: 48 TypeScript files
+**Status**: ⚠️ **NEEDS COMPREHENSIVE DOCUMENTATION** **Research Level**: Moderate **Files**: 48
+TypeScript files
 
 **Components**:
 
@@ -186,9 +204,8 @@ graph TB
 
 ### 5. Prompt Management (`src/core/prompts/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 89 files (62 TS, 27 snapshots)
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 89 files (62 TS, 27
+snapshots)
 
 **Components**:
 
@@ -208,9 +225,8 @@ graph TB
 
 ### 1. Laminar Service (`src/services/laminar/`) ✅ **FULLY DOCUMENTED**
 
-**Status**: ✅ **COMPREHENSIVE DOCUMENTATION**
-**Research Level**: Complete
-**Files**: 4 TypeScript files
+**Status**: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 4 TypeScript
+files
 
 **Components**:
 
@@ -231,9 +247,8 @@ graph TB
 
 ### 2. Cloud Services (`packages/cloud/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Moderate
-**Files**: 37 files (34 TS, 2 JSON, 1 MJS)
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Moderate **Files**: 37 files (34 TS, 2
+JSON, 1 MJS)
 
 **Components**:
 
@@ -259,9 +274,7 @@ graph TB
 
 ### 3. Marketplace System (`src/services/marketplace/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 10 TypeScript files
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 10 TypeScript files
 
 **Components**:
 
@@ -285,9 +298,7 @@ graph TB
 
 ### 4. MCP Integration (`src/services/mcp/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 4 TypeScript files
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 4 TypeScript files
 
 **Components**:
 
@@ -310,9 +321,7 @@ graph TB
 
 ### 5. Code Index Service (`src/services/code-index/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 47 TypeScript files
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 47 TypeScript files
 
 **Components**:
 
@@ -337,9 +346,7 @@ graph TB
 
 ### 6. Tree Sitter Service (`src/services/tree-sitter/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 124 TypeScript files
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 124 TypeScript files
 
 **Components**:
 
@@ -408,9 +415,8 @@ graph TB
 
 ### Provider System (`src/api/providers/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 122 files (118 TS, 4 JSON)
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 122 files (118 TS, 4
+JSON)
 
 **Components**:
 
@@ -436,9 +442,7 @@ graph TB
 
 ### Transform Layer (`src/api/transform/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Research Level**: Basic
-**Files**: 34 TypeScript files
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Level**: Basic **Files**: 34 TypeScript files
 
 **Components**:
 
@@ -458,14 +462,13 @@ graph TB
 
 ### React Component System (`webview-ui/src/components/`) ✅ **FULLY DOCUMENTED**
 
-**Status**: ✅ **COMPREHENSIVE DOCUMENTATION**
-**Research Level**: Complete
+**Status**: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete
 
 #### Chat Interface (`components/chat/`)
 
-- **ChatView.tsx**: Main chat interface
+- **ChatView\.tsx**: Main chat interface
 - **ChatTextArea.tsx**: Input area with send button
-- **ChatRow.tsx**: Message display components
+- **ChatRow\.tsx**: Message display components
 - **QueuedMessages.tsx**: Message queue display
 
 #### Settings Management (`components/settings/`)
@@ -476,7 +479,7 @@ graph TB
 
 #### Cloud Integration (`components/cloud/`)
 
-- **CloudView.tsx**: Cloud service interface
+- **CloudView\.tsx**: Cloud service interface
 - **CloudUpsellDialog.tsx**: Upgrade prompts
 
 #### Marketplace (`components/marketplace/`)
@@ -493,9 +496,8 @@ graph TB
 
 ### Unit Testing 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Framework**: Vitest
-**Coverage**: Extensive across all packages
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Framework**: Vitest **Coverage**: Extensive across all
+packages
 
 **Test Categories**:
 
@@ -532,8 +534,7 @@ graph TB
 
 ### End-to-End Testing 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Frameworks**: Playwright, VS Code E2E
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Frameworks**: Playwright, VS Code E2E
 
 **Components**:
 
@@ -553,8 +554,7 @@ graph TB
 
 ### Build Pipeline 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Tools**: Turbo, ESBuild, Vite, TypeScript
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Tools**: Turbo, ESBuild, Vite, TypeScript
 
 **Build Targets**:
 
@@ -573,8 +573,7 @@ graph TB
 
 ### Package Management 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Tool**: pnpm with workspace configuration
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Tool**: pnpm with workspace configuration
 
 **Configuration**:
 
@@ -592,8 +591,7 @@ graph TB
 
 ### CI/CD Pipeline 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Tools**: GitHub Actions, Docker, Turbo
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Tools**: GitHub Actions, Docker, Turbo
 
 **Pipeline Stages**:
 
@@ -614,8 +612,7 @@ graph TB
 
 ### JetBrains Plugin (`jetbrains/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Files**: 167 files (133 KT, 7 SVG, 3 CSS)
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Files**: 167 files (133 KT, 7 SVG, 3 CSS)
 
 **Components**:
 
@@ -632,8 +629,7 @@ graph TB
 
 ### Browser Automation (`src/services/browser/`) 🔍 **PARTIALLY RESEARCHED**
 
-**Status**: ⚠️ **NEEDS DOCUMENTATION**
-**Files**: 5 TypeScript files
+**Status**: ⚠️ **NEEDS DOCUMENTATION** **Files**: 5 TypeScript files
 
 **Components**:
 
@@ -699,28 +695,39 @@ graph TB
 
 **Understanding System Architecture:**
 
-- **Next**: [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](./repository/CORE_SYSTEMS.md) → [External Dependencies](./EXTERNAL_DEPENDENCIES.md)
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [State Machines](./state-machines/README.md) for behavior modeling
+- **Next**: [Repository Overview](./REPOSITORY_OVERVIEW.md) →
+  [Core Systems](../architecture/repository/CORE_SYSTEMS.md) → [External Dependencies](./EXTERNAL_DEPENDENCIES.md)
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [State Machines](README.md) for behavior modeling
 
 **Investigating Current Issues:**
 
-- **Next**: [Race Condition Analysis](./race-condition/README.md) → [Root Cause Analysis](./race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](./race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Next**: [Race Condition Analysis]race-condition/README.md) →
+  [Root Cause Analysis]race-condition/ROOT_CAUSE_ANALYSIS.md) →
+  [Solution Recommendations]race-condition/SOLUTION_RECOMMENDATIONS.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
 
 **Implementing System Features:**
 
-- **Next**: [Repository Development Guide](./repository/DEVELOPMENT_GUIDE.md) → [Testing Infrastructure](./repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](./repository/BUILD_PIPELINES.md)
-- **Related**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) for development patterns
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md) →
+  [Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)
+- **Related**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) for
+  development patterns
 
 **Planning Improvements:**
 
-- **Next**: [Prioritized Architecture Improvements](./PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md) → [Branch Analyses](./branches/README.md) → [Implementation Plans](../plans/README.md)
+- **Next**: [Prioritized Architecture Improvements](./PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md) →
+  [Branch Analyses](README.md) → [Implementation Plans](../plans/README.md)
 - **Related**: [Consolidation Plan](./CONSOLIDATION_PLAN.md) for documentation improvements
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Architecture Documentation](./README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go
+next, return to [Architecture Documentation](./README.md) for guidance.
 
 <a id="navigation-footer"></a>
 
-**Navigation**: [← Back to Architecture Documentation](./README.md) · [→ Repository Overview](./REPOSITORY_OVERVIEW.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+**Navigation**: [← Back to Architecture Documentation](./README.md) ·
+[→ Repository Overview](./REPOSITORY_OVERVIEW.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+[↑ Table of Contents](#-research-context--next-steps)
