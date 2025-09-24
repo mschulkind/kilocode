@@ -1,5 +1,6 @@
 {
 	"name": "kilo-code",
+	"type": "module",
 	"packageManager": "pnpm@10.8.1",
 	"engines": {
 		"node": "20.19.2"
@@ -34,7 +35,15 @@
 		"jetbrains:build": "turbo jetbrains:build",
 		"jetbrains:run": "turbo jetbrains:run",
 		"docs:start": "pnpm --filter kilocode-docs start",
-		"docs:build": "pnpm --filter kilocode-docs build"
+		"docs:build": "pnpm --filter kilocode-docs build",
+		"docs:validate": "remark docs/",
+		"docs:fix": "node scripts/docs/prettier-markdown-formatter.js docs/ && remark docs/ --output",
+		"docs:format": "node scripts/docs/prettier-markdown-formatter.js docs/",
+		"docs:maintain": "node scripts/docs/maintain-docs.js",
+		"docs:report": "node scripts/docs/validation-report.js",
+		"docs:metrics": "node scripts/docs/metrics.js",
+		"docs:performance": "node scripts/docs/performance-monitor.js",
+		"docs:benchmark": "node scripts/docs/performance-monitor.js benchmark"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.5.1",
@@ -44,6 +53,7 @@
 		"@types/glob": "^9.0.0",
 		"@types/node": "^24.1.0",
 		"@vscode/vsce": "3.3.2",
+		"chalk": "^5.4.1",
 		"esbuild": "^0.25.0",
 		"eslint": "^9.27.0",
 		"glob": "^11.0.3",
@@ -51,13 +61,27 @@
 		"knip": "^5.44.4",
 		"lint-staged": "^16.0.0",
 		"mkdirp": "^3.0.1",
+		"node-fetch": "2",
 		"only-allow": "^1.2.1",
 		"ovsx": "0.10.4",
 		"prettier": "^3.4.2",
+		"remark": "^15.0.1",
+		"remark-cli": "^12.0.1",
+		"remark-frontmatter": "^5.0.0",
+		"remark-gfm": "^4.0.1",
+		"remark-parse": "^11.0.0",
+		"remark-preset-lint-recommended": "^7.0.1",
+		"remark-stringify": "^11.0.0",
+		"remark-toc": "^9.0.0",
+		"remark-validate-links": "^13.1.0",
 		"rimraf": "^6.0.1",
+		"syllable": "^5.0.1",
+		"textstat": "^0.8.0",
 		"tsx": "^4.19.3",
 		"turbo": "^2.5.6",
-		"typescript": "^5.4.5"
+		"typescript": "^5.4.5",
+		"unified": "^11.0.5",
+		"unist-util-visit": "^5.0.0"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,json,css,md}": [
@@ -72,5 +96,8 @@
 			"form-data": ">=4.0.4",
 			"bluebird": ">=3.7.2"
 		}
+	},
+	"dependencies": {
+		"string-width": "^8.1.0"
 	}
 }
