@@ -1,0 +1,36 @@
+{
+  "reportType": "trends",
+  "generatedAt": "2025-09-24T06:00:56.100Z",
+  "quality": {
+    "current": 0.7560813622488274,
+    "trend": "stable",
+    "projection": "improving"
+  },
+  "issues": {
+    "current": 0,
+    "trend": "decreasing",
+    "projection": "decreasing"
+  },
+  "content": {
+    "growth": "stable",
+    "complexity": "moderate",
+    "maintainability": 0.8
+  },
+  "team": {
+    "productivity": "increasing",
+    "adoption": "high",
+    "engagement": 0.85
+  },
+  "recommendations": [
+    {
+      "trend": "quality",
+      "recommendation": "Continue current quality improvement efforts",
+      "priority": "medium"
+    },
+    {
+      "trend": "issues",
+      "recommendation": "Focus on preventing new issues",
+      "priority": "high"
+    }
+  ]
+}

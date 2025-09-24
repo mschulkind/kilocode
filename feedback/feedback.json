@@ -1,0 +1,28 @@
+[
+  {
+    "id": "FB-1758694148661-fnjhwy3ey",
+    "timestamp": "2025-09-24T06:09:08.661Z",
+    "submitter": "john.doe",
+    "type": "rule",
+    "category": "validation",
+    "priority": "high",
+    "title": "Confusing rule",
+    "description": "The missing-heading rule is too strict and confusing",
+    "context": {},
+    "status": "submitted",
+    "responses": []
+  },
+  {
+    "id": "FB-1758694151493-syq25qoki",
+    "timestamp": "2025-09-24T06:09:11.493Z",
+    "submitter": "jane.smith",
+    "type": "workflow",
+    "category": "process",
+    "priority": "medium",
+    "title": "Slow validation",
+    "description": "Validation takes too long on large files",
+    "context": {},
+    "status": "submitted",
+    "responses": []
+  }
+]

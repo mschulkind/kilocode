@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Commit message validation
+commit_regex='^(feat|fix|docs|style|refactor|perf|test|chore|build|ci|revert)(\(.+\))?: .{1,50}'
+
+if ! grep -qE "$commit_regex" "$1"; then
+    echo "❌ Invalid commit message format!"
+    echo ""
+    echo "Commit message should follow the format:"
+    echo "  <type>(<scope>): <description>"
+    echo ""
+    echo "Types: feat, fix, docs, style, refactor, perf, test, chore, build, ci, revert"
+    echo "Scope: optional, describes the area of change"
+    echo "Description: brief description (max 50 chars)"
+    echo ""
+    echo "Examples:"
+    echo "  feat(auth): add user authentication"
+    echo "  fix(api): resolve race condition in API calls"
+    echo "  docs(readme): update installation instructions"
+    echo "  chore: update dependencies"
+    echo ""
+    exit 1
+fi
+
+# Check for documentation changes
+if git diff --cached --name-only | grep -q "\.md$"; then
+    echo "📝 Documentation changes detected"
+    
+    # Check if commit message includes task ID for documentation changes
+    if ! grep -qE "\(T[0-9]{3}\)" "$1"; then
+        echo "⚠️  Warning: Documentation changes should include task ID (e.g., (T001))"
+        echo "   This helps track documentation automation progress"
+    fi
+fi
+
+echo "✅ Commit message validation passed"
+

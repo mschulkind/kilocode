@@ -1,0 +1,62 @@
+{
+  "reportType": "compliance",
+  "generatedAt": "2025-09-24T06:00:56.099Z",
+  "overall": {
+    "score": 0.8503401360544217,
+    "status": "good",
+    "lastUpdated": "2025-09-24T06:00:56.099Z"
+  },
+  "standards": {
+    "kilocodeStandards": {
+      "score": 0.85,
+      "status": "good",
+      "issues": []
+    },
+    "markdownStandards": {
+      "score": 0.9,
+      "status": "excellent",
+      "issues": []
+    },
+    "linkStandards": {
+      "score": 0.8,
+      "status": "good",
+      "issues": []
+    },
+    "structureStandards": {
+      "score": 0.75,
+      "status": "fair",
+      "issues": []
+    }
+  },
+  "issues": [],
+  "recommendations": [
+    {
+      "priority": "high",
+      "title": "Address validation errors",
+      "description": "Fix critical validation errors to improve compliance",
+      "action": "Run validation fixes and review error reports"
+    },
+    {
+      "priority": "medium",
+      "title": "Improve structure standards",
+      "description": "Enhance document structure compliance",
+      "action": "Review and update document templates"
+    }
+  ],
+  "actionItems": [
+    {
+      "id": "fix-validation-errors",
+      "title": "Fix validation errors",
+      "priority": "high",
+      "dueDate": "2025-10-01T06:00:56.100Z",
+      "assignee": "team"
+    },
+    {
+      "id": "improve-structure",
+      "title": "Improve document structure",
+      "priority": "medium",
+      "dueDate": "2025-10-08T06:00:56.100Z",
+      "assignee": "team"
+    }
+  ]
+}

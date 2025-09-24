@@ -1,0 +1,46 @@
+{
+  "reportType": "weekly",
+  "generatedAt": "2025-09-24T06:00:56.099Z",
+  "period": {
+    "start": "2025-09-17T06:00:56.099Z",
+    "end": "2025-09-24T06:00:56.099Z"
+  },
+  "summary": {
+    "totalFiles": 147,
+    "validFiles": 125,
+    "filesWithIssues": 0,
+    "averageQualityScore": 0.7560813622488274,
+    "totalIssues": 0,
+    "totalWarnings": 1509
+  },
+  "quality": {
+    "score": 0.7560813622488274,
+    "status": "fair",
+    "trend": "stable"
+  },
+  "compliance": {
+    "score": 0.8503401360544217,
+    "status": "good",
+    "issues": []
+  },
+  "topIssues": [
+    {
+      "rule": "unknown",
+      "count": 1507
+    },
+    {
+      "rule": "missing-heading",
+      "count": 2
+    }
+  ],
+  "improvements": [
+    "More files are valid than have issues",
+    "Average quality score is above 0.7",
+    "Good cross-referencing with internal links"
+  ],
+  "nextWeekGoals": [
+    "Improve average quality score to 0.8+",
+    "Maintain or improve current compliance score",
+    "Review and address top 3 issue types"
+  ]
+}

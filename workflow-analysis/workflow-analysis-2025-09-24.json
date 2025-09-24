@@ -1,0 +1,362 @@
+{
+  "timestamp": "2025-09-24T06:07:57.173Z",
+  "bottlenecks": [],
+  "inefficiencies": [],
+  "optimizations": [],
+  "metrics": {},
+  "recommendations": [
+    {
+      "category": "Workflow",
+      "priority": "high",
+      "title": "Optimize Validation Workflow",
+      "description": "Validation workflow has bottlenecks",
+      "actions": [
+        "Implement incremental validation",
+        "Split large files or optimize parsing"
+      ]
+    }
+  ],
+  "validationWorkflow": {
+    "steps": [
+      "File Discovery",
+      "Content Parsing",
+      "Rule Application",
+      "Error Detection",
+      "Report Generation"
+    ],
+    "bottlenecks": [
+      {
+        "step": "File Discovery",
+        "issue": "Large number of files to process",
+        "impact": "high",
+        "solution": "Implement incremental validation"
+      },
+      {
+        "step": "Content Parsing",
+        "issue": "Large files slow down parsing",
+        "impact": "medium",
+        "solution": "Split large files or optimize parsing"
+      }
+    ],
+    "optimizations": []
+  },
+  "fileProcessing": {
+    "totalFiles": 152,
+    "fileSizes": [
+      7998,
+      4658,
+      7578,
+      17831,
+      12718,
+      6578,
+      15018,
+      20729,
+      4618,
+      24399,
+      11649,
+      11685,
+      7835,
+      2432,
+      7795,
+      11566,
+      4956,
+      13056,
+      19000,
+      8002,
+      2995,
+      8332,
+      7483,
+      7277,
+      10854,
+      5351,
+      39520,
+      8689,
+      6257,
+      8157,
+      11889,
+      2352,
+      10129,
+      4188,
+      10585,
+      11754,
+      12687,
+      10590,
+      10931,
+      10621,
+      9698,
+      14064,
+      7159,
+      7262,
+      7741,
+      7229,
+      14323,
+      14129,
+      6554,
+      8113,
+      7826,
+      9309,
+      2960,
+      15166,
+      14995,
+      15529,
+      12179,
+      12024,
+      9228,
+      11735,
+      26086,
+      17923,
+      9512,
+      10017,
+      14640,
+      12250,
+      10201,
+      9139,
+      15372,
+      15261,
+      7111,
+      10377,
+      2355,
+      7646,
+      12991,
+      7521,
+      11241,
+      10421,
+      2181,
+      11354,
+      2578,
+      12430,
+      35747,
+      16113,
+      23409,
+      5877,
+      7738,
+      15401,
+      6792,
+      19217,
+      18487,
+      30515,
+      21119,
+      5087,
+      20395,
+      13434,
+      4337,
+      15695,
+      14161,
+      7273,
+      10571,
+      8304,
+      26485,
+      15335,
+      13825,
+      11854,
+      15189,
+      18134,
+      17300,
+      23416,
+      14457,
+      18844,
+      26598,
+      2909,
+      2872,
+      2930,
+      7477,
+      11605,
+      18533,
+      11386,
+      14265,
+      16701,
+      2805,
+      11829,
+      7853,
+      15278,
+      3709,
+      10043,
+      9506,
+      11676,
+      11020,
+      8772,
+      5394,
+      12053,
+      12791,
+      16767,
+      9115,
+      11740,
+      10974,
+      13698,
+      12278,
+      9079,
+      5445,
+      8406,
+      11777,
+      14316,
+      9222,
+      9303,
+      2922,
+      8726,
+      8999,
+      8130
+    ],
+    "directories": [
+      {
+        "path": "/home/matt/code/system/kilocode/docs",
+        "depth": 6
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/ui",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/tools",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/testing",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/services",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/orchestrator",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/laminar",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/integrations",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/improvements",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/build",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/architecture",
+        "depth": 7
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/structure",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/navigation",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/examples",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/glossary",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/engagement",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/core",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/code",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/standards/checklists",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/architecture/state-machines",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/architecture/repository",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/architecture/race-condition",
+        "depth": 8
+      },
+      {
+        "path": "/home/matt/code/system/kilocode/docs/architecture/branches",
+        "depth": 8
+      }
+    ],
+    "modificationPatterns": {
+      "recent": 152,
+      "weekly": 0,
+      "monthly": 0,
+      "older": 0
+    },
+    "averageSize": 11513.059210526315,
+    "medianSize": 10737.5,
+    "largestFile": 39520,
+    "smallestFile": 2181,
+    "issues": [
+      {
+        "type": "deep_directory_structure",
+        "description": "Very deep directory structure",
+        "impact": "low",
+        "recommendation": "Consider flattening directory structure"
+      }
+    ]
+  },
+  "performance": {
+    "cpuUsage": 45,
+    "memoryUsage": 60,
+    "diskUsage": 75,
+    "networkUsage": 25,
+    "bottlenecks": []
+  },
+  "teamWorkflow": {
+    "gitPatterns": {
+      "recentCommits": 15,
+      "activeBranches": 3,
+      "mergeFrequency": 0.8
+    },
+    "validationFrequency": 0.7,
+    "errorPatterns": {
+      "totalErrors": 25,
+      "commonErrors": [
+        "missing-heading",
+        "non-descriptive-link"
+      ],
+      "errorTrend": "decreasing"
+    },
+    "collaborationIssues": []
+  },
+  "toolIntegration": {
+    "vsCodeExtensions": [
+      {
+        "name": "markdownlint",
+        "version": "0.50.0"
+      },
+      {
+        "name": "markdown-all-in-one",
+        "version": "3.5.0"
+      }
+    ],
+    "gitHooks": {
+      "preCommit": true,
+      "commitMsg": true
+    },
+    "ciCdIntegration": {
+      "enabled": true,
+      "validationStep": true,
+      "reportGeneration": true
+    },
+    "integrationIssues": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-24T06:09:13.804Z",
+  "totalSubmissions": 2,
+  "byType": {
+    "rule": 1,
+    "workflow": 1
+  },
+  "byCategory": {
+    "validation": 1,
+    "process": 1
+  },
+  "byPriority": {
+    "high": 1,
+    "medium": 1
+  },
+  "trends": {
+    "last7Days": 2,
+    "last30Days": 2,
+    "last90Days": 2
+  },
+  "topIssues": [
+    {
+      "issue": "rule-validation",
+      "count": 1
+    },
+    {
+      "issue": "workflow-process",
+      "count": 1
+    }
+  ],
+  "ruleSuggestions": []
+}
