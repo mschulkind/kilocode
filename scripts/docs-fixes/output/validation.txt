@@ -1,0 +1,4 @@
+
+> kilo-code@ docs:validate /home/matt/code/system/kilocode
+> remark docs/
+

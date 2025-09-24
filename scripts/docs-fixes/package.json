@@ -1,0 +1,62 @@
+{
+	"name": "@kilocode/docs-fixes",
+	"version": "1.0.0",
+	"description": "Automated documentation fixer for KiloCode project using remark AST",
+	"type": "module",
+	"main": "src/docs-fixer.js",
+	"bin": {
+		"docs-fixer": "./src/docs-fixer.js"
+	},
+	"scripts": {
+		"fix": "node src/docs-fixer.js",
+		"fix:dry-run": "node src/docs-fixer.js --dry-run --verbose",
+		"fix:validate": "node src/docs-fixer.js --validate",
+		"test": "node test/run-tests.js",
+		"test:watch": "node test/run-tests.js --watch",
+		"lint": "eslint src/ test/",
+		"docs": "node docs/generate-docs.js",
+		"docs:generate": "node docs/generate-examples.js",
+		"docs:update": "npm run docs:generate && npm run docs"
+	},
+	"keywords": [
+		"documentation",
+		"markdown",
+		"remark",
+		"ast",
+		"automation",
+		"kilocode",
+		"fixes"
+	],
+	"author": "KiloCode Team",
+	"license": "MIT",
+	"dependencies": {
+		"remark": "^15.0.1",
+		"remark-lint": "^10.0.1",
+		"remark-lint-heading-increment": "^4.0.1",
+		"remark-lint-list-item-bullet-indent": "^5.0.1",
+		"remark-lint-list-item-indent": "^4.0.1",
+		"remark-lint-list-item-style": "^3.0.1",
+		"remark-lint-no-duplicate-headings": "^4.0.1",
+		"remark-lint-no-literal-urls": "^4.0.1",
+		"remark-lint-no-shortcut-reference-image": "^4.0.1",
+		"remark-lint-no-shortcut-reference-link": "^4.0.1",
+		"remark-lint-ordered-list-marker-style": "^4.0.1",
+		"remark-lint-ordered-list-marker-value": "^4.0.1",
+		"unist-util-visit": "^5.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^9.27.0"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/roo-ai/kilo-code.git",
+		"directory": "scripts/docs-fixes"
+	},
+	"bugs": {
+		"url": "https://github.com/roo-ai/kilo-code/issues"
+	},
+	"homepage": "https://github.com/roo-ai/kilo-code#readme"
+}
