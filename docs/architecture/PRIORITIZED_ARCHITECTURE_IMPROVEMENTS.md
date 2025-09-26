@@ -8,16 +8,22 @@ management, and API execution. Complements the race-condition work with strategi
 ## Quick Navigation
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 - \[Request Arbiter and Declarative Execution Model]race-condition/SOLUTION\_RECOMMENDATIONS.md)
 - \[Code Flow and Execution Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md)
 - [State Machine Index and Diagrams](README.md)
-- [Repository Structure Overview](../../architecture/../repository/REPOSITORY_STRUCTURE.md)
+- [Repository Structure Overview](../architecture/repository/REPOSITORY_STRUCTURE.md)
 
 ## Top Priorities (Tier 0–1)
 1. Request Arbiter (single authority for “what runs next”)
@@ -95,18 +101,24 @@ management, and API execution. Complements the race-condition work with strategi
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Architecture:*\*
+
+- *Understanding Architecture:**
+
 - **Next**: Check related architecture documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-- *Implementing Architecture Features:*\*
-- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../../../../../../orchestrator/README.md) for integration patterns
-- *Troubleshooting Architecture Issues:*\*
-- **Next**: \[Race Condition Analysis]../race-condition/README.md) →
+
+- *Implementing Architecture Features:**
+
+- **Next**: [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:**
+
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../../../../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -114,17 +126,9 @@ management, and API execution. Complements the race-condition work with strategi
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

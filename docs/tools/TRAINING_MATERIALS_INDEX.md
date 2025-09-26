@@ -1,5 +1,13 @@
 # Training Materials Index
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 This index provides access to all training materials for KiloCode's documentation automation system.
@@ -156,4 +164,5 @@ This index provides access to all training materials for KiloCode's documentatio
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
 
 ## Navigation Footer
+
 - *Navigation*\*: [← Back to Tools Overview](./README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#training-materials-index)

@@ -1,9 +1,10 @@
 # Laminar Span Nesting System
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-- *Purpose:*\* This document explains the span nesting architecture in Kilo Code's Laminar
-  observability system, detailing how spans are created, nested, and queued, with specific focus on
-  why chat history spans may not appear while test connection spans do.
+
+- *Purpose:** This document explains the span nesting architecture in Kilo Code's Laminar
+observability system, detailing how spans are created, nested, and queued, with specific focus on
+why chat history spans may not appear while test connection spans do.
 
 > **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
 > instant connections between distant parts of the system, allowing us to observe the entire state
@@ -29,6 +30,7 @@ invocations. The system uses a queuing mechanism to handle spans created before 
 initialization completes.
 
 ### Key Components
+
 - **LaminarService**: Singleton managing span lifecycle and queuing
 - **Span Types**: Root, child, and detached spans for different operation levels
 - **Nesting**: Hierarchical span relationships using `Laminar.withSpan()`
@@ -45,7 +47,8 @@ initialization completes.
 | TOOL      | Tool execution and completion          | `attempt_completion`                         | Tool handlers  |
 
 ### Span Hierarchy
-- *Visual diagram showing span relationships:*\*
+
+- *Visual diagram showing span relationships:**
 
 ```
 Root Task Span (task-{id}-task.root)
@@ -54,7 +57,8 @@ Root Task Span (task-{id}-task.root)
 │   └── Tool Span (attempt_completion)
 └── Test Connection Span (connection_test) [Independent]
 ```
-- *Nesting Rules:*\*
+
+- *Nesting Rules:**
 - Root spans wrap entire task execution
 - Task step spans represent individual API request cycles
 - LLM spans track model interactions
@@ -64,7 +68,8 @@ Root Task Span (task-{id}-task.root)
 ## Span Creation and Lifecycle
 
 ### Creation Process
-- *Immediate Creation (Test Connection):*\*
+
+- *Immediate Creation (Test Connection):**
 
 ```typescript
 // Direct creation - bypasses queuing
@@ -75,7 +80,8 @@ const testSpan = Laminar.startSpan({
 	userId: this.userId,
 })
 ```
-- *Queued Creation (Task Spans):*\*
+
+- *Queued Creation (Task Spans):**
 
 ```typescript
 // May be queued if service not initialized
@@ -91,13 +97,15 @@ laminarService.startSpan(
 ```
 
 ### Lifecycle Management
-- *Span States:*\*
+
+- *Span States:**
 1. **Created**: Span initialized with metadata
 2. **Active**: Span marked as current context
 3. **Nested**: Child spans created under active span
 4. **Completed**: Span ended and sent to backend
 5. **Failed**: Span ended with error recording
-- *Completion Process:*\*
+
+- *Completion Process:**
 
 ```typescript
 // End span with success
@@ -111,11 +119,13 @@ laminarService.endSpan("llm_call")
 ## Queuing Mechanism
 
 ### When Queuing Occurs
-- *Queue Trigger Conditions:*\*
+
+- *Queue Trigger Conditions:**
 - Service not yet initialized (`!this.isInitialized`)
 - Initialization currently in progress (`this.isInitializing`)
 - Configuration validation pending
-- *Queue Processing:*\*
+
+- *Queue Processing:**
 
 ```typescript
 // Spans queued before initialization
@@ -147,9 +157,11 @@ if (this.pendingSpanRequests.length > 0) {
 ## Why Chat History Spans May Not Appear
 
 ### Root Cause Analysis
-- *Primary Issue:*\* Task spans are created during task initialization but may be queued indefinitely
-  if the Laminar service fails to initialize properly.
-- *Failure Scenarios:*\*
+
+- *Primary Issue:** Task spans are created during task initialization but may be queued indefinitely
+if the Laminar service fails to initialize properly.
+
+- *Failure Scenarios:**
 1. **Configuration Issues:**
 
    ```typescript
@@ -177,12 +189,14 @@ if (this.pendingSpanRequests.length > 0) {
 - Task continues without observability
 
 ### Test Connection vs Task Spans
-- *Test Connection Span:*\*
+
+- *Test Connection Span:**
 - Created directly in `testConnection()` method
 - Executed immediately after initialization
 - Bypasses queuing mechanism
 - Always appears if service initializes
-- *Task Spans:*\*
+
+- *Task Spans:**
 - Created during task startup via `startSpan()` calls
 - Subject to queuing if service not ready
 - May be lost if initialization fails
@@ -191,7 +205,8 @@ if (this.pendingSpanRequests.length > 0) {
 ## Troubleshooting Span Issues
 
 ### Diagnostic Steps
-- *1. Check Service Initialization:*\*
+
+- *1. Check Service Initialization:**
 
 ```typescript
 console.log("Service Status:", {
@@ -201,7 +216,8 @@ console.log("Service Status:", {
 	pendingSpans: laminarService.pendingSpanRequests?.length,
 })
 ```
-- *2. Verify Configuration:*\*
+
+- *2. Verify Configuration:**
 
 ```typescript
 console.log("Laminar Config:", {
@@ -211,7 +227,8 @@ console.log("Laminar Config:", {
 	httpPort: laminarConfig.httpPort,
 })
 ```
-- *3. Monitor Queue Processing:*\*
+
+- *3. Monitor Queue Processing:**
 
 ```typescript
 // Check if spans are being queued
@@ -230,13 +247,15 @@ if (!laminarService.isInitialized) {
 | Span Names Mismatch | Spans created but not found for ending | Verify consistent span naming             |
 
 ### Debug Logging
-- *Enable Debug Logging:*\*
+
+- *Enable Debug Logging:**
 
 ```typescript
 // Set console level to see [LAMINAR DEBUG] messages
 console.log = console.log.bind(console)
 ```
-- *Key Debug Messages:*\*
+
+- *Key Debug Messages:**
 - `[LAMINAR DEBUG] getInstance` - Service singleton access
 - `[LAMINAR DEBUG] initialize` - Service initialization steps
 - `[LAMINAR DEBUG] startSpan` - Span creation attempts
@@ -255,21 +274,25 @@ console.log = console.log.bind(console)
 ## Implementation Details
 
 ### Span Naming Convention
-- *Pattern:*\* `{taskId}-{operationType}[-{subtype}]`
-- *Examples:*\*
+
+- *Pattern:** `{taskId}-{operationType}[-{subtype}]`
+
+- *Examples:**
 - `task-123-task.root` - Root task span
 - `task-123-task.step` - Task step span
 - `task-123-llm_call` - LLM API call span
 - `attempt_completion` - Tool execution span
 
 ### Session Management
-- *Session ID Propagation:*\*
+
+- *Session ID Propagation:**
 
 ```typescript
 const sessionId = this.rootTaskId || this.taskId
 // Used for span grouping and correlation
 ```
-- *User Context:*\*
+
+- *User Context:**
 
 ```typescript
 const userId = this.userId
@@ -277,12 +300,14 @@ const userId = this.userId
 ```
 
 ### Error Handling
-- *Exception Recording:*\*
+
+- *Exception Recording:**
 
 ```typescript
 laminarService.recordExceptionOnSpan(spanName, error)
 ```
-- *Graceful Degradation:*\*
+
+- *Graceful Degradation:**
 
 ```typescript
 // Continue operation even if tracing fails
@@ -294,10 +319,12 @@ try {
 ```
 
 ### Performance Considerations
-- *Lazy Initialization:*\*
+
+- *Lazy Initialization:**
 - Service initialized only when first span requested
 - Prevents startup overhead when tracing disabled
-- *Minimal Overhead:*\*
+
+- *Minimal Overhead:**
 - Spans created only when service enabled
 - Failed operations don't block main execution
 - Background processing for span completion
@@ -309,15 +336,21 @@ try {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Laminar Observability:*\*
+
+- *Understanding Laminar Observability:**
+
 - **Next**: Check related Laminar documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
-- *Implementing Observability Features:*\*
+
+- *Implementing Observability Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Observability Issues:*\*
+
+- *Troubleshooting Observability Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -329,6 +362,8 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

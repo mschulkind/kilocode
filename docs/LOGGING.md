@@ -66,7 +66,8 @@ console.debug("Processing item:", item.id)
 // Informational messages
 console.info("Configuration loaded successfully")
 ```
-- *Usage Notes:*\*
+
+- *Usage Notes:**
 - Available in all JavaScript/TypeScript files
 - Automatically routed based on platform (VSCode vs JetBrains)
 - No additional imports required
@@ -93,7 +94,8 @@ userLogger.info("User action performed", { action: "login" })
 // Trace-level logging for detailed debugging
 logger.trace("Function entry", { function: "processData", params: { size: 100 } })
 ```
-- *Features:*\*
+
+- *Features:**
 - Structured JSON output with timestamps
 - Hierarchical metadata inheritance
 - Configurable log levels
@@ -119,7 +121,8 @@ outputLogger(new Error("Something went wrong"))
 const dualLogger = createDualLogger(outputLogger)
 dualLogger("This appears in both output channel and console")
 ```
-- *Usage Context:*\*
+
+- *Usage Context:**
 - Automatically initialized in VSCode environment
 - Handles complex object serialization
 - Integrated with VSCode's output panel
@@ -138,7 +141,8 @@ console.info("Info message")
 console.warn("Warning message")
 console.debug("Debug message")
 ```
-- *Platform Detection:*\*
+
+- *Platform Detection:**
 - Automatically detects JetBrains environment
 - Monkey-patches global console methods
 - Falls back gracefully if RPC unavailable
@@ -155,7 +159,8 @@ logApiEvent("task_started", { taskId: "123", type: "code_generation" })
 logApiEvent("task_completed", { taskId: "123", duration: 1500 })
 logApiEvent("task_failed", { taskId: "123", error: "timeout" })
 ```
-- *Features:*\*
+
+- *Features:**
 - Automatic file output to temp directory
 - Structured event data
 - Enabled when IPC socket path is configured
@@ -166,7 +171,8 @@ Log messages are routed to different destinations based on platform, configurati
 type.
 
 ### VSCode Environment Routing
-- *Primary Destinations:*\*
+
+- *Primary Destinations:**
 1. **VSCode Output Channel** ("Kilo-Code")
 - Main logging destination in VSCode
 - Accessible via View → Output → "Kilo-Code"
@@ -185,7 +191,8 @@ type.
 - Dual output: console + file
 
 ### JetBrains Environment Routing
-- *Primary Destinations:*\*
+
+- *Primary Destinations:**
 1. **JetBrains IDE Console**
 - Console messages forwarded via MainThread RPC
 - Seamless integration with JetBrains logging
@@ -198,7 +205,8 @@ type.
 - Platform-independent configuration
 
 ### Routing Logic
-- *Platform Detection:*\*
+
+- *Platform Detection:**
 
 ```typescript
 // Automatic platform detection in extension.ts
@@ -210,7 +218,9 @@ if (!kiloCodeWrapped) {
 	registerMainThreadForwardingLogger(context)
 }
 ```
-- *Environment-Based Routing:*\*
+
+- *Environment-Based Routing:**
+
 - **Development**: Additional console logging
 - **Test**: No-op logger for performance
 - **Production**: Structured file logging + output channels
@@ -220,55 +230,70 @@ if (!kiloCodeWrapped) {
 Multiple methods to view and monitor log messages during software usage.
 
 ### VSCode Environment
-- *1. Output Panel*\*
+
+- *1. Output Panel**
+
 - **Access**: View → Output → Select "Kilo-Code" channel
 - **Content**: Real-time streaming of all routed messages
 - **Features**:
 - Search and filter capabilities
 - Clear output option
 - Multiple output channels support
-- *2. Developer Console*\*
+
+- *2. Developer Console**
+
 - **Access**: Help → Toggle Developer Tools → Console tab
 - **Content**: Console.log messages and errors
 - **Features**:
 - Interactive debugging
 - Stack trace inspection
 - Real-time message streaming
-- *3. Terminal Output*\*
+
+- *3. Terminal Output**
+
 - **Access**: Integrated terminal in VSCode
 - **Content**: Console messages during development
 - **Features**:
 - Standard terminal logging
 - Command output mixed with logs
-- *4. File-Based Viewing*\*
+
+- *4. File-Based Viewing**
+
 - **Application Logs**: `./logs/app.log`
 - JSON format with timestamps
 - Delta timestamp optimization
 - Session markers for log rotation
+
 - **Task Logs**: System temp directory
 - `kilo-code-messages.log`
 - Task-specific event logging
 - Automatic cleanup
 
 ### JetBrains Environment
-- *1. IDE Console*\*
+
+- *1. IDE Console**
+
 - **Access**: Built-in IDE console/terminal
 - **Content**: Forwarded console messages
 - **Features**:
 - Native IDE integration
 - Standard console interface
 - All console methods displayed
-- *2. File Logs*\*
+
+- *2. File Logs**
 - Same file-based logging as VSCode
 - Accessible via file system
 - JSON format for structured analysis
 
 ### Log Analysis Tools
-- *Built-in Features:*\*
+
+- *Built-in Features:**
+
 - **Search**: Filter logs by keywords, levels, or components
 - **Export**: Save log output to files
 - **Clear**: Reset log output for new sessions
-- *External Tools:*\*
+
+- *External Tools:**
 - JSON log parsers for structured analysis
 - Log aggregation tools for production monitoring
 - Text editors for file-based log inspection
@@ -278,7 +303,8 @@ Multiple methods to view and monitor log messages during software usage.
 Comprehensive configuration options for controlling logging behavior.
 
 ### Environment Variables
-- *Laminar Service Configuration:*\*
+
+- *Laminar Service Configuration:**
 
 ```bash
 # API Configuration
@@ -297,7 +323,8 @@ LMNR_GRPC_PORT=8443
 LMNR_RECORD_IO=true          # Record span I/O (default: true)
 LMNR_ENABLED=true           # Enable Laminar service (default: true)
 ```
-- *Development and IPC Configuration:*\*
+
+- *Development and IPC Configuration:**
 
 ```bash
 # Development mode
@@ -315,7 +342,8 @@ ROO_CODE_IPC_SOCKET_PATH=/tmp/roo.sock # Alternative IPC path
 ```
 
 ### Log Level Configuration
-- *CompactLogger Levels:*\*
+
+- *CompactLogger Levels:**
 
 ```typescript
 // Available levels (ordered by verbosity)
@@ -337,23 +365,27 @@ const config = {
 	},
 }
 ```
-- *Level Filtering:*\*
+
+- *Level Filtering:**
 - Messages below minimum level are filtered out
 - File output includes all levels regardless of filter
 - Console output respects level filtering
 
 ### Platform-Specific Configuration
-- *VSCode Configuration:*\*
+
+- *VSCode Configuration:**
 - Output channel name: "Kilo-Code"
 - Automatic output channel creation
 - No user-configurable VSCode settings for logging
-- *JetBrains Configuration:*\*
+
+- *JetBrains Configuration:**
 - Automatic RPC detection
 - Console method forwarding
 - Graceful fallback to standard console
 
 ### File Output Configuration
-- *Default Configuration:*\*
+
+- *Default Configuration:**
 
 ```typescript
 const DEFAULT_CONFIG = {
@@ -364,14 +396,17 @@ const DEFAULT_CONFIG = {
 	},
 }
 ```
-- *Customization Options:*\*
+
+- *Customization Options:**
+
 - **Path**: Configurable log file location
 - **Enabled**: Toggle file logging on/off
 - **Format**: JSON with delta timestamps
 - **Rotation**: Session-based markers
 
 ### Conditional Logging
-- *Environment-Based Conditions:*\*
+
+- *Environment-Based Conditions:**
 
 ```typescript
 // Development-only logging
@@ -390,7 +425,8 @@ if (process.env.KILO_IPC_SOCKET_PATH) {
 	enableApiLogging()
 }
 ```
-- *Platform-Based Conditions:*\*
+
+- *Platform-Based Conditions:**
 
 ```typescript
 // VSCode-specific logging
@@ -404,7 +440,8 @@ if (!kiloCodeWrapped) {
 ```
 
 ### Advanced Configuration
-- *Hierarchical Logger Configuration:*\*
+
+- *Hierarchical Logger Configuration:**
 
 ```typescript
 // Parent logger with base context
@@ -421,7 +458,8 @@ const requestLogger = appLogger.child({
 
 requestLogger.info("Processing request", { method: "POST", path: "/api/users" })
 ```
-- *Structured Metadata:*\*
+
+- *Structured Metadata:**
 
 ```typescript
 logger.info("User action", {
@@ -436,14 +474,17 @@ logger.info("User action", {
 ```
 
 ### Performance Considerations
-- *Test Environment Optimization:*\*
+
+- *Test Environment Optimization:**
 - No-op logger prevents logging overhead during tests
 - Zero performance impact on test execution
-- *Production Optimization:*\*
+
+- *Production Optimization:**
 - Delta timestamp storage reduces file size
 - Structured JSON format for efficient parsing
 - Configurable output destinations
-- *Development Optimization:*\*
+
+- *Development Optimization:**
 - Console logging for immediate feedback
 - Multiple output channels for different needs
 - Hierarchical context for organized logging
@@ -451,6 +492,7 @@ logger.info("User action", {
 ## Best Practices
 
 ### 1. Choose the Right Logging Method
+
 - **Development/Debugging**: Use `console.log` for quick debugging
 - **Production/Error Tracking**: Use `logger.error/fatal` for structured error logging
 - **Performance Monitoring**: Use custom logger with metadata
@@ -479,19 +521,23 @@ logger.info("User action", {
 ## Troubleshooting
 
 ### Common Issues
-- *Logs Not Appearing in VSCode Output Panel:*\*
+
+- *Logs Not Appearing in VSCode Output Panel:**
 - Check if "Kilo-Code" channel is selected
 - Verify extension is properly loaded
 - Check for console errors in Developer Tools
-- *JetBrains Console Not Showing Logs:*\*
+
+- *JetBrains Console Not Showing Logs:**
 - Verify RPC connection is available
 - Check if `kiloCodeWrapped` is properly detected
 - Look for fallback console messages
-- *File Logging Not Working:*\*
+
+- *File Logging Not Working:**
 - Check write permissions on log directory
 - Verify file path configuration
 - Ensure `fileOutput.enabled` is true
-- *Performance Issues:*\*
+
+- *Performance Issues:**
 - Reduce log volume in production
 - Use appropriate log levels
 - Consider disabling debug logging in production
@@ -528,15 +574,21 @@ monitoring across both VSCode and JetBrains platforms.
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding This System:*\*
+
+- *Understanding This System:**
+
 - **Next**: Check related documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
-- *Implementing Features:*\*
+
+- *Implementing Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Issues:*\*
+
+- *Troubleshooting Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -548,6 +600,8 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to the appropriate README for guidance.
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Documentation Hub](../../README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

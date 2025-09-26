@@ -1,5 +1,13 @@
 # IDE Integration Guide
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 This guide covers the VS Code integration for KiloCode's documentation automation system.
@@ -14,6 +22,7 @@ for documentation maintenance.
 ### Required Extensions
 
 Install the following VS Code extensions (automatically recommended):
+
 - **Markdown All in One** (`yzhang.markdown-all-in-one`) - Comprehensive markdown support
 - **markdownlint** (`davidanson.vscode-markdownlint`) - Markdown linting and validation
 - **MDX** (`unifiedjs.vscode-mdx`) - MDX file support
@@ -62,12 +71,14 @@ Use `Ctrl+Shift+P` → "Tasks: Run Task" to access:
 ## Real-time Validation
 
 ### Features
+
 - **Live Error Detection**: See validation errors as you type
 - **Auto-fix on Save**: Automatically fix common markdown issues
 - **Link Validation**: Check internal and external links
 - **TOC Management**: Auto-generate and update table of contents
 
 ### Error Types
+
 - **Syntax Errors**: Malformed markdown
 - **Link Errors**: Broken internal/external links
 - **Structure Errors**: Missing required sections
@@ -136,6 +147,7 @@ To reset IDE integration:
 ## Integration with CI/CD
 
 The IDE integration works seamlessly with the CI/CD pipeline:
+
 - **Pre-commit**: Local validation before commit
 - **CI Pipeline**: Automated validation on PR/push
 - **Consistent Results**: Same validation rules everywhere
@@ -154,17 +166,9 @@ For issues with IDE integration:
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../) · [tools](../../docs/tools/) ·
-  [↑ Table of Contents](#ide-integration-guide)
+
+- **
+
+- *Navigation**: [docs](../) · [tools](../docs/tools/) ·
+[↑ Table of Contents](#ide-integration-guide)

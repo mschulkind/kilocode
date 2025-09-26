@@ -1,5 +1,13 @@
 # Documentation Automation Setup Guide
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 This guide explains how to set up and use the automated documentation validation and maintenance
@@ -104,6 +112,7 @@ pushes.
 #### GitHub Actions Workflow
 
 The documentation validation workflow (`.github/workflows/docs-validation.yml`) runs on:
+
 - **Push events** to main/master branches when markdown files are changed
 - **Pull request events** to main/master branches when markdown files are changed
 
@@ -149,5 +158,7 @@ For advanced configuration and custom rules, see the Phase 1 implementation plan
 `context/doc_automation/phase1.md`.
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)
+
+- **
+
+- *Navigation**: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)

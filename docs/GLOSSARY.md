@@ -1,8 +1,17 @@
 # KiloCode Technical Glossary
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-- *Purpose:*\* Comprehensive reference for technical terms, concepts, and system-specific terminology
-  used throughout KiloCode documentation.
+
+- *Purpose:** Comprehensive reference for technical terms, concepts, and system-specific terminology
+used throughout KiloCode documentation.
 
 > **Quantum Physics Fun Fact**: Just as quantum entanglement allows particles to be instantly
 > connected regardless of distance, our glossary creates instant connections between concepts across
@@ -119,6 +128,7 @@ logic.
 ## State Definitions
 
 ### **Task States**
+
 - **CREATED**: Task initialized but not yet started
 - **INITIALIZING**: Task is being set up and configured
 - **RUNNING**: Task is actively executing
@@ -131,6 +141,7 @@ logic.
 - **DESTROYED**: Task resources cleaned up
 
 ### **Session States**
+
 - **NEW**: Session just created
 - **ACTIVE**: Session actively being used
 - **PAUSED**: Session temporarily inactive
@@ -140,6 +151,7 @@ logic.
 - **DESTROYED**: Session resources cleaned up
 
 ### **Recursive Call States**
+
 - **IDLE**: No recursive calls active
 - **RUNNING**: Single recursive call in progress
 - **CONCURRENT**: Multiple recursive calls running simultaneously (race condition)
@@ -183,5 +195,7 @@ Sequential path through documentation designed to build understanding progressiv
 - [→ Documentation Standards Guide](DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../docs/) · ↑ Table of Contents
+
+- **
+
+- *Navigation**: [docs](../docs/) · ↑ Table of Contents

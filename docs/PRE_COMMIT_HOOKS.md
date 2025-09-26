@@ -1,5 +1,13 @@
 # Pre-commit Hooks Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Overview
@@ -51,6 +59,7 @@ The pre-commit hook runs the following documentation checks:
 ### Validation Rules
 
 The documentation validation enforces:
+
 - **KiloCode Standards**: Custom validation rules specific to KiloCode documentation
 - **Markdown Standards**: Standard markdown linting rules
 - **Link Validation**: Internal and external link validation
@@ -215,6 +224,7 @@ Implements: T009 · Phase 1 Task 3.1: Implement Pre-commit Hooks"
 ## Integration with CI/CD
 
 The pre-commit hooks complement the CI/CD pipeline:
+
 - **Pre-commit**: Fast local validation and auto-fixes
 - **CI/CD**: Comprehensive validation and reporting
 - **Both**: Ensure documentation quality and consistency
@@ -246,6 +256,8 @@ For issues with pre-commit hooks:
 5. **Report bugs or false positives**
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)
+
+- **
+
+- *Navigation**: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)

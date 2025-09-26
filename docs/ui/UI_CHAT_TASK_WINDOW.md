@@ -1,9 +1,18 @@
 # UI\_CHAT\_TASK\_WINDOW
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-- *Purpose:*\* Describe the chat / task window UI, how user actions map to orchestrator actions, the
-  control loop that decides when to fire API requests (including payload construction), how messages
-  are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
+
+- *Purpose:** Describe the chat / task window UI, how user actions map to orchestrator actions, the
+control loop that decides when to fire API requests (including payload construction), how messages
+are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -26,8 +35,8 @@
 <a name="related-docs"></a>
 
 ## 1. Related Documents]\(1-related-documents---2-ui-overview---3-message-flow-control-loop---4-request-payloads-timing-timestamps---5-state-persistence-rendering---6-debugging-duplicate-api-requests---7-instrumentation-logs---8-troubleshooting-ux-notes---navigation-footer-summary-details-a-namerelated-docsa-1-related-documents-)
-- Backend lifecycle and task orchestration: [`ORCHESTRATOR_LIFECYCLE.md`](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)
-- Task delegation & subtasking: [`ORCHESTRATOR_TASK_DELEGATION.md`](../orchestrator/ORCHESTRATOR_TASK_DELEGATION.md)
+- Backend lifecycle and task orchestration: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md)
+- Task delegation & subtasking: [`ORCHESTRATOR_TASK_DELEGATION.md`](ORCHESTRATOR_TASK_DELEGATION.md)
 - UI feature docs (external):
   [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md)
 
@@ -176,13 +185,16 @@ If multiple API requests are observed for a single user action, check:
 - For developers: enable verbose orchestrator logging to capture guard evaluation and retries.
 
 [Back to Top](#)
-- \*\*
+
+- **
 
 Navigation:
-- Index: [`docs/ORCHESTRATOR_LIFECYCLE.md`](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)
-- Task delegation: [`docs/ORCHESTRATOR_TASK_DELEGATION.md`](../orchestrator/ORCHESTRATOR_TASK_DELEGATION.md)
+- Index: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md)
+- Task delegation: [`docs/ORCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md)
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../) · [ui](../../docs/ui/) ·
-  [↑ Table of Contents](#uichattaskwindow)
+
+- **
+
+- *Navigation**: [docs](../) · [ui](../docs/ui/) ·
+[↑ Table of Contents](#uichattaskwindow)

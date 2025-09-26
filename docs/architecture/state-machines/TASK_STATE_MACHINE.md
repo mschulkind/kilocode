@@ -5,12 +5,18 @@
 ## Overview
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 
 The Task State Machine manages the lifecycle of individual tasks in the system, from creation to
 completion or destruction. Think of it as the **"dinosaur life cycle tracker"** - we need to know if
@@ -23,12 +29,14 @@ our digital creatures are eggs, hatchlings, adults, or fossils!
 ## 🗺️ Navigation
 
 ### Quick Links
+
 - **Need to understand the problem?** →
   [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 - **Want to see how this fits together?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
 - **Ready to implement a fix?** → [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
 
 ### Key Concepts
+
 - **RUNNING** is where race conditions occur (the "hunting ground")
 - **PAUSED** can resume and cause issues (the "hibernation that wakes up wrong")
 - **COMPLETED** makes sessions inactive (the "extinction event")
@@ -163,39 +171,39 @@ const TASK_STATE_PROPERTIES: Record<TaskState, TaskStateProperties> = {
 
 ```mermaid
 stateDiagram-v2
-  [*] --> CREATED : Task created
+    [*] --> CREATED : Task created
 
-  CREATED --> INITIALIZING : startTask()
-  INITIALIZING --> RUNNING : initialization complete
-  INITIALIZING --> FAILED : initialization error
+    CREATED --> INITIALIZING : startTask()
+    INITIALIZING --> RUNNING : initialization complete
+    INITIALIZING --> FAILED : initialization error
 
-  RUNNING --> PAUSED : pauseTask()
-  RUNNING --> COMPLETED : task finished
-  RUNNING --> FAILED : fatal error
-  RUNNING --> TIMEOUT : timeout reached
-  RUNNING --> ABORTED : system abort
-  RUNNING --> CANCELLED : user cancel
+    RUNNING --> PAUSED : pauseTask()
+    RUNNING --> COMPLETED : task finished
+    RUNNING --> FAILED : fatal error
+    RUNNING --> TIMEOUT : timeout reached
+    RUNNING --> ABORTED : system abort
+    RUNNING --> CANCELLED : user cancel
 
-  PAUSED --> RUNNING : resumeTask()
-  PAUSED --> COMPLETED : task finished while paused
-  PAUSED --> FAILED : error while paused
-  PAUSED --> TIMEOUT : timeout while paused
-  PAUSED --> ABORTED : system abort
-  PAUSED --> CANCELLED : user cancel
-  PAUSED --> DESTROYED : memory cleanup
+    PAUSED --> RUNNING : resumeTask()
+    PAUSED --> COMPLETED : task finished while paused
+    PAUSED --> FAILED : error while paused
+    PAUSED --> TIMEOUT : timeout while paused
+    PAUSED --> ABORTED : system abort
+    PAUSED --> CANCELLED : user cancel
+    PAUSED --> DESTROYED : memory cleanup
 
-  COMPLETED --> DESTROYED : garbage collection
-  FAILED --> DESTROYED : garbage collection
-  TIMEOUT --> DESTROYED : garbage collection
-  ABORTED --> DESTROYED : garbage collection
-  CANCELLED --> DESTROYED : garbage collection
+    COMPLETED --> DESTROYED : garbage collection
+    FAILED --> DESTROYED : garbage collection
+    TIMEOUT --> DESTROYED : garbage collection
+    ABORTED --> DESTROYED : garbage collection
+    CANCELLED --> DESTROYED : garbage collection
 
-  DESTROYED --> INITIALIZING : reconstruct from history
+    DESTROYED --> INITIALIZING : reconstruct from history
 
-  note right of RUNNING : Main execution state
-  note right of PAUSED : Can resume execution
-  note right of COMPLETED : Session becomes inactive
-  note right of DESTROYED : Needs reconstruction
+    note right of RUNNING : Main execution state
+    note right of PAUSED : Can resume execution
+    note right of COMPLETED : Session becomes inactive
+    note right of DESTROYED : Needs reconstruction
 ```
 
 ## State Transition Table
@@ -249,6 +257,7 @@ const TASK_STATE_TRANSITIONS = {
 ```
 
 ## Key States
+
 - **RUNNING**: Main execution state where task is actively processing
 - **PAUSED**: Task is paused but can be resumed from memory
 - **COMPLETED**: Task finished successfully, session becomes inactive
@@ -257,12 +266,15 @@ const TASK_STATE_TRANSITIONS = {
 ## Race Condition Impact
 
 The task state machine is crucial for understanding the race condition because:
+
 - **RUNNING** tasks can have concurrent recursive calls
 - **PAUSED** tasks can be resumed and cause race conditions
 - **DESTROYED** tasks need reconstruction, which triggers the navigation fix
 - **COMPLETED** tasks make sessions inactive, requiring different handling
-- \*\*
-- *Related Documentation:*\*
+
+- **
+
+- *Related Documentation:**
 - [Session State Machine](SESSION_STATE_MACHINE.md)
 - [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
 - [Combined State Machine](COMBINED_STATE_MACHINE.md)
@@ -271,18 +283,24 @@ The task state machine is crucial for understanding the race condition because:
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Architecture:*\*
+
+- *Understanding Architecture:**
+
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-- *Implementing Architecture Features:*\*
-- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
-- *Troubleshooting Architecture Issues:*\*
+
+- *Implementing Architecture Features:**
+
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:**
+
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -290,17 +308,9 @@ The task state machine is crucial for understanding the race condition because:
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

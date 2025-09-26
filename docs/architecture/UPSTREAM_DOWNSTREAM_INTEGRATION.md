@@ -1,8 +1,17 @@
 # Upstream/Downstream Integration Guide
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-- *Purpose:*\* Comprehensive guide for managing code transfer and feature porting between KiloCode,
-  Roo Code, and Cline repositories.
+
+- *Purpose:** Comprehensive guide for managing code transfer and feature porting between KiloCode,
+Roo Code, and Cline repositories.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -25,15 +34,24 @@
 ## Executive Summary
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
+
 - KiloCode maintains active integration with upstream projects Roo Code and Cline, regularly merging
-  features, bug fixes, and improvements while preserving KiloCode-specific enhancements.\*
-- *Key Statistics:*\*
+features, bug fixes, and improvements while preserving KiloCode-specific enhancements.*
+
+- *Key Statistics:**
+
 - **Upstream Projects**: 2 main sources (Roo Code, Cline)
 - **Integration Frequency**: Weekly upstream sync, on-demand feature porting
 - **Code Transfer Methods**: Git merge, cherry-pick, manual adaptation
@@ -44,44 +62,50 @@
 ### Project Relationships
 
 KiloCode operates as a downstream project that integrates code from multiple upstream sources:
-- *Primary Sources:*\*
+
+- *Primary Sources:**
+
 - **Roo Code**: Main upstream project providing core AI coding assistant functionality
 - **Cline**: Secondary upstream providing specific features and improvements
-- *Integration Flow:*\*
+
+- *Integration Flow:**
 
 ```mermaid
 graph TB
-  CLINE[Cline - Primary Source]
-  ROO[Roo Code - Secondary Source]
-  KILO[KiloCode - Fork]
-  CLINE_DIRECT[KiloCode - Direct Integration]
+    CLINE[Cline - Primary Source]
+    ROO[Roo Code - Secondary Source]
+    KILO[KiloCode - Fork]
+    CLINE_DIRECT[KiloCode - Direct Integration]
 
-  subgraph "Upstream Sources"
-  CLINE_FEATURES[Cline Features]
-  ROO_FEATURES[Roo Code Features]
-  end
+    subgraph "Upstream Sources"
+        CLINE_FEATURES[Cline Features]
+        ROO_FEATURES[Roo Code Features]
+    end
 
-  subgraph "Downstream Targets"
-  KILO_FEATURES[KiloCode Features]
-  COMMUNITY[Community Forks]
-  end
+    subgraph "Downstream Targets"
+        KILO_FEATURES[KiloCode Features]
+        COMMUNITY[Community Forks]
+    end
 
-  CLINE_FEATURES --> ROO
-  ROO_FEATURES --> KILO
-  CLINE_FEATURES --> KILO_DIRECT
+    CLINE_FEATURES --> ROO
+    ROO_FEATURES --> KILO
+    CLINE_FEATURES --> KILO_DIRECT
 
-  KILO --> COMMUNITY
+    KILO --> COMMUNITY
 ```
 
 ### Remote Configuration
-- *Git Remote Setup:*\*
+
+- *Git Remote Setup:**
 
 Configure your Git remotes to track:
+
 - **origin**: Your fork of KiloCode
 - **upstream**: KiloCode's main repository
 - **roo**: Roo Code upstream source
 - **cline**: Cline upstream source
-- *Remote Management Script:*\*
+
+- *Remote Management Script:**
 
 The `scripts/setup-remotes.sh` script automates remote configuration, adding missing remotes and
 fetching the latest changes from all sources. This ensures consistent setup across development
@@ -92,7 +116,8 @@ environments.
 ### 1. Upstream Sync Process
 
 #### Regular Upstream Synchronization
-- *Automated Weekly Sync:*\*
+
+- *Automated Weekly Sync:**
 
 The `scripts/sync-upstream.sh` script automates the weekly synchronization process:
 - Fetches latest changes from all upstream sources
@@ -100,7 +125,8 @@ The `scripts/sync-upstream.sh` script automates the weekly synchronization proce
 - Merges changes with conflict detection
 - Runs comprehensive tests
 - Creates a pull request if all tests pass
-- *Manual Sync Process:*\*
+
+- *Manual Sync Process:**
 
 For manual synchronization, follow these steps:
 1. Fetch latest changes from all upstream sources
@@ -110,16 +136,19 @@ For manual synchronization, follow these steps:
 5. Create a pull request for team review
 
 #### Conflict Resolution
-- *Automated Conflict Detection:*\*
+
+- *Automated Conflict Detection:**
 
 The `scripts/analyze-conflicts.sh` script analyzes potential merge conflicts before integration
 attempts:
 - Checks for conflicts between upstream and local branches
 - Generates detailed conflict reports when issues are found
 - Provides conflict resolution strategies and priorities
-- *Conflict Resolution Strategies:*\*
+
+- *Conflict Resolution Strategies:**
 
 When conflicts arise, the system provides automated resolution strategies:
+
 - **Dependency Conflicts**: Intelligent merging of package.json files
 - **Configuration Conflicts**: Manual resolution with merge tools
 - **Code Conflicts**: Three-way merge with conflict markers
@@ -128,14 +157,16 @@ When conflicts arise, the system provides automated resolution strategies:
 ### 2. Feature Porting Process
 
 #### Roo Code Feature Integration
-- *Feature Detection:*\*
+
+- *Feature Detection:**
 
 The `scripts/detect-roo-features.sh` script identifies new features in Roo Code:
 - Monitors Roo Code repository for new commits
 - Categorizes changes by type (features, bug fixes, refactoring)
 - Generates integration recommendations
 - Tracks integration status and history
-- *Feature Adaptation:*\*
+
+- *Feature Adaptation:**
 
 When porting Roo Code features:
 1. **Analysis**: Understand the feature's purpose and implementation
@@ -145,14 +176,17 @@ When porting Roo Code features:
 5. **Documentation**: Update integration tracking markers
 
 #### Cline Feature Integration
-- *Selective Integration:*\*
+
+- *Selective Integration:**
 
 Cline features are integrated selectively based on:
+
 - **Alignment**: How well features align with KiloCode's goals
 - **Quality**: Code quality and testing standards
 - **Compatibility**: Integration complexity and risk
 - **Value**: User benefit and strategic importance
-- *Integration Process:*\*
+
+- *Integration Process:**
 
 The `scripts/port-cline-feature.sh` script handles Cline feature porting:
 - Cherry-picks specific commits from Cline repository
@@ -163,14 +197,16 @@ The `scripts/port-cline-feature.sh` script handles Cline feature porting:
 ### 3. Quality Assurance
 
 #### Automated Testing
-- *Integration Test Suite:*\*
+
+- *Integration Test Suite:**
 
 Located in `tests/integration/upstream-integration.test.ts`, the test suite validates:
 - Compatibility with ported features
 - Feature flag behavior
 - Performance benchmark maintenance
 - Integration-specific functionality
-- *Testing Pipeline:*\*
+
+- *Testing Pipeline:**
 
 The `scripts/test-integration.sh` script runs comprehensive testing:
 - Unit tests for individual components
@@ -179,14 +215,16 @@ The `scripts/test-integration.sh` script runs comprehensive testing:
 - Bundle size analysis to monitor impact
 
 #### Compatibility Verification
-- *Version Compatibility Matrix:*\*
+
+- *Version Compatibility Matrix:**
 
 The compatibility matrix tracks supported versions of:
 - Node.js runtime requirements
 - VS Code extension API compatibility
 - Dependency version constraints
 - Browser compatibility for webview components
-- *Performance Benchmarking:*\*
+
+- *Performance Benchmarking:**
 
 Regular performance benchmarks ensure integrations don't degrade application performance:
 - Startup time measurements
@@ -203,25 +241,31 @@ stability of your codebase, the frequency of upstream changes, and your toleranc
 strategy has distinct advantages and challenges that must be carefully weighed.
 
 #### Frequent Sync Strategy (Recommended for Active Projects)
-- *Philosophy:*\* Stay close to upstream with regular, small integrations
+
+- *Philosophy:** Stay close to upstream with regular, small integrations
 
 The frequent sync approach involves integrating upstream changes every one to two weeks, maintaining
 a relatively small divergence from the source projects. This strategy works well when you have
 dedicated developer time for integration work and want to minimize the risk of large, complex
 merges.
-- *When to Use:*\*
+
+- *When to Use:**
 - Your team has consistent bandwidth for integration work
 - Upstream projects release features and fixes regularly
 - You want to minimize the risk of large merge conflicts
 - Your local modifications are relatively contained and well-isolated
-- *Key Benefits:*\*
+
+- *Key Benefits:**
+
 - **Reduced Conflict Risk:** Smaller changes mean fewer opportunities for merge conflicts
 - **Faster Issue Resolution:** Bug fixes and security patches reach your codebase quickly
 - **Easier Debugging:** When issues arise, it's easier to isolate whether they came from upstream or
   local changes
 - **Better Relationship Management:** Regular interaction with upstream maintainers builds stronger
   collaborative relationships
-- *Potential Challenges:*\*
+
+- *Potential Challenges:**
+
 - **Integration Overhead:** Requires consistent developer time investment
 - **Feature Incompleteness:** You might integrate partially-implemented features that cause
   temporary instability
@@ -229,23 +273,29 @@ merges.
   integration work
 
 #### Feature-Based Sync Strategy
-- *Philosophy:*\* Cherry-pick specific improvements when you need them
+
+- *Philosophy:** Cherry-pick specific improvements when you need them
 
 This approach involves integrating only the specific features, bug fixes, or improvements that are
 relevant to your project's needs. It's more selective and intentional than frequent syncing but
 requires more careful planning and coordination.
-- *When to Use:*\*
+
+- *When to Use:**
 - Your codebase has significant local modifications that make frequent syncing risky
 - You have specific feature requirements that don't align with upstream development priorities
 - Your team prefers to evaluate and test features before integration
 - Upstream projects have mixed-quality contributions that you want to filter
-- *Key Benefits:*\*
+
+- *Key Benefits:**
+
 - **Focused Integration:** Only bring in changes that directly benefit your project
 - **Quality Control:** You can thoroughly test and evaluate features before integration
 - **Reduced Risk:** Avoid integrating potentially problematic or incomplete features
 - **Strategic Alignment:** Maintain better alignment with your project's specific goals and
   requirements
-- *Potential Challenges:*\*
+
+- *Potential Challenges:**
+
 - **Missed Improvements:** You might overlook important bug fixes or performance improvements
 - **Integration Complexity:** Cherry-picking can be technically challenging and time-consuming
 - **Maintenance Burden:** Tracking which features you've integrated and which you haven't can become
@@ -254,22 +304,28 @@ requires more careful planning and coordination.
   more difficult
 
 #### Release-Based Sync Strategy
-- *Philosophy:*\* Sync during major upstream releases for comprehensive updates
+
+- *Philosophy:** Sync during major upstream releases for comprehensive updates
 
 This approach involves waiting for major upstream releases and then performing comprehensive
 integration efforts. It's less frequent but more thorough, often involving significant planning and
 coordination.
-- *When to Use:*\*
+
+- *When to Use:**
 - Your project is mature and stable with well-tested local modifications
 - Upstream projects have clear, predictable release cycles
 - You have dedicated time blocks for major integration efforts
 - Your team prefers fewer, more substantial integration cycles
-- *Key Benefits:*\*
+
+- *Key Benefits:**
+
 - **Comprehensive Updates:** Get all improvements, features, and fixes in one coordinated effort
 - **Better Planning:** You can plan integration work around your development cycles
 - **Thorough Testing:** More time to thoroughly test integrated changes before release
 - **Reduced Integration Frequency:** Less frequent but more substantial integration work
-- *Potential Challenges:*\*
+
+- *Potential Challenges:**
+
 - **Large Merge Complexity:** Major integration efforts can be complex and time-consuming
 - **Conflict Accumulation:** More time between integrations means more potential conflicts
 - **Delayed Improvements:** Bug fixes and security patches take longer to reach your users
@@ -282,33 +338,44 @@ coordination.
 Merge conflicts don't occur randomly—they follow predictable patterns based on how different teams
 modify the same files. Understanding these patterns is crucial for developing effective prevention
 strategies.
-- *High-Risk File Categories:*\*
+
+- *High-Risk File Categories:**
 
 The most conflict-prone files are typically those that multiple developers touch frequently and that
 contain project-wide configuration. In KiloCode's case, these include:
+
 - **Package Management Files** (`package.json`, `pnpm-lock.yaml`): These change whenever
   dependencies are added, removed, or updated. Both upstream projects and KiloCode developers modify
   these files regularly, making them prime conflict candidates.
+
 - **Build Configuration Files** (`turbo.json`, `tsconfig.json`): These define how the project is
   built and configured. Changes here can have wide-reaching effects, and conflicts often indicate
   deeper architectural differences.
+
 - **Documentation Files** (`README.md`, `CHANGELOG.md`): While less critical functionally, these
   files are frequently modified by different contributors and can accumulate conflicts quickly.
-- *Medium-Risk File Categories:*\*
+
+- *Medium-Risk File Categories:**
+
 - **Configuration Files** (`eslint.config.mjs`, `prettier.config.js`): These define coding standards
   and formatting rules. Conflicts here usually indicate different preferences or standards between
   projects.
+
 - **Git Configuration** (`.gitignore`, `.gitattributes`): Changes to what files are tracked or how
   they're handled can create conflicts, especially when projects have different approaches to file
   management.
-- *Low-Risk File Categories:*\*
+
+- *Low-Risk File Categories:**
+
 - **Source Code Files**: Surprisingly, actual source code files have lower conflict rates because
   they're typically organized into distinct modules or areas of responsibility.
+
 - **Test Files**: Test files are usually project-specific and don't often conflict with upstream
   changes.
 
 ### Proactive Conflict Prevention
-- *File-Level Isolation Strategy*\*
+
+- *File-Level Isolation Strategy**
 
 The most effective approach is to isolate frequently-conflicting files into separate branches or use
 specialized merge strategies. This doesn't mean avoiding these files entirely, but rather handling
@@ -318,35 +385,43 @@ For high-risk files like `package.json`, consider maintaining a separate integra
 dependency conflicts are resolved before merging into your main development branch. This allows you
 to test dependency changes in isolation and ensures that your main development work isn't blocked by
 dependency conflicts.
-- *Automated Conflict Detection*\*
+
+- *Automated Conflict Detection**
 
 Before attempting any integration, run automated tools to identify potential conflict areas. This
 gives you advance warning about which files will require manual attention and allows you to plan
 your integration strategy accordingly.
-- *Dependency Management Philosophy*\*
+
+- *Dependency Management Philosophy**
 
 Dependencies are often the source of the most complex conflicts. Develop a clear philosophy about
 how to handle dependency conflicts:
+
 - **Security-First Approach**: Always prioritize security updates from upstream, even if it means
   updating other dependencies to maintain compatibility.
+
 - **Feature-Driven Updates**: When upstream adds new features that require new dependencies,
   evaluate whether those features align with your project's goals before automatically adopting the
   dependencies.
+
 - **Compatibility Testing**: Before resolving dependency conflicts, test the compatibility of
   different version combinations to ensure your application still functions correctly.
 
 ### Conflict Resolution Strategies
-- *The Three-Way Merge Approach*\*
+
+- *The Three-Way Merge Approach**
 
 Most merge conflicts can be resolved using a three-way merge strategy, where you consider the common
 ancestor, the upstream version, and your local version. Understanding the intent behind each change
 is more important than mechanically applying merge resolution rules.
-- *Semantic vs. Syntactic Conflicts*\*
+
+- *Semantic vs. Syntactic Conflicts**
 
 Not all conflicts are created equal. Syntactic conflicts (like formatting differences) are usually
 easy to resolve automatically. Semantic conflicts (where the same functionality is implemented
 differently) require human judgment and understanding of the broader system architecture.
-- *Documentation-First Resolution*\*
+
+- *Documentation-First Resolution**
 
 When conflicts arise, document your resolution decisions clearly. This helps future developers
 understand why certain choices were made and provides context for future similar conflicts. This
@@ -362,26 +437,34 @@ long-term project maintainability. Without proper tracking, it becomes increasin
 understand the origins of features, debug issues, and make informed decisions about future changes.
 
 ### Comment-Based Documentation System
-- *Establishing Clear Markers*\*
+
+- *Establishing Clear Markers**
 
 The most effective approach is to use standardized comment markers throughout your codebase to
 clearly identify the source and modifications of integrated code. These markers serve multiple
 purposes:
+
 - **Source Attribution**: Clearly identify which upstream project contributed each piece of code
 - **Modification Tracking**: Document what changes were made during integration
 - **Integration History**: Provide a timeline of when and why features were integrated
 - **Future Maintenance**: Help future developers understand the context and reasoning behind code
-- *Marker Categories and Usage*\*
-- *KiloCode-Specific Modifications*\*: Use these markers when you've taken code from an upstream
-  project and significantly modified it for KiloCode's specific needs. This includes adding KiloCode
-  branding, integrating with KiloCode-specific services, or adapting functionality to work with
-  KiloCode's architecture.
-- *Direct Integration Markers*\*: Use these when integrating code from Cline or other projects with
-  minimal modifications. This helps distinguish between code that's been heavily adapted versus code
-  that's been integrated more directly.
-- *Upstream Sync Markers*\*: Use these to mark sections that were synchronized from upstream KiloCode
-  (if applicable) or to indicate when large blocks of code were updated from upstream sources.
-- *Best Practices for Marker Usage*\*
+
+- *Marker Categories and Usage**
+
+- *KiloCode-Specific Modifications**: Use these markers when you've taken code from an upstream
+project and significantly modified it for KiloCode's specific needs. This includes adding KiloCode
+branding, integrating with KiloCode-specific services, or adapting functionality to work with
+KiloCode's architecture.
+
+- *Direct Integration Markers**: Use these when integrating code from Cline or other projects with
+minimal modifications. This helps distinguish between code that's been heavily adapted versus code
+that's been integrated more directly.
+
+- *Upstream Sync Markers**: Use these to mark sections that were synchronized from upstream KiloCode
+(if applicable) or to indicate when large blocks of code were updated from upstream sources.
+
+- *Best Practices for Marker Usage**
+
 - **Be Specific**: Include commit hashes, dates, and detailed descriptions of modifications
 - **Explain Intent**: Don't just document what changed, but why it was changed
 - **Keep Markers Updated**: When modifying integrated code, update the markers to reflect new
@@ -390,7 +473,8 @@ purposes:
   across the codebase
 
 ### Automated Change Detection
-- *Pre-Integration Analysis*\*
+
+- *Pre-Integration Analysis**
 
 Before integrating any upstream changes, run automated analysis to understand what's being
 integrated. This analysis should identify:
@@ -398,14 +482,16 @@ integrated. This analysis should identify:
 - What types of changes are being made (features, bug fixes, refactoring)
 - Potential areas of conflict with existing code
 - Dependencies that might be affected
-- *Post-Integration Tracking*\*
+
+- *Post-Integration Tracking**
 
 After integration, automated tools should generate reports that document:
 - What was successfully integrated
 - What conflicts were resolved and how
 - What modifications were made during integration
 - What testing was performed
-- *Conflict Prediction and Prevention*\*
+
+- *Conflict Prediction and Prevention**
 
 Use automated tools to predict potential merge conflicts before they occur. This allows you to:
 - Plan integration strategies in advance
@@ -414,22 +500,30 @@ Use automated tools to predict potential merge conflicts before they occur. This
 - Allocate appropriate time and resources for integration work
 
 ### Integration Decision Documentation
-- *Why Integration Decisions Matter*\*
+
+- *Why Integration Decisions Matter**
 
 Every integration decision represents a strategic choice about your project's direction. Documenting
 these decisions helps maintain institutional knowledge and provides context for future decisions.
-- *Key Questions to Document*\*
+
+- *Key Questions to Document**
+
 - **Why was this feature integrated?** Understanding the business or technical justification helps
   future developers make informed decisions about similar features.
+
 - **What alternatives were considered?** Documenting rejected alternatives helps avoid revisiting
   the same decisions repeatedly.
+
 - **What modifications were necessary?** Understanding what had to be changed helps identify
   patterns in integration challenges.
+
 - **What risks were identified?** Documenting potential risks helps future integrations avoid
   similar pitfalls.
-- *Integration Impact Assessment*\*
+
+- *Integration Impact Assessment**
 
 For each integration, document:
+
 - **Performance Impact**: How did the integration affect application performance?
 - **Bundle Size Impact**: Did the integration increase or decrease the application size?
 - **Dependency Changes**: What new dependencies were added or modified?
@@ -446,7 +540,8 @@ architectural patterns shift. Your local modifications must adapt to these chang
 backward compatibility and user experience.
 
 ### Safe Refactoring Approaches
-- *Feature Flag Strategy*\*
+
+- *Feature Flag Strategy**
 
 Feature flags provide a powerful mechanism for safely introducing changes from upstream while
 maintaining the ability to roll back if issues arise. The key is to implement both the new
@@ -457,29 +552,34 @@ This approach allows you to:
 - Quickly disable problematic features without code changes
 - Maintain backward compatibility during transition periods
 - Gather real-world performance data before committing to changes
-- *Gradual Migration Patterns*\*
+
+- *Gradual Migration Patterns**
 
 Rather than attempting to integrate large upstream changes all at once, consider a gradual migration
 approach that moves through distinct phases:
+
 - **Legacy Phase**: Continue using your existing implementation while preparing for migration
 - **Hybrid Phase**: Run both implementations in parallel, gradually shifting traffic to the new
   version
 - **New Phase**: Fully transition to the upstream implementation and remove legacy code
 
 This approach minimizes risk and allows you to validate each step before proceeding to the next.
-- *Compatibility Layers*\*
+
+- *Compatibility Layers**
 
 When upstream projects introduce breaking changes, compatibility layers can help bridge the gap
 between old and new APIs. These layers translate calls from your existing code to the new upstream
 interfaces, allowing you to adopt upstream changes without immediately rewriting all dependent code.
 
 ### Managing Breaking Changes
-- *Understanding Breaking Change Types*\*
+
+- *Understanding Breaking Change Types**
 
 Not all breaking changes are created equal. Some affect only internal APIs that aren't exposed to
 users, while others fundamentally change how your application behaves. Understanding the scope and
 impact of breaking changes is crucial for planning your response.
-- *Migration Planning*\*
+
+- *Migration Planning**
 
 When upstream introduces breaking changes:
 1. **Assess Impact**: Understand what parts of your codebase will be affected
@@ -487,19 +587,22 @@ When upstream introduces breaking changes:
 3. **Implement Compatibility Layer**: Create temporary compatibility code if needed
 4. **Test Thoroughly**: Ensure that all functionality continues to work during migration
 5. **Monitor Performance**: Watch for any performance regressions introduced by the changes
-- *Communication Strategy*\*
+
+- *Communication Strategy**
 
 Breaking changes often require communication with your users. Document what's changing, why it's
 changing, and what users need to do to adapt. Provide migration guides, deprecation notices, and
 clear timelines for when old APIs will be removed.
 
 ### Architectural Evolution
-- *Balancing Local Needs with Upstream Evolution*\*
+
+- *Balancing Local Needs with Upstream Evolution**
 
 One of the most complex aspects of maintaining a fork is balancing your local architectural
 decisions with upstream evolution. Upstream projects may move in directions that don't align with
 your goals, or they may introduce patterns that conflict with your existing architecture.
-- *Decision Framework*\*
+
+- *Decision Framework**
 
 When upstream architectural changes conflict with your local decisions:
 1. **Evaluate Alignment**: How well do the upstream changes align with your project's goals?
@@ -507,7 +610,8 @@ When upstream architectural changes conflict with your local decisions:
    local approach?
 3. **Consider Long-term Maintenance**: Which approach will be easier to maintain over time?
 4. **Evaluate User Impact**: How will each approach affect your users?
-- *Hybrid Architecture Patterns*\*
+
+- *Hybrid Architecture Patterns**
 
 Sometimes the best approach is to adopt a hybrid architecture that combines upstream patterns with
 your local innovations. This requires careful design to ensure the different approaches work well
@@ -522,40 +626,48 @@ size, and overall quality. Understanding and managing these impacts is crucial f
 high-quality user experience.
 
 ### Performance Monitoring Strategy
-- *Baseline Establishment*\*
+
+- *Baseline Establishment**
 
 Before integrating any upstream changes, establish clear performance baselines. These should
 include:
+
 - **Application Startup Time**: How long does it take for your application to become usable?
 - **Memory Usage**: What's the typical memory footprint during normal operation?
 - **Bundle Size**: How large is your application bundle?
 - **Runtime Performance**: What are the performance characteristics of key operations?
-- *Continuous Monitoring*\*
+
+- *Continuous Monitoring**
 
 Implement continuous monitoring to track performance metrics over time. This helps you identify when
 integrations introduce performance regressions and allows you to take corrective action quickly.
-- *Performance Budgets*\*
+
+- *Performance Budgets**
 
 Establish performance budgets for key metrics. These budgets define acceptable thresholds for
 performance degradation. When an integration threatens to exceed these budgets, you have a clear
 signal that additional optimization work is needed.
 
 ### Bundle Size Management
-- *Understanding Bundle Impact*\*
+
+- *Understanding Bundle Impact**
 
 Upstream integrations often introduce new dependencies, which can significantly impact your
 application's bundle size. This is particularly important for VS Code extensions, where bundle size
 directly affects installation time and memory usage.
-- *Bundle Analysis Strategy*\*
+
+- *Bundle Analysis Strategy**
 
 Regularly analyze your bundle to understand:
 - Which dependencies are contributing the most to bundle size
 - Whether new dependencies are being used efficiently
 - If there are opportunities to tree-shake unused code
 - How bundle size changes over time
-- *Optimization Techniques*\*
+
+- *Optimization Techniques**
 
 When integrations increase bundle size:
+
 - **Tree Shaking**: Ensure that unused code from new dependencies is properly eliminated
 - **Code Splitting**: Consider splitting large dependencies into separate chunks that can be loaded
   on demand
@@ -565,25 +677,30 @@ When integrations increase bundle size:
   exists
 
 ### Quality Assurance Integration
-- *Testing Strategy*\*
+
+- *Testing Strategy**
 
 Every integration should include comprehensive testing to ensure that upstream changes don't
 introduce regressions:
+
 - **Unit Testing**: Ensure that individual components still work correctly
 - **Integration Testing**: Verify that different parts of the system work together properly
 - **Performance Testing**: Confirm that performance characteristics haven't degraded
 - **User Acceptance Testing**: Validate that the user experience remains positive
-- *Automated Quality Gates*\*
+
+- *Automated Quality Gates**
 
 Implement automated quality gates that prevent integrations from proceeding if they fail to meet
 quality standards:
+
 - **Test Coverage**: Ensure that test coverage doesn't decrease
 - **Performance Thresholds**: Block integrations that significantly impact performance
 - **Bundle Size Limits**: Prevent integrations that would make the bundle too large
 - **Security Scanning**: Ensure that new dependencies don't introduce security vulnerabilities
 
 ### Long-term Performance Strategy
-- *Technical Debt Management*\*
+
+- *Technical Debt Management**
 
 Upstream integrations can sometimes introduce technical debt in the form of:
 - Duplicate functionality between upstream and local implementations
@@ -591,9 +708,11 @@ Upstream integrations can sometimes introduce technical debt in the form of:
 - Dependencies that don't align with your long-term goals
 
 Regularly audit your codebase for these issues and develop plans to address them.
-- *Performance Optimization Roadmap*\*
+
+- *Performance Optimization Roadmap**
 
 Develop a roadmap for performance optimization that considers both upstream and local improvements:
+
 - **Upstream Contributions**: Contribute performance improvements back to upstream projects
 - **Local Optimizations**: Implement local optimizations that upstream projects might not prioritize
 - **Architecture Evolution**: Plan for architectural changes that will improve performance over time
@@ -607,18 +726,22 @@ a culture that values continuous improvement, clear communication, and strategic
 section explores how to create systems and practices that support long-term integration success.
 
 ### Integration Health Monitoring
-- *Key Metrics to Track*\*
+
+- *Key Metrics to Track**
 
 Effective integration monitoring requires tracking both quantitative metrics and qualitative
 indicators:
+
 - **Integration Frequency**: How often are you successfully integrating upstream changes?
 - **Conflict Resolution Time**: How long does it take to resolve merge conflicts?
 - **Test Coverage Impact**: How do integrations affect your test coverage and quality?
 - **Performance Impact**: Are integrations affecting application performance?
 - **Developer Satisfaction**: How do developers feel about the integration process?
-- *Health Dashboard Components*\*
+
+- *Health Dashboard Components**
 
 A comprehensive integration health dashboard should provide visibility into:
+
 - **Recent Integration Activity**: What's been integrated recently and what's pending?
 - **Conflict Patterns**: Are there recurring conflict areas that need attention?
 - **Performance Trends**: How has performance changed over time?
@@ -626,14 +749,17 @@ A comprehensive integration health dashboard should provide visibility into:
 - **Upstream Relationship Status**: How healthy are your relationships with upstream projects?
 
 ### Long-term Maintenance Planning
-- *Technical Debt Accumulation*\*
+
+- *Technical Debt Accumulation**
 
 Over time, integrations can accumulate technical debt in several forms:
+
 - **Duplicate Code**: When both upstream and local implementations exist for similar functionality
 - **Inconsistent Patterns**: When upstream and local code follow different architectural patterns
 - **Dependency Bloat**: When integrations bring in dependencies that aren't fully utilized
 - **Documentation Drift**: When integration documentation becomes outdated
-- *Debt Management Strategy*\*
+
+- *Debt Management Strategy**
 
 Regularly audit your codebase for these types of technical debt:
 1. **Identify Debt**: Use automated tools and manual reviews to identify accumulated debt
@@ -643,68 +769,80 @@ Regularly audit your codebase for these types of technical debt:
 4. **Monitor Progress**: Track progress toward debt reduction goals
 
 ### Community Relationship Management
-- *Building Strong Upstream Relationships*\*
+
+- *Building Strong Upstream Relationships**
 
 Healthy relationships with upstream project maintainers are crucial for long-term integration
 success:
+
 - **Contribute Back**: Regularly contribute improvements, bug fixes, and features to upstream
   projects
 - **Communicate Clearly**: Be transparent about your integration goals and challenges
 - **Provide Feedback**: Share constructive feedback about upstream features and APIs
 - **Participate Actively**: Engage in upstream community discussions and decision-making processes
-- *Managing Community Expectations*\*
+
+- *Managing Community Expectations**
+
 - **Set Clear Boundaries**: Be clear about what you will and won't integrate from upstream
 - **Communicate Roadmap**: Share your integration roadmap with the community
 - **Manage Conflicts**: Handle disagreements professionally and constructively
 - **Document Decisions**: Clearly document why certain upstream features were or weren't integrated
 
 ### Continuous Improvement Process
-- *Regular Retrospectives*\*
+
+- *Regular Retrospectives**
 
 Hold regular retrospectives on your integration process:
+
 - **What's Working Well**: Identify successful patterns and practices to continue
 - **What Needs Improvement**: Identify pain points and areas for improvement
 - **Process Optimization**: Look for ways to streamline and improve integration workflows
 - **Tool Evaluation**: Assess whether your current tools and processes are still optimal
-- *Learning and Adaptation*\*
+
+- *Learning and Adaptation**
+
 - **Track Integration Success**: Measure the success of different integration approaches
 - **Learn from Failures**: Analyze failed integrations to understand what went wrong
 - **Adapt Strategies**: Adjust your integration strategy based on what you learn
 - **Share Knowledge**: Document lessons learned and share them with your team
 
 ### Risk Management
-- *Identifying Integration Risks*\*
+
+- *Identifying Integration Risks**
 
 Common risks in upstream/downstream integration include:
+
 - **Upstream Project Changes**: Upstream projects may change direction or cease development
 - **Breaking Changes**: Upstream projects may introduce breaking changes that require significant
   adaptation
 - **Dependency Conflicts**: Upstream changes may introduce dependency conflicts
 - **Performance Regressions**: Integrations may introduce performance problems
 - **Security Vulnerabilities**: New dependencies may introduce security risks
-- *Risk Mitigation Strategies*\*
+
+- *Risk Mitigation Strategies**
+
 - **Diversification**: Don't rely too heavily on any single upstream project
 - **Backup Plans**: Always have fallback plans for critical functionality
 - **Regular Security Audits**: Regularly audit dependencies for security vulnerabilities
 - **Performance Monitoring**: Continuously monitor for performance regressions
 - **Staged Rollouts**: Use staged rollouts for major integrations to minimize risk
-- \*\*
+
+- **
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](README.md) · Root: [`../../../../../../../README.md`](../../../../../../../README.md) · Source:
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../../README.md) · Source:
   `/docs/architecture/UPSTREAM_DOWNSTREAM_INTEGRATION.md#L1`
+
+## Navigation Footer
+
+- **
+
+- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
+[↑ Table of Contents](#upstreamdownstream-integration-guide)
 
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
-
-## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../) · [architecture](../../docs/architecture/) ·
-  [↑ Table of Contents](#upstreamdownstream-integration-guide)
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding

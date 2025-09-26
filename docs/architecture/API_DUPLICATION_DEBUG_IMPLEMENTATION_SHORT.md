@@ -11,12 +11,18 @@ race conditions. This is a condensed version. See the full guide in
 ## Quick Links
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 - \[Root Cause Analysis of Duplicate API Requests]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 - \[Code Flow and Execution Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md)
 - [State Machine Index and Diagrams](README.md)
@@ -25,7 +31,7 @@ race conditions. This is a condensed version. See the full guide in
 
 ## Goals
 - Detect concurrent `recursivelyMakeClineRequests` invocations.
-- Attribute each call (reason: main-loop | subtask-completion | user-request). (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
+- Attribute each call (reason: main-loop | subtask-completion | user-request). (\[Orchestrator Documentation]\(../orchestrator/README.md))
 - Capture timings to prove interleaving (race) vs sequence.
 - Tie logs to spans for end-to-end traces (Laminar).
 
@@ -77,9 +83,9 @@ private logJSON(obj: unknown) {
 
 ## Minimal Reproduction Scenarios
 1. Two-request race (most common)
-- Start orchestrator task with a plan that spawns a subtask. (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
+- Start orchestrator task with a plan that spawns a subtask. (\[Orchestrator Documentation]\(../orchestrator/README.md))
 - Keep UI on the same chat (no navigation).
-- At subtask completion, observe two starts close in time: (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
+- At subtask completion, observe two starts close in time: (\[Orchestrator Documentation]\(../orchestrator/README.md))
 - start { reason: "main-loop" }
 - start { reason: "subtask-completion" }
 - Expect jumbled responses/spinners if lock is not present.
@@ -93,7 +99,7 @@ private logJSON(obj: unknown) {
 ## Verification Checklist
 - Confirm exactly one active call at any timestamp after lock is enabled.
 - Ensure `end` of a call precedes the `start` of the next one (except queued scenarios).
-- Laminar trace shows a single active `recursiveCall` span at a time per task. (\[Orchestrator Documentation]\(../../../../../../../orchestrator/README.md))
+- Laminar trace shows a single active `recursiveCall` span at a time per task. (\[Orchestrator Documentation]\(../orchestrator/README.md))
 
 ## Metrics to Capture
 - call\_count by reason
@@ -148,18 +154,24 @@ jq -r 'select(.at=="Task.recursivelyMakeClineRequests" and .evt=="start") | [.re
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Architecture:*\*
-- **Next**: Check related architecture documentation in the same directory (\[Architecture Documentation]\(../../../../../../../README.md))
+
+- *Understanding Architecture:**
+
+- **Next**: Check related architecture documentation in the same directory (\[Architecture Documentation]\(../README.md))
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-- *Implementing Architecture Features:*\*
-- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../../../../../../orchestrator/README.md) for integration patterns
-- *Troubleshooting Architecture Issues:*\*
-- **Next**: \[Race Condition Analysis]../race-condition/README.md) →
+
+- *Implementing Architecture Features:**
+
+- **Next**: [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:**
+
+- **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../../../../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -167,17 +179,9 @@ jq -r 'select(.at=="Task.recursivelyMakeClineRequests" and .evt=="start") | [.re
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

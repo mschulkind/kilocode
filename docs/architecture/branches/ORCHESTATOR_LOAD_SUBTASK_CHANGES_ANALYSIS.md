@@ -8,12 +8,18 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 ## Quick Navigation
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 - [Root Cause Analysis of Duplicate API Requests](race-condition/ROOT_CAUSE_ANALYSIS.md) -
   Detailed investigation of the concurrent recursive calls race condition, including the problematic
   commit and code changes that created the issue. Provides comprehensive analysis of how the
@@ -28,7 +34,9 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
   approaches for each solution.
 
 ## Race Condition Details
-- *The Specific Race Condition Created:*\*
+
+- *The Specific Race Condition Created:**
+
 - **Problem**: Concurrent calls to `recursivelyMakeClineRequests` from both the main orchestrator
   loop and the new `continueParentTask` method
 - **Trigger**: When a subtask completes while the parent orchestrator is still actively running (no
@@ -37,7 +45,8 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
   in chat history
 - **Severity**: 2-request race condition (common) and 3-request race condition (severe, causes
   cascading failures)
-- *Detailed Analysis Links:*\*
+
+- *Detailed Analysis Links:**
 - [Race Condition State Machine](README.md) - Understanding the concurrent
   execution states
 - [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
@@ -184,18 +193,24 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Architecture:*\*
+
+- *Understanding Architecture:**
+
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-- *Implementing Architecture Features:*\*
-- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
-- *Troubleshooting Architecture Issues:*\*
+
+- *Implementing Architecture Features:**
+
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:**
+
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -203,17 +218,9 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

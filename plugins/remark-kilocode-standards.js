@@ -144,6 +144,7 @@ function remarkKiloCodeStandards(options = {}) {
 				end: { line: issue.line, column: issue.column + 50 },
 				ruleId: issue.rule,
 				severity: issue.type === "error" ? "error" : "warning",
+				source: "remark-kilocode-standards",
 			})
 
 			if (issue.suggestion) {
@@ -158,6 +159,7 @@ function remarkKiloCodeStandards(options = {}) {
 				end: { line: warning.line, column: warning.column + 50 },
 				ruleId: warning.rule,
 				severity: "warning",
+				source: "remark-kilocode-standards",
 			})
 
 			if (warning.suggestion) {

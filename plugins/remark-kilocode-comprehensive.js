@@ -25,6 +25,7 @@ function remarkKiloCodeComprehensive(options = {}) {
 		requireResearchContext: true,
 		requireNavigationFooter: true,
 		requireNoDeadEndsPolicy: true,
+		requireWhenYoureHere: true,
 		enforceFunFacts: true,
 		enforceDescriptiveLinks: true,
 		enforceHeadingHierarchy: true,
@@ -53,6 +54,7 @@ function remarkKiloCodeComprehensive(options = {}) {
 			hasResearchContext: false,
 			hasNavigationFooter: false,
 			hasNoDeadEndsPolicy: false,
+			hasWhenYoureHere: false,
 			hasFunFact: false,
 			headings: [],
 			links: [],
@@ -87,6 +89,9 @@ function remarkKiloCodeComprehensive(options = {}) {
 					}
 					if (/no dead ends|dead ends|policy/i.test(headingText)) {
 						documentStructure.hasNoDeadEndsPolicy = true
+					}
+					if (/when you're here|when you are here|you can/i.test(headingText)) {
+						documentStructure.hasWhenYoureHere = true
 					}
 				}
 
@@ -186,6 +191,7 @@ function remarkKiloCodeComprehensive(options = {}) {
 				end: { line: issue.line, column: issue.column + 50 },
 				ruleId: issue.rule,
 				severity: issue.type === "error" ? "error" : "warning",
+				source: "remark-kilocode-comprehensive",
 			})
 
 			if (issue.suggestion) {
@@ -200,6 +206,7 @@ function remarkKiloCodeComprehensive(options = {}) {
 				end: { line: warning.line, column: warning.column + 50 },
 				ruleId: warning.rule,
 				severity: "warning",
+				source: "remark-kilocode-comprehensive",
 			})
 
 			if (warning.suggestion) {
@@ -275,6 +282,22 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			column: 1,
 			rule: "remark-kilocode-comprehensive:kilocode-no-dead-ends-required",
 			suggestion: "Add a section explaining how this document connects to others and provides value",
+		})
+	}
+
+	// Check for When You're Here section
+	if (
+		settings.requireWhenYoureHere &&
+		shouldHaveWhenYoureHere(relativePath) &&
+		!structure.hasWhenYoureHere
+	) {
+		issues.push({
+			type: "error",
+			message: "Document must include When You're Here section",
+			line: 1,
+			column: 1,
+			rule: "remark-kilocode-comprehensive:kilocode-when-youre-here-required",
+			suggestion: "Add a section explaining what users can do when they reach this document",
 		})
 	}
 
@@ -469,21 +492,22 @@ function calculateQualityScore(structure, metrics) {
 	// Title presence (10%)
 	if (structure.hasTitle) score += 0.1
 
-	// Required sections (30%)
+	// Required sections (40%)
 	if (structure.hasResearchContext) score += 0.1
 	if (structure.hasNavigationFooter) score += 0.1
 	if (structure.hasNoDeadEndsPolicy) score += 0.1
+	if (structure.hasWhenYoureHere) score += 0.1
 
 	// Fun fact presence (5%)
 	if (structure.hasFunFact) score += 0.05
 
-	// Link quality (20%)
+	// Link quality (15%)
 	const descriptiveLinks = structure.links.filter((link) => !isNonDescriptiveLink(link.text, link.url)).length
 	const linkQuality = structure.links.length > 0 ? descriptiveLinks / structure.links.length : 0.5
-	score += linkQuality * 0.2
+	score += linkQuality * 0.15
 
-	// Content structure (20%)
-	const structureScore = Math.min(metrics.headingCount / 5, 1) * 0.2
+	// Content structure (15%)
+	const structureScore = Math.min(metrics.headingCount / 5, 1) * 0.15
 	score += structureScore
 
 	// Connectivity (15%)
@@ -568,6 +592,15 @@ function shouldHaveNoDeadEndsPolicy(filePath) {
 	const policyPatterns = ["context/", "plans/", "docs/architecture/", "docs/standards/"]
 
 	return policyPatterns.some((pattern) => filePath.includes(pattern))
+}
+
+/**
+ * Check if a document should have a When You're Here section
+ */
+function shouldHaveWhenYoureHere(filePath) {
+	const whenYoureHerePatterns = ["context/", "plans/", "docs/architecture/", "docs/standards/", "docs/tools/"]
+
+	return whenYoureHerePatterns.some((pattern) => filePath.includes(pattern))
 }
 
 /**

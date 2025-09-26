@@ -1,5 +1,13 @@
 # Testing Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 Welcome to the testing documentation! 🧪 This directory covers testing strategies, frameworks, and
@@ -8,7 +16,8 @@ best practices for ensuring KiloCode's quality and reliability.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-- **Something's Broken**: Check [Testing Strategy](TESTING_STRATEGY.md) for troubleshooting
+
+- **Something's Broken**: Check [TESTING\_STRATEGY.md](TESTING_STRATEGY.md) for troubleshooting
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow testing setup and execution guides
 
@@ -19,13 +28,15 @@ best practices for ensuring KiloCode's quality and reliability.
 - Test coverage and quality metrics
 
 ## 📚 Documentation Structure
+
 - **[Repository Overview](README.md)** - Master index of all testing documentation
-- **[Testing Strategy](TESTING_STRATEGY.md)** - Comprehensive testing strategy and approach
+- **[TESTING\_STRATEGY.md](TESTING_STRATEGY.md)** - Comprehensive testing strategy and approach
 
 ## 🔗 Cross-References
-- **Architecture**: See [Architecture Documentation](../../architecture/) for testing architecture
-- **Services**: See [Services Documentation](../../services/) for service testing
-- **Standards**: See [Standards Documentation](../../standards////////) for testing standards
+
+- **Architecture**: See [../architecture/](../architecture/) for testing architecture
+- **Services**: See [../services/](../services/) for service testing
+- **Standards**: See [../standards/](../standards/) for testing standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -41,6 +52,7 @@ validation technique, and together they give us confidence in our system!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
+
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
 - [← Architecture](architecture/README.md)

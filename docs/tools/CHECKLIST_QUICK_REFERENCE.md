@@ -1,7 +1,16 @@
 # Implementation Checklist Quick Reference
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-- *Purpose:*\* Quick reference for creating and using implementation checklists.
+
+- *Purpose:** Quick reference for creating and using implementation checklists.
 
 ## Template Location
 
@@ -30,6 +39,7 @@ cp docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md context/[proj_name]/phase1.md
 # [Project Name]: [Phase Name] Implementation Checklist
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 - *Purpose:** [Brief description]
 
 > **[Fun Fact]**: [Motivational element] [Emoji]
@@ -39,11 +49,14 @@ cp docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md context/[proj_name]/phase1.md
 
 ```markdown
 ### T[NNN] · Task X.Y: [Task Name]
+
 - *Status:** ⏳ Pending **Estimated Time:** [X] hours
+
 - *Subtasks:**
 - [ ] [Specific action 1]
 - [ ] [Specific action 2]
 - [ ] [Test/validate]
+
 - *Deliverables:**
 - [Output 1]
 - [Output 2]
@@ -119,11 +132,13 @@ Implements: TNNN · [Phase] Task X.Y: Task Name
 
 ```markdown
 ## Success Criteria Checklist
+
 - *[Phase] Success Metrics:**
 - [ ] [Measurable criterion 1]
 - [ ] [Measurable criterion 2]
 - [ ] [Performance metric]
 - [ ] [Team adoption metric]
+
 - *Documentation Updates:**
 - [ ] [Doc update 1]
 - [ ] [Doc update 2]
@@ -140,10 +155,11 @@ context/
 │   ├── phase2.md
 │   └── phase3.md
 └── <other-project>/
-  └── phase1.md
+    └── phase1.md
 ```
 
 ### Naming Convention
+
 - **Project Name**: Extract from plan filename `<proj_name>_PLAN.md`
 - **Examples**:
 - `API_GATEWAY_PLAN.md` → `context/api-gateway/`
@@ -217,18 +233,10 @@ code context/[proj_name]/phase1.md
 3. Update summary table
 4. Commit with task ID
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Documentation Tools](../../tools////////) ·
-  [📚 Technical Glossary](../GLOSSARY.md) ·
-  [↑ Table of Contents](#implementation-checklist-quick-reference)
+
+- **
+
+- *Navigation**: [← Back to Documentation Tools](../tools/) ·
+[📚 Technical Glossary](../GLOSSARY.md) ·
+[↑ Table of Contents](#implementation-checklist-quick-reference)

@@ -1,7 +1,8 @@
 # Development Guide
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-- *Purpose:*\* Comprehensive guide for developing and contributing to KiloCode.
+
+- *Purpose:** Comprehensive guide for developing and contributing to KiloCode.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -10,20 +11,29 @@
 ## Getting Started
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 
 ### Prerequisites
-- *Required Software*\*:
+
+- *Required Software**:
+
 - **Node.js**: Version 18 or higher
 - **PNPM**: Package manager
 - **Git**: Version control
 - **VS Code**: Development environment
-- *Installation*\*:
+
+- *Installation**:
 
 ```bash
 # Install Node.js (via nvm recommended)
@@ -50,23 +60,27 @@ npm install -g pnpm
 ```
 
 ### Repository Setup
-- *Clone Repository*\*:
+
+- *Clone Repository**:
 
 ```bash
 git clone https://github.com/mschulkind/kilocode.git
 cd kilocode
 ```
-- *Install Dependencies*\*:
+
+- *Install Dependencies**:
 
 ```bash
 pnpm install
 ```
-- *Build Project*\*:
+
+- *Build Project**:
 
 ```bash
 turbo build
 ```
-- *Start Development*\*:
+
+- *Start Development**:
 
 ```bash
 turbo dev
@@ -75,19 +89,24 @@ turbo dev
 ## Development Workflow
 
 ### Branch Strategy
-- *Main Branches*\*:
+
+- *Main Branches**:
+
 - **main**: Production-ready code
 - **develop**: Integration branch for features
 - **feature/\***: Feature development branches
 - **hotfix/\***: Critical bug fixes
-- *Branch Naming*\*:
+
+- *Branch Naming**:
+
 - **feature/description**: Feature development
 - **bugfix/description**: Bug fixes
 - **hotfix/description**: Critical fixes
 - **chore/description**: Maintenance tasks
 
 ### Commit Strategy
-- *Commit Message Format*\*:
+
+- *Commit Message Format**:
 
 ```
 type(scope): description
@@ -96,7 +115,9 @@ type(scope): description
 
 [optional footer]
 ```
-- *Types*\*:
+
+- *Types**:
+
 - **feat**: New features
 - **fix**: Bug fixes
 - **docs**: Documentation changes
@@ -104,7 +125,8 @@ type(scope): description
 - **refactor**: Code refactoring
 - **test**: Test changes
 - **chore**: Maintenance tasks
-- *Examples*\*:
+
+- *Examples**:
 
 ```
 feat(api): add OpenAI integration
@@ -113,7 +135,8 @@ docs(readme): update installation instructions
 ```
 
 ### Pull Request Process
-- *Before Creating PR*\*:
+
+- *Before Creating PR**:
 1. **Update Branch**: `git pull origin develop`
 2. **Run Tests**: `turbo test`
 3. **Run Linting**: `turbo lint`
@@ -121,7 +144,9 @@ docs(readme): update installation instructions
 5. **Build Project**: `turbo build`
 6. **Validate Documentation**: `pnpm docs:validate`
 7. **Maintain Documentation**: `pnpm docs:maintain`
-- *PR Requirements*\*:
+
+- *PR Requirements**:
+
 - **Description**: Clear description of changes
 - **Tests**: Include relevant tests
 - **Documentation**: Update documentation if needed
@@ -136,12 +161,14 @@ KiloCode uses automated documentation validation and maintenance to ensure consi
 documentation across the project.
 
 ### Validation Process
-- *Automatic Validation*\*:
+
+- *Automatic Validation**:
 - Real-time validation in VS Code
 - Pre-commit validation hooks
 - CI/CD pipeline validation
 - Comprehensive error reporting
-- *Manual Validation*\*:
+
+- *Manual Validation**:
 
 ```bash
 # Validate all documentation
@@ -164,12 +191,14 @@ npx remark docs/file.md
 ```
 
 ### Maintenance Process
-- *Automated Maintenance*\*:
+
+- *Automated Maintenance**:
 - Table of Contents generation
 - Navigation footer updates
 - Research context validation
 - Link health checking
-- *Manual Maintenance*\*:
+
+- *Manual Maintenance**:
 
 ```bash
 # Run automated maintenance
@@ -186,49 +215,59 @@ pnpm docs:report
 ```
 
 ### Documentation Standards
-- *Required Sections*\*:
+
+- *Required Sections**:
 - Research Context section
 - Navigation footer
 - Table of Contents (for files >500 words)
 - Descriptive link text
-- *Style Requirements*\*:
+
+- *Style Requirements**:
 - Consistent formatting
 - Proper heading hierarchy
 - Alt text for images
 - Working code examples
 
 ### VS Code Integration
-- *Extensions*\* (auto-installed):
+
+- *Extensions** (auto-installed):
 - Markdown All in One
 - markdownlint
 - MDX support
-- *Features*\*:
+
+- *Features**:
 - Real-time validation
 - Auto-fix on save
 - Live link validation
 - TOC auto-generation
 
 ### Troubleshooting
-- *Common Issues*\*:
+
+- *Common Issues**:
 - Validation not running → Check extensions, run `pnpm install`
 - Auto-fix not working → Check VS Code settings, restart
 - Performance issues → Exclude large dirs, use incremental validation
-- *Resources*\*:
-- [Remark Workflow Overview](../../tools////////REMARK_WORKFLOW_OVERVIEW.md)
-- [Validation Errors Guide](../../tools////////VALIDATION_ERRORS_GUIDE.md)
-- [Troubleshooting Guide](../../tools////////TROUBLESHOOTING_GUIDE.md)
-- [Documentation Best Practices](../../tools////////DOCUMENTATION_BEST_PRACTICES.md)
+
+- *Resources**:
+- [Remark Workflow Overview](../../tools/REMARK_WORKFLOW_OVERVIEW.md)
+- [Validation Errors Guide](../../tools/VALIDATION_ERRORS_GUIDE.md)
+- [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+- [Documentation Best Practices](../../tools/DOCUMENTATION_BEST_PRACTICES.md)
 
 ## Code Standards
 
 ### TypeScript Standards
-- *Configuration*\*: `@roo-code/config-typescript`
-- *Key Rules*\*:
+
+- *Configuration**: `@roo-code/config-typescript`
+
+- *Key Rules**:
+
 - **Strict Mode**: Always use strict mode
 - **No Any**: Avoid `any` type
 - **Explicit Types**: Use explicit type annotations
 - **Interface Naming**: Use PascalCase for interfaces
-- *Example*\*:
+
+- *Example**:
 
 ```typescript
 interface User {
@@ -246,13 +285,17 @@ function createUser(userData: Omit<User, "id">): User {
 ```
 
 ### React Standards
-- *Configuration*\*: React-specific ESLint rules
-- *Key Rules*\*:
+
+- *Configuration**: React-specific ESLint rules
+
+- *Key Rules**:
+
 - **Functional Components**: Prefer functional components
 - **Hooks**: Use hooks for state management
 - **Props Interface**: Define props interfaces
 - **Component Naming**: Use PascalCase for components
-- *Example*\*:
+
+- *Example**:
 
 ```typescript
 interface ButtonProps {
@@ -263,15 +306,16 @@ interface ButtonProps {
 
 export function Button({ children, onClick, disabled = false }: ButtonProps) {
   return (
-  <button onClick={onClick} disabled={disabled}>
-  {children}
-  </button>
+    <button onClick={onClick} disabled={disabled}>
+      {children}
+    </button>
   )
 }
 ```
 
 ### Testing Standards
-- *Test Structure*\*:
+
+- *Test Structure**:
 
 ```typescript
 describe("ComponentName", () => {
@@ -289,8 +333,11 @@ describe("ComponentName", () => {
 	})
 })
 ```
-- *Test Coverage*\*: Minimum 80% coverage
-- *Test Types*\*:
+
+- *Test Coverage**: Minimum 80% coverage
+
+- *Test Types**:
+
 - **Unit Tests**: Individual function testing
 - **Integration Tests**: Component interaction testing
 - **E2E Tests**: End-to-end workflow testing
@@ -298,7 +345,8 @@ describe("ComponentName", () => {
 ## Project Structure
 
 ### Monorepo Organization
-- *Root Level*\*:
+
+- *Root Level**:
 
 ```
 kilocode/
@@ -310,7 +358,8 @@ kilocode/
 ├── scripts/             # Build scripts
 └── turbo.json           # Turbo configuration
 ```
-- *Package Structure*\*:
+
+- *Package Structure**:
 
 ```
 packages/package-name/
@@ -323,13 +372,16 @@ packages/package-name/
 ```
 
 ### File Organization
-- *Naming Conventions*\*:
+
+- *Naming Conventions**:
+
 - **Files**: kebab-case (e.g., `user-service.ts`)
 - **Directories**: kebab-case (e.g., `user-management/`)
 - **Components**: PascalCase (e.g., `UserProfile.tsx`)
 - **Interfaces**: PascalCase (e.g., `UserProfile.ts`)
 - **Types**: PascalCase (e.g., `UserProfile.ts`)
-- *Directory Structure*\*:
+
+- *Directory Structure**:
 
 ```
 src/
@@ -344,14 +396,17 @@ src/
 ## Development Tools
 
 ### VS Code Setup
-- *Recommended Extensions*\*:
+
+- *Recommended Extensions**:
+
 - **TypeScript**: TypeScript support
 - **ESLint**: ESLint integration
 - **Prettier**: Code formatting
 - **GitLens**: Git integration
 - **Thunder Client**: API testing
 - **REST Client**: REST API testing
-- *Settings*\*:
+
+- *Settings**:
 
 ```json
 {
@@ -369,7 +424,8 @@ src/
 ```
 
 ### Git Configuration
-- *Global Configuration*\*:
+
+- *Global Configuration**:
 
 ```gitconfig
 [user]
@@ -383,7 +439,8 @@ src/
 [init]
   defaultBranch = main
 ```
-- *Repository Configuration*\*:
+
+- *Repository Configuration**:
 
 ```gitconfig
 [core]
@@ -400,40 +457,50 @@ src/
 ## Testing
 
 ### Running Tests
-- *All Tests*\*:
+
+- *All Tests**:
 
 ```bash
 turbo test
 ```
-- *Specific Package*\*:
+
+- *Specific Package**:
 
 ```bash
 cd packages/package-name
 pnpm test
 ```
-- *Watch Mode*\*:
+
+- *Watch Mode**:
 
 ```bash
 turbo test --watch
 ```
-- *Coverage*\*:
+
+- *Coverage**:
 
 ```bash
 turbo test --coverage
 ```
 
 ### Test Types
-- *Unit Tests*\*:
+
+- *Unit Tests**:
+
 - **Location**: `__tests__/` directories
 - **Naming**: `*.test.ts` or `*.spec.ts`
 - **Framework**: Vitest
 - **Coverage**: Individual functions and components
-- *Integration Tests*\*:
+
+- *Integration Tests**:
+
 - **Location**: `tests/integration/`
 - **Naming**: `*.integration.test.ts`
 - **Framework**: Vitest
 - **Coverage**: Component interactions
-- *E2E Tests*\*:
+
+- *E2E Tests**:
+
 - **Location**: `apps/playwright-e2e/tests/`
 - **Naming**: `*.e2e.test.ts`
 - **Framework**: Playwright
@@ -442,34 +509,42 @@ turbo test --coverage
 ## Building
 
 ### Build Commands
-- *Build All*\*:
+
+- *Build All**:
 
 ```bash
 turbo build
 ```
-- *Build Specific Package*\*:
+
+- *Build Specific Package**:
 
 ```bash
 cd packages/package-name
 pnpm build
 ```
-- *Build Applications*\*:
+
+- *Build Applications**:
 
 ```bash
 turbo build:apps
 ```
-- *Build Extension*\*:
+
+- *Build Extension**:
 
 ```bash
 turbo build:extension
 ```
 
 ### Build Output
-- *Package Output*\*:
+
+- *Package Output**:
+
 - **Location**: `packages/*/dist/`
 - **Format**: CommonJS and ES modules
 - **Types**: Declaration files (`.d.ts`)
-- *Application Output*\*:
+
+- *Application Output**:
+
 - **Location**: `apps/*/dist/`
 - **Format**: Optimized bundles
 - **Assets**: Static assets and resources
@@ -477,7 +552,8 @@ turbo build:extension
 ## Debugging
 
 ### VS Code Debugging
-- *Launch Configuration*\*:
+
+- *Launch Configuration**:
 
 ```json
 {
@@ -494,7 +570,8 @@ turbo build:extension
 	]
 }
 ```
-- *Debug Tasks*\*:
+
+- *Debug Tasks**:
 
 ```json
 {
@@ -517,7 +594,8 @@ turbo build:extension
 ```
 
 ### Console Debugging
-- *Logging*\*:
+
+- *Logging**:
 
 ```typescript
 import { logger } from "@roo-code/telemetry"
@@ -525,7 +603,8 @@ import { logger } from "@roo-code/telemetry"
 logger.info("Debug message", { context: "debug" })
 logger.error("Error message", { error: new Error("test") })
 ```
-- *Debug Mode*\*:
+
+- *Debug Mode**:
 
 ```bash
 DEBUG=* pnpm dev
@@ -534,7 +613,8 @@ DEBUG=* pnpm dev
 ## Deployment
 
 ### Local Deployment
-- *Extension Development*\*:
+
+- *Extension Development**:
 
 ```bash
 # Build extension
@@ -556,7 +636,8 @@ npx vsce package
 
 code --install-extension kilo-code-1.0.0.vsix
 ```
-- *Web Applications*\*:
+
+- *Web Applications**:
 
 ```bash
 # Build application
@@ -574,7 +655,8 @@ pnpm dev
 ```
 
 ### Production Deployment
-- *Extension Publishing*\*:
+
+- *Extension Publishing**:
 
 ```bash
 # Build and package
@@ -585,7 +667,8 @@ turbo build:extension
 cd src
 npx vsce publish
 ```
-- *Web Application Deployment*\*:
+
+- *Web Application Deployment**:
 
 ```bash
 # Build application
@@ -606,7 +689,8 @@ turbo build:apps
 ## Troubleshooting
 
 ### Common Issues
-- *Dependency Issues*\*:
+
+- *Dependency Issues**:
 
 ```bash
 # Clear cache and reinstall
@@ -617,7 +701,8 @@ rm -rf node_modules
 rm pnpm-lock.yaml
 pnpm install
 ```
-- *Build Issues*\*:
+
+- *Build Issues**:
 
 ```bash
 # Clean build
@@ -627,7 +712,8 @@ pnpm install
 turbo clean
 turbo build
 ```
-- *Test Issues*\*:
+
+- *Test Issues**:
 
 ```bash
 # Clear test cache
@@ -638,10 +724,14 @@ turbo test --no-cache
 ```
 
 ### Getting Help
-- *Documentation*\*: Check relevant documentation files
-- *Issues*\*: Search existing GitHub issues
-- *Discussions*\*: Use GitHub Discussions for questions
-- *Code Review*\*: Ask for code review on pull requests
+
+- *Documentation**: Check relevant documentation files
+
+- *Issues**: Search existing GitHub issues
+
+- *Discussions**: Use GitHub Discussions for questions
+
+- *Code Review**: Ask for code review on pull requests
 
 ## Next Steps
 1. **Explore Repository**: See [REPOSITORY\_STRUCTURE.md](REPOSITORY_STRUCTURE.md)
@@ -653,17 +743,16 @@ turbo test --no-cache
 - [→ Repository Structure](REPOSITORY_STRUCTURE.md)
 - [↑ Table of Contents](README.md)
 
+## Navigation Footer
+
+- **
+
+- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#development-guide)
+
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
-## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#development-guide)
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding

@@ -1,9 +1,10 @@
 # Orchestrator Task Lifecycle
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-- *Purpose:*\* This document provides a detailed, step-by-step description of the orchestrator's task
-  lifecycle, from the moment a request is received to its final completion. It covers state
-  transitions, the execution loop, and subtask management.
+
+- *Purpose:** This document provides a detailed, step-by-step description of the orchestrator's task
+lifecycle, from the moment a request is received to its final completion. It covers state
+transitions, the execution loop, and subtask management.
 
 > **Geology Fun Fact**: The orchestrator lifecycle is like the rock cycle - tasks start as molten
 > magma (CREATED), cool into solid rock (RUNNING), get weathered by external forces (PAUSED), and
@@ -20,22 +21,25 @@
 - [7. Navigation Footer](#navigation-footer)
 
 </details>
-- \*\*
 
-## Related Documents
+- **
+
+### Related Documents
 
 <a id="related-documents"></a>
+
 - **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
   documentation.
 - **[Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md)**: Describes the components
   involved in the lifecycle.
-- **[Task Delegation Guide](../orchestrator/ORCHESTRATOR_TASK_DELEGATION.md)**: Focuses specifically on
+- **[Task Delegation Guide](ORCHESTRATOR_TASK_DELEGATION.md)**: Focuses specifically on
   the subtask creation and management process.
 - **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how errors are
   handled at various stages of the lifecycle.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 ### Lifecycle Overview
 
@@ -48,26 +52,27 @@ state is reached.
 
 ```mermaid
 sequenceDiagram
-  participant Client
-  participant TaskEngine
-  participant Model
-  participant ToolExecutor
+    participant Client
+    participant TaskEngine
+    participant Model
+    participant ToolExecutor
 
-  Client->>TaskEngine: Initiate Request
-  TaskEngine->>TaskEngine: 1. Initiation (initiateTaskLoop)
-  TaskEngine->>Model: 2. Prompt Generation (getSystemPrompt)
-  Model-->>TaskEngine: 3. Model Response (Streaming)
-  TaskEngine->>TaskEngine: 4. Parsing & Execution (recursivelyMakeClineRequests)
-  TaskEngine->>ToolExecutor: Execute Tool
-  ToolExecutor-->>TaskEngine: Tool Result
-  Note over TaskEngine,ToolExecutor: Loop until completion tool is called
-  TaskEngine->>ToolExecutor: 5. Completion (attemptCompletionTool)
-  ToolExecutor-->>TaskEngine: Final State
-  TaskEngine-->>Client: 6. Termination
+    Client->>TaskEngine: Initiate Request
+    TaskEngine->>TaskEngine: 1. Initiation (initiateTaskLoop)
+    TaskEngine->>Model: 2. Prompt Generation (getSystemPrompt)
+    Model-->>TaskEngine: 3. Model Response (Streaming)
+    TaskEngine->>TaskEngine: 4. Parsing & Execution (recursivelyMakeClineRequests)
+    TaskEngine->>ToolExecutor: Execute Tool
+    ToolExecutor-->>TaskEngine: Tool Result
+    Note over TaskEngine,ToolExecutor: Loop until completion tool is called
+    TaskEngine->>ToolExecutor: 5. Completion (attemptCompletionTool)
+    ToolExecutor-->>TaskEngine: Final State
+    TaskEngine-->>Client: 6. Termination
 ```
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 ### Lifecycle Stages in Detail
 
@@ -113,7 +118,8 @@ The `Task` engine performs final cleanup, persists the final state, and returns 
 initial caller. The lifecycle for this task instance is now complete.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 ### State Transitions
 
@@ -128,7 +134,8 @@ A task can exist in several states throughout its lifecycle:
 - `failed`: The task terminated due to an unrecoverable error or reaching its mistake limit.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 ### The Execution Loop: `recursivelyMakeClineRequests`
 
@@ -144,7 +151,8 @@ conversation with the model.
    until a terminal state (completion or failure) is reached.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 ### Subtask Lifecycle
 
@@ -163,7 +171,8 @@ When the model determines a part of the task requires isolated execution, it can
    with the information from the completed subtask.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 ### Navigation Footer
 
@@ -171,10 +180,11 @@ When the model determines a part of the task requires isolated execution, it can
 
 You have reached the end of the lifecycle document. Return to the
 [Master Index](ORCHESTRATOR_INDEX.md) or proceed to the
-[Task Delegation Document](../orchestrator/ORCHESTRATOR_TASK_DELEGATION.md).
+[Task Delegation Document](ORCHESTRATOR_TASK_DELEGATION.md).
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+- **
 
 End of document.
 
@@ -213,22 +223,22 @@ End of document.
 ### Docs-only recommendations (no code changes)
 - Add a "Provider expectations" doc section describing:
 - Which errors providers should throw vs yield (e.g., THROTTLING -> throw so Task-level
-  retry/backoff runs).
+    retry/backoff runs).
 - Expected behavior for token refresh flows (single in-flight refresh promise; block concurrent
-  sends while refresh occurs).
+    sends while refresh occurs).
 - Best-effort contract for previous\_response\_id usage and race mitigation strategy.
 - How providers should expose cancellation (note the orchestration will supply an AbortSignal
-  when supported).
+    when supported).
 - Where to include request-level metadata (recommended header names and fallbacks).
 - Add a "Tracing & idempotency" doc covering:
 - Recommended header names (X-KILOCODE-TASK-ID, X-KILOCODE-TIMESTAMP-ISO) and preferred
-  placement in requests.
+    placement in requests.
 - Per-provider caveats where headers cannot be used (e.g., Bedrock SDK) and fallback options
-  (embed minimal metadata into conversation or system block).
+    (embed minimal metadata into conversation or system block).
 - Add a "Retry responsibility" doc that states:
 - Providers may perform idempotent internal retries (token refresh, small SDK-specific fixes).
 - Providers must rethrow throttling/rate-limit errors to allow Task.ts to perform exponential
-  backoff.
+    backoff.
 - Add a "Testing checklist" doc for integration tests:
 - Simulate concurrent sends to exercise previous\_response\_id handling.
 - Simulate token refresh and assert only one successful send occurs.
@@ -244,29 +254,37 @@ End of document.
   from here)
 - docs/RETRY\_POLICY.md — retry responsibility, orchestrator vs provider, backoff guidelines.
 - docs/TESTING\_STRATEGY.md — integration tests to add.
-- Update: [`ORCHESTRATOR_LIFECYCLE.md`](../orchestrator/ORCHESTRATOR_LIFECYCLE.md) to reference the new pages.
+- Update: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md) to reference the new pages.
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Orchestrator Lifecycle:*\*
+
+- *Understanding Orchestrator Lifecycle:**
+
 - **Next**: [Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
-- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [State Machines](../architecture/state-machines/README.md) for behavior modeling
-- *Investigating Race Conditions:*\*
+
+- *Investigating Race Conditions:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
-- *Implementing Orchestrator Features:*\*
+
+- *Implementing Orchestrator Features:**
+
 - **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
-  [Orchestrator Task Delegation](../orchestrator/ORCHESTRATOR_TASK_DELEGATION.md) →
+  [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 - **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for
   codebase patterns
-- *Understanding Current Problems:*\*
+
+- *Understanding Current Problems:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
@@ -284,15 +302,8 @@ testing checklist. Tell me to proceed and I will create:
 - `docs/PROVIDER_GUIDELINES.md`
 - `docs/RETRY_POLICY.md`
 - `docs/TESTING_STRATEGY.md`
-- \*\*
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
-  [↑ Table of Contents](#orchestrator-task-lifecycle)
 
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../../../../../../../../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md)
-- [Glossary](../../../../../../../../GLOSSARY.md)
+- **
+
+- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
+[↑ Table of Contents](#orchestrator-task-lifecycle)

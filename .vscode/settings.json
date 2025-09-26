@@ -85,5 +85,36 @@
 	"files.autoSaveDelay": 1000,
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
-	"editor.formatOnType": false
+	"editor.formatOnType": false,
+	// Enhanced real-time validation settings
+	"markdown.validate.realtime": {
+		"enabled": true,
+		"debounce": 500,
+		"maxErrors": 100,
+		"showWarnings": true,
+		"showInfo": false
+	},
+	// Real-time content quality analysis
+	"markdown.validate.quality": {
+		"enabled": true,
+		"readabilityThreshold": 30,
+		"gradeLevelThreshold": 12,
+		"consistencyThreshold": 0.8
+	},
+	// Real-time link validation
+	"markdown.validate.links": {
+		"realtime": true,
+		"checkExternal": false,
+		"checkInternal": true,
+		"checkAnchors": true,
+		"timeout": 3000
+	},
+	// Real-time validation notifications
+	"markdown.validate.notifications": {
+		"showErrors": true,
+		"showWarnings": true,
+		"showInfo": false,
+		"popup": false,
+		"statusBar": true
+	}
 }

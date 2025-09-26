@@ -1,5 +1,13 @@
 # Basic Validation Training
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 This training module introduces you to the fundamentals of documentation validation in the KiloCode system.
@@ -21,12 +29,14 @@ By the end of this training, you will be able to:
 ## What is Documentation Validation?
 
 Documentation validation is the process of checking documentation files for:
+
 - **Syntax errors**: Missing required sections, malformed Markdown
 - **Style issues**: Inconsistent formatting, poor structure
 - **Link problems**: Broken links, non-descriptive link text
 - **Content quality**: Missing information, unclear writing
 
 ### Why Validation Matters
+
 - **Consistency**: Ensures all documentation follows the same standards
 - **Quality**: Catches errors before they reach users
 - **Maintainability**: Makes documentation easier to update and maintain
@@ -35,6 +45,7 @@ Documentation validation is the process of checking documentation files for:
 ## Validation Tools Overview
 
 ### 1. VS Code Extensions
+
 - **Markdown All in One**: Real-time validation and formatting
 - **markdownlint**: Style checking and auto-fixing
 - **Remark**: Advanced validation and processing
@@ -51,6 +62,7 @@ Documentation validation is the process of checking documentation files for:
 ## Common Validation Errors
 
 ### 1. Missing Required Sections
+
 - *Error*\*: Missing required section "Research Context"
 - *What it means*\*: Every KiloCode document must have a Research Context section
 - *How to fix*\*:
@@ -62,6 +74,7 @@ Brief description of the research and context behind this document.
 ```
 
 ### 2. Missing Navigation Footer
+
 - *Error*\*: Missing navigation footer
 - *What it means*\*: Documents need navigation links for better organization
 - *How to fix*\*:
@@ -71,6 +84,7 @@ Brief description of the research and context behind this document.
 ```
 
 ### 3. Non-descriptive Link Text
+
 - *Warning*\*: Link text "https://example.com" is not descriptive
 - *What it means*\*: Links should have meaningful text, not just URLs
 - *How to fix*\*:
@@ -86,6 +100,7 @@ Brief description of the research and context behind this document.
 ```
 
 ### 4. Improper Heading Hierarchy
+
 - *Warning*\*: Heading level should be 2, not 3
 - *What it means*\*: Headings should follow a logical hierarchy (H1 → H2 → H3)
 - *How to fix*\*:
@@ -293,4 +308,5 @@ Some content here.
 - Peer support network
 
 ## Navigation Footer
+
 - *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)

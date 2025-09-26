@@ -1,9 +1,10 @@
 # Orchestrator Extensibility
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-- *Purpose:*\* This document provides guidance on how to extend the capabilities of the Kilo Code
-  Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
-  defining workspace-specific rules.
+
+- *Purpose:** This document provides guidance on how to extend the capabilities of the Kilo Code
+Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
+defining workspace-specific rules.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -18,19 +19,22 @@
 - \[6. Navigation Footer
 
 </details>
-- \*\*
 
-## Related Documents
+- **
+
+### Related Documents
 
 <a id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+
 - **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
   documentation.
 - **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices for
   developing new tools and modes.
-- **[Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+- **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+- **
 
 ### Extensibility Philosophy
 
@@ -41,12 +45,14 @@ tenant, allowing developers to tailor the orchestrator's capabilities to specifi
 to integrate with external services.
 
 The primary extension vectors are:
+
 - **Tools**: Adding new actions the orchestrator can perform.
 - **Modes**: Defining new operational contexts with unique permission sets.
 - **Rules**: Providing project-specific instructions and constraints to the model.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+- **
 
 ### Adding New Tools (Gap)
 
@@ -69,7 +75,8 @@ involve:
 This section is marked as a **Gap** and will be updated as the formal process is solidified.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+- **
 
 ### Adding New Modes (Gap)
 
@@ -90,7 +97,8 @@ This section is marked as a **Gap**. Further details will be provided once the A
 is finalized.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+- **
 
 ### Adding Custom Rules
 
@@ -108,23 +116,30 @@ the model, such as:
 - "API calls to the billing service must be routed through the `BillingAPIClient`."
 
 For a complete overview of how these rules are discovered and loaded, please refer to the
-[Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md).
+[Documentation Guide](../../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+- **
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding This System:*\*
+
+- *Understanding This System:**
+
 - **Next**: Check related documentation in the same directory
-- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
-- *Implementing Features:*\*
+
+- *Implementing Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Issues:*\*
+
+- *Troubleshooting Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -143,18 +158,12 @@ You have reached the end of the extensibility document. Return to the
 [Master Index](ORCHESTRATOR_INDEX.md).
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+- **
 
 End of document.
-- \*\*
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
-  [↑ Table of Contents](#orchestrator-extensibility)
 
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../../../../../../../../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md)
-- [Glossary](../../../../../../../../GLOSSARY.md)
+- **
+
+- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
+[↑ Table of Contents](#orchestrator-extensibility)

@@ -40,4 +40,26 @@ if ! $pnpm_cmd docs:fix; then
   exit 1
 fi
 
+# Enhanced documentation validation
+echo "🔍 Running enhanced documentation validation..."
+if ! $pnpm_cmd docs:validate; then
+  echo "❌ Enhanced documentation validation failed."
+  echo "💡 Check the validation output above for issues that need manual fixing."
+  exit 1
+fi
+
+# Content quality analysis
+echo "📊 Running content quality analysis..."
+if ! $pnpm_cmd docs:quality; then
+  echo "⚠️  Content quality analysis completed with warnings."
+  echo "💡 Consider improving content quality based on the analysis above."
+fi
+
+# Link validation
+echo "🔗 Running link validation..."
+if ! $pnpm_cmd docs:links; then
+  echo "⚠️  Link validation completed with warnings."
+  echo "💡 Check the link validation output above for broken or problematic links."
+fi
+
 echo "✅ Documentation validation and fixing completed successfully!"

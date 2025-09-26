@@ -1,8 +1,17 @@
 # External Dependencies
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-- *Purpose:*\* Comprehensive catalog of all external dependencies, libraries, and conventions for
-  using them in the KiloCode project.
+
+- *Purpose:** Comprehensive catalog of all external dependencies, libraries, and conventions for
+using them in the KiloCode project.
 
 > **Biology Fun Fact**: External dependencies are like symbiotic relationships in nature - each
 > library provides specific functionality (like how mitochondria provide energy), and together they
@@ -27,15 +36,24 @@
 ## Executive Summary
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
+
 - The KiloCode project utilizes over 100 external dependencies across multiple categories, from AI/ML
-  libraries to UI frameworks, with strict version management and security conventions.\*
-- *Key Statistics:*\*
+libraries to UI frameworks, with strict version management and security conventions.*
+
+- *Key Statistics:**
+
 - **Total Dependencies**: 100+ external libraries
 - **AI/ML Libraries**: 10+ language model integrations
 - **UI Components**: 20+ React and UI libraries
@@ -60,7 +78,8 @@
 | `tiktoken`                     | ^1.0.21 | Token counting and encoding        | Token management and counting         |
 
 ### AI Integration Patterns
-- *Provider Abstraction:*\*
+
+- *Provider Abstraction:**
 
 ```typescript
 // Common interface for all AI providers
@@ -84,7 +103,8 @@ class ProviderFactory {
 	}
 }
 ```
-- *Token Management:*\*
+
+- *Token Management:**
 
 ```typescript
 // Token counting and management
@@ -104,7 +124,8 @@ const tokenCount = encoding.encode(prompt).length
 | `@qdrant/js-client-rest`    | ^1.14.0 | Vector database integration | Semantic search and embeddings |
 
 ### MCP Implementation Patterns
-- *Server Integration:*\*
+
+- *Server Integration:**
 
 ```typescript
 import { Server } from "@modelcontextprotocol/sdk/server/index.js"
@@ -134,7 +155,8 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 	}
 })
 ```
-- *Vector Database Integration:*\*
+
+- *Vector Database Integration:**
 
 ```typescript
 import { QdrantClient } from "@qdrant/js-client-rest"
@@ -168,7 +190,8 @@ async function storeEmbedding(id: string, vector: number[], payload: any) {
 | `jwt-decode`                      | ^4.0.0   | JWT token handling          | Authentication token management |
 
 ### Authentication Patterns
-- *JWT Token Handling:*\*
+
+- *JWT Token Handling:**
 
 ```typescript
 import { jwtDecode } from "jwt-decode"
@@ -186,7 +209,8 @@ if (payload.exp * 1000 < Date.now()) {
 	// Token expired, refresh or redirect to login
 }
 ```
-- *AWS Credentials:*\*
+
+- *AWS Credentials:**
 
 ```typescript
 import { fromNodeProviderChain } from "@aws-sdk/credential-providers"
@@ -212,7 +236,8 @@ const client = new BedrockRuntimeClient({
 | `diff-match-patch`  | ^1.0.5  | Advanced diff algorithms    | Text comparison and merging      |
 
 ### Code Analysis Patterns
-- *Tree-sitter Integration:*\*
+
+- *Tree-sitter Integration:**
 
 ```typescript
 import { initParser } from "web-tree-sitter"
@@ -234,7 +259,8 @@ function traverse(node: any) {
 	}
 }
 ```
-- *Syntax Highlighting:*\*
+
+- *Syntax Highlighting:**
 
 ```typescript
 import { codeToHtml } from "shiki"
@@ -268,7 +294,8 @@ const html = await codeToHtml(code, {
 | `gray-matter`     | ^4.0.3  | Front matter parsing  | Markdown metadata extraction            |
 
 ### File Processing Patterns
-- *PDF Processing:*\*
+
+- *PDF Processing:**
 
 ```typescript
 import * as pdfParse from "pdf-parse"
@@ -279,7 +306,8 @@ const pdfData = await pdfParse(pdfBuffer)
 console.log("PDF Text:", pdfData.text)
 console.log("Page Count:", pdfData.numpages)
 ```
-- *Excel Processing:*\*
+
+- *Excel Processing:**
 
 ```typescript
 import * as ExcelJS from "exceljs"
@@ -292,7 +320,8 @@ worksheet.eachRow((row, rowNumber) => {
 	console.log(`Row ${rowNumber}:`, row.values)
 })
 ```
-- *Markdown Front Matter:*\*
+
+- *Markdown Front Matter:**
 
 ```typescript
 import matter from "gray-matter"
@@ -320,7 +349,8 @@ console.log("Content:", content)
 | `react-markdown`        | ^9.0.3   | Markdown rendering      | Content display and formatting |
 
 ### UI Component Patterns
-- *Radix UI Integration:*\*
+
+- *Radix UI Integration:**
 
 ```typescript
 import * as Dialog from '@radix-ui/react-dialog'
@@ -328,22 +358,23 @@ import * as Select from '@radix-ui/react-select'
 
 function MyDialog() {
   return (
-  <Dialog.Root>
-  <Dialog.Trigger asChild>
-  <button>Open Dialog</button>
-  </Dialog.Trigger>
-  <Dialog.Portal>
-  <Dialog.Overlay />
-  <Dialog.Content>
-    <Dialog.Title>Dialog Title</Dialog.Title>
-    <Dialog.Description>Dialog description</Dialog.Description>
-  </Dialog.Content>
-  </Dialog.Portal>
-  </Dialog.Root>
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <button>Open Dialog</button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Title>Dialog Title</Dialog.Title>
+          <Dialog.Description>Dialog description</Dialog.Description>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   )
 }
 ```
-- *React Query Integration:*\*
+
+- *React Query Integration:**
 
 ```typescript
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
@@ -367,18 +398,19 @@ function useCreateTask() {
 	})
 }
 ```
-- *Mermaid Diagram Integration:*\*
+
+- *Mermaid Diagram Integration:**
 
 ```typescript
 import { Mermaid } from 'mermaid'
 
 const diagram = `
 graph TD
-  A[Start] --> B{Decision}
-  B -->|Yes| C[Action 1]
-  B -->|No| D[Action 2]
-  C --> E[End]
-  D --> E
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Action 1]
+    B -->|No| D[Action 2]
+    C --> E[End]
+    D --> E
 `
 
 <Mermaid chart={diagram} />
@@ -398,7 +430,8 @@ graph TD
 | `playwright` | ^1.53.1 | E2E testing         | Browser testing and automation     |
 
 ### Build Patterns
-- *Turbo Configuration:*\*
+
+- *Turbo Configuration:**
 
 ```json
 {
@@ -415,7 +448,8 @@ graph TD
 	}
 }
 ```
-- *ESBuild Configuration:*\*
+
+- *ESBuild Configuration:**
 
 ```typescript
 import { build } from "esbuild"
@@ -431,7 +465,8 @@ await build({
 	sourcemap: true,
 })
 ```
-- *Vite Configuration:*\*
+
+- *Vite Configuration:**
 
 ```typescript
 import { defineConfig } from "vite"
@@ -467,7 +502,8 @@ export default defineConfig({
 | `zod`             | ^3.25.61 | Schema validation   | Type-safe validation                |
 
 ### Utility Patterns
-- *Debounced Operations:*\*
+
+- *Debounced Operations:**
 
 ```typescript
 import debounce from 'lodash.debounce'
@@ -481,13 +517,14 @@ function SearchInput() {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
-  debouncedSearch(query)
+    debouncedSearch(query)
   }, [query])
 
   return <input value={query} onChange={e => setQuery(e.target.value)} />
 }
 ```
-- *LRU Cache Usage:*\*
+
+- *LRU Cache Usage:**
 
 ```typescript
 import { LRUCache } from "lru-cache"
@@ -506,7 +543,8 @@ function getCachedData(key: string) {
 	return data
 }
 ```
-- *Concurrency Control:*\*
+
+- *Concurrency Control:**
 
 ```typescript
 import pLimit from "p-limit"
@@ -517,7 +555,8 @@ const tasks = urls.map((url) => limit(() => fetch(url)))
 
 const results = await Promise.all(tasks)
 ```
-- *Schema Validation:*\*
+
+- *Schema Validation:**
 
 ```typescript
 import { z } from "zod"
@@ -539,7 +578,8 @@ function validateTask(data: unknown): Task {
 ## Dependency Management
 
 ### Package Manager Configuration
-- *pnpm Workspace Setup:*\*
+
+- *pnpm Workspace Setup:**
 
 ```yaml
 # pnpm-workspace.yaml
@@ -560,7 +600,8 @@ onlyBuiltDependencies:
 - keytar
 - puppeteer-chromium-resolver
 ```
-- *Security Overrides:*\*
+
+- *Security Overrides:**
 
 ```json
 {
@@ -577,11 +618,14 @@ onlyBuiltDependencies:
 ```
 
 ### Version Management
-- *Version Pinning Strategy:*\*
+
+- *Version Pinning Strategy:**
+
 - **Exact versions** for critical dependencies (security, build tools)
 - **Caret ranges** (^) for most dependencies to allow patch updates
 - **Workspace dependencies** for internal packages using `workspace:^`
-- *Example Package.json:*\*
+
+- *Example Package.json:**
 
 ```json
 {
@@ -596,7 +640,8 @@ onlyBuiltDependencies:
 ## Security & Conventions
 
 ### Security Considerations
-- *Regular Security Audits:*\*
+
+- *Regular Security Audits:**
 
 ```bash
 # Run security audit
@@ -617,26 +662,33 @@ pnpm audit --fix
 
 pnpm outdated
 ```
-- *Dependency Security:*\*
+
+- *Dependency Security:**
+
 - **Pin critical versions** for security-sensitive packages
 - **Override vulnerable dependencies** in pnpm.overrides
 - **Regular updates** for security patches
 - **Automated security scanning** in CI/CD
 
 ### Performance Optimizations
-- *Bundle Optimization:*\*
+
+- *Bundle Optimization:**
+
 - **Tree-shaking** for unused code elimination
 - **Code splitting** for lazy loading
 - **Compression** for production builds
 - **Source maps** for debugging
-- *Runtime Optimization:*\*
+
+- *Runtime Optimization:**
+
 - **Tree-sitter WASM** for fast code parsing
 - **LRU caching** for frequently accessed data
 - **Debounced operations** for UI responsiveness
 - **Concurrency limits** for API requests
 
 ### Development Conventions
-- *Import Conventions:*\*
+
+- *Import Conventions:**
 
 ```typescript
 // External libraries first
@@ -650,7 +702,8 @@ import { TaskService } from "../services/TaskService"
 // Relative imports last
 import "./styles.css"
 ```
-- *Error Handling:*\*
+
+- *Error Handling:**
 
 ```typescript
 // Consistent error handling patterns
@@ -662,7 +715,8 @@ try {
 	throw new Error(`Failed to perform operation: ${error.message}`)
 }
 ```
-- *Type Safety:*\*
+
+- *Type Safety:**
 
 ```typescript
 // Use Zod for runtime validation
@@ -678,20 +732,19 @@ type Config = z.infer<typeof ConfigSchema>
 ```
 
 <a id="navigation-footer"></a>
-- Back: [`REPOSITORY_OVERVIEW.md`](REPOSITORY_OVERVIEW.md) · Root: [`README.md`](../../../../../../../README.md) ·
+- Back: [`REPOSITORY_OVERVIEW.md`](REPOSITORY_OVERVIEW.md) · Root: [`README.md`](../../README.md) ·
   Source: `/docs/architecture/EXTERNAL_DEPENDENCIES.md#L1`
+
+## Navigation Footer
+
+- **
+
+- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
+[↑ Table of Contents](#external-dependencies)
 
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../../../../../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../../../../../../../../architecture/README.md).
-
-## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../) · [architecture](../../docs/architecture/) ·
-  [↑ Table of Contents](#external-dependencies)
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding

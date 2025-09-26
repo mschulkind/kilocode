@@ -1,9 +1,10 @@
 # Laminar Decorator System
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-- *Purpose:*\* This document describes the observeDecorator implementation for automatic
-  instrumentation, detailing method decoration, input/output capture, performance monitoring, and
-  seamless integration with existing decorator patterns in Kilo Code.
+
+- *Purpose:** This document describes the observeDecorator implementation for automatic
+instrumentation, detailing method decoration, input/output capture, performance monitoring, and
+seamless integration with existing decorator patterns in Kilo Code.
 
 > **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
 > instant connections between distant parts of the system, allowing us to observe the entire state
@@ -32,6 +33,7 @@ across Kilo Code subsystems.
 ### Role in Laminar Integration
 
 The decorator system is responsible for:
+
 - **Automatic Instrumentation:** Applying tracing without code modifications
 - **Method Decoration:** Wrapping methods with observability logic
 - **Input/Output Tracking:** Capturing method parameters and return values
@@ -46,7 +48,8 @@ minimal changes while providing comprehensive monitoring and tracing capabilitie
 ## Decorator Architecture
 
 ### Core Decorator Implementation
-- *observeDecorator Function:*\*
+
+- *observeDecorator Function:**
 
 ```typescript
 function observeDecorator(spanName?: string, options?: ObserveOptions): MethodDecorator {
@@ -72,14 +75,17 @@ function observeDecorator(spanName?: string, options?: ObserveOptions): MethodDe
 	}
 }
 ```
-- *Decorator Components:*\*
+
+- *Decorator Components:**
+
 - **Span Creation:** Automatic span initialization
 - **Method Wrapping:** Preservation of original method behavior
 - **Error Handling:** Exception recording and re-throwing
 - **Resource Cleanup:** Proper span completion
 
 ### Decorator Options
-- *Configuration Interface:*\*
+
+- *Configuration Interface:**
 
 ```typescript
 interface ObserveOptions {
@@ -90,7 +96,8 @@ interface ObserveOptions {
 	parentSpan?: Span
 }
 ```
-- *Option Descriptions:*\*
+
+- *Option Descriptions:**
 - `captureInput`: Whether to record method parameters
 - `captureOutput`: Whether to record return values
 - `includeStackTrace`: Include stack traces in error recording
@@ -100,12 +107,14 @@ interface ObserveOptions {
 ## Automatic Instrumentation
 
 ### Method Decoration Process
-- *Decoration Flow:*\*
+
+- *Decoration Flow:**
 1. **Target Identification:** Identify methods to instrument
 2. **Decorator Application:** Apply observeDecorator to target methods
 3. **Wrapper Installation:** Replace original method with instrumented version
 4. **Span Management:** Handle span lifecycle during execution
-- *Application Examples:*\*
+
+- *Application Examples:**
 
 ```typescript
 class CheckpointService {
@@ -122,7 +131,8 @@ class CheckpointService {
 ```
 
 ### Class-Level Decoration
-- *Class Decoration Pattern:*\*
+
+- *Class Decoration Pattern:**
 
 ```typescript
 function observeClass(options?: ObserveOptions): ClassDecorator {
@@ -143,7 +153,8 @@ function observeClass(options?: ObserveOptions): ClassDecorator {
 ## Input/Output Capture
 
 ### Input Capture
-- *Parameter Recording:*\*
+
+- *Parameter Recording:**
 
 ```typescript
 private captureInput(args: any[], options: ObserveOptions): void {
@@ -155,14 +166,17 @@ private captureInput(args: any[], options: ObserveOptions): void {
   });
 }
 ```
-- *Serialization Strategy:*\*
+
+- *Serialization Strategy:**
+
 - **Primitive Types:** Direct value recording
 - **Objects:** JSON serialization with size limits
 - **Sensitive Data:** Masking or exclusion
 - **Large Objects:** Truncation or sampling
 
 ### Output Capture
-- *Return Value Recording:*\*
+
+- *Return Value Recording:**
 
 ```typescript
 private captureOutput(result: any, options: ObserveOptions): void {
@@ -172,7 +186,9 @@ private captureOutput(result: any, options: ObserveOptions): void {
   span.setAttribute('output.value', this.serializeValue(result));
 }
 ```
-- *Output Handling:*\*
+
+- *Output Handling:**
+
 - **Success Results:** Record return values
 - **Error Results:** Record exception details
 - **Async Results:** Handle promises and async functions
@@ -181,7 +197,8 @@ private captureOutput(result: any, options: ObserveOptions): void {
 ## Performance Monitoring
 
 ### Execution Time Tracking
-- *Duration Measurement:*\*
+
+- *Duration Measurement:**
 
 ```typescript
 const startTime = performance.now()
@@ -192,13 +209,16 @@ const duration = endTime - startTime
 span.setAttribute("duration.ms", duration)
 span.setAttribute("performance.category", duration > 1000 ? "slow" : duration > 100 ? "medium" : "fast")
 ```
-- *Performance Categories:*\*
+
+- *Performance Categories:**
+
 - **Fast:** < 100ms (optimal)
 - **Medium:** 100-1000ms (acceptable)
 - **Slow:** > 1000ms (needs optimization)
 
 ### Resource Usage Monitoring
-- *Memory Tracking:*\*
+
+- *Memory Tracking:**
 
 ```typescript
 const beforeMemory = process.memoryUsage()
@@ -208,7 +228,9 @@ const afterMemory = process.memoryUsage()
 span.setAttribute("memory.delta.heap", afterMemory.heapUsed - beforeMemory.heapUsed)
 span.setAttribute("memory.delta.external", afterMemory.external - beforeMemory.external)
 ```
-- *Resource Metrics:*\*
+
+- *Resource Metrics:**
+
 - **Heap Usage:** JavaScript heap memory changes
 - **External Memory:** Native addon memory usage
 - **CPU Time:** Process CPU time consumption
@@ -216,7 +238,8 @@ span.setAttribute("memory.delta.external", afterMemory.external - beforeMemory.e
 ## Integration Patterns
 
 ### Existing Decorator Compatibility
-- *Decorator Composition:*\*
+
+- *Decorator Composition:**
 
 ```typescript
 class ExampleService {
@@ -227,17 +250,21 @@ class ExampleService {
 	}
 }
 ```
-- *Execution Order:*\*
+
+- *Execution Order:**
 - Decorators execute from bottom to top
 - observeDecorator wraps the final method
 - Existing decorators remain functional
 
 ### Framework Integration
-- *VS Code Extension Patterns:*\*
+
+- *VS Code Extension Patterns:**
+
 - **Command Handlers:** Instrument command execution
 - **Event Listeners:** Track event processing
 - **Service Methods:** Monitor service operations
-- *Integration Examples:*\*
+
+- *Integration Examples:**
 
 ```typescript
 // Command instrumentation
@@ -256,7 +283,8 @@ async handleEvent(event: vscode.Event): Promise<void> {
 ## Error Handling
 
 ### Exception Propagation
-- *Error Recording:*\*
+
+- *Error Recording:**
 
 ```typescript
 try {
@@ -274,14 +302,18 @@ try {
 	throw error // Re-throw to maintain behavior
 }
 ```
-- *Error Context:*\*
+
+- *Error Context:**
+
 - **Exception Type:** Constructor name for categorization
 - **Error Message:** Human-readable error description
 - **Stack Trace:** Full call stack for debugging
 - **Context Data:** Relevant operation context
 
 ### Decorator Failure Handling
-- *Decorator Robustness:*\*
+
+- *Decorator Robustness:**
+
 - **Graceful Degradation:** Continue execution if decoration fails
 - **Error Isolation:** Decorator errors don't affect method execution
 - **Logging:** Record decoration failures for debugging
@@ -289,7 +321,8 @@ try {
 ## Configuration Options
 
 ### Global Configuration
-- *Default Settings:*\*
+
+- *Default Settings:**
 
 ```typescript
 const defaultOptions: ObserveOptions = {
@@ -299,7 +332,8 @@ const defaultOptions: ObserveOptions = {
 	customAttributes: {},
 }
 ```
-- *Configuration Override:*\*
+
+- *Configuration Override:**
 
 ```typescript
 // Global configuration
@@ -313,7 +347,9 @@ observeDecorator.config({
 ```
 
 ### Environment-Specific Settings
-- *Development vs Production:*\*
+
+- *Development vs Production:**
+
 - **Development:** Full capture, detailed logging
 - **Production:** Minimal capture, performance optimized
 - **Testing:** Mock spans, deterministic behavior
@@ -328,7 +364,8 @@ observeDecorator.config({
 | Performance    | Duration and resource tracking | `src/services/laminar/observeDecorator.ts` | Performance monitoring |
 
 ## Implementation Timeline
-- *Estimated Time:*\* 45 minutes
+
+- *Estimated Time:** 45 minutes
 
 | Step | Description                        | Time   | Status  |
 | ---- | ---------------------------------- | ------ | ------- |
@@ -345,15 +382,21 @@ observeDecorator.config({
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Laminar Observability:*\*
+
+- *Understanding Laminar Observability:**
+
 - **Next**: Check related Laminar documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
-- *Implementing Observability Features:*\*
+
+- *Implementing Observability Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Observability Issues:*\*
+
+- *Troubleshooting Observability Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -365,6 +408,8 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

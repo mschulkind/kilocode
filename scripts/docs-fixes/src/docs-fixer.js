@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs"
 import { join, dirname } from "path"
 import { remark } from "remark"
 import { visit } from "unist-util-visit"
+import { runEnhancedFixes } from "./enhanced-docs-fixer.js"
 
 /**
  * Configuration for the documentation fixer
@@ -32,6 +33,21 @@ const CONFIG = {
  * Path fixes configuration based on directory structure analysis
  */
 const PATH_FIXES = [
+	// Deeply nested standards path fixes
+	{
+		pattern: /\/standards\/[^\/]+\/[^\/]+\.md$/,
+		fixes: [
+			{ from: "../GLOSSARY.md", to: "../../../GLOSSARY.md" },
+			{ from: "../DOCUMENTATION_GUIDE.md", to: "../../../DOCUMENTATION_GUIDE.md" },
+			{ from: "../README.md", to: "../../../README.md" },
+			{ from: "../architecture/README.md", to: "../../../architecture/README.md" },
+			{ from: "../orchestrator/README.md", to: "../../../orchestrator/README.md" },
+			{ from: "../architecture/repository/DEVELOPMENT_GUIDE.md", to: "../../../architecture/repository/DEVELOPMENT_GUIDE.md" },
+			{ from: "../architecture/repository/TESTING_INFRASTRUCTURE.md", to: "../../../architecture/repository/TESTING_INFRASTRUCTURE.md" },
+			{ from: "../orchestrator/ORCHESTRATOR_LIFECYCLE.md", to: "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md" },
+		]
+	},
+
 	// GLOSSARY.md path fixes
 	{
 		pattern: /\/architecture\/[^\/]+\.md$/,
@@ -100,6 +116,7 @@ const PATH_FIXES = [
 			{ from: "../plans", to: "../plans/" },
 			{ from: "../standards", to: "../standards/" },
 			{ from: "../tools", to: "../tools/" },
+			{ from: "../docs/tools", to: "../tools/" },
 		],
 	},
 ]
@@ -137,6 +154,19 @@ const LINK_TEXT_IMPROVEMENTS = [
 	{ pattern: /\[\.\.\/src\/\]/g, replacement: "[Source Code]" },
 	{ pattern: /\[\.\.\/packages\/\]/g, replacement: "[Packages]" },
 	{ pattern: /\[\.\.\/context_portal\/\]/g, replacement: "[Context Portal]" },
+	
+	// Enhanced link text patterns
+	{ pattern: /\[\.\.\/core\/\]/g, replacement: "[Core Standards Documentation]" },
+	{ pattern: /\[\.\.\/structure\/\]/g, replacement: "[Structure Standards Documentation]" },
+	{ pattern: /\[\.\.\/navigation\/\]/g, replacement: "[Navigation Documentation]" },
+	{ pattern: /\[\.\.\/code\/\]/g, replacement: "[Code Standards]" },
+	{ pattern: /\[\.\.\/engagement\/\]/g, replacement: "[Engagement Standards]" },
+	
+	// File-specific improvements for hard to read filenames  
+	{ pattern: /\[TOOL_SYSTEM_ARCHITECTURE\.md\]/g, replacement: "[Tool System Architecture Documentation]" },
+	{ pattern: /\[UI_CHAT_TASK_WINDOW\.md\]/g, replacement: "[UI Chat Task Window Documentation]" },
+	{ pattern: /\[UI_LAYER_SYSTEM\.md\]/g, replacement: "[UI Layer System Documentation]" },
+	{ pattern: /\[UI_MESSAGE_FLOW_SYSTEM\.md\]/g, replacement: "[UI Message Flow System Documentation]" },
 
 	// Generic patterns
 	{
@@ -312,12 +342,14 @@ function fixListIndentation(content) {
 
 	// Fix 1: Remove leading spaces before bullets (list-item-bullet-indent rule)
 	// This rule expects 0 spaces before bullets
-	// We need to be careful to preserve nesting structure
+	// We need to be careful to preserve nesting structure and not break markdown formatting
 	const originalContent1 = newContent
 
 	// For flat lists (all items at same level), remove leading spaces
 	// Pattern: "  - Item" -> "- Item" (remove leading spaces)
-	newContent = newContent.replace(/^(\s+)([*+-])\s/gm, "$2 ")
+	// But avoid matching markdown formatting like "**Bold**" or "## Heading"
+	// Use negative lookahead to avoid matching when the next character is * or #
+	newContent = newContent.replace(/^(\s+)([*+-])\s(?![\*#])/gm, "$2 ")
 
 	if (newContent !== originalContent1) {
 		fixesApplied++
@@ -551,11 +583,7 @@ async function processFile(filePath) {
 			return { processed: false, error: "File too large" }
 		}
 
-		const content = readFileSync(filePath, "utf8")
-
-		// Parse the markdown into an AST for link-based fixes
-		const processor = remark()
-		const tree = processor.parse(content)
+		let content = readFileSync(filePath, "utf8")
 
 		// Track all fixes applied
 		const fixes = {
@@ -563,7 +591,24 @@ async function processFile(filePath) {
 			pathIssues: 0,
 			linkText: 0,
 			navigationFooter: false,
+			whenYouAreHere: 0,
+			noDeadEndsPolicy: 0,
 		}
+
+		// 1. Add missing standard sections first
+		if (!content.includes('## When You\'re Here') && !content.includes('### When You\'re Here')) {
+			content = addWhenYoureHereSection(content, filePath)
+			fixes.whenYouAreHere = 1
+		}
+
+		if (!content.includes('## No Dead Ends') && !content.includes('### No Dead Ends')) {
+			content = addNoDeadEndsPolicy(content, filePath)
+			fixes.noDeadEndsPolicy = 1
+		}
+
+		// Parse the markdown into an AST for link-based fixes
+		const processor = remark()
+		const tree = processor.parse(content)
 
 		// Apply AST-based fixes for links (more precise)
 		const fixResults = applyASTFixes(tree, filePath)
@@ -583,7 +628,7 @@ async function processFile(filePath) {
 		fixes.navigationFooter = navResult.added
 		newContent = navResult.content
 
-		const totalFixes = fixes.listIndentation + fixes.pathIssues + fixes.linkText + (fixes.navigationFooter ? 1 : 0)
+		const totalFixes = fixes.listIndentation + fixes.pathIssues + fixes.linkText + (fixes.navigationFooter ? 1 : 0) + fixes.whenYouAreHere + fixes.noDeadEndsPolicy
 
 		// Write file if changes were made and not in dry run mode
 		if (totalFixes > 0 && !CONFIG.dryRun) {
@@ -639,6 +684,58 @@ async function runValidation() {
 }
 
 /**
+ * Fix missing "When You're Here" sections automatically
+ */
+function addWhenYoureHereSection(content, filePath) {
+	const needsWhenAmI = filePath.includes('README.md') || filePath.split('/').length <= 3
+	if (needsWhenAmI && !content.includes('## When You\'re Here') && !content.includes('### When You\'re Here')) {
+		// Add after first heading
+		const firstHeadingMatch = content.match(/^(#+ [^\n]+)(\n)/m)
+		if (firstHeadingMatch) {
+			const insertIndex = firstHeadingMatch.index + firstHeadingMatch[0].length
+			const section = `
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers [DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
+`
+			content = content.slice(0, insertIndex) + section + content.slice(insertIndex)
+			if (CONFIG.verbose) {
+				console.log(`  ✅ Added "When You're Here" section`)
+			}
+		}
+	}
+	return content
+}
+
+/**
+ * Fix missing "No Dead Ends Policy" sections
+ */
+function addNoDeadEndsPolicy(content, filePath) {
+	const standardsDocs = filePath.includes('standards') || filePath.includes('architecture')
+	if (standardsDocs && !content.includes('## No Dead Ends') && !content.includes('### No Dead Ends')) {
+		content += `
+
+## No Dead Ends Policy
+
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents  
+- Cross-references include context for better understanding
+`
+		if (CONFIG.verbose) {
+			console.log(`  ✅ Added "No Dead Ends Policy" section`)
+		}
+	}
+	return content
+}
+
+/**
  * Main function to run the documentation fixer
  */
 async function main(options = {}) {
@@ -660,6 +757,8 @@ async function main(options = {}) {
 		pathIssues: 0,
 		linkText: 0,
 		navigationFooters: 0,
+		whenYouAreHereSections: 0,
+		noDeadEndsPolicySections: 0,
 		errors: [],
 	}
 
@@ -675,13 +774,15 @@ async function main(options = {}) {
 					filesModified++
 					totalFixes += result.totalFixes
 
-					// Update summary
-					summary.listIndentation += result.fixes.listIndentation
-					summary.pathIssues += result.fixes.pathIssues
-					summary.linkText += result.fixes.linkText
-					if (result.fixes.navigationFooter) {
-						summary.navigationFooters++
-					}
+				// Update summary
+				summary.listIndentation += result.fixes.listIndentation
+				summary.pathIssues += result.fixes.pathIssues
+				summary.linkText += result.fixes.linkText
+				if (result.fixes.navigationFooter) {
+					summary.navigationFooters++
+				}
+				summary.whenYouAreHereSections += result.fixes.whenYouAreHere
+				summary.noDeadEndsPolicySections += result.fixes.noDeadEndsPolicy
 
 					console.log(`📝 Fixed ${result.totalFixes} issues in: ${file}`)
 				}
@@ -699,6 +800,8 @@ async function main(options = {}) {
 		console.log(`- Path issue fixes: ${summary.pathIssues}`)
 		console.log(`- Link text improvements: ${summary.linkText}`)
 		console.log(`- Navigation footers added: ${summary.navigationFooters}`)
+		console.log(`- "When You're Here" sections added: ${summary.whenYouAreHereSections}`)
+		console.log(`- "No Dead Ends Policy" sections added: ${summary.noDeadEndsPolicySections}`)
 
 		if (summary.errors.length > 0) {
 			console.log(`- Errors encountered: ${summary.errors.length}`)

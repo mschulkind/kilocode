@@ -1,5 +1,13 @@
 # Build System Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 Welcome to the build system documentation! 🏗️ This directory contains comprehensive information about how KiloCode is built, packaged, and deployed.
@@ -7,6 +15,7 @@ Welcome to the build system documentation! 🏗️ This directory contains compr
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
+
 - **Something's Broken**: Start with [Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md) for troubleshooting and system context.
 - **Need to Understand**: Review this README’s structure section for an overview and links.
 - **Implementation Journey**: Follow the build pipeline from source to deployment.
@@ -17,6 +26,7 @@ Welcome to the build system documentation! 🏗️ This directory contains compr
 - Build performance monitoring
 
 ## 📚 Documentation Structure
+
 - **[Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md)** - Detailed architecture of the build system including tooling and CI.
 
 ## Directory context
@@ -24,9 +34,10 @@ Welcome to the build system documentation! 🏗️ This directory contains compr
 This directory documents how the monorepo is built and shipped across packages, apps, and the VS Code extension. It explains tooling, CI/CD workflows, and deployment strategies, and provides guidance for debugging and optimizing builds. Use the quick start paths to jump into common tasks.
 
 ## 🔗 Cross-References
-- **Architecture**: See [Architecture Documentation](../../architecture/) for system architecture
-- **Services**: See [Services Documentation](../../services/) for build-related services
-- **Standards**: See [Standards Documentation](../../standards////////) for documentation standards
+
+- **Architecture**: See [../architecture/](../architecture/) for system architecture
+- **Services**: See [../services/](../services/) for build-related services
+- **Standards**: See [../standards/](../standards/) for documentation standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -38,6 +49,7 @@ Think of the build system like a dinosaur's digestive system - it takes raw mate
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
+
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
 - [← Architecture](architecture/README.md)

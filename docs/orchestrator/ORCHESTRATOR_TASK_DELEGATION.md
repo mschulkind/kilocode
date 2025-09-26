@@ -1,9 +1,10 @@
 # Orchestrator Task Delegation
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-- *Purpose:*\* This document explains the mechanism and strategy behind task delegation in the Kilo
-  Code Orchestrator. It covers how complex problems are decomposed into smaller, manageable subtasks
-  and the lifecycle of those subtasks.
+
+- *Purpose:** This document explains the mechanism and strategy behind task delegation in the Kilo
+Code Orchestrator. It covers how complex problems are decomposed into smaller, manageable subtasks
+and the lifecycle of those subtasks.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -19,20 +20,23 @@
 - \[7. Navigation Footer
 
 </details>
-- \*\*
 
-## Related Documents
+- **
+
+### Related Documents
 
 <a id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+
 - **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
   documentation.
-- **[Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)**: Describes the overall task lifecycle
+- **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the overall task lifecycle
   where delegation occurs.
 - **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Provides details on the
   `startSubtask` and `completeSubtask` tools.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 ### The Philosophy of Delegation
 
@@ -43,6 +47,7 @@ of attempting to solve a large, multi-faceted problem in a single, long-running 
 break it down into a series of smaller, more focused subtasks.
 
 This approach has several advantages:
+
 - **Isolation**: Subtasks have their own context and history, preventing prompt contamination and
   allowing the model to focus on a specific goal.
 - **Specialization**: A subtask can be initiated in a different `Mode` than its parent, granting it
@@ -54,7 +59,8 @@ This approach has several advantages:
   and manage.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 ### The Subtask Mechanism
 
@@ -71,7 +77,8 @@ Task delegation is facilitated by a pair of specialized tools:
 The parent task is effectively in an `awaiting_subtask` state while the child task is active.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 ### Subtask Workflow Diagram
 
@@ -79,29 +86,30 @@ The parent task is effectively in an `awaiting_subtask` state while the child ta
 
 ```mermaid
 sequenceDiagram
-  participant ParentTask
-  participant ToolExecutor
-  participant ChildTask
+    participant ParentTask
+    participant ToolExecutor
+    participant ChildTask
 
-  ParentTask->>ToolExecutor: Execute startSubtask(instructions)
-  activate ParentTask
-  Note over ParentTask: State: awaiting_subtask
-  ToolExecutor->>ChildTask: Instantiate & Initiate
-  activate ChildTask
+    ParentTask->>ToolExecutor: Execute startSubtask(instructions)
+    activate ParentTask
+    Note over ParentTask: State: awaiting_subtask
+    ToolExecutor->>ChildTask: Instantiate & Initiate
+    activate ChildTask
 
-  ChildTask->>ChildTask: Run its own lifecycle (tool calls, etc.)
+    ChildTask->>ChildTask: Run its own lifecycle (tool calls, etc.)
 
-  ChildTask->>ToolExecutor: Execute completeSubtask(result)
-  deactivate ChildTask
+    ChildTask->>ToolExecutor: Execute completeSubtask(result)
+    deactivate ChildTask
 
-  ToolExecutor-->>ParentTask: Return subtask result
-  deactivate ParentTask
-  Note over ParentTask: State: in_progress
-  ParentTask->>ParentTask: Continue execution with result
+    ToolExecutor-->>ParentTask: Return subtask result
+    deactivate ParentTask
+    Note over ParentTask: State: in_progress
+    ParentTask->>ParentTask: Continue execution with result
 ```
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 ### Key Symbols and Their Roles
 
@@ -117,7 +125,8 @@ sequenceDiagram
   result is not immediately needed.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 ### When to Use Subtasks
 
@@ -125,6 +134,7 @@ sequenceDiagram
 
 The decision to delegate is made by the language model based on the complexity of the task at hand.
 Common scenarios for delegation include:
+
 - **Mode Switching for a Specific Action**: A task in `architect` mode needs to write code. It
   delegates to a subtask in `code` mode to perform the file modifications.
 - **Complex Queries**: A task needs to gather information from multiple sources. It can delegate a
@@ -135,20 +145,27 @@ Common scenarios for delegation include:
   the code it has just written.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding This System:*\*
+
+- *Understanding This System:**
+
 - **Next**: Check related documentation in the same directory
-- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
-- *Implementing Features:*\*
+
+- *Implementing Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Issues:*\*
+
+- *Troubleshooting Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -168,18 +185,12 @@ You have reached the end of the task delegation document. Return to the
 [Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md).
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+- **
 
 End of document.
-- \*\*
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
-  [↑ Table of Contents](#orchestrator-task-delegation)
 
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../../../../../../../../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md)
-- [Glossary](../../../../../../../../GLOSSARY.md)
+- **
+
+- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
+[↑ Table of Contents](#orchestrator-task-delegation)

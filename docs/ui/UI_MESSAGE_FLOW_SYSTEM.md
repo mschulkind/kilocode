@@ -1,8 +1,17 @@
 # UI Message Flow System
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-- *Purpose:*\* Detailed documentation of the UI message flow system, including send button state
-  management, message queuing, and request deduplication mechanisms.
+
+- *Purpose:** Detailed documentation of the UI message flow system, including send button state
+management, message queuing, and request deduplication mechanisms.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -20,9 +29,10 @@
 </details>
 
 ## Executive Summary
+
 - The UI Message Flow System manages user interactions with the chat interface, including send button
-  state, message queuing, and request deduplication. This system is critical for preventing duplicate
-  API requests and maintaining consistent user experience.\*
+state, message queuing, and request deduplication. This system is critical for preventing duplicate
+API requests and maintaining consistent user experience.*
 
 The UI Message Flow System consists of several interconnected components that work together to
 manage user input and prevent duplicate requests:
@@ -263,12 +273,15 @@ const handleSendMessage = useCallback(
 ## Common Issues and Solutions
 
 ### Issue 1: Send Button Stuck in Disabled State
-- *Symptoms*\*:
+
+- *Symptoms**:
 - Send button remains disabled after request completion
 - User cannot send new messages
 - UI appears frozen
-- *Root Cause*\*: `sendingDisabled` state not properly reset
-- *Solution*\*:
+
+- *Root Cause**: `sendingDisabled` state not properly reset
+
+- *Solution**:
 
 ```typescript
 // Ensure proper state reset
@@ -290,12 +303,15 @@ useEffect(() => {
 ```
 
 ### Issue 2: Multiple Messages Queued
-- *Symptoms*\*:
+
+- *Symptoms**:
 - Same message appears multiple times in queue
 - Multiple API requests for single user action
 - Queue UI shows duplicates
-- *Root Cause*\*: Message queued multiple times due to rapid user interaction
-- *Solution*\*:
+
+- *Root Cause**: Message queued multiple times due to rapid user interaction
+
+- *Solution**:
 
 ```typescript
 // Implement debounced message queuing
@@ -320,12 +336,15 @@ const handleSendMessage = useCallback(
 ```
 
 ### Issue 3: Button State Inconsistency
-- *Symptoms*\*:
+
+- *Symptoms**:
 - Button appears enabled but request is blocked
 - Button appears disabled but request goes through
 - Visual state doesn't match actual state
-- *Root Cause*\*: State updates not properly synchronized
-- *Solution*\*:
+
+- *Root Cause**: State updates not properly synchronized
+
+- *Solution**:
 
 ```typescript
 // Implement state validation
@@ -424,6 +443,8 @@ const handleSendMessage = useCallback(
   `/docs/ui/UI_MESSAGE_FLOW_SYSTEM.md#L1`
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../) · [ui](../../docs/ui/) ·
-  [↑ Table of Contents](#ui-message-flow-system)
+
+- **
+
+- *Navigation**: [docs](../) · [ui](../docs/ui/) ·
+[↑ Table of Contents](#ui-message-flow-system)

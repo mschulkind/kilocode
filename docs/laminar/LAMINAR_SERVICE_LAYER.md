@@ -1,9 +1,10 @@
 # Laminar Service Layer
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-- *Purpose:*\* This document describes the LaminarService singleton implementation, detailing span
-  lifecycle management, exception recording, telemetry integration, and the core infrastructure that
-  enables observability across Kilo Code subsystems.
+
+- *Purpose:** This document describes the LaminarService singleton implementation, detailing span
+lifecycle management, exception recording, telemetry integration, and the core infrastructure that
+enables observability across Kilo Code subsystems.
 
 > **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
 > instant connections between distant parts of the system, allowing us to observe the entire state
@@ -33,6 +34,7 @@ integration with existing telemetry systems.
 ### Role in Laminar Integration
 
 The service layer is responsible for:
+
 - **Span Management:** Creating, updating, and completing observation spans
 - **Exception Handling:** Recording and tracking errors across subsystems
 - **Singleton Coordination:** Ensuring consistent observability state
@@ -47,7 +49,8 @@ subsystems use to instrument their functionality with tracing and monitoring cap
 ## Service Architecture
 
 ### Core Components
-- *LaminarService Class:*\*
+
+- *LaminarService Class:**
 
 ```typescript
 class LaminarService {
@@ -65,7 +68,8 @@ class LaminarService {
 	}
 }
 ```
-- *Key Responsibilities:*\*
+
+- *Key Responsibilities:**
 - Singleton instance management
 - Configuration handling
 - Span lifecycle coordination
@@ -73,13 +77,15 @@ class LaminarService {
 - Telemetry opt-out compliance
 
 ### Service Initialization
-- *Initialization Process:*\*
+
+- *Initialization Process:**
 1. Configuration validation and loading
 2. Singleton instance creation
 3. Laminar SDK initialization
 4. Telemetry preference checking
 5. Service readiness verification
-- *Initialization Flow:*\*
+
+- *Initialization Flow:**
 
 ```mermaid
 graph TD
@@ -95,7 +101,8 @@ graph TD
 ## Singleton Pattern Implementation
 
 ### Singleton Mechanics
-- *Thread-Safe Implementation:*\*
+
+- *Thread-Safe Implementation:**
 
 ```typescript
 private static instance: LaminarService | null = null;
@@ -113,14 +120,16 @@ static async getInstance(): Promise<LaminarService> {
   return this.instance;
 }
 ```
-- *Benefits:*\*
+
+- *Benefits:**
 - Ensures single instance across the application
 - Prevents duplicate initialization
 - Thread-safe in Node.js environment
 - Lazy initialization for performance
 
 ### Instance Management
-- *Lifecycle Management:*\*
+
+- *Lifecycle Management:**
 - Creation on first access
 - Persistent throughout application lifetime
 - Proper cleanup on application shutdown
@@ -129,11 +138,14 @@ static async getInstance(): Promise<LaminarService> {
 ## Span Lifecycle Management
 
 ### Span Creation
-- *Span Types:*\*
+
+- *Span Types:**
+
 - **Root Spans:** Top-level operation spans (e.g., task execution)
 - **Child Spans:** Nested operation spans (e.g., tool invocations)
 - **Detached Spans:** Independent operation tracking
-- *Creation API:*\*
+
+- *Creation API:**
 
 ```typescript
 createSpan(name: string, parentSpan?: Span): Span {
@@ -146,12 +158,14 @@ createSpan(name: string, parentSpan?: Span): Span {
 ```
 
 ### Span Updates
-- *Span Attributes:*\*
+
+- *Span Attributes:**
 - Operation name and description
 - Start and end timestamps
 - Custom attributes and tags
 - Error status and messages
-- *Update Methods:*\*
+
+- *Update Methods:**
 
 ```typescript
 updateSpan(span: Span, attributes: Record<string, any>): void {
@@ -162,12 +176,14 @@ updateSpan(span: Span, attributes: Record<string, any>): void {
 ```
 
 ### Span Completion
-- *Completion Process:*\*
+
+- *Completion Process:**
 1. Set final attributes
 2. Record completion status
 3. Calculate duration
 4. End span and clean up references
-- *Completion API:*\*
+
+- *Completion API:**
 
 ```typescript
 completeSpan(span: Span, error?: Error): void {
@@ -185,11 +201,14 @@ completeSpan(span: Span, error?: Error): void {
 ## Exception Recording
 
 ### Exception Capture
-- *Exception Types:*\*
+
+- *Exception Types:**
+
 - **Operational Errors:** API failures, network issues
 - **Application Errors:** Logic errors, invalid states
 - **System Errors:** Resource exhaustion, crashes
-- *Recording Implementation:*\*
+
+- *Recording Implementation:**
 
 ```typescript
 recordException(span: Span, error: Error, attributes?: Record<string, any>): void {
@@ -200,12 +219,14 @@ recordException(span: Span, error: Error, attributes?: Record<string, any>): voi
 ```
 
 ### Error Context
-- *Context Information:*\*
+
+- *Context Information:**
 - Stack traces and error locations
 - Operation context at time of error
 - User and session information
 - System state snapshots
-- *Context Enrichment:*\*
+
+- *Context Enrichment:**
 
 ```typescript
 private enrichErrorContext(error: Error): Record<string, any> {
@@ -221,12 +242,14 @@ private enrichErrorContext(error: Error): Record<string, any> {
 ## Telemetry Integration
 
 ### Opt-out Compliance
-- *Telemetry Preferences:*\*
+
+- *Telemetry Preferences:**
 - Respect existing VS Code telemetry settings
 - Check for user opt-out preferences
 - Disable observability when requested
 - Clear communication about data collection
-- *Integration Logic:*\*
+
+- *Integration Logic:**
 
 ```typescript
 private shouldCollectTelemetry(): boolean {
@@ -237,7 +260,8 @@ private shouldCollectTelemetry(): boolean {
 ```
 
 ### Data Collection Policies
-- *Minimal Data Collection:*\*
+
+- *Minimal Data Collection:**
 - Only collect necessary observability data
 - Anonymize user-identifiable information
 - Respect privacy regulations
@@ -246,21 +270,25 @@ private shouldCollectTelemetry(): boolean {
 ## Performance Considerations
 
 ### Overhead Minimization
-- *Lazy Initialization:*\*
+
+- *Lazy Initialization:**
 - Initialize components only when needed
 - Conditional span creation based on configuration
 - Minimal impact on critical paths
-- *Efficient Operations:*\*
+
+- *Efficient Operations:**
 - Batch span operations when possible
 - Use lightweight data structures
 - Avoid blocking operations in span management
 
 ### Resource Management
-- *Memory Usage:*\*
+
+- *Memory Usage:**
 - Clean up completed spans promptly
 - Prevent span reference leaks
 - Monitor memory usage patterns
-- *CPU Overhead:*\*
+
+- *CPU Overhead:**
 - Minimize synchronous operations
 - Use background processing for non-critical tasks
 - Profile and optimize hot paths
@@ -268,21 +296,25 @@ private shouldCollectTelemetry(): boolean {
 ## Error Handling
 
 ### Service Errors
-- *Initialization Failures:*\*
+
+- *Initialization Failures:**
 - Configuration validation errors
 - SDK initialization failures
 - Permission or connectivity issues
-- *Runtime Errors:*\*
+
+- *Runtime Errors:**
 - Span operation failures
 - Exception recording errors
 - Telemetry transmission failures
 
 ### Recovery Mechanisms
-- *Graceful Degradation:*\*
+
+- *Graceful Degradation:**
 - Continue operation with reduced observability
 - Log errors without crashing the application
 - Retry failed operations with backoff
-- *Error Propagation:*\*
+
+- *Error Propagation:**
 - Surface critical errors to calling code
 - Provide meaningful error messages
 - Include debugging information
@@ -290,11 +322,13 @@ private shouldCollectTelemetry(): boolean {
 ## Integration Points
 
 ### Task System Integration
-- *Task Lifecycle Tracing:*\*
+
+- *Task Lifecycle Tracing:**
 - Span creation for task execution
 - LLM call monitoring
 - Tool invocation tracking
-- *Integration API:*\*
+
+- *Integration API:**
 
 ```typescript
 // Task system usage
@@ -309,8 +343,9 @@ try {
 ```
 
 ### Other Subsystems
-- *Tool System:*\* Tool execution span management **Authentication:** User context attribution
-- *Checkpoints:*\* State persistence tracing **Decorators:** Automatic instrumentation
+
+- *Tool System:** Tool execution span management **Authentication:** User context attribution
+- *Checkpoints:** State persistence tracing **Decorators:** Automatic instrumentation
 
 ## Code Reference Matrix
 
@@ -322,7 +357,8 @@ try {
 | Configuration      | Config validation and loading        | `src/services/laminar/LaminarService.ts` | Service initialization |
 
 ## Implementation Timeline
-- *Estimated Time:*\* 45 minutes
+
+- *Estimated Time:** 45 minutes
 
 | Step | Description                   | Time   | Status  |
 | ---- | ----------------------------- | ------ | ------- |
@@ -339,15 +375,21 @@ try {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Laminar Observability:*\*
+
+- *Understanding Laminar Observability:**
+
 - **Next**: Check related Laminar documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
-- *Implementing Observability Features:*\*
+
+- *Implementing Observability Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Observability Issues:*\*
+
+- *Troubleshooting Observability Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -359,6 +401,8 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Laminar Documentation](README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

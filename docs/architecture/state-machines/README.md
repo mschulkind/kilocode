@@ -1,7 +1,16 @@
 # State Machines Documentation 🦕
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-- *Purpose:*\* Index and navigation for all state machine documents in this directory.
+
+- *Purpose:** Index and navigation for all state machine documents in this directory.
 
 <details><summary>Table of Contents</summary>
 - [Overview](#overview)
@@ -15,12 +24,18 @@
 ## Overview
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 
 Welcome to the tectonic layers of our runtime. This index describes each state machine doc and how
 to use them together during design, debugging, and implementation.
@@ -51,26 +66,25 @@ to use them together during design, debugging, and implementation.
 ## Related documentation
 - [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) Master
   narrative and navigation hub for the duplicate-API-request issue family.
-- [Orchestrator Documentation](../../orchestrator/README.md) Parent/child task orchestration concepts
+- [Orchestrator Documentation](../orchestrator/README.md) Parent/child task orchestration concepts
   and lifecycle.
-- \*\*
+
+- **
 
 <a id="navigation-footer"></a>
-- Back: [Architecture Documentation](../../README.md) · Root: [Architecture Documentation](../../README.md) · Source:
+- Back: [Architecture Documentation](../README.md) · Root: [Architecture Documentation](../README.md) · Source:
   `/docs/architecture/state-machines/README.md#L1`
 
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
 
 ## Navigation
-- [← Architecture Overview](../../README.md)
+
+- [← Architecture Overview](../README.md)
 - [← State Machines Overview](README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

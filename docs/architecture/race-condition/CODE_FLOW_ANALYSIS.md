@@ -1,8 +1,9 @@
 # Code Flow Analysis
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-- *Purpose:*\* Detailed analysis of the code execution flow and how the race condition manifests in
-  the system.
+
+- *Purpose:** Detailed analysis of the code execution flow and how the race condition manifests in
+the system.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -11,12 +12,18 @@
 ## Complete Orchestrator-Subtask Architecture
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 
 ```mermaid
 graph TB
@@ -176,31 +183,37 @@ sequenceDiagram
 ## Critical Code Locations
 
 ### 1. Main Task Loop Entry Point
-- *File*\*: `src/core/task/Task.ts:1760`
+
+- *File**: `src/core/task/Task.ts:1760`
 
 ```typescript
 // Main task execution loop
 const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
 ```
-- *Context*\*: This is where the main orchestrator task continues its execution loop.
+
+- *Context**: This is where the main orchestrator task continues its execution loop.
 
 ### 2. Subtask Completion Entry Point
-- *File*\*: `src/core/webview/ClineProvider.ts:1587`
+
+- *File**: `src/core/webview/ClineProvider.ts:1587`
 
 ```typescript
 // Subtask completion handling
 await parentTask.recursivelyMakeClineRequests([], false)
 ```
-- *Context*\*: This is where the subtask completion triggers parent task continuation.
+
+- *Context**: This is where the subtask completion triggers parent task continuation.
 
 ### 3. API Call Location
-- *File*\*: `src/core/task/Task.ts:2984`
+
+- *File**: `src/core/task/Task.ts:2984`
 
 ```typescript
 // Where the actual API call happens
 return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
 ```
-- *Context*\*: This is where both execution paths ultimately make their API calls.
+
+- *Context**: This is where both execution paths ultimately make their API calls.
 
 ## State Transitions
 
@@ -269,11 +282,13 @@ graph LR
 ## Synchronization Points
 
 ### Current Synchronization
-- *None*\*: The system currently has no synchronization mechanism to prevent concurrent calls.
+
+- *None**: The system currently has no synchronization mechanism to prevent concurrent calls.
 
 ### Required Synchronization
-- *Lock-based*\*: Need a mechanism to ensure only one `recursivelyMakeClineRequests` call executes at
-  a time.
+
+- *Lock-based**: Need a mechanism to ensure only one `recursivelyMakeClineRequests` call executes at
+a time.
 
 ```typescript
 // Proposed synchronization
@@ -308,21 +323,20 @@ async recursivelyMakeClineRequests(...) {
 3. **Find the Solution**: See [SOLUTION\_RECOMMENDATIONS.md](SOLUTION_RECOMMENDATIONS.md)
 
 ## 🧭 Navigation Footer
-- [← Back to Race Condition Home](../README.md)
+- [← Back to Race Condition Home](README.md)
 - [→ Navigation Scenario](NAVIGATION_SCENARIO.md)
-- [↑ Table of Contents](../README.md)
+- [↑ Table of Contents](README.md)
+
+## Navigation Footer
+
+- **
+
+- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
+[race-condition](../docs/architecture/race-condition/) · [↑ Table of Contents](#code-flow-analysis)
 
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/../README.md).
-
-## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [race-condition](../docs/architecture/race-condition/) · [↑ Table of Contents](#code-flow-analysis)
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding

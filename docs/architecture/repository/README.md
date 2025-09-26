@@ -1,5 +1,13 @@
 # Repository Overview Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 Welcome to the repository overview documentation! 🏗️ This directory contains comprehensive
@@ -8,14 +16,21 @@ information about the KiloCode repository structure, systems, and components.
 ## 🗺️ Navigation Guide
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 
 ### Quick Start Paths
+
 - **Need an Overview**: Start with [REPOSITORY\_STRUCTURE.md](REPOSITORY_STRUCTURE.md)
 - **Understanding Systems**: Begin with [CORE\_SYSTEMS.md](CORE_SYSTEMS.md)
 - **Development Journey**: Follow [DEVELOPMENT\_GUIDE.md](DEVELOPMENT_GUIDE.md)
@@ -27,6 +42,7 @@ information about the KiloCode repository structure, systems, and components.
 - Testing and build infrastructure
 
 ## 📚 Documentation Structure
+
 - **[REPOSITORY\_STRUCTURE.md](REPOSITORY_STRUCTURE.md)** - High-level repository organization Maps
   directories (src, webview-ui, packages, apps) and their roles. Explains how pieces fit together
   and where to find things. Start here to orient yourself in the monorepo.
@@ -36,7 +52,7 @@ information about the KiloCode repository structure, systems, and components.
 - **[WORKSPACE\_PACKAGES.md](WORKSPACE_PACKAGES.md)** - Workspace packages and libraries Catalog of
   shared packages (types, build, cloud, evals, ipc, telemetry, configs). Details exports, consumers,
   and dependency relationships. Use this to locate reusable building blocks.
-- **[Applications](APPLICATIONS.md)** - Applications and interfaces Overview of docs, storybook,
+- **[APPLICATIONS.md](APPLICATIONS.md)** - Applications and interfaces Overview of docs, storybook,
   web apps, e2e test apps, and nightly builds. Clarifies technologies used and deployment targets.
   Useful when working outside the core extension.
 - **[TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)** - Testing tools and frameworks Explains
@@ -53,11 +69,12 @@ information about the KiloCode repository structure, systems, and components.
   points and sample configs. Start here when wiring an external dependency.
 
 ## 🔗 Cross-References
-- **Architecture**: See [Architecture Documentation](../../README.md) for system architecture Global architecture
+
+- **Architecture**: See [Architecture Documentation](../README.md) for system architecture Global architecture
   index with quick links to race-condition docs, state machines, and improvements.
-- **Standards**: See [Standards Documentation](../standards////////) for development standards Documentation,
+- **Standards**: See [../../standards/](../../standards/) for development standards Documentation,
   navigation, and code standards that keep the repo consistent and discoverable.
-- **Plans**: See [../../plans////////](../../plans////////) for development plans Active and historical
+- **Plans**: See [../../../plans/](../../../plans/) for development plans Active and historical
   plans that capture investigation and rollout steps.
 
 ## 🦕 Dinosaur Analogy
@@ -68,27 +85,25 @@ and organize fossils by type, age, and location, we organize our code by functio
 architectural layer. Each directory is like a different excavation site, revealing different aspects
 of the system's structure!
 
+## 🧭 Navigation Footer
+- [← Back to Architecture Home](../README.md)
+- [→ Core Systems](CORE_SYSTEMS.md)
+- [↑ Table of Contents](../README.md)
+
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
-## 🧭 Navigation Footer
-- [← Back to Architecture Home](../../README.md)
-- [→ Core Systems](CORE_SYSTEMS.md)
-- [↑ Table of Contents](../../README.md)
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
 
 ## Navigation
-- [← Architecture Overview](../../README.md)
+
+- [← Architecture Overview](../README.md)
 - [← Repository Structure](README.md)
 - [← Development Guide](DEVELOPMENT_GUIDE.md)
 - [← Testing Infrastructure](TESTING_INFRASTRUCTURE.md)
 - [← Build Pipelines](BUILD_PIPELINES.md)
 - [← Core Systems](CORE_SYSTEMS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

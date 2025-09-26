@@ -1,5 +1,13 @@
 # Integrations Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 Welcome to the integrations documentation! 🔌 This directory covers all external integrations and
@@ -8,6 +16,7 @@ how KiloCode connects with other systems.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
+
 - **Something's Broken**: Check specific integration docs for troubleshooting
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow integration setup guides
@@ -19,6 +28,7 @@ how KiloCode connects with other systems.
 - Tree-sitter service integration
 
 ## 📚 Documentation Structure
+
 - **[Repository Overview](README.md)** - Master index of all integration documentation
 - **[EDITOR\_INTEGRATION.md](EDITOR_INTEGRATION.md)** - VS Code and editor integration
 - **[JETBRAINS\_PLUGIN.md](JETBRAINS_PLUGIN.md)** - JetBrains IDE plugin
@@ -27,9 +37,10 @@ how KiloCode connects with other systems.
 - **[TREE\_SITTER\_SERVICE.md](TREE_SITTER_SERVICE.md)** - Tree-sitter parsing service
 
 ## 🔗 Cross-References
-- **Architecture**: See [Architecture Documentation](../../architecture/) for integration architecture
-- **Services**: See [Services Documentation](../../services/) for integration services
-- **Standards**: See [Standards Documentation](../../standards////////) for integration standards
+
+- **Architecture**: See [../architecture/](../architecture/) for integration architecture
+- **Services**: See [../services/](../services/) for integration services
+- **Standards**: See [../standards/](../standards/) for integration standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -45,6 +56,7 @@ adapted to its specific niche!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
+
 - [← Integrations Overview](README.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../../README.md)

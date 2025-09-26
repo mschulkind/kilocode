@@ -1,5 +1,13 @@
 # UI Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 Welcome to the UI documentation! 🎨 This directory covers the user interface layer, chat systems,
@@ -8,7 +16,8 @@ and task window management in KiloCode.
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
-- **Something's Broken**: Check [UI Layer System](UI_LAYER_SYSTEM.md) for troubleshooting
+
+- **Something's Broken**: Check [UI\_LAYER\_SYSTEM.md](UI_LAYER_SYSTEM.md) for troubleshooting
 - **Need to Understand**: Start with [Repository Overview](README.md) for an overview
 - **Implementation Journey**: Follow UI architecture and component guides
 
@@ -19,15 +28,17 @@ and task window management in KiloCode.
 - User experience optimization
 
 ## 📚 Documentation Structure
+
 - **[Repository Overview](README.md)** - Master index of all UI documentation
-- **[UI Layer System](UI_LAYER_SYSTEM.md)** - UI layer architecture and design
-- **[UI Chat Task Window](UI_CHAT_TASK_WINDOW.md)** - Chat and task window components
-- **[UI Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)** - Message flow and state management
+- **[UI\_LAYER\_SYSTEM.md](UI_LAYER_SYSTEM.md)** - UI layer architecture and design
+- **[UI\_CHAT\_TASK\_WINDOW.md](UI_CHAT_TASK_WINDOW.md)** - Chat and task window components
+- **[UI\_MESSAGE\_FLOW\_SYSTEM.md](UI_MESSAGE_FLOW_SYSTEM.md)** - Message flow and state management
 
 ## 🔗 Cross-References
-- **Architecture**: See [Architecture Documentation](../../architecture/) for system architecture
-- **Services**: See [Services Documentation](../../services/) for UI-related services
-- **Standards**: See [Standards Documentation](../../standards////////) for UI standards
+
+- **Architecture**: See [../architecture/](../architecture/) for system architecture
+- **Services**: See [../services/](../services/) for UI-related services
+- **Standards**: See [../standards/](../standards/) for UI standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -43,6 +54,7 @@ dinosaur's eyes - focused views of specific information!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
+
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
 - [← Architecture](architecture/README.md)

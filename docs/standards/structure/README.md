@@ -1,8 +1,17 @@
 # Document Structure 🏗️
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-- *Purpose:*\* Comprehensive standards for structuring individual documents, ensuring consistent
-  anatomy and hierarchy across all KiloCode documentation.
+
+- *Purpose:** Comprehensive standards for structuring individual documents, ensuring consistent
+anatomy and hierarchy across all KiloCode documentation.
 
 > **Architecture Fun Fact**: Just like how buildings have a foundation, framework, and finishing
 > details, our documents have a standardized structure that provides stability, organization, and
@@ -23,35 +32,47 @@
 ## Executive Summary
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
+
 - Every KiloCode document follows a standardized structure that ensures consistency, discoverability,
-  and usability. This structure provides a predictable framework that helps both authors and readers
-  navigate content effectively.\*
-- *Key Components:*\*
+and usability. This structure provides a predictable framework that helps both authors and readers
+navigate content effectively.*
+
+- *Key Components:**
+
 - **Document Anatomy**: Standardized format with required elements
 - **Headings & Hierarchy**: Consistent heading structure and case
 - **Table of Contents**: Collapsible TOC with H2/H3 entries
 - **Navigation Footer**: Consistent footer with back/root/source links
 
 ## Document Anatomy
-- *Standardized Format*\*: Every document MUST follow this anatomy:
+
+- *Standardized Format**: Every document MUST follow this anatomy:
 1. **H1 Title** (single, Title Case)
 2. **Purpose Statement** (`**Purpose:**` format with brief description)
 3. **Collapsible TOC** (`<details><summary>Table of Contents</summary>` format)
 4. **Executive Summary** (italic text with key highlights)
 5. **Body Content** (H2/H3 sections with detailed information)
 6. **Navigation Footer** (standardized footer with links)
-- *Visual Structure*\*:
+
+- *Visual Structure**:
 
 ```markdown
 # Document Title
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+
 - *Purpose:** Brief description of the document's purpose and audience.
 
 <details><summary>Table of Contents</summary>
@@ -79,13 +100,18 @@ More content here.
 ```
 
 ## Headings & Hierarchy
-- *Allowed Hierarchy*\*: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a
-  single file.
-- *Heading Case*\*:
+
+- *Allowed Hierarchy**: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a
+single file.
+
+- *Heading Case**:
+
 - **H1**: Title Case
 - **H2/H3**: Sentence case
-- *Single H1 Rule*\*: Every file MUST contain exactly one H1 at the top.
-- *Hierarchy Examples*\*:
+
+- *Single H1 Rule**: Every file MUST contain exactly one H1 at the top.
+
+- *Hierarchy Examples**:
 
 ```markdown
 # Document Title (H1 - Title Case)
@@ -122,30 +148,24 @@ This section covers another main topic.
 - [Complete Document Example](#complete-document-example)
 - [Minimal Document Example](#minimal-document-example)
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- *Required*\*: Every document MUST include a navigation footer at the end with the anchor
-  `<a id="navigation-footer"></a>`.
-- *Standard Format*\*:
+
+- *Required**: Every document MUST include a navigation footer at the end with the anchor
+`<a id="navigation-footer"></a>`.
+
+- *Standard Format**:
 
 ```
 <a id="navigation-footer"></a>
 - Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
 ```
-- *Link Requirements*\*:
+
+- *Link Requirements**:
 1. **Back**: Link to parent index (relative path)
 2. **Root**: Link to main [`README.md`](README.md) (relative path)
 3. **Source**: Link to source file (absolute repo-root path with `#L1`)
-- *Footer Examples*\*:
+
+- *Footer Examples**:
 
 ```markdown
 # From root docs/
@@ -168,14 +188,17 @@ For questions or suggestions about this documentation, please refer to the [Docu
 ```
 
 ## Structure Validation
-- *Pre-Submission Checks*\*: Validate document structure before submitting.
-- *Required Elements*\*:
+
+- *Pre-Submission Checks**: Validate document structure before submitting.
+
+- *Required Elements**:
 - \[ ] Single H1 at top
 - \[ ] Purpose statement with `**Purpose:**` format
 - \[ ] Collapsible TOC present (if required)
 - \[ ] Headings follow H1→H2→H3 hierarchy
 - \[ ] Navigation footer present and correct
-- *Structure Quality*\*:
+
+- *Structure Quality**:
 - \[ ] Purpose statement is clear and specific
 - \[ ] TOC includes all H2 and H3 sections
 - \[ ] Headings use correct case (H1 Title Case, H2/H3 Sentence case)
@@ -183,19 +206,22 @@ For questions or suggestions about this documentation, please refer to the [Docu
 - \[ ] Document follows logical flow and organization
 
 ## Common Mistakes
-- *Structure Mistakes*\*:
+
+- *Structure Mistakes**:
 - ❌ Multiple H1 headings in one document
 - ❌ Missing purpose statement
 - ❌ TOC includes H4 entries
 - ❌ Missing navigation footer
 - ❌ Incorrect heading case
-- *Content Mistakes*\*:
+
+- *Content Mistakes**:
 - ❌ Purpose statement doesn't match content
 - ❌ TOC doesn't match actual headings
 - ❌ Navigation footer links are broken
 - ❌ Inconsistent heading hierarchy
 - ❌ Missing required elements
-- *Examples*\*:
+
+- *Examples**:
 
 ```markdown
 # Bad: Multiple H1 headings
@@ -237,6 +263,7 @@ More content here.
 # API Duplication Analysis
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+
 - *Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
 identification, impact assessment, and solution recommendations.
 
@@ -307,6 +334,7 @@ Follow these steps to implement the solution:
 # Build Process Guide
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+
 - *Purpose:** Step-by-step instructions for building the KiloCode project from source.
 
 ## Prerequisites
@@ -333,9 +361,18 @@ Common issues and solutions:
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
   `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
-- \*\*
-- *Navigation*\*: [Back to Standards](../README.md) · [Next: Document Anatomy](DOCUMENT_ANATOMY.md) ·
-  [Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
+
+- **
+
+- *Navigation**: [Back to Standards](../../../README.md) · [Next: Document Anatomy](DOCUMENT_ANATOMY.md) ·
+[Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️
+
+## No Dead Ends Policy
+
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding

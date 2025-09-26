@@ -1,9 +1,10 @@
 # Orchestrator Error Handling
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-- *Purpose:*\* This document outlines the Kilo Code Orchestrator's strategies for handling errors,
-  ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
-  mechanisms, and the "Mistake Limit" concept.
+
+- *Purpose:** This document outlines the Kilo Code Orchestrator's strategies for handling errors,
+ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
+mechanisms, and the "Mistake Limit" concept.
 
 > **Dinosaur Fun Fact**: Error handling is like a dinosaur's immune system - it detects threats
 > (errors), isolates them (recovery mechanisms), and learns from them (mistake limits) to become
@@ -20,20 +21,23 @@
 - \[7. Navigation Footer
 
 </details>
-- \*\*
 
-## Related Documents
+- **
+
+### Related Documents
 
 <a id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+
 - **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
   documentation.
-- **[Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where
+- **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where
   errors can occur.
 - **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Details
   permission-related errors like `FileRestrictionError`.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 ### Error Handling Philosophy
 
@@ -44,6 +48,7 @@ errors are a natural part of a complex, model-driven workflow. Instead of failin
 system attempts to recover by providing the error context back to the language model.
 
 Key principles:
+
 - **Informative Feedback**: Errors are not just caught; they are formatted into a clear, descriptive
   message that is fed back into the task's execution loop.
 - **Model-Led Recovery**: The language model is responsible for attempting to correct its own
@@ -53,11 +58,13 @@ Key principles:
   halt tasks that are repeatedly failing.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 ### Types of Errors
 
 <a id="types-of-errors"></a>
+
 - **Tool Execution Errors**: The most common type. These occur when a tool fails to execute.
   Examples include:
 - Invalid parameters (e.g., wrong file path).
@@ -70,7 +77,8 @@ Key principles:
 - **Catastrophic Errors**: Unrecoverable system-level errors that immediately halt the task.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 ### The Recovery Loop
 
@@ -81,24 +89,25 @@ the error as the "result" of the attempted tool call.
 
 ```mermaid
 sequenceDiagram
-  participant TaskEngine
-  participant ToolExecutor
-  participant Model
+    participant TaskEngine
+    participant ToolExecutor
+    participant Model
 
-  TaskEngine->>ToolExecutor: Execute Tool(params)
-  ToolExecutor-->>TaskEngine: ERROR: Invalid parameters!
-  Note over TaskEngine: Error is caught and formatted.
-  TaskEngine->>Model: Send Updated Context (including error message)
-  Model->>Model: Analyze error and formulate corrected tool call
-  Model-->>TaskEngine: New Tool Call (with corrected params)
-  TaskEngine->>ToolExecutor: Execute Corrected Tool
-  ToolExecutor-->>TaskEngine: Success!
+    TaskEngine->>ToolExecutor: Execute Tool(params)
+    ToolExecutor-->>TaskEngine: ERROR: Invalid parameters!
+    Note over TaskEngine: Error is caught and formatted.
+    TaskEngine->>Model: Send Updated Context (including error message)
+    Model->>Model: Analyze error and formulate corrected tool call
+    Model-->>TaskEngine: New Tool Call (with corrected params)
+    TaskEngine->>ToolExecutor: Execute Corrected Tool
+    ToolExecutor-->>TaskEngine: Success!
 ```
 
 This loop allows the model to learn from its mistakes within the context of a single task.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 ### The "Mistake Limit"
 
@@ -106,6 +115,7 @@ This loop allows the model to learn from its mistakes within the context of a si
 
 To prevent a task from getting stuck in a perpetual failure loop, the `Task` engine maintains a
 mistake counter.
+
 - **Increment**: The counter is incremented every time a tool execution error occurs.
 - **Threshold**: There is a pre-defined limit for the number of mistakes allowed within a single
   task.
@@ -118,7 +128,8 @@ mistake counter.
 This concept is a crucial guardrail that ensures system stability.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 ### Specific Error Scenarios
 
@@ -143,20 +154,27 @@ This concept is a crucial guardrail that ensures system stability.
 4. **Correction**: The model should fix the regex pattern in its next attempt.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding This System:*\*
+
+- *Understanding This System:**
+
 - **Next**: Check related documentation in the same directory
-- **Related**: [Technical Glossary](../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
-- *Implementing Features:*\*
+
+- *Implementing Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Issues:*\*
+
+- *Troubleshooting Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -176,18 +194,12 @@ You have reached the end of the error handling document. Return to the
 [Security & Governance Document](ORCHESTRATOR_SECURITY_GOVERNANCE.md).
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+- **
 
 End of document.
-- \*\*
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
-  [↑ Table of Contents](#orchestrator-error-handling)
 
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../../../../../../../../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../../../../../../../../DOCUMENTATION_GUIDE.md)
-- [Glossary](../../../../../../../../GLOSSARY.md)
+- **
+
+- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
+[↑ Table of Contents](#orchestrator-error-handling)

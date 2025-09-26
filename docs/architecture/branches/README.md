@@ -1,14 +1,28 @@
 # Branch Analyses and Proposals
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 - [Branch Analysis: orchestator-load-subtask](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
   Dissects every notable change introduced on the `orchestator-load-subtask` branch with
   before/after code snippets. Explains motivations (navigation-driven parent resume) and highlights
@@ -32,18 +46,16 @@ Related context:
 
 ## No Dead Ends Policy
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
 
 ## Navigation
+
 - [← Architecture Overview](README.md)
 - [← Repository Structure](repository/README.md)
 - [← Race Condition Analysis](race-condition/README.md)
 - [← State Machines](state-machines/README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

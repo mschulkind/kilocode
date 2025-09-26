@@ -1,5 +1,13 @@
 # Validation Errors Guide
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide helps you understand and fix common validation errors in KiloCode documentation.
@@ -7,36 +15,42 @@ This guide helps you understand and fix common validation errors in KiloCode doc
 ## Error Categories
 
 ### 1. Syntax Errors
-- *Missing Required Sections*\*
+
+- *Missing Required Sections**
 
 ```
 Error: Missing required section "Research Context"
 ```
-- *Fix:*\* Add the required section:
+
+- *Fix:** Add the required section:
 
 ```markdown
 ## Research Context
 
 Brief description of the research and context behind this document.
 ```
-- *Missing Navigation Footer*\*
+
+- *Missing Navigation Footer**
 
 ```
 Error: Missing navigation footer
 ```
-- *Fix:*\* Add navigation footer:
+
+- *Fix:** Add navigation footer:
 
 ```markdown
 - *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
 ```
 
 ### 2. Link Errors
-- *Non-descriptive Link Text*\*
+
+- *Non-descriptive Link Text**
 
 ```
 Warning: Link text "https://example.com" is not descriptive
 ```
-- *Fix:*\* Use descriptive text:
+
+- *Fix:** Use descriptive text:
 
 ```markdown
 <!-- Bad -->
@@ -47,24 +61,28 @@ Warning: Link text "https://example.com" is not descriptive
 
 [Example Website](https://example.com)
 ```
-- *Broken Internal Links*\*
+
+- *Broken Internal Links**
 
 ```
 Error: Broken internal link to "nonexistent-file.md"
 ```
-- *Fix:*\* Check file path and update link:
+
+- *Fix:** Check file path and update link:
 
 ```markdown
 <!-- Verify file exists and update path -->
 
 [Link Text](./correct-path/file.md)
 ```
-- *Broken External Links*\*
+
+- *Broken External Links**
 
 ```
 Warning: External link "https://broken-link.com" is not accessible
 ```
-- *Fix:*\* Update or remove broken links:
+
+- *Fix:** Update or remove broken links:
 
 ```markdown
 <!-- Update URL or remove if no longer relevant -->
@@ -73,12 +91,14 @@ Warning: External link "https://broken-link.com" is not accessible
 ```
 
 ### 3. Structure Errors
-- *Improper Heading Hierarchy*\*
+
+- *Improper Heading Hierarchy**
 
 ```
 Warning: Heading level should be 2, not 3
 ```
-- *Fix:*\* Use proper heading hierarchy:
+
+- *Fix:** Use proper heading hierarchy:
 
 ```markdown
 # Main Title (H1)
@@ -89,12 +109,14 @@ Warning: Heading level should be 2, not 3
 
 ### Subsection Title (H3)
 ```
-- *Missing Table of Contents*\*
+
+- *Missing Table of Contents**
 
 ```
 Warning: File is long (>500 words) but missing table of contents
 ```
-- *Fix:*\* Add table of contents:
+
+- *Fix:** Add table of contents:
 
 ```markdown
 ## Table of Contents
@@ -104,12 +126,14 @@ Warning: File is long (>500 words) but missing table of contents
 ```
 
 ### 4. Style Errors
-- *Inconsistent Formatting*\*
+
+- *Inconsistent Formatting**
 
 ```
 Warning: Inconsistent list formatting
 ```
-- *Fix:*\* Use consistent formatting:
+
+- *Fix:** Use consistent formatting:
 
 ```markdown
 <!-- Use consistent bullet points -->
@@ -117,12 +141,14 @@ Warning: Inconsistent list formatting
 - Item 2
 - Item 3
 ```
-- *Missing Fun Facts*\*
+
+- *Missing Fun Facts**
 
 ```
 Warning: Consider adding a fun fact to make content more engaging
 ```
-- *Fix:*\* Add engaging fun facts:
+
+- *Fix:** Add engaging fun facts:
 
 ```markdown
 > **Fun Fact**: Did you know that markdown was created in 2004 by John Gruber?
@@ -131,31 +157,36 @@ Warning: Consider adding a fun fact to make content more engaging
 ## Common Error Patterns
 
 ### 1. URL-Only Links
-- *Problem:*\*
+
+- *Problem:**
 
 ```markdown
 Check out https://example.com for more information.
 ```
-- *Solution:*\*
+
+- *Solution:**
 
 ```markdown
 Check out [Example Website](https://example.com) for more information.
 ```
 
 ### 2. Missing Alt Text
-- *Problem:*\*
+
+- *Problem:**
 
 ```markdown
 ![Image](image.png)
 ```
-- *Solution:*\*
+
+- *Solution:**
 
 ```markdown
 ![Descriptive alt text for the image](image.png)
 ```
 
 ### 3. Inconsistent Code Blocks
-- *Problem:*\*
+
+- *Problem:**
 
 ````markdown
 ```javascript
@@ -164,6 +195,7 @@ code here
 ````
 
 ````
+
 - *Solution:**
 ```markdown
 ```javascript
@@ -173,11 +205,13 @@ code here
 ````
 
 ### 4. Broken Cross-References
+
 - *Problem:**
 ```markdown
 See [Section 1](#section-1) for details.
 ````
-- *Solution:*\*
+
+- *Solution:**
 
 ```markdown
 See [Section 1](#section-1) for details.
@@ -327,21 +361,12 @@ For complex errors:
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
-## No Dead Ends Policy
+## Navigation
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Glossary](../GLOSSARY.md)
+- [← Tools Overview](README.md)
+- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

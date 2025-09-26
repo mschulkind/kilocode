@@ -1,5 +1,13 @@
 # Remark Workflow Overview
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
 This document provides a comprehensive overview of KiloCode's remark-based documentation automation
@@ -8,6 +16,7 @@ workflow.
 ## What is Remark?
 
 Remark is a powerful markdown processor that enables:
+
 - **Validation**: Check markdown files for errors and style issues
 - **Transformation**: Modify markdown content programmatically
 - **Analysis**: Extract insights from documentation structure
@@ -20,7 +29,8 @@ Remark is a powerful markdown processor that enables:
 ```
 Markdown Files → Remark Processing → Validation Rules → Error Reports
 ```
-- *Key Features:*\*
+
+- *Key Features:**
 - Real-time validation in VS Code
 - Pre-commit validation hooks
 - CI/CD pipeline integration
@@ -31,7 +41,8 @@ Markdown Files → Remark Processing → Validation Rules → Error Reports
 ```
 Documentation → Auto-Maintenance → Updated Files → Quality Reports
 ```
-- *Automated Tasks:*\*
+
+- *Automated Tasks:**
 - Table of Contents generation
 - Navigation footer updates
 - Research context validation
@@ -42,7 +53,8 @@ Documentation → Auto-Maintenance → Updated Files → Quality Reports
 ```
 Content → Quality Metrics → Scoring → Improvement Suggestions
 ```
-- *Metrics Tracked:*\*
+
+- *Metrics Tracked:**
 - Readability scores
 - Technical term consistency
 - Cross-reference validation
@@ -89,12 +101,14 @@ npx remark docs/specific-file.md
 ```
 
 ### VS Code Integration
-- *Real-time Validation:*\*
+
+- *Real-time Validation:**
 - Errors appear in Problems panel
 - Auto-fix on save enabled
 - Live link validation
 - TOC auto-generation
-- *Available Tasks:*\*
+
+- *Available Tasks:**
 - `Ctrl+Shift+P` → "Tasks: Run Task"
 - Select `docs: validate`, `docs: maintain`, or `docs: report`
 
@@ -105,31 +119,33 @@ npx remark docs/specific-file.md
 Every documentation file must include:
 1. **Research Context Section**
 
-```markdown
-## Research Context
+   ```markdown
+   ## Research Context
 
-Brief description of the research and context behind this document.
-```
+   Brief description of the research and context behind this document.
+   ```
 2. **Navigation Footer**
 
-```markdown
-- *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
-```
+   ```markdown
+   **Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
+   ```
 3. **Table of Contents** (for files >500 words)
 
-```markdown
-## Table of Contents
+   ```markdown
+   ## Table of Contents
 - [Section 1](#section-1)
 - [Section 2](#section-2)
-```
+   ```
 
 ### Style Requirements
+
 - **Headings**: Use proper hierarchy (H1 → H2 → H3)
 - **Links**: Descriptive text, not raw URLs
 - **Fun Facts**: Include engaging facts where appropriate
 - **Consistency**: Follow KiloCode documentation standards
 
 ### Link Standards
+
 - **Internal Links**: Use relative paths
 - **External Links**: Include descriptive text
 - **References**: Validate all cross-references
@@ -163,15 +179,18 @@ Brief description of the research and context behind this document.
 ## Troubleshooting
 
 ### Common Issues
-- *Validation Errors:*\*
+
+- *Validation Errors:**
 - Check Problems panel in VS Code
 - Run `pnpm docs:validate` for detailed output
 - Review error messages and fix accordingly
-- *Auto-fix Not Working:*\*
+
+- *Auto-fix Not Working:**
 - Ensure markdownlint extension is active
 - Check VS Code settings for auto-fix configuration
 - Try manual fix: `Ctrl+Shift+P` → "Markdown: Fix all markdownlint violations"
-- *Performance Issues:*\*
+
+- *Performance Issues:**
 - Large files may take longer to validate
 - Use incremental validation for changed files
 - Check file size and complexity
@@ -240,21 +259,12 @@ After mastering the basic workflow:
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
-## No Dead Ends Policy
+## Navigation
 
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Glossary](../GLOSSARY.md)
+- [← Tools Overview](README.md)
+- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

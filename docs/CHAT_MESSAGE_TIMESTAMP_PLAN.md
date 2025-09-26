@@ -53,6 +53,7 @@ developers for debugging.
 
 The current guidance on timestamps is fragmented and inconsistent, primarily located in
 [`UI_CHAT_TASK_WINDOW.md`](UI_CHAT_TASK_WINDOW.md). Key issues include:
+
 - **Inconsistent Terminology:** The document uses phrases like "local ISO-8601 with timezone offset"
   and "ISO-8601 timestamp (UTC)" without a clear, authoritative definition.
 - **Malformed Examples:** The document contains corrupted sections and duplicated content, making it
@@ -74,6 +75,7 @@ This plan supersedes all previous documentation on this topic.
 - The UI must display a human-readable time and provide the full, precise timestamp on hover.
 
 ### Non-functional requirements
+
 - **Performance:** Timestamp generation and rendering should have negligible impact on UI
   performance and message processing latency.
 - **Determinism:** Timestamp logic should be deterministic. Given the same event log, rehydration
@@ -182,6 +184,7 @@ Developer pointers
   [`src/utils/logging/CompactTransport.ts`](src/utils/logging/CompactTransport.ts:1).
 
 ## Timestamp generation & normalization
+
 - **Source-of-Truth Clock:** The orchestrator is the source of truth for the canonical `timestamp`.
   While the UI records an `uiEnqueue` time, the orchestrator's clock is considered authoritative for
   sequencing messages to mitigate client-side clock skew. The primary `timestamp` should be
@@ -223,13 +226,14 @@ These events will be logged with the following schema:
   helping to pinpoint performance bottlenecks. Duplicates are correlated by `requestId`.
 
 ## UI rendering
+
 - **Placement:** The timestamp will be rendered as a subtle metadata line below the message content
   bubble.
 - **Format:**
-- **Visible:** A short-form time, e.g., `16:25` (24-hour local time). The client will use
-  `toLocaleTimeString()` with appropriate options for robust localization.
-- **Tooltip:** On hover, a tooltip will display the full, unambiguous timestamp, e.g.,
-  `2025-09-19T20:25:37.331Z (Local: 16:25 EDT)`.
+  * **Visible:** A short-form time, e.g., `16:25` (24-hour local time). The client will use
+    `toLocaleTimeString()` with appropriate options for robust localization.
+  * **Tooltip:** On hover, a tooltip will display the full, unambiguous timestamp, e.g.,
+    `2025-09-19T20:25:37.331Z (Local: 16:25 EDT)`.
 - **Accessibility:** The message container will have an `aria-label` that includes the full,
   descriptive timestamp for screen readers.
 - **Streaming Messages:** The timestamp shown is the initial one. It MUST NOT update as new chunks
@@ -238,6 +242,7 @@ These events will be logged with the following schema:
   and a new timestamp. The original message's timestamp is immutable.
 
 ## Persistence & rehydration
+
 - **Persistence:** Only the canonical UTC ISO string for the primary `timestamp` and the
   `lifecycleTimestamps` object are persisted in the chat history.
 - **Rehydration:** On loading a conversation, the client will eagerly derive and memoize the local
@@ -247,6 +252,7 @@ These events will be logged with the following schema:
   `timestampInferred: true` flag.
 
 ## Edge cases
+
 - **Duplicate Sends:** If two requests are generated for the same user action (resulting in two
   `requestId`s), both messages are preserved and displayed. The UI will NOT attempt to group them
   visually in the first iteration. Their distinct timestamps will clarify the sequence of events.
@@ -263,6 +269,7 @@ These events will be logged with the following schema:
   attached to the message.
 
 ## Formatting rules
+
 - **ISO Persistence:** `YYYY-MM-DDTHH:MM:SS.sssZ` (e.g., `2025-09-19T20:25:37.331Z`)
 - **Display Short:** `HH:MM` (24h local time, derived via `toLocaleTimeString`).
 - **Tooltip/Hover:** A composite string showing the original ISO string and a user-friendly local
@@ -285,9 +292,9 @@ Concepts and "channels"
 - In this codebase "channels" are logical contexts attached to log entries via the logger metadata
   `ctx` → compact entry `c`.
 - Use a channel for grouping related events, e.g. `chat.timestamps`, `chat.lifecycle`,
-  `orchestrator`.
+    `orchestrator`.
 - Create contextual loggers with `.child({ ctx: "chat.timestamps" })` so the `c` field is
-  automatically set on entries.
+    automatically set on entries.
 
 What gets written (CompactLogEntry)
 - Entries written by the logger are compact objects: `{ t, l, m, c?, d? }`.
@@ -321,9 +328,9 @@ Note: the repo's default `logger` behaves differently depending on environment.
 - [`src/utils/logging/index.ts`](src/utils/logging/index.ts:1) exports a `noopLogger` for non-test
   runtimes and a `CompactLogger` when `NODE_ENV === "test"`. This means:
 - In normal runtime the default export is a noop (no file writes) to avoid spamming logs unless
-  an explicit logger is created.
+    an explicit logger is created.
 - For local debugging or CI you can instantiate a `CompactLogger` yourself, or set up the
-  transport explicitly:
+    transport explicitly:
 
 Explicit logger with file output (example)
 
@@ -403,34 +410,35 @@ if (Math.random() < 0.01) {
 ```
 
 ## Testing strategy
+
 - **Unit Tests:**
 - Test timestamp formatting functions for different locales and times.
 - Test derivation logic for `localTimestamp`.
 - Test fallback logic for messages with missing timestamps.
 - **Integration Tests:**
 - Verify that all four `lifecycleTimestamps` are correctly recorded for a standard streaming
-  message.
+    message.
 - Test the day-boundary rendering logic.
 - **Test Environment:**
 - Use a deterministic clock source (e.g., `vi.useFakeTimers()`) in all tests to ensure
-  reproducible results.
+    reproducible results.
 - Simulate race conditions, such as a duplicate dispatch, to verify that both messages are
-  handled correctly.
+    handled correctly.
 - **Snapshot Example:** Snapshot tests will be used to capture the rendered output of a message
   list, including timestamps and day boundaries, to prevent regressions.
 
 ## Migration plan
 1. **Phase 1: Instrumentation:** Implement the logging for all four lifecycle events (`uiEnqueue`,
    `orchestratorDispatch`, `providerFirstChunk`, `providerCompleted`).
-- *Acceptance:* Logs for all four phases appear correctly in the `chat.timestamps` channel for
-  every message.
+   * *Acceptance:* Logs for all four phases appear correctly in the `chat.timestamps` channel for
+     every message.
 2. **Phase 2: Persistence:** Add the `timestamp` and `lifecycleTimestamps` fields to the message
    data model and ensure they are saved to the chat history.
-- *Acceptance:* New conversations have persisted timestamps. The `timestampInferred` logic
-  correctly handles old conversations.
+   * *Acceptance:* New conversations have persisted timestamps. The `timestampInferred` logic
+     correctly handles old conversations.
 3. **Phase 3: UI Adoption:** Update the UI components to render the short timestamp, hover tooltip,
    and day boundary separators.
-- *Acceptance:* All UI requirements are met and verified across different scenarios.
+   * *Acceptance:* All UI requirements are met and verified across different scenarios.
 4. **Phase 4: Cleanup:** Remove any legacy timestamp logic and update or remove the now-obsolete
    sections of [`UI_CHAT_TASK_WINDOW.md`](UI_CHAT_TASK_WINDOW.md).
 
@@ -465,15 +473,21 @@ if (Math.random() < 0.01) {
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding This System:*\*
+
+- *Understanding This System:**
+
 - **Next**: Check related documentation in the same directory
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
-- *Implementing Features:*\*
+
+- *Implementing Features:**
+
 - **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-- *Troubleshooting Issues:*\*
+
+- *Troubleshooting Issues:**
+
 - **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
   [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -485,6 +499,8 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to the appropriate README for guidance.
 
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Documentation Hub](../../README.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,5 +1,13 @@
 # Quick Reference Card
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
 Essential commands and shortcuts for KiloCode documentation automation.
@@ -105,6 +113,7 @@ Brief description of research and context.
 Your content here.
 
 ## Navigation
+
 - *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
 ```
 
@@ -298,22 +307,3 @@ pnpm list | grep remark
 - [Remark Documentation](https://remark.js.org/)
 - [Markdown Guide](https://www.markdownguide.org/)
 - [VS Code Markdown](https://code.visualstudio.com/docs/languages/markdown)
-
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
-## Navigation Footer
-- *Navigation*\*:
-- [← Back to Documentation Overview](../README.md)
-- [Architecture Documentation](../architecture/README.md)
-- [Standards Documentation](../../standards////////README.md)
-- *Related*\*:
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Glossary](../GLOSSARY.md)

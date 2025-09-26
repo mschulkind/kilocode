@@ -1,25 +1,19 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Commit message validation
-commit_regex='^(feat|fix|docs|style|refactor|perf|test|chore|build|ci|revert)(\(.+\))?: .{1,50}'
+# Enhanced commit message validation using Node.js
+echo "🔍 Running enhanced commit message validation..."
 
-if ! grep -qE "$commit_regex" "$1"; then
-    echo "❌ Invalid commit message format!"
-    echo ""
-    echo "Commit message should follow the format:"
-    echo "  <type>(<scope>): <description>"
-    echo ""
-    echo "Types: feat, fix, docs, style, refactor, perf, test, chore, build, ci, revert"
-    echo "Scope: optional, describes the area of change"
-    echo "Description: brief description (max 50 chars)"
-    echo ""
-    echo "Examples:"
-    echo "  feat(auth): add user authentication"
-    echo "  fix(api): resolve race condition in API calls"
-    echo "  docs(readme): update installation instructions"
-    echo "  chore: update dependencies"
-    echo ""
+# Check if Node.js is available
+if ! command -v node >/dev/null 2>&1; then
+    echo "❌ Node.js is required for commit message validation"
+    exit 1
+fi
+
+# Run commit message validation
+if ! node scripts/docs/commit-msg-validator.js "$1"; then
+    echo "❌ Commit message validation failed"
+    echo "💡 Check the validation output above for issues"
     exit 1
 fi
 

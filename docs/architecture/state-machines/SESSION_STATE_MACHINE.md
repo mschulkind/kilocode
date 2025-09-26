@@ -5,12 +5,18 @@
 ## Overview
 
 ## Research Context
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-- *Background:*\* \[Provide relevant background information]
-- *Research Questions:*\* \[List key questions this document addresses]
-- *Methodology:*\* \[Describe the approach or methodology used]
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+
+- *Purpose:** \[Describe the purpose and scope of this document]
+
+- *Background:** \[Provide relevant background information]
+
+- *Research Questions:** \[List key questions this document addresses]
+
+- *Methodology:** \[Describe the approach or methodology used]
+
+- *Findings:** \[Summarize key findings or conclusions]
+
+- **
 
 The Session State Machine manages the lifecycle of chat sessions, including user navigation, task
 associations, and session inactivity.
@@ -98,36 +104,36 @@ const SESSION_STATE_PROPERTIES: Record<SessionState, SessionStateProperties> = {
 
 ```mermaid
 stateDiagram-v2
-  [*] --> NEW : createSession()
+    [*] --> NEW : createSession()
 
-  NEW --> ACTIVE : startTask()
-  NEW --> INACTIVE : no task started
+    NEW --> ACTIVE : startTask()
+    NEW --> INACTIVE : no task started
 
-  ACTIVE --> PAUSED : user navigates away
-  ACTIVE --> COMPLETED : task completed
-  ACTIVE --> INACTIVE : task failed/aborted
+    ACTIVE --> PAUSED : user navigates away
+    ACTIVE --> COMPLETED : task completed
+    ACTIVE --> INACTIVE : task failed/aborted
 
-  PAUSED --> ACTIVE : user returns
-  PAUSED --> COMPLETED : task completed while paused
-  PAUSED --> INACTIVE : task failed while paused
-  PAUSED --> TIMEOUT : session timeout
+    PAUSED --> ACTIVE : user returns
+    PAUSED --> COMPLETED : task completed while paused
+    PAUSED --> INACTIVE : task failed while paused
+    PAUSED --> TIMEOUT : session timeout
 
-  INACTIVE --> ACTIVE : user starts new task
-  INACTIVE --> NEW : user clears session
-  INACTIVE --> TIMEOUT : session timeout
+    INACTIVE --> ACTIVE : user starts new task
+    INACTIVE --> NEW : user clears session
+    INACTIVE --> TIMEOUT : session timeout
 
-  COMPLETED --> NEW : user starts new task
-  COMPLETED --> DESTROYED : session cleanup
+    COMPLETED --> NEW : user starts new task
+    COMPLETED --> DESTROYED : session cleanup
 
-  TIMEOUT --> DESTROYED : session cleanup
-  TIMEOUT --> ACTIVE : user resumes with reconstruction
+    TIMEOUT --> DESTROYED : session cleanup
+    TIMEOUT --> ACTIVE : user resumes with reconstruction
 
-  DESTROYED --> NEW : create new session
+    DESTROYED --> NEW : create new session
 
-  note right of ACTIVE : User viewing, task running
-  note right of PAUSED : User away, task paused
-  note right of INACTIVE : No active task
-  note right of COMPLETED : Task finished
+    note right of ACTIVE : User viewing, task running
+    note right of PAUSED : User away, task paused
+    note right of INACTIVE : No active task
+    note right of COMPLETED : Task finished
 ```
 
 ## State Transition Table
@@ -169,6 +175,7 @@ const SESSION_STATE_TRANSITIONS = {
 ```
 
 ## Key States
+
 - **ACTIVE**: User is currently viewing the session, task is running
 - **PAUSED**: User navigated away but task is still running in memory
 - **INACTIVE**: No active task, needs reconstruction from history
@@ -186,12 +193,15 @@ A session is considered inactive when:
 ## Race Condition Impact
 
 The session state machine is crucial for understanding the race condition because:
+
 - **ACTIVE** sessions have tasks in memory that might be running
 - **PAUSED** sessions can resume tasks that cause race conditions
 - **INACTIVE** sessions need task reconstruction, which triggers the navigation fix
 - **COMPLETED** sessions are inactive and don't cause race conditions
-- \*\*
-- *Related Documentation:*\*
+
+- **
+
+- *Related Documentation:**
 - [Task State Machine](TASK_STATE_MACHINE.md)
 - [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
 - [Combined State Machine](COMBINED_STATE_MACHINE.md)
@@ -200,18 +210,24 @@ The session state machine is crucial for understanding the race condition becaus
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
-- *Understanding Architecture:*\*
+
+- *Understanding Architecture:**
+
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../../../../../../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
-- *Implementing Architecture Features:*\*
-- **Next**: [Repository Development Guide](../repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
-- *Troubleshooting Architecture Issues:*\*
+
+- *Implementing Architecture Features:**
+
+- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:**
+
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -219,17 +235,9 @@ The session state machine is crucial for understanding the race condition becaus
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Architecture Documentation](README.md) for guidance.
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../../../../../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+
+- **
+
+- *Navigation**: [← Back to Architecture Documentation](README.md) ·
+[📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

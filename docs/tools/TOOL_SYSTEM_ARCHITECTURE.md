@@ -1,8 +1,17 @@
 # Tool System Architecture
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-- *Purpose:*\* Comprehensive documentation of the AI tool system architecture, execution patterns,
-  validation mechanisms, and safety protocols in the KiloCode system.
+
+- *Purpose:** Comprehensive documentation of the AI tool system architecture, execution patterns,
+validation mechanisms, and safety protocols in the KiloCode system.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -23,10 +32,11 @@
 </details>
 
 ## Executive Summary
+
 - The Tool System Architecture provides the foundation for AI-powered operations in KiloCode,
-  including file operations, command execution, code analysis, and external integrations. The system
-  features a plugin-based architecture with comprehensive validation, safety mechanisms, and error
-  recovery.\*
+including file operations, command execution, code analysis, and external integrations. The system
+features a plugin-based architecture with comprehensive validation, safety mechanisms, and error
+recovery.*
 
 The Tool System consists of:
 1. **Core Tools** - File operations, command execution, search
@@ -88,7 +98,9 @@ graph TB
 ## Tool Categories
 
 ### File Operations Tools
-- *Core File Tools*\*:
+
+- *Core File Tools**:
+
 - **writeToFileTool.ts**: File creation and writing operations
 - **readFileTool.ts**: File reading with context awareness
 - **editFileTool.ts**: File editing operations
@@ -96,8 +108,10 @@ graph TB
 - **multiApplyDiffTool.ts**: Batch diff operations
 - **searchAndReplaceTool.ts**: Search and replace operations
 - **insertContentTool.ts**: Content insertion at specific positions
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
-- *Tool Interface Pattern*\*:
+
+- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+
+- *Tool Interface Pattern**:
 
 ```typescript
 export async function writeToFileTool(
@@ -111,7 +125,9 @@ export async function writeToFileTool(
 	// Tool implementation with comprehensive validation and error handling
 }
 ```
-- *Core Features*\*:
+
+- *Core Features**:
+
 - **Parameter Validation**: Comprehensive validation of required parameters
 - **Access Control**: Integration with `rooIgnoreController` for file access validation
 - **Write Protection**: Integration with `rooProtectedController` for write protection
@@ -121,12 +137,16 @@ export async function writeToFileTool(
 - **Error Tracking**: Consecutive mistake counting and tool error recording
 
 ### Command Execution Tools
-- *Command Tools*\*:
+
+- *Command Tools**:
+
 - **executeCommandTool.ts**: Terminal command execution
 - **runSlashCommandTool.ts**: Slash command execution
 - **Command validation and safety**: Input sanitization and execution limits
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
-- *Command Execution Pattern*\*:
+
+- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+
+- *Command Execution Pattern**:
 
 ```typescript
 export async function executeCommandTool(
@@ -140,7 +160,9 @@ export async function executeCommandTool(
 	// Command execution with timeout and error handling
 }
 ```
-- *Core Features*\*:
+
+- *Core Features**:
+
 - **Command Validation**: Parameter validation and command sanitization
 - **Timeout Handling**: Configurable command execution timeouts
 - **Error Handling**: Comprehensive error capture and reporting
@@ -149,27 +171,34 @@ export async function executeCommandTool(
 - **Approval Flow**: User approval for potentially dangerous commands
 
 ### Code Analysis Tools
-- *Analysis Tools*\*:
+
+- *Analysis Tools**:
+
 - **codebaseSearchTool.ts**: Semantic codebase search
 - **listFilesTool.ts**: File listing and filtering
 - **searchFilesTool.ts**: File search operations
 - **listCodeDefinitionNamesTool.ts**: Code definition discovery
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Search indexing
-  strategies, performance optimization, result ranking
+
+- *Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Search indexing
+strategies, performance optimization, result ranking
 
 ### AI Integration Tools
-- *AI Tools*\*:
+
+- *AI Tools**:
+
 - **useMcpToolTool.ts**: MCP tool integration
 - **accessMcpResourceTool.ts**: MCP resource access
 - **generateImageTool.ts**: Image generation
 - **askFollowupQuestionTool.ts**: Interactive questioning
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: AI tool orchestration,
-  resource management, response handling
+
+- *Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: AI tool orchestration,
+resource management, response handling
 
 ## Tool Execution Engine
 
 ### Execution Flow
-- *Tool Execution Pattern*\*:
+
+- *Tool Execution Pattern**:
 
 ```typescript
 interface ToolExecution {
@@ -181,7 +210,8 @@ interface ToolExecution {
 	rollback?: RollbackPlan
 }
 ```
-- *Execution Stages*\*:
+
+- *Execution Stages**:
 1. **Validation Phase**: Parameter validation and safety checks
 2. **Preparation Phase**: Resource allocation and context setup
 3. **Execution Phase**: Tool-specific operation execution
@@ -189,29 +219,35 @@ interface ToolExecution {
 5. **Rollback Phase**: Error recovery if needed
 
 ### Tool Chaining
-- *Chain Execution*\*:
+
+- *Chain Execution**:
 - Sequential tool execution with dependency resolution
 - Parallel execution for independent operations
 - Error propagation and chain interruption
 - Rollback coordination across tool chains
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Chain dependency
-  resolution, parallel execution patterns, error handling
+
+- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Chain dependency
+resolution, parallel execution patterns, error handling
 
 ## Tool Validation & Safety
 
 ### Validation Mechanisms
-- *Parameter Validation*\*:
+
+- *Parameter Validation**:
 - Type checking and schema validation
 - Range and constraint validation
 - Dependency validation
 - Security validation
-- *Safety Checks*\*:
+
+- *Safety Checks**:
 - File system access controls
 - Command execution limits
 - Resource usage monitoring
 - User permission validation
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
-- *Tool Repetition Detection*\*:
+
+- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+
+- *Tool Repetition Detection**:
 
 ```typescript
 export class ToolRepetitionDetector {
@@ -225,7 +261,9 @@ export class ToolRepetitionDetector {
 	}
 }
 ```
-- *Validation Mechanisms*\*:
+
+- *Validation Mechanisms**:
+
 - **Parameter Validation**: Required parameter checking with error reporting
 - **Access Control**: `rooIgnoreController` integration for file access validation
 - **Write Protection**: `rooProtectedController` for preventing writes to protected files
@@ -234,78 +272,94 @@ export class ToolRepetitionDetector {
 - **Repetition Detection**: Prevention of infinite tool call loops
 
 ### Safety Protocols
-- *File Operations Safety*\*:
+
+- *File Operations Safety**:
 - Backup creation before modifications
 - Permission checking
 - Path traversal prevention
 - File locking mechanisms
-- *Command Execution Safety*\*:
+
+- *Command Execution Safety**:
 - Command whitelisting
 - Input sanitization
 - Execution timeout limits
 - Output filtering
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Safety framework design,
-  threat modeling, mitigation strategies
+
+- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Safety framework design,
+threat modeling, mitigation strategies
 
 ## Tool Composition Patterns
 
 ### Sequential Composition
-- *Pattern*\*: Tools execute in sequence with data passing **Use Cases**: Multi-step file operations,
-  complex transformations **Implementation**: Chain execution with intermediate result passing
+
+- *Pattern**: Tools execute in sequence with data passing **Use Cases**: Multi-step file operations,
+complex transformations **Implementation**: Chain execution with intermediate result passing
 
 ### Parallel Composition
-- *Pattern*\*: Independent tools execute simultaneously **Use Cases**: Multiple file operations,
-  concurrent searches **Implementation**: Promise-based parallel execution
+
+- *Pattern**: Independent tools execute simultaneously **Use Cases**: Multiple file operations,
+concurrent searches **Implementation**: Promise-based parallel execution
 
 ### Conditional Composition
-- *Pattern*\*: Tools execute based on conditions **Use Cases**: Error handling, feature flags, user
-  preferences **Implementation**: Conditional execution with branching logic
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Composition patterns,
-  dependency resolution, execution optimization
+
+- *Pattern**: Tools execute based on conditions **Use Cases**: Error handling, feature flags, user
+preferences **Implementation**: Conditional execution with branching logic
+
+- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Composition patterns,
+dependency resolution, execution optimization
 
 ## Error Handling & Rollback
 
 ### Error Classification
-- *Error Types*\*:
+
+- *Error Types**:
+
 - **Validation Errors**: Parameter or permission issues
 - **Execution Errors**: Tool-specific operation failures
 - **Resource Errors**: Memory, disk, or network issues
 - **System Errors**: Infrastructure or platform failures
 
 ### Rollback Strategies
-- *File Operations Rollback*\*:
+
+- *File Operations Rollback**:
 - Backup restoration
 - Diff reversal
 - State reconstruction
-- *Command Execution Rollback*\*:
+
+- *Command Execution Rollback**:
 - Command undo operations
 - State restoration
 - Cleanup procedures
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Rollback framework
-  design, state management, recovery procedures
+
+- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Rollback framework
+design, state management, recovery procedures
 
 ## Performance Optimization
 
 ### Execution Optimization
-- *Strategies*\*:
+
+- *Strategies**:
 - Tool result caching
 - Lazy evaluation
 - Parallel execution
 - Resource pooling
 
 ### Memory Management
-- *Optimization Techniques*\*:
+
+- *Optimization Techniques**:
 - Stream processing for large files
 - Memory-efficient data structures
 - Garbage collection optimization
 - Resource cleanup
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance profiling,
-  optimization strategies, resource management
+
+- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance profiling,
+optimization strategies, resource management
 
 ## Tool Development Guidelines
 
 ### Tool Interface Standards
-- *Required Interface*\*:
+
+- *Required Interface**:
 
 ```typescript
 interface Tool {
@@ -319,56 +373,56 @@ interface Tool {
 ```
 
 ### Development Best Practices
-- *Guidelines*\*:
+
+- *Guidelines**:
 - Comprehensive parameter validation
 - Clear error messages and codes
 - Proper resource cleanup
 - Extensive testing coverage
 - Documentation and examples
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Development standards,
-  testing patterns, documentation requirements
+
+- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Development standards,
+testing patterns, documentation requirements
 
 ## Common Issues and Solutions
 
 ### Issue 1: Tool Execution Failures
-- *Symptoms*\*:
+
+- *Symptoms**:
 - Tools fail to execute properly
 - Inconsistent results across runs
 - Resource exhaustion
-- *Root Cause*\*: Insufficient validation or resource management **Solution**: Implement comprehensive
-  validation and resource monitoring
+
+- *Root Cause**: Insufficient validation or resource management **Solution**: Implement comprehensive
+validation and resource monitoring
 
 ### Issue 2: Tool Chain Deadlocks
-- *Symptoms*\*:
+
+- *Symptoms**:
 - Tool chains hang indefinitely
 - Resource conflicts between tools
 - Circular dependencies
-- *Root Cause*\*: Poor dependency resolution or resource contention **Solution**: Implement proper
-  dependency analysis and resource locking
+
+- *Root Cause**: Poor dependency resolution or resource contention **Solution**: Implement proper
+dependency analysis and resource locking
 
 ### Issue 3: Security Vulnerabilities
-- *Symptoms*\*:
+
+- *Symptoms**:
 - Unauthorized file access
 - Command injection vulnerabilities
 - Permission escalation
-- *Root Cause*\*: Insufficient security validation **Solution**: Implement comprehensive security
-  checks and access controls
+
+- *Root Cause**: Insufficient security validation **Solution**: Implement comprehensive security
+checks and access controls
 
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/tools/TOOL_SYSTEM_ARCHITECTURE.md#L1`
 
-## No Dead Ends Policy
-
-This document is designed to provide value and connect to the broader KiloCode ecosystem:
-- **Purpose**: \[Brief description of document purpose]
-- **Connections**: Links to related documents and resources
-- **Next Steps**: Clear guidance on how to use this information
-- **Related Documentation**: References to complementary materials
-
-For questions or suggestions about this documentation, please refer to the [Documentation Guide](../DOCUMENTATION_GUIDE.md) or [Architecture Overview](../architecture/README.md).
-
 ## Navigation Footer
-- \*\*
-- *Navigation*\*: [docs](../) · [tools](../../docs/tools/) ·
-  [↑ Table of Contents](#tool-system-architecture)
+
+- **
+
+- *Navigation**: [docs](../) · [tools](../docs/tools/) ·
+[↑ Table of Contents](#tool-system-architecture)
