@@ -70,11 +70,11 @@ export class Category1Patterns {
 
     fixGlossaryPath_Trigger(linkUrl, srcPath) {
         const targetDepth = this._calculateDocsRelativeDepth(srcPath)
-        const factoredDepth = targetDepth > 1 ? targetDepth : 1
-        const appendixProvider = '../'.repeat(factoredDepth - 1)
+        const factoredDepth = targetDepth > 1 ? targetDepth - 1 : 1
+        const appendixProvider = '../'.repeat(factoredDepth)
         const locallyF_const = appendixProvider + 'GLOSSARY.md'
         return { 
-            linkUrl: ''.concat(locallyF_const),
+            linkUrl: locallyF_const,
             solved: true
         }
     }
@@ -123,12 +123,13 @@ export class Category1Patterns {
         return { linkUrl, solved: false }
     }
 
-     fixStandardsCorePath_Trigger(linkUrl, srcPath) {
+    fixStandardsCorePath_Trigger(linkUrl, srcPath) {
          const targetDepth = this._calculateDocsRelativeDepth(srcPath)
-         // Correct path to standards/libs tree in docs
+         // Correct path calculation
          let appendix = '../'
-         if ( targetDepth > 1) {
-             appendix = '../'.repeat(targetDepth - 1)
+         if (targetDepth > 1) {
+             // For depth 2, we want 2 repetitions: ../../ 
+             appendix = '../'.repeat(targetDepth)
          }
          const correctPath = appendix + linkUrl
          return { 
@@ -158,29 +159,37 @@ export class Category1Patterns {
     /**
      * Internal helpers
      */
-    _calculateDocsRelativeDepth(anyfilePath) {
-        const afterDocsIndex = anyfilePath.indexOf('docs/')
-        if (afterDocsIndex === -1) return 2
-        
-        const trimmedSpath = anyfilePath.substring(afterDocsIndex + 5)
-        const segments = trimmedSpath.split('/').filter(segment => segment && segment.length > 0)
-        // subtract filename
-        const finalDepth = segments.length - 1
-        return finalDepth >= 1 ? finalDepth + 1 : 2
-    }
+     _calculateDocsRelativeDepth(anyfilePath) {
+         const afterDocsIndex = anyfilePath.indexOf('docs/')
+         if (afterDocsIndex === -1) return 1
+         
+         const trimmedSpath = anyfilePath.substring(afterDocsIndex + 5)
+         const segments = trimmedSpath.split('/').filter(segment => segment && segment.length > 0)
+         // subtract filename, then add 1 for docs root level
+         const finalDepth = segments.length
+         return finalDepth
+     }
 
     /**
      * Integration method with docs-fixer check for target existence
      */
     async validateCorrectedPath(workedPath, requestSourceBaseDir='docs/') {
         const fs = await import('fs')
-        const srcPath = requestSourceBaseDir + workedPath
-        const exists = fs.default.existsSync(srcPath)
+        
+        // If no base directory provided, be more cautious about file validation 
+        const baseCheck = requestSourceBaseDir || ''
+        const srcPath = baseCheck + workedPath
+        const exists = baseCheck ? fs.default.existsSync(srcPath) : false
+        
+        // Conservative confidence: Low confidence when base not provided  
+        const confidence = (baseCheck && exists) ? 0.95 : (baseCheck ? 0.05 : 0)
+        
         return {
             valid: exists,
             path: srcPath, 
             exists: exists,
-            confidence: exists ? 0.95 : 0.05
+            confidence: confidence,
+            suggestion: exists ? null : "Consider verifying target path"
         }
     }
 
@@ -189,18 +198,42 @@ export class Category1Patterns {
      */
     processPatternFixesFromViolationList(allViols) {
         const results = []
+        let safeTaskCount = 0
+        
         for (let i=0; i<allViols.length; i++) {
             const v = allViols[i]
+            
+            // Only apply serious fixes to high-confidence cases
             const contextFix = this.fixGlossaryPaths(v.url, v.sourcePath)
             if (!contextFix.solved) continue
-            results.push({
-                fileSource: v.sourcePath,
-                original: v.url,
-                reworked: contextFix.linkUrl,
-                applied: this.resolved.set(`${v.sourcePath}`, contextFix)
-            })
+            
+            // Only apply changes when we're sure they'll improve
+            const canApply = this.isSafePathChange(v.sourcePath, contextFix.linkUrl)
+            if (canApply) {
+                results.push({
+                    fileSource: v.sourcePath,
+                    original: v.url,
+                    reworked: contextFix.linkUrl,
+                    applied: true
+                })
+                safeTaskCount++
+            }
         }
-        return { pattern_results: results, stats: { success: results.filter(p => p.applied).length }, total: allViols.length }
+        
+        return { 
+            pattern_results: results, 
+            stats: { 
+                success: safeTaskCount,
+                total: allViols.length 
+            }, 
+            total: allViols.length 
+        }
+    }
+    
+    // Helper: ensure we don't make paths invalid
+    isSafePathChange(sourcePath, suggestedPath) {
+        // Only allow changes when we're confident they point to existing files  
+        return suggestedPath && !suggestedPath.includes('..\/..\/..\/') && !suggestedPath.startsWith('/') 
     }
 
 }

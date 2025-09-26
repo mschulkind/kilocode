@@ -1,5 +1,13 @@
 # Examples
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 ## Basic Usage Examples
 
 ### Fix All Documentation Issues
@@ -94,14 +102,12 @@ const customTemplates = {
   ...NAVIGATION_TEMPLATES,
   customSection: `
 ## Navigation
-
 - [← Custom Section](README.md)
 - [← Documentation](docs/README.md)
 - [← Main Project](../README.md)
 - [← Root](../../README.md)
 
 ## Quick Links
-
 - [Getting Started](getting-started.md)
 - [API Reference](api-reference.md)
 - [Examples](examples.md)
@@ -141,29 +147,25 @@ name: Fix Documentation
 on:
   push:
     paths:
-      - 'docs/**'
-      - 'scripts/docs-fixes/**'
+- 'docs/**'
+- 'scripts/docs-fixes/**'
 
 jobs:
   fix-docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js
+- uses: actions/checkout@v3
+- name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
-      - name: Install dependencies
+- name: Install dependencies
         run: npm ci
-        
-      - name: Fix documentation issues
+- name: Fix documentation issues
         run: |
           cd scripts/docs-fixes
           node src/docs-fixer.js --validate
-          
-      - name: Commit changes
+- name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

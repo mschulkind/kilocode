@@ -1,5 +1,13 @@
 # Configuration Guide
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 ## Overview
 
 The KiloCode Documentation Fixer uses a flexible configuration system that allows you to customize behavior, add new fix patterns, and extend functionality.
@@ -70,7 +78,6 @@ const PATH_FIXES = [
 ### Pattern Matching
 
 Path fixes use regular expressions to match file paths:
-
 - `/\/architecture\/[^\/]+\.md$/`: Matches files in `/architecture/` directory
 - `/\/architecture\/[^\/]+\/[^\/]+\.md$/`: Matches files in `/architecture/subdir/` directory
 - `/.*\.md$/`: Matches all markdown files
@@ -81,7 +88,8 @@ Each fix rule specifies:
 - `from`: The incorrect path pattern to find
 - `to`: The correct path to replace it with
 
-**Example:**
+- *Example:*\*
+
 ```javascript
 {
   from: '../GLOSSARY.md',      // Find this pattern
@@ -117,12 +125,10 @@ const LINK_TEXT_IMPROVEMENTS = [
 ```
 
 ### Pattern Types
-
 1. **Static Replacement**: Simple string replacement
    ```javascript
    { pattern: /\[README\.md\]/g, replacement: '[Project Overview]' }
    ```
-
 2. **Dynamic Replacement**: Function-based replacement
    ```javascript
    { 
@@ -144,7 +150,6 @@ const NAVIGATION_TEMPLATES = {
   // New template for a specific section
   newSection: `
 ## Navigation
-
 - [← New Section Overview](README.md)
 - [← Subsection](subsection/README.md)
 - [← Main Documentation](../README.md)
@@ -154,7 +159,6 @@ const NAVIGATION_TEMPLATES = {
   // Template with dynamic content
   dynamicTemplate: (sectionName) => `
 ## Navigation
-
 - [← ${sectionName} Overview](README.md)
 - [← Main Documentation](../README.md)
 `
