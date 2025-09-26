@@ -1,0 +1,40 @@
+---
+description: Ensure task lists adhere to the CHECKLIST_QUICK_REFERENCE.md guidelines
+globs: []
+alwaysApply: true
+---
+
+# Task List Creation Guidelines
+
+When creating a task list, implementation checklist, or project planning document, **always** follow `docs/tools/CHECKLIST_QUICK_REFERENCE.md` automatically.
+
+## Required Elements
+
+### Task Structure
+- **Task IDs**: Use format `T001`, `T002`, `T003`, etc.
+- **Status tracking**: ⏳ Pending, 🔄 In Progress, ✅ Done, ❌ Blocked
+- **Time estimates**: Include realistic time estimates
+- **Subtasks**: Break down into specific, actionable items
+- **Deliverables**: Clearly define expected outputs
+- **Testing/validation**: Include verification steps
+
+### Progress Tracking
+- **Timestamps**: Use ISO 8601 format (`2025-01-27T10:30:00Z`)
+- **Commit messages**: Use format `[type](TNNN): brief-description`
+
+### File Organization
+- **Directory**: `context/<proj_name>/phase1.md`
+- **Template**: Copy from `docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md`
+- **Naming**: Extract project name from plan filename (e.g., `API_GATEWAY_PLAN.md` → `api-gateway`)
+
+## Quick Setup
+```bash
+cp docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md context/[proj_name]/phase1.md
+```
+
+## Best Practices
+- Make tasks specific and testable
+- Include clear deliverables
+- Use realistic time estimates
+- Follow the standardized format for consistency
+
