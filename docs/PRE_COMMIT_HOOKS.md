@@ -256,8 +256,7 @@ For issues with pre-commit hooks:
 5. **Report bugs or false positives**
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)
+- *Navigation*\*: [← Back to Documentation Guide](../../DOCUMENTATION_GUIDE.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)

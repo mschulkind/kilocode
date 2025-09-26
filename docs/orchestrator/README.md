@@ -43,25 +43,25 @@ subtask coordination.
 
 #### 🎵 **Understanding the Symphony** (How It Works)
 
-- *For Expert Engineers New to KiloCode:**
+- *For Expert Engineers New to KiloCode:*\*
 1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
    Subtask, etc.)
 2. **System Overview**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) - High-level architecture and
    responsibilities
 3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns
    and state management
-4. **Current Issues**: [Race Condition Analysis](../architecture/race-condition/README.md) - API
+4. **Current Issues**: [Race Condition Analysis](../architecture/README.md) - API
    duplication problems
 
 #### 🚨 **Emergency Response** (Something's Broken!)
-1. **Quick Diagnosis**: [Race Condition Analysis](../architecture/race-condition/README.md) -
+1. **Quick Diagnosis**: [Race Condition Analysis](../architecture/README.md) -
    Current API duplication issues
 2. **Understand Flow**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Execution patterns and
    state transitions
-3. **Find Solutions**: [State Machines](../architecture/state-machines/README.md) - Behavior
+3. **Find Solutions**: [State Machines](../architecture/README.md) - Behavior
    modeling and fixes
 4. **Implementation**:
-   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Detailed
+   [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md) - Detailed
    fixes
 
 ## 🦕 Dinosaur Analogy
@@ -105,35 +105,39 @@ one section of the orchestra plays at a time.
 
 ### When You're Here, You Can:
 
-- *Understanding Orchestrator Architecture:**
+- *Understanding Orchestrator Architecture:*\*
 
 - **Next**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) →
   [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior modeling,
+
+- **Related**: [State Machines](../architecture/README.md) for behavior modeling,
   [Technical Glossary](../../GLOSSARY.md) for terminology
 
-- *Investigating Execution Issues:**
+- *Investigating Execution Issues:*\*
 
 - **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
-  [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+  [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
-- *Implementing Orchestrator Features:**
+- *Implementing Orchestrator Features:*\*
 
 - **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+
+- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
   codebase patterns
 
-- *Understanding Current Problems:**
+- *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+
+- **Related**: [State Machines](../architecture/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
@@ -141,12 +145,10 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to this README for guidance.
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Documentation Hub](../../README.md) ·
-[→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../../GLOSSARY.md)
-· [↑ Table of Contents](#-navigation-map)
-
+- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+  [→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../../GLOSSARY.md)
+  · [↑ Table of Contents](#-navigation-map)
 - "The best orchestras have a conductor who knows when to let each section play, and when to bring
-them all together. Our system needs the same kind of coordination."* 🎼
+  them all together. Our system needs the same kind of coordination."\* 🎼

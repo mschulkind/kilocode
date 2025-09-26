@@ -2,8 +2,8 @@
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Detailed analysis of why the problematic change was made and the navigation scenario it
-was designed to solve.
+- *Purpose:*\* Detailed analysis of why the problematic change was made and the navigation scenario it
+  was designed to solve.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -13,24 +13,23 @@ was designed to solve.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ### The Original Problem
 
 The commit message reveals the intended purpose: **"fix children task loading to continue the
 execution of the parent after finished"**
 
-- *Critical Navigation Scenario Being Solved:**
+- *Critical Navigation Scenario Being Solved:*\*
 
 The fix was specifically needed for a complex user workflow where task state could be lost during
 navigation:
@@ -42,27 +41,33 @@ navigation:
 
 ### The Navigation State Loss Problem
 
-- *Root Issue**: When users navigate away from a running subtask and then return, the task stack
-reconstruction process was incomplete, causing the parent orchestrator to lose its execution
-context.
+- *Root Issue*\*: When users navigate away from a running subtask and then return, the task stack
+  reconstruction process was incomplete, causing the parent orchestrator to lose its execution
+  context.
 
-- *Technical Details:**
+- *Technical Details:*\*
 
 - **Task Stack**: The orchestrator maintains a stack of active tasks
+
 - **Navigation**: Switching chats clears the current task stack
+
 - **Resume**: Clicking "Resume" on a subtask reconstructs the stack from history
+
 - **Missing Link**: The reconstructed parent task wasn't properly connected to continue execution
 
-- *User Experience Impact:**
+- *User Experience Impact:*\*
 
 - **Lost Progress**: Orchestrator stops mid-workflow
+
 - **Confusing State**: User expects orchestrator to continue after subtask
+
 - **Manual Intervention**: User has to manually restart the orchestrator
+
 - **Broken Workflow**: Complex multi-step processes get interrupted
 
 ### The Specific Code Problem
 
-- *Before the Fix** (`finishSubTask` method):
+- *Before the Fix*\* (`finishSubTask` method):
 
 ```typescript
 async finishSubTask(lastMessage: string) {
@@ -72,13 +77,13 @@ async finishSubTask(lastMessage: string) {
 }
 ```
 
-- *The Issue**: After task stack reconstruction from navigation, the parent orchestrator task was:
+- *The Issue*\*: After task stack reconstruction from navigation, the parent orchestrator task was:
 1. **Properly loaded** from history with correct conversation state
 2. **Properly initialized** with saved messages and API conversation
 3. **NOT continuing execution** - it was just sitting there waiting
 
-- *The Missing Piece**: The orchestrator needed to be told to continue its execution loop after the
-subtask completed, especially when loaded from a navigation scenario.
+- *The Missing Piece*\*: The orchestrator needed to be told to continue its execution loop after the
+  subtask completed, especially when loaded from a navigation scenario.
 
 ## The Navigation Flow Diagram
 
@@ -111,8 +116,8 @@ graph TD
 
 ## The Solution Approach
 
-- *The Fix**: Add logic to continue parent execution after subtask completion, especially for
-navigation scenarios:
+- *The Fix*\*: Add logic to continue parent execution after subtask completion, especially for
+  navigation scenarios:
 
 ```typescript
 private async continueParentTask(lastMessage: string): Promise<void> {
@@ -139,7 +144,7 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 }
 ```
 
-- *Why This Was Necessary:**
+- *Why This Was Necessary:*\*
 1. **Navigation Recovery**: Ensures orchestrator continues after user navigates away and back
 2. **State Reconstruction**: Properly initializes parent task from saved history
 3. **Execution Continuation**: Tells the orchestrator to continue its workflow
@@ -147,46 +152,50 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 
 ### The Unintended Consequence
 
-- *The Problem**: The fix was designed for **navigation scenarios** but also affects **active
-execution scenarios**:
+- *The Problem*\*: The fix was designed for **navigation scenarios** but also affects **active
+  execution scenarios**:
 
 - **Navigation Scenario**: User navigates away and back (intended use case)
+
 - **Active Execution Scenario**: User stays in chat during subtask execution (unintended side
   effect)
 
-- *The Race Condition**: In active execution, both the main task loop and subtask completion can call
-`recursivelyMakeClineRequests` simultaneously, causing the API duplication issue.
+- *The Race Condition*\*: In active execution, both the main task loop and subtask completion can call
+  `recursivelyMakeClineRequests` simultaneously, causing the API duplication issue.
 
-- *The Challenge**: The fix is necessary for navigation scenarios but causes problems in active
-execution scenarios.
+- *The Challenge*\*: The fix is necessary for navigation scenarios but causes problems in active
+  execution scenarios.
 
 ### The Complete Solution
 
-- *What's Needed**: A solution that:
+- *What's Needed*\*: A solution that:
 1. **Preserves the navigation fix** - orchestrator continues after navigation
 2. **Prevents the race condition** - no concurrent API calls in active execution
 3. **Maintains user experience** - seamless workflow in both scenarios
 
-- *The Answer**: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests` call
-executes at a time, regardless of the scenario.
+- *The Answer*\*: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests` call
+  executes at a time, regardless of the scenario.
 
 ## Why the Stack Differs Based on Navigation Path
 
-- *The Core Issue**: The task stack state depends entirely on **how you arrived** at viewing a given
-task, not just which task you're viewing.
+- *The Core Issue*\*: The task stack state depends entirely on **how you arrived** at viewing a given
+  task, not just which task you're viewing.
 
 ### Path 1: Active Execution (Normal Flow)
 
-- *How you get there**: Start orchestrator → Create subtask → Stay in chat
+- *How you get there*\*: Start orchestrator → Create subtask → Stay in chat
 
-- *Stack State**:
+- *Stack State*\*:
 
 - **Parent Task**: Active in memory, running execution loop
+
 - **Child Task**: Active in memory, running execution loop
+
 - **Parent Reference**: Direct reference, no reconstruction needed
+
 - **Execution Context**: Fully initialized and running
 
-- *Code Flow**:
+- *Code Flow*\*:
 
 ```typescript
 // Parent task is actively running
@@ -197,16 +206,19 @@ await parentTask.completeSubtask(lastMessage) // Add result
 
 ### Path 2: Navigation Return (Reconstruction Flow)
 
-- *How you get there**: Start orchestrator → Create subtask → Navigate away → Return → Click Resume
+- *How you get there*\*: Start orchestrator → Create subtask → Navigate away → Return → Click Resume
 
-- *Stack State**:
+- *Stack State*\*:
 
 - **Parent Task**: Reconstructed from history, not actively running
+
 - **Child Task**: Reconstructed from history, not actively running
+
 - **Parent Reference**: Reconstructed reference, needs initialization
+
 - **Execution Context**: Needs to be restarted
 
-- *Code Flow**:
+- *Code Flow*\*:
 
 ```typescript
 // Parent task needs to be restarted
@@ -226,16 +238,19 @@ await parentTask.recursivelyMakeClineRequests([], false)
 
 ### Chat History (Persistent Data)
 
-- *Definition**: The persistent record of all messages in a conversation, stored in the database.
+- *Definition*\*: The persistent record of all messages in a conversation, stored in the database.
 
-- *Characteristics**:
+- *Characteristics*\*:
 
 - **Persistent**: Survives restarts, navigation, and system reboots
+
 - **Static**: Just data, no execution context
+
 - **Immutable**: Messages don't change once created
+
 - **Searchable**: Can be queried and filtered
 
-- *Data Model**:
+- *Data Model*\*:
 
 ```typescript
 interface ChatHistory {
@@ -250,16 +265,19 @@ interface ChatHistory {
 
 ### Task (Active Execution Context)
 
-- *Definition**: An active execution context that processes chat history and performs work.
+- *Definition*\*: An active execution context that processes chat history and performs work.
 
-- *Characteristics**:
+- *Characteristics*\*:
 
 - **Active**: Currently running and processing
+
 - **Dynamic**: State changes during execution
+
 - **Temporary**: Exists only while running
+
 - **Stateful**: Maintains execution state and context
 
-- *Data Model**:
+- *Data Model*\*:
 
 ```typescript
 interface Task {
@@ -275,16 +293,19 @@ interface Task {
 
 ### Chat Session (Active UI View)
 
-- *Definition**: The active UI view that displays a chat history and manages user interaction.
+- *Definition*\*: The active UI view that displays a chat history and manages user interaction.
 
-- *Characteristics**:
+- *Characteristics*\*:
 
 - **UI Context**: What the user is currently viewing
+
 - **Interactive**: Handles user input and displays responses
+
 - **Temporary**: Exists only while the UI is open
+
 - **Stateful**: Maintains UI state and user interaction context
 
-- *Data Model**:
+- *Data Model*\*:
 
 ```typescript
 interface ChatSession {
@@ -337,7 +358,7 @@ A chat session is considered inactive when:
 4. **Timeout**: Session has been idle for too long
 5. **Memory Pressure**: System needs to free up resources
 
-- *Code Example**:
+- *Code Example*\*:
 
 ```typescript
 interface SessionState {
@@ -365,7 +386,7 @@ A task is considered completed when:
 4. **Timeout**: Task exceeded its time limit
 5. **System Abort**: System terminated the task
 
-- *Code Example**:
+- *Code Example*\*:
 
 ```typescript
 enum TaskStatus {
@@ -410,7 +431,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
 - [← Architecture Overview](../README.md)
 - [← Race Condition Analysis](README.md)
 - [← Root Cause Analysis](ROOT_CAUSE_ANALYSIS.md)

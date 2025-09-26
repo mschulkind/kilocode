@@ -30,7 +30,7 @@ Remark is a powerful markdown processor that enables:
 Markdown Files → Remark Processing → Validation Rules → Error Reports
 ```
 
-- *Key Features:**
+- *Key Features:*\*
 - Real-time validation in VS Code
 - Pre-commit validation hooks
 - CI/CD pipeline integration
@@ -42,7 +42,7 @@ Markdown Files → Remark Processing → Validation Rules → Error Reports
 Documentation → Auto-Maintenance → Updated Files → Quality Reports
 ```
 
-- *Automated Tasks:**
+- *Automated Tasks:*\*
 - Table of Contents generation
 - Navigation footer updates
 - Research context validation
@@ -54,7 +54,7 @@ Documentation → Auto-Maintenance → Updated Files → Quality Reports
 Content → Quality Metrics → Scoring → Improvement Suggestions
 ```
 
-- *Metrics Tracked:**
+- *Metrics Tracked:*\*
 - Readability scores
 - Technical term consistency
 - Cross-reference validation
@@ -102,13 +102,13 @@ npx remark docs/specific-file.md
 
 ### VS Code Integration
 
-- *Real-time Validation:**
+- *Real-time Validation:*\*
 - Errors appear in Problems panel
 - Auto-fix on save enabled
 - Live link validation
 - TOC auto-generation
 
-- *Available Tasks:**
+- *Available Tasks:*\*
 - `Ctrl+Shift+P` → "Tasks: Run Task"
 - Select `docs: validate`, `docs: maintain`, or `docs: report`
 
@@ -133,9 +133,11 @@ Every documentation file must include:
 
    ```markdown
    ## Table of Contents
+   ```
 - [Section 1](#section-1)
 - [Section 2](#section-2)
-   ```
+  ```
+  ```
 
 ### Style Requirements
 
@@ -180,17 +182,17 @@ Every documentation file must include:
 
 ### Common Issues
 
-- *Validation Errors:**
+- *Validation Errors:*\*
 - Check Problems panel in VS Code
 - Run `pnpm docs:validate` for detailed output
 - Review error messages and fix accordingly
 
-- *Auto-fix Not Working:**
+- *Auto-fix Not Working:*\*
 - Ensure markdownlint extension is active
 - Check VS Code settings for auto-fix configuration
 - Try manual fix: `Ctrl+Shift+P` → "Markdown: Fix all markdownlint violations"
 
-- *Performance Issues:**
+- *Performance Issues:*\*
 - Large files may take longer to validate
 - Use incremental validation for changed files
 - Check file size and complexity
@@ -198,7 +200,7 @@ Every documentation file must include:
 ### Getting Help
 1. Check this overview document
 2. Review [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-3. Consult [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+3. Consult [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 4. Check VS Code output logs for detailed error information
 
 ## Best Practices
@@ -254,13 +256,12 @@ After mastering the basic workflow:
 
 ## Related Documentation
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/repository/DEVELOPMENT_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](../architecture/DEVELOPMENT_GUIDE.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
 ## Navigation
-
 - [← Tools Overview](README.md)
 - [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
 - [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)

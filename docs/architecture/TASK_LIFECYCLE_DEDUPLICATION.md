@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Detailed documentation of task lifecycle management, message queue processing, and
-deduplication mechanisms to prevent duplicate task creation and concurrent execution issues.
+- *Purpose:*\* Detailed documentation of task lifecycle management, message queue processing, and
+  deduplication mechanisms to prevent duplicate task creation and concurrent execution issues.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -34,21 +34,19 @@ deduplication mechanisms to prevent duplicate task creation and concurrent execu
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - The Task Lifecycle Deduplication system manages task creation, message queue processing, and
-prevents duplicate task execution. This system is critical for maintaining system stability and
-preventing resource conflicts in the KiloCode orchestrator.*
+  prevents duplicate task execution. This system is critical for maintaining system stability and
+  preventing resource conflicts in the KiloCode orchestrator.\*
 
 The Task Lifecycle system implements several deduplication mechanisms:
 1. **Task Creation Deduplication** - Prevents multiple task instances for single request
@@ -370,14 +368,14 @@ public postStateToWebview(): void {
 
 ### Issue 1: Multiple Task Instances
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Multiple task IDs for single request
 - Concurrent task execution
 - Resource conflicts
 
-- *Root Cause**: Task creation not properly checking for existing tasks
+- *Root Cause*\*: Task creation not properly checking for existing tasks
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Enhanced task creation check
@@ -416,14 +414,14 @@ public async createTask(text?: string, images?: string[]): Promise<Task> {
 
 ### Issue 2: Message Queue Duplication
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Same message processed multiple times
 - Queue growing indefinitely
 - Duplicate API requests
 
-- *Root Cause**: Message deduplication not working properly
+- *Root Cause*\*: Message deduplication not working properly
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Enhanced message deduplication
@@ -465,14 +463,14 @@ private createMessageSignature(text: string, images?: string[]): string {
 
 ### Issue 3: State Desynchronization
 
-- *Symptoms**:
+- *Symptoms*\*:
 - UI state doesn't match task state
 - Buttons enabled when they should be disabled
 - Inconsistent behavior
 
-- *Root Cause**: State updates not properly synchronized
+- *Root Cause*\*: State updates not properly synchronized
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Comprehensive state validation
@@ -591,11 +589,10 @@ const stateMetrics = {
   Root: [`README.md`](README.md) · Source: `/docs/TASK_LIFECYCLE_DEDUPLICATION.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#task-lifecycle-deduplication)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#task-lifecycle-deduplication)
 
 ## No Dead Ends Policy
 

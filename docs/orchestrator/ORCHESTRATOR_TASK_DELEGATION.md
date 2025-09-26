@@ -2,9 +2,9 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** This document explains the mechanism and strategy behind task delegation in the Kilo
-Code Orchestrator. It covers how complex problems are decomposed into smaller, manageable subtasks
-and the lifecycle of those subtasks.
+- *Purpose:*\* This document explains the mechanism and strategy behind task delegation in the Kilo
+  Code Orchestrator. It covers how complex problems are decomposed into smaller, manageable subtasks
+  and the lifecycle of those subtasks.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -20,8 +20,7 @@ and the lifecycle of those subtasks.
 - \[7. Navigation Footer
 
 </details>
-
-- **
+- \*\*
 
 ### Related Documents
 
@@ -35,8 +34,7 @@ and the lifecycle of those subtasks.
   `startSubtask` and `completeSubtask` tools.
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 ### The Philosophy of Delegation
 
@@ -59,8 +57,7 @@ This approach has several advantages:
   and manage.
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 ### The Subtask Mechanism
 
@@ -77,8 +74,7 @@ Task delegation is facilitated by a pair of specialized tools:
 The parent task is effectively in an `awaiting_subtask` state while the child task is active.
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 ### Subtask Workflow Diagram
 
@@ -108,8 +104,7 @@ sequenceDiagram
 ```
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 ### Key Symbols and Their Roles
 
@@ -125,8 +120,7 @@ sequenceDiagram
   result is not immediately needed.
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 ### When to Use Subtasks
 
@@ -145,29 +139,31 @@ Common scenarios for delegation include:
   the code it has just written.
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:**
+- *Understanding This System:*\*
 
 - **Next**: Check related documentation in the same directory
+
 - **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
-- *Implementing Features:**
+- *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -185,12 +181,10 @@ You have reached the end of the task delegation document. Return to the
 [Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md).
 
 [Back to Top](#orchestrator-task-delegation)
-
-- **
+- \*\*
 
 End of document.
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
-[↑ Table of Contents](#orchestrator-task-delegation)
+- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+  [↑ Table of Contents](#orchestrator-task-delegation)

@@ -2,7 +2,7 @@
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** High-level overview of the KiloCode repository organization and directory structure.
+- *Purpose:*\* High-level overview of the KiloCode repository organization and directory structure.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -12,30 +12,34 @@
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The KiloCode repository is a comprehensive VS Code extension for AI-powered coding assistance,
 featuring a multi-layered architecture with extensive tooling, testing, and deployment
 infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages,
 applications, and services.
 
-- *Key Statistics:**
+- *Key Statistics:*\*
 
 - **Total Files**: 1,120+ TypeScript files
+
 - **Workspace Packages**: 7 core packages
+
 - **Applications**: 8 applications (docs, testing, web interfaces)
+
 - **Core Services**: 15+ specialized services
+
 - **Tools**: 25+ AI-powered tools
+
 - **Test Coverage**: Extensive unit, integration, and E2E testing
 
 ## Repository Structure Diagram
@@ -91,62 +95,81 @@ graph TB
 
 ### Core Extension (`src/`)
 
-- *Purpose**: Main VS Code extension implementation
+- *Purpose*\*: Main VS Code extension implementation
 
-- *Key Components**:
+- *Key Components*\*:
 
 - **Core Services**: Task management, API integration, message handling
+
 - **Webview Communication**: Bridge between extension and UI
+
 - **Integrations**: External service integrations
+
 - **Utilities**: Shared utility functions
+
 - **Activation**: Extension activation and lifecycle management
 
-- *File Count**: 400+ TypeScript files
+- *File Count*\*: 400+ TypeScript files
 
 ### Webview UI (`webview-ui/`)
 
-- *Purpose**: React-based user interface for the extension
+- *Purpose*\*: React-based user interface for the extension
 
-- *Key Components**:
+- *Key Components*\*:
 
 - **Chat Interface**: Main chat UI components
+
 - **Task Management**: Task creation and management UI
+
 - **Settings**: Configuration and preferences UI
+
 - **Components**: Reusable UI components
+
 - **Services**: Frontend service layer
 
-- *File Count**: 300+ TypeScript/React files
+- *File Count*\*: 300+ TypeScript/React files
 
 ### Workspace Packages (`packages/`)
 
-- *Purpose**: Shared libraries and utilities across the monorepo
+- *Purpose*\*: Shared libraries and utilities across the monorepo
 
-- *Packages**:
+- *Packages*\*:
 
 - **@roo-code/types**: Shared TypeScript type definitions
+
 - **@roo-code/build**: Build system and tooling
+
 - **@roo-code/cloud**: Cloud service integrations
+
 - **@roo-code/evals**: Evaluation and testing utilities
+
 - **@roo-code/ipc**: Inter-process communication
+
 - **@roo-code/telemetry**: Telemetry and analytics
+
 - **@kilo-code/config-\***: Configuration packages
 
-- *File Count**: 200+ TypeScript files
+- *File Count*\*: 200+ TypeScript files
 
 ### Applications (`apps/`)
 
-- *Purpose**: Standalone applications and interfaces
+- *Purpose*\*: Standalone applications and interfaces
 
-- *Applications**:
+- *Applications*\*:
 
 - **kilocode-docs**: Documentation website
+
 - **storybook**: Component library and design system
+
 - **playwright-e2e**: End-to-end testing suite
+
 - **vscode-e2e**: VS Code extension testing
+
 - **web-evals**: Web-based evaluation tools
+
 - **web-roo-code**: Web interface for RooCode
 
-- *File Count**: 150+ TypeScript files
+- *File Count*\*: 150+ TypeScript files
 
 ## File Type Distribution
 
@@ -176,7 +199,7 @@ graph TB
 
 ### Workspace Configuration
 
-- *Root Package.json**:
+- *Root Package.json*\*:
 
 ```json
 {
@@ -186,17 +209,17 @@ graph TB
 }
 ```
 
-- *Package Management**: PNPM workspace with shared dependencies
+- *Package Management*\*: PNPM workspace with shared dependencies
 
-- *Build System**: Turbo for monorepo build orchestration
+- *Build System*\*: Turbo for monorepo build orchestration
 
 ### Dependency Management
 
-- *Shared Dependencies**: Common dependencies managed at root level
+- *Shared Dependencies*\*: Common dependencies managed at root level
 
-- *Package-Specific Dependencies**: Individual packages can have specific dependencies
+- *Package-Specific Dependencies*\*: Individual packages can have specific dependencies
 
-- *Version Management**: Centralized version management with Renovate
+- *Version Management*\*: Centralized version management with Renovate
 
 ## Development Workflow
 
@@ -222,7 +245,7 @@ graph TB
 
 ### Build Pipeline
 
-- *Stages**:
+- *Stages*\*:
 1. **Dependency Installation**: Install all workspace dependencies
 2. **Type Checking**: Validate TypeScript across all packages
 3. **Linting**: Run ESLint on all code
@@ -230,53 +253,57 @@ graph TB
 5. **Building**: Compile and bundle all packages
 6. **Packaging**: Create distribution packages
 
-- *Tools**:
+- *Tools*\*:
 
 - **Turbo**: Monorepo build orchestration
+
 - **TypeScript**: Type checking and compilation
+
 - **ESLint**: Code linting and formatting
+
 - **Vitest**: Unit and integration testing
+
 - **Playwright**: End-to-end testing
 
 ### Deployment Strategy
 
-- *VS Code Extension**: Published to VS Code Marketplace
+- *VS Code Extension*\*: Published to VS Code Marketplace
 
-- *Web Applications**: Deployed to hosting platforms
+- *Web Applications*\*: Deployed to hosting platforms
 
-- *Documentation**: Deployed to documentation hosting
+- *Documentation*\*: Deployed to documentation hosting
 
-- *Packages**: Published to NPM registry
+- *Packages*\*: Published to NPM registry
 
 ## Quality Assurance
 
 ### Code Quality
 
-- *Linting**: ESLint with custom rules for TypeScript and React
+- *Linting*\*: ESLint with custom rules for TypeScript and React
 
-- *Formatting**: Prettier for consistent code formatting
+- *Formatting*\*: Prettier for consistent code formatting
 
-- *Type Safety**: Strict TypeScript configuration
+- *Type Safety*\*: Strict TypeScript configuration
 
-- *Code Review**: Mandatory code review for all changes
+- *Code Review*\*: Mandatory code review for all changes
 
 ### Testing Strategy
 
-- *Unit Tests**: Individual component and function testing
+- *Unit Tests*\*: Individual component and function testing
 
-- *Integration Tests**: Component interaction testing
+- *Integration Tests*\*: Component interaction testing
 
-- *End-to-End Tests**: Full workflow testing
+- *End-to-End Tests*\*: Full workflow testing
 
-- *Performance Tests**: Load and performance testing
+- *Performance Tests*\*: Load and performance testing
 
 ### Continuous Integration
 
-- *Automated Testing**: All tests run on every commit
+- *Automated Testing*\*: All tests run on every commit
 
-- *Quality Gates**: Build fails if quality checks fail
+- *Quality Gates*\*: Build fails if quality checks fail
 
-- *Deployment**: Automated deployment on successful builds
+- *Deployment*\*: Automated deployment on successful builds
 
 ## Next Steps
 1. **Explore Core Systems**: See [CORE\_SYSTEMS.md](CORE_SYSTEMS.md)
@@ -289,11 +316,10 @@ graph TB
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#repository-structure)
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [repository](../../architecture/) · [↑ Table of Contents](#repository-structure)
 
 ## No Dead Ends Policy
 

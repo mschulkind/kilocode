@@ -88,32 +88,33 @@ The provider instance is the "brain" of the Kilo Code extension - it receives re
 the complex process of gathering and assembling rules from multiple sources, and returns the final
 instructions to the user. It serves as the essential bridge between VS Code's extension framework
 and the sophisticated rules loading system.
-
-- **
-
+- \*\*
 - This document was created to provide clarity on the provider instance concept in response to
-questions about the rules loading system architecture.*
+  questions about the rules loading system architecture.\*
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:**
+- *Understanding This System:*\*
 
 - **Next**: Check related documentation in the same directory
+
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
-- *Implementing Features:**
+- *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -123,8 +124,7 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to the appropriate README for guidance.
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Documentation Hub](../../README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

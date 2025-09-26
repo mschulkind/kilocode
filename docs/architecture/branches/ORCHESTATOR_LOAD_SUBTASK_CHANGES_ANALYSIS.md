@@ -9,17 +9,16 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - [Root Cause Analysis of Duplicate API Requests](race-condition/ROOT_CAUSE_ANALYSIS.md) -
   Detailed investigation of the concurrent recursive calls race condition, including the problematic
   commit and code changes that created the issue. Provides comprehensive analysis of how the
@@ -35,18 +34,21 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 
 ## Race Condition Details
 
-- *The Specific Race Condition Created:**
+- *The Specific Race Condition Created:*\*
 
 - **Problem**: Concurrent calls to `recursivelyMakeClineRequests` from both the main orchestrator
   loop and the new `continueParentTask` method
+
 - **Trigger**: When a subtask completes while the parent orchestrator is still actively running (no
   navigation occurred)
+
 - **Symptoms**: Multiple simultaneous API requests with spinners, jumbled responses, XML corruption
   in chat history
+
 - **Severity**: 2-request race condition (common) and 3-request race condition (severe, causes
   cascading failures)
 
-- *Detailed Analysis Links:**
+- *Detailed Analysis Links:*\*
 - [Race Condition State Machine](README.md) - Understanding the concurrent
   execution states
 - [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
@@ -194,23 +196,26 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:**
+- *Understanding Architecture:*\*
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:**
+- *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
 
-- *Troubleshooting Architecture Issues:**
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -219,8 +224,7 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

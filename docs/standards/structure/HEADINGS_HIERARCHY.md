@@ -2,8 +2,8 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Detailed standards for heading structure, hierarchy, and formatting to ensure
-consistent document organization and navigation across all KiloCode documentation.
+- *Purpose:*\* Detailed standards for heading structure, hierarchy, and formatting to ensure
+  consistent document organization and navigation across all KiloCode documentation.
 
 > **Geology Fun Fact**: Just like how geological strata are organized into distinct layers with
 > specific characteristics and relationships, our document headings create a hierarchical structure
@@ -25,42 +25,43 @@ consistent document organization and navigation across all KiloCode documentatio
 
 ## Research Context
 
-- *Purpose:** Establish comprehensive standards for heading hierarchy and structure across all
-KiloCode documentation to ensure consistent navigation and accessibility.
+- *Purpose:*\* Establish comprehensive standards for heading hierarchy and structure across all
+  KiloCode documentation to ensure consistent navigation and accessibility.
 
-- *Background:** Inconsistent heading structures across documentation files were creating navigation
-challenges and accessibility issues. This document provides clear guidelines for maintaining proper
-heading hierarchy.
+- *Background:*\* Inconsistent heading structures across documentation files were creating navigation
+  challenges and accessibility issues. This document provides clear guidelines for maintaining proper
+  heading hierarchy.
 
-- *Research Questions:** How should headings be structured for optimal navigation? What case
-conventions should be used? When is H4 appropriate?
+- *Research Questions:*\* How should headings be structured for optimal navigation? What case
+  conventions should be used? When is H4 appropriate?
 
-- *Methodology:** Analysis of existing documentation patterns, accessibility best practices, and
-markdown standards to create comprehensive guidelines.
+- *Methodology:*\* Analysis of existing documentation patterns, accessibility best practices, and
+  markdown standards to create comprehensive guidelines.
 
-- *Findings:** Clear hierarchy rules (H1→H2→H3 only, with H4 for tight enumerations), consistent case
-standards (Title case for H1, sentence case for H2/H3), and single H1 rule provide the best
-structure.
-
-- **
-
+- *Findings:*\* Clear hierarchy rules (H1→H2→H3 only, with H4 for tight enumerations), consistent case
+  standards (Title case for H1, sentence case for H2/H3), and single H1 rule provide the best
+  structure.
+- \*\*
 - Consistent heading hierarchy is essential for document organization, navigation, and accessibility.
-These standards ensure that all KiloCode documentation follows a predictable structure that helps
-both authors and readers navigate content effectively.*
+  These standards ensure that all KiloCode documentation follows a predictable structure that helps
+  both authors and readers navigate content effectively.\*
 
-- *Key Standards:**
+- *Key Standards:*\*
 
 - **Allowed Hierarchy**: H1 → H2 → H3 only, with H4 for tight enumerations
+
 - **Heading Case**: H1 Title Case, H2/H3 Sentence case
+
 - **Single H1 Rule**: Every file must contain exactly one H1 at the top
+
 - **Logical Progression**: Headings must follow logical information hierarchy
 
 ## Hierarchy Rules
 
-- *Allowed Hierarchy**: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a
-single file.
+- *Allowed Hierarchy*\*: H1 → H2 → H3 only. H4 may be used only for tightly scoped enumerations in a
+  single file.
 
-- *Hierarchy Flow**:
+- *Hierarchy Flow*\*:
 
 ```
 H1 (Document Title)
@@ -76,13 +77,13 @@ H1 (Document Title)
     └── H3 (Subsection)
 ```
 
-- *H4 Usage**: H4 may only be used for tightly scoped enumerations within a single file, such as:
+- *H4 Usage*\*: H4 may only be used for tightly scoped enumerations within a single file, such as:
 - Bullet point lists
 - Numbered lists
 - Definition lists
 - Tightly related sub-items
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # Document Title (H1)
@@ -112,12 +113,10 @@ This section covers another main topic.
 ```
 
 ## Heading Case Standards
+- \*H1 (Title Case)\*\*: Capitalize major words, including nouns, verbs, adjectives, and adverbs.
+- \*H2/H3 (Sentence case)\*\*: Capitalize only the first word and proper nouns.
 
-- *H1 (Title Case)**: Capitalize major words, including nouns, verbs, adjectives, and adverbs.
-
-- *H2/H3 (Sentence case)**: Capitalize only the first word and proper nouns.
-
-- *Case Examples**:
+- *Case Examples*\*:
 
 ```markdown
 # Good: Title Case for H1
@@ -147,27 +146,33 @@ API Duplication Analysis State Machine Design Patterns Build Process Guide Docum
 ### Validation checklist
 ```
 
-- *Case Rules**:
+- *Case Rules*\*:
 
 - **H1 Title Case**: Capitalize major words (nouns, verbs, adjectives, adverbs)
+
 - **H2/H3 Sentence case**: Capitalize only first word and proper nouns
+
 - **Consistent Application**: Apply case rules consistently throughout document
+
 - **Proper Nouns**: Always capitalize proper nouns regardless of heading level
 
 ## Single H1 Rule
 
-- *Rule**: Every file MUST contain exactly one H1 at the top.
+- *Rule*\*: Every file MUST contain exactly one H1 at the top.
 
-- *Purpose**: The H1 serves as the document title and should be unique within each document.
+- *Purpose*\*: The H1 serves as the document title and should be unique within each document.
 
-- *Implementation**:
+- *Implementation*\*:
 
 - **Single H1**: Only one H1 per document
+
 - **Top Position**: H1 must be at the very top of the document
+
 - **Title Case**: H1 must use Title Case formatting
+
 - **Descriptive**: H1 should clearly describe the document's content
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # Good: Single H1 at top
@@ -219,23 +224,29 @@ More content here.
 
 ## H4 Usage Guidelines
 
-- *Rule**: H4 may be used only for tightly scoped enumerations in a single file.
+- *Rule*\*: H4 may be used only for tightly scoped enumerations in a single file.
 
-- *When to Use H4**:
+- *When to Use H4*\*:
 
 - **Bullet Point Lists**: When listing related items
+
 - **Numbered Lists**: When providing step-by-step instructions
+
 - **Definition Lists**: When defining terms or concepts
+
 - **Tightly Related Sub-items**: When breaking down a single concept
 
-- *When NOT to Use H4**:
+- *When NOT to Use H4*\*:
 
 - **Major Content Sections**: Use H2 or H3 instead
+
 - **Cross-Document Topics**: Create separate documents
+
 - **Broad Concepts**: Use H2 or H3 instead
+
 - **Navigation Elements**: Use H2 or H3 instead
 
-- *H4 Examples**:
+- *H4 Examples*\*:
 
 ```markdown
 ### Implementation Strategies (H3)
@@ -260,9 +271,9 @@ This section covers different approaches to solving the problem.
 
 ## Hierarchy Validation
 
-- *Pre-Submission Checks**: Validate heading hierarchy before submitting.
+- *Pre-Submission Checks*\*: Validate heading hierarchy before submitting.
 
-- *Required Validations**:
+- *Required Validations*\*:
 - \[ ] Single H1 at top
 - \[ ] H1 uses Title Case
 - \[ ] H2/H3 use Sentence case
@@ -270,14 +281,14 @@ This section covers different approaches to solving the problem.
 - \[ ] Logical hierarchy progression
 - \[ ] Consistent formatting
 
-- *Hierarchy Quality Checks**:
+- *Hierarchy Quality Checks*\*:
 - \[ ] Headings follow logical information hierarchy
 - \[ ] No skipped heading levels (H1 → H3 without H2)
 - \[ ] Consistent case formatting
 - \[ ] Descriptive and specific headings
 - \[ ] Proper nesting and indentation
 
-- *Common Hierarchy Issues**:
+- *Common Hierarchy Issues*\*:
 - ❌ Multiple H1 headings
 - ❌ Skipped heading levels
 - ❌ Inconsistent case formatting
@@ -286,28 +297,28 @@ This section covers different approaches to solving the problem.
 
 ## Common Mistakes
 
-- *Structure Mistakes**:
+- *Structure Mistakes*\*:
 - ❌ Multiple H1 headings in one document
 - ❌ H1 not at the top of document
 - ❌ Skipped heading levels (H1 → H3 without H2)
 - ❌ H4 used for major content sections
 - ❌ Inconsistent heading hierarchy
 
-- *Case Mistakes**:
+- *Case Mistakes*\*:
 - ❌ H1 not using Title Case
 - ❌ H2/H3 not using Sentence case
 - ❌ Inconsistent case application
 - ❌ Wrong capitalization of proper nouns
 - ❌ Mixed case within headings
 
-- *Content Mistakes**:
+- *Content Mistakes*\*:
 - ❌ Generic or unclear headings
 - ❌ Headings that don't describe content
 - ❌ Missing headings for major sections
 - ❌ Overly long or complex headings
 - ❌ Headings that don't follow logical flow
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # Bad: Multiple H1 headings
@@ -543,11 +554,10 @@ Common issues and solutions:
 ```
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [Back to Structure](README.md) · [Next: Table of Contents](TABLE_OF_CONTENTS.md) ·
-[Source: `/docs/standards/structure/HEADINGS_HIERARCHY.md#L1`](HEADINGS_HIERARCHY.md#L1)
+- *Navigation*\*: [Back to Structure](README.md) · [Next: Table of Contents](TABLE_OF_CONTENTS.md) ·
+  [Source: `/docs/standards/structure/HEADINGS_HIERARCHY.md#L1`](HEADINGS_HIERARCHY.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️
@@ -556,32 +566,34 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 ### When You're Here, You Can:
 
-- *Understanding Documentation Standards:**
+- *Understanding Documentation Standards:*\*
 
 - **Next**: Check related standards documentation in the same directory
+
 - **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
-- *Implementing Documentation Standards:**
+- *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
+- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
 
-- *Applying Standards to Documentation:**
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../../architecture/README.md) →
-  [Orchestrator Documentation](../../../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+- *Applying Standards to Documentation:*\*
+
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../../architecture/README.md) →
+  [Orchestrator Documentation](../../orchestrator/README.md)
+
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Standards Documentation](README.md) for guidance.
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Standards Documentation](README.md) ·
-[📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Standards Documentation](README.md) ·
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

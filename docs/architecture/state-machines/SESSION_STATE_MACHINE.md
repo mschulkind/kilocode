@@ -6,17 +6,16 @@
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The Session State Machine manages the lifecycle of chat sessions, including user navigation, task
 associations, and session inactivity.
@@ -195,13 +194,15 @@ A session is considered inactive when:
 The session state machine is crucial for understanding the race condition because:
 
 - **ACTIVE** sessions have tasks in memory that might be running
+
 - **PAUSED** sessions can resume tasks that cause race conditions
+
 - **INACTIVE** sessions need task reconstruction, which triggers the navigation fix
+
 - **COMPLETED** sessions are inactive and don't cause race conditions
+- \*\*
 
-- **
-
-- *Related Documentation:**
+- *Related Documentation:*\*
 - [Task State Machine](TASK_STATE_MACHINE.md)
 - [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
 - [Combined State Machine](COMBINED_STATE_MACHINE.md)
@@ -211,23 +212,26 @@ The session state machine is crucial for understanding the race condition becaus
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:**
+- *Understanding Architecture:*\*
 
 - **Next**: Check related architecture documentation in the same directory
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:**
+- *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
 
-- *Troubleshooting Architecture Issues:**
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+
+- *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -236,8 +240,7 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Architecture Documentation](README.md) ·
-[📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

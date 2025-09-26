@@ -2,9 +2,9 @@
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:** This document provides guidelines and best practices for developers working with the
-Kilo Code Orchestrator. Following these practices will lead to more robust, predictable, and
-maintainable interactions with the system.
+- *Purpose:*\* This document provides guidelines and best practices for developers working with the
+  Kilo Code Orchestrator. Following these practices will lead to more robust, predictable, and
+  maintainable interactions with the system.
 
 > **Biology Fun Fact**: Best practices are like the DNA of good code - they encode the essential
 > patterns that ensure healthy, robust systems that can evolve and adapt over time! 🧬
@@ -19,8 +19,7 @@ maintainable interactions with the system.
 - \[6. Navigation Footer
 
 </details>
-
-- **
+- \*\*
 
 ### Related Documents
 
@@ -33,8 +32,7 @@ maintainable interactions with the system.
 - **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-best-practices)
-
-- **
+- \*\*
 
 ### Prompt Engineering Best Practices
 
@@ -55,8 +53,7 @@ The quality of the orchestrator's output is highly dependent on the quality of t
   Often, a small tweak to the initial prompt or a custom rule can significantly improve performance.
 
 [Back to Top](#orchestrator-best-practices)
-
-- **
+- \*\*
 
 ### Tool and Mode Development
 
@@ -77,8 +74,7 @@ When extending the system, adhere to these principles.
   violation occurs.
 
 [Back to Top](#orchestrator-best-practices)
-
-- **
+- \*\*
 
 ### Task Management and Delegation
 
@@ -94,8 +90,7 @@ When extending the system, adhere to these principles.
   captured by the [`switchModeTool`](/src/core/tools/switchModeTool.ts#L8).
 
 [Back to Top](#orchestrator-best-practices)
-
-- **
+- \*\*
 
 ### Testing and Validation
 
@@ -111,8 +106,7 @@ When extending the system, adhere to these principles.
   prompt to completion.
 
 [Back to Top](#orchestrator-best-practices)
-
-- **
+- \*\*
 
 ### Navigation Footer
 
@@ -122,43 +116,46 @@ When extending the system, adhere to these principles.
 
 ### When You're Here, You Can:
 
-- *Implementing Orchestrator Features:**
+- *Implementing Orchestrator Features:*\*
 
 - **Next**: [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Orchestrator Extensibility](ORCHESTRATOR_EXTENSIBILITY.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+
 - **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for codebase
+  [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for codebase
   patterns
 
-- *Understanding Current Problems:**
+- *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- *Testing and Validation:**
+- **Related**: [State Machines](../architecture/README.md) for behavior analysis
 
-- **Next**: [Testing Strategy](../architecture/race-condition/TESTING_STRATEGY.md) →
+- *Testing and Validation:*\*
+
+- **Next**: [Testing Strategy](../architecture/TESTING_STRATEGY.md) →
   [Implementation Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md) →
-  [Repository Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+  [Repository Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
-- *Understanding Orchestrator Architecture:**
+- *Understanding Orchestrator Architecture:*\*
 
 - **Next**: [Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md) →
   [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior modeling
+
+- **Related**: [State Machines](../architecture/README.md) for behavior modeling
 
 ### No Dead Ends Policy
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Orchestrator Documentation](README.md) for guidance.
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Orchestrator Documentation](README.md) ·
-[→ Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) ·
-[📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
+  [→ Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

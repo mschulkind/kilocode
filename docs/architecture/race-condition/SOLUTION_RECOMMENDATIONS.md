@@ -2,7 +2,7 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Detailed recommendations for solving the API duplication race condition issue.
+- *Purpose:*\* Detailed recommendations for solving the API duplication race condition issue.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -12,17 +12,16 @@
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The race condition can be solved by implementing a **synchronization mechanism** that ensures only
 one `recursivelyMakeClineRequests` call executes at a time, regardless of whether it's called from
@@ -32,10 +31,10 @@ the main task loop or subtask completion.
 
 ### Core Principle
 
-- *Single Execution**: Only one `recursivelyMakeClineRequests` call should be active at any given
-time.
+- *Single Execution*\*: Only one `recursivelyMakeClineRequests` call should be active at any given
+  time.
 
-- *Preserve Functionality**: The solution must maintain both:
+- *Preserve Functionality*\*: The solution must maintain both:
 - Navigation scenario functionality (orchestrator continues after navigation)
 - Active execution functionality (normal task execution)
 
@@ -391,11 +390,10 @@ If code changes are needed:
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[race-condition](../docs/architecture/race-condition/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [race-condition](../../architecture/) · ↑ Table of Contents
 
 ## No Dead Ends Policy
 

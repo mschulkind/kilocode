@@ -10,9 +10,9 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:** Describe the chat / task window UI, how user actions map to orchestrator actions, the
-control loop that decides when to fire API requests (including payload construction), how messages
-are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
+- *Purpose:*\* Describe the chat / task window UI, how user actions map to orchestrator actions, the
+  control loop that decides when to fire API requests (including payload construction), how messages
+  are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -185,16 +185,14 @@ If multiple API requests are observed for a single user action, check:
 - For developers: enable verbose orchestrator logging to capture guard evaluation and retries.
 
 [Back to Top](#)
-
-- **
+- \*\*
 
 Navigation:
 - Index: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md)
 - Task delegation: [`docs/ORCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [ui](../docs/ui/) ·
-[↑ Table of Contents](#uichattaskwindow)
+- *Navigation*\*: [docs](../) · [ui](./ui/) ·
+  [↑ Table of Contents](#uichattaskwindow)

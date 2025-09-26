@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:** Comprehensive documentation of the Orchestration Layer system, including Task Engine,
-Message Queue Service, and Orchestrator components that manage task execution and coordination.
+- *Purpose:*\* Comprehensive documentation of the Orchestration Layer system, including Task Engine,
+  Message Queue Service, and Orchestrator components that manage task execution and coordination.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -34,21 +34,19 @@ Message Queue Service, and Orchestrator components that manage task execution an
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - The Orchestration Layer system manages the core task execution engine, message queue processing,
-and overall system coordination. It is responsible for task lifecycle management, request
-deduplication, and coordinating between different system components.*
+  and overall system coordination. It is responsible for task lifecycle management, request
+  deduplication, and coordinating between different system components.\*
 
 The Orchestration Layer consists of three main components:
 1. **Task Engine** - Core task execution and lifecycle management
@@ -111,11 +109,11 @@ graph TB
 The Task Engine is the core component responsible for task execution, lifecycle management, and API
 request coordination.
 
-- *Location**: `src/core/task/Task.ts`
+- *Location*\*: `src/core/task/Task.ts`
 
 ### Task Creation
 
-- *Task Constructor**:
+- *Task Constructor*\*:
 
 ```typescript
 export class Task extends EventEmitter {
@@ -153,7 +151,7 @@ export class Task extends EventEmitter {
 
 ### Task Lifecycle
 
-- *Lifecycle States**:
+- *Lifecycle States*\*:
 
 ```mermaid
 stateDiagram-v2
@@ -172,7 +170,7 @@ stateDiagram-v2
     Error --> [*]
 ```
 
-- *Lifecycle Methods**:
+- *Lifecycle Methods*\*:
 
 ```typescript
 // Task initiation
@@ -199,7 +197,7 @@ public async completeTask(): Promise<void> {
 
 ### API Request Management
 
-- *Request Creation**:
+- *Request Creation*\*:
 
 ```typescript
 public async *attemptApiRequest(retryAttempt: number = 0): ApiStream {
@@ -244,11 +242,11 @@ public async *attemptApiRequest(retryAttempt: number = 0): ApiStream {
 The Message Queue Service manages queued messages and provides deduplication mechanisms to prevent
 duplicate processing.
 
-- *Location**: `src/core/message-queue/MessageQueueService.ts`
+- *Location*\*: `src/core/message-queue/MessageQueueService.ts`
 
 ### Service Implementation
 
-- *Core Service**:
+- *Core Service*\*:
 
 ```typescript
 export class MessageQueueService extends EventEmitter<QueueEvents> {
@@ -296,7 +294,7 @@ export class MessageQueueService extends EventEmitter<QueueEvents> {
 
 ### Message Processing
 
-- *Queue Processing Logic**:
+- *Queue Processing Logic*\*:
 
 ```typescript
 // In Task.ts
@@ -320,7 +318,7 @@ public processQueuedMessages(): void {
 
 ### Deduplication Mechanisms
 
-- *Message Deduplication**:
+- *Message Deduplication*\*:
 
 ```typescript
 // Enhanced deduplication
@@ -367,11 +365,11 @@ private createMessageSignature(text: string, images?: string[]): string {
 
 The Orchestrator manages system-wide coordination, task delegation, and component interaction.
 
-- *Location**: `src/core/webview/ClineProvider.ts`
+- *Location*\*: `src/core/webview/ClineProvider.ts`
 
 ### Task Coordination
 
-- *Task Stack Management**:
+- *Task Stack Management*\*:
 
 ```typescript
 export class ClineProvider {
@@ -424,7 +422,7 @@ export class ClineProvider {
 
 ### Component Delegation
 
-- *Task Stack Operations**:
+- *Task Stack Operations*\*:
 
 ```typescript
 private async addClineToStack(task: Task): Promise<void> {
@@ -450,7 +448,7 @@ public getCurrentTask(): Task | undefined {
 
 ### State Coordination
 
-- *Global State Management**:
+- *Global State Management*\*:
 
 ```typescript
 public postStateToWebview(): void {
@@ -473,7 +471,7 @@ public postStateToWebview(): void {
 
 ### Lifecycle Coordination
 
-- *Task State Transitions**:
+- *Task State Transitions*\*:
 
 ```typescript
 // Task state management
@@ -510,7 +508,7 @@ export class Task extends EventEmitter {
 
 ### Request Processing
 
-- *Ask Method Coordination**:
+- *Ask Method Coordination*\*:
 
 ```typescript
 public async ask(type: string, text?: string, images?: string[]): Promise<AskResult> {
@@ -558,7 +556,7 @@ public async ask(type: string, text?: string, images?: string[]): Promise<AskRes
 
 ### Cross-Component State Sync
 
-- *State Synchronization**:
+- *State Synchronization*\*:
 
 ```typescript
 // Provider state coordination
@@ -586,7 +584,7 @@ private async updateUIState(task: Task): Promise<void> {
 
 ### Concurrency Control
 
-- *Request Deduplication**:
+- *Request Deduplication*\*:
 
 ```typescript
 // Prevent concurrent request processing
@@ -611,14 +609,14 @@ public async processRequest(request: Request): Promise<Response> {
 
 ### Issue 1: Task Stack Corruption
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Multiple active tasks
 - Tasks not properly cleaned up
 - Memory leaks
 
-- *Root Cause**: Task stack not properly managed
+- *Root Cause*\*: Task stack not properly managed
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Enhanced task stack management
@@ -647,14 +645,14 @@ private cleanupTask(task: Task): void {
 
 ### Issue 2: Message Queue Race Conditions
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Messages processed multiple times
 - Queue state inconsistencies
 - Duplicate API requests
 
-- *Root Cause**: Non-atomic queue operations
+- *Root Cause*\*: Non-atomic queue operations
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Atomic queue operations
@@ -682,14 +680,14 @@ export class MessageQueueService extends EventEmitter<QueueEvents> {
 
 ### Issue 3: State Desynchronization
 
-- *Symptoms**:
+- *Symptoms*\*:
 - UI state doesn't match backend state
 - Inconsistent behavior across components
 - Race conditions in state updates
 
-- *Root Cause**: State updates not properly coordinated
+- *Root Cause*\*: State updates not properly coordinated
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Centralized state management
@@ -720,11 +718,10 @@ class StateManager {
   Root: [`README.md`](README.md) · Source: `/docs/ORCHESTRATION_LAYER_SYSTEM.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#orchestration-layer-system)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#orchestration-layer-system)
 
 ## No Dead Ends Policy
 

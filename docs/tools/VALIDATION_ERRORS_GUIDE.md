@@ -16,13 +16,13 @@ This guide helps you understand and fix common validation errors in KiloCode doc
 
 ### 1. Syntax Errors
 
-- *Missing Required Sections**
+- *Missing Required Sections*\*
 
 ```
 Error: Missing required section "Research Context"
 ```
 
-- *Fix:** Add the required section:
+- *Fix:*\* Add the required section:
 
 ```markdown
 ## Research Context
@@ -30,13 +30,13 @@ Error: Missing required section "Research Context"
 Brief description of the research and context behind this document.
 ```
 
-- *Missing Navigation Footer**
+- *Missing Navigation Footer*\*
 
 ```
 Error: Missing navigation footer
 ```
 
-- *Fix:** Add navigation footer:
+- *Fix:*\* Add navigation footer:
 
 ```markdown
 - *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
@@ -44,13 +44,13 @@ Error: Missing navigation footer
 
 ### 2. Link Errors
 
-- *Non-descriptive Link Text**
+- *Non-descriptive Link Text*\*
 
 ```
 Warning: Link text "https://example.com" is not descriptive
 ```
 
-- *Fix:** Use descriptive text:
+- *Fix:*\* Use descriptive text:
 
 ```markdown
 <!-- Bad -->
@@ -62,13 +62,13 @@ Warning: Link text "https://example.com" is not descriptive
 [Example Website](https://example.com)
 ```
 
-- *Broken Internal Links**
+- *Broken Internal Links*\*
 
 ```
 Error: Broken internal link to "nonexistent-file.md"
 ```
 
-- *Fix:** Check file path and update link:
+- *Fix:*\* Check file path and update link:
 
 ```markdown
 <!-- Verify file exists and update path -->
@@ -76,13 +76,13 @@ Error: Broken internal link to "nonexistent-file.md"
 [Link Text](./correct-path/file.md)
 ```
 
-- *Broken External Links**
+- *Broken External Links*\*
 
 ```
 Warning: External link "https://broken-link.com" is not accessible
 ```
 
-- *Fix:** Update or remove broken links:
+- *Fix:*\* Update or remove broken links:
 
 ```markdown
 <!-- Update URL or remove if no longer relevant -->
@@ -92,13 +92,13 @@ Warning: External link "https://broken-link.com" is not accessible
 
 ### 3. Structure Errors
 
-- *Improper Heading Hierarchy**
+- *Improper Heading Hierarchy*\*
 
 ```
 Warning: Heading level should be 2, not 3
 ```
 
-- *Fix:** Use proper heading hierarchy:
+- *Fix:*\* Use proper heading hierarchy:
 
 ```markdown
 # Main Title (H1)
@@ -110,13 +110,13 @@ Warning: Heading level should be 2, not 3
 ### Subsection Title (H3)
 ```
 
-- *Missing Table of Contents**
+- *Missing Table of Contents*\*
 
 ```
 Warning: File is long (>500 words) but missing table of contents
 ```
 
-- *Fix:** Add table of contents:
+- *Fix:*\* Add table of contents:
 
 ```markdown
 ## Table of Contents
@@ -127,13 +127,13 @@ Warning: File is long (>500 words) but missing table of contents
 
 ### 4. Style Errors
 
-- *Inconsistent Formatting**
+- *Inconsistent Formatting*\*
 
 ```
 Warning: Inconsistent list formatting
 ```
 
-- *Fix:** Use consistent formatting:
+- *Fix:*\* Use consistent formatting:
 
 ```markdown
 <!-- Use consistent bullet points -->
@@ -142,13 +142,13 @@ Warning: Inconsistent list formatting
 - Item 3
 ```
 
-- *Missing Fun Facts**
+- *Missing Fun Facts*\*
 
 ```
 Warning: Consider adding a fun fact to make content more engaging
 ```
 
-- *Fix:** Add engaging fun facts:
+- *Fix:*\* Add engaging fun facts:
 
 ```markdown
 > **Fun Fact**: Did you know that markdown was created in 2004 by John Gruber?
@@ -158,13 +158,13 @@ Warning: Consider adding a fun fact to make content more engaging
 
 ### 1. URL-Only Links
 
-- *Problem:**
+- *Problem:*\*
 
 ```markdown
 Check out https://example.com for more information.
 ```
 
-- *Solution:**
+- *Solution:*\*
 
 ```markdown
 Check out [Example Website](https://example.com) for more information.
@@ -172,13 +172,13 @@ Check out [Example Website](https://example.com) for more information.
 
 ### 2. Missing Alt Text
 
-- *Problem:**
+- *Problem:*\*
 
 ```markdown
 ![Image](image.png)
 ```
 
-- *Solution:**
+- *Solution:*\*
 
 ```markdown
 ![Descriptive alt text for the image](image.png)
@@ -186,7 +186,7 @@ Check out [Example Website](https://example.com) for more information.
 
 ### 3. Inconsistent Code Blocks
 
-- *Problem:**
+- *Problem:*\*
 
 ````markdown
 ```javascript
@@ -211,7 +211,7 @@ code here
 See [Section 1](#section-1) for details.
 ````
 
-- *Solution:**
+- *Solution:*\*
 
 ```markdown
 See [Section 1](#section-1) for details.
@@ -346,7 +346,7 @@ For complex errors:
 1. This validation errors guide
 2. [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 3. [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-4. [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+4. [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ### Support
 1. Check VS Code output logs
@@ -357,12 +357,11 @@ For complex errors:
 ## Related Documentation
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
 ## Navigation
-
 - [← Tools Overview](README.md)
 - [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
 - [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)

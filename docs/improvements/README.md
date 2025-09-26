@@ -52,7 +52,6 @@ cleaning up the problematic layers!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
-
 - [← Improvements Overview](README.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../../README.md)

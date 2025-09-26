@@ -4,8 +4,8 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Technical implementation guide for adding comprehensive debug logging to track down API
-request duplication issues in KiloCode.
+- *Purpose:*\* Technical implementation guide for adding comprehensive debug logging to track down API
+  request duplication issues in KiloCode.
 
 > **Cartography Fun Fact**: Just as cartographers use triangulation to pinpoint exact locations,
 > this debug implementation uses multiple logging points to triangulate the exact source of
@@ -15,39 +15,41 @@ request duplication issues in KiloCode.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ### When You're Here, You Can:
 
-- *Implementing Debug Logging:**
+- *Implementing Debug Logging:*\*
 
 - **Next**: Follow the implementation phases below →
   [Testing Strategy](race-condition/TESTING_STRATEGY.md) →
   [Solution Recommendations](race-condition/SOLUTION_RECOMMENDATIONS.md)
+
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Race Condition Analysis](README.md) for context
 
-- *Understanding the Problem:**
+- *Understanding the Problem:*\*
 
 - **Next**: [Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) → This implementation guide
+
 - **Related**: [Short Debug Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
   for quick reference
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
 - **Next**: [Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) → This
   implementation guide → [Testing Strategy](race-condition/TESTING_STRATEGY.md)
+
 - **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -60,7 +62,7 @@ go next, return to [Architecture Documentation](../../README.md) for guidance.
 
 This document provides step-by-step implementation instructions for adding debug logging to identify
 and resolve the [race condition](README.md) causing duplicate
-[API requests](../GLOSSARY.md#API-Request). The implementation is designed to be non-intrusive
+[API requests](../GLOSSARY.md). The implementation is designed to be non-intrusive
 and easily removable after the issue is resolved.
 
 ## Implementation Phases
@@ -69,7 +71,7 @@ and easily removable after the issue is resolved.
 
 #### 1.1 Task-Level Request Tracker
 
-- *File:** `src/core/task/Task.ts`
+- *File:*\* `src/core/task/Task.ts`
 
 Add the following interface and class properties:
 
@@ -164,7 +166,7 @@ private _concurrencyMonitor: ConcurrencyInfo = {
 
 #### 1.2 Ask Method Instrumentation
 
-- *File:** `src/core/task/Task.ts` (around line 883)
+- *File:*\* `src/core/task/Task.ts` (around line 883)
 
 Replace the race-prone message queue processing with instrumented version:
 
@@ -267,7 +269,7 @@ Replace the race-prone message queue processing with instrumented version:
 
 #### 1.3 ProcessQueuedMessages Instrumentation
 
-- *File:** `src/core/task/Task.ts` (around line 3297)
+- *File:*\* `src/core/task/Task.ts` (around line 3297)
 
 Add synchronization and comprehensive logging:
 
@@ -364,7 +366,7 @@ public processQueuedMessages(): void {
 
 #### 2.1 Atomic Operations
 
-- *File:** `src/core/message-queue/MessageQueueService.ts`
+- *File:*\* `src/core/message-queue/MessageQueueService.ts`
 
 Add thread-safe operations:
 
@@ -438,7 +440,7 @@ public getQueueStats() {
 
 #### 3.1 Chat UI Instrumentation
 
-- *File:** `webview-ui/src/components/chat/ChatView.tsx`
+- *File:*\* `webview-ui/src/components/chat/ChatView.tsx`
 
 Add comprehensive state monitoring:
 
@@ -514,7 +516,7 @@ const handleSendMessage = useCallback(
 
 #### 3.2 Webview Message Handler Instrumentation
 
-- *File:** `src/core/webview/webviewMessageHandler.ts`
+- *File:*\* `src/core/webview/webviewMessageHandler.ts`
 
 Add message tracking:
 
@@ -554,7 +556,7 @@ case "queueMessage": {
 
 #### 4.1 Tool Helper Function
 
-- *File:** `src/core/tools/debugHelpers.ts` (new file)
+- *File:*\* `src/core/tools/debugHelpers.ts` (new file)
 
 Create a shared helper for tool completion logging:
 
@@ -610,7 +612,7 @@ cline.processQueuedMessages()
 
 #### 5.1 Provider Request Tracking
 
-- *File:** `src/api/providers/requestTracker.ts` (new file)
+- *File:*\* `src/api/providers/requestTracker.ts` (new file)
 
 Create a shared request tracker for all providers:
 
@@ -711,7 +713,7 @@ try {
 
 ### 1. Unit Tests
 
-- *File:** `src/core/task/__tests__/Task.race-condition.spec.ts`
+- *File:*\* `src/core/task/__tests__/Task.race-condition.spec.ts`
 
 ```typescript
 import { describe, it, expect, vi, beforeEach } from "vitest"
@@ -761,7 +763,7 @@ describe("API Request Duplication Race Conditions", () => {
 
 ### 2. Integration Tests
 
-- *File:** `src/core/task/__tests__/Task.integration.spec.ts`
+- *File:*\* `src/core/task/__tests__/Task.integration.spec.ts`
 
 ```typescript
 describe("End-to-End Race Condition Tests", () => {
@@ -894,11 +896,10 @@ The implementation follows a phased approach, allowing for incremental deploymen
 each component.
 
 ## Navigation Footer
+- \*\*
 
-- **
+- *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
+  [→ Race Condition Analysis](README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 
-- *Navigation**: [← Back to Architecture Documentation](../../README.md) ·
-[→ Race Condition Analysis](README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
-
-- *Last Updated:** 2024-12-19 **Status:** Ready for Implementation **Priority:** Critical
+- *Last Updated:*\* 2024-12-19 **Status:** Ready for Implementation **Priority:** Critical

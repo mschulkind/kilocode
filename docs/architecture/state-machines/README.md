@@ -10,7 +10,7 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Index and navigation for all state machine documents in this directory.
+- *Purpose:*\* Index and navigation for all state machine documents in this directory.
 
 <details><summary>Table of Contents</summary>
 - [Overview](#overview)
@@ -25,17 +25,16 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 Welcome to the tectonic layers of our runtime. This index describes each state machine doc and how
 to use them together during design, debugging, and implementation.
@@ -66,10 +65,9 @@ to use them together during design, debugging, and implementation.
 ## Related documentation
 - [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) Master
   narrative and navigation hub for the duplicate-API-request issue family.
-- [Orchestrator Documentation](../orchestrator/README.md) Parent/child task orchestration concepts
+- [Orchestrator Documentation](../../orchestrator/README.md) Parent/child task orchestration concepts
   and lifecycle.
-
-- **
+- \*\*
 
 <a id="navigation-footer"></a>
 - Back: [Architecture Documentation](../README.md) · Root: [Architecture Documentation](../README.md) · Source:
@@ -83,7 +81,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
 - [← Architecture Overview](../README.md)
 - [← State Machines Overview](README.md)
 - [← Main Documentation](../README.md)

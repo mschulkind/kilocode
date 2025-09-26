@@ -2,9 +2,9 @@
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:** This document provides guidance on how to extend the capabilities of the Kilo Code
-Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
-defining workspace-specific rules.
+- *Purpose:*\* This document provides guidance on how to extend the capabilities of the Kilo Code
+  Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
+  defining workspace-specific rules.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -19,8 +19,7 @@ defining workspace-specific rules.
 - \[6. Navigation Footer
 
 </details>
-
-- **
+- \*\*
 
 ### Related Documents
 
@@ -33,8 +32,7 @@ defining workspace-specific rules.
 - **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
-
-- **
+- \*\*
 
 ### Extensibility Philosophy
 
@@ -51,8 +49,7 @@ The primary extension vectors are:
 - **Rules**: Providing project-specific instructions and constraints to the model.
 
 [Back to Top](#orchestrator-extensibility)
-
-- **
+- \*\*
 
 ### Adding New Tools (Gap)
 
@@ -75,8 +72,7 @@ involve:
 This section is marked as a **Gap** and will be updated as the formal process is solidified.
 
 [Back to Top](#orchestrator-extensibility)
-
-- **
+- \*\*
 
 ### Adding New Modes (Gap)
 
@@ -97,8 +93,7 @@ This section is marked as a **Gap**. Further details will be provided once the A
 is finalized.
 
 [Back to Top](#orchestrator-extensibility)
-
-- **
+- \*\*
 
 ### Adding Custom Rules
 
@@ -119,29 +114,31 @@ For a complete overview of how these rules are discovered and loaded, please ref
 [Documentation Guide](../../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
-
-- **
+- \*\*
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:**
+- *Understanding This System:*\*
 
 - **Next**: Check related documentation in the same directory
+
 - **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
-- *Implementing Features:**
+- *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -158,12 +155,10 @@ You have reached the end of the extensibility document. Return to the
 [Master Index](ORCHESTRATOR_INDEX.md).
 
 [Back to Top](#orchestrator-extensibility)
-
-- **
+- \*\*
 
 End of document.
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
-[↑ Table of Contents](#orchestrator-extensibility)
+- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+  [↑ Table of Contents](#orchestrator-extensibility)

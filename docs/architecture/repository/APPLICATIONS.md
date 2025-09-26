@@ -2,7 +2,7 @@
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:** Overview of the standalone applications and interfaces in the KiloCode monorepo.
+- *Purpose:*\* Overview of the standalone applications and interfaces in the KiloCode monorepo.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -12,17 +12,16 @@
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The KiloCode monorepo contains 8 standalone applications that provide different interfaces and
 functionality:
@@ -65,19 +64,23 @@ graph TB
 
 ### kilocode-docs
 
-- *Purpose**: Main documentation website
+- *Purpose*\*: Main documentation website
 
-- *Technology**: Docusaurus
+- *Technology*\*: Docusaurus
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Documentation Site**: Comprehensive documentation website
+
 - **Blog**: Blog posts and updates
+
 - **Internationalization**: Multi-language support
+
 - **Search**: Full-text search functionality
+
 - **Versioning**: Documentation versioning
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/kilocode-docs/
@@ -89,26 +92,29 @@ apps/kilocode-docs/
 └── docusaurus.config.ts # Configuration
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/build
+- *Dependencies*\*: @roo-code/types, @roo-code/build
 
-- *Deployment**: Documentation hosting platform
+- *Deployment*\*: Documentation hosting platform
 
 ### web-docs
 
-- *Purpose**: Web-based documentation interface
+- *Purpose*\*: Web-based documentation interface
 
-- *Technology**: React, TypeScript
+- *Technology*\*: React, TypeScript
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Web Interface**: Web-based documentation interface
+
 - **Interactive Examples**: Interactive code examples
+
 - **Real-time Updates**: Real-time documentation updates
+
 - **User Feedback**: User feedback and comments
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/web-docs/
@@ -118,28 +124,31 @@ apps/web-docs/
 └── pages/              # Page components
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/build
+- *Dependencies*\*: @roo-code/types, @roo-code/build
 
-- *Deployment**: Web hosting platform
+- *Deployment*\*: Web hosting platform
 
 ## Development Applications
 
 ### storybook
 
-- *Purpose**: Component library and design system
+- *Purpose*\*: Component library and design system
 
-- *Technology**: Storybook, React
+- *Technology*\*: Storybook, React
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Component Library**: Reusable UI components
+
 - **Design System**: Design system documentation
+
 - **Interactive Stories**: Interactive component stories
+
 - **Testing**: Component testing and validation
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/storybook/
@@ -149,26 +158,29 @@ apps/storybook/
 └── scripts/            # Build scripts
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/build
+- *Dependencies*\*: @roo-code/types, @roo-code/build
 
-- *Deployment**: Storybook hosting platform
+- *Deployment*\*: Storybook hosting platform
 
 ### web-evals
 
-- *Purpose**: Web-based evaluation tools
+- *Purpose*\*: Web-based evaluation tools
 
-- *Technology**: React, TypeScript
+- *Technology*\*: React, TypeScript
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Evaluation Interface**: Web-based evaluation interface
+
 - **Test Management**: Test case management
+
 - **Results Visualization**: Evaluation results visualization
+
 - **Performance Metrics**: Performance metrics and analytics
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/web-evals/
@@ -178,26 +190,29 @@ apps/web-evals/
 └── pages/              # Page components
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/evals
+- *Dependencies*\*: @roo-code/types, @roo-code/evals
 
-- *Deployment**: Web hosting platform
+- *Deployment*\*: Web hosting platform
 
 ### web-roo-code
 
-- *Purpose**: Web interface for RooCode
+- *Purpose*\*: Web interface for RooCode
 
-- *Technology**: React, TypeScript
+- *Technology*\*: React, TypeScript
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Web Interface**: Web-based RooCode interface
+
 - **Chat Interface**: Chat interface for AI interactions
+
 - **Task Management**: Task creation and management
+
 - **Real-time Updates**: Real-time updates and notifications
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/web-roo-code/
@@ -207,28 +222,31 @@ apps/web-roo-code/
 └── pages/              # Page components
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/cloud
+- *Dependencies*\*: @roo-code/types, @roo-code/cloud
 
-- *Deployment**: Web hosting platform
+- *Deployment*\*: Web hosting platform
 
 ## Testing Applications
 
 ### playwright-e2e
 
-- *Purpose**: End-to-end testing suite
+- *Purpose*\*: End-to-end testing suite
 
-- *Technology**: Playwright, TypeScript
+- *Technology*\*: Playwright, TypeScript
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **E2E Tests**: End-to-end test automation
+
 - **Cross-browser Testing**: Multi-browser testing
+
 - **Visual Testing**: Visual regression testing
+
 - **Performance Testing**: Performance testing and monitoring
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/playwright-e2e/
@@ -238,26 +256,29 @@ apps/playwright-e2e/
 └── config/             # Test configuration
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/evals
+- *Dependencies*\*: @roo-code/types, @roo-code/evals
 
-- *Deployment**: CI/CD pipeline
+- *Deployment*\*: CI/CD pipeline
 
 ### vscode-e2e
 
-- *Purpose**: VS Code extension testing
+- *Purpose*\*: VS Code extension testing
 
-- *Technology**: Playwright, TypeScript
+- *Technology*\*: Playwright, TypeScript
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Extension Testing**: VS Code extension testing
+
 - **UI Testing**: Extension UI testing
+
 - **Integration Testing**: Extension integration testing
+
 - **Performance Testing**: Extension performance testing
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/vscode-e2e/
@@ -267,26 +288,29 @@ apps/vscode-e2e/
 └── config/             # Test configuration
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/evals
+- *Dependencies*\*: @roo-code/types, @roo-code/evals
 
-- *Deployment**: CI/CD pipeline
+- *Deployment*\*: CI/CD pipeline
 
 ### vscode-nightly
 
-- *Purpose**: Nightly VS Code extension builds
+- *Purpose*\*: Nightly VS Code extension builds
 
-- *Technology**: TypeScript, VS Code API
+- *Technology*\*: TypeScript, VS Code API
 
-- *Key Features**:
+- *Key Features*\*:
 
 - **Nightly Builds**: Automated nightly builds
+
 - **Testing**: Nightly testing and validation
+
 - **Distribution**: Nightly distribution
+
 - **Monitoring**: Build monitoring and alerting
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 apps/vscode-nightly/
@@ -295,11 +319,11 @@ apps/vscode-nightly/
 └── scripts/            # Build scripts
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types, @roo-code/build
+- *Dependencies*\*: @roo-code/types, @roo-code/build
 
-- *Deployment**: Automated nightly builds
+- *Deployment*\*: Automated nightly builds
 
 ## Application Dependencies
 
@@ -342,18 +366,24 @@ graph TD
 
 ### External Dependencies
 
-- *Common Dependencies**:
+- *Common Dependencies*\*:
 
 - **React**: UI framework
+
 - **TypeScript**: Type checking
+
 - **Node.js**: Runtime environment
+
 - **VS Code API**: VS Code extension API
 
-- *Application-Specific Dependencies**:
+- *Application-Specific Dependencies*\*:
 
 - **kilocode-docs**: Docusaurus, MDX
+
 - **storybook**: Storybook, React
+
 - **playwright-e2e**: Playwright, testing utilities
+
 - **web-evals**: Evaluation libraries
 
 ## Development Workflow
@@ -368,45 +398,45 @@ graph TD
 
 ### Application Testing
 
-- *Unit Tests**: Individual application unit tests
+- *Unit Tests*\*: Individual application unit tests
 
-- *Integration Tests**: Application integration tests
+- *Integration Tests*\*: Application integration tests
 
-- *E2E Tests**: End-to-end application testing
+- *E2E Tests*\*: End-to-end application testing
 
 ### Application Deployment
 
-- *Web Applications**: Deployed to web hosting platforms
+- *Web Applications*\*: Deployed to web hosting platforms
 
-- *Documentation**: Deployed to documentation hosting
+- *Documentation*\*: Deployed to documentation hosting
 
-- *Testing Applications**: Integrated into CI/CD pipeline
+- *Testing Applications*\*: Integrated into CI/CD pipeline
 
 ## Quality Assurance
 
 ### Code Quality
 
-- *Linting**: ESLint configuration for all applications
+- *Linting*\*: ESLint configuration for all applications
 
-- *Type Checking**: TypeScript strict mode for all applications
+- *Type Checking*\*: TypeScript strict mode for all applications
 
-- *Formatting**: Prettier for consistent formatting
+- *Formatting*\*: Prettier for consistent formatting
 
 ### Testing
 
-- *Test Coverage**: Minimum 80% test coverage
+- *Test Coverage*\*: Minimum 80% test coverage
 
-- *Test Types**: Unit, integration, and E2E tests
+- *Test Types*\*: Unit, integration, and E2E tests
 
-- *Test Automation**: Automated test execution
+- *Test Automation*\*: Automated test execution
 
 ### Documentation
 
-- *README**: Each application has its own README
+- *README*\*: Each application has its own README
 
-- *API Documentation**: Generated API documentation
+- *API Documentation*\*: Generated API documentation
 
-- *Usage Examples**: Comprehensive usage examples
+- *Usage Examples*\*: Comprehensive usage examples
 
 ## Next Steps
 1. **Explore Testing**: See [TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)
@@ -419,11 +449,10 @@ graph TD
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#applications)
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [repository](../../architecture/) · [↑ Table of Contents](#applications)
 
 ## No Dead Ends Policy
 

@@ -10,24 +10,23 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Master index for the API request duplication issue caused by concurrent recursive calls
-in the orchestrator-subtask execution flow.
+- *Purpose:*\* Master index for the API request duplication issue caused by concurrent recursive calls
+  in the orchestrator-subtask execution flow.
 
 ## 🗺️ Navigation Guide
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ### Quick Start Paths
 
@@ -97,12 +96,15 @@ both the main task loop and subtask completion can simultaneously call
 simultaneous API calls with spinners appearing in the chat interface, causing jumbled responses and
 confused user experience.
 
-- *Key Findings:**
+- *Key Findings:*\*
 
 - **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution
   paths
+
 - **Trigger**: Recent change to subtask completion handling in `ClineProvider.ts`
+
 - **Impact**: Multiple API requests, jumbled responses, confused chat interface
+
 - **Solution**: Synchronization mechanism to ensure only one recursive call executes at a time
 
 > **Quantum Physics Fun Fact**: This is like having two particles in a quantum superposition - they
@@ -150,11 +152,10 @@ dinosaur eats at a time, but they take turns in an organized way!
 - [↑ Table of Contents](../../README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#api-duplication-race-condition-analysis)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#api-duplication-race-condition-analysis)
 
 ## No Dead Ends Policy
 

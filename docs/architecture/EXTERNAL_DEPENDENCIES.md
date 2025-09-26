@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Comprehensive catalog of all external dependencies, libraries, and conventions for
-using them in the KiloCode project.
+- *Purpose:*\* Comprehensive catalog of all external dependencies, libraries, and conventions for
+  using them in the KiloCode project.
 
 > **Biology Fun Fact**: External dependencies are like symbiotic relationships in nature - each
 > library provides specific functionality (like how mitochondria provide energy), and together they
@@ -37,27 +37,29 @@ using them in the KiloCode project.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - The KiloCode project utilizes over 100 external dependencies across multiple categories, from AI/ML
-libraries to UI frameworks, with strict version management and security conventions.*
+  libraries to UI frameworks, with strict version management and security conventions.\*
 
-- *Key Statistics:**
+- *Key Statistics:*\*
 
 - **Total Dependencies**: 100+ external libraries
+
 - **AI/ML Libraries**: 10+ language model integrations
+
 - **UI Components**: 20+ React and UI libraries
+
 - **Build Tools**: 15+ development and build utilities
+
 - **Security Overrides**: 5+ security-critical dependency overrides
 
 ## AI/ML & Language Models
@@ -79,7 +81,7 @@ libraries to UI frameworks, with strict version management and security conventi
 
 ### AI Integration Patterns
 
-- *Provider Abstraction:**
+- *Provider Abstraction:*\*
 
 ```typescript
 // Common interface for all AI providers
@@ -104,7 +106,7 @@ class ProviderFactory {
 }
 ```
 
-- *Token Management:**
+- *Token Management:*\*
 
 ```typescript
 // Token counting and management
@@ -125,7 +127,7 @@ const tokenCount = encoding.encode(prompt).length
 
 ### MCP Implementation Patterns
 
-- *Server Integration:**
+- *Server Integration:*\*
 
 ```typescript
 import { Server } from "@modelcontextprotocol/sdk/server/index.js"
@@ -156,7 +158,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 })
 ```
 
-- *Vector Database Integration:**
+- *Vector Database Integration:*\*
 
 ```typescript
 import { QdrantClient } from "@qdrant/js-client-rest"
@@ -191,7 +193,7 @@ async function storeEmbedding(id: string, vector: number[], payload: any) {
 
 ### Authentication Patterns
 
-- *JWT Token Handling:**
+- *JWT Token Handling:*\*
 
 ```typescript
 import { jwtDecode } from "jwt-decode"
@@ -210,7 +212,7 @@ if (payload.exp * 1000 < Date.now()) {
 }
 ```
 
-- *AWS Credentials:**
+- *AWS Credentials:*\*
 
 ```typescript
 import { fromNodeProviderChain } from "@aws-sdk/credential-providers"
@@ -237,7 +239,7 @@ const client = new BedrockRuntimeClient({
 
 ### Code Analysis Patterns
 
-- *Tree-sitter Integration:**
+- *Tree-sitter Integration:*\*
 
 ```typescript
 import { initParser } from "web-tree-sitter"
@@ -260,7 +262,7 @@ function traverse(node: any) {
 }
 ```
 
-- *Syntax Highlighting:**
+- *Syntax Highlighting:*\*
 
 ```typescript
 import { codeToHtml } from "shiki"
@@ -295,7 +297,7 @@ const html = await codeToHtml(code, {
 
 ### File Processing Patterns
 
-- *PDF Processing:**
+- *PDF Processing:*\*
 
 ```typescript
 import * as pdfParse from "pdf-parse"
@@ -307,7 +309,7 @@ console.log("PDF Text:", pdfData.text)
 console.log("Page Count:", pdfData.numpages)
 ```
 
-- *Excel Processing:**
+- *Excel Processing:*\*
 
 ```typescript
 import * as ExcelJS from "exceljs"
@@ -321,7 +323,7 @@ worksheet.eachRow((row, rowNumber) => {
 })
 ```
 
-- *Markdown Front Matter:**
+- *Markdown Front Matter:*\*
 
 ```typescript
 import matter from "gray-matter"
@@ -350,7 +352,7 @@ console.log("Content:", content)
 
 ### UI Component Patterns
 
-- *Radix UI Integration:**
+- *Radix UI Integration:*\*
 
 ```typescript
 import * as Dialog from '@radix-ui/react-dialog'
@@ -374,7 +376,7 @@ function MyDialog() {
 }
 ```
 
-- *React Query Integration:**
+- *React Query Integration:*\*
 
 ```typescript
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
@@ -399,7 +401,7 @@ function useCreateTask() {
 }
 ```
 
-- *Mermaid Diagram Integration:**
+- *Mermaid Diagram Integration:*\*
 
 ```typescript
 import { Mermaid } from 'mermaid'
@@ -431,7 +433,7 @@ graph TD
 
 ### Build Patterns
 
-- *Turbo Configuration:**
+- *Turbo Configuration:*\*
 
 ```json
 {
@@ -449,7 +451,7 @@ graph TD
 }
 ```
 
-- *ESBuild Configuration:**
+- *ESBuild Configuration:*\*
 
 ```typescript
 import { build } from "esbuild"
@@ -466,7 +468,7 @@ await build({
 })
 ```
 
-- *Vite Configuration:**
+- *Vite Configuration:*\*
 
 ```typescript
 import { defineConfig } from "vite"
@@ -503,7 +505,7 @@ export default defineConfig({
 
 ### Utility Patterns
 
-- *Debounced Operations:**
+- *Debounced Operations:*\*
 
 ```typescript
 import debounce from 'lodash.debounce'
@@ -524,7 +526,7 @@ function SearchInput() {
 }
 ```
 
-- *LRU Cache Usage:**
+- *LRU Cache Usage:*\*
 
 ```typescript
 import { LRUCache } from "lru-cache"
@@ -544,7 +546,7 @@ function getCachedData(key: string) {
 }
 ```
 
-- *Concurrency Control:**
+- *Concurrency Control:*\*
 
 ```typescript
 import pLimit from "p-limit"
@@ -556,7 +558,7 @@ const tasks = urls.map((url) => limit(() => fetch(url)))
 const results = await Promise.all(tasks)
 ```
 
-- *Schema Validation:**
+- *Schema Validation:*\*
 
 ```typescript
 import { z } from "zod"
@@ -579,7 +581,7 @@ function validateTask(data: unknown): Task {
 
 ### Package Manager Configuration
 
-- *pnpm Workspace Setup:**
+- *pnpm Workspace Setup:*\*
 
 ```yaml
 # pnpm-workspace.yaml
@@ -601,7 +603,7 @@ onlyBuiltDependencies:
 - puppeteer-chromium-resolver
 ```
 
-- *Security Overrides:**
+- *Security Overrides:*\*
 
 ```json
 {
@@ -619,13 +621,15 @@ onlyBuiltDependencies:
 
 ### Version Management
 
-- *Version Pinning Strategy:**
+- *Version Pinning Strategy:*\*
 
 - **Exact versions** for critical dependencies (security, build tools)
+
 - **Caret ranges** (^) for most dependencies to allow patch updates
+
 - **Workspace dependencies** for internal packages using `workspace:^`
 
-- *Example Package.json:**
+- *Example Package.json:*\*
 
 ```json
 {
@@ -641,7 +645,7 @@ onlyBuiltDependencies:
 
 ### Security Considerations
 
-- *Regular Security Audits:**
+- *Regular Security Audits:*\*
 
 ```bash
 # Run security audit
@@ -663,32 +667,41 @@ pnpm audit --fix
 pnpm outdated
 ```
 
-- *Dependency Security:**
+- *Dependency Security:*\*
 
 - **Pin critical versions** for security-sensitive packages
+
 - **Override vulnerable dependencies** in pnpm.overrides
+
 - **Regular updates** for security patches
+
 - **Automated security scanning** in CI/CD
 
 ### Performance Optimizations
 
-- *Bundle Optimization:**
+- *Bundle Optimization:*\*
 
 - **Tree-shaking** for unused code elimination
+
 - **Code splitting** for lazy loading
+
 - **Compression** for production builds
+
 - **Source maps** for debugging
 
-- *Runtime Optimization:**
+- *Runtime Optimization:*\*
 
 - **Tree-sitter WASM** for fast code parsing
+
 - **LRU caching** for frequently accessed data
+
 - **Debounced operations** for UI responsiveness
+
 - **Concurrency limits** for API requests
 
 ### Development Conventions
 
-- *Import Conventions:**
+- *Import Conventions:*\*
 
 ```typescript
 // External libraries first
@@ -703,7 +716,7 @@ import { TaskService } from "../services/TaskService"
 import "./styles.css"
 ```
 
-- *Error Handling:**
+- *Error Handling:*\*
 
 ```typescript
 // Consistent error handling patterns
@@ -716,7 +729,7 @@ try {
 }
 ```
 
-- *Type Safety:**
+- *Type Safety:*\*
 
 ```typescript
 // Use Zod for runtime validation
@@ -736,11 +749,10 @@ type Config = z.infer<typeof ConfigSchema>
   Source: `/docs/architecture/EXTERNAL_DEPENDENCIES.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#external-dependencies)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#external-dependencies)
 
 ## No Dead Ends Policy
 

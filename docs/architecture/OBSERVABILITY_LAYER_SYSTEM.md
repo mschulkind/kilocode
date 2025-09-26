@@ -10,9 +10,9 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Comprehensive documentation of the Observability Layer system, including Laminar
-Service and Span Management components that handle system monitoring, tracing, and performance
-tracking.
+- *Purpose:*\* Comprehensive documentation of the Observability Layer system, including Laminar
+  Service and Span Management components that handle system monitoring, tracing, and performance
+  tracking.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -35,21 +35,19 @@ tracking.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - The Observability Layer system manages system monitoring, tracing, and performance tracking through
-the Laminar Service and Span Management components. It provides comprehensive observability into
-system behavior, performance metrics, and error tracking.*
+  the Laminar Service and Span Management components. It provides comprehensive observability into
+  system behavior, performance metrics, and error tracking.\*
 
 The Observability Layer consists of two main components:
 1. **Laminar Service** - Core observability service and span lifecycle management
@@ -108,11 +106,11 @@ graph TB
 The Laminar Service is the core observability service that manages span creation, lifecycle, and
 data collection.
 
-- *Location**: `src/services/laminar/LaminarService.ts`
+- *Location*\*: `src/services/laminar/LaminarService.ts`
 
 ### Service Architecture
 
-- *Service Implementation**:
+- *Service Implementation*\*:
 
 ```typescript
 class LaminarService {
@@ -140,7 +138,7 @@ class LaminarService {
 
 ### Service Initialization
 
-- *Initialization Process**:
+- *Initialization Process*\*:
 
 ```typescript
 public async initialize(): Promise<void> {
@@ -194,7 +192,7 @@ public async initialize(): Promise<void> {
 
 ### Span Creation
 
-- *Span Creation Process**:
+- *Span Creation Process*\*:
 
 ```typescript
 public startSpan(
@@ -257,7 +255,7 @@ private _startSpanNow(
 
 ### Span Types
 
-- *Supported Span Types**:
+- *Supported Span Types*\*:
 
 ```typescript
 type SpanType = "LLM" | "DEFAULT" | "TOOL"
@@ -292,7 +290,7 @@ const toolSpan = laminarService.startSpan("TOOL", {
 
 ### Span Lifecycle
 
-- *Span Lifecycle Management**:
+- *Span Lifecycle Management*\*:
 
 ```typescript
 // Span creation with lifecycle tracking
@@ -336,7 +334,7 @@ private trackSpanLifecycle(span: Span, spanName: string): void {
 
 ### Span Attributes
 
-- *Attribute Management**:
+- *Attribute Management*\*:
 
 ```typescript
 // Add attributes to spans
@@ -373,7 +371,7 @@ laminarService.addAttributesToSpan(`${this.taskId}-task.step`, {
 
 ### Data Collection Strategy
 
-- *System Prompt Optimization**:
+- *System Prompt Optimization*\*:
 
 ```typescript
 // Optimize system prompt storage in spans
@@ -389,7 +387,7 @@ const spanInput = laminarService.getRecordSpanIO()
 
 ### Performance Metrics
 
-- *Metrics Collection**:
+- *Metrics Collection*\*:
 
 ```typescript
 // Performance metrics tracking
@@ -426,7 +424,7 @@ private recordSpanMetrics(spanName: string, duration: number): void {
 
 ### Error Tracking
 
-- *Error Recording**:
+- *Error Recording*\*:
 
 ```typescript
 // Record exceptions on spans
@@ -459,7 +457,7 @@ private recordErrorMetrics(spanName: string, error: Error): void {
 
 ### Monitoring Metrics
 
-- *Key Performance Indicators**:
+- *Key Performance Indicators*\*:
 
 ```typescript
 // Performance monitoring
@@ -492,7 +490,7 @@ public getPerformanceMetrics(): PerformanceMetrics {
 
 ### Resource Usage Tracking
 
-- *Resource Monitoring**:
+- *Resource Monitoring*\*:
 
 ```typescript
 // Resource usage tracking
@@ -520,7 +518,7 @@ public getResourceUsage(): ResourceUsage {
 
 ### Error Classification
 
-- *Error Types**:
+- *Error Types*\*:
 
 ```typescript
 // Error classification
@@ -545,7 +543,7 @@ interface ErrorRecord {
 
 ### Error Recovery
 
-- *Error Recovery Strategies**:
+- *Error Recovery Strategies*\*:
 
 ```typescript
 // Error recovery implementation
@@ -589,14 +587,14 @@ private attemptErrorRecovery(errorRecord: ErrorRecord): void {
 
 ### Issue 1: Span Duplication
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Multiple spans for same operation
 - Duplicate observability data
 - Performance degradation
 
-- *Root Cause**: Active span check not working properly
+- *Root Cause*\*: Active span check not working properly
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Enhanced active span check
@@ -620,14 +618,14 @@ public startSpan(spanType: SpanType, options: {...}, isActive: boolean = false):
 
 ### Issue 2: System Prompt Duplication
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Large system prompts still stored in spans
 - High memory usage
 - Slow span processing
 
-- *Root Cause**: `recordSpanIO` flag not properly checked
+- *Root Cause*\*: `recordSpanIO` flag not properly checked
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Ensure proper recordSpanIO check
@@ -644,14 +642,14 @@ if (laminarService.getRecordSpanIO() && spanInput) {
 
 ### Issue 3: Span Cleanup Issues
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Spans not properly cleaned up
 - Memory leaks
 - Active span count growing
 
-- *Root Cause**: Span disposal not handled properly
+- *Root Cause*\*: Span disposal not handled properly
 
-- *Solution**:
+- *Solution*\*:
 
 ```typescript
 // Enhanced span cleanup
@@ -696,11 +694,10 @@ public cleanupAllSpans(): void {
   Root: [`README.md`](README.md) · Source: `/docs/OBSERVABILITY_LAYER_SYSTEM.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#observability-layer-system)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#observability-layer-system)
 
 ## No Dead Ends Policy
 

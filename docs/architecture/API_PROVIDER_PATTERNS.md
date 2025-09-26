@@ -2,8 +2,8 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Comprehensive documentation of API provider architecture, integration patterns, and
-multi-provider support in the KiloCode system.
+- *Purpose:*\* Comprehensive documentation of API provider architecture, integration patterns, and
+  multi-provider support in the KiloCode system.
 
 > **Geology Fun Fact**: API providers are like different types of rock formations - each has unique
 > characteristics (granite-like reliability, sandstone-like flexibility), but they all need to fit
@@ -29,21 +29,19 @@ multi-provider support in the KiloCode system.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - The API Provider system enables KiloCode to integrate with multiple AI service providers, providing
-a unified interface for language model interactions while supporting provider-specific features and
-optimizations.*
+  a unified interface for language model interactions while supporting provider-specific features and
+  optimizations.\*
 
 The API Provider system consists of:
 1. **Provider Interface** - Unified abstraction for all providers
@@ -108,14 +106,14 @@ graph TB
 
 ### OpenAI Provider
 
-- *Implementation**: `src/api/providers/openai/` **Features**:
+- *Implementation*\*: `src/api/providers/openai/` **Features**:
 - GPT model support (GPT-3.5, GPT-4, GPT-4 Turbo)
 - Function calling capabilities
 - Image generation support
 - Streaming responses
 - Custom model endpoints
 
-- *Configuration**:
+- *Configuration*\*:
 
 ```typescript
 interface OpenAIProviderConfig {
@@ -128,9 +126,9 @@ interface OpenAIProviderConfig {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
-- *Provider Architecture**:
+- *Provider Architecture*\*:
 
 ```typescript
 export class OpenAiHandler extends BaseProvider implements SingleCompletionHandler {
@@ -144,26 +142,32 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 }
 ```
 
-- *Core Features**:
+- *Core Features*\*:
 
 - **Multi-Endpoint Support**: Azure OpenAI, custom endpoints, and standard OpenAI API
+
 - **Model Family Support**: GPT-3.5, GPT-4, GPT-4 Turbo, O1/O3 family models
+
 - **Streaming Support**: Real-time response streaming with chunk processing
+
 - **Error Handling**: Comprehensive error classification and retry logic
+
 - **Format Conversion**: Multiple message format support (OpenAI, R1, Simple)
+
 - **Timeout Management**: Configurable request timeouts
+
 - **Header Customization**: Custom headers and authentication support
 
 ### Anthropic Provider
 
-- *Implementation**: `src/api/providers/anthropic/` **Features**:
+- *Implementation*\*: `src/api/providers/anthropic/` **Features**:
 - Claude model support (Claude 3, Claude 3.5 Sonnet)
 - Tool use capabilities
 - Structured output support
 - Streaming responses
 - Message formatting
 
-- *Configuration**:
+- *Configuration*\*:
 
 ```typescript
 interface AnthropicProviderConfig {
@@ -175,18 +179,18 @@ interface AnthropicProviderConfig {
 }
 ```
 
-- *Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Tool use implementation,
-structured output, message formatting
+- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Tool use implementation,
+  structured output, message formatting
 
 ### KiloCode Provider
 
-- *Implementation**: `src/api/providers/kilocode/` **Features**:
+- *Implementation*\*: `src/api/providers/kilocode/` **Features**:
 - KiloCode-specific models
 - Custom authentication
 - Enhanced features
 - Integration with KiloCode services
 
-- *Configuration**:
+- *Configuration*\*:
 
 ```typescript
 interface KiloCodeProviderConfig {
@@ -197,20 +201,20 @@ interface KiloCodeProviderConfig {
 }
 ```
 
-- *Implementation Status**: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Custom features,
-authentication flow, service integration
+- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Custom features,
+  authentication flow, service integration
 
 ## Request/Response Handling
 
 ### Request Transformation
 
-- *Transformation Pipeline**:
+- *Transformation Pipeline*\*:
 1. **Input Validation**: Parameter validation and sanitization
 2. **Format Conversion**: Provider-specific format conversion
 3. **Authentication**: API key injection and authentication headers
 4. **Request Building**: HTTP request construction
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```typescript
 interface RequestTransformer {
@@ -222,27 +226,30 @@ interface RequestTransformer {
 
 ### Response Processing
 
-- *Response Pipeline**:
+- *Response Pipeline*\*:
 1. **Response Parsing**: Provider-specific response parsing
 2. **Error Detection**: Error identification and classification
 3. **Format Normalization**: Unified response format
 4. **Metadata Extraction**: Provider metadata extraction
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Response parsing
-patterns, error detection, format normalization
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Response parsing
+  patterns, error detection, format normalization
 
 ## Streaming Implementation
 
 ### Streaming Architecture
 
-- *Streaming Components**:
+- *Streaming Components*\*:
 
 - **Stream Manager**: Manages streaming connections
+
 - **Chunk Processor**: Processes streaming chunks
+
 - **Buffer Manager**: Manages response buffering
+
 - **Completion Detector**: Detects stream completion
 
-- *Streaming Flow**:
+- *Streaming Flow*\*:
 
 ```mermaid
 sequenceDiagram
@@ -263,19 +270,22 @@ sequenceDiagram
     StreamManager-->>Client: Stream End
 ```
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Streaming protocols,
-chunk processing, buffer management
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Streaming protocols,
+  chunk processing, buffer management
 
 ### Chunk Processing
 
-- *Chunk Types**:
+- *Chunk Types*\*:
 
 - **Text Chunks**: Incremental text content
+
 - **Function Chunks**: Function call information
+
 - **Metadata Chunks**: Provider-specific metadata
+
 - **Error Chunks**: Error information
 
-- *Processing Strategy**:
+- *Processing Strategy*\*:
 - Incremental processing for text chunks
 - Buffered processing for function calls
 - Immediate processing for errors
@@ -285,18 +295,23 @@ chunk processing, buffer management
 
 ### Error Classification
 
-- *Error Categories**:
+- *Error Categories*\*:
 
 - **Authentication Errors**: Invalid credentials, expired tokens
+
 - **Rate Limit Errors**: API rate limit exceeded
+
 - **Quota Errors**: Usage quota exceeded
+
 - **Network Errors**: Connection failures, timeouts
+
 - **Provider Errors**: Provider-specific errors
+
 - **Validation Errors**: Request validation failures
 
 ### Retry Strategy
 
-- *Retry Configuration**:
+- *Retry Configuration*\*:
 
 ```typescript
 interface RetryConfig {
@@ -308,20 +323,20 @@ interface RetryConfig {
 }
 ```
 
-- *Retry Logic**:
+- *Retry Logic*\*:
 - Exponential backoff with jitter
 - Error-specific retry strategies
 - Circuit breaker pattern
 - Rate limit handling
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Retry strategies, circuit
-breaker implementation, rate limit handling
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Retry strategies, circuit
+  breaker implementation, rate limit handling
 
 ## Configuration Management
 
 ### Configuration Schema
 
-- *Provider Configuration**:
+- *Provider Configuration*\*:
 
 ```typescript
 interface ProviderConfiguration {
@@ -337,20 +352,20 @@ interface ProviderConfiguration {
 
 ### Configuration Loading
 
-- *Loading Strategy**:
+- *Loading Strategy*\*:
 - Environment variable loading
 - Configuration file loading
 - Runtime configuration updates
 - Validation and sanitization
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration loading
-patterns, validation, runtime updates
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration loading
+  patterns, validation, runtime updates
 
 ## Performance Optimization
 
 ### Connection Pooling
 
-- *Pool Management**:
+- *Pool Management*\*:
 - HTTP connection pooling
 - Keep-alive connections
 - Connection reuse
@@ -358,20 +373,20 @@ patterns, validation, runtime updates
 
 ### Request Optimization
 
-- *Optimization Techniques**:
+- *Optimization Techniques*\*:
 - Request batching
 - Compression support
 - Caching strategies
 - Parallel requests
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Connection pooling,
-request optimization, caching strategies
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Connection pooling,
+  request optimization, caching strategies
 
 ## Security & Authentication
 
 ### Authentication Methods
 
-- *Supported Methods**:
+- *Supported Methods*\*:
 - API Key authentication
 - OAuth 2.0 authentication
 - JWT token authentication
@@ -379,88 +394,92 @@ request optimization, caching strategies
 
 ### Security Measures
 
-- *Security Features**:
+- *Security Features*\*:
 - Credential encryption
 - Secure storage
 - Token rotation
 - Access logging
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Authentication patterns,
-security measures, credential management
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Authentication patterns,
+  security measures, credential management
 
 ## Common Issues and Solutions
 
 ### Issue 1: Provider Authentication Failures
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Authentication errors
 - Invalid credentials
 - Token expiration
 
-- *Root Cause**: Incorrect authentication configuration **Solution**: Implement proper credential
-validation and token refresh
+- *Root Cause*\*: Incorrect authentication configuration **Solution**: Implement proper credential
+  validation and token refresh
 
 ### Issue 2: Rate Limit Exceeded
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Rate limit errors
 - Request throttling
 - Service unavailability
 
-- *Root Cause**: Exceeding provider rate limits **Solution**: Implement rate limiting and backoff
-strategies
+- *Root Cause*\*: Exceeding provider rate limits **Solution**: Implement rate limiting and backoff
+  strategies
 
 ### Issue 3: Streaming Connection Issues
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Stream interruptions
 - Incomplete responses
 - Connection timeouts
 
-- *Root Cause**: Network instability or provider issues **Solution**: Implement connection retry and
-stream recovery
+- *Root Cause*\*: Network instability or provider issues **Solution**: Implement connection retry and
+  stream recovery
 
 ### Issue 4: Response Parsing Errors
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Malformed responses
 - Parsing failures
 - Data corruption
 
-- *Root Cause**: Provider response format changes **Solution**: Implement robust parsing with
-fallback mechanisms
+- *Root Cause*\*: Provider response format changes **Solution**: Implement robust parsing with
+  fallback mechanisms
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Provider Architecture:**
+- *Understanding Provider Architecture:*\*
 
 - **Next**: [Provider Layer System](./PROVIDER_LAYER_SYSTEM.md) →
   [External Dependencies](./EXTERNAL_DEPENDENCIES.md) → [System Overview](./SYSTEM_OVERVIEW.md)
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Repository Overview](../architecture/repository/README.md) for codebase structure
 
-- *Implementing Provider Features:**
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Repository Overview](../../architecture/README.md) for codebase structure
+
+- *Implementing Provider Features:*\*
 
 - **Next**: [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) →
   [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md) →
-  [Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)
+  [Build Pipelines](../architecture/BUILD_PIPELINES.md)
+
 - **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Provider Issues:**
+- *Troubleshooting Provider Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
   \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
+
 - **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
-- *Understanding Current Problems:**
+- *Understanding Current Problems:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Code Flow Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md) →
   \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
+
 - **Related**: [State Machines](README.md) for behavior analysis
 
 ### No Dead Ends Policy
@@ -470,15 +489,14 @@ next, return to [Architecture Documentation](./README.md) for guidance.
 
 <a id="navigation-footer"></a>
 
-- *Navigation**: [← Back to Architecture Documentation](./README.md) ·
-[→ Provider Layer System](./PROVIDER_LAYER_SYSTEM.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
-[↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Architecture Documentation](./README.md) ·
+  [→ Provider Layer System](./PROVIDER_LAYER_SYSTEM.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+  [↑ Table of Contents](#-research-context--next-steps)
 
 ## Navigation
-
 - [← Architecture Overview](README.md)
 - [← Repository Structure](repository/README.md)
 - [← Race Condition Analysis](race-condition/README.md)
 - [← State Machines](state-machines/README.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

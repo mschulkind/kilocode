@@ -2,9 +2,9 @@
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:** This document provides a comprehensive reference for the core tools available to the
-Kilo Code Orchestrator. Each entry details the tool's purpose, parameters, and provides a link to
-its source implementation.
+- *Purpose:*\* This document provides a comprehensive reference for the core tools available to the
+  Kilo Code Orchestrator. Each entry details the tool's purpose, parameters, and provides a link to
+  its source implementation.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -21,8 +21,7 @@ its source implementation.
 - [8. Navigation Footer](#navigation-footer)
 
 </details>
-
-- **
+- \*\*
 
 ### Related Documents
 
@@ -36,8 +35,7 @@ its source implementation.
   custom tools to the system.
 
 [Back to Top](#orchestrator-tools-reference)
-
-- **
+- \*\*
 
 ### Tool Philosophy
 
@@ -46,11 +44,12 @@ its source implementation.
 Tools are the fundamental actions the orchestrator can perform. They are designed to be:
 
 - **Atomic**: Each tool performs a single, well-defined operation.
+
 - **Declarative**: Tools are invoked via a clear, XML-based syntax that the model generates.
+
 - **Permissioned**: Most tools are only available in specific modes, ensuring a separation of
   concerns and enhancing security.
-
-- **
+- \*\*
 
 ### Core Task Flow Tools
 
@@ -62,11 +61,12 @@ These tools are fundamental to the execution and completion of tasks.
 
 - **Purpose**: Signals the successful completion of a task. This is a terminal operation that ends
   the task lifecycle.
+
 - **Source**: [`src/core/tools/attemptCompletionTool.ts`](/src/core/tools/attemptCompletionTool.ts#L35)
+
 - **Parameters**:
 - `result`: A final message summarizing the work done.
-
-- **
+- \*\*
 
 ### Task Management Tools
 
@@ -96,10 +96,10 @@ These tools control the flow of execution, manage modes, and delegate work.
 
 - **Purpose**: Manages the delegation of work to a synchronous, blocking subtask. See
   [Task Delegation Guide](ORCHESTRATOR_TASK_DELEGATION.md) for a detailed explanation.
+
 - **Source**: [`startSubtask`](/src/core/tools/attemptCompletionTool.ts#L1628),
   [`completeSubtask`](/src/core/tools/attemptCompletionTool.ts#L1669)
-
-- **
+- \*\*
 
 ### User Interaction Tools
 
@@ -111,12 +111,13 @@ This category includes tools for communicating with the end-user.
 
 - **Purpose**: Pauses the task and asks the user for clarification or additional information. The
   task will not proceed until the user provides a response.
+
 - **Source**: [`src/core/tools/askFollowupQuestionTool.ts`](/src/core/tools/attemptCompletionTool.ts#L6)
+
 - **Parameters**:
 - `question`: The question to ask the user.
 - `follow_up`: A list of suggested, actionable answers.
-
-- **
+- \*\*
 
 ### State & Planning Tools
 
@@ -128,11 +129,12 @@ Tools for managing the internal state and plan of a task.
 
 - **Purpose**: Creates or overwrites the task's todo list. This is the primary mechanism for "Todo
   Gating," where the orchestrator tracks its plan and progress.
+
 - **Source**: [`src/core/tools/updateTodoListTool.ts`](/src/core/tools/attemptCompletionTool.ts#L156)
+
 - **Parameters**:
 - `todos`: A markdown-formatted checklist of tasks.
-
-- **
+- \*\*
 
 ### File System Tools
 
@@ -142,34 +144,41 @@ A suite of tools for interacting with the file system. These are typically restr
 modes like `code`.
 
 - **`read_file`**: Reads the content of one or more files.
-- **`write_to_file`**: Creates a new file or completely overwrites an existing one.
-- **`apply_diff`**: Applies a surgical change to a file using a search/replace block.
-- **`insert_content`**: Inserts new content at a specific line in a file.
-- **`list_files`**: Lists the files and directories within a given path.
-- **`search_files`**: Performs a regex search across files in a directory.
 
-- **
+- **`write_to_file`**: Creates a new file or completely overwrites an existing one.
+
+- **`apply_diff`**: Applies a surgical change to a file using a search/replace block.
+
+- **`insert_content`**: Inserts new content at a specific line in a file.
+
+- **`list_files`**: Lists the files and directories within a given path.
+
+- **`search_files`**: Performs a regex search across files in a directory.
+- \*\*
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:**
+- *Understanding This System:*\*
 
 - **Next**: Check related documentation in the same directory
+
 - **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
-- *Implementing Features:**
+- *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -186,12 +195,10 @@ You have reached the end of the tools reference. Return to the [Master Index](OR
 or proceed to the [Error Handling Document](ORCHESTRATOR_ERROR_HANDLING.md).
 
 [Back to Top](#orchestrator-tools-reference)
-
-- **
+- \*\*
 
 End of document.
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
-[↑ Table of Contents](#orchestrator-tools-reference)
+- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+  [↑ Table of Contents](#orchestrator-tools-reference)

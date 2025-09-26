@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:** Comprehensive documentation of the terminal integration system for command execution,
-shell integration, and terminal management in KiloCode.
+- *Purpose:*\* Comprehensive documentation of the terminal integration system for command execution,
+  shell integration, and terminal management in KiloCode.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -29,9 +29,8 @@ shell integration, and terminal management in KiloCode.
 </details>
 
 ## Executive Summary
-
 - The Terminal Integration system provides comprehensive terminal management, command execution, and
-shell integration capabilities for seamless development workflow integration in KiloCode.*
+  shell integration capabilities for seamless development workflow integration in KiloCode.\*
 
 The Terminal Integration consists of:
 1. **Terminal Management** - Terminal lifecycle and process management
@@ -92,14 +91,17 @@ graph TB
 
 ### Terminal Registry
 
-- *Implementation**: `src/integrations/terminal/TerminalRegistry.ts` **Features**:
+- *Implementation*\*: `src/integrations/terminal/TerminalRegistry.ts` **Features**:
 
 - **Terminal Lifecycle**: Complete terminal lifecycle management
+
 - **Process Tracking**: Active process monitoring and tracking
+
 - **Resource Management**: Terminal resource allocation and cleanup
+
 - **State Management**: Terminal state tracking and synchronization
 
-- *Registry Interface**:
+- *Registry Interface*\*:
 
 ```typescript
 interface TerminalRegistry {
@@ -110,23 +112,29 @@ interface TerminalRegistry {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Lifecycle Management**: Complete terminal lifecycle control
+
 - **Process Tracking**: Comprehensive process monitoring
+
 - **Resource Management**: Efficient resource allocation
+
 - **State Synchronization**: Terminal state management
 
 ### Base Terminal
 
-- *Implementation**: `src/integrations/terminal/BaseTerminal.ts` **Features**:
+- *Implementation*\*: `src/integrations/terminal/BaseTerminal.ts` **Features**:
 
 - **Terminal Interface**: Standardized terminal interface
+
 - **Event Handling**: Terminal event processing and handling
+
 - **State Management**: Terminal state tracking and management
+
 - **Error Handling**: Comprehensive error handling and recovery
 
-- *Terminal Interface**:
+- *Terminal Interface*\*:
 
 ```typescript
 interface BaseTerminal {
@@ -138,25 +146,31 @@ interface BaseTerminal {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Standardized Interface**: Consistent terminal interface
+
 - **Event Processing**: Comprehensive event handling
+
 - **State Management**: Terminal state tracking
+
 - **Error Recovery**: Robust error handling
 
 ## Shell Integration
 
 ### Shell Integration Manager
 
-- *Implementation**: `src/integrations/terminal/ShellIntegrationManager.ts` **Features**:
+- *Implementation*\*: `src/integrations/terminal/ShellIntegrationManager.ts` **Features**:
 
 - **Shell Detection**: Automatic shell detection and configuration
+
 - **Integration Setup**: Shell integration configuration and setup
+
 - **Environment Management**: Shell environment configuration
+
 - **Fallback Handling**: Graceful fallback for unsupported shells
 
-- *Shell Support**:
+- *Shell Support*\*:
 
 ```typescript
 interface ShellIntegration {
@@ -167,23 +181,29 @@ interface ShellIntegration {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Multi-shell Support**: Support for multiple shell types
+
 - **Automatic Detection**: Intelligent shell detection
+
 - **Integration Setup**: Seamless shell integration
+
 - **Fallback Support**: Graceful fallback handling
 
 ### Shell-specific Implementations
 
-- *Shell Types**:
+- *Shell Types*\*:
 
 - **Bash**: Unix/Linux bash shell integration
+
 - **CMD**: Windows Command Prompt integration
+
 - **PowerShell**: Windows PowerShell integration
+
 - **PowerShell Core**: Cross-platform PowerShell integration
 
-- *Shell Features**:
+- *Shell Features*\*:
 
 ```typescript
 interface ShellFeatures {
@@ -195,25 +215,31 @@ interface ShellFeatures {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Platform Support**: Cross-platform shell support
+
 - **Feature Detection**: Shell capability detection
+
 - **Optimization**: Shell-specific optimizations
+
 - **Compatibility**: Backward compatibility support
 
 ## Command Execution
 
 ### Command Execution Engine
 
-- *Implementation**: `src/integrations/terminal/ExecaTerminal.ts` **Features**:
+- *Implementation*\*: `src/integrations/terminal/ExecaTerminal.ts` **Features**:
 
 - **Safe Execution**: Secure command execution with validation
+
 - **Timeout Management**: Command timeout and cancellation
+
 - **Output Processing**: Command output capture and processing
+
 - **Error Handling**: Comprehensive error handling and reporting
 
-- *Execution Interface**:
+- *Execution Interface*\*:
 
 ```typescript
 interface CommandExecutor {
@@ -223,23 +249,29 @@ interface CommandExecutor {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Secure Execution**: Safe command execution with validation
+
 - **Timeout Control**: Command timeout and cancellation
+
 - **Output Capture**: Complete output capture and processing
+
 - **Error Management**: Comprehensive error handling
 
 ### Process Management
 
-- *Process Features**:
+- *Process Features*\*:
 
 - **Process Lifecycle**: Complete process lifecycle management
+
 - **Stream Handling**: Input/output stream management
+
 - **Signal Handling**: Process signal handling and control
+
 - **Resource Monitoring**: Process resource usage monitoring
 
-- *Process Interface**:
+- *Process Interface*\*:
 
 ```typescript
 interface TerminalProcess {
@@ -252,25 +284,31 @@ interface TerminalProcess {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Lifecycle Management**: Complete process lifecycle control
+
 - **Stream Processing**: Efficient stream handling
+
 - **Signal Control**: Process signal management
+
 - **Resource Tracking**: Process resource monitoring
 
 ## Performance & Optimization
 
 ### Stream Processing
 
-- *Stream Features**:
+- *Stream Features*\*:
 
 - **Real-time Processing**: Real-time stream processing and handling
+
 - **Buffer Management**: Efficient buffer management and optimization
+
 - **Memory Optimization**: Memory-efficient stream processing
+
 - **Performance Monitoring**: Stream performance monitoring and optimization
 
-- *Stream Processing**:
+- *Stream Processing*\*:
 
 ```typescript
 interface StreamProcessor {
@@ -281,78 +319,86 @@ interface StreamProcessor {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Processing**: Live stream processing
+
 - **Buffer Optimization**: Efficient buffer management
+
 - **Memory Efficiency**: Optimized memory usage
+
 - **Performance Tracking**: Stream performance monitoring
 
 ### Resource Management
 
-- *Resource Optimization**:
+- *Resource Optimization*\*:
 
 - **Memory Management**: Efficient memory usage and cleanup
+
 - **Process Pooling**: Process pool management and reuse
+
 - **Connection Pooling**: Terminal connection pooling
+
 - **Garbage Collection**: Optimized garbage collection patterns
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Resource Efficiency**: Optimized resource utilization
+
 - **Pool Management**: Efficient resource pooling
+
 - **Cleanup**: Automatic resource cleanup
+
 - **Performance**: Optimized resource performance
 
 ## Common Issues and Solutions
 
 ### Issue 1: Terminal Process Failures
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Process execution failures
 - Terminal crashes
 - Command timeouts
 
-- *Root Cause**: Process management or shell integration issues **Solution**: Implement robust
-process management and error recovery
+- *Root Cause*\*: Process management or shell integration issues **Solution**: Implement robust
+  process management and error recovery
 
 ### Issue 2: Shell Integration Problems
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Shell detection failures
 - Integration setup errors
 - Command execution issues
 
-- *Root Cause**: Shell-specific integration or configuration issues **Solution**: Improve shell
-detection and integration setup
+- *Root Cause*\*: Shell-specific integration or configuration issues **Solution**: Improve shell
+  detection and integration setup
 
 ### Issue 3: Stream Processing Issues
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Output truncation
 - Stream processing errors
 - Memory leaks
 
-- *Root Cause**: Stream handling or buffer management issues **Solution**: Implement robust stream
-processing and memory management
+- *Root Cause*\*: Stream handling or buffer management issues **Solution**: Implement robust stream
+  processing and memory management
 
 ### Issue 4: Performance Problems
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Slow command execution
 - High memory usage
 - Terminal lag
 
-- *Root Cause**: Inefficient processing or resource management **Solution**: Optimize processing
-algorithms and resource utilization
+- *Root Cause*\*: Inefficient processing or resource management **Solution**: Optimize processing
+  algorithms and resource utilization
 
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/integrations/TERMINAL_INTEGRATION.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [integrations](../docs/integrations/) ·
-[↑ Table of Contents](#terminal-integration)
+- *Navigation*\*: [docs](../) · [integrations](../docs/integrations/) ·
+  [↑ Table of Contents](#terminal-integration)

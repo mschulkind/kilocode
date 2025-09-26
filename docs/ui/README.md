@@ -54,11 +54,10 @@ dinosaur's eyes - focused views of specific information!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
-
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
-- [← Architecture](architecture/README.md)
-- [← Orchestrator](orchestrator/README.md)
+- [← Architecture](../architecture/README.md)
+- [← Orchestrator](../orchestrator/README.md)
 - [← Standards](standards/README.md)
 - [← Plans](plans/README.md)
 - [← Tools](tools/README.md)

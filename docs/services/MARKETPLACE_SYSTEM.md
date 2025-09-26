@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:** Comprehensive documentation of the MCP server marketplace system, package management,
-and server discovery in the KiloCode system.
+- *Purpose:*\* Comprehensive documentation of the MCP server marketplace system, package management,
+  and server discovery in the KiloCode system.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
 > specific function, but they all work together to keep the system healthy and functioning! 🧬
@@ -30,10 +30,9 @@ and server discovery in the KiloCode system.
 </details>
 
 ## Executive Summary
-
 - The Marketplace System provides a comprehensive platform for discovering, installing, and managing
-MCP (Model Context Protocol) servers, enabling users to extend KiloCode's capabilities with
-third-party integrations.*
+  MCP (Model Context Protocol) servers, enabling users to extend KiloCode's capabilities with
+  third-party integrations.\*
 
 The Marketplace System consists of:
 1. **Marketplace Manager** - Core marketplace functionality
@@ -98,13 +97,13 @@ graph TB
 
 ### Server Catalog
 
-- *Implementation**: `src/services/marketplace/MarketplaceManager.ts` **Features**:
+- *Implementation*\*: `src/services/marketplace/MarketplaceManager.ts` **Features**:
 - Server registry management
 - Metadata storage
 - Version tracking
 - Category organization
 
-- *Server Metadata**:
+- *Server Metadata*\*:
 
 ```typescript
 interface MCPServerMetadata {
@@ -124,9 +123,9 @@ interface MCPServerMetadata {
 }
 ```
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
-- *MarketplaceManager Architecture**:
+- *MarketplaceManager Architecture*\*:
 
 ```typescript
 export class MarketplaceManager {
@@ -143,53 +142,59 @@ export class MarketplaceManager {
 }
 ```
 
-- *Core Features**:
+- *Core Features*\*:
 
 - **Remote Configuration**: Integration with RemoteConfigLoader for marketplace data
+
 - **Organization Support**: Organization-specific MCP server management
+
 - **Item Filtering**: Advanced filtering by type, search, and tags
+
 - **Error Handling**: Comprehensive error handling with detailed error reporting
+
 - **Cloud Integration**: Integration with CloudService for organization settings
+
 - **Installation Management**: Integration with SimpleInstaller for item installation
+
 - **Telemetry Integration**: Usage tracking and analytics
 
 ### Search and Discovery
 
-- *Search Features**:
+- *Search Features*\*:
 - Full-text search
 - Category filtering
 - Tag-based filtering
 - Capability filtering
 - Popularity ranking
 
-- *Discovery Mechanisms**:
+- *Discovery Mechanisms*\*:
 - Registry browsing
 - Search functionality
 - Recommendation engine
 - Trending servers
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Search implementation,
-filtering algorithms, ranking systems
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Search implementation,
+  filtering algorithms, ranking systems
 
 ## Package Management
 
 ### Installation System
 
-- *Implementation**: `src/services/marketplace/SimpleInstaller.ts` **Features**:
+- *Implementation*\*: `src/services/marketplace/SimpleInstaller.ts` **Features**:
 - Package installation
 - Dependency resolution
 - Version management
 - Update mechanisms
 
-- *Installation Process**:
+- *Installation Process*\*:
 1. **Validation**: Package validation and security checks
 2. **Dependencies**: Dependency resolution and installation
 3. **Installation**: Package installation and configuration
 4. **Activation**: Server activation and registration
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
-- *SimpleInstaller Architecture**:
+- *SimpleInstaller Architecture*\*:
 
 ```typescript
 export class SimpleInstaller {
@@ -204,46 +209,58 @@ export class SimpleInstaller {
 }
 ```
 
-- *Core Features**:
+- *Core Features*\*:
 
 - **Multi-Type Support**: Support for modes and MCP servers
+
 - **Target Selection**: Project-level and global installation options
+
 - **Custom Modes Integration**: Integration with CustomModesManager
+
 - **File Path Resolution**: Automatic file path detection and creation
+
 - **Line Number Tracking**: Precise line number tracking for VS Code navigation
+
 - **Error Handling**: Comprehensive error handling and validation
+
 - **YAML Processing**: YAML parsing and generation for configuration files
 
 ### Dependency Management
 
-- *Dependency Types**:
+- *Dependency Types*\*:
 
 - **Runtime Dependencies**: Required for server operation
+
 - **Development Dependencies**: Required for development
+
 - **Peer Dependencies**: External dependencies
+
 - **Optional Dependencies**: Optional features
 
-- *Dependency Resolution**:
+- *Dependency Resolution*\*:
 - Version conflict resolution
 - Dependency graph analysis
 - Circular dependency detection
 - Security vulnerability scanning
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Dependency management,
-conflict resolution, security scanning
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Dependency management,
+  conflict resolution, security scanning
 
 ## Installation System
 
 ### Package Installation
 
-- *Installation Types**:
+- *Installation Types*\*:
 
 - **Local Installation**: Install from local files
+
 - **Registry Installation**: Install from marketplace
+
 - **Git Installation**: Install from Git repositories
+
 - **URL Installation**: Install from URLs
 
-- *Installation Flow**:
+- *Installation Flow*\*:
 
 ```mermaid
 sequenceDiagram
@@ -264,40 +281,46 @@ sequenceDiagram
     Marketplace-->>User: Success Notification
 ```
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Installation flow,
-validation process, registration system
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Installation flow,
+  validation process, registration system
 
 ### Update Management
 
-- *Update Types**:
+- *Update Types*\*:
 
 - **Automatic Updates**: Automatic update installation
+
 - **Manual Updates**: User-initiated updates
+
 - **Security Updates**: Critical security patches
+
 - **Feature Updates**: New feature releases
 
-- *Update Process**:
+- *Update Process*\*:
 1. **Check for Updates**: Version checking
 2. **Download Updates**: Update package download
 3. **Validate Updates**: Update validation
 4. **Apply Updates**: Update installation
 5. **Restart Services**: Service restart
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Update management,
-version checking, rollback mechanisms
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Update management,
+  version checking, rollback mechanisms
 
 ## Configuration Management
 
 ### Server Configuration
 
-- *Configuration Types**:
+- *Configuration Types*\*:
 
 - **Server Settings**: Server-specific configuration
+
 - **Connection Settings**: Connection parameters
+
 - **Authentication Settings**: Authentication configuration
+
 - **Feature Settings**: Feature-specific settings
 
-- *Configuration Schema**:
+- *Configuration Schema*\*:
 
 ```typescript
 interface ServerConfiguration {
@@ -311,115 +334,123 @@ interface ServerConfiguration {
 }
 ```
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration management,
-schema validation, settings persistence
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration management,
+  schema validation, settings persistence
 
 ### Remote Configuration
 
-- *Implementation**: `src/services/marketplace/RemoteConfigLoader.ts` **Features**:
+- *Implementation*\*: `src/services/marketplace/RemoteConfigLoader.ts` **Features**:
 - Remote configuration loading
 - Configuration synchronization
 - Fallback mechanisms
 - Cache management
 
-- *Configuration Sources**:
+- *Configuration Sources*\*:
 - Remote configuration servers
 - Local configuration files
 - Environment variables
 - Default configurations
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Remote configuration,
-synchronization, fallback strategies
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Remote configuration,
+  synchronization, fallback strategies
 
 ## Security & Validation
 
 ### Package Validation
 
-- *Validation Types**:
+- *Validation Types*\*:
 
 - **Signature Verification**: Digital signature validation
+
 - **Integrity Checks**: Package integrity verification
+
 - **Security Scanning**: Security vulnerability scanning
+
 - **Compatibility Checks**: Compatibility validation
 
-- *Validation Process**:
+- *Validation Process*\*:
 1. **Download Validation**: Package download verification
 2. **Signature Verification**: Digital signature validation
 3. **Integrity Check**: Package integrity verification
 4. **Security Scan**: Security vulnerability scanning
 5. **Compatibility Check**: Compatibility validation
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Validation framework,
-security measures, compatibility checking
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Validation framework,
+  security measures, compatibility checking
 
 ### Sandboxing
 
-- *Sandbox Features**:
+- *Sandbox Features*\*:
 
 - **Process Isolation**: Isolated execution environment
+
 - **Resource Limits**: Resource usage restrictions
+
 - **Network Access**: Controlled network access
+
 - **File System Access**: Restricted file system access
 
-- *Security Measures**:
+- *Security Measures*\*:
 
 - **Code Signing**: Signed package validation
+
 - **Permission System**: Granular permission control
+
 - **Audit Logging**: Security event logging
+
 - **Threat Detection**: Malicious behavior detection
 
-- *Implementation Status**: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Sandboxing architecture,
-security measures, threat detection
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Sandboxing architecture,
+  security measures, threat detection
 
 ## Common Issues and Solutions
 
 ### Issue 1: Installation Failures
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Package installation errors
 - Dependency resolution failures
 - Validation errors
 
-- *Root Cause**: Package corruption or dependency conflicts **Solution**: Implement robust validation
-and dependency resolution
+- *Root Cause*\*: Package corruption or dependency conflicts **Solution**: Implement robust validation
+  and dependency resolution
 
 ### Issue 2: Server Discovery Issues
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Missing servers in catalog
 - Search functionality failures
 - Metadata inconsistencies
 
-- *Root Cause**: Catalog synchronization issues or metadata corruption **Solution**: Implement proper
-catalog management and synchronization
+- *Root Cause*\*: Catalog synchronization issues or metadata corruption **Solution**: Implement proper
+  catalog management and synchronization
 
 ### Issue 3: Configuration Problems
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Configuration loading failures
 - Settings not persisting
 - Remote configuration issues
 
-- *Root Cause**: Configuration management or synchronization problems **Solution**: Implement robust
-configuration management and fallback mechanisms
+- *Root Cause*\*: Configuration management or synchronization problems **Solution**: Implement robust
+  configuration management and fallback mechanisms
 
 ### Issue 4: Security Vulnerabilities
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Security warnings
 - Package validation failures
 - Sandbox violations
 
-- *Root Cause**: Insufficient security validation or sandboxing **Solution**: Implement comprehensive
-security measures and validation
+- *Root Cause*\*: Insufficient security validation or sandboxing **Solution**: Implement comprehensive
+  security measures and validation
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
   · Source: `/docs/services/MARKETPLACE_SYSTEM.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [services](../docs/services/) ·
-[↑ Table of Contents](#marketplace-system)
+- *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+  [↑ Table of Contents](#marketplace-system)

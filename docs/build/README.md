@@ -49,11 +49,10 @@ Think of the build system like a dinosaur's digestive system - it takes raw mate
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
-
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
-- [← Architecture](architecture/README.md)
-- [← Orchestrator](orchestrator/README.md)
+- [← Architecture](../architecture/README.md)
+- [← Orchestrator](../orchestrator/README.md)
 - [← Standards](standards/README.md)
 - [← Plans](plans/README.md)
 - [← Tools](tools/README.md)

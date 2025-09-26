@@ -10,9 +10,9 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Comprehensive guide for diagnosing and resolving issues where KiloCode fires multiple
-API requests simultaneously, causing spinning status animations, interleaved responses, and system
-confusion.
+- *Purpose:*\* Comprehensive guide for diagnosing and resolving issues where KiloCode fires multiple
+  API requests simultaneously, causing spinning status animations, interleaved responses, and system
+  confusion.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -35,22 +35,20 @@ confusion.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - This document provides a comprehensive troubleshooting guide for duplicate API request issues in
-KiloCode. The problem manifests as multiple simultaneous API calls, resulting in spinning
-animations, interleaved responses, and system confusion. This guide covers all subsystems involved,
-diagnostic procedures, and resolution strategies.*
+  KiloCode. The problem manifests as multiple simultaneous API calls, resulting in spinning
+  animations, interleaved responses, and system confusion. This guide covers all subsystems involved,
+  diagnostic procedures, and resolution strategies.\*
 
 Duplicate API request issues in KiloCode typically stem from failures in the request deduplication
 mechanisms across multiple subsystems. The primary systems involved are:
@@ -151,7 +149,7 @@ sequenceDiagram
 - Non-atomic `isEmpty()` and `dequeueMessage()` operations
 - Multiple concurrent `ask` calls process the same queued message
 - Located in `Task.ts` lines 883-903
-   * **Priority**: CRITICAL - Requires immediate fix
+  * **Priority**: CRITICAL - Requires immediate fix
 2. **UI State Management Failures**
 - `sendingDisabled` state not properly managed
 - Multiple event listeners attached to send button
@@ -256,14 +254,14 @@ const laminarState = {
 
 ### UI Control Layer
 
-- *Location**: `webview-ui/src/components/chat/ChatView.tsx`, `ChatTextArea.tsx`
+- *Location*\*: `webview-ui/src/components/chat/ChatView.tsx`, `ChatTextArea.tsx`
 
-- *Key Components**:
+- *Key Components*\*:
 - `sendingDisabled` state management
 - Send button event handlers
 - Message queue UI integration
 
-- *Critical Code Sections**:
+- *Critical Code Sections*\*:
 
 ```typescript
 // ChatView.tsx - Send button handler
@@ -281,21 +279,21 @@ const handleSendMessage = useCallback(
 )
 ```
 
-- *Common Issues**:
+- *Common Issues*\*:
 - `sendingDisabled` state not updated properly after request completion
 - Multiple event listeners attached to send button
 - Race conditions between UI state updates and user actions
 
 ### Message Queue System
 
-- *Location**: `src/core/message-queue/MessageQueueService.ts`
+- *Location*\*: `src/core/message-queue/MessageQueueService.ts`
 
-- *Key Components**:
+- *Key Components*\*:
 - Message queuing and deduplication
 - Queue state management
 - Message processing coordination
 
-- *Critical Code Sections**:
+- *Critical Code Sections*\*:
 
 ```typescript
 // MessageQueueService.ts - Message addition
@@ -317,21 +315,21 @@ public addMessage(text: string, images?: string[]): QueuedMessage | undefined {
 }
 ```
 
-- *Common Issues**:
+- *Common Issues*\*:
 - Messages added multiple times due to UI state inconsistencies
 - Queue processing triggers multiple API calls
 - Concurrent access to message queue
 
 ### Task Lifecycle Management
 
-- *Location**: `src/core/task/Task.ts`
+- *Location*\*: `src/core/task/Task.ts`
 
-- *Key Components**:
+- *Key Components*\*:
 - Task creation and initialization
 - Message processing coordination
 - State synchronization
 
-- *Critical Code Sections**:
+- *Critical Code Sections*\*:
 
 ```typescript
 // Task.ts - Message processing
@@ -347,21 +345,21 @@ public processQueuedMessages(): void {
 }
 ```
 
-- *Common Issues**:
+- *Common Issues*\*:
 - Multiple task instances created for single request
 - Concurrent message processing
 - Task state not properly synchronized
 
 ### Laminar Service Integration
 
-- *Location**: `src/services/laminar/LaminarService.ts`
+- *Location*\*: `src/services/laminar/LaminarService.ts`
 
-- *Key Components**:
+- *Key Components*\*:
 - Span creation and management
 - Request deduplication
 - System prompt optimization
 
-- *Critical Code Sections**:
+- *Critical Code Sections*\*:
 
 ```typescript
 // LaminarService.ts - Span creation with deduplication
@@ -376,21 +374,21 @@ public startSpan(spanType: SpanType, options: {...}, isActive: boolean = false):
 }
 ```
 
-- *Common Issues**:
+- *Common Issues*\*:
 - Multiple spans created for same operation
 - System prompt duplication in span input
 - Span deduplication logic failures
 
 ### Webview Communication
 
-- *Location**: `src/core/webview/webviewMessageHandler.ts`
+- *Location*\*: `src/core/webview/webviewMessageHandler.ts`
 
-- *Key Components**:
+- *Key Components*\*:
 - Message routing and handling
 - State synchronization
 - Error handling
 
-- *Critical Code Sections**:
+- *Critical Code Sections*\*:
 
 ```typescript
 // webviewMessageHandler.ts - Message queue handling
@@ -400,7 +398,7 @@ case "queueMessage": {
 }
 ```
 
-- *Common Issues**:
+- *Common Issues*\*:
 - Duplicate message handlers
 - Message processing race conditions
 - State synchronization failures
@@ -409,14 +407,14 @@ case "queueMessage": {
 
 ### Pattern 1: UI State Desynchronization
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Multiple spinning animations
 - Send button remains enabled during request
 - Messages sent multiple times
 
-- *Root Cause**: `sendingDisabled` state not properly managed
+- *Root Cause*\*: `sendingDisabled` state not properly managed
 
-- *Diagnosis**:
+- *Diagnosis*\*:
 
 ```typescript
 // Check UI state consistency
@@ -428,7 +426,7 @@ console.log("UI State Check:", {
 })
 ```
 
-- *Resolution**:
+- *Resolution*\*:
 
 ```typescript
 // Ensure proper state management
@@ -448,14 +446,14 @@ const handleSendMessage = useCallback(
 
 ### Pattern 2: Message Queue Duplication
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Messages appear in queue multiple times
 - Multiple API calls for single message
 - Queue processing errors
 
-- *Root Cause**: Messages added to queue multiple times
+- *Root Cause*\*: Messages added to queue multiple times
 
-- *Diagnosis**:
+- *Diagnosis*\*:
 
 ```typescript
 // Check queue state
@@ -465,7 +463,7 @@ console.log("Queue State:", {
 })
 ```
 
-- *Resolution**:
+- *Resolution*\*:
 
 ```typescript
 // Implement queue deduplication
@@ -496,14 +494,14 @@ public addMessage(text: string, images?: string[]): QueuedMessage | undefined {
 
 ### Pattern 3: Task Instance Duplication
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Multiple task IDs for single request
 - Concurrent task execution
 - State synchronization failures
 
-- *Root Cause**: Multiple task instances created
+- *Root Cause*\*: Multiple task instances created
 
-- *Diagnosis**:
+- *Diagnosis*\*:
 
 ```typescript
 // Check task instances
@@ -514,7 +512,7 @@ console.log("Task Instances:", {
 })
 ```
 
-- *Resolution**:
+- *Resolution*\*:
 
 ```typescript
 // Ensure single task instance
@@ -536,14 +534,14 @@ public async createTask(text?: string, images?: string[]): Promise<Task> {
 
 ### Pattern 4: Laminar Span Duplication
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Multiple spans for same operation
 - System prompt duplication
 - Observability data corruption
 
-- *Root Cause**: Span deduplication logic failures
+- *Root Cause*\*: Span deduplication logic failures
 
-- *Diagnosis**:
+- *Diagnosis*\*:
 
 ```typescript
 // Check span state
@@ -555,7 +553,7 @@ console.log("Laminar State:", {
 })
 ```
 
-- *Resolution**:
+- *Resolution*\*:
 
 ```typescript
 // Implement span deduplication
@@ -780,11 +778,10 @@ const featureFlags = {
   `/docs/DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#duplicate-api-requests-troubleshooting-guide)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#duplicate-api-requests-troubleshooting-guide)
 
 ## No Dead Ends Policy
 

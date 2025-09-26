@@ -2,8 +2,8 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Detailed breakdown of the standardized document structure that every KiloCode document
-must follow, ensuring consistency and usability across all documentation.
+- *Purpose:*\* Detailed breakdown of the standardized document structure that every KiloCode document
+  must follow, ensuring consistency and usability across all documentation.
 
 > **Biology Fun Fact**: Just like how DNA has a specific structure with base pairs, sugar-phosphate
 > backbones, and double helix formation, our documents have a specific structure with purpose
@@ -25,23 +25,21 @@ must follow, ensuring consistency and usability across all documentation.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - Every KiloCode document follows a standardized anatomy with six required elements that work
-together to create consistent, discoverable, and usable documentation. This structure ensures that
-both authors and readers know what to expect from any document.*
+  together to create consistent, discoverable, and usable documentation. This structure ensures that
+  both authors and readers know what to expect from any document.\*
 
-- *Required Elements:**
+- *Required Elements:*\*
 1. **H1 Title** - Single, descriptive title
 2. **Purpose Statement** - Clear purpose and audience
 3. **Collapsible TOC** - Navigation overview
@@ -51,7 +49,7 @@ both authors and readers know what to expect from any document.*
 
 ## Required Elements
 
-- *Every document MUST contain these six elements in this exact order:**
+- *Every document MUST contain these six elements in this exact order:*\*
 
 ### 1. H1 Title
 
@@ -94,14 +92,17 @@ both authors and readers know what to expect from any document.*
 
 ### H1 Title
 
-- *Requirements**:
+- *Requirements*\*:
 
 - **Single H1**: Only one H1 per document
+
 - **Title Case**: Capitalize major words
+
 - **Descriptive**: Clearly indicates content
+
 - **Specific**: Avoid generic titles
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # Good: Specific and descriptive
@@ -119,16 +120,19 @@ Documentation Guide Stuff Things
 
 ### Purpose Statement
 
-- *Format**: `**Purpose:**` followed by brief description
+- *Format*\*: `**Purpose:**` followed by brief description
 
-- *Content Requirements**:
+- *Content Requirements*\*:
 
 - **Clear Purpose**: What the document does
+
 - **Target Audience**: Who should read it
+
 - **Success Criteria**: What readers will learn
+
 - **Context**: How it fits into the larger system
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # Good: Clear purpose and audience
@@ -148,16 +152,19 @@ architects.
 
 ### Collapsible TOC
 
-- *Format**: `<details><summary>Table of Contents</summary>` with H2/H3 entries
+- *Format*\*: `<details><summary>Table of Contents</summary>` with H2/H3 entries
 
-- *Content Requirements**:
+- *Content Requirements*\*:
 
 - **H2 Entries**: All major sections
+
 - **H3 Entries**: All subsections
+
 - **No H4**: Don't include H4 entries
+
 - **Proper Links**: Use correct anchor links
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 <details><summary>Table of Contents</summary>
@@ -172,16 +179,19 @@ architects.
 
 ### Executive Summary
 
-- *Format**: H2 heading with italic text
+- *Format*\*: H2 heading with italic text
 
-- *Content Requirements**:
+- *Content Requirements*\*:
 
 - **Key Highlights**: Most important information
+
 - **Overview**: What the document covers
+
 - **Context**: How it relates to other content
+
 - **Actionable**: What readers can do next
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 ## Executive Summary
@@ -199,16 +209,19 @@ including prerequisites, build steps, and troubleshooting common issues._
 
 ### Body Content
 
-- *Format**: H2/H3 sections with detailed information
+- *Format*\*: H2/H3 sections with detailed information
 
-- *Content Requirements**:
+- *Content Requirements*\*:
 
 - **Logical Flow**: Information flows logically
+
 - **Clear Hierarchy**: Proper H2/H3 structure
+
 - **Detailed Information**: Comprehensive coverage
+
 - **Examples**: Code examples and use cases
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 ## Problem Description
@@ -241,24 +254,27 @@ the parent task.
 
 ### When You're Here, You Can:
 
-- *Understanding Documentation Standards:**
+- *Understanding Documentation Standards:*\*
 
 - **Next**: Check related standards documentation in the same directory
+
 - **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
-- *Implementing Documentation Standards:**
+- *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
+- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
 
-- *Applying Standards to Documentation:**
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../../architecture/README.md) →
-  [Orchestrator Documentation](../../../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+- *Applying Standards to Documentation:*\*
+
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../../architecture/README.md) →
+  [Orchestrator Documentation](../../orchestrator/README.md)
+
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -268,16 +284,19 @@ next, return to [Standards Documentation](README.md) for guidance.
 
 ### Navigation Footer
 
-- *Format**: `<a id="navigation-footer"></a>` with back/root/source links
+- *Format*\*: `<a id="navigation-footer"></a>` with back/root/source links
 
-- *Content Requirements**:
+- *Content Requirements*\*:
 
 - **Back Link**: Link to parent index
+
 - **Root Link**: Link to main README.md
+
 - **Source Link**: Link to source file with #L1
+
 - **Proper Paths**: Use correct relative/absolute paths
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 <a id="navigation-footer"></a>
@@ -291,7 +310,7 @@ next, return to [Standards Documentation](README.md) for guidance.
 
 ## Structure Flow
 
-- *Logical Flow**: The document structure follows a logical flow from general to specific:
+- *Logical Flow*\*: The document structure follows a logical flow from general to specific:
 1. **Title** → Identifies the topic
 2. **Purpose** → Explains the goal
 3. **TOC** → Shows the structure
@@ -299,7 +318,7 @@ next, return to [Standards Documentation](README.md) for guidance.
 5. **Content** → Delivers details
 6. **Footer** → Enables navigation
 
-- *Flow Diagram**:
+- *Flow Diagram*\*:
 
 ```mermaid
 graph TD
@@ -319,40 +338,40 @@ graph TD
 
 ## Element Validation
 
-- *Pre-Submission Checks**: Validate each element before submitting.
+- *Pre-Submission Checks*\*: Validate each element before submitting.
 
-- *H1 Title Validation**:
+- *H1 Title Validation*\*:
 - \[ ] Single H1 at the top
 - \[ ] Title Case formatting
 - \[ ] Descriptive and specific
 - \[ ] Matches document content
 
-- *Purpose Statement Validation**:
+- *Purpose Statement Validation*\*:
 - \[ ] Uses `**Purpose:**` format
 - \[ ] Clear purpose description
 - \[ ] Identifies target audience
 - \[ ] Includes success criteria
 
-- *TOC Validation**:
+- *TOC Validation*\*:
 - \[ ] Collapsible format used
 - \[ ] Includes all H2 sections
 - \[ ] Includes all H3 sections
 - \[ ] No H4 entries included
 - \[ ] Links work correctly
 
-- *Executive Summary Validation**:
+- *Executive Summary Validation*\*:
 - \[ ] H2 heading used
 - \[ ] Italic text format
 - \[ ] Key highlights included
 - \[ ] Overview provided
 
-- *Body Content Validation**:
+- *Body Content Validation*\*:
 - \[ ] Logical flow maintained
 - \[ ] Proper H2/H3 hierarchy
 - \[ ] Detailed information provided
 - \[ ] Examples included where appropriate
 
-- *Navigation Footer Validation**:
+- *Navigation Footer Validation*\*:
 - \[ ] Anchor tag present
 - \[ ] Back link correct
 - \[ ] Root link correct
@@ -361,28 +380,28 @@ graph TD
 
 ## Common Mistakes
 
-- *Structure Mistakes**:
+- *Structure Mistakes*\*:
 - ❌ Multiple H1 headings
 - ❌ Missing purpose statement
 - ❌ TOC includes H4 entries
 - ❌ Missing navigation footer
 - ❌ Incorrect element order
 
-- *Content Mistakes**:
+- *Content Mistakes*\*:
 - ❌ Purpose statement doesn't match content
 - ❌ TOC doesn't match actual headings
 - ❌ Executive summary too vague
 - ❌ Body content lacks detail
 - ❌ Navigation footer links broken
 
-- *Format Mistakes**:
+- *Format Mistakes*\*:
 - ❌ Wrong heading case
 - ❌ Missing italic formatting in summary
 - ❌ Incorrect TOC format
 - ❌ Wrong link paths
 - ❌ Missing required elements
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # Bad: Multiple H1 headings
@@ -538,11 +557,10 @@ Common issues and solutions:
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
   `/docs/BUILD_PROCESS_GUIDE.md#L1`
 ```
+- \*\*
 
-- **
-
-- *Navigation**: [Back to Structure](README.md) · [Next: Headings & Hierarchy](HEADINGS_HIERARCHY.md)
-· [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
+- *Navigation*\*: [Back to Structure](README.md) · [Next: Headings & Hierarchy](HEADINGS_HIERARCHY.md)
+  · [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️

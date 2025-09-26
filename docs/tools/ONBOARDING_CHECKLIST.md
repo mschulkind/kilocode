@@ -215,10 +215,9 @@ automation system.
 - [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
 - [Quick Reference Card](./QUICK_REFERENCE_CARD.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [tools](../docs/tools/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../) · [tools](./) · ↑ Table of Contents

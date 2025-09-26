@@ -56,7 +56,6 @@ adapted to its specific niche!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
-
 - [← Integrations Overview](README.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../../README.md)

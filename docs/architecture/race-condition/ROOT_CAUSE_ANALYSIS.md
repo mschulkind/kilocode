@@ -2,7 +2,7 @@
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:** Detailed investigation of the root cause of the API duplication race condition issue.
+- *Purpose:*\* Detailed investigation of the root cause of the API duplication race condition issue.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -12,24 +12,23 @@
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
-- **
-
-- *Commit**: `749f3d22a` - "fix children task loading to continue the execution of the parent after
-finished" **Date**: September 10, 2025 **Author**: Catriel Müller
+- *Commit*\*: `749f3d22a` - "fix children task loading to continue the execution of the parent after
+  finished" **Date**: September 10, 2025 **Author**: Catriel Müller
 
 ### Before the Change
 
-- *Original `finishSubTask` method** (`/src/core/webview/ClineProvider.ts:466`):
+- *Original `finishSubTask` method*\* (`/src/core/webview/ClineProvider.ts:466`):
 
 ```typescript
 async finishSubTask(lastMessage: string) {
@@ -40,12 +39,12 @@ async finishSubTask(lastMessage: string) {
 }
 ```
 
-- *Behavior**: Only called `completeSubtask()` which added the subtask result to the parent's
-conversation history.
+- *Behavior*\*: Only called `completeSubtask()` which added the subtask result to the parent's
+  conversation history.
 
 ### After the Change
 
-- *New `finishSubTask` method** with `continueParentTask`:
+- *New `finishSubTask` method*\* with `continueParentTask`:
 
 ```typescript
 async finishSubTask(lastMessage: string) {
@@ -80,8 +79,8 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 }
 ```
 
-- *Behavior**: Now calls `completeSubtask()` AND then calls
-`recursivelyMakeClineRequests([], false)`.
+- *Behavior*\*: Now calls `completeSubtask()` AND then calls
+  `recursivelyMakeClineRequests([], false)`.
 
 ## The Race Condition
 
@@ -105,14 +104,12 @@ await parentTask.recursivelyMakeClineRequests([], false)
 ```
 
 ### The Timing Problem
-
-- *Normal Execution (No Race)**:
+- \*Normal Execution (No Race)\*\*:
 1. Main task loop calls `recursivelyMakeClineRequests`
 2. API call completes
 3. Subtask completion calls `recursivelyMakeClineRequests`
 4. Second API call completes
-
-- *Race Condition (Concurrent Execution)**:
+- \*Race Condition (Concurrent Execution)\*\*:
 1. Main task loop calls `recursivelyMakeClineRequests`
 2. **Simultaneously**: Subtask completion calls `recursivelyMakeClineRequests`
 3. **Both API calls happen at the same time**
@@ -259,11 +256,10 @@ The fix solved the navigation problem but created a new race condition:
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[race-condition](../docs/architecture/race-condition/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [race-condition](../../architecture/) · ↑ Table of Contents
 
 ## No Dead Ends Policy
 

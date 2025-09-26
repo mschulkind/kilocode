@@ -292,9 +292,9 @@ Concepts and "channels"
 - In this codebase "channels" are logical contexts attached to log entries via the logger metadata
   `ctx` → compact entry `c`.
 - Use a channel for grouping related events, e.g. `chat.timestamps`, `chat.lifecycle`,
-    `orchestrator`.
+  `orchestrator`.
 - Create contextual loggers with `.child({ ctx: "chat.timestamps" })` so the `c` field is
-    automatically set on entries.
+  automatically set on entries.
 
 What gets written (CompactLogEntry)
 - Entries written by the logger are compact objects: `{ t, l, m, c?, d? }`.
@@ -328,9 +328,9 @@ Note: the repo's default `logger` behaves differently depending on environment.
 - [`src/utils/logging/index.ts`](src/utils/logging/index.ts:1) exports a `noopLogger` for non-test
   runtimes and a `CompactLogger` when `NODE_ENV === "test"`. This means:
 - In normal runtime the default export is a noop (no file writes) to avoid spamming logs unless
-    an explicit logger is created.
+  an explicit logger is created.
 - For local debugging or CI you can instantiate a `CompactLogger` yourself, or set up the
-    transport explicitly:
+  transport explicitly:
 
 Explicit logger with file output (example)
 
@@ -417,13 +417,13 @@ if (Math.random() < 0.01) {
 - Test fallback logic for messages with missing timestamps.
 - **Integration Tests:**
 - Verify that all four `lifecycleTimestamps` are correctly recorded for a standard streaming
-    message.
+  message.
 - Test the day-boundary rendering logic.
 - **Test Environment:**
 - Use a deterministic clock source (e.g., `vi.useFakeTimers()`) in all tests to ensure
-    reproducible results.
+  reproducible results.
 - Simulate race conditions, such as a duplicate dispatch, to verify that both messages are
-    handled correctly.
+  handled correctly.
 - **Snapshot Example:** Snapshot tests will be used to capture the rendered output of a message
   list, including timestamps and day boundaries, to prevent regressions.
 
@@ -474,22 +474,25 @@ if (Math.random() < 0.01) {
 
 ### When You're Here, You Can:
 
-- *Understanding This System:**
+- *Understanding This System:*\*
 
 - **Next**: Check related documentation in the same directory
+
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
-- *Implementing Features:**
+- *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -499,8 +502,7 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to the appropriate README for guidance.
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Documentation Hub](../../README.md) ·
-[📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

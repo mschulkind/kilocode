@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Master index for comprehensive information about the KiloCode repository structure,
-systems, and components.
+- *Purpose:*\* Master index for comprehensive information about the KiloCode repository structure,
+  systems, and components.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -21,22 +21,21 @@ systems, and components.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ### Quick Start Paths
 
-- **Need an Overview**: Start with [Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)
-- **Understanding Systems**: Begin with [Core Systems](../architecture/repository/CORE_SYSTEMS.md)
+- **Need an Overview**: Start with [Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)
+- **Understanding Systems**: Begin with [Core Systems](../architecture/CORE_SYSTEMS.md)
 - **Development Journey**: Follow [Development Guide](repository/DEVELOPMENT_GUIDE.md)
 
 ### Current Focus
@@ -52,19 +51,19 @@ understanding:
 
 ### Core Documentation
 
-- **[Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)** - High-level repository
+- **[Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)** - High-level repository
   organization
-- **[Core Systems](../architecture/repository/CORE_SYSTEMS.md)** - Core systems and services
-- **[Workspace Packages](../architecture/repository/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
-- **[Applications](../architecture/repository/APPLICATIONS.md)** - Applications and interfaces
+- **[Core Systems](../architecture/CORE_SYSTEMS.md)** - Core systems and services
+- **[Workspace Packages](../architecture/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
+- **[Applications](../architecture/APPLICATIONS.md)** - Applications and interfaces
 
 ### Development & Infrastructure
 
 - **[Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and
   frameworks
-- **[Build Pipelines](../architecture/repository/BUILD_PIPELINES.md)** - Build and CI/CD systems
-- **[Development Tools](../architecture/repository/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
-- **[External Integrations](../architecture/repository/EXTERNAL_INTEGRATIONS.md)** - External service integrations
+- **[Build Pipelines](../architecture/BUILD_PIPELINES.md)** - Build and CI/CD systems
+- **[Development Tools](../architecture/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
+- **[External Integrations](../architecture/EXTERNAL_INTEGRATIONS.md)** - External service integrations
 - **[Development Guide](repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
 
 ## Executive Summary
@@ -74,13 +73,18 @@ featuring a multi-layered architecture with extensive tooling, testing, and depl
 infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages,
 applications, and services.
 
-- *Key Statistics:**
+- *Key Statistics:*\*
 
 - **Total Files**: 1,120+ TypeScript files
+
 - **Workspace Packages**: 7 core packages
+
 - **Applications**: 8 applications (docs, testing, web interfaces)
+
 - **Core Services**: 15+ specialized services
+
 - **Tools**: 25+ AI-powered tools
+
 - **Test Coverage**: Extensive unit, integration, and E2E testing
 
 ## Quick Reference
@@ -126,15 +130,14 @@ of the system's structure!
 
 ## 🧭 Navigation Footer
 - [← Back to Architecture Home](../../README.md)
-- [→ Repository Structure](../architecture/repository/REPOSITORY_STRUCTURE.md)
+- [→ Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)
 - [↑ Table of Contents](../../README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#repository-overview)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#repository-overview)
 
 ## No Dead Ends Policy
 

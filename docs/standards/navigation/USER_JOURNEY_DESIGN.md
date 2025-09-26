@@ -2,8 +2,8 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Comprehensive standards for designing user journeys that optimize the experience for
-different types of users with different goals, contexts, and expertise levels.
+- *Purpose:*\* Comprehensive standards for designing user journeys that optimize the experience for
+  different types of users with different goals, contexts, and expertise levels.
 
 > **Geology Fun Fact**: Just like how different types of rock formations require different
 > exploration strategies - some need careful excavation, others need seismic analysis, and some need
@@ -23,113 +23,140 @@ different types of users with different goals, contexts, and expertise levels.
 </details>
 
 ## Executive Summary
-
 - User journey design creates optimal experiences for different types of users by understanding their
-goals, constraints, and context. These standards ensure that documentation provides the right
-information at the right time in the right format for each user type.*
+  goals, constraints, and context. These standards ensure that documentation provides the right
+  information at the right time in the right format for each user type.\*
 
-- *Key Standards:**
+- *Key Standards:*\*
 
 - **User-Centric Design**: Focus on user needs and goals
+
 - **Context Awareness**: Adapt to user context and constraints
+
 - **Progressive Disclosure**: Start with overview, then provide details
+
 - **Multiple Entry Points**: Provide different ways to access information
 
 ## User Type Analysis
 
-- *Purpose**: Understand different user types and their specific needs.
+- *Purpose*\*: Understand different user types and their specific needs.
 
 ### Emergency Responders
 
-- *Profile**: Developers, system administrators, support staff **Goals**: Quickly identify and fix
-problems **Constraints**: Time pressure, immediate action required **Expertise**: Intermediate to
-advanced **Context**: Production issues, system failures, user complaints
+- *Profile*\*: Developers, system administrators, support staff **Goals**: Quickly identify and fix
+  problems **Constraints**: Time pressure, immediate action required **Expertise**: Intermediate to
+  advanced **Context**: Production issues, system failures, user complaints
 
-- *Needs**:
+- *Needs*\*:
 
 - **Immediate Access**: Quick access to problem identification
+
 - **Step-by-Step**: Clear progression from problem to solution
+
 - **Technical Focus**: Detailed technical information
+
 - **Quick Reference**: Fast access to solutions and fixes
 
-- *Journey Design**:
+- *Journey Design*\*:
 
 - **Problem Identification**: Direct links to symptoms and diagnosis
+
 - **Root Cause Analysis**: Technical details and code analysis
+
 - **Solution Implementation**: Step-by-step implementation guide
+
 - **Verification**: Testing and validation procedures
 
 ### Researchers
 
-- *Profile**: Architects, researchers, new team members **Goals**: Comprehensive understanding of
-system architecture **Constraints**: No immediate time pressure, learning focus **Expertise**:
-Beginner to advanced **Context**: System design, architecture decisions, learning
+- *Profile*\*: Architects, researchers, new team members **Goals**: Comprehensive understanding of
+  system architecture **Constraints**: No immediate time pressure, learning focus **Expertise**:
+  Beginner to advanced **Context**: System design, architecture decisions, learning
 
-- *Needs**:
+- *Needs*\*:
 
 - **Comprehensive Coverage**: Complete system understanding
+
 - **Conceptual Framework**: High-level architecture overview
+
 - **Detailed Analysis**: Deep technical details
+
 - **Cross-References**: Extensive linking between concepts
 
-- *Journey Design**:
+- *Journey Design*\*:
 
 - **Conceptual Overview**: High-level system architecture
+
 - **Detailed Analysis**: Component-by-component analysis
+
 - **Related Systems**: Integration and interaction patterns
+
 - **Advanced Topics**: Specialized and advanced concepts
 
 ### Implementers
 
-- *Profile**: Developers, implementers, maintainers **Goals**: Implement solutions and maintain
-system **Constraints**: Project timeline, implementation focus **Expertise**: Intermediate to
-advanced **Context**: Development, implementation, maintenance
+- *Profile*\*: Developers, implementers, maintainers **Goals**: Implement solutions and maintain
+  system **Constraints**: Project timeline, implementation focus **Expertise**: Intermediate to
+  advanced **Context**: Development, implementation, maintenance
 
-- *Needs**:
+- *Needs*\*:
 
 - **Practical Focus**: Actionable implementation guidance
+
 - **Code Examples**: Detailed code snippets and examples
+
 - **Testing Strategy**: Comprehensive testing approach
+
 - **Maintenance Guide**: Long-term maintenance considerations
 
-- *Journey Design**:
+- *Journey Design*\*:
 
 - **Solution Design**: Architecture and design decisions
+
 - **Technical Implementation**: Code implementation details
+
 - **Testing & Validation**: Testing strategies and procedures
+
 - **Maintenance**: Long-term maintenance and monitoring
 
 ### New Users
 
-- *Profile**: New team members, beginners, students **Goals**: Learn the system and understand basics
-- *Constraints**: Learning curve, need for context **Expertise**: Beginner **Context**: Onboarding,
-learning, training
+- *Profile*\*: New team members, beginners, students **Goals**: Learn the system and understand basics
 
-- *Needs**:
+- *Constraints*\*: Learning curve, need for context **Expertise**: Beginner **Context**: Onboarding,
+  learning, training
+
+- *Needs*\*:
 
 - **Gentle Introduction**: Easy-to-understand overview
+
 - **Progressive Learning**: Step-by-step learning path
+
 - **Context**: Background information and context
+
 - **Examples**: Lots of examples and use cases
 
-- *Journey Design**:
+- *Journey Design*\*:
 
 - **Introduction**: Gentle introduction to concepts
+
 - **Basic Concepts**: Fundamental concepts and terminology
+
 - **Progressive Learning**: Step-by-step learning path
+
 - **Practical Examples**: Real-world examples and use cases
 
 ## Journey Optimization
 
-- *Purpose**: Optimize user journeys for maximum effectiveness and user satisfaction.
+- *Purpose*\*: Optimize user journeys for maximum effectiveness and user satisfaction.
 
 ### Progressive Disclosure
 
-- *Principle**: Start with overview, then provide details **Benefits**: Users get context before
-diving into details **Implementation**: Use hierarchical information structure **Examples**:
-Executive summary → detailed sections → examples
+- *Principle*\*: Start with overview, then provide details **Benefits**: Users get context before
+  diving into details **Implementation**: Use hierarchical information structure **Examples**:
+  Executive summary → detailed sections → examples
 
-- *Structure**:
+- *Structure*\*:
 
 ```
 1. Overview (What is this?)
@@ -143,41 +170,47 @@ Executive summary → detailed sections → examples
 
 ### Multiple Entry Points
 
-- *Principle**: Provide different ways to access the same information **Benefits**: Users can start
-from their preferred context **Implementation**: Create multiple navigation paths **Examples**:
-Problem-based, concept-based, process-based, reference-based
+- *Principle*\*: Provide different ways to access the same information **Benefits**: Users can start
+  from their preferred context **Implementation**: Create multiple navigation paths **Examples**:
+  Problem-based, concept-based, process-based, reference-based
 
-- *Entry Points**:
+- *Entry Points*\*:
 
 - **Problem-Based**: Start with specific problems
+
 - **Concept-Based**: Start with general concepts
+
 - **Process-Based**: Start with implementation processes
+
 - **Reference-Based**: Start with specific information
 
 ### Context Awareness
 
-- *Principle**: Adapt content based on user context **Benefits**: Users get relevant information for
-their situation **Implementation**: Use conditional content and smart navigation **Examples**:
-Experience level, time constraints, goals, tools
+- *Principle*\*: Adapt content based on user context **Benefits**: Users get relevant information for
+  their situation **Implementation**: Use conditional content and smart navigation **Examples**:
+  Experience level, time constraints, goals, tools
 
-- *Context Factors**:
+- *Context Factors*\*:
 
 - **Experience Level**: Beginner, intermediate, advanced, expert
+
 - **Time Constraints**: Immediate, short, medium, long
+
 - **Goals**: Problem solving, learning, implementation, reference
+
 - **Tools**: Available tools and resources
 
 ## Context Awareness
 
-- *Purpose**: Adapt user journeys based on user context and situation.
+- *Purpose*\*: Adapt user journeys based on user context and situation.
 
 ### Experience Level Adaptation
 
-- *Beginner**: More explanation, simpler language, more examples **Intermediate**: Balanced approach,
-moderate detail **Advanced**: Technical focus, quick reference **Expert**: Streamlined,
-implementation-focused
+- *Beginner*\*: More explanation, simpler language, more examples **Intermediate**: Balanced approach,
+  moderate detail **Advanced**: Technical focus, quick reference **Expert**: Streamlined,
+  implementation-focused
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```markdown
 ## For Beginners
@@ -197,11 +230,11 @@ subtask completion call `recursivelyMakeClineRequests` simultaneously.
 
 ### Time Constraint Adaptation
 
-- *Immediate**: Emergency response path, quick fixes **Short**: Quick reference, essential
-information **Medium**: Standard path, balanced detail **Long**: Comprehensive path, complete
-coverage
+- *Immediate*\*: Emergency response path, quick fixes **Short**: Quick reference, essential
+  information **Medium**: Standard path, balanced detail **Long**: Comprehensive path, complete
+  coverage
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```markdown
 ## Quick Fix (5 minutes)
@@ -219,11 +252,11 @@ coverage
 
 ### Goal-Based Adaptation
 
-- *Problem Solving**: Focus on diagnosis and solutions **Learning**: Focus on concepts and
-understanding **Implementation**: Focus on practical guidance **Reference**: Focus on specific
-information
+- *Problem Solving*\*: Focus on diagnosis and solutions **Learning**: Focus on concepts and
+  understanding **Implementation**: Focus on practical guidance **Reference**: Focus on specific
+  information
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```markdown
 ## Problem Solving Path
@@ -241,15 +274,15 @@ information
 
 ## Journey Patterns
 
-- *Purpose**: Use consistent patterns for common user journey types.
+- *Purpose*\*: Use consistent patterns for common user journey types.
 
 ### Problem-Solution Pattern
 
-- *Use**: When users need to solve specific problems **Structure**: Problem → Analysis → Solution →
-Verification **Benefits**: Clear progression from problem to solution **Examples**: Bug fixes,
-system issues, user complaints
+- *Use*\*: When users need to solve specific problems **Structure**: Problem → Analysis → Solution →
+  Verification **Benefits**: Clear progression from problem to solution **Examples**: Bug fixes,
+  system issues, user complaints
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```markdown
 ## Problem: API Duplication Issue
@@ -272,11 +305,11 @@ Test the solution to ensure it works correctly.
 
 ### Learning Pattern
 
-- *Use**: When users need to understand concepts **Structure**: Overview → Concepts → Details →
-Examples **Benefits**: Progressive learning from general to specific **Examples**: System
-architecture, design patterns, new features
+- *Use*\*: When users need to understand concepts **Structure**: Overview → Concepts → Details →
+  Examples **Benefits**: Progressive learning from general to specific **Examples**: System
+  architecture, design patterns, new features
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```markdown
 ## Overview: State Machines
@@ -299,11 +332,11 @@ State machines are used for task lifecycle management.
 
 ### Implementation Pattern
 
-- *Use**: When users need to implement solutions **Structure**: Design → Implementation → Testing →
-Maintenance **Benefits**: Clear progression from design to maintenance **Examples**: Feature
-development, system integration, bug fixes
+- *Use*\*: When users need to implement solutions **Structure**: Design → Implementation → Testing →
+  Maintenance **Benefits**: Clear progression from design to maintenance **Examples**: Feature
+  development, system integration, bug fixes
 
-- *Implementation**:
+- *Implementation*\*:
 
 ```markdown
 ## Design: Solution Architecture
@@ -325,11 +358,11 @@ Monitor performance and update as needed.
 
 ### Reference Pattern
 
-- *Use**: When users need specific information **Structure**: Quick Access → Details → Examples →
-Related **Benefits**: Fast access to specific information **Examples**: API references,
-configuration guides, troubleshooting
+- *Use*\*: When users need specific information **Structure**: Quick Access → Details → Examples →
+  Related **Benefits**: Fast access to specific information **Examples**: API references,
+  configuration guides, troubleshooting
 
-- *Implementation**:
+- *Implementation*\*:
 
 ````markdown
 ## Quick Access: API Methods
@@ -633,11 +666,10 @@ Common issues and solutions:
 ```
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [Back to Navigation](README.md) · [Next: Code Documentation](../code/README.md) ·
-[Source: `/docs/standards/navigation/USER_JOURNEY_DESIGN.md#L1`](USER_JOURNEY_DESIGN.md#L1)
+- *Navigation*\*: [Back to Navigation](README.md) · [Next: Code Documentation](../code/README.md) ·
+  [Source: `/docs/standards/navigation/USER_JOURNEY_DESIGN.md#L1`](USER_JOURNEY_DESIGN.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️
@@ -646,32 +678,34 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 ### When You're Here, You Can:
 
-- *Understanding Documentation Standards:**
+- *Understanding Documentation Standards:*\*
 
 - **Next**: Check related standards documentation in the same directory
+
 - **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
-- *Implementing Documentation Standards:**
+- *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
+- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
 
-- *Applying Standards to Documentation:**
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../../architecture/README.md) →
-  [Orchestrator Documentation](../../../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+- *Applying Standards to Documentation:*\*
+
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../../architecture/README.md) →
+  [Orchestrator Documentation](../../orchestrator/README.md)
+
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Standards Documentation](README.md) for guidance.
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Standards Documentation](README.md) ·
-[📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Standards Documentation](README.md) ·
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

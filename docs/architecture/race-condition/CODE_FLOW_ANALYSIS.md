@@ -2,8 +2,8 @@
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:** Detailed analysis of the code execution flow and how the race condition manifests in
-the system.
+- *Purpose:*\* Detailed analysis of the code execution flow and how the race condition manifests in
+  the system.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -13,17 +13,16 @@ the system.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ```mermaid
 graph TB
@@ -184,36 +183,36 @@ sequenceDiagram
 
 ### 1. Main Task Loop Entry Point
 
-- *File**: `src/core/task/Task.ts:1760`
+- *File*\*: `src/core/task/Task.ts:1760`
 
 ```typescript
 // Main task execution loop
 const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
 ```
 
-- *Context**: This is where the main orchestrator task continues its execution loop.
+- *Context*\*: This is where the main orchestrator task continues its execution loop.
 
 ### 2. Subtask Completion Entry Point
 
-- *File**: `src/core/webview/ClineProvider.ts:1587`
+- *File*\*: `src/core/webview/ClineProvider.ts:1587`
 
 ```typescript
 // Subtask completion handling
 await parentTask.recursivelyMakeClineRequests([], false)
 ```
 
-- *Context**: This is where the subtask completion triggers parent task continuation.
+- *Context*\*: This is where the subtask completion triggers parent task continuation.
 
 ### 3. API Call Location
 
-- *File**: `src/core/task/Task.ts:2984`
+- *File*\*: `src/core/task/Task.ts:2984`
 
 ```typescript
 // Where the actual API call happens
 return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
 ```
 
-- *Context**: This is where both execution paths ultimately make their API calls.
+- *Context*\*: This is where both execution paths ultimately make their API calls.
 
 ## State Transitions
 
@@ -283,12 +282,12 @@ graph LR
 
 ### Current Synchronization
 
-- *None**: The system currently has no synchronization mechanism to prevent concurrent calls.
+- *None*\*: The system currently has no synchronization mechanism to prevent concurrent calls.
 
 ### Required Synchronization
 
-- *Lock-based**: Need a mechanism to ensure only one `recursivelyMakeClineRequests` call executes at
-a time.
+- *Lock-based*\*: Need a mechanism to ensure only one `recursivelyMakeClineRequests` call executes at
+  a time.
 
 ```typescript
 // Proposed synchronization
@@ -328,11 +327,10 @@ async recursivelyMakeClineRequests(...) {
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[race-condition](../docs/architecture/race-condition/) · [↑ Table of Contents](#code-flow-analysis)
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [race-condition](../../architecture/) · [↑ Table of Contents](#code-flow-analysis)
 
 ## No Dead Ends Policy
 

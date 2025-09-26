@@ -2,9 +2,9 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** This document details the security model of the Kilo Code Orchestrator, focusing on
-mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe
-and predictable operation.
+- *Purpose:*\* This document details the security model of the Kilo Code Orchestrator, focusing on
+  mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe
+  and predictable operation.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
 > can go, and how to get there without getting lost! 🗺️
@@ -20,8 +20,7 @@ and predictable operation.
 - \[7. Navigation Footer
 
 </details>
-
-- **
+- \*\*
 
 ### Related Documents
 
@@ -35,8 +34,7 @@ and predictable operation.
   errors are handled.
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 ### Security Philosophy
 
@@ -51,8 +49,7 @@ This mode-centric approach provides a clear and auditable trail of why certain a
 permitted.
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 ### Modes as a Security Boundary
 
@@ -74,8 +71,7 @@ A task can request to change its mode by using the
 [`switchModeTool`](/src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged action.
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 ### Tool Permissioning
 
@@ -94,8 +90,7 @@ Some tools, like `askFollowupQuestionTool`, are considered **Always-Available To
 permitted in all modes.
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 ### File Access Control
 
@@ -114,8 +109,7 @@ communicates the nature of the violation to the model, allowing it to take corre
 switching to an appropriate mode).
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 ### Governance Workflow Diagram
 
@@ -142,29 +136,31 @@ flowchart TD
 ```
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:**
+- *Understanding This System:*\*
 
 - **Next**: Check related documentation in the same directory
+
 - **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
-- *Implementing Features:**
+- *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:**
+- *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
@@ -182,12 +178,10 @@ You have reached the end of the security and governance document. Return to the
 [Best Practices Document](ORCHESTRATOR_BEST_PRACTICES.md).
 
 [Back to Top](#orchestrator-security--governance)
-
-- **
+- \*\*
 
 End of document.
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [orchestrator](../orchestrator/) ·
-[↑ Table of Contents](#orchestrator-security--governance)
+- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+  [↑ Table of Contents](#orchestrator-security--governance)

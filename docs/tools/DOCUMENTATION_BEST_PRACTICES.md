@@ -17,7 +17,7 @@ KiloCode project.
 
 ### 1. Structure and Organization
 
-- *Clear Hierarchy**
+- *Clear Hierarchy*\*
 
 ```markdown
 # Main Title (H1) - Only one per document
@@ -31,13 +31,13 @@ KiloCode project.
 #### Detail Section (H4)
 ```
 
-- *Logical Flow**
+- *Logical Flow*\*
 - Start with overview and purpose
 - Progress from general to specific
 - End with next steps or related resources
 - Use consistent section ordering
 
-- *File Organization**
+- *File Organization*\*
 
 ```
 docs/
@@ -50,7 +50,7 @@ docs/
 
 ### 2. Content Quality
 
-- *Research Context** Every document should include:
+- *Research Context*\* Every document should include:
 
 ```markdown
 ## Research Context
@@ -59,13 +59,13 @@ Brief description of the research, background, and context that led to this docu
 "why" behind the content.
 ```
 
-- *Engaging Content**
+- *Engaging Content*\*
 - Include fun facts where appropriate
 - Use analogies and examples
 - Make content accessible to different skill levels
 - Include visual elements when helpful
 
-- *No Dead Ends Policy**
+- *No Dead Ends Policy*\*
 - Every document should have clear next steps
 - Link to related resources
 - Provide navigation paths
@@ -73,19 +73,19 @@ Brief description of the research, background, and context that led to this docu
 
 ### 3. Writing Style
 
-- *Tone and Voice**
+- *Tone and Voice*\*
 - Professional but approachable
 - Clear and concise
 - Consistent terminology
 - Active voice preferred
 
-- *Technical Accuracy**
+- *Technical Accuracy*\*
 - Verify all technical claims
 - Include code examples that work
 - Update outdated information
 - Cross-reference related concepts
 
-- *Accessibility**
+- *Accessibility*\*
 - Use descriptive headings
 - Include alt text for images
 - Provide text alternatives for diagrams
@@ -95,7 +95,7 @@ Brief description of the research, background, and context that led to this docu
 
 ### 1. Markdown Best Practices
 
-- *Headings**
+- *Headings*\*
 
 ```markdown
 # Use Title Case for H1
@@ -107,7 +107,7 @@ Brief description of the research, background, and context that led to this docu
 ### Avoid too many heading levels
 ```
 
-- *Lists**
+- *Lists*\*
 
 ```markdown
 <!-- Use consistent bullet points -->
@@ -121,7 +121,7 @@ Brief description of the research, background, and context that led to this docu
 3. Third step
 ```
 
-- *Code Blocks**
+- *Code Blocks*\*
 
 ````markdown
 ```javascript
@@ -144,7 +144,7 @@ https://example.com ❌
 
 ### 2. Required Sections
 
-- *Table of Contents** (for files >500 words)
+- *Table of Contents*\* (for files >500 words)
 
 ```markdown
 ## Table of Contents
@@ -154,13 +154,13 @@ https://example.com ❌
 - [Conclusion](#conclusion)
 ```
 
-- *Navigation Footer**
+- *Navigation Footer*\*
 
 ```markdown
 - *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
 ```
 
-- *Research Context**
+- *Research Context*\*
 
 ```markdown
 ## Research Context
@@ -170,19 +170,19 @@ Brief description of the research and context behind this document.
 
 ### 3. Visual Elements
 
-- *Images**
+- *Images*\*
 - Use descriptive filenames
 - Include alt text
 - Optimize file sizes
 - Use consistent formats (PNG, SVG)
 
-- *Diagrams**
+- *Diagrams*\*
 - Use Mermaid for flowcharts
 - Include text descriptions
 - Keep diagrams simple and clear
 - Update when content changes
 
-- *Code Examples**
+- *Code Examples*\*
 - Use working code
 - Include comments
 - Show expected output
@@ -216,19 +216,19 @@ Brief description of the research and context behind this document.
 
 ### 1. Review Process
 
-- *Self-Review**
+- *Self-Review*\*
 - Read through entire document
 - Check for clarity and completeness
 - Verify technical accuracy
 - Run validation tools
 
-- *Peer Review**
+- *Peer Review*\*
 - Ask team member to review
 - Focus on content quality
 - Check for missing information
 - Verify understanding
 
-- *Final Review**
+- *Final Review*\*
 - Run automated validation
 - Check all links and references
 - Ensure consistency with standards
@@ -236,13 +236,13 @@ Brief description of the research and context behind this document.
 
 ### 2. Maintenance
 
-- *Regular Updates**
+- *Regular Updates*\*
 - Review documents quarterly
 - Update outdated information
 - Check link health
 - Improve based on feedback
 
-- *Version Control**
+- *Version Control*\*
 - Use descriptive commit messages
 - Include change summaries
 - Tag major updates
@@ -250,13 +250,13 @@ Brief description of the research and context behind this document.
 
 ### 3. Feedback Integration
 
-- *Collecting Feedback**
+- *Collecting Feedback*\*
 - Use team feedback forms
 - Monitor usage metrics
 - Track validation errors
 - Gather user suggestions
 
-- *Implementing Improvements**
+- *Implementing Improvements*\*
 - Prioritize feedback
 - Update documentation
 - Communicate changes
@@ -266,13 +266,13 @@ Brief description of the research and context behind this document.
 
 ### 1. Content Issues
 
-- *Avoid:**
+- *Avoid:*\*
 - Outdated information
 - Incomplete sections
 - Missing context
 - Unclear explanations
 
-- *Instead:**
+- *Instead:*\*
 - Regular updates
 - Complete information
 - Clear background
@@ -280,13 +280,13 @@ Brief description of the research and context behind this document.
 
 ### 2. Formatting Issues
 
-- *Avoid:**
+- *Avoid:*\*
 - Inconsistent headings
 - Broken links
 - Poor code formatting
 - Missing alt text
 
-- *Instead:**
+- *Instead:*\*
 - Follow style guide
 - Validate all links
 - Use proper code blocks
@@ -294,13 +294,13 @@ Brief description of the research and context behind this document.
 
 ### 3. Organization Issues
 
-- *Avoid:**
+- *Avoid:*\*
 - Unclear structure
 - Missing navigation
 - Orphaned content
 - Poor file organization
 
-- *Instead:**
+- *Instead:*\*
 - Logical hierarchy
 - Clear navigation
 - Connected content
@@ -340,7 +340,7 @@ pnpm docs:report
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ## Continuous Improvement
 
@@ -366,11 +366,10 @@ pnpm docs:report
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/repository/DEVELOPMENT_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](../architecture/DEVELOPMENT_GUIDE.md)
 
 ## Navigation
-
 - [← Tools Overview](README.md)
 - [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
 - [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)

@@ -55,7 +55,6 @@ development ecosystem!
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
-
 - [← Tools Overview](README.md)
 - [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
 - [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)

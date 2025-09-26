@@ -161,14 +161,13 @@ For issues with IDE integration:
 4. Check project documentation standards
 
 ## Related Documentation
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/repository/DEVELOPMENT_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](../architecture/DEVELOPMENT_GUIDE.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [tools](../docs/tools/) ·
-[↑ Table of Contents](#ide-integration-guide)
+- *Navigation*\*: [docs](../) · [tools](./) ·
+  [↑ Table of Contents](#ide-integration-guide)

@@ -2,9 +2,9 @@
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:** This document provides a detailed overview of the Kilo Code Orchestrator's
-architecture, including its core components, their interactions, and the flow of data through the
-system.
+- *Purpose:*\* This document provides a detailed overview of the Kilo Code Orchestrator's
+  architecture, including its core components, their interactions, and the flow of data through the
+  system.
 
 > **Quantum Physics Fun Fact**: The orchestrator architecture is like quantum superposition - it
 > exists in multiple states simultaneously (CREATED, RUNNING, PAUSED) until observed (measured), at
@@ -21,8 +21,7 @@ system.
 - \[7. Navigation Footer
 
 </details>
-
-- **
+- \*\*
 
 ### Related Documents
 
@@ -36,8 +35,7 @@ system.
   security model, including modes and permissions.
 
 [Back to Top](#orchestrator-architecture)
-
-- **
+- \*\*
 
 ### Architectural Philosophy
 
@@ -57,8 +55,7 @@ design goals are:
   through the central `Task` loop.
 
 [Back to Top](#orchestrator-architecture)
-
-- **
+- \*\*
 
 ### Core Components
 
@@ -83,8 +80,7 @@ The architecture comprises several key components that work in concert to execut
   context. A key function is [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
 
 [Back to Top](#orchestrator-architecture)
-
-- **
+- \*\*
 
 ### Data Flow Diagram
 
@@ -116,8 +112,7 @@ sequenceDiagram
 ```
 
 [Back to Top](#orchestrator-architecture)
-
-- **
+- \*\*
 
 ### Component Deep Dive
 
@@ -144,8 +139,7 @@ The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it 
 which is then handled by the Task Engine.
 
 [Back to Top](#orchestrator-architecture)
-
-- **
+- \*\*
 
 ### Key Interactions
 
@@ -164,8 +158,7 @@ which is then handled by the Task Engine.
   moved/renamed) is called.
 
 [Back to Top](#orchestrator-architecture)
-
-- **
+- \*\*
 
 ### Navigation Footer
 
@@ -175,43 +168,46 @@ which is then handled by the Task Engine.
 
 ### When You're Here, You Can:
 
-- *Understanding Orchestrator Architecture:**
+- *Understanding Orchestrator Architecture:*\*
 
 - **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
+
 - **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [State Machines](../architecture/state-machines/README.md) for behavior modeling
+  [State Machines](../architecture/README.md) for behavior modeling
 
-- *Investigating Race Conditions:**
+- *Investigating Race Conditions:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md)
+
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
-- *Implementing Orchestrator Features:**
+- *Implementing Orchestrator Features:*\*
 
 - **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+
+- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
   codebase patterns
 
-- *Understanding Current Problems:**
+- *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+
+- **Related**: [State Machines](../architecture/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Orchestrator Documentation](README.md) for guidance.
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Orchestrator Documentation](README.md) ·
-[→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../GLOSSARY.md) ·
-[↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
+  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../GLOSSARY.md) ·
+  [↑ Table of Contents](#-research-context--next-steps)

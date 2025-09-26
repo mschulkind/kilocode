@@ -74,13 +74,12 @@ systems working together to survive, our system needs all services working in ha
 - [↑ Table of Contents](../README.md)
 
 ## Navigation
-
-- [← Main Documentation](README.md)
-- [← Project Root](README.md)
-- [← Architecture](architecture/README.md)
-- [← Orchestrator](orchestrator/README.md)
-- [← Standards](standards/README.md)
-- [← Plans](plans/README.md)
-- [← Tools](tools/README.md)
-- [← Improvements](improvements/README.md)
-- [← Integrations](integrations/README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)
+- [← Architecture](../architecture/README.md)
+- [← Orchestrator](../orchestrator/README.md)
+- [← Standards](../standards/README.md)
+- [← Plans](../plans/README.md)
+- [← Tools](../tools/README.md)
+- [← Improvements](../improvements/README.md)
+- [← Integrations](../integrations/README.md)

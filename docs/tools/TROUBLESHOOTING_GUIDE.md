@@ -16,12 +16,12 @@ This guide helps you resolve common issues with KiloCode's documentation automat
 
 ### 1. Validation Not Running
 
-- *Symptoms:**
+- *Symptoms:*\*
 - No validation errors shown in VS Code
 - `pnpm docs:validate` command fails
 - No Problems panel entries
 
-- *Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check if remark is installed
@@ -43,7 +43,7 @@ cat .remarkrc
 npx remark docs/README.md
 ```
 
-- *Solutions:**
+- *Solutions:*\*
 1. **Install Dependencies**
 
    ```bash
@@ -65,12 +65,12 @@ npx remark docs/README.md
 
 ### 2. Auto-fix Not Working
 
-- *Symptoms:**
+- *Symptoms:*\*
 - Auto-fix on save doesn't work
 - Manual fix commands fail
 - Validation errors persist
 
-- *Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check VS Code settings
@@ -86,7 +86,7 @@ grep -A 5 "codeActionsOnSave" .vscode/settings.json
 npx remark --use remark-stringify docs/
 ```
 
-- *Solutions:**
+- *Solutions:*\*
 1. **Enable Auto-fix**
 
    ```json
@@ -112,12 +112,12 @@ npx remark --use remark-stringify docs/
 
 ### 3. Performance Issues
 
-- *Symptoms:**
+- *Symptoms:*\*
 - Slow validation
 - VS Code becomes unresponsive
 - Long processing times
 
-- *Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check file counts
@@ -133,7 +133,7 @@ find docs/ -name "*.md" | wc -l
 find docs/ -name "*.md" -exec wc -c {} + | sort -n
 ```
 
-- *Solutions:**
+- *Solutions:*\*
 1. **Exclude Large Directories**
 
    ```json
@@ -154,12 +154,12 @@ find docs/ -name "*.md" -exec wc -c {} + | sort -n
 
 ### 4. Link Validation Errors
 
-- *Symptoms:**
+- *Symptoms:*\*
 - False positive broken links
 - External links marked as broken
 - Internal links not found
 
-- *Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check specific link
@@ -175,7 +175,7 @@ npx remark-validate-links docs/file.md
 curl -I https://example.com
 ```
 
-- *Solutions:**
+- *Solutions:*\*
 1. **Internal Links**
 
    ```markdown
@@ -210,12 +210,12 @@ curl -I https://example.com
 
 ### 5. Extension Conflicts
 
-- *Symptoms:**
+- *Symptoms:*\*
 - Multiple validation errors
 - Conflicting rules
 - Inconsistent behavior
 
-- *Diagnosis:**
+- *Diagnosis:*\*
 
 ```bash
 # Check installed extensions
@@ -231,7 +231,7 @@ code --list-extensions | grep -i markdown
 grep -r "markdown" .vscode/
 ```
 
-- *Solutions:**
+- *Solutions:*\*
 1. **Disable Conflicting Extensions**
 - Keep only Markdown All in One and markdownlint
 - Disable other markdown extensions temporarily
@@ -259,7 +259,7 @@ grep -r "markdown" .vscode/
 
 ### 1. Debug Mode
 
-- *Enable Debug Logging:**
+- *Enable Debug Logging:*\*
 
 ```bash
 # Set debug environment
@@ -275,7 +275,7 @@ export DEBUG=remark*
 npx remark docs/ --verbose
 ```
 
-- *VS Code Debug:**
+- *VS Code Debug:*\*
 1. Open Command Palette (`Ctrl+Shift+P`)
 2. Run "Developer: Toggle Developer Tools"
 3. Check Console for error messages
@@ -283,7 +283,7 @@ npx remark docs/ --verbose
 
 ### 2. Configuration Issues
 
-- *Check .remarkrc:**
+- *Check .remarkrc:*\*
 
 ```bash
 # Validate JSON syntax
@@ -299,7 +299,7 @@ cat .remarkrc | jq .
 npx remark --config .remarkrc docs/
 ```
 
-- *Check Package.json:**
+- *Check Package.json:*\*
 
 ```bash
 # Verify scripts exist
@@ -317,7 +317,7 @@ pnpm list | grep remark
 
 ### 3. File System Issues
 
-- *Permissions:**
+- *Permissions:*\*
 
 ```bash
 # Check file permissions
@@ -333,7 +333,7 @@ ls -la docs/
 chmod -R 644 docs/
 ```
 
-- *Encoding Issues:**
+- *Encoding Issues:*\*
 
 ```bash
 # Check file encoding
@@ -353,7 +353,7 @@ iconv -f ISO-8859-1 -t UTF-8 docs/file.md > docs/file-utf8.md
 
 ### 1. Self-Diagnosis
 
-- *Check These First:**
+- *Check These First:*\*
 - \[ ] Dependencies installed: `pnpm install`
 - \[ ] VS Code extensions active
 - \[ ] Configuration files valid
@@ -362,13 +362,13 @@ iconv -f ISO-8859-1 -t UTF-8 docs/file.md > docs/file-utf8.md
 
 ### 2. Log Analysis
 
-- *VS Code Logs:**
+- *VS Code Logs:*\*
 1. Help → Toggle Developer Tools
 2. Console tab
 3. Look for error messages
 4. Check network requests
 
-- *Terminal Logs:**
+- *Terminal Logs:*\*
 
 ```bash
 # Run with verbose output
@@ -386,13 +386,13 @@ npx remark docs/ 2>&1 | grep -i error
 
 ### 3. Team Support
 
-- *Before Asking for Help:**
+- *Before Asking for Help:*\*
 1. Check this troubleshooting guide
 2. Try the suggested solutions
 3. Gather error messages and logs
 4. Document steps to reproduce
 
-- *When Asking for Help:**
+- *When Asking for Help:*\*
 - Include error messages
 - Describe what you were trying to do
 - Share relevant configuration
@@ -402,13 +402,13 @@ npx remark docs/ 2>&1 | grep -i error
 
 ### 1. Regular Maintenance
 
-- *Weekly:**
+- *Weekly:*\*
 - Run `pnpm docs:validate`
 - Check for new validation errors
 - Update outdated links
 - Review team feedback
 
-- *Monthly:**
+- *Monthly:*\*
 - Review configuration settings
 - Update dependencies
 - Check extension compatibility
@@ -416,13 +416,13 @@ npx remark docs/ 2>&1 | grep -i error
 
 ### 2. Best Practices
 
-- *File Management:**
+- *File Management:*\*
 - Use consistent naming
 - Keep files organized
 - Regular cleanup
 - Version control properly
 
-- *Configuration:**
+- *Configuration:*\*
 - Document custom settings
 - Test changes before committing
 - Keep configurations simple
@@ -430,13 +430,13 @@ npx remark docs/ 2>&1 | grep -i error
 
 ### 3. Team Training
 
-- *New Members:**
+- *New Members:*\*
 - Complete onboarding checklist
 - Review best practices
 - Practice with sample files
 - Ask questions early
 
-- *Regular Updates:**
+- *Regular Updates:*\*
 - Share new features
 - Update procedures
 - Review common issues
@@ -447,11 +447,10 @@ npx remark docs/ 2>&1 | grep -i error
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [tools](../docs/tools/) ·
-[↑ Table of Contents](#troubleshooting-guide)
+- *Navigation*\*: [docs](../) · [tools](./) ·
+  [↑ Table of Contents](#troubleshooting-guide)

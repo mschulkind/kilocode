@@ -17,17 +17,16 @@ of the API duplication race condition issue in KiloCode.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 ### Quick Start Paths
 
@@ -73,7 +72,7 @@ of the API duplication race condition issue in KiloCode.
 - **State Machines**: See [../state-machines/](../state-machines/) for detailed state analysis The
   canonical source for Task, Session, Recursive Call, Combined, and Race-Condition state diagrams
   with properties and transitions.
-- **Orchestrator**: See [../orchestrator/](../orchestrator/) for orchestrator-specific details
+- **Orchestrator**: See [../orchestrator/](../../orchestrator/) for orchestrator-specific details
   In-depth coverage of orchestrator responsibilities, lifecycle, and best practices.
 - **Architecture**: See [Architecture Documentation](../README.md) for system architecture overview Global entry
   point for architecture with repository, observability, and planning links.
@@ -98,7 +97,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
 - [← Architecture Overview](../README.md)
 - [← Race Condition Analysis](README.md)
 - [← Root Cause Analysis](ROOT_CAUSE_ANALYSIS.md)

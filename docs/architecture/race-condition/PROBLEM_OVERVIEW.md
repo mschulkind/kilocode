@@ -2,23 +2,22 @@
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:** Executive summary and problem description for the API duplication race condition issue.
+- *Purpose:*\* Executive summary and problem description for the API duplication race condition issue.
 
 ## Executive Summary
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The API duplication issue is caused by a **race condition** introduced in commit `749f3d22a` where
 both the main task loop and subtask completion can simultaneously call
@@ -26,12 +25,15 @@ both the main task loop and subtask completion can simultaneously call
 simultaneous API calls with spinners appearing in the chat interface, causing jumbled responses and
 confused user experience.
 
-- *Key Findings:**
+- *Key Findings:*\*
 
 - **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution
   paths
+
 - **Trigger**: Recent change to subtask completion handling in `ClineProvider.ts`
+
 - **Impact**: Multiple API requests, jumbled responses, confused chat interface
+
 - **Solution**: Synchronization mechanism to ensure only one recursive call executes at a time
 
 > **Quantum Physics Fun Fact**: This is like having two particles in a quantum superposition - they
@@ -52,7 +54,7 @@ confused user experience.
 1. **Start here**: [State Machines Index](../state-machines/README.md)
 2. **Explore the problem**:
    [Race Condition State Machine](../state-machines/RACE_CONDITION_STATE_MACHINE.md)
-3. **Understand the flow**: [Orchestrator Lifecycle](../orchestrator/ORCHESTRATOR_LIFECYCLE.md)
+3. **Understand the flow**: [Orchestrator Lifecycle](../../orchestrator/ORCHESTRATOR_LIFECYCLE.md)
 4. **See the big picture**: [Combined State Machine](../state-machines/COMBINED_STATE_MACHINE.md)
 
 #### 🛠️ **Implementation Journey** (Building the Fix)
@@ -124,9 +126,9 @@ the same interaction cycle.
 
 ### What is Green Text?
 
-- *Green text** is a visual indicator that appears in the chat interface to signal the end of an AI
-turn. It's like a "conversation punctuation mark" that tells the user "I'm done with my response,
-it's your turn now."
+- *Green text*\* is a visual indicator that appears in the chat interface to signal the end of an AI
+  turn. It's like a "conversation punctuation mark" that tells the user "I'm done with my response,
+  it's your turn now."
 
 ### Race Condition vs. Sequential Execution
 
@@ -169,11 +171,10 @@ it's your turn now."
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[race-condition](../docs/architecture/race-condition/) · [↑ Table of Contents](#problem-overview)
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [race-condition](../../architecture/) · [↑ Table of Contents](#problem-overview)
 
 ## No Dead Ends Policy
 

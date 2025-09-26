@@ -158,7 +158,6 @@ For advanced configuration and custom rules, see the Phase 1 implementation plan
 `context/doc_automation/phase1.md`.
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)
+- *Navigation*\*: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)

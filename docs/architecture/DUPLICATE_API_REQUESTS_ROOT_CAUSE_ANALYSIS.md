@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Deep technical analysis of the actual root cause of duplicate API request issues in
-KiloCode, based on detailed code examination.
+- *Purpose:*\* Deep technical analysis of the actual root cause of duplicate API request issues in
+  KiloCode, based on detailed code examination.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -34,21 +34,19 @@ KiloCode, based on detailed code examination.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 - After deep code examination, I have identified the actual root cause of duplicate API requests in
-KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where
-message queue processing can trigger multiple concurrent API calls.*
+  KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where
+  message queue processing can trigger multiple concurrent API calls.\*
 
 ## Root Cause Identified
 
@@ -156,7 +154,7 @@ const message = this.messageQueueService.dequeueMessage() // gets undefined
 
 ### 1. Primary Race Condition
 
-- *File**: `src/core/task/Task.ts` **Lines**: 883-903 **Issue**: Non-atomic message queue processing
+- *File*\*: `src/core/task/Task.ts` **Lines**: 883-903 **Issue**: Non-atomic message queue processing
 
 ```typescript
 // BUG: Race condition here
@@ -167,8 +165,8 @@ const message = this.messageQueueService.dequeueMessage()
 
 ### 2. Message Queue Service
 
-- *File**: `src/core/message-queue/MessageQueueService.ts` **Lines**: 80-84 **Issue**: No
-synchronization for concurrent access
+- *File*\*: `src/core/message-queue/MessageQueueService.ts` **Lines**: 80-84 **Issue**: No
+  synchronization for concurrent access
 
 ```typescript
 public dequeueMessage(): QueuedMessage | undefined {
@@ -180,8 +178,8 @@ public dequeueMessage(): QueuedMessage | undefined {
 
 ### 3. Process Queued Messages
 
-- *File**: `src/core/task/Task.ts` **Lines**: 3297-3312 **Issue**: Async processing without
-synchronization
+- *File*\*: `src/core/task/Task.ts` **Lines**: 3297-3312 **Issue**: Async processing without
+  synchronization
 
 ```typescript
 public processQueuedMessages(): void {
@@ -198,8 +196,8 @@ public processQueuedMessages(): void {
 
 ### 4. Tool Completion Triggers
 
-- *Files**: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.) **Lines**: Various
-- *Issue**: Tools call `processQueuedMessages()` without coordination
+- *Files*\*: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.) **Lines**: Various
+- *Issue*\*: Tools call `processQueuedMessages()` without coordination
 
 ```typescript
 // In multiple tool files:
@@ -408,11 +406,10 @@ This analysis provides the exact locations and fixes needed to resolve the issue
   Root: [`README.md`](README.md) · Source: `/docs/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [architecture](../docs/architecture/) ·
-[↑ Table of Contents](#duplicate-api-requests---root-cause-analysis)
+- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+  [↑ Table of Contents](#duplicate-api-requests---root-cause-analysis)
 
 ## No Dead Ends Policy
 

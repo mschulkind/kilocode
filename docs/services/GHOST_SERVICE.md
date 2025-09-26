@@ -10,8 +10,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Comprehensive documentation of the Ghost Service for AI-powered code completion, inline
-suggestions, and intelligent code assistance in KiloCode.
+- *Purpose:*\* Comprehensive documentation of the Ghost Service for AI-powered code completion, inline
+  suggestions, and intelligent code assistance in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
 > specific function, but they all work together to keep the system healthy and functioning! 🧬
@@ -29,10 +29,9 @@ suggestions, and intelligent code assistance in KiloCode.
 </details>
 
 ## Executive Summary
-
 - The Ghost Service provides comprehensive AI-powered code completion, inline suggestions, and
-intelligent code assistance through multiple completion strategies and real-time UI integration in
-KiloCode.*
+  intelligent code assistance through multiple completion strategies and real-time UI integration in
+  KiloCode.\*
 
 The Ghost Service consists of:
 1. **GhostProvider** - Core service orchestration and management
@@ -107,7 +106,7 @@ graph TB
 
 ### Ghost Provider
 
-- *Provider Architecture**:
+- *Provider Architecture*\*:
 
 ```typescript
 export class GhostProvider {
@@ -124,42 +123,52 @@ export class GhostProvider {
 }
 ```
 
-- *Core Features**:
+- *Core Features*\*:
 
 - **Singleton Pattern**: Single instance management across workspace
+
 - **Document Management**: Comprehensive document state management
+
 - **Strategy Selection**: Intelligent completion strategy selection
+
 - **UI Coordination**: Real-time UI updates and visual feedback
+
 - **Performance Monitoring**: Cost tracking and performance metrics
 
 ### Completion Engine
 
-- *Completion Workflow**:
+- *Completion Workflow*\*:
 1. **Context Analysis**: Code context and cursor position analysis
 2. **Strategy Selection**: Appropriate completion strategy selection
 3. **AI Processing**: AI-powered completion generation
 4. **Result Processing**: Completion result processing and validation
 5. **UI Update**: Real-time UI updates and visual feedback
 
-- *Completion Types**:
+- *Completion Types*\*:
 
 - **Inline Completions**: Inline code suggestions
+
 - **Multi-line Completions**: Multi-line code generation
+
 - **Error Fixes**: Automatic error detection and fixing
+
 - **Refactoring**: Code refactoring suggestions
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Processing**: Real-time completion generation
+
 - **Context Awareness**: Intelligent context analysis
+
 - **Multi-strategy Support**: Multiple completion strategies
+
 - **Performance Optimization**: Efficient processing and caching
 
 ## Strategy Management
 
 ### Completion Strategies
 
-- *Strategy Types**:
+- *Strategy Types*\*:
 
 ```typescript
 // Base strategy interface
@@ -180,34 +189,43 @@ class SelectionRefactorStrategy extends BasePromptStrategy
 class UserRequestStrategy extends BasePromptStrategy
 ```
 
-- *Strategy Features**:
+- *Strategy Features*\*:
 
 - **Context-aware Selection**: Intelligent strategy selection based on context
+
 - **Specialized Processing**: Strategy-specific completion processing
+
 - **Fallback Mechanisms**: Graceful fallback to alternative strategies
+
 - **Performance Optimization**: Strategy-specific performance tuning
 
 ### Strategy Orchestration
 
-- *Orchestration Features**:
+- *Orchestration Features*\*:
 
 - **Strategy Ranking**: Intelligent strategy ranking and selection
+
 - **Context Analysis**: Deep context analysis for strategy selection
+
 - **Performance Monitoring**: Strategy performance monitoring
+
 - **Adaptive Learning**: Strategy selection improvement over time
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Multi-strategy Architecture**: Flexible strategy system
+
 - **Context Intelligence**: Smart context-based strategy selection
+
 - **Performance Optimization**: Strategy-specific optimizations
+
 - **Extensibility**: Easy addition of new completion strategies
 
 ## UI Integration
 
 ### Visual Feedback
 
-- *UI Components**:
+- *UI Components*\*:
 
 ```typescript
 // Visual components
@@ -218,35 +236,45 @@ class GhostCodeLensProvider implements vscode.CodeLensProvider
 class GhostGutterAnimation extends vscode.Disposable
 ```
 
-- *Visual Features**:
+- *Visual Features*\*:
 
 - **Inline Decorations**: Real-time completion preview decorations
+
 - **Status Bar Integration**: Completion status and progress display
+
 - **Code Actions**: Context-aware code action suggestions
+
 - **Code Lens**: Intelligent code lens information
+
 - **Animations**: Smooth visual transitions and feedback
 
 ### User Experience
 
-- *UX Features**:
+- *UX Features*\*:
 
 - **Non-intrusive**: Subtle and non-intrusive completion suggestions
+
 - **Responsive**: Fast and responsive completion generation
+
 - **Customizable**: User-customizable completion behavior
+
 - **Accessible**: Accessible completion interface
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Real-time Updates**: Live completion updates and feedback
+
 - **Visual Polish**: Smooth animations and visual transitions
+
 - **User Control**: User control over completion behavior
+
 - **Performance**: Optimized UI performance and responsiveness
 
 ## Performance & Optimization
 
 ### Performance Monitoring
 
-- *Performance Metrics**:
+- *Performance Metrics*\*:
 
 ```typescript
 private sessionCost: number = 0
@@ -255,78 +283,86 @@ private isProcessing: boolean = false
 private isRequestCancelled: boolean = false
 ```
 
-- *Monitoring Features**:
+- *Monitoring Features*\*:
 
 - **Cost Tracking**: AI API cost monitoring and tracking
+
 - **Performance Metrics**: Completion speed and accuracy metrics
+
 - **Resource Usage**: Memory and CPU usage monitoring
+
 - **User Analytics**: Usage patterns and behavior analytics
 
 ### Optimization Strategies
 
-- *Optimization Techniques**:
+- *Optimization Techniques*\*:
 
 - **Request Cancellation**: Intelligent request cancellation
+
 - **Caching**: Completion result caching and reuse
+
 - **Debouncing**: Input debouncing for performance
+
 - **Batch Processing**: Batch completion processing
 
-- *Implementation Status**: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
 - **Performance Monitoring**: Comprehensive performance tracking
+
 - **Cost Management**: AI API cost optimization
+
 - **Resource Optimization**: Efficient resource utilization
+
 - **User Experience**: Optimized user experience and responsiveness
 
 ## Common Issues and Solutions
 
 ### Issue 1: Completion Accuracy Problems
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Poor completion suggestions
 - Irrelevant completions
 - Missing context awareness
 
-- *Root Cause**: Strategy selection or context analysis issues **Solution**: Improve context analysis
-and strategy selection algorithms
+- *Root Cause*\*: Strategy selection or context analysis issues **Solution**: Improve context analysis
+  and strategy selection algorithms
 
 ### Issue 2: Performance Issues
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Slow completion generation
 - High resource usage
 - UI lag and freezing
 
-- *Root Cause**: Inefficient processing or resource management **Solution**: Implement performance
-optimization and resource management
+- *Root Cause*\*: Inefficient processing or resource management **Solution**: Implement performance
+  optimization and resource management
 
 ### Issue 3: UI Integration Issues
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Visual glitches
 - Decoration rendering issues
 - Animation problems
 
-- *Root Cause**: UI component or rendering issues **Solution**: Fix UI components and improve
-rendering performance
+- *Root Cause*\*: UI component or rendering issues **Solution**: Fix UI components and improve
+  rendering performance
 
 ### Issue 4: Strategy Selection Problems
 
-- *Symptoms**:
+- *Symptoms*\*:
 - Wrong strategy selection
 - Poor completion quality
 - Context misinterpretation
 
-- *Root Cause**: Strategy selection or context analysis issues **Solution**: Improve strategy
-selection algorithms and context analysis
+- *Root Cause*\*: Strategy selection or context analysis issues **Solution**: Improve strategy
+  selection algorithms and context analysis
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
   · Source: `/docs/services/GHOST_SERVICE.md#L1`
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../) · [services](../docs/services/) ·
-[↑ Table of Contents](#ghost-service)
+- *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+  [↑ Table of Contents](#ghost-service)

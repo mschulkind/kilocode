@@ -2,8 +2,8 @@
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:** Detailed overview of the workspace packages and shared libraries in the KiloCode
-monorepo.
+- *Purpose:*\* Detailed overview of the workspace packages and shared libraries in the KiloCode
+  monorepo.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -13,17 +13,16 @@ monorepo.
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
 
 The KiloCode monorepo contains 7 core packages that provide shared functionality across the entire
 codebase:
@@ -69,17 +68,21 @@ graph TB
 
 ### @roo-code/types
 
-- *Purpose**: Shared TypeScript type definitions and schemas
+- *Purpose*\*: Shared TypeScript type definitions and schemas
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Message Types**: Chat message and conversation types
+
 - **Task Types**: Task and orchestrator type definitions
+
 - **API Types**: API request and response types
+
 - **Tool Types**: Tool definition and execution types
+
 - **Configuration Types**: Configuration and settings types
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/types/src/
@@ -91,24 +94,27 @@ packages/types/src/
 └── index.ts            # Main export file
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: None (base package)
+- *Dependencies*\*: None (base package)
 
-- *Used By**: All packages and applications
+- *Used By*\*: All packages and applications
 
 ### @roo-code/build
 
-- *Purpose**: Build system and tooling utilities
+- *Purpose*\*: Build system and tooling utilities
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Build Utilities**: Build process utilities
+
 - **Webpack Configs**: Webpack configuration helpers
+
 - **TypeScript Configs**: TypeScript configuration helpers
+
 - **ESLint Configs**: ESLint configuration helpers
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/build/src/
@@ -119,24 +125,27 @@ packages/build/src/
 └── index.ts            # Main export file
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types
+- *Dependencies*\*: @roo-code/types
 
-- *Used By**: Core extension, webview UI, applications
+- *Used By*\*: Core extension, webview UI, applications
 
 ### @roo-code/cloud
 
-- *Purpose**: Cloud service integrations and utilities
+- *Purpose*\*: Cloud service integrations and utilities
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Cloud Clients**: Cloud service client implementations
+
 - **Authentication**: Cloud authentication utilities
+
 - **Storage**: Cloud storage utilities
+
 - **Deployment**: Deployment utilities
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/cloud/src/
@@ -147,24 +156,27 @@ packages/cloud/src/
 └── index.ts            # Main export file
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types
+- *Dependencies*\*: @roo-code/types
 
-- *Used By**: Core extension, applications
+- *Used By*\*: Core extension, applications
 
 ### @roo-code/evals
 
-- *Purpose**: Evaluation and testing utilities
+- *Purpose*\*: Evaluation and testing utilities
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Test Utilities**: Testing utility functions
+
 - **Evaluation Metrics**: Evaluation metric calculations
+
 - **Test Data**: Test data generation and management
+
 - **Performance Testing**: Performance testing utilities
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/evals/src/
@@ -175,24 +187,27 @@ packages/evals/src/
 └── index.ts            # Main export file
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types
+- *Dependencies*\*: @roo-code/types
 
-- *Used By**: Testing infrastructure, applications
+- *Used By*\*: Testing infrastructure, applications
 
 ### @roo-code/ipc
 
-- *Purpose**: Inter-process communication utilities
+- *Purpose*\*: Inter-process communication utilities
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **IPC Channels**: IPC channel definitions
+
 - **Message Handlers**: Message handling utilities
+
 - **Event Emitters**: Event emission utilities
+
 - **Communication Protocols**: Communication protocol definitions
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/ipc/src/
@@ -203,24 +218,27 @@ packages/ipc/src/
 └── index.ts            # Main export file
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types
+- *Dependencies*\*: @roo-code/types
 
-- *Used By**: Core extension, webview UI
+- *Used By*\*: Core extension, webview UI
 
 ### @roo-code/telemetry
 
-- *Purpose**: Telemetry and analytics utilities
+- *Purpose*\*: Telemetry and analytics utilities
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Telemetry Client**: Telemetry client implementation
+
 - **Metrics Collection**: Metrics collection utilities
+
 - **Event Tracking**: Event tracking utilities
+
 - **Analytics**: Analytics and reporting utilities
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/telemetry/src/
@@ -231,26 +249,29 @@ packages/telemetry/src/
 └── index.ts            # Main export file
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: @roo-code/types
+- *Dependencies*\*: @roo-code/types
 
-- *Used By**: Core extension, applications
+- *Used By*\*: Core extension, applications
 
 ## Configuration Packages
 
 ### @roo-code/config-eslint
 
-- *Purpose**: Shared ESLint configuration
+- *Purpose*\*: Shared ESLint configuration
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Base Config**: Base ESLint configuration
+
 - **TypeScript Config**: TypeScript-specific rules
+
 - **React Config**: React-specific rules
+
 - **Custom Rules**: Custom ESLint rules
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/config-eslint/
@@ -261,24 +282,27 @@ packages/config-eslint/
 └── package.json        # Package configuration
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: None
+- *Dependencies*\*: None
 
-- *Used By**: All TypeScript packages
+- *Used By*\*: All TypeScript packages
 
 ### @roo-code/config-typescript
 
-- *Purpose**: Shared TypeScript configuration
+- *Purpose*\*: Shared TypeScript configuration
 
-- *Key Exports**:
+- *Key Exports*\*:
 
 - **Base Config**: Base TypeScript configuration
+
 - **Strict Config**: Strict TypeScript configuration
+
 - **React Config**: React-specific configuration
+
 - **Node Config**: Node.js-specific configuration
 
-- *File Structure**:
+- *File Structure*\*:
 
 ```
 packages/config-typescript/
@@ -289,11 +313,11 @@ packages/config-typescript/
 └── package.json        # Package configuration
 ```
 
-- *Status**: ✅ **Fully Implemented**
+- *Status*\*: ✅ **Fully Implemented**
 
-- *Dependencies**: None
+- *Dependencies*\*: None
 
-- *Used By**: All TypeScript packages
+- *Used By*\*: All TypeScript packages
 
 ## Package Dependencies
 
@@ -319,24 +343,29 @@ graph TD
 
 ### External Dependencies
 
-- *Common Dependencies**:
+- *Common Dependencies*\*:
 
 - **TypeScript**: Type checking and compilation
+
 - **React**: UI framework (for webview UI)
+
 - **Node.js**: Runtime environment
+
 - **VS Code API**: VS Code extension API
 
-- *Package-Specific Dependencies**:
+- *Package-Specific Dependencies*\*:
 
 - **@roo-code/cloud**: AWS SDK, Azure SDK
+
 - **@roo-code/telemetry**: Analytics libraries
+
 - **@roo-code/evals**: Testing frameworks
 
 ## Package Management
 
 ### Workspace Configuration
 
-- *Root Package.json**:
+- *Root Package.json*\*:
 
 ```json
 {
@@ -346,25 +375,25 @@ graph TD
 }
 ```
 
-- *Package Dependencies**: Managed through PNPM workspace
+- *Package Dependencies*\*: Managed through PNPM workspace
 
-- *Version Management**: Centralized version management
+- *Version Management*\*: Centralized version management
 
 ### Build Process
 
-- *Individual Package Builds**: Each package can be built independently
+- *Individual Package Builds*\*: Each package can be built independently
 
-- *Monorepo Builds**: All packages built together using Turbo
+- *Monorepo Builds*\*: All packages built together using Turbo
 
-- *Dependency Resolution**: PNPM handles dependency resolution
+- *Dependency Resolution*\*: PNPM handles dependency resolution
 
 ### Publishing
 
-- *NPM Registry**: Packages published to NPM registry
+- *NPM Registry*\*: Packages published to NPM registry
 
-- *Version Management**: Semantic versioning for all packages
+- *Version Management*\*: Semantic versioning for all packages
 
-- *Release Process**: Automated release process with changesets
+- *Release Process*\*: Automated release process with changesets
 
 ## Development Workflow
 
@@ -378,45 +407,45 @@ graph TD
 
 ### Package Testing
 
-- *Unit Tests**: Individual package unit tests
+- *Unit Tests*\*: Individual package unit tests
 
-- *Integration Tests**: Package integration tests
+- *Integration Tests*\*: Package integration tests
 
-- *E2E Tests**: End-to-end package testing
+- *E2E Tests*\*: End-to-end package testing
 
 ### Package Documentation
 
-- *README**: Each package has its own README
+- *README*\*: Each package has its own README
 
-- *API Documentation**: Generated API documentation
+- *API Documentation*\*: Generated API documentation
 
-- *Examples**: Usage examples and samples
+- *Examples*\*: Usage examples and samples
 
 ## Quality Assurance
 
 ### Code Quality
 
-- *Linting**: ESLint configuration for all packages
+- *Linting*\*: ESLint configuration for all packages
 
-- *Type Checking**: TypeScript strict mode for all packages
+- *Type Checking*\*: TypeScript strict mode for all packages
 
-- *Formatting**: Prettier for consistent formatting
+- *Formatting*\*: Prettier for consistent formatting
 
 ### Testing
 
-- *Test Coverage**: Minimum 80% test coverage
+- *Test Coverage*\*: Minimum 80% test coverage
 
-- *Test Types**: Unit, integration, and E2E tests
+- *Test Types*\*: Unit, integration, and E2E tests
 
-- *Test Automation**: Automated test execution
+- *Test Automation*\*: Automated test execution
 
 ### Documentation
 
-- *API Documentation**: Generated from TypeScript types
+- *API Documentation*\*: Generated from TypeScript types
 
-- *Usage Examples**: Comprehensive usage examples
+- *Usage Examples*\*: Comprehensive usage examples
 
-- *Migration Guides**: Package migration and upgrade guides
+- *Migration Guides*\*: Package migration and upgrade guides
 
 ## Next Steps
 1. **Explore Applications**: See [APPLICATIONS.md](APPLICATIONS.md)
@@ -429,11 +458,10 @@ graph TD
 - [↑ Table of Contents](README.md)
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [docs](../../) · [architecture](../architecture/) ·
-[repository](../docs/architecture/../architecture/repository/) · [↑ Table of Contents](#workspace-packages)
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [repository](../../architecture/) · [↑ Table of Contents](#workspace-packages)
 
 ## No Dead Ends Policy
 

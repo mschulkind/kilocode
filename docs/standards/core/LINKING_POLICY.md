@@ -7,20 +7,19 @@
 
 ## Research Context
 
-- *Purpose:** \[Describe the purpose and scope of this document]
+- *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:** \[Provide relevant background information]
+- *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:** \[List key questions this document addresses]
+- *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:** \[Describe the approach or methodology used]
+- *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:** \[Summarize key findings or conclusions]
-
-- **
-- [Root Cause Analysis of Duplicate API Requests](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
-- [Testing Strategy for Race Condition Fixes](../architecture/race-condition/TESTING_STRATEGY.md)
-- [Repository Structure Overview](../architecture/repository/REPOSITORY_STRUCTURE.md)
+- *Findings:*\* \[Summarize key findings or conclusions]
+- \*\*
+- [Root Cause Analysis of Duplicate API Requests](../../architecture/ROOT_CAUSE_ANALYSIS.md)
+- [Testing Strategy for Race Condition Fixes](../../architecture/TESTING_STRATEGY.md)
+- [Repository Structure Overview](../../architecture/REPOSITORY_STRUCTURE.md)
 
 ### Bad
 - `race-condition/ROOT_CAUSE_ANALYSIS.md`
@@ -29,7 +28,7 @@
 
 ### Conventions
 - Use imperative or descriptive phrasing: “See
-  [Orchestrator Lifecycle Overview](../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md)”.
+  [Orchestrator Lifecycle Overview](../../orchestrator/ORCHESTRATOR_LIFECYCLE.md)”.
 - Prefer the shortest relative path that works from the current document.
 - When linking multiple related docs, use a short list with each item fully descriptive.
 
@@ -37,8 +36,8 @@
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:** Comprehensive standards for creating and maintaining links within KiloCode
-documentation, ensuring consistent navigation and discoverability across all documents.
+- *Purpose:*\* Comprehensive standards for creating and maintaining links within KiloCode
+  documentation, ensuring consistent navigation and discoverability across all documents.
 
 > **Cartography Fun Fact**: The word "cartography" comes from the Greek words "chartis" (map) and
 > "graphein" (to write). Our linking policy is like the "cartographic principles" that guide how we
@@ -57,25 +56,27 @@ documentation, ensuring consistent navigation and discoverability across all doc
 </details>
 
 ## Executive Summary
-
 - Effective linking creates a web of knowledge that helps users understand relationships and discover
-related information. These standards ensure consistent, functional, and valuable links throughout
-our documentation.*
+  related information. These standards ensure consistent, functional, and valuable links throughout
+  our documentation.\*
 
-- *Key Standards:**
+- *Key Standards:*\*
 
 - **Doc-to-Doc Links**: Use relative paths within the `docs/` directory
+
 - **Code References**: Use absolute repo-root paths for code files
+
 - **External Links**: Use absolute HTTPS URLs for external references
+
 - **Link Quality**: All links must be descriptive, functional, and valuable
 
 ## Link Types and Rules
 
 ### Doc-to-Doc Links
 
-- *Rule**: Use relative paths within the `docs/` directory. Do NOT prefix with `docs/`.
+- *Rule*\*: Use relative paths within the `docs/` directory. Do NOT prefix with `docs/`.
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # From root docs/
@@ -99,18 +100,21 @@ our documentation.*
 [Next Section](NEXT_SECTION.md) [Related Concept](RELATED_CONCEPT.md)
 ```
 
-- *Path Rules**:
+- *Path Rules*\*:
 
 - **Same Directory**: `FILENAME.md`
+
 - **Subdirectory**: `subdirectory/FILENAME.md`
+
 - **Parent Directory**: `../FILENAME.md`
+
 - **Root Directory**: `../FILENAME.md` (from any subdirectory)
 
 ### Code References
 
-- *Rule**: Use absolute repo-root paths for code files.
+- *Rule*\*: Use absolute repo-root paths for code files.
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 # File reference
@@ -138,17 +142,19 @@ our documentation.*
 [core directory](/src/core/)
 ```
 
-- *Line Number Rules**:
+- *Line Number Rules*\*:
 
 - **Single Line**: `#L123`
+
 - **Line Range**: `#L123-456`
+
 - **Multiple Ranges**: `#L123-456,L789-890`
 
 ### External Links
 
-- *Rule**: Use absolute HTTPS URLs for external references.
+- *Rule*\*: Use absolute HTTPS URLs for external references.
 
-- *Examples**:
+- *Examples*\*:
 
 ```markdown
 [Anthropic API](https://docs.anthropic.com/api)
@@ -156,18 +162,21 @@ our documentation.*
 [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 ```
 
-- *External Link Standards**:
+- *External Link Standards*\*:
 
 - **HTTPS Only**: Never use HTTP for external links
+
 - **Descriptive Text**: Link text should describe the destination
+
 - **Stable URLs**: Prefer stable, canonical URLs
+
 - **Accessibility**: Ensure links work with screen readers
 
 ## Path Conventions
 
 ### Relative Paths (Doc-to-Doc)
 
-- *From Root `docs/` Directory**:
+- *From Root `docs/` Directory*\*:
 
 ```markdown
 # To subdirectory
@@ -185,7 +194,7 @@ our documentation.*
 [Core Principles](standards/core/PRINCIPLES.md)
 ```
 
-- *From Subdirectory**:
+- *From Subdirectory*\*:
 
 ```markdown
 # To parent directory
@@ -208,7 +217,7 @@ our documentation.*
 [Core Standards](../standards/core/README.md)
 ```
 
-- *From Nested Subdirectory**:
+- *From Nested Subdirectory*\*:
 
 ```markdown
 # To root directory
@@ -232,7 +241,7 @@ our documentation.*
 
 ### Absolute Paths (Code References)
 
-- *File References**:
+- *File References*\*:
 
 ```markdown
 # Source files
@@ -259,7 +268,7 @@ our documentation.*
 
 ### Descriptive Link Text
 
-- *Good Examples**:
+- *Good Examples*\*:
 
 ```markdown
 [API Duplication Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
@@ -268,7 +277,7 @@ our documentation.*
 [Anthropic API Documentation](https://docs.anthropic.com/api)
 ```
 
-- *Bad Examples**:
+- *Bad Examples*\*:
 
 ```markdown
 [click here](architecture/API_DUPLICATION_ANALYSIS.md)
@@ -278,42 +287,54 @@ our documentation.*
 
 ### Link Value
 
-- *Every link must add value**:
+- *Every link must add value*\*:
 
 - **Contextual**: Links should be relevant to the current content
+
 - **Informative**: Links should provide additional useful information
+
 - **Actionable**: Links should help users accomplish their goals
+
 - **Current**: Links should point to up-to-date information
 
 ### Link Integrity
 
-- *Functional Requirements**:
+- *Functional Requirements*\*:
 
 - **Working**: All links must resolve to valid destinations
+
 - **Stable**: Links should not break when content moves
+
 - **Accessible**: Links should work for all users and tools
+
 - **Maintainable**: Links should be easy to update and maintain
 
 ## GitHub-Specific Considerations
 
-- *Markdown Renderer**: All links will be viewed on GitHub.com, so ensure they work in the GitHub
-markdown renderer.
+- *Markdown Renderer*\*: All links will be viewed on GitHub.com, so ensure they work in the GitHub
+  markdown renderer.
 
-- *Supported Features**:
+- *Supported Features*\*:
 
 - **Relative Links**: GitHub supports relative links within the repository
+
 - **Code References**: Line numbers create clickable links to specific lines
+
 - **Table of Contents**: Anchors work automatically in GitHub's markdown viewer
+
 - **Image Links**: Both relative and absolute image links are supported
 
-- *Unsupported Features**:
+- *Unsupported Features*\*:
 
 - **Reference-style Links**: Avoid `[ref]: url` pattern
+
 - **Custom HTML**: Stick to standard markdown
+
 - **JavaScript**: No interactive elements
+
 - **Custom CSS**: No styling beyond markdown
 
-- *GitHub Link Examples**:
+- *GitHub Link Examples*\*:
 
 ```markdown
 # These work in GitHub
@@ -334,24 +355,27 @@ markdown renderer.
 
 ### Regular Checks
 
-- *Link Validation**: Regularly check that all links are functional and current.
+- *Link Validation*\*: Regularly check that all links are functional and current.
 
-- *Update Triggers**:
+- *Update Triggers*\*:
 
 - **File Moves**: Update all links when files are moved or renamed
+
 - **Content Changes**: Update links when referenced content changes
+
 - **External Changes**: Check external links for availability and relevance
+
 - **Structure Changes**: Update links when directory structure changes
 
 ### Link Testing
 
-- *Manual Testing**:
+- *Manual Testing*\*:
 - Click all links to verify they work
 - Check that links point to the intended content
 - Verify that external links are still accessible
 - Test links with different tools and browsers
 
-- *Automated Testing**:
+- *Automated Testing*\*:
 - Use link checking tools to identify broken links
 - Set up CI/CD checks for link integrity
 - Monitor external link availability
@@ -361,13 +385,13 @@ markdown renderer.
 
 ### Path Mistakes
 
-- *Wrong Path Types**:
+- *Wrong Path Types*\*:
 - ❌ Using absolute paths for doc-to-doc links
 - ❌ Using relative paths for code references
 - ❌ Missing `../` for parent directory references
 - ❌ Incorrect path separators
 
-- *Path Examples**:
+- *Path Examples*\*:
 
 ```markdown
 # Wrong
@@ -385,12 +409,12 @@ markdown renderer.
 
 ### Link Text Mistakes
 
-- *Generic Text**:
+- *Generic Text*\*:
 - ❌ "click here", "more info", "read more"
 - ❌ "this", "that", "here", "there"
 - ❌ Generic file names without context
 
-- *Good Link Text**:
+- *Good Link Text*\*:
 
 ```markdown
 # Descriptive and specific
@@ -404,13 +428,13 @@ markdown renderer.
 
 ### Maintenance Mistakes
 
-- *Broken Links**:
+- *Broken Links*\*:
 - ❌ Links to moved or deleted files
 - ❌ Links to renamed files
 - ❌ Links to changed line numbers
 - ❌ Links to unavailable external resources
 
-- *Outdated Links**:
+- *Outdated Links*\*:
 - ❌ Links to deprecated content
 - ❌ Links to outdated external resources
 - ❌ Links to content that no longer exists
@@ -420,7 +444,7 @@ markdown renderer.
 
 ### Good Linking Examples
 
-- *Documentation Cross-References**:
+- *Documentation Cross-References*\*:
 
 ```markdown
 ## Related Documentation
@@ -431,14 +455,14 @@ markdown renderer.
 - [ask method](`[FILE_MOVED_OR_RENAMED]`#L739) - Implementation details
 ```
 
-- *Navigation Examples**:
+- *Navigation Examples*\*:
 
 ```markdown
 - *Navigation**: [Back to Architecture](../architecture/) · [Next: State Machines](state-machines/) ·
 [Source: `/docs/standards/core/LINKING_POLICY.md#L1`](LINKING_POLICY.md#L1)
 ```
 
-- *Code Reference Examples**:
+- *Code Reference Examples*\*:
 
 ```markdown
 The `recursivelyMakeClineRequests` method in [Task.ts](`[FILE_MOVED_OR_RENAMED]`#L1790) is called
@@ -448,7 +472,7 @@ simultaneously.
 
 ### Bad Linking Examples
 
-- *Generic Link Text**:
+- *Generic Link Text*\*:
 
 ```markdown
 # Bad
@@ -467,7 +491,7 @@ simultaneously.
 [ask method implementation](`[FILE_MOVED_OR_RENAMED]`#L739)
 ```
 
-- *Wrong Path Types**:
+- *Wrong Path Types*\*:
 
 ```markdown
 # Bad
@@ -486,12 +510,11 @@ simultaneously.
 ```
 
 ## Navigation Footer
+- \*\*
 
-- **
-
-- *Navigation**: [Back to Core Standards](README.md) ·
-[Next: Content Organization](CONTENT_ORGANIZATION.md) ·
-[Source: `/docs/standards/core/LINKING_POLICY.md#L1`](LINKING_POLICY.md#L1)
+- *Navigation*\*: [Back to Core Standards](README.md) ·
+  [Next: Content Organization](CONTENT_ORGANIZATION.md) ·
+  [Source: `/docs/standards/core/LINKING_POLICY.md#L1`](LINKING_POLICY.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️
@@ -500,32 +523,34 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 ### When You're Here, You Can:
 
-- *Understanding Documentation Standards:**
+- *Understanding Documentation Standards:*\*
 
 - **Next**: Check related standards documentation in the same directory
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
 
-- *Implementing Documentation Standards:**
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
-- **Next**: [Repository Development Guide](../../../architecture/repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../../architecture/repository/TESTING_INFRASTRUCTURE.md)
-- **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
+- *Implementing Documentation Standards:*\*
 
-- *Applying Standards to Documentation:**
+- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
+  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
 
-- **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../../architecture/README.md) →
-  [Orchestrator Documentation](../../../orchestrator/README.md)
-- **Related**: [Race Condition Analysis](../architecture/race-condition/README.md) for current
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+
+- *Applying Standards to Documentation:*\*
+
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../../architecture/README.md) →
+  [Orchestrator Documentation](../../orchestrator/README.md)
+
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Standards Documentation](README.md) for guidance.
+- \*\*
 
-- **
-
-- *Navigation**: [← Back to Standards Documentation](README.md) ·
-[📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Standards Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

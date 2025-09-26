@@ -16,13 +16,13 @@ architecture, development workflows, and troubleshooting guides.
   understanding
 - **🛠️ Implementation Journey**: Follow the [Investigation Plans](plans/README.md) for active
   development work
-- **📚 New to Codebase**: Start with [Technical Glossary](GLOSSARY.md) for terminology, then
+- **📚 New to Codebase**: Start with [Technical Glossary](../GLOSSARY.md) for terminology, then
   [Repository Overview](README.md)
 
 ### Expert Engineer Onboarding
 
-- *For experienced engineers new to KiloCode:**
-1. **Start Here**: [Technical Glossary](GLOSSARY.md) - Essential terminology and concepts
+- *For experienced engineers new to KiloCode:*\*
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology and concepts
 2. **System Overview**: [Architecture Documentation](README.md) - High-level system
    design
 3. **Current Issues**: [Race Condition Analysis](README.md) - Active
@@ -41,7 +41,7 @@ architecture, development workflows, and troubleshooting guides.
 
 ### Core Documentation
 
-- **[Documentation Standards](DOCUMENTATION_GUIDE.md)** - Complete guide to our documentation
+- **[Documentation Standards](../../DOCUMENTATION_GUIDE.md)** - Complete guide to our documentation
   principles, structure, and standards
 - **[Documentation Progress](DOCUMENTATION_PROGRESS.md)** - Tracking documentation coverage and
   improvements
@@ -115,32 +115,36 @@ journey optimization.
 
 ### When You're Here, You Can:
 
-- *Understanding System Architecture:**
+- *Understanding System Architecture:*\*
 
 - **Next**: [Architecture Overview](README.md) →
   [State Machines](README.md) →
   [Race Condition Analysis](README.md)
+
 - **Related**: [Orchestrator Documentation](README.md) for execution patterns
 
-- *Investigating Issues:**
+- *Investigating Issues:*\*
 
 - **Next**: [Race Condition Analysis](README.md) →
-  [Root Cause Analysis](architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
-  [Solution Recommendations](architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md) →
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+
 - **Related**: [Investigation Plans](plans/README.md) for active debugging work
 
-- *Implementing Solutions:**
+- *Implementing Solutions:*\*
 
-- **Next**: [Solution Recommendations](architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) →
-  [Testing Strategy](architecture/race-condition/TESTING_STRATEGY.md) →
-  [Implementation Guide](architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- **Related**: [Orchestrator Best Practices](orchestrator/ORCHESTRATOR_BEST_PRACTICES.md)
+- **Next**: [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md) →
+  [Testing Strategy](../architecture/TESTING_STRATEGY.md) →
+  [Implementation Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
 
-- *Understanding Codebase:**
+- **Related**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md)
+
+- *Understanding Codebase:*\*
 
 - **Next**: [Repository Overview](README.md) →
-  [Core Systems](architecture/../architecture/repository/CORE_SYSTEMS.md) → [Source Code](../src/)
-- **Related**: [Build Pipelines](architecture/../architecture/repository/BUILD_PIPELINES.md) for development
+  [Core Systems](../architecture/CORE_SYSTEMS.md) → [Source Code](../src/)
+
+- **Related**: [Build Pipelines](../architecture/BUILD_PIPELINES.md) for development
   workflow
 
 ### No Dead Ends Policy
@@ -157,7 +161,7 @@ Every documentation page provides:
 - **Source Code**: See [../src/](../src/) for implementation details
 - **Configuration**: See [../packages/](../packages/) for package configurations
 - **Context Portal**: See [../context\_portal/](../context_portal/) for ConPort integration
-- **Technical Terms**: See [Technical Glossary](GLOSSARY.md) for definitions and concepts
+- **Technical Terms**: See [Technical Glossary](../GLOSSARY.md) for definitions and concepts
 
 ## 🦕 Dinosaur Analogy
 
@@ -173,11 +177,10 @@ understanding of the KiloCode ecosystem!
 - [↑ Table of Contents](#-documentation-structure)
 
 ## Navigation
-
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
-- [← Architecture](architecture/README.md)
-- [← Orchestrator](orchestrator/README.md)
+- [← Architecture](../architecture/README.md)
+- [← Orchestrator](../orchestrator/README.md)
 - [← Standards](standards/README.md)
 - [← Plans](plans/README.md)
 - [← Tools](tools/README.md)
