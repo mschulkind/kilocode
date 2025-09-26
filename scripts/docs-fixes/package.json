@@ -11,8 +11,13 @@
 		"fix": "node src/docs-fixer.js",
 		"fix:dry-run": "node src/docs-fixer.js --dry-run --verbose",
 		"fix:validate": "node src/docs-fixer.js --validate",
-		"test": "node test/run-tests.js",
-		"test:watch": "node test/run-tests.js --watch",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:watch": "vitest --watch",
+		"test:ui": "vitest --ui",
+		"test:coverage": "vitest run --coverage",
+		"test:legacy": "node test/run-tests.js",
+		"test:legacy:watch": "node test/run-tests.js --watch",
 		"lint": "eslint src/ test/",
 		"docs": "node docs/generate-docs.js",
 		"docs:generate": "node docs/generate-examples.js",
@@ -45,7 +50,10 @@
 		"unist-util-visit": "^5.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^9.27.0"
+		"@vitest/ui": "^3.2.4",
+		"eslint": "^9.27.0",
+		"jsdom": "^27.0.0",
+		"vitest": "^3.2.4"
 	},
 	"engines": {
 		"node": ">=18.0.0"

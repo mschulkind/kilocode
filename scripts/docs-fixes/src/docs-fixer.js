@@ -16,6 +16,7 @@ import { join, dirname } from "path"
 import { remark } from "remark"
 import { visit } from "unist-util-visit"
 import { runEnhancedFixes } from "./enhanced-docs-fixer.js"
+import { EnhancedASTProcessor } from "./enhanced-ast-processor.js"
 
 /**
  * Configuration for the documentation fixer
@@ -506,15 +507,24 @@ function fixListIndentationAST(listNode) {
 	return fixes
 }
 
+// Global enhanced processor instance 
+let globalEnhancedProcessor = null
+
 /**
- * Fix path issues using AST
+ * Fix path issues using AST with enhanced intelligence
  */
-function fixPathIssuesAST(linkNode, filePath) {
+function fixPathIssuesAST(linkNode, filePath, enhancedProcessor = null) {
 	let fixes = 0
 
 	if (!linkNode.url) return fixes
 
-	// Apply path fixes based on file location
+	// Use the injected processor or global default
+	const processor = enhancedProcessor || getGlobalEnhancedProcessor(filePath)
+
+	// Apply path fixes based on file location using enhanced processor
+	fixes += processor.enhancedFixPathIssuesAST(linkNode, filePath, PATH_FIXES)
+
+	// Original path fix logic continued for backward compatibility
 	for (const pathFix of PATH_FIXES) {
 		if (pathFix.pattern.test(filePath)) {
 			for (const fix of pathFix.fixes) {
@@ -530,6 +540,22 @@ function fixPathIssuesAST(linkNode, filePath) {
 	}
 
 	return fixes
+}
+
+/**
+ * Get or create enhanced processor instance with debug logging
+ */
+function getGlobalEnhancedProcessor(filePath) {
+	if (!globalEnhancedProcessor) {
+		let debugEnabled = CONFIG.verbose
+		globalEnhancedProcessor = new EnhancedASTProcessor({
+			debugMode: debugEnabled,
+			basePath: CONFIG.docsDir
+		})
+		globalEnhancedProcessor.integrateWithDocsFixer()
+	}
+	
+	return globalEnhancedProcessor
 }
 
 /**

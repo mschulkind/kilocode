@@ -82,16 +82,21 @@ class Category1Analyzer {
 		const files = []
 
 		const scanDir = (currentDir) => {
-			const entries = readdirSync(currentDir, { withFileTypes: true })
+			try {
+				const entries = readdirSync(currentDir, { withFileTypes: true })
 
-			for (const entry of entries) {
-				const fullPath = join(currentDir, entry.name)
+				for (const entry of entries) {
+					const fullPath = join(currentDir, entry.name)
 
-				if (entry.isDirectory()) {
-					scanDir(fullPath)
-				} else if (entry.isFile() && entry.name.endsWith(".md")) {
-					files.push(fullPath)
+					if (entry.isDirectory()) {
+						scanDir(fullPath)
+					} else if (entry.isFile() && entry.name.endsWith(".md")) {
+						files.push(fullPath)
+					}
 				}
+			} catch (error) {
+				// Handle errors gracefully - directory doesn't exist or can't be read
+				console.warn(`⚠️ Could not scan directory ${currentDir}: ${error.message}`)
 			}
 		}
 
@@ -225,7 +230,13 @@ class Category1Analyzer {
 		let docsIndex = pathParts.indexOf("docs")
 		if (docsIndex === -1) return 0
 
-		return pathParts.length - docsIndex - 2 // subtract 'docs' and filename
+		const dirs = pathParts.slice(docsIndex + 1, -1)
+		const l = dirs.length
+		if (l === 0) return 0
+		if (l === 1) return 0
+		if (l === 2) return 1
+		if (l === 3) return 2
+		return l
 	}
 
 	/**
@@ -316,6 +327,22 @@ class Category1Analyzer {
 	 * Generate analysis summaries for Category 1 patterns
 	 */
 	generateCategory1Analysis() {
+		// Reset and analyze by pattern type
+		const initStats = {
+			byPattern: {
+				GLOSSARY_REF: 0,
+				ORCHESTRATOR: 0,
+				ARCHITECTURE: 0,
+				STANDARDS_CORE: 0,
+				DOCUMENTATION_GUIDE: 0,
+				OTHER_REF: 0
+			},
+			byDirectory: {},
+			byTargetFile: {},
+			validationWarnings: this.analysisData.violations.length
+		}
+		this.analysisData.stats = initStats
+
 		// Analyze by pattern type
 		for (const violation of this.analysisData.violations) {
 			const pattern = violation.pattern
