@@ -49,7 +49,7 @@ graph TD
   A[Webview request] --> B[getEnabledRulesFromDirectory]
   B --> C{Dirent}
   C -->|isFile| D[Add file]
-  C -->|isSymbolicLink| E[resolve symlink -> read target, add file(s)]
+  C -->|isSymbolicLink| E[Resolve symlink and add file]
 ```
 
 ### Option B — Shared util: factor symlink-aware reader
@@ -64,7 +64,7 @@ graph TD
 graph TD
   A[loadRuleFiles] --> B[rules-reader.ts]
   C[getEnabledRulesFromDirectory] --> B
-  B --> D[symlink-aware enumeration]
+  B --> D[Symlink aware enumeration]
 ```
 
 ### Option C — RulesService: full centralization and caching
@@ -79,8 +79,8 @@ graph TD
 graph TD
   UI[UI] -->|query| S[RulesService]
   Loader[Loader] -->|query| S
-  S --> Cache[cache layer]
-  S --> Reader[symlink-aware reader]
+  S --> Cache[Cache layer]
+  S --> Reader[Symlink aware reader]
 ```
 
 ## Recommendation
