@@ -1,0 +1,4957 @@
+{
+	"timestamp": "2025-09-26T03:10:41.534Z",
+	"totalFiles": 153,
+	"violations": [
+		{
+			"file": "docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 0,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 0,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/IMPROVEMENT_LOG.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 0,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/IMPROVEMENT_LOG.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 0,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/LOGGING.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 0,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/LOGGING.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 0,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/PROVIDER_INSTANCE_EXPLANATION.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 0,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/PROVIDER_INSTANCE_EXPLANATION.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 0,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md",
+			"url": "../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"linkText": "Orchestrator Lifecycle",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md",
+			"url": "../orchestrator/",
+			"linkText": "../orchestrator/",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_PROVIDER_PATTERNS.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/API_PROVIDER_PATTERNS.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/COMMUNICATION_LAYER_SYSTEM.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/COMMUNICATION_LAYER_SYSTEM.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/CONSOLIDATION_PLAN.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/CONSOLIDATION_PLAN.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/GETTING_STARTED.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/GETTING_STARTED.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/GETTING_STARTED.md",
+			"url": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"linkText": "Orchestrator Best Practices",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md",
+			"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/README.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/README.md",
+			"url": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"linkText": "Orchestrator Best Practices",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/README.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/SYSTEM_OVERVIEW.md",
+			"url": "../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../../orchestrator/README.md",
+			"correctedPath": "../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/SYSTEM_OVERVIEW.md",
+			"url": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"linkText": "Orchestrator Best Practices",
+			"depth": 1,
+			"currentPath": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"correctedPath": "../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/race-condition/PROBLEM_OVERVIEW.md",
+			"url": "../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"linkText": "Orchestrator Lifecycle",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/race-condition/README.md",
+			"url": "../orchestrator/",
+			"linkText": "../orchestrator/",
+			"depth": 2,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/architecture/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/COMBINED_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/COMBINED_STATE_MACHINE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/COMBINED_STATE_MACHINE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/COMBINED_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RACE_CONDITION_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RACE_CONDITION_STATE_MACHINE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RACE_CONDITION_STATE_MACHINE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RACE_CONDITION_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/README.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RECURSIVE_CALL_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RECURSIVE_CALL_STATE_MACHINE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RECURSIVE_CALL_STATE_MACHINE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/RECURSIVE_CALL_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/SESSION_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/SESSION_STATE_MACHINE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/SESSION_STATE_MACHINE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/SESSION_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/TASK_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/TASK_STATE_MACHINE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/architecture/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/TASK_STATE_MACHINE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 2,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/architecture/state-machines/TASK_STATE_MACHINE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "docs/GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "HIGH",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_AUTHENTICATION_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_AUTHENTICATION_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_CHECKPOINT_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_CHECKPOINT_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_CONFIG.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_CONFIG.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_CONFIGURATION_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_CONFIGURATION_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_DECORATOR_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_DECORATOR_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_DEPENDENCY_MANAGEMENT.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_DEPENDENCY_MANAGEMENT.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_INTEGRATION.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_INTEGRATION.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_LLM_INTEGRATION.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_LLM_INTEGRATION.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_PORT.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_PORT.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SERVICE_LAYER.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SERVICE_LAYER.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SPAN_NESTING.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SPAN_NESTING.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SPAN_NESTING_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SPAN_NESTING_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SUBSYSTEMS_INDEX.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_SUBSYSTEMS_INDEX.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_TASK_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_TASK_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_TESTING_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_TESTING_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_TOOL_SYSTEM.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/laminar/LAMINAR_TOOL_SYSTEM.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_ARCHITECTURE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_ARCHITECTURE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"url": "../orchestrator/",
+			"linkText": "orchestrator",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_EXTENSIBILITY.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_EXTENSIBILITY.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_EXTENSIBILITY.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_EXTENSIBILITY.md",
+			"url": "../orchestrator/",
+			"linkText": "orchestrator",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_INDEX.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_INDEX.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_INDEX.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_INDEX.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"url": "../orchestrator/",
+			"linkText": "orchestrator",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_SECURITY_GOVERNANCE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_SECURITY_GOVERNANCE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_SECURITY_GOVERNANCE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_SECURITY_GOVERNANCE.md",
+			"url": "../orchestrator/",
+			"linkText": "orchestrator",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TASK_DELEGATION.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TASK_DELEGATION.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TASK_DELEGATION.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TASK_DELEGATION.md",
+			"url": "../orchestrator/",
+			"linkText": "orchestrator",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TOOLS_REFERENCE.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TOOLS_REFERENCE.md",
+			"url": "../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 1,
+			"currentPath": "../orchestrator/README.md",
+			"correctedPath": "../../orchestrator/README.md",
+			"targetPath": "docs/orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TOOLS_REFERENCE.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/ORCHESTRATOR_TOOLS_REFERENCE.md",
+			"url": "../orchestrator/",
+			"linkText": "orchestrator",
+			"depth": 1,
+			"currentPath": "../orchestrator/",
+			"correctedPath": "../../orchestrator/",
+			"targetPath": "docs/orchestrator/",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/README.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/README.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/orchestrator/README.md",
+			"url": "../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 1,
+			"currentPath": "../../GLOSSARY.md",
+			"correctedPath": "../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/CONTENT_ORGANIZATION.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/CONTENT_ORGANIZATION.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/CONTENT_ORGANIZATION.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/CONTENT_ORGANIZATION.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/FILE_CONVENTIONS.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/FILE_CONVENTIONS.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/FILE_CONVENTIONS.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/FILE_CONVENTIONS.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/LINKING_POLICY.md",
+			"url": "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"linkText": "Orchestrator Lifecycle Overview",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"correctedPath": "../../../../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"targetPath": "orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/LINKING_POLICY.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/LINKING_POLICY.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/LINKING_POLICY.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/LINKING_POLICY.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/PRINCIPLES.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/PRINCIPLES.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/PRINCIPLES.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/core/PRINCIPLES.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/CROSS_REFERENCES.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/CROSS_REFERENCES.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/CROSS_REFERENCES.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/CROSS_REFERENCES.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/QUICK_START_PATHS.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/QUICK_START_PATHS.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/QUICK_START_PATHS.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/QUICK_START_PATHS.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/USER_JOURNEY_DESIGN.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/USER_JOURNEY_DESIGN.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/USER_JOURNEY_DESIGN.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/navigation/USER_JOURNEY_DESIGN.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/DOCUMENT_ANATOMY.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/DOCUMENT_ANATOMY.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/DOCUMENT_ANATOMY.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/HEADINGS_HIERARCHY.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/HEADINGS_HIERARCHY.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/HEADINGS_HIERARCHY.md",
+			"url": "../../../orchestrator/README.md",
+			"linkText": "Orchestrator Documentation",
+			"depth": 2,
+			"currentPath": "../../../orchestrator/README.md",
+			"correctedPath": "../../../../../../orchestrator/README.md",
+			"targetPath": "orchestrator/README.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "CRITICAL",
+			"fixType": "ADD_DEPTH"
+		},
+		{
+			"file": "docs/standards/structure/HEADINGS_HIERARCHY.md",
+			"url": "../../../GLOSSARY.md",
+			"linkText": "📚 Technical Glossary",
+			"depth": 2,
+			"currentPath": "../../../GLOSSARY.md",
+			"correctedPath": "../../GLOSSARY.md",
+			"targetPath": "GLOSSARY.md",
+			"pattern": "GLOSSARY_REF",
+			"severity": "CRITICAL",
+			"fixType": "REDUCE_DEPTH"
+		},
+		{
+			"file": "docs/tools/DOC_AUTOMATION_TOOLING.md",
+			"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"linkText": "Orchestrator Error Handling",
+			"depth": 1,
+			"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"pattern": "ORCHESTRATOR",
+			"severity": "HIGH",
+			"fixType": "ADD_DEPTH"
+		}
+	],
+	"patternsIdentified": {
+		"docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md": {
+			"file": "docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 0,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 0,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/DOCUMENTATION_AUTOMATION_SETUP.md": {
+			"file": "docs/DOCUMENTATION_AUTOMATION_SETUP.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/DOCUMENTATION_GUIDE.md": {
+			"file": "docs/DOCUMENTATION_GUIDE.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/DOCUMENTATION_PROGRESS.md": {
+			"file": "docs/DOCUMENTATION_PROGRESS.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/DOCUMENTATION_VALIDATION_FIX_PROCESS.md": {
+			"file": "docs/DOCUMENTATION_VALIDATION_FIX_PROCESS.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/GLOSSARY.md": {
+			"file": "docs/GLOSSARY.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/IMPROVEMENT_LOG.md": {
+			"file": "docs/IMPROVEMENT_LOG.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 0,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 0,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/LOGGING.md": {
+			"file": "docs/LOGGING.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 0,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 0,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/PRE_COMMIT_HOOKS.md": {
+			"file": "docs/PRE_COMMIT_HOOKS.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/PROVIDER_INSTANCE_EXPLANATION.md": {
+			"file": "docs/PROVIDER_INSTANCE_EXPLANATION.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 0,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 0,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/README.md": {
+			"file": "docs/README.md",
+			"depth": 0,
+			"directory": "docs",
+			"violations": []
+		},
+		"docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md": {
+			"file": "docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md": {
+			"file": "docs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md": {
+			"file": "docs/architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md": {
+			"file": "docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"linkText": "Orchestrator Lifecycle",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "../orchestrator/",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/API_PROVIDER_PATTERNS.md": {
+			"file": "docs/architecture/API_PROVIDER_PATTERNS.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/COMMUNICATION_LAYER_SYSTEM.md": {
+			"file": "docs/architecture/COMMUNICATION_LAYER_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/CONSOLIDATION_PLAN.md": {
+			"file": "docs/architecture/CONSOLIDATION_PLAN.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md": {
+			"file": "docs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md": {
+			"file": "docs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md": {
+			"file": "docs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/EXTERNAL_DEPENDENCIES.md": {
+			"file": "docs/architecture/EXTERNAL_DEPENDENCIES.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/GETTING_STARTED.md": {
+			"file": "docs/architecture/GETTING_STARTED.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"linkText": "Orchestrator Best Practices",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/OBSERVABILITY_LAYER_SYSTEM.md": {
+			"file": "docs/architecture/OBSERVABILITY_LAYER_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/ORCHESTRATION_LAYER_SYSTEM.md": {
+			"file": "docs/architecture/ORCHESTRATION_LAYER_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md": {
+			"file": "docs/architecture/PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/PROVIDER_LAYER_SYSTEM.md": {
+			"file": "docs/architecture/PROVIDER_LAYER_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/README.md": {
+			"file": "docs/architecture/README.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"linkText": "Orchestrator Best Practices",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/REPOSITORY_OVERVIEW.md": {
+			"file": "docs/architecture/REPOSITORY_OVERVIEW.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/SYSTEM_OVERVIEW.md": {
+			"file": "docs/architecture/SYSTEM_OVERVIEW.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": [
+				{
+					"url": "../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../../orchestrator/README.md",
+					"correctedPath": "../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"linkText": "Orchestrator Best Practices",
+					"depth": 1,
+					"currentPath": "../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"correctedPath": "../../../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/TASK_LIFECYCLE_DEDUPLICATION.md": {
+			"file": "docs/architecture/TASK_LIFECYCLE_DEDUPLICATION.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/UPSTREAM_DOWNSTREAM_INTEGRATION.md": {
+			"file": "docs/architecture/UPSTREAM_DOWNSTREAM_INTEGRATION.md",
+			"depth": 1,
+			"directory": "docs/architecture",
+			"violations": []
+		},
+		"docs/architecture/branches/KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md": {
+			"file": "docs/architecture/branches/KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md",
+			"depth": 2,
+			"directory": "docs/architecture/branches",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md": {
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md",
+			"depth": 2,
+			"directory": "docs/architecture/branches",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md": {
+			"file": "docs/architecture/branches/ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md",
+			"depth": 2,
+			"directory": "docs/architecture/branches",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/branches/README.md": {
+			"file": "docs/architecture/branches/README.md",
+			"depth": 2,
+			"directory": "docs/architecture/branches",
+			"violations": []
+		},
+		"docs/architecture/race-condition/CODE_FLOW_ANALYSIS.md": {
+			"file": "docs/architecture/race-condition/CODE_FLOW_ANALYSIS.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/race-condition/IMPACT_ASSESSMENT.md": {
+			"file": "docs/architecture/race-condition/IMPACT_ASSESSMENT.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/race-condition/NAVIGATION_SCENARIO.md": {
+			"file": "docs/architecture/race-condition/NAVIGATION_SCENARIO.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/race-condition/PREVENTION_MEASURES.md": {
+			"file": "docs/architecture/race-condition/PREVENTION_MEASURES.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/race-condition/PROBLEM_OVERVIEW.md": {
+			"file": "docs/architecture/race-condition/PROBLEM_OVERVIEW.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": [
+				{
+					"url": "../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"linkText": "Orchestrator Lifecycle",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/race-condition/README.md": {
+			"file": "docs/architecture/race-condition/README.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": [
+				{
+					"url": "../orchestrator/",
+					"linkText": "../orchestrator/",
+					"depth": 2,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/architecture/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/race-condition/ROOT_CAUSE_ANALYSIS.md": {
+			"file": "docs/architecture/race-condition/ROOT_CAUSE_ANALYSIS.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/race-condition/SOLUTION_RECOMMENDATIONS.md": {
+			"file": "docs/architecture/race-condition/SOLUTION_RECOMMENDATIONS.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/race-condition/TESTING_STRATEGY.md": {
+			"file": "docs/architecture/race-condition/TESTING_STRATEGY.md",
+			"depth": 2,
+			"directory": "docs/architecture/race-condition",
+			"violations": []
+		},
+		"docs/architecture/repository/APPLICATIONS.md": {
+			"file": "docs/architecture/repository/APPLICATIONS.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/BUILD_PIPELINES.md": {
+			"file": "docs/architecture/repository/BUILD_PIPELINES.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/CORE_SYSTEMS.md": {
+			"file": "docs/architecture/repository/CORE_SYSTEMS.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/DEVELOPMENT_GUIDE.md": {
+			"file": "docs/architecture/repository/DEVELOPMENT_GUIDE.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/DEVELOPMENT_TOOLS.md": {
+			"file": "docs/architecture/repository/DEVELOPMENT_TOOLS.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/EXTERNAL_INTEGRATIONS.md": {
+			"file": "docs/architecture/repository/EXTERNAL_INTEGRATIONS.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/README.md": {
+			"file": "docs/architecture/repository/README.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/REPOSITORY_STRUCTURE.md": {
+			"file": "docs/architecture/repository/REPOSITORY_STRUCTURE.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/TESTING_INFRASTRUCTURE.md": {
+			"file": "docs/architecture/repository/TESTING_INFRASTRUCTURE.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/repository/WORKSPACE_PACKAGES.md": {
+			"file": "docs/architecture/repository/WORKSPACE_PACKAGES.md",
+			"depth": 2,
+			"directory": "docs/architecture/repository",
+			"violations": []
+		},
+		"docs/architecture/state-machines/COMBINED_STATE_MACHINE.md": {
+			"file": "docs/architecture/state-machines/COMBINED_STATE_MACHINE.md",
+			"depth": 2,
+			"directory": "docs/architecture/state-machines",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/state-machines/RACE_CONDITION_STATE_MACHINE.md": {
+			"file": "docs/architecture/state-machines/RACE_CONDITION_STATE_MACHINE.md",
+			"depth": 2,
+			"directory": "docs/architecture/state-machines",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/state-machines/README.md": {
+			"file": "docs/architecture/state-machines/README.md",
+			"depth": 2,
+			"directory": "docs/architecture/state-machines",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/state-machines/RECURSIVE_CALL_STATE_MACHINE.md": {
+			"file": "docs/architecture/state-machines/RECURSIVE_CALL_STATE_MACHINE.md",
+			"depth": 2,
+			"directory": "docs/architecture/state-machines",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/state-machines/SESSION_STATE_MACHINE.md": {
+			"file": "docs/architecture/state-machines/SESSION_STATE_MACHINE.md",
+			"depth": 2,
+			"directory": "docs/architecture/state-machines",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/architecture/state-machines/TASK_STATE_MACHINE.md": {
+			"file": "docs/architecture/state-machines/TASK_STATE_MACHINE.md",
+			"depth": 2,
+			"directory": "docs/architecture/state-machines",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/architecture/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 2,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/architecture/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "docs/GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "HIGH",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/build/BUILD_PIPELINE_ARCHITECTURE.md": {
+			"file": "docs/build/BUILD_PIPELINE_ARCHITECTURE.md",
+			"depth": 1,
+			"directory": "docs/build",
+			"violations": []
+		},
+		"docs/build/README.md": {
+			"file": "docs/build/README.md",
+			"depth": 1,
+			"directory": "docs/build",
+			"violations": []
+		},
+		"docs/improvements/PRIORITY_IMPROVEMENTS.md": {
+			"file": "docs/improvements/PRIORITY_IMPROVEMENTS.md",
+			"depth": 1,
+			"directory": "docs/improvements",
+			"violations": []
+		},
+		"docs/improvements/README.md": {
+			"file": "docs/improvements/README.md",
+			"depth": 1,
+			"directory": "docs/improvements",
+			"violations": []
+		},
+		"docs/improvements/RESEARCH_GAPS.md": {
+			"file": "docs/improvements/RESEARCH_GAPS.md",
+			"depth": 1,
+			"directory": "docs/improvements",
+			"violations": []
+		},
+		"docs/improvements/TECHNICAL_DEBT.md": {
+			"file": "docs/improvements/TECHNICAL_DEBT.md",
+			"depth": 1,
+			"directory": "docs/improvements",
+			"violations": []
+		},
+		"docs/integrations/BROWSER_AUTOMATION.md": {
+			"file": "docs/integrations/BROWSER_AUTOMATION.md",
+			"depth": 1,
+			"directory": "docs/integrations",
+			"violations": []
+		},
+		"docs/integrations/EDITOR_INTEGRATION.md": {
+			"file": "docs/integrations/EDITOR_INTEGRATION.md",
+			"depth": 1,
+			"directory": "docs/integrations",
+			"violations": []
+		},
+		"docs/integrations/JETBRAINS_PLUGIN.md": {
+			"file": "docs/integrations/JETBRAINS_PLUGIN.md",
+			"depth": 1,
+			"directory": "docs/integrations",
+			"violations": []
+		},
+		"docs/integrations/README.md": {
+			"file": "docs/integrations/README.md",
+			"depth": 1,
+			"directory": "docs/integrations",
+			"violations": []
+		},
+		"docs/integrations/TERMINAL_INTEGRATION.md": {
+			"file": "docs/integrations/TERMINAL_INTEGRATION.md",
+			"depth": 1,
+			"directory": "docs/integrations",
+			"violations": []
+		},
+		"docs/integrations/TREE_SITTER_SERVICE.md": {
+			"file": "docs/integrations/TREE_SITTER_SERVICE.md",
+			"depth": 1,
+			"directory": "docs/integrations",
+			"violations": []
+		},
+		"docs/laminar/LAMINAR_AUTHENTICATION_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_AUTHENTICATION_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_CHECKPOINT_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_CHECKPOINT_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_CONFIG.md": {
+			"file": "docs/laminar/LAMINAR_CONFIG.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_CONFIGURATION_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_CONFIGURATION_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_DECORATOR_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_DECORATOR_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_DEDUPLICATION_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_DEDUPLICATION_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": []
+		},
+		"docs/laminar/LAMINAR_DEPENDENCY_MANAGEMENT.md": {
+			"file": "docs/laminar/LAMINAR_DEPENDENCY_MANAGEMENT.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_INTEGRATION.md": {
+			"file": "docs/laminar/LAMINAR_INTEGRATION.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_LLM_INTEGRATION.md": {
+			"file": "docs/laminar/LAMINAR_LLM_INTEGRATION.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_PORT.md": {
+			"file": "docs/laminar/LAMINAR_PORT.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_SERVICE_LAYER.md": {
+			"file": "docs/laminar/LAMINAR_SERVICE_LAYER.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_SPAN_NESTING.md": {
+			"file": "docs/laminar/LAMINAR_SPAN_NESTING.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_SPAN_NESTING_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_SPAN_NESTING_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_SUBSYSTEMS_INDEX.md": {
+			"file": "docs/laminar/LAMINAR_SUBSYSTEMS_INDEX.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_TASK_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_TASK_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_TESTING_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_TESTING_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/LAMINAR_TOOL_SYSTEM.md": {
+			"file": "docs/laminar/LAMINAR_TOOL_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": [
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/laminar/README.md": {
+			"file": "docs/laminar/README.md",
+			"depth": 1,
+			"directory": "docs/laminar",
+			"violations": []
+		},
+		"docs/orchestrator/ORCHESTRATOR_ARCHITECTURE.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_ARCHITECTURE.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_BEST_PRACTICES.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_BEST_PRACTICES.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "orchestrator",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_EXTENSIBILITY.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_EXTENSIBILITY.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "orchestrator",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_INDEX.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_INDEX.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_LIFECYCLE.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "orchestrator",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_SECURITY_GOVERNANCE.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_SECURITY_GOVERNANCE.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "orchestrator",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_TASK_DELEGATION.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_TASK_DELEGATION.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "orchestrator",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/ORCHESTRATOR_TOOLS_REFERENCE.md": {
+			"file": "docs/orchestrator/ORCHESTRATOR_TOOLS_REFERENCE.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 1,
+					"currentPath": "../orchestrator/README.md",
+					"correctedPath": "../../orchestrator/README.md",
+					"targetPath": "docs/orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../orchestrator/",
+					"linkText": "orchestrator",
+					"depth": 1,
+					"currentPath": "../orchestrator/",
+					"correctedPath": "../../orchestrator/",
+					"targetPath": "docs/orchestrator/",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/orchestrator/README.md": {
+			"file": "docs/orchestrator/README.md",
+			"depth": 1,
+			"directory": "docs/orchestrator",
+			"violations": [
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 1,
+					"currentPath": "../../GLOSSARY.md",
+					"correctedPath": "../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/services/CLOUD_SERVICES_ARCHITECTURE.md": {
+			"file": "docs/services/CLOUD_SERVICES_ARCHITECTURE.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/CODE_INDEX_SERVICE.md": {
+			"file": "docs/services/CODE_INDEX_SERVICE.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/CUSTOM_MODES_SYSTEM.md": {
+			"file": "docs/services/CUSTOM_MODES_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/Diff_SYSTEM.md": {
+			"file": "docs/services/Diff_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/GHOST_SERVICE.md": {
+			"file": "docs/services/GHOST_SERVICE.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/MARKETPLACE_SYSTEM.md": {
+			"file": "docs/services/MARKETPLACE_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/MCP_INTEGRATION.md": {
+			"file": "docs/services/MCP_INTEGRATION.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/PROMPT_SYSTEM.md": {
+			"file": "docs/services/PROMPT_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/services/README.md": {
+			"file": "docs/services/README.md",
+			"depth": 1,
+			"directory": "docs/services",
+			"violations": []
+		},
+		"docs/standards/README.md": {
+			"file": "docs/standards/README.md",
+			"depth": 1,
+			"directory": "docs/standards",
+			"violations": []
+		},
+		"docs/standards/checklists/README.md": {
+			"file": "docs/standards/checklists/README.md",
+			"depth": 2,
+			"directory": "docs/standards/checklists",
+			"violations": []
+		},
+		"docs/standards/code/README.md": {
+			"file": "docs/standards/code/README.md",
+			"depth": 2,
+			"directory": "docs/standards/code",
+			"violations": []
+		},
+		"docs/standards/core/CONTENT_ORGANIZATION.md": {
+			"file": "docs/standards/core/CONTENT_ORGANIZATION.md",
+			"depth": 2,
+			"directory": "docs/standards/core",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/core/FILE_CONVENTIONS.md": {
+			"file": "docs/standards/core/FILE_CONVENTIONS.md",
+			"depth": 2,
+			"directory": "docs/standards/core",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/core/LINKING_POLICY.md": {
+			"file": "docs/standards/core/LINKING_POLICY.md",
+			"depth": 2,
+			"directory": "docs/standards/core",
+			"violations": [
+				{
+					"url": "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"linkText": "Orchestrator Lifecycle Overview",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"correctedPath": "../../../../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"targetPath": "orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/core/PRINCIPLES.md": {
+			"file": "docs/standards/core/PRINCIPLES.md",
+			"depth": 2,
+			"directory": "docs/standards/core",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/core/README.md": {
+			"file": "docs/standards/core/README.md",
+			"depth": 2,
+			"directory": "docs/standards/core",
+			"violations": []
+		},
+		"docs/standards/engagement/README.md": {
+			"file": "docs/standards/engagement/README.md",
+			"depth": 2,
+			"directory": "docs/standards/engagement",
+			"violations": []
+		},
+		"docs/standards/examples/README.md": {
+			"file": "docs/standards/examples/README.md",
+			"depth": 2,
+			"directory": "docs/standards/examples",
+			"violations": []
+		},
+		"docs/standards/glossary/README.md": {
+			"file": "docs/standards/glossary/README.md",
+			"depth": 2,
+			"directory": "docs/standards/glossary",
+			"violations": []
+		},
+		"docs/standards/navigation/CROSS_REFERENCES.md": {
+			"file": "docs/standards/navigation/CROSS_REFERENCES.md",
+			"depth": 2,
+			"directory": "docs/standards/navigation",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/navigation/QUICK_START_PATHS.md": {
+			"file": "docs/standards/navigation/QUICK_START_PATHS.md",
+			"depth": 2,
+			"directory": "docs/standards/navigation",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/navigation/README.md": {
+			"file": "docs/standards/navigation/README.md",
+			"depth": 2,
+			"directory": "docs/standards/navigation",
+			"violations": []
+		},
+		"docs/standards/navigation/USER_JOURNEY_DESIGN.md": {
+			"file": "docs/standards/navigation/USER_JOURNEY_DESIGN.md",
+			"depth": 2,
+			"directory": "docs/standards/navigation",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/structure/DOCUMENT_ANATOMY.md": {
+			"file": "docs/standards/structure/DOCUMENT_ANATOMY.md",
+			"depth": 2,
+			"directory": "docs/standards/structure",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/standards/structure/HEADINGS_HIERARCHY.md": {
+			"file": "docs/standards/structure/HEADINGS_HIERARCHY.md",
+			"depth": 2,
+			"directory": "docs/standards/structure",
+			"violations": [
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../orchestrator/README.md",
+					"linkText": "Orchestrator Documentation",
+					"depth": 2,
+					"currentPath": "../../../orchestrator/README.md",
+					"correctedPath": "../../../../../../orchestrator/README.md",
+					"targetPath": "orchestrator/README.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "CRITICAL",
+					"fixType": "ADD_DEPTH"
+				},
+				{
+					"url": "../../../GLOSSARY.md",
+					"linkText": "📚 Technical Glossary",
+					"depth": 2,
+					"currentPath": "../../../GLOSSARY.md",
+					"correctedPath": "../../GLOSSARY.md",
+					"targetPath": "GLOSSARY.md",
+					"pattern": "GLOSSARY_REF",
+					"severity": "CRITICAL",
+					"fixType": "REDUCE_DEPTH"
+				}
+			]
+		},
+		"docs/standards/structure/NAVIGATION_FOOTER.md": {
+			"file": "docs/standards/structure/NAVIGATION_FOOTER.md",
+			"depth": 2,
+			"directory": "docs/standards/structure",
+			"violations": []
+		},
+		"docs/standards/structure/README.md": {
+			"file": "docs/standards/structure/README.md",
+			"depth": 2,
+			"directory": "docs/standards/structure",
+			"violations": []
+		},
+		"docs/standards/structure/STRUCTURE_VALIDATION.md": {
+			"file": "docs/standards/structure/STRUCTURE_VALIDATION.md",
+			"depth": 2,
+			"directory": "docs/standards/structure",
+			"violations": []
+		},
+		"docs/standards/structure/TABLE_OF_CONTENTS.md": {
+			"file": "docs/standards/structure/TABLE_OF_CONTENTS.md",
+			"depth": 2,
+			"directory": "docs/standards/structure",
+			"violations": []
+		},
+		"docs/testing/README.md": {
+			"file": "docs/testing/README.md",
+			"depth": 1,
+			"directory": "docs/testing",
+			"violations": []
+		},
+		"docs/testing/TESTING_STRATEGY.md": {
+			"file": "docs/testing/TESTING_STRATEGY.md",
+			"depth": 1,
+			"directory": "docs/testing",
+			"violations": []
+		},
+		"docs/tools/BASIC_VALIDATION_TRAINING.md": {
+			"file": "docs/tools/BASIC_VALIDATION_TRAINING.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/CHECKLIST_QUICK_REFERENCE.md": {
+			"file": "docs/tools/CHECKLIST_QUICK_REFERENCE.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/DOCUMENTATION_BEST_PRACTICES.md": {
+			"file": "docs/tools/DOCUMENTATION_BEST_PRACTICES.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/DOC_AUTOMATION_TOOLING.md": {
+			"file": "docs/tools/DOC_AUTOMATION_TOOLING.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": [
+				{
+					"url": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"linkText": "Orchestrator Error Handling",
+					"depth": 1,
+					"currentPath": "../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"correctedPath": "../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"targetPath": "docs/orchestrator/ORCHESTRATOR_ERROR_HANDLING.md",
+					"pattern": "ORCHESTRATOR",
+					"severity": "HIGH",
+					"fixType": "ADD_DEPTH"
+				}
+			]
+		},
+		"docs/tools/IDE_INTEGRATION_GUIDE.md": {
+			"file": "docs/tools/IDE_INTEGRATION_GUIDE.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md": {
+			"file": "docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/ONBOARDING_CHECKLIST.md": {
+			"file": "docs/tools/ONBOARDING_CHECKLIST.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/PHASE_1_COMPLETION_REPORT.md": {
+			"file": "docs/tools/PHASE_1_COMPLETION_REPORT.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/QUICK_REFERENCE_CARD.md": {
+			"file": "docs/tools/QUICK_REFERENCE_CARD.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/README.md": {
+			"file": "docs/tools/README.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/REMARK_WORKFLOW_OVERVIEW.md": {
+			"file": "docs/tools/REMARK_WORKFLOW_OVERVIEW.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/SKILL_ASSESSMENT_QUIZ.md": {
+			"file": "docs/tools/SKILL_ASSESSMENT_QUIZ.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/TOOL_SYSTEM_ARCHITECTURE.md": {
+			"file": "docs/tools/TOOL_SYSTEM_ARCHITECTURE.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/TRAINING_MATERIALS_INDEX.md": {
+			"file": "docs/tools/TRAINING_MATERIALS_INDEX.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/TROUBLESHOOTING_GUIDE.md": {
+			"file": "docs/tools/TROUBLESHOOTING_GUIDE.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/tools/VALIDATION_ERRORS_GUIDE.md": {
+			"file": "docs/tools/VALIDATION_ERRORS_GUIDE.md",
+			"depth": 1,
+			"directory": "docs/tools",
+			"violations": []
+		},
+		"docs/ui/README.md": {
+			"file": "docs/ui/README.md",
+			"depth": 1,
+			"directory": "docs/ui",
+			"violations": []
+		},
+		"docs/ui/UI_CHAT_TASK_WINDOW.md": {
+			"file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+			"depth": 1,
+			"directory": "docs/ui",
+			"violations": []
+		},
+		"docs/ui/UI_LAYER_SYSTEM.md": {
+			"file": "docs/ui/UI_LAYER_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/ui",
+			"violations": []
+		},
+		"docs/ui/UI_MESSAGE_FLOW_SYSTEM.md": {
+			"file": "docs/ui/UI_MESSAGE_FLOW_SYSTEM.md",
+			"depth": 1,
+			"directory": "docs/ui",
+			"violations": []
+		}
+	},
+	"stats": {
+		"byPattern": {
+			"GLOSSARY_REF": 48,
+			"ORCHESTRATOR": 122,
+			"ARCHITECTURE": 0,
+			"STANDARDS_CORE": 0,
+			"DOCUMENTATION_GUIDE": 0,
+			"OTHER_REF": 0
+		},
+		"byDirectory": {
+			"docs": 8,
+			"docs/architecture": 25,
+			"docs/architecture/branches": 12,
+			"docs/architecture/race-condition": 2,
+			"docs/architecture/state-machines": 21,
+			"docs/laminar": 32,
+			"docs/orchestrator": 33,
+			"docs/standards/core": 17,
+			"docs/standards/navigation": 12,
+			"docs/standards/structure": 7,
+			"docs/tools": 1
+		},
+		"byTargetFile": {
+			"README.md": 64,
+			"ORCHESTRATOR_ERROR_HANDLING.md": 44,
+			"ORCHESTRATOR_LIFECYCLE.md": 3,
+			"": 8,
+			"ORCHESTRATOR_BEST_PRACTICES.md": 3,
+			"GLOSSARY.md": 48
+		},
+		"validationWarnings": 170
+	},
+	"topPatterns": [
+		{
+			"pattern": "ORCHESTRATOR",
+			"count": 122
+		},
+		{
+			"pattern": "GLOSSARY_REF",
+			"count": 48
+		},
+		{
+			"pattern": "ARCHITECTURE",
+			"count": 0
+		},
+		{
+			"pattern": "STANDARDS_CORE",
+			"count": 0
+		},
+		{
+			"pattern": "DOCUMENTATION_GUIDE",
+			"count": 0
+		},
+		{
+			"pattern": "OTHER_REF",
+			"count": 0
+		}
+	]
+}
