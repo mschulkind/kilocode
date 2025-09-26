@@ -34,6 +34,19 @@ This plan presents three options varying in risk and scope to make discovery con
 - Respect MAX_DEPTH symlink guard in [`custom-instructions.ts`](src/core/prompts/sections/custom-instructions.ts:57).
 - Cross-platform behavior (Windows symlink semantics) — tests skip symlink cases on Windows.
 
+## Why are there two discovery systems?
+
+Over time the project evolved to use two separate discovery code paths for different purposes and runtime contexts. Summarized reasons:
+
+- Historical evolution: The loader code (used at runtime by core features) was implemented first with a robust, recursive, symlink-aware reader to fully ingest rules files. The webview listing was added later to provide a lightweight UI surface for toggling rules and initially took a simpler approach (directory scan using Dirent.isFile) for safety and portability.
+- Separation of concerns: The loader must read and concatenate rule contents for runtime processing; the UI only needs filenames, enablement state, and stable ordering. These differing responsibilities led to different implementation trade-offs.
+- Context and environment constraints: The webview and UI code may run in a different execution context (renderer/webview or tightly sandboxed environment) and historically used safer, non-recursive filesystem APIs to avoid exposing complex symlink resolution or binary detection logic in the UI layer.
+- Performance and simplicity: The UI listing favors minimal, fast operations to populate toggles without heavy file I/O or binary checks. The loader prioritizes correctness over micro-performance during initialization.
+- Backwards compatibility and risk management: Early conservative choices (ignore symlinks) reduced risk of surprising behavior caused by symlink loops or external filesystem mounts. That conservatism persisted even after the loader implemented symlink protections (MAX_DEPTH).
+- Test coverage and drift: Tests and utilities were added around the loader's behavior, and the UI code path received fewer symlink-centric tests, allowing behavior drift.
+
+Implication: these justified differences explain why the two paths diverged. Unification (Option B/C) should preserve the original reasons by ensuring the shared implementation exposes a minimal, fast API for UI use while centralizing the complex symlink and binary-handling logic.
+
 ## Options
 
 ### Option A — Minimal: make UI symlink-aware
