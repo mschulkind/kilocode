@@ -1,12 +1,12 @@
-# Rules Discovery
+# RULES_DISCOVERY
 
-> **Development note**: This document explains how Kilo searches for and loads "rules" files and highlights symlink behavior.
+> **Development note**: This document explains how Kilo searches for and loads "rules" files and documents the symlink behaviour observed across loader and UI codepaths.
 
-**Purpose:** Describe code paths and behaviors used to discover and read rules files so engineers can diagnose issues (for example, symlinked rules not appearing in the UI).
+**Purpose:** Describe the code paths and behaviors Kilo uses to discover and read rule files so engineers can quickly diagnose issues (for example, symlinked rules not appearing in the UI).
 
 <details><summary>Table of Contents</summary>
 
-- [Executive Summary](#executive-summary)
+- [Executive summary](#executive-summary)
 - [Search order and roo directories](#search-order-and-roo-directories)
 - [Primary loader: loadRuleFiles](#primary-loader-loadrulefiles)
 - [Directory walker, symlink resolution, and sorting](#directory-walker-symlink-resolution-and-sorting)
@@ -18,77 +18,78 @@
 
 </details>
 
-## Executive Summary
+## Executive summary
 
-_Kilo looks first in "roo" style directories (global then project) for rule directories and files. The primary loader that assembles rules content is [`loadRuleFiles`](src/core/prompts/sections/custom-instructions.ts:211) which uses a directory walker that resolves symlinks and reads target files. The webview UI uses a separate code path ([`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47)) that does not follow symlinks, which is the most likely mismatch when symlinked rules are not shown._
+_Kilo searches for rules in "roo"-style directories (global then project). The canonical loader is [`loadRuleFiles`](src/core/prompts/sections/custom-instructions.ts:211) which uses a symlink-aware directory walker. The UI uses a separate listing function [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47) that currently does not follow symlinks — this mismatch is the most likely cause when symlinked rules are missing from UI toggles._
 
 ## Search order and roo directories
 
-- Roo directories are resolved by [`getRooDirectoriesForCwd`](src/services/roo-config/index.ts:155). It returns an ordered list: global then project-local (see [`getProjectRooDirectoryForCwd`](src/services/roo-config/index.ts:61)).
-- Keys:
-    - Global base: [`getGlobalRooDirectory`](src/services/roo-config/index.ts:27).
-    - Project base: [`getProjectRooDirectoryForCwd`](src/services/roo-config/index.ts:61) (prefers `.roo` when present, otherwise `.kilocode`).
+- Roo directories are resolved by [`getRooDirectoriesForCwd`](src/services/roo-config/index.ts:155), which returns ordered directories (global first, project second). See also [`getProjectRooDirectoryForCwd`](src/services/roo-config/index.ts:61).
+- Typical locations:
+    - Global: [`getGlobalRooDirectory`](src/services/roo-config/index.ts:27) → typically `~/.kilocode`.
+    - Project: project-local roo directory (prefers `.roo` over `.kilocode`) via [`getProjectRooDirectoryForCwd`](src/services/roo-config/index.ts:61).
 
 ## Primary loader: loadRuleFiles
 
-- The main compilation point is [`loadRuleFiles`](src/core/prompts/sections/custom-instructions.ts:211). Behavior:
-    - Iterates roo directories (global first) and checks for a `rules` directory (e.g., `~/.kilocode/rules` or `<project>/.kilocode/rules`).
-    - If a `rules` directory exists it calls `readTextFilesFromDirectory` to enumerate and read files.
-    - If no directories are found it falls back to legacy files (`.kilocoderules`, `.roorules`, `.clinerules`) in the cwd.
-- Also handles mode-specific directories (`rules-{mode}`) and AGENTS.md via a separate helper (`loadAgentRulesFile`) which explicitly checks symlinks for agent rule files [`loadAgentRulesFile`](src/core/prompts/sections/custom-instructions.ts:256).
+- The main compilation entrypoint is [`loadRuleFiles`](src/core/prompts/sections/custom-instructions.ts:211).
+- Behaviour summary:
+    - Iterates the ordered roo directories and checks for a `rules` subdirectory (for example `~/.kilocode/rules` or `<workspace>/.kilocode/rules`).
+    - When found, it calls the symlink-aware enumerator [`readTextFilesFromDirectory`](src/core/prompts/sections/custom-instructions.ts:127) which resolves symlinks, filters binary/cache files, and returns ordered file content.
+    - If no roo `rules` directories exist, it falls back to legacy single-file rules: `.kilocoderules`, `.roorules`, `.clinerules` in the cwd.
+- Special cases:
+    - Mode-specific directories (`rules-<mode>`) are handled similarly (see the mode-specific block in [`addCustomInstructions`](src/core/prompts/sections/custom-instructions.ts:318)).
+    - AGENTS.md / AGENT.md are read via [`loadAgentRulesFile`](src/core/prompts/sections/custom-instructions.ts:256) which contains explicit symlink handling logic for single agent files.
 
 ## Directory walker, symlink resolution, and sorting
 
-- File enumeration and symlink handling are implemented inside [`readTextFilesFromDirectory`](src/core/prompts/sections/custom-instructions.ts:127).
-- Key functions:
-    - `resolveDirectoryEntry` — initial per-Dirent resolver (handles files and delegates symlinks): [`resolveDirectoryEntry`](src/core/prompts/sections/custom-instructions.ts:62).
-    - `resolveSymLink` — resolves a symlink target via `fs.readlink`, `fs.stat` and recursively enumerates directory targets: [`resolveSymLink`](src/core/prompts/sections/custom-instructions.ts:86).
-    - `safeReadFile` — reads file content ignoring ENOENT/EISDIR: [`safeReadFile`](src/core/prompts/sections/custom-instructions.ts:32).
-- Behavior notes:
-    - For symlinked files the code stores both originalPath (symlink path) and resolvedPath (target). When sorting and presenting results it sorts by originalPath (`sortKey`) so symlinks are ordered by their symlink names, not the target names (see sorting and comment): [`readTextFilesFromDirectory`](src/core/prompts/sections/custom-instructions.ts:180).
-    - If a symlink points to a directory, the resolver recursively enumerates files inside the target directory and includes them.
-    - Binary files and common cache files are filtered (`isBinaryFile` + `shouldIncludeRuleFile`) to avoid noise.
+- `readTextFilesFromDirectory` (the enumerator) lives at [`readTextFilesFromDirectory`](src/core/prompts/sections/custom-instructions.ts:127).
+- Important helpers:
+    - [`resolveDirectoryEntry`](src/core/prompts/sections/custom-instructions.ts:62) — initial per-Dirent resolver that delegates symlink handling.
+    - [`resolveSymLink`](src/core/prompts/sections/custom-instructions.ts:86) — resolves symlinks with `fs.readlink` and then `fs.stat`, recursing into directories and preventing cycles via `MAX_DEPTH` (`src/core/prompts/sections/custom-instructions.ts:57`).
+    - [`safeReadFile`](src/core/prompts/sections/custom-instructions.ts:32) — resilient file reader that swallows ENOENT/EISDIR.
+- Behaviour notes:
+    - For symlinked files the implementation stores both `originalPath` (the symlink) and `resolvedPath` (the target). Sorting is performed by the original symlink name (`sortKey`) so user-visible order follows symlink filenames, not target names.
+    - If a symlink targets a directory, that target is recursively enumerated and its files are included.
+    - Binary files and common OS/cache files are filtered by `isBinaryFile` usage and `shouldIncludeRuleFile`.
 
 ## Webview listing (no symlink resolution)
 
-- The webview uses [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47) to build rule toggles shown in the UI.
-- That function:
-    - Calls `fs.readdir(dirPath, { withFileTypes: true })` and only treats entries with `dirent.isFile()` as rule files. It does not call `lstat`/`readlink` to resolve symlinks, nor does it traverse symlink target directories — see [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:56).
-    - Filters by allowed extensions using [`allowedExtensions`](src/shared/kilocode/rules.ts:1).
-- Implication: symlink entries that are Dirent objects with `isSymbolicLink() === true` and `isFile() === false` are ignored by this code path and therefore do not appear in the webview toggles.
+- The webview toggle UI obtains rules via [`getEnabledRules`](src/core/webview/kilorules.ts:21) which calls [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47) per directory.
+- [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47) uses `fs.readdir(..., { withFileTypes: true })` and only accepts entries where `dirent.isFile()` is true; it filters by extension using [`allowedExtensions`](src/shared/kilocode/rules.ts:1).
+- Consequence: Dirent entries that are symbolic links (where `isSymbolicLink()` might be true and `isFile()` false) are skipped. Symlinked rule files or directories therefore may be present in the loader output but absent from the UI toggle lists.
 
 ## Other helpers affecting discovery
 
-- `readDirectory` in [`src/utils/fs.ts`](src/utils/fs.ts:79) is used by some utilities (`rule-helpers`) and filters Dirents with `entry.isFile()` — this likewise excludes symlink Dirents that are not reported as files: [`readDirectory`](src/utils/fs.ts:79).
-- `rule-helpers.readDirectoryRecursive` uses `readDirectory` and then filters by extensions — so code that relies on `readDirectory` will not see symlink entries unless the implementation resolves symlinks first: [`src/core/context/instructions/rule-helpers.ts`](src/core/context/instructions/rule-helpers.ts:10).
-- Migration helper `ensureLocalKilorulesDirExists` may convert a legacy file into a directory; it uses `fileExistsAtPath` / `isDirectory` from [`src/core/context/instructions/kilo-rules.ts`](src/core/context/instructions/kilo-rules.ts:10).
+- [`readDirectory`](src/utils/fs.ts:79) — a utility used by some code paths which filters to `entry.isFile()`; it will also exclude symlink Dirents unless the Dirent reports as a file.
+- Any code that relies on `readDirectory` or `fs.readdir(..., { withFileTypes: true })` and then checks `isFile()` will inherit the same symlink-exclusion behaviour.
 
 ## Likely root cause for missing symlinked rules
 
-- There are two different discovery strategies:
-    1. The "loader" (`loadRuleFiles` + `readTextFilesFromDirectory`) actively resolves symlinks and includes target files.
-    2. The "UI"/listing (`getEnabledRulesFromDirectory`) treats Dirent entries conservatively and only includes entries that `isFile()` — it does not resolve or follow symlinks.
-- This mismatch means symlinked rule files (or symlinked directories containing rule files) can appear in the compiled rules returned by `loadRuleFiles` but will be absent from the webview's toggle list. That explains issues where rules execute but are not toggleable or visible in the UI.
+- Two discovery strategies exist:
+    1. Loader: symlink-aware enumerator (`readTextFilesFromDirectory`) used by `loadRuleFiles`.
+    2. UI/listing: conservative Dirent-based discovery (`getEnabledRulesFromDirectory`) used by the webview.
+- The mismatch causes rules to execute (loader reads targets) but not be visible/toggleable in the UI (UI ignored symlink Dirents).
 
 ## Suggested fixes
 
-- Short-term (least invasive):
-    - Update [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47) to call `fs.lstat` on each Dirent and, when `isSymbolicLink()` is true, resolve the link with `fs.readlink` and `fs.stat` to determine if the target is a file. Add symlink-based entries to the returned toggles.
-    - Alternatively, reuse `readTextFilesFromDirectory` or factor its symlink resolution into a shared helper and call it from both the loader and the webview listing.
-- Medium-term:
-    - Unify discovery into a single util module (e.g., export a symlink-aware directory reader) that both `loadRuleFiles` and `getEnabledRulesFromDirectory` consume so behavior stays consistent.
-- Considerations:
-    - Ensure the UI path preserves the same sorting rule (symlink ordering by symlink name) if that semantic is important (tests assert this behavior: [`custom-instructions` tests](src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1617)).
-    - Be cautious about recursive symlink cycles — the loader uses MAX_DEPTH to limit recursion: see [`resolveSymLink`](src/core/prompts/sections/custom-instructions.ts:91).
+- Short-term / quick patch:
+    - Update [`getEnabledRulesFromDirectory`](src/core/webview/kilorules.ts:47) to `lstat` each Dirent and when `isSymbolicLink()` is true, resolve with `fs.readlink` and `fs.stat` to detect file targets and include them in toggles. Preserve the same extension whitelist ([`allowedExtensions`](src/shared/kilocode/rules.ts:1)).
+    - As an alternative short patch, call a small shared helper that converts Dirent lists into file paths while resolving symlinks.
+- Medium-term / recommended:
+    - Factor the loader's symlink-aware enumeration into a shared utility (for example `src/utils/rules-reader.ts`) and use it in both `loadRuleFiles` and `getEnabledRulesFromDirectory`. This guarantees parity and reduces regressions.
+- Tests & considerations:
+    - Preserve behavior for sorting by symlink name if tests or UX rely on that ordering (see tests referencing `custom-instructions` at [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1617`](src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1617)).
+    - Be careful to bound recursion to avoid symlink cycles (use `MAX_DEPTH` as in [`resolveSymLink`](src/core/prompts/sections/custom-instructions.ts:91)).
 
 ## Research context & next steps
 
-- Confirm whether the failing case is in the webview toggle listing (missing entries) or in the compiled rules (missing content). Verify by comparing:
-    - What `loadRuleFiles(cwd)` returns: [`src/core/prompts/sections/custom-instructions.ts`](src/core/prompts/sections/custom-instructions.ts:211).
-    - What `getEnabledRules(workspacePath, ...)` returns for the same directory: [`src/core/webview/kilorules.ts`](src/core/webview/kilorules.ts:21).
-- If UI toggles are missing, implement the short-term fix and run the relevant tests:
-    - Tests around symlink handling live in: [`src/core/prompts/sections/__tests__/custom-instructions.spec.ts`](src/core/prompts/sections/__tests__/custom-instructions.spec.ts:1352) (see many symlink-related cases).
-- If desired, implement the unified helper and update both call sites; write unit tests mirroring the existing symlink tests.
+- To reproduce and confirm:
+    - Compare the string returned by the loader: [`loadRuleFiles(cwd)`](src/core/prompts/sections/custom-instructions.ts:211).
+    - Compare the toggles returned by the webview: [`getEnabledRules(workspacePath, ...)`](src/core/webview/kilorules.ts:21).
+- If UI toggles are missing:
+    1. Implement short-term patch in `getEnabledRulesFromDirectory` (quick verification).
+    2. Add unit tests that create symlinked files/dirs under a temp rules dir and assert toggles include symlink paths.
+    3. Consider refactor into shared util and run full test-suite.
 
 <a id="navigation-footer"></a>
 
