@@ -696,16 +696,41 @@ async function processFile(filePath) {
 }
 
 /**
- * Get all markdown files in the docs directory
+ * Get all markdown files from specified targets
  */
-async function getMarkdownFiles() {
+async function getMarkdownFiles(targets = ['docs/']) {
 	const { execSync } = await import("child_process")
-	const files = execSync(`find ${CONFIG.docsDir} -name "*.md" -type f`, { encoding: "utf8" })
-		.trim()
-		.split("\n")
-		.filter((file) => file.length > 0)
-
-	return files
+	const { existsSync, statSync } = await import("fs")
+	
+	const allFiles = []
+	
+	for (const target of targets) {
+		if (!existsSync(target)) {
+			console.warn(`Warning: Target "${target}" does not exist, skipping...`)
+			continue
+		}
+		
+		const stats = statSync(target)
+		
+		if (stats.isFile()) {
+			// Single file
+			if (target.endsWith('.md')) {
+				allFiles.push(target)
+			} else {
+				console.warn(`Warning: "${target}" is not a markdown file, skipping...`)
+			}
+		} else if (stats.isDirectory()) {
+			// Directory - find all markdown files
+			const files = execSync(`find "${target}" -name "*.md" -type f`, { encoding: "utf8" })
+				.trim()
+				.split("\n")
+				.filter((file) => file.length > 0)
+			allFiles.push(...files)
+		}
+	}
+	
+	// Remove duplicates and sort
+	return [...new Set(allFiles)].sort()
 }
 
 /**
@@ -812,7 +837,7 @@ async function main(options = {}) {
 	}
 
 	try {
-		const markdownFiles = await getMarkdownFiles()
+		const markdownFiles = await getMarkdownFiles(options.targets)
 
 		for (const file of markdownFiles) {
 			const result = await processFile(file)
@@ -877,6 +902,7 @@ async function main(options = {}) {
 if (import.meta.url === `file://${process.argv[1]}`) {
 	const args = process.argv.slice(2)
 	const options = {}
+	const targets = []
 
 	// Parse command line arguments
 	for (const arg of args) {
@@ -894,7 +920,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 				console.log(`
 KiloCode Documentation Fixer
 
-Usage: node docs-fixer.js [options]
+Usage: node docs-fixer.js [options] [targets...]
 
 Options:
   --dry-run    Run without making changes (preview mode)
@@ -902,13 +928,28 @@ Options:
   --validate   Run validation after fixes
   --help       Show this help message
 
+Targets:
+  [targets...] Specific files or directories to process (default: docs/)
+
 Examples:
   node docs-fixer.js --dry-run --verbose
   node docs-fixer.js --validate
+  node docs-fixer.js docs/architecture/
+  node docs-fixer.js docs/README.md docs/GLOSSARY.md
+  node docs-fixer.js docs/ tools/
         `)
 				process.exit(0)
+			default:
+				// If it doesn't start with --, it's a target
+				if (!arg.startsWith('--')) {
+					targets.push(arg)
+				}
+				break
 		}
 	}
+
+	// Set targets in options
+	options.targets = targets.length > 0 ? targets : ['docs/']
 
 	main(options).catch(console.error)
 }

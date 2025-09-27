@@ -13,8 +13,9 @@ import { main } from './docs-fixes/src/docs-fixer.js';
 // Parse command line arguments
 const args = process.argv.slice(2);
 const options = {};
+const targets = [];
 
-// Parse options
+// Parse options and targets
 for (const arg of args) {
   switch (arg) {
     case '--dry-run':
@@ -30,7 +31,7 @@ for (const arg of args) {
       console.log(`
 KiloCode Documentation Fixer
 
-Usage: node scripts/docs-fixer.js [options]
+Usage: node scripts/docs-fixer.js [options] [targets...]
 
 Options:
   --dry-run    Run without making changes (preview mode)
@@ -38,15 +39,30 @@ Options:
   --validate   Run validation after fixes
   --help       Show this help message
 
+Targets:
+  [targets...] Specific files or directories to process (default: docs/)
+
 Examples:
   node scripts/docs-fixer.js --dry-run --verbose
   node scripts/docs-fixer.js --validate
+  node scripts/docs-fixer.js docs/architecture/
+  node scripts/docs-fixer.js docs/README.md docs/GLOSSARY.md
+  node scripts/docs-fixer.js docs/ tools/
 
 For more information, see: scripts/docs-fixes/README.md
       `);
       process.exit(0);
+    default:
+      // If it doesn't start with --, it's a target
+      if (!arg.startsWith('--')) {
+        targets.push(arg);
+      }
+      break;
   }
 }
+
+// Set targets in options
+options.targets = targets.length > 0 ? targets : ['docs/'];
 
 // Run the documentation fixer
 main(options).catch(error => {

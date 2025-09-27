@@ -224,7 +224,6 @@ If linter names don't appear in output:
 - `package.json` - Command definitions
 
 ## Navigation
-
 - [← Tools Overview](README.md)
 - [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
 - [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
