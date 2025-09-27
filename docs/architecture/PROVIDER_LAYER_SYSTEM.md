@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of provider layer requirements and external API integration architecture in the KiloCode project. The system reflects findings from:
-
 - Provider layer system architecture analysis and API integration strategy development
 - Language model integration and request processing optimization research
 - External API communication and error handling system design
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of provider layer requi
 The system provides robust external API integration and provider management capabilities.
 
 ## Table of Contents
-
 - [System Architecture](#system-architecture)
 - [API Provider](#api-provider)
 - [Language Model Integration](#language-model-integration)
@@ -43,6 +41,7 @@ The Provider Layer system manages external API communication and provides unifie
 4. **Response Handler** - Response processing and validation
 
 ### Architecture Overview
+
 ```mermaid
 graph TB
     A[Request Processor] --> B[API Provider]
@@ -57,15 +56,18 @@ graph TB
 ## API Provider
 
 ### Provider Overview
+
 The API Provider manages communication with external APIs and services, providing a unified interface for different providers.
 
 **Key Features:**
+
 - **Multi-Provider Support** - Support for multiple API providers
 - **Request Routing** - Intelligent request routing and load balancing
 - **Authentication** - Secure authentication and credential management
 - **Rate Limiting** - API rate limiting and quota management
 
 ### Provider Implementation
+
 ```typescript
 interface APIProvider {
   sendRequest(request: APIRequest): Promise<APIResponse>;
@@ -100,15 +102,18 @@ class APIProviderImpl implements APIProvider {
 ## Language Model Integration
 
 ### Integration Overview
+
 Language Model Integration provides seamless access to various language models and AI services.
 
 **Supported Models:**
+
 - **OpenAI GPT** - GPT-3.5, GPT-4, and other OpenAI models
 - **Anthropic Claude** - Claude-3 and other Anthropic models
 - **Google PaLM** - PaLM-2 and other Google models
 - **Azure OpenAI** - Enterprise OpenAI services
 
 ### Integration Implementation
+
 ```typescript
 interface LanguageModelProvider {
   generateText(prompt: string, options: GenerationOptions): Promise<string>;
@@ -137,6 +142,7 @@ class LanguageModelProviderImpl implements LanguageModelProvider {
 ## Request Processing
 
 ### Processing Pipeline
+
 Request processing transforms and validates requests before sending them to external APIs.
 
 **Processing Stages:**
@@ -147,6 +153,7 @@ Request processing transforms and validates requests before sending them to exte
 5. **Request Sending** - Send request to external API
 
 ### Processing Implementation
+
 ```typescript
 interface RequestProcessor {
   processRequest(request: Request): Promise<ProcessedRequest>;
@@ -181,15 +188,18 @@ class RequestProcessorImpl implements RequestProcessor {
 ## Error Handling
 
 ### Error Management
+
 Comprehensive error handling for external API communication and provider management.
 
 **Error Types:**
+
 - **Authentication Errors** - Invalid credentials or permissions
 - **Rate Limit Errors** - API rate limit exceeded
 - **Network Errors** - Network connectivity issues
 - **Provider Errors** - Provider-specific errors
 
 ### Error Handling Implementation
+
 ```typescript
 interface ErrorHandler {
   handleError(error: Error, context: ErrorContext): Promise<ErrorResponse>;
@@ -232,15 +242,18 @@ class ErrorHandlerImpl implements ErrorHandler {
 ## Retry Logic
 
 ### Retry Strategy
+
 Intelligent retry logic for handling transient failures and improving reliability.
 
 **Retry Policies:**
+
 - **Exponential Backoff** - Exponential delay between retries
 - **Jitter** - Random delay variation to prevent thundering herd
 - **Circuit Breaker** - Circuit breaker pattern for failing services
 - **Dead Letter Queue** - Dead letter queue for failed requests
 
 ### Retry Implementation
+
 ```typescript
 interface RetryManager {
   executeWithRetry<T>(operation: () => Promise<T>, options: RetryOptions): Promise<T>;
@@ -293,15 +306,18 @@ class RetryManagerImpl implements RetryManager {
 ## Performance Optimization
 
 ### Optimization Strategies
+
 Performance optimization for external API communication and provider management.
 
 **Optimization Areas:**
+
 - **Connection Pooling** - Reuse HTTP connections
 - **Request Batching** - Batch multiple requests
 - **Caching** - Cache responses and metadata
 - **Load Balancing** - Distribute load across providers
 
 ### Performance Monitoring
+
 ```typescript
 interface PerformanceMonitor {
   recordRequest(provider: string, duration: number, success: boolean): void;
@@ -334,18 +350,21 @@ class PerformanceMonitorImpl implements PerformanceMonitor {
 ## Common Issues
 
 ### Provider Issues
+
 - **Authentication Failures** - Invalid credentials or expired tokens
 - **Rate Limit Exceeded** - API rate limits exceeded
 - **Service Unavailable** - External service downtime
 - **Response Format Changes** - Changes in API response format
 
 ### Integration Issues
+
 - **Model Availability** - Language model availability issues
 - **Response Quality** - Poor response quality from models
 - **Latency Issues** - High latency in API responses
 - **Cost Management** - API usage cost management
 
 ### Troubleshooting
+
 - **Log Analysis** - Analyze logs for error patterns
 - **Performance Monitoring** - Monitor performance metrics
 - **Provider Status** - Check provider status and health
@@ -354,7 +373,6 @@ class PerformanceMonitorImpl implements PerformanceMonitor {
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -364,5 +382,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← API Provider Patterns](API_PROVIDER_PATTERNS.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

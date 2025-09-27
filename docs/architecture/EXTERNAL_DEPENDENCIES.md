@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of external dependencies and their usage patterns in the KiloCode project. The catalog reflects findings from:
-
 - External dependency analysis and usage pattern research
 - Library integration and compatibility assessment
 - Performance and security impact evaluation
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of external dependencie
 The catalog provides systematic guidance for managing and using external dependencies effectively.
 
 ## Table of Contents
-
 - [AI/ML & Language Models](#aiml--language-models)
 - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
 - [Cloud & Authentication](#cloud--authentication)
@@ -36,18 +34,21 @@ The catalog provides systematic guidance for managing and using external depende
 ## AI/ML & Language Models
 
 ### Core AI Libraries
+
 - **OpenAI SDK** - GPT models and embeddings
 - **Anthropic SDK** - Claude models and safety features
 - **Google AI SDK** - PaLM and Gemini models
 - **Azure OpenAI SDK** - Enterprise OpenAI services
 
 ### Model Integration
+
 - **Provider Abstraction** - Unified interface for multiple providers
 - **Model Selection** - Dynamic model selection and routing
 - **Response Processing** - Standardized response handling
 - **Error Management** - Comprehensive error handling
 
 ### Usage Patterns
+
 ```typescript
 // Example usage pattern
 import { OpenAIProvider } from '@kilocode/providers';
@@ -66,18 +67,21 @@ const response = await provider.generate({
 ## Model Context Protocol (MCP)
 
 ### MCP Integration
+
 - **Protocol Implementation** - MCP protocol implementation
 - **Server Integration** - MCP server integration
 - **Client Management** - MCP client management
 - **Resource Handling** - Resource access and management
 
 ### MCP Components
+
 - **MCP Server** - Server implementation for resource access
 - **MCP Client** - Client for protocol communication
 - **Resource Manager** - Resource management and access
 - **Protocol Handler** - Protocol message handling
 
 ### Configuration
+
 ```typescript
 // MCP configuration example
 const mcpConfig = {
@@ -96,18 +100,21 @@ const mcpConfig = {
 ## Cloud & Authentication
 
 ### Cloud Services
+
 - **AWS SDK** - Amazon Web Services integration
 - **Azure SDK** - Microsoft Azure services
 - **Google Cloud SDK** - Google Cloud Platform services
 - **Firebase SDK** - Firebase services and authentication
 
 ### Authentication
+
 - **OAuth 2.0** - OAuth 2.0 authentication flow
 - **JWT Tokens** - JSON Web Token authentication
 - **API Keys** - API key authentication
 - **SSO Integration** - Single sign-on integration
 
 ### Security
+
 - **Credential Management** - Secure credential storage
 - **Token Refresh** - Automatic token refresh
 - **Permission Management** - Role-based access control
@@ -116,18 +123,21 @@ const mcpConfig = {
 ## Code Analysis & Processing
 
 ### Code Analysis Tools
+
 - **Tree-sitter** - Code parsing and analysis
 - **ESLint** - JavaScript/TypeScript linting
 - **Prettier** - Code formatting
 - **TypeScript** - Type checking and compilation
 
 ### Processing Libraries
+
 - **AST Manipulation** - Abstract syntax tree manipulation
 - **Code Transformation** - Code transformation and refactoring
 - **Pattern Matching** - Code pattern matching
 - **Dependency Analysis** - Code dependency analysis
 
 ### Integration Patterns
+
 ```typescript
 // Code analysis example
 import { parse } from '@tree-sitter/typescript';
@@ -145,18 +155,21 @@ const functionNode = tree.rootNode.firstChild;
 ## File Processing & Formats
 
 ### File Processing
+
 - **fs-extra** - Enhanced file system operations
 - **glob** - File pattern matching
 - **chokidar** - File system watching
 - **mime-types** - MIME type detection
 
 ### Format Support
+
 - **Markdown** - Markdown parsing and processing
 - **JSON** - JSON parsing and validation
 - **YAML** - YAML parsing and processing
 - **XML** - XML parsing and processing
 
 ### Processing Patterns
+
 ```typescript
 // File processing example
 import { readFile, writeFile } from 'fs-extra';
@@ -173,18 +186,21 @@ for (const file of files) {
 ## UI & Frontend (Webview)
 
 ### Frontend Frameworks
+
 - **React** - User interface components
 - **Vue.js** - Alternative UI framework
 - **Svelte** - Lightweight UI framework
 - **Lit** - Web components library
 
 ### Styling
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **Styled Components** - CSS-in-JS styling
 - **Sass/SCSS** - CSS preprocessing
 - **CSS Modules** - Scoped CSS styling
 
 ### State Management
+
 - **Redux** - Predictable state container
 - **Zustand** - Lightweight state management
 - **MobX** - Reactive state management
@@ -193,18 +209,21 @@ for (const file of files) {
 ## Development Tools & Build
 
 ### Build Tools
+
 - **Webpack** - Module bundler
 - **Vite** - Fast build tool
 - **Rollup** - Module bundler
 - **esbuild** - Fast JavaScript bundler
 
 ### Development Tools
+
 - **TypeScript** - Type checking and compilation
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
 - **Husky** - Git hooks
 
 ### Testing
+
 - **Jest** - JavaScript testing framework
 - **Vitest** - Fast unit testing
 - **Playwright** - End-to-end testing
@@ -213,18 +232,21 @@ for (const file of files) {
 ## Utilities & Helpers
 
 ### Utility Libraries
+
 - **Lodash** - Utility functions
 - **Ramda** - Functional programming utilities
 - **Date-fns** - Date manipulation
 - **uuid** - UUID generation
 
 ### Async Utilities
+
 - **p-limit** - Promise concurrency limiting
 - **p-retry** - Promise retry logic
 - **p-timeout** - Promise timeout
 - **p-queue** - Promise queue management
 
 ### Data Processing
+
 - **csv-parser** - CSV parsing
 - **xml2js** - XML parsing
 - **yaml** - YAML parsing
@@ -233,18 +255,21 @@ for (const file of files) {
 ## Dependency Management
 
 ### Package Management
+
 - **npm** - Node.js package manager
 - **yarn** - Alternative package manager
 - **pnpm** - Fast, disk space efficient package manager
 - **Lerna** - Monorepo management
 
 ### Version Management
+
 - **Semantic Versioning** - Version numbering scheme
 - **Dependency Updates** - Automated dependency updates
 - **Security Audits** - Security vulnerability scanning
 - **License Compliance** - License compliance checking
 
 ### Best Practices
+
 - **Dependency Pinning** - Pin dependency versions
 - **Regular Updates** - Regular dependency updates
 - **Security Scanning** - Regular security scanning
@@ -253,7 +278,6 @@ for (const file of files) {
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -263,5 +287,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← Provider Layer](PROVIDER_LAYER_SYSTEM.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

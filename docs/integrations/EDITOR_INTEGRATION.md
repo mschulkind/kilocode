@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of KiloCode's editor integration requirements and VS Code extension development patterns. The integration system reflects findings from:
-
 - VS Code extension API analysis and best practices research
 - User experience studies for editor integration workflows
 - Performance analysis of editor manipulation operations
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of KiloCode's editor in
 The system provides seamless integration between KiloCode's AI capabilities and the development environment.
 
 ## Table of Contents
-
 - [Integration Overview](#integration-overview)
 - [System Architecture](#system-architecture)
 - [Key Features](#key-features)
@@ -66,24 +64,28 @@ graph TB
 ## Key Features
 
 ### Editor Utilities
+
 - **File Operations**: Open, close, save, and manipulate files
 - **Selection Management**: Get and set text selections
 - **Cursor Control**: Navigate and position cursor
 - **Text Manipulation**: Insert, delete, and replace text
 
 ### Diff Visualization
+
 - **Side-by-side Comparison**: Visual diff display
 - **Inline Changes**: Highlighted modifications
 - **Navigation Controls**: Jump between changes
 - **Conflict Resolution**: Merge conflict assistance
 
 ### Decoration Management
+
 - **Visual Feedback**: Highlight code sections
 - **Error Indicators**: Mark problematic areas
 - **Progress Indicators**: Show operation status
 - **Custom Markers**: User-defined decorations
 
 ### State Management
+
 - **Editor State Tracking**: Monitor editor changes
 - **Synchronization**: Keep states in sync
 - **History Management**: Track modification history
@@ -103,6 +105,7 @@ graph TB
 4. Test integration functionality
 
 ### Configuration Options
+
 ```json
 {
   "kilocode.editor.enabled": true,
@@ -115,6 +118,7 @@ graph TB
 ## Usage Examples
 
 ### Basic Editor Operations
+
 ```typescript
 // Open a file
 await editorUtils.openFile('path/to/file.ts');
@@ -127,6 +131,7 @@ await editorUtils.insertText('// New comment');
 ```
 
 ### Diff Visualization
+
 ```typescript
 // Show diff between two versions
 await diffVisualization.showDiff(file1, file2);
@@ -139,6 +144,7 @@ await diffVisualization.acceptAll();
 ```
 
 ### Decoration Management
+
 ```typescript
 // Add error decoration
 await decorations.addError(range, 'Syntax error');
@@ -170,7 +176,9 @@ await decorations.clearAll();
 - Check system resources
 
 ### Debug Mode
+
 Enable debug logging for detailed troubleshooting:
+
 ```json
 {
   "kilocode.debug.enabled": true,
@@ -181,7 +189,6 @@ Enable debug logging for detailed troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

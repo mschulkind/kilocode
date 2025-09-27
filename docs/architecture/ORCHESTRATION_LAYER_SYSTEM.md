@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of orchestration requirements and task management system architecture in the KiloCode project. The system reflects findings from:
-
 - Task orchestration system architecture analysis and design patterns
 - Message queue service implementation and coordination strategy research
 - Task lifecycle management and state coordination system development
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of orchestration requir
 The system provides robust task orchestration and coordination capabilities.
 
 ## Table of Contents
-
 - [System Architecture](#system-architecture)
 - [Task Engine](#task-engine)
 - [Message Queue Service](#message-queue-service)
@@ -43,6 +41,7 @@ The Orchestration Layer system manages task execution, coordination, and state m
 4. **State Manager** - State coordination and consistency
 
 ### Architecture Overview
+
 ```mermaid
 graph TB
     A[Task Engine] --> B[Message Queue Service]
@@ -57,15 +56,18 @@ graph TB
 ## Task Engine
 
 ### Engine Overview
+
 The Task Engine provides core task execution capabilities and management functionality.
 
 **Key Features:**
+
 - **Task Execution** - Execute tasks with proper isolation
 - **Resource Management** - Manage task resources and constraints
 - **Error Handling** - Comprehensive error handling and recovery
 - **Performance Monitoring** - Task performance monitoring
 
 ### Engine Implementation
+
 ```typescript
 interface TaskEngine {
   executeTask(task: Task): Promise<TaskResult>;
@@ -97,15 +99,18 @@ class TaskEngineImpl implements TaskEngine {
 ## Message Queue Service
 
 ### Queue Overview
+
 The Message Queue Service provides reliable inter-component communication and message processing.
 
 **Key Features:**
+
 - **Message Routing** - Intelligent message routing and delivery
 - **Reliability** - Guaranteed message delivery
 - **Scalability** - Horizontal scaling capabilities
 - **Monitoring** - Message processing monitoring
 
 ### Queue Implementation
+
 ```typescript
 interface MessageQueue {
   publish(message: Message): Promise<void>;
@@ -135,15 +140,18 @@ class MessageQueueImpl implements MessageQueue {
 ## Orchestrator
 
 ### Orchestrator Overview
+
 The Orchestrator coordinates task execution and manages system-wide task scheduling and coordination.
 
 **Key Features:**
+
 - **Task Scheduling** - Intelligent task scheduling and prioritization
 - **Resource Coordination** - Resource allocation and management
 - **Load Balancing** - Distribute load across available resources
 - **Fault Tolerance** - Handle failures and recovery
 
 ### Orchestrator Implementation
+
 ```typescript
 interface Orchestrator {
   scheduleTask(task: Task): Promise<string>;
@@ -178,6 +186,7 @@ class OrchestratorImpl implements Orchestrator {
 ## Task Lifecycle Management
 
 ### Lifecycle Stages
+
 Tasks progress through various stages during their execution lifecycle.
 
 **Lifecycle Stages:**
@@ -189,6 +198,7 @@ Tasks progress through various stages during their execution lifecycle.
 6. **Cancelled** - Task cancelled by user or system
 
 ### Lifecycle Management
+
 ```typescript
 interface TaskLifecycleManager {
   createTask(task: Task): Promise<string>;
@@ -223,15 +233,18 @@ class TaskLifecycleManagerImpl implements TaskLifecycleManager {
 ## State Coordination
 
 ### State Management
+
 State coordination ensures consistent state across all system components and tasks.
 
 **State Types:**
+
 - **Task State** - Individual task state
 - **System State** - Overall system state
 - **Resource State** - Resource availability and usage
 - **Configuration State** - System configuration state
 
 ### State Coordination
+
 ```typescript
 interface StateCoordinator {
   updateState(stateId: string, state: any): Promise<void>;
@@ -265,15 +278,18 @@ class StateCoordinatorImpl implements StateCoordinator {
 ## Performance Optimization
 
 ### Optimization Strategies
+
 Performance optimization ensures efficient task execution and system responsiveness.
 
 **Optimization Areas:**
+
 - **Task Scheduling** - Optimize task scheduling algorithms
 - **Resource Utilization** - Optimize resource usage
 - **Message Processing** - Optimize message processing
 - **State Management** - Optimize state operations
 
 ### Performance Monitoring
+
 ```typescript
 interface PerformanceMonitor {
   recordTaskExecution(taskId: string, duration: number): void;
@@ -306,18 +322,21 @@ class PerformanceMonitorImpl implements PerformanceMonitor {
 ## Common Issues
 
 ### Task Execution Issues
+
 - **Task Failures** - Tasks failing unexpectedly
 - **Resource Exhaustion** - Insufficient resources for task execution
 - **Timeout Issues** - Tasks timing out
 - **Deadlocks** - Task execution deadlocks
 
 ### Coordination Issues
+
 - **State Inconsistency** - Inconsistent state across components
 - **Message Loss** - Messages not being delivered
 - **Scheduling Problems** - Task scheduling issues
 - **Load Balancing** - Uneven load distribution
 
 ### Troubleshooting
+
 - **Task Analysis** - Analyze task execution patterns
 - **State Investigation** - Investigate state consistency
 - **Performance Analysis** - Analyze system performance
@@ -326,7 +345,6 @@ class PerformanceMonitorImpl implements PerformanceMonitor {
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -335,6 +353,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
-- [← Orchestrator Documentation](../orchestrator/README.md)
-- [← Main Documentation](../README.md)
+- [← Orchestrator Documentation](../../orchestrator/README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

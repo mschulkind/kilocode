@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of duplicate API request issues and troubleshooting strategies in the KiloCode system. The guide reflects findings from:
-
 - Duplicate API request diagnosis and resolution strategy development
 - System architecture analysis for troubleshooting purposes
 - Common failure pattern identification and resolution approach research
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of duplicate API reques
 The guide provides systematic approaches to diagnosing and resolving duplicate API request issues.
 
 ## Table of Contents
-
 - [System Architecture Overview](#system-architecture-overview)
 - [Root Cause Analysis](#root-cause-analysis)
 - [Diagnostic Procedures](#diagnostic-procedures)
@@ -42,6 +40,7 @@ The KiloCode system architecture consists of multiple layers that can contribute
 4. **Provider Layer** - External API integration and management
 
 ### Architecture Flow
+
 ```mermaid
 graph TB
     A[UI Components] --> B[Communication Layer]
@@ -63,12 +62,14 @@ graph TB
 4. **Error Recovery** - Automatic retry mechanisms causing duplicate requests
 
 ### Contributing Factors
+
 - **System Architecture** - Distributed request handling
 - **User Interface** - Multiple interaction points
 - **Network Conditions** - Variable response times
 - **Concurrency** - High user activity periods
 
 ### Technical Root Causes
+
 - **Request ID Generation** - Insufficient uniqueness
 - **State Synchronization** - Race conditions in state updates
 - **Error Handling** - Inadequate error recovery
@@ -97,24 +98,28 @@ graph TB
 ## Subsystem Deep Dives
 
 ### UI Layer Analysis
+
 - **User Interaction** - Multiple user actions triggering requests
 - **State Management** - UI state consistency and updates
 - **Event Handling** - Event processing and propagation
 - **Response Display** - Response handling and display logic
 
 ### Communication Layer Analysis
+
 - **Message Routing** - Message routing and processing
 - **State Synchronization** - State synchronization between components
 - **Error Handling** - Error handling and recovery
 - **Performance** - Communication performance and optimization
 
 ### Orchestration Layer Analysis
+
 - **Task Management** - Task creation and management
 - **State Coordination** - State coordination across tasks
 - **Error Recovery** - Error recovery and retry mechanisms
 - **Performance** - Orchestration performance and efficiency
 
 ### Provider Layer Analysis
+
 - **API Integration** - External API integration and management
 - **Request Handling** - Request generation and processing
 - **Response Processing** - Response handling and validation
@@ -123,24 +128,28 @@ graph TB
 ## Common Failure Patterns
 
 ### Pattern 1: Race Conditions
+
 - **Symptoms** - Multiple requests sent simultaneously
 - **Causes** - Concurrent execution without proper synchronization
 - **Resolution** - Implement proper concurrency control
 - **Prevention** - Add request deduplication and state synchronization
 
 ### Pattern 2: State Inconsistency
+
 - **Symptoms** - Inconsistent system behavior
 - **Causes** - State updates not properly synchronized
 - **Resolution** - Fix state synchronization issues
 - **Prevention** - Implement atomic state updates
 
 ### Pattern 3: Error Recovery Loops
+
 - **Symptoms** - Repeated failed requests
 - **Causes** - Automatic retry mechanisms
 - **Resolution** - Fix error recovery logic
 - **Prevention** - Implement proper error handling
 
 ### Pattern 4: User Action Duplication
+
 - **Symptoms** - Multiple user actions triggering requests
 - **Causes** - Rapid user interactions
 - **Resolution** - Implement user action debouncing
@@ -169,18 +178,21 @@ graph TB
 ## Prevention Measures
 
 ### Development Practices
+
 - **Code Review** - Implement comprehensive code review
 - **Testing** - Develop comprehensive testing strategies
 - **Monitoring** - Implement real-time monitoring
 - **Documentation** - Maintain comprehensive documentation
 
 ### System Design
+
 - **Architecture** - Design for concurrency and reliability
 - **State Management** - Implement robust state management
 - **Error Handling** - Design comprehensive error handling
 - **Performance** - Design for performance and scalability
 
 ### Operational Practices
+
 - **Monitoring** - Implement comprehensive monitoring
 - **Alerting** - Set up proactive alerting
 - **Incident Response** - Develop incident response procedures
@@ -189,7 +201,6 @@ graph TB
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -199,5 +210,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 - [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

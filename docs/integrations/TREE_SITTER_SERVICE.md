@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of Tree Sitter's parsing capabilities and code analysis requirements in development environments. The service architecture reflects findings from:
-
 - Tree Sitter parser performance and accuracy analysis
 - Language-specific parsing pattern research
 - AST (Abstract Syntax Tree) processing optimization studies
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of Tree Sitter's parsin
 The system provides accurate and efficient code parsing for multiple programming languages.
 
 ## Table of Contents
-
 - [Service Overview](#service-overview)
 - [System Architecture](#system-architecture)
 - [Supported Languages](#supported-languages)
@@ -69,6 +67,7 @@ graph TB
 ## Supported Languages
 
 ### Primary Languages
+
 - **JavaScript/TypeScript** - Full ES6+ support
 - **Python** - Python 3.x syntax support
 - **Java** - Java 8+ features
@@ -77,6 +76,7 @@ graph TB
 - **Rust** - Modern Rust features
 
 ### Additional Languages
+
 - **Ruby** - Ruby 2.x+ syntax
 - **PHP** - PHP 7.x+ features
 - **C#** - .NET Core support
@@ -87,6 +87,7 @@ graph TB
 ## Query System
 
 ### Query Syntax
+
 ```typescript
 // Find function definitions
 (function_declaration name: (identifier) @function-name)
@@ -99,6 +100,7 @@ graph TB
 ```
 
 ### Query Operations
+
 - **Pattern Matching** - Find code patterns
 - **Syntax Highlighting** - Token-based highlighting
 - **Code Navigation** - Jump to definitions
@@ -118,6 +120,7 @@ graph TB
 4. Test parsing functionality
 
 ### Configuration Options
+
 ```json
 {
   "kilocode.treesitter.enabled": true,
@@ -130,6 +133,7 @@ graph TB
 ## Usage Examples
 
 ### Basic Parsing
+
 ```typescript
 // Parse JavaScript code
 const parser = await treeSitterService.getParser('javascript');
@@ -143,6 +147,7 @@ const nodeInfo = await treeSitterService.getNodeInfo(node);
 ```
 
 ### Code Analysis
+
 ```typescript
 // Find all function calls
 const calls = await treeSitterService.query(tree, '(call_expression)');
@@ -155,6 +160,7 @@ const analysis = await treeSitterService.analyzeCode(tree);
 ```
 
 ### Advanced Queries
+
 ```typescript
 // Find unused variables
 const unused = await treeSitterService.findUnusedVariables(tree);
@@ -169,12 +175,14 @@ const metrics = await treeSitterService.generateMetrics(tree);
 ## Performance Optimization
 
 ### Caching Strategies
+
 - **Parse Tree Caching** - Cache parsed ASTs
 - **Query Result Caching** - Cache query results
 - **Language Parser Caching** - Reuse parser instances
 - **Memory Management** - Efficient memory usage
 
 ### Optimization Techniques
+
 - **Incremental Parsing** - Parse only changed code
 - **Lazy Loading** - Load parsers on demand
 - **Batch Processing** - Process multiple files together
@@ -203,7 +211,9 @@ const metrics = await treeSitterService.generateMetrics(tree);
 - Use incremental parsing
 
 ### Debug Mode
+
 Enable detailed logging for troubleshooting:
+
 ```json
 {
   "kilocode.treesitter.debug": true,
@@ -214,7 +224,6 @@ Enable detailed logging for troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

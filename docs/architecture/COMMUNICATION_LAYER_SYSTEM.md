@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of the Communication Layer system architecture and implementation patterns. The system reflects findings from:
-
 - Inter-component communication pattern analysis and best practices research
 - Webview bridge implementation and optimization studies
 - Message handling and routing system design patterns
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of the Communication La
 The system provides robust communication capabilities between UI and backend components.
 
 ## Table of Contents
-
 - [System Architecture](#system-architecture)
 - [Webview Bridge](#webview-bridge)
 - [Message Handler](#message-handler)
@@ -43,6 +41,7 @@ The Communication Layer system facilitates seamless communication between the UI
 4. **Error Handler** - Error handling and recovery mechanisms
 
 ### Architecture Overview
+
 ```mermaid
 graph TB
     A[UI Components] --> B[Webview Bridge]
@@ -58,15 +57,18 @@ graph TB
 ## Webview Bridge
 
 ### Bridge Implementation
+
 The Webview Bridge provides a secure communication channel between the webview and the VS Code extension.
 
 **Key Features:**
+
 - **Secure Communication** - Encrypted message passing
 - **Bidirectional Messaging** - Two-way communication support
 - **Event Handling** - Real-time event processing
 - **Error Recovery** - Automatic error detection and recovery
 
 ### Bridge Configuration
+
 ```typescript
 interface BridgeConfig {
   secure: boolean;
@@ -95,15 +97,18 @@ class WebviewBridge {
 ## Message Handler
 
 ### Message Processing
+
 The Message Handler processes and routes messages between different system components.
 
 **Processing Features:**
+
 - **Message Routing** - Intelligent message routing
 - **Request/Response** - Request-response pattern support
 - **Async Processing** - Asynchronous message processing
 - **Queue Management** - Message queue management
 
 ### Handler Implementation
+
 ```typescript
 interface Message {
   id: string;
@@ -134,12 +139,14 @@ class MessageHandler {
 ## Message Types and Routing
 
 ### Message Categories
+
 - **UI Messages** - User interface interaction messages
 - **System Messages** - System state and configuration messages
 - **Data Messages** - Data transfer and synchronization messages
 - **Error Messages** - Error reporting and handling messages
 
 ### Routing Strategy
+
 ```typescript
 enum MessageType {
   UI_INTERACTION = 'ui.interaction',
@@ -169,15 +176,18 @@ class MessageRouter {
 ## State Synchronization
 
 ### Synchronization Strategy
+
 The State Manager ensures consistent state across all system components.
 
 **Synchronization Features:**
+
 - **Real-time Updates** - Immediate state updates
 - **Conflict Resolution** - Automatic conflict resolution
 - **State Persistence** - Persistent state storage
 - **Change Tracking** - State change tracking and auditing
 
 ### State Management
+
 ```typescript
 interface State {
   id: string;
@@ -217,15 +227,18 @@ class StateManager {
 ## Error Handling
 
 ### Error Management
+
 The Error Handler provides comprehensive error handling and recovery mechanisms.
 
 **Error Features:**
+
 - **Error Detection** - Automatic error detection
 - **Error Classification** - Error type classification
 - **Recovery Strategies** - Automatic recovery strategies
 - **Error Reporting** - Comprehensive error reporting
 
 ### Error Handling Implementation
+
 ```typescript
 enum ErrorType {
   COMMUNICATION_ERROR = 'communication.error',
@@ -261,12 +274,14 @@ class ErrorHandler {
 ## Performance Optimization
 
 ### Optimization Strategies
+
 - **Message Batching** - Batch multiple messages for efficiency
 - **Connection Pooling** - Reuse connections for better performance
 - **Caching** - Cache frequently accessed data
 - **Compression** - Compress large messages
 
 ### Performance Monitoring
+
 ```typescript
 class PerformanceMonitor {
   trackMessage(message: Message, duration: number): void {
@@ -290,12 +305,14 @@ class PerformanceMonitor {
 ## Common Issues
 
 ### Communication Issues
+
 - **Message Loss** - Messages not being delivered
 - **Timeout Errors** - Communication timeouts
 - **State Inconsistency** - Inconsistent state across components
 - **Performance Degradation** - Slow communication performance
 
 ### Troubleshooting
+
 - **Logging** - Comprehensive logging for debugging
 - **Monitoring** - Real-time performance monitoring
 - **Testing** - Automated testing for communication flows
@@ -304,7 +321,6 @@ class PerformanceMonitor {
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -314,5 +330,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← Orchestration Layer](ORCHESTRATION_LAYER_SYSTEM.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

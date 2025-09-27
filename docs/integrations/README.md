@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This documentation directory was established through comprehensive analysis of KiloCode's external integration requirements and capabilities. The structure reflects findings from:
-
 - Integration architecture analysis across all external systems
 - User experience research for different development environments
 - Performance analysis of integration patterns
@@ -22,7 +21,6 @@ This documentation directory was established through comprehensive analysis of K
 The organization supports both immediate integration setup and long-term integration strategy planning.
 
 ## Table of Contents
-
 - [Integration Overview](#integration-overview)
 - [Quick Start Guide](#quick-start-guide)
 - [Documentation Structure](#documentation-structure)
@@ -36,12 +34,14 @@ Welcome to the integrations documentation! This directory covers all external in
 ## Quick Start Guide
 
 ### For Developers
+
 - **Editor Setup**: Check [Editor Integration Guide](EDITOR_INTEGRATION.md) for VS Code and editor setup
 - **JetBrains Users**: Review [JetBrains Plugin Documentation](JETBRAINS_PLUGIN.md) for IDE integration
 - **Terminal Workflow**: See [Terminal Integration Guide](TERMINAL_INTEGRATION.md) for shell integration
 - **Browser Automation**: Explore [Browser Automation Documentation](BROWSER_AUTOMATION.md) for web interaction capabilities
 
 ### For System Administrators
+
 - **Service Integration**: Review [Tree-sitter Service Documentation](TREE_SITTER_SERVICE.md) for parsing service setup
 - **Architecture Overview**: Check [Integration Architecture](../architecture/README.md) for system design
 - **Security Considerations**: See [Integration Standards](../standards/README.md) for security guidelines
@@ -75,18 +75,19 @@ Each integration document cross-references related integrations and provides nav
 ## Cross-References
 
 ### Related Documentation
+
 - **Architecture**: [Integration Architecture](../architecture/README.md) for system design
 - **Services**: [Integration Services](../services/README.md) for service-specific documentation
 - **Standards**: [Integration Standards](../standards/README.md) for quality guidelines
 
 ### Implementation Context
+
 - **Tools**: [Development Tools](../tools/README.md) for implementation guidance
-- **Testing**: [Testing Infrastructure](../architecture/repository/TESTING_INFRASTRUCTURE.md) for integration testing
+- **Testing**: [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md) for integration testing
 
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

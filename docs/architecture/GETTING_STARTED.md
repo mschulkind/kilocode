@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of developer onboarding needs and best practices for the KiloCode project. The guide reflects findings from:
-
 - Developer onboarding experience analysis and improvement research
 - Development environment setup and configuration best practices
 - Codebase understanding and navigation strategy development
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of developer onboarding
 The guide provides systematic approaches to getting started with KiloCode development.
 
 ## Table of Contents
-
 - [Prerequisites](#prerequisites)
 - [Quick Start](#quick-start)
 - [Development Environment Setup](#development-environment-setup)
@@ -36,18 +34,21 @@ The guide provides systematic approaches to getting started with KiloCode develo
 ## Prerequisites
 
 ### System Requirements
+
 - **Node.js** - Version 18 or higher
 - **npm/pnpm** - Package manager (pnpm recommended)
 - **Git** - Version control system
 - **VS Code** - Recommended development environment
 
 ### Development Tools
+
 - **TypeScript** - Type checking and compilation
 - **ESLint** - Code linting and formatting
 - **Prettier** - Code formatting
 - **Jest** - Testing framework
 
 ### Knowledge Requirements
+
 - **JavaScript/TypeScript** - Core programming language
 - **React** - Frontend framework
 - **Node.js** - Backend runtime
@@ -56,27 +57,32 @@ The guide provides systematic approaches to getting started with KiloCode develo
 ## Quick Start
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/kilocode/kilocode.git
 cd kilocode
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 pnpm install
 ```
 
 ### 3. Build the Project
+
 ```bash
 pnpm build
 ```
 
 ### 4. Run Tests
+
 ```bash
 pnpm test
 ```
 
 ### 5. Start Development
+
 ```bash
 pnpm dev
 ```
@@ -90,6 +96,7 @@ pnpm dev
 4. **Enable Formatting** - Enable automatic code formatting
 
 ### Environment Variables
+
 ```bash
 # Create .env file
 cp .env.example .env
@@ -100,6 +107,7 @@ ANTHROPIC_API_KEY=your_api_key_here
 ```
 
 ### Git Configuration
+
 ```bash
 # Configure Git
 git config user.name "Your Name"
@@ -112,6 +120,7 @@ pnpm prepare
 ## Understanding the Codebase
 
 ### Project Structure
+
 ```
 kilocode/
 ├── src/                 # Source code
@@ -123,6 +132,7 @@ kilocode/
 ```
 
 ### Key Directories
+
 - **`src/`** - Main source code
 - **`packages/`** - Shared packages and libraries
 - **`apps/`** - Applications and services
@@ -130,6 +140,7 @@ kilocode/
 - **`scripts/`** - Build and utility scripts
 
 ### Architecture Overview
+
 - **UI Layer** - User interface components
 - **Communication Layer** - Inter-component communication
 - **Orchestration Layer** - Task orchestration and coordination
@@ -138,18 +149,21 @@ kilocode/
 ## Core Concepts
 
 ### System Architecture
+
 - **Modular Design** - Modular and extensible architecture
 - **Component-Based** - Component-based development approach
 - **Event-Driven** - Event-driven communication patterns
 - **Async Processing** - Asynchronous processing and handling
 
 ### Development Patterns
+
 - **TypeScript** - Type-safe development
 - **Functional Programming** - Functional programming patterns
 - **Immutable Data** - Immutable data structures
 - **Error Handling** - Comprehensive error handling
 
 ### Key Technologies
+
 - **React** - User interface framework
 - **Node.js** - Backend runtime
 - **TypeScript** - Type checking and compilation
@@ -171,6 +185,7 @@ kilocode/
 5. **Deploy** - Deploy to staging and production
 
 ### Quality Assurance
+
 - **Code Review** - Peer code review process
 - **Automated Testing** - Comprehensive test coverage
 - **Linting** - Code quality and style checking
@@ -179,18 +194,21 @@ kilocode/
 ## Testing & Quality
 
 ### Testing Strategy
+
 - **Unit Tests** - Component and function testing
 - **Integration Tests** - System integration testing
 - **End-to-End Tests** - Full application testing
 - **Performance Tests** - Performance and load testing
 
 ### Quality Tools
+
 - **ESLint** - Code linting and style checking
 - **Prettier** - Code formatting
 - **TypeScript** - Type checking
 - **Jest** - Testing framework
 
 ### Testing Commands
+
 ```bash
 # Run all tests
 pnpm test
@@ -218,12 +236,14 @@ pnpm lint:fix
 5. **Address Feedback** - Address review feedback
 
 ### Code Standards
+
 - **TypeScript** - Use TypeScript for type safety
 - **ESLint** - Follow ESLint rules and guidelines
 - **Prettier** - Use Prettier for code formatting
 - **Testing** - Write comprehensive tests
 
 ### Documentation
+
 - **Code Comments** - Add meaningful code comments
 - **README Updates** - Update README files
 - **API Documentation** - Document API changes
@@ -232,18 +252,21 @@ pnpm lint:fix
 ## Troubleshooting
 
 ### Common Issues
+
 - **Build Failures** - Check Node.js version and dependencies
 - **Test Failures** - Verify test environment and configuration
 - **Linting Errors** - Fix code style and quality issues
 - **Type Errors** - Resolve TypeScript type errors
 
 ### Getting Help
+
 - **Documentation** - Check project documentation
 - **Issues** - Search existing issues
 - **Discussions** - Join project discussions
 - **Community** - Connect with community
 
 ### Debugging
+
 - **VS Code Debugger** - Use VS Code debugging features
 - **Console Logging** - Add console logging for debugging
 - **Error Tracking** - Use error tracking tools
@@ -252,7 +275,6 @@ pnpm lint:fix
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -262,5 +284,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← Development Guide](repository/DEVELOPMENT_GUIDE.md)
 - [← Repository Structure](repository/REPOSITORY_STRUCTURE.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

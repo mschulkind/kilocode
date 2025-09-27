@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of race conditions in the KiloCode orchestrator-subtask execution flow. The analysis reflects findings from:
-
 - Concurrent system behavior analysis and race condition identification
 - Orchestrator-subtask execution flow investigation
 - API request duplication pattern analysis
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of race conditions in t
 The analysis provides detailed insights into the root causes of API duplication issues.
 
 ## Table of Contents
-
 - [Race Condition Overview](#race-condition-overview)
 - [Technical Analysis](#technical-analysis)
 - [Root Cause Identification](#root-cause-identification)
@@ -34,6 +32,7 @@ The analysis provides detailed insights into the root causes of API duplication 
 The API duplication issue is caused by concurrent recursive calls in the orchestrator-subtask execution flow, leading to multiple simultaneous API requests and jumbled responses.
 
 **Key Characteristics:**
+
 - **Concurrent Execution** - Multiple subtasks executing simultaneously
 - **Recursive Calls** - Self-referential execution patterns
 - **Race Conditions** - Timing-dependent behavior
@@ -48,6 +47,7 @@ The API duplication issue is caused by concurrent recursive calls in the orchest
 ## Technical Analysis
 
 ### Orchestrator-Subtask Flow
+
 ```mermaid
 graph TB
     A[Orchestrator] --> B[Subtask 1]
@@ -67,6 +67,7 @@ graph TB
 4. **Response Handling** - Race conditions in response processing
 
 ### Execution Patterns
+
 - **Sequential Execution** - Normal, non-duplicated flow
 - **Concurrent Execution** - Problematic, duplicated flow
 - **Recursive Execution** - Self-referential, amplified duplication
@@ -81,12 +82,14 @@ graph TB
 4. **Error Recovery** - Automatic retry mechanisms
 
 ### Contributing Factors
+
 - **System Architecture** - Distributed request handling
 - **User Interface** - Multiple interaction points
 - **Network Conditions** - Variable response times
 - **Concurrency** - High user activity periods
 
 ### Technical Root Causes
+
 - **Request ID Generation** - Insufficient uniqueness
 - **State Synchronization** - Race conditions in state updates
 - **Error Handling** - Inadequate error recovery
@@ -95,18 +98,21 @@ graph TB
 ## Impact Assessment
 
 ### User Experience Impact
+
 - **Interface Confusion** - Multiple spinners and jumbled responses
 - **Performance Degradation** - Slower response times
 - **Reliability Issues** - Inconsistent behavior
 - **User Frustration** - Poor user experience
 
 ### System Performance Impact
+
 - **Increased Load** - Unnecessary API requests
 - **Resource Consumption** - Higher CPU and memory usage
 - **Network Overhead** - Additional network traffic
 - **Database Load** - Increased database queries
 
 ### Business Impact
+
 - **User Satisfaction** - Decreased user satisfaction
 - **System Reliability** - Reduced system reliability
 - **Development Velocity** - Slowed development progress
@@ -135,7 +141,6 @@ graph TB
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -145,5 +150,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
 - [← Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

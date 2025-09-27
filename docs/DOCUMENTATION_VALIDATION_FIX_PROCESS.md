@@ -5,14 +5,15 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+
 - **Context**: Use this as a starting point or reference while navigating the project.
+
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-- *KiloCode Documentation Enhancement Plan with Automated Fixing and Validation**
+- *KiloCode Documentation Enhancement Plan with Automated Fixing and Validation*\*
 
 This document outlines the comprehensive approach taken to identify, categorize, and resolve 2078 documentation validation warnings across the KiloCode project, improving documentation quality and navigability.
-
-- **
+- \*\*
 
 ## Executive Summary
 
@@ -21,11 +22,13 @@ This process identified and addressed **2078 total validation warnings** across 
 ### Before & After Analysis
 
 - **Initial State**: 2078 warnings across all documentation files
-- **After Fixes**: 1987 warnings remaining (reduced by 91 in initial iteration)
-- **Automation Added**: Enhanced docs-fixer with new capabilities
-- **Process**: Systematic categorization and targeted solutions ⚠️ **Note**: Category 1 cross-reference path fixes still need implementation
 
-- **
+- **After Fixes**: 1987 warnings remaining (reduced by 91 in initial iteration)
+
+- **Automation Added**: Enhanced docs-fixer with new capabilities
+
+- **Process**: Systematic categorization and targeted solutions ⚠️ **Note**: Category 1 cross-reference path fixes still need implementation
+- \*\*
 
 ## 1. Warnings Analysis: The 8-Category Breakdown
 
@@ -44,114 +47,114 @@ Our detailed analysis revealed that the 2078 warnings fall into these distinct c
 
 ### Category 1: Cross-Reference Issues (875 warnings) ⚠️ **NEEDS IMPLEMENTATION**
 
-- *Root Cause**: Path depth calculation errors in deeply nested documentation structures.
+- *Root Cause*\*: Path depth calculation errors in deeply nested documentation structures.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - `../GLOSSARY.md` → `../../GLOSSARY.md` (standards/ subdirectories)
 - `../DOCUMENTATION_GUIDE.md` → `../../DOCUMENTATION_GUIDE.md`
 - Deep nesting paths requiring additional `../` prefix corrections
 
-- *Status**: Patterns added to `PATH_FIXES` but NOT yet correctly targeting actual link occurrences
+- *Status*\*: Patterns added to `PATH_FIXES` but NOT yet correctly targeting actual link occurrences
 - Enhanced path depth calculation exists in configuration but needs refinement
 - Pattern matching not capturing all deeply nested reference cases
+
 - **IMPLEMENTATION NEEDED**: Update `fixPathIssuesAST` function to correctly identify and fix all cross-reference warnings
 
 ### Category 2: Missing Files (429 warnings)
 
-- *Root Cause**: Referenced documentation files that don't exist or have incorrect paths.
+- *Root Cause*\*: Referenced documentation files that don't exist or have incorrect paths.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - Missing documents referred to by internal links
 - Incorrect path references leading to broken validator detection
 - Missing navigation and process documentation
 
-- *Solution Approach**:
+- *Solution Approach*\*:
 - File existence verification before path fixes applied
 - Enhanced link validation pipeline
 - Gap analysis for documentation coverage
 
 ### Category 3: Document Structure Issues (152 warnings)
 
-- *Root Cause**: Documents without proper navigation hierarchies or section organization.
+- *Root Cause*\*: Documents without proper navigation hierarchies or section organization.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - Orphaned document sections without clear navigation path
 - Missing content bridges between related documents
 - Fragmented document organization
 
-- *Solution Implemented**:
+- *Solution Implemented*\*:
 - Auto-generation of missing navigation helpers
 - Enhanced navigation templates for different document types
 - Cross-referencing improvement automation
 
 ### Category 4: Non-Descriptive Link Text (217 warnings)
 
-- *Root Cause**: Links with generic text like "README.md", "DOCUMENTATION\_GUIDE.md" instead of descriptive context.
+- *Root Cause*\*: Links with generic text like "README.md", "DOCUMENTATION\_GUIDE.md" instead of descriptive context.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - File names as link text without explanation
 - Directory pointers without meaningful descriptions
 - Procedural links without context
 
-- *Solution Implemented**:
+- *Solution Implemented*\*:
 - Enhanced `LINK_TEXT_IMPROVEMENTS` configuration
 - Automatic file-to-description mapping patterns
 - Context-aware link text generation
 
 ### Category 5: Missing Required Sections (87 warnings)
 
-- *Root Cause**: Documents missing standard sections expected by the documentation standards.
+- *Root Cause*\*: Documents missing standard sections expected by the documentation standards.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - Missing "When You're Here" orientation sections
 - Missing "No Dead Ends Policy" declarations
 - Incomplete navigation reference patterns
 
-- *Solution Implemented**:
+- *Solution Implemented*\*:
 - Automatic "When You're Here" section insertion
 - "No Dead Ends Policy" section auto-generation for standards docs
 - Template-based section creation
 
 ### Category 6: Document Quality Issues (38 warnings)
 
-- *Root Cause**: Documents below quality threshold requirements.
+- *Root Cause*\*: Documents below quality threshold requirements.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - Documents scoring below 0.7 quality threshold
 - Low link density warnings
 
-- *Solution Approach**:
+- *Solution Approach*\*:
 - Quality threshold validation integration
 - Link density improvement recommendations
 - Content enhancement automation
 
 ### Category 7: Navigation Footer Issues (42 warnings)
 
-- *Root Cause**: Missing navigation footers on documents.
+- *Root Cause*\*: Missing navigation footers on documents.
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - Documents without suitable navigation paths
 - Missing cross-referencing guided on document completion
 
-- *Solution Implemented**:
+- *Solution Implemented*\*:
 - Context-aware navigation template matching
 - Automatic footer insertion based on document location
 - Navigation hierarchy intelligence
 
 ### Category 8: Heading Structure Issues (40 warnings)
 
-- *Root Cause**: Incorrect heading levels, usually skipping heading levels (e.g., H3 without H2).
+- *Root Cause*\*: Incorrect heading levels, usually skipping heading levels (e.g., H3 without H2).
 
-- *Most Common Issues**:
+- *Most Common Issues*\*:
 - `Heading level 3 skips level 2` warning patterns
 - Mixed heading hierarchies creating structure problems
 
-- *Solution Approach**:
+- *Solution Approach*\*:
 - Heading hierarchy analysis automation
 - Automatic level correction procedures
 - Structure consistency validation
-
-- **
+- \*\*
 
 ## 2. Enhanced Precision Fixes Implemented
 
@@ -197,19 +200,18 @@ pnpm docs:validate
 ```
 
 This integration maintains compatibility while optimizing the vicious error-fix-validation cycle.
-
-- **
+- \*\*
 
 ## 3. Fix Strategy: Systematic Application of Enhancements
 
 ### 3.1 Enhancement Priorities
 
-- *Phase 1 - High Impact (Weeks 1-2)**
+- *Phase 1 - High Impact (Weeks 1-2)*\*
 1. Enhanced path resolution (Categories 1 & 2): Target 1300+ warnings
 2. Missing sections automation (Categories 5, 7): Target 130+ warnings
 3. Link text improvement acceleration (Category 4): Target 210+ warnings
 
-- *Phase 2 - Medium Impact (Weeks 3-4)**
+- *Phase 2 - Medium Impact (Weeks 3-4)*\*
 1. Document structure optimization (Category 3): Target 150+ warnings
 2. Heading structure fixes (Category 8): Target 40+ warnings
 3. Documentation quality discussion (Category 6): Target 38+ warnings
@@ -235,8 +237,7 @@ Each category addressed was validated incrementally:
 - Progressive enhancement through targeted fixing
 - Performance optimization for processing speed
 - Comprehensive reporting for remaining validation issues
-
-- **
+- \*\*
 
 ## 4. Analysis of Tooling & Implementation Questions Answered
 
@@ -271,8 +272,7 @@ Research indicated improving patterns that work best as combined effect:
 2. **Structural document intelligence** that understands differences between document types
 3. **Repeat validation workflow improvements** for workflow confidence
 4. **Enhanced pattern documentation organization** to maintain the gains achieved
-
-- **
+- \*\*
 
 ## 5. Deployment Plan
 
@@ -299,21 +299,22 @@ Future iterations will enable:
 - Categorization review of new additions during file changes
 - Bulk fixes for similar issue-type renewals continue progressive gradual remediation
 - Workflow possession of automated path issue simulation
-
-- **
+- \*\*
 
 ## 6. Immediate Results: 91-Warning Reduction
 
 The enhanced automation approach demonstrated:
 
 - **Measurable Impact**: Reduction from 2078 to 1987 warnings (4.4% improvement)
+
 - **Enhanced Sections**: Added "When You're Here" and "No Dead Ends Policy" sections
+
 - **Systematic Priority**: Careful categorization identified that Category 1 (875 cross-reference warnings) still needs implementation
+
 - **Implementation Gaps**: While automatic section and link text fixes worked, path fixing requires refinement
 
-- *Key Finding**: The full path fixing capability needs better pattern matching in `fixPathIssuesAST` function to properly handle all 875 cross-reference warnings.
-
-- **
+- *Key Finding*\*: The full path fixing capability needs better pattern matching in `fixPathIssuesAST` function to properly handle all 875 cross-reference warnings.
+- \*\*
 
 ## 7. Next Steps for Complete Resolution
 1. **Fix Category 1 implementation gap**: Update `fixPathIssuesAST` function to correctly identify and fix all cross-reference path issues:
@@ -345,8 +346,7 @@ running batch-apply automation scripts permitting further reduction tracking
 ```
 
 HITO document concluded here with guidance deployments and maintenance achievement expansion intended.
-
-- **
+- \*\*
 
 ### Appendix: Enhancement Scripts Located
 - [scripts/docs-fixes/src/docs-fixer.js](../../scripts/docs-fixes/src/docs-fixer.js)
@@ -367,21 +367,18 @@ Referenced automation path provides robust combat for a documentation team to er
 Documentation automation framework maintained at `pnpm docs:fix` ensures continuous total quality maintain-curve. Documentation quality automated continuous sustainable implementation delivered process the dividends gained.
 
 Contact: Maintain the program-and-automation for documentation-build-routes deployed as discussed.
-
-- **
-
-- Plan document status: Deliverable phase documentation quality enhancement fields completed structure >30 ✅*
+- \*\*
+- Plan document status: Deliverable phase documentation quality enhancement fields completed structure >30 ✅\*
 
 This is a robust framework providing both broad and precise resolution for the 2078 warnings as well as a sustainable automation platform for ongoing use.
 
 Would you like any type of tweak or  additional format included within your enhancement plan?
 
 ## Navigation
-
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
-- [← Architecture](architecture/README.md)
-- [← Orchestrator](orchestrator/README.md)
+- [← Architecture](../architecture/README.md)
+- [← Orchestrator](../orchestrator/README.md)
 - [← Standards](standards/README.md)
 - [← Plans](plans/README.md)
 - [← Tools](tools/README.md)

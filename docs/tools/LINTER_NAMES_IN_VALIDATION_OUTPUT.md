@@ -1,5 +1,13 @@
 # How Linter Names Make It to the `docs:validate` Output
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+- **Context**: Use this as a starting point or reference while navigating the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 This document explains the complete flow of how linter names appear in the `docs:validate` command output, from configuration to final display.
 
 ## Overview
@@ -15,6 +23,7 @@ pnpm docs:validate
 ```
 
 This executes the script defined in `package.json`:
+
 ```json
 "docs:validate": "bash scripts/docs-validate.sh"
 ```
@@ -22,6 +31,7 @@ This executes the script defined in `package.json`:
 ### 2. Validation Script
 
 The `scripts/docs-validate.sh` script runs:
+
 ```bash
 script -qfc "remark \"$TARGET\" --quiet > /dev/null" /dev/null
 ```
@@ -51,7 +61,6 @@ Remark reads the `.remarkrc` configuration file:
 ### 1. Built-in Remark-Lint Plugins
 
 The `remark-preset-lint-recommended` preset includes these plugins:
-
 - `remark-lint:final-newline` - Ensures files end with newline
 - `remark-lint:list-item-bullet-indent` - Validates list indentation
 - `remark-lint:no-blockquote-without-marker` - Requires blockquote markers
@@ -65,6 +74,7 @@ The `remark-preset-lint-recommended` preset includes these plugins:
 - `remark-lint:no-unused-definitions` - Flags unused link definitions
 
 **Output Format:**
+
 ```
 151:36    warning    Unexpected missing final newline character    final-newline    remark-lint
 ```
@@ -72,11 +82,11 @@ The `remark-preset-lint-recommended` preset includes these plugins:
 ### 2. Link Validation Plugin
 
 The `remark-validate-links` plugin provides:
-
 - `remark-validate-links:missing-file` - Missing file references
 - `remark-validate-links:missing-heading` - Missing heading references
 
 **Output Format:**
+
 ```
 197:33-197:44    warning    Cannot find file `ui`    missing-file    remark-validate-links:missing-file
 ```
@@ -86,7 +96,6 @@ The `remark-validate-links` plugin provides:
 #### A. `remark-kilocode-standards.js`
 
 This plugin provides KiloCode-specific validation rules:
-
 - `remark-kilocode-standards:kilocode-descriptive-links` - Non-descriptive link text
 - `remark-kilocode-standards:kilocode-title-required` - Missing H1 title
 - `remark-kilocode-standards:kilocode-research-context-required` - Missing Research Context
@@ -98,7 +107,6 @@ This plugin provides KiloCode-specific validation rules:
 #### B. `remark-kilocode-comprehensive.js`
 
 This plugin provides advanced validation rules:
-
 - `remark-kilocode-comprehensive:kilocode-title-required` - Missing H1 title
 - `remark-kilocode-comprehensive:kilocode-research-context-required` - Missing Research Context
 - `remark-kilocode-comprehensive:kilocode-navigation-footer-required` - Missing navigation footer
@@ -116,6 +124,7 @@ This plugin provides advanced validation rules:
 - `remark-kilocode-comprehensive:kilocode-orphaned-sections` - Orphaned sections
 
 **Output Format:**
+
 ```
 1:1-1:51    warning    Document must include No Dead Ends Policy    remark-kilocode-comprehensive:kilocode-no-dead-ends-required
 ```
@@ -169,6 +178,7 @@ LINE:COLUMN    SEVERITY    MESSAGE    RULE_ID    SOURCE
 ```
 
 **Example:**
+
 ```
 151:36    warning    Unexpected missing final newline character    final-newline    remark-lint
 ```
@@ -183,7 +193,6 @@ Where:
 ## Plugin Execution Order
 
 Plugins are executed in the order defined in `.remarkrc`:
-
 1. `remark-preset-lint-recommended` (built-in rules)
 2. `remark-gfm` (GitHub Flavored Markdown)
 3. `remark-frontmatter` (frontmatter parsing)
@@ -193,7 +202,6 @@ Plugins are executed in the order defined in `.remarkrc`:
 7. `./plugins/remark-kilocode-comprehensive.js` (KiloCode comprehensive)
 
 ## Key Points
-
 1. **Source Names**: The `source` field identifies which plugin generated the message
 2. **Rule IDs**: The `ruleId` field identifies the specific rule within that plugin
 3. **Custom Plugins**: KiloCode custom plugins use descriptive rule IDs like `kilocode-descriptive-links`
@@ -203,16 +211,24 @@ Plugins are executed in the order defined in `.remarkrc`:
 ## Troubleshooting
 
 If linter names don't appear in output:
-
 1. Check that plugins are properly configured in `.remarkrc`
 2. Verify that custom plugins export the correct function signature
 3. Ensure that `file.message()` calls include both `ruleId` and `source` parameters
 4. Check that the plugin is actually being executed (add console.log for debugging)
 
 ## Related Files
-
 - `.remarkrc` - Main configuration file
 - `plugins/remark-kilocode-standards.js` - Basic KiloCode validation
 - `plugins/remark-kilocode-comprehensive.js` - Advanced KiloCode validation
 - `scripts/docs-validate.sh` - Validation script
 - `package.json` - Command definitions
+
+## Navigation
+
+- [← Tools Overview](README.md)
+- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

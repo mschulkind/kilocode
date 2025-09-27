@@ -3,7 +3,7 @@
 > bash scripts/docs-validate.sh
 
 [4m[33mdocs/architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 27 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 29 sections that might be orphaned[22m
 154:1-154:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 155:1-155:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
@@ -20,14 +20,14 @@
 903:1-903:51    [33mwarning[39m [1mCross-reference "../GLOSSARY.md" may be invalid[22m
 
 [4m[33mdocs/architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 52 sections that might be orphaned[22m
-175:1-175:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-176:1-176:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 53 sections that might be orphaned[22m
+172:1-172:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+173:1-173:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 46 sections that might be orphaned[22m
-156:1-156:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-157:1-157:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 47 sections that might be orphaned[22m
+153:1-153:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+154:1-154:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/API_PROVIDER_PATTERNS.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 38 sections that might be orphaned[22m
@@ -92,27 +92,27 @@
 
 [4m[33mdocs/architecture/branches/README.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 88 sections that might be orphaned[22m
-167:1-167:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-169:1-169:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-170:1-170:51    [33mwarning[39m [1mCross-reference "../../../README.md" may be invalid[22m
+164:1-164:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+166:1-166:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+167:1-167:51    [33mwarning[39m [1mCross-reference "../../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/COMMUNICATION_LAYER_SYSTEM.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 51 sections that might be orphaned[22m
-345:1-345:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-346:1-346:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+333:1-333:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+334:1-334:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/CONSOLIDATION_PLAN.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 100 sections that might be orphaned[22m
-191:1-191:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-192:1-192:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+188:1-188:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+189:1-189:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 83 sections that might be orphaned[22m
-190:1-190:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-191:1-191:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 84 sections that might be orphaned[22m
+187:1-187:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+188:1-188:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 70 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 65 sections that might be orphaned[22m
 161:1-161:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 162:1-162:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
@@ -133,36 +133,36 @@
 
 [4m[33mdocs/architecture/OBSERVABILITY_LAYER_SYSTEM.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 41 sections that might be orphaned[22m
-371:1-371:51    [33mwarning[39m [1mCross-reference "../laminar/README.md" may be invalid[22m
-372:1-372:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-373:1-373:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+352:1-352:51    [33mwarning[39m [1mCross-reference "../laminar/README.md" may be invalid[22m
+353:1-353:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+354:1-354:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/ORCHESTRATION_LAYER_SYSTEM.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 49 sections that might be orphaned[22m
-371:1-371:51    [33mwarning[39m [1mCross-reference "../../orchestrator/README.md" may be invalid[22m
-371:3-371:63    [33mwarning[39m [1mCannot find file [36m`../../orchestrator/README.md`[39m; did you mean [36m`../orchestrator/README.md`[39m[22m                                                                   missing-file            remark-validate-links:missing-file
-372:1-372:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-373:1-373:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+356:1-356:51    [33mwarning[39m [1mCross-reference "../../orchestrator/README.md" may be invalid[22m
+356:3-356:63    [33mwarning[39m [1mCannot find file [36m`../../orchestrator/README.md`[39m; did you mean [36m`../orchestrator/README.md`[39m[22m                                                                   missing-file            remark-validate-links:missing-file
+357:1-357:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+358:1-358:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 82 sections that might be orphaned[22m
-229:1-229:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-230:1-230:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 79 sections that might be orphaned[22m
+213:1-213:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+214:1-214:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/PROVIDER_LAYER_SYSTEM.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 60 sections that might be orphaned[22m
-400:1-400:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-401:1-401:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+385:1-385:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+386:1-386:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/race-condition/CODE_FLOW_ANALYSIS.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 55 sections that might be orphaned[22m
-290:1-290:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-294:1-294:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+263:1-263:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+267:1-267:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/race-condition/IMPACT_ASSESSMENT.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 105 sections that might be orphaned[22m
-440:1-440:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-444:1-444:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 120 sections that might be orphaned[22m
+347:1-347:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+351:1-351:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/race-condition/NAVIGATION_SCENARIO.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 84 sections that might be orphaned[22m
@@ -175,14 +175,14 @@
 441:1-441:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/race-condition/PREVENTION_MEASURES.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 103 sections that might be orphaned[22m
-395:1-395:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-399:1-399:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 111 sections that might be orphaned[22m
+347:1-347:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+351:1-351:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/race-condition/PROBLEM_OVERVIEW.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 85 sections that might be orphaned[22m
-307:1-307:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-311:1-311:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 92 sections that might be orphaned[22m
+259:1-259:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+263:1-263:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/race-condition/README.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 19 sections that might be orphaned[22m
@@ -237,9 +237,9 @@
 [4m[33mdocs/architecture/README.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 26 sections that might be orphaned[22m
 1:1-1:51        [33mwarning[39m [1mDocument has high link density. Consider reducing links or expanding content.[22m
-69:1-69:51      [33mwarning[39m [1mCross-reference "../ui/UI_LAYER_SYSTEM.md" may be invalid[22m
+65:1-65:51      [33mwarning[39m [1mCross-reference "../ui/UI_LAYER_SYSTEM.md" may be invalid[22m
+132:1-132:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 136:1-136:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
-140:1-140:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/architecture/REPOSITORY_OVERVIEW.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 40 sections that might be orphaned[22m
@@ -672,9 +672,9 @@
 223:3-223:42    [33mwarning[39m [1mCannot find file [36m`../GLOSSARY.md`[39m; did you mean [36m`GLOSSARY.md`[39m[22m                                                                                               missing-file            remark-validate-links:missing-file
 
 [4m[33mdocs/improvements/PRIORITY_IMPROVEMENTS.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 136 sections that might be orphaned[22m
-400:1-400:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-401:1-401:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 91 sections that might be orphaned[22m
+319:1-319:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+320:1-320:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/improvements/README.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 23 sections that might be orphaned[22m
@@ -694,27 +694,27 @@
 98:1-98:51      [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/improvements/RESEARCH_GAPS.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 63 sections that might be orphaned[22m
-320:1-320:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-321:1-321:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 78 sections that might be orphaned[22m
+319:1-319:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+320:1-320:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/improvements/TECHNICAL_DEBT.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 75 sections that might be orphaned[22m
-332:1-332:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-333:1-333:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 70 sections that might be orphaned[22m
+272:1-272:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+273:1-273:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/integrations/BROWSER_AUTOMATION.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 33 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 35 sections that might be orphaned[22m
 236:1-236:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
 237:1-237:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/integrations/EDITOR_INTEGRATION.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 33 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 35 sections that might be orphaned[22m
 201:1-201:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
 202:1-202:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/integrations/JETBRAINS_PLUGIN.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 37 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 39 sections that might be orphaned[22m
 186:1-186:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
 187:1-187:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
@@ -735,12 +735,12 @@
 101:1-101:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/integrations/TERMINAL_INTEGRATION.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 35 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 37 sections that might be orphaned[22m
 228:1-228:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
 229:1-229:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/integrations/TREE_SITTER_SERVICE.md[39m[24m
-1:1-1:51        [33mwarning[39m [1mDocument has 30 sections that might be orphaned[22m
+1:1-1:51        [33mwarning[39m [1mDocument has 32 sections that might be orphaned[22m
 238:1-238:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
 239:1-239:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
@@ -1391,73 +1391,73 @@
 [4m[33mdocs/README.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 30 sections that might be orphaned[22m
 1:1-1:51        [33mwarning[39m [1mDocument has high link density. Consider reducing links or expanding content.[22m
-49:1-49:51      [33mwarning[39m [1mCross-reference "../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md" may be invalid[22m
-49:1-49:51      [33mwarning[39m [1mCross-reference "../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md" may be invalid[22m
-49:31-49:128    [33mwarning[39m [1mCannot find file [36m`../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m; did you mean [36m`architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m[22m           missing-file            remark-validate-links:missing-file
-49:131-49:215   [33mwarning[39m [1mCannot find file [36m`../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`[39m; did you mean [36m`architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`[39m[22m missing-file            remark-validate-links:missing-file
-50:1-50:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-50:1-50:51      [33mwarning[39m [1mCross-reference "../architecture/SOLUTION_RECOMMENDATIONS.md" may be invalid[22m
-50:30-50:82     [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-50:85-50:156    [33mwarning[39m [1mCannot find file [36m`../architecture/SOLUTION_RECOMMENDATIONS.md`[39m[22m                                                                                              missing-file            remark-validate-links:missing-file
-54:1-54:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-54:1-54:51      [33mwarning[39m [1mCross-reference "../architecture/REPOSITORY_OVERVIEW.md" may be invalid[22m
-54:1-54:51      [33mwarning[39m [1mCross-reference "../architecture/SYSTEM_OVERVIEW.md" may be invalid[22m
-54:28-54:83     [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-54:86-54:139    [33mwarning[39m [1mCannot find file [36m`../architecture/SYSTEM_OVERVIEW.md`[39m; did you mean [36m`architecture/SYSTEM_OVERVIEW.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
-54:142-54:203   [33mwarning[39m [1mCannot find file [36m`../architecture/REPOSITORY_OVERVIEW.md`[39m; did you mean [36m`architecture/REPOSITORY_OVERVIEW.md`[39m[22m                                               missing-file            remark-validate-links:missing-file
-55:1-55:51      [33mwarning[39m [1mCross-reference "../architecture/COMMUNICATION_LAYER_SYSTEM.md" may be invalid[22m
-55:1-55:51      [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
-55:24-55:79     [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-55:82-55:150    [33mwarning[39m [1mCannot find file [36m`../architecture/COMMUNICATION_LAYER_SYSTEM.md`[39m; did you mean [36m`architecture/COMMUNICATION_LAYER_SYSTEM.md`[39m[22m                                 missing-file            remark-validate-links:missing-file
-59:1-59:51      [33mwarning[39m [1mCross-reference "../plans/README.md" may be invalid[22m
-60:1-60:51      [33mwarning[39m [1mCross-reference "../architecture/DEVELOPMENT_GUIDE.md" may be invalid[22m
-60:1-60:51      [33mwarning[39m [1mCross-reference "../architecture/GETTING_STARTED.md" may be invalid[22m
-60:29-60:88     [33mwarning[39m [1mCannot find file [36m`../architecture/GETTING_STARTED.md`[39m; did you mean [36m`architecture/GETTING_STARTED.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
-60:91-60:148    [33mwarning[39m [1mCannot find file [36m`../architecture/DEVELOPMENT_GUIDE.md`[39m[22m                                                                                                     missing-file            remark-validate-links:missing-file
-64:1-64:51      [33mwarning[39m [1mCross-reference "../GLOSSARY.md" may be invalid[22m
-64:30-64:66     [33mwarning[39m [1mCannot find file [36m`../GLOSSARY.md`[39m; did you mean [36m`GLOSSARY.md`[39m[22m                                                                                               missing-file            remark-validate-links:missing-file
-65:1-65:51      [33mwarning[39m [1mCross-reference "../architecture/CORE_SYSTEMS.md" may be invalid[22m
-65:1-65:51      [33mwarning[39m [1mCross-reference "../architecture/REPOSITORY_OVERVIEW.md" may be invalid[22m
-65:29-65:90     [33mwarning[39m [1mCannot find file [36m`../architecture/REPOSITORY_OVERVIEW.md`[39m; did you mean [36m`architecture/REPOSITORY_OVERVIEW.md`[39m[22m                                               missing-file            remark-validate-links:missing-file
-65:93-65:140    [33mwarning[39m [1mCannot find file [36m`../architecture/CORE_SYSTEMS.md`[39m[22m                                                                                                          missing-file            remark-validate-links:missing-file
-72:1-72:51      [33mwarning[39m [1mCross-reference "../GLOSSARY.md" may be invalid[22m
-72:3-72:39      [33mwarning[39m [1mCannot find file [36m`../GLOSSARY.md`[39m; did you mean [36m`GLOSSARY.md`[39m[22m                                                                                               missing-file            remark-validate-links:missing-file
-76:1-76:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-76:3-76:58      [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-77:1-77:51      [33mwarning[39m [1mCross-reference "../architecture/SYSTEM_OVERVIEW.md" may be invalid[22m
-77:3-77:56      [33mwarning[39m [1mCannot find file [36m`../architecture/SYSTEM_OVERVIEW.md`[39m; did you mean [36m`architecture/SYSTEM_OVERVIEW.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
-78:1-78:51      [33mwarning[39m [1mCross-reference "../architecture/REPOSITORY_STRUCTURE.md" may be invalid[22m
-78:3-78:66      [33mwarning[39m [1mCannot find file [36m`../architecture/REPOSITORY_STRUCTURE.md`[39m[22m                                                                                                  missing-file            remark-validate-links:missing-file
-81:1-81:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-81:3-81:55      [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-82:1-82:51      [33mwarning[39m [1mCross-reference "../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md" may be invalid[22m
-82:3-82:92      [33mwarning[39m [1mCannot find file [36m`../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m; did you mean [36m`architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m[22m           missing-file            remark-validate-links:missing-file
-85:1-85:51      [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
-85:3-85:58      [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-86:1-86:51      [33mwarning[39m [1mCross-reference "../architecture/DEVELOPMENT_GUIDE.md" may be invalid[22m
-86:3-86:60      [33mwarning[39m [1mCannot find file [36m`../architecture/DEVELOPMENT_GUIDE.md`[39m[22m                                                                                                     missing-file            remark-validate-links:missing-file
-87:1-87:51      [33mwarning[39m [1mCross-reference "../architecture/TESTING_INFRASTRUCTURE.md" may be invalid[22m
-87:3-87:70      [33mwarning[39m [1mCannot find file [36m`../architecture/TESTING_INFRASTRUCTURE.md`[39m[22m                                                                                                missing-file            remark-validate-links:missing-file
-99:1-99:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-99:5-99:60      [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-100:1-100:51    [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
-100:5-100:60    [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-105:1-105:51    [33mwarning[39m [1mCross-reference "../architecture/GETTING_STARTED.md" may be invalid[22m
-105:5-105:64    [33mwarning[39m [1mCannot find file [36m`../architecture/GETTING_STARTED.md`[39m; did you mean [36m`architecture/GETTING_STARTED.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
-106:1-106:51    [33mwarning[39m [1mCross-reference "../architecture/DEVELOPMENT_GUIDE.md" may be invalid[22m
-106:5-106:62    [33mwarning[39m [1mCannot find file [36m`../architecture/DEVELOPMENT_GUIDE.md`[39m[22m                                                                                                     missing-file            remark-validate-links:missing-file
-111:1-111:51    [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-111:5-111:57    [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-112:1-112:51    [33mwarning[39m [1mCross-reference "../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md" may be invalid[22m
-112:5-112:94    [33mwarning[39m [1mCannot find file [36m`../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m; did you mean [36m`architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m[22m           missing-file            remark-validate-links:missing-file
-144:1-144:51    [33mwarning[39m [1mCross-reference "../architecture/TESTING_INFRASTRUCTURE.md" may be invalid[22m
-144:5-144:72    [33mwarning[39m [1mCannot find file [36m`../architecture/TESTING_INFRASTRUCTURE.md`[39m[22m                                                                                                missing-file            remark-validate-links:missing-file
-154:1-154:51    [33mwarning[39m [1mCross-reference "../plans/README.md" may be invalid[22m
-167:1-167:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-168:1-168:51    [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
-168:3-168:60    [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
-169:1-169:51    [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
-169:3-169:60    [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+46:1-46:51      [33mwarning[39m [1mCross-reference "../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md" may be invalid[22m
+46:1-46:51      [33mwarning[39m [1mCross-reference "../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md" may be invalid[22m
+46:31-46:128    [33mwarning[39m [1mCannot find file [36m`../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m; did you mean [36m`architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m[22m           missing-file            remark-validate-links:missing-file
+46:131-46:215   [33mwarning[39m [1mCannot find file [36m`../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`[39m; did you mean [36m`architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md`[39m[22m missing-file            remark-validate-links:missing-file
+47:1-47:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+47:1-47:51      [33mwarning[39m [1mCross-reference "../architecture/SOLUTION_RECOMMENDATIONS.md" may be invalid[22m
+47:30-47:82     [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+47:85-47:156    [33mwarning[39m [1mCannot find file [36m`../architecture/SOLUTION_RECOMMENDATIONS.md`[39m[22m                                                                                              missing-file            remark-validate-links:missing-file
+51:1-51:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+51:1-51:51      [33mwarning[39m [1mCross-reference "../architecture/REPOSITORY_OVERVIEW.md" may be invalid[22m
+51:1-51:51      [33mwarning[39m [1mCross-reference "../architecture/SYSTEM_OVERVIEW.md" may be invalid[22m
+51:28-51:83     [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+51:86-51:139    [33mwarning[39m [1mCannot find file [36m`../architecture/SYSTEM_OVERVIEW.md`[39m; did you mean [36m`architecture/SYSTEM_OVERVIEW.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
+51:142-51:203   [33mwarning[39m [1mCannot find file [36m`../architecture/REPOSITORY_OVERVIEW.md`[39m; did you mean [36m`architecture/REPOSITORY_OVERVIEW.md`[39m[22m                                               missing-file            remark-validate-links:missing-file
+52:1-52:51      [33mwarning[39m [1mCross-reference "../architecture/COMMUNICATION_LAYER_SYSTEM.md" may be invalid[22m
+52:1-52:51      [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
+52:24-52:79     [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+52:82-52:150    [33mwarning[39m [1mCannot find file [36m`../architecture/COMMUNICATION_LAYER_SYSTEM.md`[39m; did you mean [36m`architecture/COMMUNICATION_LAYER_SYSTEM.md`[39m[22m                                 missing-file            remark-validate-links:missing-file
+56:1-56:51      [33mwarning[39m [1mCross-reference "../plans/README.md" may be invalid[22m
+57:1-57:51      [33mwarning[39m [1mCross-reference "../architecture/DEVELOPMENT_GUIDE.md" may be invalid[22m
+57:1-57:51      [33mwarning[39m [1mCross-reference "../architecture/GETTING_STARTED.md" may be invalid[22m
+57:29-57:88     [33mwarning[39m [1mCannot find file [36m`../architecture/GETTING_STARTED.md`[39m; did you mean [36m`architecture/GETTING_STARTED.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
+57:91-57:148    [33mwarning[39m [1mCannot find file [36m`../architecture/DEVELOPMENT_GUIDE.md`[39m[22m                                                                                                     missing-file            remark-validate-links:missing-file
+61:1-61:51      [33mwarning[39m [1mCross-reference "../GLOSSARY.md" may be invalid[22m
+61:30-61:66     [33mwarning[39m [1mCannot find file [36m`../GLOSSARY.md`[39m; did you mean [36m`GLOSSARY.md`[39m[22m                                                                                               missing-file            remark-validate-links:missing-file
+62:1-62:51      [33mwarning[39m [1mCross-reference "../architecture/CORE_SYSTEMS.md" may be invalid[22m
+62:1-62:51      [33mwarning[39m [1mCross-reference "../architecture/REPOSITORY_OVERVIEW.md" may be invalid[22m
+62:29-62:90     [33mwarning[39m [1mCannot find file [36m`../architecture/REPOSITORY_OVERVIEW.md`[39m; did you mean [36m`architecture/REPOSITORY_OVERVIEW.md`[39m[22m                                               missing-file            remark-validate-links:missing-file
+62:93-62:140    [33mwarning[39m [1mCannot find file [36m`../architecture/CORE_SYSTEMS.md`[39m[22m                                                                                                          missing-file            remark-validate-links:missing-file
+69:1-69:51      [33mwarning[39m [1mCross-reference "../GLOSSARY.md" may be invalid[22m
+69:3-69:39      [33mwarning[39m [1mCannot find file [36m`../GLOSSARY.md`[39m; did you mean [36m`GLOSSARY.md`[39m[22m                                                                                               missing-file            remark-validate-links:missing-file
+73:1-73:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+73:3-73:58      [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+74:1-74:51      [33mwarning[39m [1mCross-reference "../architecture/SYSTEM_OVERVIEW.md" may be invalid[22m
+74:3-74:56      [33mwarning[39m [1mCannot find file [36m`../architecture/SYSTEM_OVERVIEW.md`[39m; did you mean [36m`architecture/SYSTEM_OVERVIEW.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
+75:1-75:51      [33mwarning[39m [1mCross-reference "../architecture/REPOSITORY_STRUCTURE.md" may be invalid[22m
+75:3-75:66      [33mwarning[39m [1mCannot find file [36m`../architecture/REPOSITORY_STRUCTURE.md`[39m[22m                                                                                                  missing-file            remark-validate-links:missing-file
+78:1-78:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+78:3-78:55      [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+79:1-79:51      [33mwarning[39m [1mCross-reference "../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md" may be invalid[22m
+79:3-79:92      [33mwarning[39m [1mCannot find file [36m`../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m; did you mean [36m`architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m[22m           missing-file            remark-validate-links:missing-file
+82:1-82:51      [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
+82:3-82:58      [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+83:1-83:51      [33mwarning[39m [1mCross-reference "../architecture/DEVELOPMENT_GUIDE.md" may be invalid[22m
+83:3-83:60      [33mwarning[39m [1mCannot find file [36m`../architecture/DEVELOPMENT_GUIDE.md`[39m[22m                                                                                                     missing-file            remark-validate-links:missing-file
+84:1-84:51      [33mwarning[39m [1mCross-reference "../architecture/TESTING_INFRASTRUCTURE.md" may be invalid[22m
+84:3-84:70      [33mwarning[39m [1mCannot find file [36m`../architecture/TESTING_INFRASTRUCTURE.md`[39m[22m                                                                                                missing-file            remark-validate-links:missing-file
+96:1-96:51      [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+96:5-96:60      [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+97:1-97:51      [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
+97:5-97:60      [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+102:1-102:51    [33mwarning[39m [1mCross-reference "../architecture/GETTING_STARTED.md" may be invalid[22m
+102:5-102:64    [33mwarning[39m [1mCannot find file [36m`../architecture/GETTING_STARTED.md`[39m; did you mean [36m`architecture/GETTING_STARTED.md`[39m[22m                                                       missing-file            remark-validate-links:missing-file
+103:1-103:51    [33mwarning[39m [1mCross-reference "../architecture/DEVELOPMENT_GUIDE.md" may be invalid[22m
+103:5-103:62    [33mwarning[39m [1mCannot find file [36m`../architecture/DEVELOPMENT_GUIDE.md`[39m[22m                                                                                                     missing-file            remark-validate-links:missing-file
+108:1-108:51    [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+108:5-108:57    [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+109:1-109:51    [33mwarning[39m [1mCross-reference "../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md" may be invalid[22m
+109:5-109:94    [33mwarning[39m [1mCannot find file [36m`../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m; did you mean [36m`architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md`[39m[22m           missing-file            remark-validate-links:missing-file
+141:1-141:51    [33mwarning[39m [1mCross-reference "../architecture/TESTING_INFRASTRUCTURE.md" may be invalid[22m
+141:5-141:72    [33mwarning[39m [1mCannot find file [36m`../architecture/TESTING_INFRASTRUCTURE.md`[39m[22m                                                                                                missing-file            remark-validate-links:missing-file
+151:1-151:51    [33mwarning[39m [1mCross-reference "../plans/README.md" may be invalid[22m
+164:1-164:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+165:1-165:51    [33mwarning[39m [1mCross-reference "../architecture/README.md" may be invalid[22m
+165:3-165:60    [33mwarning[39m [1mCannot find file [36m`../architecture/README.md`[39m; did you mean [36m`architecture/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
+166:1-166:51    [33mwarning[39m [1mCross-reference "../orchestrator/README.md" may be invalid[22m
+166:3-166:60    [33mwarning[39m [1mCannot find file [36m`../orchestrator/README.md`[39m; did you mean [36m`orchestrator/README.md`[39m[22m                                                                         missing-file            remark-validate-links:missing-file
 
 [4m[33mdocs/services/CLOUD_SERVICES_ARCHITECTURE.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 86 sections that might be orphaned[22m
@@ -2022,8 +2022,8 @@
 
 [4m[33mdocs/tools/LINTER_NAMES_IN_VALIDATION_OUTPUT.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 70 sections that might be orphaned[22m
-232:1-232:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
-233:1-233:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
+233:1-233:51    [33mwarning[39m [1mCross-reference "../README.md" may be invalid[22m
+234:1-234:51    [33mwarning[39m [1mCross-reference "../../README.md" may be invalid[22m
 
 [4m[33mdocs/tools/ONBOARDING_CHECKLIST.md[39m[24m
 1:1-1:51        [33mwarning[39m [1mDocument has 35 sections that might be orphaned[22m

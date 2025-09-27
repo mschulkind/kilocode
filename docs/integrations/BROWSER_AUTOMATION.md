@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of browser automation requirements and web interaction patterns in development environments. The automation system reflects findings from:
-
 - Browser automation framework analysis (Puppeteer, Playwright, Selenium)
 - Web scraping and content extraction best practices
 - Cross-browser compatibility and testing research
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of browser automation r
 The system provides reliable and efficient browser automation for web content processing.
 
 ## Table of Contents
-
 - [Automation Overview](#automation-overview)
 - [System Architecture](#system-architecture)
 - [Key Features](#key-features)
@@ -68,24 +66,28 @@ graph TB
 ## Key Features
 
 ### Browser Session Management
+
 - **Session Creation**: Spawn browser instances
 - **Configuration**: Customize browser settings
 - **Lifecycle Control**: Start, stop, and restart sessions
 - **Resource Management**: Memory and CPU optimization
 
 ### Web Content Processing
+
 - **Page Navigation**: Navigate to web pages
 - **Content Extraction**: Extract text, images, and data
 - **DOM Interaction**: Manipulate page elements
 - **Screenshot Capture**: Visual content recording
 
 ### Browser Discovery
+
 - **Auto-Detection**: Find installed browsers
 - **Version Management**: Handle browser versions
 - **Compatibility**: Cross-browser support
 - **Fallback Options**: Alternative browser selection
 
 ### Content Fetching
+
 - **HTTP Requests**: Direct content retrieval
 - **Rendering**: JavaScript-rendered content
 - **Streaming**: Large content handling
@@ -105,6 +107,7 @@ graph TB
 4. Test automation functionality
 
 ### Configuration Options
+
 ```json
 {
   "kilocode.browser.enabled": true,
@@ -117,6 +120,7 @@ graph TB
 ## Usage Examples
 
 ### Basic Browser Operations
+
 ```typescript
 // Create browser session
 const browser = await browserManager.create();
@@ -135,6 +139,7 @@ await browser.close();
 ```
 
 ### Content Processing
+
 ```typescript
 // Extract specific elements
 const links = await contentProcessor.extractLinks(page);
@@ -147,6 +152,7 @@ const images = await contentProcessor.extractImages(page);
 ```
 
 ### Advanced Features
+
 ```typescript
 // Handle JavaScript rendering
 await browser.waitForLoad();
@@ -161,18 +167,21 @@ await browser.fillForm({ username: 'user', password: 'pass' });
 ## Best Practices
 
 ### Performance Optimization
+
 - **Resource Management**: Limit concurrent sessions
 - **Caching**: Cache frequently accessed content
 - **Timeouts**: Set appropriate timeout values
 - **Cleanup**: Properly close browser sessions
 
 ### Security Considerations
+
 - **Content Validation**: Validate extracted content
 - **Error Handling**: Handle network and browser errors
 - **Rate Limiting**: Respect website rate limits
 - **Privacy**: Protect user data and cookies
 
 ### Reliability
+
 - **Error Recovery**: Implement retry mechanisms
 - **Fallback Strategies**: Handle browser failures
 - **Monitoring**: Track automation performance
@@ -201,7 +210,9 @@ await browser.fillForm({ username: 'user', password: 'pass' });
 - Use headless mode when possible
 
 ### Debug Mode
+
 Enable detailed logging for troubleshooting:
+
 ```json
 {
   "kilocode.browser.debug": true,
@@ -212,7 +223,6 @@ Enable detailed logging for troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

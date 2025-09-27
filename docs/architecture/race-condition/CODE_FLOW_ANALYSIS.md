@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of code execution flow and race condition manifestation in the KiloCode system. The analysis reflects findings from:
-
 - Code execution flow analysis and race condition identification
 - Orchestrator-subtask architecture investigation and flow mapping
 - Race condition manifestation pattern analysis and root cause identification
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of code execution flow 
 The analysis provides detailed insights into code flow patterns and race condition behavior.
 
 ## Table of Contents
-
 - [Complete Orchestrator-Subtask Architecture](#complete-orchestrator-subtask-architecture)
 - [Race Condition Flow Analysis](#race-condition-flow-analysis)
 - [Code Execution Patterns](#code-execution-patterns)
@@ -35,6 +33,7 @@ The analysis provides detailed insights into code flow patterns and race conditi
 The orchestrator-subtask architecture provides the foundation for understanding how race conditions manifest in the system.
 
 ### Architecture Overview
+
 ```mermaid
 graph TB
     subgraph "Orchestrator Context"
@@ -60,6 +59,7 @@ graph TB
 ```
 
 ### Key Components
+
 - **Main Task Loop** - Primary task execution loop
 - **recursivelyMakeClineRequests** - Request generation and processing
 - **Subtask Creation** - Dynamic subtask creation
@@ -69,6 +69,7 @@ graph TB
 ## Race Condition Flow Analysis
 
 ### Normal Execution Flow
+
 In normal operation, tasks execute sequentially with proper state management.
 
 **Normal Flow:**
@@ -80,6 +81,7 @@ In normal operation, tasks execute sequentially with proper state management.
 6. **Response Processing** - Response is processed and returned
 
 ### Race Condition Flow
+
 Race conditions occur when multiple subtasks attempt to resume their parent simultaneously.
 
 **Race Condition Flow:**
@@ -92,6 +94,7 @@ Race conditions occur when multiple subtasks attempt to resume their parent simu
 ## Code Execution Patterns
 
 ### Pattern 1: Sequential Execution
+
 ```typescript
 // Normal sequential execution
 async function executeTask(task: Task) {
@@ -107,6 +110,7 @@ async function executeTask(task: Task) {
 ```
 
 ### Pattern 2: Concurrent Execution (Problematic)
+
 ```typescript
 // Problematic concurrent execution
 async function executeTask(task: Task) {
@@ -124,6 +128,7 @@ async function executeTask(task: Task) {
 ```
 
 ### Pattern 3: Race Condition Manifestation
+
 ```typescript
 // Race condition in parent resume
 async function resumeParent(parentTask: Task) {
@@ -144,27 +149,33 @@ async function resumeParent(parentTask: Task) {
 ## Critical Code Paths
 
 ### Path 1: Subtask Completion
+
 The subtask completion path is where race conditions typically begin.
 
 **Critical Points:**
+
 - **Subtask State Update** - Subtask state is updated
 - **Parent Notification** - Parent is notified of completion
 - **Resume Trigger** - Parent resume is triggered
 - **State Validation** - State validation occurs
 
 ### Path 2: Parent Resume
+
 The parent resume path is where race conditions manifest.
 
 **Critical Points:**
+
 - **Resume Check** - Check if parent is already resumed
 - **State Lock** - Attempt to lock parent state
 - **Request Generation** - Generate API request
 - **Request Sending** - Send request to external API
 
 ### Path 3: State Management
+
 State management is critical for preventing race conditions.
 
 **Critical Points:**
+
 - **State Consistency** - Ensure state consistency
 - **Atomic Operations** - Perform atomic state operations
 - **Lock Management** - Manage state locks
@@ -173,27 +184,33 @@ State management is critical for preventing race conditions.
 ## Race Condition Manifestation
 
 ### Scenario 1: Concurrent Subtask Completion
+
 Multiple subtasks complete simultaneously, each triggering parent resume.
 
 **Manifestation:**
+
 - **Timing** - Subtasks complete within milliseconds of each other
 - **State Check** - Each subtask passes the resume check
 - **Duplicate Resume** - Multiple parent resumes are triggered
 - **Duplicate Requests** - Multiple API requests are generated
 
 ### Scenario 2: State Update Race
+
 State updates race between different components.
 
 **Manifestation:**
+
 - **Concurrent Updates** - Multiple components update state simultaneously
 - **Inconsistent State** - State becomes inconsistent
 - **Race Condition** - Race condition in state updates
 - **System Confusion** - System becomes confused about state
 
 ### Scenario 3: Response Processing Race
+
 Multiple responses are processed simultaneously.
 
 **Manifestation:**
+
 - **Response Overlap** - Responses overlap in time
 - **Processing Race** - Response processing races
 - **State Confusion** - State becomes confused
@@ -202,27 +219,33 @@ Multiple responses are processed simultaneously.
 ## Impact Analysis
 
 ### System Impact
+
 Race conditions have significant impact on system behavior and performance.
 
 **Impact Areas:**
+
 - **Performance** - Degraded system performance
 - **Reliability** - Reduced system reliability
 - **Consistency** - Inconsistent system behavior
 - **User Experience** - Poor user experience
 
 ### User Impact
+
 Users experience various issues due to race conditions.
 
 **User Issues:**
+
 - **Multiple Spinners** - Multiple loading spinners
 - **Jumbled Responses** - Responses appear out of order
 - **System Confusion** - System appears confused
 - **Poor Performance** - Slow system performance
 
 ### Business Impact
+
 Race conditions affect business operations and user satisfaction.
 
 **Business Issues:**
+
 - **User Satisfaction** - Decreased user satisfaction
 - **System Reliability** - Reduced system reliability
 - **Development Velocity** - Slowed development progress
@@ -231,7 +254,6 @@ Race conditions affect business operations and user satisfaction.
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

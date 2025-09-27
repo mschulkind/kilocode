@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created as a condensed version of the comprehensive troubleshooting guide for duplicate API request issues. The short version reflects findings from:
-
 - Rapid triage procedure development for duplicate API request issues
 - Quick diagnostic method research for field troubleshooting
 - Immediate resolution strategy analysis for critical issues
@@ -22,7 +21,6 @@ This document was created as a condensed version of the comprehensive troublesho
 The guide provides essential steps for rapid issue identification and resolution.
 
 ## Table of Contents
-
 - [Triage Flow](#triage-flow)
 - [Quick Diagnostics](#quick-diagnostics)
 - [Common Scenarios](#common-scenarios)
@@ -32,18 +30,21 @@ The guide provides essential steps for rapid issue identification and resolution
 ## Triage Flow
 
 ### Step 1: Observe Symptoms
+
 - **Multiple Spinners** - Multiple spinners appearing simultaneously
 - **Jumbled Responses** - Responses out of order or corrupted
 - **Timing Issues** - Often occurs after subtask completion
 - **User Confusion** - User interface confusion and frustration
 
 ### Step 2: Collect Quick Data
+
 - **Check DevTools** - Examine console for JSON logs with `Task.recursivelyMakeClineRequests`
 - **Capture Reasons** - Note reasons: main-loop | subtask-completion | user-request
 - **Note Timestamps** - Record timestamps for overlaps and patterns
 - **Document Context** - Capture system context and user actions
 
 ### Step 3: Identify Scenario
+
 - **Two-Request Race** - Main-loop + subtask-completion close together
 - **Multiple Subtasks** - Multiple subtasks completing simultaneously
 - **User Action Duplication** - Rapid user actions triggering requests
@@ -52,6 +53,7 @@ The guide provides essential steps for rapid issue identification and resolution
 ## Quick Diagnostics
 
 ### Console Log Analysis
+
 ```javascript
 // Look for these patterns in console logs
 Task.recursivelyMakeClineRequests
@@ -61,12 +63,14 @@ Task.recursivelyMakeClineRequests
 ```
 
 ### Network Tab Analysis
+
 - **Request Timing** - Check request timing and overlaps
 - **Request IDs** - Verify request ID uniqueness
 - **Response Order** - Analyze response order and timing
 - **Error Patterns** - Identify error patterns and causes
 
 ### System State Check
+
 - **Component State** - Check component state consistency
 - **Task Status** - Verify task status and completion
 - **User Actions** - Review recent user actions
@@ -75,24 +79,28 @@ Task.recursivelyMakeClineRequests
 ## Common Scenarios
 
 ### Scenario 1: Two-Request Race
+
 **Symptoms**: Main-loop and subtask-completion requests close together
 **Cause**: Race condition between main loop and subtask completion
 **Resolution**: Implement request deduplication
 **Prevention**: Add proper synchronization
 
 ### Scenario 2: Multiple Subtasks
+
 **Symptoms**: Multiple subtasks completing simultaneously
 **Cause**: Concurrent subtask execution
 **Resolution**: Implement subtask coordination
 **Prevention**: Add proper concurrency control
 
 ### Scenario 3: User Action Duplication
+
 **Symptoms**: Rapid user actions triggering multiple requests
 **Cause**: User interface not preventing duplicate actions
 **Resolution**: Implement user action debouncing
 **Prevention**: Add user interaction controls
 
 ### Scenario 4: Error Recovery Loop
+
 **Symptoms**: Repeated failed requests
 **Cause**: Automatic retry mechanisms
 **Resolution**: Fix error recovery logic
@@ -141,7 +149,6 @@ Task.recursivelyMakeClineRequests
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -151,5 +158,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← Full Troubleshooting Guide](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
 - [← Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

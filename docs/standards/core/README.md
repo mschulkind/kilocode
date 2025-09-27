@@ -160,7 +160,7 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 - *Next Steps*\*:
 - [Document Structure](../structure/README.md) - How to structure individual documents
-- [Navigation & User Experience](../navigation/README.md) - How to create user journeys  
+- [Navigation & User Experience](../navigation/README.md) - How to create user journeys
 - [Code Documentation](../code/README.md) - How to document technical content
 - [Engagement & Accessibility](../engagement/README.md) - How to make docs accessible
 

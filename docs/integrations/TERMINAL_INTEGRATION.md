@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of terminal integration patterns and shell interaction requirements in development environments. The integration system reflects findings from:
-
 - Terminal emulation and shell integration research
 - Command execution security and safety analysis
 - Process management and monitoring best practices
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of terminal integration
 The system provides secure and efficient terminal integration for development workflows.
 
 ## Table of Contents
-
 - [Integration Overview](#integration-overview)
 - [System Architecture](#system-architecture)
 - [Key Features](#key-features)
@@ -71,24 +69,28 @@ graph TB
 ## Key Features
 
 ### Terminal Management
+
 - **Terminal Creation**: Spawn new terminal instances
 - **Session Management**: Handle multiple terminal sessions
 - **Configuration**: Customize terminal settings
 - **Lifecycle Control**: Start, stop, and restart terminals
 
 ### Shell Integration
+
 - **Multi-Shell Support**: Bash, Zsh, PowerShell, CMD
 - **Environment Variables**: Shell environment management
 - **Path Resolution**: Working directory handling
 - **Shell Features**: Tab completion, history, aliases
 
 ### Command Execution
+
 - **Safe Execution**: Sandboxed command running
 - **Input/Output Handling**: Stream processing
 - **Error Management**: Command failure handling
 - **Timeout Control**: Execution time limits
 
 ### Process Management
+
 - **Process Monitoring**: Track running processes
 - **Resource Usage**: CPU and memory monitoring
 - **Signal Handling**: Process control signals
@@ -108,6 +110,7 @@ graph TB
 4. Test command execution
 
 ### Configuration Options
+
 ```json
 {
   "kilocode.terminal.enabled": true,
@@ -120,6 +123,7 @@ graph TB
 ## Usage Examples
 
 ### Basic Terminal Operations
+
 ```typescript
 // Create new terminal
 const terminal = await terminalManager.create();
@@ -135,6 +139,7 @@ await terminal.close();
 ```
 
 ### Shell Integration
+
 ```typescript
 // Set environment variable
 await shellIntegration.setEnv('NODE_ENV', 'development');
@@ -147,6 +152,7 @@ const history = await shellIntegration.getHistory();
 ```
 
 ### Process Management
+
 ```typescript
 // Monitor process
 const process = await processManager.spawn('npm', ['start']);
@@ -161,12 +167,14 @@ await processManager.terminate(process.id);
 ## Security Considerations
 
 ### Command Safety
+
 - **Sandboxing**: Isolated execution environment
 - **Permission Checks**: Validate command permissions
 - **Input Validation**: Sanitize command inputs
 - **Resource Limits**: Prevent resource exhaustion
 
 ### Access Control
+
 - **User Permissions**: Respect system permissions
 - **File System Access**: Controlled file operations
 - **Network Access**: Restricted network operations
@@ -195,7 +203,9 @@ await processManager.terminate(process.id);
 - Optimize configuration
 
 ### Debug Mode
+
 Enable detailed logging for troubleshooting:
+
 ```json
 {
   "kilocode.terminal.debug": true,
@@ -206,7 +216,6 @@ Enable detailed logging for troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

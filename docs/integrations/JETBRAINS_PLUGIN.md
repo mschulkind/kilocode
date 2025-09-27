@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of JetBrains plugin development patterns and KiloCode's integration requirements. The plugin architecture reflects findings from:
-
 - JetBrains IntelliJ Platform SDK analysis and best practices research
 - IPC communication pattern analysis for plugin-host interactions
 - User experience studies for IDE integration workflows
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of JetBrains plugin dev
 The system provides seamless integration between KiloCode's AI capabilities and JetBrains development environments.
 
 ## Table of Contents
-
 - [Plugin Overview](#plugin-overview)
 - [System Architecture](#system-architecture)
 - [Key Components](#key-components)
@@ -66,24 +64,28 @@ graph TB
 ## Key Components
 
 ### Host Application
+
 - **TypeScript Implementation**: Core logic and AI integration
 - **Service Management**: Background service coordination
 - **Configuration**: Plugin settings and preferences
 - **Logging**: Comprehensive logging and debugging
 
 ### Plugin Implementation
+
 - **Kotlin Code**: Native JetBrains plugin code
 - **UI Integration**: IDE interface components
 - **Action Handlers**: User interaction processing
 - **Event Management**: IDE event handling
 
 ### Communication Bridge
+
 - **IPC Protocol**: Inter-process communication
 - **Message Serialization**: Data format conversion
 - **Error Handling**: Communication error management
 - **Performance Optimization**: Efficient data transfer
 
 ### Build System
+
 - **Plugin Packaging**: VSIX file generation
 - **Dependency Management**: Plugin dependencies
 - **Version Control**: Plugin versioning
@@ -103,6 +105,7 @@ graph TB
 4. Test plugin functionality
 
 ### Configuration
+
 ```json
 {
   "kilocode.host.port": 8080,
@@ -115,18 +118,21 @@ graph TB
 ## Usage Guide
 
 ### Basic Operations
+
 - **Code Generation**: AI-powered code suggestions
 - **Code Review**: Automated code analysis
 - **Refactoring**: Intelligent code restructuring
 - **Documentation**: Automatic documentation generation
 
 ### IDE Integration
+
 - **Context Menus**: Right-click integration
 - **Tool Windows**: Dedicated plugin panels
 - **Editor Actions**: Inline code assistance
 - **Project Views**: Enhanced project navigation
 
 ### Advanced Features
+
 - **Custom Commands**: User-defined operations
 - **Workflow Automation**: Batch processing
 - **Team Collaboration**: Shared configurations
@@ -155,7 +161,9 @@ graph TB
 - Optimize configuration
 
 ### Debug Mode
+
 Enable detailed logging for troubleshooting:
+
 ```json
 {
   "kilocode.debug.enabled": true,
@@ -166,7 +174,6 @@ Enable detailed logging for troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding

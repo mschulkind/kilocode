@@ -32,34 +32,41 @@ fi
 $npx_cmd lint-staged
 $pnpm_cmd lint
 
-# Documentation validation and fixing (unified approach)
-echo "🔍 Running unified documentation validation and fixing..."
-if ! $pnpm_cmd docs:fix; then
-  echo "❌ Documentation validation and fixing failed."
-  echo "💡 The docs-fixer automatically fixes issues and validates. Check the output above."
-  exit 1
-fi
+# Check if any docs/ files are staged for commit
+if git diff --cached --name-only | grep -q "^docs/"; then
+  echo "📝 Documentation files detected in staged changes. Running documentation validation..."
+  
+  # Documentation validation and fixing (unified approach)
+  echo "🔍 Running unified documentation validation and fixing..."
+  if ! $pnpm_cmd docs:fix; then
+    echo "❌ Documentation validation and fixing failed."
+    echo "💡 The docs-fixer automatically fixes issues and validates. Check the output above."
+    exit 1
+  fi
 
-# Enhanced documentation validation
-echo "🔍 Running enhanced documentation validation..."
-if ! $pnpm_cmd docs:validate; then
-  echo "❌ Enhanced documentation validation failed."
-  echo "💡 Check the validation output above for issues that need manual fixing."
-  exit 1
-fi
+  # Enhanced documentation validation
+  echo "🔍 Running enhanced documentation validation..."
+  if ! $pnpm_cmd docs:validate; then
+    echo "❌ Enhanced documentation validation failed."
+    echo "💡 Check the validation output above for issues that need manual fixing."
+    exit 1
+  fi
 
-# Content quality analysis
-echo "📊 Running content quality analysis..."
-if ! $pnpm_cmd docs:quality; then
-  echo "⚠️  Content quality analysis completed with warnings."
-  echo "💡 Consider improving content quality based on the analysis above."
-fi
+  # Content quality analysis
+  echo "📊 Running content quality analysis..."
+  if ! $pnpm_cmd docs:quality; then
+    echo "⚠️  Content quality analysis completed with warnings."
+    echo "💡 Consider improving content quality based on the analysis above."
+  fi
 
-# Link validation
-echo "🔗 Running link validation..."
-if ! $pnpm_cmd docs:links; then
-  echo "⚠️  Link validation completed with warnings."
-  echo "💡 Check the link validation output above for broken or problematic links."
-fi
+  # Link validation
+  echo "🔗 Running link validation..."
+  if ! $pnpm_cmd docs:links; then
+    echo "⚠️  Link validation completed with warnings."
+    echo "💡 Check the link validation output above for broken or problematic links."
+  fi
 
-echo "✅ Documentation validation and fixing completed successfully!"
+  echo "✅ Documentation validation and fixing completed successfully!"
+else
+  echo "⏭️  No documentation files in staged changes. Skipping documentation validation."
+fi

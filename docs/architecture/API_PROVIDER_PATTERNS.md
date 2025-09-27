@@ -13,7 +13,6 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Research Context
 
 This document was created through comprehensive analysis of API provider patterns and multi-provider support requirements in the KiloCode system. The patterns reflect findings from:
-
 - API provider architecture analysis and best practices research
 - Multi-provider integration pattern analysis
 - Request/response handling optimization studies
@@ -22,7 +21,6 @@ This document was created through comprehensive analysis of API provider pattern
 The patterns provide a systematic approach to implementing robust API provider support.
 
 ## Table of Contents
-
 - [Provider Architecture](#provider-architecture)
 - [Provider Types](#provider-types)
 - [Request/Response Handling](#requestresponse-handling)
@@ -44,6 +42,7 @@ The API provider architecture supports multiple providers with consistent interf
 4. **Response Handler** - Unified response processing
 
 ### Architecture Overview
+
 ```mermaid
 graph TB
     A[Client Request] --> B[Provider Router]
@@ -59,18 +58,21 @@ graph TB
 ## Provider Types
 
 ### Primary Providers
+
 - **OpenAI** - GPT models and embeddings
 - **Anthropic** - Claude models and safety features
 - **Google** - PaLM and Gemini models
 - **Azure OpenAI** - Enterprise OpenAI services
 
 ### Specialized Providers
+
 - **Local Models** - Self-hosted model support
 - **Custom APIs** - Third-party API integrations
 - **Fallback Providers** - Backup provider options
 - **Testing Providers** - Mock and test implementations
 
 ### Provider Characteristics
+
 - **Reliability** - Uptime and consistency metrics
 - **Performance** - Response time and throughput
 - **Cost** - Pricing and usage optimization
@@ -79,6 +81,7 @@ graph TB
 ## Request/Response Handling
 
 ### Request Processing
+
 ```typescript
 interface ProviderRequest {
   model: string;
@@ -106,6 +109,7 @@ class ProviderHandler {
 ```
 
 ### Response Processing
+
 ```typescript
 interface ProviderResponse {
   content: string;
@@ -133,12 +137,14 @@ class ResponseHandler {
 ## Streaming Implementation
 
 ### Streaming Support
+
 - **Real-time Responses** - Stream content as it's generated
 - **Partial Updates** - Incremental response updates
 - **Error Handling** - Graceful stream error recovery
 - **Performance** - Optimized streaming performance
 
 ### Streaming Patterns
+
 ```typescript
 class StreamingProvider {
   async *streamResponse(request: ProviderRequest): AsyncGenerator<StreamChunk> {
@@ -158,12 +164,14 @@ class StreamingProvider {
 ## Error Handling
 
 ### Error Types
+
 - **Provider Errors** - Provider-specific error conditions
 - **Network Errors** - Connectivity and timeout issues
 - **Rate Limiting** - API rate limit exceeded
 - **Authentication** - Invalid credentials or permissions
 
 ### Retry Logic
+
 ```typescript
 class RetryHandler {
   async withRetry<T>(
@@ -188,6 +196,7 @@ class RetryHandler {
 ## Configuration Management
 
 ### Provider Configuration
+
 ```typescript
 interface ProviderConfig {
   name: string;
@@ -217,12 +226,14 @@ class ConfigManager {
 ## Performance Optimization
 
 ### Optimization Strategies
+
 - **Connection Pooling** - Reuse HTTP connections
 - **Request Batching** - Batch multiple requests
 - **Caching** - Cache responses and metadata
 - **Load Balancing** - Distribute load across providers
 
 ### Performance Monitoring
+
 ```typescript
 class PerformanceMonitor {
   trackRequest(provider: string, duration: number, success: boolean) {
@@ -247,12 +258,14 @@ class PerformanceMonitor {
 ## Security & Authentication
 
 ### Authentication Methods
+
 - **API Keys** - Standard API key authentication
 - **OAuth** - OAuth 2.0 authentication flow
 - **JWT Tokens** - JSON Web Token authentication
 - **Custom Headers** - Provider-specific authentication
 
 ### Security Best Practices
+
 - **Credential Management** - Secure credential storage
 - **Request Validation** - Validate all incoming requests
 - **Response Sanitization** - Sanitize outgoing responses
@@ -261,18 +274,21 @@ class PerformanceMonitor {
 ## Common Issues
 
 ### Provider-Specific Issues
+
 - **Rate Limiting** - Handle provider rate limits
 - **Model Availability** - Manage model availability
 - **Response Format** - Handle different response formats
 - **Error Codes** - Map provider error codes
 
 ### General Issues
+
 - **Network Connectivity** - Handle network issues
 - **Timeout Management** - Manage request timeouts
 - **Resource Exhaustion** - Handle resource limits
 - **Configuration Errors** - Validate configuration
 
 ### Troubleshooting
+
 - **Logging** - Comprehensive logging for debugging
 - **Monitoring** - Real-time monitoring and alerting
 - **Testing** - Automated testing for provider integration
@@ -281,7 +297,6 @@ class PerformanceMonitor {
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
@@ -291,5 +306,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← API Duplication Analysis](API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 - [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

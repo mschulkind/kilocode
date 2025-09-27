@@ -263,9 +263,9 @@ End of document.
 
 - *Investigating Race Conditions:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -273,18 +273,18 @@ End of document.
 
 - **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Repository Development Guide](../architecture/repository/DEVELOPMENT_GUIDE.md) for
+- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
   codebase patterns
 
 - *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/race-condition/README.md) →
-  [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [State Machines](../architecture/state-machines/README.md) for behavior analysis
+- **Related**: [State Machines](../architecture/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
