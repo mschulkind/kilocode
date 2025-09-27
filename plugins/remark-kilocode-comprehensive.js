@@ -6,6 +6,11 @@
  */
 
 import { visit } from "unist-util-visit"
+import { CrossReferenceValidator } from "../src/validation/CrossReferenceValidator.js"
+import { FileIndexBuilder } from "../src/validation/FileIndexBuilder.js"
+import { DocumentTypeDetector } from "../src/validation/DocumentTypeDetector.js"
+import { OrphanedSectionsDetector } from "../src/validation/OrphanedSectionsDetector.js"
+import { ValidationRuleConfig } from "../src/validation/ValidationRuleConfig.js"
 
 /**
  * Comprehensive KiloCode Standards Validation Plugin
@@ -37,7 +42,30 @@ function remarkKiloCodeComprehensive(options = {}) {
 		...options,
 	}
 
-	return (tree, file) => {
+	// Initialize validation components
+	let validationComponents = null
+	if (settings.validateCrossReferences || settings.detectOrphanedDocuments) {
+		try {
+			const fileIndexBuilder = new FileIndexBuilder()
+			const crossReferenceValidator = new CrossReferenceValidator(fileIndexBuilder)
+			const documentTypeDetector = new DocumentTypeDetector()
+			const orphanedSectionsDetector = new OrphanedSectionsDetector()
+			const validationRuleConfig = new ValidationRuleConfig()
+
+			validationComponents = {
+				fileIndexBuilder,
+				crossReferenceValidator,
+				documentTypeDetector,
+				orphanedSectionsDetector,
+				validationRuleConfig
+			}
+		} catch (error) {
+			// Gracefully handle initialization errors
+			console.warn('Failed to initialize validation components:', error.message)
+		}
+	}
+
+	return async (tree, file) => {
 		const issues = []
 		const warnings = []
 		const metrics = {
@@ -61,6 +89,26 @@ function remarkKiloCodeComprehensive(options = {}) {
 			sections: [],
 			crossReferences: [],
 			orphanedSections: [],
+		}
+
+		// Detect document type and get validation rules
+		let documentType = { type: 'general', confidence: 0.5, reasons: [] }
+		let validationRules = {}
+		
+		if (validationComponents) {
+			try {
+				documentType = validationComponents.documentTypeDetector.detectDocumentType(
+					file.path || '',
+					'',
+					''
+				)
+				validationRules = validationComponents.validationRuleConfig.getRulesForDocument(
+					file.path || '',
+					documentType
+				)
+			} catch (error) {
+				console.warn('Failed to detect document type or get validation rules:', error.message)
+			}
 		}
 
 		// Visit all nodes in the AST
@@ -174,14 +222,78 @@ function remarkKiloCodeComprehensive(options = {}) {
 		// Validate content quality
 		validateContentQuality(metrics, issues, warnings, settings, file)
 
-		// Validate cross-references
-		if (settings.validateCrossReferences) {
-			validateCrossReferences(documentStructure, issues, file)
+		// Validate cross-references using the new validator
+		if (settings.validateCrossReferences && validationComponents) {
+			try {
+				// Build file index if needed
+				await validationComponents.fileIndexBuilder.buildIndex()
+				
+				// Validate each cross-reference
+				for (const crossRef of documentStructure.crossReferences) {
+					try {
+						// Check if file is cached to avoid unnecessary file system operations
+						const isCached = validationComponents.fileIndexBuilder.isFileCached(crossRef.target)
+						
+						const result = await validationComponents.crossReferenceValidator.validateLink(
+							crossRef.target,
+							file.path || ''
+						)
+						
+						if (!result.isValid && result.errors.length > 0) {
+							result.errors.forEach(error => {
+								issues.push({
+									type: "error",
+									message: error.message,
+									line: crossRef.line,
+									column: 1,
+									rule: "kilocode-cross-reference",
+									suggestion: error.suggestion || "Verify that the referenced document exists and the link is correct"
+								})
+							})
+						}
+					} catch (error) {
+						// Handle individual validation errors gracefully
+						console.warn('Failed to validate cross-reference:', error.message)
+					}
+				}
+			} catch (error) {
+				// Handle validation errors gracefully
+				console.warn('Failed to validate cross-references:', error.message)
+				// Fall back to basic validation
+				validateCrossReferences(documentStructure, issues, file)
+			}
 		}
 
-		// Detect orphaned documents
-		if (settings.detectOrphanedDocuments) {
-			validateNoOrphanedDocuments(documentStructure, issues, warnings, file)
+		// Detect orphaned sections using the new detector
+		if (settings.detectOrphanedDocuments && validationComponents) {
+			try {
+				const content = getTreeText(tree)
+				const result = validationComponents.orphanedSectionsDetector.detectOrphanedSections(
+					content,
+					file.path || ''
+				)
+				
+				if (result.orphanedSections.length > 0) {
+					result.orphanedSections.forEach(section => {
+						warnings.push({
+							type: "warning",
+							message: `Potential orphaned section: ${section.content.substring(0, 50)}...`,
+							line: section.line || 1,
+							column: 1,
+							rule: "kilocode-orphaned-section",
+							suggestion: "Consider adding links or restructuring content to improve connectivity"
+						})
+					})
+				}
+				
+				// Update document structure with detected orphaned sections
+				documentStructure.orphanedSections = result.orphanedSections
+			} catch (error) {
+				// Handle validation errors gracefully
+				console.warn('Failed to detect orphaned sections:', error.message)
+				// Fall back to basic validation
+				validateNoOrphanedDocuments(documentStructure, issues, warnings, file)
+			}
 		}
 
 		// Report issues
@@ -625,6 +737,13 @@ function getNodeText(node) {
 	}
 
 	return ""
+}
+
+/**
+ * Extract text content from the entire tree
+ */
+function getTreeText(tree) {
+	return getNodeText(tree)
 }
 
 export default remarkKiloCodeComprehensive
