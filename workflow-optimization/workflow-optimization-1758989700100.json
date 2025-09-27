@@ -1,0 +1,294 @@
+{
+  "timestamp": "2025-09-27T16:14:59.893Z",
+  "directory": "docs/ui/",
+  "bottleneckAnalysis": {
+    "timestamp": "2025-09-27T16:14:59.893Z",
+    "directory": "docs/ui/",
+    "bottlenecks": [],
+    "performance": {
+      "validationTime": 81,
+      "fileProcessingTime": 78,
+      "linkValidationTime": 0,
+      "contentAnalysisTime": 0
+    },
+    "recommendations": []
+  },
+  "falsePositiveReduction": {
+    "timestamp": "2025-09-27T16:14:59.975Z",
+    "directory": "docs/ui/",
+    "falsePositives": [],
+    "improvements": [],
+    "recommendations": []
+  },
+  "errorMessageImprovements": {
+    "timestamp": "2025-09-27T16:15:00.044Z",
+    "directory": "docs/ui/",
+    "errorMessages": [
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 34,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 47,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 48,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 49,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 53,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 54,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/README.md",
+        "line": 55,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 38,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 39,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 41,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 191,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 192,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_LAYER_SYSTEM.md",
+        "line": 466,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_LAYER_SYSTEM.md",
+        "line": 466,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_MESSAGE_FLOW_SYSTEM.md",
+        "line": 441,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      },
+      {
+        "type": "link-text-error",
+        "file": "docs/ui/UI_MESSAGE_FLOW_SYSTEM.md",
+        "line": 441,
+        "message": "Link text should be descriptive",
+        "severity": "warning"
+      }
+    ],
+    "improvements": [
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 34,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 47,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 48,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 49,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 53,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 54,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/README.md",
+        "line": 55,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 38,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 39,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 41,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 191,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_CHAT_TASK_WINDOW.md",
+        "line": 192,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_LAYER_SYSTEM.md",
+        "line": 466,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_LAYER_SYSTEM.md",
+        "line": 466,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_MESSAGE_FLOW_SYSTEM.md",
+        "line": 441,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      },
+      {
+        "type": "error-message-improvement",
+        "file": "docs/ui/UI_MESSAGE_FLOW_SYSTEM.md",
+        "line": 441,
+        "currentMessage": "Link text should be descriptive",
+        "improvedMessage": "Link text should describe the destination (e.g., \"Read more about X\" instead of \"click here\")",
+        "suggestion": "Provide more specific guidance"
+      }
+    ],
+    "recommendations": [
+      {
+        "priority": "high",
+        "category": "error-messages",
+        "message": "Error messages need improvement",
+        "action": "Implement more descriptive and actionable error messages"
+      }
+    ]
+  },
+  "developerExperienceOptimizations": {
+    "timestamp": "2025-09-27T16:15:00.099Z",
+    "directory": "docs/ui/",
+    "workflowIssues": [],
+    "optimizations": [],
+    "recommendations": []
+  },
+  "overallRecommendations": [
+    {
+      "priority": "high",
+      "category": "error-messages",
+      "message": "Error messages need improvement",
+      "action": "Implement more descriptive and actionable error messages"
+    }
+  ]
+}

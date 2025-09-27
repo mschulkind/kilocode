@@ -668,6 +668,78 @@ async function generateOptimizationReports(results, config) {
 	console.log(`📊 Workflow optimization report saved to ${jsonPath}`)
 }
 
+/**
+ * Main CLI function
+ */
+async function main() {
+	const args = process.argv.slice(2)
+	const targets = []
+	
+	// Parse arguments
+	for (const arg of args) {
+		if (arg === '--help' || arg === '-h') {
+			console.log(`
+KiloCode Workflow Optimizer
+
+Usage: node scripts/docs/workflow-optimizer.js [targets...]
+
+Targets:
+  [targets...] Specific files or directories to process (default: docs/)
+
+Examples:
+  node scripts/docs/workflow-optimizer.js
+  node scripts/docs/workflow-optimizer.js docs/README.md
+  node scripts/docs/workflow-optimizer.js docs/ui/
+  node scripts/docs/workflow-optimizer.js docs/architecture/ docs/tools/
+`)
+			process.exit(0)
+		} else if (!arg.startsWith('--')) {
+			targets.push(arg)
+		}
+	}
+	
+	// Default to docs/ if no targets provided
+	const finalTargets = targets.length > 0 ? targets : ['docs/']
+	
+	console.log('🔧 Running workflow optimization...')
+	
+	try {
+		// Process each target
+		for (const target of finalTargets) {
+			if (!fs.existsSync(target)) {
+				console.warn(`Warning: Target "${target}" does not exist, skipping...`)
+				continue
+			}
+			
+			const stats = fs.statSync(target)
+			
+			if (stats.isFile() && target.endsWith('.md')) {
+				// Single file - process its directory
+				const dirPath = path.dirname(target)
+				console.log(`Processing directory: ${dirPath}`)
+				await runWorkflowOptimization(dirPath)
+			} else if (stats.isDirectory()) {
+				// Directory
+				console.log(`Processing directory: ${target}`)
+				await runWorkflowOptimization(target)
+			} else {
+				console.warn(`Warning: "${target}" is not a markdown file or directory, skipping...`)
+			}
+		}
+		
+		console.log('✅ Workflow optimization completed')
+		
+	} catch (error) {
+		console.error('❌ Error:', error.message)
+		process.exit(1)
+	}
+}
+
+// CLI interface
+if (import.meta.url === `file://${process.argv[1]}`) {
+	main().catch(console.error)
+}
+
 export {
 	runWorkflowOptimization,
 	analyzeWorkflowBottlenecks,

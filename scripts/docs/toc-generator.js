@@ -293,12 +293,140 @@ function watchFilesForTOC(filePaths, config = {}) {
 	}
 }
 
+/**
+ * Get all markdown files from specified targets
+ * @param {Array} targets - Array of file/directory paths
+ * @returns {Array} Array of markdown file paths
+ */
+function getMarkdownFiles(targets = ['docs/']) {
+	const files = []
+	
+	function scanDirectory(dir) {
+		try {
+			const items = fs.readdirSync(dir)
+			
+			items.forEach(item => {
+				const itemPath = path.join(dir, item)
+				const stat = fs.statSync(itemPath)
+				
+				if (stat.isDirectory()) {
+					scanDirectory(itemPath)
+				} else if (item.endsWith('.md')) {
+					files.push(itemPath)
+				}
+			})
+		} catch (error) {
+			// Skip directories that can't be read
+		}
+	}
+	
+	for (const target of targets) {
+		if (!fs.existsSync(target)) {
+			console.warn(`Warning: Target "${target}" does not exist, skipping...`)
+			continue
+		}
+		
+		const stats = fs.statSync(target)
+		
+		if (stats.isFile()) {
+			// Single file
+			if (target.endsWith('.md')) {
+				files.push(target)
+			} else {
+				console.warn(`Warning: "${target}" is not a markdown file, skipping...`)
+			}
+		} else if (stats.isDirectory()) {
+			// Directory - scan for markdown files
+			scanDirectory(target)
+		}
+	}
+	
+	// Remove duplicates and sort
+	return [...new Set(files)].sort()
+}
+
+/**
+ * Main CLI function
+ */
+async function main() {
+	const args = process.argv.slice(2)
+	const targets = []
+	
+	// Parse arguments
+	for (const arg of args) {
+		if (arg === '--help' || arg === '-h') {
+			console.log(`
+KiloCode TOC Generator
+
+Usage: node scripts/docs/toc-generator.js [targets...]
+
+Targets:
+  [targets...] Specific files or directories to process (default: docs/)
+
+Examples:
+  node scripts/docs/toc-generator.js
+  node scripts/docs/toc-generator.js docs/README.md
+  node scripts/docs/toc-generator.js docs/ui/
+  node scripts/docs/toc-generator.js docs/architecture/ docs/tools/
+`)
+			process.exit(0)
+		} else if (!arg.startsWith('--')) {
+			targets.push(arg)
+		}
+	}
+	
+	// Default to docs/ if no targets provided
+	const finalTargets = targets.length > 0 ? targets : ['docs/']
+	
+	console.log('📋 Generating Table of Contents...')
+	
+	try {
+		const markdownFiles = getMarkdownFiles(finalTargets)
+		
+		if (markdownFiles.length === 0) {
+			console.log('No markdown files found in specified targets')
+			return
+		}
+		
+		console.log(`Processing ${markdownFiles.length} files...`)
+		
+		const results = await generateTOCForFiles(markdownFiles)
+		
+		let successCount = 0
+		let changedCount = 0
+		
+		results.forEach(result => {
+			if (result.success) {
+				successCount++
+				if (result.changed) {
+					changedCount++
+					console.log(`✅ ${result.file}: ${result.message}`)
+				}
+			} else {
+				console.error(`❌ ${result.file}: ${result.message}`)
+			}
+		})
+		
+		console.log(`\n📊 Summary: ${successCount}/${results.length} files processed, ${changedCount} files updated`)
+		
+	} catch (error) {
+		console.error('❌ Error:', error.message)
+		process.exit(1)
+	}
+}
+
+// CLI interface
+if (import.meta.url === `file://${process.argv[1]}`) {
+	main().catch(console.error)
+}
+
 export {
 	generateTOC,
 	generateTOCForFile,
 	generateTOCForFiles,
 	watchFilesForTOC,
 	insertTOC,
+	getMarkdownFiles,
 	DEFAULT_CONFIG
 }
 

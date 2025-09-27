@@ -530,6 +530,146 @@ function generateLinkReport(results) {
 	return report
 }
 
+/**
+ * Get all markdown files from specified targets
+ * @param {Array} targets - Array of file/directory paths
+ * @returns {Array} Array of markdown file paths
+ */
+function getMarkdownFiles(targets = ['docs/']) {
+	const files = []
+	
+	function scanDirectory(dir) {
+		try {
+			const items = fs.readdirSync(dir)
+			
+			items.forEach(item => {
+				const itemPath = path.join(dir, item)
+				const stat = fs.statSync(itemPath)
+				
+				if (stat.isDirectory()) {
+					scanDirectory(itemPath)
+				} else if (item.endsWith('.md')) {
+					files.push(itemPath)
+				}
+			})
+		} catch (error) {
+			// Skip directories that can't be read
+		}
+	}
+	
+	for (const target of targets) {
+		if (!fs.existsSync(target)) {
+			console.warn(`Warning: Target "${target}" does not exist, skipping...`)
+			continue
+		}
+		
+		const stats = fs.statSync(target)
+		
+		if (stats.isFile()) {
+			// Single file
+			if (target.endsWith('.md')) {
+				files.push(target)
+			} else {
+				console.warn(`Warning: "${target}" is not a markdown file, skipping...`)
+			}
+		} else if (stats.isDirectory()) {
+			// Directory - scan for markdown files
+			scanDirectory(target)
+		}
+	}
+	
+	// Remove duplicates and sort
+	return [...new Set(files)].sort()
+}
+
+/**
+ * Main CLI function
+ */
+async function main() {
+	const args = process.argv.slice(2)
+	const targets = []
+	
+	// Parse arguments
+	for (const arg of args) {
+		if (arg === '--help' || arg === '-h') {
+			console.log(`
+KiloCode Link Validator
+
+Usage: node scripts/docs/link-validator.js [targets...]
+
+Targets:
+  [targets...] Specific files or directories to process (default: docs/)
+
+Examples:
+  node scripts/docs/link-validator.js
+  node scripts/docs/link-validator.js docs/README.md
+  node scripts/docs/link-validator.js docs/ui/
+  node scripts/docs/link-validator.js docs/architecture/ docs/tools/
+`)
+			process.exit(0)
+		} else if (!arg.startsWith('--')) {
+			targets.push(arg)
+		}
+	}
+	
+	// Default to docs/ if no targets provided
+	const finalTargets = targets.length > 0 ? targets : ['docs/']
+	
+	console.log('🔗 Validating links...')
+	
+	try {
+		const markdownFiles = getMarkdownFiles(finalTargets)
+		
+		if (markdownFiles.length === 0) {
+			console.log('No markdown files found in specified targets')
+			return
+		}
+		
+		console.log(`Processing ${markdownFiles.length} files...`)
+		
+		let totalValid = 0
+		let totalInvalid = 0
+		let totalExternal = 0
+		let totalAnchor = 0
+		
+		for (const filePath of markdownFiles) {
+			try {
+				const result = await validateFileLinks(filePath)
+				
+				if (result.valid) {
+					totalValid++
+					console.log(`✅ ${filePath}: All links valid`)
+				} else {
+					totalInvalid++
+					console.log(`❌ ${filePath}: ${result.summary.invalidLinks} invalid links`)
+				}
+				
+				totalExternal += result.summary.externalLinks
+				totalAnchor += result.summary.anchorLinks
+				
+			} catch (error) {
+				console.error(`❌ ${filePath}: Error - ${error.message}`)
+			}
+		}
+		
+		console.log(`\n📊 Summary:`)
+		console.log(`- Files processed: ${markdownFiles.length}`)
+		console.log(`- Valid files: ${totalValid}`)
+		console.log(`- Files with invalid links: ${totalInvalid}`)
+		console.log(`- External links found: ${totalExternal}`)
+		console.log(`- Anchor links found: ${totalAnchor}`)
+		
+	} catch (error) {
+		console.error('❌ Error:', error.message)
+		process.exit(1)
+	}
+}
+
+// CLI interface
+if (import.meta.url === `file://${process.argv[1]}`) {
+	main().catch(console.error)
+}
+
 export {
 	validateFileLinks,
 	validateDirectoryLinks,
@@ -540,7 +680,8 @@ export {
 	generateLinkReport,
 	isExternalLink,
 	isAnchorLink,
-	resolveLink
+	resolveLink,
+	getMarkdownFiles
 }
 
 
