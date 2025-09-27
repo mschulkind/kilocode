@@ -1,222 +1,162 @@
-# UI\_CHAT\_TASK\_WINDOW
+# Chat Task Window System
+
+## Overview
+
+This document describes the chat and task window user interface components, including user interaction patterns, message flow control, request payload construction, and troubleshooting procedures for duplicate API requests.
 
 ## Table of Contents
-- [UI\_CHAT\_TASK\_WINDOW](#uichattaskwindow)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [1. Related Documents](1-related-documents---2-ui-overview---3-message-flow-control-loop---4-request-payloads-timing-timestamps---5-state-persistence-rendering---6-debugging-duplicate-api-requests---7-instrumentation-logs---8-troubleshooting-ux-notes---navigation-footer-summary-details-a-namerelated-docsa-1-related-documents-)]\(#1-related-documents1-related-documents-2-ui-overview-3-message-flow-control-loop-4-request-payloads-timing-timestamps-5-state-persistence-rendering-6-debugging-duplicate-api-requests-7-instrumentation-logs-8-troubleshooting-ux-notes-navigation-footer-summary-details-a-namerelated-docsa-1-related-documents)
-- [2. UI Overview](#2-ui-overview)
-- [2.1 Panels & Controls](#21-panels-controls)
-- [2.2 Display conventions](#22-display-conventions)
-- [3. Message Flow & Control Loop](#3-message-flow-control-loop)
-- [3.1 High-level flow](#31-high-level-flow)
-- [3.2 When requests are issued](#32-when-requests-are-issued)
-- [4. Request Payloads & Timing (timestamps)](#4-request-payloads-timing-timestamps)
-- [4.1 Payload composition](#41-payload-composition)
-- [4.2 Timestamps and logging](#42-timestamps-and-logging)
-- [5. State, Persistence & Rendering](#5-state-persistence-rendering)
-- [5.1 In-memory vs persisted state](#51-in-memory-vs-persisted-state)
-- [5.2 Rendering notes](#52-rendering-notes)
-- [6. Debugging: duplicate API requests](#6-debugging-duplicate-api-requests)
-- [6.1 Diagnostics](#61-diagnostics)
-- [6.2 Quick fixes](#62-quick-fixes)
-- [7. Instrumentation & Logs](#7-instrumentation-logs)
-- [8. Troubleshooting & UX notes](#8-troubleshooting-ux-notes)
-- [Navigation Footer](#navigation-footer)
 
-## When You're Here
+- [Related Documentation](#related-documentation)
+- [UI Components](#ui-components)
+- [Message Flow Control](#message-flow-control)
+- [Request Payloads and Timing](#request-payloads-and-timing)
+- [State Management and Rendering](#state-management-and-rendering)
+- [Debugging Duplicate Requests](#debugging-duplicate-requests)
+- [Instrumentation and Logging](#instrumentation-and-logging)
+- [Troubleshooting Guide](#troubleshooting-guide)
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+## Related Documentation
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+- **Backend Lifecycle**: See [Orchestrator Lifecycle](../orchestrator/README.md) for task orchestration patterns
+- **Task Delegation**: Review [Orchestrator Documentation](../orchestrator/README.md) for task delegation and subtasking
+- **Settings Management**: Reference [Settings Documentation](../../apps/kilocode-docs/docs/features/settings-management.md) for UI feature configuration
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+## UI Components
 
-- *Purpose:*\* Describe the chat / task window UI, how user actions map to orchestrator actions, the
-  control loop that decides when to fire API requests (including payload construction), how messages
-  are displayed (including timestamps), and troubleshooting steps for duplicate API requests.
+The chat and task window interface consists of several key components:
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
-> can go, and how to get there without getting lost! 🗺️
+### Primary Panels and Controls
 
-<details>
-<summary>Table of contents</summary>
-- \[1. Related Documents
-- 2. UI Overview
-- 3. Message Flow & Control Loop
-- 4. Request Payloads & Timing (timestamps)
-- 5. State, Persistence & Rendering
-- 6. Debugging: duplicate API requests
-- 7. Instrumentation & Logs
-- 8. Troubleshooting & UX notes
-- Navigation Footer
+- **Chat Input**: Free-text input field where users compose their prompts and messages
+- **Model Switcher**: Dropdown control for selecting the AI model for the next request
+- **Message List**: Chronological display of conversation history including user messages, system responses, and status indicators
+- **Task View**: Optional panel displaying current plans, subtasks, and execution progress
+- **Status Indicators**: Visual feedback showing request states (pending, in progress, streaming, completed, error)
+- **Action Controls**: Send button, Stop/Cancel functionality, and Retry options
 
-</summary>
-</details>
+### Display Conventions
 
-<a name="related-docs"></a>
+- **Message Format**: Each message displays author (User/System/Assistant), formatted content (Markdown), timestamp, and status badges
+- **Streaming Responses**: Real-time updates with streaming indicators and incremental content updates
+- **Idempotency**: UI attaches client-side request IDs to ensure operation consistency
 
-## 1. Related Documents]\(1-related-documents---2-ui-overview---3-message-flow-control-loop---4-request-payloads-timing-timestamps---5-state-persistence-rendering---6-debugging-duplicate-api-requests---7-instrumentation-logs---8-troubleshooting-ux-notes---navigation-footer-summary-details-a-namerelated-docsa-1-related-documents-)
-- Backend lifecycle and task orchestration: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md)
-- Task delegation & subtasking: [`ORCHESTRATOR_TASK_DELEGATION.md`](ORCHESTRATOR_TASK_DELEGATION.md)
-- UI feature docs (external):
-  [`../apps/kilocode-docs/docs/features/settings-management.md`](../apps/kilocode-docs/docs/features/settings-management.md)
+## Message Flow Control
 
-[Back to Top](#)
+The system implements a sophisticated control loop to manage when and how API requests are initiated.
 
-<a name="ui-overview"></a>
-
-## 2. UI Overview
-
-This section describes the primary parts of the chat / task window and their responsibilities.
-
-### 2.1 Panels & Controls
-- Chat input: free-text input where users type prompts.
-- Shortcut dropdown (model switcher): updates the model for the next request.
-- Message list: chronological list of messages and system responses.
-- Task / plan view: optional panel showing current plan or subtasks.
-- Status indicators: show request state (pending, in\_progress, streaming, completed, error).
-- Controls: Send, Stop/Cancel, Retry.
-
-### 2.2 Display conventions
-- Messages show: Author (User / System / Assistant), Body (Markdown), Timestamp, and status badges.
-- Streaming responses should show a streaming indicator and update the message body incrementally.
-- Keep operations idempotent: UI should attach a client-side requestId to each enqueued request.
-
-[Back to Top](#)
-
-<a name="message-flow"></a>
-
-## 3. Message Flow & Control Loop
-
-This section documents the control loop that decides when the UI or orchestrator issues requests.
-
-### 3.1 High-level flow
+### High-Level Flow
 
 ```mermaid
 sequenceDiagram
-  participant U as User
-  participant UI as Chat UI
-  participant O as Orchestrator
-  participant API as Provider
+    participant User
+    participant ChatUI as Chat UI
+    participant Orchestrator
+    participant Provider as API Provider
 
-  U->>UI: submit message / press Send
-  UI->>O: enqueueMessage(message, requestId)
-  O->>O: decideRequestPayload()
-  O->>API: sendRequest(payload, requestId)
-  API-->>O: streamResponse(chunk)
-  O-->>UI: streamToMessage(chunk, requestId)
-  O-->>UI: finalizeMessage(requestId)
+    User->>ChatUI: Submit message
+    ChatUI->>Orchestrator: Enqueue message with request ID
+    Orchestrator->>Orchestrator: Validate and prepare payload
+    Orchestrator->>Provider: Send request with metadata
+    Provider-->>Orchestrator: Stream response chunks
+    Orchestrator-->>ChatUI: Update message with chunks
+    Orchestrator-->>ChatUI: Finalize message
 ```
 
-### 3.2 When requests are issued
-- UI-initiated: user presses Send (explicit) or uses a shortcut (explicit).
-- Orchestrator-initiated: subtasks, follow-ups or scheduled actions trigger initiateTaskLoop() in
-  the orchestrator.
-- Guard conditions before issuing: no activeRequest for same chat turn, request payload validated,
-  and requestId generated.
-- Debounce UI actions (100–250ms) for rapid input events; do not fire on every keystroke.
+### Request Initiation Triggers
 
-[Back to Top](#)
+- **User Actions**: Explicit send button press or shortcut key activation
+- **Orchestrator Actions**: Subtask execution, follow-up operations, or scheduled tasks
+- **Guard Conditions**: Validates no active requests exist for the same chat turn, payload validation passes, and unique request ID is generated
+- **Debouncing**: UI actions are debounced (100-250ms) to prevent rapid-fire requests
 
-<a name="payloads-timestamps"></a>
+## Request Payloads and Timing
 
-## 4. Request Payloads & Timing (timestamps)
+### Payload Composition
 
-### 4.1 Payload composition
-- Each outgoing request should include:
-- requestId (client-generated short uuid)
-- messages: recent message window (trimmed by token budget)
-- system/context frames (persistent prompts)
-- model/profile and provider hints
-- request-level options (max tokens, temperature, streaming flag)
-- metadata (workspace, file, task id if applicable)
+Each API request includes comprehensive metadata:
 
-### 4.2 Timestamps and logging
-- Attach timestamps at meaningful points:
-- ui\_enqueue\_timestamp: when user action enqueued
-- orchestrator\_dispatch\_timestamp: when orchestrator hands to provider
-- provider\_start\_timestamp: when provider sends first token
-- provider\_response\_timestamp: when final response received
-- Log requestId with each timestamp to correlate events across layers.
-- Display timestamps in UI as local-time derived from ISO-8601 UTC stored on messages (e.g.
-  2025-09-19T20:47:27Z).
+- **Request ID**: Client-generated unique identifier for tracking and deduplication
+- **Message History**: Recent conversation window optimized for token budget
+- **System Context**: Persistent prompts and context frames
+- **Model Configuration**: Provider hints and model selection
+- **Request Options**: Token limits, temperature settings, streaming preferences
+- **Metadata**: Workspace context, file references, and task identifiers
 
-[Back to Top](#)
+### Timestamp Management
 
-<a name="state-persistence"></a>
+The system tracks timestamps at critical points:
 
-## 5. State, Persistence & Rendering
+- **UI Enqueue**: When user action is queued for processing
+- **Orchestrator Dispatch**: When request is handed to the provider
+- **Provider Start**: When first response token is received
+- **Provider Complete**: When final response is received
 
-### 5.1 In-memory vs persisted state
-- In-memory UI state: draft message, temporary streaming buffers, UI flags (send disabled).
-- Persisted state: conversation history, message timestamps, model/profile preferences, saved
-  drafts.
-- Best practice: persist conversation messages and request metadata so re-renders or reconstructions
-  keep consistent times and ids.
+All timestamps are stored in ISO-8601 UTC format and displayed in local time in the UI.
 
-### 5.2 Rendering notes
-- Preserve edit buffer across rerenders; use controlled components.
-- Include data attributes on message elements: data-request-id, data-provider-id to assist
-  debugging.
-- Render streaming chunks progressively and finalize when stream completes.
+## State Management and Rendering
 
-[Back to Top](#)
+### State Categories
 
-<a name="debugging-duplicate-requests"></a>
+- **In-Memory State**: Draft messages, streaming buffers, UI flags (send button state)
+- **Persisted State**: Conversation history, message timestamps, user preferences, saved drafts
 
-## 6. Debugging: duplicate API requests
+### Rendering Best Practices
 
-If multiple API requests are observed for a single user action, check:
-- UI double-send: Send handler bound multiple times, or button not disabled during send.
-- Duplicate event listeners: components mounted twice.
-- Re-entrant control loop: both UI and orchestrator trigger send; missing dedupe by requestId.
-- Streaming vs finalization race: start-of-stream triggers finalization incorrectly.
-- Retries / fallback paths: timeouts or fallback logic issuing additional requests.
+- **Controlled Components**: Preserve edit buffers across re-renders
+- **Debugging Support**: Include data attributes (request ID, provider ID) on message elements
+- **Progressive Updates**: Render streaming content incrementally until completion
 
-### 6.1 Diagnostics
-- Add logging at: UI.enqueue(requestId), Orchestrator.dispatch(requestId),
-  Provider.start(requestId).
-- Correlate request timestamps and requestIds across logs.
-- Search for multiple UI.enqueue events for same action.
+## Debugging Duplicate Requests
 
-### 6.2 Quick fixes
-- Disable send button on click and re-enable after complete/error.
-- Add debounce (100–250ms) or guard flag activeRequest per chat turn.
-- Attach and check client-generated requestId; orchestrator should skip if activeRequest exists for
-  same id.
-- Use cancellation tokens to cancel in-flight provider calls when superseded.
+### Common Causes
 
-[Back to Top](#)
+- **UI Double-Send**: Multiple event handlers or button state management issues
+- **Component Remounting**: Duplicate event listeners from component lifecycle issues
+- **Control Loop Conflicts**: Both UI and orchestrator triggering requests without deduplication
+- **Streaming Race Conditions**: Incorrect finalization logic during streaming
+- **Retry Logic**: Timeout handling or fallback mechanisms creating additional requests
 
-<a name="instrumentation"></a>
+### Diagnostic Procedures
 
-## 7. Instrumentation & Logs
-- Recommended logs: enqueue, dispatch, provider start, provider chunk, provider end, finalization.
-- Include requestId, timestamps, user action trace, and short payload hash in logs.
-- For reproduction, capture network & console traces and the requestId shown in UI metadata.
+1. **Add Logging Points**: Track enqueue, dispatch, and provider start events
+2. **Correlate Timestamps**: Use request IDs to trace request flow across layers
+3. **Identify Patterns**: Look for multiple enqueue events for single user actions
 
-[Back to Top](#)
+### Quick Resolution Steps
 
-<a name="troubleshooting"></a>
+- **Disable Send Button**: Prevent multiple clicks during request processing
+- **Implement Debouncing**: Add 100-250ms delay for rapid user actions
+- **Request ID Validation**: Orchestrator should skip requests with existing active IDs
+- **Cancellation Tokens**: Cancel in-flight requests when superseded
 
-## 8. Troubleshooting & UX notes
-- UX: surface clear states: "Request queued", "Streaming", "Completed", "Error".
-- Show request progress and provide a Cancel action for long-running requests.
-- When fallbacks occur (shell integration timeouts), present the fallback reason in logs and UI.
-- For developers: enable verbose orchestrator logging to capture guard evaluation and retries.
+## Instrumentation and Logging
 
-[Back to Top](#)
-- \*\*
+### Recommended Log Points
 
-Navigation:
-- Index: [`docs/ORCHESTRATOR_LIFECYCLE.md`](docs/ORCHESTRATOR_LIFECYCLE.md)
-- Task delegation: [`docs/ORCHESTRATOR_TASK_DELEGATION.md`](docs/ORCHESTRATOR_TASK_DELEGATION.md)
+- Request enqueue (UI level)
+- Request dispatch (Orchestrator level)
+- Provider start and chunk events
+- Request completion and finalization
 
-## Navigation Footer
-- \*\*
+### Log Content
 
-- *Navigation*\*: [docs](../) · [ui](./ui/) ·
-  [↑ Table of Contents](#uichattaskwindow)
+Include request ID, timestamps, user action traces, and payload hashes for comprehensive debugging support.
+
+## Troubleshooting Guide
+
+### User Experience Considerations
+
+- **Clear State Indicators**: Display "Request Queued", "Streaming", "Completed", "Error" states
+- **Progress Feedback**: Show request progress and provide cancel functionality
+- **Fallback Communication**: Clearly communicate when fallback mechanisms are activated
+
+### Developer Tools
+
+- **Verbose Logging**: Enable detailed orchestrator logging for guard evaluation and retry analysis
+- **Network Traces**: Capture network and console traces with request IDs for reproduction
+
+## Navigation
+
+- [← Back to UI Documentation](README.md)
+- [→ UI Layer System](UI_LAYER_SYSTEM.md)
+- [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)

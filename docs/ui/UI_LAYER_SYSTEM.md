@@ -1,74 +1,18 @@
-# UI Layer System
+# UI Layer System Architecture
 
-## Table of Contents
-- [UI Layer System](#ui-layer-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Chat UI Component](#chat-ui-component)
-- [ChatView Component](#chatview-component)
-- [Message Display](#message-display)
-- [Send Button Component](#send-button-component)
-- [ChatTextArea Component](#chattextarea-component)
-- [Send Button Logic](#send-button-logic)
-- [Message Queue UI](#message-queue-ui)
-- [QueuedMessages Component](#queuedmessages-component)
-- [Queue State Integration](#queue-state-integration)
-- [State Management](#state-management)
-- [State Variables](#state-variables)
-- [State Transitions](#state-transitions)
-- [State Synchronization](#state-synchronization)
-- [Event Handling](#event-handling)
-- [Message Send Events](#message-send-events)
-- [Keyboard Events](#keyboard-events)
-- [Webview Communication](#webview-communication)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Send Button Stuck Disabled](#issue-1-send-button-stuck-disabled)
-- [Issue 2: Multiple Messages Queued](#issue-2-multiple-messages-queued)
-- [Issue 3: Button State Inconsistency](#issue-3-button-state-inconsistency)
-- [Navigation Footer](#navigation-footer)
+## Overview
 
-## When You're Here
+The UI Layer system provides comprehensive user interface components for the KiloCode chat application, managing user interactions, state visualization, and communication with backend systems.
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+## System Components
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+The UI Layer consists of three primary components:
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+1. **Chat Interface** - Main chat view and message display system
+2. **Send Controls** - User input controls and request initiation mechanisms
+3. **Message Queue** - Visual representation and management of queued messages
 
-- *Purpose:*\* Comprehensive documentation of the UI Layer system components, including Chat UI, Send
-  Button, and Message Queue UI components and their interactions.
-
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
-> can go, and how to get there without getting lost! 🗺️
-
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Chat UI Component](#chat-ui-component)
-- [Send Button Component](#send-button-component)
-- [Message Queue UI](#message-queue-ui)
-- [State Management](#state-management)
-- [Event Handling](#event-handling)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- Navigation Footer
-
-</details>
-
-## Executive Summary
-- The UI Layer system manages all user interface components for the chat interface, including the
-  main chat view, send button controls, and message queue display. This layer is responsible for user
-  interactions, state visualization, and communication with the backend systems.\*
-
-The UI Layer consists of three main components:
-1. **Chat UI** - Main chat interface and message display
-2. **Send Button** - User input controls and request initiation
-3. **Message Queue UI** - Visual representation of queued messages
-
-## System Architecture
+## Architecture Diagram
 
 ```mermaid
 graph TB
@@ -109,35 +53,33 @@ graph TB
     SH --> SD
 ```
 
-## Chat UI Component
+## Chat Interface Component
 
 ### ChatView Component
 
-- *Location*\*: `webview-ui/src/components/chat/ChatView.tsx`
+**Location**: `webview-ui/src/components/chat/ChatView.tsx`
 
-- *Responsibilities*\*:
+**Responsibilities**:
 - Main chat interface container
 - Message display and rendering
 - State coordination between components
 - Communication with backend via webview
 
-- *Key Features*\*:
-
+**Interface Definition**:
 ```typescript
 export interface ChatViewProps {
-	isHidden: boolean
-	showAnnouncement: boolean
-	hideAnnouncement: () => void
+    isHidden: boolean
+    showAnnouncement: boolean
+    hideAnnouncement: () => void
 }
 
 export interface ChatViewRef {
-	acceptInput: () => void
-	focusInput: () => void
+    acceptInput: () => void
+    focusInput: () => void
 }
 ```
 
-- *State Management*\*:
-
+**State Management**:
 ```typescript
 const [inputValue, setInputValue] = useState("")
 const [sendingDisabled, setSendingDisabled] = useState(false)
@@ -145,86 +87,80 @@ const [selectedImages, setSelectedImages] = useState<string[]>([])
 const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 ```
 
-### Message Display
+### Message Display System
 
-- *Component*\*: `ChatRow`
-- Displays individual messages
-- Handles different message types (user, assistant, system)
-- Manages message formatting and rendering
+**Component**: `ChatRow`
 
-- *Features*\*:
-- Markdown rendering
-- Code syntax highlighting
-- Image display
-- Message timestamps
-- Status indicators
+**Features**:
+- Individual message rendering
+- Support for different message types (user, assistant, system)
+- Markdown rendering with syntax highlighting
+- Image display capabilities
+- Timestamp and status indicators
 
-## Send Button Component
+## Send Controls Component
 
 ### ChatTextArea Component
 
-- *Location*\*: `webview-ui/src/components/chat/ChatTextArea.tsx`
+**Location**: `webview-ui/src/components/chat/ChatTextArea.tsx`
 
-- *Responsibilities*\*:
-- Text input area
+**Responsibilities**:
+- Text input area management
 - Send button control
-- Image selection
+- Image selection interface
 - Mode and profile selection
 - Input validation
 
-- *Interface*\*:
-
+**Interface Definition**:
 ```typescript
 interface ChatTextAreaProps {
-	inputValue: string
-	setInputValue: (value: string) => void
-	sendingDisabled: boolean
-	selectApiConfigDisabled: boolean
-	placeholderText: string
-	selectedImages: string[]
-	setSelectedImages: React.Dispatch<React.SetStateAction<string[]>>
-	onSend: () => void
-	onSelectImages: () => void
-	shouldDisableImages: boolean
-	onHeightChange?: (height: number) => void
-	mode: Mode
-	setMode: (value: Mode) => void
-	modeShortcutText: string
-	isEditMode?: boolean
-	onCancel?: () => void
+    inputValue: string
+    setInputValue: (value: string) => void
+    sendingDisabled: boolean
+    selectApiConfigDisabled: boolean
+    placeholderText: string
+    selectedImages: string[]
+    setSelectedImages: React.Dispatch<React.SetStateAction<string[]>>
+    onSend: () => void
+    onSelectImages: () => void
+    shouldDisableImages: boolean
+    onHeightChange?: (height: number) => void
+    mode: Mode
+    setMode: (value: Mode) => void
+    modeShortcutText: string
+    isEditMode?: boolean
+    onCancel?: () => void
 }
 ```
 
 ### Send Button Logic
 
-- *State-Dependent Behavior*\*:
-
+**State-Dependent Behavior**:
 ```typescript
 const handleSendMessage = useCallback(
-	(text: string, images: string[]) => {
-		text = text.trim()
+    (text: string, images: string[]) => {
+        text = text.trim()
 
-		if (text || images.length > 0) {
-			if (sendingDisabled) {
-				// Queue message instead of sending immediately
-				try {
-					console.log("queueMessage", text, images)
-					vscode.postMessage({ type: "queueMessage", text, images })
-				} catch (error) {
-					console.error("Failed to queue message:", error)
-				}
-			} else {
-				// Send immediately
-				vscode.postMessage({ type: "newTask", text, images })
-			}
-		}
-	},
-	[sendingDisabled],
+        if (text || images.length > 0) {
+            if (sendingDisabled) {
+                // Queue message instead of sending immediately
+                try {
+                    console.log("queueMessage", text, images)
+                    vscode.postMessage({ type: "queueMessage", text, images })
+                } catch (error) {
+                    console.error("Failed to queue message:", error)
+                }
+            } else {
+                // Send immediately
+                vscode.postMessage({ type: "newTask", text, images })
+            }
+        }
+    },
+    [sendingDisabled],
 )
 ```
 
-- *Button State Management*\*:
-
+**Button State Management**:
 ```typescript
 <button
     aria-label={t("chat:sendMessage")}
@@ -246,22 +182,21 @@ const handleSendMessage = useCallback(
 </button>
 ```
 
-## Message Queue UI
+## Message Queue System
 
 ### QueuedMessages Component
 
-- *Location*\*: `webview-ui/src/components/chat/QueuedMessages.tsx`
+**Location**: `webview-ui/src/components/chat/QueuedMessages.tsx`
 
-- *Purpose*\*: Visual representation of queued messages when the system is busy
+**Purpose**: Visual representation of queued messages when the system is busy
 
-- *Features*\*:
+**Features**:
 - Display queued message count
 - Show message previews
 - Allow message removal
 - Allow message editing
 
-- *Implementation*\*:
-
+**Implementation**:
 ```typescript
 export const QueuedMessages: React.FC<QueuedMessagesProps> = ({
     messages,
@@ -292,30 +227,27 @@ export const QueuedMessages: React.FC<QueuedMessagesProps> = ({
 
 ### Queue State Integration
 
-- *Connection to Backend*\*:
-
+**Backend Connection**:
 ```typescript
 useEffect(() => {
-	const currentTask = provider.getCurrentTask()
-	if (currentTask?.messageQueueService) {
-		const handleQueueStateChange = (messages: QueuedMessage[]) => {
-			setQueuedMessages(messages)
-		}
+    const currentTask = provider.getCurrentTask()
+    if (currentTask?.messageQueueService) {
+        const handleQueueStateChange = (messages: QueuedMessage[]) => {
+            setQueuedMessages(messages)
+        }
 
-		currentTask.messageQueueService.on("stateChanged", handleQueueStateChange)
+        currentTask.messageQueueService.on("stateChanged", handleQueueStateChange)
 
-		return () => {
-			currentTask.messageQueueService.off("stateChanged", handleQueueStateChange)
-		}
-	}
+        return () => {
+            currentTask.messageQueueService.off("stateChanged", handleQueueStateChange)
+        }
+    }
 }, [provider])
 ```
 
 ## State Management
 
-### State Variables
-
-- *Primary State*\*:
+### Primary State Variables
 
 ```typescript
 const [sendingDisabled, setSendingDisabled] = useState(false)
@@ -326,7 +258,7 @@ const [selectedImages, setSelectedImages] = useState<string[]>([])
 const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 ```
 
-### State Transitions
+### State Transition Flow
 
 ```mermaid
 stateDiagram-v2
@@ -344,23 +276,22 @@ stateDiagram-v2
 
 ### State Synchronization
 
-- *Task State Integration*\*:
-
+**Task State Integration**:
 ```typescript
 useEffect(() => {
-	const currentTask = provider.getCurrentTask()
-	if (currentTask) {
-		const checkTaskState = () => {
-			if (!currentTask.isStreaming && !currentTask.isWaitingForFirstChunk) {
-				setSendingDisabled(false)
-			}
-		}
+    const currentTask = provider.getCurrentTask()
+    if (currentTask) {
+        const checkTaskState = () => {
+            if (!currentTask.isStreaming && !currentTask.isWaitingForFirstChunk) {
+                setSendingDisabled(false)
+            }
+        }
 
-		// Check state periodically
-		const interval = setInterval(checkTaskState, 1000)
+        // Check state periodically
+        const interval = setInterval(checkTaskState, 1000)
 
-		return () => clearInterval(interval)
-	}
+        return () => clearInterval(interval)
+    }
 }, [provider])
 ```
 
@@ -368,134 +299,126 @@ useEffect(() => {
 
 ### Message Send Events
 
-- *Primary Handler*\*:
-
+**Primary Handler**:
 ```typescript
 const handleSendMessage = useCallback(
-	(text: string, images: string[]) => {
-		text = text.trim()
+    (text: string, images: string[]) => {
+        text = text.trim()
 
-		if (text || images.length > 0) {
-			if (sendingDisabled) {
-				// Queue message instead of sending immediately
-				vscode.postMessage({ type: "queueMessage", text, images })
-			} else {
-				// Send immediately
-				vscode.postMessage({ type: "newTask", text, images })
-			}
-		}
-	},
-	[sendingDisabled],
+        if (text || images.length > 0) {
+            if (sendingDisabled) {
+                // Queue message instead of sending immediately
+                vscode.postMessage({ type: "queueMessage", text, images })
+            } else {
+                // Send immediately
+                vscode.postMessage({ type: "newTask", text, images })
+            }
+        }
+    },
+    [sendingDisabled],
 )
 ```
 
 ### Keyboard Events
 
-- *Enter Key Handling*\*:
-
+**Enter Key Handling**:
 ```typescript
 const handleKeyDown = useCallback(
-	(event: React.KeyboardEvent) => {
-		if (event.key === "Enter" && !event.shiftKey) {
-			event.preventDefault()
-			if (!sendingDisabled) {
-				handleSendMessage(inputValue, selectedImages)
-			}
-		}
-	},
-	[sendingDisabled, inputValue, selectedImages, handleSendMessage],
+    (event: React.KeyboardEvent) => {
+        if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault()
+            if (!sendingDisabled) {
+                handleSendMessage(inputValue, selectedImages)
+            }
+        }
+    },
+    [sendingDisabled, inputValue, selectedImages, handleSendMessage],
 )
 ```
 
 ### Webview Communication
 
-- *Message Types*\*:
+**Message Types**:
 - `newTask` - Create new task with message
 - `queueMessage` - Queue message for later processing
 - `removeQueuedMessage` - Remove queued message
 - `editQueuedMessage` - Edit queued message
 
-## Common Issues and Solutions
+## Troubleshooting Guide
 
-### Issue 1: Send Button Stuck Disabled
+### Send Button Stuck Disabled
 
-- *Symptoms*\*:
+**Symptoms**:
 - Send button remains disabled after request completion
 - User cannot send new messages
 - UI appears frozen
 
-- *Root Cause*\*: `sendingDisabled` state not properly reset
+**Root Cause**: `sendingDisabled` state not properly reset
 
-- *Solution*\*:
-
+**Solution**:
 ```typescript
 // Ensure proper state reset
 useEffect(() => {
-	const currentTask = provider.getCurrentTask()
-	if (currentTask) {
-		const checkTaskState = () => {
-			if (!currentTask.isStreaming && !currentTask.isWaitingForFirstChunk) {
-				setSendingDisabled(false)
-			}
-		}
+    const currentTask = provider.getCurrentTask()
+    if (currentTask) {
+        const checkTaskState = () => {
+            if (!currentTask.isStreaming && !currentTask.isWaitingForFirstChunk) {
+                setSendingDisabled(false)
+            }
+        }
 
-		const interval = setInterval(checkTaskState, 1000)
-		return () => clearInterval(interval)
-	}
+        const interval = setInterval(checkTaskState, 1000)
+        return () => clearInterval(interval)
+    }
 }, [provider])
 ```
 
-### Issue 2: Multiple Messages Queued
+### Multiple Messages Queued
 
-- *Symptoms*\*:
+**Symptoms**:
 - Same message appears multiple times in queue
 - Multiple API requests for single user action
 - Queue UI shows duplicates
 
-- *Root Cause*\*: Message queued multiple times due to rapid user interaction
+**Root Cause**: Message queued multiple times due to rapid user interaction
 
-- *Solution*\*:
-
+**Solution**:
 ```typescript
 // Implement debounced message queuing
 const debouncedQueueMessage = useMemo(
-	() =>
-		debounce((text: string, images: string[]) => {
-			vscode.postMessage({ type: "queueMessage", text, images })
-		}, 300),
-	[],
+    () =>
+        debounce((text: string, images: string[]) => {
+            vscode.postMessage({ type: "queueMessage", text, images })
+        }, 300),
+    [],
 )
 ```
 
-### Issue 3: Button State Inconsistency
+### Button State Inconsistency
 
-- *Symptoms*\*:
+**Symptoms**:
 - Button appears enabled but request is blocked
 - Button appears disabled but request goes through
 - Visual state doesn't match actual state
 
-- *Root Cause*\*: State updates not properly synchronized
+**Root Cause**: State updates not properly synchronized
 
-- *Solution*\*:
-
+**Solution**:
 ```typescript
 // Implement state validation
 const validateButtonState = useCallback(() => {
-	const currentTask = provider.getCurrentTask()
-	const expectedSendingDisabled = currentTask?.isStreaming || currentTask?.isWaitingForFirstChunk || false
+    const currentTask = provider.getCurrentTask()
+    const expectedSendingDisabled = currentTask?.isStreaming || currentTask?.isWaitingForFirstChunk || false
 
-	if (sendingDisabled !== expectedSendingDisabled) {
-		console.warn("Button state inconsistency detected, correcting")
-		setSendingDisabled(expectedSendingDisabled)
-	}
+    if (sendingDisabled !== expectedSendingDisabled) {
+        console.warn("Button state inconsistency detected, correcting")
+        setSendingDisabled(expectedSendingDisabled)
+    }
 }, [sendingDisabled, provider])
 ```
 
-<a id="navigation-footer"></a>
-- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
-  `/docs/ui/UI_LAYER_SYSTEM.md#L1`
+## Navigation
 
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [docs](../) · [ui](./ui/) · [↑ Table of Contents](#ui-layer-system)
+- [← Back to UI Documentation](README.md)
+- [→ Chat Task Window](UI_CHAT_TASK_WINDOW.md)
+- [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)

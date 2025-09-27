@@ -1,78 +1,49 @@
 # UI Documentation
 
-## Table of Contents
-- [UI Documentation](#ui-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#navigation-guide)
-- [Quick Start Paths](#quick-start-paths)
-- [Current Focus](#current-focus)
-- [📚 Documentation Structure](#documentation-structure)
-- [🔗 Cross-References](#cross-references)
-- [🦕 Dinosaur Analogy](#dinosaur-analogy)
-- [🧭 Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
+## Overview
 
-## When You're Here
+This directory contains comprehensive documentation for the user interface layer of KiloCode, covering chat systems, task window management, and UI component architecture.
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+## Documentation Structure
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+The UI documentation is organized into focused, specialized documents:
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+- **[UI Layer System](UI_LAYER_SYSTEM.md)** - Complete architecture and design patterns for the UI layer
+- **[Chat Task Window](UI_CHAT_TASK_WINDOW.md)** - Chat interface and task window component implementation
+- **[Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)** - Message routing, state management, and communication patterns
 
-Welcome to the UI documentation! 🎨 This directory covers the user interface layer, chat systems,
-and task window management in KiloCode.
+## Quick Navigation
 
-## 🗺️ Navigation Guide
+### For Developers
+- **Understanding UI Architecture**: Start with [UI Layer System](UI_LAYER_SYSTEM.md)
+- **Implementing Chat Features**: Reference [Chat Task Window](UI_CHAT_TASK_WINDOW.md)
+- **Managing Message Flow**: See [Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)
 
-### Quick Start Paths
+### For Troubleshooting
+- **UI Component Issues**: Check [UI Layer System](UI_LAYER_SYSTEM.md) for component patterns
+- **Chat Interface Problems**: Review [Chat Task Window](UI_CHAT_TASK_WINDOW.md) for implementation details
+- **Message Routing Issues**: Consult [Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md) for flow patterns
 
-- **Something's Broken**: Check [UI\_LAYER\_SYSTEM.md](UI_LAYER_SYSTEM.md) for troubleshooting
-- **Need to Understand**: Start with [Repository Overview](README.md) for an overview
-- **Implementation Journey**: Follow UI architecture and component guides
+## System Integration
 
-### Current Focus
-- Chat interface and message flow
-- Task window management
-- UI component architecture
-- User experience optimization
+The UI layer integrates with several other system components:
 
-## 📚 Documentation Structure
+- **Architecture Layer**: See [Architecture Documentation](../architecture/README.md) for system-wide patterns
+- **Service Layer**: Review [Service Documentation](../services/README.md) for UI-related services
+- **Standards**: Follow [Documentation Standards](../standards/README.md) for UI development guidelines
 
-- **[Repository Overview](README.md)** - Master index of all UI documentation
-- **[UI\_LAYER\_SYSTEM.md](UI_LAYER_SYSTEM.md)** - UI layer architecture and design
-- **[UI\_CHAT\_TASK\_WINDOW.md](UI_CHAT_TASK_WINDOW.md)** - Chat and task window components
-- **[UI\_MESSAGE\_FLOW\_SYSTEM.md](UI_MESSAGE_FLOW_SYSTEM.md)** - Message flow and state management
+## Key Concepts
 
-## 🔗 Cross-References
+### User Interface Design
+The UI serves as the primary interface between users and the KiloCode system, providing intuitive access to chat functionality and task management.
 
-- **Architecture**: See [../architecture/](../architecture/) for system architecture
-- **Services**: See [../services/](../services/) for UI-related services
-- **Standards**: See [../standards/](../standards/) for UI standards
+### Component Architecture
+UI components are built using a modular architecture that promotes reusability and maintainability.
 
-## 🦕 Dinosaur Analogy
-
-Think of the UI like the external appearance and behavior of a dinosaur. Just as a dinosaur's skin,
-scales, and movements were the interface between its internal systems and the external world, our UI
-is the interface between our internal systems and the user. The chat interface is like the
-dinosaur's mouth - the primary way it communicates with the world. The task windows are like the
-dinosaur's eyes - focused views of specific information!
-
-## 🧭 Navigation Footer
-- [← Back to Documentation Home](../README.md)
-- [→ Architecture Documentation](../architecture/README.md)
-- [↑ Table of Contents](../README.md)
+### Message Flow
+The system implements sophisticated message routing and state management to ensure reliable communication between UI components.
 
 ## Navigation
-- [← Main Documentation](README.md)
-- [← Project Root](README.md)
-- [← Architecture](../architecture/README.md)
-- [← Orchestrator](../orchestrator/README.md)
-- [← Standards](standards/README.md)
-- [← Plans](plans/README.md)
-- [← Tools](tools/README.md)
-- [← Improvements](improvements/README.md)
-- [← Integrations](integrations/README.md)
+
+- [← Back to Documentation Home](../README.md)
+- [→ Architecture Documentation](../architecture/README.md)
