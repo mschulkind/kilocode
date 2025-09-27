@@ -1,5 +1,34 @@
 # UI Layer System
 
+## Table of Contents
+- [UI Layer System](#ui-layer-system)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [System Architecture](#system-architecture)
+- [Chat UI Component](#chat-ui-component)
+- [ChatView Component](#chatview-component)
+- [Message Display](#message-display)
+- [Send Button Component](#send-button-component)
+- [ChatTextArea Component](#chattextarea-component)
+- [Send Button Logic](#send-button-logic)
+- [Message Queue UI](#message-queue-ui)
+- [QueuedMessages Component](#queuedmessages-component)
+- [Queue State Integration](#queue-state-integration)
+- [State Management](#state-management)
+- [State Variables](#state-variables)
+- [State Transitions](#state-transitions)
+- [State Synchronization](#state-synchronization)
+- [Event Handling](#event-handling)
+- [Message Send Events](#message-send-events)
+- [Keyboard Events](#keyboard-events)
+- [Webview Communication](#webview-communication)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Send Button Stuck Disabled](#issue-1-send-button-stuck-disabled)
+- [Issue 2: Multiple Messages Queued](#issue-2-multiple-messages-queued)
+- [Issue 3: Button State Inconsistency](#issue-3-button-state-inconsistency)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.

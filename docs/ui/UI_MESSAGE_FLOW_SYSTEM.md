@@ -1,5 +1,32 @@
 # UI Message Flow System
 
+## Table of Contents
+- [UI Message Flow System](#ui-message-flow-system)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [System Architecture](#system-architecture)
+- [Send Button State Management](#send-button-state-management)
+- [State Variables](#state-variables)
+- [State Transitions](#state-transitions)
+- [Critical State Logic](#critical-state-logic)
+- [Send Button Component](#send-button-component)
+- [Message Queue Integration](#message-queue-integration)
+- [Queue State Management](#queue-state-management)
+- [Queue UI Component](#queue-ui-component)
+- [Request Flow Control](#request-flow-control)
+- [Flow Control Logic](#flow-control-logic)
+- [Request Deduplication](#request-deduplication)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Send Button Stuck in Disabled State](#issue-1-send-button-stuck-in-disabled-state)
+- [Issue 2: Multiple Messages Queued](#issue-2-multiple-messages-queued)
+- [Issue 3: Button State Inconsistency](#issue-3-button-state-inconsistency)
+- [Debugging Procedures](#debugging-procedures)
+- [Enable Debug Logging](#enable-debug-logging)
+- [State Inspection Tools](#state-inspection-tools)
+- [Performance Monitoring](#performance-monitoring)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.

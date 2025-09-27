@@ -1,5 +1,29 @@
 # UI\_CHAT\_TASK\_WINDOW
 
+## Table of Contents
+- [UI\_CHAT\_TASK\_WINDOW](#uichattaskwindow)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [1. Related Documents](1-related-documents---2-ui-overview---3-message-flow-control-loop---4-request-payloads-timing-timestamps---5-state-persistence-rendering---6-debugging-duplicate-api-requests---7-instrumentation-logs---8-troubleshooting-ux-notes---navigation-footer-summary-details-a-namerelated-docsa-1-related-documents-)]\(#1-related-documents1-related-documents-2-ui-overview-3-message-flow-control-loop-4-request-payloads-timing-timestamps-5-state-persistence-rendering-6-debugging-duplicate-api-requests-7-instrumentation-logs-8-troubleshooting-ux-notes-navigation-footer-summary-details-a-namerelated-docsa-1-related-documents)
+- [2. UI Overview](#2-ui-overview)
+- [2.1 Panels & Controls](#21-panels-controls)
+- [2.2 Display conventions](#22-display-conventions)
+- [3. Message Flow & Control Loop](#3-message-flow-control-loop)
+- [3.1 High-level flow](#31-high-level-flow)
+- [3.2 When requests are issued](#32-when-requests-are-issued)
+- [4. Request Payloads & Timing (timestamps)](#4-request-payloads-timing-timestamps)
+- [4.1 Payload composition](#41-payload-composition)
+- [4.2 Timestamps and logging](#42-timestamps-and-logging)
+- [5. State, Persistence & Rendering](#5-state-persistence-rendering)
+- [5.1 In-memory vs persisted state](#51-in-memory-vs-persisted-state)
+- [5.2 Rendering notes](#52-rendering-notes)
+- [6. Debugging: duplicate API requests](#6-debugging-duplicate-api-requests)
+- [6.1 Diagnostics](#61-diagnostics)
+- [6.2 Quick fixes](#62-quick-fixes)
+- [7. Instrumentation & Logs](#7-instrumentation-logs)
+- [8. Troubleshooting & UX notes](#8-troubleshooting-ux-notes)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
