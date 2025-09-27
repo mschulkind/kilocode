@@ -29,20 +29,20 @@ for (const arg of args) {
       break;
     case '--help':
       console.log(`
-KiloCode Documentation Fixer
+\x1b[0;36mKiloCode Documentation Fixer\x1b[0m
 
-Usage: node scripts/docs-fixer.js [options] [targets...]
+\x1b[1;37mUsage:\x1b[0m node scripts/docs-fixer.js [options] [targets...]
 
-Options:
+\x1b[1;37mOptions:\x1b[0m
   --dry-run    Run without making changes (preview mode)
   --verbose    Show detailed fix information
   --validate   Run validation after fixes
   --help       Show this help message
 
-Targets:
+\x1b[1;37mTargets:\x1b[0m
   [targets...] Specific files or directories to process (default: docs/)
 
-Examples:
+\x1b[1;37mExamples:\x1b[0m
   node scripts/docs-fixer.js --dry-run --verbose
   node scripts/docs-fixer.js --validate
   node scripts/docs-fixer.js docs/architecture/

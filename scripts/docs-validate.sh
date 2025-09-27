@@ -21,14 +21,14 @@ NC='\033[0m' # No Color
 
 # Check for help flag
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-  echo "KiloCode Documentation Validator
+  echo -e "${CYAN}KiloCode Documentation Validator${NC}
 
-Usage: pnpm docs:validate [targets...]
+${WHITE}Usage:${NC} pnpm docs:validate [targets...]
 
-Targets:
+${WHITE}Targets:${NC}
   [targets...] Specific files or directories to validate (default: docs/)
 
-Examples:
+${WHITE}Examples:${NC}
   pnpm docs:validate                    # Validate all docs
   pnpm docs:validate path/to/file.md    # Validate specific file
   pnpm docs:validate docs/              # Validate specific directory
@@ -48,11 +48,17 @@ fi
 # Check if all targets exist
 for TARGET in "${TARGETS[@]}"; do
   if [ ! -e "$TARGET" ]; then
-    echo "Error: Target \"$TARGET\" does not exist" >&2
+    echo -e "${RED}Error: Target \"$TARGET\" does not exist${NC}" >&2
     exit 1
   fi
 done
 
+# Show validation start message
+echo -e "${BLUE}🔍 Validating documentation...${NC}"
+
 # Run remark with all targets (suppress file content, show only warnings/errors)
 # Use script to force unbuffered output and prevent blocking with pipes
 script -qfc "remark \"${TARGETS[@]}\" --quiet > /dev/null" /dev/null
+
+# Show completion message
+echo -e "${GREEN}✅ Documentation validation completed!${NC}"

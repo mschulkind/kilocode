@@ -7,6 +7,16 @@
 #   pnpm docs:fix-and-validate path/to/file.md    # Fix and validate specific file
 #   pnpm docs:fix-and-validate docs/              # Fix and validate specific directory
 
+# Color definitions
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
+
 # Default to docs/ if no arguments provided
 if [ $# -eq 0 ]; then
   TARGETS=("docs/")
@@ -14,14 +24,14 @@ else
   TARGETS=("$@")
 fi
 
-echo "🔧 Running documentation fix and validate pipeline..."
+echo -e "${PURPLE}🔧 Running documentation fix and validate pipeline...${NC}"
 
 # Run fix pipeline
-echo "📋 Step 1/6: Running fix pipeline..."
-bash scripts/docs-fix.sh "${TARGETS[@]}"
+echo -e "${BLUE}📋 Step 1/6: Running fix pipeline...${NC}"
+bash scripts/docs-fix.sh "${TARGETS[@]}" || { echo -e "${RED}❌ Documentation fix pipeline failed${NC}"; exit 1; }
 
 # Run validation
-echo "🔍 Step 2/6: Running validation..."
-pnpm docs:validate "${TARGETS[@]}"
+echo -e "${BLUE}🔍 Step 2/6: Running validation...${NC}"
+pnpm docs:validate "${TARGETS[@]}" || { echo -e "${RED}❌ Documentation validation failed${NC}"; exit 1; }
 
-echo "✅ Documentation fix and validate pipeline completed!"
+echo -e "${GREEN}✅ Documentation fix and validate pipeline completed!${NC}"

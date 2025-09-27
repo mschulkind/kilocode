@@ -679,14 +679,14 @@ async function main() {
 	for (const arg of args) {
 		if (arg === '--help' || arg === '-h') {
 			console.log(`
-KiloCode Workflow Optimizer
+\x1b[0;36mKiloCode Workflow Optimizer\x1b[0m
 
-Usage: node scripts/docs/workflow-optimizer.js [targets...]
+\x1b[1;37mUsage:\x1b[0m node scripts/docs/workflow-optimizer.js [targets...]
 
-Targets:
+\x1b[1;37mTargets:\x1b[0m
   [targets...] Specific files or directories to process (default: docs/)
 
-Examples:
+\x1b[1;37mExamples:\x1b[0m
   node scripts/docs/workflow-optimizer.js
   node scripts/docs/workflow-optimizer.js docs/README.md
   node scripts/docs/workflow-optimizer.js docs/ui/
