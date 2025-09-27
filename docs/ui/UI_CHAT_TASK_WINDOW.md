@@ -1,12 +1,15 @@
 # Chat Task Window System
 
-## Overview
+## When You're Here
 
-This document describes the chat and task window user interface components, including user interaction patterns, message flow control, request payload construction, and troubleshooting procedures for duplicate API requests.
+This document provides comprehensive coverage of KiloCode's chat interface and task window components. It covers user interaction patterns, message flow control, and troubleshooting procedures.
+
+- **Purpose**: Complete guide to chat interface and task window implementation
+- **Context**: Essential reading for developers working on chat features or debugging message flow issues
+- **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Table of Contents
-
-- [Related Documentation](#related-documentation)
+- [Overview](#overview)
 - [UI Components](#ui-components)
 - [Message Flow Control](#message-flow-control)
 - [Request Payloads and Timing](#request-payloads-and-timing)
@@ -14,16 +17,15 @@ This document describes the chat and task window user interface components, incl
 - [Debugging Duplicate Requests](#debugging-duplicate-requests)
 - [Instrumentation and Logging](#instrumentation-and-logging)
 - [Troubleshooting Guide](#troubleshooting-guide)
+- [Navigation](#navigation)
 
-## Related Documentation
+## Overview
 
-- **Backend Lifecycle**: See [Orchestrator Lifecycle](../orchestrator/README.md) for task orchestration patterns
-- **Task Delegation**: Review [Orchestrator Documentation](../orchestrator/README.md) for task delegation and subtasking
-- **Settings Management**: Reference [Settings Documentation](../../apps/kilocode-docs/docs/features/settings-management.md) for UI feature configuration
+This document describes the chat and task window user interface components, including user interaction patterns, message flow control, request payload construction, and troubleshooting procedures for duplicate API requests. The chat interface is the primary user interaction point for communicating with KiloCode's AI systems.
 
 ## UI Components
 
-The chat and task window interface consists of several key components:
+The chat and task window interface consists of several key components that work together to provide a seamless user experience.
 
 ### Primary Panels and Controls
 
@@ -42,7 +44,7 @@ The chat and task window interface consists of several key components:
 
 ## Message Flow Control
 
-The system implements a sophisticated control loop to manage when and how API requests are initiated.
+The system implements a sophisticated control loop to manage when and how API requests are initiated, preventing duplicate requests and ensuring reliable communication.
 
 ### High-Level Flow
 
@@ -73,7 +75,7 @@ sequenceDiagram
 
 ### Payload Composition
 
-Each API request includes comprehensive metadata:
+Each API request includes comprehensive metadata to ensure proper processing and tracking:
 
 - **Request ID**: Client-generated unique identifier for tracking and deduplication
 - **Message History**: Recent conversation window optimized for token budget
@@ -84,7 +86,7 @@ Each API request includes comprehensive metadata:
 
 ### Timestamp Management
 
-The system tracks timestamps at critical points:
+The system tracks timestamps at critical points to monitor performance and debug issues:
 
 - **UI Enqueue**: When user action is queued for processing
 - **Orchestrator Dispatch**: When request is handed to the provider

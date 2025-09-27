@@ -1,57 +1,35 @@
 # UI Layer System Architecture
 
+## When You're Here
+
+This document provides a comprehensive overview of KiloCode's UI layer architecture, including component design, state management, and troubleshooting procedures.
+
+- **Purpose**: Complete guide to UI layer system architecture and component implementation
+- **Context**: Essential for developers working on UI components, state management, or debugging UI issues
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+## Table of Contents
+- [Overview](#overview)
+- [System Components](#system-components)
+- [Chat Interface Component](#chat-interface-component)
+- [Send Controls Component](#send-controls-component)
+- [Message Queue System](#message-queue-system)
+- [State Management](#state-management)
+- [Event Handling](#event-handling)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [Navigation](#navigation)
+
 ## Overview
 
-The UI Layer system provides comprehensive user interface components for the KiloCode chat application, managing user interactions, state visualization, and communication with backend systems.
+The UI Layer system provides comprehensive user interface components for the KiloCode chat application, managing user interactions, state visualization, and communication with backend systems. This architecture ensures consistent behavior and maintainable code across all UI components.
 
 ## System Components
 
-The UI Layer consists of three primary components:
+The UI Layer consists of three primary components that work together to provide a seamless user experience:
 
 1. **Chat Interface** - Main chat view and message display system
 2. **Send Controls** - User input controls and request initiation mechanisms
 3. **Message Queue** - Visual representation and management of queued messages
-
-## Architecture Diagram
-
-```mermaid
-graph TB
-    subgraph "UI Layer Components"
-        CV[ChatView]
-        CTA[ChatTextArea]
-        SB[Send Button]
-        MQ[Message Queue UI]
-        SI[Selected Images]
-        IV[Input Value]
-    end
-
-    subgraph "State Management"
-        SD[sendingDisabled]
-        EB[enableButtons]
-        IS[isStreaming]
-        QM[queuedMessages]
-    end
-
-    subgraph "Event Handlers"
-        HM[handleSendMessage]
-        QH[queueHandler]
-        SH[stateHandler]
-    end
-
-    CV --> CTA
-    CTA --> SB
-    CV --> MQ
-
-    SB --> HM
-    MQ --> QH
-
-    HM --> SD
-    HM --> EB
-    HM --> IS
-
-    QH --> QM
-    SH --> SD
-```
 
 ## Chat Interface Component
 
@@ -66,6 +44,7 @@ graph TB
 - Communication with backend via webview
 
 **Interface Definition**:
+
 ```typescript
 export interface ChatViewProps {
     isHidden: boolean
@@ -80,6 +59,7 @@ export interface ChatViewRef {
 ```
 
 **State Management**:
+
 ```typescript
 const [inputValue, setInputValue] = useState("")
 const [sendingDisabled, setSendingDisabled] = useState(false)
@@ -112,6 +92,7 @@ const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 - Input validation
 
 **Interface Definition**:
+
 ```typescript
 interface ChatTextAreaProps {
     inputValue: string
@@ -136,6 +117,7 @@ interface ChatTextAreaProps {
 ### Send Button Logic
 
 **State-Dependent Behavior**:
+
 ```typescript
 const handleSendMessage = useCallback(
     (text: string, images: string[]) => {
@@ -161,6 +143,7 @@ const handleSendMessage = useCallback(
 ```
 
 **Button State Management**:
+
 ```typescript
 <button
     aria-label={t("chat:sendMessage")}
@@ -197,6 +180,7 @@ const handleSendMessage = useCallback(
 - Allow message editing
 
 **Implementation**:
+
 ```typescript
 export const QueuedMessages: React.FC<QueuedMessagesProps> = ({
     messages,
@@ -228,6 +212,7 @@ export const QueuedMessages: React.FC<QueuedMessagesProps> = ({
 ### Queue State Integration
 
 **Backend Connection**:
+
 ```typescript
 useEffect(() => {
     const currentTask = provider.getCurrentTask()
@@ -277,6 +262,7 @@ stateDiagram-v2
 ### State Synchronization
 
 **Task State Integration**:
+
 ```typescript
 useEffect(() => {
     const currentTask = provider.getCurrentTask()
@@ -300,6 +286,7 @@ useEffect(() => {
 ### Message Send Events
 
 **Primary Handler**:
+
 ```typescript
 const handleSendMessage = useCallback(
     (text: string, images: string[]) => {
@@ -322,6 +309,7 @@ const handleSendMessage = useCallback(
 ### Keyboard Events
 
 **Enter Key Handling**:
+
 ```typescript
 const handleKeyDown = useCallback(
     (event: React.KeyboardEvent) => {
@@ -356,6 +344,7 @@ const handleKeyDown = useCallback(
 **Root Cause**: `sendingDisabled` state not properly reset
 
 **Solution**:
+
 ```typescript
 // Ensure proper state reset
 useEffect(() => {
@@ -383,6 +372,7 @@ useEffect(() => {
 **Root Cause**: Message queued multiple times due to rapid user interaction
 
 **Solution**:
+
 ```typescript
 // Implement debounced message queuing
 const debouncedQueueMessage = useMemo(
@@ -404,6 +394,7 @@ const debouncedQueueMessage = useMemo(
 **Root Cause**: State updates not properly synchronized
 
 **Solution**:
+
 ```typescript
 // Implement state validation
 const validateButtonState = useCallback(() => {

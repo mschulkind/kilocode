@@ -1,25 +1,45 @@
 # UI Documentation
 
+## When You're Here
+
+This document serves as the central entry point for understanding KiloCode's user interface architecture and implementation. It provides navigation and context for all UI-related documentation.
+
+- **Purpose**: Overview and navigation for KiloCode's user interface layer documentation
+- **Context**: Use this as your starting point when working with UI components, chat systems, or message flow
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+## Table of Contents
+- [Overview](#overview)
+- [Documentation Structure](#documentation-structure)
+- [Quick Navigation](#quick-navigation)
+- [System Integration](#system-integration)
+- [Key Concepts](#key-concepts)
+- [Navigation](#navigation)
+
 ## Overview
 
-This directory contains comprehensive documentation for the user interface layer of KiloCode, covering chat systems, task window management, and UI component architecture.
+This directory contains comprehensive documentation for KiloCode's user interface layer, covering chat systems, task window management, and UI component architecture. The UI layer serves as the primary interaction point between users and the KiloCode system.
 
 ## Documentation Structure
 
-The UI documentation is organized into focused, specialized documents:
+The UI documentation is organized into three focused documents:
+
+### Core Documents
 
 - **[UI Layer System](UI_LAYER_SYSTEM.md)** - Complete architecture and design patterns for the UI layer
-- **[Chat Task Window](UI_CHAT_TASK_WINDOW.md)** - Chat interface and task window component implementation
+- **[Chat Task Window](UI_CHAT_TASK_WINDOW.md)** - Chat interface and task window component implementation  
 - **[Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)** - Message routing, state management, and communication patterns
 
 ## Quick Navigation
 
 ### For Developers
+
 - **Understanding UI Architecture**: Start with [UI Layer System](UI_LAYER_SYSTEM.md)
 - **Implementing Chat Features**: Reference [Chat Task Window](UI_CHAT_TASK_WINDOW.md)
 - **Managing Message Flow**: See [Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)
 
 ### For Troubleshooting
+
 - **UI Component Issues**: Check [UI Layer System](UI_LAYER_SYSTEM.md) for component patterns
 - **Chat Interface Problems**: Review [Chat Task Window](UI_CHAT_TASK_WINDOW.md) for implementation details
 - **Message Routing Issues**: Consult [Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md) for flow patterns
@@ -28,22 +48,25 @@ The UI documentation is organized into focused, specialized documents:
 
 The UI layer integrates with several other system components:
 
-- **Architecture Layer**: See [Architecture Documentation](../architecture/README.md) for system-wide patterns
-- **Service Layer**: Review [Service Documentation](../services/README.md) for UI-related services
-- **Standards**: Follow [Documentation Standards](../standards/README.md) for UI development guidelines
+- **Architecture Layer**: See the main [Architecture Documentation](../../docs/README.md) for system-wide patterns
+- **Service Layer**: Review service documentation for UI-related backend services
+- **Standards**: Follow project standards for UI development guidelines
 
 ## Key Concepts
 
 ### User Interface Design
-The UI serves as the primary interface between users and the KiloCode system, providing intuitive access to chat functionality and task management.
+
+The UI serves as the primary interface between users and the KiloCode system, providing intuitive access to chat functionality and task management through a modern, responsive design.
 
 ### Component Architecture
-UI components are built using a modular architecture that promotes reusability and maintainability.
+
+UI components are built using a modular React architecture that promotes reusability, maintainability, and consistent user experience across different parts of the application.
 
 ### Message Flow
-The system implements sophisticated message routing and state management to ensure reliable communication between UI components.
+
+The system implements sophisticated message routing and state management to ensure reliable communication between UI components, preventing duplicate requests and maintaining consistent state.
 
 ## Navigation
 
-- [← Back to Documentation Home](../README.md)
-- [→ Architecture Documentation](../architecture/README.md)
+- [← Back to Documentation Home](../../docs/README.md)
+- [→ Architecture Documentation](../../docs/README.md)

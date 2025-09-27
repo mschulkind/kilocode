@@ -1,8 +1,26 @@
 # UI Message Flow System
 
+## When You're Here
+
+This document provides comprehensive coverage of KiloCode's message flow system, including send button state management, message queuing, and request deduplication mechanisms.
+
+- **Purpose**: Complete guide to message flow control and request management in the UI layer
+- **Context**: Essential for developers working on message handling, state management, or debugging request flow issues
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+## Table of Contents
+- [Overview](#overview)
+- [System Architecture](#system-architecture)
+- [Send Button State Management](#send-button-state-management)
+- [Message Queue Integration](#message-queue-integration)
+- [Request Flow Control](#request-flow-control)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [Debugging Procedures](#debugging-procedures)
+- [Navigation](#navigation)
+
 ## Overview
 
-The UI Message Flow System manages user interactions with the chat interface, including send button state management, message queuing, and request deduplication mechanisms. This system is critical for preventing duplicate API requests and maintaining a consistent user experience.
+The UI Message Flow System manages user interactions with the chat interface, including send button state management, message queuing, and request deduplication mechanisms. This system is critical for preventing duplicate API requests and maintaining a consistent user experience across all chat interactions.
 
 ## System Architecture
 
@@ -12,52 +30,6 @@ The message flow system consists of interconnected components that work together
 2. **ChatTextArea Component** - Input area with send button
 3. **Message Queue UI** - Visual representation of queued messages
 4. **State Management** - Centralized state for request control
-
-## Architecture Diagram
-
-```mermaid
-graph TB
-    subgraph "UI Components"
-        CV[ChatView]
-        CTA[ChatTextArea]
-        SB[Send Button]
-        MQ[Message Queue UI]
-    end
-
-    subgraph "State Management"
-        SD[sendingDisabled]
-        EB[enableButtons]
-        IS[isStreaming]
-        IV[inputValue]
-    end
-
-    subgraph "Message Flow"
-        HM[handleSendMessage]
-        QM[queueMessage]
-        NT[newTask]
-    end
-
-    subgraph "Webview Communication"
-        VSC[vscode.postMessage]
-        WH[webviewMessageHandler]
-    end
-
-    CV --> HM
-    CTA --> SB
-    SB --> HM
-    HM --> SD
-    HM --> EB
-    HM --> IS
-
-    HM --> QM
-    HM --> NT
-
-    QM --> VSC
-    NT --> VSC
-    VSC --> WH
-
-    MQ --> CV
-```
 
 ## Send Button State Management
 
@@ -254,6 +226,7 @@ const handleSendMessage = useCallback(
 **Root Cause**: `sendingDisabled` state not properly reset
 
 **Solution**:
+
 ```typescript
 // Ensure proper state reset
 useEffect(() => {
@@ -283,6 +256,7 @@ useEffect(() => {
 **Root Cause**: Message queued multiple times due to rapid user interaction
 
 **Solution**:
+
 ```typescript
 // Implement debounced message queuing
 const debouncedQueueMessage = useMemo(
@@ -315,6 +289,7 @@ const handleSendMessage = useCallback(
 **Root Cause**: State updates not properly synchronized
 
 **Solution**:
+
 ```typescript
 // Implement state validation
 const validateButtonState = useCallback(() => {
