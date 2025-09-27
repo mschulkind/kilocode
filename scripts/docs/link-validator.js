@@ -367,16 +367,18 @@ async function validateFileLinks(filePath, baseDir, options = {}) {
 			const validation = await validateLink(link, baseDir, fileCache, options)
 			results.links.push(validation)
 			
-			// Update summary
+		// Update summary
+		if (validation.type && results.summary.hasOwnProperty(validation.type)) {
 			results.summary[validation.type]++
-			if (validation.valid) {
-				results.summary.valid++
-			} else {
-				results.summary.invalid++
-				results.valid = false
-				results.issues.push(...validation.issues)
-				results.suggestions.push(...validation.suggestions)
-			}
+		}
+		if (validation.valid) {
+			results.summary.valid++
+		} else {
+			results.summary.invalid++
+			results.valid = false
+			results.issues.push(...validation.issues)
+			results.suggestions.push(...validation.suggestions)
+		}
 		}
 		
 		return results
@@ -641,11 +643,11 @@ async function main() {
 					console.log(`✅ ${filePath}: All links valid`)
 				} else {
 					totalInvalid++
-					console.log(`❌ ${filePath}: ${result.summary.invalidLinks} invalid links`)
+					console.log(`❌ ${filePath}: ${result.summary.invalid || 0} invalid links`)
 				}
 				
-				totalExternal += result.summary.externalLinks
-				totalAnchor += result.summary.anchorLinks
+				totalExternal += result.summary.external || 0
+				totalAnchor += result.summary.anchor || 0
 				
 			} catch (error) {
 				console.error(`❌ ${filePath}: Error - ${error.message}`)
