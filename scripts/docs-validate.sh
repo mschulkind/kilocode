@@ -9,6 +9,16 @@
 #   pnpm docs:validate file1.md file2.md  # Validate multiple files
 #   pnpm docs:validate docs/ tools/       # Validate multiple directories
 
+# Color definitions
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
+
 # Check for help flag
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
   echo "KiloCode Documentation Validator

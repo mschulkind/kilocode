@@ -36,6 +36,9 @@ logs
 # Documentation validation output
 scripts/docs-fixes/output/validation.txt
 
+# Workflow optimization reports
+workflow-optimization/
+
 # Vite development
 .vite-port
 
