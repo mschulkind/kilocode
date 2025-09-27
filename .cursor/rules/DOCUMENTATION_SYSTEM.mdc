@@ -1,28 +1,14 @@
 ---
 description: Critical rules for working with the documentation system to avoid common pitfalls
-globs: ["docs/**/*.md", "**/*.md"]
+globs: 
+  - "docs/**/*.md"
+  - "**/*.md"
 alwaysApply: true
 ---
 
 # Documentation System Rules
 
 ## 🚫 **NEVER DO THESE THINGS**
-
-### ❌ **Never pipe commands that expect interactive output**
-```bash
-# ❌ NEVER DO THIS - IT ALWAYS BLOCKS/HANGS
-pnpm docs:validate | head
-pnpm docs:validate | less
-pnpm docs:validate | more
-pnpm docs:validate | cat
-
-# ✅ Instead, use these alternatives:
-pnpm docs:validate 2>&1 | grep "specific-pattern"
-pnpm docs:validate 2>&1 | tail -10
-pnpm docs:validate 2>&1 | wc -l
-```
-
-**Why:** Commands like `head`, `less`, `more`, `cat` interfere with output stream handling, causing hangs.
 
 ### ❌ **Never run docs:validate directly in terminal**
 ```bash
@@ -68,7 +54,35 @@ sed -n '90p' docs/some-file.md
 3. Verify the change worked
 4. Make next change
 
-## 🔧 **Debugging Commands That Work**
+## 🔧 **Documentation Commands**
+
+### **Individual Commands**
+```bash
+# TOC generation
+pnpm docs:toc              # Generate/update TOCs for all files
+pnpm docs:toc:watch        # Auto-update TOCs on file changes
+
+# Validation and fixing
+pnpm docs:check            # Preview changes without applying
+pnpm docs:fix              # Apply fixes to documentation
+pnpm docs:validate         # Validate all documentation
+
+# Quality and analysis
+pnpm docs:quality          # Content quality analysis
+pnpm docs:links            # Link validation
+pnpm docs:workflow         # Workflow optimization
+```
+
+### **Comprehensive Commands**
+```bash
+# Run all fixers in sequence
+pnpm docs:fix-all          # TOC + fix + quality + links + workflow
+
+# Complete workflow
+pnpm docs:fix-and-validate # All fixers + validation
+```
+
+### **Debugging Commands That Work**
 ```bash
 # ALWAYS capture validation output to file first
 pnpm docs:validate > docs_validate_output.log 2>&1
@@ -109,4 +123,37 @@ NOT:
  * Sub item 1 ❌ Space before bullet
  * Sub item 2 ❌ Space before bullet
 - Item 2
+```
+
+## 🎯 **Recommended Workflow**
+
+### **For Daily Development**
+```bash
+# Quick fix everything
+pnpm docs:fix-and-validate
+
+# Or step by step
+pnpm docs:fix-all
+pnpm docs:validate > validation.log 2>&1
+```
+
+### **For TOC Management**
+```bash
+# Generate TOCs for all files
+pnpm docs:toc
+
+# Watch mode during development
+pnpm docs:toc:watch
+```
+
+### **For Analysis**
+```bash
+# Check what would be fixed
+pnpm docs:check
+
+# Quality analysis
+pnpm docs:quality
+
+# Link validation
+pnpm docs:links
 ```

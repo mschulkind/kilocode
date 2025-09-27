@@ -43,10 +43,19 @@ const PATH_FIXES = [
 			{ from: "../README.md", to: "../../../README.md" },
 			{ from: "../architecture/README.md", to: "../../../architecture/README.md" },
 			{ from: "../orchestrator/README.md", to: "../../../orchestrator/README.md" },
-			{ from: "../architecture/repository/DEVELOPMENT_GUIDE.md", to: "../../../architecture/repository/DEVELOPMENT_GUIDE.md" },
-			{ from: "../architecture/repository/TESTING_INFRASTRUCTURE.md", to: "../../../architecture/repository/TESTING_INFRASTRUCTURE.md" },
-			{ from: "../orchestrator/ORCHESTRATOR_LIFECYCLE.md", to: "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md" },
-		]
+			{
+				from: "../architecture/repository/DEVELOPMENT_GUIDE.md",
+				to: "../../../architecture/repository/DEVELOPMENT_GUIDE.md",
+			},
+			{
+				from: "../architecture/repository/TESTING_INFRASTRUCTURE.md",
+				to: "../../../architecture/repository/TESTING_INFRASTRUCTURE.md",
+			},
+			{
+				from: "../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+				to: "../../../orchestrator/ORCHESTRATOR_LIFECYCLE.md",
+			},
+		],
 	},
 
 	// GLOSSARY.md path fixes
@@ -155,15 +164,15 @@ const LINK_TEXT_IMPROVEMENTS = [
 	{ pattern: /\[\.\.\/src\/\]/g, replacement: "[Source Code]" },
 	{ pattern: /\[\.\.\/packages\/\]/g, replacement: "[Packages]" },
 	{ pattern: /\[\.\.\/context_portal\/\]/g, replacement: "[Context Portal]" },
-	
+
 	// Enhanced link text patterns
 	{ pattern: /\[\.\.\/core\/\]/g, replacement: "[Core Standards Documentation]" },
 	{ pattern: /\[\.\.\/structure\/\]/g, replacement: "[Structure Standards Documentation]" },
 	{ pattern: /\[\.\.\/navigation\/\]/g, replacement: "[Navigation Documentation]" },
 	{ pattern: /\[\.\.\/code\/\]/g, replacement: "[Code Standards]" },
 	{ pattern: /\[\.\.\/engagement\/\]/g, replacement: "[Engagement Standards]" },
-	
-	// File-specific improvements for hard to read filenames  
+
+	// File-specific improvements for hard to read filenames
 	{ pattern: /\[TOOL_SYSTEM_ARCHITECTURE\.md\]/g, replacement: "[Tool System Architecture Documentation]" },
 	{ pattern: /\[UI_CHAT_TASK_WINDOW\.md\]/g, replacement: "[UI Chat Task Window Documentation]" },
 	{ pattern: /\[UI_LAYER_SYSTEM\.md\]/g, replacement: "[UI Layer System Documentation]" },
@@ -350,6 +359,11 @@ function fixListIndentation(content) {
 	// Pattern: "  - Item" -> "- Item" (remove leading spaces)
 	// But avoid matching markdown formatting like "**Bold**" or "## Heading"
 	// Use negative lookahead to avoid matching when the next character is * or #
+	// Also avoid matching when the bullet is followed by another * (bold formatting)
+	// More specific regex to avoid matching markdown formatting
+	// Only match when it's clearly a list item (bullet followed by space and non-markdown character)
+	// The issue: current regex matches "**foo**" because it sees "*" as a bullet
+	// Fix: require the bullet to be followed by a space AND not be part of markdown formatting
 	newContent = newContent.replace(/^(\s+)([*+-])\s(?![\*#])/gm, "$2 ")
 
 	if (newContent !== originalContent1) {
@@ -371,7 +385,10 @@ function fixListIndentation(content) {
 	const originalContent3 = newContent
 
 	// Fix bullets with no space after them: "-Item" -> "- Item"
-	newContent = newContent.replace(/^([*+-])([^\s\n])/gm, "$1 $2")
+	// But avoid matching markdown formatting like "**bold**" or "*italic*"
+	// Only match when it's clearly a list bullet at the start of a line
+	// Use negative lookahead to avoid matching when followed by another * (bold formatting)
+	newContent = newContent.replace(/^([*+-])([^\s\n*])/gm, "$1 $2")
 
 	// Fix bullets with multiple spaces after them: "-  Item" -> "- Item"
 	newContent = newContent.replace(/^([*+-])\s{2,}([^\s\n])/gm, "$1 $2")
@@ -507,7 +524,7 @@ function fixListIndentationAST(listNode) {
 	return fixes
 }
 
-// Global enhanced processor instance 
+// Global enhanced processor instance
 let globalEnhancedProcessor = null
 
 /**
@@ -550,11 +567,11 @@ function getGlobalEnhancedProcessor(filePath) {
 		let debugEnabled = CONFIG.verbose
 		globalEnhancedProcessor = new EnhancedASTProcessor({
 			debugMode: debugEnabled,
-			basePath: CONFIG.docsDir
+			basePath: CONFIG.docsDir,
 		})
 		globalEnhancedProcessor.integrateWithDocsFixer()
 	}
-	
+
 	return globalEnhancedProcessor
 }
 
@@ -622,12 +639,12 @@ async function processFile(filePath) {
 		}
 
 		// 1. Add missing standard sections first
-		if (!content.includes('## When You\'re Here') && !content.includes('### When You\'re Here')) {
+		if (!content.includes("## When You're Here") && !content.includes("### When You're Here")) {
 			content = addWhenYoureHereSection(content, filePath)
 			fixes.whenYouAreHere = 1
 		}
 
-		if (!content.includes('## No Dead Ends') && !content.includes('### No Dead Ends')) {
+		if (!content.includes("## No Dead Ends") && !content.includes("### No Dead Ends")) {
 			content = addNoDeadEndsPolicy(content, filePath)
 			fixes.noDeadEndsPolicy = 1
 		}
@@ -654,7 +671,13 @@ async function processFile(filePath) {
 		fixes.navigationFooter = navResult.added
 		newContent = navResult.content
 
-		const totalFixes = fixes.listIndentation + fixes.pathIssues + fixes.linkText + (fixes.navigationFooter ? 1 : 0) + fixes.whenYouAreHere + fixes.noDeadEndsPolicy
+		const totalFixes =
+			fixes.listIndentation +
+			fixes.pathIssues +
+			fixes.linkText +
+			(fixes.navigationFooter ? 1 : 0) +
+			fixes.whenYouAreHere +
+			fixes.noDeadEndsPolicy
 
 		// Write file if changes were made and not in dry run mode
 		if (totalFixes > 0 && !CONFIG.dryRun) {
@@ -713,8 +736,8 @@ async function runValidation() {
  * Fix missing "When You're Here" sections automatically
  */
 function addWhenYoureHereSection(content, filePath) {
-	const needsWhenAmI = filePath.includes('README.md') || filePath.split('/').length <= 3
-	if (needsWhenAmI && !content.includes('## When You\'re Here') && !content.includes('### When You\'re Here')) {
+	const needsWhenAmI = filePath.includes("README.md") || filePath.split("/").length <= 3
+	if (needsWhenAmI && !content.includes("## When You're Here") && !content.includes("### When You're Here")) {
 		// Add after first heading
 		const firstHeadingMatch = content.match(/^(#+ [^\n]+)(\n)/m)
 		if (firstHeadingMatch) {
@@ -742,8 +765,8 @@ This document is part of the KiloCode project documentation. If you're not famil
  * Fix missing "No Dead Ends Policy" sections
  */
 function addNoDeadEndsPolicy(content, filePath) {
-	const standardsDocs = filePath.includes('standards') || filePath.includes('architecture')
-	if (standardsDocs && !content.includes('## No Dead Ends') && !content.includes('### No Dead Ends')) {
+	const standardsDocs = filePath.includes("standards") || filePath.includes("architecture")
+	if (standardsDocs && !content.includes("## No Dead Ends") && !content.includes("### No Dead Ends")) {
 		content += `
 
 ## No Dead Ends Policy
@@ -800,15 +823,15 @@ async function main(options = {}) {
 					filesModified++
 					totalFixes += result.totalFixes
 
-				// Update summary
-				summary.listIndentation += result.fixes.listIndentation
-				summary.pathIssues += result.fixes.pathIssues
-				summary.linkText += result.fixes.linkText
-				if (result.fixes.navigationFooter) {
-					summary.navigationFooters++
-				}
-				summary.whenYouAreHereSections += result.fixes.whenYouAreHere
-				summary.noDeadEndsPolicySections += result.fixes.noDeadEndsPolicy
+					// Update summary
+					summary.listIndentation += result.fixes.listIndentation
+					summary.pathIssues += result.fixes.pathIssues
+					summary.linkText += result.fixes.linkText
+					if (result.fixes.navigationFooter) {
+						summary.navigationFooters++
+					}
+					summary.whenYouAreHereSections += result.fixes.whenYouAreHere
+					summary.noDeadEndsPolicySections += result.fixes.noDeadEndsPolicy
 
 					console.log(`📝 Fixed ${result.totalFixes} issues in: ${file}`)
 				}

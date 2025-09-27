@@ -327,7 +327,38 @@ Content here.
 		})
 	})
 
-	// Test 8: Navigation template selection
+	// Test 8: List fixer preserves bold/emphasis formatting
+	testSuite.addTest("List fixer preserves bold/emphasis formatting", async () => {
+		const { fixListIndentation } = await import("../src/docs-fixer.js")
+
+		const testContent = `
+# Test File
+
+**foo** bar blah
+*italic* text here
+**bold** and *italic* together
+- **Bold item** in list
+- *Italic item* in list
+- **Bold** and *italic* in same item
+- Regular item with **bold** text
+- Another item with *italic* text
+`
+
+		const result = fixListIndentation(testContent)
+		
+		// Verify that bold formatting is preserved
+		assertContains(result.content, "**foo** bar blah", "Bold formatting should be preserved in regular text")
+		assertContains(result.content, "**bold** and *italic* together", "Mixed formatting should be preserved")
+		assertContains(result.content, "- **Bold item** in list", "Bold formatting should be preserved in list items")
+		assertContains(result.content, "- *Italic item* in list", "Italic formatting should be preserved in list items")
+		assertContains(result.content, "- **Bold** and *italic* in same item", "Mixed formatting should be preserved in list items")
+		assertContains(result.content, "- Regular item with **bold** text", "Bold formatting should be preserved within list item text")
+		assertContains(result.content, "- Another item with *italic* text", "Italic formatting should be preserved within list item text")
+
+		console.log("✅ List fixer preserves bold/emphasis formatting test passed!")
+	})
+
+	// Test 9: Navigation template selection
 	testSuite.addTest("Navigation template selection", async () => {
 		const { getNavigationTemplate } = await import("../src/docs-fixer.js")
 
@@ -365,7 +396,7 @@ Content here.
 	// UTILITY TESTS - These tests validate functionality but don't generate examples
 	// ============================================================================
 
-	// Test 9: Dry run mode
+	// Test 10: Dry run mode
 	testSuite.addTest("Dry run mode", async () => {
 		const testFile = join(TEST_CONFIG.testDir, "dry-run-test.md")
 		const content = `
@@ -389,7 +420,7 @@ Content here.
 		}
 	})
 
-	// Test 10: File processing error handling
+	// Test 11: File processing error handling
 	testSuite.addTest("File processing error handling", async () => {
 		const nonExistentFile = join(TEST_CONFIG.testDir, "non-existent.md")
 
