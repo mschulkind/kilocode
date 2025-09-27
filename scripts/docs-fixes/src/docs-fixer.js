@@ -704,6 +704,17 @@ async function processFile(filePath) {
 		// Check if content actually changed compared to original
 		const contentChanged = newContent !== content
 		
+		// Check if this file was already modified by previous pipeline steps (e.g., TOC generation)
+		// by comparing with git HEAD to avoid false positive reporting
+		let wasAlreadyModified = false
+		try {
+			const { execSync } = await import("child_process")
+			const gitStatus = execSync(`git status --porcelain "${filePath}"`, { encoding: "utf8" }).trim()
+			wasAlreadyModified = gitStatus.startsWith("M ") || gitStatus.startsWith("A ")
+		} catch (error) {
+			// If git check fails, assume not modified
+		}
+		
 		// Write file if changes were made and not in dry run mode
 		if (totalFixes > 0 && !CONFIG.dryRun) {
 			if (contentChanged) {
@@ -718,6 +729,7 @@ async function processFile(filePath) {
 			fixes,
 			totalFixes,
 			changed: contentChanged,
+			wasAlreadyModified,
 		}
 	} catch (error) {
 		return { processed: false, error: error.message }
@@ -876,19 +888,25 @@ async function main(options = {}) {
 			if (result.processed) {
 				if (result.changed) {
 					filesModified++
-					totalFixes += result.totalFixes
+					
+					// Only count fixes if the file wasn't already modified by previous pipeline steps
+					if (!result.wasAlreadyModified) {
+						totalFixes += result.totalFixes
 
-					// Update summary
-					summary.listIndentation += result.fixes.listIndentation
-					summary.pathIssues += result.fixes.pathIssues
-					summary.linkText += result.fixes.linkText
-					if (result.fixes.navigationFooter) {
-						summary.navigationFooters++
+						// Update summary
+						summary.listIndentation += result.fixes.listIndentation
+						summary.pathIssues += result.fixes.pathIssues
+						summary.linkText += result.fixes.linkText
+						if (result.fixes.navigationFooter) {
+							summary.navigationFooters++
+						}
+						summary.whenYouAreHereSections += result.fixes.whenYouAreHere
+						summary.noDeadEndsPolicySections += result.fixes.noDeadEndsPolicy
+
+						console.log(`📝 Fixed ${result.totalFixes} issues in: ${file}`)
+					} else if (CONFIG.verbose) {
+						console.log(`📝 Applied ${result.totalFixes} fixes in: ${file} (file was already modified by previous pipeline steps)`)
 					}
-					summary.whenYouAreHereSections += result.fixes.whenYouAreHere
-					summary.noDeadEndsPolicySections += result.fixes.noDeadEndsPolicy
-
-					console.log(`📝 Fixed ${result.totalFixes} issues in: ${file}`)
 				}
 			} else {
 				summary.errors.push({ file, error: result.error })
