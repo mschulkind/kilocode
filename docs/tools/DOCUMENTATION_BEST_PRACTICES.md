@@ -71,6 +71,16 @@ Brief description of the research, background, and context that led to this docu
 - Provide navigation paths
 - Avoid orphaned content
 
+```markdown
+## No Dead Ends Policy
+
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents  
+- Cross-references include context for better understanding
+```
+
 ### 3. Writing Style
 
 - *Tone and Voice*\*
@@ -144,6 +154,11 @@ https://example.com ❌
 
 ### 2. Required Sections
 
+- *Document Length*\*
+- Target: 300-1500 words per document
+- Split large documents at natural boundaries
+- Each document should cover one main concept
+
 - *Table of Contents*\* (for files >500 words)
 
 ```markdown
@@ -165,7 +180,20 @@ https://example.com ❌
 ```markdown
 ## Research Context
 
-Brief description of the research and context behind this document.
+Brief description of the research, background, and context that led to this document. Explain the
+"why" behind the content.
+```
+
+- *No Dead Ends Policy*\*
+
+```markdown
+## No Dead Ends Policy
+
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents  
+- Cross-references include context for better understanding
 ```
 
 ### 3. Visual Elements
@@ -361,6 +389,14 @@ pnpm docs:report
 - Regular best practices updates
 - Tool training sessions
 - Process improvements
+
+## No Dead Ends Policy
+
+This document follows the "No Dead Ends" principle - every path leads to useful information.
+
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents  
+- Cross-references include context for better understanding
 
 ## Related Documentation
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)

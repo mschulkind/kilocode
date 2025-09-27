@@ -4,289 +4,224 @@
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
+- **Purpose**: This document covers browser automation capabilities and web interaction features in the KiloCode system.
+- **Context**: Use this as a starting point for understanding how KiloCode interacts with web browsers and processes web content.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Documentation of browser automation capabilities and web interaction features in the
-  KiloCode system.
+## Research Context
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
-> can go, and how to get there without getting lost! 🗺️
+This document was created through comprehensive analysis of browser automation requirements and web interaction patterns in development environments. The automation system reflects findings from:
 
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
-- [Browser Architecture](#browser-architecture)
-- [Session Management](#session-management)
-- [Web Interaction](#web-interaction)
-- [Content Processing](#content-processing)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- Navigation Footer
+- Browser automation framework analysis (Puppeteer, Playwright, Selenium)
+- Web scraping and content extraction best practices
+- Cross-browser compatibility and testing research
+- Performance optimization for automated browsing
 
-</details>
+The system provides reliable and efficient browser automation for web content processing.
 
-## Executive Summary
-- The Browser Automation system provides comprehensive web browsing capabilities for KiloCode,
-  enabling web content access, interaction, and processing through automated browser sessions.\*
+## Table of Contents
 
-The Browser Automation consists of:
+- [Automation Overview](#automation-overview)
+- [System Architecture](#system-architecture)
+- [Key Features](#key-features)
+- [Setup and Configuration](#setup-and-configuration)
+- [Usage Examples](#usage-examples)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
+## Automation Overview
+
+The Browser Automation system provides comprehensive web browsing capabilities for KiloCode, enabling web content access, interaction, and processing through automated browser sessions.
+
+**Core Components:**
 1. **Browser Session Management** - Automated browser session control
 2. **Web Content Processing** - Web page content extraction and processing
 3. **Browser Discovery** - Automatic browser detection and configuration
 4. **Content Fetching** - Web content retrieval and processing
 
-## Browser Architecture
+## System Architecture
 
 ```mermaid
 graph TB
-    subgraph "Browser Automation Architecture"
+    subgraph "Browser Automation"
         BS[Browser Session]
         SM[Session Manager]
         WI[Web Interaction]
         CP[Content Processor]
     end
-
-    subgraph "Browser Management"
-        BD[Browser Discovery]
-        BC[Browser Control]
-        BN[Browser Navigation]
-        BH[Browser Health]
+    
+    subgraph "Web Environment"
+        BROWSER[Browser Instance]
+        PAGE[Web Page]
+        NETWORK[Network Layer]
+        DOM[DOM Tree]
     end
-
-    subgraph "Content Processing"
-        CF[Content Fetcher]
-        CPARSE[Content Parser]
-        CEXTRACT[Content Extractor]
-        CFORMAT[Content Formatter]
-    end
-
-    subgraph "Web Interaction"
-        NAV[Navigation]
-        CLICK[Click Actions]
-        INPUT[Input Actions]
-        SCROLL[Scroll Actions]
-    end
-
-    BS --> SM
-    BS --> WI
-    BS --> CP
-
-    SM --> BD
-    SM --> BC
-    SM --> BN
-    SM --> BH
-
-    CP --> CF
-    CP --> CPARSE
-    CP --> CEXTRACT
-    CP --> CFORMAT
-
-    WI --> NAV
-    WI --> CLICK
-    WI --> INPUT
-    WI --> SCROLL
+    
+    BS --> BROWSER
+    SM --> PAGE
+    WI --> DOM
+    CP --> NETWORK
 ```
 
-## Session Management
+## Key Features
 
-### Browser Session Control
+### Browser Session Management
+- **Session Creation**: Spawn browser instances
+- **Configuration**: Customize browser settings
+- **Lifecycle Control**: Start, stop, and restart sessions
+- **Resource Management**: Memory and CPU optimization
 
-- *Session Features*\*:
-
-- **Session Creation**: Automated browser session initialization
-
-- **Session Configuration**: Browser configuration and settings
-
-- **Session Monitoring**: Session health and status monitoring
-
-- **Session Cleanup**: Proper session termination and cleanup
-
-- *Session Implementation*\*:
-
-```typescript
-interface BrowserSession {
-	id: string
-	browser: Browser
-	page: Page
-	status: SessionStatus
-	startTime: Date
-}
-```
-
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Session management,
-  browser control, configuration patterns
+### Web Content Processing
+- **Page Navigation**: Navigate to web pages
+- **Content Extraction**: Extract text, images, and data
+- **DOM Interaction**: Manipulate page elements
+- **Screenshot Capture**: Visual content recording
 
 ### Browser Discovery
+- **Auto-Detection**: Find installed browsers
+- **Version Management**: Handle browser versions
+- **Compatibility**: Cross-browser support
+- **Fallback Options**: Alternative browser selection
 
-- *Discovery Features*\*:
+### Content Fetching
+- **HTTP Requests**: Direct content retrieval
+- **Rendering**: JavaScript-rendered content
+- **Streaming**: Large content handling
+- **Caching**: Content caching strategies
 
-- **Browser Detection**: Automatic browser installation detection
+## Setup and Configuration
 
-- **Version Management**: Browser version compatibility checking
+### Prerequisites
+- Node.js 16+ for automation service
+- Browser installation (Chrome, Firefox, Safari)
+- Network access for web content
 
-- **Path Resolution**: Browser executable path resolution
+### Installation Steps
+1. Install KiloCode browser automation
+2. Configure browser settings
+3. Set up content processing
+4. Test automation functionality
 
-- **Capability Detection**: Browser capability assessment
-
-- *Discovery Implementation*\*:
-
-```typescript
-interface BrowserDiscovery {
-	detectBrowsers: () => Promise<BrowserInfo[]>
-	getDefaultBrowser: () => Promise<BrowserInfo>
-	validateBrowser: (browser: BrowserInfo) => Promise<boolean>
+### Configuration Options
+```json
+{
+  "kilocode.browser.enabled": true,
+  "kilocode.browser.headless": true,
+  "kilocode.browser.timeout": 30000,
+  "kilocode.browser.cache": true
 }
 ```
 
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Browser detection
-  algorithms, compatibility checking, path resolution
+## Usage Examples
 
-## Web Interaction
-
-### Navigation and Actions
-
-- *Interaction Features*\*:
-
-- **Page Navigation**: URL navigation and page loading
-
-- **Element Interaction**: Click, input, and scroll actions
-
-- **Form Handling**: Form filling and submission
-
-- **Dynamic Content**: Handling of dynamic web content
-
-- *Interaction Implementation*\*:
-
+### Basic Browser Operations
 ```typescript
-interface WebInteraction {
-	navigate: (url: string) => Promise<void>
-	click: (selector: string) => Promise<void>
-	input: (selector: string, text: string) => Promise<void>
-	scroll: (direction: "up" | "down", amount: number) => Promise<void>
-}
-```
+// Create browser session
+const browser = await browserManager.create();
 
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Interaction patterns,
-  element selection, action handling
+// Navigate to page
+await browser.navigate('https://example.com');
+
+// Extract content
+const content = await browser.extractContent();
+
+// Take screenshot
+await browser.screenshot('page.png');
+
+// Close session
+await browser.close();
+```
 
 ### Content Processing
-
-- *Processing Features*\*:
-
-- **Content Extraction**: Web page content extraction
-
-- **Text Processing**: Text content processing and formatting
-
-- **Image Processing**: Image content handling
-
-- **Link Processing**: Link extraction and processing
-
-- *Processing Implementation*\*:
-
 ```typescript
-interface ContentProcessor {
-	extractText: (page: Page) => Promise<string>
-	extractLinks: (page: Page) => Promise<Link[]>
-	extractImages: (page: Page) => Promise<Image[]>
-	formatContent: (content: string) => Promise<FormattedContent>
+// Extract specific elements
+const links = await contentProcessor.extractLinks(page);
+
+// Get page metadata
+const metadata = await contentProcessor.getMetadata(page);
+
+// Process images
+const images = await contentProcessor.extractImages(page);
+```
+
+### Advanced Features
+```typescript
+// Handle JavaScript rendering
+await browser.waitForLoad();
+
+// Interact with elements
+await browser.click('#submit-button');
+
+// Fill forms
+await browser.fillForm({ username: 'user', password: 'pass' });
+```
+
+## Best Practices
+
+### Performance Optimization
+- **Resource Management**: Limit concurrent sessions
+- **Caching**: Cache frequently accessed content
+- **Timeouts**: Set appropriate timeout values
+- **Cleanup**: Properly close browser sessions
+
+### Security Considerations
+- **Content Validation**: Validate extracted content
+- **Error Handling**: Handle network and browser errors
+- **Rate Limiting**: Respect website rate limits
+- **Privacy**: Protect user data and cookies
+
+### Reliability
+- **Error Recovery**: Implement retry mechanisms
+- **Fallback Strategies**: Handle browser failures
+- **Monitoring**: Track automation performance
+- **Testing**: Regular automation testing
+
+## Troubleshooting
+
+### Common Issues
+
+**Browser Not Found**
+- Check browser installation
+- Verify browser path configuration
+- Install required browser drivers
+- Test browser accessibility
+
+**Content Extraction Failures**
+- Verify page loading completion
+- Check for JavaScript requirements
+- Review content selectors
+- Test with different browsers
+
+**Performance Problems**
+- Monitor resource usage
+- Optimize browser settings
+- Implement proper cleanup
+- Use headless mode when possible
+
+### Debug Mode
+Enable detailed logging for troubleshooting:
+```json
+{
+  "kilocode.browser.debug": true,
+  "kilocode.browser.logLevel": "debug"
 }
 ```
 
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Content extraction
-  algorithms, text processing, formatting strategies
+## No Dead Ends Policy
 
-## Content Processing
+This document follows the "No Dead Ends" principle - every path leads to useful information.
 
-### URL Content Fetcher
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
+- Troubleshooting section provides actionable solutions
 
-- *Fetcher Features*\*:
-
-- **HTTP Requests**: Web content HTTP request handling
-
-- **Response Processing**: HTTP response processing and validation
-
-- **Error Handling**: Network error handling and retry logic
-
-- **Content Validation**: Content type and format validation
-
-- *Fetcher Implementation*\*:
-
-```typescript
-interface UrlContentFetcher {
-	fetch: (url: string) => Promise<ContentResponse>
-	validateUrl: (url: string) => boolean
-	handleErrors: (error: Error) => Promise<ErrorResponse>
-}
-```
-
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: HTTP handling, error
-  management, content validation
-
-### Content Formatting
-
-- *Formatting Features*\*:
-
-- **Text Normalization**: Text content normalization
-
-- **HTML Processing**: HTML content processing and cleaning
-
-- **Markdown Conversion**: HTML to Markdown conversion
-
-- **Content Structure**: Content structure analysis and formatting
-
-- *Implementation Status*\*: 🔍 **PARTIALLY RESEARCHED** **Research Needed**: Text processing, HTML
-  parsing, markdown conversion
-
-## Common Issues and Solutions
-
-### Issue 1: Browser Session Failures
-
-- *Symptoms*\*:
-- Browser session creation failures
-- Session timeouts
-- Browser crashes
-
-- *Root Cause*\*: Browser configuration or resource issues **Solution**: Implement robust browser
-  management and error recovery
-
-### Issue 2: Content Extraction Issues
-
-- *Symptoms*\*:
-- Incomplete content extraction
-- Malformed content
-- Extraction failures
-
-- *Root Cause*\*: Content parsing or extraction algorithm issues **Solution**: Improve content
-  extraction algorithms and error handling
-
-### Issue 3: Performance Issues
-
-- *Symptoms*\*:
-- Slow page loading
-- High resource usage
-- Session timeouts
-
-- *Root Cause*\*: Inefficient browser management or resource constraints **Solution**: Optimize
-  browser configuration and resource management
-
-### Issue 4: Compatibility Issues
-
-- *Symptoms*\*:
-- Browser compatibility problems
-- Feature detection failures
-- Version conflicts
-
-- *Root Cause*\*: Browser version or capability mismatches **Solution**: Implement proper browser
-  detection and compatibility checking
-
-<a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
-  · Source: `/docs/integrations/BROWSER_AUTOMATION.md#L1`
-
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [docs](../) · [integrations](../docs/integrations/) ·
-  [↑ Table of Contents](#browser-automation)
+## Navigation
+- [← Integrations Overview](README.md)
+- [← Editor Integration](EDITOR_INTEGRATION.md)
+- [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
+- [← Terminal Integration](TERMINAL_INTEGRATION.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

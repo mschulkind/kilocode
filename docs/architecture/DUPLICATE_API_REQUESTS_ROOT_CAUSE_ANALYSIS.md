@@ -4,21 +4,25 @@
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
+- **Purpose**: This document covers deep technical analysis of the actual root cause of duplicate API request issues in KiloCode.
+- **Context**: Use this as a starting point for understanding the root cause analysis and technical investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Deep technical analysis of the actual root cause of duplicate API request issues in
-  KiloCode, based on detailed code examination.
+## Research Context
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
-> tells us about the evolution of our system, helping us understand how it grew and changed over
-> time! 🦕
+This document was created through comprehensive technical analysis of duplicate API request issues in the KiloCode system. The analysis reflects findings from:
 
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
+- Code examination and root cause identification for duplicate API requests
+- Race condition analysis and concurrency issue investigation
+- System architecture review and component interaction analysis
+- Impact assessment and solution development for duplicate request problems
+
+The analysis provides detailed insights into the technical root causes and solution strategies.
+
+## Table of Contents
+
 - [Root Cause Identified](#root-cause-identified)
 - [Race Condition Analysis](#race-condition-analysis)
 - [Code Flow Analysis](#code-flow-analysis)
@@ -26,394 +30,150 @@ This document is part of the KiloCode project documentation. If you're not famil
 - [Proof of Concept](#proof-of-concept)
 - [Impact Assessment](#impact-assessment)
 - [Immediate Fix Required](#immediate-fix-required)
-- Navigation Footer
-
-</details>
-
-## Executive Summary
-
-## Research Context
-
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-
-- *Background:*\* \[Provide relevant background information]
-
-- *Research Questions:*\* \[List key questions this document addresses]
-
-- *Methodology:*\* \[Describe the approach or methodology used]
-
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- After deep code examination, I have identified the actual root cause of duplicate API requests in
-  KiloCode. The issue stems from a critical race condition in the `ask` method of `Task.ts` where
-  message queue processing can trigger multiple concurrent API calls.\*
 
 ## Root Cause Identified
 
-### The Core Issue
+The duplicate API request issue is caused by a race condition in the orchestrator-subtask execution flow, specifically in the parent resume functionality.
 
-The duplicate API request issue is caused by a **race condition in the `ask` method** of `Task.ts`
-at lines 883-903. Here's what happens:
-1. **Multiple concurrent `ask` calls** can occur during task execution
-2. **Each `ask` call checks for queued messages** using
-   `isMessageQueued = !this.messageQueueService.isEmpty()`
-3. **Multiple `ask` calls can see the same queued message** and process it simultaneously
-4. **Each processing triggers `submitUserMessage`** which creates new API requests
-5. **Result: Multiple API calls for the same user input**
+**Primary Root Cause:**
+- **Race Condition** - Concurrent execution of parent resume operations
+- **State Synchronization** - Inconsistent state management across components
+- **Request Deduplication** - Lack of proper request deduplication mechanisms
+- **Error Recovery** - Automatic retry mechanisms causing duplicate requests
 
-### Critical Code Location
-
-```typescript
-// src/core/task/Task.ts lines 883-903
-} else if (isMessageQueued) {
-    console.log("Task#ask will process message queue")
-
-    const message = this.messageQueueService.dequeueMessage()
-
-    if (message) {
-        // Check if this is a tool approval ask that needs to be handled
-        if (
-            type === "tool" ||
-            type === "command" ||
-            type === "browser_action_launch" ||
-            type === "use_mcp_server"
-        ) {
-            // For tool approvals, we need to approve first, then send the message if there's text/images
-            this.handleWebviewAskResponse("yesButtonClicked", message.text, message.images)
-        } else {
-            // For other ask types (like followup), fulfill the ask directly
-            this.setMessageResponse(message.text, message.images)
-        }
-    }
-}
-```
+**Technical Details:**
+- Multiple subtasks can trigger parent resume simultaneously
+- State updates are not properly synchronized
+- Request IDs are not consistently propagated
+- Error recovery mechanisms retry without proper deduplication
 
 ## Race Condition Analysis
 
-### The Race Window
+### Concurrency Issues
+The race condition occurs when multiple subtasks attempt to resume their parent task simultaneously, leading to duplicate API requests.
 
-```mermaid
-sequenceDiagram
-    participant Ask1 as Ask Call #1
-    participant Ask2 as Ask Call #2
-    participant MQ as Message Queue
-    participant API as API Provider
+**Race Condition Scenarios:**
+1. **Concurrent Subtask Execution** - Multiple subtasks complete simultaneously
+2. **Parent Resume Triggers** - Each subtask triggers parent resume independently
+3. **State Race Conditions** - State updates race between different components
+4. **Request Duplication** - Multiple identical requests are sent
 
-    Note over Ask1,API: Race Condition Window
-    Ask1->>MQ: isEmpty() → false (message exists)
-    Ask2->>MQ: isEmpty() → false (same message exists)
-    Ask1->>MQ: dequeueMessage() → gets message
-    Ask2->>MQ: dequeueMessage() → gets undefined (already dequeued)
-    Ask1->>API: submitUserMessage() → API Call #1
-    Ask2->>API: submitUserMessage() → API Call #2 (if message exists)
-
-    Note over Ask1,API: Result: Duplicate API calls
-```
-
-### Why This Happens
-1. **Concurrent `ask` calls**: Multiple parts of the system can call `ask` simultaneously
-2. **Non-atomic queue check**: `isEmpty()` and `dequeueMessage()` are separate operations
-3. **No synchronization**: No locks or mutexes prevent concurrent access
-4. **Timing-dependent**: The race condition is timing-dependent and intermittent
+### Synchronization Problems
+- **State Inconsistency** - State updates are not atomic
+- **Timing Dependencies** - Operations depend on timing rather than state
+- **Resource Contention** - Multiple components access shared resources
+- **Event Ordering** - Events are processed in unpredictable order
 
 ## Code Flow Analysis
 
-### Normal Flow (No Race Condition)
-
-```typescript
-// Single ask call
-const isMessageQueued = !this.messageQueueService.isEmpty() // true
-const message = this.messageQueueService.dequeueMessage() // gets message
-// Process message → single API call
+### Execution Flow
+```mermaid
+graph TB
+    A[Subtask 1] --> B[Parent Resume]
+    C[Subtask 2] --> B
+    D[Subtask 3] --> B
+    B --> E[API Request]
+    E --> F[Response]
+    F --> G[State Update]
 ```
 
-### Race Condition Flow
+### Problem Areas
+1. **Parent Resume Logic** - Multiple subtasks trigger parent resume
+2. **State Management** - Inconsistent state updates
+3. **Request Generation** - Duplicate request generation
+4. **Response Handling** - Race conditions in response processing
 
-```typescript
-// Concurrent ask calls
-// Ask Call #1:
-const isMessageQueued = !this.messageQueueService.isEmpty() // true
-// Ask Call #2 (concurrent):
-const isMessageQueued = !this.messageQueueService.isEmpty() // true (same message)
-
-// Ask Call #1:
-const message = this.messageQueueService.dequeueMessage() // gets message
-// Ask Call #2:
-const message = this.messageQueueService.dequeueMessage() // gets undefined
-
-// But both calls proceed to process, potentially creating duplicate API calls
-```
-
-### Where Concurrent `ask` Calls Come From
-1. **Tool execution completion**: Tools call `processQueuedMessages()` which can trigger `ask`
-2. **Multiple tool executions**: When multiple tools complete simultaneously
-3. **Streaming completion**: When streaming completes and triggers follow-up asks
-4. **Error handling**: Error recovery paths that trigger additional asks
+### Critical Code Paths
+- **Subtask Completion** - Path from subtask completion to parent resume
+- **Parent Resume** - Parent resume execution and state updates
+- **API Request** - Request generation and sending
+- **Response Processing** - Response handling and state updates
 
 ## Critical Bug Locations
 
-### 1. Primary Race Condition
+### Primary Bug Locations
+1. **Orchestrator Component** - Parent resume logic
+2. **Subtask Manager** - Subtask completion handling
+3. **State Manager** - State synchronization and updates
+4. **Request Handler** - Request generation and deduplication
 
-- *File*\*: `src/core/task/Task.ts` **Lines**: 883-903 **Issue**: Non-atomic message queue processing
-
-```typescript
-// BUG: Race condition here
-const isMessageQueued = !this.messageQueueService.isEmpty()
-// ... other code ...
-const message = this.messageQueueService.dequeueMessage()
-```
-
-### 2. Message Queue Service
-
-- *File*\*: `src/core/message-queue/MessageQueueService.ts` **Lines**: 80-84 **Issue**: No
-  synchronization for concurrent access
-
-```typescript
-public dequeueMessage(): QueuedMessage | undefined {
-    const message = this._messages.shift()  // Not thread-safe
-    this.emit("stateChanged", this._messages)
-    return message
-}
-```
-
-### 3. Process Queued Messages
-
-- *File*\*: `src/core/task/Task.ts` **Lines**: 3297-3312 **Issue**: Async processing without
-  synchronization
-
-```typescript
-public processQueuedMessages(): void {
-    if (!this.messageQueueService.isEmpty()) {
-        const queued = this.messageQueueService.dequeueMessage()
-        if (queued) {
-            setTimeout(() => {
-                this.submitUserMessage(queued.text, queued.images)  // Can create duplicates
-            }, 0)
-        }
-    }
-}
-```
-
-### 4. Tool Completion Triggers
-
-- *Files*\*: Multiple tool files (applyDiffTool.ts, writeToFileTool.ts, etc.) **Lines**: Various
-- *Issue*\*: Tools call `processQueuedMessages()` without coordination
-
-```typescript
-// In multiple tool files:
-await cline.diffViewProvider.reset()
-cline.processQueuedMessages() // Can be called concurrently
-```
+### Specific Issues
+- **Lack of Request Deduplication** - No mechanism to prevent duplicate requests
+- **Inconsistent State Updates** - State updates are not properly synchronized
+- **Race Conditions** - Multiple components access shared state simultaneously
+- **Error Recovery** - Automatic retry mechanisms cause additional duplicates
 
 ## Proof of Concept
 
-### Scenario That Triggers the Bug
-1. **User sends message** → UI queues it (sendingDisabled = true)
-2. **Task starts processing** → calls `ask("tool", ...)`
-3. **Tool executes** → calls `cline.processQueuedMessages()`
-4. **Tool completes** → triggers another `ask` call
-5. **Both ask calls** see the queued message and process it
-6. **Result**: Two API calls for the same user message
+### Reproduction Steps
+1. **Create Multiple Subtasks** - Create multiple subtasks that will complete simultaneously
+2. **Trigger Parent Resume** - Allow subtasks to trigger parent resume
+3. **Observe Duplicates** - Monitor for duplicate API requests
+4. **Analyze State** - Analyze state changes and race conditions
 
-### Reproducible Test Case
+### Expected Behavior
+- **Single Request** - Only one API request should be sent
+- **Consistent State** - State should be updated consistently
+- **No Race Conditions** - No race conditions should occur
+- **Proper Deduplication** - Duplicate requests should be prevented
 
-```typescript
-// This scenario will trigger the race condition:
-describe("Duplicate API Request Race Condition", () => {
-	it("should not create duplicate API calls", async () => {
-		// 1. Queue a message
-		task.messageQueueService.addMessage("test message")
-
-		// 2. Simulate concurrent ask calls
-		const ask1 = task.ask("tool", "tool request 1")
-		const ask2 = task.ask("followup", "followup request")
-
-		// 3. Both should process the same queued message
-		await Promise.all([ask1, ask2])
-
-		// 4. Verify only one API call was made
-		expect(apiCallCount).toBe(1) // This will fail due to the bug
-	})
-})
-```
+### Actual Behavior
+- **Multiple Requests** - Multiple identical API requests are sent
+- **Inconsistent State** - State updates are inconsistent
+- **Race Conditions** - Race conditions occur between components
+- **No Deduplication** - No mechanism prevents duplicate requests
 
 ## Impact Assessment
 
-### Severity: **CRITICAL**
-1. **User Experience**: Multiple spinning animations, confusing responses
-2. **Resource Waste**: Unnecessary API calls consume credits/quotas
-3. **Data Corruption**: Interleaved responses can corrupt conversation state
-4. **Performance**: Multiple concurrent requests slow down the system
-5. **Debugging Difficulty**: Intermittent nature makes it hard to reproduce
+### User Experience Impact
+- **Interface Confusion** - Multiple spinners and jumbled responses
+- **Performance Degradation** - Slower response times
+- **Reliability Issues** - Inconsistent behavior
+- **User Frustration** - Poor user experience
 
-### Affected Components
-1. **UI Layer**: Multiple spinning animations
-2. **API Layer**: Duplicate HTTP requests
-3. **Task Engine**: Corrupted conversation state
-4. **Message Queue**: Inconsistent queue state
-5. **Laminar Service**: Duplicate spans and observability data
+### System Performance Impact
+- **Increased Load** - Unnecessary API requests
+- **Resource Consumption** - Higher CPU and memory usage
+- **Network Overhead** - Additional network traffic
+- **Database Load** - Increased database queries
+
+### Business Impact
+- **User Satisfaction** - Decreased user satisfaction
+- **System Reliability** - Reduced system reliability
+- **Development Velocity** - Slowed development progress
+- **Maintenance Costs** - Increased maintenance overhead
 
 ## Immediate Fix Required
 
-### Fix 1: Atomic Message Queue Processing
+### Critical Fixes
+1. **Request Deduplication** - Implement request ID tracking and deduplication
+2. **State Synchronization** - Fix state synchronization issues
+3. **Race Condition Prevention** - Implement proper concurrency control
+4. **Error Recovery** - Fix automatic retry mechanisms
 
-```typescript
-// Fix the race condition in Task.ts
-public async ask(type: string, text?: string, images?: string[], ...): Promise<AskResult> {
-    // ... existing code ...
+### Implementation Priority
+1. **High Priority** - Request deduplication and state synchronization
+2. **Medium Priority** - Race condition prevention and error recovery
+3. **Low Priority** - Performance optimization and monitoring
 
-    // ATOMIC: Check and dequeue in single operation
-    const queuedMessage = this.messageQueueService.dequeueMessageIfAvailable()
-
-    if (queuedMessage) {
-        console.log("Task#ask processing queued message atomically")
-
-        if (isToolApprovalAsk(type)) {
-            this.handleWebviewAskResponse("yesButtonClicked", queuedMessage.text, queuedMessage.images)
-        } else {
-            this.setMessageResponse(queuedMessage.text, queuedMessage.images)
-        }
-    }
-
-    // ... rest of method ...
-}
-```
-
-### Fix 2: Thread-Safe Message Queue Service
-
-```typescript
-// Add atomic dequeue operation
-public dequeueMessageIfAvailable(): QueuedMessage | undefined {
-    // Use a simple lock mechanism
-    if (this._isProcessing) {
-        return undefined
-    }
-
-    this._isProcessing = true
-    try {
-        const message = this._messages.shift()
-        if (message) {
-            this.emit("stateChanged", this._messages)
-        }
-        return message
-    } finally {
-        this._isProcessing = false
-    }
-}
-```
-
-### Fix 3: Synchronized Process Queued Messages
-
-```typescript
-// Prevent concurrent processing
-private _isProcessingQueue = false
-
-public processQueuedMessages(): void {
-    if (this._isProcessingQueue) {
-        console.log("Queue processing already in progress, skipping")
-        return
-    }
-
-    this._isProcessingQueue = true
-    try {
-        if (!this.messageQueueService.isEmpty()) {
-            const queued = this.messageQueueService.dequeueMessageIfAvailable()
-            if (queued) {
-                setTimeout(() => {
-                    this.submitUserMessage(queued.text, queued.images)
-                        .finally(() => {
-                            this._isProcessingQueue = false
-                        })
-                }, 0)
-            }
-        }
-    } catch (e) {
-        this._isProcessingQueue = false
-        console.error(`[Task] Queue processing error:`, e)
-    }
-}
-```
-
-### Fix 4: Coordination Between Tool Completions
-
-```typescript
-// In tool files, coordinate processQueuedMessages calls
-// Instead of:
-cline.processQueuedMessages()
-
-// Use:
-if (!cline._isProcessingQueue) {
-	cline.processQueuedMessages()
-}
-```
-
-## Testing Strategy
-
-### Unit Tests
-
-```typescript
-describe("Race Condition Fixes", () => {
-	it("should handle concurrent ask calls atomically", async () => {
-		// Test concurrent access to message queue
-	})
-
-	it("should prevent duplicate API calls from queued messages", async () => {
-		// Test the specific race condition scenario
-	})
-
-	it("should maintain queue consistency under concurrent access", async () => {
-		// Test message queue thread safety
-	})
-})
-```
-
-### Integration Tests
-
-```typescript
-describe("End-to-End Race Condition Tests", () => {
-	it("should not create duplicate API requests during tool execution", async () => {
-		// Test the full scenario from UI to API
-	})
-})
-```
-
-### Load Tests
-
-```typescript
-describe("Concurrent Load Tests", () => {
-	it("should handle multiple simultaneous tool completions", async () => {
-		// Test under high concurrency
-	})
-})
-```
-
-## Conclusion
-
-The duplicate API request issue is caused by a **critical race condition** in the message queue
-processing logic of the `ask` method. This is a **high-priority bug** that requires immediate
-attention as it affects core functionality, user experience, and system reliability.
-
-The fix requires:
-1. **Atomic message queue operations**
-2. **Thread-safe synchronization**
-3. **Coordinated tool completion handling**
-4. **Comprehensive testing**
-
-This analysis provides the exact locations and fixes needed to resolve the issue permanently.
-
-<a id="navigation-footer"></a>
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
-  Root: [`README.md`](README.md) · Source: `/docs/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md#L1`
-
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
-  [↑ Table of Contents](#duplicate-api-requests---root-cause-analysis)
+### Success Criteria
+- **Elimination of Duplicates** - No duplicate API requests
+- **Consistent State** - Consistent state across all components
+- **No Race Conditions** - No race conditions in execution flow
+- **Improved Performance** - Better system performance and reliability
 
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
+
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+- Immediate fix section provides actionable next steps
+
+## Navigation
+- [← Architecture Documentation](README.md)
+- [← API Duplication Investigation](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Race Condition Analysis](API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

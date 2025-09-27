@@ -1,150 +1,127 @@
 # Architecture Documentation
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document serves as the master index for all system architecture documentation in the KiloCode project.
+- **Context**: Use this as a starting point for understanding system design, component relationships, and architectural patterns.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-Overview and navigation for system architecture, design patterns, and critical system analysis.
-
-## Directory Context
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+This documentation directory was established through comprehensive analysis of KiloCode's system architecture and design patterns. The architecture documentation reflects findings from:
 
-- *Background:*\* \[Provide relevant background information]
+- System architecture analysis across all layers and components
+- Critical issue investigation including race conditions and API duplication
+- Repository structure and monorepo organization research
+- State machine design and implementation patterns
+- Performance analysis and optimization opportunities
 
-- *Research Questions:*\* \[List key questions this document addresses]
+The organization supports both immediate system understanding and long-term architectural planning.
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+## Table of Contents
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+- [Architecture Overview](#architecture-overview)
+- [Quick Start Guide](#quick-start-guide)
+- [System Components](#system-components)
+- [Critical Analysis](#critical-analysis)
+- [Repository Structure](#repository-structure)
+- [Development Resources](#development-resources)
 
-The architecture directory contains comprehensive documentation for understanding KiloCode's system
-design, component relationships, and architectural patterns. This includes critical analysis of race
-conditions, state machines, repository structure, and architectural improvements. Essential for
-understanding how components interact and identifying system-level issues.
+## Architecture Overview
 
-### Key Focus Areas
+The architecture directory contains comprehensive documentation for understanding KiloCode's system design, component relationships, and architectural patterns. This includes critical analysis of race conditions, state machines, repository structure, and architectural improvements.
 
-- **System Architecture Layers** - UI, Communication, Orchestration, Provider, and Observability
-  layers
+**Key Focus Areas:**
+- **System Architecture Layers** - UI, Communication, Orchestration, Provider, and Observability layers
 - **Critical Issues & Analysis** - Race conditions, API duplication, and system reliability
 - **Repository Structure** - Monorepo organization, packages, and build systems
 - **State Machines** - Task, Session, and Recursive Call state management
 - **Architectural Improvements** - Prioritized roadmap for system enhancements
 
-## 🚀 Quick Start Paths
+## Quick Start Guide
 
 ### For Expert Engineers New to KiloCode
+- **Emergency Response** (Something's Broken): [Race Condition Analysis](race-condition/README.md) → [Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md) → [Solution Recommendations](race-condition/SOLUTION_RECOMMENDATIONS.md)
+- **Deep Dive Research** (Understanding the System): [Repository Overview](repository/README.md) → [Core Systems](repository/CORE_SYSTEMS.md) → [System Overview](SYSTEM_OVERVIEW.md)
 
-- *Start Here*\*: [Technical Glossary](../GLOSSARY.md) - Essential terminology before diving deeper
+### For System Architects
+- **Architecture Analysis**: [System Overview](SYSTEM_OVERVIEW.md) → [Communication Layer](COMMUNICATION_LAYER_SYSTEM.md) → [Orchestration Layer](ORCHESTRATION_LAYER_SYSTEM.md)
+- **Performance Optimization**: [Observability Layer](OBSERVABILITY_LAYER_SYSTEM.md) → [Provider Layer](PROVIDER_LAYER_SYSTEM.md) → [Architecture Improvements](PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md)
 
-- *Then Choose Your Path:*\*
-1. **🚨 Emergency Response** (Something's Broken)
-- \[Race Condition Analysis]race-condition/README.md) →
-  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
-  \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
-- [Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) for immediate
-  triage
-2. **🔬 Deep Dive Research** (Understanding the System)
-- [Repository Overview](../../architecture/README.md) → [Core Systems](../architecture/CORE_SYSTEMS.md) →
-  [State Machines](README.md)
-- \[Race Condition Analysis]race-condition/README.md) for current issues
-3. **🛠️ Implementation Journey** (Building Solutions)
-- \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md) →
-  \[Testing Strategy]race-condition/TESTING\_STRATEGY.md) →
-  [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+### For Developers
+- **Getting Started**: [Getting Started Guide](GETTING_STARTED.md) → [Repository Structure](repository/REPOSITORY_STRUCTURE.md) → [Development Guide](repository/DEVELOPMENT_GUIDE.md)
+- **Development Workflow**: [Development Tools](repository/DEVELOPMENT_TOOLS.md) → [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md) → [Build Pipelines](repository/BUILD_PIPELINES.md)
 
-## 📚 Core Documentation
+## System Components
 
-### Critical Analysis & Current Issues
+### Core Architecture Layers
+- **[UI Layer System](../ui/UI_LAYER_SYSTEM.md)** - User interface components and interactions
+- **[Communication Layer System](COMMUNICATION_LAYER_SYSTEM.md)** - Inter-component communication
+- **[Orchestration Layer System](ORCHESTRATION_LAYER_SYSTEM.md)** - Task orchestration and coordination
+- **[Provider Layer System](PROVIDER_LAYER_SYSTEM.md)** - External service integrations
+- **[Observability Layer System](OBSERVABILITY_LAYER_SYSTEM.md)** - Monitoring and logging
 
-- **\[Race Condition Analysis]race-condition/README.md)** - Master index for API duplication
-  issues, symptoms, and solutions
-- **[Short Debug Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)** - Concise
-  playbook for instrumentation and verification
-- **[Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md)** - Field
-  triage checklist for incidents
+### Critical System Analysis
+- **[Race Condition Analysis](race-condition/README.md)** - Comprehensive race condition investigation
+- **[API Duplication Investigation](API_DUPLICATION_INVESTIGATION_SUMMARY.md)** - API duplication root cause analysis
+- **[Task Lifecycle Deduplication](TASK_LIFECYCLE_DEDUPLICATION.md)** - Task deduplication strategies
 
-### System Understanding
+## Critical Analysis
 
-- **[State Machines](README.md)** - Task, Session, and Recursive Call state
-  definitions and transitions
-- **[Repository Overview](../../architecture/README.md)** - High-level system map and monorepo structure
-- **[Core Systems](../architecture/CORE_SYSTEMS.md)** - Detailed breakdown of major system components
+### Race Condition Investigation
+- **[Problem Overview](race-condition/PROBLEM_OVERVIEW.md)** - Race condition symptoms and impact
+- **[Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md)** - Technical root cause identification
+- **[Solution Recommendations](race-condition/SOLUTION_RECOMMENDATIONS.md)** - Proposed fixes and improvements
+- **[Testing Strategy](race-condition/TESTING_STRATEGY.md)** - Validation and testing approaches
 
-## Planning & Improvements
-- [Prioritized Architecture Improvements](./PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md) A ranked
-  roadmap of high-impact architecture changes (arbiter, idempotency, FSM guards, single-writer).
-  Each item states motivation, outcome, and rollout hints. Use to plan incremental improvements.
-- [Branch Analyses and Proposals](README.md) Index of branch-specific analyses,
-  proposals, and cross-fork comparisons. Useful for reviewing historical context and the rationale
-  for corrective PRs. Links include detailed before/after diffs.
+### API Duplication Analysis
+- **[API Duplication Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)** - Investigation overview
+- **[API Duplication Race Condition Analysis](API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)** - Technical analysis
+- **[Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)** - Root cause findings
+- **[API Provider Patterns](API_PROVIDER_PATTERNS.md)** - Provider implementation patterns
 
-## 🔍 Research Context & Next Steps
+## Repository Structure
 
-### When You're Here, You Can:
+### Repository Organization
+- **[Repository Overview](REPOSITORY_OVERVIEW.md)** - High-level repository structure
+- **[Repository Structure](repository/REPOSITORY_STRUCTURE.md)** - Detailed directory organization
+- **[Core Systems](repository/CORE_SYSTEMS.md)** - Core system components
+- **[Workspace Packages](repository/WORKSPACE_PACKAGES.md)** - Package organization
 
-- *Understanding Race Conditions:*\*
+### Development Resources
+- **[Development Guide](repository/DEVELOPMENT_GUIDE.md)** - Development setup and workflow
+- **[Development Tools](repository/DEVELOPMENT_TOOLS.md)** - Development tooling and utilities
+- **[Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)** - Testing frameworks and strategies
+- **[Build Pipelines](repository/BUILD_PIPELINES.md)** - Build and deployment processes
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
-  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
-  \[Code Flow Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md)
+## Development Resources
 
-- **Related**: [State Machines](README.md) for behavior modeling,
-  [Orchestrator Documentation](../../orchestrator/README.md) for execution patterns
+### State Machines
+- **[State Machine Overview](state-machines/README.md)** - State machine architecture
+- **[Task State Machine](state-machines/TASK_STATE_MACHINE.md)** - Task lifecycle management
+- **[Session State Machine](state-machines/SESSION_STATE_MACHINE.md)** - Session state handling
+- **[Combined State Machine](state-machines/COMBINED_STATE_MACHINE.md)** - Integrated state management
 
-- *Understanding System Architecture:*\*
+### External Integrations
+- **[External Dependencies](EXTERNAL_DEPENDENCIES.md)** - External service dependencies
+- **[Upstream Downstream Integration](UPSTREAM_DOWNSTREAM_INTEGRATION.md)** - Integration patterns
 
-- **Next**: [Repository Overview](../../architecture/README.md) →
-  [Core Systems](../architecture/CORE_SYSTEMS.md) → [Build Pipelines](../architecture/BUILD_PIPELINES.md)
+## No Dead Ends Policy
 
-- **Related**: [State Machines](README.md) for runtime behavior,
-  [Technical Glossary](../GLOSSARY.md) for terminology
+This document follows the "No Dead Ends" principle - every path leads to useful information.
 
-- *Implementing Solutions:*\*
-
-- **Next**: \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md) →
-  \[Testing Strategy]race-condition/TESTING\_STRATEGY.md) →
-  [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-
-- **Related**: [Orchestrator Best Practices](../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md),
-  [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md)
-
-- *Planning Improvements:*\*
-
-- **Next**: [Prioritized Architecture Improvements](./PRIORITIZED_ARCHITECTURE_IMPROVEMENTS.md) →
-  [Branch Analyses](README.md) → [Implementation Plans](../plans/README.md)
-
-- **Related**: [Consolidation Plan](./CONSOLIDATION_PLAN.md) for documentation improvements
-
-### No Dead Ends Policy
-
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to this README for guidance.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
+- Quick start paths provide clear entry points for different user types
 
 ## Navigation
-
-- **\[Race Condition Documentation]race-condition/README.md)** - Complete analysis of API
-  duplication issues, root causes, and solutions
-- **[Orchestrator Documentation](../../orchestrator/README.md)** - Task coordination, lifecycle
-  management, and execution patterns
-- **[Repository Documentation](../../architecture/README.md)** - Codebase structure, packages, and
-  development workflow
-- **[State Machine Documentation](README.md)** - System behavior modeling and state
-  transition definitions
-- **[Technical Glossary](../GLOSSARY.md)** - Essential terminology and system concepts
-- **[Observability Layer System](./OBSERVABILITY_LAYER_SYSTEM.md)** - Tracing, metrics, and
-  instrumentation patterns
-
-## Notes
-- Prefer SHORT docs for quick field use; deep links lead to full guides.
-- See [Documentation Consolidation Plan](./CONSOLIDATION_PLAN.md) for active deduplication work.
-
-## Directory context
-
-This directory aggregates all architecture-focused documents: high-level overviews, layered system
-design, critical issue analyses (like race conditions), and state-machine specifications. Use the
-Quick Start to jump into urgent tasks or deep dives, and the Planning section to track active
-architectural work. Subdirectories (e.g., `race-condition/`, `../architecture/repository/`, `state-machines/`) each
-provide their own focused indexes with detailed coverage.
+- [← Main Documentation](../README.md)
+- [← Repository Overview](REPOSITORY_OVERVIEW.md)
+- [← System Overview](SYSTEM_OVERVIEW.md)
+- [← Race Condition Analysis](race-condition/README.md)
+- [← Project Root](../../README.md)

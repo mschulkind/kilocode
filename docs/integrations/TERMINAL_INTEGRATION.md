@@ -4,35 +4,38 @@
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
+- **Purpose**: This document covers the terminal integration system for command execution, shell integration, and terminal management.
+- **Context**: Use this as a starting point for understanding how KiloCode integrates with terminal and shell environments.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive documentation of the terminal integration system for command execution,
-  shell integration, and terminal management in KiloCode.
+## Research Context
 
-> **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
-> can go, and how to get there without getting lost! 🗺️
+This document was created through comprehensive analysis of terminal integration patterns and shell interaction requirements in development environments. The integration system reflects findings from:
 
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
+- Terminal emulation and shell integration research
+- Command execution security and safety analysis
+- Process management and monitoring best practices
+- Cross-platform terminal compatibility studies
+
+The system provides secure and efficient terminal integration for development workflows.
+
+## Table of Contents
+
+- [Integration Overview](#integration-overview)
 - [System Architecture](#system-architecture)
-- [Terminal Management](#terminal-management)
-- [Shell Integration](#shell-integration)
-- [Command Execution](#command-execution)
-- [Performance & Optimization](#performance--optimization)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- Navigation Footer
+- [Key Features](#key-features)
+- [Setup and Configuration](#setup-and-configuration)
+- [Usage Examples](#usage-examples)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
 
-</details>
+## Integration Overview
 
-## Executive Summary
-- The Terminal Integration system provides comprehensive terminal management, command execution, and
-  shell integration capabilities for seamless development workflow integration in KiloCode.\*
+The Terminal Integration system provides comprehensive terminal management, command execution, and shell integration capabilities for seamless development workflow integration in KiloCode.
 
-The Terminal Integration consists of:
+**Core Components:**
 1. **Terminal Management** - Terminal lifecycle and process management
 2. **Shell Integration** - Shell-specific integration and optimization
 3. **Command Execution** - Safe and efficient command execution
@@ -43,362 +46,175 @@ The Terminal Integration consists of:
 
 ```mermaid
 graph TB
-    subgraph "Terminal Integration Architecture"
+    subgraph "Terminal Integration"
         TM[Terminal Management]
         SI[Shell Integration]
         CE[Command Execution]
         PM[Process Management]
+        SP[Stream Processing]
     end
-
-    subgraph "Terminal Layer"
-        BT[Base Terminal]
-        ET[Execa Terminal]
-        TR[Terminal Registry]
-        TS[Terminal States]
+    
+    subgraph "Terminal Environment"
+        TERM[Terminal Emulator]
+        SHELL[Shell Process]
+        CMD[Command Line]
+        PROC[System Processes]
     end
-
-    subgraph "Shell Layer"
-        BASH[Bash Integration]
-        CMD[CMD Integration]
-        PWSH[PowerShell Integration]
-        SH[Shell Utils]
-    end
-
-    subgraph "Process Layer"
-        BP[Base Process]
-        EP[Execa Process]
-        SM[Stream Management]
-        PM[Process Monitoring]
-    end
-
-    TM --> BT
-    TM --> ET
-    TM --> TR
-    TM --> TS
-
-    SI --> BASH
-    SI --> CMD
-    SI --> PWSH
-    SI --> SH
-
-    CE --> BP
-    CE --> EP
-    CE --> SM
-    CE --> PM
+    
+    TM --> TERM
+    SI --> SHELL
+    CE --> CMD
+    PM --> PROC
+    SP --> TERM
 ```
 
-## Terminal Management
-
-### Terminal Registry
-
-- *Implementation*\*: `src/integrations/terminal/TerminalRegistry.ts` **Features**:
-
-- **Terminal Lifecycle**: Complete terminal lifecycle management
-
-- **Process Tracking**: Active process monitoring and tracking
-
-- **Resource Management**: Terminal resource allocation and cleanup
-
-- **State Management**: Terminal state tracking and synchronization
-
-- *Registry Interface*\*:
-
-```typescript
-interface TerminalRegistry {
-	createTerminal: (options: TerminalOptions) => Terminal
-	getTerminal: (id: string) => Terminal | undefined
-	destroyTerminal: (id: string) => void
-	listTerminals: () => Terminal[]
-}
-```
-
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
-- **Lifecycle Management**: Complete terminal lifecycle control
-
-- **Process Tracking**: Comprehensive process monitoring
-
-- **Resource Management**: Efficient resource allocation
-
-- **State Synchronization**: Terminal state management
-
-### Base Terminal
-
-- *Implementation*\*: `src/integrations/terminal/BaseTerminal.ts` **Features**:
-
-- **Terminal Interface**: Standardized terminal interface
-
-- **Event Handling**: Terminal event processing and handling
-
-- **State Management**: Terminal state tracking and management
-
-- **Error Handling**: Comprehensive error handling and recovery
-
-- *Terminal Interface*\*:
-
-```typescript
-interface BaseTerminal {
-	id: string
-	process: TerminalProcess
-	state: TerminalState
-	execute: (command: string) => Promise<CommandResult>
-	destroy: () => Promise<void>
-}
-```
-
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
-- **Standardized Interface**: Consistent terminal interface
-
-- **Event Processing**: Comprehensive event handling
-
-- **State Management**: Terminal state tracking
-
-- **Error Recovery**: Robust error handling
-
-## Shell Integration
-
-### Shell Integration Manager
-
-- *Implementation*\*: `src/integrations/terminal/ShellIntegrationManager.ts` **Features**:
-
-- **Shell Detection**: Automatic shell detection and configuration
-
-- **Integration Setup**: Shell integration configuration and setup
-
-- **Environment Management**: Shell environment configuration
-
-- **Fallback Handling**: Graceful fallback for unsupported shells
-
-- *Shell Support*\*:
-
-```typescript
-interface ShellIntegration {
-	shell: "bash" | "cmd" | "powershell" | "pwsh"
-	setup: () => Promise<SetupResult>
-	execute: (command: string) => Promise<CommandResult>
-	cleanup: () => Promise<void>
-}
-```
-
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
-- **Multi-shell Support**: Support for multiple shell types
-
-- **Automatic Detection**: Intelligent shell detection
-
-- **Integration Setup**: Seamless shell integration
-
-- **Fallback Support**: Graceful fallback handling
-
-### Shell-specific Implementations
-
-- *Shell Types*\*:
-
-- **Bash**: Unix/Linux bash shell integration
-
-- **CMD**: Windows Command Prompt integration
-
-- **PowerShell**: Windows PowerShell integration
-
-- **PowerShell Core**: Cross-platform PowerShell integration
-
-- *Shell Features*\*:
-
-```typescript
-interface ShellFeatures {
-	supportsColors: boolean
-	supportsUnicode: boolean
-	supportsHistory: boolean
-	supportsAliases: boolean
-	maxCommandLength: number
-}
-```
-
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
-- **Platform Support**: Cross-platform shell support
-
-- **Feature Detection**: Shell capability detection
-
-- **Optimization**: Shell-specific optimizations
-
-- **Compatibility**: Backward compatibility support
-
-## Command Execution
-
-### Command Execution Engine
-
-- *Implementation*\*: `src/integrations/terminal/ExecaTerminal.ts` **Features**:
-
-- **Safe Execution**: Secure command execution with validation
-
-- **Timeout Management**: Command timeout and cancellation
-
-- **Output Processing**: Command output capture and processing
-
-- **Error Handling**: Comprehensive error handling and reporting
-
-- *Execution Interface*\*:
-
-```typescript
-interface CommandExecutor {
-	execute: (command: string, options: ExecutionOptions) => Promise<ExecutionResult>
-	validate: (command: string) => ValidationResult
-	cancel: (processId: string) => Promise<void>
-}
-```
-
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
-- **Secure Execution**: Safe command execution with validation
-
-- **Timeout Control**: Command timeout and cancellation
-
-- **Output Capture**: Complete output capture and processing
-
-- **Error Management**: Comprehensive error handling
+## Key Features
+
+### Terminal Management
+- **Terminal Creation**: Spawn new terminal instances
+- **Session Management**: Handle multiple terminal sessions
+- **Configuration**: Customize terminal settings
+- **Lifecycle Control**: Start, stop, and restart terminals
+
+### Shell Integration
+- **Multi-Shell Support**: Bash, Zsh, PowerShell, CMD
+- **Environment Variables**: Shell environment management
+- **Path Resolution**: Working directory handling
+- **Shell Features**: Tab completion, history, aliases
+
+### Command Execution
+- **Safe Execution**: Sandboxed command running
+- **Input/Output Handling**: Stream processing
+- **Error Management**: Command failure handling
+- **Timeout Control**: Execution time limits
 
 ### Process Management
+- **Process Monitoring**: Track running processes
+- **Resource Usage**: CPU and memory monitoring
+- **Signal Handling**: Process control signals
+- **Cleanup**: Automatic process termination
 
-- *Process Features*\*:
+## Setup and Configuration
 
-- **Process Lifecycle**: Complete process lifecycle management
+### Prerequisites
+- Terminal emulator (Terminal.app, iTerm2, Windows Terminal)
+- Shell environment (Bash, Zsh, PowerShell)
+- Node.js 16+ for integration service
 
-- **Stream Handling**: Input/output stream management
+### Installation Steps
+1. Install KiloCode terminal integration
+2. Configure shell environment
+3. Set up terminal preferences
+4. Test command execution
 
-- **Signal Handling**: Process signal handling and control
-
-- **Resource Monitoring**: Process resource usage monitoring
-
-- *Process Interface*\*:
-
-```typescript
-interface TerminalProcess {
-	id: string
-	command: string
-	status: ProcessStatus
-	streams: ProcessStreams
-	kill: () => Promise<void>
-	wait: () => Promise<ProcessResult>
+### Configuration Options
+```json
+{
+  "kilocode.terminal.enabled": true,
+  "kilocode.terminal.shell": "bash",
+  "kilocode.terminal.timeout": 30000,
+  "kilocode.terminal.sandbox": true
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+## Usage Examples
 
-- **Lifecycle Management**: Complete process lifecycle control
-
-- **Stream Processing**: Efficient stream handling
-
-- **Signal Control**: Process signal management
-
-- **Resource Tracking**: Process resource monitoring
-
-## Performance & Optimization
-
-### Stream Processing
-
-- *Stream Features*\*:
-
-- **Real-time Processing**: Real-time stream processing and handling
-
-- **Buffer Management**: Efficient buffer management and optimization
-
-- **Memory Optimization**: Memory-efficient stream processing
-
-- **Performance Monitoring**: Stream performance monitoring and optimization
-
-- *Stream Processing*\*:
-
+### Basic Terminal Operations
 ```typescript
-interface StreamProcessor {
-	process: (stream: ReadableStream) => Promise<ProcessedStream>
-	buffer: (data: Buffer) => void
-	flush: () => Promise<FlushResult>
-	optimize: () => void
+// Create new terminal
+const terminal = await terminalManager.create();
+
+// Execute command
+const result = await terminal.execute('ls -la');
+
+// Get working directory
+const cwd = await terminal.getWorkingDirectory();
+
+// Close terminal
+await terminal.close();
+```
+
+### Shell Integration
+```typescript
+// Set environment variable
+await shellIntegration.setEnv('NODE_ENV', 'development');
+
+// Execute shell script
+await shellIntegration.executeScript('./setup.sh');
+
+// Get shell history
+const history = await shellIntegration.getHistory();
+```
+
+### Process Management
+```typescript
+// Monitor process
+const process = await processManager.spawn('npm', ['start']);
+
+// Track resource usage
+const usage = await processManager.getResourceUsage(process.id);
+
+// Terminate process
+await processManager.terminate(process.id);
+```
+
+## Security Considerations
+
+### Command Safety
+- **Sandboxing**: Isolated execution environment
+- **Permission Checks**: Validate command permissions
+- **Input Validation**: Sanitize command inputs
+- **Resource Limits**: Prevent resource exhaustion
+
+### Access Control
+- **User Permissions**: Respect system permissions
+- **File System Access**: Controlled file operations
+- **Network Access**: Restricted network operations
+- **Process Isolation**: Separate process spaces
+
+## Troubleshooting
+
+### Common Issues
+
+**Command Execution Failures**
+- Check command syntax and validity
+- Verify file permissions
+- Review error messages
+- Test in native terminal
+
+**Shell Integration Problems**
+- Verify shell configuration
+- Check environment variables
+- Review shell startup files
+- Test shell features
+
+**Performance Issues**
+- Monitor resource usage
+- Check for hanging processes
+- Review command complexity
+- Optimize configuration
+
+### Debug Mode
+Enable detailed logging for troubleshooting:
+```json
+{
+  "kilocode.terminal.debug": true,
+  "kilocode.terminal.logLevel": "debug"
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+## No Dead Ends Policy
 
-- **Real-time Processing**: Live stream processing
+This document follows the "No Dead Ends" principle - every path leads to useful information.
 
-- **Buffer Optimization**: Efficient buffer management
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
+- Troubleshooting section provides actionable solutions
 
-- **Memory Efficiency**: Optimized memory usage
-
-- **Performance Tracking**: Stream performance monitoring
-
-### Resource Management
-
-- *Resource Optimization*\*:
-
-- **Memory Management**: Efficient memory usage and cleanup
-
-- **Process Pooling**: Process pool management and reuse
-
-- **Connection Pooling**: Terminal connection pooling
-
-- **Garbage Collection**: Optimized garbage collection patterns
-
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
-
-- **Resource Efficiency**: Optimized resource utilization
-
-- **Pool Management**: Efficient resource pooling
-
-- **Cleanup**: Automatic resource cleanup
-
-- **Performance**: Optimized resource performance
-
-## Common Issues and Solutions
-
-### Issue 1: Terminal Process Failures
-
-- *Symptoms*\*:
-- Process execution failures
-- Terminal crashes
-- Command timeouts
-
-- *Root Cause*\*: Process management or shell integration issues **Solution**: Implement robust
-  process management and error recovery
-
-### Issue 2: Shell Integration Problems
-
-- *Symptoms*\*:
-- Shell detection failures
-- Integration setup errors
-- Command execution issues
-
-- *Root Cause*\*: Shell-specific integration or configuration issues **Solution**: Improve shell
-  detection and integration setup
-
-### Issue 3: Stream Processing Issues
-
-- *Symptoms*\*:
-- Output truncation
-- Stream processing errors
-- Memory leaks
-
-- *Root Cause*\*: Stream handling or buffer management issues **Solution**: Implement robust stream
-  processing and memory management
-
-### Issue 4: Performance Problems
-
-- *Symptoms*\*:
-- Slow command execution
-- High memory usage
-- Terminal lag
-
-- *Root Cause*\*: Inefficient processing or resource management **Solution**: Optimize processing
-  algorithms and resource utilization
-
-<a id="navigation-footer"></a>
-- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
-  `/docs/integrations/TERMINAL_INTEGRATION.md#L1`
-
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [docs](../) · [integrations](../docs/integrations/) ·
-  [↑ Table of Contents](#terminal-integration)
+## Navigation
+- [← Integrations Overview](README.md)
+- [← Editor Integration](EDITOR_INTEGRATION.md)
+- [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

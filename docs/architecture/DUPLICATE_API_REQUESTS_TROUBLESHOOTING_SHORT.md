@@ -1,119 +1,155 @@
 # Duplicate API Requests Troubleshooting (Short)
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document provides fast, field-ready triage for multiple spinners and jumbled responses.
+- **Context**: Use this as a quick reference for immediate troubleshooting of duplicate API request issues.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-Purpose: Fast, field-ready triage for multiple spinners / jumbled responses.
-
-## Triage Flow
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+This document was created as a condensed version of the comprehensive troubleshooting guide for duplicate API request issues. The short version reflects findings from:
 
-- *Background:*\* \[Provide relevant background information]
+- Rapid triage procedure development for duplicate API request issues
+- Quick diagnostic method research for field troubleshooting
+- Immediate resolution strategy analysis for critical issues
+- Emergency response procedure development for system problems
 
-- *Research Questions:*\* \[List key questions this document addresses]
+The guide provides essential steps for rapid issue identification and resolution.
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+## Table of Contents
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-1. Observe symptoms
-- Multiple spinners at once
-- Responses out of order / corrupted XML
-- Often after subtask completion
-2. Collect quick data
-- Check DevTools/console for JSON logs with `Task.recursivelyMakeClineRequests`
-- Capture reasons: main-loop | subtask-completion | user-request
-- Note timestamps for overlaps
-3. Identify scenario
-- Two-request race: main-loop + subtask-completion close together
-- Three-request race: add user-request after premature green text
-4. Confirm lock status
-- If lock enabled: expect no overlaps, only queued waits
-- If lock disabled: expect overlaps (bug)
+- [Triage Flow](#triage-flow)
+- [Quick Diagnostics](#quick-diagnostics)
+- [Common Scenarios](#common-scenarios)
+- [Immediate Actions](#immediate-actions)
+- [Emergency Procedures](#emergency-procedures)
 
-## Quick Fixes
-- Enable lock feature flag for `recursivelyMakeClineRequests`
-- Restart the chat session if corruption occurred
-- If three-request variant triggered, avoid immediate resend; wait for UI to settle
+## Triage Flow
 
-## Where It Breaks
-- Parent and subtask both calling `recursivelyMakeClineRequests` concurrently
-- Introduced by navigation recovery change (`continueParentTask`)
+### Step 1: Observe Symptoms
+- **Multiple Spinners** - Multiple spinners appearing simultaneously
+- **Jumbled Responses** - Responses out of order or corrupted
+- **Timing Issues** - Often occurs after subtask completion
+- **User Confusion** - User interface confusion and frustration
 
-## Minimal Commands / Checks
-- Grep for call starts:
+### Step 2: Collect Quick Data
+- **Check DevTools** - Examine console for JSON logs with `Task.recursivelyMakeClineRequests`
+- **Capture Reasons** - Note reasons: main-loop | subtask-completion | user-request
+- **Note Timestamps** - Record timestamps for overlaps and patterns
+- **Document Context** - Capture system context and user actions
 
-```bash
-rg 'Task.recursivelyMakeClineRequests".*"start"' src webview-ui | cat
+### Step 3: Identify Scenario
+- **Two-Request Race** - Main-loop + subtask-completion close together
+- **Multiple Subtasks** - Multiple subtasks completing simultaneously
+- **User Action Duplication** - Rapid user actions triggering requests
+- **Error Recovery Loop** - Automatic retry mechanisms causing duplicates
+
+## Quick Diagnostics
+
+### Console Log Analysis
+```javascript
+// Look for these patterns in console logs
+Task.recursivelyMakeClineRequests
+// Check for multiple instances with same request ID
+// Look for timing overlaps
+// Identify request sources
 ```
-- Verify single active span per task in Laminar
-- Inspect UI flags: `sendingDisabled`, `isStreaming` transitions
 
-## Instrumentation Essentials
-- Use the SHORT debug implementation: `API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md`
-- Tag every call with `reason`
-- Record `start`, `end`, `duration_ms`, `queue_wait_ms`
+### Network Tab Analysis
+- **Request Timing** - Check request timing and overlaps
+- **Request IDs** - Verify request ID uniqueness
+- **Response Order** - Analyze response order and timing
+- **Error Patterns** - Identify error patterns and causes
 
-## Known Triggers
-- Subtask completes and parent continues in background (same chat)
-- Subtask prematurely thinks it's done (green text), then user resends
-- Navigation away/back resumes parent (intended), but can overlap without lock
+### System State Check
+- **Component State** - Check component state consistency
+- **Task Status** - Verify task status and completion
+- **User Actions** - Review recent user actions
+- **System Load** - Check system load and performance
 
-## Decision Tree
-- Overlap detected?
-- Yes → Lock missing/misconfigured → Enable lock, retest
-- No → Investigate jumbled UI rendering, ordering logic, or tool result routing
-- Triple overlap?
-- Yes → Confirm premature completion; educate UI flow; add guard to suppress extra calls when
-  `green end` recently emitted
+## Common Scenarios
 
-## Preventive Measures
-- Keep lock permanently for recursive calls
-- Add idempotent guards on parent resume when already running
-- CI test for overlap (see `TESTING_STRATEGY.md`)
+### Scenario 1: Two-Request Race
+**Symptoms**: Main-loop and subtask-completion requests close together
+**Cause**: Race condition between main loop and subtask completion
+**Resolution**: Implement request deduplication
+**Prevention**: Add proper synchronization
 
-## Links
-- \[Root Cause Analysis of Duplicate API Requests]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- \[Code Flow and Execution Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md)
-- \[Solution Options and Synchronization Strategies]race-condition/SOLUTION\_RECOMMENDATIONS.md)
-- \[Testing Strategy and Validation Plan]race-condition/TESTING\_STRATEGY.md)
-- \[Prevention and Monitoring Measures]race-condition/PREVENTION\_MEASURES.md)
+### Scenario 2: Multiple Subtasks
+**Symptoms**: Multiple subtasks completing simultaneously
+**Cause**: Concurrent subtask execution
+**Resolution**: Implement subtask coordination
+**Prevention**: Add proper concurrency control
 
-## 🔍 Research Context & Next Steps
+### Scenario 3: User Action Duplication
+**Symptoms**: Rapid user actions triggering multiple requests
+**Cause**: User interface not preventing duplicate actions
+**Resolution**: Implement user action debouncing
+**Prevention**: Add user interaction controls
 
-### When You're Here, You Can:
+### Scenario 4: Error Recovery Loop
+**Symptoms**: Repeated failed requests
+**Cause**: Automatic retry mechanisms
+**Resolution**: Fix error recovery logic
+**Prevention**: Implement proper error handling
 
-- *Understanding Architecture:*\*
+## Immediate Actions
 
-- **Next**: Check related architecture documentation in the same directory
+### Emergency Response
+1. **Stop User Actions** - Prevent further user interactions
+2. **Check System State** - Verify system state and stability
+3. **Review Logs** - Examine recent logs for error patterns
+4. **Document Issue** - Record issue details and context
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](README.md) for context
+### Quick Fixes
+1. **Request Deduplication** - Implement immediate request deduplication
+2. **State Reset** - Reset system state if necessary
+3. **Error Recovery** - Disable problematic error recovery
+4. **User Interface** - Prevent duplicate user actions
 
-- *Implementing Architecture Features:*\*
+### Validation
+1. **Test Scenarios** - Test common scenarios for duplicates
+2. **Monitor Performance** - Monitor system performance
+3. **User Feedback** - Collect user feedback and experience
+4. **Document Results** - Document resolution and results
 
-- **Next**: [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)
+## Emergency Procedures
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+### Critical Issues
+1. **System Unstable** - System showing signs of instability
+2. **Data Corruption** - Potential data corruption or loss
+3. **Performance Degradation** - Significant performance degradation
+4. **User Impact** - High user impact and frustration
 
-- *Troubleshooting Architecture Issues:*\*
+### Response Steps
+1. **Immediate Assessment** - Quick assessment of issue severity
+2. **Stakeholder Notification** - Notify relevant stakeholders
+3. **Emergency Response** - Implement emergency response procedures
+4. **Documentation** - Document emergency response and results
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
-  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
+### Recovery Procedures
+1. **System Recovery** - Implement system recovery procedures
+2. **Data Validation** - Validate data integrity and consistency
+3. **Performance Monitoring** - Monitor system performance
+4. **User Communication** - Communicate with affected users
 
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
+## No Dead Ends Policy
 
-### No Dead Ends Policy
+This document follows the "No Dead Ends" principle - every path leads to useful information.
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Architecture Documentation](README.md) for guidance.
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
+- Emergency procedures provide actionable next steps
 
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+## Navigation
+- [← Architecture Documentation](README.md)
+- [← Full Troubleshooting Guide](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+- [← Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

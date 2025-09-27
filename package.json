@@ -38,7 +38,7 @@
 		"docs:build": "pnpm --filter kilocode-docs build",
 		"docs:check": "node scripts/docs-fixer.js --dry-run",
 		"docs:fix": "node scripts/docs-fixer.js --validate",
-    "docs:validate": "remark docs/",
+    "docs:validate": "bash scripts/docs-validate.sh",
     "docs:quality": "node scripts/docs/content-quality.js",
     "docs:links": "node scripts/docs/link-validator.js",
     "docs:workflow": "node scripts/docs/workflow-optimizer.js",

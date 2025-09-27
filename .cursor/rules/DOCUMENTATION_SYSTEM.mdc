@@ -24,6 +24,22 @@ pnpm docs:validate 2>&1 | wc -l
 
 **Why:** Commands like `head`, `less`, `more`, `cat` interfere with output stream handling, causing hangs.
 
+### ❌ **Never run docs:validate directly in terminal**
+```bash
+# ❌ NEVER DO THIS - Output can be overwhelming and hard to analyze
+pnpm docs:validate
+
+# ✅ ALWAYS pipe to file first, then analyze the file:
+pnpm docs:validate > docs_validate_output.log 2>&1
+# Then read the file:
+cat docs_validate_output.log
+# Or search within it:
+grep "warning" docs_validate_output.log
+grep "error" docs_validate_output.log
+```
+
+**Why:** Direct output is overwhelming and makes analysis difficult. Always capture to file first.
+
 ### ❌ **Never assume list indentation without checking**
 - Always check actual remark-lint rule documentation
 - `remark-lint-list-item-bullet-indent` prevents spaces BEFORE bullets
@@ -54,11 +70,19 @@ sed -n '90p' docs/some-file.md
 
 ## 🔧 **Debugging Commands That Work**
 ```bash
+# ALWAYS capture validation output to file first
+pnpm docs:validate > docs_validate_output.log 2>&1
+
+# Then analyze the captured output:
 # Count warnings by type
-pnpm docs:validate 2>&1 | grep "list-item-bullet-indent" | wc -l
+grep "list-item-bullet-indent" docs_validate_output.log | wc -l
 
 # See last few warnings
-pnpm docs:validate 2>&1 | tail -10
+tail -10 docs_validate_output.log
+
+# Search for specific patterns
+grep "warning" docs_validate_output.log
+grep "error" docs_validate_output.log
 
 # Preview changes without applying
 pnpm docs:check

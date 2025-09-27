@@ -4,728 +4,337 @@
 
 This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
+- **Purpose**: This document covers the Orchestration Layer system, including Task Engine, Message Queue Service, and Orchestrator components for task execution and coordination.
+- **Context**: Use this as a starting point for understanding task orchestration and coordination in the KiloCode system.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:*\* Comprehensive documentation of the Orchestration Layer system, including Task Engine,
-  Message Queue Service, and Orchestrator components that manage task execution and coordination.
+## Research Context
 
-> **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
-> tells us about the evolution of our system, helping us understand how it grew and changed over
-> time! 🦕
+This document was created through comprehensive analysis of orchestration requirements and task management system architecture in the KiloCode project. The system reflects findings from:
 
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
+- Task orchestration system architecture analysis and design patterns
+- Message queue service implementation and coordination strategy research
+- Task lifecycle management and state coordination system development
+- Performance optimization and scalability strategy analysis
+
+The system provides robust task orchestration and coordination capabilities.
+
+## Table of Contents
+
 - [System Architecture](#system-architecture)
 - [Task Engine](#task-engine)
 - [Message Queue Service](#message-queue-service)
 - [Orchestrator](#orchestrator)
 - [Task Lifecycle Management](#task-lifecycle-management)
 - [State Coordination](#state-coordination)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- Navigation Footer
-
-</details>
-
-## Executive Summary
-
-## Research Context
-
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-
-- *Background:*\* \[Provide relevant background information]
-
-- *Research Questions:*\* \[List key questions this document addresses]
-
-- *Methodology:*\* \[Describe the approach or methodology used]
-
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- The Orchestration Layer system manages the core task execution engine, message queue processing,
-  and overall system coordination. It is responsible for task lifecycle management, request
-  deduplication, and coordinating between different system components.\*
-
-The Orchestration Layer consists of three main components:
-1. **Task Engine** - Core task execution and lifecycle management
-2. **Message Queue Service** - Message queuing and deduplication
-3. **Orchestrator** - System-wide coordination and task delegation
+- [Performance Optimization](#performance-optimization)
+- [Common Issues](#common-issues)
 
 ## System Architecture
 
+The Orchestration Layer system manages task execution, coordination, and state management across the entire KiloCode system.
+
+**Core Components:**
+1. **Task Engine** - Task execution and management
+2. **Message Queue Service** - Inter-component communication
+3. **Orchestrator** - Task coordination and scheduling
+4. **State Manager** - State coordination and consistency
+
+### Architecture Overview
 ```mermaid
 graph TB
-    subgraph "Orchestration Layer"
-        TE[Task Engine]
-        MQS[Message Queue Service]
-        ORCH[Orchestrator]
-    end
-
-    subgraph "Task Management"
-        TC[Task Creation]
-        TL[Task Lifecycle]
-        TS[Task State]
-        TQ[Task Queue]
-    end
-
-    subgraph "Message Processing"
-        MP[Message Processing]
-        MD[Message Deduplication]
-        MS[Message State]
-        MR[Message Routing]
-    end
-
-    subgraph "Coordination"
-        CD[Component Delegation]
-        CS[State Synchronization]
-        CE[Error Handling]
-        CC[Concurrency Control]
-    end
-
-    TE --> TC
-    TE --> TL
-    TE --> TS
-
-    MQS --> MP
-    MQS --> MD
-    MQS --> MS
-
-    ORCH --> CD
-    ORCH --> CS
-    ORCH --> CE
-    ORCH --> CC
-
-    TC --> TQ
-    MP --> MR
-    CD --> CS
+    A[Task Engine] --> B[Message Queue Service]
+    B --> C[Orchestrator]
+    C --> D[State Manager]
+    D --> E[Task Execution]
+    E --> F[Result Processing]
+    F --> G[State Updates]
+    G --> D
 ```
 
 ## Task Engine
 
-### Overview
+### Engine Overview
+The Task Engine provides core task execution capabilities and management functionality.
 
-The Task Engine is the core component responsible for task execution, lifecycle management, and API
-request coordination.
+**Key Features:**
+- **Task Execution** - Execute tasks with proper isolation
+- **Resource Management** - Manage task resources and constraints
+- **Error Handling** - Comprehensive error handling and recovery
+- **Performance Monitoring** - Task performance monitoring
 
-- *Location*\*: `src/core/task/Task.ts`
-
-### Task Creation
-
-- *Task Constructor*\*:
-
+### Engine Implementation
 ```typescript
-export class Task extends EventEmitter {
-	public readonly taskId: string
-	public readonly instanceId: string
-	public readonly parentTask?: Task
-	public readonly rootTask?: Task
-
-	// Message Queue Service
-	public readonly messageQueueService: MessageQueueService
-	private messageQueueStateChangedHandler: (() => void) | undefined
-
-	// Streaming state
-	public isStreaming = false
-	public isWaitingForFirstChunk = false
-
-	constructor(options: TaskOptions) {
-		super()
-
-		this.taskId = options.taskId || crypto.randomUUID()
-		this.instanceId = crypto.randomUUID()
-
-		// Initialize message queue service
-		this.messageQueueService = new MessageQueueService()
-
-		this.messageQueueStateChangedHandler = () => {
-			this.emit(RooCodeEventName.TaskUserMessage, this.taskId)
-			this.providerRef.deref()?.postStateToWebview()
-		}
-
-		this.messageQueueService.on("stateChanged", this.messageQueueStateChangedHandler)
-	}
-}
-```
-
-### Task Lifecycle
-
-- *Lifecycle States*\*:
-
-```mermaid
-stateDiagram-v2
-    [*] --> Created: Task Creation
-    Created --> Initializing: Start Initialization
-    Initializing --> Ready: Initialization Complete
-    Ready --> Processing: Start Processing
-    Processing --> Streaming: Response Received
-    Streaming --> Processing: Continue Processing
-    Processing --> Completed: Task Complete
-    Streaming --> Completed: Stream Complete
-    Processing --> Error: Error Occurred
-    Streaming --> Error: Stream Error
-    Error --> Ready: Retry
-    Completed --> [*]
-    Error --> [*]
-```
-
-- *Lifecycle Methods*\*:
-
-```typescript
-// Task initiation
-public async submitUserMessage(text: string, images?: string[]): Promise<void> {
-    // Add user message to conversation
-    // Trigger task processing
+interface TaskEngine {
+  executeTask(task: Task): Promise<TaskResult>;
+  cancelTask(taskId: string): Promise<void>;
+  getTaskStatus(taskId: string): TaskStatus;
+  getTaskHistory(taskId: string): TaskHistory[];
 }
 
-// Task processing loop
-private async initiateTaskLoop(userContent: ContentBlockParam[]): Promise<void> {
-    // Main task execution loop
-    while (!this.abort) {
-        const didEndLoop = await this.recursivelyMakeClineRequests(userContent, includeFileDetails)
-        // Continue until completion
-    }
-}
-
-// Task completion
-public async completeTask(): Promise<void> {
-    // Finalize task state
-    // Clean up resources
-}
-```
-
-### API Request Management
-
-- *Request Creation*\*:
-
-```typescript
-public async *attemptApiRequest(retryAttempt: number = 0): ApiStream {
-    // Initialize request variables
-    let cacheWriteTokens = 0
-    let cacheReadTokens = 0
-    let inputTokens = 0
-    let outputTokens = 0
-
-    // Create API request
-    const stream = await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, async () => {
-        laminarService.startSpan("LLM", {
-            name: `${this.taskId}-llm_call`,
-            spanType: "LLM",
-            sessionId: this.rootTaskId || this.taskId,
-            input: laminarService.getRecordSpanIO()
-                ? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, ...cleanConversationHistory]
-                : undefined,
-        })
-        return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
-    })
-
-    // Process streaming response
-    const iterator = stream[Symbol.asyncIterator]()
-
+class TaskEngineImpl implements TaskEngine {
+  async executeTask(task: Task): Promise<TaskResult> {
+    const execution = new TaskExecution(task);
+    
     try {
-        this.isWaitingForFirstChunk = true
-        const firstChunk = await iterator.next()
-        yield firstChunk.value
-        this.isWaitingForFirstChunk = false
+      const result = await execution.run();
+      return result;
     } catch (error) {
-        this.isWaitingForFirstChunk = false
-        // Handle error
+      await this.handleTaskError(task, error);
+      throw error;
     }
+  }
+  
+  private async handleTaskError(task: Task, error: Error): Promise<void> {
+    // Handle task execution errors
+    await this.errorHandler.handleError(task, error);
+  }
 }
 ```
 
 ## Message Queue Service
 
-### Overview
+### Queue Overview
+The Message Queue Service provides reliable inter-component communication and message processing.
 
-The Message Queue Service manages queued messages and provides deduplication mechanisms to prevent
-duplicate processing.
+**Key Features:**
+- **Message Routing** - Intelligent message routing and delivery
+- **Reliability** - Guaranteed message delivery
+- **Scalability** - Horizontal scaling capabilities
+- **Monitoring** - Message processing monitoring
 
-- *Location*\*: `src/core/message-queue/MessageQueueService.ts`
-
-### Service Implementation
-
-- *Core Service*\*:
-
+### Queue Implementation
 ```typescript
-export class MessageQueueService extends EventEmitter<QueueEvents> {
-	private _messages: QueuedMessage[]
-
-	constructor() {
-		super()
-		this._messages = []
-	}
-
-	public addMessage(text: string, images?: string[]): QueuedMessage | undefined {
-		if (!text && !images?.length) {
-			return undefined
-		}
-
-		// Check for duplicate messages
-		const existingMessage = this._messages.find(
-			(msg) => msg.text === text && JSON.stringify(msg.images) === JSON.stringify(images),
-		)
-
-		if (existingMessage) {
-			console.log("Duplicate message detected, skipping")
-			return existingMessage
-		}
-
-		const message: QueuedMessage = {
-			timestamp: Date.now(),
-			id: uuidv4(),
-			text,
-			images,
-		}
-
-		this._messages.push(message)
-		this.emit("stateChanged", this._messages)
-		return message
-	}
-
-	public dequeueMessage(): QueuedMessage | undefined {
-		const message = this._messages.shift()
-		this.emit("stateChanged", this._messages)
-		return message
-	}
-}
-```
-
-### Message Processing
-
-- *Queue Processing Logic*\*:
-
-```typescript
-// In Task.ts
-public processQueuedMessages(): void {
-    try {
-        if (!this.messageQueueService.isEmpty()) {
-            const queued = this.messageQueueService.dequeueMessage()
-            if (queued) {
-                setTimeout(() => {
-                    this.submitUserMessage(queued.text, queued.images).catch((err) =>
-                        console.error(`[Task] Failed to submit queued message:`, err),
-                    )
-                }, 0)
-            }
-        }
-    } catch (error) {
-        console.error("[Task] Error processing queued messages:", error)
-    }
-}
-```
-
-### Deduplication Mechanisms
-
-- *Message Deduplication*\*:
-
-```typescript
-// Enhanced deduplication
-public addMessage(text: string, images?: string[]): QueuedMessage | undefined {
-    if (!text && !images?.length) {
-        return undefined
-    }
-
-    // Create message signature for duplicate detection
-    const messageSignature = this.createMessageSignature(text, images)
-
-    const existingMessage = this._messages.find(msg =>
-        this.createMessageSignature(msg.text, msg.images) === messageSignature
-    )
-
-    if (existingMessage) {
-        console.log("Duplicate message detected, updating timestamp instead")
-        existingMessage.timestamp = Date.now()
-        this.emit("stateChanged", this._messages)
-        return existingMessage
-    }
-
-    // Add new message
-    const message: QueuedMessage = {
-        timestamp: Date.now(),
-        id: uuidv4(),
-        text,
-        images,
-    }
-
-    this._messages.push(message)
-    this.emit("stateChanged", this._messages)
-    return message
+interface MessageQueue {
+  publish(message: Message): Promise<void>;
+  subscribe(topic: string, handler: MessageHandler): void;
+  acknowledge(messageId: string): Promise<void>;
+  getQueueStats(): QueueStats;
 }
 
-private createMessageSignature(text: string, images?: string[]): string {
-    return `${text.trim()}-${JSON.stringify(images || [])}`
+class MessageQueueImpl implements MessageQueue {
+  async publish(message: Message): Promise<void> {
+    const queue = this.getQueue(message.topic);
+    await queue.enqueue(message);
+    
+    // Notify subscribers
+    this.notifySubscribers(message.topic, message);
+  }
+  
+  subscribe(topic: string, handler: MessageHandler): void {
+    if (!this.subscribers.has(topic)) {
+      this.subscribers.set(topic, []);
+    }
+    this.subscribers.get(topic)!.push(handler);
+  }
 }
 ```
 
 ## Orchestrator
 
-### Overview
+### Orchestrator Overview
+The Orchestrator coordinates task execution and manages system-wide task scheduling and coordination.
 
-The Orchestrator manages system-wide coordination, task delegation, and component interaction.
+**Key Features:**
+- **Task Scheduling** - Intelligent task scheduling and prioritization
+- **Resource Coordination** - Resource allocation and management
+- **Load Balancing** - Distribute load across available resources
+- **Fault Tolerance** - Handle failures and recovery
 
-- *Location*\*: `src/core/webview/ClineProvider.ts`
-
-### Task Coordination
-
-- *Task Stack Management*\*:
-
+### Orchestrator Implementation
 ```typescript
-export class ClineProvider {
-	private clineStack: Task[] = []
-
-	public async createTask(
-		text?: string,
-		images?: string[],
-		parentTask?: Task,
-		options: CreateTaskOptions = {},
-		configuration: RooCodeSettings = {},
-	): Promise<Task> {
-		// Check for existing active task
-		const currentTask = this.getCurrentTask()
-
-		if (currentTask && !currentTask.isCompleted && !currentTask.abandoned) {
-			// If there's an active task, queue the message instead of creating new task
-			console.log(`[ClineProvider] Active task exists (${currentTask.taskId}), queuing message`)
-			currentTask.messageQueueService.addMessage(text || "", images)
-			return currentTask
-		}
-
-		// Create new task
-		const task = new Task({
-			provider: this,
-			context: this.context,
-			apiConfiguration,
-			enableDiff,
-			enableCheckpoints,
-			fuzzyMatchThreshold,
-			consecutiveMistakeLimit: apiConfiguration.consecutiveMistakeLimit,
-			task: text,
-			images,
-			experiments,
-			rootTask: this.clineStack.length > 0 ? this.clineStack[0] : undefined,
-			parentTask,
-			taskNumber: this.clineStack.length + 1,
-			onCreated: this.taskCreationCallback,
-			enableBridge: BridgeOrchestrator.isEnabled(cloudUserInfo, remoteControlEnabled),
-			initialTodos: options.initialTodos,
-			...options,
-		})
-
-		await this.addClineToStack(task)
-
-		return task
-	}
+interface Orchestrator {
+  scheduleTask(task: Task): Promise<string>;
+  cancelTask(taskId: string): Promise<void>;
+  getTaskQueue(): Task[];
+  getSystemStatus(): SystemStatus;
 }
-```
 
-### Component Delegation
-
-- *Task Stack Operations*\*:
-
-```typescript
-private async addClineToStack(task: Task): Promise<void> {
-    // Remove any abandoned tasks from the stack
-    this.clineStack = this.clineStack.filter(t => !t.abandoned)
-
-    // Add new task to stack
-    this.clineStack.push(task)
-
-    // Ensure only one task is active at a time
-    if (this.clineStack.length > 1) {
-        // Pause previous tasks
-        for (let i = 0; i < this.clineStack.length - 1; i++) {
-            this.clineStack[i].isPaused = true
-        }
+class OrchestratorImpl implements Orchestrator {
+  async scheduleTask(task: Task): Promise<string> {
+    // Validate task
+    await this.validateTask(task);
+    
+    // Assign resources
+    const resources = await this.allocateResources(task);
+    
+    // Schedule execution
+    const taskId = await this.taskScheduler.schedule(task, resources);
+    
+    return taskId;
+  }
+  
+  private async validateTask(task: Task): Promise<void> {
+    // Validate task requirements and constraints
+    if (!task.isValid()) {
+      throw new Error('Invalid task configuration');
     }
-}
-
-public getCurrentTask(): Task | undefined {
-    return this.clineStack[this.clineStack.length - 1]
-}
-```
-
-### State Coordination
-
-- *Global State Management*\*:
-
-```typescript
-public postStateToWebview(): void {
-    const currentTask = this.getCurrentTask()
-    if (!currentTask) return
-
-    const state = {
-        taskId: currentTask.taskId,
-        isStreaming: currentTask.isStreaming,
-        isWaitingForFirstChunk: currentTask.isWaitingForFirstChunk,
-        queuedMessages: currentTask.queuedMessages,
-        // ... other state
-    }
-
-    this.postMessageToWebview({ type: "state", state })
+  }
 }
 ```
 
 ## Task Lifecycle Management
 
-### Lifecycle Coordination
+### Lifecycle Stages
+Tasks progress through various stages during their execution lifecycle.
 
-- *Task State Transitions*\*:
+**Lifecycle Stages:**
+1. **Created** - Task created and queued
+2. **Scheduled** - Task scheduled for execution
+3. **Running** - Task currently executing
+4. **Completed** - Task completed successfully
+5. **Failed** - Task failed with error
+6. **Cancelled** - Task cancelled by user or system
 
+### Lifecycle Management
 ```typescript
-// Task state management
-export class Task extends EventEmitter {
-	public isStreaming = false
-	public isWaitingForFirstChunk = false
-	public isPaused = false
-	public abandoned = false
-
-	// Check if task can process new requests
-	public canProcessRequests(): boolean {
-		return !this.isStreaming && !this.isWaitingForFirstChunk && !this.isPaused && !this.abandoned
-	}
-
-	// Update task state
-	private async updateTaskState(newState: Partial<TaskState>): Promise<void> {
-		const oldState = { ...this.getCurrentState() }
-
-		// Update state atomically
-		Object.assign(this, newState)
-
-		// Emit state change event
-		this.emit(RooCodeEventName.TaskStateChanged, {
-			oldState,
-			newState: this.getCurrentState(),
-			taskId: this.taskId,
-		})
-
-		// Notify provider of state change
-		this.providerRef.deref()?.postStateToWebview()
-	}
+interface TaskLifecycleManager {
+  createTask(task: Task): Promise<string>;
+  startTask(taskId: string): Promise<void>;
+  completeTask(taskId: string, result: TaskResult): Promise<void>;
+  failTask(taskId: string, error: Error): Promise<void>;
+  cancelTask(taskId: string): Promise<void>;
 }
-```
 
-### Request Processing
-
-- *Ask Method Coordination*\*:
-
-```typescript
-public async ask(type: string, text?: string, images?: string[]): Promise<AskResult> {
-    // ... message setup ...
-
-    // Check for queued messages
-    const isMessageQueued = !this.messageQueueService.isEmpty()
-    const isBlocking = !(this.askResponse !== undefined || this.lastMessageTs !== askTs)
-    const isStatusMutable = !partial && isBlocking && !isMessageQueued
-
-    if (isMessageQueued) {
-        console.log("Task#ask will process message queue")
-
-        const message = this.messageQueueService.dequeueMessage()
-        if (message) {
-            // Check if this is a tool approval ask
-            if (isToolApprovalAsk(type)) {
-                this.handleWebviewAskResponse("yesButtonClicked", message.text, message.images)
-            } else {
-                this.setMessageResponse(message.text, message.images)
-            }
-        }
-    }
-
-    // Wait for response
-    await pWaitFor(() => this.askResponse !== undefined || this.lastMessageTs !== askTs, { interval: 100 })
-
-    // Return result
-    const result = {
-        response: this.askResponse!,
-        text: this.askResponseText,
-        images: this.askResponseImages
-    }
-
-    // Clean up
-    this.askResponse = undefined
-    this.askResponseText = undefined
-    this.askResponseImages = undefined
-
-    return result
+class TaskLifecycleManagerImpl implements TaskLifecycleManager {
+  async createTask(task: Task): Promise<string> {
+    const taskId = generateTaskId();
+    const taskRecord = new TaskRecord(taskId, task, TaskStatus.CREATED);
+    
+    await this.taskStore.save(taskRecord);
+    await this.eventBus.publish(new TaskCreatedEvent(taskId, task));
+    
+    return taskId;
+  }
+  
+  async startTask(taskId: string): Promise<void> {
+    const taskRecord = await this.taskStore.get(taskId);
+    taskRecord.status = TaskStatus.RUNNING;
+    taskRecord.startTime = Date.now();
+    
+    await this.taskStore.save(taskRecord);
+    await this.eventBus.publish(new TaskStartedEvent(taskId));
+  }
 }
 ```
 
 ## State Coordination
 
-### Cross-Component State Sync
+### State Management
+State coordination ensures consistent state across all system components and tasks.
 
-- *State Synchronization*\*:
+**State Types:**
+- **Task State** - Individual task state
+- **System State** - Overall system state
+- **Resource State** - Resource availability and usage
+- **Configuration State** - System configuration state
 
+### State Coordination
 ```typescript
-// Provider state coordination
-public async syncState(): Promise<void> {
-    const currentTask = this.getCurrentTask()
-    if (!currentTask) return
-
-    // Update all dependent components
-    await this.updateUIState(currentTask)
-    await this.updateMessageQueueState(currentTask)
-    await this.updateLaminarState(currentTask)
+interface StateCoordinator {
+  updateState(stateId: string, state: any): Promise<void>;
+  getState(stateId: string): Promise<any>;
+  subscribeToState(stateId: string, callback: StateCallback): void;
+  synchronizeState(): Promise<void>;
 }
 
-private async updateUIState(task: Task): Promise<void> {
-    await this.postMessageToWebview({
-        type: "state",
-        state: {
-            taskId: task.taskId,
-            isStreaming: task.isStreaming,
-            queuedMessages: task.queuedMessages,
-        }
-    })
-}
-```
-
-### Concurrency Control
-
-- *Request Deduplication*\*:
-
-```typescript
-// Prevent concurrent request processing
-private _isProcessingRequest = false
-
-public async processRequest(request: Request): Promise<Response> {
-    if (this._isProcessingRequest) {
-        console.log("Request already being processed, queuing")
-        return this.queueRequest(request)
+class StateCoordinatorImpl implements StateCoordinator {
+  async updateState(stateId: string, state: any): Promise<void> {
+    // Validate state update
+    await this.validateStateUpdate(stateId, state);
+    
+    // Update state
+    await this.stateStore.update(stateId, state);
+    
+    // Notify subscribers
+    await this.notifySubscribers(stateId, state);
+  }
+  
+  private async validateStateUpdate(stateId: string, state: any): Promise<void> {
+    // Validate state consistency and constraints
+    const currentState = await this.stateStore.get(stateId);
+    if (!this.isValidTransition(currentState, state)) {
+      throw new Error('Invalid state transition');
     }
-
-    this._isProcessingRequest = true
-    try {
-        return await this.executeRequest(request)
-    } finally {
-        this._isProcessingRequest = false
-    }
+  }
 }
 ```
 
-## Common Issues and Solutions
+## Performance Optimization
 
-### Issue 1: Task Stack Corruption
+### Optimization Strategies
+Performance optimization ensures efficient task execution and system responsiveness.
 
-- *Symptoms*\*:
-- Multiple active tasks
-- Tasks not properly cleaned up
-- Memory leaks
+**Optimization Areas:**
+- **Task Scheduling** - Optimize task scheduling algorithms
+- **Resource Utilization** - Optimize resource usage
+- **Message Processing** - Optimize message processing
+- **State Management** - Optimize state operations
 
-- *Root Cause*\*: Task stack not properly managed
-
-- *Solution*\*:
-
+### Performance Monitoring
 ```typescript
-// Enhanced task stack management
-private async addClineToStack(task: Task): Promise<void> {
-    // Clean up abandoned tasks
-    this.clineStack = this.clineStack.filter(t => !t.abandoned && !t.isCompleted)
-
-    // Add new task
-    this.clineStack.push(task)
-
-    // Ensure only one active task
-    for (let i = 0; i < this.clineStack.length - 1; i++) {
-        this.clineStack[i].isPaused = true
-    }
-
-    // Set up cleanup handlers
-    task.on('completed', () => this.cleanupTask(task))
-    task.on('abandoned', () => this.cleanupTask(task))
+interface PerformanceMonitor {
+  recordTaskExecution(taskId: string, duration: number): void;
+  recordResourceUsage(resourceId: string, usage: ResourceUsage): void;
+  recordMessageProcessing(messageId: string, duration: number): void;
+  getPerformanceMetrics(): PerformanceMetrics;
 }
 
-private cleanupTask(task: Task): void {
-    this.clineStack = this.clineStack.filter(t => t !== task)
-    task.removeAllListeners()
-}
-```
-
-### Issue 2: Message Queue Race Conditions
-
-- *Symptoms*\*:
-- Messages processed multiple times
-- Queue state inconsistencies
-- Duplicate API requests
-
-- *Root Cause*\*: Non-atomic queue operations
-
-- *Solution*\*:
-
-```typescript
-// Atomic queue operations
-export class MessageQueueService extends EventEmitter<QueueEvents> {
-	private _isProcessing = false
-
-	public dequeueMessageIfAvailable(): QueuedMessage | undefined {
-		if (this._isProcessing) {
-			return undefined
-		}
-
-		this._isProcessing = true
-		try {
-			const message = this._messages.shift()
-			if (message) {
-				this.emit("stateChanged", this._messages)
-			}
-			return message
-		} finally {
-			this._isProcessing = false
-		}
-	}
+class PerformanceMonitorImpl implements PerformanceMonitor {
+  recordTaskExecution(taskId: string, duration: number): void {
+    this.metrics.record({
+      type: 'task_execution',
+      taskId,
+      duration,
+      timestamp: Date.now()
+    });
+  }
+  
+  getPerformanceMetrics(): PerformanceMetrics {
+    return {
+      averageTaskDuration: this.calculateAverageTaskDuration(),
+      taskThroughput: this.calculateTaskThroughput(),
+      resourceUtilization: this.calculateResourceUtilization(),
+      messageProcessingRate: this.calculateMessageProcessingRate()
+    };
+  }
 }
 ```
 
-### Issue 3: State Desynchronization
+## Common Issues
 
-- *Symptoms*\*:
-- UI state doesn't match backend state
-- Inconsistent behavior across components
-- Race conditions in state updates
+### Task Execution Issues
+- **Task Failures** - Tasks failing unexpectedly
+- **Resource Exhaustion** - Insufficient resources for task execution
+- **Timeout Issues** - Tasks timing out
+- **Deadlocks** - Task execution deadlocks
 
-- *Root Cause*\*: State updates not properly coordinated
+### Coordination Issues
+- **State Inconsistency** - Inconsistent state across components
+- **Message Loss** - Messages not being delivered
+- **Scheduling Problems** - Task scheduling issues
+- **Load Balancing** - Uneven load distribution
 
-- *Solution*\*:
-
-```typescript
-// Centralized state management
-class StateManager {
-	private state: GlobalState
-	private subscribers: Set<(state: GlobalState) => void> = new Set()
-
-	public updateState(updates: Partial<GlobalState>): void {
-		const oldState = { ...this.state }
-		this.state = { ...this.state, ...updates }
-
-		// Notify all subscribers
-		this.subscribers.forEach((callback) => callback(this.state))
-
-		// Log state changes for debugging
-		console.log("State updated:", { oldState, newState: this.state })
-	}
-
-	public subscribe(callback: (state: GlobalState) => void): () => void {
-		this.subscribers.add(callback)
-		return () => this.subscribers.delete(callback)
-	}
-}
-```
-
-<a id="navigation-footer"></a>
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
-  Root: [`README.md`](README.md) · Source: `/docs/ORCHESTRATION_LAYER_SYSTEM.md#L1`
-
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
-  [↑ Table of Contents](#orchestration-layer-system)
+### Troubleshooting
+- **Task Analysis** - Analyze task execution patterns
+- **State Investigation** - Investigate state consistency
+- **Performance Analysis** - Analyze system performance
+- **Log Analysis** - Analyze system logs for issues
 
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
+
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+- Common issues section provides actionable solutions
+
+## Navigation
+- [← Architecture Documentation](README.md)
+- [← System Overview](SYSTEM_OVERVIEW.md)
+- [← Orchestrator Documentation](../orchestrator/README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

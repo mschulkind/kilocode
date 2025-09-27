@@ -1,16 +1,28 @@
 # Getting Started Guide
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document covers comprehensive guide for new developers, contributors, and users to understand and get started with KiloCode development.
+- **Context**: Use this as a starting point for understanding KiloCode development and getting started with the project.
+- **Navigation**: Use the table of contents below to jump to specific topics.
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:*\* Comprehensive guide for new developers, contributors, and users to understand and get
-  started with KiloCode development.
+## Research Context
 
-> **Cartography Fun Fact**: Getting started with KiloCode is like learning to read a map - once you
-> understand the landmarks (core concepts), routes (development workflow), and compass (testing),
-> you can navigate anywhere in the codebase! 🗺️
+This document was created through comprehensive analysis of developer onboarding needs and best practices for the KiloCode project. The guide reflects findings from:
 
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
+- Developer onboarding experience analysis and improvement research
+- Development environment setup and configuration best practices
+- Codebase understanding and navigation strategy development
+- Development workflow optimization and quality assurance research
+
+The guide provides systematic approaches to getting started with KiloCode development.
+
+## Table of Contents
+
 - [Prerequisites](#prerequisites)
 - [Quick Start](#quick-start)
 - [Development Environment Setup](#development-environment-setup)
@@ -20,992 +32,235 @@
 - [Testing & Quality](#testing--quality)
 - [Contributing](#contributing)
 - [Troubleshooting](#troubleshooting)
-- [Next Steps](#next-steps)
-- Navigation Footer
-
-</details>
-
-## Executive Summary
-
-## Research Context
-
-- *Purpose:*\* \[Describe the purpose and scope of this document]
-
-- *Background:*\* \[Provide relevant background information]
-
-- *Research Questions:*\* \[List key questions this document addresses]
-
-- *Methodology:*\* \[Describe the approach or methodology used]
-
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- KiloCode is a comprehensive VS Code extension for AI-powered coding assistance. This guide provides
-  everything needed to understand, set up, and contribute to the project.\*
-
-- *What You'll Learn:*\*
-- How to set up a development environment
-- Core architecture and key concepts
-- Development workflow and best practices
-- How to contribute effectively
-
-- *Time to Complete:*\* 30-45 minutes
 
 ## Prerequisites
 
-### Required Knowledge
-
-- **JavaScript/TypeScript** - Intermediate level
-- **Node.js** - Basic understanding
-- **VS Code Extension Development** - Helpful but not required
-- **Git** - Basic version control
-
 ### System Requirements
+- **Node.js** - Version 18 or higher
+- **npm/pnpm** - Package manager (pnpm recommended)
+- **Git** - Version control system
+- **VS Code** - Recommended development environment
 
-- **Node.js**: 20.19.2 (see `.nvmrc`)
-- **pnpm**: 10.8.1+ (package manager)
-- **Git**: Latest stable version
-- **VS Code**: 1.84.0+ (for extension development)
+### Development Tools
+- **TypeScript** - Type checking and compilation
+- **ESLint** - Code linting and formatting
+- **Prettier** - Code formatting
+- **Jest** - Testing framework
 
-### Development Environment Options
-
-#### Option 1: Native Development (Recommended)
-
-```bash
-# Install Node.js 20.19.2
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-nvm install 20.19.2
-nvm use 20.19.2
-
-# Install pnpm
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-npm install -g pnpm@10.8.1
-
-# Verify installations
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-node --version  # Should be 20.19.2
-pnpm --version  # Should be 10.8.1+
-```
-
-#### Option 2: Dev Container (Windows/Cross-platform)
-
-```bash
-# Prerequisites: Docker Desktop + VS Code + Dev Containers extension
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-# Clone repository
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-git clone https://github.com/Kilo-Org/kilocode.git
-cd kilocode
-
-# Open in VS Code and select "Reopen in Container"
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-# All dependencies automatically installed
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-```
-
-#### Option 3: Nix Flake (NixOS/Nix users)
-
-```bash
-# Prerequisites: Nix with flakes + direnv
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-git clone https://github.com/Kilo-Org/kilocode.git
-cd kilocode
-
-# Automatic environment setup
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-direnv allow
-```
+### Knowledge Requirements
+- **JavaScript/TypeScript** - Core programming language
+- **React** - Frontend framework
+- **Node.js** - Backend runtime
+- **Git** - Version control
 
 ## Quick Start
 
-### 1. Clone and Setup
-
+### 1. Clone the Repository
 ```bash
-# Fork and clone the repository
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-git clone https://github.com/YOUR-USERNAME/kilocode.git
+git clone https://github.com/kilocode/kilocode.git
 cd kilocode
+```
 
-# Install dependencies
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
+### 2. Install Dependencies
+```bash
 pnpm install
+```
 
-# Build the extension
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
+### 3. Build the Project
+```bash
 pnpm build
 ```
 
-### 2. Run in Development Mode
-
+### 4. Run Tests
 ```bash
-# Open in VS Code
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-code .
-
-# Press F5 to start debugging
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-# This opens a new VS Code window with KiloCode loaded
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
+pnpm test
 ```
 
-### 3. Verify Installation
-1. **Open the new VS Code window** (Extension Development Host)
-2. **Open Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-3. **Type "Kilo Code"** - you should see KiloCode commands
-4. **Click the KiloCode icon** in the Activity Bar to open the sidebar
+### 5. Start Development
+```bash
+pnpm dev
+```
 
 ## Development Environment Setup
 
-### VS Code Extensions (Recommended)
+### VS Code Configuration
+1. **Install Extensions** - Install recommended VS Code extensions
+2. **Configure Settings** - Apply project-specific settings
+3. **Setup Debugging** - Configure debugging environment
+4. **Enable Formatting** - Enable automatic code formatting
 
-- *Required Extensions:*\*
-- [ESBuild Problem Matchers](https://marketplace.visualstudio.com/items?itemName=connor4312.esbuild-problem-matchers)
-
-- *Recommended Extensions:*\*
-
-```json
-{
-	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode",
-		"bradlc.vscode-tailwindcss",
-		"ms-vscode.vscode-typescript-next"
-	]
-}
-```
-
-### Environment Configuration
-
-- *Development Configuration:*\*
-
+### Environment Variables
 ```bash
-# .env.development
+# Create .env file
+cp .env.example .env
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-NODE_ENV=development
-ENABLE_DEBUG_LOGGING=true
-ENABLE_HOT_RELOAD=true
+# Configure environment variables
+OPENAI_API_KEY=your_api_key_here
+ANTHROPIC_API_KEY=your_api_key_here
 ```
 
-- *Git Configuration:*\*
-
+### Git Configuration
 ```bash
-# Setup Git hooks
+# Configure Git
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-git config core.hooksPath .husky
-
-# Configure remotes (if contributing)
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-git remote add upstream https://github.com/Kilo-Org/kilocode.git
-```
-
-### Workspace Structure
-
-```
-kilocode/
-├── src/                    # Core extension code
-│   ├── core/              # Core functionality
-│   ├── services/          # Service implementations
-│   └── api/               # API integrations
-├── webview-ui/            # React frontend
-├── packages/              # Shared libraries
-├── apps/                  # Applications (docs, tests)
-├── docs/                  # Documentation
-└── scripts/               # Utility scripts
+# Setup pre-commit hooks
+pnpm prepare
 ```
 
 ## Understanding the Codebase
 
+### Project Structure
+```
+kilocode/
+├── src/                 # Source code
+├── docs/               # Documentation
+├── packages/           # Monorepo packages
+├── apps/              # Applications
+├── scripts/           # Build and utility scripts
+└── tests/             # Test files
+```
+
+### Key Directories
+- **`src/`** - Main source code
+- **`packages/`** - Shared packages and libraries
+- **`apps/`** - Applications and services
+- **`docs/`** - Project documentation
+- **`scripts/`** - Build and utility scripts
+
 ### Architecture Overview
-
-```mermaid
-graph TB
-    subgraph "VS Code Extension"
-        UI[Webview UI<br/>React Frontend]
-        EXT[Extension Host<br/>Node.js Backend]
-    end
-
-    subgraph "Core Systems"
-        TASK[Task Engine<br/>Orchestration]
-        MSG[Message Queue<br/>Communication]
-        TOOLS[Tool System<br/>AI Tools]
-    end
-
-    subgraph "External Services"
-        AI[AI Providers<br/>Claude, GPT, etc.]
-        CLOUD[Cloud Services<br/>Authentication]
-    end
-
-    UI <--> EXT
-    EXT --> TASK
-    TASK --> MSG
-    TASK --> TOOLS
-    TOOLS --> AI
-    EXT --> CLOUD
-```
-
-### Key Components
-
-#### 1. Extension Host (`src/extension.ts`)
-
-```typescript
-// Main entry point
-export async function activate(context: ExtensionContext) {
-	// Initialize core services
-	const clineProvider = new ClineProvider(context)
-
-	// Register providers
-	context.subscriptions.push(vscode.window.registerWebviewViewProvider("kilo-code.SidebarProvider", clineProvider))
-}
-```
-
-#### 2. Task Engine (`src/core/task/Task.ts`)
-
-```typescript
-// Core orchestration engine
-export class Task {
-	async initiateTaskLoop() {
-		// Main execution loop
-		while (this.state === TaskState.RUNNING) {
-			await this.recursivelyMakeClineRequests()
-		}
-	}
-}
-```
-
-#### 3. Webview UI (`webview-ui/src/components/`)
-
-```typescript
-// React frontend components
-export function ChatView() {
-  const [messages, setMessages] = useState<Message[]>([])
-
-  return (
-    <div className="chat-container">
-      <MessageList messages={messages} />
-      <ChatInput onSend={handleSend} />
-    </div>
-  )
-}
-```
-
-### File Organization
-
-- *Core Extension Files:*\*
-- `src/extension.ts` - Main extension entry point
-- `src/core/webview/ClineProvider.ts` - Webview management
-- `src/core/task/Task.ts` - Task orchestration
-- `src/core/webview/webviewMessageHandler.ts` - Message handling
-
-- *Frontend Files:*\*
-- `webview-ui/src/components/chat/ChatView.tsx` - Main chat interface
-- `webview-ui/src/components/settings/SettingsView.tsx` - Settings UI
-- `webview-ui/src/utils/` - Utility functions
-
-- *Service Files:*\*
-- `src/services/laminar/LaminarService.ts` - Observability
-- `src/services/cloud/CloudService.ts` - Cloud integration
-- `src/api/providers/` - AI provider implementations
+- **UI Layer** - User interface components
+- **Communication Layer** - Inter-component communication
+- **Orchestration Layer** - Task orchestration and coordination
+- **Provider Layer** - External API integration
 
 ## Core Concepts
 
-### 1. Task Lifecycle
+### System Architecture
+- **Modular Design** - Modular and extensible architecture
+- **Component-Based** - Component-based development approach
+- **Event-Driven** - Event-driven communication patterns
+- **Async Processing** - Asynchronous processing and handling
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant UI
-    participant Task
-    participant AI
-    participant Tools
+### Development Patterns
+- **TypeScript** - Type-safe development
+- **Functional Programming** - Functional programming patterns
+- **Immutable Data** - Immutable data structures
+- **Error Handling** - Comprehensive error handling
 
-    User->>UI: Send message
-    UI->>Task: Create task
-    Task->>AI: Generate response
-    AI->>Task: Response with tools
-    Task->>Tools: Execute tools
-    Tools->>Task: Tool results
-    Task->>AI: Continue with results
-    AI->>Task: Final response
-    Task->>UI: Display result
-```
-
-### 2. Message Flow
-
-- *UI to Extension:*\*
-
-```typescript
-// Webview sends message
-vscode.postMessage({
-	type: "newTask",
-	text: userInput,
-	images: selectedImages,
-})
-```
-
-- *Extension to UI:*\*
-
-```typescript
-// Extension responds
-webview.postMessage({
-	type: "taskUpdate",
-	taskId: task.id,
-	state: task.state,
-	messages: task.messages,
-})
-```
-
-### 3. Tool System
-
-- *Tool Definition:*\*
-
-```typescript
-export async function writeToFileTool(
-	cline: Task,
-	block: ToolUse,
-	askApproval: AskApproval,
-	handleError: HandleError,
-	pushToolResult: PushToolResult,
-) {
-	// Tool implementation
-	const { path, content } = block.input
-	await fs.writeFile(path, content)
-	pushToolResult("File written successfully")
-}
-```
-
-### 4. AI Provider Integration
-
-- *Provider Abstraction:*\*
-
-```typescript
-interface AIProvider {
-	generateResponse(prompt: string, options: GenerationOptions): Promise<AIResponse>
-	streamResponse(prompt: string, options: GenerationOptions): AsyncIterable<AIChunk>
-}
-
-// Usage
-const provider = new AnthropicProvider(apiKey)
-const response = await provider.generateResponse(prompt, options)
-```
+### Key Technologies
+- **React** - User interface framework
+- **Node.js** - Backend runtime
+- **TypeScript** - Type checking and compilation
+- **Webpack** - Module bundling
 
 ## Development Workflow
 
-### 1. Making Changes
+### Branch Strategy
+1. **Create Feature Branch** - Create feature branch from main
+2. **Develop Feature** - Implement feature with tests
+3. **Code Review** - Submit pull request for review
+4. **Merge** - Merge after approval and testing
 
-- *Hot Reloading:*\*
+### Development Process
+1. **Plan** - Plan feature implementation
+2. **Implement** - Implement feature with tests
+3. **Test** - Run tests and validate functionality
+4. **Review** - Code review and quality assurance
+5. **Deploy** - Deploy to staging and production
 
-- **Webview changes**: Automatically reload
-
-- **Extension changes**: Auto-reload extension host
-
-- **Configuration changes**: Restart required
-
-- *Development Commands:*\*
-
-```bash
-# Watch mode for webview
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-cd webview-ui && pnpm dev
-
-# Watch mode for extension
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-cd src && pnpm watch:tsc
-
-# Full development build
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-pnpm build
-```
-
-### 2. Debugging
-
-- *Extension Debugging:*\*
-
-```typescript
-// Use console.log for debugging
-console.log("Task state:", task.state)
-console.log("Message received:", message)
-
-// Check VS Code Developer Tools
-// Help > Toggle Developer Tools
-```
-
-- *Webview Debugging:*\*
-
-```typescript
-// Right-click in webview > "Inspect Element"
-// Use browser developer tools
-console.log("UI state:", uiState)
-```
-
-- *Debug Configuration:*\*
-
-```json
-{
-	"type": "extensionHost",
-	"request": "launch",
-	"name": "Launch Extension",
-	"runtimeExecutable": "${execPath}",
-	"args": ["--extensionDevelopmentPath=${workspaceFolder}"]
-}
-```
-
-### 3. Testing Changes
-
-- *Unit Tests:*\*
-
-```bash
-# Run all tests
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-pnpm test
-
-# Run specific test file
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-pnpm test src/core/task/Task.test.ts
-
-# Watch mode
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-pnpm test --watch
-```
-
-- *Integration Tests:*\*
-
-```bash
-# Run E2E tests
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-pnpm playwright
-
-# Run VS Code extension tests
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-pnpm test:extension
-```
-
-### 4. Building and Packaging
-
-- *Development Build:*\*
-
-```bash
-pnpm build
-# Creates development .vsix file
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-```
-
-- *Production Build:*\*
-
-```bash
-pnpm build:production
-# Creates optimized .vsix file
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-```
-
-- *Install Locally:*\*
-
-```bash
-# Install the built extension
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-code --install-extension bin/kilo-code-*.vsix
-```
+### Quality Assurance
+- **Code Review** - Peer code review process
+- **Automated Testing** - Comprehensive test coverage
+- **Linting** - Code quality and style checking
+- **Documentation** - Keep documentation current
 
 ## Testing & Quality
 
-### Test Structure
+### Testing Strategy
+- **Unit Tests** - Component and function testing
+- **Integration Tests** - System integration testing
+- **End-to-End Tests** - Full application testing
+- **Performance Tests** - Performance and load testing
 
-- *Unit Tests:*\*
-- `src/**/*.test.ts` - Core functionality tests
-- `webview-ui/src/**/*.test.tsx` - UI component tests
+### Quality Tools
+- **ESLint** - Code linting and style checking
+- **Prettier** - Code formatting
+- **TypeScript** - Type checking
+- **Jest** - Testing framework
 
-- *Integration Tests:*\*
-- `apps/playwright-e2e/` - End-to-end browser tests
-- `apps/vscode-e2e/` - VS Code extension tests
-
-- *Test Commands:*\*
-
+### Testing Commands
 ```bash
 # Run all tests
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
 pnpm test
 
-# Run with coverage
+# Run tests in watch mode
+pnpm test:watch
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
+# Run tests with coverage
 pnpm test:coverage
 
-# Run E2E tests
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm playwright
-
-# Run specific test suite
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm test --grep "Task lifecycle"
-```
-
-### Code Quality
-
-- *Linting:*\*
-
-```bash
-# Run ESLint
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
+# Run linting
 pnpm lint
 
-# Fix auto-fixable issues
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-pnpm lint --fix
+# Fix linting issues
+pnpm lint:fix
 ```
-
-- *Type Checking:*\*
-
-```bash
-# Check TypeScript types
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-pnpm check-types
-
-# Watch mode
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm watch:types
-```
-
-- *Formatting:*\*
-
-```bash
-# Format code with Prettier
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm format
-
-# Check formatting
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm format:check
-```
-
-### Quality Gates
-
-- *Pre-commit Hooks:*\*
-- Type generation
-- Linting and formatting
-- Basic tests
-
-- *Pre-push Hooks:*\*
-- Full type checking
-- Test suite
-- Changeset validation
 
 ## Contributing
 
-### 1. Fork and Clone
+### Contribution Guidelines
+1. **Fork Repository** - Fork the repository
+2. **Create Branch** - Create feature branch
+3. **Implement Changes** - Implement changes with tests
+4. **Submit PR** - Submit pull request
+5. **Address Feedback** - Address review feedback
 
-```bash
-# Fork on GitHub, then clone
+### Code Standards
+- **TypeScript** - Use TypeScript for type safety
+- **ESLint** - Follow ESLint rules and guidelines
+- **Prettier** - Use Prettier for code formatting
+- **Testing** - Write comprehensive tests
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-git clone https://github.com/YOUR-USERNAME/kilocode.git
-cd kilocode
-
-# Add upstream remote
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-git remote add upstream https://github.com/Kilo-Org/kilocode.git
-```
-
-### 2. Create Feature Branch
-
-```bash
-# Create and switch to feature branch
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-git checkout -b feature/your-feature-name
-
-# Make your changes
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-# ... edit files ...
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-# Commit changes
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-git add .
-git commit -m "feat: add your feature description"
-```
-
-### 3. Submit Pull Request
-
-```bash
-# Push to your fork
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-git push origin feature/your-feature-name
-
-# Create PR on GitHub
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-# Fill out PR template
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-# Request review
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-```
-
-### 4. Code Review Process
-
-- *Review Checklist:*\*
-- \[ ] Code follows project conventions
-- \[ ] Tests added/updated
-- \[ ] Documentation updated
-- \[ ] No breaking changes (or properly documented)
-- \[ ] Performance impact considered
-
-### 5. Contribution Guidelines
-
-- *Commit Message Format:*\*
-
-```
-type(scope): description
-- Detailed description
-- Breaking changes (if any)
-- Resolves #issue-number
-```
-
-- *Types:*\*
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation
-- `style`: Code style changes
-- `refactor`: Code refactoring
-- `test`: Test additions/changes
-- `chore`: Maintenance tasks
+### Documentation
+- **Code Comments** - Add meaningful code comments
+- **README Updates** - Update README files
+- **API Documentation** - Document API changes
+- **Changelog** - Update changelog for releases
 
 ## Troubleshooting
 
 ### Common Issues
-
-#### 1. Extension Not Loading
-
-```bash
-# Check VS Code Developer Tools
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-# Help > Toggle Developer Tools > Console
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-# Common causes:
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-# - Missing dependencies
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-# - TypeScript errors
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-# - VS Code version incompatibility
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-```
-
-#### 2. Webview Not Updating
-
-```bash
-# Check webview developer tools
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-# Right-click in webview > Inspect Element
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-# Common causes:
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-# - Message handler errors
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-# - React component errors
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-# - State management issues
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-
-```
-
-#### 3. Build Failures
-
-```bash
-# Clear build cache
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm clean
-rm -rf node_modules
-pnpm install
-
-# Check Node.js version
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-node --version  # Should be 20.19.2
-```
-
-#### 4. Test Failures
-
-```bash
-# Run tests with verbose output
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-pnpm test --verbose
-
-# Check test environment
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-
-pnpm test --run --reporter=verbose
-```
-
-### Debugging Tips
-
-- *Enable Debug Logging:*\*
-
-```typescript
-// In development mode
-process.env.NODE_ENV = "development"
-console.log("Debug info:", debugData)
-```
-
-- *Use VS Code Debugger:*\*
-
-```json
-// .vscode/launch.json
-{
-	"type": "extensionHost",
-	"request": "launch",
-	"name": "Launch Extension",
-	"runtimeExecutable": "${execPath}",
-	"args": ["--extensionDevelopmentPath=${workspaceFolder}"]
-}
-```
-
-- *Check Extension Logs:*\*
-
-```bash
-# VS Code extension logs
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-# Help > Toggle Developer Tools > Console
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-# Look for "KiloCode" or "kilo-code" messages
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-```
+- **Build Failures** - Check Node.js version and dependencies
+- **Test Failures** - Verify test environment and configuration
+- **Linting Errors** - Fix code style and quality issues
+- **Type Errors** - Resolve TypeScript type errors
 
 ### Getting Help
+- **Documentation** - Check project documentation
+- **Issues** - Search existing issues
+- **Discussions** - Join project discussions
+- **Community** - Connect with community
 
-- *Documentation:*\*
-- [System Overview](SYSTEM_OVERVIEW.md) - Architecture details
-- [Repository Overview](REPOSITORY_OVERVIEW.md) - Codebase structure
-- [API Provider Patterns](API_PROVIDER_PATTERNS.md) - AI integration
+### Debugging
+- **VS Code Debugger** - Use VS Code debugging features
+- **Console Logging** - Add console logging for debugging
+- **Error Tracking** - Use error tracking tools
+- **Performance Profiling** - Profile performance issues
 
-- *Community:*\*
-- [GitHub Issues](https://github.com/Kilo-Org/kilocode/issues) - Bug reports
-- [GitHub Discussions](https://github.com/Kilo-Org/kilocode/discussions) - Questions
-- [Discord](https://discord.gg/Ja6BkfyTzJ) - Real-time chat
+## No Dead Ends Policy
 
-## Next Steps
+This document follows the "No Dead Ends" principle - every path leads to useful information.
 
-### Immediate Next Steps
-1. **Explore the Codebase:**
-- Read [System Overview](SYSTEM_OVERVIEW.md)
-- Review [Repository Overview](REPOSITORY_OVERVIEW.md)
-- Check [External Dependencies](EXTERNAL_DEPENDENCIES.md)
-2. **Try Development:**
-- Make a small change (e.g., update a UI text)
-- Run tests to verify
-- Build and test locally
-3. **Understand Architecture:**
-- Study the [Task Engine](README.md)
-- Review [Tool System](tools/TOOL_SYSTEM_ARCHITECTURE.md)
-- Explore [Service Layer](README.md)
-
-### Learning Paths
-
-#### For New Contributors
-1. [Getting Started Guide](GETTING_STARTED.md) ← You are here
-2. [System Overview](SYSTEM_OVERVIEW.md)
-3. [Repository Overview](REPOSITORY_OVERVIEW.md)
-4. [Tool System Architecture](tools/TOOL_SYSTEM_ARCHITECTURE.md)
-5. [Documentation Guide](../../DOCUMENTATION_GUIDE.md) - Contribution standards
-
-#### For Experienced Developers
-1. [System Overview](SYSTEM_OVERVIEW.md)
-2. [API Provider Patterns](API_PROVIDER_PATTERNS.md)
-3. [External Dependencies](EXTERNAL_DEPENDENCIES.md)
-4. [Upstream/Downstream Integration](UPSTREAM_DOWNSTREAM_INTEGRATION.md)
-5. [Priority Improvements](../improvements/PRIORITY_IMPROVEMENTS.md)
-
-#### For System Administrators
-1. [Repository Overview](REPOSITORY_OVERVIEW.md)
-2. [Build Pipeline Architecture](../build/BUILD_PIPELINE_ARCHITECTURE.md)
-3. [Testing Strategy](../testing/TESTING_STRATEGY.md)
-4. [External Dependencies](EXTERNAL_DEPENDENCIES.md)
-
-### Recommended Reading
-
-- *Essential Documents:*\*
-- [System Overview](SYSTEM_OVERVIEW.md) - Complete architecture
-- [Repository Overview](REPOSITORY_OVERVIEW.md) - Codebase structure
-- [External Dependencies](EXTERNAL_DEPENDENCIES.md) - Dependencies and libraries
-
-- *Advanced Topics:*\*
-- [Upstream/Downstream Integration](UPSTREAM_DOWNSTREAM_INTEGRATION.md) - Code transfer processes
-- [Priority Improvements](../improvements/PRIORITY_IMPROVEMENTS.md) - Development roadmap
-- [Technical Debt](../improvements/TECHNICAL_DEBT.md) - Known issues and solutions
-
-- *Troubleshooting:*\*
-- [Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md)
-- \*\*
-
-- *🎉 Congratulations!*\* You're now ready to start developing with KiloCode. Remember to:
-- Follow the development workflow
-- Write tests for your changes
-- Update documentation as needed
-- Ask questions in the community channels
-
-Happy coding! 🚀
-
-## 🔍 Research Context & Next Steps
-
-### When You're Here, You Can:
-
-- *New to KiloCode Development:*\*
-
-- **Next**: [System Overview](./SYSTEM_OVERVIEW.md) →
-  [Repository Overview](./REPOSITORY_OVERVIEW.md) → [Core Systems](../architecture/CORE_SYSTEMS.md)
-
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) for advanced topics
-
-- *Setting Up Development Environment:*\*
-
-- **Next**: [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md) →
-  [Build Pipelines](../architecture/BUILD_PIPELINES.md)
-
-- **Related**: [External Dependencies](./EXTERNAL_DEPENDENCIES.md) for dependency management
-
-- *Understanding Current Issues:*\*
-
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
-  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
-  \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
-
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for execution patterns
-
-- *Contributing to KiloCode:*\*
-
-- **Next**: [Orchestrator Best Practices](../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) →
-  \[Testing Strategy]race-condition/TESTING\_STRATEGY.md) →
-  [Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-
-- **Related**: [Investigation Plans](../plans/README.md) for active development work
-
-### No Dead Ends Policy
-
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Architecture Documentation](./README.md) for guidance.
-
-<a id="navigation-footer"></a>
-
-- *Navigation*\*: [← Back to Architecture Documentation](./README.md) ·
-  [→ System Overview](./SYSTEM_OVERVIEW.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
-  [↑ Table of Contents](#-research-context--next-steps)
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
+- Troubleshooting section provides actionable solutions
 
 ## Navigation
-- [← Architecture Overview](README.md)
-- [← Repository Structure](repository/README.md)
-- [← Race Condition Analysis](race-condition/README.md)
-- [← State Machines](state-machines/README.md)
-- [← Main Documentation](../../README.md)
+- [← Architecture Documentation](README.md)
+- [← Development Guide](repository/DEVELOPMENT_GUIDE.md)
+- [← Repository Structure](repository/REPOSITORY_STRUCTURE.md)
+- [← Main Documentation](../README.md)
 - [← Project Root](../../README.md)

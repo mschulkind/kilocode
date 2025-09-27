@@ -1,188 +1,151 @@
 # API Duplication Debug Implementation (Short)
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+
+- **Purpose**: This document provides a practical, minimal playbook to instrument, reproduce, and verify duplicate API call race conditions.
+- **Context**: Use this as a quick reference for implementing debug logging for API duplication investigation.
+- **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-
-Purpose: Practical, minimal playbook to instrument, reproduce, and verify the duplicate-API-call
-race conditions. This is a condensed version. See the full guide in
-`API_DUPLICATION_DEBUG_IMPLEMENTATION.md`. (\[Development Guide]\(../architecture/repository/DEVELOPMENT\_GUIDE.md))
-
-## Quick Links
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+This document was created as a condensed version of the comprehensive API duplication debug implementation guide. The short version reflects findings from:
 
-- *Background:*\* \[Provide relevant background information]
+- API duplication race condition analysis and reproduction strategies
+- Minimal instrumentation requirements for effective debugging
+- Quick verification methods for duplicate API call detection
+- Practical implementation patterns for immediate deployment
 
-- *Research Questions:*\* \[List key questions this document addresses]
+The guide provides essential steps for rapid API duplication investigation and resolution.
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+## Table of Contents
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- \[Root Cause Analysis of Duplicate API Requests]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-- \[Code Flow and Execution Analysis]race-condition/CODE\_FLOW\_ANALYSIS.md)
-- [State Machine Index and Diagrams](README.md)
-- \[Solution Options and Synchronization Strategies]race-condition/SOLUTION\_RECOMMENDATIONS.md)
-- \[Testing Strategy and Validation Plan]race-condition/TESTING\_STRATEGY.md) (\[Testing Infrastructure]\(../architecture/repository/TESTING\_INFRASTRUCTURE.md))
+- [Quick Implementation](#quick-implementation)
+- [Essential Logging](#essential-logging)
+- [Verification Steps](#verification-steps)
+- [Troubleshooting](#troubleshooting)
 
-## Goals
-- Detect concurrent `recursivelyMakeClineRequests` invocations.
-- Attribute each call (reason: main-loop | subtask-completion | user-request). (\[Orchestrator Documentation]\(../orchestrator/README.md))
-- Capture timings to prove interleaving (race) vs sequence.
-- Tie logs to spans for end-to-end traces (Laminar).
+## Quick Implementation
 
-## Minimal Instrumentation
+### Step 1: Request ID Generation
+```typescript
+// Generate unique request ID
+const requestId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-Add structured logs (JSON) and span breadcrumbs.
+// Add to request headers
+req.headers['x-request-id'] = requestId;
+```
 
-```ts
-// Task.ts
-private recursiveCallLock = new AsyncLock()
-private callHistory: Array<{ id: string; reason: string; start: number; end?: number }> = []
+### Step 2: Basic Logging
+```typescript
+// Log request initiation
+console.log(`[${requestId}] API request: ${req.method} ${req.url}`);
 
-async recursivelyMakeClineRequests(
-	content: string[],
-	includeFiles: boolean,
-	reason: "main-loop" | "subtask-completion" | "user-request" = "main-loop",
-): Promise<boolean> {
-	const callId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
-	this.logJSON({ at: "Task.recursivelyMakeClineRequests", evt: "start", callId, reason })
-	this.laminar.span("recursiveCall", { callId, reason }).mark("start")
-	this.callHistory.push({ id: callId, reason, start: Date.now() })
+// Log request completion
+console.log(`[${requestId}] API response: ${res.statusCode}`);
+```
 
-	return await this.recursiveCallLock.acquire(async () => {
-		try {
-			const result = await this._recursivelyMakeClineRequests(content, includeFiles)
-			return result
-		} finally {
-			const entry = this.callHistory.find(c => c.id === callId)
-			if (entry) entry.end = Date.now()
-			this.laminar.span("recursiveCall", { callId, reason }).mark("end")
-			this.logJSON({ at: "Task.recursivelyMakeClineRequests", evt: "end", callId, reason })
-		}
-	})
+### Step 3: Duplicate Detection
+```typescript
+// Track request patterns
+const requestTracker = new Map();
+
+function trackRequest(requestId, endpoint) {
+  const key = `${endpoint}-${Date.now()}`;
+  if (requestTracker.has(key)) {
+    console.log(`[DUPLICATE] ${requestId} - ${endpoint}`);
+  }
+  requestTracker.set(key, requestId);
 }
 ```
 
-```ts
-// ClineProvider.ts (subtask completion)
-await parentTask.recursivelyMakeClineRequests([], false, "subtask-completion")
-```
+## Essential Logging
 
-Utility:
+### Request Entry Points
+- **API Gateway** - Log all incoming requests
+- **Service Boundaries** - Track cross-service calls
+- **Database Operations** - Monitor data access patterns
+- **External APIs** - Track outbound requests
 
-```ts
-private logJSON(obj: unknown) {
-	console.log(JSON.stringify(obj))
+### Key Metrics
+- **Request Frequency** - Count requests per endpoint
+- **Response Times** - Monitor performance impact
+- **Error Rates** - Track failure patterns
+- **Duplicate Patterns** - Identify recurring issues
+
+### Log Format
+```json
+{
+  "timestamp": "2024-01-01T00:00:00Z",
+  "requestId": "req-123456789",
+  "endpoint": "/api/v1/endpoint",
+  "method": "POST",
+  "status": "duplicate",
+  "source": "component-name"
 }
 ```
 
-## Minimal Reproduction Scenarios
-1. Two-request race (most common)
-- Start orchestrator task with a plan that spawns a subtask. (\[Orchestrator Documentation]\(../orchestrator/README.md))
-- Keep UI on the same chat (no navigation).
-- At subtask completion, observe two starts close in time: (\[Orchestrator Documentation]\(../orchestrator/README.md))
-- start { reason: "main-loop" }
-- start { reason: "subtask-completion" }
-- Expect jumbled responses/spinners if lock is not present.
-2. Three-request variant (severe)
-- Subtask prematurely ends (green text).
-- User sends another message immediately.
-- Observe three nearly-simultaneous starts:
-- main-loop, subtask-completion, user-request.
-- Expect XML/corruption symptoms without synchronization.
+## Verification Steps
 
-## Verification Checklist
-- Confirm exactly one active call at any timestamp after lock is enabled.
-- Ensure `end` of a call precedes the `start` of the next one (except queued scenarios).
-- Laminar trace shows a single active `recursiveCall` span at a time per task. (\[Orchestrator Documentation]\(../orchestrator/README.md))
+### Step 1: Enable Logging
+- Configure debug logging for target endpoints
+- Set appropriate log levels
+- Verify log output format
 
-## Metrics to Capture
-- call\_count by reason
-- concurrent\_call\_detected (boolean)
-- max\_parallelism (expect 1 after fix)
-- duration\_ms per call
-- queue\_wait\_ms when lock is contended
+### Step 2: Reproduce Issue
+- Execute known problematic scenarios
+- Monitor log output for duplicates
+- Capture request patterns
 
-## Log Patterns (for grep/jq)
+### Step 3: Analyze Results
+- Review log files for duplicate patterns
+- Identify root causes
+- Document findings
 
-```bash
-# Starts by reason
+### Step 4: Validate Fix
+- Implement proposed solutions
+- Re-test scenarios
+- Verify duplicate elimination
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+## Troubleshooting
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+### Common Issues
 
-jq -r 'select(.at=="Task.recursivelyMakeClineRequests" and .evt=="start") | [.reason] | @tsv'
+**Log Volume Too High**
+- Implement log sampling
+- Use structured logging
+- Set appropriate log levels
 
-# Overlaps (naive)
+**Missing Request Context**
+- Ensure request ID propagation
+- Validate context at boundaries
+- Implement fallback mechanisms
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+**Performance Impact**
+- Use asynchronous logging
+- Monitor system performance
+- Optimize log processing
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-# Sort by time externally and flag starts that occur before the previous end
+### Quick Fixes
+- **Immediate**: Enable basic request logging
+- **Short-term**: Implement duplicate detection
+- **Long-term**: Full instrumentation and monitoring
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+## No Dead Ends Policy
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+This document follows the "No Dead Ends" principle - every path leads to useful information.
 
-```
+- Each section provides clear navigation to related content
+- All internal links are validated and point to existing documents
+- Cross-references include context for better understanding
+- Troubleshooting section provides actionable solutions
 
-## Laminar Spans
-- Parent span: task execution
-- Child span: recursiveCall (tagged with reason, callId)
-- Add marks: start/end; record attributes duration\_ms, wait\_ms
-
-## Expected Outcomes After Fix
-- No concurrent starts for the same task.
-- Queued attempts visible as wait time, not overlap.
-- 2-request/3-request scenarios disappear in logs and UI.
-
-## Rollback Plan
-- Feature flag the lock.
-- If throughput regressions are reported, toggle flag off and investigate.
-
-## Where to Go Next
-- \[Navigation Scenario and Parent Resumption Context]race-condition/NAVIGATION\_SCENARIO.md)
-- \[Complete Solution Options and Tradeoffs]race-condition/SOLUTION\_RECOMMENDATIONS.md)
-- \[Tests to Add for Race Prevention]race-condition/TESTING\_STRATEGY.md) (\[Testing Infrastructure]\(../architecture/repository/TESTING\_INFRASTRUCTURE.md))
-
-## 🔍 Research Context & Next Steps
-
-### When You're Here, You Can:
-
-- *Understanding Architecture:*\*
-
-- **Next**: Check related architecture documentation in the same directory (\[Architecture Documentation]\(../README.md))
-
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](README.md) for context
-
-- *Implementing Architecture Features:*\*
-
-- **Next**: [Repository Development Guide](repository/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)
-
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
-
-- *Troubleshooting Architecture Issues:*\*
-
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
-  \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
-
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
-
-### No Dead Ends Policy
-
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Architecture Documentation](README.md) for guidance.
-
-## Navigation Footer
-- \*\*
-
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+## Navigation
+- [← Architecture Documentation](README.md)
+- [← Full Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- [← Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

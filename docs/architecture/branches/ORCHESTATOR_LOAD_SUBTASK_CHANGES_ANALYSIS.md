@@ -19,15 +19,15 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
-- [Root Cause Analysis of Duplicate API Requests](race-condition/ROOT_CAUSE_ANALYSIS.md) -
+- [Root Cause Analysis of Duplicate API Requests](../race-condition/ROOT_CAUSE_ANALYSIS.md) -
   Detailed investigation of the concurrent recursive calls race condition, including the problematic
   commit and code changes that created the issue. Provides comprehensive analysis of how the
   `continueParentTask` method introduced concurrent execution paths.
-- [Navigation Scenario and Parent Resumption Context](race-condition/NAVIGATION_SCENARIO.md) -
+- [Navigation Scenario and Parent Resumption Context](../race-condition/NAVIGATION_SCENARIO.md) -
   Explains why the problematic change was made, focusing on the navigation state loss problem and
   parent reinitialization. Details the specific scenario where users navigate away from chat and
   return to resume subtasks.
-- [Solution Options and Synchronization Strategies](race-condition/SOLUTION_RECOMMENDATIONS.md) -
+- [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md) -
   Proposes multiple approaches to fix the race condition, including lock-based solutions, call
   tracking, and subtask completion coordination. Includes implementation strategies and testing
   approaches for each solution.
@@ -51,10 +51,10 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 - *Detailed Analysis Links:*\*
 - [Race Condition State Machine](README.md) - Understanding the concurrent
   execution states
-- [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
+- [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
   architecture works
-- [Impact Assessment](race-condition/IMPACT_ASSESSMENT.md) - Severity and user experience impact
-- [Testing Strategy](race-condition/TESTING_STRATEGY.md) - How to reproduce and validate fixes
+- [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) - Severity and user experience impact
+- [Testing Strategy](../race-condition/TESTING_STRATEGY.md) - How to reproduce and validate fixes
 
 ## Summary of Intent
 - Goal: Ensure that when a subtask finishes after the user navigated away and returned, the parent
@@ -114,7 +114,7 @@ private async continueParentTask(lastMessage: string): Promise<void> {
   `recursivelyMakeClineRequests` racing with the main loop.
 - **Race Condition Details**: See [Race Condition State Machine](README.md) for
   the specific concurrent execution states and
-  [Impact Assessment](race-condition/IMPACT_ASSESSMENT.md) for severity analysis.
+  [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for severity analysis.
 
 ## Change 2: Parent Task Initialization Logic
 
@@ -161,7 +161,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ### Side Effect
 - Fire-and-forget makes concurrency invisible and hard to coordinate; increases chance of overlap
   with main loop.
-- **Concurrency Analysis**: See [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) for
+- **Concurrency Analysis**: See [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) for
   detailed explanation of how the orchestrator-subtask architecture creates this race condition.
 
 ## Change 4: Messaging/Conversation History Additions
@@ -182,7 +182,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 - Intended scenario (navigation away/back): improved.
 - Active scenario (no navigation): created duplicate, concurrent recursive calls (2-request, and in
   edge cases 3-request).
-- **Detailed Impact Analysis**: See [Impact Assessment](race-condition/IMPACT_ASSESSMENT.md) for
+- **Detailed Impact Analysis**: See [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for
   comprehensive analysis of user experience impact and severity levels.
 
 ## Recommendations
@@ -200,7 +200,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
@@ -227,4 +227,4 @@ next, return to [Architecture Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
