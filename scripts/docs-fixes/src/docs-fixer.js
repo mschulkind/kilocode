@@ -368,6 +368,9 @@ function fixListIndentation(content) {
 
 	if (newContent !== originalContent1) {
 		fixesApplied++
+		if (CONFIG.verbose) {
+			console.log(`  🔧 List fix 1: Removed leading spaces before bullets`)
+		}
 	}
 
 	// Fix 2: Fix ordered list marker style (ordered-list-marker-style rule)
@@ -378,6 +381,9 @@ function fixListIndentation(content) {
 
 	if (newContent !== originalContent2) {
 		fixesApplied++
+		if (CONFIG.verbose) {
+			console.log(`  🔧 List fix 2: Changed parentheses to periods in ordered lists`)
+		}
 	}
 
 	// Fix 3: Fix spacing after bullets (list-item-indent rule)
@@ -395,6 +401,9 @@ function fixListIndentation(content) {
 
 	if (newContent !== originalContent3) {
 		fixesApplied++
+		if (CONFIG.verbose) {
+			console.log(`  🔧 List fix 3: Fixed spacing after bullets`)
+		}
 	}
 
 	// Fix 4: Convert * and + bullets to - bullets (remark-lint preference)
@@ -402,6 +411,9 @@ function fixListIndentation(content) {
 	newContent = newContent.replace(/^([*+])\s/gm, "- ")
 	if (newContent !== originalContent4) {
 		fixesApplied++
+		if (CONFIG.verbose) {
+			console.log(`  🔧 List fix 4: Converted * and + bullets to - bullets`)
+		}
 	}
 
 	// Fix 5: Fix numbered list items that have incorrect spacing
@@ -541,20 +553,8 @@ function fixPathIssuesAST(linkNode, filePath, enhancedProcessor = null) {
 	// Apply path fixes based on file location using enhanced processor
 	fixes += processor.enhancedFixPathIssuesAST(linkNode, filePath, PATH_FIXES)
 
-	// Original path fix logic continued for backward compatibility
-	for (const pathFix of PATH_FIXES) {
-		if (pathFix.pattern.test(filePath)) {
-			for (const fix of pathFix.fixes) {
-				if (linkNode.url === fix.from) {
-					linkNode.url = fix.to
-					fixes++
-					if (CONFIG.verbose) {
-						console.log(`  ✅ Path fix: ${fix.from} → ${fix.to}`)
-					}
-				}
-			}
-		}
-	}
+	// Note: Original path fix logic removed to prevent double-counting
+	// The enhanced processor now handles all PATH_FIXES logic
 
 	return fixes
 }
@@ -642,11 +642,20 @@ async function processFile(filePath) {
 		if (!content.includes("## When You're Here") && !content.includes("### When You're Here")) {
 			content = addWhenYoureHereSection(content, filePath)
 			fixes.whenYouAreHere = 1
+			if (CONFIG.verbose) {
+				console.log(`  ✅ Added "When You're Here" section`)
+			}
 		}
 
 		if (!content.includes("## No Dead Ends") && !content.includes("### No Dead Ends")) {
-			content = addNoDeadEndsPolicy(content, filePath)
-			fixes.noDeadEndsPolicy = 1
+			const newContent = addNoDeadEndsPolicy(content, filePath)
+			if (newContent !== content) {
+				content = newContent
+				fixes.noDeadEndsPolicy = 1
+				if (CONFIG.verbose) {
+					console.log(`  ✅ Added "No Dead Ends Policy" section`)
+				}
+			}
 		}
 
 		// Parse the markdown into an AST for link-based fixes
@@ -657,19 +666,32 @@ async function processFile(filePath) {
 		const fixResults = applyASTFixes(tree, filePath)
 		fixes.pathIssues = fixResults.pathIssues
 		fixes.linkText = fixResults.linkText
+		if (CONFIG.verbose && (fixResults.pathIssues > 0 || fixResults.linkText > 0)) {
+			console.log(`  ✅ Applied ${fixResults.pathIssues} path fixes and ${fixResults.linkText} link text fixes`)
+		}
 
 		// Convert AST back to markdown
 		let newContent = processor.stringify(tree)
 
 		// Apply list indentation fixes using regex (more reliable for formatting)
 		const listResult = fixListIndentation(newContent)
-		fixes.listIndentation = listResult.fixesApplied
-		newContent = listResult.content
+		if (listResult.content !== newContent) {
+			fixes.listIndentation = listResult.fixesApplied
+			newContent = listResult.content
+			if (CONFIG.verbose && listResult.fixesApplied > 0) {
+				console.log(`  ✅ Applied ${listResult.fixesApplied} list indentation fixes (final content changed: ${newContent !== processor.stringify(tree)})`)
+			}
+		}
 
 		// Check if navigation footer should be added
 		const navResult = addNavigationFooter(newContent, filePath)
-		fixes.navigationFooter = navResult.added
-		newContent = navResult.content
+		if (navResult.content !== newContent) {
+			fixes.navigationFooter = navResult.added
+			newContent = navResult.content
+			if (CONFIG.verbose && navResult.added) {
+				console.log(`  ✅ Added navigation footer`)
+			}
+		}
 
 		const totalFixes =
 			fixes.listIndentation +
@@ -679,16 +701,23 @@ async function processFile(filePath) {
 			fixes.whenYouAreHere +
 			fixes.noDeadEndsPolicy
 
+		// Check if content actually changed compared to original
+		const contentChanged = newContent !== content
+		
 		// Write file if changes were made and not in dry run mode
 		if (totalFixes > 0 && !CONFIG.dryRun) {
-			writeFileSync(filePath, newContent, "utf8")
+			if (contentChanged) {
+				writeFileSync(filePath, newContent, "utf8")
+			} else if (CONFIG.verbose) {
+				console.log(`  ⚠️  Fixes applied but content unchanged - possible formatting cycle`)
+			}
 		}
 
 		return {
 			processed: true,
 			fixes,
 			totalFixes,
-			changed: totalFixes > 0,
+			changed: contentChanged,
 		}
 	} catch (error) {
 		return { processed: false, error: error.message }
@@ -805,6 +834,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 		if (CONFIG.verbose) {
 			console.log(`  ✅ Added "No Dead Ends Policy" section`)
 		}
+		return content
 	}
 	return content
 }

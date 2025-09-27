@@ -153,9 +153,10 @@ export class EnhancedASTProcessor {
 
     /**
      * Integration with existing PATH_FIXES AST handling 
+     * Actually applies fixes and only counts real changes
      */
-    applyExistingPathFixes(filePath, linkUrl, PATH_FIXES) {
-        this.logDebug(`Applying existing PATH_FIXES for ${filePath}/${linkUrl}`)
+    applyExistingPathFixes(linkNode, filePath, PATH_FIXES) {
+        this.logDebug(`Applying existing PATH_FIXES for ${filePath}/${linkNode.url}`)
         
         let correctionCount = 0
         let reusedCount = 0
@@ -163,8 +164,17 @@ export class EnhancedASTProcessor {
         for (const pathFix of PATH_FIXES) {
             if (pathFix.pattern && pathFix.pattern.test(filePath)) {
                 for (const fix of pathFix.fixes) {
-                    if (linkUrl === fix.from) {
-                        correctionCount++
+                    if (linkNode.url === fix.from) {
+                        // Only apply and count if the fix would actually change something
+                        if (fix.from !== fix.to) {
+                            this.logDebug(`  📝 Applying PATH_FIX: ${fix.from} → ${fix.to}`)
+                            linkNode.url = fix.to
+                            correctionCount++
+                            this.trackCorrection(filePath, fix.from, fix.to)
+                        } else {
+                            this.logDebug(`  ⚠️  Skipping identical fix: ${fix.from} === ${fix.to}`)
+                            reusedCount++
+                        }
                     }
                 }
             }
@@ -183,8 +193,9 @@ export class EnhancedASTProcessor {
         this.logDebug(`Enhanced AST: Processing ${filePath}`)
         
         // Phase C1: Apply the existing fixes based on PATH_FIXES
-        const existingResult = this.applyExistingPathFixes(filePath, linkNode.url, PATH_FIXES)
+        const existingResult = this.applyExistingPathFixes(linkNode, filePath, PATH_FIXES)
         totalFixes += existingResult.corrected
+        this.logDebug(`  Phase C1 result: ${existingResult.corrected} fixes, ${existingResult.reused} reused`)
         
         // Phase C2: Category 1 intelligence path fixes to the URL reference directly
         const urlCorrect = linkNode.url
@@ -192,9 +203,14 @@ export class EnhancedASTProcessor {
         // C2.1: GLOSSARY.md fixes
         if (urlCorrect.includes('GLOSSARY.md')) {
             const handyCorrectPath = this.calculateGlossaryPath(filePath)
-            linkNode.url = handyCorrectPath
-            totalFixes += 1
-            this.trackCorrection(filePath, urlCorrect, handyCorrectPath)
+            if (handyCorrectPath !== linkNode.url) {
+                this.logDebug(`  📝 Applying GLOSSARY fix: ${linkNode.url} → ${handyCorrectPath}`)
+                linkNode.url = handyCorrectPath
+                totalFixes += 1
+                this.trackCorrection(filePath, urlCorrect, handyCorrectPath)
+            } else {
+                this.logDebug(`  ⚠️  Skipping identical GLOSSARY fix: ${linkNode.url} === ${handyCorrectPath}`)
+            }
         }
         
         // C2.2: DOCUMENTATION_GUIDE.md fixes
