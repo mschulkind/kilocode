@@ -87,7 +87,7 @@ function remarkKiloCodeStandards(options = {}) {
 							message: "Link has no descriptive text",
 							line: node.position?.start?.line || 0,
 							column: node.position?.start?.column || 0,
-							rule: "remark-kilocode-standards:kilocode-descriptive-links",
+							rule: "kilocode-descriptive-links",
 						})
 					} else {
 						const linkText = getNodeText(node)
@@ -97,7 +97,7 @@ function remarkKiloCodeStandards(options = {}) {
 								message: `Link text "${linkText}" is not descriptive. Use meaningful text instead.`,
 								line: node.position?.start?.line || 0,
 								column: node.position?.start?.column || 0,
-								rule: "remark-kilocode-standards:kilocode-descriptive-links",
+								rule: "kilocode-descriptive-links",
 							})
 						}
 					}
@@ -142,10 +142,10 @@ function remarkKiloCodeStandards(options = {}) {
 			const message = file.message(issue.message, {
 				start: { line: issue.line, column: issue.column },
 				end: { line: issue.line, column: issue.column + 50 },
-				ruleId: issue.rule,
-				severity: issue.type === "error" ? "error" : "warning",
-				source: "remark-kilocode-standards",
-			})
+			}, `remark-kilocode-standards:${issue.rule}`)
+
+			// Set fatal flag based on issue type
+			message.fatal = issue.type === "error"
 
 			if (issue.suggestion) {
 				message.note = issue.suggestion
@@ -157,10 +157,10 @@ function remarkKiloCodeStandards(options = {}) {
 			const message = file.message(warning.message, {
 				start: { line: warning.line, column: warning.column },
 				end: { line: warning.line, column: warning.column + 50 },
-				ruleId: warning.rule,
-				severity: "warning",
-				source: "remark-kilocode-standards",
-			})
+			}, `remark-kilocode-standards:${warning.rule}`)
+
+			// Warnings are never fatal
+			message.fatal = false
 
 			if (warning.suggestion) {
 				message.note = warning.suggestion
@@ -183,7 +183,7 @@ function validateDocumentStructure(structure, issues, warnings, settings, file) 
 			message: "Document should have a main title (H1 heading)",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-standards:kilocode-title-required",
+			rule: "kilocode-title-required",
 			suggestion: "Add a main title at the beginning of the document",
 		})
 	}
@@ -195,7 +195,7 @@ function validateDocumentStructure(structure, issues, warnings, settings, file) 
 			message: "Document should have a Research Context section",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-standards:kilocode-research-context-required",
+			rule: "kilocode-research-context-required",
 			suggestion: 'Add a "## Research Context" section explaining the purpose and background',
 		})
 	}
@@ -211,7 +211,7 @@ function validateDocumentStructure(structure, issues, warnings, settings, file) 
 			message: "Document should have a navigation footer",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-standards:kilocode-navigation-footer-required",
+			rule: "kilocode-navigation-footer-required",
 			suggestion: "Add a navigation footer with relevant links",
 		})
 	}
@@ -223,7 +223,7 @@ function validateDocumentStructure(structure, issues, warnings, settings, file) 
 			message: "Consider adding a fun fact to make the document more engaging",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-standards:kilocode-fun-fact-suggestion",
+			rule: "kilocode-fun-fact-suggestion",
 			suggestion: "Add a fun fact related to the document topic",
 		})
 	}
@@ -251,7 +251,7 @@ function validateHeadingHierarchy(headings, issues, file) {
 				message: `Heading level ${heading.depth} skips level ${expectedDepth + 1}. Use proper heading hierarchy.`,
 				line: heading.line,
 				column: 1,
-				rule: "remark-kilocode-standards:kilocode-heading-hierarchy",
+				rule: "kilocode-heading-hierarchy",
 				suggestion: `Change to H${expectedDepth + 1} or add intermediate headings`,
 			})
 		}
@@ -273,7 +273,7 @@ function validateNoDeadEnds(structure, issues, file) {
 			message: "Document appears to be a dead end with no outgoing links",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-standards:kilocode-no-dead-ends",
+			rule: "kilocode-no-dead-ends",
 			suggestion: "Add links to related documents or external resources",
 		})
 	}

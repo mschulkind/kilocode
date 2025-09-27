@@ -189,10 +189,10 @@ function remarkKiloCodeComprehensive(options = {}) {
 			const message = file.message(issue.message, {
 				start: { line: issue.line, column: issue.column },
 				end: { line: issue.line, column: issue.column + 50 },
-				ruleId: issue.rule,
-				severity: issue.type === "error" ? "error" : "warning",
-				source: "remark-kilocode-comprehensive",
-			})
+			}, `remark-kilocode-comprehensive:${issue.rule}`)
+
+			// Set fatal flag based on issue type
+			message.fatal = issue.type === "error"
 
 			if (issue.suggestion) {
 				message.note = issue.suggestion
@@ -204,10 +204,10 @@ function remarkKiloCodeComprehensive(options = {}) {
 			const message = file.message(warning.message, {
 				start: { line: warning.line, column: warning.column },
 				end: { line: warning.line, column: warning.column + 50 },
-				ruleId: warning.rule,
-				severity: "warning",
-				source: "remark-kilocode-comprehensive",
-			})
+			}, `remark-kilocode-comprehensive:${warning.rule}`)
+
+			// Warnings are never fatal
+			message.fatal = false
 
 			if (warning.suggestion) {
 				message.note = warning.suggestion
@@ -236,7 +236,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			message: "Document must have a main title (H1 heading)",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-title-required",
+			rule: "kilocode-title-required",
 			suggestion: "Add a descriptive main title at the beginning of the document",
 		})
 	}
@@ -248,7 +248,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			message: "Document must have a Research Context section",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-research-context-required",
+			rule: "kilocode-research-context-required",
 			suggestion: 'Add a "## Research Context" section explaining the purpose, background, and methodology',
 		})
 	}
@@ -264,7 +264,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			message: "Document must have a navigation footer",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-navigation-footer-required",
+			rule: "kilocode-navigation-footer-required",
 			suggestion: "Add a navigation footer with relevant links and breadcrumbs",
 		})
 	}
@@ -280,7 +280,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			message: "Document must include No Dead Ends Policy",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-no-dead-ends-required",
+			rule: "kilocode-no-dead-ends-required",
 			suggestion: "Add a section explaining how this document connects to others and provides value",
 		})
 	}
@@ -296,7 +296,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			message: "Document must include When You're Here section",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-when-youre-here-required",
+			rule: "kilocode-when-youre-here-required",
 			suggestion: "Add a section explaining what users can do when they reach this document",
 		})
 	}
@@ -308,7 +308,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 			message: "Consider adding a fun fact to make the document more engaging",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-fun-fact-suggestion",
+			rule: "kilocode-fun-fact-suggestion",
 			suggestion: "Add a fun fact related to the document topic to improve engagement",
 		})
 	}
@@ -330,7 +330,7 @@ function validateContentQuality(metrics, issues, warnings, settings, file) {
 			message: `Document is quite short (${metrics.wordCount} words). Consider adding more detail.`,
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-content-length",
+			rule: "kilocode-content-length",
 			suggestion: "Expand the document with more comprehensive information",
 		})
 	}
@@ -343,7 +343,7 @@ function validateContentQuality(metrics, issues, warnings, settings, file) {
 			message: "Document has low link density. Consider adding more references.",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-link-density",
+			rule: "kilocode-link-density",
 			suggestion: "Add links to related documents, external resources, or references",
 		})
 	} else if (linkDensity > 5) {
@@ -352,7 +352,7 @@ function validateContentQuality(metrics, issues, warnings, settings, file) {
 			message: "Document has high link density. Consider reducing links or expanding content.",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-link-density",
+			rule: "kilocode-link-density",
 			suggestion: "Reduce the number of links or expand the content to improve balance",
 		})
 	}
@@ -364,7 +364,7 @@ function validateContentQuality(metrics, issues, warnings, settings, file) {
 			message: "Document has few headings. Consider adding more structure.",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-heading-structure",
+			rule: "kilocode-heading-structure",
 			suggestion: "Add more headings to improve document structure and readability",
 		})
 	}
@@ -376,7 +376,7 @@ function validateContentQuality(metrics, issues, warnings, settings, file) {
 			message: `Document quality score (${metrics.qualityScore.toFixed(2)}) is below threshold (${settings.contentQualityThreshold})`,
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-quality-threshold",
+			rule: "kilocode-quality-threshold",
 			suggestion: "Improve document quality by addressing the issues identified above",
 		})
 	}
@@ -399,7 +399,7 @@ function validateCrossReferences(structure, issues, file) {
 				message: `Cross-reference "${ref.target}" may be invalid`,
 				line: ref.line,
 				column: 1,
-				rule: "remark-kilocode-comprehensive:kilocode-cross-reference",
+				rule: "kilocode-cross-reference",
 				suggestion: "Verify that the referenced document exists and the link is correct",
 			})
 		}
@@ -416,7 +416,7 @@ function validateNoOrphanedDocuments(structure, issues, warnings, file) {
 			message: "Document appears to be orphaned with no outgoing links",
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-orphaned-document",
+			rule: "kilocode-orphaned-document",
 			suggestion: "Add links to related documents or external resources to prevent dead ends",
 		})
 	}
@@ -428,7 +428,7 @@ function validateNoOrphanedDocuments(structure, issues, warnings, file) {
 			message: `Document has ${structure.orphanedSections.length} sections that might be orphaned`,
 			line: 1,
 			column: 1,
-			rule: "remark-kilocode-comprehensive:kilocode-orphaned-sections",
+			rule: "kilocode-orphaned-sections",
 			suggestion: "Consider adding links or restructuring content to improve connectivity",
 		})
 	}
@@ -458,7 +458,7 @@ function validateAdvancedHeadingHierarchy(headings, issues, file) {
 				message: `Heading level ${heading.depth} skips level ${expectedDepth + 1}. Use proper heading hierarchy.`,
 				line: heading.line,
 				column: 1,
-				rule: "remark-kilocode-comprehensive:kilocode-heading-hierarchy",
+				rule: "kilocode-heading-hierarchy",
 				suggestion: `Change to H${expectedDepth + 1} or add intermediate headings`,
 			})
 		}
@@ -470,7 +470,7 @@ function validateAdvancedHeadingHierarchy(headings, issues, file) {
 				message: `Heading depth increased too quickly from H${previousDepth} to H${heading.depth}`,
 				line: heading.line,
 				column: 1,
-				rule: "remark-kilocode-comprehensive:kilocode-heading-progression",
+				rule: "kilocode-heading-progression",
 				suggestion: "Consider a more gradual progression in heading levels",
 			})
 		}
