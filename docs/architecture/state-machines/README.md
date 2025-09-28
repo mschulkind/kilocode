@@ -1,19 +1,31 @@
 # State Machines Documentation 🦕
+
 ## Table of Contents
-
 - [State Machines Documentation 🦕](#state-machines-documentation-)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Overview](#overview)
-  - [Research Context](#research-context)
-  - [Start Here](#start-here)
-  - [Core State Machines](#core-state-machines)
-  - [Combined and Specialized](#combined-and-specialized)
-  - [Related documentation](#related-documentation)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation](#navigation)
-    - [Example](#example)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Start Here](#start-here)
+- [Core State Machines](#core-state-machines)
+- [Combined and Specialized](#combined-and-specialized)
+- [Related documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Navigation](#navigation)
+- [Example](#example)
+- [State Machines Documentation 🦕](#state-machines-documentation-)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Start Here](#start-here)
+- [Core State Machines](#core-state-machines)
+- [Combined and Specialized](#combined-and-specialized)
+- [Related documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -83,7 +95,7 @@ to use them together during design, debugging, and implementation.
 ## Related documentation
 - [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) Master
   narrative and navigation hub for the duplicate-API-request issue family.
-- [Orchestrator Documentation](../orchestrator/README.md) Parent/child task orchestration concepts
+- [Orchestrator Documentation](../../orchestrator/README.md) Parent/child task orchestration concepts
   and lifecycle.
 - \*\*
 
@@ -99,10 +111,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
 
-
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 ## Navigation
 

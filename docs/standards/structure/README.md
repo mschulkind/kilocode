@@ -1,21 +1,35 @@
 # Document Structure 🏗️
+
 ## Table of Contents
-
 - [Document Structure 🏗️](#document-structure-)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Executive Summary](#executive-summary)
-  - [Research Context](#research-context)
-  - [Document Anatomy](#document-anatomy)
-  - [Headings & Hierarchy](#headings-hierarchy)
-  - [Navigation Footer](#navigation-footer)
-  - [Structure Validation](#structure-validation)
-  - [Common Mistakes](#common-mistakes)
-  - [Implementation Examples](#implementation-examples)
-    - [Complete Document Example](#complete-document-example)
-    - [Minimal Document Example](#minimal-document-example)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Document Anatomy](#document-anatomy)
+- [Headings & Hierarchy](#headings-hierarchy)
+- [Navigation Footer](#navigation-footer)
+- [Structure Validation](#structure-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete Document Example](#complete-document-example)
+- [Minimal Document Example](#minimal-document-example)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Document Structure 🏗️](#document-structure-)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Document Anatomy](#document-anatomy)
+- [Headings & Hierarchy](#headings-hierarchy)
+- [Navigation Footer](#navigation-footer)
+- [Structure Validation](#structure-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete Document Example](#complete-document-example)
+- [Minimal Document Example](#minimal-document-example)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -391,7 +405,7 @@ Common issues and solutions:
 ```
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../README.md) · [Next: Document
+- *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Document
   Anatomy](DOCUMENT_ANATOMY.md) ·
   [Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
 
@@ -406,6 +420,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
-
+- 📚 [Technical Glossary](../../../GLOSSARY.md)

@@ -1,20 +1,35 @@
 # Race Condition Analysis Documentation
-## Table of Contents
 
+## Table of Contents
 - [Race Condition Analysis Documentation](#race-condition-analysis-documentation)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [🗺️ Navigation Guide](#-navigation-guide)
-  - [Research Context](#research-context)
-    - [Quick Start Paths](#quick-start-paths)
-    - [Current Focus](#current-focus)
-  - [📚 Documentation Structure](#-documentation-structure)
-  - [🔗 Cross-References](#-crossreferences)
-  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
-  - [🧭 Navigation Footer](#-navigation-footer)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation](#navigation)
-    - [Example](#example)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#-navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#-documentation-structure)
+- [🔗 Cross-References](#-crossreferences)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Navigation](#navigation)
+- [Example](#example)
+- [Race Condition Analysis Documentation](#race-condition-analysis-documentation)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#-navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#-documentation-structure)
+- [🔗 Cross-References](#-crossreferences)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
 
 ## When You're Here
 
@@ -117,10 +132,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
 
-
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 ## Navigation
 

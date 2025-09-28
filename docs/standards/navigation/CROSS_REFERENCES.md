@@ -1,45 +1,86 @@
 # Cross-References 🔗
-## Table of Contents
 
+## Table of Contents
 - [Cross-References 🔗](#crossreferences-)
-  - [Table of Contents](#table-of-contents)
-  - [Executive Summary](#executive-summary)
-  - [Research Context](#research-context)
-  - [Cross-Reference Types](#crossreference-types)
-    - [Conceptual Links](#conceptual-links)
-    - [Procedural Links](#procedural-links)
-    - [Reference Links](#reference-links)
-    - [Navigation Links](#navigation-links)
-  - [Reference Placement](#reference-placement)
-    - [Within Documents](#within-documents)
-    - [Between Documents](#between-documents)
-    - [Across Domains](#across-domains)
-  - [Link Quality Standards](#link-quality-standards)
-    - [Descriptive Link Text](#descriptive-link-text)
-    - [Functional Links](#functional-links)
-    - [Relevant Connections](#relevant-connections)
-    - [Current Information](#current-information)
-  - [Cross-Reference Patterns](#crossreference-patterns)
-    - ["See Also" Pattern](#see-also-pattern)
-    - ["Next Steps" Pattern](#next-steps-pattern)
-    - ["Prerequisites" Pattern](#prerequisites-pattern)
-    - ["Examples" Pattern](#examples-pattern)
-  - [Reference Maintenance](#reference-maintenance)
-    - [Regular Validation](#regular-validation)
-    - [Content Updates](#content-updates)
-    - [Link Monitoring](#link-monitoring)
-  - [Common Issues](#common-issues)
-    - [Broken Links](#broken-links)
-    - [Irrelevant Links](#irrelevant-links)
-    - [Generic Link Text](#generic-link-text)
-    - [Outdated Information](#outdated-information)
-  - [Implementation Examples](#implementation-examples)
-    - [Complete Cross-Reference Example](#complete-crossreference-example)
-    - [Minimal Cross-Reference Example](#minimal-crossreference-example)
-  - [Navigation Footer](#navigation-footer)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Cross-Reference Types](#crossreference-types)
+- [Conceptual Links](#conceptual-links)
+- [Procedural Links](#procedural-links)
+- [Reference Links](#reference-links)
+- [Navigation Links](#navigation-links)
+- [Reference Placement](#reference-placement)
+- [Within Documents](#within-documents)
+- [Between Documents](#between-documents)
+- [Across Domains](#across-domains)
+- [Link Quality Standards](#link-quality-standards)
+- [Descriptive Link Text](#descriptive-link-text)
+- [Functional Links](#functional-links)
+- [Relevant Connections](#relevant-connections)
+- [Current Information](#current-information)
+- [Cross-Reference Patterns](#crossreference-patterns)
+- ["See Also" Pattern](#see-also-pattern)
+- ["Next Steps" Pattern](#next-steps-pattern)
+- ["Prerequisites" Pattern](#prerequisites-pattern)
+- ["Examples" Pattern](#examples-pattern)
+- [Reference Maintenance](#reference-maintenance)
+- [Regular Validation](#regular-validation)
+- [Content Updates](#content-updates)
+- [Link Monitoring](#link-monitoring)
+- [Common Issues](#common-issues)
+- [Broken Links](#broken-links)
+- [Irrelevant Links](#irrelevant-links)
+- [Generic Link Text](#generic-link-text)
+- [Outdated Information](#outdated-information)
+- [Implementation Examples](#implementation-examples)
+- [Complete Cross-Reference Example](#complete-crossreference-example)
+- [Minimal Cross-Reference Example](#minimal-crossreference-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Cross-References 🔗](#crossreferences-)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Cross-Reference Types](#crossreference-types)
+- [Conceptual Links](#conceptual-links)
+- [Procedural Links](#procedural-links)
+- [Reference Links](#reference-links)
+- [Navigation Links](#navigation-links)
+- [Reference Placement](#reference-placement)
+- [Within Documents](#within-documents)
+- [Between Documents](#between-documents)
+- [Across Domains](#across-domains)
+- [Link Quality Standards](#link-quality-standards)
+- [Descriptive Link Text](#descriptive-link-text)
+- [Functional Links](#functional-links)
+- [Relevant Connections](#relevant-connections)
+- [Current Information](#current-information)
+- [Cross-Reference Patterns](#crossreference-patterns)
+- ["See Also" Pattern](#see-also-pattern)
+- ["Next Steps" Pattern](#next-steps-pattern)
+- ["Prerequisites" Pattern](#prerequisites-pattern)
+- ["Examples" Pattern](#examples-pattern)
+- [Reference Maintenance](#reference-maintenance)
+- [Regular Validation](#regular-validation)
+- [Content Updates](#content-updates)
+- [Link Monitoring](#link-monitoring)
+- [Common Issues](#common-issues)
+- [Broken Links](#broken-links)
+- [Irrelevant Links](#irrelevant-links)
+- [Generic Link Text](#generic-link-text)
+- [Outdated Information](#outdated-information)
+- [Implementation Examples](#implementation-examples)
+- [Complete Cross-Reference Example](#complete-crossreference-example)
+- [Minimal Cross-Reference Example](#minimal-crossreference-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -69,10 +110,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Executive Summary
 
@@ -250,7 +291,7 @@ The race condition occurs when both main loop and subtask completion call
 
 - *Placement*\*: Link to related documents in the same domain **Use When**: Related information
   exists
-in other documents in the same domain **Benefits**: Access to related information while maintaining
+  in other documents in the same domain **Benefits**: Access to related information while maintaining
   domain context **Examples**:
 - "Related Documentation" sections
 - "Further Reading" sections
@@ -272,7 +313,7 @@ in other documents in the same domain **Benefits**: Access to related informatio
 
 - *Placement*\*: Link to related content in different domains **Use When**: Related information
   exists
-in other domains **Benefits**: Access to related information across the entire documentation system
+  in other domains **Benefits**: Access to related information across the entire documentation system
 
 - *Examples*\*:
 - "Architecture Impact" sections
@@ -379,7 +420,7 @@ details.
 ### Current Information
 
 - *Requirement*\*: Cross-references should point to current, up-to-date information **Benefits**:
-Users get accurate, current information **Maintenance**: Regularly update links to ensure they point
+  Users get accurate, current information **Maintenance**: Regularly update links to ensure they point
   to current content **Validation**: Check that linked content is still relevant and current
 
 - *Implementation*\*:
@@ -493,7 +534,7 @@ typical scenarios.
 ### Regular Validation
 
 - *Frequency*\*: Monthly or before major releases **Process**: Check all cross-references for
-functionality and relevance **Tools**: Use automated link checking tools **Documentation**: Document
+  functionality and relevance **Tools**: Use automated link checking tools **Documentation**: Document
   any issues found and resolutions
 
 - *Validation Checklist*\*:
@@ -506,7 +547,7 @@ functionality and relevance **Tools**: Use automated link checking tools **Docum
 ### Content Updates
 
 - *Trigger*\*: When content is moved, renamed, or restructured **Process**: Update all
-cross-references to reflect changes **Scope**: Check all documents that might reference the changed
+  cross-references to reflect changes **Scope**: Check all documents that might reference the changed
   content **Validation**: Test updated links to ensure they work
 
 - *Update Process*\*:
@@ -802,23 +843,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../architecture/README.md) →
-  [Orchestrator Documentation](../orchestrator/README.md)
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../../architecture/README.md) →
+  [Orchestrator Documentation](../../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -832,10 +873,14 @@ next, return to [Standards Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
+- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

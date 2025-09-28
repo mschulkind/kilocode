@@ -1,38 +1,72 @@
 # Laminar Configuration Guide
-## Table of Contents
 
+## Table of Contents
 - [Laminar Configuration Guide](#laminar-configuration-guide)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Start Example](#quick-start-example)
-  - [Configuration Settings](#configuration-settings)
-    - [Required Settings](#required-settings)
-      - [LMNR_API_KEY](#lmnr_api_key)
-    - [Optional Settings](#optional-settings)
-      - [LMNR_ENABLED](#lmnr_enabled)
-      - [LMNR_RECORD_IO](#lmnr_record_io)
-      - [LMNR_BASE_URL](#lmnr_base_url)
-      - [LMNR_HTTP_PORT](#lmnr_http_port)
-      - [LMNR_GRPC_PORT](#lmnr_grpc_port)
-  - [Environment-Specific Examples](#environmentspecific-examples)
-    - [Development Environment](#development-environment)
-    - [Staging Environment](#staging-environment)
-    - [Production Environment](#production-environment)
-  - [Project Integration](#project-integration)
-    - [Adding Laminar to Your Project](#adding-laminar-to-your-project)
-    - [Loading Environment Variables](#loading-environment-variables)
-  - [Troubleshooting](#troubleshooting)
-    - [Common Issues](#common-issues)
-    - [Debug Mode](#debug-mode)
-    - [Testing Configuration](#testing-configuration)
-  - [Security Considerations](#security-considerations)
-  - [Migration Guide](#migration-guide)
-    - [From Default Configuration](#from-default-configuration)
-    - [From Custom Configuration](#from-custom-configuration)
-  - [Support](#support)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Quick Start Example](#quick-start-example)
+- [Configuration Settings](#configuration-settings)
+- [Required Settings](#required-settings)
+- [LMNR\_API\_KEY](#lmnr_api_key)
+- [Optional Settings](#optional-settings)
+- [LMNR\_ENABLED](#lmnr_enabled)
+- [LMNR\_RECORD\_IO](#lmnr_record_io)
+- [LMNR\_BASE\_URL](#lmnr_base_url)
+- [LMNR\_HTTP\_PORT](#lmnr_http_port)
+- [LMNR\_GRPC\_PORT](#lmnr_grpc_port)
+- [Environment-Specific Examples](#environmentspecific-examples)
+- [Development Environment](#development-environment)
+- [Staging Environment](#staging-environment)
+- [Production Environment](#production-environment)
+- [Project Integration](#project-integration)
+- [Adding Laminar to Your Project](#adding-laminar-to-your-project)
+- [Loading Environment Variables](#loading-environment-variables)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [Testing Configuration](#testing-configuration)
+- [Security Considerations](#security-considerations)
+- [Migration Guide](#migration-guide)
+- [From Default Configuration](#from-default-configuration)
+- [From Custom Configuration](#from-custom-configuration)
+- [Support](#support)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Configuration Guide](#laminar-configuration-guide)
+- [Table of Contents](#table-of-contents)
+- [Quick Start Example](#quick-start-example)
+- [Configuration Settings](#configuration-settings)
+- [Required Settings](#required-settings)
+- [LMNR\_API\_KEY](#lmnr_api_key)
+- [Optional Settings](#optional-settings)
+- [LMNR\_ENABLED](#lmnr_enabled)
+- [LMNR\_RECORD\_IO](#lmnr_record_io)
+- [LMNR\_BASE\_URL](#lmnr_base_url)
+- [LMNR\_HTTP\_PORT](#lmnr_http_port)
+- [LMNR\_GRPC\_PORT](#lmnr_grpc_port)
+- [Environment-Specific Examples](#environmentspecific-examples)
+- [Development Environment](#development-environment)
+- [Staging Environment](#staging-environment)
+- [Production Environment](#production-environment)
+- [Project Integration](#project-integration)
+- [Adding Laminar to Your Project](#adding-laminar-to-your-project)
+- [Loading Environment Variables](#loading-environment-variables)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [Testing Configuration](#testing-configuration)
+- [Security Considerations](#security-considerations)
+- [Migration Guide](#migration-guide)
+- [From Default Configuration](#from-default-configuration)
+- [From Custom Configuration](#from-custom-configuration)
+- [Support](#support)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -44,10 +78,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Quick Start Example
 
@@ -400,9 +434,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

@@ -1,23 +1,42 @@
 # Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation
-## Table of Contents
 
+## Table of Contents
 - [Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation](#kilo-vs-roo-comparison-subtask-resume-orchestrator-continuation)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Navigation](#quick-navigation)
-  - [Research Context](#research-context)
-  - [Repositories and Branches Compared](#repositories-and-branches-compared)
-  - [Roo Branch Diff (against origin/main)](#roo-branch-diff-against-originmain)
-  - [Conceptual Before/After (Kilo vs Roo)](#conceptual-beforeafter-kilo-vs-roo)
-  - [Base Differences That Matter](#base-differences-that-matter)
-  - [Alignment With Our Cleanup Proposal](#alignment-with-our-cleanup-proposal)
-  - [Recommended Mapping of Kilo Proposal to Roo](#recommended-mapping-of-kilo-proposal-to-roo)
-  - [Side-by-Side Conceptual Diffs](#sidebyside-conceptual-diffs)
-  - [Conclusion](#conclusion)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
-    - [Example](#example)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Quick Navigation](#quick-navigation)
+- [Research Context](#research-context)
+- [Repositories and Branches Compared](#repositories-and-branches-compared)
+- [Roo Branch Diff (against origin/main)](#roo-branch-diff-against-originmain)
+- [Conceptual Before/After (Kilo vs Roo)](#conceptual-beforeafter-kilo-vs-roo)
+- [Base Differences That Matter](#base-differences-that-matter)
+- [Alignment With Our Cleanup Proposal](#alignment-with-our-cleanup-proposal)
+- [Recommended Mapping of Kilo Proposal to Roo](#recommended-mapping-of-kilo-proposal-to-roo)
+- [Side-by-Side Conceptual Diffs](#sidebyside-conceptual-diffs)
+- [Conclusion](#conclusion)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [Example](#example)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation](#kilo-vs-roo-comparison-subtask-resume-orchestrator-continuation)
+- [Table of Contents](#table-of-contents)
+- [Quick Navigation](#quick-navigation)
+- [Research Context](#research-context)
+- [Repositories and Branches Compared](#repositories-and-branches-compared)
+- [Roo Branch Diff (against origin/main)](#roo-branch-diff-against-originmain)
+- [Conceptual Before/After (Kilo vs Roo)](#conceptual-beforeafter-kilo-vs-roo)
+- [Base Differences That Matter](#base-differences-that-matter)
+- [Alignment With Our Cleanup Proposal](#alignment-with-our-cleanup-proposal)
+- [Recommended Mapping of Kilo Proposal to Roo](#recommended-mapping-of-kilo-proposal-to-roo)
+- [Side-by-Side Conceptual Diffs](#sidebyside-conceptual-diffs)
+- [Conclusion](#conclusion)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [Example](#example)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -31,10 +50,10 @@ differences, touched files, behavioral deltas, and alignment/variance with our c
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Quick Navigation
 
@@ -163,7 +182,7 @@ Tests (Kilo vs Roo)
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
@@ -171,14 +190,14 @@ Tests (Kilo vs Roo)
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -201,10 +220,14 @@ command --option value
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
+- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

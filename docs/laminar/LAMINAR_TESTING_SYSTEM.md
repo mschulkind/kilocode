@@ -1,42 +1,80 @@
 # Laminar Testing System
-## Table of Contents
 
+## Table of Contents
 - [Laminar Testing System](#laminar-testing-system)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Role in Laminar Integration](#role-in-laminar-integration)
-    - [Integration Scope](#integration-scope)
-  - [Testing Architecture](#testing-architecture)
-    - [Test Categories](#test-categories)
-    - [Test Organization](#test-organization)
-  - [Integration Testing](#integration-testing)
-    - [Subsystem Integration Tests](#subsystem-integration-tests)
-    - [Configuration Integration](#configuration-integration)
-  - [Performance Testing](#performance-testing)
-    - [Overhead Measurement](#overhead-measurement)
-    - [Scalability Testing](#scalability-testing)
-  - [Trace Accuracy Validation](#trace-accuracy-validation)
-    - [Span Content Validation](#span-content-validation)
-    - [Exception Recording](#exception-recording)
-  - [Subsystem Validation](#subsystem-validation)
-    - [Task System Validation](#task-system-validation)
-    - [Tool System Validation](#tool-system-validation)
-    - [LLM Integration Validation](#llm-integration-validation)
-  - [Mock and Test Utilities](#mock-and-test-utilities)
-    - [Mock Implementations](#mock-implementations)
-    - [Test Helpers](#test-helpers)
-  - [Continuous Integration](#continuous-integration)
-    - [CI Pipeline Integration](#ci-pipeline-integration)
-    - [Automated Validation](#automated-validation)
-  - [Test Maintenance](#test-maintenance)
-    - [Test Organization](#test-organization)
-    - [Flaky Test Prevention](#flaky-test-prevention)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [Implementation Timeline](#implementation-timeline)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Testing Architecture](#testing-architecture)
+- [Test Categories](#test-categories)
+- [Test Organization](#test-organization)
+- [Integration Testing](#integration-testing)
+- [Subsystem Integration Tests](#subsystem-integration-tests)
+- [Configuration Integration](#configuration-integration)
+- [Performance Testing](#performance-testing)
+- [Overhead Measurement](#overhead-measurement)
+- [Scalability Testing](#scalability-testing)
+- [Trace Accuracy Validation](#trace-accuracy-validation)
+- [Span Content Validation](#span-content-validation)
+- [Exception Recording](#exception-recording)
+- [Subsystem Validation](#subsystem-validation)
+- [Task System Validation](#task-system-validation)
+- [Tool System Validation](#tool-system-validation)
+- [LLM Integration Validation](#llm-integration-validation)
+- [Mock and Test Utilities](#mock-and-test-utilities)
+- [Mock Implementations](#mock-implementations)
+- [Test Helpers](#test-helpers)
+- [Continuous Integration](#continuous-integration)
+- [CI Pipeline Integration](#ci-pipeline-integration)
+- [Automated Validation](#automated-validation)
+- [Test Maintenance](#test-maintenance)
+- [Test Organization](#test-organization)
+- [Flaky Test Prevention](#flaky-test-prevention)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Testing System](#laminar-testing-system)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Testing Architecture](#testing-architecture)
+- [Test Categories](#test-categories)
+- [Test Organization](#test-organization)
+- [Integration Testing](#integration-testing)
+- [Subsystem Integration Tests](#subsystem-integration-tests)
+- [Configuration Integration](#configuration-integration)
+- [Performance Testing](#performance-testing)
+- [Overhead Measurement](#overhead-measurement)
+- [Scalability Testing](#scalability-testing)
+- [Trace Accuracy Validation](#trace-accuracy-validation)
+- [Span Content Validation](#span-content-validation)
+- [Exception Recording](#exception-recording)
+- [Subsystem Validation](#subsystem-validation)
+- [Task System Validation](#task-system-validation)
+- [Tool System Validation](#tool-system-validation)
+- [LLM Integration Validation](#llm-integration-validation)
+- [Mock and Test Utilities](#mock-and-test-utilities)
+- [Mock Implementations](#mock-implementations)
+- [Test Helpers](#test-helpers)
+- [Continuous Integration](#continuous-integration)
+- [CI Pipeline Integration](#ci-pipeline-integration)
+- [Automated Validation](#automated-validation)
+- [Test Maintenance](#test-maintenance)
+- [Test Organization](#test-organization)
+- [Flaky Test Prevention](#flaky-test-prevention)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
@@ -69,10 +107,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -601,9 +639,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

@@ -1,50 +1,96 @@
 # Laminar LLM Integration
-## Table of Contents
 
+## Table of Contents
 - [Laminar LLM Integration](#laminar-llm-integration)
-  - [Table of Contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
 - [Laminar LLM Integration](#laminar-llm-integration)
-  - [Overview](#overview)
-  - [between Kilo Code and Overview](#between-kilo-code-and-overview)
-    - [Key Integration Points calls](#key-integration-points-calls)
-    - [Key Integration dedicated Points](#key-integration-dedicated-points)
-    - [Integration Flow](#integration-flow)
-    - [Span Metadata](#span-metadata)
-  - [Cost Attribution](#cost-attribution)
-    - [Cost Calculation](#cost-calculation)
-  - [Model Information Capture](#model-information-capture)
-    - [Model Metadata](#model-metadata)
-    - [Cost Attribution](#cost-attribution)
-  - [Model Information Capture](#model-information-capture)
-  - [Cache Usage Tracking](#cache-usage-tracking)
-    - [Performance Tracking Cache](#performance-tracking-cache)
-  - [Cache Usage Tracking](#cache-usage-tracking)
-  - [Performance Metrics Age of](#performance-metrics-age-of)
-    - [cached responses](#cached-responses)
-    - [Cache Response Time Tracking](#cache-response-time-tracking)
-    - [improvements from cache usage](#improvements-from-cache-usage)
-  - [Performance Metrics](#performance-metrics)
-    - [Quality Metrics](#quality-metrics)
-  - [Error Handling](#error-handling)
-    - [Error Classification](#error-classification)
-    - [Error Context](#error-context)
-  - [Integration Points](#integration-points)
-    - [Error Context](#error-context)
-    - [TaskComprehensive error information System Integration](#taskcomprehensive-error-information-system-integration)
-    - [Service Layer Integration](#service-layer-integration)
-  - [Integration for LLM calls](#integration-for-llm-calls)
-    - [counting Task System and Integration](#counting-task-system-and-integration)
-    - [grouping](#grouping)
-    - [Service Configuration Integration](#service-configuration-integration)
-    - [Configuration Integration](#configuration-integration)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [NavigationCached()](#navigationcached)
-  - [Navigation](#navigation)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [between Kilo Code and Overview](#between-kilo-code-and-overview)
+- [Key Integration Points calls](#key-integration-points-calls)
+- [Key Integration dedicated Points](#key-integration-dedicated-points)
+- [Integration Flow](#integration-flow)
+- [Span Metadata](#span-metadata)
+- [Cost Attribution](#cost-attribution)
+- [Cost Calculation](#cost-calculation)
+- [Model Information Capture](#model-information-capture)
+- [Model Metadata](#model-metadata)
+- [Cost Attribution](#cost-attribution)
+- [Model Information Capture](#model-information-capture)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Performance Tracking Cache](#performance-tracking-cache)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Performance Metrics Age of](#performance-metrics-age-of)
+- [cached responses](#cached-responses)
+- [Cache Response Time Tracking](#cache-response-time-tracking)
+- [improvements from cache usage](#improvements-from-cache-usage)
+- [Performance Metrics](#performance-metrics)
+- [Quality Metrics](#quality-metrics)
+- [Error Handling](#error-handling)
+- [Error Classification](#error-classification)
+- [Error Context](#error-context)
+- [Integration Points](#integration-points)
+- [Error Context](#error-context)
+- [TaskComprehensive error information System Integration](#taskcomprehensive-error-information-system-integration)
+- [Service Layer Integration](#service-layer-integration)
+- [Integration for LLM calls](#integration-for-llm-calls)
+- [counting Task System and Integration](#counting-task-system-and-integration)
+- [grouping](#grouping)
+- [Service Configuration Integration](#service-configuration-integration)
+- [Configuration Integration](#configuration-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Code Reference Matrix](#code-reference-matrix)
+- [NavigationCached()](#navigationcached)
+- [Navigation](#navigation)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar LLM Integration](#laminar-llm-integration)
+- [Table of Contents](#table-of-contents)
+- [Laminar LLM Integration](#laminar-llm-integration)
+- [Overview](#overview)
+- [between Kilo Code and Overview](#between-kilo-code-and-overview)
+- [Key Integration Points calls](#key-integration-points-calls)
+- [Key Integration dedicated Points](#key-integration-dedicated-points)
+- [Integration Flow](#integration-flow)
+- [Span Metadata](#span-metadata)
+- [Cost Attribution](#cost-attribution)
+- [Cost Calculation](#cost-calculation)
+- [Model Information Capture](#model-information-capture)
+- [Model Metadata](#model-metadata)
+- [Cost Attribution](#cost-attribution)
+- [Model Information Capture](#model-information-capture)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Performance Tracking Cache](#performance-tracking-cache)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Performance Metrics Age of](#performance-metrics-age-of)
+- [cached responses](#cached-responses)
+- [Cache Response Time Tracking](#cache-response-time-tracking)
+- [improvements from cache usage](#improvements-from-cache-usage)
+- [Performance Metrics](#performance-metrics)
+- [Quality Metrics](#quality-metrics)
+- [Error Handling](#error-handling)
+- [Error Classification](#error-classification)
+- [Error Context](#error-context)
+- [Integration Points](#integration-points)
+- [Error Context](#error-context)
+- [TaskComprehensive error information System Integration](#taskcomprehensive-error-information-system-integration)
+- [Service Layer Integration](#service-layer-integration)
+- [Integration for LLM calls](#integration-for-llm-calls)
+- [counting Task System and Integration](#counting-task-system-and-integration)
+- [grouping](#grouping)
+- [Service Configuration Integration](#service-configuration-integration)
+- [Configuration Integration](#configuration-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Code Reference Matrix](#code-reference-matrix)
+- [NavigationCached()](#navigationcached)
+- [Navigation](#navigation)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
@@ -80,10 +126,10 @@ Model) interactions, costs, providing detailed and model performance tracing for
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -493,12 +539,10 @@ disabled)
 |MService.ts) Task | ` LLM Integration | [`src/core/task/Task.ts`](callLLMsrc/core/task/Task.ts)()`,
 `|`makeLLMRequest()`, `calculateCost()` |process APILLMResponse()` | Span tracing creation, cost
 calculation | |, token Cache tracking | | Manager LLM Service |
-[`src/services |
-[`src/services/cache/llm/LLMService.ts/CacheManager.ts`](src/services/cache`](src/CacheManager.ts)
+[`src/services | [`src/services/cache/llm/LLMService.ts/CacheManager.ts`](src/services/cache`](src/CacheManager.ts)
 | `/services/llm/LLgetMService.ts) | `callAPI()`, `Cached()`, `calculatesetCost()` | APICached()` |
 Cache call wrapping, usage tracking | | Token Counter |
-[` costsrc calculation | | Token/services/llm/TokenCounter Counter |
-[`src/services/llm.ts`](src/services/llm/Token/TokenCounter.ts`](src/services/llCounter.ts)
+[` costsrc calculation | | Token/services/llm/TokenCounter Counter | [`src/services/llm.ts`](src/services/llm/Token/TokenCounter.ts`](src/services/llCounter.ts)
 | `countTokensm()`,
 `/TokenCounter.ts) | `countTokens()`, `trackUsage()` | Token accounting | |trackUsage()` | Token
 Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/services Cache Manager
@@ -509,8 +553,7 @@ Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/se
 
 <a id="navigation-footer">\</aResponse()\` | Cache>
 - Back:
-\[`LAMINAR tracking | _SUB| Cost Calculator |
-[`SYSTEMS\_README.md`](LAMINsrc/services/llm/CostCalculatorAR_SUBSYSTEMS_README.md:1.ts)
+  \[`LAMINAR tracking | _SUB| Cost Calculator | [`SYSTEMS\_README.md`](LAMINsrc/services/llm/CostCalculatorAR_SUBSYSTEMS_README.md:1.ts)
   ·`]\(src/services/llm/C
   Root: \[`LAMINARostCalculator.ts) | `calculateCost\_SUBSYSTEMS\_README.md`](LAMIN()`,AR\_SUBSYSTEM
   `updateRates()` |S\_README.md:1 Cost computation |
@@ -559,9 +602,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

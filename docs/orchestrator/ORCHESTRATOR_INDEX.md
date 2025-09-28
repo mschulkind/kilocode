@@ -1,22 +1,40 @@
 # Orchestrator Master Index
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Master Index](#orchestrator-master-index)
-  - [Table of Contents](#table-of-contents)
-  - [Purpose & Scope](#purpose-scope)
-  - [High-Level Responsibilities](#highlevel-responsibilities)
-  - [Core Concepts At a Glance](#core-concepts-at-a-glance)
-  - [Lifecycle Snapshot](#lifecycle-snapshot)
-  - [Documentation Map](#documentation-map)
-  - [Quick Reference Matrix](#quick-reference-matrix)
-  - [Architecture Flow Diagram](#architecture-flow-diagram)
-  - [Guardrails & Safety Overview](#guardrails-safety-overview)
-  - [Change Management & Versioning](#change-management-versioning)
-  - [Glossary](#glossary)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Purpose & Scope](#purpose-scope)
+- [High-Level Responsibilities](#highlevel-responsibilities)
+- [Core Concepts At a Glance](#core-concepts-at-a-glance)
+- [Lifecycle Snapshot](#lifecycle-snapshot)
+- [Documentation Map](#documentation-map)
+- [Quick Reference Matrix](#quick-reference-matrix)
+- [Architecture Flow Diagram](#architecture-flow-diagram)
+- [Guardrails & Safety Overview](#guardrails-safety-overview)
+- [Change Management & Versioning](#change-management-versioning)
+- [Glossary](#glossary)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Orchestrator Master Index](#orchestrator-master-index)
+- [Table of Contents](#table-of-contents)
+- [Purpose & Scope](#purpose-scope)
+- [High-Level Responsibilities](#highlevel-responsibilities)
+- [Core Concepts At a Glance](#core-concepts-at-a-glance)
+- [Lifecycle Snapshot](#lifecycle-snapshot)
+- [Documentation Map](#documentation-map)
+- [Quick Reference Matrix](#quick-reference-matrix)
+- [Architecture Flow Diagram](#architecture-flow-diagram)
+- [Guardrails & Safety Overview](#guardrails-safety-overview)
+- [Change Management & Versioning](#change-management-versioning)
+- [Glossary](#glossary)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -30,10 +48,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Purpose & Scope
 
@@ -125,7 +143,7 @@ A typical task follows this orchestrated sequence:
 5. **Streaming Parse & Tool Handling:** The model's response is parsed in real-time. Tool calls are
    identified and dispatched.
 6. **Gating & Guardrails:** The system checks for `todo` list compliance, file restrictions, and
-other safety rules like those defined in [`isToolAllowedForMode`](../../src/shared/modes.ts#L167).
+   other safety rules like those defined in [`isToolAllowedForMode`](../../src/shared/modes.ts#L167).
 7. **Subtask Delegation:** If necessary, a subtask is created and managed via
    [`startSubtask`](../../src/core/task/Task.ts#L1628).
 8. **Result Propagation:** The result of the tool or subtask is fed back into the loop.
@@ -246,7 +264,7 @@ To keep documentation synchronized with the codebase, follow these principles:
 3. **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid
    diagrams.
 4. **Rules as Policy:** For automated verification of documentation rules, consider adding checks
-   inspired by the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
+   inspired by the [Documentation Guide](../../DOCUMENTATION_GUIDE.md).
 - \*\*
 
 ## Glossary
@@ -307,10 +325,14 @@ next, return to the appropriate README for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
+- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

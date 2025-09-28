@@ -1,41 +1,78 @@
 # Laminar Span Nesting and Queuing Mechanism
-## Table of Contents
 
+## Table of Contents
 - [Laminar Span Nesting and Queuing Mechanism](#laminar-span-nesting-and-queuing-mechanism)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Span Nesting Hierarchy](#span-nesting-hierarchy)
-  - [Queuing Mechanism](#queuing-mechanism)
-    - [Why Queue Spans?](#why-queue-spans)
-    - [Queuing Implementation](#queuing-implementation)
-    - [Processing Queued Spans](#processing-queued-spans)
-  - [Chat History Span Issue](#chat-history-span-issue)
-    - [Problem Description](#problem-description)
-    - [Root Cause Analysis](#root-cause-analysis)
-    - [Current Span Creation](#current-span-creation)
-  - [Current Implementation](#current-implementation)
-    - [LaminarService Key Methods](#laminarservice-key-methods)
-    - [Span Lifecycle](#span-lifecycle)
-  - [Proposed Solutions](#proposed-solutions)
-    - [1. Early Initialization](#1-early-initialization)
-    - [2. Improved Error Handling](#2-improved-error-handling)
-    - [3. Span Naming Standardization](#3-span-naming-standardization)
-    - [4. Session ID Validation](#4-session-id-validation)
-  - [Code Examples](#code-examples)
-    - [Creating a Task Span](#creating-a-task-span)
-    - [LLM Call Span](#llm-call-span)
-    - [Span Completion](#span-completion)
-  - [Troubleshooting](#troubleshooting)
-    - [Debug Logging](#debug-logging)
-    - [Common Issues](#common-issues)
-  - [Future Improvements](#future-improvements)
-    - [1. Async Initialization](#1-async-initialization)
-    - [2. Span Buffering](#2-span-buffering)
-    - [3. Configuration Validation](#3-configuration-validation)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Span Nesting Hierarchy](#span-nesting-hierarchy)
+- [Queuing Mechanism](#queuing-mechanism)
+- [Why Queue Spans?](#why-queue-spans)
+- [Queuing Implementation](#queuing-implementation)
+- [Processing Queued Spans](#processing-queued-spans)
+- [Chat History Span Issue](#chat-history-span-issue)
+- [Problem Description](#problem-description)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Current Span Creation](#current-span-creation)
+- [Current Implementation](#current-implementation)
+- [LaminarService Key Methods](#laminarservice-key-methods)
+- [Span Lifecycle](#span-lifecycle)
+- [Proposed Solutions](#proposed-solutions)
+- [1. Early Initialization](#1-early-initialization)
+- [2. Improved Error Handling](#2-improved-error-handling)
+- [3. Span Naming Standardization](#3-span-naming-standardization)
+- [4. Session ID Validation](#4-session-id-validation)
+- [Code Examples](#code-examples)
+- [Creating a Task Span](#creating-a-task-span)
+- [LLM Call Span](#llm-call-span)
+- [Span Completion](#span-completion)
+- [Troubleshooting](#troubleshooting)
+- [Debug Logging](#debug-logging)
+- [Common Issues](#common-issues)
+- [Future Improvements](#future-improvements)
+- [1. Async Initialization](#1-async-initialization)
+- [2. Span Buffering](#2-span-buffering)
+- [3. Configuration Validation](#3-configuration-validation)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Span Nesting and Queuing Mechanism](#laminar-span-nesting-and-queuing-mechanism)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Span Nesting Hierarchy](#span-nesting-hierarchy)
+- [Queuing Mechanism](#queuing-mechanism)
+- [Why Queue Spans?](#why-queue-spans)
+- [Queuing Implementation](#queuing-implementation)
+- [Processing Queued Spans](#processing-queued-spans)
+- [Chat History Span Issue](#chat-history-span-issue)
+- [Problem Description](#problem-description)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Current Span Creation](#current-span-creation)
+- [Current Implementation](#current-implementation)
+- [LaminarService Key Methods](#laminarservice-key-methods)
+- [Span Lifecycle](#span-lifecycle)
+- [Proposed Solutions](#proposed-solutions)
+- [1. Early Initialization](#1-early-initialization)
+- [2. Improved Error Handling](#2-improved-error-handling)
+- [3. Span Naming Standardization](#3-span-naming-standardization)
+- [4. Session ID Validation](#4-session-id-validation)
+- [Code Examples](#code-examples)
+- [Creating a Task Span](#creating-a-task-span)
+- [LLM Call Span](#llm-call-span)
+- [Span Completion](#span-completion)
+- [Troubleshooting](#troubleshooting)
+- [Debug Logging](#debug-logging)
+- [Common Issues](#common-issues)
+- [Future Improvements](#future-improvements)
+- [1. Async Initialization](#1-async-initialization)
+- [2. Span Buffering](#2-span-buffering)
+- [3. Configuration Validation](#3-configuration-validation)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -65,10 +102,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -379,9 +416,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

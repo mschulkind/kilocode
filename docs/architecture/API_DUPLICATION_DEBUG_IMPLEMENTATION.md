@@ -1,41 +1,78 @@
 # API Duplication Debug Implementation Guide
-## Table of Contents
 
+## Table of Contents
 - [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
-  - [Table of Contents](#table-of-contents)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-  - [Research Context](#research-context)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Overview](#overview)
-  - [Implementation Phases](#implementation-phases)
-    - [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
-      - [1.1 Task-Level Request Tracker](#11-tasklevel-request-tracker)
-      - [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
-      - [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
-    - [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
-      - [2.1 Atomic Operations](#21-atomic-operations)
-    - [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
-      - [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
-      - [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
-    - [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
-      - [4.1 Tool Helper Function](#41-tool-helper-function)
-      - [4.2 Update All Tool Files](#42-update-all-tool-files)
-    - [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
-      - [5.1 Provider Request Tracking](#51-provider-request-tracking)
-      - [5.2 Update Provider Files](#52-update-provider-files)
-  - [Testing and Validation](#testing-and-validation)
-    - [1. Unit Tests](#1-unit-tests)
-    - [2. Integration Tests](#2-integration-tests)
-  - [Deployment and Monitoring](#deployment-and-monitoring)
-    - [1. Environment Configuration](#1-environment-configuration)
-    - [2. Log Analysis Tools](#2-log-analysis-tools)
-    - [3. Monitoring Dashboard](#3-monitoring-dashboard)
-  - [Cleanup and Removal](#cleanup-and-removal)
-    - [1. Feature Flags](#1-feature-flags)
-    - [2. Removal Checklist](#2-removal-checklist)
-  - [Conclusion](#conclusion)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [Research Context](#research-context)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Overview](#overview)
+- [Implementation Phases](#implementation-phases)
+- [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
+- [1.1 Task-Level Request Tracker](#11-tasklevel-request-tracker)
+- [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
+- [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
+- [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
+- [2.1 Atomic Operations](#21-atomic-operations)
+- [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
+- [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
+- [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
+- [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
+- [4.1 Tool Helper Function](#41-tool-helper-function)
+- [4.2 Update All Tool Files](#42-update-all-tool-files)
+- [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
+- [5.1 Provider Request Tracking](#51-provider-request-tracking)
+- [5.2 Update Provider Files](#52-update-provider-files)
+- [Testing and Validation](#testing-and-validation)
+- [1. Unit Tests](#1-unit-tests)
+- [2. Integration Tests](#2-integration-tests)
+- [Deployment and Monitoring](#deployment-and-monitoring)
+- [1. Environment Configuration](#1-environment-configuration)
+- [2. Log Analysis Tools](#2-log-analysis-tools)
+- [3. Monitoring Dashboard](#3-monitoring-dashboard)
+- [Cleanup and Removal](#cleanup-and-removal)
+- [1. Feature Flags](#1-feature-flags)
+- [2. Removal Checklist](#2-removal-checklist)
+- [Conclusion](#conclusion)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
+- [Table of Contents](#table-of-contents)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [Research Context](#research-context)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Overview](#overview)
+- [Implementation Phases](#implementation-phases)
+- [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
+- [1.1 Task-Level Request Tracker](#11-tasklevel-request-tracker)
+- [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
+- [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
+- [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
+- [2.1 Atomic Operations](#21-atomic-operations)
+- [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
+- [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
+- [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
+- [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
+- [4.1 Tool Helper Function](#41-tool-helper-function)
+- [4.2 Update All Tool Files](#42-update-all-tool-files)
+- [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
+- [5.1 Provider Request Tracking](#51-provider-request-tracking)
+- [5.2 Update Provider Files](#52-update-provider-files)
+- [Testing and Validation](#testing-and-validation)
+- [1. Unit Tests](#1-unit-tests)
+- [2. Integration Tests](#2-integration-tests)
+- [Deployment and Monitoring](#deployment-and-monitoring)
+- [1. Environment Configuration](#1-environment-configuration)
+- [2. Log Analysis Tools](#2-log-analysis-tools)
+- [3. Monitoring Dashboard](#3-monitoring-dashboard)
+- [Cleanup and Removal](#cleanup-and-removal)
+- [1. Feature Flags](#1-feature-flags)
+- [2. Removal Checklist](#2-removal-checklist)
+- [Conclusion](#conclusion)
+- [Navigation Footer](#navigation-footer)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -56,10 +93,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
@@ -109,7 +146,7 @@ document's role or purpose, this section helps orient you.
 ### No Dead Ends Policy
 
 This guide provides complete implementation steps with clear next actions. If you're unsure where to
-go next, return to [Architecture Documentation](../README.md) for guidance.
+go next, return to [Architecture Documentation](../../README.md) for guidance.
 
 ## Overview
 
@@ -960,12 +997,16 @@ each component.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](../README.md) ·
+- *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
   [→ Race Condition Analysis](README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 

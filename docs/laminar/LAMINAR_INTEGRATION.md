@@ -1,32 +1,60 @@
 # Laminar Integration
-## Table of Contents
 
+## Table of Contents
 - [Laminar Integration](#laminar-integration)
-  - [Table of Contents](#table-of-contents)
-  - [What is Laminar?](#what-is-laminar)
-  - [Purpose in Kilo Code](#purpose-in-kilo-code)
-  - [Integration with Telemetry Systems](#integration-with-telemetry-systems)
-  - [Key Components](#key-components)
-    - [LaminarService](#laminarservice)
-    - [Spans](#spans)
-    - [Decorators](#decorators)
-    - [Configuration](#configuration)
-  - [Effects on Codebase](#effects-on-codebase)
-    - [Task Execution](#task-execution)
-    - [Tool Handling](#tool-handling)
-    - [Authentication](#authentication)
-    - [Checkpoints](#checkpoints)
-  - [Configuration](#configuration)
-  - [Code Examples](#code-examples)
-    - [Span Creation in Task Execution](#span-creation-in-task-execution)
-    - [Tool Execution Tracing](#tool-execution-tracing)
-    - [Decorator Usage](#decorator-usage)
-    - [Exception Recording](#exception-recording)
-  - [Differences from Cline](#differences-from-cline)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [What is Laminar?](#what-is-laminar)
+- [Purpose in Kilo Code](#purpose-in-kilo-code)
+- [Integration with Telemetry Systems](#integration-with-telemetry-systems)
+- [Key Components](#key-components)
+- [LaminarService](#laminarservice)
+- [Spans](#spans)
+- [Decorators](#decorators)
+- [Configuration](#configuration)
+- [Effects on Codebase](#effects-on-codebase)
+- [Task Execution](#task-execution)
+- [Tool Handling](#tool-handling)
+- [Authentication](#authentication)
+- [Checkpoints](#checkpoints)
+- [Configuration](#configuration)
+- [Code Examples](#code-examples)
+- [Span Creation in Task Execution](#span-creation-in-task-execution)
+- [Tool Execution Tracing](#tool-execution-tracing)
+- [Decorator Usage](#decorator-usage)
+- [Exception Recording](#exception-recording)
+- [Differences from Cline](#differences-from-cline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Integration](#laminar-integration)
+- [Table of Contents](#table-of-contents)
+- [What is Laminar?](#what-is-laminar)
+- [Purpose in Kilo Code](#purpose-in-kilo-code)
+- [Integration with Telemetry Systems](#integration-with-telemetry-systems)
+- [Key Components](#key-components)
+- [LaminarService](#laminarservice)
+- [Spans](#spans)
+- [Decorators](#decorators)
+- [Configuration](#configuration)
+- [Effects on Codebase](#effects-on-codebase)
+- [Task Execution](#task-execution)
+- [Tool Handling](#tool-handling)
+- [Authentication](#authentication)
+- [Checkpoints](#checkpoints)
+- [Configuration](#configuration)
+- [Code Examples](#code-examples)
+- [Span Creation in Task Execution](#span-creation-in-task-execution)
+- [Tool Execution Tracing](#tool-execution-tracing)
+- [Decorator Usage](#decorator-usage)
+- [Exception Recording](#exception-recording)
+- [Differences from Cline](#differences-from-cline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
@@ -51,10 +79,10 @@ execution, tool usage, and LLM interactions.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## What is Laminar?
 
@@ -328,9 +356,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

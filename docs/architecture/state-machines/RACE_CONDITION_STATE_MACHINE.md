@@ -1,28 +1,52 @@
 # Race Condition State Machine
-## Table of Contents
 
+## Table of Contents
 - [Race Condition State Machine](#race-condition-state-machine)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Research Context](#research-context)
-  - [Race Condition States](#race-condition-states)
-  - [State Descriptions](#state-descriptions)
-    - [NormalExecution State](#normalexecution-state)
-    - [RaceCondition State](#racecondition-state)
-    - [SynchronizedExecution State](#synchronizedexecution-state)
-  - [Race Condition Detection](#race-condition-detection)
-  - [Synchronization Implementation](#synchronization-implementation)
-  - [State Transition Triggers](#state-transition-triggers)
-    - [NormalExecution → RaceCondition](#normalexecution-racecondition)
-    - [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
-    - [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
-  - [Monitoring and Debugging](#monitoring-and-debugging)
-  - [Key States](#key-states)
-  - [Prevention Strategies](#prevention-strategies)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Race Condition States](#race-condition-states)
+- [State Descriptions](#state-descriptions)
+- [NormalExecution State](#normalexecution-state)
+- [RaceCondition State](#racecondition-state)
+- [SynchronizedExecution State](#synchronizedexecution-state)
+- [Race Condition Detection](#race-condition-detection)
+- [Synchronization Implementation](#synchronization-implementation)
+- [State Transition Triggers](#state-transition-triggers)
+- [NormalExecution → RaceCondition](#normalexecution-racecondition)
+- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+- [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
+- [Monitoring and Debugging](#monitoring-and-debugging)
+- [Key States](#key-states)
+- [Prevention Strategies](#prevention-strategies)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Race Condition State Machine](#race-condition-state-machine)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Race Condition States](#race-condition-states)
+- [State Descriptions](#state-descriptions)
+- [NormalExecution State](#normalexecution-state)
+- [RaceCondition State](#racecondition-state)
+- [SynchronizedExecution State](#synchronizedexecution-state)
+- [Race Condition Detection](#race-condition-detection)
+- [Synchronization Implementation](#synchronization-implementation)
+- [State Transition Triggers](#state-transition-triggers)
+- [NormalExecution → RaceCondition](#normalexecution-racecondition)
+- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+- [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
+- [Monitoring and Debugging](#monitoring-and-debugging)
+- [Key States](#key-states)
+- [Prevention Strategies](#prevention-strategies)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -32,10 +56,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -311,7 +335,7 @@ class RaceConditionMonitor {
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
@@ -319,14 +343,14 @@ class RaceConditionMonitor {
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -342,10 +366,14 @@ next, return to [Architecture Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
+- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,22 +1,37 @@
 # Core Standards 🎯
+
 ## Table of Contents
-
 - [Core Standards 🎯](#core-standards-)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Executive Summary](#executive-summary)
-  - [Research Context](#research-context)
-  - [Core Principles](#core-principles)
-  - [File & Directory Conventions](#file-directory-conventions)
-  - [Linking Policy](#linking-policy)
-  - [Content Organization](#content-organization)
-  - [Quick Reference](#quick-reference)
-    - [](#)
-    - [](#)
-  - [Related Standards](#related-standards)
-  - [Navigation Footer](#navigation-footer)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Core Principles](#core-principles)
+- [File & Directory Conventions](#file-directory-conventions)
+- [Linking Policy](#linking-policy)
+- [Content Organization](#content-organization)
+- [Quick Reference](#quick-reference)
+- [](#)
+- [](#)
+- [Related Standards](#related-standards)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Core Standards 🎯](#core-standards-)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Core Principles](#core-principles)
+- [File & Directory Conventions](#file-directory-conventions)
+- [Linking Policy](#linking-policy)
+- [Content Organization](#content-organization)
+- [Quick Reference](#quick-reference)
+- [](#)
+- [](#)
+- [Related Standards](#related-standards)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -64,7 +79,7 @@ document's role or purpose, this section helps orient you.
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
 - These are the fundamental rules that every KiloCode contributor MUST follow. They form the
-foundation for all other documentation standards and ensure consistency across the entire project.\*
+  foundation for all other documentation standards and ensure consistency across the entire project.\*
 
 - *Essential Rules:*\*
 
@@ -113,7 +128,7 @@ foundation for all other documentation standards and ensure consistency across t
 - Examples: `architecture/`, `services/`, `orchestrator/`, `laminar/`, `ui/`, `tools/`, `testing/`
 
 - *Index Files*\*:
-- Maintain a top-level [`README.md`](../README.md) that lists domain indexes
+- Maintain a top-level [`README.md`](../../../README.md) that lists domain indexes
 - Use `README.md` in subdirectories when a directory contains multiple topical docs
 - Index files should provide clear navigation and categorization
 
@@ -212,6 +227,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
-
+- 📚 [Technical Glossary](../../../GLOSSARY.md)

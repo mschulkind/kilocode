@@ -1,33 +1,62 @@
 # CHAT MESSAGE TIMESTAMP PLAN
-## Table of Contents
 
+## Table of Contents
 - [CHAT MESSAGE TIMESTAMP PLAN](#chat-message-timestamp-plan)
-  - [Table of Contents](#table-of-contents)
-  - [Executive summary](#executive-summary)
-  - [Goals](#goals)
-  - [Non-goals](#nongoals)
-  - [Current state](#current-state)
-  - [Requirements](#requirements)
-    - [Functional requirements](#functional-requirements)
-    - [Non-functional requirements](#nonfunctional-requirements)
-  - [Data model](#data-model)
-  - [Timestamp generation & normalization](#timestamp-generation-normalization)
-  - [Event timeline instrumentation](#event-timeline-instrumentation)
-  - [UI rendering](#ui-rendering)
-  - [Persistence & rehydration](#persistence-rehydration)
-  - [Edge cases](#edge-cases)
-  - [Formatting rules](#formatting-rules)
-  - [Instrumentation & logging](#instrumentation-logging)
-  - [Testing strategy](#testing-strategy)
-  - [Migration plan](#migration-plan)
-  - [Risks & mitigations](#risks-mitigations)
-  - [Open questions](#open-questions)
-  - [Acceptance criteria](#acceptance-criteria)
-  - [Change log](#change-log)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive summary](#executive-summary)
+- [Goals](#goals)
+- [Non-goals](#nongoals)
+- [Current state](#current-state)
+- [Requirements](#requirements)
+- [Functional requirements](#functional-requirements)
+- [Non-functional requirements](#nonfunctional-requirements)
+- [Data model](#data-model)
+- [Timestamp generation & normalization](#timestamp-generation-normalization)
+- [Event timeline instrumentation](#event-timeline-instrumentation)
+- [UI rendering](#ui-rendering)
+- [Persistence & rehydration](#persistence-rehydration)
+- [Edge cases](#edge-cases)
+- [Formatting rules](#formatting-rules)
+- [Instrumentation & logging](#instrumentation-logging)
+- [Testing strategy](#testing-strategy)
+- [Migration plan](#migration-plan)
+- [Risks & mitigations](#risks-mitigations)
+- [Open questions](#open-questions)
+- [Acceptance criteria](#acceptance-criteria)
+- [Change log](#change-log)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [CHAT MESSAGE TIMESTAMP PLAN](#chat-message-timestamp-plan)
+- [Table of Contents](#table-of-contents)
+- [Executive summary](#executive-summary)
+- [Goals](#goals)
+- [Non-goals](#nongoals)
+- [Current state](#current-state)
+- [Requirements](#requirements)
+- [Functional requirements](#functional-requirements)
+- [Non-functional requirements](#nonfunctional-requirements)
+- [Data model](#data-model)
+- [Timestamp generation & normalization](#timestamp-generation-normalization)
+- [Event timeline instrumentation](#event-timeline-instrumentation)
+- [UI rendering](#ui-rendering)
+- [Persistence & rehydration](#persistence-rehydration)
+- [Edge cases](#edge-cases)
+- [Formatting rules](#formatting-rules)
+- [Instrumentation & logging](#instrumentation-logging)
+- [Testing strategy](#testing-strategy)
+- [Migration plan](#migration-plan)
+- [Risks & mitigations](#risks-mitigations)
+- [Open questions](#open-questions)
+- [Acceptance criteria](#acceptance-criteria)
+- [Change log](#change-log)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -65,10 +94,10 @@ timestamps to chat messages.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Executive summary
 
@@ -488,7 +517,8 @@ if (Math.random() < 0.01) {
 | Risk                     | Mitigation
 |
 | ------------------------ |
-- ---------------------------
+
+***
 
 |
 | **Clock Skew**           | Use the orchestrator as the source of truth for the canonical
@@ -561,9 +591,13 @@ next, return to the appropriate README for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Documentation Hub](../README.md) ·

@@ -1,31 +1,55 @@
 # Architecture Documentation
+
 ## Table of Contents
-
 - [Architecture Documentation](#architecture-documentation)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Research Context](#research-context)
-  - [Architecture Overview](#architecture-overview)
-  - [Quick Start Guide](#quick-start-guide)
-    - [For Expert Engineers New to KiloCode](#for-expert-engineers-new-to-kilocode)
-    - [For System Architects](#for-system-architects)
-    - [For Developers](#for-developers)
-  - [System Components](#system-components)
-    - [Core Architecture Layers](#core-architecture-layers)
-    - [Critical System Analysis](#critical-system-analysis)
-  - [Critical Analysis](#critical-analysis)
-    - [Race Condition Investigation](#race-condition-investigation)
-    - [API Duplication Analysis](#api-duplication-analysis)
-  - [Repository Structure](#repository-structure)
-    - [Repository Organization](#repository-organization)
-    - [Development Resources](#development-resources)
-  - [Development Resources](#development-resources)
-    - [State Machines](#state-machines)
-    - [External Integrations](#external-integrations)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation](#navigation)
-    - [Example](#example)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Architecture Overview](#architecture-overview)
+- [Quick Start Guide](#quick-start-guide)
+- [For Expert Engineers New to KiloCode](#for-expert-engineers-new-to-kilocode)
+- [For System Architects](#for-system-architects)
+- [For Developers](#for-developers)
+- [System Components](#system-components)
+- [Core Architecture Layers](#core-architecture-layers)
+- [Critical System Analysis](#critical-system-analysis)
+- [Critical Analysis](#critical-analysis)
+- [Race Condition Investigation](#race-condition-investigation)
+- [API Duplication Analysis](#api-duplication-analysis)
+- [Repository Structure](#repository-structure)
+- [Repository Organization](#repository-organization)
+- [Development Resources](#development-resources)
+- [Development Resources](#development-resources)
+- [State Machines](#state-machines)
+- [External Integrations](#external-integrations)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Navigation](#navigation)
+- [Example](#example)
+- [Architecture Documentation](#architecture-documentation)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Architecture Overview](#architecture-overview)
+- [Quick Start Guide](#quick-start-guide)
+- [For Expert Engineers New to KiloCode](#for-expert-engineers-new-to-kilocode)
+- [For System Architects](#for-system-architects)
+- [For Developers](#for-developers)
+- [System Components](#system-components)
+- [Core Architecture Layers](#core-architecture-layers)
+- [Critical System Analysis](#critical-system-analysis)
+- [Critical Analysis](#critical-analysis)
+- [Race Condition Investigation](#race-condition-investigation)
+- [API Duplication Analysis](#api-duplication-analysis)
+- [Repository Structure](#repository-structure)
+- [Repository Organization](#repository-organization)
+- [Development Resources](#development-resources)
+- [Development Resources](#development-resources)
+- [State Machines](#state-machines)
+- [External Integrations](#external-integrations)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -122,7 +146,7 @@ conditions, state machines, repository structure, and architectural improvements
 
 - **[Problem Overview](race-condition/PROBLEM_OVERVIEW.md)** - Race condition symptoms and impact
 - **[Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)** -
-Technical root
+  Technical root
   cause identification
 - **[Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)** -
   Proposed fixes and improvements
@@ -179,9 +203,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 - Quick start paths provide clear entry points for different user types
 
-
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
@@ -192,8 +214,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 # Example markdown
 [Link](url)
 ```
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../README.md)
 - [← Repository Overview](REPOSITORY_OVERVIEW.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← Race Condition Analysis](race-condition/README.md)
-- [← Project Root](../README.md)
+- [← Project Root](../../README.md)

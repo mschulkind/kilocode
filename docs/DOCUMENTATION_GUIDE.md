@@ -1,39 +1,72 @@
 # Documentation Standards Guide
+
 ## Table of Contents
-
 - [Documentation Standards Guide](#documentation-standards-guide)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Executive Summary](#executive-summary)
-  - [Core Principles](#core-principles)
-  - [File & Directory Conventions](#file-directory-conventions)
-    - [README Index Description Rules](#readme-index-description-rules)
-  - [Document Structure](#document-structure)
-  - [Headings & Hierarchy](#headings-hierarchy)
-  - [Linking Policy](#linking-policy)
-  - [Code Blocks & Media](#code-blocks-media)
-  - [Content Organization](#content-organization)
-  - [Navigation & User Experience](#navigation-user-experience)
-    - [Quick Start Paths](#quick-start-paths)
-    - [Navigation Guidelines](#navigation-guidelines)
-  - [Code Documentation Standards](#code-documentation-standards)
-    - [Inline Comments for Data Structures](#inline-comments-for-data-structures)
-    - [Code Snippet Organization](#code-snippet-organization)
-  - [Engagement & Accessibility](#engagement-accessibility)
-    - [Analogies and Metaphors](#analogies-and-metaphors)
-    - [Fun Facts and Engagement](#fun-facts-and-engagement)
-  - [Technical Glossary](#technical-glossary)
-    - [Core Concepts](#core-concepts)
-    - [System-Specific Terms](#systemspecific-terms)
-  - [Navigation Footer Specification](#navigation-footer-specification)
-  - [Review & Submission Checklist](#review-submission-checklist)
-    - [Basic Structure](#basic-structure)
-    - [Linking and References](#linking-and-references)
-    - [User Experience](#user-experience)
-    - [Code Documentation](#code-documentation)
-    - [Engagement and Accessibility](#engagement-and-accessibility)
-  - [Implementation Guidelines](#implementation-guidelines)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Core Principles](#core-principles)
+- [File & Directory Conventions](#file-directory-conventions)
+- [README Index Description Rules](#readme-index-description-rules)
+- [Document Structure](#document-structure)
+- [Headings & Hierarchy](#headings-hierarchy)
+- [Linking Policy](#linking-policy)
+- [Code Blocks & Media](#code-blocks-media)
+- [Content Organization](#content-organization)
+- [Navigation & User Experience](#navigation-user-experience)
+- [Quick Start Paths](#quick-start-paths)
+- [Navigation Guidelines](#navigation-guidelines)
+- [Code Documentation Standards](#code-documentation-standards)
+- [Inline Comments for Data Structures](#inline-comments-for-data-structures)
+- [Code Snippet Organization](#code-snippet-organization)
+- [Engagement & Accessibility](#engagement-accessibility)
+- [Analogies and Metaphors](#analogies-and-metaphors)
+- [Fun Facts and Engagement](#fun-facts-and-engagement)
+- [Technical Glossary](#technical-glossary)
+- [Core Concepts](#core-concepts)
+- [System-Specific Terms](#systemspecific-terms)
+- [Navigation Footer Specification](#navigation-footer-specification)
+- [Review & Submission Checklist](#review-submission-checklist)
+- [Basic Structure](#basic-structure)
+- [Linking and References](#linking-and-references)
+- [User Experience](#user-experience)
+- [Code Documentation](#code-documentation)
+- [Engagement and Accessibility](#engagement-and-accessibility)
+- [Implementation Guidelines](#implementation-guidelines)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Documentation Standards Guide](#documentation-standards-guide)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Core Principles](#core-principles)
+- [File & Directory Conventions](#file-directory-conventions)
+- [README Index Description Rules](#readme-index-description-rules)
+- [Document Structure](#document-structure)
+- [Headings & Hierarchy](#headings-hierarchy)
+- [Linking Policy](#linking-policy)
+- [Code Blocks & Media](#code-blocks-media)
+- [Content Organization](#content-organization)
+- [Navigation & User Experience](#navigation-user-experience)
+- [Quick Start Paths](#quick-start-paths)
+- [Navigation Guidelines](#navigation-guidelines)
+- [Code Documentation Standards](#code-documentation-standards)
+- [Inline Comments for Data Structures](#inline-comments-for-data-structures)
+- [Code Snippet Organization](#code-snippet-organization)
+- [Engagement & Accessibility](#engagement-accessibility)
+- [Analogies and Metaphors](#analogies-and-metaphors)
+- [Fun Facts and Engagement](#fun-facts-and-engagement)
+- [Technical Glossary](#technical-glossary)
+- [Core Concepts](#core-concepts)
+- [System-Specific Terms](#systemspecific-terms)
+- [Navigation Footer Specification](#navigation-footer-specification)
+- [Review & Submission Checklist](#review-submission-checklist)
+- [Basic Structure](#basic-structure)
+- [Linking and References](#linking-and-references)
+- [User Experience](#user-experience)
+- [Code Documentation](#code-documentation)
+- [Engagement and Accessibility](#engagement-and-accessibility)
+- [Implementation Guidelines](#implementation-guidelines)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -211,12 +244,12 @@ graph TD
 
 - *Examples*\*:
 - `[Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) - Detailed
-investigation of the concurrent recursive calls race condition, including the problematic commit and
+  investigation of the concurrent recursive calls race condition, including the problematic commit and
   code changes that created the issue. Provides comprehensive analysis of how the continueParentTask
   method introduced concurrent execution paths.`
 - `[Solution Options](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Proposes
   multiple approaches to fix the race condition, including lock-based solutions, call tracking, and
-subtask completion coordination. Includes implementation strategies and testing approaches for each
+  subtask completion coordination. Includes implementation strategies and testing approaches for each
   solution.`
 
 - *GitHub-Specific Considerations*\*:
@@ -459,7 +492,7 @@ enum ExampleState {
   waiting for the next user input. It's the visual cue that the turn boundary has been reached.
 
 - *Race Condition*\*: A situation where multiple processes or threads access shared resources
-concurrently, leading to unpredictable behavior. In our context, this occurs when multiple API calls
+  concurrently, leading to unpredictable behavior. In our context, this occurs when multiple API calls
   are made simultaneously, causing responses to be interleaved and corrupted.
 
 - *State Machine*\*: A computational model that describes how a system behaves in response to
@@ -623,6 +656,4 @@ Every section in this document connects you to your next step:
   `/docs/DOCUMENTATION_GUIDE.md#L1`
 
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
-

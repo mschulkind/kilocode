@@ -1,42 +1,80 @@
 # Laminar Task System Integration
-## Table of Contents
 
+## Table of Contents
 - [Laminar Task System Integration](#laminar-task-system-integration)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Role in Kilo Code](#role-in-kilo-code)
-    - [Laminar Integration Scope](#laminar-integration-scope)
-  - [Task System Architecture](#task-system-architecture)
-    - [Core Components](#core-components)
-  - [Laminar Integration Points](#laminar-integration-points)
-    - [Task Lifecycle Tracing](#task-lifecycle-tracing)
-    - [Span Hierarchy](#span-hierarchy)
-    - [Span Metadata](#span-metadata)
-  - [LLM Integration Within Tasks](#llm-integration-within-tasks)
-    - [Token Usage Tracking](#token-usage-tracking)
-    - [Cost Tracking and Model Information](#cost-tracking-and-model-information)
-    - [Cache Usage Tracking](#cache-usage-tracking)
-  - [Authentication and User Context](#authentication-and-user-context)
-    - [User Context Integration](#user-context-integration)
-    - [Privacy Considerations](#privacy-considerations)
-  - [Performance Considerations](#performance-considerations)
-    - [Overhead Minimization](#overhead-minimization)
-    - [Resource Management](#resource-management)
-    - [Performance Metrics](#performance-metrics)
-  - [Error Handling and Recovery](#error-handling-and-recovery)
-    - [Error Classification](#error-classification)
-    - [Recovery Mechanisms](#recovery-mechanisms)
-    - [Monitoring and Alerting](#monitoring-and-alerting)
-  - [Integration with Other Subsystems](#integration-with-other-subsystems)
-    - [Tools Subsystem Integration](#tools-subsystem-integration)
-    - [Checkpoints Subsystem Integration](#checkpoints-subsystem-integration)
-    - [Service Layer Integration](#service-layer-integration)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [Implementation Timeline](#implementation-timeline)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Role in Kilo Code](#role-in-kilo-code)
+- [Laminar Integration Scope](#laminar-integration-scope)
+- [Task System Architecture](#task-system-architecture)
+- [Core Components](#core-components)
+- [Laminar Integration Points](#laminar-integration-points)
+- [Task Lifecycle Tracing](#task-lifecycle-tracing)
+- [Span Hierarchy](#span-hierarchy)
+- [Span Metadata](#span-metadata)
+- [LLM Integration Within Tasks](#llm-integration-within-tasks)
+- [Token Usage Tracking](#token-usage-tracking)
+- [Cost Tracking and Model Information](#cost-tracking-and-model-information)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Authentication and User Context](#authentication-and-user-context)
+- [User Context Integration](#user-context-integration)
+- [Privacy Considerations](#privacy-considerations)
+- [Performance Considerations](#performance-considerations)
+- [Overhead Minimization](#overhead-minimization)
+- [Resource Management](#resource-management)
+- [Performance Metrics](#performance-metrics)
+- [Error Handling and Recovery](#error-handling-and-recovery)
+- [Error Classification](#error-classification)
+- [Recovery Mechanisms](#recovery-mechanisms)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Integration with Other Subsystems](#integration-with-other-subsystems)
+- [Tools Subsystem Integration](#tools-subsystem-integration)
+- [Checkpoints Subsystem Integration](#checkpoints-subsystem-integration)
+- [Service Layer Integration](#service-layer-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Task System Integration](#laminar-task-system-integration)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Role in Kilo Code](#role-in-kilo-code)
+- [Laminar Integration Scope](#laminar-integration-scope)
+- [Task System Architecture](#task-system-architecture)
+- [Core Components](#core-components)
+- [Laminar Integration Points](#laminar-integration-points)
+- [Task Lifecycle Tracing](#task-lifecycle-tracing)
+- [Span Hierarchy](#span-hierarchy)
+- [Span Metadata](#span-metadata)
+- [LLM Integration Within Tasks](#llm-integration-within-tasks)
+- [Token Usage Tracking](#token-usage-tracking)
+- [Cost Tracking and Model Information](#cost-tracking-and-model-information)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Authentication and User Context](#authentication-and-user-context)
+- [User Context Integration](#user-context-integration)
+- [Privacy Considerations](#privacy-considerations)
+- [Performance Considerations](#performance-considerations)
+- [Overhead Minimization](#overhead-minimization)
+- [Resource Management](#resource-management)
+- [Performance Metrics](#performance-metrics)
+- [Error Handling and Recovery](#error-handling-and-recovery)
+- [Error Classification](#error-classification)
+- [Recovery Mechanisms](#recovery-mechanisms)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Integration with Other Subsystems](#integration-with-other-subsystems)
+- [Tools Subsystem Integration](#tools-subsystem-integration)
+- [Checkpoints Subsystem Integration](#checkpoints-subsystem-integration)
+- [Service Layer Integration](#service-layer-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -51,10 +89,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -384,7 +422,8 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 | Component       | Primary Functions
 | Key Integration Points     |
 | --------------- |
-- ------------------
+
+***
 
 | -------------------------- |
 | Task Lifecycle  | [`constructor`](src/core/task/Task.ts#L317),
@@ -460,9 +499,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

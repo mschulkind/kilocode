@@ -1,38 +1,72 @@
 # Branch Analysis: catrielmuller/orchestator-load-subtask
-## Table of Contents
 
+## Table of Contents
 - [Branch Analysis: catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestatorloadsubtask)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Navigation](#quick-navigation)
-  - [Research Context](#research-context)
-  - [Race Condition Details](#race-condition-details)
-  - [Summary of Intent](#summary-of-intent)
-  - [Change 1: ](#change-1-)
-    - [Before](#before)
-    - [After](#after)
-    - [Motivation](#motivation)
-    - [Side Effect](#side-effect)
-  - [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
-    - [Before](#before)
-    - [After](#after)
-    - [Motivation](#motivation)
-    - [Side Effect](#side-effect)
-  - [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
-    - [Before](#before)
-    - [After](#after)
-    - [Motivation](#motivation)
-    - [Side Effect](#side-effect)
-  - [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
-    - [Before](#before)
-    - [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
-    - [Motivation](#motivation)
-    - [Side Effect](#side-effect)
-  - [Net Impact](#net-impact)
-  - [Recommendations](#recommendations)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Quick Navigation](#quick-navigation)
+- [Research Context](#research-context)
+- [Race Condition Details](#race-condition-details)
+- [Summary of Intent](#summary-of-intent)
+- [Change 1: ](#change-1-)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
+- [Before](#before)
+- [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Net Impact](#net-impact)
+- [Recommendations](#recommendations)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Branch Analysis: catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestatorloadsubtask)
+- [Table of Contents](#table-of-contents)
+- [Quick Navigation](#quick-navigation)
+- [Research Context](#research-context)
+- [Race Condition Details](#race-condition-details)
+- [Summary of Intent](#summary-of-intent)
+- [Change 1: ](#change-1-)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
+- [Before](#before)
+- [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Net Impact](#net-impact)
+- [Recommendations](#recommendations)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -45,10 +79,10 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Quick Navigation
 
@@ -245,7 +279,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
@@ -253,14 +287,14 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -276,10 +310,14 @@ next, return to [Architecture Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
+- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

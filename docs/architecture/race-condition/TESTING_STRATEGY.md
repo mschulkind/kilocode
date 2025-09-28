@@ -1,33 +1,61 @@
 # Testing Strategy
-## Table of Contents
 
+## Table of Contents
 - [Testing Strategy](#testing-strategy)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Testing Overview](#testing-overview)
-  - [Research Context](#research-context)
-  - [Test Categories](#test-categories)
-    - [Unit Tests](#unit-tests)
-    - [Integration Tests](#integration-tests)
-    - [End-to-End Tests](#endtoend-tests)
-  - [Load Testing](#load-testing)
-    - [Concurrent User Simulation](#concurrent-user-simulation)
-    - [Stress Testing](#stress-testing)
-  - [Performance Testing](#performance-testing)
-    - [Response Time Validation](#response-time-validation)
-  - [Monitoring and Alerting](#monitoring-and-alerting)
-    - [Real-time Monitoring](#realtime-monitoring)
-    - [Automated Testing](#automated-testing)
-  - [Test Data Management](#test-data-management)
-    - [Test Data Setup](#test-data-setup)
-    - [Test Environment](#test-environment)
-  - [Test Execution Strategy](#test-execution-strategy)
-    - [Test Phases](#test-phases)
-    - [Test Reporting](#test-reporting)
-  - [Next Steps](#next-steps)
-  - [🧭 Navigation Footer](#-navigation-footer)
-  - [Navigation Footer](#navigation-footer)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Testing Overview](#testing-overview)
+- [Research Context](#research-context)
+- [Test Categories](#test-categories)
+- [Unit Tests](#unit-tests)
+- [Integration Tests](#integration-tests)
+- [End-to-End Tests](#endtoend-tests)
+- [Load Testing](#load-testing)
+- [Concurrent User Simulation](#concurrent-user-simulation)
+- [Stress Testing](#stress-testing)
+- [Performance Testing](#performance-testing)
+- [Response Time Validation](#response-time-validation)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Real-time Monitoring](#realtime-monitoring)
+- [Automated Testing](#automated-testing)
+- [Test Data Management](#test-data-management)
+- [Test Data Setup](#test-data-setup)
+- [Test Environment](#test-environment)
+- [Test Execution Strategy](#test-execution-strategy)
+- [Test Phases](#test-phases)
+- [Test Reporting](#test-reporting)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Testing Strategy](#testing-strategy)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Testing Overview](#testing-overview)
+- [Research Context](#research-context)
+- [Test Categories](#test-categories)
+- [Unit Tests](#unit-tests)
+- [Integration Tests](#integration-tests)
+- [End-to-End Tests](#endtoend-tests)
+- [Load Testing](#load-testing)
+- [Concurrent User Simulation](#concurrent-user-simulation)
+- [Stress Testing](#stress-testing)
+- [Performance Testing](#performance-testing)
+- [Response Time Validation](#response-time-validation)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Real-time Monitoring](#realtime-monitoring)
+- [Automated Testing](#automated-testing)
+- [Test Data Management](#test-data-management)
+- [Test Data Setup](#test-data-setup)
+- [Test Environment](#test-environment)
+- [Test Execution Strategy](#test-execution-strategy)
+- [Test Phases](#test-phases)
+- [Test Reporting](#test-reporting)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 
 ## When You're Here
 
@@ -521,8 +549,8 @@ class RaceConditionMonitor {
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
-  [race-condition](../architecture/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+  [race-condition](../../architecture/) · ↑ Table of Contents
 
 ## No Dead Ends Policy
 
@@ -532,6 +560,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
-
+- 📚 [Technical Glossary](../../../GLOSSARY.md)

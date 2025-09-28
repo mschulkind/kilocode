@@ -1,36 +1,68 @@
 # Laminar Span Nesting System
-## Table of Contents
 
+## Table of Contents
 - [Laminar Span Nesting System](#laminar-span-nesting-system)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Key Components](#key-components)
-  - [Span Types and Hierarchy](#span-types-and-hierarchy)
-    - [Span Type Categories](#span-type-categories)
-    - [Span Hierarchy](#span-hierarchy)
-  - [Span Creation and Lifecycle](#span-creation-and-lifecycle)
-    - [Creation Process](#creation-process)
-    - [Lifecycle Management](#lifecycle-management)
-  - [Queuing Mechanism](#queuing-mechanism)
-    - [When Queuing Occurs](#when-queuing-occurs)
-    - [Queue vs Direct Creation](#queue-vs-direct-creation)
-  - [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
-    - [Root Cause Analysis](#root-cause-analysis)
-    - [Test Connection vs Task Spans](#test-connection-vs-task-spans)
-  - [Troubleshooting Span Issues](#troubleshooting-span-issues)
-    - [Diagnostic Steps](#diagnostic-steps)
-    - [Common Issues and Solutions](#common-issues-and-solutions)
-    - [Debug Logging](#debug-logging)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [Implementation Details](#implementation-details)
-    - [Span Naming Convention](#span-naming-convention)
-    - [Session Management](#session-management)
-    - [Error Handling](#error-handling)
-    - [Performance Considerations](#performance-considerations)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Key Components](#key-components)
+- [Span Types and Hierarchy](#span-types-and-hierarchy)
+- [Span Type Categories](#span-type-categories)
+- [Span Hierarchy](#span-hierarchy)
+- [Span Creation and Lifecycle](#span-creation-and-lifecycle)
+- [Creation Process](#creation-process)
+- [Lifecycle Management](#lifecycle-management)
+- [Queuing Mechanism](#queuing-mechanism)
+- [When Queuing Occurs](#when-queuing-occurs)
+- [Queue vs Direct Creation](#queue-vs-direct-creation)
+- [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Test Connection vs Task Spans](#test-connection-vs-task-spans)
+- [Troubleshooting Span Issues](#troubleshooting-span-issues)
+- [Diagnostic Steps](#diagnostic-steps)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Debug Logging](#debug-logging)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Details](#implementation-details)
+- [Span Naming Convention](#span-naming-convention)
+- [Session Management](#session-management)
+- [Error Handling](#error-handling)
+- [Performance Considerations](#performance-considerations)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Span Nesting System](#laminar-span-nesting-system)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Key Components](#key-components)
+- [Span Types and Hierarchy](#span-types-and-hierarchy)
+- [Span Type Categories](#span-type-categories)
+- [Span Hierarchy](#span-hierarchy)
+- [Span Creation and Lifecycle](#span-creation-and-lifecycle)
+- [Creation Process](#creation-process)
+- [Lifecycle Management](#lifecycle-management)
+- [Queuing Mechanism](#queuing-mechanism)
+- [When Queuing Occurs](#when-queuing-occurs)
+- [Queue vs Direct Creation](#queue-vs-direct-creation)
+- [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Test Connection vs Task Spans](#test-connection-vs-task-spans)
+- [Troubleshooting Span Issues](#troubleshooting-span-issues)
+- [Diagnostic Steps](#diagnostic-steps)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Debug Logging](#debug-logging)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Details](#implementation-details)
+- [Span Naming Convention](#span-naming-convention)
+- [Session Management](#session-management)
+- [Error Handling](#error-handling)
+- [Performance Considerations](#performance-considerations)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -60,10 +92,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -433,9 +465,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

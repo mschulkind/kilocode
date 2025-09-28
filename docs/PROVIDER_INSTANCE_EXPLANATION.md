@@ -1,28 +1,52 @@
 # Provider Instance Explanation
-## Table of Contents
 
+## Table of Contents
 - [Provider Instance Explanation](#provider-instance-explanation)
-  - [Table of Contents](#table-of-contents)
-  - [Definition](#definition)
-  - [Role and Responsibilities](#role-and-responsibilities)
-    - [1. Request Handling](#1-request-handling)
-    - [2. Instruction Building Coordination](#2-instruction-building-coordination)
-    - [3. System Integration](#3-system-integration)
-  - [Position in the Architecture](#position-in-the-architecture)
-    - [In the Data Flow Sequence](#in-the-data-flow-sequence)
-    - [Invocation Points](#invocation-points)
-  - [Key Characteristics](#key-characteristics)
-    - [Lazy Loading](#lazy-loading)
-    - [Central Coordination](#central-coordination)
-    - [Extension Lifecycle](#extension-lifecycle)
-  - [Implementation Details](#implementation-details)
-    - [File Location](#file-location)
-    - [Integration Points](#integration-points)
-  - [Summary](#summary)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Definition](#definition)
+- [Role and Responsibilities](#role-and-responsibilities)
+- [1. Request Handling](#1-request-handling)
+- [2. Instruction Building Coordination](#2-instruction-building-coordination)
+- [3. System Integration](#3-system-integration)
+- [Position in the Architecture](#position-in-the-architecture)
+- [In the Data Flow Sequence](#in-the-data-flow-sequence)
+- [Invocation Points](#invocation-points)
+- [Key Characteristics](#key-characteristics)
+- [Lazy Loading](#lazy-loading)
+- [Central Coordination](#central-coordination)
+- [Extension Lifecycle](#extension-lifecycle)
+- [Implementation Details](#implementation-details)
+- [File Location](#file-location)
+- [Integration Points](#integration-points)
+- [Summary](#summary)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Provider Instance Explanation](#provider-instance-explanation)
+- [Table of Contents](#table-of-contents)
+- [Definition](#definition)
+- [Role and Responsibilities](#role-and-responsibilities)
+- [1. Request Handling](#1-request-handling)
+- [2. Instruction Building Coordination](#2-instruction-building-coordination)
+- [3. System Integration](#3-system-integration)
+- [Position in the Architecture](#position-in-the-architecture)
+- [In the Data Flow Sequence](#in-the-data-flow-sequence)
+- [Invocation Points](#invocation-points)
+- [Key Characteristics](#key-characteristics)
+- [Lazy Loading](#lazy-loading)
+- [Central Coordination](#central-coordination)
+- [Extension Lifecycle](#extension-lifecycle)
+- [Implementation Details](#implementation-details)
+- [File Location](#file-location)
+- [Integration Points](#integration-points)
+- [Summary](#summary)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
@@ -35,10 +59,10 @@ of the Kilo Code extension's rules loading system.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Definition
 
@@ -166,9 +190,13 @@ next, return to the appropriate README for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Documentation Hub](../README.md) ·

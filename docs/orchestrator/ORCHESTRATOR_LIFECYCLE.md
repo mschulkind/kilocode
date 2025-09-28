@@ -1,31 +1,59 @@
 # Orchestrator Task Lifecycle
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
-  - [Table of Contents](#table-of-contents)
-    - [Related Documents](#related-documents)
-    - [Lifecycle Overview](#lifecycle-overview)
-    - [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
-      - [Stage 1: Initiation](#stage-1-initiation)
-      - [Stage 2: Prompt Generation](#stage-2-prompt-generation)
-      - [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
-      - [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
-      - [Stage 5: Completion](#stage-5-completion)
-      - [Stage 6: Termination](#stage-6-termination)
-    - [State Transitions](#state-transitions)
-    - [The Execution Loop: ](#the-execution-loop-)
-    - [Subtask Lifecycle](#subtask-lifecycle)
-    - [Navigation Footer](#navigation-footer)
-  - [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
-    - [Quick pointer to code](#quick-pointer-to-code)
-    - [Concrete send patterns (summary)](#concrete-send-patterns-summary)
-    - [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
-    - [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
-    - [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-    - [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Lifecycle Overview](#lifecycle-overview)
+- [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
+- [Stage 1: Initiation](#stage-1-initiation)
+- [Stage 2: Prompt Generation](#stage-2-prompt-generation)
+- [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
+- [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
+- [Stage 5: Completion](#stage-5-completion)
+- [Stage 6: Termination](#stage-6-termination)
+- [State Transitions](#state-transitions)
+- [The Execution Loop: ](#the-execution-loop-)
+- [Subtask Lifecycle](#subtask-lifecycle)
+- [Navigation Footer](#navigation-footer)
+- [When You're Here](#when-youre-here)
+- [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
+- [Quick pointer to code](#quick-pointer-to-code)
+- [Concrete send patterns (summary)](#concrete-send-patterns-summary)
+- [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
+- [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
+- [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Lifecycle Overview](#lifecycle-overview)
+- [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
+- [Stage 1: Initiation](#stage-1-initiation)
+- [Stage 2: Prompt Generation](#stage-2-prompt-generation)
+- [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
+- [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
+- [Stage 5: Completion](#stage-5-completion)
+- [Stage 6: Termination](#stage-6-termination)
+- [State Transitions](#state-transitions)
+- [The Execution Loop: ](#the-execution-loop-)
+- [Subtask Lifecycle](#subtask-lifecycle)
+- [Navigation Footer](#navigation-footer)
+- [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
+- [Quick pointer to code](#quick-pointer-to-code)
+- [Concrete send patterns (summary)](#concrete-send-patterns-summary)
+- [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
+- [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
+- [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -219,10 +247,10 @@ End of document.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Provider network send points, duplicate-causes, and recommended docs-only changes
 
@@ -351,15 +379,17 @@ testing checklist. Tell me to proceed and I will create:
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [docs/](../) · [orchestrator/](./) ·
   [↑ Table of Contents](#orchestrator-task-lifecycle)
 
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
-

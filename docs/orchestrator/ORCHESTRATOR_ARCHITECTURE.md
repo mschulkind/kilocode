@@ -1,21 +1,38 @@
 # Orchestrator Architecture
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Architecture](#orchestrator-architecture)
-  - [Table of Contents](#table-of-contents)
-    - [Related Documents](#related-documents)
-    - [Architectural Philosophy](#architectural-philosophy)
-    - [Core Components](#core-components)
-    - [Data Flow Diagram](#data-flow-diagram)
-    - [Component Deep Dive](#component-deep-dive)
-      - [Task Engine](#task-engine)
-      - [Streaming Parser](#streaming-parser)
-      - [Tool Executor & Library](#tool-executor-library)
-    - [Key Interactions](#key-interactions)
-    - [Navigation Footer](#navigation-footer)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Architectural Philosophy](#architectural-philosophy)
+- [Core Components](#core-components)
+- [Data Flow Diagram](#data-flow-diagram)
+- [Component Deep Dive](#component-deep-dive)
+- [Task Engine](#task-engine)
+- [Streaming Parser](#streaming-parser)
+- [Tool Executor & Library](#tool-executor-library)
+- [Key Interactions](#key-interactions)
+- [Navigation Footer](#navigation-footer)
+- [When You're Here](#when-youre-here)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Orchestrator Architecture](#orchestrator-architecture)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Architectural Philosophy](#architectural-philosophy)
+- [Core Components](#core-components)
+- [Data Flow Diagram](#data-flow-diagram)
+- [Component Deep Dive](#component-deep-dive)
+- [Task Engine](#task-engine)
+- [Streaming Parser](#streaming-parser)
+- [Tool Executor & Library](#tool-executor-library)
+- [Key Interactions](#key-interactions)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -43,7 +60,7 @@
 
 ### Related Documents
 
-<a
+\<a
 
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
@@ -192,10 +209,10 @@ which is then handled by the Task Engine.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
@@ -246,9 +263,13 @@ next, return to [Orchestrator Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·

@@ -1,60 +1,116 @@
 # Documentation Automation & Tooling Options
-## Table of Contents
 
+## Table of Contents
 - [Documentation Automation & Tooling Options](#documentation-automation-tooling-options)
-  - [Table of Contents](#table-of-contents)
-  - [Executive Summary](#executive-summary)
-  - [Goals & Scope](#goals-scope)
-  - [Options Catalog](#options-catalog)
-    - [Link Checking](#link-checking)
-    - [Prose/Style Linting](#prosestyle-linting)
-    - [Templating: Footers/Headers/Blocks](#templating-footersheadersblocks)
-    - [Diagram Validation](#diagram-validation)
-    - [Cross-File Consistency Checks](#crossfile-consistency-checks)
-    - [GitHub Flavored Markdown (GFM) Validation](#github-flavored-markdown-gfm-validation)
-    - [Additional Tools](#additional-tools)
-  - [Remark Ecosystem Deep Dive](#remark-ecosystem-deep-dive)
-    - [What is Remark?](#what-is-remark)
-    - [Core Remark Tools](#core-remark-tools)
-    - [KiloCode-Specific Remark Setup](#kilocodespecific-remark-setup)
-    - [Advanced Remark Tools](#advanced-remark-tools)
-  - [](#)
-    - [Remark for KiloCode Use Cases](#remark-for-kilocode-use-cases)
-    - [Integration with KiloCode Workflow](#integration-with-kilocode-workflow)
-    - [Remark vs Other Tools](#remark-vs-other-tools)
-  - [MkDocs vs Remark: Comparison & Integration](#mkdocs-vs-remark-comparison-integration)
-    - [Are They Mutually Exclusive?](#are-they-mutually-exclusive)
-    - [Detailed Comparison](#detailed-comparison)
-    - [Why Different Options Use Different Tools](#why-different-options-use-different-tools)
-    - [Complementary Integration Strategies](#complementary-integration-strategies)
-    - [When to Use Each Tool](#when-to-use-each-tool)
-    - [KiloCode-Specific Recommendations](#kilocodespecific-recommendations)
-    - [Configuration Examples](#configuration-examples)
-  - [Documentation Standards as Linters](#documentation-standards-as-linters)
-    - [Automatable Rules from Documentation Guide](#automatable-rules-from-documentation-guide)
-    - [Custom Linter Implementation](#custom-linter-implementation)
-  - [Concrete Toolset Recommendations](#concrete-toolset-recommendations)
-    - [Option 1: Minimal Setup (Quick Start)](#option-1-minimal-setup-quick-start)
-    - [Option 2: Advanced Setup (Recommended)](#option-2-advanced-setup-recommended)
-    - [Option 3: Enterprise Setup (Full Automation)](#option-3-enterprise-setup-full-automation)
-  - [Phased Implementation Approach](#phased-implementation-approach)
-    - [Phase 1: Foundation (Week 1-2)](#phase-1-foundation-week-12)
-    - [Phase 2: Standards Enforcement (Week 3-4)](#phase-2-standards-enforcement-week-34)
-    - [Phase 3: Advanced Automation (Week 5-6)](#phase-3-advanced-automation-week-56)
-    - [Phase 4: Optimization (Week 7-8)](#phase-4-optimization-week-78)
-  - [Recommended Baseline Stack](#recommended-baseline-stack)
-  - [Integration Plan](#integration-plan)
-    - [Local Development](#local-development)
-    - [CI (GitHub Actions)](#ci-github-actions)
-  - [Custom Linter Development](#custom-linter-development)
-    - [Implementation Priority](#implementation-priority)
-    - [Custom Rule Examples](#custom-rule-examples)
-  - [Future Enhancements](#future-enhancements)
-    - [Phase 2+ Features](#phase-2-features)
-  - [Research Context & Next Steps](#research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Goals & Scope](#goals-scope)
+- [Options Catalog](#options-catalog)
+- [Link Checking](#link-checking)
+- [Prose/Style Linting](#prosestyle-linting)
+- [Templating: Footers/Headers/Blocks](#templating-footersheadersblocks)
+- [Diagram Validation](#diagram-validation)
+- [Cross-File Consistency Checks](#crossfile-consistency-checks)
+- [GitHub Flavored Markdown (GFM) Validation](#github-flavored-markdown-gfm-validation)
+- [Additional Tools](#additional-tools)
+- [Remark Ecosystem Deep Dive](#remark-ecosystem-deep-dive)
+- [What is Remark?](#what-is-remark)
+- [Core Remark Tools](#core-remark-tools)
+- [KiloCode-Specific Remark Setup](#kilocodespecific-remark-setup)
+- [Advanced Remark Tools](#advanced-remark-tools)
+- [](#)
+- [Remark for KiloCode Use Cases](#remark-for-kilocode-use-cases)
+- [Integration with KiloCode Workflow](#integration-with-kilocode-workflow)
+- [Remark vs Other Tools](#remark-vs-other-tools)
+- [MkDocs vs Remark: Comparison & Integration](#mkdocs-vs-remark-comparison-integration)
+- [Are They Mutually Exclusive?](#are-they-mutually-exclusive)
+- [Detailed Comparison](#detailed-comparison)
+- [Why Different Options Use Different Tools](#why-different-options-use-different-tools)
+- [Complementary Integration Strategies](#complementary-integration-strategies)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [KiloCode-Specific Recommendations](#kilocodespecific-recommendations)
+- [Configuration Examples](#configuration-examples)
+- [Documentation Standards as Linters](#documentation-standards-as-linters)
+- [Automatable Rules from Documentation Guide](#automatable-rules-from-documentation-guide)
+- [Custom Linter Implementation](#custom-linter-implementation)
+- [Concrete Toolset Recommendations](#concrete-toolset-recommendations)
+- [Option 1: Minimal Setup (Quick Start)](#option-1-minimal-setup-quick-start)
+- [Option 2: Advanced Setup (Recommended)](#option-2-advanced-setup-recommended)
+- [Option 3: Enterprise Setup (Full Automation)](#option-3-enterprise-setup-full-automation)
+- [Phased Implementation Approach](#phased-implementation-approach)
+- [Phase 1: Foundation (Week 1-2)](#phase-1-foundation-week-12)
+- [Phase 2: Standards Enforcement (Week 3-4)](#phase-2-standards-enforcement-week-34)
+- [Phase 3: Advanced Automation (Week 5-6)](#phase-3-advanced-automation-week-56)
+- [Phase 4: Optimization (Week 7-8)](#phase-4-optimization-week-78)
+- [Recommended Baseline Stack](#recommended-baseline-stack)
+- [Integration Plan](#integration-plan)
+- [Local Development](#local-development)
+- [CI (GitHub Actions)](#ci-github-actions)
+- [Custom Linter Development](#custom-linter-development)
+- [Implementation Priority](#implementation-priority)
+- [Custom Rule Examples](#custom-rule-examples)
+- [Future Enhancements](#future-enhancements)
+- [Phase 2+ Features](#phase-2-features)
+- [Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Documentation Automation & Tooling Options](#documentation-automation-tooling-options)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [Goals & Scope](#goals-scope)
+- [Options Catalog](#options-catalog)
+- [Link Checking](#link-checking)
+- [Prose/Style Linting](#prosestyle-linting)
+- [Templating: Footers/Headers/Blocks](#templating-footersheadersblocks)
+- [Diagram Validation](#diagram-validation)
+- [Cross-File Consistency Checks](#crossfile-consistency-checks)
+- [GitHub Flavored Markdown (GFM) Validation](#github-flavored-markdown-gfm-validation)
+- [Additional Tools](#additional-tools)
+- [Remark Ecosystem Deep Dive](#remark-ecosystem-deep-dive)
+- [What is Remark?](#what-is-remark)
+- [Core Remark Tools](#core-remark-tools)
+- [KiloCode-Specific Remark Setup](#kilocodespecific-remark-setup)
+- [Advanced Remark Tools](#advanced-remark-tools)
+- [](#)
+- [Remark for KiloCode Use Cases](#remark-for-kilocode-use-cases)
+- [Integration with KiloCode Workflow](#integration-with-kilocode-workflow)
+- [Remark vs Other Tools](#remark-vs-other-tools)
+- [MkDocs vs Remark: Comparison & Integration](#mkdocs-vs-remark-comparison-integration)
+- [Are They Mutually Exclusive?](#are-they-mutually-exclusive)
+- [Detailed Comparison](#detailed-comparison)
+- [Why Different Options Use Different Tools](#why-different-options-use-different-tools)
+- [Complementary Integration Strategies](#complementary-integration-strategies)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [KiloCode-Specific Recommendations](#kilocodespecific-recommendations)
+- [Configuration Examples](#configuration-examples)
+- [Documentation Standards as Linters](#documentation-standards-as-linters)
+- [Automatable Rules from Documentation Guide](#automatable-rules-from-documentation-guide)
+- [Custom Linter Implementation](#custom-linter-implementation)
+- [Concrete Toolset Recommendations](#concrete-toolset-recommendations)
+- [Option 1: Minimal Setup (Quick Start)](#option-1-minimal-setup-quick-start)
+- [Option 2: Advanced Setup (Recommended)](#option-2-advanced-setup-recommended)
+- [Option 3: Enterprise Setup (Full Automation)](#option-3-enterprise-setup-full-automation)
+- [Phased Implementation Approach](#phased-implementation-approach)
+- [Phase 1: Foundation (Week 1-2)](#phase-1-foundation-week-12)
+- [Phase 2: Standards Enforcement (Week 3-4)](#phase-2-standards-enforcement-week-34)
+- [Phase 3: Advanced Automation (Week 5-6)](#phase-3-advanced-automation-week-56)
+- [Phase 4: Optimization (Week 7-8)](#phase-4-optimization-week-78)
+- [Recommended Baseline Stack](#recommended-baseline-stack)
+- [Integration Plan](#integration-plan)
+- [Local Development](#local-development)
+- [CI (GitHub Actions)](#ci-github-actions)
+- [Custom Linter Development](#custom-linter-development)
+- [Implementation Priority](#implementation-priority)
+- [Custom Rule Examples](#custom-rule-examples)
+- [Future Enhancements](#future-enhancements)
+- [Phase 2+ Features](#phase-2-features)
+- [Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -87,10 +143,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Executive Summary
 
@@ -336,6 +392,7 @@ module.exports = remarkKiloCodeStandards
 - [remark-lint-no-dead-urls](https://github.com/remarkjs/remark-lint-no-dead-urls) - Check for dead
   URLs
 - ##
+
 [remark-lint-no-undefined-references](https://github.com/remarkjs/remark-lint-no-undefined-references)
 
 Validate reference links
@@ -1275,11 +1332,11 @@ function validateNavigationFooter(content, filePath) {
   [Integration Plan](#integration-plan) → [Custom Linter Development](#custom-linter-development)
 
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Documentation Guide](../DOCUMENTATION_GUIDE.md) for standards
+  [Documentation Guide](../../DOCUMENTATION_GUIDE.md) for standards
 
 - *Understanding Current Documentation Standards:*\*
 
-- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
   [Standards Documentation](../standards/README.md) → This automation guide
 
 - **Related**: [Architecture Documentation](../architecture/README.md) for context
@@ -1315,9 +1372,13 @@ next, return to [Tools Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Tools Documentation](README.md) ·

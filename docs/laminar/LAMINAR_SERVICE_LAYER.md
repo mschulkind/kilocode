@@ -1,42 +1,80 @@
 # Laminar Service Layer
-## Table of Contents
 
+## Table of Contents
 - [Laminar Service Layer](#laminar-service-layer)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Role in Laminar Integration](#role-in-laminar-integration)
-    - [Integration Scope](#integration-scope)
-  - [Service Architecture](#service-architecture)
-    - [Core Components](#core-components)
-    - [Service Initialization](#service-initialization)
-  - [Singleton Pattern Implementation](#singleton-pattern-implementation)
-    - [Singleton Mechanics](#singleton-mechanics)
-    - [Instance Management](#instance-management)
-  - [Span Lifecycle Management](#span-lifecycle-management)
-    - [Span Creation](#span-creation)
-    - [Span Updates](#span-updates)
-    - [Span Completion](#span-completion)
-  - [Exception Recording](#exception-recording)
-    - [Exception Capture](#exception-capture)
-    - [Error Context](#error-context)
-  - [Telemetry Integration](#telemetry-integration)
-    - [Opt-out Compliance](#optout-compliance)
-    - [Data Collection Policies](#data-collection-policies)
-  - [Performance Considerations](#performance-considerations)
-    - [Overhead Minimization](#overhead-minimization)
-    - [Resource Management](#resource-management)
-  - [Error Handling](#error-handling)
-    - [Service Errors](#service-errors)
-    - [Recovery Mechanisms](#recovery-mechanisms)
-  - [Integration Points](#integration-points)
-    - [Task System Integration](#task-system-integration)
-    - [Other Subsystems](#other-subsystems)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [Implementation Timeline](#implementation-timeline)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Service Architecture](#service-architecture)
+- [Core Components](#core-components)
+- [Service Initialization](#service-initialization)
+- [Singleton Pattern Implementation](#singleton-pattern-implementation)
+- [Singleton Mechanics](#singleton-mechanics)
+- [Instance Management](#instance-management)
+- [Span Lifecycle Management](#span-lifecycle-management)
+- [Span Creation](#span-creation)
+- [Span Updates](#span-updates)
+- [Span Completion](#span-completion)
+- [Exception Recording](#exception-recording)
+- [Exception Capture](#exception-capture)
+- [Error Context](#error-context)
+- [Telemetry Integration](#telemetry-integration)
+- [Opt-out Compliance](#optout-compliance)
+- [Data Collection Policies](#data-collection-policies)
+- [Performance Considerations](#performance-considerations)
+- [Overhead Minimization](#overhead-minimization)
+- [Resource Management](#resource-management)
+- [Error Handling](#error-handling)
+- [Service Errors](#service-errors)
+- [Recovery Mechanisms](#recovery-mechanisms)
+- [Integration Points](#integration-points)
+- [Task System Integration](#task-system-integration)
+- [Other Subsystems](#other-subsystems)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Service Layer](#laminar-service-layer)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Service Architecture](#service-architecture)
+- [Core Components](#core-components)
+- [Service Initialization](#service-initialization)
+- [Singleton Pattern Implementation](#singleton-pattern-implementation)
+- [Singleton Mechanics](#singleton-mechanics)
+- [Instance Management](#instance-management)
+- [Span Lifecycle Management](#span-lifecycle-management)
+- [Span Creation](#span-creation)
+- [Span Updates](#span-updates)
+- [Span Completion](#span-completion)
+- [Exception Recording](#exception-recording)
+- [Exception Capture](#exception-capture)
+- [Error Context](#error-context)
+- [Telemetry Integration](#telemetry-integration)
+- [Opt-out Compliance](#optout-compliance)
+- [Data Collection Policies](#data-collection-policies)
+- [Performance Considerations](#performance-considerations)
+- [Overhead Minimization](#overhead-minimization)
+- [Resource Management](#resource-management)
+- [Error Handling](#error-handling)
+- [Service Errors](#service-errors)
+- [Recovery Mechanisms](#recovery-mechanisms)
+- [Integration Points](#integration-points)
+- [Task System Integration](#task-system-integration)
+- [Other Subsystems](#other-subsystems)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
@@ -69,10 +107,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -470,9 +508,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

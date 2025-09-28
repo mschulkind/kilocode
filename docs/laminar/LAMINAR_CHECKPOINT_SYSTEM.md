@@ -1,46 +1,88 @@
 # Laminar Checkpoint System Integration
-## Table of Contents
 
+## Table of Contents
 - [Laminar Checkpoint System Integration](#laminar-checkpoint-system-integration)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Key Integration Points](#key-integration-points)
-    - [Key Integration Points](#key-integration-points)
-  - [Architecture](#architecture)
-    - [Integration Flow](#integration-flow)
-  - [Checkpoint Lifecycle Tracing](#checkpoint-lifecycle-tracing)
-    - [Span Metadata](#span-metadata)
-    - [Span Metadata](#span-metadata)
-  - [Performance Monitoring](#performance-monitoring)
-    - [throughput, and resource usage](#throughput-and-resource-usage)
-  - [Performance Timing Metrics](#performance-timing-metrics)
-    - [Timing Metrics timing](#timing-metrics-timing)
-    - [Resource Usage### Resource Usage](#resource-usage-resource-usage)
-    - [Checkpoint Analytics](#checkpoint-analytics)
-    - [State Integrity](#state-integrity)
-    - [State ** Quality Metrics CorruptionQuality Detection**: Automatic detection of and state](#state-quality-metrics-corruptionquality-detection-automatic-detection-of-and-state)
-    - [State reliability tracking:](#state-reliability-tracking)
-  - [Integration Points](#integration-points)
-    - [Task format compatibility System Integration](#task-format-compatibility-system-integration)
-  - [Error Handling](#error-handling)
-    - [task spans:](#task-spans)
-    - [Service Layer Integration](#service-layer-integration)
-    - [validation failures](#validation-failures)
-    - [Error Context](#error-context)
-  - [Error Handling](#error-handling)
-    - [Actions**: Steps taken to handle Error or recover from Classification](#actions-steps-taken-to-handle-error-or-recover-from-classification)
-  - [Integration Points](#integration-points)
-    - [Task System Integration](#task-system-integration)
-    - [Error Context](#error-context)
-    - [Service Layer Integration](#service-layer-integration)
-    - [or recover from errors](#or-recover-from-errors)
-  - [Code Reference Storage Integration](#code-reference-storage-integration)
-  - [Code Reference Matrix](#code-reference-matrix)
-  - [Navigation](#navigation)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Key Integration Points](#key-integration-points)
+- [Key Integration Points](#key-integration-points)
+- [Architecture](#architecture)
+- [Integration Flow](#integration-flow)
+- [Checkpoint Lifecycle Tracing](#checkpoint-lifecycle-tracing)
+- [Span Metadata](#span-metadata)
+- [Span Metadata](#span-metadata)
+- [Performance Monitoring](#performance-monitoring)
+- [throughput, and resource usage](#throughput-and-resource-usage)
+- [Performance Timing Metrics](#performance-timing-metrics)
+- [Timing Metrics timing](#timing-metrics-timing)
+- [Resource Usage### Resource Usage](#resource-usage-resource-usage)
+- [Checkpoint Analytics](#checkpoint-analytics)
+- [State Integrity](#state-integrity)
+- [State \*\* Quality Metrics CorruptionQuality Detection\*\*: Automatic detection of and state](#state-quality-metrics-corruptionquality-detection-automatic-detection-of-and-state)
+- [State reliability tracking:](#state-reliability-tracking)
+- [Integration Points](#integration-points)
+- [Task format compatibility System Integration](#task-format-compatibility-system-integration)
+- [Error Handling](#error-handling)
+- [task spans:](#task-spans)
+- [Service Layer Integration](#service-layer-integration)
+- [validation failures](#validation-failures)
+- [Error Context](#error-context)
+- [Error Handling](#error-handling)
+- [Actions\*\*: Steps taken to handle Error or recover from Classification](#actions-steps-taken-to-handle-error-or-recover-from-classification)
+- [Integration Points](#integration-points)
+- [Task System Integration](#task-system-integration)
+- [Error Context](#error-context)
+- [Service Layer Integration](#service-layer-integration)
+- [or recover from errors](#or-recover-from-errors)
+- [Code Reference Storage Integration](#code-reference-storage-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Navigation](#navigation)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Laminar Checkpoint System Integration](#laminar-checkpoint-system-integration)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Key Integration Points](#key-integration-points)
+- [Key Integration Points](#key-integration-points)
+- [Architecture](#architecture)
+- [Integration Flow](#integration-flow)
+- [Checkpoint Lifecycle Tracing](#checkpoint-lifecycle-tracing)
+- [Span Metadata](#span-metadata)
+- [Span Metadata](#span-metadata)
+- [Performance Monitoring](#performance-monitoring)
+- [throughput, and resource usage](#throughput-and-resource-usage)
+- [Performance Timing Metrics](#performance-timing-metrics)
+- [Timing Metrics timing](#timing-metrics-timing)
+- [Resource Usage### Resource Usage](#resource-usage-resource-usage)
+- [Checkpoint Analytics](#checkpoint-analytics)
+- [State Integrity](#state-integrity)
+- [State \*\* Quality Metrics CorruptionQuality Detection\*\*: Automatic detection of and state](#state-quality-metrics-corruptionquality-detection-automatic-detection-of-and-state)
+- [State reliability tracking:](#state-reliability-tracking)
+- [Integration Points](#integration-points)
+- [Task format compatibility System Integration](#task-format-compatibility-system-integration)
+- [Error Handling](#error-handling)
+- [task spans:](#task-spans)
+- [Service Layer Integration](#service-layer-integration)
+- [validation failures](#validation-failures)
+- [Error Context](#error-context)
+- [Error Handling](#error-handling)
+- [Actions\*\*: Steps taken to handle Error or recover from Classification](#actions-steps-taken-to-handle-error-or-recover-from-classification)
+- [Integration Points](#integration-points)
+- [Task System Integration](#task-system-integration)
+- [Error Context](#error-context)
+- [Service Layer Integration](#service-layer-integration)
+- [or recover from errors](#or-recover-from-errors)
+- [Code Reference Storage Integration](#code-reference-storage-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Navigation](#navigation)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -92,10 +134,10 @@ The Checkpoint>
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -390,15 +432,11 @@ Matrix
 ## Code Reference Matrix
 
 |
-Component()` | Span creation, performance tracking | | Checkpoint Manager |
-[`src/services/checkpoints/CheckpointManager.ts`](src/services/checkpoints/CheckpointManager.ts) |
-`createCheckpoint()`, `restoreCheckpoint()` | Operation orchestration | | State Serializer | File |
-[`src/services/checkpoints/StateSerializer.ts`](src |/services/checkpoints/StateSerializer.ts) | Key
+Component()` | Span creation, performance tracking | | Checkpoint Manager | [`src/services/checkpoints/CheckpointManager.ts`](src/services/checkpoints/CheckpointManager.ts) |
+`createCheckpoint()`, `restoreCheckpoint()` | Operation orchestration | | State Serializer | File | [`src/services/checkpoints/StateSerializer.ts`](src |/services/checkpoints/StateSerializer.ts) | Key
 Methods | Laminar Integration | |-----------|------|-------------|-------------------| |
-RepoPerTaskCheckpointService |
-[`src/services/checkpoints/RepoPerTaskCheckpointService.ts`](src/services/checkpoints/RepoPerTaskCheckpointService.ts)
-| `save()`, `load()`, `delete()` | Span creation, performance tracking | | Checkpoint Manager |
-[`src/services/checkpoints/CheckpointManager.ts`](src/services/checkpoints/CheckpointManager.ts) |
+RepoPerTaskCheckpointService | [`src/services/checkpoints/RepoPerTaskCheckpointService.ts`](src/services/checkpoints/RepoPerTaskCheckpointService.ts)
+| `save()`, `load()`, `delete()` | Span creation, performance tracking | | Checkpoint Manager | [`src/services/checkpoints/CheckpointManager.ts`](src/services/checkpoints/CheckpointManager.ts) |
 `create
 `serialize()`, `deserialize()` | Serialization monitoring | | Storage Backend |
 \[`src/services/checkpoints/Checkpoint()`, `restoreCheckpoint()` | Operation orchestration | |
@@ -408,8 +446,7 @@ State Serializer |
 | `writepoints/StateSerializer.ts)
 | `serialize()`, `deserialize()`
 |()`, `read()` | I/O operation Serialization monitoring | tracing| | | Integrity Checker | [`src
-Storage/services/checkpoints/IntegrityChecker.ts`]( Backend |
-[`src/services/checkpoints/src/services/checkpoints/IntegrityChecker.tsStorageBackend.ts`](src/services/checkpoints)
+Storage/services/checkpoints/IntegrityChecker.ts`]( Backend | [`src/services/checkpoints/src/services/checkpoints/IntegrityChecker.tsStorageBackend.ts`](src/services/checkpoints)
 | `validate()`, `/StorageBackend.ts)
 | `writechecksum()` | State validation()`, `read()\` | I/O tracking |
 
@@ -422,8 +459,7 @@ Storage/services/checkpoints/IntegrityChecker.ts`]( Backend |
 <a id="navigation-footer">\</-footer"></a>
 - Back: \[\`LAMaINAR\_SUBSYSTEMS\_INDEX>
 - Back:
-\[`LAMIN.md`]\(AR\_SUBLAMINAR\_SUBSYSTEMSSYSTEMS\_README.md`](LAM_README.md:1) · Root:INAR
-[`LAMINAR\_SUBSYSTEMS\_INDEX\_SUBSYSTEMS\_README.md:1)
+  \[`LAMIN.md`]\(AR\_SUBLAMINAR\_SUBSYSTEMSSYSTEMS\_README.md`](LAM_README.md:1) · Root:INAR [`LAMINAR\_SUBSYSTEMS\_INDEX\_SUBSYSTEMS\_README.md:1)
   · Root:
 
 \[`LAMIN.md`]\(LAMINAR\_SUBSYSTEMSAR\_SUBSYSTEMS\_README.md`](LAMINAR_SUBSYSTEMS_README.md_README.md:1)
@@ -469,9 +505,13 @@ next, return to [Laminar Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·

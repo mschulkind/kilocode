@@ -1,18 +1,33 @@
 # Orchestrator Task Delegation
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Task Delegation](#orchestrator-task-delegation)
-  - [Table of Contents](#table-of-contents)
-    - [Related Documents](#related-documents)
-    - [The Philosophy of Delegation](#the-philosophy-of-delegation)
-    - [The Subtask Mechanism](#the-subtask-mechanism)
-    - [Subtask Workflow Diagram](#subtask-workflow-diagram)
-    - [Key Symbols and Their Roles](#key-symbols-and-their-roles)
-    - [When to Use Subtasks](#when-to-use-subtasks)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-    - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [The Philosophy of Delegation](#the-philosophy-of-delegation)
+- [The Subtask Mechanism](#the-subtask-mechanism)
+- [Subtask Workflow Diagram](#subtask-workflow-diagram)
+- [Key Symbols and Their Roles](#key-symbols-and-their-roles)
+- [When to Use Subtasks](#when-to-use-subtasks)
+- [When You're Here](#when-youre-here)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Orchestrator Task Delegation](#orchestrator-task-delegation)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [The Philosophy of Delegation](#the-philosophy-of-delegation)
+- [The Subtask Mechanism](#the-subtask-mechanism)
+- [Subtask Workflow Diagram](#subtask-workflow-diagram)
+- [Key Symbols and Their Roles](#key-symbols-and-their-roles)
+- [When to Use Subtasks](#when-to-use-subtasks)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -39,7 +54,7 @@
 
 ### Related Documents
 
-<a
+\<a
 
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
@@ -164,10 +179,10 @@ Common scenarios for delegation include:
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
@@ -219,15 +234,17 @@ End of document.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-task-delegation)
 
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
-

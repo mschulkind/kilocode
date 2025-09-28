@@ -1,27 +1,47 @@
 # UI Documentation
+
 ## Table of Contents
-
 - [UI Documentation](#ui-documentation)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [Research Context](#research-context)
-    - [Technical Overview](#technical-overview)
-    - [Background](#background)
-    - [Methodology](#methodology)
-  - [Overview](#overview)
-  - [Documentation Structure](#documentation-structure)
-    - [Core Documents](#core-documents)
-  - [Quick Navigation](#quick-navigation)
-    - [For Developers](#for-developers)
-    - [For Troubleshooting](#for-troubleshooting)
-  - [System Integration](#system-integration)
-  - [Key Concepts](#key-concepts)
-    - [User Interface Design](#user-interface-design)
-    - [Component Architecture](#component-architecture)
-    - [Message Flow](#message-flow)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation](#navigation)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Documentation Structure](#documentation-structure)
+- [Core Documents](#core-documents)
+- [Quick Navigation](#quick-navigation)
+- [For Developers](#for-developers)
+- [For Troubleshooting](#for-troubleshooting)
+- [System Integration](#system-integration)
+- [Key Concepts](#key-concepts)
+- [User Interface Design](#user-interface-design)
+- [Component Architecture](#component-architecture)
+- [Message Flow](#message-flow)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Navigation](#navigation)
+- [UI Documentation](#ui-documentation)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Documentation Structure](#documentation-structure)
+- [Core Documents](#core-documents)
+- [Quick Navigation](#quick-navigation)
+- [For Developers](#for-developers)
+- [For Troubleshooting](#for-troubleshooting)
+- [System Integration](#system-integration)
+- [Key Concepts](#key-concepts)
+- [User Interface Design](#user-interface-design)
+- [Component Architecture](#component-architecture)
+- [Message Flow](#message-flow)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -123,9 +143,7 @@ For more information, see:
 - [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
-
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation

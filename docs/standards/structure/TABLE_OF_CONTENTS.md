@@ -1,25 +1,43 @@
 # ## When You're Here
+
 ## Table of Contents
-
 - [## When You're Here](#-when-youre-here)
-  - [When You're Here](#when-youre-here)
-  - [Table of Contents](#table-of-contents)
-  - [Executive Summary](#executive-summary)
-  - [Research Context](#research-context)
-  - [TOC Requirements](#toc-requirements)
-  - [Format Standards](#format-standards)
-  - [Content Guidelines](#content-guidelines)
-  - [Placement Rules](#placement-rules)
-  - [Optional TOC Criteria](#optional-toc-criteria)
-  - [TOC Validation](#toc-validation)
-  - [Common Mistakes](#common-mistakes)
-  - [Implementation Examples](#implementation-examples)
-    - [Complete TOC Example](#complete-toc-example)
-    - [Minimal TOC Example](#minimal-toc-example)
-    - [No TOC Example](#no-toc-example)
-  - [Navigation Footer](#navigation-footer)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [TOC Requirements](#toc-requirements)
+- [Format Standards](#format-standards)
+- [Content Guidelines](#content-guidelines)
+- [Placement Rules](#placement-rules)
+- [Optional TOC Criteria](#optional-toc-criteria)
+- [TOC Validation](#toc-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete TOC Example](#complete-toc-example)
+- [Minimal TOC Example](#minimal-toc-example)
+- [No TOC Example](#no-toc-example)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [## When You're Here](#-when-youre-here)
+- [When You're Here](#when-youre-here)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [TOC Requirements](#toc-requirements)
+- [Format Standards](#format-standards)
+- [Content Guidelines](#content-guidelines)
+- [Placement Rules](#placement-rules)
+- [Optional TOC Criteria](#optional-toc-criteria)
+- [TOC Validation](#toc-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete TOC Example](#complete-toc-example)
+- [Minimal TOC Example](#minimal-toc-example)
+- [No TOC Example](#no-toc-example)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 - ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
@@ -599,6 +617,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
-
+- 📚 [Technical Glossary](../../../GLOSSARY.md)

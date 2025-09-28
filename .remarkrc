@@ -1,12 +1,8 @@
 {
   "plugins": [
     "remark-preset-lint-recommended",
-    "remark-gfm",
-    "remark-frontmatter",
-    "remark-toc",
     "remark-validate-links",
-    "./plugins/remark-kilocode-standards.js",
-    "./plugins/remark-kilocode-comprehensive.js"
+    "./plugins/remark-kilocode-unified.js"
   ],
   "settings": {
     "bullet": "-",
@@ -17,6 +13,9 @@
     "ruleRepetition": 3,
     "ruleSpaces": false,
     "strong": "*"
+  },
+  "remarkPresetLintRecommended": {
+    "no-undefined-references": false
   },
   "validateLinks": {
     "repository": "roo-ai/kilo-code",

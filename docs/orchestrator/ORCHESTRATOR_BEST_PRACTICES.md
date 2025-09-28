@@ -1,17 +1,30 @@
 # Orchestrator Best Practices
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Best Practices](#orchestrator-best-practices)
-  - [Table of Contents](#table-of-contents)
-    - [Related Documents](#related-documents)
-    - [Prompt Engineering Best Practices](#prompt-engineering-best-practices)
-    - [Tool and Mode Development](#tool-and-mode-development)
-    - [Task Management and Delegation](#task-management-and-delegation)
-    - [Testing and Validation](#testing-and-validation)
-    - [Navigation Footer](#navigation-footer)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Prompt Engineering Best Practices](#prompt-engineering-best-practices)
+- [Tool and Mode Development](#tool-and-mode-development)
+- [Task Management and Delegation](#task-management-and-delegation)
+- [Testing and Validation](#testing-and-validation)
+- [Navigation Footer](#navigation-footer)
+- [When You're Here](#when-youre-here)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Orchestrator Best Practices](#orchestrator-best-practices)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Prompt Engineering Best Practices](#prompt-engineering-best-practices)
+- [Tool and Mode Development](#tool-and-mode-development)
+- [Task Management and Delegation](#task-management-and-delegation)
+- [Testing and Validation](#testing-and-validation)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -37,7 +50,7 @@
 
 ### Related Documents
 
-<a
+\<a
 
 id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
@@ -46,7 +59,7 @@ id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-
   documentation.
 - **[Extensibility Guide](ORCHESTRATOR_EXTENSIBILITY.md)**: Provides the technical details
   for creating new tools and modes.
-- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+- **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-best-practices)
 - \*\*
@@ -134,10 +147,10 @@ When extending the system, adhere to these principles.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
@@ -188,9 +201,13 @@ next, return to [Orchestrator Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·

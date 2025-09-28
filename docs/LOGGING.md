@@ -1,43 +1,82 @@
 # Kilo Code Logging Documentation
-## Table of Contents
 
+## Table of Contents
 - [Kilo Code Logging Documentation](#kilo-code-logging-documentation)
-  - [Table of Contents](#table-of-contents)
-  - [Writing to Logs from Code](#writing-to-logs-from-code)
-    - [1. Console Logging](#1-console-logging)
-    - [2. Custom Logger (CompactLogger)](#2-custom-logger-compactlogger)
-    - [3. VSCode Output Channel Logger](#3-vscode-output-channel-logger)
-    - [4. Forwarding Logger (JetBrains)](#4-forwarding-logger-jetbrains)
-    - [5. API Event Logging](#5-api-event-logging)
-  - [Log Message Routing](#log-message-routing)
-    - [VSCode Environment Routing](#vscode-environment-routing)
-    - [JetBrains Environment Routing](#jetbrains-environment-routing)
-    - [Routing Logic](#routing-logic)
-  - [Viewing Logs](#viewing-logs)
-    - [VSCode Environment](#vscode-environment)
-    - [JetBrains Environment](#jetbrains-environment)
-    - [Log Analysis Tools](#log-analysis-tools)
-  - [Configuration and Filtering](#configuration-and-filtering)
-    - [Environment Variables](#environment-variables)
-    - [Log Level Configuration](#log-level-configuration)
-    - [Platform-Specific Configuration](#platformspecific-configuration)
-    - [File Output Configuration](#file-output-configuration)
-    - [Conditional Logging](#conditional-logging)
-    - [Advanced Configuration](#advanced-configuration)
-    - [Performance Considerations](#performance-considerations)
-  - [Best Practices](#best-practices)
-    - [1. Choose the Right Logging Method](#1-choose-the-right-logging-method)
-    - [2. Log Levels and Filtering](#2-log-levels-and-filtering)
-    - [3. Structured Logging](#3-structured-logging)
-    - [4. Error Handling](#4-error-handling)
-    - [5. Performance](#5-performance)
-  - [Troubleshooting](#troubleshooting)
-    - [Common Issues](#common-issues)
-    - [Debug Commands](#debug-commands)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Writing to Logs from Code](#writing-to-logs-from-code)
+- [1. Console Logging](#1-console-logging)
+- [2. Custom Logger (CompactLogger)](#2-custom-logger-compactlogger)
+- [3. VSCode Output Channel Logger](#3-vscode-output-channel-logger)
+- [4. Forwarding Logger (JetBrains)](#4-forwarding-logger-jetbrains)
+- [5. API Event Logging](#5-api-event-logging)
+- [Log Message Routing](#log-message-routing)
+- [VSCode Environment Routing](#vscode-environment-routing)
+- [JetBrains Environment Routing](#jetbrains-environment-routing)
+- [Routing Logic](#routing-logic)
+- [Viewing Logs](#viewing-logs)
+- [VSCode Environment](#vscode-environment)
+- [JetBrains Environment](#jetbrains-environment)
+- [Log Analysis Tools](#log-analysis-tools)
+- [Configuration and Filtering](#configuration-and-filtering)
+- [Environment Variables](#environment-variables)
+- [Log Level Configuration](#log-level-configuration)
+- [Platform-Specific Configuration](#platformspecific-configuration)
+- [File Output Configuration](#file-output-configuration)
+- [Conditional Logging](#conditional-logging)
+- [Advanced Configuration](#advanced-configuration)
+- [Performance Considerations](#performance-considerations)
+- [Best Practices](#best-practices)
+- [1. Choose the Right Logging Method](#1-choose-the-right-logging-method)
+- [2. Log Levels and Filtering](#2-log-levels-and-filtering)
+- [3. Structured Logging](#3-structured-logging)
+- [4. Error Handling](#4-error-handling)
+- [5. Performance](#5-performance)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Commands](#debug-commands)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Kilo Code Logging Documentation](#kilo-code-logging-documentation)
+- [Table of Contents](#table-of-contents)
+- [Writing to Logs from Code](#writing-to-logs-from-code)
+- [1. Console Logging](#1-console-logging)
+- [2. Custom Logger (CompactLogger)](#2-custom-logger-compactlogger)
+- [3. VSCode Output Channel Logger](#3-vscode-output-channel-logger)
+- [4. Forwarding Logger (JetBrains)](#4-forwarding-logger-jetbrains)
+- [5. API Event Logging](#5-api-event-logging)
+- [Log Message Routing](#log-message-routing)
+- [VSCode Environment Routing](#vscode-environment-routing)
+- [JetBrains Environment Routing](#jetbrains-environment-routing)
+- [Routing Logic](#routing-logic)
+- [Viewing Logs](#viewing-logs)
+- [VSCode Environment](#vscode-environment)
+- [JetBrains Environment](#jetbrains-environment)
+- [Log Analysis Tools](#log-analysis-tools)
+- [Configuration and Filtering](#configuration-and-filtering)
+- [Environment Variables](#environment-variables)
+- [Log Level Configuration](#log-level-configuration)
+- [Platform-Specific Configuration](#platformspecific-configuration)
+- [File Output Configuration](#file-output-configuration)
+- [Conditional Logging](#conditional-logging)
+- [Advanced Configuration](#advanced-configuration)
+- [Performance Considerations](#performance-considerations)
+- [Best Practices](#best-practices)
+- [1. Choose the Right Logging Method](#1-choose-the-right-logging-method)
+- [2. Log Levels and Filtering](#2-log-levels-and-filtering)
+- [3. Structured Logging](#3-structured-logging)
+- [4. Error Handling](#4-error-handling)
+- [5. Performance](#5-performance)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Commands](#debug-commands)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -50,10 +89,10 @@ write logs, where messages are routed, viewing options, and configuration settin
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Writing to Logs from Code
 
@@ -647,9 +686,13 @@ next, return to the appropriate README for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Documentation Hub](../README.md) ·

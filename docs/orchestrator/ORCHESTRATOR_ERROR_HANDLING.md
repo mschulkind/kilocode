@@ -1,26 +1,43 @@
 # Orchestrator Error Handling
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Error Handling](#orchestrator-error-handling)
-  - [Table of Contents](#table-of-contents)
-    - [Related Documents](#related-documents)
-    - [Error Handling Philosophy](#error-handling-philosophy)
-    - [Types of Errors](#types-of-errors)
-    - [The Recovery Loop](#the-recovery-loop)
-    - [The "Mistake Limit"](#the-mistake-limit)
-    - [Specific Error Scenarios](#specific-error-scenarios)
-      - [Scenario: ](#scenario-)
-      - [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-    - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Error Handling Philosophy](#error-handling-philosophy)
+- [Types of Errors](#types-of-errors)
+- [The Recovery Loop](#the-recovery-loop)
+- [The "Mistake Limit"](#the-mistake-limit)
+- [Specific Error Scenarios](#specific-error-scenarios)
+- [Scenario: ](#scenario-)
+- [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
+- [When You're Here](#when-youre-here)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Orchestrator Error Handling](#orchestrator-error-handling)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Error Handling Philosophy](#error-handling-philosophy)
+- [Types of Errors](#types-of-errors)
+- [The Recovery Loop](#the-recovery-loop)
+- [The "Mistake Limit"](#the-mistake-limit)
+- [Specific Error Scenarios](#specific-error-scenarios)
+- [Scenario: ](#scenario-)
+- [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* This document outlines the Kilo Code Orchestrator's strategies for handling errors,
-ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
+  ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
   mechanisms, and the "Mistake Limit" concept.
 
 > **Dinosaur Fun Fact**: Error handling is like a dinosaur's immune system - it detects threats
@@ -42,7 +59,7 @@ ensuring resilience, and maintaining a stable operational state. It covers error
 
 ### Related Documents
 
-<a
+\<a
 
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
@@ -175,10 +192,10 @@ This concept is a crucial guardrail that ensures system stability.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
@@ -230,15 +247,17 @@ End of document.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-error-handling)
 
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
-

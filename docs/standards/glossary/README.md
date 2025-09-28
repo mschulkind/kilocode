@@ -1,19 +1,33 @@
 # Technical Glossary
-## Table of Contents
 
+## Table of Contents
 - [Technical Glossary](#technical-glossary)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [🗺️ Navigation Guide](#-navigation-guide)
-  - [Research Context](#research-context)
-    - [Quick Start Paths](#quick-start-paths)
-    - [Current Focus](#current-focus)
-  - [📚 Documentation Structure](#-documentation-structure)
-  - [🔗 Cross-References](#-crossreferences)
-  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
-  - [🧭 Navigation Footer](#-navigation-footer)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation](#navigation)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#-navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#-documentation-structure)
+- [🔗 Cross-References](#-crossreferences)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Navigation](#navigation)
+- [Technical Glossary](#technical-glossary)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#-navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#-documentation-structure)
+- [🔗 Cross-References](#-crossreferences)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
 
 ## When You're Here
 
@@ -76,9 +90,9 @@ concepts (data structures vs. functions, different architectural layers, differe
 contexts)!
 
 ## 🧭 Navigation Footer
-- [← Back to Standards Home](../README.md)
+- [← Back to Standards Home](../../../README.md)
 - [→ Core Standards](../core/README.md)
-- [↑ Table of Contents](../README.md)
+- [↑ Table of Contents](../../../README.md)
 
 ## No Dead Ends Policy
 
@@ -89,12 +103,10 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Standards Overview](README.md)
-- [← Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [← Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 - [← Navigation Standards](navigation/README.md)
-- [← Main Documentation](../README.md)
+- [← Main Documentation](../../../README.md)
 - [← Project Root](../../README.md)
 
 ## Navigation
-
-- 📚 [Technical Glossary](../GLOSSARY.md)
-
+- 📚 [Technical Glossary](../../../GLOSSARY.md)

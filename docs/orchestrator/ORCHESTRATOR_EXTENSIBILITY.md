@@ -1,17 +1,31 @@
 # Orchestrator Extensibility
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator Extensibility](#orchestrator-extensibility)
-  - [Table of Contents](#table-of-contents)
-    - [Related Documents](#related-documents)
-    - [Extensibility Philosophy](#extensibility-philosophy)
-    - [Adding New Tools (Gap)](#adding-new-tools-gap)
-    - [Adding New Modes (Gap)](#adding-new-modes-gap)
-    - [Adding Custom Rules](#adding-custom-rules)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-    - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Extensibility Philosophy](#extensibility-philosophy)
+- [Adding New Tools (Gap)](#adding-new-tools-gap)
+- [Adding New Modes (Gap)](#adding-new-modes-gap)
+- [Adding Custom Rules](#adding-custom-rules)
+- [When You're Here](#when-youre-here)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Orchestrator Extensibility](#orchestrator-extensibility)
+- [Table of Contents](#table-of-contents)
+- [Related Documents](#related-documents)
+- [Extensibility Philosophy](#extensibility-philosophy)
+- [Adding New Tools (Gap)](#adding-new-tools-gap)
+- [Adding New Modes (Gap)](#adding-new-modes-gap)
+- [Adding Custom Rules](#adding-custom-rules)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -37,7 +51,7 @@
 
 ### Related Documents
 
-<a
+\<a
 
 id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
@@ -47,7 +61,7 @@ id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-
 - **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices
   for
   developing new tools and modes.
-- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+- **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
 - \*\*
@@ -130,7 +144,7 @@ the model, such as:
 - "API calls to the billing service must be routed through the `BillingAPIClient`."
 
 For a complete overview of how these rules are discovered and loaded, please refer to the
-[Documentation Guide](../DOCUMENTATION_GUIDE.md).
+[Documentation Guide](../../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
 - \*\*
@@ -140,10 +154,10 @@ For a complete overview of how these rules are discovered and loaded, please ref
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
@@ -194,15 +208,17 @@ End of document.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-extensibility)
 
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
-

@@ -1,27 +1,49 @@
 # Repository Overview
-## Table of Contents
 
+## Table of Contents
 - [Repository Overview](#repository-overview)
-  - [Table of Contents](#table-of-contents)
-  - [When You're Here](#when-youre-here)
-  - [🗺️ Navigation Guide](#-navigation-guide)
-  - [Research Context](#research-context)
-    - [Quick Start Paths](#quick-start-paths)
-    - [Current Focus](#current-focus)
-  - [📚 Documentation Structure](#-documentation-structure)
-    - [Core Documentation](#core-documentation)
-    - [Development & Infrastructure](#development-infrastructure)
-  - [Executive Summary](#executive-summary)
-  - [Quick Reference](#quick-reference)
-    - [Repository Structure](#repository-structure)
-    - [Core Systems](#core-systems)
-    - [Development Workflow](#development-workflow)
-  - [🔗 Cross-References](#-crossreferences)
-  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
-  - [🧭 Navigation Footer](#-navigation-footer)
-  - [Navigation Footer](#navigation-footer)
-  - [No Dead Ends Policy](#no-dead-ends-policy)
-    - [Example](#example)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#-navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#-documentation-structure)
+- [Core Documentation](#core-documentation)
+- [Development & Infrastructure](#development-infrastructure)
+- [Executive Summary](#executive-summary)
+- [Quick Reference](#quick-reference)
+- [Repository Structure](#repository-structure)
+- [Core Systems](#core-systems)
+- [Development Workflow](#development-workflow)
+- [🔗 Cross-References](#-crossreferences)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Example](#example)
+- [Navigation](#navigation)
+- [Repository Overview](#repository-overview)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#-navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#-documentation-structure)
+- [Core Documentation](#core-documentation)
+- [Development & Infrastructure](#development-infrastructure)
+- [Executive Summary](#executive-summary)
+- [Quick Reference](#quick-reference)
+- [Repository Structure](#repository-structure)
+- [Core Systems](#core-systems)
+- [Development Workflow](#development-workflow)
+- [🔗 Cross-References](#-crossreferences)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🧭 Navigation Footer](#-navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Example](#example)
 
 ## When You're Here
 
@@ -142,7 +164,7 @@ applications, and services.
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [Architecture Documentation](../README.md) for system architecture
+- **Architecture**: See [Architecture Documentation](../../README.md) for system architecture
 - **Standards**: See [Parent directory](../standards/) for development standards
 - **Plans**: See [Parent directory](../../plans/) for development plans
 
@@ -155,9 +177,9 @@ architectural layer. Each directory is like a different excavation site, reveali
 of the system's structure!
 
 ## 🧭 Navigation Footer
-- [← Back to Architecture Home](../README.md)
+- [← Back to Architecture Home](../../README.md)
 - [→ Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)
-- [↑ Table of Contents](../README.md)
+- [↑ Table of Contents](../../README.md)
 
 ## Navigation Footer
 - \*\*
@@ -180,6 +202,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-
 - 📚 [Technical Glossary](../GLOSSARY.md)
-

@@ -1,34 +1,64 @@
 # User Journey Design 🗺️
-## Table of Contents
 
+## Table of Contents
 - [User Journey Design 🗺️](#user-journey-design-)
-  - [Table of Contents](#table-of-contents)
-  - [Executive Summary](#executive-summary)
-  - [User Type Analysis](#user-type-analysis)
-    - [Emergency Responders](#emergency-responders)
-    - [Researchers](#researchers)
-    - [Implementers](#implementers)
-    - [New Users](#new-users)
-  - [Journey Optimization](#journey-optimization)
-    - [Progressive Disclosure](#progressive-disclosure)
-    - [Multiple Entry Points](#multiple-entry-points)
-    - [Context Awareness](#context-awareness)
-  - [Context Awareness](#context-awareness)
-    - [Experience Level Adaptation](#experience-level-adaptation)
-    - [Time Constraint Adaptation](#time-constraint-adaptation)
-    - [Goal-Based Adaptation](#goalbased-adaptation)
-  - [Journey Patterns](#journey-patterns)
-    - [Problem-Solution Pattern](#problemsolution-pattern)
-    - [Learning Pattern](#learning-pattern)
-    - [Implementation Pattern](#implementation-pattern)
-    - [Reference Pattern](#reference-pattern)
-  - [Examples: Usage](#examples-usage)
-  - [Related: See Also](#related-see-also)
-    - [Minimal User Journey Example](#minimal-user-journey-example)
-  - [Navigation Footer](#navigation-footer)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [User Type Analysis](#user-type-analysis)
+- [Emergency Responders](#emergency-responders)
+- [Researchers](#researchers)
+- [Implementers](#implementers)
+- [New Users](#new-users)
+- [Journey Optimization](#journey-optimization)
+- [Progressive Disclosure](#progressive-disclosure)
+- [Multiple Entry Points](#multiple-entry-points)
+- [Context Awareness](#context-awareness)
+- [Context Awareness](#context-awareness)
+- [Experience Level Adaptation](#experience-level-adaptation)
+- [Time Constraint Adaptation](#time-constraint-adaptation)
+- [Goal-Based Adaptation](#goalbased-adaptation)
+- [Journey Patterns](#journey-patterns)
+- [Problem-Solution Pattern](#problemsolution-pattern)
+- [Learning Pattern](#learning-pattern)
+- [Implementation Pattern](#implementation-pattern)
+- [Reference Pattern](#reference-pattern)
+- [Examples: Usage](#examples-usage)
+- [Related: See Also](#related-see-also)
+- [Minimal User Journey Example](#minimal-user-journey-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [User Journey Design 🗺️](#user-journey-design-)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [User Type Analysis](#user-type-analysis)
+- [Emergency Responders](#emergency-responders)
+- [Researchers](#researchers)
+- [Implementers](#implementers)
+- [New Users](#new-users)
+- [Journey Optimization](#journey-optimization)
+- [Progressive Disclosure](#progressive-disclosure)
+- [Multiple Entry Points](#multiple-entry-points)
+- [Context Awareness](#context-awareness)
+- [Context Awareness](#context-awareness)
+- [Experience Level Adaptation](#experience-level-adaptation)
+- [Time Constraint Adaptation](#time-constraint-adaptation)
+- [Goal-Based Adaptation](#goalbased-adaptation)
+- [Journey Patterns](#journey-patterns)
+- [Problem-Solution Pattern](#problemsolution-pattern)
+- [Learning Pattern](#learning-pattern)
+- [Implementation Pattern](#implementation-pattern)
+- [Reference Pattern](#reference-pattern)
+- [Examples: Usage](#examples-usage)
+- [Related: See Also](#related-see-also)
+- [Minimal User Journey Example](#minimal-user-journey-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -58,10 +88,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Executive Summary
 - User journey design creates optimal experiences for different types of users by understanding
@@ -739,23 +769,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../architecture/README.md) →
-  [Orchestrator Documentation](../orchestrator/README.md)
+- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../../architecture/README.md) →
+  [Orchestrator Documentation](../../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -769,10 +799,14 @@ next, return to [Standards Documentation](README.md) for guidance.
 Every section in this document connects you to your next step:
 
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+
 - **If you need context**: Check the [Research Context](#research-context) section
+
 - **If you're ready to implement**: Jump to the implementation sections
+
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
+- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

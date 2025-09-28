@@ -1,26 +1,48 @@
 # Orchestrator System Documentation 🎼
-## Table of Contents
 
+## Table of Contents
 - [Orchestrator System Documentation 🎼](#orchestrator-system-documentation-)
-  - [Table of Contents](#table-of-contents)
-  - [Directory Context](#directory-context)
-    - [Key Focus Areas](#key-focus-areas)
-  - [🗺️ Navigation Map](#-navigation-map)
-    - [Core Concepts](#core-concepts)
-    - [Quick Start Paths](#quick-start-paths)
-      - [🎵 ](#-)
-      - [🚨 ](#-)
-  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
-  - [🔬 Research Areas](#-research-areas)
-    - [Current Focus](#current-focus)
-    - [Next Steps](#next-steps)
-  - [🎯 Key Concepts](#-key-concepts)
-    - [The Problem](#the-problem)
-    - [The Solution](#the-solution)
-  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
-    - [When You're Here, You Can:](#when-youre-here-you-can)
-    - [No Dead Ends Policy](#no-dead-ends-policy)
-  - [Navigation Footer](#navigation-footer)
+- [Table of Contents](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Directory Context](#directory-context)
+- [Key Focus Areas](#key-focus-areas)
+- [🗺️ Navigation Map](#-navigation-map)
+- [Core Concepts](#core-concepts)
+- [Quick Start Paths](#quick-start-paths)
+- [🎵 ](#-)
+- [🚨 ](#-)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🔬 Research Areas](#-research-areas)
+- [Current Focus](#current-focus)
+- [Next Steps](#next-steps)
+- [🎯 Key Concepts](#-key-concepts)
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Orchestrator System Documentation 🎼](#orchestrator-system-documentation-)
+- [Table of Contents](#table-of-contents)
+- [Directory Context](#directory-context)
+- [Key Focus Areas](#key-focus-areas)
+- [🗺️ Navigation Map](#-navigation-map)
+- [Core Concepts](#core-concepts)
+- [Quick Start Paths](#quick-start-paths)
+- [🎵 ](#-)
+- [🚨 ](#-)
+- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+- [🔬 Research Areas](#-research-areas)
+- [Current Focus](#current-focus)
+- [Next Steps](#next-steps)
+- [🎯 Key Concepts](#-key-concepts)
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -39,10 +61,10 @@ get chaotic!
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: [Brief description of what this document covers]
-- **Audience**: [Who should read this document]
-- **Prerequisites**: [What you should know before reading]
-- **Related Documents**: [Links to related documentation]
+- **Purpose**: \[Brief description of what this document covers]
+- **Audience**: \[Who should read this document]
+- **Prerequisites**: \[What you should know before reading]
+- **Related Documents**: \[Links to related documentation]
 
 ## Directory Context
 
@@ -182,8 +204,8 @@ next, return to this README for guidance.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
-[→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md)
+- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+  [→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md)
 
 ## No Dead Ends Policy
 
