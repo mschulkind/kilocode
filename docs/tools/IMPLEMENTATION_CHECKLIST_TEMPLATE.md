@@ -1,92 +1,93 @@
 # Implementation Checklist Template
 
 ## Table of Contents
-- [Implementation Checklist Template](#implementation-checklist-template)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Template Overview](#template-overview)
-- [Document Structure](#document-structure)
-- [1. Header Section](#1-header-section)
-- [2. Progress Summary](#2-progress-summary)
-- [3. Implementation Rules](#3-implementation-rules)
-- [4. Task Organization](#4-task-organization)
-- [Template Usage](#template-usage)
-- [Creating a New Implementation Checklist](#creating-a-new-implementation-checklist)
-- [Customization Guidelines](#customization-guidelines)
-- [Template Sections](#template-sections)
-- [Header Template](#header-template)
-- [Implementation Rules Template](#implementation-rules-template)
-- [Task Overview Template](#task-overview-template)
-- [Individual Task Template](#individual-task-template)
-- [Success Criteria Template](#success-criteria-template)
-- [Next Steps Template](#next-steps-template)
-- [Best Practices](#best-practices)
-- [Task Design](#task-design)
-- [Progress Tracking](#progress-tracking)
-- [Documentation](#documentation)
-- [Quality Assurance](#quality-assurance)
-- [Example Customizations](#example-customizations)
-- [For Software Development](#for-software-development)
-- [For Documentation Projects](#for-documentation-projects)
-- [For Infrastructure Projects](#for-infrastructure-projects)
-- [For Process Implementation](#for-process-implementation)
-- [File Organization](#file-organization)
-- [Directory Structure](#directory-structure)
-- [Naming Convention](#naming-convention)
-- [File Placement](#file-placement)
-- [Maintenance Guidelines](#maintenance-guidelines)
-- [During Implementation](#during-implementation)
-- [After Completion](#after-completion)
-- [Implementation Checklist Template](#implementation-checklist-template)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Template Overview](#template-overview)
-- [Document Structure](#document-structure)
-- [1. Header Section](#1-header-section)
-- [2. Progress Summary](#2-progress-summary)
-- [3. Implementation Rules](#3-implementation-rules)
-- [4. Task Organization](#4-task-organization)
-- [Template Usage](#template-usage)
-- [Creating a New Implementation Checklist](#creating-a-new-implementation-checklist)
-- [Customization Guidelines](#customization-guidelines)
-- [Template Sections](#template-sections)
-- [Header Template](#header-template)
-- [Implementation Rules Template](#implementation-rules-template)
-- [Task Overview Template](#task-overview-template)
-- [Individual Task Template](#individual-task-template)
-- [Success Criteria Template](#success-criteria-template)
-- [Next Steps Template](#next-steps-template)
-- [Best Practices](#best-practices)
-- [Task Design](#task-design)
-- [Progress Tracking](#progress-tracking)
-- [Documentation](#documentation)
-- [Quality Assurance](#quality-assurance)
-- [Example Customizations](#example-customizations)
-- [For Software Development](#for-software-development)
-- [For Documentation Projects](#for-documentation-projects)
-- [For Infrastructure Projects](#for-infrastructure-projects)
-- [For Process Implementation](#for-process-implementation)
-- [File Organization](#file-organization)
-- [Directory Structure](#directory-structure)
-- [Naming Convention](#naming-convention)
-- [File Placement](#file-placement)
-- [Maintenance Guidelines](#maintenance-guidelines)
-- [During Implementation](#during-implementation)
-- [After Completion](#after-completion)
+
+* [Implementation Checklist Template](#implementation-checklist-template)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Template Overview](#template-overview)
+* [Document Structure](#document-structure)
+* [1. Header Section](#1-header-section)
+* [2. Progress Summary](#2-progress-summary)
+* [3. Implementation Rules](#3-implementation-rules)
+* [4. Task Organization](#4-task-organization)
+* [Template Usage](#template-usage)
+* [Creating a New Implementation Checklist](#creating-a-new-implementation-checklist)
+* [Customization Guidelines](#customization-guidelines)
+* [Template Sections](#template-sections)
+* [Header Template](#header-template)
+* [Implementation Rules Template](#implementation-rules-template)
+* [Task Overview Template](#task-overview-template)
+* [Individual Task Template](#individual-task-template)
+* [Success Criteria Template](#success-criteria-template)
+* [Next Steps Template](#next-steps-template)
+* [Best Practices](#best-practices)
+* [Task Design](#task-design)
+* [Progress Tracking](#progress-tracking)
+* [Documentation](#documentation)
+* [Quality Assurance](#quality-assurance)
+* [Example Customizations](#example-customizations)
+* [For Software Development](#for-software-development)
+* [For Documentation Projects](#for-documentation-projects)
+* [For Infrastructure Projects](#for-infrastructure-projects)
+* [For Process Implementation](#for-process-implementation)
+* [File Organization](#file-organization)
+* [Directory Structure](#directory-structure)
+* [Naming Convention](#naming-convention)
+* [File Placement](#file-placement)
+* [Maintenance Guidelines](#maintenance-guidelines)
+* [During Implementation](#during-implementation)
+* [After Completion](#after-completion)
+* [Implementation Checklist Template](#implementation-checklist-template)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Template Overview](#template-overview)
+* [Document Structure](#document-structure)
+* [1. Header Section](#1-header-section)
+* [2. Progress Summary](#2-progress-summary)
+* [3. Implementation Rules](#3-implementation-rules)
+* [4. Task Organization](#4-task-organization)
+* [Template Usage](#template-usage)
+* [Creating a New Implementation Checklist](#creating-a-new-implementation-checklist)
+* [Customization Guidelines](#customization-guidelines)
+* [Template Sections](#template-sections)
+* [Header Template](#header-template)
+* [Implementation Rules Template](#implementation-rules-template)
+* [Task Overview Template](#task-overview-template)
+* [Individual Task Template](#individual-task-template)
+* [Success Criteria Template](#success-criteria-template)
+* [Next Steps Template](#next-steps-template)
+* [Best Practices](#best-practices)
+* [Task Design](#task-design)
+* [Progress Tracking](#progress-tracking)
+* [Documentation](#documentation)
+* [Quality Assurance](#quality-assurance)
+* [Example Customizations](#example-customizations)
+* [For Software Development](#for-software-development)
+* [For Documentation Projects](#for-documentation-projects)
+* [For Infrastructure Projects](#for-infrastructure-projects)
+* [For Process Implementation](#for-process-implementation)
+* [File Organization](#file-organization)
+* [Directory Structure](#directory-structure)
+* [Naming Convention](#naming-convention)
+* [File Placement](#file-placement)
+* [Maintenance Guidelines](#maintenance-guidelines)
+* [During Implementation](#during-implementation)
+* [After Completion](#after-completion)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* A standardized template for creating detailed, granular task breakdowns for
+* *Purpose:*\* A standardized template for creating detailed, granular task breakdowns for
   implementing complex projects with precise tracking and accountability.
 
 > **Cartography Fun Fact**: Like mapping a complex terrain, we'll chart each step of our
@@ -102,35 +103,38 @@ accountability features.
 
 ### 1. Header Section
 
-- **Title**: `[Project Name]: [Phase Name] Implementation Checklist`
-- **Purpose**: Brief description of the project scope and focus
-- **Fun Fact**: Optional motivational or thematic element
+* **Title**: `[Project Name]: [Phase Name] Implementation Checklist`
+* **Purpose**: Brief description of the project scope and focus
+* **Fun Fact**: Optional motivational or thematic element
 
 ### 2. Progress Summary
 
-- **Research Context**: Template placeholders for project context
-- **Summary Table**: Task tracking with status, timestamps, and progress
-- **Overall Progress**: Aggregate statistics
+* **Research Context**: Template placeholders for project context
+* **Summary Table**: Task tracking with status, timestamps, and progress
+* **Overall Progress**: Aggregate statistics
 
 ### 3. Implementation Rules
 
-- **Task ID Convention**: Unique identifier system
-- **Task Workflow**: Step-by-step process for each task
-- **Commit Message Format**: Standardized commit structure
-- **Testing Requirements**: Quality assurance guidelines
+* **Task ID Convention**: Unique identifier system
+* **Task Workflow**: Step-by-step process for each task
+* **Commit Message Format**: Standardized commit structure
+* **Testing Requirements**: Quality assurance guidelines
 
 ### 4. Task Organization
 
-- **Task Overview**: High-level project information
-- **Weekly/Phase Breakdown**: Organized task groupings
-- **Individual Task Details**: Detailed task specifications
+* **Task Overview**: High-level project information
+* **Weekly/Phase Breakdown**: Organized task groupings
+* **Individual Task Details**: Detailed task specifications
 
 ## Template Usage
 
 ### Creating a New Implementation Checklist
+
 1. **Copy this template** to your project directory: `context/<proj_name>/phase1.md`
-- Extract `<proj_name>` from your plan filename: `<proj_name>_PLAN.md`
-- Example: If plan is `API_GATEWAY_PLAN.md`, use `context/api-gateway/phase1.md`
+
+* Extract `<proj_name>` from your plan filename: `<proj_name>_PLAN.md`
+* Example: If plan is `API_GATEWAY_PLAN.md`, use `context/api-gateway/phase1.md`
+
 2. **Replace placeholders** with project-specific information
 3. **Define task structure** based on your project needs
 4. **Set up tracking** using the provided format
@@ -138,10 +142,10 @@ accountability features.
 
 ### Customization Guidelines
 
-- **Task IDs**: Use `TNNN` format (T001, T002, etc.)
-- **Timestamps**: Use ISO 8601 format (2025-01-27T10:30:00Z)
-- **Status Values**: `⏳ Pending`, `🔄 In Progress`, `✅ Done`, `❌ Blocked`
-- **Progress**: Use percentage (0-100%)
+* **Task IDs**: Use `TNNN` format (T001, T002, etc.)
+* **Timestamps**: Use ISO 8601 format (2025-01-27T10:30:00Z)
+* **Status Values**: `⏳ Pending`, `🔄 In Progress`, `✅ Done`, `❌ Blocked`
+* **Progress**: Use percentage (0-100%)
 
 ## Template Sections
 
@@ -217,9 +221,10 @@ this plan only and may be reused in other plans.
 ```
 
 [type](TNNN): brief-description
-- specific change 1
-- specific change 2
-- specific change 3
+
+* specific change 1
+* specific change 2
+* specific change 3
 
 Implements: TNNN · Phase Task X.Y: Task Name
 
@@ -323,57 +328,61 @@ For more information, see:
 
 ### Task Design
 
-- **Granular**: Break tasks into specific, actionable subtasks
-- **Testable**: Each task should have clear success criteria
-- **Time-bound**: Include realistic time estimates
-- **Dependencies**: Note any task dependencies clearly
+* **Granular**: Break tasks into specific, actionable subtasks
+* **Testable**: Each task should have clear success criteria
+* **Time-bound**: Include realistic time estimates
+* **Dependencies**: Note any task dependencies clearly
 
 ### Progress Tracking
 
-- **Real-time Updates**: Update checkboxes as work progresses
-- **Status Consistency**: Use consistent status values throughout
-- **Timestamp Accuracy**: Record actual start/completion times
-- **Progress Visibility**: Keep summary table current
+* **Real-time Updates**: Update checkboxes as work progresses
+* **Status Consistency**: Use consistent status values throughout
+* **Timestamp Accuracy**: Record actual start/completion times
+* **Progress Visibility**: Keep summary table current
 
 ### Documentation
 
-- **Clear Descriptions**: Write task names and descriptions clearly
-- **Comprehensive Subtasks**: Include all necessary steps
-- **Deliverable Focus**: Specify what will be produced
-- **Link Maintenance**: Keep cross-references current
+* **Clear Descriptions**: Write task names and descriptions clearly
+* **Comprehensive Subtasks**: Include all necessary steps
+* **Deliverable Focus**: Specify what will be produced
+* **Link Maintenance**: Keep cross-references current
 
 ### Quality Assurance
 
-- **Testing Requirements**: Include validation steps
-- **Review Process**: Build in review checkpoints
-- **Error Handling**: Plan for common issues
-- **Documentation Updates**: Keep docs current with changes
+* **Testing Requirements**: Include validation steps
+* **Review Process**: Build in review checkpoints
+* **Error Handling**: Plan for common issues
+* **Documentation Updates**: Keep docs current with changes
 
 ## Example Customizations
 
 ### For Software Development
-- Add code review subtasks
-- Include testing and deployment steps
-- Add performance benchmarks
-- Include security considerations
+
+* Add code review subtasks
+* Include testing and deployment steps
+* Add performance benchmarks
+* Include security considerations
 
 ### For Documentation Projects
-- Add content review steps
-- Include style guide compliance
-- Add accessibility checks
-- Include user testing
+
+* Add content review steps
+* Include style guide compliance
+* Add accessibility checks
+* Include user testing
 
 ### For Infrastructure Projects
-- Add environment setup steps
-- Include monitoring configuration
-- Add backup and recovery steps
-- Include security hardening
+
+* Add environment setup steps
+* Include monitoring configuration
+* Add backup and recovery steps
+* Include security hardening
 
 ### For Process Implementation
-- Add training and adoption steps
-- Include change management
-- Add feedback collection
-- Include success measurement
+
+* Add training and adoption steps
+* Include change management
+* Add feedback collection
+* Include success measurement
 
 ## File Organization
 
@@ -391,33 +400,39 @@ context/
 
 ### Naming Convention
 
-- **Project Name**: Extract from plan filename `<proj_name>_PLAN.md`
-- **Examples**:
-- `API_GATEWAY_PLAN.md` → `context/api-gateway/`
-- `USER_DASHBOARD_PLAN.md` → `context/user-dashboard/`
-- `CI_CD_PIPELINE_PLAN.md` → `context/ci-cd-pipeline/`
+* **Project Name**: Extract from plan filename `<proj_name>_PLAN.md`
+* **Examples**:
+* `API_GATEWAY_PLAN.md` → `context/api-gateway/`
+* `USER_DASHBOARD_PLAN.md` → `context/user-dashboard/`
+* `CI_CD_PIPELINE_PLAN.md` → `context/ci-cd-pipeline/`
 
 ### File Placement
 
-- **Checklists**: `context/<proj_name>/phase1.md`, `phase2.md`, etc.
-- **Plans**: `plans/<proj_name>_PLAN.md`
-- **Templates**: `docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md`
+* **Checklists**: `context/<proj_name>/phase1.md`, `phase2.md`, etc.
+* **Plans**: `plans/<proj_name>_PLAN.md`
+* **Templates**: `docs/tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md`
 
 ## Maintenance Guidelines
 
 ### During Implementation
-- Update progress regularly
-- Document lessons learned
-- Adjust estimates based on actual time
-- Update dependencies as needed
+
+* Update progress regularly
+* Document lessons learned
+* Adjust estimates based on actual time
+* Update dependencies as needed
 
 ### After Completion
-- Archive completed checklists
-- Extract best practices
-- Update templates based on learnings
-- Share insights with team
-- \*\*
 
-- *Navigation*\*: [← Back to Documentation Tools](../tools/) ·
-  [📚 Technical Glossary](../GLOSSARY.md) ·
+* Archive completed checklists
+
+* Extract best practices
+
+* Update templates based on learnings
+
+* Share insights with team
+
+* \*\*
+
+* *Navigation*\*: [← Back to Documentation Tools](../tools/) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) ·
   [↑ Table of Contents](#implementation-checklist-template)

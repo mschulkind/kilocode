@@ -1,45 +1,46 @@
 # Orchestrator Master Index
 
 ## Table of Contents
-- [Orchestrator Master Index](#orchestrator-master-index)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Purpose & Scope](#purpose-scope)
-- [High-Level Responsibilities](#highlevel-responsibilities)
-- [Core Concepts At a Glance](#core-concepts-at-a-glance)
-- [Lifecycle Snapshot](#lifecycle-snapshot)
-- [Documentation Map](#documentation-map)
-- [Quick Reference Matrix](#quick-reference-matrix)
-- [Architecture Flow Diagram](#architecture-flow-diagram)
-- [Guardrails & Safety Overview](#guardrails-safety-overview)
-- [Change Management & Versioning](#change-management-versioning)
-- [Glossary](#glossary)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Orchestrator Master Index](#orchestrator-master-index)
-- [Table of Contents](#table-of-contents)
-- [Purpose & Scope](#purpose-scope)
-- [High-Level Responsibilities](#highlevel-responsibilities)
-- [Core Concepts At a Glance](#core-concepts-at-a-glance)
-- [Lifecycle Snapshot](#lifecycle-snapshot)
-- [Documentation Map](#documentation-map)
-- [Quick Reference Matrix](#quick-reference-matrix)
-- [Architecture Flow Diagram](#architecture-flow-diagram)
-- [Guardrails & Safety Overview](#guardrails-safety-overview)
-- [Change Management & Versioning](#change-management-versioning)
-- [Glossary](#glossary)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Orchestrator Master Index](#orchestrator-master-index)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Purpose & Scope](#purpose-scope)
+* [High-Level Responsibilities](#highlevel-responsibilities)
+* [Core Concepts At a Glance](#core-concepts-at-a-glance)
+* [Lifecycle Snapshot](#lifecycle-snapshot)
+* [Documentation Map](#documentation-map)
+* [Quick Reference Matrix](#quick-reference-matrix)
+* [Architecture Flow Diagram](#architecture-flow-diagram)
+* [Guardrails & Safety Overview](#guardrails-safety-overview)
+* [Change Management & Versioning](#change-management-versioning)
+* [Glossary](#glossary)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Orchestrator Master Index](#orchestrator-master-index)
+* [Table of Contents](#table-of-contents)
+* [Purpose & Scope](#purpose-scope)
+* [High-Level Responsibilities](#highlevel-responsibilities)
+* [Core Concepts At a Glance](#core-concepts-at-a-glance)
+* [Lifecycle Snapshot](#lifecycle-snapshot)
+* [Documentation Map](#documentation-map)
+* [Quick Reference Matrix](#quick-reference-matrix)
+* [Architecture Flow Diagram](#architecture-flow-diagram)
+* [Guardrails & Safety Overview](#guardrails-safety-overview)
+* [Change Management & Versioning](#change-management-versioning)
+* [Glossary](#glossary)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the
+* *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the
   Orchestrator's architecture, lifecycle, and core responsibilities, enabling developers to
   understand, maintain, and extend its capabilities with confidence.
 
@@ -48,10 +49,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Purpose & Scope
 
@@ -60,15 +61,16 @@ provide a high-level overview and a centralized entry point into the more detail
 covering specific aspects of the Orchestrator's functionality. It establishes the conceptual
 framework and key terminology used throughout the suite.
 
-- *Scope:*\*
+* *Scope:*\*
 
-- **IN SCOPE:** High-level architecture, core responsibilities, task lifecycle, key concept
+* **IN SCOPE:** High-level architecture, core responsibilities, task lifecycle, key concept
   definitions, and a map to all sibling orchestrator documents.
 
-- **OUT OF SCOPE:** Detailed implementation logic, specific tool implementation, low-level state
+* **OUT OF SCOPE:** Detailed implementation logic, specific tool implementation, low-level state
   management, or UI-specific interactions. These topics are delegated to the specialized documents
   linked in the [Documentation Map](#documentation-map).
-- \*\*
+
+* \*\*
 
 ## High-Level Responsibilities
 
@@ -76,16 +78,16 @@ The Orchestrator is responsible for managing the end-to-end lifecycle of a user'
 includes interpreting the request, executing tools, managing state, and ensuring safe, predictable
 outcomes.
 
-- **System Prompt Assembly:** Constructs the master prompt that guides the model by combining user
+* **System Prompt Assembly:** Constructs the master prompt that guides the model by combining user
   requests, system instructions, and context. See
   [`getSystemPrompt`](../../src/core/task/Task.ts#L2499).
 
-- **Task Execution Loop:** Manages the primary loop that drives a task, from parsing the model's
+* **Task Execution Loop:** Manages the primary loop that drives a task, from parsing the model's
   response to tool invocation and state management. See
   [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699) and
   [`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735).
 
-- **Tool Management & Gating:** Provides and validates tools for the model, ensuring that only
+* **Tool Management & Gating:** Provides and validates tools for the model, ensuring that only
   permitted tools are used by the active mode. Key tools include
   [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35),
   [`newTaskTool`](../../src/core/tools/newTaskTool.ts#L14),
@@ -93,46 +95,49 @@ outcomes.
   [`askFollowupQuestionTool`](../../src/core/tools/askFollowupQuestionTool.ts#L6), and
   [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156).
 
-- **Mode-Based Permissions:** Enforces which tools and file operations are allowed for a given mode,
+* **Mode-Based Permissions:** Enforces which tools and file operations are allowed for a given mode,
   preventing unintended side effects. See [`isToolAllowedForMode`](../../src/shared/modes.ts#L167)
   and the resulting [`FileRestrictionError`](../../src/shared/modes.ts#L157).
 
-- **Formatting & Presentation:** Ensures that all model outputs adhere to a strict markdown format
+* **Formatting & Presentation:** Ensures that all model outputs adhere to a strict markdown format
   for reliable parsing and presentation. See
   [`markdownFormattingSection`](../../src/core/prompts/sections/markdown-formatting.ts#L1).
-- \*\*
+
+* \*\*
 
 ## Core Concepts At a Glance
 
-- **Mode:** A distinct persona or capability set (e.g., `code`, `architect`) that defines available
+* **Mode:** A distinct persona or capability set (e.g., `code`, `architect`) that defines available
   tools and operational boundaries.
 
-- **Tool Invocation:** The process by which the model requests to execute a system-provided function
+* **Tool Invocation:** The process by which the model requests to execute a system-provided function
   (e.g., `read_file`, `apply_diff`).
 
-- **Subtask:** A discrete unit of work delegated by the Orchestrator to a specialized mode or
+* **Subtask:** A discrete unit of work delegated by the Orchestrator to a specialized mode or
   function, managed via [`startSubtask`](../../src/core/task/Task.ts#L1628) and
   [`completeSubtask`](../../src/core/task/Task.ts#L1669).
 
-- **Todo Gating:** A mechanism that requires the model to create and follow a plan (`todo list`) for
+* **Todo Gating:** A mechanism that requires the model to create and follow a plan (`todo list`) for
   complex tasks, ensuring structured execution.
 
-- **Streaming Parser:** The component responsible for real-time parsing of the model's output stream
+* **Streaming Parser:** The component responsible for real-time parsing of the model's output stream
   to identify and execute tool calls as they arrive.
 
-- **Mistake Limit:** A configurable threshold for the number of consecutive errors a model can make
+* **Mistake Limit:** A configurable threshold for the number of consecutive errors a model can make
   before the task is halted.
 
-- **Continuity Metadata:** Information passed between tasks to maintain context, such as the last
+* **Continuity Metadata:** Information passed between tasks to maintain context, such as the last
   active file or user selections.
 
-- **File Restriction:** A security mechanism that limits file system access based on the active
+* **File Restriction:** A security mechanism that limits file system access based on the active
   mode's permissions, enforced via [`FileRestrictionError`](../../src/shared/modes.ts#L157).
-- \*\*
+
+* \*\*
 
 ## Lifecycle Snapshot
 
 A typical task follows this orchestrated sequence:
+
 1. **User Request:** A user submits a prompt in a specific mode.
 2. **Mode Resolution:** The system identifies the active mode and its associated permissions from
    [`src/shared/modes.ts`](../../src/shared/modes.ts#L69).
@@ -150,7 +155,8 @@ A typical task follows this orchestrated sequence:
 9. **Completion or Anomaly:** The loop continues until
    [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35) is called or an
    unrecoverable error occurs.
-- \*\*
+
+* \*\*
 
 ## Documentation Map
 
@@ -179,7 +185,8 @@ This table maps out the complete Orchestrator documentation suite.
 Orchestrator. | All Devs                | `TOOLS_REFERENCE`, `ARCHITECTURE`     |
 | `ORCHESTRATOR_EXTENSIBILITY.md`       | Guides adding new modes, tools, and capabilities.
 | Core Devs, Contributors | `SECURITY_GOVERNANCE`, `ARCHITECTURE` |
-- \*\*
+
+* \*\*
 
 ## Quick Reference Matrix
 
@@ -204,7 +211,8 @@ Orchestrator. | All Devs                | `TOOLS_REFERENCE`, `ARCHITECTURE`     
 | `ORCHESTRATOR_BEST_PRACTICES.md`      |
 | User Interaction | [`askFollowupQuestionTool`](../../src/core/tools/askFollowupQuestionTool.ts#L6)
 | `ORCHESTRATOR_LIFECYCLE.md`           |
-- \*\*
+
+* \*\*
 
 ## Architecture Flow Diagram
 
@@ -229,34 +237,37 @@ flowchart TD
     M --> N[End Task];
     L -- No --> D;
 ```
-- \*\*
+
+* \*\*
 
 ## Guardrails & Safety Overview
 
 The Orchestrator enforces several safety mechanisms to ensure predictable and secure operation:
 
-- **File Restrictions:** Modes are restricted to specific file patterns, preventing unauthorized
+* **File Restrictions:** Modes are restricted to specific file patterns, preventing unauthorized
   access. A [`FileRestrictionError`](../../src/shared/modes.ts#L157) is thrown on violation.
 
-- **Single Tool Constraint:** The model is only permitted to call one tool at a time, simplifying
+* **Single Tool Constraint:** The model is only permitted to call one tool at a time, simplifying
   parsing and execution logic.
 
-- **Todo Gating:** For complex tasks, the model must first generate a plan, which is then enforced
+* **Todo Gating:** For complex tasks, the model must first generate a plan, which is then enforced
   step-by-step via [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156).
 
-- **Missing Parameter Handling:** The system validates that all required parameters for a tool call
+* **Missing Parameter Handling:** The system validates that all required parameters for a tool call
   are present before execution.
 
-- **Mistake Count:** A task will fail if the model makes too many consecutive mistakes (e.g.,
+* **Mistake Count:** A task will fail if the model makes too many consecutive mistakes (e.g.,
   malformed tool calls).
 
-- **Continuity Handling:** State is explicitly passed between tasks to maintain context, avoiding
+* **Continuity Handling:** State is explicitly passed between tasks to maintain context, avoiding
   reliance on implicit or hidden state.
-- \*\*
+
+* \*\*
 
 ## Change Management & Versioning
 
 To keep documentation synchronized with the codebase, follow these principles:
+
 1. **Atomic Commits:** All code changes that affect Orchestrator logic MUST be accompanied by
    corresponding documentation updates in the same commit.
 2. **Symbol Link Integrity:** When refactoring, ensure all clickable code references like
@@ -264,25 +275,27 @@ To keep documentation synchronized with the codebase, follow these principles:
 3. **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid
    diagrams.
 4. **Rules as Policy:** For automated verification of documentation rules, consider adding checks
-   inspired by the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
-- \*\*
+   inspired by the [Documentation Guide](../../DOCUMENTATION_GUIDE.md).
+
+* \*\*
 
 ## Glossary
 
-- **Continuity:** The mechanism for preserving state and context across multiple, related tasks.
+* **Continuity:** The mechanism for preserving state and context across multiple, related tasks.
 
-- **Gating:** A checkpoint or condition that must be satisfied before a task can proceed.
+* **Gating:** A checkpoint or condition that must be satisfied before a task can proceed.
 
-- **Mode:** A defined set of capabilities, tools, and restrictions that governs the model's
+* **Mode:** A defined set of capabilities, tools, and restrictions that governs the model's
   behavior.
 
-- **Orchestrator:** The top-level process that manages the entire lifecycle of a task.
+* **Orchestrator:** The top-level process that manages the entire lifecycle of a task.
 
-- **Subtask:** A smaller, self-contained task that is delegated by the main Orchestrator loop.
+* **Subtask:** A smaller, self-contained task that is delegated by the main Orchestrator loop.
 
-- **Tool:** A function exposed to the model that allows it to interact with the system (e.g., read
+* **Tool:** A function exposed to the model that allows it to interact with the system (e.g., read
   files, apply code changes).
-- \*\*
+
+* \*\*
 
 End of document.
 
@@ -290,26 +303,26 @@ End of document.
 
 ### When You're Here, You Can:
 
-- *Understanding This System:*\*
+* *Understanding This System:*\*
 
-- **Next**: Check related documentation in the same directory
+* **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../architecture/README.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../README.md) for context
 
-- *Implementing Features:*\*
+* *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -318,21 +331,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to the appropriate README for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

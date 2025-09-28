@@ -1,102 +1,103 @@
 # Link Text Standards Documentation
 
 ## Table of Contents
-- [Link Text Standards Documentation](#link-text-standards-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [Link Text Principles](#link-text-principles)
-- [Accessibility First](#accessibility-first)
-- [User Experience](#user-experience)
-- [Standards and Guidelines](#standards-and-guidelines)
-- [Required Standards](#required-standards)
-- [1. Descriptive Text](#1-descriptive-text)
-- [2. Context Independence](#2-context-independence)
-- [3. Unique Identification](#3-unique-identification)
-- [Recommended Guidelines](#recommended-guidelines)
-- [1. Action-Oriented Text](#1-actionoriented-text)
-- [2. Consistent Formatting](#2-consistent-formatting)
-- [3. Appropriate Length](#3-appropriate-length)
-- [Common Patterns and Examples](#common-patterns-and-examples)
-- [File and Document Links](#file-and-document-links)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Links](#navigation-links)
-- [Cross-Reference Links](#crossreference-links)
-- [External Links](#external-links)
-- [Context-Specific Guidelines](#contextspecific-guidelines)
-- [Architecture Documentation](#architecture-documentation)
-- [Tools Documentation](#tools-documentation)
-- [Standards Documentation](#standards-documentation)
-- [Automated Improvements](#automated-improvements)
-- [Link Text Standardizer](#link-text-standardizer)
-- [Common Improvements](#common-improvements)
-- [File Name Improvements](#file-name-improvements)
-- [Validation and Enforcement](#validation-and-enforcement)
-- [Automated Validation](#automated-validation)
-- [Validation Rules](#validation-rules)
-- [Error Types](#error-types)
-- [Best Practices Summary](#best-practices-summary)
-- [Do's](#dos)
-- [Don'ts](#donts)
-- [Tools and Resources](#tools-and-resources)
-- [Automated Tools](#automated-tools)
-- [Manual Review](#manual-review)
-- [External Resources](#external-resources)
-- [Updates and Maintenance](#updates-and-maintenance)
-- [Navigation](#navigation)
-- [Link Text Standards Documentation](#link-text-standards-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [Link Text Principles](#link-text-principles)
-- [Accessibility First](#accessibility-first)
-- [User Experience](#user-experience)
-- [Standards and Guidelines](#standards-and-guidelines)
-- [Required Standards](#required-standards)
-- [1. Descriptive Text](#1-descriptive-text)
-- [2. Context Independence](#2-context-independence)
-- [3. Unique Identification](#3-unique-identification)
-- [Recommended Guidelines](#recommended-guidelines)
-- [1. Action-Oriented Text](#1-actionoriented-text)
-- [2. Consistent Formatting](#2-consistent-formatting)
-- [3. Appropriate Length](#3-appropriate-length)
-- [Common Patterns and Examples](#common-patterns-and-examples)
-- [File and Document Links](#file-and-document-links)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Links](#navigation-links)
-- [Cross-Reference Links](#crossreference-links)
-- [External Links](#external-links)
-- [Context-Specific Guidelines](#contextspecific-guidelines)
-- [Architecture Documentation](#architecture-documentation)
-- [Tools Documentation](#tools-documentation)
-- [Standards Documentation](#standards-documentation)
-- [Automated Improvements](#automated-improvements)
-- [Link Text Standardizer](#link-text-standardizer)
-- [Common Improvements](#common-improvements)
-- [File Name Improvements](#file-name-improvements)
-- [Validation and Enforcement](#validation-and-enforcement)
-- [Automated Validation](#automated-validation)
-- [Validation Rules](#validation-rules)
-- [Error Types](#error-types)
-- [Best Practices Summary](#best-practices-summary)
-- [Do's](#dos)
-- [Don'ts](#donts)
-- [Tools and Resources](#tools-and-resources)
-- [Automated Tools](#automated-tools)
-- [Manual Review](#manual-review)
-- [External Resources](#external-resources)
-- [Updates and Maintenance](#updates-and-maintenance)
-- [Navigation](#navigation)
+
+* [Link Text Standards Documentation](#link-text-standards-documentation)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [Link Text Principles](#link-text-principles)
+* [Accessibility First](#accessibility-first)
+* [User Experience](#user-experience)
+* [Standards and Guidelines](#standards-and-guidelines)
+* [Required Standards](#required-standards)
+* [1. Descriptive Text](#1-descriptive-text)
+* [2. Context Independence](#2-context-independence)
+* [3. Unique Identification](#3-unique-identification)
+* [Recommended Guidelines](#recommended-guidelines)
+* [1. Action-Oriented Text](#1-actionoriented-text)
+* [2. Consistent Formatting](#2-consistent-formatting)
+* [3. Appropriate Length](#3-appropriate-length)
+* [Common Patterns and Examples](#common-patterns-and-examples)
+* [File and Document Links](#file-and-document-links)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Links](#navigation-links)
+* [Cross-Reference Links](#crossreference-links)
+* [External Links](#external-links)
+* [Context-Specific Guidelines](#contextspecific-guidelines)
+* [Architecture Documentation](#architecture-documentation)
+* [Tools Documentation](#tools-documentation)
+* [Standards Documentation](#standards-documentation)
+* [Automated Improvements](#automated-improvements)
+* [Link Text Standardizer](#link-text-standardizer)
+* [Common Improvements](#common-improvements)
+* [File Name Improvements](#file-name-improvements)
+* [Validation and Enforcement](#validation-and-enforcement)
+* [Automated Validation](#automated-validation)
+* [Validation Rules](#validation-rules)
+* [Error Types](#error-types)
+* [Best Practices Summary](#best-practices-summary)
+* [Do's](#dos)
+* [Don'ts](#donts)
+* [Tools and Resources](#tools-and-resources)
+* [Automated Tools](#automated-tools)
+* [Manual Review](#manual-review)
+* [External Resources](#external-resources)
+* [Updates and Maintenance](#updates-and-maintenance)
+* [Navigation](#navigation)
+* [Link Text Standards Documentation](#link-text-standards-documentation)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [Link Text Principles](#link-text-principles)
+* [Accessibility First](#accessibility-first)
+* [User Experience](#user-experience)
+* [Standards and Guidelines](#standards-and-guidelines)
+* [Required Standards](#required-standards)
+* [1. Descriptive Text](#1-descriptive-text)
+* [2. Context Independence](#2-context-independence)
+* [3. Unique Identification](#3-unique-identification)
+* [Recommended Guidelines](#recommended-guidelines)
+* [1. Action-Oriented Text](#1-actionoriented-text)
+* [2. Consistent Formatting](#2-consistent-formatting)
+* [3. Appropriate Length](#3-appropriate-length)
+* [Common Patterns and Examples](#common-patterns-and-examples)
+* [File and Document Links](#file-and-document-links)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Links](#navigation-links)
+* [Cross-Reference Links](#crossreference-links)
+* [External Links](#external-links)
+* [Context-Specific Guidelines](#contextspecific-guidelines)
+* [Architecture Documentation](#architecture-documentation)
+* [Tools Documentation](#tools-documentation)
+* [Standards Documentation](#standards-documentation)
+* [Automated Improvements](#automated-improvements)
+* [Link Text Standardizer](#link-text-standardizer)
+* [Common Improvements](#common-improvements)
+* [File Name Improvements](#file-name-improvements)
+* [Validation and Enforcement](#validation-and-enforcement)
+* [Automated Validation](#automated-validation)
+* [Validation Rules](#validation-rules)
+* [Error Types](#error-types)
+* [Best Practices Summary](#best-practices-summary)
+* [Do's](#dos)
+* [Don'ts](#donts)
+* [Tools and Resources](#tools-and-resources)
+* [Automated Tools](#automated-tools)
+* [Manual Review](#manual-review)
+* [External Resources](#external-resources)
+* [Updates and Maintenance](#updates-and-maintenance)
+* [Navigation](#navigation)
 
 ## When You're Here
 
@@ -104,9 +105,9 @@
 
 This document provides \[purpose of document].
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Context**: \[How this fits into the broader system/project]
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Purpose**: \[Brief description of what this document covers]
+* **Context**: \[How this fits into the broader system/project]
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Research Context
 
@@ -137,18 +138,19 @@ click a link.
 
 Link text should be:
 
-- **Descriptive**: Clearly indicate what the link leads to
-- **Self-contained**: Understandable without surrounding context
-- **Unique**: Distinguishable from other links on the page
-- **Concise**: Brief but informative
+* **Descriptive**: Clearly indicate what the link leads to
+* **Self-contained**: Understandable without surrounding context
+* **Unique**: Distinguishable from other links on the page
+* **Concise**: Brief but informative
 
 ### User Experience
 
 Good link text helps users:
-- Navigate efficiently through documentation
-- Understand the relationship between documents
-- Make informed decisions about which links to follow
-- Use screen readers and other assistive technologies effectively
+
+* Navigate efficiently through documentation
+* Understand the relationship between documents
+* Make informed decisions about which links to follow
+* Use screen readers and other assistive technologies effectively
 
 ## Standards and Guidelines
 
@@ -277,8 +279,9 @@ Link text should be long enough to be descriptive but short enough to be scannab
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Links
 
@@ -373,6 +376,7 @@ For more information, see:
 ### Link Text Standardizer
 
 The project includes an automated link text standardizer that:
+
 1. **Identifies Non-Descriptive Links**: Detects links with poor text
 2. **Applies Improvement Rules**: Uses predefined patterns to suggest better text
 3. **Context-Aware Improvements**: Considers document context for better suggestions
@@ -414,10 +418,10 @@ The standardizer automatically improves:
 
 The validation system checks for:
 
-- **Non-descriptive patterns**: Generic words like "here", "more", "click"
-- **URL duplication**: Link text that matches the URL
-- **Context independence**: Links that require context to understand
-- **Consistency**: Similar links using different patterns
+* **Non-descriptive patterns**: Generic words like "here", "more", "click"
+* **URL duplication**: Link text that matches the URL
+* **Context independence**: Links that require context to understand
+* **Consistency**: Similar links using different patterns
 
 ### Validation Rules
 
@@ -438,9 +442,9 @@ const nonDescriptivePatterns = [
 
 ### Error Types
 
-- **Errors**: Non-descriptive links that must be fixed
-- **Warnings**: Links that could be improved
-- **Info**: Suggestions for better alternatives
+* **Errors**: Non-descriptive links that must be fixed
+* **Warnings**: Links that could be improved
+* **Info**: Suggestions for better alternatives
 
 ## Best Practices Summary
 
@@ -468,26 +472,28 @@ const nonDescriptivePatterns = [
 
 ### Automated Tools
 
-- **Link Text Standardizer**: `scripts/docs/link-text-standardizer.js`
-- **Validation System**: Integrated into `remark-kilocode-comprehensive`
-- **Link Validator**: `scripts/docs/link-validator.js`
+* **Link Text Standardizer**: `scripts/docs/link-text-standardizer.js`
+* **Validation System**: Integrated into `remark-kilocode-comprehensive`
+* **Link Validator**: `scripts/docs/link-validator.js`
 
 ### Manual Review
 
-- **Accessibility Testing**: Test with screen readers
-- **User Testing**: Gather feedback from actual users
-- **Peer Review**: Have others review link clarity
+* **Accessibility Testing**: Test with screen readers
+* **User Testing**: Gather feedback from actual users
+* **Peer Review**: Have others review link clarity
 
 ### External Resources
-- [WebAIM Link Text Guidelines](https://webaim.org/techniques/hypertext/link_text)
-- [WCAG Link Purpose
+
+* [WebAIM Link Text Guidelines](https://webaim.org/techniques/hypertext/link_text)
+* [WCAG Link Purpose
   Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)
-- [MDN Link Best
+* [MDN Link Best
   Practices](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Link_text)
 
 ## Updates and Maintenance
 
 This standard is maintained as part of the KiloCode documentation automation:
+
 1. **Regular Updates**: Standards are updated based on best practices
 2. **Automated Enforcement**: Validation rules are enforced automatically
 3. **Community Feedback**: Standards evolve based on user feedback
@@ -497,7 +503,8 @@ For questions or issues with link text standards, see the [Validation System
 Documentation](./VALIDATION_SYSTEM.md).
 
 ## Navigation
-- [← Back to Documentation Tools](./)
-- [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
-- [↑ Table of Contents](#link-text-standards-documentation)
+
+* [← Back to Documentation Tools](./)
+* [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
+* [📚 Technical Glossary](../../GLOSSARY.md)
+* [↑ Table of Contents](#link-text-standards-documentation)

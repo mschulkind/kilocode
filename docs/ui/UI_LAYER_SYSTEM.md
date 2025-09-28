@@ -1,72 +1,73 @@
 # UI Layer System Architecture
 
 ## Table of Contents
-- [UI Layer System Architecture](#ui-layer-system-architecture)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [System Components](#system-components)
-- [Chat Interface Component](#chat-interface-component)
-- [ChatView Component](#chatview-component)
-- [Message Display System](#message-display-system)
-- [Send Controls Component](#send-controls-component)
-- [ChatTextArea Component](#chattextarea-component)
-- [Send Button Logic](#send-button-logic)
-- [Message Queue System](#message-queue-system)
-- [QueuedMessages Component](#queuedmessages-component)
-- [Queue State Integration](#queue-state-integration)
-- [State Management](#state-management)
-- [Primary State Variables](#primary-state-variables)
-- [State Transition Flow](#state-transition-flow)
-- [State Synchronization](#state-synchronization)
-- [Event Handling](#event-handling)
-- [Message Send Events](#message-send-events)
-- [Keyboard Events](#keyboard-events)
-- [Webview Communication](#webview-communication)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Send Button Stuck Disabled](#send-button-stuck-disabled)
-- [Multiple Messages Queued](#multiple-messages-queued)
-- [Button State Inconsistency](#button-state-inconsistency)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [UI Layer System Architecture](#ui-layer-system-architecture)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [System Components](#system-components)
-- [Chat Interface Component](#chat-interface-component)
-- [ChatView Component](#chatview-component)
-- [Message Display System](#message-display-system)
-- [Send Controls Component](#send-controls-component)
-- [ChatTextArea Component](#chattextarea-component)
-- [Send Button Logic](#send-button-logic)
-- [Message Queue System](#message-queue-system)
-- [QueuedMessages Component](#queuedmessages-component)
-- [Queue State Integration](#queue-state-integration)
-- [State Management](#state-management)
-- [Primary State Variables](#primary-state-variables)
-- [State Transition Flow](#state-transition-flow)
-- [State Synchronization](#state-synchronization)
-- [Event Handling](#event-handling)
-- [Message Send Events](#message-send-events)
-- [Keyboard Events](#keyboard-events)
-- [Webview Communication](#webview-communication)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Send Button Stuck Disabled](#send-button-stuck-disabled)
-- [Multiple Messages Queued](#multiple-messages-queued)
-- [Button State Inconsistency](#button-state-inconsistency)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [UI Layer System Architecture](#ui-layer-system-architecture)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [System Components](#system-components)
+* [Chat Interface Component](#chat-interface-component)
+* [ChatView Component](#chatview-component)
+* [Message Display System](#message-display-system)
+* [Send Controls Component](#send-controls-component)
+* [ChatTextArea Component](#chattextarea-component)
+* [Send Button Logic](#send-button-logic)
+* [Message Queue System](#message-queue-system)
+* [QueuedMessages Component](#queuedmessages-component)
+* [Queue State Integration](#queue-state-integration)
+* [State Management](#state-management)
+* [Primary State Variables](#primary-state-variables)
+* [State Transition Flow](#state-transition-flow)
+* [State Synchronization](#state-synchronization)
+* [Event Handling](#event-handling)
+* [Message Send Events](#message-send-events)
+* [Keyboard Events](#keyboard-events)
+* [Webview Communication](#webview-communication)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [Send Button Stuck Disabled](#send-button-stuck-disabled)
+* [Multiple Messages Queued](#multiple-messages-queued)
+* [Button State Inconsistency](#button-state-inconsistency)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [UI Layer System Architecture](#ui-layer-system-architecture)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [System Components](#system-components)
+* [Chat Interface Component](#chat-interface-component)
+* [ChatView Component](#chatview-component)
+* [Message Display System](#message-display-system)
+* [Send Controls Component](#send-controls-component)
+* [ChatTextArea Component](#chattextarea-component)
+* [Send Button Logic](#send-button-logic)
+* [Message Queue System](#message-queue-system)
+* [QueuedMessages Component](#queuedmessages-component)
+* [Queue State Integration](#queue-state-integration)
+* [State Management](#state-management)
+* [Primary State Variables](#primary-state-variables)
+* [State Transition Flow](#state-transition-flow)
+* [State Synchronization](#state-synchronization)
+* [Event Handling](#event-handling)
+* [Message Send Events](#message-send-events)
+* [Keyboard Events](#keyboard-events)
+* [Webview Communication](#webview-communication)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [Send Button Stuck Disabled](#send-button-stuck-disabled)
+* [Multiple Messages Queued](#multiple-messages-queued)
+* [Button State Inconsistency](#button-state-inconsistency)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -75,10 +76,10 @@
 This document provides a comprehensive overview of KiloCode's UI layer architecture, including
 component design, state management, and troubleshooting procedures.
 
-- **Purpose**: Complete guide to UI layer system architecture and component implementation
-- **Context**: Essential for developers working on UI components, state management, or debugging UI
+* **Purpose**: Complete guide to UI layer system architecture and component implementation
+* **Context**: Essential for developers working on UI components, state management, or debugging UI
   issues
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Research Context
 
@@ -108,6 +109,7 @@ components.
 
 The UI Layer consists of three primary components that work together to provide a seamless user
 experience:
+
 1. **Chat Interface** - Main chat view and message display system
 2. **Send Controls** - User input controls and request initiation mechanisms
 3. **Message Queue** - Visual representation and management of queued messages
@@ -119,10 +121,11 @@ experience:
 **Location**: `webview-ui/src/components/chat/ChatView.tsx`
 
 **Responsibilities**:
-- Main chat interface container
-- Message display and rendering
-- State coordination between components
-- Communication with backend via webview
+
+* Main chat interface container
+* Message display and rendering
+* State coordination between components
+* Communication with backend via webview
 
 **Interface Definition**:
 
@@ -153,11 +156,12 @@ const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 **Component**: `ChatRow`
 
 **Features**:
-- Individual message rendering
-- Support for different message types (user, assistant, system)
-- Markdown rendering with syntax highlighting
-- Image display capabilities
-- Timestamp and status indicators
+
+* Individual message rendering
+* Support for different message types (user, assistant, system)
+* Markdown rendering with syntax highlighting
+* Image display capabilities
+* Timestamp and status indicators
 
 ## Send Controls Component
 
@@ -166,11 +170,12 @@ const [queuedMessages, setQueuedMessages] = useState<QueuedMessage[]>([])
 **Location**: `webview-ui/src/components/chat/ChatTextArea.tsx`
 
 **Responsibilities**:
-- Text input area management
-- Send button control
-- Image selection interface
-- Mode and profile selection
-- Input validation
+
+* Text input area management
+* Send button control
+* Image selection interface
+* Mode and profile selection
+* Input validation
 
 **Interface Definition**:
 
@@ -256,10 +261,11 @@ hover:border-[rgba(255,255,255,0.08)] active:bg-transparent",
 **Purpose**: Visual representation of queued messages when the system is busy
 
 **Features**:
-- Display queued message count
-- Show message previews
-- Allow message removal
-- Allow message editing
+
+* Display queued message count
+* Show message previews
+* Allow message removal
+* Allow message editing
 
 **Implementation**:
 
@@ -409,19 +415,21 @@ const handleKeyDown = useCallback(
 ### Webview Communication
 
 **Message Types**:
-- `newTask` - Create new task with message
-- `queueMessage` - Queue message for later processing
-- `removeQueuedMessage` - Remove queued message
-- `editQueuedMessage` - Edit queued message
+
+* `newTask` - Create new task with message
+* `queueMessage` - Queue message for later processing
+* `removeQueuedMessage` - Remove queued message
+* `editQueuedMessage` - Edit queued message
 
 ## Troubleshooting Guide
 
 ### Send Button Stuck Disabled
 
 **Symptoms**:
-- Send button remains disabled after request completion
-- User cannot send new messages
-- UI appears frozen
+
+* Send button remains disabled after request completion
+* User cannot send new messages
+* UI appears frozen
 
 **Root Cause**: `sendingDisabled` state not properly reset
 
@@ -447,9 +455,10 @@ useEffect(() => {
 ### Multiple Messages Queued
 
 **Symptoms**:
-- Same message appears multiple times in queue
-- Multiple API requests for single user action
-- Queue UI shows duplicates
+
+* Same message appears multiple times in queue
+* Multiple API requests for single user action
+* Queue UI shows duplicates
 
 **Root Cause**: Message queued multiple times due to rapid user interaction
 
@@ -469,9 +478,10 @@ const debouncedQueueMessage = useMemo(
 ### Button State Inconsistency
 
 **Symptoms**:
-- Button appears enabled but request is blocked
-- Button appears disabled but request goes through
-- Visual state doesn't match actual state
+
+* Button appears enabled but request is blocked
+* Button appears disabled but request goes through
+* Visual state doesn't match actual state
 
 **Root Cause**: State updates not properly synchronized
 
@@ -496,13 +506,16 @@ false
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Back to UI Documentation](README.md)
-- [→ Chat Task Window](UI_CHAT_TASK_WINDOW.md)
-- [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)
+
+* [← Back to UI Documentation](README.md)
+* [→ Chat Task Window](UI_CHAT_TASK_WINDOW.md)
+* [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)

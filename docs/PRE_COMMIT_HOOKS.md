@@ -1,87 +1,88 @@
 # Pre-commit Hooks Documentation
 
 ## Table of Contents
-- [Pre-commit Hooks Documentation](#precommit-hooks-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Configuration](#configuration)
-- [Husky Setup](#husky-setup)
-- [Pre-commit Hook Flow](#precommit-hook-flow)
-- [Documentation Validation](#documentation-validation)
-- [Validation Commands](#validation-commands)
-- [Validation Rules](#validation-rules)
-- [Auto-fix Capabilities](#autofix-capabilities)
-- [Error Handling](#error-handling)
-- [Validation Failures](#validation-failures)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Link Validation Errors](#link-validation-errors)
-- [Missing Required Sections](#missing-required-sections)
-- [Heading Hierarchy Issues](#heading-hierarchy-issues)
-- [Bypassing Hooks (Emergency Only)](#bypassing-hooks-emergency-only)
-- [Skip Pre-commit Hook](#skip-precommit-hook)
-- [Skip All Hooks](#skip-all-hooks)
-- [Troubleshooting](#troubleshooting)
-- [Hook Not Running](#hook-not-running)
-- [Performance Issues](#performance-issues)
-- [Validation Errors](#validation-errors)
-- [Too Many Warnings](#too-many-warnings)
-- [False Positives](#false-positives)
-- [Best Practices](#best-practices)
-- [Before Committing](#before-committing)
-- [Commit Messages](#commit-messages)
-- [Integration with CI/CD](#integration-with-cicd)
-- [Maintenance](#maintenance)
-- [Updating Hook Configuration](#updating-hook-configuration)
-- [Adding New Validation Rules](#adding-new-validation-rules)
-- [Support](#support)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Pre-commit Hooks Documentation](#precommit-hooks-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Configuration](#configuration)
-- [Husky Setup](#husky-setup)
-- [Pre-commit Hook Flow](#precommit-hook-flow)
-- [Documentation Validation](#documentation-validation)
-- [Validation Commands](#validation-commands)
-- [Validation Rules](#validation-rules)
-- [Auto-fix Capabilities](#autofix-capabilities)
-- [Error Handling](#error-handling)
-- [Validation Failures](#validation-failures)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Link Validation Errors](#link-validation-errors)
-- [Missing Required Sections](#missing-required-sections)
-- [Heading Hierarchy Issues](#heading-hierarchy-issues)
-- [Bypassing Hooks (Emergency Only)](#bypassing-hooks-emergency-only)
-- [Skip Pre-commit Hook](#skip-precommit-hook)
-- [Skip All Hooks](#skip-all-hooks)
-- [Troubleshooting](#troubleshooting)
-- [Hook Not Running](#hook-not-running)
-- [Performance Issues](#performance-issues)
-- [Validation Errors](#validation-errors)
-- [Too Many Warnings](#too-many-warnings)
-- [False Positives](#false-positives)
-- [Best Practices](#best-practices)
-- [Before Committing](#before-committing)
-- [Commit Messages](#commit-messages)
-- [Integration with CI/CD](#integration-with-cicd)
-- [Maintenance](#maintenance)
-- [Updating Hook Configuration](#updating-hook-configuration)
-- [Adding New Validation Rules](#adding-new-validation-rules)
-- [Support](#support)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Pre-commit Hooks Documentation](#precommit-hooks-documentation)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Configuration](#configuration)
+* [Husky Setup](#husky-setup)
+* [Pre-commit Hook Flow](#precommit-hook-flow)
+* [Documentation Validation](#documentation-validation)
+* [Validation Commands](#validation-commands)
+* [Validation Rules](#validation-rules)
+* [Auto-fix Capabilities](#autofix-capabilities)
+* [Error Handling](#error-handling)
+* [Validation Failures](#validation-failures)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Link Validation Errors](#link-validation-errors)
+* [Missing Required Sections](#missing-required-sections)
+* [Heading Hierarchy Issues](#heading-hierarchy-issues)
+* [Bypassing Hooks (Emergency Only)](#bypassing-hooks-emergency-only)
+* [Skip Pre-commit Hook](#skip-precommit-hook)
+* [Skip All Hooks](#skip-all-hooks)
+* [Troubleshooting](#troubleshooting)
+* [Hook Not Running](#hook-not-running)
+* [Performance Issues](#performance-issues)
+* [Validation Errors](#validation-errors)
+* [Too Many Warnings](#too-many-warnings)
+* [False Positives](#false-positives)
+* [Best Practices](#best-practices)
+* [Before Committing](#before-committing)
+* [Commit Messages](#commit-messages)
+* [Integration with CI/CD](#integration-with-cicd)
+* [Maintenance](#maintenance)
+* [Updating Hook Configuration](#updating-hook-configuration)
+* [Adding New Validation Rules](#adding-new-validation-rules)
+* [Support](#support)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Pre-commit Hooks Documentation](#precommit-hooks-documentation)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Configuration](#configuration)
+* [Husky Setup](#husky-setup)
+* [Pre-commit Hook Flow](#precommit-hook-flow)
+* [Documentation Validation](#documentation-validation)
+* [Validation Commands](#validation-commands)
+* [Validation Rules](#validation-rules)
+* [Auto-fix Capabilities](#autofix-capabilities)
+* [Error Handling](#error-handling)
+* [Validation Failures](#validation-failures)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Link Validation Errors](#link-validation-errors)
+* [Missing Required Sections](#missing-required-sections)
+* [Heading Hierarchy Issues](#heading-hierarchy-issues)
+* [Bypassing Hooks (Emergency Only)](#bypassing-hooks-emergency-only)
+* [Skip Pre-commit Hook](#skip-precommit-hook)
+* [Skip All Hooks](#skip-all-hooks)
+* [Troubleshooting](#troubleshooting)
+* [Hook Not Running](#hook-not-running)
+* [Performance Issues](#performance-issues)
+* [Validation Errors](#validation-errors)
+* [Too Many Warnings](#too-many-warnings)
+* [False Positives](#false-positives)
+* [Best Practices](#best-practices)
+* [Before Committing](#before-committing)
+* [Commit Messages](#commit-messages)
+* [Integration with CI/CD](#integration-with-cicd)
+* [Maintenance](#maintenance)
+* [Updating Hook Configuration](#updating-hook-configuration)
+* [Adding New Validation Rules](#adding-new-validation-rules)
+* [Support](#support)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -97,6 +98,7 @@ documentation before commits are accepted.
 
 The project uses Husky v9.1.7 for Git hook management. The pre-commit hook is located at
 `.husky/pre-commit` and includes:
+
 1. **Branch Protection**: Prevents direct commits to main branch (unless tracking origin/main)
 2. **Lint-staged**: Runs linting on staged files
 3. **General Linting**: Runs project-wide linting
@@ -134,26 +136,28 @@ documentation helps us understand how! ⚙️
 The pre-commit hook runs the following documentation checks:
 
 ### Validation Commands
-- `pnpm docs:validate` - Validates all markdown files using remark with custom KiloCode plugins
-- `pnpm docs:maintain` - Automatically maintains documentation structure (TOC, navigation, etc.)
+
+* `pnpm docs:validate` - Validates all markdown files using remark with custom KiloCode plugins
+* `pnpm docs:maintain` - Automatically maintains documentation structure (TOC, navigation, etc.)
 
 ### Validation Rules
 
 The documentation validation enforces:
 
-- **KiloCode Standards**: Custom validation rules specific to KiloCode documentation
-- **Markdown Standards**: Standard markdown linting rules
-- **Link Validation**: Internal and external link validation
-- **Structure Validation**: Required sections and proper hierarchy
-- **Content Quality**: Readability and consistency checks
+* **KiloCode Standards**: Custom validation rules specific to KiloCode documentation
+* **Markdown Standards**: Standard markdown linting rules
+* **Link Validation**: Internal and external link validation
+* **Structure Validation**: Required sections and proper hierarchy
+* **Content Quality**: Readability and consistency checks
 
 ### Auto-fix Capabilities
 
 Some documentation issues can be automatically fixed:
-- Table of Contents generation
-- Navigation footer updates
-- Research context sections
-- Basic formatting issues
+
+* Table of Contents generation
+* Navigation footer updates
+* Research context sections
+* Basic formatting issues
 
 Run `pnpm docs:fix` to automatically fix fixable issues.
 
@@ -162,6 +166,7 @@ Run `pnpm docs:fix` to automatically fix fixable issues.
 ### Validation Failures
 
 If documentation validation fails:
+
 1. **Commit is blocked** - The commit will not proceed
 2. **Error details shown** - Specific validation errors are displayed
 3. **Fix suggestions provided** - Guidance on how to resolve issues
@@ -228,6 +233,7 @@ git commit --no-verify --no-edit
 ## Troubleshooting
 
 ### Hook Not Running
+
 1. **Check permissions**: Ensure `.husky/pre-commit` is executable
 
    ```bash
@@ -242,6 +248,7 @@ git commit --no-verify --no-edit
 ### Performance Issues
 
 If validation is slow:
+
 1. **Run validation on specific files**:
 
    ```bash
@@ -260,18 +267,21 @@ If validation is slow:
 ### Validation Errors
 
 #### Too Many Warnings
-- Focus on errors first, warnings can be addressed later
-- Use `--quiet` flag to reduce output
-- Consider updating validation rules if warnings are not actionable
+
+* Focus on errors first, warnings can be addressed later
+* Use `--quiet` flag to reduce output
+* Consider updating validation rules if warnings are not actionable
 
 #### False Positives
-- Report false positives to the team
-- Consider updating validation rules
-- Use inline comments to suppress specific warnings
+
+* Report false positives to the team
+* Consider updating validation rules
+* Use inline comments to suppress specific warnings
 
 ## Best Practices
 
 ### Before Committing
+
 1. **Run validation manually**:
 
    ```bash
@@ -291,9 +301,10 @@ If validation is slow:
 ### Commit Messages
 
 Use descriptive commit messages that include:
-- Type of change (docs, fix, feat, etc.)
-- Brief description
-- Reference to documentation standards if applicable
+
+* Type of change (docs, fix, feat, etc.)
+* Brief description
+* Reference to documentation standards if applicable
 
 Example:
 
@@ -310,13 +321,14 @@ Implements: T009 · Phase 1 Task 3.1: Implement Pre-commit Hooks"
 
 The pre-commit hooks complement the CI/CD pipeline:
 
-- **Pre-commit**: Fast local validation and auto-fixes
-- **CI/CD**: Comprehensive validation and reporting
-- **Both**: Ensure documentation quality and consistency
+* **Pre-commit**: Fast local validation and auto-fixes
+* **CI/CD**: Comprehensive validation and reporting
+* **Both**: Ensure documentation quality and consistency
 
 ## Maintenance
 
 ### Updating Hook Configuration
+
 1. **Edit `.husky/pre-commit`**
 2. **Test changes**:
    ```bash
@@ -326,6 +338,7 @@ The pre-commit hooks complement the CI/CD pipeline:
 4. **Update documentation**
 
 ### Adding New Validation Rules
+
 1. **Update validation plugins**
 2. **Test with sample files**
 3. **Update documentation**
@@ -334,6 +347,7 @@ The pre-commit hooks complement the CI/CD pipeline:
 ## Support
 
 For issues with pre-commit hooks:
+
 1. **Check this documentation**
 2. **Review error messages carefully**
 3. **Try suggested fixes**
@@ -345,11 +359,13 @@ For issues with pre-commit hooks:
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)
+* \*\*
+
+* *Navigation*\*: [← Back to Documentation Guide](../../DOCUMENTATION_GUIDE.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)

@@ -1,91 +1,92 @@
 # Validation Errors Guide
 
 ## Table of Contents
-- [Validation Errors Guide](#validation-errors-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Error Categories](#error-categories)
-- [1. Syntax Errors](#1-syntax-errors)
-- [2. Link Errors](#2-link-errors)
-- [3. Structure Errors](#3-structure-errors)
-- [Common Error Patterns](#common-error-patterns)
-- [1. URL-Only Links](#1-urlonly-links)
-- [2. Missing Alt Text](#2-missing-alt-text)
-- [3. Inconsistent Code Blocks](#3-inconsistent-code-blocks)
-- [Auto-Fix Capabilities](#autofix-capabilities)
-- [VS Code Auto-Fix](#vs-code-autofix)
-- [Command Line Auto-Fix](#command-line-autofix)
-- [Error Resolution Workflow](#error-resolution-workflow)
-- [1. Identify the Error](#1-identify-the-error)
-- [2. Understand the Error](#2-understand-the-error)
-- [3. Fix the Error](#3-fix-the-error)
-- [4. Verify the Fix](#4-verify-the-fix)
-- [Error Prevention](#error-prevention)
-- [1. Use VS Code Extensions](#1-use-vs-code-extensions)
-- [2. Follow Standards](#2-follow-standards)
-- [3. Regular Validation](#3-regular-validation)
-- [4. Team Guidelines](#4-team-guidelines)
-- [Advanced Error Handling](#advanced-error-handling)
-- [Custom Validation Rules](#custom-validation-rules)
-- [Suppressing Errors](#suppressing-errors)
-- [Error Reporting](#error-reporting)
-- [Troubleshooting](#troubleshooting)
-- [Validation Not Running](#validation-not-running)
-- [Auto-fix Not Working](#autofix-not-working)
-- [Performance Issues](#performance-issues)
-- [Getting Help](#getting-help)
-- [Resources](#resources)
-- [Support](#support)
-- [Related Documentation](#related-documentation)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Validation Errors Guide](#validation-errors-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Error Categories](#error-categories)
-- [1. Syntax Errors](#1-syntax-errors)
-- [2. Link Errors](#2-link-errors)
-- [3. Structure Errors](#3-structure-errors)
-- [Common Error Patterns](#common-error-patterns)
-- [1. URL-Only Links](#1-urlonly-links)
-- [2. Missing Alt Text](#2-missing-alt-text)
-- [3. Inconsistent Code Blocks](#3-inconsistent-code-blocks)
-- [Auto-Fix Capabilities](#autofix-capabilities)
-- [VS Code Auto-Fix](#vs-code-autofix)
-- [Command Line Auto-Fix](#command-line-autofix)
-- [Error Resolution Workflow](#error-resolution-workflow)
-- [1. Identify the Error](#1-identify-the-error)
-- [2. Understand the Error](#2-understand-the-error)
-- [3. Fix the Error](#3-fix-the-error)
-- [4. Verify the Fix](#4-verify-the-fix)
-- [Error Prevention](#error-prevention)
-- [1. Use VS Code Extensions](#1-use-vs-code-extensions)
-- [2. Follow Standards](#2-follow-standards)
-- [3. Regular Validation](#3-regular-validation)
-- [4. Team Guidelines](#4-team-guidelines)
-- [Advanced Error Handling](#advanced-error-handling)
-- [Custom Validation Rules](#custom-validation-rules)
-- [Suppressing Errors](#suppressing-errors)
-- [Error Reporting](#error-reporting)
-- [Troubleshooting](#troubleshooting)
-- [Validation Not Running](#validation-not-running)
-- [Auto-fix Not Working](#autofix-not-working)
-- [Performance Issues](#performance-issues)
-- [Getting Help](#getting-help)
-- [Resources](#resources)
-- [Support](#support)
-- [Related Documentation](#related-documentation)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+
+* [Validation Errors Guide](#validation-errors-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Error Categories](#error-categories)
+* [1. Syntax Errors](#1-syntax-errors)
+* [2. Link Errors](#2-link-errors)
+* [3. Structure Errors](#3-structure-errors)
+* [Common Error Patterns](#common-error-patterns)
+* [1. URL-Only Links](#1-urlonly-links)
+* [2. Missing Alt Text](#2-missing-alt-text)
+* [3. Inconsistent Code Blocks](#3-inconsistent-code-blocks)
+* [Auto-Fix Capabilities](#autofix-capabilities)
+* [VS Code Auto-Fix](#vs-code-autofix)
+* [Command Line Auto-Fix](#command-line-autofix)
+* [Error Resolution Workflow](#error-resolution-workflow)
+* [1. Identify the Error](#1-identify-the-error)
+* [2. Understand the Error](#2-understand-the-error)
+* [3. Fix the Error](#3-fix-the-error)
+* [4. Verify the Fix](#4-verify-the-fix)
+* [Error Prevention](#error-prevention)
+* [1. Use VS Code Extensions](#1-use-vs-code-extensions)
+* [2. Follow Standards](#2-follow-standards)
+* [3. Regular Validation](#3-regular-validation)
+* [4. Team Guidelines](#4-team-guidelines)
+* [Advanced Error Handling](#advanced-error-handling)
+* [Custom Validation Rules](#custom-validation-rules)
+* [Suppressing Errors](#suppressing-errors)
+* [Error Reporting](#error-reporting)
+* [Troubleshooting](#troubleshooting)
+* [Validation Not Running](#validation-not-running)
+* [Auto-fix Not Working](#autofix-not-working)
+* [Performance Issues](#performance-issues)
+* [Getting Help](#getting-help)
+* [Resources](#resources)
+* [Support](#support)
+* [Related Documentation](#related-documentation)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Validation Errors Guide](#validation-errors-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Error Categories](#error-categories)
+* [1. Syntax Errors](#1-syntax-errors)
+* [2. Link Errors](#2-link-errors)
+* [3. Structure Errors](#3-structure-errors)
+* [Common Error Patterns](#common-error-patterns)
+* [1. URL-Only Links](#1-urlonly-links)
+* [2. Missing Alt Text](#2-missing-alt-text)
+* [3. Inconsistent Code Blocks](#3-inconsistent-code-blocks)
+* [Auto-Fix Capabilities](#autofix-capabilities)
+* [VS Code Auto-Fix](#vs-code-autofix)
+* [Command Line Auto-Fix](#command-line-autofix)
+* [Error Resolution Workflow](#error-resolution-workflow)
+* [1. Identify the Error](#1-identify-the-error)
+* [2. Understand the Error](#2-understand-the-error)
+* [3. Fix the Error](#3-fix-the-error)
+* [4. Verify the Fix](#4-verify-the-fix)
+* [Error Prevention](#error-prevention)
+* [1. Use VS Code Extensions](#1-use-vs-code-extensions)
+* [2. Follow Standards](#2-follow-standards)
+* [3. Regular Validation](#3-regular-validation)
+* [4. Team Guidelines](#4-team-guidelines)
+* [Advanced Error Handling](#advanced-error-handling)
+* [Custom Validation Rules](#custom-validation-rules)
+* [Suppressing Errors](#suppressing-errors)
+* [Error Reporting](#error-reporting)
+* [Troubleshooting](#troubleshooting)
+* [Validation Not Running](#validation-not-running)
+* [Auto-fix Not Working](#autofix-not-working)
+* [Performance Issues](#performance-issues)
+* [Getting Help](#getting-help)
+* [Resources](#resources)
+* [Support](#support)
+* [Related Documentation](#related-documentation)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -96,13 +97,13 @@ This guide helps you understand and fix common validation errors in KiloCode doc
 
 ### 1. Syntax Errors
 
-- *Missing Required Sections*\*
+* *Missing Required Sections*\*
 
 ```
 Error: Missing required section "Research Context"
 ```
 
-- *Fix:*\* Add the required section:
+* *Fix:*\* Add the required section:
 
 ```markdown
 ## Research Context
@@ -110,13 +111,13 @@ Error: Missing required section "Research Context"
 Brief description of the research and context behind this document.
 ```
 
-- *Missing Navigation Footer*\*
+* *Missing Navigation Footer*\*
 
 ```
 Error: Missing navigation footer
 ```
 
-- *Fix:*\* Add navigation footer:
+* *Fix:*\* Add navigation footer:
 
 ```markdown
 - *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
@@ -124,13 +125,13 @@ Error: Missing navigation footer
 
 ### 2. Link Errors
 
-- *Non-descriptive Link Text*\*
+* *Non-descriptive Link Text*\*
 
 ```
 Warning: Link text "https://example.com" is not descriptive
 ```
 
-- *Fix:*\* Use descriptive text:
+* *Fix:*\* Use descriptive text:
 
 ```markdown
 <!-- Bad -->
@@ -142,13 +143,13 @@ Warning: Link text "https://example.com" is not descriptive
 [Example Website](https://example.com)
 ```
 
-- *Broken Internal Links*\*
+* *Broken Internal Links*\*
 
 ```
 Error: Broken internal link to "nonexistent-file.md"
 ```
 
-- *Fix:*\* Check file path and update link:
+* *Fix:*\* Check file path and update link:
 
 ```markdown
 <!-- Verify file exists and update path -->
@@ -156,13 +157,13 @@ Error: Broken internal link to "nonexistent-file.md"
 [Link Text](./correct-path/file.md)
 ```
 
-- *Broken External Links*\*
+* *Broken External Links*\*
 
 ```
 Warning: External link "https://broken-link.com" is not accessible
 ```
 
-- *Fix:*\* Update or remove broken links:
+* *Fix:*\* Update or remove broken links:
 
 ```markdown
 <!-- Update URL or remove if no longer relevant -->
@@ -172,13 +173,13 @@ Warning: External link "https://broken-link.com" is not accessible
 
 ### 3. Structure Errors
 
-- *Improper Heading Hierarchy*\*
+* *Improper Heading Hierarchy*\*
 
 ```
 Warning: Heading level should be 2, not 3
 ```
 
-- *Fix:*\* Use proper heading hierarchy:
+* *Fix:*\* Use proper heading hierarchy:
 
 ```markdown
 # Main Title (H1)
@@ -191,13 +192,13 @@ behind the "what"! 💻
 ### Subsection Title (H3)
 ```
 
-- *Missing Table of Contents*\*
+* *Missing Table of Contents*\*
 
 ```
 Warning: File is long (>500 words) but missing table of contents
 ```
 
-- *Fix:*\* Add table of contents:
+* *Fix:*\* Add table of contents:
 
 ```markdown
 
@@ -220,13 +221,13 @@ Warning: Inconsistent list formatting
 - Item 3
 ````
 
-- *Missing Fun Facts*\*
+* *Missing Fun Facts*\*
 
 ```
 Warning: Consider adding a fun fact to make content more engaging
 ```
 
-- *Fix:*\* Add engaging fun facts:
+* *Fix:*\* Add engaging fun facts:
 
 ```markdown
 > **Fun Fact**: Did you know that markdown was created in 2004 by John Gruber?
@@ -236,13 +237,13 @@ Warning: Consider adding a fun fact to make content more engaging
 
 ### 1. URL-Only Links
 
-- *Problem:*\*
+* *Problem:*\*
 
 ```markdown
 Check out https://example.com for more information.
 ```
 
-- *Solution:*\*
+* *Solution:*\*
 
 ```markdown
 Check out [Example Website](https://example.com) for more information.
@@ -250,13 +251,13 @@ Check out [Example Website](https://example.com) for more information.
 
 ### 2. Missing Alt Text
 
-- *Problem:*\*
+* *Problem:*\*
 
 ```markdown
 ![Image](image.png)
 ```
 
-- *Solution:*\*
+* *Solution:*\*
 
 ```markdown
 ![Descriptive alt text for the image](image.png)
@@ -264,7 +265,7 @@ Check out [Example Website](https://example.com) for more information.
 
 ### 3. Inconsistent Code Blocks
 
-- *Problem:*\*
+* *Problem:*\*
 
 ````markdown
 ```javascript
@@ -289,7 +290,7 @@ code here
 See [Section 1](#section-1) for details.
 ````
 
-- *Solution:*\*
+* *Solution:*\*
 
 ```markdown
 See [Section 1](#section-1) for details.
@@ -302,12 +303,16 @@ See [Section 1](#section-1) for details.
 ### VS Code Auto-Fix
 
 Many errors can be automatically fixed:
+
 1. **Enable Auto-fix on Save:**
-- Already configured in VS Code settings
-- Fixes common markdown issues automatically
+
+* Already configured in VS Code settings
+* Fixes common markdown issues automatically
+
 2. **Manual Auto-fix:**
-- `Ctrl+Shift+P` → "Markdown: Fix all markdownlint violations"
-- Fixes all auto-fixable issues
+
+* `Ctrl+Shift+P` → "Markdown: Fix all markdownlint violations"
+* Fixes all auto-fixable issues
 
 ### Command Line Auto-Fix
 
@@ -330,46 +335,54 @@ npx remark --use remark-stringify docs/specific-file.md
 ## Error Resolution Workflow
 
 ### 1. Identify the Error
-- Check Problems panel in VS Code
-- Run `pnpm docs:validate` for detailed output
-- Look for error codes and descriptions
+
+* Check Problems panel in VS Code
+* Run `pnpm docs:validate` for detailed output
+* Look for error codes and descriptions
 
 ### 2. Understand the Error
-- Read error message carefully
-- Check this guide for common solutions
-- Review documentation standards
+
+* Read error message carefully
+* Check this guide for common solutions
+* Review documentation standards
 
 ### 3. Fix the Error
-- Use auto-fix when available
-- Apply manual fixes for complex issues
-- Test fix with validation
+
+* Use auto-fix when available
+* Apply manual fixes for complex issues
+* Test fix with validation
 
 ### 4. Verify the Fix
-- Run validation again
-- Check Problems panel
-- Ensure no new errors introduced
+
+* Run validation again
+* Check Problems panel
+* Ensure no new errors introduced
 
 ## Error Prevention
 
 ### 1. Use VS Code Extensions
-- Markdown All in One for real-time validation
-- markdownlint for style checking
-- Auto-fix on save enabled
+
+* Markdown All in One for real-time validation
+* markdownlint for style checking
+* Auto-fix on save enabled
 
 ### 2. Follow Standards
-- Use required sections consistently
-- Follow naming conventions
-- Maintain proper structure
+
+* Use required sections consistently
+* Follow naming conventions
+* Maintain proper structure
 
 ### 3. Regular Validation
-- Run `pnpm docs:validate` before committing
-- Check Problems panel regularly
-- Use pre-commit hooks
+
+* Run `pnpm docs:validate` before committing
+* Check Problems panel regularly
+* Use pre-commit hooks
 
 ### 4. Team Guidelines
-- Share common error patterns
-- Document project-specific rules
-- Regular team training
+
+* Share common error patterns
+* Document project-specific rules
+* Regular team training
 
 ## Advanced Error Handling
 
@@ -398,6 +411,7 @@ Content that triggers the rule
 ### Error Reporting
 
 For complex errors:
+
 1. Check validation report: `pnpm docs:report`
 2. Review error context and file location
 3. Consult team documentation
@@ -406,16 +420,19 @@ For complex errors:
 ## Troubleshooting
 
 ### Validation Not Running
+
 1. Check VS Code extensions are installed
 2. Verify `.remarkrc` configuration exists
 3. Ensure dependencies are installed: `pnpm install`
 
 ### Auto-fix Not Working
+
 1. Check VS Code settings for auto-fix configuration
 2. Verify markdownlint extension is active
 3. Try manual fix command
 
 ### Performance Issues
+
 1. Check file size and complexity
 2. Use incremental validation
 3. Exclude large directories if needed
@@ -423,37 +440,42 @@ For complex errors:
 ## Getting Help
 
 ### Resources
+
 1. This validation errors guide
 2. [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 3. [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-4. [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+4. [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ### Support
+
 1. Check VS Code output logs
 2. Review error messages carefully
 3. Consult team documentation
 4. Ask team members for help
 
 ## Related Documentation
-- [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
-- [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-- [Remark Configuration](../../.remarkrc)
-- [Package Scripts](../../package.json)
+
+* [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
+* [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
+* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [Remark Configuration](../../.remarkrc)
+* [Package Scripts](../../package.json)
 
 ## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation
-- [← Tools Overview](README.md)
-- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
-- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
-- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
-- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Tools Overview](README.md)
+* [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+* [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+* [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+* [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)

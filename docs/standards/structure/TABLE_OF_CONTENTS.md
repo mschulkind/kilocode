@@ -1,57 +1,58 @@
 # ## When You're Here
 
 ## Table of Contents
-- [## When You're Here](#-when-youre-here)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [TOC Requirements](#toc-requirements)
-- [Format Standards](#format-standards)
-- [Content Guidelines](#content-guidelines)
-- [Placement Rules](#placement-rules)
-- [Optional TOC Criteria](#optional-toc-criteria)
-- [TOC Validation](#toc-validation)
-- [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
-- [Complete TOC Example](#complete-toc-example)
-- [Minimal TOC Example](#minimal-toc-example)
-- [No TOC Example](#no-toc-example)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [## When You're Here](#-when-youre-here)
-- [When You're Here](#when-youre-here)
-- [Table of Contents](#table-of-contents)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [TOC Requirements](#toc-requirements)
-- [Format Standards](#format-standards)
-- [Content Guidelines](#content-guidelines)
-- [Placement Rules](#placement-rules)
-- [Optional TOC Criteria](#optional-toc-criteria)
-- [TOC Validation](#toc-validation)
-- [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
-- [Complete TOC Example](#complete-toc-example)
-- [Minimal TOC Example](#minimal-toc-example)
-- [No TOC Example](#no-toc-example)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [## When You're Here](#-when-youre-here)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Executive Summary](#executive-summary)
+* [Research Context](#research-context)
+* [TOC Requirements](#toc-requirements)
+* [Format Standards](#format-standards)
+* [Content Guidelines](#content-guidelines)
+* [Placement Rules](#placement-rules)
+* [Optional TOC Criteria](#optional-toc-criteria)
+* [TOC Validation](#toc-validation)
+* [Common Mistakes](#common-mistakes)
+* [Implementation Examples](#implementation-examples)
+* [Complete TOC Example](#complete-toc-example)
+* [Minimal TOC Example](#minimal-toc-example)
+* [No TOC Example](#no-toc-example)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [## When You're Here](#-when-youre-here)
+* [When You're Here](#when-youre-here)
+* [Table of Contents](#table-of-contents)
+* [Executive Summary](#executive-summary)
+* [Research Context](#research-context)
+* [TOC Requirements](#toc-requirements)
+* [Format Standards](#format-standards)
+* [Content Guidelines](#content-guidelines)
+* [Placement Rules](#placement-rules)
+* [Optional TOC Criteria](#optional-toc-criteria)
+* [TOC Validation](#toc-validation)
+* [Common Mistakes](#common-mistakes)
+* [Implementation Examples](#implementation-examples)
+* [Complete TOC Example](#complete-toc-example)
+* [Minimal TOC Example](#minimal-toc-example)
+* [No TOC Example](#no-toc-example)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
 This document provides \[purpose of document].
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Context**: \[How this fits into the broader system/project]
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Purpose**: \[Brief description of what this document covers]
+* **Context**: \[How this fits into the broader system/project]
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Standards for creating and formatting table of contents (TOC) elements to ensure
+* *Purpose:*\* Standards for creating and formatting table of contents (TOC) elements to ensure
   consistent navigation and discoverability across all KiloCode documentation.
 
 > **Cartography Fun Fact**: Just like how a map legend helps you understand the symbols and features
@@ -75,52 +76,54 @@ This document provides \[purpose of document].
 
 ## Research Context
 
-- *Purpose:*\* Define standards for table of contents (TOC) creation and formatting to improve
+* *Purpose:*\* Define standards for table of contents (TOC) creation and formatting to improve
   document navigation and discoverability across all KiloCode documentation.
 
-- *Background:*\* Inconsistent TOC formatting and missing TOCs in longer documents were making it
+* *Background:*\* Inconsistent TOC formatting and missing TOCs in longer documents were making it
   difficult for users to navigate and find information efficiently.
 
-- *Research Questions:*\* What format should TOCs use? When are TOCs required? What content should
+* *Research Questions:*\* What format should TOCs use? When are TOCs required? What content should
   be
   included?
 
-- *Methodology:*\* Analysis of documentation length patterns, user navigation needs, and markdown
+* *Methodology:*\* Analysis of documentation length patterns, user navigation needs, and markdown
   best
   practices to determine optimal TOC standards.
 
-- *Findings:*\* Collapsible format with H2/H3 entries only, required for documents with 3+ H2s and
+* *Findings:*\* Collapsible format with H2/H3 entries only, required for documents with 3+ H2s and
   800+ words, provides optimal navigation without cluttering shorter documents.
-- \*\*
-- Table of contents elements provide essential navigation for readers, helping them understand
+
+* \*\*
+
+* Table of contents elements provide essential navigation for readers, helping them understand
   document structure and quickly locate specific information. These standards ensure consistent TOC
   formatting and content across all KiloCode documentation.\*
 
-- *Key Standards:*\*
+* *Key Standards:*\*
 
-- **Format**: Collapsible `<details><summary>` format
+* **Format**: Collapsible `<details><summary>` format
 
-- **Content**: Include H2 and H3 entries only
+* **Content**: Include H2 and H3 entries only
 
-- **Placement**: Immediately after purpose statement
+* **Placement**: Immediately after purpose statement
 
-- **Optional**: Skip TOC for documents with <3 H2s and <800 words
+* **Optional**: Skip TOC for documents with <3 H2s and <800 words
 
 ## TOC Requirements
 
-- *Required Elements*\*: Every document that meets the criteria MUST include a TOC.
+* *Required Elements*\*: Every document that meets the criteria MUST include a TOC.
 
-- *TOC Criteria*\*:
+* *TOC Criteria*\*:
 
-- **H2 Count**: Document has 3 or more H2 sections
+* **H2 Count**: Document has 3 or more H2 sections
 
-- **Word Count**: Document is 800 words or more
+* **Word Count**: Document is 800 words or more
 
-- **Content Complexity**: Document covers multiple distinct topics
+* **Content Complexity**: Document covers multiple distinct topics
 
-- **Navigation Value**: TOC would help readers navigate content
+* **Navigation Value**: TOC would help readers navigate content
 
-- *TOC Format*\*: Use the standard collapsible format:
+* *TOC Format*\*: Use the standard collapsible format:
 
 ```markdown
 <details><summary>Table of Contents</summary>
@@ -135,19 +138,19 @@ This document provides \[purpose of document].
 
 ## Format Standards
 
-- *Collapsible Format*\*: Use `<details><summary>Table of Contents</summary>` format.
+* *Collapsible Format*\*: Use `<details><summary>Table of Contents</summary>` format.
 
-- *Benefits*\*:
+* *Benefits*\*:
 
-- **Space Efficient**: Doesn't take up space when collapsed
+* **Space Efficient**: Doesn't take up space when collapsed
 
-- **User Controlled**: Users can expand/collapse as needed
+* **User Controlled**: Users can expand/collapse as needed
 
-- **Consistent**: Standard format across all documents
+* **Consistent**: Standard format across all documents
 
-- **Accessible**: Works with screen readers and other tools
+* **Accessible**: Works with screen readers and other tools
 
-- *Format Structure*\*:
+* *Format Structure*\*:
 
 ```markdown
 <details><summary>Table of Contents</summary>
@@ -161,35 +164,35 @@ This document provides \[purpose of document].
 </details>
 ```
 
-- *Format Elements*\*:
+* *Format Elements*\*:
 
-- **Opening Tag**: `<details><summary>Table of Contents</summary>`
+* **Opening Tag**: `<details><summary>Table of Contents</summary>`
 
-- **List Items**: `- [Section Name](#section-anchor)`
+* **List Items**: `- [Section Name](#section-anchor)`
 
-- **Closing Tag**: `</details>`
+* **Closing Tag**: `</details>`
 
-- **Indentation**: Use consistent indentation for readability
+* **Indentation**: Use consistent indentation for readability
 
 ## Content Guidelines
 
-- *Include H2 and H3 Entries*\*: TOC should include all H2 and H3 sections.
+* *Include H2 and H3 Entries*\*: TOC should include all H2 and H3 sections.
 
-- *Exclude H4 Entries*\*: Do not include H4 entries in the TOC.
+* *Exclude H4 Entries*\*: Do not include H4 entries in the TOC.
 
-- *Anchor Links*\*: Use proper anchor links that match heading text.
+* *Anchor Links*\*: Use proper anchor links that match heading text.
 
-- *Anchor Format*\*: Convert heading text to anchor format:
+* *Anchor Format*\*: Convert heading text to anchor format:
 
-- **Lowercase**: Convert to lowercase
+* **Lowercase**: Convert to lowercase
 
-- **Hyphens**: Replace spaces with hyphens
+* **Hyphens**: Replace spaces with hyphens
 
-- **Special Characters**: Remove special characters
+* **Special Characters**: Remove special characters
 
-- **Numbers**: Keep numbers as-is
+* **Numbers**: Keep numbers as-is
 
-- *Anchor Examples*\*:
+* *Anchor Examples*\*:
 
 ```markdown
 # Heading Text → #heading-text
@@ -203,7 +206,7 @@ This document provides \[purpose of document].
 ### Root Cause Analysis → #root-cause-analysis
 ```
 
-- *Content Examples*\*:
+* *Content Examples*\*:
 
 ```markdown
 <details><summary>Table of Contents</summary>
@@ -220,9 +223,10 @@ This document provides \[purpose of document].
 
 ## Placement Rules
 
-- *Placement*\*: Add the collapsible TOC immediately after the purpose statement.
+* *Placement*\*: Add the collapsible TOC immediately after the purpose statement.
 
-- *Order of Elements*\*:
+* *Order of Elements*\*:
+
 1. **H1 Title** - Document title
 2. **Purpose Statement** - Document purpose
 3. **Collapsible TOC** - Navigation overview
@@ -230,7 +234,7 @@ This document provides \[purpose of document].
 5. **Body Content** - Detailed information
 6. **Navigation Footer** - Cross-references
 
-- *Placement Examples*\*:
+* *Placement Examples*\*:
 
 ```markdown
 # Document Title
@@ -262,19 +266,19 @@ More content here.
 
 ## Optional TOC Criteria
 
-- *Skip TOC When*\*: Document has fewer than three H2s and is under ~800 words.
+* *Skip TOC When*\*: Document has fewer than three H2s and is under ~800 words.
 
-- *Criteria for Skipping*\*:
+* *Criteria for Skipping*\*:
 
-- **H2 Count**: Less than 3 H2 sections
+* **H2 Count**: Less than 3 H2 sections
 
-- **Word Count**: Under 800 words
+* **Word Count**: Under 800 words
 
-- **Content Simplicity**: Single, focused topic
+* **Content Simplicity**: Single, focused topic
 
-- **Navigation Value**: TOC wouldn't significantly help navigation
+* **Navigation Value**: TOC wouldn't significantly help navigation
 
-- *Examples of Documents That Can Skip TOC*\*:
+* *Examples of Documents That Can Skip TOC*\*:
 
 ```markdown
 # Build Process Guide (Simple, focused)
@@ -300,7 +304,7 @@ documentation helps us understand how! ⚙️
 - Environment problems
 ```
 
-- *Examples of Documents That Need TOC*\*:
+* *Examples of Documents That Need TOC*\*:
 
 ```markdown
 # API Duplication Analysis (Complex, multiple topics)
@@ -328,55 +332,87 @@ this documentation provides structured guidance for understanding and implementi
 
 ## TOC Validation
 
-- *Pre-Submission Checks*\*: Validate TOC before submitting.
+* *Pre-Submission Checks*\*: Validate TOC before submitting.
 
-- *Required Validations*\*:
-- \[ ] TOC present (if required by criteria)
-- \[ ] Collapsible format used
-- \[ ] Includes all H2 sections
-- \[ ] Includes all H3 sections
-- \[ ] No H4 entries included
-- \[ ] Links work correctly
-- \[ ] Proper placement after purpose statement
+* *Required Validations*\*:
 
-- *TOC Quality Checks*\*:
-- \[ ] Anchor links match heading text
-- \[ ] Consistent formatting
-- \[ ] Logical order of entries
-- \[ ] Descriptive section names
-- \[ ] Proper indentation
+* \[ ] TOC present (if required by criteria)
 
-- *Common TOC Issues*\*:
-- ❌ Missing TOC when required
-- ❌ TOC includes H4 entries
-- ❌ Broken anchor links
-- ❌ Inconsistent formatting
-- ❌ Wrong placement
+* \[ ] Collapsible format used
+
+* \[ ] Includes all H2 sections
+
+* \[ ] Includes all H3 sections
+
+* \[ ] No H4 entries included
+
+* \[ ] Links work correctly
+
+* \[ ] Proper placement after purpose statement
+
+* *TOC Quality Checks*\*:
+
+* \[ ] Anchor links match heading text
+
+* \[ ] Consistent formatting
+
+* \[ ] Logical order of entries
+
+* \[ ] Descriptive section names
+
+* \[ ] Proper indentation
+
+* *Common TOC Issues*\*:
+
+* ❌ Missing TOC when required
+
+* ❌ TOC includes H4 entries
+
+* ❌ Broken anchor links
+
+* ❌ Inconsistent formatting
+
+* ❌ Wrong placement
 
 ## Common Mistakes
 
-- *Format Mistakes*\*:
-- ❌ Using non-collapsible format
-- ❌ Missing opening or closing tags
-- ❌ Inconsistent indentation
-- ❌ Wrong summary text
-- ❌ Missing list item formatting
+* *Format Mistakes*\*:
 
-- *Content Mistakes*\*:
-- ❌ Including H4 entries
-- ❌ Missing H2 or H3 sections
-- ❌ Broken anchor links
-- ❌ Inconsistent section names
-- ❌ Wrong anchor format
+* ❌ Using non-collapsible format
 
-- *Placement Mistakes*\*:
-- ❌ TOC not after purpose statement
-- ❌ TOC in wrong location
-- ❌ Missing TOC when required
-- ❌ TOC present when not needed
-- ❌ Wrong order of elements
+* ❌ Missing opening or closing tags
 
-- *Examples*\*:
+* ❌ Inconsistent indentation
+
+* ❌ Wrong summary text
+
+* ❌ Missing list item formatting
+
+* *Content Mistakes*\*:
+
+* ❌ Including H4 entries
+
+* ❌ Missing H2 or H3 sections
+
+* ❌ Broken anchor links
+
+* ❌ Inconsistent section names
+
+* ❌ Wrong anchor format
+
+* *Placement Mistakes*\*:
+
+* ❌ TOC not after purpose statement
+
+* ❌ TOC in wrong location
+
+* ❌ Missing TOC when required
+
+* ❌ TOC present when not needed
+
+* ❌ Wrong order of elements
+
+* *Examples*\*:
 
 ```markdown
 # Bad: Non-collapsible format
@@ -601,9 +637,10 @@ documentation helps us understand how! ⚙️
 ```
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [Back to Structure](README.md) · [Next: Navigation Footer](NAVIGATION_FOOTER.md) ·
+* \*\*
+
+* *Navigation*\*: [Back to Structure](README.md) · [Next: Navigation Footer](NAVIGATION_FOOTER.md) ·
   [Source: `/docs/standards/structure/TABLE_OF_CONTENTS.md#L1`](TABLE_OF_CONTENTS.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
@@ -612,9 +649,11 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

@@ -1,42 +1,43 @@
 # \[Document Title]
 
 ## Table of Contents
-- [\[Document Title\]](#document-title)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Project Information](#project-information)
-- [Background](#background)
-- [Research Questions](#research-questions)
-- [Methodology](#methodology)
-- [Findings](#findings)
-- [Section 1](#section-1)
-- [Section 2](#section-2)
-- [Section 3](#section-3)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [\[Document Title\]](#document-title)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Project Information](#project-information)
-- [Background](#background)
-- [Research Questions](#research-questions)
-- [Methodology](#methodology)
-- [Findings](#findings)
-- [Section 1](#section-1)
-- [Section 2](#section-2)
-- [Section 3](#section-3)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+
+* [\[Document Title\]](#document-title)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Project Information](#project-information)
+* [Background](#background)
+* [Research Questions](#research-questions)
+* [Methodology](#methodology)
+* [Findings](#findings)
+* [Section 1](#section-1)
+* [Section 2](#section-2)
+* [Section 3](#section-3)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [\[Document Title\]](#document-title)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Project Information](#project-information)
+* [Background](#background)
+* [Research Questions](#research-questions)
+* [Methodology](#methodology)
+* [Findings](#findings)
+* [Section 1](#section-1)
+* [Section 2](#section-2)
+* [Section 3](#section-3)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
 
 ## When You're Here
 
 This document provides \[BRIEF DESCRIPTION OF PURPOSE]. It covers \[SPECIFIC TOPICS OR AREAS].
 
-- **Purpose**: \[Clear explanation of what this document is for]
-- **Context**: \[How this fits into the larger system/project]
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Purpose**: \[Clear explanation of what this document is for]
+* **Context**: \[How this fits into the larger system/project]
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 > **\[Thematic Fun Fact]**: \[Engaging fun fact related to the topic] \[Emoji]
 
@@ -65,10 +66,11 @@ This document provides \[BRIEF DESCRIPTION OF PURPOSE]. It covers \[SPECIFIC TOP
 ### Findings
 
 \[Summarize key findings or conclusions]
-- [Section 1](#section-1)
-- [Section 2](#section-2)
-- [Section 3](#section-3)
-- [Navigation](#navigation)
+
+* [Section 1](#section-1)
+* [Section 2](#section-2)
+* [Section 3](#section-3)
+* [Navigation](#navigation)
 
 ## Section 1
 
@@ -87,12 +89,14 @@ This document provides \[BRIEF DESCRIPTION OF PURPOSE]. It covers \[SPECIFIC TOP
 This document connects to:
 
 For more information, see:
-- [Parent Category](../../category/)
-- [Related Topics](../related/)
+
+* [Parent Category](../../category/)
+* [Related Topics](../related/)
 
 ## Navigation
-- [← Back to Main Documentation](../README.md)
-- [← Back to Category](../)
-- [→ Related Topic](../related-topic/)
-- [📚 Technical Glossary](../GLOSSARY.md)
-- [↑ Table of Contents](#table-of-contents)
+
+* [← Back to Main Documentation](../README.md)
+* [← Back to Category](../)
+* [→ Related Topic](../related-topic/)
+* [📚 Technical Glossary](../../GLOSSARY.md)
+* [↑ Table of Contents](#table-of-contents)

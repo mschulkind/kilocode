@@ -1,48 +1,49 @@
 # Recursive Call State Machine
 
 ## Table of Contents
-- [Recursive Call State Machine](#recursive-call-state-machine)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [🗺️ Navigation](#-navigation)
-- [Quick Links](#quick-links)
-- [Key Concepts](#key-concepts)
-- [Recursive Call States](#recursive-call-states)
-- [Recursive Call State Properties](#recursive-call-state-properties)
-- [State Transition Diagram](#state-transition-diagram)
-- [Race Condition Detection](#race-condition-detection)
-- [3-Request Race Condition](#3request-race-condition)
-- [Synchronization States](#synchronization-states)
-- [State Machine Implementation](#state-machine-implementation)
-- [Key States](#key-states)
-- [Race Condition Prevention](#race-condition-prevention)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Recursive Call State Machine](#recursive-call-state-machine)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [🗺️ Navigation](#-navigation)
-- [Quick Links](#quick-links)
-- [Key Concepts](#key-concepts)
-- [Recursive Call States](#recursive-call-states)
-- [Recursive Call State Properties](#recursive-call-state-properties)
-- [State Transition Diagram](#state-transition-diagram)
-- [Race Condition Detection](#race-condition-detection)
-- [3-Request Race Condition](#3request-race-condition)
-- [Synchronization States](#synchronization-states)
-- [State Machine Implementation](#state-machine-implementation)
-- [Key States](#key-states)
-- [Race Condition Prevention](#race-condition-prevention)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Recursive Call State Machine](#recursive-call-state-machine)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [🗺️ Navigation](#-navigation)
+* [Quick Links](#quick-links)
+* [Key Concepts](#key-concepts)
+* [Recursive Call States](#recursive-call-states)
+* [Recursive Call State Properties](#recursive-call-state-properties)
+* [State Transition Diagram](#state-transition-diagram)
+* [Race Condition Detection](#race-condition-detection)
+* [3-Request Race Condition](#3request-race-condition)
+* [Synchronization States](#synchronization-states)
+* [State Machine Implementation](#state-machine-implementation)
+* [Key States](#key-states)
+* [Race Condition Prevention](#race-condition-prevention)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Recursive Call State Machine](#recursive-call-state-machine)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [🗺️ Navigation](#-navigation)
+* [Quick Links](#quick-links)
+* [Key Concepts](#key-concepts)
+* [Recursive Call States](#recursive-call-states)
+* [Recursive Call State Properties](#recursive-call-state-properties)
+* [State Transition Diagram](#state-transition-diagram)
+* [Race Condition Detection](#race-condition-detection)
+* [3-Request Race Condition](#3request-race-condition)
+* [Synchronization States](#synchronization-states)
+* [State Machine Implementation](#state-machine-implementation)
+* [Key States](#key-states)
+* [Race Condition Prevention](#race-condition-prevention)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -52,25 +53,26 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 The Recursive Call State Machine manages the execution of recursive API calls, including the
 detection and prevention of race conditions. This is the **"quantum field controller"** of our
@@ -85,16 +87,16 @@ system - it manages the delicate balance between order and chaos in our API call
 
 ### Quick Links
 
-- **Something's broken?** → [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-- **Need to understand the flow?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
-- **Ready to implement a fix?** → Synchronization Implementation
+* **Something's broken?** → [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* **Need to understand the flow?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
+* **Ready to implement a fix?** → Synchronization Implementation
 
 ### Key Concepts
 
-- **IDLE** is the safe state (the "vacuum state" - empty but ready)
-- **RUNNING** is normal execution (the "stable particle" - predictable)
-- **CONCURRENT** is the danger zone (the "quantum entanglement gone wrong")
-- **TRIPLE\_CONCURRENT** is catastrophic (the "nuclear meltdown" - XML apocalypse!)
+* **IDLE** is the safe state (the "vacuum state" - empty but ready)
+* **RUNNING** is normal execution (the "stable particle" - predictable)
+* **CONCURRENT** is the danger zone (the "quantum entanglement gone wrong")
+* **TRIPLE\_CONCURRENT** is catastrophic (the "nuclear meltdown" - XML apocalypse!)
 
 ## Recursive Call States
 
@@ -266,6 +268,7 @@ stateDiagram-v2
 
 The race condition occurs when the system transitions from `IDLE` to `CONCURRENT`, bypassing the
 proper `RUNNING` state. This happens when:
+
 1. **Main Task Loop**: Calls `recursivelyMakeClineRequests()`
 2. **Subtask Completion**: Also calls `recursivelyMakeClineRequests()` via `continueParentTask()`
 3. **Concurrent Execution**: Both calls reach the API simultaneously
@@ -274,26 +277,29 @@ proper `RUNNING` state. This happens when:
 ### 3-Request Race Condition
 
 The most severe form involves **3 simultaneous API requests** triggered by:
+
 1. **Subtask Premature Completion**: Subtask incorrectly thinks it's done and outputs green text
 2. **Subtask Stops**: Subtask stops execution prematurely
 3. **User Request**: User sends another request to the agent
 4. **Triple Concurrent Calls**:
-- Main orchestrator loop call
-- Subtask completion call (from premature completion)
-- New user request call
+
+* Main orchestrator loop call
+* Subtask completion call (from premature completion)
+* New user request call
+
 5. **Severe Corruption**: XML appears in chat, permanent session damage
 
 This 3-request scenario is particularly destructive because it causes:
 
-- **XML Corruption**: Chat history becomes severely broken
-- **Permanent Damage**: Session requires restart to recover
-- **Cascading Failure**: All subsequent requests become corrupted
+* **XML Corruption**: Chat history becomes severely broken
+* **Permanent Damage**: Session requires restart to recover
+* **Cascading Failure**: All subsequent requests become corrupted
 
 ## Synchronization States
 
-- **QUEUED**: Calls are queued when a lock is already held
-- **LOCKED**: A call is actively processing with the lock held
-- **TIMEOUT**: Lock acquisition timed out, call is abandoned
+* **QUEUED**: Calls are queued when a lock is already held
+* **LOCKED**: A call is actively processing with the lock held
+* **TIMEOUT**: Lock acquisition timed out, call is abandoned
 
 ## State Machine Implementation
 
@@ -348,51 +354,57 @@ class RecursiveCallStateManager {
 
 ## Key States
 
-- **IDLE**: Safe state, no active calls
-- **RUNNING**: Normal execution, single call active
-- **CONCURRENT**: **RACE CONDITION** - multiple calls active simultaneously
-- **QUEUED**: Calls waiting for lock, synchronized execution
-- **LOCKED**: Call processing with lock held
+* **IDLE**: Safe state, no active calls
+* **RUNNING**: Normal execution, single call active
+* **CONCURRENT**: **RACE CONDITION** - multiple calls active simultaneously
+* **QUEUED**: Calls waiting for lock, synchronized execution
+* **LOCKED**: Call processing with lock held
 
 ## Race Condition Prevention
 
 To prevent race conditions:
+
 1. **Check State**: Before making a call, check if another call is already running
 2. **Acquire Lock**: Use a lock mechanism to ensure only one call at a time
 3. **Queue Calls**: If lock is held, queue the call for later execution
 4. **Detect Concurrent**: Monitor for concurrent calls and handle appropriately
-- \*\*
 
-- *Related Documentation:*\*
-- [Task State Machine](TASK_STATE_MACHINE.md)
-- [Session State Machine](SESSION_STATE_MACHINE.md)
-- [Combined State Machine](COMBINED_STATE_MACHINE.md)
-- [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* \*\*
+
+* *Related Documentation:*\*
+
+* [Task State Machine](TASK_STATE_MACHINE.md)
+
+* [Session State Machine](SESSION_STATE_MACHINE.md)
+
+* [Combined State Machine](COMBINED_STATE_MACHINE.md)
+
+* [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:*\*
+* *Understanding Architecture:*\*
 
-- **Next**: Check related architecture documentation in the same directory
+* **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:*\*
+* *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Architecture Issues:*\*
+* *Troubleshooting Architecture Issues:*\*
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+* **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -401,21 +413,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,76 +1,77 @@
 # Code Documentation 📝
 
 ## Table of Contents
-- [Code Documentation 📝](#code-documentation-)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Inline Comments](#inline-comments)
-- [Comment Requirements](#comment-requirements)
-- [Comment Format](#comment-format)
-- [Comment Types](#comment-types)
-- [Code Snippets](#code-snippets)
-- [Snippet Organization](#snippet-organization)
-- [Snippet Format](#snippet-format)
-- [Data Structures](#data-structures)
-- [Structure Documentation](#structure-documentation)
-- [Documentation Format](#documentation-format)
-- [Property Documentation](#property-documentation)
-- [Code Examples](#code-examples)
-- [Example Requirements](#example-requirements)
-- [Example Format](#example-format)
-- [Documentation Standards](#documentation-standards)
-- [Quality Standards](#quality-standards)
-- [Validation Requirements](#validation-requirements)
-- [Implementation Guidelines](#implementation-guidelines)
-- [Daily Practice](#daily-practice)
-- [Quality Checks](#quality-checks)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Code Documentation 📝](#code-documentation-)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Inline Comments](#inline-comments)
-- [Comment Requirements](#comment-requirements)
-- [Comment Format](#comment-format)
-- [Comment Types](#comment-types)
-- [Code Snippets](#code-snippets)
-- [Snippet Organization](#snippet-organization)
-- [Snippet Format](#snippet-format)
-- [Data Structures](#data-structures)
-- [Structure Documentation](#structure-documentation)
-- [Documentation Format](#documentation-format)
-- [Property Documentation](#property-documentation)
-- [Code Examples](#code-examples)
-- [Example Requirements](#example-requirements)
-- [Example Format](#example-format)
-- [Documentation Standards](#documentation-standards)
-- [Quality Standards](#quality-standards)
-- [Validation Requirements](#validation-requirements)
-- [Implementation Guidelines](#implementation-guidelines)
-- [Daily Practice](#daily-practice)
-- [Quality Checks](#quality-checks)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Code Documentation 📝](#code-documentation-)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Executive Summary](#executive-summary)
+* [Research Context](#research-context)
+* [Inline Comments](#inline-comments)
+* [Comment Requirements](#comment-requirements)
+* [Comment Format](#comment-format)
+* [Comment Types](#comment-types)
+* [Code Snippets](#code-snippets)
+* [Snippet Organization](#snippet-organization)
+* [Snippet Format](#snippet-format)
+* [Data Structures](#data-structures)
+* [Structure Documentation](#structure-documentation)
+* [Documentation Format](#documentation-format)
+* [Property Documentation](#property-documentation)
+* [Code Examples](#code-examples)
+* [Example Requirements](#example-requirements)
+* [Example Format](#example-format)
+* [Documentation Standards](#documentation-standards)
+* [Quality Standards](#quality-standards)
+* [Validation Requirements](#validation-requirements)
+* [Implementation Guidelines](#implementation-guidelines)
+* [Daily Practice](#daily-practice)
+* [Quality Checks](#quality-checks)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Code Documentation 📝](#code-documentation-)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Executive Summary](#executive-summary)
+* [Research Context](#research-context)
+* [Inline Comments](#inline-comments)
+* [Comment Requirements](#comment-requirements)
+* [Comment Format](#comment-format)
+* [Comment Types](#comment-types)
+* [Code Snippets](#code-snippets)
+* [Snippet Organization](#snippet-organization)
+* [Snippet Format](#snippet-format)
+* [Data Structures](#data-structures)
+* [Structure Documentation](#structure-documentation)
+* [Documentation Format](#documentation-format)
+* [Property Documentation](#property-documentation)
+* [Code Examples](#code-examples)
+* [Example Requirements](#example-requirements)
+* [Example Format](#example-format)
+* [Documentation Standards](#documentation-standards)
+* [Quality Standards](#quality-standards)
+* [Validation Requirements](#validation-requirements)
+* [Implementation Guidelines](#implementation-guidelines)
+* [Daily Practice](#daily-practice)
+* [Quality Checks](#quality-checks)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive standards for documenting code, data structures, and technical content
+* *Purpose:*\* Comprehensive standards for documenting code, data structures, and technical content
   to
   ensure clarity, maintainability, and accessibility for all users.
 
@@ -94,45 +95,47 @@ document's role or purpose, this section helps orient you.
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- Effective code documentation makes complex technical content accessible and understandable for all
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
+
+* Effective code documentation makes complex technical content accessible and understandable for all
   users. These standards ensure that code, data structures, and technical concepts are clearly
   documented with appropriate context and explanations.\*
 
-- *Key Standards:*\*
+* *Key Standards:*\*
 
-- **Inline Comments**: Required for complex data structures and code
+* **Inline Comments**: Required for complex data structures and code
 
-- **Code Snippets**: Organized with contextual explanations
+* **Code Snippets**: Organized with contextual explanations
 
-- **Data Structures**: Documented with purpose and relationships
+* **Data Structures**: Documented with purpose and relationships
 
-- **Code Examples**: Include practical, real-world examples
+* **Code Examples**: Include practical, real-world examples
 
 ## Inline Comments
 
-- *Purpose*\*: Make complex code structures accessible through inline documentation and comments.
+* *Purpose*\*: Make complex code structures accessible through inline documentation and comments.
 
 ### Comment Requirements
 
-- *Required for complex data structures*\*:
-- Enum values MUST have explanatory comments with their purpose and context
-- Interface properties MUST be documented with their relationships and constraints
-- State properties tables MUST include inline explanations for each property
-- Code snippets MUST be broken down with contextual comments
+* *Required for complex data structures*\*:
+* Enum values MUST have explanatory comments with their purpose and context
+* Interface properties MUST be documented with their relationships and constraints
+* State properties tables MUST include inline explanations for each property
+* Code snippets MUST be broken down with contextual comments
 
 ### Comment Format
 
-- *Standard Format*\*: Use consistent comment formatting throughout
+* *Standard Format*\*: Use consistent comment formatting throughout
 
 ```typescript
 // 🎯 Purpose: Brief explanation of what this represents
@@ -146,11 +149,11 @@ enum ExampleState {
 
 ### Comment Types
 
-- *Purpose Comments*\*: Explain what the code does **Context Comments**: Explain how it relates to
+* *Purpose Comments*\*: Explain what the code does **Context Comments**: Explain how it relates to
   other concepts **Constraint Comments**: Explain limitations and requirements **Example Comments**:
   Provide usage examples
 
-- *Implementation*\*:
+* *Implementation*\*:
 
 ```typescript
 // 🎯 Purpose: Manages the lifecycle of individual tasks in the system
@@ -172,25 +175,33 @@ enum TaskState {
 
 ## Code Snippets
 
-- *Purpose*\*: Organize and present code snippets with clear context and explanations.
+* *Purpose*\*: Organize and present code snippets with clear context and explanations.
 
 ### Snippet Organization
 
-- *Long Code Snippets*\*:
-- Break into logical sections with clear separators
-- Add inline comments explaining key concepts
-- Use consistent formatting and indentation
-- Include context about where the code fits in the larger system
+* *Long Code Snippets*\*:
 
-- *Data Structure Documentation*\*:
-- Explain the purpose of each field
-- Document relationships between fields
-- Provide examples of valid values
-- Include constraints and validation rules
+* Break into logical sections with clear separators
+
+* Add inline comments explaining key concepts
+
+* Use consistent formatting and indentation
+
+* Include context about where the code fits in the larger system
+
+* *Data Structure Documentation*\*:
+
+* Explain the purpose of each field
+
+* Document relationships between fields
+
+* Provide examples of valid values
+
+* Include constraints and validation rules
 
 ### Snippet Format
 
-- *Standard Format*\*: Use consistent formatting for all code snippets
+* *Standard Format*\*: Use consistent formatting for all code snippets
 
 ```typescript
 // 🎯 Purpose: The "geological survey" - mapping each state's characteristics
@@ -290,23 +301,23 @@ const TASK_STATE_PROPERTIES: Record<TaskState, TaskStateProperties> = {
 
 ## Data Structures
 
-- *Purpose*\*: Document data structures with clear purpose, relationships, and constraints.
+* *Purpose*\*: Document data structures with clear purpose, relationships, and constraints.
 
 ### Structure Documentation
 
-- *Required Elements*\*:
+* *Required Elements*\*:
 
-- **Purpose**: What the structure represents
+* **Purpose**: What the structure represents
 
-- **Relationships**: How it relates to other structures
+* **Relationships**: How it relates to other structures
 
-- **Constraints**: Limitations and requirements
+* **Constraints**: Limitations and requirements
 
-- **Examples**: Valid values and usage examples
+* **Examples**: Valid values and usage examples
 
 ### Documentation Format
 
-- *Standard Format*\*: Use consistent documentation format
+* *Standard Format*\*: Use consistent documentation format
 
 ```typescript
 // 🎯 Purpose: The "geological properties" that define each state layer
@@ -323,17 +334,17 @@ interface TaskStateProperties {
 
 ### Property Documentation
 
-- *Each Property Must Include*\*:
+* *Each Property Must Include*\*:
 
-- **Purpose**: What the property represents
+* **Purpose**: What the property represents
 
-- **Type**: Data type and constraints
+* **Type**: Data type and constraints
 
-- **Relationships**: How it relates to other properties
+* **Relationships**: How it relates to other properties
 
-- **Examples**: Valid values and usage
+* **Examples**: Valid values and usage
 
-- *Implementation*\*:
+* *Implementation*\*:
 
 ```typescript
 // 🎯 Purpose: Manages the execution of recursive API calls
@@ -366,23 +377,23 @@ interface RecursiveCallStateProperties {
 
 ## Code Examples
 
-- *Purpose*\*: Provide practical, real-world examples that demonstrate concepts and usage.
+* *Purpose*\*: Provide practical, real-world examples that demonstrate concepts and usage.
 
 ### Example Requirements
 
-- *Every Code Example Must Include*\*:
+* *Every Code Example Must Include*\*:
 
-- **Context**: What the example demonstrates
+* **Context**: What the example demonstrates
 
-- **Purpose**: Why this example is useful
+* **Purpose**: Why this example is useful
 
-- **Explanation**: How the code works
+* **Explanation**: How the code works
 
-- **Usage**: How to use the example
+* **Usage**: How to use the example
 
 ### Example Format
 
-- *Standard Format*\*: Use consistent format for all examples
+* *Standard Format*\*: Use consistent format for all examples
 
 ```typescript
 // 🎯 Purpose: Example of how to implement lock-based synchronization
@@ -426,60 +437,72 @@ class RecursiveCallManager {
 
 ## Documentation Standards
 
-- *Purpose*\*: Ensure consistent documentation quality and format across all code documentation.
+* *Purpose*\*: Ensure consistent documentation quality and format across all code documentation.
 
 ### Quality Standards
 
-- *Content Quality*\*:
+* *Content Quality*\*:
 
-- **Accuracy**: All code examples must be accurate and functional
+* **Accuracy**: All code examples must be accurate and functional
 
-- **Completeness**: Examples must be complete and runnable
+* **Completeness**: Examples must be complete and runnable
 
-- **Clarity**: Code must be clearly explained and documented
+* **Clarity**: Code must be clearly explained and documented
 
-- **Relevance**: Examples must be relevant to the content
+* **Relevance**: Examples must be relevant to the content
 
-- *Format Standards*\*:
+* *Format Standards*\*:
 
-- **Consistency**: Use consistent formatting throughout
+* **Consistency**: Use consistent formatting throughout
 
-- **Readability**: Code must be easy to read and understand
+* **Readability**: Code must be easy to read and understand
 
-- **Organization**: Code must be well-organized and structured
+* **Organization**: Code must be well-organized and structured
 
-- **Comments**: Include appropriate comments and explanations
+* **Comments**: Include appropriate comments and explanations
 
 ### Validation Requirements
 
-- *Pre-Submission Checks*\*:
-- \[ ] All code examples are accurate and functional
-- \[ ] All data structures are properly documented
-- \[ ] All inline comments are helpful and accurate
-- \[ ] All code snippets are well-organized
-- \[ ] All examples include context and purpose
+* *Pre-Submission Checks*\*:
 
-- *Quality Assurance*\*:
-- \[ ] Code examples have been tested
-- \[ ] Data structure documentation is complete
-- \[ ] Inline comments add value
-- \[ ] Code snippets are properly formatted
-- \[ ] Examples are relevant and useful
+* \[ ] All code examples are accurate and functional
+
+* \[ ] All data structures are properly documented
+
+* \[ ] All inline comments are helpful and accurate
+
+* \[ ] All code snippets are well-organized
+
+* \[ ] All examples include context and purpose
+
+* *Quality Assurance*\*:
+
+* \[ ] Code examples have been tested
+
+* \[ ] Data structure documentation is complete
+
+* \[ ] Inline comments add value
+
+* \[ ] Code snippets are properly formatted
+
+* \[ ] Examples are relevant and useful
 
 ## Implementation Guidelines
 
-- *Purpose*\*: Provide practical guidance for implementing code documentation standards.
+* *Purpose*\*: Provide practical guidance for implementing code documentation standards.
 
 ### Daily Practice
 
-- *When Writing Code Documentation*\*:
+* *When Writing Code Documentation*\*:
+
 1. **Start with Purpose**: Define what the code does
 2. **Add Context**: Explain how it relates to other code
 3. **Document Properties**: Explain each property and field
 4. **Include Examples**: Provide practical usage examples
 5. **Add Comments**: Include helpful inline comments
 
-- *When Maintaining Code Documentation*\*:
+* *When Maintaining Code Documentation*\*:
+
 1. **Update Comments**: Keep comments current with code changes
 2. **Validate Examples**: Ensure examples still work
 3. **Check Accuracy**: Verify documentation accuracy
@@ -488,24 +511,35 @@ class RecursiveCallManager {
 
 ### Quality Checks
 
-- *Regular Validation*\*:
-- \[ ] All code examples are tested and functional
-- \[ ] All data structures are properly documented
-- \[ ] All inline comments are helpful and accurate
-- \[ ] All code snippets are well-organized
-- \[ ] All examples include context and purpose
+* *Regular Validation*\*:
 
-- *Content Review*\*:
-- \[ ] Code examples are accurate and complete
-- \[ ] Data structure documentation is comprehensive
-- \[ ] Inline comments add value to understanding
-- \[ ] Code snippets are properly formatted
-- \[ ] Examples are relevant and useful
+* \[ ] All code examples are tested and functional
+
+* \[ ] All data structures are properly documented
+
+* \[ ] All inline comments are helpful and accurate
+
+* \[ ] All code snippets are well-organized
+
+* \[ ] All examples include context and purpose
+
+* *Content Review*\*:
+
+* \[ ] Code examples are accurate and complete
+
+* \[ ] Data structure documentation is comprehensive
+
+* \[ ] Inline comments add value to understanding
+
+* \[ ] Code snippets are properly formatted
+
+* \[ ] Examples are relevant and useful
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md)
+* \*\*
+
+* *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md)
   ·
   [Source: `/docs/standards/code/README.md#L1`](README.md#L1)
 
@@ -515,9 +549,11 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

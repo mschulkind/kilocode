@@ -1,36 +1,37 @@
 # Orchestrator Extensibility
 
 ## Table of Contents
-- [Orchestrator Extensibility](#orchestrator-extensibility)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Extensibility Philosophy](#extensibility-philosophy)
-- [Adding New Tools (Gap)](#adding-new-tools-gap)
-- [Adding New Modes (Gap)](#adding-new-modes-gap)
-- [Adding Custom Rules](#adding-custom-rules)
-- [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Orchestrator Extensibility](#orchestrator-extensibility)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Extensibility Philosophy](#extensibility-philosophy)
-- [Adding New Tools (Gap)](#adding-new-tools-gap)
-- [Adding New Modes (Gap)](#adding-new-modes-gap)
-- [Adding Custom Rules](#adding-custom-rules)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Orchestrator Extensibility](#orchestrator-extensibility)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Extensibility Philosophy](#extensibility-philosophy)
+* [Adding New Tools (Gap)](#adding-new-tools-gap)
+* [Adding New Modes (Gap)](#adding-new-modes-gap)
+* [Adding Custom Rules](#adding-custom-rules)
+* [When You're Here](#when-youre-here)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Orchestrator Extensibility](#orchestrator-extensibility)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Extensibility Philosophy](#extensibility-philosophy)
+* [Adding New Tools (Gap)](#adding-new-tools-gap)
+* [Adding New Modes (Gap)](#adding-new-modes-gap)
+* [Adding Custom Rules](#adding-custom-rules)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* This document provides guidance on how to extend the capabilities of the Kilo Code
+* *Purpose:*\* This document provides guidance on how to extend the capabilities of the Kilo Code
   Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
   defining workspace-specific rules.
 
@@ -55,16 +56,17 @@
 
 id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+* **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
   orchestrator
   documentation.
-- **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices
+* **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices
   for
   developing new tools and modes.
-- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+* **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+* \*\*
 
 ### Extensibility Philosophy
 
@@ -76,12 +78,13 @@ to integrate with external services.
 
 The primary extension vectors are:
 
-- **Tools**: Adding new actions the orchestrator can perform.
-- **Modes**: Defining new operational contexts with unique permission sets.
-- **Rules**: Providing project-specific instructions and constraints to the model.
+* **Tools**: Adding new actions the orchestrator can perform.
+* **Modes**: Defining new operational contexts with unique permission sets.
+* **Rules**: Providing project-specific instructions and constraints to the model.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+* \*\*
 
 ### Adding New Tools (Gap)
 
@@ -92,6 +95,7 @@ API or interacting with a proprietary build system.
 
 While the detailed implementation process is still being finalized, the general workflow will
 involve:
+
 1. **Implementation**: Creating a TypeScript function that encapsulates the tool's logic. This
    function must be robust and provide clear error messages on failure.
 2. **Registration**: Registering the new tool with the `ToolExecutor` so that it can be discovered
@@ -104,7 +108,8 @@ involve:
 This section is marked as a **Gap** and will be updated as the formal process is solidified.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+* \*\*
 
 ### Adding New Modes (Gap)
 
@@ -114,6 +119,7 @@ Creating a new mode allows for the definition of a new security context, tailore
 type of task.
 
 The process for adding a new mode is currently under development. The anticipated steps are:
+
 1. **Definition**: Defining the new mode's name, purpose, and slug in the central mode registry,
    likely [`src/shared/modes.ts`](`[FILE_MOVED_OR_RENAMED]`#L69).
 2. **Permission Assignment**: Creating a mapping that links the new mode to a specific set of
@@ -125,7 +131,8 @@ This section is marked as a **Gap**. Further details will be provided once the A
 is finalized.
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+* \*\*
 
 ### Adding Custom Rules
 
@@ -139,50 +146,52 @@ These rule files are injected directly into the system prompt via
 [`getSystemPrompt`](../../src/core/task/Task.ts#L2499). They can contain any information that helps
 guide
 the model, such as:
-- "Do not use the `any` type in TypeScript."
-- "All new components must be registered in `src/components/index.ts`."
-- "API calls to the billing service must be routed through the `BillingAPIClient`."
+
+* "Do not use the `any` type in TypeScript."
+* "All new components must be registered in `src/components/index.ts`."
+* "API calls to the billing service must be routed through the `BillingAPIClient`."
 
 For a complete overview of how these rules are discovered and loaded, please refer to the
-[Documentation Guide](../DOCUMENTATION_GUIDE.md).
+[Documentation Guide](../../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+* \*\*
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:*\*
+* *Understanding This System:*\*
 
-- **Next**: Check related documentation in the same directory
+* **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../architecture/README.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../README.md) for context
 
-- *Implementing Features:*\*
+* *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -198,27 +207,30 @@ You have reached the end of the extensibility document. Return to the
 [Master Index](../orchestrator/ORCHESTRATOR_INDEX.md).
 
 [Back to Top](#orchestrator-extensibility)
-- \*\*
+
+* \*\*
 
 End of document.
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+* *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-extensibility)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

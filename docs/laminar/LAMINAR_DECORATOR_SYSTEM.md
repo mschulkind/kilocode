@@ -1,77 +1,78 @@
 # Laminar Decorator System
 
 ## Table of Contents
-- [Laminar Decorator System](#laminar-decorator-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Role in Laminar Integration](#role-in-laminar-integration)
-- [Integration Scope](#integration-scope)
-- [Decorator Architecture](#decorator-architecture)
-- [Core Decorator Implementation](#core-decorator-implementation)
-- [Decorator Options](#decorator-options)
-- [Automatic Instrumentation](#automatic-instrumentation)
-- [Method Decoration Process](#method-decoration-process)
-- [Class-Level Decoration](#classlevel-decoration)
-- [Input/Output Capture](#inputoutput-capture)
-- [Input Capture](#input-capture)
-- [Output Capture](#output-capture)
-- [Performance Monitoring](#performance-monitoring)
-- [Execution Time Tracking](#execution-time-tracking)
-- [Resource Usage Monitoring](#resource-usage-monitoring)
-- [Integration Patterns](#integration-patterns)
-- [Existing Decorator Compatibility](#existing-decorator-compatibility)
-- [Framework Integration](#framework-integration)
-- [Error Handling](#error-handling)
-- [Exception Propagation](#exception-propagation)
-- [Decorator Failure Handling](#decorator-failure-handling)
-- [Configuration Options](#configuration-options)
-- [Global Configuration](#global-configuration)
-- [Environment-Specific Settings](#environmentspecific-settings)
-- [Code Reference Matrix](#code-reference-matrix)
-- [Implementation Timeline](#implementation-timeline)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Laminar Decorator System](#laminar-decorator-system)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Role in Laminar Integration](#role-in-laminar-integration)
-- [Integration Scope](#integration-scope)
-- [Decorator Architecture](#decorator-architecture)
-- [Core Decorator Implementation](#core-decorator-implementation)
-- [Decorator Options](#decorator-options)
-- [Automatic Instrumentation](#automatic-instrumentation)
-- [Method Decoration Process](#method-decoration-process)
-- [Class-Level Decoration](#classlevel-decoration)
-- [Input/Output Capture](#inputoutput-capture)
-- [Input Capture](#input-capture)
-- [Output Capture](#output-capture)
-- [Performance Monitoring](#performance-monitoring)
-- [Execution Time Tracking](#execution-time-tracking)
-- [Resource Usage Monitoring](#resource-usage-monitoring)
-- [Integration Patterns](#integration-patterns)
-- [Existing Decorator Compatibility](#existing-decorator-compatibility)
-- [Framework Integration](#framework-integration)
-- [Error Handling](#error-handling)
-- [Exception Propagation](#exception-propagation)
-- [Decorator Failure Handling](#decorator-failure-handling)
-- [Configuration Options](#configuration-options)
-- [Global Configuration](#global-configuration)
-- [Environment-Specific Settings](#environmentspecific-settings)
-- [Code Reference Matrix](#code-reference-matrix)
-- [Implementation Timeline](#implementation-timeline)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Laminar Decorator System](#laminar-decorator-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Role in Laminar Integration](#role-in-laminar-integration)
+* [Integration Scope](#integration-scope)
+* [Decorator Architecture](#decorator-architecture)
+* [Core Decorator Implementation](#core-decorator-implementation)
+* [Decorator Options](#decorator-options)
+* [Automatic Instrumentation](#automatic-instrumentation)
+* [Method Decoration Process](#method-decoration-process)
+* [Class-Level Decoration](#classlevel-decoration)
+* [Input/Output Capture](#inputoutput-capture)
+* [Input Capture](#input-capture)
+* [Output Capture](#output-capture)
+* [Performance Monitoring](#performance-monitoring)
+* [Execution Time Tracking](#execution-time-tracking)
+* [Resource Usage Monitoring](#resource-usage-monitoring)
+* [Integration Patterns](#integration-patterns)
+* [Existing Decorator Compatibility](#existing-decorator-compatibility)
+* [Framework Integration](#framework-integration)
+* [Error Handling](#error-handling)
+* [Exception Propagation](#exception-propagation)
+* [Decorator Failure Handling](#decorator-failure-handling)
+* [Configuration Options](#configuration-options)
+* [Global Configuration](#global-configuration)
+* [Environment-Specific Settings](#environmentspecific-settings)
+* [Code Reference Matrix](#code-reference-matrix)
+* [Implementation Timeline](#implementation-timeline)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Laminar Decorator System](#laminar-decorator-system)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Role in Laminar Integration](#role-in-laminar-integration)
+* [Integration Scope](#integration-scope)
+* [Decorator Architecture](#decorator-architecture)
+* [Core Decorator Implementation](#core-decorator-implementation)
+* [Decorator Options](#decorator-options)
+* [Automatic Instrumentation](#automatic-instrumentation)
+* [Method Decoration Process](#method-decoration-process)
+* [Class-Level Decoration](#classlevel-decoration)
+* [Input/Output Capture](#inputoutput-capture)
+* [Input Capture](#input-capture)
+* [Output Capture](#output-capture)
+* [Performance Monitoring](#performance-monitoring)
+* [Execution Time Tracking](#execution-time-tracking)
+* [Resource Usage Monitoring](#resource-usage-monitoring)
+* [Integration Patterns](#integration-patterns)
+* [Existing Decorator Compatibility](#existing-decorator-compatibility)
+* [Framework Integration](#framework-integration)
+* [Error Handling](#error-handling)
+* [Exception Propagation](#exception-propagation)
+* [Decorator Failure Handling](#decorator-failure-handling)
+* [Configuration Options](#configuration-options)
+* [Global Configuration](#global-configuration)
+* [Environment-Specific Settings](#environmentspecific-settings)
+* [Code Reference Matrix](#code-reference-matrix)
+* [Implementation Timeline](#implementation-timeline)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* This document describes the observeDecorator implementation for automatic
+* *Purpose:*\* This document describes the observeDecorator implementation for automatic
   instrumentation, detailing method decoration, input/output capture, performance monitoring, and
   seamless integration with existing decorator patterns in Kilo Code.
 
@@ -98,10 +99,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -113,11 +114,11 @@ across Kilo Code subsystems.
 
 The decorator system is responsible for:
 
-- **Automatic Instrumentation:** Applying tracing without code modifications
-- **Method Decoration:** Wrapping methods with observability logic
-- **Input/Output Tracking:** Capturing method parameters and return values
-- **Performance Metrics:** Measuring execution time and resource usage
-- **Error Propagation:** Maintaining exception handling integrity
+* **Automatic Instrumentation:** Applying tracing without code modifications
+* **Method Decoration:** Wrapping methods with observability logic
+* **Input/Output Tracking:** Capturing method parameters and return values
+* **Performance Metrics:** Measuring execution time and resource usage
+* **Error Propagation:** Maintaining exception handling integrity
 
 ### Integration Scope
 
@@ -128,7 +129,7 @@ minimal changes while providing comprehensive monitoring and tracing capabilitie
 
 ### Core Decorator Implementation
 
-- *observeDecorator Function:*\*
+* *observeDecorator Function:*\*
 
 ```typescript
 function observeDecorator(spanName?: string, options?: ObserveOptions): MethodDecorator {
@@ -155,19 +156,19 @@ function observeDecorator(spanName?: string, options?: ObserveOptions): MethodDe
 }
 ```
 
-- *Decorator Components:*\*
+* *Decorator Components:*\*
 
-- **Span Creation:** Automatic span initialization
+* **Span Creation:** Automatic span initialization
 
-- **Method Wrapping:** Preservation of original method behavior
+* **Method Wrapping:** Preservation of original method behavior
 
-- **Error Handling:** Exception recording and re-throwing
+* **Error Handling:** Exception recording and re-throwing
 
-- **Resource Cleanup:** Proper span completion
+* **Resource Cleanup:** Proper span completion
 
 ### Decorator Options
 
-- *Configuration Interface:*\*
+* *Configuration Interface:*\*
 
 ```typescript
 interface ObserveOptions {
@@ -179,24 +180,25 @@ interface ObserveOptions {
 }
 ```
 
-- *Option Descriptions:*\*
-- `captureInput`: Whether to record method parameters
-- `captureOutput`: Whether to record return values
-- `includeStackTrace`: Include stack traces in error recording
-- `customAttributes`: Additional span attributes
-- `parentSpan`: Explicit parent span for nesting
+* *Option Descriptions:*\*
+* `captureInput`: Whether to record method parameters
+* `captureOutput`: Whether to record return values
+* `includeStackTrace`: Include stack traces in error recording
+* `customAttributes`: Additional span attributes
+* `parentSpan`: Explicit parent span for nesting
 
 ## Automatic Instrumentation
 
 ### Method Decoration Process
 
-- *Decoration Flow:*\*
+* *Decoration Flow:*\*
+
 1. **Target Identification:** Identify methods to instrument
 2. **Decorator Application:** Apply observeDecorator to target methods
 3. **Wrapper Installation:** Replace original method with instrumented version
 4. **Span Management:** Handle span lifecycle during execution
 
-- *Application Examples:*\*
+* *Application Examples:*\*
 
 ```typescript
 class CheckpointService {
@@ -214,7 +216,7 @@ class CheckpointService {
 
 ### Class-Level Decoration
 
-- *Class Decoration Pattern:*\*
+* *Class Decoration Pattern:*\*
 
 ```typescript
 function observeClass(options?: ObserveOptions): ClassDecorator {
@@ -236,7 +238,7 @@ function observeClass(options?: ObserveOptions): ClassDecorator {
 
 ### Input Capture
 
-- *Parameter Recording:*\*
+* *Parameter Recording:*\*
 
 ```typescript
 private captureInput(args: any[], options: ObserveOptions): void {
@@ -249,19 +251,19 @@ private captureInput(args: any[], options: ObserveOptions): void {
 }
 ```
 
-- *Serialization Strategy:*\*
+* *Serialization Strategy:*\*
 
-- **Primitive Types:** Direct value recording
+* **Primitive Types:** Direct value recording
 
-- **Objects:** JSON serialization with size limits
+* **Objects:** JSON serialization with size limits
 
-- **Sensitive Data:** Masking or exclusion
+* **Sensitive Data:** Masking or exclusion
 
-- **Large Objects:** Truncation or sampling
+* **Large Objects:** Truncation or sampling
 
 ### Output Capture
 
-- *Return Value Recording:*\*
+* *Return Value Recording:*\*
 
 ```typescript
 private captureOutput(result: any, options: ObserveOptions): void {
@@ -272,21 +274,21 @@ private captureOutput(result: any, options: ObserveOptions): void {
 }
 ```
 
-- *Output Handling:*\*
+* *Output Handling:*\*
 
-- **Success Results:** Record return values
+* **Success Results:** Record return values
 
-- **Error Results:** Record exception details
+* **Error Results:** Record exception details
 
-- **Async Results:** Handle promises and async functions
+* **Async Results:** Handle promises and async functions
 
-- **Void Returns:** Mark as void type
+* **Void Returns:** Mark as void type
 
 ## Performance Monitoring
 
 ### Execution Time Tracking
 
-- *Duration Measurement:*\*
+* *Duration Measurement:*\*
 
 ```typescript
 const startTime = performance.now()
@@ -299,17 +301,17 @@ span.setAttribute("performance.category", duration > 1000 ? "slow" : duration > 
 "fast")
 ```
 
-- *Performance Categories:*\*
+* *Performance Categories:*\*
 
-- **Fast:** < 100ms (optimal)
+* **Fast:** < 100ms (optimal)
 
-- **Medium:** 100-1000ms (acceptable)
+* **Medium:** 100-1000ms (acceptable)
 
-- **Slow:** > 1000ms (needs optimization)
+* **Slow:** > 1000ms (needs optimization)
 
 ### Resource Usage Monitoring
 
-- *Memory Tracking:*\*
+* *Memory Tracking:*\*
 
 ```typescript
 const beforeMemory = process.memoryUsage()
@@ -320,19 +322,19 @@ span.setAttribute("memory.delta.heap", afterMemory.heapUsed - beforeMemory.heapU
 span.setAttribute("memory.delta.external", afterMemory.external - beforeMemory.external)
 ```
 
-- *Resource Metrics:*\*
+* *Resource Metrics:*\*
 
-- **Heap Usage:** JavaScript heap memory changes
+* **Heap Usage:** JavaScript heap memory changes
 
-- **External Memory:** Native addon memory usage
+* **External Memory:** Native addon memory usage
 
-- **CPU Time:** Process CPU time consumption
+* **CPU Time:** Process CPU time consumption
 
 ## Integration Patterns
 
 ### Existing Decorator Compatibility
 
-- *Decorator Composition:*\*
+* *Decorator Composition:*\*
 
 ```typescript
 class ExampleService {
@@ -344,22 +346,22 @@ class ExampleService {
 }
 ```
 
-- *Execution Order:*\*
-- Decorators execute from bottom to top
-- observeDecorator wraps the final method
-- Existing decorators remain functional
+* *Execution Order:*\*
+* Decorators execute from bottom to top
+* observeDecorator wraps the final method
+* Existing decorators remain functional
 
 ### Framework Integration
 
-- *VS Code Extension Patterns:*\*
+* *VS Code Extension Patterns:*\*
 
-- **Command Handlers:** Instrument command execution
+* **Command Handlers:** Instrument command execution
 
-- **Event Listeners:** Track event processing
+* **Event Listeners:** Track event processing
 
-- **Service Methods:** Monitor service operations
+* **Service Methods:** Monitor service operations
 
-- *Integration Examples:*\*
+* *Integration Examples:*\*
 
 ```typescript
 // Command instrumentation
@@ -379,7 +381,7 @@ async handleEvent(event: vscode.Event): Promise<void> {
 
 ### Exception Propagation
 
-- *Error Recording:*\*
+* *Error Recording:*\*
 
 ```typescript
 try {
@@ -398,31 +400,31 @@ try {
 }
 ```
 
-- *Error Context:*\*
+* *Error Context:*\*
 
-- **Exception Type:** Constructor name for categorization
+* **Exception Type:** Constructor name for categorization
 
-- **Error Message:** Human-readable error description
+* **Error Message:** Human-readable error description
 
-- **Stack Trace:** Full call stack for debugging
+* **Stack Trace:** Full call stack for debugging
 
-- **Context Data:** Relevant operation context
+* **Context Data:** Relevant operation context
 
 ### Decorator Failure Handling
 
-- *Decorator Robustness:*\*
+* *Decorator Robustness:*\*
 
-- **Graceful Degradation:** Continue execution if decoration fails
+* **Graceful Degradation:** Continue execution if decoration fails
 
-- **Error Isolation:** Decorator errors don't affect method execution
+* **Error Isolation:** Decorator errors don't affect method execution
 
-- **Logging:** Record decoration failures for debugging
+* **Logging:** Record decoration failures for debugging
 
 ## Configuration Options
 
 ### Global Configuration
 
-- *Default Settings:*\*
+* *Default Settings:*\*
 
 ```typescript
 const defaultOptions: ObserveOptions = {
@@ -433,7 +435,7 @@ const defaultOptions: ObserveOptions = {
 }
 ```
 
-- *Configuration Override:*\*
+* *Configuration Override:*\*
 
 ```typescript
 // Global configuration
@@ -448,13 +450,13 @@ observeDecorator.config({
 
 ### Environment-Specific Settings
 
-- *Development vs Production:*\*
+* *Development vs Production:*\*
 
-- **Development:** Full capture, detailed logging
+* **Development:** Full capture, detailed logging
 
-- **Production:** Minimal capture, performance optimized
+* **Production:** Minimal capture, performance optimized
 
-- **Testing:** Mock spans, deterministic behavior
+* **Testing:** Mock spans, deterministic behavior
 
 ## Code Reference Matrix
 
@@ -473,7 +475,7 @@ Performance monitoring |
 
 ## Implementation Timeline
 
-- *Estimated Time:*\* 45 minutes
+* *Estimated Time:*\* 45 minutes
 
 | Step | Description                        | Time   | Status  |
 | ---- | ---------------------------------- | ------ | ------- |
@@ -484,33 +486,34 @@ Performance monitoring |
 | 5    | Integration testing                | 5 min  | Pending |
 
 <a id="navigation-footer"></a>
-- Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
+
+* Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
   [`README.md`](README.md:1) · Source: `/docs/LAMINAR_DECORATOR_SYSTEM.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Laminar Observability:*\*
+* *Understanding Laminar Observability:*\*
 
-- **Next**: Check related Laminar documentation in the same directory
+* **Next**: Check related Laminar documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
 
-- *Implementing Observability Features:*\*
+* *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Observability Issues:*\*
+* *Troubleshooting Observability Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -519,21 +522,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

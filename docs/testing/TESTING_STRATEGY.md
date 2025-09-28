@@ -1,97 +1,98 @@
 # Testing Strategy
 
 ## Table of Contents
-- [Testing Strategy](#testing-strategy)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [Testing Architecture](#testing-architecture)
-- [Unit Testing](#unit-testing)
-- [Vitest Framework](#vitest-framework)
-- [Core Extension Tests](#core-extension-tests)
-- [Webview UI Tests](#webview-ui-tests)
-- [Integration Testing](#integration-testing)
-- [API Integration Tests](#api-integration-tests)
-- [Service Integration Tests](#service-integration-tests)
-- [End-to-End Testing](#endtoend-testing)
-- [Playwright E2E Tests](#playwright-e2e-tests)
-- [VS Code E2E Tests](#vs-code-e2e-tests)
-- [Test Infrastructure](#test-infrastructure)
-- [Mock Frameworks](#mock-frameworks)
-- [Test Helpers](#test-helpers)
-- [Mock and Fixture Patterns](#mock-and-fixture-patterns)
-- [Mock Factories](#mock-factories)
-- [Test Fixtures](#test-fixtures)
-- [Test Coverage Analysis](#test-coverage-analysis)
-- [Coverage Metrics](#coverage-metrics)
-- [Coverage Reporting](#coverage-reporting)
-- [Performance Testing](#performance-testing)
-- [Load Testing](#load-testing)
-- [Benchmark Testing](#benchmark-testing)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Test Flakiness](#issue-1-test-flakiness)
-- [Issue 2: Mock Complexity](#issue-2-mock-complexity)
-- [Issue 3: Test Performance](#issue-3-test-performance)
-- [Issue 4: Coverage Gaps](#issue-4-coverage-gaps)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [Testing Strategy](#testing-strategy)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [Testing Architecture](#testing-architecture)
-- [Unit Testing](#unit-testing)
-- [Vitest Framework](#vitest-framework)
-- [Core Extension Tests](#core-extension-tests)
-- [Webview UI Tests](#webview-ui-tests)
-- [Integration Testing](#integration-testing)
-- [API Integration Tests](#api-integration-tests)
-- [Service Integration Tests](#service-integration-tests)
-- [End-to-End Testing](#endtoend-testing)
-- [Playwright E2E Tests](#playwright-e2e-tests)
-- [VS Code E2E Tests](#vs-code-e2e-tests)
-- [Test Infrastructure](#test-infrastructure)
-- [Mock Frameworks](#mock-frameworks)
-- [Test Helpers](#test-helpers)
-- [Mock and Fixture Patterns](#mock-and-fixture-patterns)
-- [Mock Factories](#mock-factories)
-- [Test Fixtures](#test-fixtures)
-- [Test Coverage Analysis](#test-coverage-analysis)
-- [Coverage Metrics](#coverage-metrics)
-- [Coverage Reporting](#coverage-reporting)
-- [Performance Testing](#performance-testing)
-- [Load Testing](#load-testing)
-- [Benchmark Testing](#benchmark-testing)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Test Flakiness](#issue-1-test-flakiness)
-- [Issue 2: Mock Complexity](#issue-2-mock-complexity)
-- [Issue 3: Test Performance](#issue-3-test-performance)
-- [Issue 4: Coverage Gaps](#issue-4-coverage-gaps)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Testing Strategy](#testing-strategy)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [Testing Architecture](#testing-architecture)
+* [Unit Testing](#unit-testing)
+* [Vitest Framework](#vitest-framework)
+* [Core Extension Tests](#core-extension-tests)
+* [Webview UI Tests](#webview-ui-tests)
+* [Integration Testing](#integration-testing)
+* [API Integration Tests](#api-integration-tests)
+* [Service Integration Tests](#service-integration-tests)
+* [End-to-End Testing](#endtoend-testing)
+* [Playwright E2E Tests](#playwright-e2e-tests)
+* [VS Code E2E Tests](#vs-code-e2e-tests)
+* [Test Infrastructure](#test-infrastructure)
+* [Mock Frameworks](#mock-frameworks)
+* [Test Helpers](#test-helpers)
+* [Mock and Fixture Patterns](#mock-and-fixture-patterns)
+* [Mock Factories](#mock-factories)
+* [Test Fixtures](#test-fixtures)
+* [Test Coverage Analysis](#test-coverage-analysis)
+* [Coverage Metrics](#coverage-metrics)
+* [Coverage Reporting](#coverage-reporting)
+* [Performance Testing](#performance-testing)
+* [Load Testing](#load-testing)
+* [Benchmark Testing](#benchmark-testing)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Test Flakiness](#issue-1-test-flakiness)
+* [Issue 2: Mock Complexity](#issue-2-mock-complexity)
+* [Issue 3: Test Performance](#issue-3-test-performance)
+* [Issue 4: Coverage Gaps](#issue-4-coverage-gaps)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [Testing Strategy](#testing-strategy)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [Testing Architecture](#testing-architecture)
+* [Unit Testing](#unit-testing)
+* [Vitest Framework](#vitest-framework)
+* [Core Extension Tests](#core-extension-tests)
+* [Webview UI Tests](#webview-ui-tests)
+* [Integration Testing](#integration-testing)
+* [API Integration Tests](#api-integration-tests)
+* [Service Integration Tests](#service-integration-tests)
+* [End-to-End Testing](#endtoend-testing)
+* [Playwright E2E Tests](#playwright-e2e-tests)
+* [VS Code E2E Tests](#vs-code-e2e-tests)
+* [Test Infrastructure](#test-infrastructure)
+* [Mock Frameworks](#mock-frameworks)
+* [Test Helpers](#test-helpers)
+* [Mock and Fixture Patterns](#mock-and-fixture-patterns)
+* [Mock Factories](#mock-factories)
+* [Test Fixtures](#test-fixtures)
+* [Test Coverage Analysis](#test-coverage-analysis)
+* [Coverage Metrics](#coverage-metrics)
+* [Coverage Reporting](#coverage-reporting)
+* [Performance Testing](#performance-testing)
+* [Load Testing](#load-testing)
+* [Benchmark Testing](#benchmark-testing)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Test Flakiness](#issue-1-test-flakiness)
+* [Issue 2: Mock Complexity](#issue-2-mock-complexity)
+* [Issue 3: Test Performance](#issue-3-test-performance)
+* [Issue 4: Coverage Gaps](#issue-4-coverage-gaps)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive documentation of testing infrastructure, strategies, and patterns
+* *Purpose:*\* Comprehensive documentation of testing infrastructure, strategies, and patterns
   across
   the KiloCode system.
 
@@ -131,10 +132,12 @@ document's role or purpose, this section helps orient you.
 \[Research or development methodology used]
 
 ## Executive Summary
-- The Testing Strategy provides comprehensive testing infrastructure and patterns for the KiloCode
+
+* The Testing Strategy provides comprehensive testing infrastructure and patterns for the KiloCode
   system, ensuring code quality, reliability, and maintainability across all components.\*
 
 The Testing Strategy consists of:
+
 1. **Unit Testing** - Component-level testing with Vitest
 2. **Integration Testing** - Service integration and API testing
 3. **End-to-End Testing** - Full workflow testing with Playwright
@@ -194,10 +197,10 @@ graph TB
 
 ### Vitest Framework
 
-- *Framework*\*: Vitest **Location**: Test files across all packages **Configuration**:
+* *Framework*\*: Vitest **Location**: Test files across all packages **Configuration**:
   `vitest.config.ts` in each package
 
-- *Test Structure*\*:
+* *Test Structure*\*:
 
 ```typescript
 import { describe, it, expect, vi } from "vitest"
@@ -213,19 +216,19 @@ describe("ComponentName", () => {
 })
 ```
 
-- *Test Categories*\*:
+* *Test Categories*\*:
 
-- **Component Tests**: React component testing
+* **Component Tests**: React component testing
 
-- **Service Tests**: Service layer testing
+* **Service Tests**: Service layer testing
 
-- **Utility Tests**: Utility function testing
+* **Utility Tests**: Utility function testing
 
-- **Model Tests**: Data model testing
+* **Model Tests**: Data model testing
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
 
-- *Test File Structure*\*:
+* *Test File Structure*\*:
 
 ```
 src/__tests__/
@@ -239,64 +242,85 @@ src/__tests__/
     └── fs/                       # File system mocks
 ```
 
-- *Test Patterns*\*:
+* *Test Patterns*\*:
 
-- **Extension Testing**: VS Code extension lifecycle and activation
+* **Extension Testing**: VS Code extension lifecycle and activation
 
-- **Command Testing**: Command execution and parameter validation
+* **Command Testing**: Command execution and parameter validation
 
-- **Integration Testing**: Cross-component integration testing
+* **Integration Testing**: Cross-component integration testing
 
-- **Migration Testing**: Settings migration and compatibility testing
+* **Migration Testing**: Settings migration and compatibility testing
 
-- **Mock Integration**: Comprehensive VS Code API mocking
+* **Mock Integration**: Comprehensive VS Code API mocking
 
 ### Core Extension Tests
 
-- *Location*\*: `src/__tests__/` **Test Files**:
-- `command-integration.spec.ts`: Command integration testing
-- `command-mentions.spec.ts`: Command mention testing
-- `commands.spec.ts`: Command testing
-- `extension.spec.ts`: Extension lifecycle testing
-- `migrateSettings.spec.ts`: Settings migration testing
+* *Location*\*: `src/__tests__/` **Test Files**:
 
-- *Test Coverage*\*:
-- Extension activation
-- Command execution
-- Settings management
-- Message handling
+* `command-integration.spec.ts`: Command integration testing
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Extension testing
+* `command-mentions.spec.ts`: Command mention testing
+
+* `commands.spec.ts`: Command testing
+
+* `extension.spec.ts`: Extension lifecycle testing
+
+* `migrateSettings.spec.ts`: Settings migration testing
+
+* *Test Coverage*\*:
+
+* Extension activation
+
+* Command execution
+
+* Settings management
+
+* Message handling
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Extension testing
   patterns, VS Code API mocking
 
 ### Webview UI Tests
 
-- *Location*\*: `webview-ui/src/__tests__/` **Test Files**:
-- `App.spec.tsx`: Main app testing
-- `command-autocomplete.spec.ts`: Command autocomplete testing
-- `ContextWindowProgress.spec.tsx`: Context window testing
-- `ErrorBoundary.spec.tsx`: Error boundary testing
+* *Location*\*: `webview-ui/src/__tests__/` **Test Files**:
 
-- *Test Coverage*\*:
-- React component rendering
-- User interaction handling
-- State management
-- Error handling
+* `App.spec.tsx`: Main app testing
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: React testing patterns,
+* `command-autocomplete.spec.ts`: Command autocomplete testing
+
+* `ContextWindowProgress.spec.tsx`: Context window testing
+
+* `ErrorBoundary.spec.tsx`: Error boundary testing
+
+* *Test Coverage*\*:
+
+* React component rendering
+
+* User interaction handling
+
+* State management
+
+* Error handling
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: React testing patterns,
   component mocking, state testing
 
 ## Integration Testing
 
 ### API Integration Tests
 
-- *Test Categories*\*:
-- Provider API integration
-- Cloud service integration
-- MCP server integration
-- Database integration
+* *Test Categories*\*:
 
-- *Test Patterns*\*:
+* Provider API integration
+
+* Cloud service integration
+
+* MCP server integration
+
+* Database integration
+
+* *Test Patterns*\*:
 
 ```typescript
 describe("API Integration", () => {
@@ -310,71 +334,86 @@ describe("API Integration", () => {
 })
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: API testing patterns,
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: API testing patterns,
   service mocking, integration strategies
 
 ### Service Integration Tests
 
-- *Test Categories*\*:
-- Service-to-service communication
-- Data flow testing
-- State synchronization
-- Error propagation
+* *Test Categories*\*:
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Service integration
+* Service-to-service communication
+
+* Data flow testing
+
+* State synchronization
+
+* Error propagation
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Service integration
   patterns, mock services, data flow testing
 
 ## End-to-End Testing
 
 ### Playwright E2E Tests
 
-- *Location*\*: `apps/playwright-e2e/` **Framework**: Playwright **Configuration**:
+* *Location*\*: `apps/playwright-e2e/` **Framework**: Playwright **Configuration**:
   `playwright.config.ts`
 
-- *Test Files*\*:
-- `chat.test.ts`: Chat functionality testing
-- `sanity.test.ts`: Basic functionality testing
-- `settings.test.ts`: Settings testing
+* *Test Files*\*:
 
-- *Test Categories*\*:
-- User workflow testing
-- UI interaction testing
-- Cross-browser testing
-- Performance testing
+* `chat.test.ts`: Chat functionality testing
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: E2E testing patterns,
+* `sanity.test.ts`: Basic functionality testing
+
+* `settings.test.ts`: Settings testing
+
+* *Test Categories*\*:
+
+* User workflow testing
+
+* UI interaction testing
+
+* Cross-browser testing
+
+* Performance testing
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: E2E testing patterns,
   browser automation, workflow testing
 
 ### VS Code E2E Tests
 
-- *Location*\*: `apps/vscode-e2e/` **Framework**: VS Code Extension Testing **Configuration**: VS
+* *Location*\*: `apps/vscode-e2e/` **Framework**: VS Code Extension Testing **Configuration**: VS
   Code
   extension test configuration
 
-- *Test Categories*\*:
-- Extension lifecycle testing
-- Command execution testing
-- Webview communication testing
-- Settings integration testing
+* *Test Categories*\*:
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: VS Code extension
+* Extension lifecycle testing
+
+* Command execution testing
+
+* Webview communication testing
+
+* Settings integration testing
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: VS Code extension
   testing, extension lifecycle, webview testing
 
 ## Test Infrastructure
 
 ### Mock Frameworks
 
-- *Mock Types*\*:
+* *Mock Types*\*:
 
-- **VS Code API Mocks**: `src/__mocks__/vscode.js`
+* **VS Code API Mocks**: `src/__mocks__/vscode.js`
 
-- **File System Mocks**: `src/__mocks__/fs/`
+* **File System Mocks**: `src/__mocks__/fs/`
 
-- **Service Mocks**: Service-specific mocks
+* **Service Mocks**: Service-specific mocks
 
-- **Component Mocks**: React component mocks
+* **Component Mocks**: React component mocks
 
-- *Mock Implementation*\*:
+* *Mock Implementation*\*:
 
 ```typescript
 // VS Code API Mock
@@ -389,39 +428,39 @@ const mockVSCode = {
 }
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Mock patterns, VS Code
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Mock patterns, VS Code
   API mocking, service mocking
 
 ### Test Helpers
 
-- *Helper Categories*\*:
+* *Helper Categories*\*:
 
-- **Test Setup Helpers**: Test environment setup
+* **Test Setup Helpers**: Test environment setup
 
-- **Mock Helpers**: Mock creation utilities
+* **Mock Helpers**: Mock creation utilities
 
-- **Assertion Helpers**: Custom assertions
+* **Assertion Helpers**: Custom assertions
 
-- **Utility Helpers**: Test utilities
+* **Utility Helpers**: Test utilities
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Helper patterns, test
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Helper patterns, test
   utilities, assertion helpers
 
 ## Mock and Fixture Patterns
 
 ### Mock Factories
 
-- *Factory Types*\*:
+* *Factory Types*\*:
 
-- **Component Factories**: React component mock factories
+* **Component Factories**: React component mock factories
 
-- **Service Factories**: Service mock factories
+* **Service Factories**: Service mock factories
 
-- **Data Factories**: Test data factories
+* **Data Factories**: Test data factories
 
-- **API Factories**: API mock factories
+* **API Factories**: API mock factories
 
-- *Factory Implementation*\*:
+* *Factory Implementation*\*:
 
 ```typescript
 export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
@@ -431,141 +470,166 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 })
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Factory patterns, mock
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Factory patterns, mock
   creation, test data generation
 
 ### Test Fixtures
 
-- *Fixture Types*\*:
+* *Fixture Types*\*:
 
-- **Component Fixtures**: React component test fixtures
+* **Component Fixtures**: React component test fixtures
 
-- **Service Fixtures**: Service test fixtures
+* **Service Fixtures**: Service test fixtures
 
-- **Data Fixtures**: Test data fixtures
+* **Data Fixtures**: Test data fixtures
 
-- **Configuration Fixtures**: Configuration test fixtures
+* **Configuration Fixtures**: Configuration test fixtures
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Fixture patterns, test
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Fixture patterns, test
   data management, configuration testing
 
 ## Test Coverage Analysis
 
 ### Coverage Metrics
 
-- *Coverage Categories*\*:
+* *Coverage Categories*\*:
 
-- **Line Coverage**: Percentage of lines executed
+* **Line Coverage**: Percentage of lines executed
 
-- **Branch Coverage**: Percentage of branches tested
+* **Branch Coverage**: Percentage of branches tested
 
-- **Function Coverage**: Percentage of functions tested
+* **Function Coverage**: Percentage of functions tested
 
-- **Statement Coverage**: Percentage of statements tested
+* **Statement Coverage**: Percentage of statements tested
 
-- *Coverage Targets*\*:
-- Core components: 90%+ coverage
-- Services: 85%+ coverage
-- Utilities: 95%+ coverage
-- UI components: 80%+ coverage
+* *Coverage Targets*\*:
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Coverage analysis,
+* Core components: 90%+ coverage
+
+* Services: 85%+ coverage
+
+* Utilities: 95%+ coverage
+
+* UI components: 80%+ coverage
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Coverage analysis,
   coverage targets, coverage reporting
 
 ### Coverage Reporting
 
-- *Reporting Tools*\*:
-- Vitest coverage reporting
-- Coverage visualization
-- Coverage thresholds
-- Coverage badges
+* *Reporting Tools*\*:
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Coverage reporting,
+* Vitest coverage reporting
+
+* Coverage visualization
+
+* Coverage thresholds
+
+* Coverage badges
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Coverage reporting,
   visualization, threshold management
 
 ## Performance Testing
 
 ### Load Testing
 
-- *Load Test Categories*\*:
+* *Load Test Categories*\*:
 
-- **API Load Testing**: API endpoint load testing
+* **API Load Testing**: API endpoint load testing
 
-- **Component Load Testing**: React component performance
+* **Component Load Testing**: React component performance
 
-- **Extension Load Testing**: VS Code extension performance
+* **Extension Load Testing**: VS Code extension performance
 
-- **Memory Testing**: Memory usage testing
+* **Memory Testing**: Memory usage testing
 
-- *Performance Metrics*\*:
-- Response time
-- Throughput
-- Memory usage
-- CPU usage
+* *Performance Metrics*\*:
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance testing
+* Response time
+
+* Throughput
+
+* Memory usage
+
+* CPU usage
+
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance testing
   patterns, load testing, memory testing
 
 ### Benchmark Testing
 
-- *Benchmark Categories*\*:
+* *Benchmark Categories*\*:
 
-- **API Performance**: API response time benchmarks
+* **API Performance**: API response time benchmarks
 
-- **Component Performance**: React component render benchmarks
+* **Component Performance**: React component render benchmarks
 
-- **Extension Performance**: Extension activation benchmarks
+* **Extension Performance**: Extension activation benchmarks
 
-- **Memory Benchmarks**: Memory usage benchmarks
+* **Memory Benchmarks**: Memory usage benchmarks
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Benchmark patterns,
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Benchmark patterns,
   performance measurement, optimization
 
 ## Common Issues and Solutions
 
 ### Issue 1: Test Flakiness
 
-- *Symptoms*\*:
-- Intermittent test failures
-- Race conditions in tests
-- Timing-dependent failures
+* *Symptoms*\*:
 
-- *Root Cause*\*: Asynchronous operations or timing issues **Solution**: Implement proper async
+* Intermittent test failures
+
+* Race conditions in tests
+
+* Timing-dependent failures
+
+* *Root Cause*\*: Asynchronous operations or timing issues **Solution**: Implement proper async
   handling and deterministic timing
 
 ### Issue 2: Mock Complexity
 
-- *Symptoms*\*:
-- Complex mock setups
-- Mock maintenance overhead
-- Mock brittleness
+* *Symptoms*\*:
 
-- *Root Cause*\*: Over-complex mocking strategies **Solution**: Implement factory patterns and
+* Complex mock setups
+
+* Mock maintenance overhead
+
+* Mock brittleness
+
+* *Root Cause*\*: Over-complex mocking strategies **Solution**: Implement factory patterns and
   simplified mocking
 
 ### Issue 3: Test Performance
 
-- *Symptoms*\*:
-- Slow test execution
-- High memory usage
-- Test timeouts
+* *Symptoms*\*:
 
-- *Root Cause*\*: Inefficient test patterns or resource leaks **Solution**: Optimize test patterns
+* Slow test execution
+
+* High memory usage
+
+* Test timeouts
+
+* *Root Cause*\*: Inefficient test patterns or resource leaks **Solution**: Optimize test patterns
   and
   implement proper cleanup
 
 ### Issue 4: Coverage Gaps
 
-- *Symptoms*\*:
-- Low test coverage
-- Untested edge cases
-- Coverage regressions
+* *Symptoms*\*:
 
-- *Root Cause*\*: Insufficient test coverage or missing test cases **Solution**: Implement
+* Low test coverage
+
+* Untested edge cases
+
+* Coverage regressions
+
+* *Root Cause*\*: Insufficient test coverage or missing test cases **Solution**: Implement
   comprehensive test coverage and coverage monitoring
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+
+* Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/testing/TESTING_STRATEGY.md#L1`
 
 ## No Dead Ends Policy
@@ -573,13 +637,16 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [testing](../docs/testing/) · ↑ Table of Contents
+* \*\*
+
+* *Navigation*\*: [docs](../) · [testing](../docs/testing/) · ↑ Table of Contents
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

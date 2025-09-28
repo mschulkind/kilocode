@@ -1,75 +1,76 @@
 # Tree Sitter Service
 
 ## Table of Contents
-- [Tree Sitter Service](#tree-sitter-service)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Service Overview](#service-overview)
-- [System Architecture](#system-architecture)
-- [Supported Languages](#supported-languages)
-- [Primary Languages](#primary-languages)
-- [Additional Languages](#additional-languages)
-- [Query System](#query-system)
-- [Query Syntax](#query-syntax)
-- [Query Operations](#query-operations)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Parsing](#basic-parsing)
-- [Code Analysis](#code-analysis)
-- [Advanced Queries](#advanced-queries)
-- [Performance Optimization](#performance-optimization)
-- [Caching Strategies](#caching-strategies)
-- [Optimization Techniques](#optimization-techniques)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Tree Sitter Service](#tree-sitter-service)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Service Overview](#service-overview)
-- [System Architecture](#system-architecture)
-- [Supported Languages](#supported-languages)
-- [Primary Languages](#primary-languages)
-- [Additional Languages](#additional-languages)
-- [Query System](#query-system)
-- [Query Syntax](#query-syntax)
-- [Query Operations](#query-operations)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Parsing](#basic-parsing)
-- [Code Analysis](#code-analysis)
-- [Advanced Queries](#advanced-queries)
-- [Performance Optimization](#performance-optimization)
-- [Caching Strategies](#caching-strategies)
-- [Optimization Techniques](#optimization-techniques)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Tree Sitter Service](#tree-sitter-service)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Service Overview](#service-overview)
+* [System Architecture](#system-architecture)
+* [Supported Languages](#supported-languages)
+* [Primary Languages](#primary-languages)
+* [Additional Languages](#additional-languages)
+* [Query System](#query-system)
+* [Query Syntax](#query-syntax)
+* [Query Operations](#query-operations)
+* [Setup and Configuration](#setup-and-configuration)
+* [Prerequisites](#prerequisites)
+* [Installation Steps](#installation-steps)
+* [Configuration Options](#configuration-options)
+* [Usage Examples](#usage-examples)
+* [Basic Parsing](#basic-parsing)
+* [Code Analysis](#code-analysis)
+* [Advanced Queries](#advanced-queries)
+* [Performance Optimization](#performance-optimization)
+* [Caching Strategies](#caching-strategies)
+* [Optimization Techniques](#optimization-techniques)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Tree Sitter Service](#tree-sitter-service)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Service Overview](#service-overview)
+* [System Architecture](#system-architecture)
+* [Supported Languages](#supported-languages)
+* [Primary Languages](#primary-languages)
+* [Additional Languages](#additional-languages)
+* [Query System](#query-system)
+* [Query Syntax](#query-syntax)
+* [Query Operations](#query-operations)
+* [Setup and Configuration](#setup-and-configuration)
+* [Prerequisites](#prerequisites)
+* [Installation Steps](#installation-steps)
+* [Configuration Options](#configuration-options)
+* [Usage Examples](#usage-examples)
+* [Basic Parsing](#basic-parsing)
+* [Code Analysis](#code-analysis)
+* [Advanced Queries](#advanced-queries)
+* [Performance Optimization](#performance-optimization)
+* [Caching Strategies](#caching-strategies)
+* [Optimization Techniques](#optimization-techniques)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the Tree Sitter code parsing service and language-specific
+* **Purpose**: This document covers the Tree Sitter code parsing service and language-specific
   parsing capabilities.
-- **Context**: Use this as a starting point for understanding how KiloCode analyzes and processes
+* **Context**: Use this as a starting point for understanding how KiloCode analyzes and processes
   code using Tree Sitter.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -79,10 +80,11 @@ document's role or purpose, this section helps orient you.
 This document was created through comprehensive analysis of Tree Sitter's parsing capabilities and
 code analysis requirements in development environments. The service architecture reflects findings
 from:
-- Tree Sitter parser performance and accuracy analysis
-- Language-specific parsing pattern research
-- AST (Abstract Syntax Tree) processing optimization studies
-- Code analysis and query system design patterns
+
+* Tree Sitter parser performance and accuracy analysis
+* Language-specific parsing pattern research
+* AST (Abstract Syntax Tree) processing optimization studies
+* Code analysis and query system design patterns
 
 The system provides accurate and efficient code parsing for multiple programming languages.
 
@@ -92,6 +94,7 @@ The Tree Sitter Service provides comprehensive code parsing and analysis capabil
 programming languages, enabling semantic code understanding and analysis within the KiloCode system.
 
 **Core Components:**
+
 1. **Language Parser** - Multi-language code parsing with Tree Sitter
 2. **Query System** - Language-specific query patterns
 3. **AST Processing** - Abstract syntax tree analysis and manipulation
@@ -125,21 +128,21 @@ graph TB
 
 ### Primary Languages
 
-- **JavaScript/TypeScript** - Full ES6+ support
-- **Python** - Python 3.x syntax support
-- **Java** - Java 8+ features
-- **C/C++** - C++17 standard support
-- **Go** - Go 1.x syntax
-- **Rust** - Modern Rust features
+* **JavaScript/TypeScript** - Full ES6+ support
+* **Python** - Python 3.x syntax support
+* **Java** - Java 8+ features
+* **C/C++** - C++17 standard support
+* **Go** - Go 1.x syntax
+* **Rust** - Modern Rust features
 
 ### Additional Languages
 
-- **Ruby** - Ruby 2.x+ syntax
-- **PHP** - PHP 7.x+ features
-- **C#** - .NET Core support
-- **Swift** - Swift 5.x syntax
-- **Kotlin** - Kotlin 1.x features
-- **Scala** - Scala 2.x support
+* **Ruby** - Ruby 2.x+ syntax
+* **PHP** - PHP 7.x+ features
+* **C#** - .NET Core support
+* **Swift** - Swift 5.x syntax
+* **Kotlin** - Kotlin 1.x features
+* **Scala** - Scala 2.x support
 
 ## Query System
 
@@ -158,19 +161,21 @@ graph TB
 
 ### Query Operations
 
-- **Pattern Matching** - Find code patterns
-- **Syntax Highlighting** - Token-based highlighting
-- **Code Navigation** - Jump to definitions
-- **Refactoring** - Safe code transformations
+* **Pattern Matching** - Find code patterns
+* **Syntax Highlighting** - Token-based highlighting
+* **Code Navigation** - Jump to definitions
+* **Refactoring** - Safe code transformations
 
 ## Setup and Configuration
 
 ### Prerequisites
-- Node.js 16+ for service runtime
-- Tree Sitter parsers for target languages
-- Sufficient memory for AST processing
+
+* Node.js 16+ for service runtime
+* Tree Sitter parsers for target languages
+* Sufficient memory for AST processing
 
 ### Installation Steps
+
 1. Install Tree Sitter service
 2. Configure language parsers
 3. Set up query patterns
@@ -233,39 +238,42 @@ const metrics = await treeSitterService.generateMetrics(tree);
 
 ### Caching Strategies
 
-- **Parse Tree Caching** - Cache parsed ASTs
-- **Query Result Caching** - Cache query results
-- **Language Parser Caching** - Reuse parser instances
-- **Memory Management** - Efficient memory usage
+* **Parse Tree Caching** - Cache parsed ASTs
+* **Query Result Caching** - Cache query results
+* **Language Parser Caching** - Reuse parser instances
+* **Memory Management** - Efficient memory usage
 
 ### Optimization Techniques
 
-- **Incremental Parsing** - Parse only changed code
-- **Lazy Loading** - Load parsers on demand
-- **Batch Processing** - Process multiple files together
-- **Resource Limits** - Prevent memory exhaustion
+* **Incremental Parsing** - Parse only changed code
+* **Lazy Loading** - Load parsers on demand
+* **Batch Processing** - Process multiple files together
+* **Resource Limits** - Prevent memory exhaustion
 
 ## Troubleshooting
 
 ### Common Issues
 
 **Parser Not Found**
-- Verify language parser installation
-- Check parser version compatibility
-- Install missing language parsers
-- Test with supported languages
+
+* Verify language parser installation
+* Check parser version compatibility
+* Install missing language parsers
+* Test with supported languages
 
 **Parsing Errors**
-- Validate source code syntax
-- Check language version compatibility
-- Review parser configuration
-- Test with simpler code samples
+
+* Validate source code syntax
+* Check language version compatibility
+* Review parser configuration
+* Test with simpler code samples
 
 **Performance Problems**
-- Monitor memory usage
-- Enable caching options
-- Optimize query patterns
-- Use incremental parsing
+
+* Monitor memory usage
+* Enable caching options
+* Optimize query patterns
+* Use incremental parsing
 
 ### Debug Mode
 
@@ -281,19 +289,22 @@ Enable detailed logging for troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
-- Troubleshooting section provides actionable solutions
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
+* Troubleshooting section provides actionable solutions
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Integrations Overview](README.md)
-- [← Editor Integration](EDITOR_INTEGRATION.md)
-- [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
-- [← Terminal Integration](TERMINAL_INTEGRATION.md)
-- [← Browser Automation](BROWSER_AUTOMATION.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Integrations Overview](README.md)
+* [← Editor Integration](EDITOR_INTEGRATION.md)
+* [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
+* [← Terminal Integration](TERMINAL_INTEGRATION.md)
+* [← Browser Automation](BROWSER_AUTOMATION.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)

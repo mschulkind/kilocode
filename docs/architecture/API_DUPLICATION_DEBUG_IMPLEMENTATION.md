@@ -1,78 +1,79 @@
 # API Duplication Debug Implementation Guide
 
 ## Table of Contents
-- [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [Research Context](#research-context)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Overview](#overview)
-- [Implementation Phases](#implementation-phases)
-- [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
-- [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
-- [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
-- [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
-- [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
-- [2.1 Atomic Operations](#21-atomic-operations)
-- [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
-- [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
-- [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
-- [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
-- [4.1 Tool Helper Function](#41-tool-helper-function)
-- [4.2 Update All Tool Files](#42-update-all-tool-files)
-- [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
-- [5.1 Provider Request Tracking](#51-provider-request-tracking)
-- [5.2 Update Provider Files](#52-update-provider-files)
-- [Testing and Validation](#testing-and-validation)
-- [1. Unit Tests](#1-unit-tests)
-- [2. Integration Tests](#2-integration-tests)
-- [Deployment and Monitoring](#deployment-and-monitoring)
-- [1. Environment Configuration](#1-environment-configuration)
-- [2. Log Analysis Tools](#2-log-analysis-tools)
-- [3. Monitoring Dashboard](#3-monitoring-dashboard)
-- [Cleanup and Removal](#cleanup-and-removal)
-- [1. Feature Flags](#1-feature-flags)
-- [2. Removal Checklist](#2-removal-checklist)
-- [Conclusion](#conclusion)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
-- [Table of Contents](#table-of-contents)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [Research Context](#research-context)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Overview](#overview)
-- [Implementation Phases](#implementation-phases)
-- [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
-- [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
-- [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
-- [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
-- [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
-- [2.1 Atomic Operations](#21-atomic-operations)
-- [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
-- [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
-- [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
-- [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
-- [4.1 Tool Helper Function](#41-tool-helper-function)
-- [4.2 Update All Tool Files](#42-update-all-tool-files)
-- [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
-- [5.1 Provider Request Tracking](#51-provider-request-tracking)
-- [5.2 Update Provider Files](#52-update-provider-files)
-- [Testing and Validation](#testing-and-validation)
-- [1. Unit Tests](#1-unit-tests)
-- [2. Integration Tests](#2-integration-tests)
-- [Deployment and Monitoring](#deployment-and-monitoring)
-- [1. Environment Configuration](#1-environment-configuration)
-- [2. Log Analysis Tools](#2-log-analysis-tools)
-- [3. Monitoring Dashboard](#3-monitoring-dashboard)
-- [Cleanup and Removal](#cleanup-and-removal)
-- [1. Feature Flags](#1-feature-flags)
-- [2. Removal Checklist](#2-removal-checklist)
-- [Conclusion](#conclusion)
-- [Navigation Footer](#navigation-footer)
+
+* [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [Research Context](#research-context)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Overview](#overview)
+* [Implementation Phases](#implementation-phases)
+* [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
+* [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
+* [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
+* [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
+* [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
+* [2.1 Atomic Operations](#21-atomic-operations)
+* [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
+* [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
+* [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
+* [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
+* [4.1 Tool Helper Function](#41-tool-helper-function)
+* [4.2 Update All Tool Files](#42-update-all-tool-files)
+* [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
+* [5.1 Provider Request Tracking](#51-provider-request-tracking)
+* [5.2 Update Provider Files](#52-update-provider-files)
+* [Testing and Validation](#testing-and-validation)
+* [1. Unit Tests](#1-unit-tests)
+* [2. Integration Tests](#2-integration-tests)
+* [Deployment and Monitoring](#deployment-and-monitoring)
+* [1. Environment Configuration](#1-environment-configuration)
+* [2. Log Analysis Tools](#2-log-analysis-tools)
+* [3. Monitoring Dashboard](#3-monitoring-dashboard)
+* [Cleanup and Removal](#cleanup-and-removal)
+* [1. Feature Flags](#1-feature-flags)
+* [2. Removal Checklist](#2-removal-checklist)
+* [Conclusion](#conclusion)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
+* [Table of Contents](#table-of-contents)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [Research Context](#research-context)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Overview](#overview)
+* [Implementation Phases](#implementation-phases)
+* [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
+* [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
+* [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
+* [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
+* [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
+* [2.1 Atomic Operations](#21-atomic-operations)
+* [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
+* [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
+* [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
+* [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
+* [4.1 Tool Helper Function](#41-tool-helper-function)
+* [4.2 Update All Tool Files](#42-update-all-tool-files)
+* [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
+* [5.1 Provider Request Tracking](#51-provider-request-tracking)
+* [5.2 Update Provider Files](#52-update-provider-files)
+* [Testing and Validation](#testing-and-validation)
+* [1. Unit Tests](#1-unit-tests)
+* [2. Integration Tests](#2-integration-tests)
+* [Deployment and Monitoring](#deployment-and-monitoring)
+* [1. Environment Configuration](#1-environment-configuration)
+* [2. Log Analysis Tools](#2-log-analysis-tools)
+* [3. Monitoring Dashboard](#3-monitoring-dashboard)
+* [Cleanup and Removal](#cleanup-and-removal)
+* [1. Feature Flags](#1-feature-flags)
+* [2. Removal Checklist](#2-removal-checklist)
+* [Conclusion](#conclusion)
+* [Navigation Footer](#navigation-footer)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -80,7 +81,7 @@
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* Technical implementation guide for adding comprehensive debug logging to track down
+* *Purpose:*\* Technical implementation guide for adding comprehensive debug logging to track down
   API
   request duplication issues in KiloCode.
 
@@ -93,54 +94,55 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 ### When You're Here, You Can:
 
-- *Implementing Debug Logging:*\*
+* *Implementing Debug Logging:*\*
 
-- **Next**: Follow the implementation phases below →
-  [Testing Strategy](architecture/TESTING_STRATEGY.md) →
-  [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
+* **Next**: Follow the implementation phases below →
+  [Testing Strategy](../../testing/TESTING_STRATEGY.md) →
+  [Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Race Condition Analysis](README.md) for context
 
-- *Understanding the Problem:*\*
+* *Understanding the Problem:*\*
 
-- **Next**: [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](architecture/CODE_FLOW_ANALYSIS.md) → This implementation
+* **Next**: [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](CODE_FLOW_ANALYSIS.md) → This implementation
   guide
 
-- **Related**: [Short Debug Implementation
+* **Related**: [Short Debug Implementation
   Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
   for quick reference
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Short Troubleshooting
+* **Next**: [Short Troubleshooting
   Guide](../architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) → This
-  implementation guide → [Testing Strategy](architecture/TESTING_STRATEGY.md)
+  implementation guide → [Testing Strategy](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -152,7 +154,7 @@ go next, return to [Architecture Documentation](../../README.md) for guidance.
 
 This document provides step-by-step implementation instructions for adding debug logging to identify
 and resolve the [race condition](README.md) causing duplicate
-[API requests](../GLOSSARY.md). The implementation is designed to be non-intrusive
+[API requests](../../GLOSSARY.md). The implementation is designed to be non-intrusive
 and easily removable after the issue is resolved.
 
 ## Implementation Phases
@@ -161,7 +163,7 @@ and easily removable after the issue is resolved.
 
 #### 1.1 Task-Level Request Tracker
 
-- *File:*\* `src/core/task/Task.ts`
+* *File:*\* `src/core/task/Task.ts`
 
 Add the following interface and class properties:
 
@@ -256,7 +258,7 @@ private _concurrencyMonitor: ConcurrencyInfo = {
 
 #### 1.2 Ask Method Instrumentation
 
-- *File:*\* `src/core/task/Task.ts` (around line 883)
+* *File:*\* `src/core/task/Task.ts` (around line 883)
 
 Replace the race-prone message queue processing with instrumented version:
 
@@ -359,7 +361,7 @@ Replace the race-prone message queue processing with instrumented version:
 
 #### 1.3 ProcessQueuedMessages Instrumentation
 
-- *File:*\* `src/core/task/Task.ts` (around line 3297)
+* *File:*\* `src/core/task/Task.ts` (around line 3297)
 
 Add synchronization and comprehensive logging:
 
@@ -456,7 +458,7 @@ public processQueuedMessages(): void {
 
 #### 2.1 Atomic Operations
 
-- *File:*\* `src/core/message-queue/MessageQueueService.ts`
+* *File:*\* `src/core/message-queue/MessageQueueService.ts`
 
 Add thread-safe operations:
 
@@ -530,7 +532,7 @@ public getQueueStats() {
 
 #### 3.1 Chat UI Instrumentation
 
-- *File:*\* `webview-ui/src/components/chat/ChatView.tsx`
+* *File:*\* `webview-ui/src/components/chat/ChatView.tsx`
 
 Add comprehensive state monitoring:
 
@@ -606,7 +608,7 @@ const handleSendMessage = useCallback(
 
 #### 3.2 Webview Message Handler Instrumentation
 
-- *File:*\* `src/core/webview/webviewMessageHandler.ts`
+* *File:*\* `src/core/webview/webviewMessageHandler.ts`
 
 Add message tracking:
 
@@ -646,7 +648,7 @@ case "queueMessage": {
 
 #### 4.1 Tool Helper Function
 
-- *File:*\* `src/core/tools/debugHelpers.ts` (new file)
+* *File:*\* `src/core/tools/debugHelpers.ts` (new file)
 
 Create a shared helper for tool completion logging:
 
@@ -702,7 +704,7 @@ cline.processQueuedMessages()
 
 #### 5.1 Provider Request Tracking
 
-- *File:*\* `src/api/providers/requestTracker.ts` (new file)
+* *File:*\* `src/api/providers/requestTracker.ts` (new file)
 
 Create a shared request tracker for all providers:
 
@@ -804,7 +806,7 @@ try {
 
 ### 1. Unit Tests
 
-- *File:*\* `src/core/task/__tests__/Task.race-condition.spec.ts`
+* *File:*\* `src/core/task/__tests__/Task.race-condition.spec.ts`
 
 ```typescript
 import { describe, it, expect, vi, beforeEach } from "vitest"
@@ -854,7 +856,7 @@ describe("API Request Duplication Race Conditions", () => {
 
 ### 2. Integration Tests
 
-- *File:*\* `src/core/task/__tests__/Task.integration.spec.ts`
+* *File:*\* `src/core/task/__tests__/Task.integration.spec.ts`
 
 ```typescript
 describe("End-to-End Race Condition Tests", () => {
@@ -970,17 +972,19 @@ if (DEBUG_FEATURES.REQUEST_TRACKING) {
 ### 2. Removal Checklist
 
 After the issue is resolved:
-- \[ ] Remove debug logging code
-- \[ ] Remove debug helper files
-- \[ ] Remove test files
-- \[ ] Update documentation
-- \[ ] Clean up console.log statements
-- \[ ] Remove feature flags
+
+* \[ ] Remove debug logging code
+* \[ ] Remove debug helper files
+* \[ ] Remove test files
+* \[ ] Update documentation
+* \[ ] Clean up console.log statements
+* \[ ] Remove feature flags
 
 ## Conclusion
 
 This implementation provides comprehensive debug logging to identify and resolve the API request
 duplication issue. The logging is designed to be:
+
 1. **Non-intrusive**: Minimal performance impact
 2. **Comprehensive**: Covers all potential race condition sources
 3. **Removable**: Easy to clean up after resolution
@@ -990,24 +994,25 @@ The implementation follows a phased approach, allowing for incremental deploymen
 each component.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
+* *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
   [→ Race Condition Analysis](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 
-- *Last Updated:*\* 2024-12-19 **Status:** Ready for Implementation **Priority:** Critical
+* *Last Updated:*\* 2024-12-19 **Status:** Ready for Implementation **Priority:** Critical

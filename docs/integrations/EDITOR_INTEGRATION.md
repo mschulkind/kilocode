@@ -1,67 +1,68 @@
 # Editor Integration
 
 ## Table of Contents
-- [Editor Integration](#editor-integration)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Editor Utilities](#editor-utilities)
-- [Diff Visualization](#diff-visualization)
-- [Decoration Management](#decoration-management)
-- [State Management](#state-management)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Editor Operations](#basic-editor-operations)
-- [Diff Visualization](#diff-visualization)
-- [Decoration Management](#decoration-management)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Editor Integration](#editor-integration)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Editor Utilities](#editor-utilities)
-- [Diff Visualization](#diff-visualization)
-- [Decoration Management](#decoration-management)
-- [State Management](#state-management)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Editor Operations](#basic-editor-operations)
-- [Diff Visualization](#diff-visualization)
-- [Decoration Management](#decoration-management)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Editor Integration](#editor-integration)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Integration Overview](#integration-overview)
+* [System Architecture](#system-architecture)
+* [Key Features](#key-features)
+* [Editor Utilities](#editor-utilities)
+* [Diff Visualization](#diff-visualization)
+* [Decoration Management](#decoration-management)
+* [State Management](#state-management)
+* [Setup and Configuration](#setup-and-configuration)
+* [Prerequisites](#prerequisites)
+* [Installation Steps](#installation-steps)
+* [Configuration Options](#configuration-options)
+* [Usage Examples](#usage-examples)
+* [Basic Editor Operations](#basic-editor-operations)
+* [Diff Visualization](#diff-visualization)
+* [Decoration Management](#decoration-management)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Editor Integration](#editor-integration)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Integration Overview](#integration-overview)
+* [System Architecture](#system-architecture)
+* [Key Features](#key-features)
+* [Editor Utilities](#editor-utilities)
+* [Diff Visualization](#diff-visualization)
+* [Decoration Management](#decoration-management)
+* [State Management](#state-management)
+* [Setup and Configuration](#setup-and-configuration)
+* [Prerequisites](#prerequisites)
+* [Installation Steps](#installation-steps)
+* [Configuration Options](#configuration-options)
+* [Usage Examples](#usage-examples)
+* [Basic Editor Operations](#basic-editor-operations)
+* [Diff Visualization](#diff-visualization)
+* [Decoration Management](#decoration-management)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the editor integration system for VS Code editor interaction,
+* **Purpose**: This document covers the editor integration system for VS Code editor interaction,
   diff visualization, and editor utilities.
-- **Context**: Use this as a starting point for understanding how KiloCode integrates with VS Code
+* **Context**: Use this as a starting point for understanding how KiloCode integrates with VS Code
   and other editors.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -71,10 +72,11 @@ document's role or purpose, this section helps orient you.
 This document was created through comprehensive analysis of KiloCode's editor integration
 requirements and VS Code extension development patterns. The integration system reflects findings
 from:
-- VS Code extension API analysis and best practices research
-- User experience studies for editor integration workflows
-- Performance analysis of editor manipulation operations
-- Security assessment of editor state management
+
+* VS Code extension API analysis and best practices research
+* User experience studies for editor integration workflows
+* Performance analysis of editor manipulation operations
+* Security assessment of editor state management
 
 The system provides seamless integration between KiloCode's AI capabilities and the development
 environment.
@@ -85,6 +87,7 @@ The Editor Integration system provides comprehensive VS Code editor interaction,
 and editor utility capabilities for seamless development workflow integration in KiloCode.
 
 **Core Components:**
+
 1. **Editor Utilities** - Core editor interaction and manipulation
 2. **Diff Visualization** - Comprehensive diff display and interaction
 3. **Decoration Management** - Visual feedback and decoration system
@@ -117,40 +120,42 @@ graph TB
 
 ### Editor Utilities
 
-- **File Operations**: Open, close, save, and manipulate files
-- **Selection Management**: Get and set text selections
-- **Cursor Control**: Navigate and position cursor
-- **Text Manipulation**: Insert, delete, and replace text
+* **File Operations**: Open, close, save, and manipulate files
+* **Selection Management**: Get and set text selections
+* **Cursor Control**: Navigate and position cursor
+* **Text Manipulation**: Insert, delete, and replace text
 
 ### Diff Visualization
 
-- **Side-by-side Comparison**: Visual diff display
-- **Inline Changes**: Highlighted modifications
-- **Navigation Controls**: Jump between changes
-- **Conflict Resolution**: Merge conflict assistance
+* **Side-by-side Comparison**: Visual diff display
+* **Inline Changes**: Highlighted modifications
+* **Navigation Controls**: Jump between changes
+* **Conflict Resolution**: Merge conflict assistance
 
 ### Decoration Management
 
-- **Visual Feedback**: Highlight code sections
-- **Error Indicators**: Mark problematic areas
-- **Progress Indicators**: Show operation status
-- **Custom Markers**: User-defined decorations
+* **Visual Feedback**: Highlight code sections
+* **Error Indicators**: Mark problematic areas
+* **Progress Indicators**: Show operation status
+* **Custom Markers**: User-defined decorations
 
 ### State Management
 
-- **Editor State Tracking**: Monitor editor changes
-- **Synchronization**: Keep states in sync
-- **History Management**: Track modification history
-- **Undo/Redo Support**: Operation reversal
+* **Editor State Tracking**: Monitor editor changes
+* **Synchronization**: Keep states in sync
+* **History Management**: Track modification history
+* **Undo/Redo Support**: Operation reversal
 
 ## Setup and Configuration
 
 ### Prerequisites
-- VS Code 1.70.0 or higher
-- KiloCode extension installed
-- Node.js 16+ for development
+
+* VS Code 1.70.0 or higher
+* KiloCode extension installed
+* Node.js 16+ for development
 
 ### Installation Steps
+
 1. Install the KiloCode VS Code extension
 2. Configure editor integration settings
 3. Enable required permissions
@@ -213,19 +218,22 @@ await decorations.clearAll();
 ### Common Issues
 
 **Integration Not Working**
-- Verify VS Code extension is installed and enabled
-- Check KiloCode service is running
-- Restart VS Code if necessary
+
+* Verify VS Code extension is installed and enabled
+* Check KiloCode service is running
+* Restart VS Code if necessary
 
 **Diff Visualization Issues**
-- Ensure file paths are valid
-- Check file permissions
-- Verify file encoding compatibility
+
+* Ensure file paths are valid
+* Check file permissions
+* Verify file encoding compatibility
 
 **Performance Problems**
-- Disable unnecessary decorations
-- Reduce diff complexity
-- Check system resources
+
+* Disable unnecessary decorations
+* Reduce diff complexity
+* Check system resources
 
 ### Debug Mode
 
@@ -241,17 +249,20 @@ Enable debug logging for detailed troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
-- Troubleshooting section provides actionable solutions
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
+* Troubleshooting section provides actionable solutions
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Integrations Overview](README.md)
-- [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
-- [← Terminal Integration](TERMINAL_INTEGRATION.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Integrations Overview](README.md)
+* [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
+* [← Terminal Integration](TERMINAL_INTEGRATION.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)

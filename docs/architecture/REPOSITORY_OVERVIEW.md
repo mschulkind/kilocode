@@ -1,63 +1,64 @@
 # Repository Overview
 
 ## Table of Contents
-- [Repository Overview](#repository-overview)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#️-navigation-guide)
-- [Research Context](#research-context)
-- [Quick Start Paths](#quick-start-paths)
-- [Current Focus](#current-focus)
-- [📚 Documentation Structure](#-documentation-structure)
-- [Core Documentation](#core-documentation)
-- [Development & Infrastructure](#development-infrastructure)
-- [Executive Summary](#executive-summary)
-- [Quick Reference](#quick-reference)
-- [Repository Structure](#repository-structure)
-- [Core Systems](#core-systems)
-- [Development Workflow](#development-workflow)
-- [🔗 Cross-References](#-cross-references)
-- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
-- [🧭 Navigation Footer](#-navigation-footer)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Example](#example)
-- [Navigation](#navigation)
-- [Repository Overview](#repository-overview)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#️-navigation-guide)
-- [Research Context](#research-context)
-- [Quick Start Paths](#quick-start-paths)
-- [Current Focus](#current-focus)
-- [📚 Documentation Structure](#-documentation-structure)
-- [Core Documentation](#core-documentation)
-- [Development & Infrastructure](#development-infrastructure)
-- [Executive Summary](#executive-summary)
-- [Quick Reference](#quick-reference)
-- [Repository Structure](#repository-structure)
-- [Core Systems](#core-systems)
-- [Development Workflow](#development-workflow)
-- [🔗 Cross-References](#-cross-references)
-- [🦕 Dinosaur Analogy](#-dinosaur-analogy)
-- [🧭 Navigation Footer](#-navigation-footer)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Example](#example)
+
+* [Repository Overview](#repository-overview)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [🗺️ Navigation Guide](#️-navigation-guide)
+* [Research Context](#research-context)
+* [Quick Start Paths](#quick-start-paths)
+* [Current Focus](#current-focus)
+* [📚 Documentation Structure](#-documentation-structure)
+* [Core Documentation](#core-documentation)
+* [Development & Infrastructure](#development-infrastructure)
+* [Executive Summary](#executive-summary)
+* [Quick Reference](#quick-reference)
+* [Repository Structure](#repository-structure)
+* [Core Systems](#core-systems)
+* [Development Workflow](#development-workflow)
+* [🔗 Cross-References](#-cross-references)
+* [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+* [🧭 Navigation Footer](#-navigation-footer)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Example](#example)
+* [Navigation](#navigation)
+* [Repository Overview](#repository-overview)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [🗺️ Navigation Guide](#️-navigation-guide)
+* [Research Context](#research-context)
+* [Quick Start Paths](#quick-start-paths)
+* [Current Focus](#current-focus)
+* [📚 Documentation Structure](#-documentation-structure)
+* [Core Documentation](#core-documentation)
+* [Development & Infrastructure](#development-infrastructure)
+* [Executive Summary](#executive-summary)
+* [Quick Reference](#quick-reference)
+* [Repository Structure](#repository-structure)
+* [Core Systems](#core-systems)
+* [Development Workflow](#development-workflow)
+* [🔗 Cross-References](#-cross-references)
+* [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+* [🧭 Navigation Footer](#-navigation-footer)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Example](#example)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Master index for comprehensive information about the KiloCode repository structure,
+* *Purpose:*\* Master index for comprehensive information about the KiloCode repository structure,
   systems, and components.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
@@ -68,28 +69,30 @@ document's role or purpose, this section helps orient you.
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 ### Quick Start Paths
 
-- **Need an Overview**: Start with [Repository Structure](architecture/REPOSITORY_STRUCTURE.md)
-- **Understanding Systems**: Begin with [Core Systems](architecture/CORE_SYSTEMS.md)
-- **Development Journey**: Follow [Development Guide](repository/DEVELOPMENT_GUIDE.md)
+* **Need an Overview**: Start with [Repository Structure](REPOSITORY_STRUCTURE.md)
+* **Understanding Systems**: Begin with [Core Systems](CORE_SYSTEMS.md)
+* **Development Journey**: Follow [Development Guide](repository/DEVELOPMENT_GUIDE.md)
 
 ### Current Focus
-- Repository structure and organization
-- Core systems and architecture
-- Development tools and workflows
-- Testing and build infrastructure
+
+* Repository structure and organization
+* Core systems and architecture
+* Development tools and workflows
+* Testing and build infrastructure
 
 ## 📚 Documentation Structure
 
@@ -98,21 +101,21 @@ understanding:
 
 ### Core Documentation
 
-- **[Repository Structure](architecture/REPOSITORY_STRUCTURE.md)** - High-level repository
+* **[Repository Structure](REPOSITORY_STRUCTURE.md)** - High-level repository
   organization
-- **[Core Systems](architecture/CORE_SYSTEMS.md)** - Core systems and services
-- **[Workspace Packages](../architecture/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
-- **[Applications](../architecture/APPLICATIONS.md)** - Applications and interfaces
+* **[Core Systems](CORE_SYSTEMS.md)** - Core systems and services
+* **[Workspace Packages](../architecture/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
+* **[Applications](../architecture/APPLICATIONS.md)** - Applications and interfaces
 
 ### Development & Infrastructure
 
-- **[Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and
+* **[Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md)** - Testing tools and
   frameworks
-- **[Build Pipelines](../architecture/BUILD_PIPELINES.md)** - Build and CI/CD systems
-- **[Development Tools](../architecture/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
-- **[External Integrations](../architecture/EXTERNAL_INTEGRATIONS.md)** - External service
+* **[Build Pipelines](../architecture/BUILD_PIPELINES.md)** - Build and CI/CD systems
+* **[Development Tools](../architecture/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
+* **[External Integrations](../architecture/EXTERNAL_INTEGRATIONS.md)** - External service
   integrations
-- **[Development Guide](repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
+* **[Development Guide](repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
 
 ## Executive Summary
 
@@ -121,52 +124,52 @@ featuring a multi-layered architecture with extensive tooling, testing, and depl
 infrastructure. The codebase spans over 1,120 TypeScript files across multiple workspace packages,
 applications, and services.
 
-- *Key Statistics:*\*
+* *Key Statistics:*\*
 
-- **Total Files**: 1,120+ TypeScript files
+* **Total Files**: 1,120+ TypeScript files
 
-- **Workspace Packages**: 7 core packages
+* **Workspace Packages**: 7 core packages
 
-- **Applications**: 8 applications (docs, testing, web interfaces)
+* **Applications**: 8 applications (docs, testing, web interfaces)
 
-- **Core Services**: 15+ specialized services
+* **Core Services**: 15+ specialized services
 
-- **Tools**: 25+ AI-powered tools
+* **Tools**: 25+ AI-powered tools
 
-- **Test Coverage**: Extensive unit, integration, and E2E testing
+* **Test Coverage**: Extensive unit, integration, and E2E testing
 
 ## Quick Reference
 
 ### Repository Structure
 
-- **Core Extension**: `src/` - Main VS Code extension implementation
-- **Webview UI**: `webview-ui/` - React-based user interface
-- **Workspace Packages**: `packages/` - Shared libraries and utilities
-- **Applications**: `apps/` - Standalone applications and interfaces
-- **Documentation**: `docs/` - Comprehensive documentation system
+* **Core Extension**: `src/` - Main VS Code extension implementation
+* **Webview UI**: `webview-ui/` - React-based user interface
+* **Workspace Packages**: `packages/` - Shared libraries and utilities
+* **Applications**: `apps/` - Standalone applications and interfaces
+* **Documentation**: `docs/` - Comprehensive documentation system
 
 ### Core Systems
 
-- **Orchestrator Service**: Task execution and coordination
-- **API Service**: External AI service communication
-- **Message Queue Service**: Message queuing and processing
-- **Laminar Service**: Observability and tracing
-- **Prompt Service**: Prompt engineering and management
-- **Tool Service**: AI tool execution and coordination
+* **Orchestrator Service**: Task execution and coordination
+* **API Service**: External AI service communication
+* **Message Queue Service**: Message queuing and processing
+* **Laminar Service**: Observability and tracing
+* **Prompt Service**: Prompt engineering and management
+* **Tool Service**: AI tool execution and coordination
 
 ### Development Workflow
 
-- **Monorepo Management**: PNPM workspace with Turbo orchestration
-- **Code Quality**: ESLint, Prettier, TypeScript strict mode
-- **Testing**: Vitest, Playwright, Jest for comprehensive testing
-- **Building**: Webpack, Vite, TypeScript compilation
-- **Deployment**: VS Code Marketplace, NPM registry, web hosting
+* **Monorepo Management**: PNPM workspace with Turbo orchestration
+* **Code Quality**: ESLint, Prettier, TypeScript strict mode
+* **Testing**: Vitest, Playwright, Jest for comprehensive testing
+* **Building**: Webpack, Vite, TypeScript compilation
+* **Deployment**: VS Code Marketplace, NPM registry, web hosting
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [Architecture Documentation](../../README.md) for system architecture
-- **Standards**: See [Parent directory](../standards/) for development standards
-- **Plans**: See [Parent directory](../../plans/) for development plans
+* **Architecture**: See [Architecture Documentation](../../README.md) for system architecture
+* **Standards**: See [Parent directory](../standards/) for development standards
+* **Plans**: See [Parent directory](../../plans/) for development plans
 
 ## 🦕 Dinosaur Analogy
 
@@ -177,14 +180,16 @@ architectural layer. Each directory is like a different excavation site, reveali
 of the system's structure!
 
 ## 🧭 Navigation Footer
-- [← Back to Architecture Home](../../README.md)
-- [→ Repository Structure](architecture/REPOSITORY_STRUCTURE.md)
-- [↑ Table of Contents](../../README.md)
+
+* [← Back to Architecture Home](../../README.md)
+* [→ Repository Structure](REPOSITORY_STRUCTURE.md)
+* [↑ Table of Contents](../../README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
   [↑ Table of Contents](#repository-overview)
 
 ## No Dead Ends Policy
@@ -197,9 +202,11 @@ of the system's structure!
 ```
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

@@ -287,6 +287,16 @@ function shouldHaveFunFact(filePath) {
  * Check if link text is non-descriptive
  */
 function isNonDescriptiveLink(text, url) {
+	// Allow documentation file references (they are descriptive in context)
+	if (url && (
+		url.endsWith('.md') || 
+		url.includes('/') && url.includes('.') ||
+		text.endsWith('.md') ||
+		text.includes('_') && text.includes('.')
+	)) {
+		return false
+	}
+
 	const nonDescriptivePatterns = [
 		/^(click here|here|link|more|read more|see more|continue|next|previous)$/i,
 		/^(this|that|it)$/i,

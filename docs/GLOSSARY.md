@@ -1,109 +1,110 @@
 # KiloCode Technical Glossary
 
 ## Table of Contents
-- [KiloCode Technical Glossary](#kilocode-technical-glossary)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Core System Concepts](#core-system-concepts)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [System-Specific Terms](#systemspecific-terms)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [State Definitions](#state-definitions)
-- [](#)
-- [](#)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Terms](#navigation-terms)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [🔗 Related Documentation](#-related-documentation)
-- [🧭 Navigation Footer](#-navigation-footer)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [KiloCode Technical Glossary](#kilocode-technical-glossary)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Core System Concepts](#core-system-concepts)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [System-Specific Terms](#systemspecific-terms)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [State Definitions](#state-definitions)
-- [](#)
-- [](#)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Terms](#navigation-terms)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [🔗 Related Documentation](#-related-documentation)
-- [🧭 Navigation Footer](#-navigation-footer)
-- [Navigation Footer](#navigation-footer)
+
+* [KiloCode Technical Glossary](#kilocode-technical-glossary)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Core System Concepts](#core-system-concepts)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [System-Specific Terms](#systemspecific-terms)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [State Definitions](#state-definitions)
+* [](#)
+* [](#)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Terms](#navigation-terms)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [🔗 Related Documentation](#-related-documentation)
+* [🧭 Navigation Footer](#-navigation-footer)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [KiloCode Technical Glossary](#kilocode-technical-glossary)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Core System Concepts](#core-system-concepts)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [System-Specific Terms](#systemspecific-terms)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [State Definitions](#state-definitions)
+* [](#)
+* [](#)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Terms](#navigation-terms)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [](#)
+* [🔗 Related Documentation](#-related-documentation)
+* [🧭 Navigation Footer](#-navigation-footer)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Comprehensive reference for technical terms, concepts, and system-specific
+* *Purpose:*\* Comprehensive reference for technical terms, concepts, and system-specific
   terminology
   used throughout KiloCode documentation.
 
@@ -240,44 +241,45 @@ logic.
 
 ### **Task States**
 
-- **CREATED**: Task initialized but not yet started
-- **INITIALIZING**: Task is being set up and configured
-- **RUNNING**: Task is actively executing
-- **PAUSED**: Task execution temporarily suspended
-- **COMPLETED**: Task finished successfully
-- **FAILED**: Task encountered an error and stopped
-- **TIMEOUT**: Task exceeded maximum execution time
-- **ABORTED**: Task was manually stopped
-- **CANCELLED**: Task was cancelled before completion
-- **DESTROYED**: Task resources cleaned up
+* **CREATED**: Task initialized but not yet started
+* **INITIALIZING**: Task is being set up and configured
+* **RUNNING**: Task is actively executing
+* **PAUSED**: Task execution temporarily suspended
+* **COMPLETED**: Task finished successfully
+* **FAILED**: Task encountered an error and stopped
+* **TIMEOUT**: Task exceeded maximum execution time
+* **ABORTED**: Task was manually stopped
+* **CANCELLED**: Task was cancelled before completion
+* **DESTROYED**: Task resources cleaned up
 
 ### **Session States**
 
-- **NEW**: Session just created
-- **ACTIVE**: Session actively being used
-- **PAUSED**: Session temporarily inactive
-- **INACTIVE**: Session not being used but still exists
-- **COMPLETED**: Session finished
-- **TIMEOUT**: Session exceeded maximum idle time
-- **DESTROYED**: Session resources cleaned up
+* **NEW**: Session just created
+* **ACTIVE**: Session actively being used
+* **PAUSED**: Session temporarily inactive
+* **INACTIVE**: Session not being used but still exists
+* **COMPLETED**: Session finished
+* **TIMEOUT**: Session exceeded maximum idle time
+* **DESTROYED**: Session resources cleaned up
 
 ### **Recursive Call States**
 
-- **IDLE**: No recursive calls active
-- **RUNNING**: Single recursive call in progress
-- **CONCURRENT**: Multiple recursive calls running simultaneously (race condition)
-- **QUEUED**: Recursive call waiting for resources
-- **LOCKED**: Recursive call blocked by synchronization
-- **TIMEOUT**: Recursive call exceeded time limit
-- **TRIPLE\_CONCURRENT**: Three simultaneous recursive calls (severe race condition)
+* **IDLE**: No recursive calls active
+* **RUNNING**: Single recursive call in progress
+* **CONCURRENT**: Multiple recursive calls running simultaneously (race condition)
+* **QUEUED**: Recursive call waiting for resources
+* **LOCKED**: Recursive call blocked by synchronization
+* **TIMEOUT**: Recursive call exceeded time limit
+* **TRIPLE\_CONCURRENT**: Three simultaneous recursive calls (severe race condition)
 
 ## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Terms
 
@@ -303,20 +305,24 @@ implementation).
 Sequential path through documentation designed to build understanding progressively.
 
 ## 🔗 Related Documentation
-- [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
+
+* [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
   principles and structure
-- [Architecture Documentation](README.md) - System architecture and design patterns
-- [Orchestrator Documentation](README.md) - Task orchestration and lifecycle management
+* [Architecture Documentation](README.md) - System architecture and design patterns
+* [Orchestrator Documentation](README.md) - Task orchestration and lifecycle management
 
 ## 🧭 Navigation Footer
-- [← Back to Documentation Hub](README.md)
-- [↑ Table of Contents](#core-system-concepts)
-- [→ Documentation Standards Guide](../DOCUMENTATION_GUIDE.md)
+
+* [← Back to Documentation Hub](README.md)
+* [↑ Table of Contents](#core-system-concepts)
+* [→ Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../docs/) · ↑ Table of Contents
+* \*\*
+
+* *Navigation*\*: [docs](../docs/) · ↑ Table of Contents
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

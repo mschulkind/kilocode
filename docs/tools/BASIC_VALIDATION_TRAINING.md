@@ -1,61 +1,62 @@
 # Basic Validation Training
 
 ## Table of Contents
-- [Basic Validation Training](#basic-validation-training)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Learning Objectives](#learning-objectives)
-- [Prerequisites](#prerequisites)
-- [What is Documentation Validation?](#what-is-documentation-validation)
-- [Why Validation Matters](#why-validation-matters)
-- [Validation Tools Overview](#validation-tools-overview)
-- [1. VS Code Extensions](#1-vs-code-extensions)
-- [2. Command Line Tools](#2-command-line-tools)
-- [3. Git Integration](#3-git-integration)
-- [Common Validation Errors](#common-validation-errors)
-- [1. Missing Required Sections](#1-missing-required-sections)
-- [2. Missing Navigation Footer](#2-missing-navigation-footer)
-- [3. Non-descriptive Link Text](#3-nondescriptive-link-text)
-- [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
-- [Hands-On Exercise 1: Basic Validation](#handson-exercise-1-basic-validation)
-- [Setup](#setup)
-- [Exercise Steps](#exercise-steps)
-- [Expected Results](#expected-results)
-- [Hands-On Exercise 2: Fixing Common Errors](#handson-exercise-2-fixing-common-errors)
-- [Exercise File](#exercise-file)
-- [Fix the Issues](#fix-the-issues)
-- [Basic Validation Training](#basic-validation-training)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Learning Objectives](#learning-objectives)
-- [Prerequisites](#prerequisites)
-- [What is Documentation Validation?](#what-is-documentation-validation)
-- [Why Validation Matters](#why-validation-matters)
-- [Validation Tools Overview](#validation-tools-overview)
-- [1. VS Code Extensions](#1-vs-code-extensions)
-- [2. Command Line Tools](#2-command-line-tools)
-- [3. Git Integration](#3-git-integration)
-- [Common Validation Errors](#common-validation-errors)
-- [1. Missing Required Sections](#1-missing-required-sections)
-- [2. Missing Navigation Footer](#2-missing-navigation-footer)
-- [3. Non-descriptive Link Text](#3-nondescriptive-link-text)
-- [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
-- [Hands-On Exercise 1: Basic Validation](#handson-exercise-1-basic-validation)
-- [Setup](#setup)
-- [Exercise Steps](#exercise-steps)
-- [Expected Results](#expected-results)
-- [Hands-On Exercise 2: Fixing Common Errors](#handson-exercise-2-fixing-common-errors)
-- [Exercise File](#exercise-file)
-- [Fix the Issues](#fix-the-issues)
+
+* [Basic Validation Training](#basic-validation-training)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Learning Objectives](#learning-objectives)
+* [Prerequisites](#prerequisites)
+* [What is Documentation Validation?](#what-is-documentation-validation)
+* [Why Validation Matters](#why-validation-matters)
+* [Validation Tools Overview](#validation-tools-overview)
+* [1. VS Code Extensions](#1-vs-code-extensions)
+* [2. Command Line Tools](#2-command-line-tools)
+* [3. Git Integration](#3-git-integration)
+* [Common Validation Errors](#common-validation-errors)
+* [1. Missing Required Sections](#1-missing-required-sections)
+* [2. Missing Navigation Footer](#2-missing-navigation-footer)
+* [3. Non-descriptive Link Text](#3-nondescriptive-link-text)
+* [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
+* [Hands-On Exercise 1: Basic Validation](#handson-exercise-1-basic-validation)
+* [Setup](#setup)
+* [Exercise Steps](#exercise-steps)
+* [Expected Results](#expected-results)
+* [Hands-On Exercise 2: Fixing Common Errors](#handson-exercise-2-fixing-common-errors)
+* [Exercise File](#exercise-file)
+* [Fix the Issues](#fix-the-issues)
+* [Basic Validation Training](#basic-validation-training)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Learning Objectives](#learning-objectives)
+* [Prerequisites](#prerequisites)
+* [What is Documentation Validation?](#what-is-documentation-validation)
+* [Why Validation Matters](#why-validation-matters)
+* [Validation Tools Overview](#validation-tools-overview)
+* [1. VS Code Extensions](#1-vs-code-extensions)
+* [2. Command Line Tools](#2-command-line-tools)
+* [3. Git Integration](#3-git-integration)
+* [Common Validation Errors](#common-validation-errors)
+* [1. Missing Required Sections](#1-missing-required-sections)
+* [2. Missing Navigation Footer](#2-missing-navigation-footer)
+* [3. Non-descriptive Link Text](#3-nondescriptive-link-text)
+* [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
+* [Hands-On Exercise 1: Basic Validation](#handson-exercise-1-basic-validation)
+* [Setup](#setup)
+* [Exercise Steps](#exercise-steps)
+* [Expected Results](#expected-results)
+* [Hands-On Exercise 2: Fixing Common Errors](#handson-exercise-2-fixing-common-errors)
+* [Exercise File](#exercise-file)
+* [Fix the Issues](#fix-the-issues)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -66,57 +67,61 @@ system.
 ## Learning Objectives
 
 By the end of this training, you will be able to:
-- Understand what documentation validation is and why it matters
-- Identify common validation errors and their causes
-- Use basic validation tools and commands
-- Fix simple validation issues
-- Understand the validation workflow
+
+* Understand what documentation validation is and why it matters
+* Identify common validation errors and their causes
+* Use basic validation tools and commands
+* Fix simple validation issues
+* Understand the validation workflow
 
 ## Prerequisites
-- Basic familiarity with Markdown
-- VS Code installed and configured
-- Access to the KiloCode documentation system
+
+* Basic familiarity with Markdown
+* VS Code installed and configured
+* Access to the KiloCode documentation system
 
 ## What is Documentation Validation?
 
 Documentation validation is the process of checking documentation files for:
 
-- **Syntax errors**: Missing required sections, malformed Markdown
-- **Style issues**: Inconsistent formatting, poor structure
-- **Link problems**: Broken links, non-descriptive link text
-- **Content quality**: Missing information, unclear writing
+* **Syntax errors**: Missing required sections, malformed Markdown
+* **Style issues**: Inconsistent formatting, poor structure
+* **Link problems**: Broken links, non-descriptive link text
+* **Content quality**: Missing information, unclear writing
 
 ### Why Validation Matters
 
-- **Consistency**: Ensures all documentation follows the same standards
-- **Quality**: Catches errors before they reach users
-- **Maintainability**: Makes documentation easier to update and maintain
-- **User Experience**: Provides clear, well-structured information
+* **Consistency**: Ensures all documentation follows the same standards
+* **Quality**: Catches errors before they reach users
+* **Maintainability**: Makes documentation easier to update and maintain
+* **User Experience**: Provides clear, well-structured information
 
 ## Validation Tools Overview
 
 ### 1. VS Code Extensions
 
-- **Markdown All in One**: Real-time validation and formatting
-- **markdownlint**: Style checking and auto-fixing
-- **Remark**: Advanced validation and processing
+* **Markdown All in One**: Real-time validation and formatting
+* **markdownlint**: Style checking and auto-fixing
+* **Remark**: Advanced validation and processing
 
 ### 2. Command Line Tools
-- `pnpm docs:validate`: Run full validation
-- `pnpm docs:fix`: Auto-fix common issues
-- `pnpm docs:report`: Generate validation reports
+
+* `pnpm docs:validate`: Run full validation
+* `pnpm docs:fix`: Auto-fix common issues
+* `pnpm docs:report`: Generate validation reports
 
 ### 3. Git Integration
-- Pre-commit hooks prevent invalid documentation
-- Commit message validation ensures proper formatting
+
+* Pre-commit hooks prevent invalid documentation
+* Commit message validation ensures proper formatting
 
 ## Common Validation Errors
 
 ### 1. Missing Required Sections
 
-- *Error*\*: Missing required section "Research Context"
-- *What it means*\*: Every KiloCode document must have a Research Context section
-- *How to fix*\*:
+* *Error*\*: Missing required section "Research Context"
+* *What it means*\*: Every KiloCode document must have a Research Context section
+* *How to fix*\*:
 
 ```markdown
 ## Research Context
@@ -126,9 +131,9 @@ Brief description of the research and context behind this document.
 
 ### 2. Missing Navigation Footer
 
-- *Error*\*: Missing navigation footer
-- *What it means*\*: Documents need navigation links for better organization
-- *How to fix*\*:
+* *Error*\*: Missing navigation footer
+* *What it means*\*: Documents need navigation links for better organization
+* *How to fix*\*:
 
 ```markdown
 - \*Navigation\*\*: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
@@ -136,9 +141,9 @@ Brief description of the research and context behind this document.
 
 ### 3. Non-descriptive Link Text
 
-- *Warning*\*: Link text "https://example.com" is not descriptive
-- *What it means*\*: Links should have meaningful text, not just URLs
-- *How to fix*\*:
+* *Warning*\*: Link text "https://example.com" is not descriptive
+* *What it means*\*: Links should have meaningful text, not just URLs
+* *How to fix*\*:
 
 ```markdown
 <!-- Bad -->
@@ -152,9 +157,9 @@ Brief description of the research and context behind this document.
 
 ### 4. Improper Heading Hierarchy
 
-- *Warning*\*: Heading level should be 2, not 3
-- *What it means*\*: Headings should follow a logical hierarchy (H1 → H2 → H3)
-- *How to fix*\*:
+* *Warning*\*: Heading level should be 2, not 3
+* *What it means*\*: Headings should follow a logical hierarchy (H1 → H2 → H3)
+* *How to fix*\*:
 
 ```markdown
 # Main Title (H1)
@@ -167,32 +172,38 @@ Brief description of the research and context behind this document.
 ## Hands-On Exercise 1: Basic Validation
 
 ### Setup
+
 1. Open VS Code
 2. Navigate to the `docs/` directory
 3. Open a Markdown file
 
 ### Exercise Steps
+
 1. **Run validation**:
 
    ```bash
    pnpm docs:validate
    ```
 2. **Check Problems panel**:
-- Look for validation errors
-- Note the error types and locations
+
+* Look for validation errors
+* Note the error types and locations
+
 3. **Try auto-fix**:
 
    ```bash
    pnpm docs:fix
    ```
 4. **Verify fixes**:
-- Run validation again
-- Check that errors are resolved
+
+* Run validation again
+* Check that errors are resolved
 
 ### Expected Results
-- You should see validation errors in the Problems panel
-- Auto-fix should resolve some issues automatically
-- Manual fixes may be needed for complex issues
+
+* You should see validation errors in the Problems panel
+* Auto-fix should resolve some issues automatically
+* Manual fixes may be needed for complex issues
 
 ## Hands-On Exercise 2: Fixing Common Errors
 
@@ -223,6 +234,7 @@ Some content here.
 ```
 
 ### Fix the Issues
+
 1. **Add Research Context section**:
 
    ```markdown
@@ -245,7 +257,7 @@ Some content here.
    ```
 
 **Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
 
 ```
 

@@ -1,64 +1,65 @@
 # Orchestrator Task Lifecycle
 
 ## Table of Contents
-- [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Lifecycle Overview](#lifecycle-overview)
-- [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
-- [Stage 1: Initiation](#stage-1-initiation)
-- [Stage 2: Prompt Generation](#stage-2-prompt-generation)
-- [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
-- [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
-- [Stage 5: Completion](#stage-5-completion)
-- [Stage 6: Termination](#stage-6-termination)
-- [State Transitions](#state-transitions)
-- [The Execution Loop: ](#the-execution-loop-)
-- [Subtask Lifecycle](#subtask-lifecycle)
-- [Navigation Footer](#navigation-footer)
-- [When You're Here](#when-youre-here)
-- [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
-- [Quick pointer to code](#quick-pointer-to-code)
-- [Concrete send patterns (summary)](#concrete-send-patterns-summary)
-- [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
-- [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
-- [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Lifecycle Overview](#lifecycle-overview)
-- [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
-- [Stage 1: Initiation](#stage-1-initiation)
-- [Stage 2: Prompt Generation](#stage-2-prompt-generation)
-- [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
-- [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
-- [Stage 5: Completion](#stage-5-completion)
-- [Stage 6: Termination](#stage-6-termination)
-- [State Transitions](#state-transitions)
-- [The Execution Loop: ](#the-execution-loop-)
-- [Subtask Lifecycle](#subtask-lifecycle)
-- [Navigation Footer](#navigation-footer)
-- [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
-- [Quick pointer to code](#quick-pointer-to-code)
-- [Concrete send patterns (summary)](#concrete-send-patterns-summary)
-- [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
-- [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
-- [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
+
+* [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Lifecycle Overview](#lifecycle-overview)
+* [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
+* [Stage 1: Initiation](#stage-1-initiation)
+* [Stage 2: Prompt Generation](#stage-2-prompt-generation)
+* [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
+* [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
+* [Stage 5: Completion](#stage-5-completion)
+* [Stage 6: Termination](#stage-6-termination)
+* [State Transitions](#state-transitions)
+* [The Execution Loop: ](#the-execution-loop-)
+* [Subtask Lifecycle](#subtask-lifecycle)
+* [Navigation Footer](#navigation-footer)
+* [When You're Here](#when-youre-here)
+* [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
+* [Quick pointer to code](#quick-pointer-to-code)
+* [Concrete send patterns (summary)](#concrete-send-patterns-summary)
+* [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
+* [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
+* [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Lifecycle Overview](#lifecycle-overview)
+* [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
+* [Stage 1: Initiation](#stage-1-initiation)
+* [Stage 2: Prompt Generation](#stage-2-prompt-generation)
+* [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
+* [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
+* [Stage 5: Completion](#stage-5-completion)
+* [Stage 6: Termination](#stage-6-termination)
+* [State Transitions](#state-transitions)
+* [The Execution Loop: ](#the-execution-loop-)
+* [Subtask Lifecycle](#subtask-lifecycle)
+* [Navigation Footer](#navigation-footer)
+* [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicatecauses-and-recommended-docsonly-changes)
+* [Quick pointer to code](#quick-pointer-to-code)
+* [Concrete send patterns (summary)](#concrete-send-patterns-summary)
+* [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
+* [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
+* [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* This document provides a detailed, step-by-step description of the orchestrator's
+* *Purpose:*\* This document provides a detailed, step-by-step description of the orchestrator's
   task
   lifecycle, from the moment a request is received to its final completion. It covers state
   transitions, the execution loop, and subtask management.
@@ -85,18 +86,19 @@
 
 <a id="related-documents"></a>
 
-- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+* **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
   orchestrator
   documentation.
-- **[Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md)**: Describes the components
+* **[Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md)**: Describes the components
   involved in the lifecycle.
-- **[Task Delegation Guide](ORCHESTRATOR_TASK_DELEGATION.md)**: Focuses specifically on
+* **[Task Delegation Guide](ORCHESTRATOR_TASK_DELEGATION.md)**: Focuses specifically on
   the subtask creation and management process.
-- **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how errors are
+* **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how errors are
   handled at various stages of the lifecycle.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 ### Lifecycle Overview
 
@@ -128,7 +130,8 @@ sequenceDiagram
 ```
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 ### Lifecycle Stages in Detail
 
@@ -176,22 +179,25 @@ The `Task` engine performs final cleanup, persists the final state, and returns 
 initial caller. The lifecycle for this task instance is now complete.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 ### State Transitions
 
 <a id="state-transitions"></a>
 
 A task can exist in several states throughout its lifecycle:
-- `pending`: The task has been created but the execution loop has not yet begun.
-- `in_progress`: The task is actively engaged in the model-response/tool-execution loop.
-- `awaiting_subtask`: The task has delegated work to a subtask and is paused, waiting for it to
+
+* `pending`: The task has been created but the execution loop has not yet begun.
+* `in_progress`: The task is actively engaged in the model-response/tool-execution loop.
+* `awaiting_subtask`: The task has delegated work to a subtask and is paused, waiting for it to
   complete.
-- `completed`: The task has successfully finished via `attemptCompletionTool`.
-- `failed`: The task terminated due to an unrecoverable error or reaching its mistake limit.
+* `completed`: The task has successfully finished via `attemptCompletionTool`.
+* `failed`: The task terminated due to an unrecoverable error or reaching its mistake limit.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 ### The Execution Loop: `recursivelyMakeClineRequests`
 
@@ -201,6 +207,7 @@ The function [`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735)
 the
 lifecycle. It is not a simple loop but a recursive function that represents one full turn of the
 conversation with the model.
+
 1. **Call Model**: Sends the current context (history, tool results) to the model.
 2. **Parse Response**: The `StreamingParser` processes the output.
 3. **Execute Tools**: If tool calls are found, they are executed.
@@ -208,7 +215,8 @@ conversation with the model.
    until a terminal state (completion or failure) is reached.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 ### Subtask Lifecycle
 
@@ -216,6 +224,7 @@ conversation with the model.
 
 When the model determines a part of the task requires isolated execution, it can use the
 [`startSubtask`](../../src/core/task/Task.ts#L1628) tool.
+
 1. **Pause Parent**: The parent task's state is set to `awaiting_subtask`.
 2. **Create Child**: A new `Task` instance is created with a specific, narrowed-down objective. This
    child task has its own independent lifecycle.
@@ -227,7 +236,8 @@ When the model determines a part of the task requires isolated execution, it can
    with the information from the completed subtask.
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 ### Navigation Footer
 
@@ -238,7 +248,8 @@ You have reached the end of the lifecycle document. Return to the
 [Task Delegation Document](ORCHESTRATOR_TASK_DELEGATION.md).
 
 [Back to Top](#orchestrator-task-lifecycle)
-- \*\*
+
+* \*\*
 
 End of document.
 
@@ -247,35 +258,39 @@ End of document.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Provider network send points, duplicate-causes, and recommended docs-only changes
 
 ### Quick pointer to code
-- Task control loop: [`src/core/task/Task.ts`](../../src/core/task/Task.ts#L2648)
-- Message queue:
+
+* Task control loop: [`src/core/task/Task.ts`](../../src/core/task/Task.ts#L2648)
+* Message queue:
 
 [`src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts#L36)
-- Provider entrypoints: `createMessage()` implementations under
+
+* Provider entrypoints: `createMessage()` implementations under
   [`src/api/providers/`](../../src/api/providers/index.ts#L1)
 
 ### Concrete send patterns (summary)
-- OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers:
+
+* OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers:
   [`/\src/api/providers/openai.ts#L83`](../../src/api/providers/openai.ts#L83),
   [`/\src/api/providers/ollama.ts#L61`](../../src/api/providers/ollama.ts#L61), etc.)
-- Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE
+* Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE
   fallback (see
   [`/\src/api/providers/openai-native.ts#L296`](../../src/api/providers/openai-native.ts#L296)).
-- Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g.,
+* Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g.,
   [`/\src/api/providers/anthropic.ts#L80`](../../src/api/providers/anthropic.ts#L80),
   [`/\src/api/providers/bedrock.ts#L420`](../../src/api/providers/bedrock.ts#L420)).
-- Manual fetch() usages (SSE or JSON): OpenRouter image endpoint, OpenAI Native SSE fallback, Glama
+* Manual fetch() usages (SSE or JSON): OpenRouter image endpoint, OpenAI Native SSE fallback, Glama
   polling, etc.
 
 ### Likely causes of duplicate requests (doc summary)
+
 1. Orchestrator-level retries + provider internal retries/fallbacks (e.g., OpenAI-native
    previous\_response retry + Task retry).
 2. Token refresh flows that retry the same request (Gemini/Qwen patterns).
@@ -287,78 +302,80 @@ document's role or purpose, this section helps orient you.
 6. SSE vs SDK fallback paths that can trigger additional network sends on error-handling branches.
 
 ### Docs-only recommendations (no code changes)
-- Add a "Provider expectations" doc section describing:
-- Which errors providers should throw vs yield (e.g., THROTTLING -> throw so Task-level
+
+* Add a "Provider expectations" doc section describing:
+* Which errors providers should throw vs yield (e.g., THROTTLING -> throw so Task-level
   retry/backoff runs).
-- Expected behavior for token refresh flows (single in-flight refresh promise; block concurrent
+* Expected behavior for token refresh flows (single in-flight refresh promise; block concurrent
   sends while refresh occurs).
-- Best-effort contract for previous\_response\_id usage and race mitigation strategy.
-- How providers should expose cancellation (note the orchestration will supply an AbortSignal
+* Best-effort contract for previous\_response\_id usage and race mitigation strategy.
+* How providers should expose cancellation (note the orchestration will supply an AbortSignal
   when supported).
-- Where to include request-level metadata (recommended header names and fallbacks).
-- Add a "Tracing & idempotency" doc covering:
-- Recommended header names (X-KILOCODE-TASK-ID, X-KILOCODE-TIMESTAMP-ISO) and preferred
+* Where to include request-level metadata (recommended header names and fallbacks).
+* Add a "Tracing & idempotency" doc covering:
+* Recommended header names (X-KILOCODE-TASK-ID, X-KILOCODE-TIMESTAMP-ISO) and preferred
   placement in requests.
-- Per-provider caveats where headers cannot be used (e.g., Bedrock SDK) and fallback options
+* Per-provider caveats where headers cannot be used (e.g., Bedrock SDK) and fallback options
   (embed minimal metadata into conversation or system block).
-- Add a "Retry responsibility" doc that states:
-- Providers may perform idempotent internal retries (token refresh, small SDK-specific fixes).
-- Providers must rethrow throttling/rate-limit errors to allow Task.ts to perform exponential
+* Add a "Retry responsibility" doc that states:
+* Providers may perform idempotent internal retries (token refresh, small SDK-specific fixes).
+* Providers must rethrow throttling/rate-limit errors to allow Task.ts to perform exponential
   backoff.
-- Add a "Testing checklist" doc for integration tests:
-- Simulate concurrent sends to exercise previous\_response\_id handling.
-- Simulate token refresh and assert only one successful send occurs.
-- Simulate provider-switch while a stream is in-flight to validate cancellation behavior.
-- Verify that handlers that poll (glama) do not cause extra requests on normal success.
-- Create a short "Fast fixes" list for engineers to follow when implementing code changes later:
-- Centralize header injection plan (docs link to recommended header names).
-- Standardize error classification mapping for throttling vs non-retriable errors.
-- Remove duplicate fetchModel calls where observed.
+* Add a "Testing checklist" doc for integration tests:
+* Simulate concurrent sends to exercise previous\_response\_id handling.
+* Simulate token refresh and assert only one successful send occurs.
+* Simulate provider-switch while a stream is in-flight to validate cancellation behavior.
+* Verify that handlers that poll (glama) do not cause extra requests on normal success.
+* Create a short "Fast fixes" list for engineers to follow when implementing code changes later:
+* Centralize header injection plan (docs link to recommended header names).
+* Standardize error classification mapping for throttling vs non-retriable errors.
+* Remove duplicate fetchModel calls where observed.
 
 ### Suggested doc locations & links (insert these pages)
-- docs/PROVIDER\_GUIDELINES.md — provider expectations, header names, cancellation contract. (link
+
+* docs/PROVIDER\_GUIDELINES.md — provider expectations, header names, cancellation contract. (link
   from here)
-- docs/RETRY\_POLICY.md — retry responsibility, orchestrator vs provider, backoff guidelines.
-- docs/TESTING\_STRATEGY.md — integration tests to add.
-- Update: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md) to reference the new pages.
+* docs/RETRY\_POLICY.md — retry responsibility, orchestrator vs provider, backoff guidelines.
+* docs/TESTING\_STRATEGY.md — integration tests to add.
+* Update: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md) to reference the new pages.
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Orchestrator Lifecycle:*\*
+* *Understanding Orchestrator Lifecycle:*\*
 
-- **Next**: [Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md) →
+* **Next**: [Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [State Machines](../architecture/README.md) for behavior modeling
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [State Machines](../README.md) for behavior modeling
 
-- *Investigating Race Conditions:*\*
+* *Investigating Race Conditions:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](architecture/CODE_FLOW_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+* **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
-- *Implementing Orchestrator Features:*\*
+* *Implementing Orchestrator Features:*\*
 
-- **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
+* **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
-  [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
+  [Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Repository Development Guide](architecture/GETTING_STARTED.md) for
+* **Related**: [Repository Development Guide](GETTING_STARTED.md) for
   codebase patterns
 
-- *Understanding Current Problems:*\*
+* *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Code Flow Analysis](architecture/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Code Flow Analysis](CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [State Machines](../architecture/README.md) for behavior analysis
+* **Related**: [State Machines](../README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
@@ -369,27 +386,29 @@ next, return to [Orchestrator Documentation](README.md) for guidance.
 
 I will add these markdown files under `docs/` with concise, copy-pasteable guidelines and the
 testing checklist. Tell me to proceed and I will create:
-- `docs/PROVIDER_GUIDELINES.md`
-- `docs/RETRY_POLICY.md`
-- `docs/TESTING_STRATEGY.md`
-- \*\*
+
+* `docs/PROVIDER_GUIDELINES.md`
+* `docs/RETRY_POLICY.md`
+* `docs/TESTING_STRATEGY.md`
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [docs/](../) · [orchestrator/](./) ·
+* *Navigation*\*: [docs/](../) · [orchestrator/](./) ·
   [↑ Table of Contents](#orchestrator-task-lifecycle)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

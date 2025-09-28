@@ -1,123 +1,125 @@
 # Validation System Documentation
 
 ## Table of Contents
-- [Validation System Documentation](#validation-system-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [Core Components](#core-components)
-- [Plugin Integration](#plugin-integration)
-- [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
-- [Intelligent Document Type Detection](#intelligent-document-type-detection)
-- [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
-- [Performance Optimization](#performance-optimization)
-- [Basic Usage](#basic-usage)
-- [Advanced Configuration](#advanced-configuration)
-- [Performance Monitoring](#performance-monitoring)
-- [Validation Rules](#validation-rules)
-- [Performance Configuration](#performance-configuration)
-- [CrossReferenceValidator](#crossreferencevalidator)
-- [FileIndexBuilder](#fileindexbuilder)
-- [DocumentTypeDetector](#documenttypedetector)
-- [OrphanedSectionsDetector](#orphanedsectionsdetector)
-- [ValidationRuleConfig](#validationruleconfig)
-- [PerformanceMonitor](#performancemonitor)
-- [PerformanceOptimizer](#performanceoptimizer)
-- [Performance Requirements](#performance-requirements)
-- [Document Organization](#document-organization)
-- [Performance Optimization](#performance-optimization)
-- [Validation Rules](#validation-rules)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [From Legacy Validation System](#from-legacy-validation-system)
-- [Configuration Migration](#configuration-migration)
-- [Development Setup](#development-setup)
-- [Adding New Validation Rules](#adding-new-validation-rules)
-- [Performance Optimization](#performance-optimization)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Validation System Documentation](#validation-system-documentation)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [Core Components](#core-components)
-- [Plugin Integration](#plugin-integration)
-- [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
-- [Intelligent Document Type Detection](#intelligent-document-type-detection)
-- [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
-- [Performance Optimization](#performance-optimization)
-- [Basic Usage](#basic-usage)
-- [Advanced Configuration](#advanced-configuration)
-- [Performance Monitoring](#performance-monitoring)
-- [Validation Rules](#validation-rules)
-- [Performance Configuration](#performance-configuration)
-- [CrossReferenceValidator](#crossreferencevalidator)
-- [FileIndexBuilder](#fileindexbuilder)
-- [DocumentTypeDetector](#documenttypedetector)
-- [OrphanedSectionsDetector](#orphanedsectionsdetector)
-- [ValidationRuleConfig](#validationruleconfig)
-- [PerformanceMonitor](#performancemonitor)
-- [PerformanceOptimizer](#performanceoptimizer)
-- [Performance Requirements](#performance-requirements)
-- [Document Organization](#document-organization)
-- [Performance Optimization](#performance-optimization)
-- [Validation Rules](#validation-rules)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [From Legacy Validation System](#from-legacy-validation-system)
-- [Configuration Migration](#configuration-migration)
-- [Development Setup](#development-setup)
-- [Adding New Validation Rules](#adding-new-validation-rules)
-- [Performance Optimization](#performance-optimization)
-- [Navigation](#navigation)
+
+* [Validation System Documentation](#validation-system-documentation)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [Core Components](#core-components)
+* [Plugin Integration](#plugin-integration)
+* [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
+* [Intelligent Document Type Detection](#intelligent-document-type-detection)
+* [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
+* [Performance Optimization](#performance-optimization)
+* [Basic Usage](#basic-usage)
+* [Advanced Configuration](#advanced-configuration)
+* [Performance Monitoring](#performance-monitoring)
+* [Validation Rules](#validation-rules)
+* [Performance Configuration](#performance-configuration)
+* [CrossReferenceValidator](#crossreferencevalidator)
+* [FileIndexBuilder](#fileindexbuilder)
+* [DocumentTypeDetector](#documenttypedetector)
+* [OrphanedSectionsDetector](#orphanedsectionsdetector)
+* [ValidationRuleConfig](#validationruleconfig)
+* [PerformanceMonitor](#performancemonitor)
+* [PerformanceOptimizer](#performanceoptimizer)
+* [Performance Requirements](#performance-requirements)
+* [Document Organization](#document-organization)
+* [Performance Optimization](#performance-optimization)
+* [Validation Rules](#validation-rules)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [From Legacy Validation System](#from-legacy-validation-system)
+* [Configuration Migration](#configuration-migration)
+* [Development Setup](#development-setup)
+* [Adding New Validation Rules](#adding-new-validation-rules)
+* [Performance Optimization](#performance-optimization)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Validation System Documentation](#validation-system-documentation)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [Core Components](#core-components)
+* [Plugin Integration](#plugin-integration)
+* [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
+* [Intelligent Document Type Detection](#intelligent-document-type-detection)
+* [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
+* [Performance Optimization](#performance-optimization)
+* [Basic Usage](#basic-usage)
+* [Advanced Configuration](#advanced-configuration)
+* [Performance Monitoring](#performance-monitoring)
+* [Validation Rules](#validation-rules)
+* [Performance Configuration](#performance-configuration)
+* [CrossReferenceValidator](#crossreferencevalidator)
+* [FileIndexBuilder](#fileindexbuilder)
+* [DocumentTypeDetector](#documenttypedetector)
+* [OrphanedSectionsDetector](#orphanedsectionsdetector)
+* [ValidationRuleConfig](#validationruleconfig)
+* [PerformanceMonitor](#performancemonitor)
+* [PerformanceOptimizer](#performanceoptimizer)
+* [Performance Requirements](#performance-requirements)
+* [Document Organization](#document-organization)
+* [Performance Optimization](#performance-optimization)
+* [Validation Rules](#validation-rules)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [From Legacy Validation System](#from-legacy-validation-system)
+* [Configuration Migration](#configuration-migration)
+* [Development Setup](#development-setup)
+* [Adding New Validation Rules](#adding-new-validation-rules)
+* [Performance Optimization](#performance-optimization)
+* [Navigation](#navigation)
 
 🔍 **Did You Know**: \[Interesting insight]
-- [Validation System Documentation](#validation-system-documentation)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [Core Components](#core-components)
-- [Plugin Integration](#plugin-integration)
-- [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
-- [Intelligent Document Type Detection](#intelligent-document-type-detection)
-- [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
-- [Performance Optimization](#performance-optimization)
-- [Basic Usage](#basic-usage)
-- [Advanced Configuration](#advanced-configuration)
-- [Performance Monitoring](#performance-monitoring)
-- [Validation Rules](#validation-rules)
-- [Performance Configuration](#performance-configuration)
-- [CrossReferenceValidator](#crossreferencevalidator)
-- [FileIndexBuilder](#fileindexbuilder)
-- [DocumentTypeDetector](#documenttypedetector)
-- [OrphanedSectionsDetector](#orphanedsectionsdetector)
-- [ValidationRuleConfig](#validationruleconfig)
-- [PerformanceMonitor](#performancemonitor)
-- [PerformanceOptimizer](#performanceoptimizer)
-- [Performance Requirements](#performance-requirements)
-- [Document Organization](#document-organization)
-- [Performance Optimization](#performance-optimization)
-- [Validation Rules](#validation-rules)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [From Legacy Validation System](#from-legacy-validation-system)
-- [Configuration Migration](#configuration-migration)
-- [Development Setup](#development-setup)
-- [Adding New Validation Rules](#adding-new-validation-rules)
-- [Performance Optimization](#performance-optimization)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Validation System Documentation](#validation-system-documentation)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [Core Components](#core-components)
+* [Plugin Integration](#plugin-integration)
+* [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
+* [Intelligent Document Type Detection](#intelligent-document-type-detection)
+* [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
+* [Performance Optimization](#performance-optimization)
+* [Basic Usage](#basic-usage)
+* [Advanced Configuration](#advanced-configuration)
+* [Performance Monitoring](#performance-monitoring)
+* [Validation Rules](#validation-rules)
+* [Performance Configuration](#performance-configuration)
+* [CrossReferenceValidator](#crossreferencevalidator)
+* [FileIndexBuilder](#fileindexbuilder)
+* [DocumentTypeDetector](#documenttypedetector)
+* [OrphanedSectionsDetector](#orphanedsectionsdetector)
+* [ValidationRuleConfig](#validationruleconfig)
+* [PerformanceMonitor](#performancemonitor)
+* [PerformanceOptimizer](#performanceoptimizer)
+* [Performance Requirements](#performance-requirements)
+* [Document Organization](#document-organization)
+* [Performance Optimization](#performance-optimization)
+* [Validation Rules](#validation-rules)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [From Legacy Validation System](#from-legacy-validation-system)
+* [Configuration Migration](#configuration-migration)
+* [Development Setup](#development-setup)
+* [Adding New Validation Rules](#adding-new-validation-rules)
+* [Performance Optimization](#performance-optimization)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -125,9 +127,9 @@
 
 This document provides \[purpose of document].
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Context**: \[How this fits into the broader system/project]
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Purpose**: \[Brief description of what this document covers]
+* **Context**: \[How this fits into the broader system/project]
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Research Context
 
@@ -154,12 +156,14 @@ validation rules, intelligent document type detection, and performance-optimized
 processes.
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Architecture
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Architecture
 
 ### Core Components
 
 The validation system consists of several key components:
+
 1. **CrossReferenceValidator** - Validates file references and anchor links
 2. **FileIndexBuilder** - Maintains an index of all markdown files for efficient lookup
 3. **DocumentTypeDetector** - Intelligently detects document types based on path, content, and
@@ -175,51 +179,53 @@ The system integrates through the `remark-kilocode-comprehensive` plugin, which 
 validation components and provides a unified interface for validation operations.
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Features
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Features
 
 ### Enhanced Cross-Reference Validation
 
-- **File Existence Checking**: Validates that referenced files actually exist
-- **Anchor Link Validation**: Checks that anchor links within documents are valid
-- **Caching System**: Implements TTL-based caching for performance optimization
-- **Error Handling**: Graceful handling of permission and file system issues
-- **Path Resolution**: Support for both relative and absolute paths
+* **File Existence Checking**: Validates that referenced files actually exist
+* **Anchor Link Validation**: Checks that anchor links within documents are valid
+* **Caching System**: Implements TTL-based caching for performance optimization
+* **Error Handling**: Graceful handling of permission and file system issues
+* **Path Resolution**: Support for both relative and absolute paths
 
 ### Intelligent Document Type Detection
 
 The system automatically detects document types based on:
 
-- **Path Patterns**: Analyzes file paths for common patterns (e.g., `/docs/`, `/plans/`, `/src/`)
-- **Content Analysis**: Examines document content for type indicators
-- **Structure Analysis**: Evaluates document structure and formatting
-- **Confidence Scoring**: Provides confidence levels for type detection
+* **Path Patterns**: Analyzes file paths for common patterns (e.g., `/docs/`, `/plans/`, `/src/`)
+* **Content Analysis**: Examines document content for type indicators
+* **Structure Analysis**: Evaluates document structure and formatting
+* **Confidence Scoring**: Provides confidence levels for type detection
 
 Supported document types:
 
-- **Navigation Documents**: Index files, README files, navigation guides
-- **Technical Documents**: API documentation, technical specifications
-- **Planning Documents**: Project plans, implementation checklists
-- **General Documents**: Fallback category for other document types
+* **Navigation Documents**: Index files, README files, navigation guides
+* **Technical Documents**: API documentation, technical specifications
+* **Planning Documents**: Project plans, implementation checklists
+* **General Documents**: Fallback category for other document types
 
 ### Context-Aware Orphaned Sections Detection
 
-- **Navigation Pattern Recognition**: Understands navigation document structures
-- **Section Classification**: Categorizes sections based on content and context
-- **Document Connectivity Analysis**: Considers how documents link to each other
-- **Configurable Thresholds**: Adjustable sensitivity levels for detection
+* **Navigation Pattern Recognition**: Understands navigation document structures
+* **Section Classification**: Categorizes sections based on content and context
+* **Document Connectivity Analysis**: Considers how documents link to each other
+* **Configurable Thresholds**: Adjustable sensitivity levels for detection
 
 ### Performance Optimization
 
-- **Caching Strategies**: Multiple levels of caching for file operations and validation results
-- **Parallel Processing**: Batch processing of independent validation operations
-- **Memory Management**: Efficient memory usage with automatic cleanup
-- **Performance Monitoring**: Real-time tracking of validation performance
-- **Early Termination**: Stops validation early when critical errors are found
+* **Caching Strategies**: Multiple levels of caching for file operations and validation results
+* **Parallel Processing**: Batch processing of independent validation operations
+* **Memory Management**: Efficient memory usage with automatic cleanup
+* **Performance Monitoring**: Real-time tracking of validation performance
+* **Early Termination**: Stops validation early when critical errors are found
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Usage
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Usage
 
 ### Basic Usage
 
@@ -282,8 +288,9 @@ await globalPerformanceOptimizer.optimizeAll()
 ```
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Configuration
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Configuration
 
 ### Validation Rules
 
@@ -330,8 +337,9 @@ The system supports different validation rules based on document type:
 ```
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## API Reference
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## API Reference
 
 ### CrossReferenceValidator
 
@@ -467,48 +475,55 @@ interface PerformanceOptimizer {
 
 The validation system is designed to meet the following performance requirements:
 
-- **Validation Time**: < 30 seconds for full documentation validation
-- **Memory Usage**: < 200 MB peak memory usage
-- **Accuracy**: > 99% accuracy for cross-reference validation
-- **False Positives**: Zero false positive warnings
+* **Validation Time**: < 30 seconds for full documentation validation
+* **Memory Usage**: < 200 MB peak memory usage
+* **Accuracy**: > 99% accuracy for cross-reference validation
+* **False Positives**: Zero false positive warnings
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Error Handling
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Error Handling
 
 The system provides comprehensive error handling:
 
-- **File System Errors**: Graceful handling of permission denied, file not found, etc.
-- **Network Errors**: Timeout and connection error handling for external links
-- **Memory Errors**: Automatic memory cleanup and garbage collection
-- **Validation Errors**: Detailed error messages with suggestions for fixes
+* **File System Errors**: Graceful handling of permission denied, file not found, etc.
+* **Network Errors**: Timeout and connection error handling for external links
+* **Memory Errors**: Automatic memory cleanup and garbage collection
+* **Validation Errors**: Detailed error messages with suggestions for fixes
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Best Practices
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Best Practices
 
 ### Document Organization
+
 1. **Use Clear File Paths**: Organize documents in logical directory structures
 2. **Consistent Naming**: Use consistent naming conventions for files and sections
 3. **Proper Linking**: Use relative paths for internal links, absolute URLs for external links
 4. **Anchor Links**: Use descriptive anchor link formats
 
 ### Performance Optimization
+
 1. **Enable Caching**: Always enable caching for better performance
 2. **Use Parallel Processing**: Leverage parallel processing for independent operations
 3. **Monitor Performance**: Regularly check performance metrics and apply optimizations
 4. **Batch Operations**: Group related validation operations together
 
 ### Validation Rules
+
 1. **Document Type Specific**: Use different validation rules for different document types
 2. **Appropriate Thresholds**: Set thresholds based on your documentation needs
 3. **Regular Updates**: Keep validation rules updated as your documentation evolves
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Troubleshooting
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Troubleshooting
 
 ### Common Issues
+
 1. **Slow Validation**: Enable performance optimization and check memory usage
 2. **False Positives**: Adjust validation rules and thresholds
 3. **Memory Issues**: Reduce batch size and enable memory monitoring
@@ -530,10 +545,12 @@ const processor = unified()
 ```
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Migration Guide
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Migration Guide
 
 ### From Legacy Validation System
+
 1. **Update Plugin Usage**: Replace old validation plugins with `remark-kilocode-comprehensive`
 2. **Configure New Options**: Set up new configuration options for enhanced features
 3. **Update Validation Rules**: Migrate existing validation rules to the new system
@@ -561,61 +578,70 @@ const processor = unified()
 ```
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Contributing
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Contributing
 
 ### Development Setup
+
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Run tests: `npm test`
 4. Run validation: `npm run validate`
 
 ### Adding New Validation Rules
+
 1. Define the rule in `ValidationRuleConfig`
 2. Implement validation logic in the appropriate component
 3. Add tests for the new rule
 4. Update documentation
 
 ### Performance Optimization
+
 1. Profile the validation system to identify bottlenecks
 2. Implement optimization strategies in `PerformanceOptimizer`
 3. Test performance improvements
 4. Update performance benchmarks
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## License
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## License
 
 This validation system is part of the KiloCode project and follows the same licensing terms.
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## No Dead Ends Policy
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
-- **If you need context**: Check the [Research Context](#research-context) section
-- **If you're ready to implement**: Jump to the implementation sections
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you need context**: Check the [Research Context](#research-context) section
+* **If you're ready to implement**: Jump to the implementation sections
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Tools Overview](README.md)
-- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
-- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
-- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
-- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Tools Overview](README.md)
+* [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+* [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+* [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+* [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)

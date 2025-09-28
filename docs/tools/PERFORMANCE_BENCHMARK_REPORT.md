@@ -6,18 +6,18 @@
 
 This document provides performance benchmarks and recommendations for the documentation validation system.
 
-- **Purpose**: This document shows performance metrics and optimization recommendations.
-- **Context**: Use this as a reference while optimizing the validation system.
-- **Navigation**: Use the table of contents below to jump to specific sections.
+* **Purpose**: This document shows performance metrics and optimization recommendations.
+* **Context**: Use this as a reference while optimizing the validation system.
+* **Navigation**: Use the table of contents below to jump to specific sections.
 
 ## Table of Contents
 
-- [Performance Benchmark Report](#performance-benchmark-report)
-- [Summary](#summary)
-- [Detailed Metrics](#detailed-metrics)
-- [Performance Baselines](#performance-baselines)
-- [Recommendations](#recommendations)
-- [Navigation](#navigation)
+* [Performance Benchmark Report](#performance-benchmark-report)
+* [Summary](#summary)
+* [Detailed Metrics](#detailed-metrics)
+* [Performance Baselines](#performance-baselines)
+* [Recommendations](#recommendations)
+* [Navigation](#navigation)
 
 ## Summary
 
@@ -35,23 +35,23 @@ This document provides performance benchmarks and recommendations for the docume
 
 ### Validation Performance
 
-- **Average Duration**: 49.53s
-- **Min Duration**: 34.90s
-- **Max Duration**: 57.64s
-- **Iterations**: 3
+* **Average Duration**: 49.53s
+* **Min Duration**: 34.90s
+* **Max Duration**: 57.64s
+* **Iterations**: 3
 
 ### File System Performance
 
-- **Total Files**: 174
-- **Glob Time**: 66.83ms
-- **Average File Time**: 0.38ms
+* **Total Files**: 174
+* **Glob Time**: 66.83ms
+* **Average File Time**: 0.38ms
 
 ### Memory Usage
 
-- **RSS**: 61.71MB
-- **Heap Total**: 10.90MB
-- **Heap Used**: 9.84MB
-- **External**: 1.73MB
+* **RSS**: 61.71MB
+* **Heap Total**: 10.90MB
+* **Heap Used**: 9.84MB
+* **External**: 1.73MB
 
 ## Performance Baselines
 
@@ -66,8 +66,6 @@ This document provides performance benchmarks and recommendations for the docume
 
 ## Recommendations
 
-
-
 ## Navigation
 
-- **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#performance-benchmark-report)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#performance-benchmark-report)

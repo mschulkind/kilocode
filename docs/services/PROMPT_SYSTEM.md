@@ -1,77 +1,78 @@
 # Prompt System
 
 ## Table of Contents
-- [Prompt System](#prompt-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Prompt Generation](#prompt-generation)
-- [System Prompt Generation](#system-prompt-generation)
-- [Context Integration](#context-integration)
-- [Context Management](#context-management)
-- [File Context Tracking](#file-context-tracking)
-- [Context Optimization](#context-optimization)
-- [Instruction System](#instruction-system)
-- [Rule Processing](#rule-processing)
-- [Instruction Validation](#instruction-validation)
-- [Response Processing](#response-processing)
-- [Assistant Message Parsing](#assistant-message-parsing)
-- [Response Validation](#response-validation)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Prompt Generation Performance](#issue-1-prompt-generation-performance)
-- [Issue 2: Context Size Issues](#issue-2-context-size-issues)
-- [Issue 3: Response Parsing Errors](#issue-3-response-parsing-errors)
-- [Issue 4: Rule Processing Issues](#issue-4-rule-processing-issues)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [Prompt System](#prompt-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Prompt Generation](#prompt-generation)
-- [System Prompt Generation](#system-prompt-generation)
-- [Context Integration](#context-integration)
-- [Context Management](#context-management)
-- [File Context Tracking](#file-context-tracking)
-- [Context Optimization](#context-optimization)
-- [Instruction System](#instruction-system)
-- [Rule Processing](#rule-processing)
-- [Instruction Validation](#instruction-validation)
-- [Response Processing](#response-processing)
-- [Assistant Message Parsing](#assistant-message-parsing)
-- [Response Validation](#response-validation)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Prompt Generation Performance](#issue-1-prompt-generation-performance)
-- [Issue 2: Context Size Issues](#issue-2-context-size-issues)
-- [Issue 3: Response Parsing Errors](#issue-3-response-parsing-errors)
-- [Issue 4: Rule Processing Issues](#issue-4-rule-processing-issues)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Prompt System](#prompt-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [System Architecture](#system-architecture)
+* [Prompt Generation](#prompt-generation)
+* [System Prompt Generation](#system-prompt-generation)
+* [Context Integration](#context-integration)
+* [Context Management](#context-management)
+* [File Context Tracking](#file-context-tracking)
+* [Context Optimization](#context-optimization)
+* [Instruction System](#instruction-system)
+* [Rule Processing](#rule-processing)
+* [Instruction Validation](#instruction-validation)
+* [Response Processing](#response-processing)
+* [Assistant Message Parsing](#assistant-message-parsing)
+* [Response Validation](#response-validation)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Prompt Generation Performance](#issue-1-prompt-generation-performance)
+* [Issue 2: Context Size Issues](#issue-2-context-size-issues)
+* [Issue 3: Response Parsing Errors](#issue-3-response-parsing-errors)
+* [Issue 4: Rule Processing Issues](#issue-4-rule-processing-issues)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [Prompt System](#prompt-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [System Architecture](#system-architecture)
+* [Prompt Generation](#prompt-generation)
+* [System Prompt Generation](#system-prompt-generation)
+* [Context Integration](#context-integration)
+* [Context Management](#context-management)
+* [File Context Tracking](#file-context-tracking)
+* [Context Optimization](#context-optimization)
+* [Instruction System](#instruction-system)
+* [Rule Processing](#rule-processing)
+* [Instruction Validation](#instruction-validation)
+* [Response Processing](#response-processing)
+* [Assistant Message Parsing](#assistant-message-parsing)
+* [Response Validation](#response-validation)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Prompt Generation Performance](#issue-1-prompt-generation-performance)
+* [Issue 2: Context Size Issues](#issue-2-context-size-issues)
+* [Issue 3: Response Parsing Errors](#issue-3-response-parsing-errors)
+* [Issue 4: Rule Processing Issues](#issue-4-rule-processing-issues)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Comprehensive documentation of the prompt system for AI interaction, system prompt
+* *Purpose:*\* Comprehensive documentation of the prompt system for AI interaction, system prompt
   generation, and context management in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
@@ -107,10 +108,12 @@ document's role or purpose, this section helps orient you.
 \[Research or development methodology used]
 
 ## Executive Summary
-- The Prompt System provides comprehensive AI interaction capabilities through dynamic prompt
+
+* The Prompt System provides comprehensive AI interaction capabilities through dynamic prompt
   generation, context management, and response processing in the KiloCode system.\*
 
 The Prompt System consists of:
+
 1. **Prompt Generation** - Dynamic system prompt creation and management
 2. **Context Management** - Intelligent context assembly and optimization
 3. **Instruction System** - Rule-based instruction processing and validation
@@ -169,17 +172,17 @@ graph TB
 
 ### System Prompt Generation
 
-- *Implementation*\*: `src/core/prompts/system.ts` **Features**:
+* *Implementation*\*: `src/core/prompts/system.ts` **Features**:
 
-- **Dynamic Prompt Assembly**: Context-aware prompt generation
+* **Dynamic Prompt Assembly**: Context-aware prompt generation
 
-- **Component Integration**: Modular prompt component system
+* **Component Integration**: Modular prompt component system
 
-- **Customization Support**: Mode-specific prompt customization
+* **Customization Support**: Mode-specific prompt customization
 
-- **Performance Optimization**: Efficient prompt generation
+* **Performance Optimization**: Efficient prompt generation
 
-- *Prompt Components*\*:
+* *Prompt Components*\*:
 
 ```typescript
 interface PromptComponent {
@@ -190,29 +193,29 @@ interface PromptComponent {
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Modular Architecture**: Component-based prompt construction
+* **Modular Architecture**: Component-based prompt construction
 
-- **Context Awareness**: Intelligent context integration
+* **Context Awareness**: Intelligent context integration
 
-- **Performance Optimization**: Efficient prompt generation
+* **Performance Optimization**: Efficient prompt generation
 
-- **Customization**: Flexible prompt customization
+* **Customization**: Flexible prompt customization
 
 ### Context Integration
 
-- *Context Types*\*:
+* *Context Types*\*:
 
-- **File Context**: Current file and related files
+* **File Context**: Current file and related files
 
-- **Code Context**: Relevant code snippets and definitions
+* **Code Context**: Relevant code snippets and definitions
 
-- **History Context**: Conversation history and previous interactions
+* **History Context**: Conversation history and previous interactions
 
-- **Environment Context**: System environment and configuration
+* **Environment Context**: System environment and configuration
 
-- *Context Assembly*\*:
+* *Context Assembly*\*:
 
 ```typescript
 interface ContextAssembler {
@@ -222,31 +225,31 @@ interface ContextAssembler {
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Intelligent Assembly**: Smart context selection and assembly
+* **Intelligent Assembly**: Smart context selection and assembly
 
-- **Optimization**: Context size and relevance optimization
+* **Optimization**: Context size and relevance optimization
 
-- **Validation**: Context quality and completeness validation
+* **Validation**: Context quality and completeness validation
 
-- **Performance**: Efficient context processing
+* **Performance**: Efficient context processing
 
 ## Context Management
 
 ### File Context Tracking
 
-- *Implementation*\*: `src/core/context-tracking/FileContextTracker.ts` **Features**:
+* *Implementation*\*: `src/core/context-tracking/FileContextTracker.ts` **Features**:
 
-- **File Monitoring**: Real-time file change tracking
+* **File Monitoring**: Real-time file change tracking
 
-- **Context Caching**: Efficient context caching and retrieval
+* **Context Caching**: Efficient context caching and retrieval
 
-- **Relationship Mapping**: File relationship and dependency tracking
+* **Relationship Mapping**: File relationship and dependency tracking
 
-- **Change Detection**: Intelligent change detection and processing
+* **Change Detection**: Intelligent change detection and processing
 
-- *Context Tracking*\*:
+* *Context Tracking*\*:
 
 ```typescript
 interface FileContextTracker {
@@ -257,53 +260,53 @@ interface FileContextTracker {
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Real-time Tracking**: Live file change monitoring
+* **Real-time Tracking**: Live file change monitoring
 
-- **Efficient Caching**: Smart context caching strategies
+* **Efficient Caching**: Smart context caching strategies
 
-- **Relationship Management**: File dependency tracking
+* **Relationship Management**: File dependency tracking
 
-- **Change Optimization**: Intelligent change processing
+* **Change Optimization**: Intelligent change processing
 
 ### Context Optimization
 
-- *Optimization Strategies*\*:
+* *Optimization Strategies*\*:
 
-- **Size Management**: Context size optimization and limits
+* **Size Management**: Context size optimization and limits
 
-- **Relevance Filtering**: Intelligent relevance-based filtering
+* **Relevance Filtering**: Intelligent relevance-based filtering
 
-- **Priority Ranking**: Context priority and importance ranking
+* **Priority Ranking**: Context priority and importance ranking
 
-- **Compression**: Context compression and deduplication
+* **Compression**: Context compression and deduplication
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Smart Filtering**: Relevance-based context filtering
+* **Smart Filtering**: Relevance-based context filtering
 
-- **Size Optimization**: Efficient context size management
+* **Size Optimization**: Efficient context size management
 
-- **Priority Management**: Intelligent context prioritization
+* **Priority Management**: Intelligent context prioritization
 
-- **Performance**: Optimized context processing
+* **Performance**: Optimized context processing
 
 ## Instruction System
 
 ### Rule Processing
 
-- *Implementation*\*: `src/core/context/instructions/` **Features**:
+* *Implementation*\*: `src/core/context/instructions/` **Features**:
 
-- **Rule Engine**: Flexible rule processing and validation
+* **Rule Engine**: Flexible rule processing and validation
 
-- **Workflow Management**: Complex workflow orchestration
+* **Workflow Management**: Complex workflow orchestration
 
-- **Validation System**: Comprehensive rule validation
+* **Validation System**: Comprehensive rule validation
 
-- **Customization Support**: Extensible rule system
+* **Customization Support**: Extensible rule system
 
-- *Rule Types*\*:
+* *Rule Types*\*:
 
 ```typescript
 interface Rule {
@@ -315,53 +318,53 @@ interface Rule {
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Flexible Rules**: Dynamic rule processing and execution
+* **Flexible Rules**: Dynamic rule processing and execution
 
-- **Workflow Support**: Complex workflow orchestration
+* **Workflow Support**: Complex workflow orchestration
 
-- **Validation**: Comprehensive rule validation
+* **Validation**: Comprehensive rule validation
 
-- **Extensibility**: Easy rule addition and modification
+* **Extensibility**: Easy rule addition and modification
 
 ### Instruction Validation
 
-- *Validation Features*\*:
+* *Validation Features*\*:
 
-- **Syntax Validation**: Rule syntax and format validation
+* **Syntax Validation**: Rule syntax and format validation
 
-- **Logic Validation**: Rule logic and consistency validation
+* **Logic Validation**: Rule logic and consistency validation
 
-- **Performance Validation**: Rule performance and efficiency validation
+* **Performance Validation**: Rule performance and efficiency validation
 
-- **Security Validation**: Rule security and safety validation
+* **Security Validation**: Rule security and safety validation
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Comprehensive Validation**: Multi-layer validation system
+* **Comprehensive Validation**: Multi-layer validation system
 
-- **Error Detection**: Early error detection and reporting
+* **Error Detection**: Early error detection and reporting
 
-- **Performance Monitoring**: Rule performance tracking
+* **Performance Monitoring**: Rule performance tracking
 
-- **Security Checks**: Security validation and safety checks
+* **Security Checks**: Security validation and safety checks
 
 ## Response Processing
 
 ### Assistant Message Parsing
 
-- *Implementation*\*: `src/core/assistant-message/` **Features**:
+* *Implementation*\*: `src/core/assistant-message/` **Features**:
 
-- **Message Parsing**: Comprehensive message parsing and validation
+* **Message Parsing**: Comprehensive message parsing and validation
 
-- **Format Support**: Multiple message format support
+* **Format Support**: Multiple message format support
 
-- **Error Handling**: Robust error handling and recovery
+* **Error Handling**: Robust error handling and recovery
 
-- **Performance Optimization**: Efficient parsing and processing
+* **Performance Optimization**: Efficient parsing and processing
 
-- *Parser Types*\*:
+* *Parser Types*\*:
 
 ```typescript
 interface AssistantMessageParser {
@@ -371,83 +374,96 @@ interface AssistantMessageParser {
 }
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Multi-format Support**: Support for various message formats
+* **Multi-format Support**: Support for various message formats
 
-- **Robust Parsing**: Reliable message parsing and validation
+* **Robust Parsing**: Reliable message parsing and validation
 
-- **Error Recovery**: Graceful error handling and recovery
+* **Error Recovery**: Graceful error handling and recovery
 
-- **Performance**: Optimized parsing performance
+* **Performance**: Optimized parsing performance
 
 ### Response Validation
 
-- *Validation Features*\*:
+* *Validation Features*\*:
 
-- **Content Validation**: Response content quality validation
+* **Content Validation**: Response content quality validation
 
-- **Format Validation**: Response format and structure validation
+* **Format Validation**: Response format and structure validation
 
-- **Safety Validation**: Response safety and security validation
+* **Safety Validation**: Response safety and security validation
 
-- **Performance Validation**: Response performance and efficiency validation
+* **Performance Validation**: Response performance and efficiency validation
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Quality Assurance**: Comprehensive response quality validation
+* **Quality Assurance**: Comprehensive response quality validation
 
-- **Safety Checks**: Security and safety validation
+* **Safety Checks**: Security and safety validation
 
-- **Performance Monitoring**: Response performance tracking
+* **Performance Monitoring**: Response performance tracking
 
-- **Error Detection**: Early error detection and handling
+* **Error Detection**: Early error detection and handling
 
 ## Common Issues and Solutions
 
 ### Issue 1: Prompt Generation Performance
 
-- *Symptoms*\*:
-- Slow prompt generation
-- High memory usage
-- Context assembly delays
+* *Symptoms*\*:
 
-- *Root Cause*\*: Inefficient prompt generation or context processing **Solution**: Implement prompt
+* Slow prompt generation
+
+* High memory usage
+
+* Context assembly delays
+
+* *Root Cause*\*: Inefficient prompt generation or context processing **Solution**: Implement prompt
   caching and context optimization
 
 ### Issue 2: Context Size Issues
 
-- *Symptoms*\*:
-- Context too large for AI models
-- Context truncation problems
-- Poor context relevance
+* *Symptoms*\*:
 
-- *Root Cause*\*: Inadequate context size management or relevance filtering **Solution**: Implement
+* Context too large for AI models
+
+* Context truncation problems
+
+* Poor context relevance
+
+* *Root Cause*\*: Inadequate context size management or relevance filtering **Solution**: Implement
   smart context filtering and size optimization
 
 ### Issue 3: Response Parsing Errors
 
-- *Symptoms*\*:
-- Malformed response parsing
-- Parsing failures
-- Inconsistent response handling
+* *Symptoms*\*:
 
-- *Root Cause*\*: Robust parsing or response format issues **Solution**: Improve parsing algorithms
+* Malformed response parsing
+
+* Parsing failures
+
+* Inconsistent response handling
+
+* *Root Cause*\*: Robust parsing or response format issues **Solution**: Improve parsing algorithms
   and error handling
 
 ### Issue 4: Rule Processing Issues
 
-- *Symptoms*\*:
-- Rule execution failures
-- Inconsistent rule behavior
-- Performance problems
+* *Symptoms*\*:
 
-- *Root Cause*\*: Rule engine or validation issues **Solution**: Implement robust rule processing
+* Rule execution failures
+
+* Inconsistent rule behavior
+
+* Performance problems
+
+* *Root Cause*\*: Rule engine or validation issues **Solution**: Implement robust rule processing
   and
   validation
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+
+* Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/services/PROMPT_SYSTEM.md#L1`
 
 ## No Dead Ends Policy
@@ -455,14 +471,17 @@ interface AssistantMessageParser {
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
   [↑ Table of Contents](#prompt-system)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

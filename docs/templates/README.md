@@ -1,58 +1,59 @@
 # Document Templates
 
 ## Table of Contents
-- [Document Templates](#document-templates)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Template Types](#template-types)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Documents](#navigation-documents)
-- [Technical Documents](#technical-documents)
-- [Planning Documents](#planning-documents)
-- [General Documents](#general-documents)
-- [Usage](#usage)
-- [Creating a New Document](#creating-a-new-document)
-- [Template Validation](#template-validation)
-- [Examples](#examples)
-- [Good Example - Navigation Document](#good-example-navigation-document)
-- [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
-- [Validation Rules](#validation-rules)
-- [Best Practices](#best-practices)
-- [Document Creation](#document-creation)
-- [Maintenance](#maintenance)
-- [Quality Assurance](#quality-assurance)
-- [Migration Guide](#migration-guide)
-- [Converting Existing Documents](#converting-existing-documents)
-- [Common Issues and Fixes](#common-issues-and-fixes)
-- [Updates and Maintenance](#updates-and-maintenance)
-- [Navigation](#navigation)
-- [Document Templates](#document-templates)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Template Types](#template-types)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Documents](#navigation-documents)
-- [Technical Documents](#technical-documents)
-- [Planning Documents](#planning-documents)
-- [General Documents](#general-documents)
-- [Usage](#usage)
-- [Creating a New Document](#creating-a-new-document)
-- [Template Validation](#template-validation)
-- [Examples](#examples)
-- [Good Example - Navigation Document](#good-example-navigation-document)
-- [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
-- [Validation Rules](#validation-rules)
-- [Best Practices](#best-practices)
-- [Document Creation](#document-creation)
-- [Maintenance](#maintenance)
-- [Quality Assurance](#quality-assurance)
-- [Migration Guide](#migration-guide)
-- [Converting Existing Documents](#converting-existing-documents)
-- [Common Issues and Fixes](#common-issues-and-fixes)
-- [Updates and Maintenance](#updates-and-maintenance)
-- [Navigation](#navigation)
+
+* [Document Templates](#document-templates)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Template Types](#template-types)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Documents](#navigation-documents)
+* [Technical Documents](#technical-documents)
+* [Planning Documents](#planning-documents)
+* [General Documents](#general-documents)
+* [Usage](#usage)
+* [Creating a New Document](#creating-a-new-document)
+* [Template Validation](#template-validation)
+* [Examples](#examples)
+* [Good Example - Navigation Document](#good-example-navigation-document)
+* [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+* [Validation Rules](#validation-rules)
+* [Best Practices](#best-practices)
+* [Document Creation](#document-creation)
+* [Maintenance](#maintenance)
+* [Quality Assurance](#quality-assurance)
+* [Migration Guide](#migration-guide)
+* [Converting Existing Documents](#converting-existing-documents)
+* [Common Issues and Fixes](#common-issues-and-fixes)
+* [Updates and Maintenance](#updates-and-maintenance)
+* [Navigation](#navigation)
+* [Document Templates](#document-templates)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Template Types](#template-types)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Documents](#navigation-documents)
+* [Technical Documents](#technical-documents)
+* [Planning Documents](#planning-documents)
+* [General Documents](#general-documents)
+* [Usage](#usage)
+* [Creating a New Document](#creating-a-new-document)
+* [Template Validation](#template-validation)
+* [Examples](#examples)
+* [Good Example - Navigation Document](#good-example-navigation-document)
+* [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+* [Validation Rules](#validation-rules)
+* [Best Practices](#best-practices)
+* [Document Creation](#document-creation)
+* [Maintenance](#maintenance)
+* [Quality Assurance](#quality-assurance)
+* [Migration Guide](#migration-guide)
+* [Converting Existing Documents](#converting-existing-documents)
+* [Common Issues and Fixes](#common-issues-and-fixes)
+* [Updates and Maintenance](#updates-and-maintenance)
+* [Navigation](#navigation)
 
 ## Overview
 
@@ -68,45 +69,47 @@ ensure consistent structure across all documentation and help eliminate validati
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Documents
 
-- **File**: `navigation-document-template.md`
-- **Use Case**: README files, getting started guides, index pages
-- **Required Sections**: When You're Here, Research Context, Table of Contents, Navigation Footer
-- **Examples**: [Main README](../README.md), [Architecture Overview](../architecture/README.md)
+* **File**: `navigation-document-template.md`
+* **Use Case**: README files, getting started guides, index pages
+* **Required Sections**: When You're Here, Research Context, Table of Contents, Navigation Footer
+* **Examples**: [Main README](../README.md), [Architecture Overview](../README.md)
 
 ### Technical Documents
 
-- **File**: `technical-document-template.md`
-- **Use Case**: API documentation, technical specifications, implementation guides
-- **Required Sections**: When You're Here, Research Context, Technical sections, Navigation Footer
-- **Examples**: [Validation System](../tools/VALIDATION_SYSTEM.md), [API
+* **File**: `technical-document-template.md`
+* **Use Case**: API documentation, technical specifications, implementation guides
+* **Required Sections**: When You're Here, Research Context, Technical sections, Navigation Footer
+* **Examples**: [Validation System](../tools/VALIDATION_SYSTEM.md), [API
   Reference](../tools/VALIDATION_API_REFERENCE.md)
 
 ### Planning Documents
 
-- **File**: `planning-document-template.md`
-- **Use Case**: Project plans, roadmaps, implementation checklists
-- **Required Sections**: When You're Here, Research Context, Progress Summary, Success Criteria,
+* **File**: `planning-document-template.md`
+* **Use Case**: Project plans, roadmaps, implementation checklists
+* **Required Sections**: When You're Here, Research Context, Progress Summary, Success Criteria,
   Navigation Footer
-- **Examples**: [Documentation Guide](../DOCUMENTATION_GUIDE.md), [Implementation
+* **Examples**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md), [Implementation
   Checklists](../tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md)
 
 ### General Documents
 
-- **File**: `general-document-template.md`
-- **Use Case**: General information, mixed content, custom formats
-- **Required Sections**: When You're Here, Research Context, Main content sections, Navigation
+* **File**: `general-document-template.md`
+* **Use Case**: General information, mixed content, custom formats
+* **Required Sections**: When You're Here, Research Context, Main content sections, Navigation
   Footer
-- **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting
-  Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting
+  Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
 ## Usage
 
 ### Creating a New Document
+
 1. **Choose the appropriate template** based on your document type
 2. **Copy the template** to your target location
 3. **Fill in the placeholders** with your content
@@ -116,12 +119,13 @@ For more information, see:
 ### Template Validation
 
 All templates include validation rules that are automatically checked:
-- Required sections presence
-- Section content requirements
-- Link text descriptiveness
-- Navigation structure
-- Line length compliance
-- Fun fact presence (recommended)
+
+* Required sections presence
+* Section content requirements
+* Link text descriptiveness
+* Navigation structure
+* Line length compliance
+* Fun fact presence (recommended)
 
 ## Examples
 
@@ -175,6 +179,7 @@ See `template-validation-rules.md` for detailed validation rules and requirement
 ## Best Practices
 
 ### Document Creation
+
 1. Choose appropriate template based on document type
 2. Fill in all required sections
 3. Use descriptive link text
@@ -182,12 +187,14 @@ See `template-validation-rules.md` for detailed validation rules and requirement
 5. Ensure proper navigation structure
 
 ### Maintenance
+
 1. Keep templates up to date
 2. Validate against template rules
 3. Update cross-references when moving documents
 4. Maintain consistent formatting
 
 ### Quality Assurance
+
 1. Run template validation before committing
 2. Check for broken links
 3. Verify navigation structure
@@ -196,6 +203,7 @@ See `template-validation-rules.md` for detailed validation rules and requirement
 ## Migration Guide
 
 ### Converting Existing Documents
+
 1. **Identify Document Type**: Use the DocumentTypeDetector to determine the appropriate template
 2. **Add Required Sections**: Add missing required sections following the template structure
 3. **Update Navigation**: Ensure proper navigation structure and links
@@ -204,16 +212,17 @@ See `template-validation-rules.md` for detailed validation rules and requirement
 
 ### Common Issues and Fixes
 
-- **Missing "When You're Here"**: Add the section with purpose, context, and navigation info
-- **Missing Research Context**: Add section with project information and background
-- **Missing Navigation Footer**: Add footer with back links and related topics
-- **Non-descriptive Links**: Update link text to be more descriptive
-- **Missing Fun Facts**: Add relevant fun facts to improve engagement
+* **Missing "When You're Here"**: Add the section with purpose, context, and navigation info
+* **Missing Research Context**: Add section with project information and background
+* **Missing Navigation Footer**: Add footer with back links and related topics
+* **Non-descriptive Links**: Update link text to be more descriptive
+* **Missing Fun Facts**: Add relevant fun facts to improve engagement
 
 ## Updates and Maintenance
 
 This template system is maintained as part of the KiloCode documentation automation. Updates to
 templates should be:
+
 1. Documented in this README
 2. Updated in the validation system
 3. Tested with sample documents
@@ -223,7 +232,8 @@ For questions or issues with templates, see the [Validation System
 Documentation](../tools/VALIDATION_SYSTEM.md).
 
 ## Navigation
-- [← Back to Documentation Tools](../tools/)
-- [→ Template Validation Rules](./template-validation-rules.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
-- [↑ Table of Contents](#document-templates)
+
+* [← Back to Documentation Tools](../tools/)
+* [→ Template Validation Rules](./template-validation-rules.md)
+* [📚 Technical Glossary](../../GLOSSARY.md)
+* [↑ Table of Contents](#document-templates)

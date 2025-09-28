@@ -1,73 +1,74 @@
 # Terminal Integration
 
 ## Table of Contents
-- [Terminal Integration](#terminal-integration)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Terminal Management](#terminal-management)
-- [Shell Integration](#shell-integration)
-- [Command Execution](#command-execution)
-- [Process Management](#process-management)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Terminal Operations](#basic-terminal-operations)
-- [Shell Integration](#shell-integration)
-- [Process Management](#process-management)
-- [Security Considerations](#security-considerations)
-- [Command Safety](#command-safety)
-- [Access Control](#access-control)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Terminal Integration](#terminal-integration)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Terminal Management](#terminal-management)
-- [Shell Integration](#shell-integration)
-- [Command Execution](#command-execution)
-- [Process Management](#process-management)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Terminal Operations](#basic-terminal-operations)
-- [Shell Integration](#shell-integration)
-- [Process Management](#process-management)
-- [Security Considerations](#security-considerations)
-- [Command Safety](#command-safety)
-- [Access Control](#access-control)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Terminal Integration](#terminal-integration)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Integration Overview](#integration-overview)
+* [System Architecture](#system-architecture)
+* [Key Features](#key-features)
+* [Terminal Management](#terminal-management)
+* [Shell Integration](#shell-integration)
+* [Command Execution](#command-execution)
+* [Process Management](#process-management)
+* [Setup and Configuration](#setup-and-configuration)
+* [Prerequisites](#prerequisites)
+* [Installation Steps](#installation-steps)
+* [Configuration Options](#configuration-options)
+* [Usage Examples](#usage-examples)
+* [Basic Terminal Operations](#basic-terminal-operations)
+* [Shell Integration](#shell-integration)
+* [Process Management](#process-management)
+* [Security Considerations](#security-considerations)
+* [Command Safety](#command-safety)
+* [Access Control](#access-control)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Terminal Integration](#terminal-integration)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Integration Overview](#integration-overview)
+* [System Architecture](#system-architecture)
+* [Key Features](#key-features)
+* [Terminal Management](#terminal-management)
+* [Shell Integration](#shell-integration)
+* [Command Execution](#command-execution)
+* [Process Management](#process-management)
+* [Setup and Configuration](#setup-and-configuration)
+* [Prerequisites](#prerequisites)
+* [Installation Steps](#installation-steps)
+* [Configuration Options](#configuration-options)
+* [Usage Examples](#usage-examples)
+* [Basic Terminal Operations](#basic-terminal-operations)
+* [Shell Integration](#shell-integration)
+* [Process Management](#process-management)
+* [Security Considerations](#security-considerations)
+* [Command Safety](#command-safety)
+* [Access Control](#access-control)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Debug Mode](#debug-mode)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the terminal integration system for command execution, shell
+* **Purpose**: This document covers the terminal integration system for command execution, shell
   integration, and terminal management.
-- **Context**: Use this as a starting point for understanding how KiloCode integrates with terminal
+* **Context**: Use this as a starting point for understanding how KiloCode integrates with terminal
   and shell environments.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -76,10 +77,11 @@ document's role or purpose, this section helps orient you.
 
 This document was created through comprehensive analysis of terminal integration patterns and shell
 interaction requirements in development environments. The integration system reflects findings from:
-- Terminal emulation and shell integration research
-- Command execution security and safety analysis
-- Process management and monitoring best practices
-- Cross-platform terminal compatibility studies
+
+* Terminal emulation and shell integration research
+* Command execution security and safety analysis
+* Process management and monitoring best practices
+* Cross-platform terminal compatibility studies
 
 The system provides secure and efficient terminal integration for development workflows.
 
@@ -89,6 +91,7 @@ The Terminal Integration system provides comprehensive terminal management, comm
 shell integration capabilities for seamless development workflow integration in KiloCode.
 
 **Core Components:**
+
 1. **Terminal Management** - Terminal lifecycle and process management
 2. **Shell Integration** - Shell-specific integration and optimization
 3. **Command Execution** - Safe and efficient command execution
@@ -125,40 +128,42 @@ graph TB
 
 ### Terminal Management
 
-- **Terminal Creation**: Spawn new terminal instances
-- **Session Management**: Handle multiple terminal sessions
-- **Configuration**: Customize terminal settings
-- **Lifecycle Control**: Start, stop, and restart terminals
+* **Terminal Creation**: Spawn new terminal instances
+* **Session Management**: Handle multiple terminal sessions
+* **Configuration**: Customize terminal settings
+* **Lifecycle Control**: Start, stop, and restart terminals
 
 ### Shell Integration
 
-- **Multi-Shell Support**: Bash, Zsh, PowerShell, CMD
-- **Environment Variables**: Shell environment management
-- **Path Resolution**: Working directory handling
-- **Shell Features**: Tab completion, history, aliases
+* **Multi-Shell Support**: Bash, Zsh, PowerShell, CMD
+* **Environment Variables**: Shell environment management
+* **Path Resolution**: Working directory handling
+* **Shell Features**: Tab completion, history, aliases
 
 ### Command Execution
 
-- **Safe Execution**: Sandboxed command running
-- **Input/Output Handling**: Stream processing
-- **Error Management**: Command failure handling
-- **Timeout Control**: Execution time limits
+* **Safe Execution**: Sandboxed command running
+* **Input/Output Handling**: Stream processing
+* **Error Management**: Command failure handling
+* **Timeout Control**: Execution time limits
 
 ### Process Management
 
-- **Process Monitoring**: Track running processes
-- **Resource Usage**: CPU and memory monitoring
-- **Signal Handling**: Process control signals
-- **Cleanup**: Automatic process termination
+* **Process Monitoring**: Track running processes
+* **Resource Usage**: CPU and memory monitoring
+* **Signal Handling**: Process control signals
+* **Cleanup**: Automatic process termination
 
 ## Setup and Configuration
 
 ### Prerequisites
-- Terminal emulator (Terminal.app, iTerm2, Windows Terminal)
-- Shell environment (Bash, Zsh, PowerShell)
-- Node.js 16+ for integration service
+
+* Terminal emulator (Terminal.app, iTerm2, Windows Terminal)
+* Shell environment (Bash, Zsh, PowerShell)
+* Node.js 16+ for integration service
 
 ### Installation Steps
+
 1. Install KiloCode terminal integration
 2. Configure shell environment
 3. Set up terminal preferences
@@ -223,39 +228,42 @@ await processManager.terminate(process.id);
 
 ### Command Safety
 
-- **Sandboxing**: Isolated execution environment
-- **Permission Checks**: Validate command permissions
-- **Input Validation**: Sanitize command inputs
-- **Resource Limits**: Prevent resource exhaustion
+* **Sandboxing**: Isolated execution environment
+* **Permission Checks**: Validate command permissions
+* **Input Validation**: Sanitize command inputs
+* **Resource Limits**: Prevent resource exhaustion
 
 ### Access Control
 
-- **User Permissions**: Respect system permissions
-- **File System Access**: Controlled file operations
-- **Network Access**: Restricted network operations
-- **Process Isolation**: Separate process spaces
+* **User Permissions**: Respect system permissions
+* **File System Access**: Controlled file operations
+* **Network Access**: Restricted network operations
+* **Process Isolation**: Separate process spaces
 
 ## Troubleshooting
 
 ### Common Issues
 
 **Command Execution Failures**
-- Check command syntax and validity
-- Verify file permissions
-- Review error messages
-- Test in native terminal
+
+* Check command syntax and validity
+* Verify file permissions
+* Review error messages
+* Test in native terminal
 
 **Shell Integration Problems**
-- Verify shell configuration
-- Check environment variables
-- Review shell startup files
-- Test shell features
+
+* Verify shell configuration
+* Check environment variables
+* Review shell startup files
+* Test shell features
 
 **Performance Issues**
-- Monitor resource usage
-- Check for hanging processes
-- Review command complexity
-- Optimize configuration
+
+* Monitor resource usage
+* Check for hanging processes
+* Review command complexity
+* Optimize configuration
 
 ### Debug Mode
 
@@ -271,17 +279,20 @@ Enable detailed logging for troubleshooting:
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
-- Troubleshooting section provides actionable solutions
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
+* Troubleshooting section provides actionable solutions
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Integrations Overview](README.md)
-- [← Editor Integration](EDITOR_INTEGRATION.md)
-- [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Integrations Overview](README.md)
+* [← Editor Integration](EDITOR_INTEGRATION.md)
+* [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)

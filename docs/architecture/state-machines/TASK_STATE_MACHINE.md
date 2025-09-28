@@ -1,42 +1,43 @@
 # Task State Machine
 
 ## Table of Contents
-- [Task State Machine](#task-state-machine)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [🗺️ Navigation](#-navigation)
-- [Quick Links](#quick-links)
-- [Key Concepts](#key-concepts)
-- [Task States](#task-states)
-- [Task State Properties](#task-state-properties)
-- [State Transition Diagram](#state-transition-diagram)
-- [State Transition Table](#state-transition-table)
-- [Key States](#key-states)
-- [Race Condition Impact](#race-condition-impact)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Task State Machine](#task-state-machine)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [🗺️ Navigation](#-navigation)
-- [Quick Links](#quick-links)
-- [Key Concepts](#key-concepts)
-- [Task States](#task-states)
-- [Task State Properties](#task-state-properties)
-- [State Transition Diagram](#state-transition-diagram)
-- [State Transition Table](#state-transition-table)
-- [Key States](#key-states)
-- [Race Condition Impact](#race-condition-impact)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Task State Machine](#task-state-machine)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [🗺️ Navigation](#-navigation)
+* [Quick Links](#quick-links)
+* [Key Concepts](#key-concepts)
+* [Task States](#task-states)
+* [Task State Properties](#task-state-properties)
+* [State Transition Diagram](#state-transition-diagram)
+* [State Transition Table](#state-transition-table)
+* [Key States](#key-states)
+* [Race Condition Impact](#race-condition-impact)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Task State Machine](#task-state-machine)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [🗺️ Navigation](#-navigation)
+* [Quick Links](#quick-links)
+* [Key Concepts](#key-concepts)
+* [Task States](#task-states)
+* [Task State Properties](#task-state-properties)
+* [State Transition Diagram](#state-transition-diagram)
+* [State Transition Table](#state-transition-table)
+* [Key States](#key-states)
+* [Race Condition Impact](#race-condition-impact)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -46,25 +47,26 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 The Task State Machine manages the lifecycle of individual tasks in the system, from creation to
 completion or destruction. Think of it as the **"dinosaur life cycle tracker"** - we need to know if
@@ -78,17 +80,17 @@ our digital creatures are eggs, hatchlings, adults, or fossils!
 
 ### Quick Links
 
-- **Need to understand the problem?** →
+* **Need to understand the problem?** →
   [Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-- **Want to see how this fits together?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
-- **Ready to implement a fix?** → [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
+* **Want to see how this fits together?** → [Combined State Machine](COMBINED_STATE_MACHINE.md)
+* **Ready to implement a fix?** → [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
 
 ### Key Concepts
 
-- **RUNNING** is where race conditions occur (the "hunting ground")
-- **PAUSED** can resume and cause issues (the "hibernation that wakes up wrong")
-- **COMPLETED** makes sessions inactive (the "extinction event")
-- **DESTROYED** needs reconstruction (the "fossil that needs to be brought back to life")
+* **RUNNING** is where race conditions occur (the "hunting ground")
+* **PAUSED** can resume and cause issues (the "hibernation that wakes up wrong")
+* **COMPLETED** makes sessions inactive (the "extinction event")
+* **DESTROYED** needs reconstruction (the "fossil that needs to be brought back to life")
 
 ## Task States
 
@@ -306,54 +308,59 @@ const TASK_STATE_TRANSITIONS = {
 
 ## Key States
 
-- **RUNNING**: Main execution state where task is actively processing
-- **PAUSED**: Task is paused but can be resumed from memory
-- **COMPLETED**: Task finished successfully, session becomes inactive
-- **DESTROYED**: Task was garbage collected, needs reconstruction from history
+* **RUNNING**: Main execution state where task is actively processing
+* **PAUSED**: Task is paused but can be resumed from memory
+* **COMPLETED**: Task finished successfully, session becomes inactive
+* **DESTROYED**: Task was garbage collected, needs reconstruction from history
 
 ## Race Condition Impact
 
 The task state machine is crucial for understanding the race condition because:
 
-- **RUNNING** tasks can have concurrent recursive calls
+* **RUNNING** tasks can have concurrent recursive calls
 
-- **PAUSED** tasks can be resumed and cause race conditions
+* **PAUSED** tasks can be resumed and cause race conditions
 
-- **DESTROYED** tasks need reconstruction, which triggers the navigation fix
+* **DESTROYED** tasks need reconstruction, which triggers the navigation fix
 
-- **COMPLETED** tasks make sessions inactive, requiring different handling
-- \*\*
+* **COMPLETED** tasks make sessions inactive, requiring different handling
 
-- *Related Documentation:*\*
-- [Session State Machine](SESSION_STATE_MACHINE.md)
-- [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
-- [Combined State Machine](COMBINED_STATE_MACHINE.md)
-- [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* \*\*
+
+* *Related Documentation:*\*
+
+* [Session State Machine](SESSION_STATE_MACHINE.md)
+
+* [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
+
+* [Combined State Machine](COMBINED_STATE_MACHINE.md)
+
+* [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:*\*
+* *Understanding Architecture:*\*
 
-- **Next**: Check related architecture documentation in the same directory
+* **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:*\*
+* *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Architecture Issues:*\*
+* *Troubleshooting Architecture Issues:*\*
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+* **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -362,21 +369,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

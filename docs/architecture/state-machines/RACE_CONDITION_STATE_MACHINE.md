@@ -1,52 +1,53 @@
 # Race Condition State Machine
 
 ## Table of Contents
-- [Race Condition State Machine](#race-condition-state-machine)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [Race Condition States](#race-condition-states)
-- [State Descriptions](#state-descriptions)
-- [NormalExecution State](#normalexecution-state)
-- [RaceCondition State](#racecondition-state)
-- [SynchronizedExecution State](#synchronizedexecution-state)
-- [Race Condition Detection](#race-condition-detection)
-- [Synchronization Implementation](#synchronization-implementation)
-- [State Transition Triggers](#state-transition-triggers)
-- [NormalExecution → RaceCondition](#normalexecution-racecondition)
-- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
-- [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
-- [Monitoring and Debugging](#monitoring-and-debugging)
-- [Key States](#key-states)
-- [Prevention Strategies](#prevention-strategies)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Race Condition State Machine](#race-condition-state-machine)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [Race Condition States](#race-condition-states)
-- [State Descriptions](#state-descriptions)
-- [NormalExecution State](#normalexecution-state)
-- [RaceCondition State](#racecondition-state)
-- [SynchronizedExecution State](#synchronizedexecution-state)
-- [Race Condition Detection](#race-condition-detection)
-- [Synchronization Implementation](#synchronization-implementation)
-- [State Transition Triggers](#state-transition-triggers)
-- [NormalExecution → RaceCondition](#normalexecution-racecondition)
-- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
-- [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
-- [Monitoring and Debugging](#monitoring-and-debugging)
-- [Key States](#key-states)
-- [Prevention Strategies](#prevention-strategies)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Race Condition State Machine](#race-condition-state-machine)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [Race Condition States](#race-condition-states)
+* [State Descriptions](#state-descriptions)
+* [NormalExecution State](#normalexecution-state)
+* [RaceCondition State](#racecondition-state)
+* [SynchronizedExecution State](#synchronizedexecution-state)
+* [Race Condition Detection](#race-condition-detection)
+* [Synchronization Implementation](#synchronization-implementation)
+* [State Transition Triggers](#state-transition-triggers)
+* [NormalExecution → RaceCondition](#normalexecution-racecondition)
+* [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+* [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
+* [Monitoring and Debugging](#monitoring-and-debugging)
+* [Key States](#key-states)
+* [Prevention Strategies](#prevention-strategies)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Race Condition State Machine](#race-condition-state-machine)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [Race Condition States](#race-condition-states)
+* [State Descriptions](#state-descriptions)
+* [NormalExecution State](#normalexecution-state)
+* [RaceCondition State](#racecondition-state)
+* [SynchronizedExecution State](#synchronizedexecution-state)
+* [Race Condition Detection](#race-condition-detection)
+* [Synchronization Implementation](#synchronization-implementation)
+* [State Transition Triggers](#state-transition-triggers)
+* [NormalExecution → RaceCondition](#normalexecution-racecondition)
+* [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+* [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
+* [Monitoring and Debugging](#monitoring-and-debugging)
+* [Key States](#key-states)
+* [Prevention Strategies](#prevention-strategies)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -56,25 +57,26 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 The Race Condition State Machine specifically models the states involved in the API duplication race
 condition, showing the problem states and the solution states.
@@ -122,26 +124,26 @@ stateDiagram-v2
 
 ### NormalExecution State
 
-- **SingleCall**: One recursive call is active
-- **CallComplete**: Call finishes successfully
-- **Next Call**: Another call can be made
-- **Execution Ends**: All calls completed
+* **SingleCall**: One recursive call is active
+* **CallComplete**: Call finishes successfully
+* **Next Call**: Another call can be made
+* **Execution Ends**: All calls completed
 
 ### RaceCondition State
 
-- **ConcurrentCalls**: Multiple calls start simultaneously
-- **APICall1**: Main task loop API call
-- **APICall2**: Subtask completion API call
-- **APIResponse1/2**: Responses come back
-- **JumbledState**: Responses are mixed up
-- **ChatConfusion**: UI gets confused
+* **ConcurrentCalls**: Multiple calls start simultaneously
+* **APICall1**: Main task loop API call
+* **APICall2**: Subtask completion API call
+* **APIResponse1/2**: Responses come back
+* **JumbledState**: Responses are mixed up
+* **ChatConfusion**: UI gets confused
 
 ### SynchronizedExecution State
 
-- **LockAcquired**: Lock is held for exclusive access
-- **SequentialCalls**: Calls processed one at a time
-- **CleanResponses**: Responses come back in order
-- **NormalUI**: UI works correctly
+* **LockAcquired**: Lock is held for exclusive access
+* **SequentialCalls**: Calls processed one at a time
+* **CleanResponses**: Responses come back in order
+* **NormalUI**: UI works correctly
 
 ## Race Condition Detection
 
@@ -241,21 +243,21 @@ class RaceConditionSynchronizer {
 
 ### NormalExecution → RaceCondition
 
-- **Trigger**: Navigation fix causes concurrent calls
-- **Condition**: `recursivelyMakeClineRequests()` called from both main loop and subtask completion
-- **Result**: Multiple API calls active simultaneously
+* **Trigger**: Navigation fix causes concurrent calls
+* **Condition**: `recursivelyMakeClineRequests()` called from both main loop and subtask completion
+* **Result**: Multiple API calls active simultaneously
 
 ### RaceCondition → SynchronizedExecution
 
-- **Trigger**: Synchronization mechanism implemented
-- **Condition**: Lock-based system prevents concurrent calls
-- **Result**: Calls processed sequentially
+* **Trigger**: Synchronization mechanism implemented
+* **Condition**: Lock-based system prevents concurrent calls
+* **Result**: Calls processed sequentially
 
 ### SynchronizedExecution → NormalExecution
 
-- **Trigger**: Synchronization removed or bypassed
-- **Condition**: System returns to normal operation
-- **Result**: Single calls processed normally
+* **Trigger**: Synchronization removed or bypassed
+* **Condition**: System returns to normal operation
+* **Result**: Single calls processed normally
 
 ## Monitoring and Debugging
 
@@ -308,49 +310,56 @@ class RaceConditionMonitor {
 
 ## Key States
 
-- **NormalExecution**: Safe, single-call execution
-- **RaceCondition**: **PROBLEM** - Multiple concurrent calls
-- **SynchronizedExecution**: **SOLUTION** - Lock-based synchronization
+* **NormalExecution**: Safe, single-call execution
+* **RaceCondition**: **PROBLEM** - Multiple concurrent calls
+* **SynchronizedExecution**: **SOLUTION** - Lock-based synchronization
 
 ## Prevention Strategies
+
 1. **Lock-Based Synchronization**: Ensure only one call at a time
 2. **Call Queuing**: Queue additional calls when lock is held
 3. **Race Condition Detection**: Monitor for concurrent calls
 4. **Timeout Handling**: Handle lock acquisition timeouts gracefully
 5. **Event Logging**: Track race condition events for debugging
-- \*\*
 
-- *Related Documentation:*\*
-- [Task State Machine](TASK_STATE_MACHINE.md)
-- [Session State Machine](SESSION_STATE_MACHINE.md)
-- [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
-- [Combined State Machine](COMBINED_STATE_MACHINE.md)
-- [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* \*\*
+
+* *Related Documentation:*\*
+
+* [Task State Machine](TASK_STATE_MACHINE.md)
+
+* [Session State Machine](SESSION_STATE_MACHINE.md)
+
+* [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
+
+* [Combined State Machine](COMBINED_STATE_MACHINE.md)
+
+* [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:*\*
+* *Understanding Architecture:*\*
 
-- **Next**: Check related architecture documentation in the same directory
+* **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:*\*
+* *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Architecture Issues:*\*
+* *Troubleshooting Architecture Issues:*\*
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+* **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -359,21 +368,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,73 +1,74 @@
 # Laminar Span Nesting System
 
 ## Table of Contents
-- [Laminar Span Nesting System](#laminar-span-nesting-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Key Components](#key-components)
-- [Span Types and Hierarchy](#span-types-and-hierarchy)
-- [Span Type Categories](#span-type-categories)
-- [Span Hierarchy](#span-hierarchy)
-- [Span Creation and Lifecycle](#span-creation-and-lifecycle)
-- [Creation Process](#creation-process)
-- [Lifecycle Management](#lifecycle-management)
-- [Queuing Mechanism](#queuing-mechanism)
-- [When Queuing Occurs](#when-queuing-occurs)
-- [Queue vs Direct Creation](#queue-vs-direct-creation)
-- [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Test Connection vs Task Spans](#test-connection-vs-task-spans)
-- [Troubleshooting Span Issues](#troubleshooting-span-issues)
-- [Diagnostic Steps](#diagnostic-steps)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Debug Logging](#debug-logging)
-- [Code Reference Matrix](#code-reference-matrix)
-- [Implementation Details](#implementation-details)
-- [Span Naming Convention](#span-naming-convention)
-- [Session Management](#session-management)
-- [Error Handling](#error-handling)
-- [Performance Considerations](#performance-considerations)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Laminar Span Nesting System](#laminar-span-nesting-system)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Key Components](#key-components)
-- [Span Types and Hierarchy](#span-types-and-hierarchy)
-- [Span Type Categories](#span-type-categories)
-- [Span Hierarchy](#span-hierarchy)
-- [Span Creation and Lifecycle](#span-creation-and-lifecycle)
-- [Creation Process](#creation-process)
-- [Lifecycle Management](#lifecycle-management)
-- [Queuing Mechanism](#queuing-mechanism)
-- [When Queuing Occurs](#when-queuing-occurs)
-- [Queue vs Direct Creation](#queue-vs-direct-creation)
-- [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Test Connection vs Task Spans](#test-connection-vs-task-spans)
-- [Troubleshooting Span Issues](#troubleshooting-span-issues)
-- [Diagnostic Steps](#diagnostic-steps)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Debug Logging](#debug-logging)
-- [Code Reference Matrix](#code-reference-matrix)
-- [Implementation Details](#implementation-details)
-- [Span Naming Convention](#span-naming-convention)
-- [Session Management](#session-management)
-- [Error Handling](#error-handling)
-- [Performance Considerations](#performance-considerations)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Laminar Span Nesting System](#laminar-span-nesting-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Key Components](#key-components)
+* [Span Types and Hierarchy](#span-types-and-hierarchy)
+* [Span Type Categories](#span-type-categories)
+* [Span Hierarchy](#span-hierarchy)
+* [Span Creation and Lifecycle](#span-creation-and-lifecycle)
+* [Creation Process](#creation-process)
+* [Lifecycle Management](#lifecycle-management)
+* [Queuing Mechanism](#queuing-mechanism)
+* [When Queuing Occurs](#when-queuing-occurs)
+* [Queue vs Direct Creation](#queue-vs-direct-creation)
+* [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
+* [Root Cause Analysis](#root-cause-analysis)
+* [Test Connection vs Task Spans](#test-connection-vs-task-spans)
+* [Troubleshooting Span Issues](#troubleshooting-span-issues)
+* [Diagnostic Steps](#diagnostic-steps)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Debug Logging](#debug-logging)
+* [Code Reference Matrix](#code-reference-matrix)
+* [Implementation Details](#implementation-details)
+* [Span Naming Convention](#span-naming-convention)
+* [Session Management](#session-management)
+* [Error Handling](#error-handling)
+* [Performance Considerations](#performance-considerations)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Laminar Span Nesting System](#laminar-span-nesting-system)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Key Components](#key-components)
+* [Span Types and Hierarchy](#span-types-and-hierarchy)
+* [Span Type Categories](#span-type-categories)
+* [Span Hierarchy](#span-hierarchy)
+* [Span Creation and Lifecycle](#span-creation-and-lifecycle)
+* [Creation Process](#creation-process)
+* [Lifecycle Management](#lifecycle-management)
+* [Queuing Mechanism](#queuing-mechanism)
+* [When Queuing Occurs](#when-queuing-occurs)
+* [Queue vs Direct Creation](#queue-vs-direct-creation)
+* [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
+* [Root Cause Analysis](#root-cause-analysis)
+* [Test Connection vs Task Spans](#test-connection-vs-task-spans)
+* [Troubleshooting Span Issues](#troubleshooting-span-issues)
+* [Diagnostic Steps](#diagnostic-steps)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Debug Logging](#debug-logging)
+* [Code Reference Matrix](#code-reference-matrix)
+* [Implementation Details](#implementation-details)
+* [Span Naming Convention](#span-naming-convention)
+* [Session Management](#session-management)
+* [Error Handling](#error-handling)
+* [Performance Considerations](#performance-considerations)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* This document explains the span nesting architecture in Kilo Code's Laminar
+* *Purpose:*\* This document explains the span nesting architecture in Kilo Code's Laminar
   observability system, detailing how spans are created, nested, and queued, with specific focus on
   why chat history spans may not appear while test connection spans do.
 
@@ -92,10 +93,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -106,10 +107,10 @@ initialization completes.
 
 ### Key Components
 
-- **LaminarService**: Singleton managing span lifecycle and queuing
-- **Span Types**: Root, child, and detached spans for different operation levels
-- **Nesting**: Hierarchical span relationships using `Laminar.withSpan()`
-- **Queuing**: Deferred span processing when service isn't ready
+* **LaminarService**: Singleton managing span lifecycle and queuing
+* **Span Types**: Root, child, and detached spans for different operation levels
+* **Nesting**: Hierarchical span relationships using `Laminar.withSpan()`
+* **Queuing**: Deferred span processing when service isn't ready
 
 ## Span Types and Hierarchy
 
@@ -128,7 +129,7 @@ initialization completes.
 
 ### Span Hierarchy
 
-- *Visual diagram showing span relationships:*\*
+* *Visual diagram showing span relationships:*\*
 
 ```
 Root Task Span (task-{id}-task.root)
@@ -138,18 +139,18 @@ Root Task Span (task-{id}-task.root)
 └── Test Connection Span (connection_test) [Independent]
 ```
 
-- *Nesting Rules:*\*
-- Root spans wrap entire task execution
-- Task step spans represent individual API request cycles
-- LLM spans track model interactions
-- Tool spans capture tool-specific operations
-- Test connection spans are independent
+* *Nesting Rules:*\*
+* Root spans wrap entire task execution
+* Task step spans represent individual API request cycles
+* LLM spans track model interactions
+* Tool spans capture tool-specific operations
+* Test connection spans are independent
 
 ## Span Creation and Lifecycle
 
 ### Creation Process
 
-- *Immediate Creation (Test Connection):*\*
+* *Immediate Creation (Test Connection):*\*
 
 ```typescript
 // Direct creation - bypasses queuing
@@ -161,7 +162,7 @@ const testSpan = Laminar.startSpan({
 })
 ```
 
-- *Queued Creation (Task Spans):*\*
+* *Queued Creation (Task Spans):*\*
 
 ```typescript
 // May be queued if service not initialized
@@ -178,14 +179,15 @@ laminarService.startSpan(
 
 ### Lifecycle Management
 
-- *Span States:*\*
+* *Span States:*\*
+
 1. **Created**: Span initialized with metadata
 2. **Active**: Span marked as current context
 3. **Nested**: Child spans created under active span
 4. **Completed**: Span ended and sent to backend
 5. **Failed**: Span ended with error recording
 
-- *Completion Process:*\*
+* *Completion Process:*\*
 
 ```typescript
 // End span with success
@@ -200,12 +202,15 @@ laminarService.endSpan("llm_call")
 
 ### When Queuing Occurs
 
-- *Queue Trigger Conditions:*\*
-- Service not yet initialized (`!this.isInitialized`)
-- Initialization currently in progress (`this.isInitializing`)
-- Configuration validation pending
+* *Queue Trigger Conditions:*\*
 
-- *Queue Processing:*\*
+* Service not yet initialized (`!this.isInitialized`)
+
+* Initialization currently in progress (`this.isInitializing`)
+
+* Configuration validation pending
+
+* *Queue Processing:*\*
 
 ```typescript
 // Spans queued before initialization
@@ -238,11 +243,12 @@ if (this.pendingSpanRequests.length > 0) {
 
 ### Root Cause Analysis
 
-- *Primary Issue:*\* Task spans are created during task initialization but may be queued
+* *Primary Issue:*\* Task spans are created during task initialization but may be queued
   indefinitely
   if the Laminar service fails to initialize properly.
 
-- *Failure Scenarios:*\*
+* *Failure Scenarios:*\*
+
 1. **Configuration Issues:**
 
    ```typescript
@@ -265,29 +271,38 @@ if (this.pendingSpanRequests.length > 0) {
    }
    ```
 3. **Queued Spans Never Processed:**
-- Spans added to `pendingSpanRequests` queue
-- If initialization fails, queue is never processed
-- Task continues without observability
+
+* Spans added to `pendingSpanRequests` queue
+* If initialization fails, queue is never processed
+* Task continues without observability
 
 ### Test Connection vs Task Spans
 
-- *Test Connection Span:*\*
-- Created directly in `testConnection()` method
-- Executed immediately after initialization
-- Bypasses queuing mechanism
-- Always appears if service initializes
+* *Test Connection Span:*\*
 
-- *Task Spans:*\*
-- Created during task startup via `startSpan()` calls
-- Subject to queuing if service not ready
-- May be lost if initialization fails
-- Depend on proper queue processing
+* Created directly in `testConnection()` method
+
+* Executed immediately after initialization
+
+* Bypasses queuing mechanism
+
+* Always appears if service initializes
+
+* *Task Spans:*\*
+
+* Created during task startup via `startSpan()` calls
+
+* Subject to queuing if service not ready
+
+* May be lost if initialization fails
+
+* Depend on proper queue processing
 
 ## Troubleshooting Span Issues
 
 ### Diagnostic Steps
 
-- *1. Check Service Initialization:*\*
+* *1. Check Service Initialization:*\*
 
 ```typescript
 console.log("Service Status:", {
@@ -298,7 +313,7 @@ console.log("Service Status:", {
 })
 ```
 
-- *2. Verify Configuration:*\*
+* *2. Verify Configuration:*\*
 
 ```typescript
 console.log("Laminar Config:", {
@@ -309,7 +324,7 @@ console.log("Laminar Config:", {
 })
 ```
 
-- *3. Monitor Queue Processing:*\*
+* *3. Monitor Queue Processing:*\*
 
 ```typescript
 // Check if spans are being queued
@@ -335,19 +350,19 @@ API key |
 
 ### Debug Logging
 
-- *Enable Debug Logging:*\*
+* *Enable Debug Logging:*\*
 
 ```typescript
 // Set console level to see [LAMINAR DEBUG] messages
 console.log = console.log.bind(console)
 ```
 
-- *Key Debug Messages:*\*
-- `[LAMINAR DEBUG] getInstance` - Service singleton access
-- `[LAMINAR DEBUG] initialize` - Service initialization steps
-- `[LAMINAR DEBUG] startSpan` - Span creation attempts
-- `[LAMINAR DEBUG] _startSpanNow` - Actual span creation
-- `[LAMINAR DEBUG] endSpan` - Span completion
+* *Key Debug Messages:*\*
+* `[LAMINAR DEBUG] getInstance` - Service singleton access
+* `[LAMINAR DEBUG] initialize` - Service initialization steps
+* `[LAMINAR DEBUG] startSpan` - Span creation attempts
+* `[LAMINAR DEBUG] _startSpanNow` - Actual span creation
+* `[LAMINAR DEBUG] endSpan` - Span completion
 
 ## Code Reference Matrix
 
@@ -368,24 +383,28 @@ console.log = console.log.bind(console)
 
 ### Span Naming Convention
 
-- *Pattern:*\* `{taskId}-{operationType}[-{subtype}]`
+* *Pattern:*\* `{taskId}-{operationType}[-{subtype}]`
 
-- *Examples:*\*
-- `task-123-task.root` - Root task span
-- `task-123-task.step` - Task step span
-- `task-123-llm_call` - LLM API call span
-- `attempt_completion` - Tool execution span
+* *Examples:*\*
+
+* `task-123-task.root` - Root task span
+
+* `task-123-task.step` - Task step span
+
+* `task-123-llm_call` - LLM API call span
+
+* `attempt_completion` - Tool execution span
 
 ### Session Management
 
-- *Session ID Propagation:*\*
+* *Session ID Propagation:*\*
 
 ```typescript
 const sessionId = this.rootTaskId || this.taskId
 // Used for span grouping and correlation
 ```
 
-- *User Context:*\*
+* *User Context:*\*
 
 ```typescript
 const userId = this.userId
@@ -394,13 +413,13 @@ const userId = this.userId
 
 ### Error Handling
 
-- *Exception Recording:*\*
+* *Exception Recording:*\*
 
 ```typescript
 laminarService.recordExceptionOnSpan(spanName, error)
 ```
 
-- *Graceful Degradation:*\*
+* *Graceful Degradation:*\*
 
 ```typescript
 // Continue operation even if tracing fails
@@ -413,43 +432,49 @@ try {
 
 ### Performance Considerations
 
-- *Lazy Initialization:*\*
-- Service initialized only when first span requested
-- Prevents startup overhead when tracing disabled
+* *Lazy Initialization:*\*
 
-- *Minimal Overhead:*\*
-- Spans created only when service enabled
-- Failed operations don't block main execution
-- Background processing for span completion
+* Service initialized only when first span requested
+
+* Prevents startup overhead when tracing disabled
+
+* *Minimal Overhead:*\*
+
+* Spans created only when service enabled
+
+* Failed operations don't block main execution
+
+* Background processing for span completion
 
 <a id="navigation-footer"></a>
-- Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
+
+* Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
   [`README.md`](README.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING_SYSTEM.md#L1`
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Laminar Observability:*\*
+* *Understanding Laminar Observability:*\*
 
-- **Next**: Check related Laminar documentation in the same directory
+* **Next**: Check related Laminar documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
 
-- *Implementing Observability Features:*\*
+* *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Observability Issues:*\*
+* *Troubleshooting Observability Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -458,21 +483,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

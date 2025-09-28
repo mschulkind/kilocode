@@ -1,46 +1,47 @@
 # Cleanup Proposal: Replace `catrielmuller/orchestator-load-subtask`
 
 ## Table of Contents
-- [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Quick Navigation](#quick-navigation)
-- [Research Context](#research-context)
-- [Objectives](#objectives)
-- [Design Overview](#design-overview)
-- [Changes (Before → After)](#changes-before--after)
-- [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
-- [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
-- [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
-- [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion--parent-init-intent)
-- [Testing Plan](#testing-plan)
-- [Migration Plan](#migration-plan)
-- [Rollback](#rollback)
-- [Expected Outcomes](#expected-outcomes)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
-- [Table of Contents](#table-of-contents)
-- [Quick Navigation](#quick-navigation)
-- [Research Context](#research-context)
-- [Objectives](#objectives)
-- [Design Overview](#design-overview)
-- [Changes (Before → After)](#changes-before--after)
-- [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
-- [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
-- [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
-- [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion--parent-init-intent)
-- [Testing Plan](#testing-plan)
-- [Migration Plan](#migration-plan)
-- [Rollback](#rollback)
-- [Expected Outcomes](#expected-outcomes)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Quick Navigation](#quick-navigation)
+* [Research Context](#research-context)
+* [Objectives](#objectives)
+* [Design Overview](#design-overview)
+* [Changes (Before → After)](#changes-before--after)
+* [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
+* [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
+* [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
+* [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion--parent-init-intent)
+* [Testing Plan](#testing-plan)
+* [Migration Plan](#migration-plan)
+* [Rollback](#rollback)
+* [Expected Outcomes](#expected-outcomes)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
+* [Table of Contents](#table-of-contents)
+* [Quick Navigation](#quick-navigation)
+* [Research Context](#research-context)
+* [Objectives](#objectives)
+* [Design Overview](#design-overview)
+* [Changes (Before → After)](#changes-before--after)
+* [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
+* [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
+* [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
+* [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion--parent-init-intent)
+* [Testing Plan](#testing-plan)
+* [Migration Plan](#migration-plan)
+* [Rollback](#rollback)
+* [Expected Outcomes](#expected-outcomes)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
@@ -54,39 +55,45 @@ control.
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Quick Navigation
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- [Branch Changes Analysis](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
-- [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md)
-- [Testing Strategy and Validation Plan](../race-condition/TESTING_STRATEGY.md)
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
+
+* [Branch Changes Analysis](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
+
+* [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md)
+
+* [Testing Strategy and Validation Plan](../race-condition/TESTING_STRATEGY.md)
 
 ## Objectives
-- Preserve: parent resume after navigation away/back.
-- Fix: eliminate concurrent `recursivelyMakeClineRequests` from multiple sources.
-- Improve: idempotency, observability, and explicit preconditions.
+
+* Preserve: parent resume after navigation away/back.
+* Fix: eliminate concurrent `recursivelyMakeClineRequests` from multiple sources.
+* Improve: idempotency, observability, and explicit preconditions.
 
 ## Design Overview
-- Add a `RequestArbiter` per TaskId to select exactly one next action.
-- Producers (main loop, subtask completion, user) submit `Intent`s.
-- Executor performs the selected action and emits lifecycle events.
-- Parent initialization modeled as an eligibility-gated `InitializeParent` intent.
+
+* Add a `RequestArbiter` per TaskId to select exactly one next action.
+* Producers (main loop, subtask completion, user) submit `Intent`s.
+* Executor performs the selected action and emits lifecycle events.
+* Parent initialization modeled as an eligibility-gated `InitializeParent` intent.
 
 ## Changes (Before → After)
 
@@ -139,7 +146,8 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 ```
 
 Motivation
-- Centralize selection and sequencing; remove fire-and-forget recursion from the provider.
+
+* Centralize selection and sequencing; remove fire-and-forget recursion from the provider.
 
 ### 2) Task: Wrap recursion in arbiter-aware executor
 
@@ -163,7 +171,8 @@ this.requestArbiter.submit({
 ```
 
 Motivation
-- Main loop becomes a producer of intents, not an executor; single writer enforces sequencing.
+
+* Main loop becomes a producer of intents, not an executor; single writer enforces sequencing.
 
 ### 3) Arbiter: Single selection with explicit preconditions
 
@@ -215,7 +224,8 @@ export class RequestArbiter {
 ```
 
 Motivation
-- Exactly one selected action at a time; eligibility guarantees proper ordering (e.g., init first).
+
+* Exactly one selected action at a time; eligibility guarantees proper ordering (e.g., init first).
 
 ### 4) Executor: Idempotent recursion + parent init intent
 
@@ -262,51 +272,56 @@ export class Executor {
 ```
 
 Motivation
-- Enforce initialization before recursion; add idempotency to prevent duplicates.
+
+* Enforce initialization before recursion; add idempotency to prevent duplicates.
 
 ## Testing Plan
-- Determinism: one selected action at a time.
-- Navigation: initialize-parent → continuation ordering guaranteed.
-- No-overlap: concurrent producers result in queued intents, not concurrent recursion.
-- E2E: no multiple spinners; no XML corruption.
+
+* Determinism: one selected action at a time.
+* Navigation: initialize-parent → continuation ordering guaranteed.
+* No-overlap: concurrent producers result in queued intents, not concurrent recursion.
+* E2E: no multiple spinners; no XML corruption.
 
 ## Migration Plan
-- Feature-flag RA/Executor path; submit intents in parallel with existing path for logging-only
+
+* Feature-flag RA/Executor path; submit intents in parallel with existing path for logging-only
   validation.
-- Switch providers and task to intent submission; remove direct recursion calls.
-- Remove temporary lock once RA proves stable.
+* Switch providers and task to intent submission; remove direct recursion calls.
+* Remove temporary lock once RA proves stable.
 
 ## Rollback
-- Disable RA flag; revert providers to direct flow (kept in code for the rollout window only).
+
+* Disable RA flag; revert providers to direct flow (kept in code for the rollout window only).
 
 ## Expected Outcomes
-- Race class eliminated by design.
-- Clear audit trail of decisions; improved UX and stability.
+
+* Race class eliminated by design.
+* Clear audit trail of decisions; improved UX and stability.
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:*\*
+* *Understanding Architecture:*\*
 
-- **Next**: Check related architecture documentation in the same directory
+* **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:*\*
+* *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Architecture Issues:*\*
+* *Troubleshooting Architecture Issues:*\*
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+* **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -315,21 +330,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

@@ -1,52 +1,53 @@
 # Orchestrator Tools Reference
 
 ## Table of Contents
-- [Orchestrator Tools Reference](#orchestrator-tools-reference)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Tool Philosophy](#tool-philosophy)
-- [Core Task Flow Tools](#core-task-flow-tools)
-- [attemptCompletionTool](#attemptcompletiontool)
-- [Task Management Tools](#task-management-tools)
-- [newTaskTool](#newtasktool)
-- [switchModeTool](#switchmodetool)
-- [startSubtask](#startsubtask)
-- [User Interaction Tools](#user-interaction-tools)
-- [askFollowupQuestionTool](#askfollowupquestiontool)
-- [State & Planning Tools](#state-planning-tools)
-- [updateTodoListTool](#updatetodolisttool)
-- [File System Tools](#file-system-tools)
-- [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Orchestrator Tools Reference](#orchestrator-tools-reference)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Tool Philosophy](#tool-philosophy)
-- [Core Task Flow Tools](#core-task-flow-tools)
-- [attemptCompletionTool](#attemptcompletiontool)
-- [Task Management Tools](#task-management-tools)
-- [newTaskTool](#newtasktool)
-- [switchModeTool](#switchmodetool)
-- [startSubtask](#startsubtask)
-- [User Interaction Tools](#user-interaction-tools)
-- [askFollowupQuestionTool](#askfollowupquestiontool)
-- [State & Planning Tools](#state-planning-tools)
-- [updateTodoListTool](#updatetodolisttool)
-- [File System Tools](#file-system-tools)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Orchestrator Tools Reference](#orchestrator-tools-reference)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Tool Philosophy](#tool-philosophy)
+* [Core Task Flow Tools](#core-task-flow-tools)
+* [attemptCompletionTool](#attemptcompletiontool)
+* [Task Management Tools](#task-management-tools)
+* [newTaskTool](#newtasktool)
+* [switchModeTool](#switchmodetool)
+* [startSubtask](#startsubtask)
+* [User Interaction Tools](#user-interaction-tools)
+* [askFollowupQuestionTool](#askfollowupquestiontool)
+* [State & Planning Tools](#state-planning-tools)
+* [updateTodoListTool](#updatetodolisttool)
+* [File System Tools](#file-system-tools)
+* [When You're Here](#when-youre-here)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Orchestrator Tools Reference](#orchestrator-tools-reference)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Tool Philosophy](#tool-philosophy)
+* [Core Task Flow Tools](#core-task-flow-tools)
+* [attemptCompletionTool](#attemptcompletiontool)
+* [Task Management Tools](#task-management-tools)
+* [newTaskTool](#newtasktool)
+* [switchModeTool](#switchmodetool)
+* [startSubtask](#startsubtask)
+* [User Interaction Tools](#user-interaction-tools)
+* [askFollowupQuestionTool](#askfollowupquestiontool)
+* [State & Planning Tools](#state-planning-tools)
+* [updateTodoListTool](#updatetodolisttool)
+* [File System Tools](#file-system-tools)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* This document provides a comprehensive reference for the core tools available to the
+* *Purpose:*\* This document provides a comprehensive reference for the core tools available to the
   Kilo Code Orchestrator. Each entry details the tool's purpose, parameters, and provides a link to
   its source implementation.
 
@@ -71,16 +72,17 @@
 
 <a id="related-documents"></a>
 
-- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+* **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
   orchestrator
   documentation.
-- **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Explains how tool
+* **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Explains how tool
   access is governed by modes and permissions.
-- **[Extensibility Guide](ORCHESTRATOR_EXTENSIBILITY.md)**: Describes how to add new
+* **[Extensibility Guide](ORCHESTRATOR_EXTENSIBILITY.md)**: Describes how to add new
   custom tools to the system.
 
 [Back to Top](#orchestrator-tools-reference)
-- \*\*
+
+* \*\*
 
 ### Tool Philosophy
 
@@ -88,13 +90,14 @@
 
 Tools are the fundamental actions the orchestrator can perform. They are designed to be:
 
-- **Atomic**: Each tool performs a single, well-defined operation.
+* **Atomic**: Each tool performs a single, well-defined operation.
 
-- **Declarative**: Tools are invoked via a clear, XML-based syntax that the model generates.
+* **Declarative**: Tools are invoked via a clear, XML-based syntax that the model generates.
 
-- **Permissioned**: Most tools are only available in specific modes, ensuring a separation of
+* **Permissioned**: Most tools are only available in specific modes, ensuring a separation of
   concerns and enhancing security.
-- \*\*
+
+* \*\*
 
 ### Core Task Flow Tools
 
@@ -104,15 +107,17 @@ These tools are fundamental to the execution and completion of tasks.
 
 #### `attemptCompletionTool`
 
-- **Purpose**: Signals the successful completion of a task. This is a terminal operation that ends
+* **Purpose**: Signals the successful completion of a task. This is a terminal operation that ends
   the task lifecycle.
 
-- **Source**:
+* **Source**:
   [`src/core/tools/attemptCompletionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L35)
 
-- **Parameters**:
-- `result`: A final message summarizing the work done.
-- \*\*
+* **Parameters**:
+
+* `result`: A final message summarizing the work done.
+
+* \*\*
 
 ### Task Management Tools
 
@@ -122,30 +127,31 @@ These tools control the flow of execution, manage modes, and delegate work.
 
 #### `newTaskTool`
 
-- **Purpose**: Creates a new, independent task that runs asynchronously. This is a "fire-and-forget"
+* **Purpose**: Creates a new, independent task that runs asynchronously. This is a "fire-and-forget"
   operation; the parent task does not wait for the new task to complete.
-- **Source**: [`src/core/tools/newTaskTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L14)
-- **Parameters**:
-- `mode`: The mode in which to start the new task.
-- `message`: The initial user message or instructions for the new task.
+* **Source**: [`src/core/tools/newTaskTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L14)
+* **Parameters**:
+* `mode`: The mode in which to start the new task.
+* `message`: The initial user message or instructions for the new task.
 
 #### `switchModeTool`
 
-- **Purpose**: Changes the active operational mode of the current task. This alters the set of
+* **Purpose**: Changes the active operational mode of the current task. This alters the set of
   available tools and permissions.
-- **Source**: [`src/core/tools/switchModeTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L8)
-- **Parameters**:
-- `mode_slug`: The slug of the mode to switch to (e.g., "code", "architect").
-- `reason`: An optional explanation for why the mode switch is necessary.
+* **Source**: [`src/core/tools/switchModeTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L8)
+* **Parameters**:
+* `mode_slug`: The slug of the mode to switch to (e.g., "code", "architect").
+* `reason`: An optional explanation for why the mode switch is necessary.
 
 #### `startSubtask` / `completeSubtask`
 
-- **Purpose**: Manages the delegation of work to a synchronous, blocking subtask. See
+* **Purpose**: Manages the delegation of work to a synchronous, blocking subtask. See
   [Task Delegation Guide](ORCHESTRATOR_TASK_DELEGATION.md) for a detailed explanation.
 
-- **Source**: [`startSubtask`](../../src/core/tools/attemptCompletionTool.ts#L1628),
+* **Source**: [`startSubtask`](../../src/core/tools/attemptCompletionTool.ts#L1628),
   [`completeSubtask`](../../src/core/tools/attemptCompletionTool.ts#L1669)
-- \*\*
+
+* \*\*
 
 ### User Interaction Tools
 
@@ -155,16 +161,19 @@ This category includes tools for communicating with the end-user.
 
 #### `askFollowupQuestionTool`
 
-- **Purpose**: Pauses the task and asks the user for clarification or additional information. The
+* **Purpose**: Pauses the task and asks the user for clarification or additional information. The
   task will not proceed until the user provides a response.
 
-- **Source**:
+* **Source**:
   [`src/core/tools/askFollowupQuestionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L6)
 
-- **Parameters**:
-- `question`: The question to ask the user.
-- `follow_up`: A list of suggested, actionable answers.
-- \*\*
+* **Parameters**:
+
+* `question`: The question to ask the user.
+
+* `follow_up`: A list of suggested, actionable answers.
+
+* \*\*
 
 ### State & Planning Tools
 
@@ -174,15 +183,17 @@ Tools for managing the internal state and plan of a task.
 
 #### `updateTodoListTool`
 
-- **Purpose**: Creates or overwrites the task's todo list. This is the primary mechanism for "Todo
+* **Purpose**: Creates or overwrites the task's todo list. This is the primary mechanism for "Todo
   Gating," where the orchestrator tracks its plan and progress.
 
-- **Source**:
+* **Source**:
   [`src/core/tools/updateTodoListTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L156)
 
-- **Parameters**:
-- `todos`: A markdown-formatted checklist of tasks.
-- \*\*
+* **Parameters**:
+
+* `todos`: A markdown-formatted checklist of tasks.
+
+* \*\*
 
 ### File System Tools
 
@@ -191,53 +202,54 @@ Tools for managing the internal state and plan of a task.
 A suite of tools for interacting with the file system. These are typically restricted to specific
 modes like `code`.
 
-- **`read_file`**: Reads the content of one or more files.
+* **`read_file`**: Reads the content of one or more files.
 
-- **`write_to_file`**: Creates a new file or completely overwrites an existing one.
+* **`write_to_file`**: Creates a new file or completely overwrites an existing one.
 
-- **`apply_diff`**: Applies a surgical change to a file using a search/replace block.
+* **`apply_diff`**: Applies a surgical change to a file using a search/replace block.
 
-- **`insert_content`**: Inserts new content at a specific line in a file.
+* **`insert_content`**: Inserts new content at a specific line in a file.
 
-- **`list_files`**: Lists the files and directories within a given path.
+* **`list_files`**: Lists the files and directories within a given path.
 
-- **`search_files`**: Performs a regex search across files in a directory.
-- \*\*
+* **`search_files`**: Performs a regex search across files in a directory.
+
+* \*\*
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:*\*
+* *Understanding This System:*\*
 
-- **Next**: Check related documentation in the same directory
+* **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../architecture/README.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../README.md) for context
 
-- *Implementing Features:*\*
+* *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -254,27 +266,30 @@ Index](../orchestrator/ORCHESTRATOR_INDEX.md)
 or proceed to the [Error Handling Document](ORCHESTRATOR_ERROR_HANDLING.md).
 
 [Back to Top](#orchestrator-tools-reference)
-- \*\*
+
+* \*\*
 
 End of document.
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+* *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-tools-reference)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

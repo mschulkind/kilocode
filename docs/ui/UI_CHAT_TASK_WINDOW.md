@@ -1,72 +1,73 @@
 # Chat Task Window System
 
 ## Table of Contents
-- [Chat Task Window System](#chat-task-window-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [UI Components](#ui-components)
-- [Primary Panels and Controls](#primary-panels-and-controls)
-- [Display Conventions](#display-conventions)
-- [Message Flow Control](#message-flow-control)
-- [High-Level Flow](#high-level-flow)
-- [Request Initiation Triggers](#request-initiation-triggers)
-- [Request Payloads and Timing](#request-payloads-and-timing)
-- [Payload Composition](#payload-composition)
-- [Timestamp Management](#timestamp-management)
-- [State Management and Rendering](#state-management-and-rendering)
-- [State Categories](#state-categories)
-- [Rendering Best Practices](#rendering-best-practices)
-- [Debugging Duplicate Requests](#debugging-duplicate-requests)
-- [Common Causes](#common-causes)
-- [Diagnostic Procedures](#diagnostic-procedures)
-- [Quick Resolution Steps](#quick-resolution-steps)
-- [Instrumentation and Logging](#instrumentation-and-logging)
-- [Recommended Log Points](#recommended-log-points)
-- [Log Content](#log-content)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [User Experience Considerations](#user-experience-considerations)
-- [Developer Tools](#developer-tools)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Chat Task Window System](#chat-task-window-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [UI Components](#ui-components)
-- [Primary Panels and Controls](#primary-panels-and-controls)
-- [Display Conventions](#display-conventions)
-- [Message Flow Control](#message-flow-control)
-- [High-Level Flow](#high-level-flow)
-- [Request Initiation Triggers](#request-initiation-triggers)
-- [Request Payloads and Timing](#request-payloads-and-timing)
-- [Payload Composition](#payload-composition)
-- [Timestamp Management](#timestamp-management)
-- [State Management and Rendering](#state-management-and-rendering)
-- [State Categories](#state-categories)
-- [Rendering Best Practices](#rendering-best-practices)
-- [Debugging Duplicate Requests](#debugging-duplicate-requests)
-- [Common Causes](#common-causes)
-- [Diagnostic Procedures](#diagnostic-procedures)
-- [Quick Resolution Steps](#quick-resolution-steps)
-- [Instrumentation and Logging](#instrumentation-and-logging)
-- [Recommended Log Points](#recommended-log-points)
-- [Log Content](#log-content)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [User Experience Considerations](#user-experience-considerations)
-- [Developer Tools](#developer-tools)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Chat Task Window System](#chat-task-window-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [UI Components](#ui-components)
+* [Primary Panels and Controls](#primary-panels-and-controls)
+* [Display Conventions](#display-conventions)
+* [Message Flow Control](#message-flow-control)
+* [High-Level Flow](#high-level-flow)
+* [Request Initiation Triggers](#request-initiation-triggers)
+* [Request Payloads and Timing](#request-payloads-and-timing)
+* [Payload Composition](#payload-composition)
+* [Timestamp Management](#timestamp-management)
+* [State Management and Rendering](#state-management-and-rendering)
+* [State Categories](#state-categories)
+* [Rendering Best Practices](#rendering-best-practices)
+* [Debugging Duplicate Requests](#debugging-duplicate-requests)
+* [Common Causes](#common-causes)
+* [Diagnostic Procedures](#diagnostic-procedures)
+* [Quick Resolution Steps](#quick-resolution-steps)
+* [Instrumentation and Logging](#instrumentation-and-logging)
+* [Recommended Log Points](#recommended-log-points)
+* [Log Content](#log-content)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [User Experience Considerations](#user-experience-considerations)
+* [Developer Tools](#developer-tools)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Chat Task Window System](#chat-task-window-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [UI Components](#ui-components)
+* [Primary Panels and Controls](#primary-panels-and-controls)
+* [Display Conventions](#display-conventions)
+* [Message Flow Control](#message-flow-control)
+* [High-Level Flow](#high-level-flow)
+* [Request Initiation Triggers](#request-initiation-triggers)
+* [Request Payloads and Timing](#request-payloads-and-timing)
+* [Payload Composition](#payload-composition)
+* [Timestamp Management](#timestamp-management)
+* [State Management and Rendering](#state-management-and-rendering)
+* [State Categories](#state-categories)
+* [Rendering Best Practices](#rendering-best-practices)
+* [Debugging Duplicate Requests](#debugging-duplicate-requests)
+* [Common Causes](#common-causes)
+* [Diagnostic Procedures](#diagnostic-procedures)
+* [Quick Resolution Steps](#quick-resolution-steps)
+* [Instrumentation and Logging](#instrumentation-and-logging)
+* [Recommended Log Points](#recommended-log-points)
+* [Log Content](#log-content)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [User Experience Considerations](#user-experience-considerations)
+* [Developer Tools](#developer-tools)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -76,10 +77,10 @@ This document provides comprehensive coverage of KiloCode's chat interface and t
 components. It covers user interaction patterns, message flow control, and troubleshooting
 procedures.
 
-- **Purpose**: Complete guide to chat interface and task window implementation
-- **Context**: Essential reading for developers working on chat features or debugging message flow
+* **Purpose**: Complete guide to chat interface and task window implementation
+* **Context**: Essential reading for developers working on chat features or debugging message flow
   issues
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Research Context
 
@@ -112,22 +113,22 @@ a seamless user experience.
 
 ### Primary Panels and Controls
 
-- **Chat Input**: Free-text input field where users compose their prompts and messages
-- **Model Switcher**: Dropdown control for selecting the AI model for the next request
-- **Message List**: Chronological display of conversation history including user messages, system
+* **Chat Input**: Free-text input field where users compose their prompts and messages
+* **Model Switcher**: Dropdown control for selecting the AI model for the next request
+* **Message List**: Chronological display of conversation history including user messages, system
   responses, and status indicators
-- **Task View**: Optional panel displaying current plans, subtasks, and execution progress
-- **Status Indicators**: Visual feedback showing request states (pending, in progress, streaming,
+* **Task View**: Optional panel displaying current plans, subtasks, and execution progress
+* **Status Indicators**: Visual feedback showing request states (pending, in progress, streaming,
   completed, error)
-- **Action Controls**: Send button, Stop/Cancel functionality, and Retry options
+* **Action Controls**: Send button, Stop/Cancel functionality, and Retry options
 
 ### Display Conventions
 
-- **Message Format**: Each message displays author (User/System/Assistant), formatted content
+* **Message Format**: Each message displays author (User/System/Assistant), formatted content
   (Markdown), timestamp, and status badges
-- **Streaming Responses**: Real-time updates with streaming indicators and incremental content
+* **Streaming Responses**: Real-time updates with streaming indicators and incremental content
   updates
-- **Idempotency**: UI attaches client-side request IDs to ensure operation consistency
+* **Idempotency**: UI attaches client-side request IDs to ensure operation consistency
 
 ## Message Flow Control
 
@@ -154,11 +155,11 @@ sequenceDiagram
 
 ### Request Initiation Triggers
 
-- **User Actions**: Explicit send button press or shortcut key activation
-- **Orchestrator Actions**: Subtask execution, follow-up operations, or scheduled tasks
-- **Guard Conditions**: Validates no active requests exist for the same chat turn, payload
+* **User Actions**: Explicit send button press or shortcut key activation
+* **Orchestrator Actions**: Subtask execution, follow-up operations, or scheduled tasks
+* **Guard Conditions**: Validates no active requests exist for the same chat turn, payload
   validation passes, and unique request ID is generated
-- **Debouncing**: UI actions are debounced (100-250ms) to prevent rapid-fire requests
+* **Debouncing**: UI actions are debounced (100-250ms) to prevent rapid-fire requests
 
 ## Request Payloads and Timing
 
@@ -166,21 +167,21 @@ sequenceDiagram
 
 Each API request includes comprehensive metadata to ensure proper processing and tracking:
 
-- **Request ID**: Client-generated unique identifier for tracking and deduplication
-- **Message History**: Recent conversation window optimized for token budget
-- **System Context**: Persistent prompts and context frames
-- **Model Configuration**: Provider hints and model selection
-- **Request Options**: Token limits, temperature settings, streaming preferences
-- **Metadata**: Workspace context, file references, and task identifiers
+* **Request ID**: Client-generated unique identifier for tracking and deduplication
+* **Message History**: Recent conversation window optimized for token budget
+* **System Context**: Persistent prompts and context frames
+* **Model Configuration**: Provider hints and model selection
+* **Request Options**: Token limits, temperature settings, streaming preferences
+* **Metadata**: Workspace context, file references, and task identifiers
 
 ### Timestamp Management
 
 The system tracks timestamps at critical points to monitor performance and debug issues:
 
-- **UI Enqueue**: When user action is queued for processing
-- **Orchestrator Dispatch**: When request is handed to the provider
-- **Provider Start**: When first response token is received
-- **Provider Complete**: When final response is received
+* **UI Enqueue**: When user action is queued for processing
+* **Orchestrator Dispatch**: When request is handed to the provider
+* **Provider Start**: When first response token is received
+* **Provider Complete**: When final response is received
 
 All timestamps are stored in ISO-8601 UTC format and displayed in local time in the UI.
 
@@ -188,44 +189,46 @@ All timestamps are stored in ISO-8601 UTC format and displayed in local time in 
 
 ### State Categories
 
-- **In-Memory State**: Draft messages, streaming buffers, UI flags (send button state)
-- **Persisted State**: Conversation history, message timestamps, user preferences, saved drafts
+* **In-Memory State**: Draft messages, streaming buffers, UI flags (send button state)
+* **Persisted State**: Conversation history, message timestamps, user preferences, saved drafts
 
 ### Rendering Best Practices
 
-- **Controlled Components**: Preserve edit buffers across re-renders
-- **Debugging Support**: Include data attributes (request ID, provider ID) on message elements
-- **Progressive Updates**: Render streaming content incrementally until completion
+* **Controlled Components**: Preserve edit buffers across re-renders
+* **Debugging Support**: Include data attributes (request ID, provider ID) on message elements
+* **Progressive Updates**: Render streaming content incrementally until completion
 
 ## Debugging Duplicate Requests
 
 ### Common Causes
 
-- **UI Double-Send**: Multiple event handlers or button state management issues
-- **Component Remounting**: Duplicate event listeners from component lifecycle issues
-- **Control Loop Conflicts**: Both UI and orchestrator triggering requests without deduplication
-- **Streaming Race Conditions**: Incorrect finalization logic during streaming
-- **Retry Logic**: Timeout handling or fallback mechanisms creating additional requests
+* **UI Double-Send**: Multiple event handlers or button state management issues
+* **Component Remounting**: Duplicate event listeners from component lifecycle issues
+* **Control Loop Conflicts**: Both UI and orchestrator triggering requests without deduplication
+* **Streaming Race Conditions**: Incorrect finalization logic during streaming
+* **Retry Logic**: Timeout handling or fallback mechanisms creating additional requests
 
 ### Diagnostic Procedures
+
 1. **Add Logging Points**: Track enqueue, dispatch, and provider start events
 2. **Correlate Timestamps**: Use request IDs to trace request flow across layers
 3. **Identify Patterns**: Look for multiple enqueue events for single user actions
 
 ### Quick Resolution Steps
 
-- **Disable Send Button**: Prevent multiple clicks during request processing
-- **Implement Debouncing**: Add 100-250ms delay for rapid user actions
-- **Request ID Validation**: Orchestrator should skip requests with existing active IDs
-- **Cancellation Tokens**: Cancel in-flight requests when superseded
+* **Disable Send Button**: Prevent multiple clicks during request processing
+* **Implement Debouncing**: Add 100-250ms delay for rapid user actions
+* **Request ID Validation**: Orchestrator should skip requests with existing active IDs
+* **Cancellation Tokens**: Cancel in-flight requests when superseded
 
 ## Instrumentation and Logging
 
 ### Recommended Log Points
-- Request enqueue (UI level)
-- Request dispatch (Orchestrator level)
-- Provider start and chunk events
-- Request completion and finalization
+
+* Request enqueue (UI level)
+* Request dispatch (Orchestrator level)
+* Provider start and chunk events
+* Request completion and finalization
 
 ### Log Content
 
@@ -236,27 +239,30 @@ support.
 
 ### User Experience Considerations
 
-- **Clear State Indicators**: Display "Request Queued", "Streaming", "Completed", "Error" states
-- **Progress Feedback**: Show request progress and provide cancel functionality
-- **Fallback Communication**: Clearly communicate when fallback mechanisms are activated
+* **Clear State Indicators**: Display "Request Queued", "Streaming", "Completed", "Error" states
+* **Progress Feedback**: Show request progress and provide cancel functionality
+* **Fallback Communication**: Clearly communicate when fallback mechanisms are activated
 
 ### Developer Tools
 
-- **Verbose Logging**: Enable detailed orchestrator logging for guard evaluation and retry analysis
-- **Network Traces**: Capture network and console traces with request IDs for reproduction
+* **Verbose Logging**: Enable detailed orchestrator logging for guard evaluation and retry analysis
+* **Network Traces**: Capture network and console traces with request IDs for reproduction
 
 ## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Back to UI Documentation](README.md)
-- [→ UI Layer System](UI_LAYER_SYSTEM.md)
-- [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)
+
+* [← Back to UI Documentation](README.md)
+* [→ UI Layer System](UI_LAYER_SYSTEM.md)
+* [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)

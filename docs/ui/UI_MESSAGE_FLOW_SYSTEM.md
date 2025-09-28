@@ -1,68 +1,69 @@
 # UI Message Flow System
 
 ## Table of Contents
-- [UI Message Flow System](#ui-message-flow-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [System Architecture](#system-architecture)
-- [Send Button State Management](#send-button-state-management)
-- [Primary State Variables](#primary-state-variables)
-- [State Transition Flow](#state-transition-flow)
-- [Core State Logic](#core-state-logic)
-- [Send Button Implementation](#send-button-implementation)
-- [Message Queue Integration](#message-queue-integration)
-- [Queue State Management](#queue-state-management)
-- [Queue UI Component](#queue-ui-component)
-- [Request Flow Control](#request-flow-control)
-- [Flow Control Logic](#flow-control-logic)
-- [Request Deduplication](#request-deduplication)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Send Button Stuck in Disabled State](#send-button-stuck-in-disabled-state)
-- [Multiple Messages Queued](#multiple-messages-queued)
-- [Button State Inconsistency](#button-state-inconsistency)
-- [Debugging Procedures](#debugging-procedures)
-- [Enable Debug Logging](#enable-debug-logging)
-- [State Inspection Tools](#state-inspection-tools)
-- [Performance Monitoring](#performance-monitoring)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [UI Message Flow System](#ui-message-flow-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [System Architecture](#system-architecture)
-- [Send Button State Management](#send-button-state-management)
-- [Primary State Variables](#primary-state-variables)
-- [State Transition Flow](#state-transition-flow)
-- [Core State Logic](#core-state-logic)
-- [Send Button Implementation](#send-button-implementation)
-- [Message Queue Integration](#message-queue-integration)
-- [Queue State Management](#queue-state-management)
-- [Queue UI Component](#queue-ui-component)
-- [Request Flow Control](#request-flow-control)
-- [Flow Control Logic](#flow-control-logic)
-- [Request Deduplication](#request-deduplication)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Send Button Stuck in Disabled State](#send-button-stuck-in-disabled-state)
-- [Multiple Messages Queued](#multiple-messages-queued)
-- [Button State Inconsistency](#button-state-inconsistency)
-- [Debugging Procedures](#debugging-procedures)
-- [Enable Debug Logging](#enable-debug-logging)
-- [State Inspection Tools](#state-inspection-tools)
-- [Performance Monitoring](#performance-monitoring)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [UI Message Flow System](#ui-message-flow-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [System Architecture](#system-architecture)
+* [Send Button State Management](#send-button-state-management)
+* [Primary State Variables](#primary-state-variables)
+* [State Transition Flow](#state-transition-flow)
+* [Core State Logic](#core-state-logic)
+* [Send Button Implementation](#send-button-implementation)
+* [Message Queue Integration](#message-queue-integration)
+* [Queue State Management](#queue-state-management)
+* [Queue UI Component](#queue-ui-component)
+* [Request Flow Control](#request-flow-control)
+* [Flow Control Logic](#flow-control-logic)
+* [Request Deduplication](#request-deduplication)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [Send Button Stuck in Disabled State](#send-button-stuck-in-disabled-state)
+* [Multiple Messages Queued](#multiple-messages-queued)
+* [Button State Inconsistency](#button-state-inconsistency)
+* [Debugging Procedures](#debugging-procedures)
+* [Enable Debug Logging](#enable-debug-logging)
+* [State Inspection Tools](#state-inspection-tools)
+* [Performance Monitoring](#performance-monitoring)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [UI Message Flow System](#ui-message-flow-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [System Architecture](#system-architecture)
+* [Send Button State Management](#send-button-state-management)
+* [Primary State Variables](#primary-state-variables)
+* [State Transition Flow](#state-transition-flow)
+* [Core State Logic](#core-state-logic)
+* [Send Button Implementation](#send-button-implementation)
+* [Message Queue Integration](#message-queue-integration)
+* [Queue State Management](#queue-state-management)
+* [Queue UI Component](#queue-ui-component)
+* [Request Flow Control](#request-flow-control)
+* [Flow Control Logic](#flow-control-logic)
+* [Request Deduplication](#request-deduplication)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [Send Button Stuck in Disabled State](#send-button-stuck-in-disabled-state)
+* [Multiple Messages Queued](#multiple-messages-queued)
+* [Button State Inconsistency](#button-state-inconsistency)
+* [Debugging Procedures](#debugging-procedures)
+* [Enable Debug Logging](#enable-debug-logging)
+* [State Inspection Tools](#state-inspection-tools)
+* [Performance Monitoring](#performance-monitoring)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -71,10 +72,10 @@
 This document provides comprehensive coverage of KiloCode's message flow system, including send
 button state management, message queuing, and request deduplication mechanisms.
 
-- **Purpose**: Complete guide to message flow control and request management in the UI layer
-- **Context**: Essential for developers working on message handling, state management, or debugging
+* **Purpose**: Complete guide to message flow control and request management in the UI layer
+* **Context**: Essential for developers working on message handling, state management, or debugging
   request flow issues
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Research Context
 
@@ -104,6 +105,7 @@ interactions.
 
 The message flow system consists of interconnected components that work together to manage user
 input and prevent duplicate requests:
+
 1. **ChatView Component** - Main chat interface controller
 2. **ChatTextArea Component** - Input area with send button
 3. **Message Queue UI** - Visual representation of queued messages
@@ -298,9 +300,10 @@ const handleSendMessage = useCallback(
 ### Send Button Stuck in Disabled State
 
 **Symptoms**:
-- Send button remains disabled after request completion
-- User cannot send new messages
-- UI appears frozen
+
+* Send button remains disabled after request completion
+* User cannot send new messages
+* UI appears frozen
 
 **Root Cause**: `sendingDisabled` state not properly reset
 
@@ -328,9 +331,10 @@ useEffect(() => {
 ### Multiple Messages Queued
 
 **Symptoms**:
-- Same message appears multiple times in queue
-- Multiple API requests for single user action
-- Queue UI shows duplicates
+
+* Same message appears multiple times in queue
+* Multiple API requests for single user action
+* Queue UI shows duplicates
 
 **Root Cause**: Message queued multiple times due to rapid user interaction
 
@@ -361,9 +365,10 @@ const handleSendMessage = useCallback(
 ### Button State Inconsistency
 
 **Symptoms**:
-- Button appears enabled but request is blocked
-- Button appears disabled but request goes through
-- Visual state doesn't match actual state
+
+* Button appears enabled but request is blocked
+* Button appears disabled but request goes through
+* Visual state doesn't match actual state
 
 **Root Cause**: State updates not properly synchronized
 
@@ -467,13 +472,16 @@ const handleSendMessage = useCallback(
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Back to UI Documentation](README.md)
-- [→ UI Layer System](UI_LAYER_SYSTEM.md)
-- [→ Chat Task Window](UI_CHAT_TASK_WINDOW.md)
+
+* [← Back to UI Documentation](README.md)
+* [→ UI Layer System](UI_LAYER_SYSTEM.md)
+* [→ Chat Task Window](UI_CHAT_TASK_WINDOW.md)

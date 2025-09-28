@@ -1,47 +1,48 @@
 # Laminar Subsystems Index
 
 ## Table of Contents
-- [Laminar Subsystems Index](#laminar-subsystems-index)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [High-Level Responsibilities](#highlevel-responsibilities)
-- [Core Concepts At a Glance](#core-concepts-at-a-glance)
-- [Integration Architecture](#integration-architecture)
-- [Architecture Layers](#architecture-layers)
-- [Documentation Map](#documentation-map)
-- [Quick Reference Matrix](#quick-reference-matrix)
-- [Subsystem Flow Diagram](#subsystem-flow-diagram)
-- [Observability Principles](#observability-principles)
-- [Change Management & Versioning](#change-management-versioning)
-- [Glossary](#glossary)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Laminar Subsystems Index](#laminar-subsystems-index)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [High-Level Responsibilities](#highlevel-responsibilities)
-- [Core Concepts At a Glance](#core-concepts-at-a-glance)
-- [Integration Architecture](#integration-architecture)
-- [Architecture Layers](#architecture-layers)
-- [Documentation Map](#documentation-map)
-- [Quick Reference Matrix](#quick-reference-matrix)
-- [Subsystem Flow Diagram](#subsystem-flow-diagram)
-- [Observability Principles](#observability-principles)
-- [Change Management & Versioning](#change-management-versioning)
-- [Glossary](#glossary)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Laminar Subsystems Index](#laminar-subsystems-index)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [High-Level Responsibilities](#highlevel-responsibilities)
+* [Core Concepts At a Glance](#core-concepts-at-a-glance)
+* [Integration Architecture](#integration-architecture)
+* [Architecture Layers](#architecture-layers)
+* [Documentation Map](#documentation-map)
+* [Quick Reference Matrix](#quick-reference-matrix)
+* [Subsystem Flow Diagram](#subsystem-flow-diagram)
+* [Observability Principles](#observability-principles)
+* [Change Management & Versioning](#change-management-versioning)
+* [Glossary](#glossary)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Laminar Subsystems Index](#laminar-subsystems-index)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [High-Level Responsibilities](#highlevel-responsibilities)
+* [Core Concepts At a Glance](#core-concepts-at-a-glance)
+* [Integration Architecture](#integration-architecture)
+* [Architecture Layers](#architecture-layers)
+* [Documentation Map](#documentation-map)
+* [Quick Reference Matrix](#quick-reference-matrix)
+* [Subsystem Flow Diagram](#subsystem-flow-diagram)
+* [Observability Principles](#observability-principles)
+* [Change Management & Versioning](#change-management-versioning)
+* [Glossary](#glossary)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the Laminar
+* *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the Laminar
   observability subsystems integrated into Kilo Code, enabling developers to understand, monitor, and
   extend tracing capabilities across task execution, tool usage, and LLM interactions with confidence.
 
@@ -50,10 +51,10 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
@@ -62,15 +63,16 @@ Kilo Code. Its purpose is to provide a high-level overview and a centralized ent
 more detailed documentation covering specific subsystems of the Laminar integration. It establishes
 the conceptual framework and key terminology used throughout the suite.
 
-- *Scope:*\*
+* *Scope:*\*
 
-- **IN SCOPE:** High-level architecture of Laminar subsystems, their responsibilities, key
+* **IN SCOPE:** High-level architecture of Laminar subsystems, their responsibilities, key
   components, integration points, and a map to all sibling Laminar documents.
 
-- **OUT OF SCOPE:** Detailed implementation logic, specific tracing mechanics, low-level state
+* **OUT OF SCOPE:** Detailed implementation logic, specific tracing mechanics, low-level state
   management, or UI-specific interactions. These topics are delegated to the specialized documents
   linked in the [Documentation Map](#documentation-map).
-- \*\*
+
+* \*\*
 
 ## High-Level Responsibilities
 
@@ -78,49 +80,51 @@ The Laminar integration is responsible for providing comprehensive observability
 execution flow. This includes tracing task lifecycles, monitoring tool usage, tracking LLM
 interactions, and ensuring privacy-compliant data collection.
 
-- **Task Lifecycle Tracing:** Complete span coverage from task initialization through completion,
+* **Task Lifecycle Tracing:** Complete span coverage from task initialization through completion,
   capturing all execution phases and state transitions.
 
-- **Tool Usage Monitoring:** Detailed tracking of tool invocations, parameter capture, performance
+* **Tool Usage Monitoring:** Detailed tracking of tool invocations, parameter capture, performance
   metrics, and success/failure status.
 
-- **LLM Interaction Recording:** Comprehensive monitoring of API calls, token usage, costs, model
+* **LLM Interaction Recording:** Comprehensive monitoring of API calls, token usage, costs, model
   information, and cache utilization.
 
-- **User Context Attribution:** Linking traces to authenticated users while respecting privacy
+* **User Context Attribution:** Linking traces to authenticated users while respecting privacy
   settings and telemetry opt-out preferences.
 
-- **Automatic Instrumentation:** Providing decorators and utilities for seamless observability
+* **Automatic Instrumentation:** Providing decorators and utilities for seamless observability
   integration without code modification.
 
-- **Performance Oversight:** Ensuring tracing overhead remains minimal while providing actionable
+* **Performance Oversight:** Ensuring tracing overhead remains minimal while providing actionable
   insights.
-- \*\*
+
+* \*\*
 
 ## Core Concepts At a Glance
 
-- **Span:** A unit of work with a start time, end time, and associated metadata representing an
+* **Span:** A unit of work with a start time, end time, and associated metadata representing an
   operation's execution.
 
-- **Trace:** A collection of spans that together represent the end-to-end execution of a request or
+* **Trace:** A collection of spans that together represent the end-to-end execution of a request or
   task.
 
-- **Observability:** The ability to understand system behavior through logs, metrics, and traces.
+* **Observability:** The ability to understand system behavior through logs, metrics, and traces.
 
-- **Decorator:** A TypeScript decorator that automatically instruments methods with tracing
+* **Decorator:** A TypeScript decorator that automatically instruments methods with tracing
   capabilities.
 
-- **Singleton Service:** The central LaminarService that manages span lifecycle and provides tracing
+* **Singleton Service:** The central LaminarService that manages span lifecycle and provides tracing
   APIs.
 
-- **Configuration System:** Environment-aware configuration management for API keys, endpoints, and
+* **Configuration System:** Environment-aware configuration management for API keys, endpoints, and
   feature flags.
 
-- **Telemetry Opt-out:** User-controlled mechanism to disable observability data collection.
+* **Telemetry Opt-out:** User-controlled mechanism to disable observability data collection.
 
-- **Context Propagation:** Passing trace context between different parts of the system to maintain
+* **Context Propagation:** Passing trace context between different parts of the system to maintain
   correlation.
-- \*\*
+
+* \*\*
 
 ## Integration Architecture
 
@@ -146,16 +150,17 @@ graph TD
 
 ### Architecture Layers
 
-- **Foundation Layer:** SDK integration and basic configuration
+* **Foundation Layer:** SDK integration and basic configuration
 
-- **Service Layer:** Core tracing infrastructure and APIs
+* **Service Layer:** Core tracing infrastructure and APIs
 
-- **Integration Layer:** Subsystem-specific tracing implementations
+* **Integration Layer:** Subsystem-specific tracing implementations
 
-- **Instrumentation Layer:** Automatic decoration and monitoring
+* **Instrumentation Layer:** Automatic decoration and monitoring
 
-- **Validation Layer:** Testing and quality assurance
-- \*\*
+* **Validation Layer:** Testing and quality assurance
+
+* \*\*
 
 ## Documentation Map
 
@@ -187,7 +192,8 @@ Core Devs         | `LAMINAR_PORT.md`          |
 Core Devs         | `LAMINAR_PORT.md`          |
 | `LAMINAR_TESTING_SYSTEM.md`        | Integration tests, performance validation, accuracy.       |
 QA, Core Devs     | All subsystem docs         |
-- \*\*
+
+* \*\*
 
 ## Quick Reference Matrix
 
@@ -211,7 +217,8 @@ QA, Core Devs     | All subsystem docs         |
 `LAMINAR_CONFIGURATION_SYSTEM.md`  |
 | Testing              | Integration suites, performance benchmarks      |
 `LAMINAR_TESTING_SYSTEM.md`        |
-- \*\*
+
+* \*\*
 
 ## Subsystem Flow Diagram
 
@@ -240,31 +247,34 @@ flowchart TD
     Q --> R[Trace Transmission]
     R --> S[Analytics & Insights]
 ```
-- \*\*
+
+* \*\*
 
 ## Observability Principles
 
 The Laminar integration adheres to several key observability principles to ensure effective
 monitoring while maintaining system performance and user privacy:
 
-- **Minimal Overhead:** Tracing operations add less than 5% performance overhead
+* **Minimal Overhead:** Tracing operations add less than 5% performance overhead
 
-- **Privacy First:** Strict opt-out compliance and data minimization
+* **Privacy First:** Strict opt-out compliance and data minimization
 
-- **Correlation:** All spans include correlation IDs for trace linking
+* **Correlation:** All spans include correlation IDs for trace linking
 
-- **Context Propagation:** Trace context flows through async operations
+* **Context Propagation:** Trace context flows through async operations
 
-- **Error Transparency:** Exceptions are recorded without exposing sensitive data
+* **Error Transparency:** Exceptions are recorded without exposing sensitive data
 
-- **Configurable Granularity:** Different detail levels for development vs production
+* **Configurable Granularity:** Different detail levels for development vs production
 
-- **Backwards Compatibility:** Integration doesn't break existing functionality
-- \*\*
+* **Backwards Compatibility:** Integration doesn't break existing functionality
+
+* \*\*
 
 ## Change Management & Versioning
 
 To keep documentation synchronized with the codebase, follow these principles:
+
 1. **Atomic Documentation:** All code changes that affect Laminar functionality MUST be accompanied
    by corresponding documentation updates in the same commit.
 2. **Link Integrity:** When refactoring, ensure all clickable code references remain valid with
@@ -273,26 +283,28 @@ To keep documentation synchronized with the codebase, follow these principles:
    diagrams.
 4. **Version Compatibility:** Document version requirements and compatibility constraints for
    Laminar SDK updates.
-- \*\*
+
+* \*\*
 
 ## Glossary
 
-- **Span:** A single unit of work with timing and metadata.
+* **Span:** A single unit of work with timing and metadata.
 
-- **Trace:** A tree of spans representing a complete request flow.
+* **Trace:** A tree of spans representing a complete request flow.
 
-- **Decorator:** A TypeScript feature for modifying class/method behavior.
+* **Decorator:** A TypeScript feature for modifying class/method behavior.
 
-- **Singleton:** A design pattern ensuring only one instance of a class exists.
+* **Singleton:** A design pattern ensuring only one instance of a class exists.
 
-- **Observability:** The ability to understand system internal state from external outputs.
+* **Observability:** The ability to understand system internal state from external outputs.
 
-- **Telemetry:** Automated collection and transmission of system data.
+* **Telemetry:** Automated collection and transmission of system data.
 
-- **Context Propagation:** Passing trace information across service boundaries.
+* **Context Propagation:** Passing trace information across service boundaries.
 
-- **Opt-out:** User-controlled mechanism to disable data collection.
-- \*\*
+* **Opt-out:** User-controlled mechanism to disable data collection.
+
+* \*\*
 
 End of document.
 
@@ -300,26 +312,26 @@ End of document.
 
 ### When You're Here, You Can:
 
-- *Understanding Laminar Observability:*\*
+* *Understanding Laminar Observability:*\*
 
-- **Next**: Check related Laminar documentation in the same directory
+* **Next**: Check related Laminar documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
 
-- *Implementing Observability Features:*\*
+* *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Observability Issues:*\*
+* *Troubleshooting Observability Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -328,21 +340,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

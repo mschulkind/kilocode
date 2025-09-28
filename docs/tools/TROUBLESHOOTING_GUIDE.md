@@ -1,72 +1,73 @@
 # Troubleshooting Guide
 
 ## Table of Contents
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Common Issues](#common-issues)
-- [1. Validation Not Running](#1-validation-not-running)
-- [2. Auto-fix Not Working](#2-autofix-not-working)
-- [3. Performance Issues](#3-performance-issues)
-- [4. Link Validation Errors](#4-link-validation-errors)
-- [5. Extension Conflicts](#5-extension-conflicts)
-- [Advanced Troubleshooting](#advanced-troubleshooting)
-- [1. Debug Mode](#1-debug-mode)
-- [2. Configuration Issues](#2-configuration-issues)
-- [3. File System Issues](#3-file-system-issues)
-- [Getting Help](#getting-help)
-- [1. Self-Diagnosis](#1-selfdiagnosis)
-- [2. Log Analysis](#2-log-analysis)
-- [3. Team Support](#3-team-support)
-- [Prevention](#prevention)
-- [1. Regular Maintenance](#1-regular-maintenance)
-- [2. Best Practices](#2-best-practices)
-- [3. Team Training](#3-team-training)
-- [Related Documentation](#related-documentation)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Common Issues](#common-issues)
-- [1. Validation Not Running](#1-validation-not-running)
-- [2. Auto-fix Not Working](#2-autofix-not-working)
-- [3. Performance Issues](#3-performance-issues)
-- [4. Link Validation Errors](#4-link-validation-errors)
-- [5. Extension Conflicts](#5-extension-conflicts)
-- [Advanced Troubleshooting](#advanced-troubleshooting)
-- [1. Debug Mode](#1-debug-mode)
-- [2. Configuration Issues](#2-configuration-issues)
-- [3. File System Issues](#3-file-system-issues)
-- [Getting Help](#getting-help)
-- [1. Self-Diagnosis](#1-selfdiagnosis)
-- [2. Log Analysis](#2-log-analysis)
-- [3. Team Support](#3-team-support)
-- [Prevention](#prevention)
-- [1. Regular Maintenance](#1-regular-maintenance)
-- [2. Best Practices](#2-best-practices)
-- [3. Team Training](#3-team-training)
-- [Related Documentation](#related-documentation)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Common Issues](#common-issues)
+* [1. Validation Not Running](#1-validation-not-running)
+* [2. Auto-fix Not Working](#2-autofix-not-working)
+* [3. Performance Issues](#3-performance-issues)
+* [4. Link Validation Errors](#4-link-validation-errors)
+* [5. Extension Conflicts](#5-extension-conflicts)
+* [Advanced Troubleshooting](#advanced-troubleshooting)
+* [1. Debug Mode](#1-debug-mode)
+* [2. Configuration Issues](#2-configuration-issues)
+* [3. File System Issues](#3-file-system-issues)
+* [Getting Help](#getting-help)
+* [1. Self-Diagnosis](#1-selfdiagnosis)
+* [2. Log Analysis](#2-log-analysis)
+* [3. Team Support](#3-team-support)
+* [Prevention](#prevention)
+* [1. Regular Maintenance](#1-regular-maintenance)
+* [2. Best Practices](#2-best-practices)
+* [3. Team Training](#3-team-training)
+* [Related Documentation](#related-documentation)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [Troubleshooting Guide](#troubleshooting-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Common Issues](#common-issues)
+* [1. Validation Not Running](#1-validation-not-running)
+* [2. Auto-fix Not Working](#2-autofix-not-working)
+* [3. Performance Issues](#3-performance-issues)
+* [4. Link Validation Errors](#4-link-validation-errors)
+* [5. Extension Conflicts](#5-extension-conflicts)
+* [Advanced Troubleshooting](#advanced-troubleshooting)
+* [1. Debug Mode](#1-debug-mode)
+* [2. Configuration Issues](#2-configuration-issues)
+* [3. File System Issues](#3-file-system-issues)
+* [Getting Help](#getting-help)
+* [1. Self-Diagnosis](#1-selfdiagnosis)
+* [2. Log Analysis](#2-log-analysis)
+* [3. Team Support](#3-team-support)
+* [Prevention](#prevention)
+* [1. Regular Maintenance](#1-regular-maintenance)
+* [2. Best Practices](#2-best-practices)
+* [3. Team Training](#3-team-training)
+* [Related Documentation](#related-documentation)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -94,12 +95,15 @@ This guide helps you resolve common issues with KiloCode's documentation automat
 
 ### 1. Validation Not Running
 
-- *Symptoms:*\*
-- No validation errors shown in VS Code
-- `pnpm docs:validate` command fails
-- No Problems panel entries
+* *Symptoms:*\*
 
-- *Diagnosis:*\*
+* No validation errors shown in VS Code
+
+* `pnpm docs:validate` command fails
+
+* No Problems panel entries
+
+* *Diagnosis:*\*
 
 ```bash
 # Check if remark is installed
@@ -124,16 +128,19 @@ documentation helps us understand how! ⚙️
 npx remark docs/README.md
 ```
 
-- *Solutions:*\*
+* *Solutions:*\*
+
 1. **Install Dependencies**
 
    ```bash
    pnpm install
    ```
 2. **Check VS Code Extensions**
-- Ensure Markdown All in One is installed
-- Verify markdownlint extension is active
-- Reload VS Code window
+
+* Ensure Markdown All in One is installed
+* Verify markdownlint extension is active
+* Reload VS Code window
+
 3. **Verify Configuration**
 
    ```bash
@@ -146,12 +153,15 @@ npx remark docs/README.md
 
 ### 2. Auto-fix Not Working
 
-- *Symptoms:*\*
-- Auto-fix on save doesn't work
-- Manual fix commands fail
-- Validation errors persist
+* *Symptoms:*\*
 
-- *Diagnosis:*\*
+* Auto-fix on save doesn't work
+
+* Manual fix commands fail
+
+* Validation errors persist
+
+* *Diagnosis:*\*
 
 ```bash
 # Check VS Code settings
@@ -169,7 +179,8 @@ foundation, clear structure, and intuitive navigation! 🏗️
 npx remark --use remark-stringify docs/
 ```
 
-- *Solutions:*\*
+* *Solutions:*\*
+
 1. **Enable Auto-fix**
 
    ```json
@@ -180,9 +191,11 @@ npx remark --use remark-stringify docs/
    }
    ```
 2. **Check Extension Status**
-- Open Extensions panel
-- Verify markdownlint is enabled
-- Restart VS Code if needed
+
+* Open Extensions panel
+* Verify markdownlint is enabled
+* Restart VS Code if needed
+
 3. **Manual Fix**
 
    ```bash
@@ -195,12 +208,15 @@ npx remark --use remark-stringify docs/
 
 ### 3. Performance Issues
 
-- *Symptoms:*\*
-- Slow validation
-- VS Code becomes unresponsive
-- Long processing times
+* *Symptoms:*\*
 
-- *Diagnosis:*\*
+* Slow validation
+
+* VS Code becomes unresponsive
+
+* Long processing times
+
+* *Diagnosis:*\*
 
 ```bash
 # Check file counts
@@ -218,7 +234,8 @@ foundation, clear structure, and intuitive navigation! 🏗️
 find docs/ -name "*.md" -exec wc -c {} + | sort -n
 ```
 
-- *Solutions:*\*
+* *Solutions:*\*
+
 1. **Exclude Large Directories**
 
    ```json
@@ -235,19 +252,24 @@ find docs/ -name "*.md" -exec wc -c {} + | sort -n
 # Only validate changed files
 git diff --name-only HEAD~1 | grep '\.md$' | xargs npx remark
 ````
+
 3. **Optimize Configuration**
-- Disable expensive rules for large files
-- Use caching for repeated validations
-- Process files in parallel
+
+* Disable expensive rules for large files
+* Use caching for repeated validations
+* Process files in parallel
 
 ### 4. Link Validation Errors
 
-- *Symptoms:*\*
-- False positive broken links
-- External links marked as broken
-- Internal links not found
+* *Symptoms:*\*
 
-- *Diagnosis:*\*
+* False positive broken links
+
+* External links marked as broken
+
+* Internal links not found
+
+* *Diagnosis:*\*
 
 ```bash
 # Check specific link
@@ -265,7 +287,8 @@ this documentation provides structured guidance for understanding and implementi
 curl -I https://example.com
 ```
 
-- *Solutions:*\*
+* *Solutions:*\*
+
 1. **Internal Links**
 
    ```markdown
@@ -300,12 +323,15 @@ curl -I https://example.com
 
 ### 5. Extension Conflicts
 
-- *Symptoms:*\*
-- Multiple validation errors
-- Conflicting rules
-- Inconsistent behavior
+* *Symptoms:*\*
 
-- *Diagnosis:*\*
+* Multiple validation errors
+
+* Conflicting rules
+
+* Inconsistent behavior
+
+* *Diagnosis:*\*
 
 ```bash
 # Check installed extensions
@@ -323,10 +349,13 @@ documentation helps us understand how! ⚙️
 grep -r "markdown" .vscode/
 ```
 
-- *Solutions:*\*
+* *Solutions:*\*
+
 1. **Disable Conflicting Extensions**
-- Keep only Markdown All in One and markdownlint
-- Disable other markdown extensions temporarily
+
+* Keep only Markdown All in One and markdownlint
+* Disable other markdown extensions temporarily
+
 2. **Resolve Settings Conflicts**
 
    ```json
@@ -351,7 +380,7 @@ grep -r "markdown" .vscode/
 
 ### 1. Debug Mode
 
-- *Enable Debug Logging:*\*
+* *Enable Debug Logging:*\*
 
 ```bash
 # Set debug environment
@@ -369,7 +398,8 @@ documentation helps us understand how! ⚙️
 npx remark docs/ --verbose
 ```
 
-- *VS Code Debug:*\*
+* *VS Code Debug:*\*
+
 1. Open Command Palette (`Ctrl+Shift+P`)
 2. Run "Developer: Toggle Developer Tools"
 3. Check Console for error messages
@@ -377,7 +407,7 @@ npx remark docs/ --verbose
 
 ### 2. Configuration Issues
 
-- *Check .remarkrc:*\*
+* *Check .remarkrc:*\*
 
 ```bash
 # Validate JSON syntax
@@ -395,7 +425,7 @@ this documentation provides structured guidance for understanding and implementi
 npx remark --config .remarkrc docs/
 ```
 
-- *Check Package.json:*\*
+* *Check Package.json:*\*
 
 ```bash
 # Verify scripts exist
@@ -415,7 +445,7 @@ pnpm list | grep remark
 
 ### 3. File System Issues
 
-- *Permissions:*\*
+* *Permissions:*\*
 
 ```bash
 # Check file permissions
@@ -433,7 +463,7 @@ this documentation provides structured guidance for understanding and implementi
 chmod -R 644 docs/
 ```
 
-- *Encoding Issues:*\*
+* *Encoding Issues:*\*
 
 ```bash
 # Check file encoding
@@ -455,22 +485,23 @@ iconv -f ISO-8859-1 -t UTF-8 docs/file.md > docs/file-utf8.md
 
 ### 1. Self-Diagnosis
 
-- *Check These First:*\*
-- \[ ] Dependencies installed: `pnpm install`
-- \[ ] VS Code extensions active
-- \[ ] Configuration files valid
-- \[ ] File permissions correct
-- \[ ] No conflicting extensions
+* *Check These First:*\*
+* \[ ] Dependencies installed: `pnpm install`
+* \[ ] VS Code extensions active
+* \[ ] Configuration files valid
+* \[ ] File permissions correct
+* \[ ] No conflicting extensions
 
 ### 2. Log Analysis
 
-- *VS Code Logs:*\*
+* *VS Code Logs:*\*
+
 1. Help → Toggle Developer Tools
 2. Console tab
 3. Look for error messages
 4. Check network requests
 
-- *Terminal Logs:*\*
+* *Terminal Logs:*\*
 
 ```bash
 # Run with verbose output
@@ -490,82 +521,111 @@ npx remark docs/ 2>&1 | grep -i error
 
 ### 3. Team Support
 
-- *Before Asking for Help:*\*
+* *Before Asking for Help:*\*
+
 1. Check this troubleshooting guide
 2. Try the suggested solutions
 3. Gather error messages and logs
 4. Document steps to reproduce
 
-- *When Asking for Help:*\*
-- Include error messages
-- Describe what you were trying to do
-- Share relevant configuration
-- Mention what you've already tried
+* *When Asking for Help:*\*
+* Include error messages
+* Describe what you were trying to do
+* Share relevant configuration
+* Mention what you've already tried
 
 ## Prevention
 
 ### 1. Regular Maintenance
 
-- *Weekly:*\*
-- Run `pnpm docs:validate`
-- Check for new validation errors
-- Update outdated links
-- Review team feedback
+* *Weekly:*\*
 
-- *Monthly:*\*
-- Review configuration settings
-- Update dependencies
-- Check extension compatibility
-- Optimize performance
+* Run `pnpm docs:validate`
+
+* Check for new validation errors
+
+* Update outdated links
+
+* Review team feedback
+
+* *Monthly:*\*
+
+* Review configuration settings
+
+* Update dependencies
+
+* Check extension compatibility
+
+* Optimize performance
 
 ### 2. Best Practices
 
-- *File Management:*\*
-- Use consistent naming
-- Keep files organized
-- Regular cleanup
-- Version control properly
+* *File Management:*\*
 
-- *Configuration:*\*
-- Document custom settings
-- Test changes before committing
-- Keep configurations simple
-- Regular backups
+* Use consistent naming
+
+* Keep files organized
+
+* Regular cleanup
+
+* Version control properly
+
+* *Configuration:*\*
+
+* Document custom settings
+
+* Test changes before committing
+
+* Keep configurations simple
+
+* Regular backups
 
 ### 3. Team Training
 
-- *New Members:*\*
-- Complete onboarding checklist
-- Review best practices
-- Practice with sample files
-- Ask questions early
+* *New Members:*\*
 
-- *Regular Updates:*\*
-- Share new features
-- Update procedures
-- Review common issues
-- Improve processes
+* Complete onboarding checklist
+
+* Review best practices
+
+* Practice with sample files
+
+* Ask questions early
+
+* *Regular Updates:*\*
+
+* Share new features
+
+* Update procedures
+
+* Review common issues
+
+* Improve processes
 
 ## Related Documentation
-- [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
-- [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
-- [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
-- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+
+* [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
+* [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
+* [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
+* [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
+* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [tools](./) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [tools](./) ·
   [↑ Table of Contents](#troubleshooting-guide)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

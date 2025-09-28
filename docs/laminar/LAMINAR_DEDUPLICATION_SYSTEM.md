@@ -1,95 +1,96 @@
 # Laminar Deduplication System
 
 ## Table of Contents
-- [Laminar Deduplication System](#laminar-deduplication-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Span Management](#span-management)
-- [Span Storage](#span-storage)
-- [Span Creation Process](#span-creation-process)
-- [Critical Span Creation Code](#critical-span-creation-code)
-- [Internal Span Creation](#internal-span-creation)
-- [System Prompt Optimization](#system-prompt-optimization)
-- [The Duplication Problem](#the-duplication-problem)
-- [Implementation in Task.ts](#implementation-in-taskts)
-- [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
-- [Deduplication Mechanisms](#deduplication-mechanisms)
-- [1. Active Span Deduplication](#1-active-span-deduplication)
-- [2. Span Name Deduplication](#2-span-name-deduplication)
-- [3. Input Data Deduplication](#3-input-data-deduplication)
-- [4. System Prompt Metadata](#4-system-prompt-metadata)
-- [Configuration and Control](#configuration-and-control)
-- [Laminar Configuration](#laminar-configuration)
-- [Runtime Control Methods](#runtime-control-methods)
-- [Configuration Updates](#configuration-updates)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
-- [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
-- [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
-- [Performance Impact](#performance-impact)
-- [Memory Usage Reduction](#memory-usage-reduction)
-- [Network Bandwidth Reduction](#network-bandwidth-reduction)
-- [Processing Time Improvement](#processing-time-improvement)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [Laminar Deduplication System](#laminar-deduplication-system)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Span Management](#span-management)
-- [Span Storage](#span-storage)
-- [Span Creation Process](#span-creation-process)
-- [Critical Span Creation Code](#critical-span-creation-code)
-- [Internal Span Creation](#internal-span-creation)
-- [System Prompt Optimization](#system-prompt-optimization)
-- [The Duplication Problem](#the-duplication-problem)
-- [Implementation in Task.ts](#implementation-in-taskts)
-- [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
-- [Deduplication Mechanisms](#deduplication-mechanisms)
-- [1. Active Span Deduplication](#1-active-span-deduplication)
-- [2. Span Name Deduplication](#2-span-name-deduplication)
-- [3. Input Data Deduplication](#3-input-data-deduplication)
-- [4. System Prompt Metadata](#4-system-prompt-metadata)
-- [Configuration and Control](#configuration-and-control)
-- [Laminar Configuration](#laminar-configuration)
-- [Runtime Control Methods](#runtime-control-methods)
-- [Configuration Updates](#configuration-updates)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
-- [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
-- [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
-- [Performance Impact](#performance-impact)
-- [Memory Usage Reduction](#memory-usage-reduction)
-- [Network Bandwidth Reduction](#network-bandwidth-reduction)
-- [Processing Time Improvement](#processing-time-improvement)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Laminar Deduplication System](#laminar-deduplication-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [System Architecture](#system-architecture)
+* [Span Management](#span-management)
+* [Span Storage](#span-storage)
+* [Span Creation Process](#span-creation-process)
+* [Critical Span Creation Code](#critical-span-creation-code)
+* [Internal Span Creation](#internal-span-creation)
+* [System Prompt Optimization](#system-prompt-optimization)
+* [The Duplication Problem](#the-duplication-problem)
+* [Implementation in Task.ts](#implementation-in-taskts)
+* [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
+* [Deduplication Mechanisms](#deduplication-mechanisms)
+* [1. Active Span Deduplication](#1-active-span-deduplication)
+* [2. Span Name Deduplication](#2-span-name-deduplication)
+* [3. Input Data Deduplication](#3-input-data-deduplication)
+* [4. System Prompt Metadata](#4-system-prompt-metadata)
+* [Configuration and Control](#configuration-and-control)
+* [Laminar Configuration](#laminar-configuration)
+* [Runtime Control Methods](#runtime-control-methods)
+* [Configuration Updates](#configuration-updates)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
+* [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
+* [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
+* [Performance Impact](#performance-impact)
+* [Memory Usage Reduction](#memory-usage-reduction)
+* [Network Bandwidth Reduction](#network-bandwidth-reduction)
+* [Processing Time Improvement](#processing-time-improvement)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [Laminar Deduplication System](#laminar-deduplication-system)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [System Architecture](#system-architecture)
+* [Span Management](#span-management)
+* [Span Storage](#span-storage)
+* [Span Creation Process](#span-creation-process)
+* [Critical Span Creation Code](#critical-span-creation-code)
+* [Internal Span Creation](#internal-span-creation)
+* [System Prompt Optimization](#system-prompt-optimization)
+* [The Duplication Problem](#the-duplication-problem)
+* [Implementation in Task.ts](#implementation-in-taskts)
+* [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
+* [Deduplication Mechanisms](#deduplication-mechanisms)
+* [1. Active Span Deduplication](#1-active-span-deduplication)
+* [2. Span Name Deduplication](#2-span-name-deduplication)
+* [3. Input Data Deduplication](#3-input-data-deduplication)
+* [4. System Prompt Metadata](#4-system-prompt-metadata)
+* [Configuration and Control](#configuration-and-control)
+* [Laminar Configuration](#laminar-configuration)
+* [Runtime Control Methods](#runtime-control-methods)
+* [Configuration Updates](#configuration-updates)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
+* [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
+* [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
+* [Performance Impact](#performance-impact)
+* [Memory Usage Reduction](#memory-usage-reduction)
+* [Network Bandwidth Reduction](#network-bandwidth-reduction)
+* [Processing Time Improvement](#processing-time-improvement)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:*\* Detailed documentation of the Laminar service deduplication mechanisms, span
+* *Purpose:*\* Detailed documentation of the Laminar service deduplication mechanisms, span
   management, and system prompt optimization to prevent duplicate observability data and improve
   performance.
 
@@ -128,11 +129,13 @@ document's role or purpose, this section helps orient you.
 \[Research or development methodology used]
 
 ## Executive Summary
-- The Laminar Deduplication System manages observability spans and prevents duplicate data
+
+* The Laminar Deduplication System manages observability spans and prevents duplicate data
   collection, particularly for system prompts which can be large and repetitive. This system is
   crucial for maintaining performance and reducing data storage costs in the observability pipeline.\*
 
 The Laminar service implements several deduplication mechanisms to prevent:
+
 1. **Span Duplication** - Multiple spans for the same operation
 2. **System Prompt Duplication** - Large system prompts stored multiple times
 3. **Input/Output Data Duplication** - Redundant data in span inputs
@@ -466,14 +469,17 @@ public async updateConfig(newConfig: Partial<LaminarConfig>): Promise<void> {
 
 ### Issue 1: Multiple Spans for Same Operation
 
-- *Symptoms*\*:
-- Multiple spans created for single LLM call
-- Duplicate observability data
-- Performance degradation
+* *Symptoms*\*:
 
-- *Root Cause*\*: Active span check not working properly
+* Multiple spans created for single LLM call
 
-- *Solution*\*:
+* Duplicate observability data
+
+* Performance degradation
+
+* *Root Cause*\*: Active span check not working properly
+
+* *Solution*\*:
 
 ```typescript
 // Enhanced active span check
@@ -497,14 +503,17 @@ public startSpan(spanType: SpanType, options: {...}, isActive: boolean = false):
 
 ### Issue 2: System Prompt Still Duplicated
 
-- *Symptoms*\*:
-- Large system prompts still stored in spans
-- High memory usage
-- Slow span processing
+* *Symptoms*\*:
 
-- *Root Cause*\*: `recordSpanIO` flag not properly checked
+* Large system prompts still stored in spans
 
-- *Solution*\*:
+* High memory usage
+
+* Slow span processing
+
+* *Root Cause*\*: `recordSpanIO` flag not properly checked
+
+* *Solution*\*:
 
 ```typescript
 // Ensure proper recordSpanIO check
@@ -522,14 +531,17 @@ if (laminarService.getRecordSpanIO() && spanInput) {
 
 ### Issue 3: Span Cleanup Issues
 
-- *Symptoms*\*:
-- Spans not properly cleaned up
-- Memory leaks
-- Active span count growing
+* *Symptoms*\*:
 
-- *Root Cause*\*: Span disposal not handled properly
+* Spans not properly cleaned up
 
-- *Solution*\*:
+* Memory leaks
+
+* Active span count growing
+
+* *Root Cause*\*: Span disposal not handled properly
+
+* *Solution*\*:
 
 ```typescript
 // Enhanced span cleanup
@@ -653,7 +665,8 @@ const processingMetrics = {
 ```
 
 <a id="navigation-footer"></a>
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
+
+* Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
 
 ## No Dead Ends Policy
@@ -661,14 +674,17 @@ const processingMetrics = {
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [laminar](../docs/laminar/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [laminar](../docs/laminar/) ·
   [↑ Table of Contents](#laminar-deduplication-system)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

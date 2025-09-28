@@ -1,96 +1,97 @@
 # Implementation Checklist Quick Reference
 
 ## Table of Contents
-- [Implementation Checklist Quick Reference](#implementation-checklist-quick-reference)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Template Location](#template-location)
-- [Quick Setup](#quick-setup)
-- [1. Copy Template](#1-copy-template)
-- [2. Customize Header](#2-customize-header)
-- [3. Define Tasks](#3-define-tasks)
-- [Status Values](#status-values)
-- [Task ID Format](#task-id-format)
-- [Commit Message Format](#commit-message-format)
-- [Progress Tracking Rules](#progress-tracking-rules)
-- [For Each Task:](#for-each-task)
-- [Timestamp Format](#timestamp-format)
-- [Common Task Patterns](#common-task-patterns)
-- [Setup Tasks](#setup-tasks)
-- [Implementation Tasks](#implementation-tasks)
-- [Documentation Tasks](#documentation-tasks)
-- [Testing Tasks](#testing-tasks)
-- [Success Criteria Template](#success-criteria-template)
-- [File Organization](#file-organization)
-- [Directory Structure](#directory-structure)
-- [Naming Convention](#naming-convention)
-- [Best Practices](#best-practices)
-- [Task Design](#task-design)
-- [Progress Updates](#progress-updates)
-- [Quality Assurance](#quality-assurance)
-- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-- [Quick Commands](#quick-commands)
-- [Create New Checklist](#create-new-checklist)
-- [Update Progress](#update-progress)
-- [Complete Task](#complete-task)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Implementation Checklist Quick Reference](#implementation-checklist-quick-reference)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Template Location](#template-location)
-- [Quick Setup](#quick-setup)
-- [1. Copy Template](#1-copy-template)
-- [2. Customize Header](#2-customize-header)
-- [3. Define Tasks](#3-define-tasks)
-- [Status Values](#status-values)
-- [Task ID Format](#task-id-format)
-- [Commit Message Format](#commit-message-format)
-- [Progress Tracking Rules](#progress-tracking-rules)
-- [For Each Task:](#for-each-task)
-- [Timestamp Format](#timestamp-format)
-- [Common Task Patterns](#common-task-patterns)
-- [Setup Tasks](#setup-tasks)
-- [Implementation Tasks](#implementation-tasks)
-- [Documentation Tasks](#documentation-tasks)
-- [Testing Tasks](#testing-tasks)
-- [Success Criteria Template](#success-criteria-template)
-- [File Organization](#file-organization)
-- [Directory Structure](#directory-structure)
-- [Naming Convention](#naming-convention)
-- [Best Practices](#best-practices)
-- [Task Design](#task-design)
-- [Progress Updates](#progress-updates)
-- [Quality Assurance](#quality-assurance)
-- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-- [Quick Commands](#quick-commands)
-- [Create New Checklist](#create-new-checklist)
-- [Update Progress](#update-progress)
-- [Complete Task](#complete-task)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Implementation Checklist Quick Reference](#implementation-checklist-quick-reference)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Template Location](#template-location)
+* [Quick Setup](#quick-setup)
+* [1. Copy Template](#1-copy-template)
+* [2. Customize Header](#2-customize-header)
+* [3. Define Tasks](#3-define-tasks)
+* [Status Values](#status-values)
+* [Task ID Format](#task-id-format)
+* [Commit Message Format](#commit-message-format)
+* [Progress Tracking Rules](#progress-tracking-rules)
+* [For Each Task:](#for-each-task)
+* [Timestamp Format](#timestamp-format)
+* [Common Task Patterns](#common-task-patterns)
+* [Setup Tasks](#setup-tasks)
+* [Implementation Tasks](#implementation-tasks)
+* [Documentation Tasks](#documentation-tasks)
+* [Testing Tasks](#testing-tasks)
+* [Success Criteria Template](#success-criteria-template)
+* [File Organization](#file-organization)
+* [Directory Structure](#directory-structure)
+* [Naming Convention](#naming-convention)
+* [Best Practices](#best-practices)
+* [Task Design](#task-design)
+* [Progress Updates](#progress-updates)
+* [Quality Assurance](#quality-assurance)
+* [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+* [Quick Commands](#quick-commands)
+* [Create New Checklist](#create-new-checklist)
+* [Update Progress](#update-progress)
+* [Complete Task](#complete-task)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Implementation Checklist Quick Reference](#implementation-checklist-quick-reference)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Template Location](#template-location)
+* [Quick Setup](#quick-setup)
+* [1. Copy Template](#1-copy-template)
+* [2. Customize Header](#2-customize-header)
+* [3. Define Tasks](#3-define-tasks)
+* [Status Values](#status-values)
+* [Task ID Format](#task-id-format)
+* [Commit Message Format](#commit-message-format)
+* [Progress Tracking Rules](#progress-tracking-rules)
+* [For Each Task:](#for-each-task)
+* [Timestamp Format](#timestamp-format)
+* [Common Task Patterns](#common-task-patterns)
+* [Setup Tasks](#setup-tasks)
+* [Implementation Tasks](#implementation-tasks)
+* [Documentation Tasks](#documentation-tasks)
+* [Testing Tasks](#testing-tasks)
+* [Success Criteria Template](#success-criteria-template)
+* [File Organization](#file-organization)
+* [Directory Structure](#directory-structure)
+* [Naming Convention](#naming-convention)
+* [Best Practices](#best-practices)
+* [Task Design](#task-design)
+* [Progress Updates](#progress-updates)
+* [Quality Assurance](#quality-assurance)
+* [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+* [Quick Commands](#quick-commands)
+* [Create New Checklist](#create-new-checklist)
+* [Update Progress](#update-progress)
+* [Complete Task](#complete-task)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:*\* Quick reference for creating and using implementation checklists.
+* *Purpose:*\* Quick reference for creating and using implementation checklists.
 
 ## Research Context
 
@@ -163,15 +164,17 @@ behind the "what"! 💻
 ```
 
 ## Status Values
-- ⏳ Pending
-- 🔄 In Progress
-- ✅ Done
-- ❌ Blocked
+
+* ⏳ Pending
+* 🔄 In Progress
+* ✅ Done
+* ❌ Blocked
 
 ## Task ID Format
-- `T001`, `T002`, `T003`, etc.
-- Unique within each checklist
-- Can be reused across different projects
+
+* `T001`, `T002`, `T003`, etc.
+* Unique within each checklist
+* Can be reused across different projects
 
 ## Commit Message Format
 
@@ -186,6 +189,7 @@ Implements: TNNN · [Phase] Task X.Y: Task Name
 ## Progress Tracking Rules
 
 ### For Each Task:
+
 1. Set status to "In Progress"
 2. Add started timestamp (ISO 8601)
 3. Update summary table
@@ -205,28 +209,32 @@ Implements: TNNN · [Phase] Task X.Y: Task Name
 ## Common Task Patterns
 
 ### Setup Tasks
-- Environment configuration
-- Dependency installation
-- Project structure creation
-- Basic testing
+
+* Environment configuration
+* Dependency installation
+* Project structure creation
+* Basic testing
 
 ### Implementation Tasks
-- Core feature development
-- Integration work
-- Configuration setup
-- Testing implementation
+
+* Core feature development
+* Integration work
+* Configuration setup
+* Testing implementation
 
 ### Documentation Tasks
-- User guides
-- API documentation
-- Process documentation
-- Troubleshooting guides
+
+* User guides
+* API documentation
+* Process documentation
+* Troubleshooting guides
 
 ### Testing Tasks
-- Unit test creation
-- Integration testing
-- Performance testing
-- Security testing
+
+* Unit test creation
+* Integration testing
+* Performance testing
+* Security testing
 
 ## Success Criteria Template
 
@@ -260,31 +268,34 @@ context/
 
 ### Naming Convention
 
-- **Project Name**: Extract from plan filename `<proj_name>_PLAN.md`
-- **Examples**:
-- `API_GATEWAY_PLAN.md` → `context/api-gateway/`
-- `USER_DASHBOARD_PLAN.md` → `context/user-dashboard/`
-- `CI_CD_PIPELINE_PLAN.md` → `context/ci-cd-pipeline/`
+* **Project Name**: Extract from plan filename `<proj_name>_PLAN.md`
+* **Examples**:
+* `API_GATEWAY_PLAN.md` → `context/api-gateway/`
+* `USER_DASHBOARD_PLAN.md` → `context/user-dashboard/`
+* `CI_CD_PIPELINE_PLAN.md` → `context/ci-cd-pipeline/`
 
 ## Best Practices
 
 ### Task Design
-- Break into specific, actionable subtasks
-- Include testing/validation steps
-- Add clear deliverables
-- Estimate time realistically
+
+* Break into specific, actionable subtasks
+* Include testing/validation steps
+* Add clear deliverables
+* Estimate time realistically
 
 ### Progress Updates
-- Update checkboxes in real-time
-- Keep summary table current
-- Record actual time spent
-- Document lessons learned
+
+* Update checkboxes in real-time
+* Keep summary table current
+* Record actual time spent
+* Document lessons learned
 
 ### Quality Assurance
-- Test each task completion
-- Validate configurations
-- Update documentation
-- Review with team
+
+* Test each task completion
+* Validate configurations
+* Update documentation
+* Review with team
 
 ## Common Mistakes to Avoid
 
@@ -325,12 +336,14 @@ code context/[proj_name]/phase1.md
 ```
 
 ### Update Progress
+
 1. Change status: `⏳ Pending` → `🔄 In Progress`
 2. Add timestamp: `2025-01-27T10:30:00Z`
 3. Check off subtasks: `[ ]` → `[x]`
 4. Update summary table
 
 ### Complete Task
+
 1. Change status: `🔄 In Progress` → `✅ Done`
 2. Add completion timestamp
 3. Update summary table
@@ -341,12 +354,14 @@ code context/[proj_name]/phase1.md
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [← Back to Documentation Tools](../tools/) ·
-  [📚 Technical Glossary](../GLOSSARY.md) ·
+* \*\*
+
+* *Navigation*\*: [← Back to Documentation Tools](../tools/) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) ·
   [↑ Table of Contents](#implementation-checklist-quick-reference)

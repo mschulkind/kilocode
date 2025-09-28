@@ -1,114 +1,115 @@
 # Development Guide
 
 ## Table of Contents
-- [Development Guide](#development-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Getting Started](#getting-started)
-- [Research Context](#research-context)
-- [Prerequisites](#prerequisites)
-- [Repository Setup](#repository-setup)
-- [Development Workflow](#development-workflow)
-- [Branch Strategy](#branch-strategy)
-- [Commit Strategy](#commit-strategy)
-- [Pull Request Process](#pull-request-process)
-- [Documentation Automation](#documentation-automation)
-- [Overview](#overview)
-- [Validation Process](#validation-process)
-- [Maintenance Process](#maintenance-process)
-- [Documentation Standards](#documentation-standards)
-- [VS Code Integration](#vs-code-integration)
-- [Troubleshooting](#troubleshooting)
-- [Code Standards](#code-standards)
-- [TypeScript Standards](#typescript-standards)
-- [React Standards](#react-standards)
-- [Testing Standards](#testing-standards)
-- [Project Structure](#project-structure)
-- [Monorepo Organization](#monorepo-organization)
-- [File Organization](#file-organization)
-- [Development Tools](#development-tools)
-- [VS Code Setup](#vs-code-setup)
-- [Git Configuration](#git-configuration)
-- [Testing](#testing)
-- [Running Tests](#running-tests)
-- [Test Types](#test-types)
-- [Building](#building)
-- [Build Commands](#build-commands)
-- [Build Output](#build-output)
-- [Debugging](#debugging)
-- [VS Code Debugging](#vs-code-debugging)
-- [Console Debugging](#console-debugging)
-- [Deployment](#deployment)
-- [Local Deployment](#local-deployment)
-- [Production Deployment](#production-deployment)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Getting Help](#getting-help)
-- [Next Steps](#next-steps)
-- [🧭 Navigation Footer](#-navigation-footer)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Development Guide](#development-guide)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Getting Started](#getting-started)
-- [Research Context](#research-context)
-- [Prerequisites](#prerequisites)
-- [Repository Setup](#repository-setup)
-- [Development Workflow](#development-workflow)
-- [Branch Strategy](#branch-strategy)
-- [Commit Strategy](#commit-strategy)
-- [Pull Request Process](#pull-request-process)
-- [Documentation Automation](#documentation-automation)
-- [Overview](#overview)
-- [Validation Process](#validation-process)
-- [Maintenance Process](#maintenance-process)
-- [Documentation Standards](#documentation-standards)
-- [VS Code Integration](#vs-code-integration)
-- [Troubleshooting](#troubleshooting)
-- [Code Standards](#code-standards)
-- [TypeScript Standards](#typescript-standards)
-- [React Standards](#react-standards)
-- [Testing Standards](#testing-standards)
-- [Project Structure](#project-structure)
-- [Monorepo Organization](#monorepo-organization)
-- [File Organization](#file-organization)
-- [Development Tools](#development-tools)
-- [VS Code Setup](#vs-code-setup)
-- [Git Configuration](#git-configuration)
-- [Testing](#testing)
-- [Running Tests](#running-tests)
-- [Test Types](#test-types)
-- [Building](#building)
-- [Build Commands](#build-commands)
-- [Build Output](#build-output)
-- [Debugging](#debugging)
-- [VS Code Debugging](#vs-code-debugging)
-- [Console Debugging](#console-debugging)
-- [Deployment](#deployment)
-- [Local Deployment](#local-deployment)
-- [Production Deployment](#production-deployment)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Getting Help](#getting-help)
-- [Next Steps](#next-steps)
-- [🧭 Navigation Footer](#-navigation-footer)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+* [Development Guide](#development-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Getting Started](#getting-started)
+* [Research Context](#research-context)
+* [Prerequisites](#prerequisites)
+* [Repository Setup](#repository-setup)
+* [Development Workflow](#development-workflow)
+* [Branch Strategy](#branch-strategy)
+* [Commit Strategy](#commit-strategy)
+* [Pull Request Process](#pull-request-process)
+* [Documentation Automation](#documentation-automation)
+* [Overview](#overview)
+* [Validation Process](#validation-process)
+* [Maintenance Process](#maintenance-process)
+* [Documentation Standards](#documentation-standards)
+* [VS Code Integration](#vs-code-integration)
+* [Troubleshooting](#troubleshooting)
+* [Code Standards](#code-standards)
+* [TypeScript Standards](#typescript-standards)
+* [React Standards](#react-standards)
+* [Testing Standards](#testing-standards)
+* [Project Structure](#project-structure)
+* [Monorepo Organization](#monorepo-organization)
+* [File Organization](#file-organization)
+* [Development Tools](#development-tools)
+* [VS Code Setup](#vs-code-setup)
+* [Git Configuration](#git-configuration)
+* [Testing](#testing)
+* [Running Tests](#running-tests)
+* [Test Types](#test-types)
+* [Building](#building)
+* [Build Commands](#build-commands)
+* [Build Output](#build-output)
+* [Debugging](#debugging)
+* [VS Code Debugging](#vs-code-debugging)
+* [Console Debugging](#console-debugging)
+* [Deployment](#deployment)
+* [Local Deployment](#local-deployment)
+* [Production Deployment](#production-deployment)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Getting Help](#getting-help)
+* [Next Steps](#next-steps)
+* [🧭 Navigation Footer](#-navigation-footer)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Development Guide](#development-guide)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Getting Started](#getting-started)
+* [Research Context](#research-context)
+* [Prerequisites](#prerequisites)
+* [Repository Setup](#repository-setup)
+* [Development Workflow](#development-workflow)
+* [Branch Strategy](#branch-strategy)
+* [Commit Strategy](#commit-strategy)
+* [Pull Request Process](#pull-request-process)
+* [Documentation Automation](#documentation-automation)
+* [Overview](#overview)
+* [Validation Process](#validation-process)
+* [Maintenance Process](#maintenance-process)
+* [Documentation Standards](#documentation-standards)
+* [VS Code Integration](#vs-code-integration)
+* [Troubleshooting](#troubleshooting)
+* [Code Standards](#code-standards)
+* [TypeScript Standards](#typescript-standards)
+* [React Standards](#react-standards)
+* [Testing Standards](#testing-standards)
+* [Project Structure](#project-structure)
+* [Monorepo Organization](#monorepo-organization)
+* [File Organization](#file-organization)
+* [Development Tools](#development-tools)
+* [VS Code Setup](#vs-code-setup)
+* [Git Configuration](#git-configuration)
+* [Testing](#testing)
+* [Running Tests](#running-tests)
+* [Test Types](#test-types)
+* [Building](#building)
+* [Build Commands](#build-commands)
+* [Build Output](#build-output)
+* [Debugging](#debugging)
+* [VS Code Debugging](#vs-code-debugging)
+* [Console Debugging](#console-debugging)
+* [Deployment](#deployment)
+* [Local Deployment](#local-deployment)
+* [Production Deployment](#production-deployment)
+* [Troubleshooting](#troubleshooting)
+* [Common Issues](#common-issues)
+* [Getting Help](#getting-help)
+* [Next Steps](#next-steps)
+* [🧭 Navigation Footer](#-navigation-footer)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
 
 ## When You're Here
 
 This document provides \[purpose of document].
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Context**: \[How this fits into the broader system/project]
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Purpose**: \[Brief description of what this document covers]
+* **Context**: \[How this fits into the broader system/project]
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive guide for developing and contributing to KiloCode.
+* *Purpose:*\* Comprehensive guide for developing and contributing to KiloCode.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
 > tells us about the evolution of our system, helping us understand how it grew and changed over
@@ -118,30 +119,31 @@ This document provides \[purpose of document].
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 ### Prerequisites
 
-- *Required Software*\*:
+* *Required Software*\*:
 
-- **Node.js**: Version 18 or higher
+* **Node.js**: Version 18 or higher
 
-- **PNPM**: Package manager
+* **PNPM**: Package manager
 
-- **Git**: Version control
+* **Git**: Version control
 
-- **VS Code**: Development environment
+* **VS Code**: Development environment
 
-- *Installation*\*:
+* *Installation*\*:
 
 ```bash
 # Install Node.js (via nvm recommended)
@@ -173,26 +175,26 @@ behind the "what"! 💻
 
 ### Repository Setup
 
-- *Clone Repository*\*:
+* *Clone Repository*\*:
 
 ```bash
 git clone https://github.com/mschulkind/kilocode.git
 cd kilocode
 ```
 
-- *Install Dependencies*\*:
+* *Install Dependencies*\*:
 
 ```bash
 pnpm install
 ```
 
-- *Build Project*\*:
+* *Build Project*\*:
 
 ```bash
 turbo build
 ```
 
-- *Start Development*\*:
+* *Start Development*\*:
 
 ```bash
 turbo dev
@@ -202,29 +204,29 @@ turbo dev
 
 ### Branch Strategy
 
-- *Main Branches*\*:
+* *Main Branches*\*:
 
-- **main**: Production-ready code
+* **main**: Production-ready code
 
-- **develop**: Integration branch for features
+* **develop**: Integration branch for features
 
-- **feature/\***: Feature development branches
+* **feature/\***: Feature development branches
 
-- **hotfix/\***: Critical bug fixes
+* **hotfix/\***: Critical bug fixes
 
-- *Branch Naming*\*:
+* *Branch Naming*\*:
 
-- **feature/description**: Feature development
+* **feature/description**: Feature development
 
-- **bugfix/description**: Bug fixes
+* **bugfix/description**: Bug fixes
 
-- **hotfix/description**: Critical fixes
+* **hotfix/description**: Critical fixes
 
-- **chore/description**: Maintenance tasks
+* **chore/description**: Maintenance tasks
 
 ### Commit Strategy
 
-- *Commit Message Format*\*:
+* *Commit Message Format*\*:
 
 ```
 type(scope): description
@@ -234,23 +236,23 @@ type(scope): description
 [optional footer]
 ```
 
-- *Types*\*:
+* *Types*\*:
 
-- **feat**: New features
+* **feat**: New features
 
-- **fix**: Bug fixes
+* **fix**: Bug fixes
 
-- **docs**: Documentation changes
+* **docs**: Documentation changes
 
-- **style**: Code style changes
+* **style**: Code style changes
 
-- **refactor**: Code refactoring
+* **refactor**: Code refactoring
 
-- **test**: Test changes
+* **test**: Test changes
 
-- **chore**: Maintenance tasks
+* **chore**: Maintenance tasks
 
-- *Examples*\*:
+* *Examples*\*:
 
 ```
 feat(api): add OpenAI integration
@@ -260,7 +262,8 @@ docs(readme): update installation instructions
 
 ### Pull Request Process
 
-- *Before Creating PR*\*:
+* *Before Creating PR*\*:
+
 1. **Update Branch**: `git pull origin develop`
 2. **Run Tests**: `turbo test`
 3. **Run Linting**: `turbo lint`
@@ -269,17 +272,17 @@ docs(readme): update installation instructions
 6. **Validate Documentation**: `pnpm docs:validate`
 7. **Maintain Documentation**: `pnpm docs:maintain`
 
-- *PR Requirements*\*:
+* *PR Requirements*\*:
 
-- **Description**: Clear description of changes
+* **Description**: Clear description of changes
 
-- **Tests**: Include relevant tests
+* **Tests**: Include relevant tests
 
-- **Documentation**: Update documentation if needed
+* **Documentation**: Update documentation if needed
 
-- **Screenshots**: Include screenshots for UI changes
+* **Screenshots**: Include screenshots for UI changes
 
-- **Breaking Changes**: Document breaking changes
+* **Breaking Changes**: Document breaking changes
 
 ## Documentation Automation
 
@@ -290,13 +293,17 @@ documentation across the project.
 
 ### Validation Process
 
-- *Automatic Validation*\*:
-- Real-time validation in VS Code
-- Pre-commit validation hooks
-- CI/CD pipeline validation
-- Comprehensive error reporting
+* *Automatic Validation*\*:
 
-- *Manual Validation*\*:
+* Real-time validation in VS Code
+
+* Pre-commit validation hooks
+
+* CI/CD pipeline validation
+
+* Comprehensive error reporting
+
+* *Manual Validation*\*:
 
 ```bash
 # Validate all documentation
@@ -323,13 +330,17 @@ npx remark docs/file.md
 
 ### Maintenance Process
 
-- *Automated Maintenance*\*:
-- Table of Contents generation
-- Navigation footer updates
-- Research context validation
-- Link health checking
+* *Automated Maintenance*\*:
 
-- *Manual Maintenance*\*:
+* Table of Contents generation
+
+* Navigation footer updates
+
+* Research context validation
+
+* Link health checking
+
+* *Manual Maintenance*\*:
 
 ```bash
 # Run automated maintenance
@@ -349,61 +360,83 @@ pnpm docs:report
 
 ### Documentation Standards
 
-- *Required Sections*\*:
-- Research Context section
-- Navigation footer
-- Table of Contents (for files >500 words)
-- Descriptive link text
+* *Required Sections*\*:
 
-- *Style Requirements*\*:
-- Consistent formatting
-- Proper heading hierarchy
-- Alt text for images
-- Working code examples
+* Research Context section
+
+* Navigation footer
+
+* Table of Contents (for files >500 words)
+
+* Descriptive link text
+
+* *Style Requirements*\*:
+
+* Consistent formatting
+
+* Proper heading hierarchy
+
+* Alt text for images
+
+* Working code examples
 
 ### VS Code Integration
 
-- *Extensions*\* (auto-installed):
-- Markdown All in One
-- markdownlint
-- MDX support
+* *Extensions*\* (auto-installed):
 
-- *Features*\*:
-- Real-time validation
-- Auto-fix on save
-- Live link validation
-- TOC auto-generation
+* Markdown All in One
+
+* markdownlint
+
+* MDX support
+
+* *Features*\*:
+
+* Real-time validation
+
+* Auto-fix on save
+
+* Live link validation
+
+* TOC auto-generation
 
 ### Troubleshooting
 
-- *Common Issues*\*:
-- Validation not running → Check extensions, run `pnpm install`
-- Auto-fix not working → Check VS Code settings, restart
-- Performance issues → Exclude large dirs, use incremental validation
+* *Common Issues*\*:
 
-- *Resources*\*:
-- [Remark Workflow Overview](../../tools/REMARK_WORKFLOW_OVERVIEW.md)
-- [Validation Errors Guide](../../tools/VALIDATION_ERRORS_GUIDE.md)
-- [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
-- [Documentation Best Practices](../../tools/DOCUMENTATION_BEST_PRACTICES.md)
+* Validation not running → Check extensions, run `pnpm install`
+
+* Auto-fix not working → Check VS Code settings, restart
+
+* Performance issues → Exclude large dirs, use incremental validation
+
+* *Resources*\*:
+
+* [Remark Workflow Overview](../../tools/REMARK_WORKFLOW_OVERVIEW.md)
+
+* [Validation Errors Guide](../../tools/VALIDATION_ERRORS_GUIDE.md)
+
+* [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+
+* [Documentation Best Practices](../../tools/DOCUMENTATION_BEST_PRACTICES.md)
 
 ## Code Standards
 
 ### TypeScript Standards
 
-- *Configuration*\*: `@roo-code/config-typescript`
+* *Configuration*\*: `@roo-code/config-typescript`
 
-- *Key Rules*\*:
+* *Key Rules*\*:
 
-- **Strict Mode**: Always use strict mode
+* **Strict Mode**: Always use strict mode
 
-- **No Any**: Avoid `any` type
+* **No Any**: Avoid `any` type
 
-- **Explicit Types**: Use explicit type annotations
+* **Explicit Types**: Use explicit type annotations
 
-- **Interface Naming**: Use PascalCase for interfaces
+* **Interface Naming**: Use PascalCase for interfaces
 
-- *Example*\*:
+* *Example*\*:
 
 ```typescript
 interface User {
@@ -422,19 +455,19 @@ function createUser(userData: Omit<User, "id">): User {
 
 ### React Standards
 
-- *Configuration*\*: React-specific ESLint rules
+* *Configuration*\*: React-specific ESLint rules
 
-- *Key Rules*\*:
+* *Key Rules*\*:
 
-- **Functional Components**: Prefer functional components
+* **Functional Components**: Prefer functional components
 
-- **Hooks**: Use hooks for state management
+* **Hooks**: Use hooks for state management
 
-- **Props Interface**: Define props interfaces
+* **Props Interface**: Define props interfaces
 
-- **Component Naming**: Use PascalCase for components
+* **Component Naming**: Use PascalCase for components
 
-- *Example*\*:
+* *Example*\*:
 
 ```typescript
 interface ButtonProps {
@@ -454,7 +487,7 @@ export function Button({ children, onClick, disabled = false }: ButtonProps) {
 
 ### Testing Standards
 
-- *Test Structure*\*:
+* *Test Structure*\*:
 
 ```typescript
 describe("ComponentName", () => {
@@ -473,21 +506,21 @@ describe("ComponentName", () => {
 })
 ```
 
-- *Test Coverage*\*: Minimum 80% coverage
+* *Test Coverage*\*: Minimum 80% coverage
 
-- *Test Types*\*:
+* *Test Types*\*:
 
-- **Unit Tests**: Individual function testing
+* **Unit Tests**: Individual function testing
 
-- **Integration Tests**: Component interaction testing
+* **Integration Tests**: Component interaction testing
 
-- **E2E Tests**: End-to-end workflow testing
+* **E2E Tests**: End-to-end workflow testing
 
 ## Project Structure
 
 ### Monorepo Organization
 
-- *Root Level*\*:
+* *Root Level*\*:
 
 ```
 kilocode/
@@ -500,7 +533,7 @@ kilocode/
 └── turbo.json           # Turbo configuration
 ```
 
-- *Package Structure*\*:
+* *Package Structure*\*:
 
 ```
 packages/package-name/
@@ -514,19 +547,19 @@ packages/package-name/
 
 ### File Organization
 
-- *Naming Conventions*\*:
+* *Naming Conventions*\*:
 
-- **Files**: kebab-case (e.g., `user-service.ts`)
+* **Files**: kebab-case (e.g., `user-service.ts`)
 
-- **Directories**: kebab-case (e.g., `user-management/`)
+* **Directories**: kebab-case (e.g., `user-management/`)
 
-- **Components**: PascalCase (e.g., `UserProfile.tsx`)
+* **Components**: PascalCase (e.g., `UserProfile.tsx`)
 
-- **Interfaces**: PascalCase (e.g., `UserProfile.ts`)
+* **Interfaces**: PascalCase (e.g., `UserProfile.ts`)
 
-- **Types**: PascalCase (e.g., `UserProfile.ts`)
+* **Types**: PascalCase (e.g., `UserProfile.ts`)
 
-- *Directory Structure*\*:
+* *Directory Structure*\*:
 
 ```
 src/
@@ -542,21 +575,21 @@ src/
 
 ### VS Code Setup
 
-- *Recommended Extensions*\*:
+* *Recommended Extensions*\*:
 
-- **TypeScript**: TypeScript support
+* **TypeScript**: TypeScript support
 
-- **ESLint**: ESLint integration
+* **ESLint**: ESLint integration
 
-- **Prettier**: Code formatting
+* **Prettier**: Code formatting
 
-- **GitLens**: Git integration
+* **GitLens**: Git integration
 
-- **Thunder Client**: API testing
+* **Thunder Client**: API testing
 
-- **REST Client**: REST API testing
+* **REST Client**: REST API testing
 
-- *Settings*\*:
+* *Settings*\*:
 
 ```json
 {
@@ -575,7 +608,7 @@ src/
 
 ### Git Configuration
 
-- *Global Configuration*\*:
+* *Global Configuration*\*:
 
 ```gitconfig
 [user]
@@ -590,7 +623,7 @@ src/
   defaultBranch = main
 ```
 
-- *Repository Configuration*\*:
+* *Repository Configuration*\*:
 
 ```gitconfig
 [core]
@@ -608,26 +641,26 @@ src/
 
 ### Running Tests
 
-- *All Tests*\*:
+* *All Tests*\*:
 
 ```bash
 turbo test
 ```
 
-- *Specific Package*\*:
+* *Specific Package*\*:
 
 ```bash
 cd packages/package-name
 pnpm test
 ```
 
-- *Watch Mode*\*:
+* *Watch Mode*\*:
 
 ```bash
 turbo test --watch
 ```
 
-- *Coverage*\*:
+* *Coverage*\*:
 
 ```bash
 turbo test --coverage
@@ -635,60 +668,60 @@ turbo test --coverage
 
 ### Test Types
 
-- *Unit Tests*\*:
+* *Unit Tests*\*:
 
-- **Location**: `__tests__/` directories
+* **Location**: `__tests__/` directories
 
-- **Naming**: `*.test.ts` or `*.spec.ts`
+* **Naming**: `*.test.ts` or `*.spec.ts`
 
-- **Framework**: Vitest
+* **Framework**: Vitest
 
-- **Coverage**: Individual functions and components
+* **Coverage**: Individual functions and components
 
-- *Integration Tests*\*:
+* *Integration Tests*\*:
 
-- **Location**: `tests/integration/`
+* **Location**: `tests/integration/`
 
-- **Naming**: `*.integration.test.ts`
+* **Naming**: `*.integration.test.ts`
 
-- **Framework**: Vitest
+* **Framework**: Vitest
 
-- **Coverage**: Component interactions
+* **Coverage**: Component interactions
 
-- *E2E Tests*\*:
+* *E2E Tests*\*:
 
-- **Location**: `apps/playwright-e2e/tests/`
+* **Location**: `apps/playwright-e2e/tests/`
 
-- **Naming**: `*.e2e.test.ts`
+* **Naming**: `*.e2e.test.ts`
 
-- **Framework**: Playwright
+* **Framework**: Playwright
 
-- **Coverage**: Complete user workflows
+* **Coverage**: Complete user workflows
 
 ## Building
 
 ### Build Commands
 
-- *Build All*\*:
+* *Build All*\*:
 
 ```bash
 turbo build
 ```
 
-- *Build Specific Package*\*:
+* *Build Specific Package*\*:
 
 ```bash
 cd packages/package-name
 pnpm build
 ```
 
-- *Build Applications*\*:
+* *Build Applications*\*:
 
 ```bash
 turbo build:apps
 ```
 
-- *Build Extension*\*:
+* *Build Extension*\*:
 
 ```bash
 turbo build:extension
@@ -696,27 +729,27 @@ turbo build:extension
 
 ### Build Output
 
-- *Package Output*\*:
+* *Package Output*\*:
 
-- **Location**: `packages/*/dist/`
+* **Location**: `packages/*/dist/`
 
-- **Format**: CommonJS and ES modules
+* **Format**: CommonJS and ES modules
 
-- **Types**: Declaration files (`.d.ts`)
+* **Types**: Declaration files (`.d.ts`)
 
-- *Application Output*\*:
+* *Application Output*\*:
 
-- **Location**: `apps/*/dist/`
+* **Location**: `apps/*/dist/`
 
-- **Format**: Optimized bundles
+* **Format**: Optimized bundles
 
-- **Assets**: Static assets and resources
+* **Assets**: Static assets and resources
 
 ## Debugging
 
 ### VS Code Debugging
 
-- *Launch Configuration*\*:
+* *Launch Configuration*\*:
 
 ```json
 {
@@ -734,7 +767,7 @@ turbo build:extension
 }
 ```
 
-- *Debug Tasks*\*:
+* *Debug Tasks*\*:
 
 ```json
 {
@@ -758,7 +791,7 @@ turbo build:extension
 
 ### Console Debugging
 
-- *Logging*\*:
+* *Logging*\*:
 
 ```typescript
 import { logger } from "@roo-code/telemetry"
@@ -767,7 +800,7 @@ logger.info("Debug message", { context: "debug" })
 logger.error("Error message", { error: new Error("test") })
 ```
 
-- *Debug Mode*\*:
+* *Debug Mode*\*:
 
 ```bash
 DEBUG=* pnpm dev
@@ -777,7 +810,7 @@ DEBUG=* pnpm dev
 
 ### Local Deployment
 
-- *Extension Development*\*:
+* *Extension Development*\*:
 
 ```bash
 # Build extension
@@ -803,7 +836,7 @@ behind the "what"! 💻
 code --install-extension kilo-code-1.0.0.vsix
 ```
 
-- *Web Applications*\*:
+* *Web Applications*\*:
 
 ```bash
 # Build application
@@ -824,7 +857,7 @@ pnpm dev
 
 ### Production Deployment
 
-- *Extension Publishing*\*:
+* *Extension Publishing*\*:
 
 ```bash
 # Build and package
@@ -837,7 +870,7 @@ cd src
 npx vsce publish
 ```
 
-- *Web Application Deployment*\*:
+* *Web Application Deployment*\*:
 
 ```bash
 # Build application
@@ -862,7 +895,7 @@ behind the "what"! 💻
 
 ### Common Issues
 
-- *Dependency Issues*\*:
+* *Dependency Issues*\*:
 
 ```bash
 # Clear cache and reinstall
@@ -875,7 +908,7 @@ rm pnpm-lock.yaml
 pnpm install
 ```
 
-- *Build Issues*\*:
+* *Build Issues*\*:
 
 ```bash
 # Clean build
@@ -887,7 +920,7 @@ turbo clean
 turbo build
 ```
 
-- *Test Issues*\*:
+* *Test Issues*\*:
 
 ```bash
 # Clear test cache
@@ -900,36 +933,41 @@ turbo test --no-cache
 
 ### Getting Help
 
-- *Documentation*\*: Check relevant documentation files
+* *Documentation*\*: Check relevant documentation files
 
-- *Issues*\*: Search existing GitHub issues
+* *Issues*\*: Search existing GitHub issues
 
-- *Discussions*\*: Use GitHub Discussions for questions
+* *Discussions*\*: Use GitHub Discussions for questions
 
-- *Code Review*\*: Ask for code review on pull requests
+* *Code Review*\*: Ask for code review on pull requests
 
 ## Next Steps
+
 1. **Explore Repository**: See [REPOSITORY\_STRUCTURE.md](REPOSITORY_STRUCTURE.md)
 2. **Understand Core Systems**: See [CORE\_SYSTEMS.md](CORE_SYSTEMS.md)
 3. **Learn Testing**: See [TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)
 
 ## 🧭 Navigation Footer
-- [← Back to Repository Home](README.md)
-- [→ Repository Structure](REPOSITORY_STRUCTURE.md)
-- [↑ Table of Contents](README.md)
+
+* [← Back to Repository Home](README.md)
+* [→ Repository Structure](REPOSITORY_STRUCTURE.md)
+* [↑ Table of Contents](README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
   [repository](../../architecture/) · [↑ Table of Contents](#development-guide)
 
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

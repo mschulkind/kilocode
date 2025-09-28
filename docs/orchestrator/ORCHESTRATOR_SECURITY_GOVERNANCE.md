@@ -1,38 +1,39 @@
 # Orchestrator Security & Governance
 
 ## Table of Contents
-- [Orchestrator Security & Governance](#orchestrator-security-governance)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Security Philosophy](#security-philosophy)
-- [Modes as a Security Boundary](#modes-as-a-security-boundary)
-- [Tool Permissioning](#tool-permissioning)
-- [File Access Control](#file-access-control)
-- [Governance Workflow Diagram](#governance-workflow-diagram)
-- [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Orchestrator Security & Governance](#orchestrator-security-governance)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Security Philosophy](#security-philosophy)
-- [Modes as a Security Boundary](#modes-as-a-security-boundary)
-- [Tool Permissioning](#tool-permissioning)
-- [File Access Control](#file-access-control)
-- [Governance Workflow Diagram](#governance-workflow-diagram)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Orchestrator Security & Governance](#orchestrator-security-governance)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Security Philosophy](#security-philosophy)
+* [Modes as a Security Boundary](#modes-as-a-security-boundary)
+* [Tool Permissioning](#tool-permissioning)
+* [File Access Control](#file-access-control)
+* [Governance Workflow Diagram](#governance-workflow-diagram)
+* [When You're Here](#when-youre-here)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Orchestrator Security & Governance](#orchestrator-security-governance)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Security Philosophy](#security-philosophy)
+* [Modes as a Security Boundary](#modes-as-a-security-boundary)
+* [Tool Permissioning](#tool-permissioning)
+* [File Access Control](#file-access-control)
+* [Governance Workflow Diagram](#governance-workflow-diagram)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* This document details the security model of the Kilo Code Orchestrator, focusing on
+* *Purpose:*\* This document details the security model of the Kilo Code Orchestrator, focusing on
   mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe
   and predictable operation.
 
@@ -58,17 +59,18 @@
 
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+* **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
   orchestrator
   documentation.
-- **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and
+* **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and
   their
   intended functions.
-- **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how permission
+* **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how permission
   errors are handled.
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 ### Security Philosophy
 
@@ -83,7 +85,8 @@ This mode-centric approach provides a clear and auditable trail of why certain a
 permitted.
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 ### Modes as a Security Boundary
 
@@ -95,18 +98,19 @@ are located in [`src/shared/modes.ts`](../../src/shared/modes.ts#L69).
 
 Examples of modes and their intended privilege levels:
 
-- **`architect`**: High-level planning and structuring. Typically has no file system write access.
-- **`code`**: Implementation and file modification. Has broad access to file system tools.
-- **`debug`**: Investigation and analysis. May have read access to most files but limited write
+* **`architect`**: High-level planning and structuring. Typically has no file system write access.
+* **`code`**: Implementation and file modification. Has broad access to file system tools.
+* **`debug`**: Investigation and analysis. May have read access to most files but limited write
   access.
-- **`test`**: Running and creating tests. Has access to test runners and can write to test files.
+* **`test`**: Running and creating tests. Has access to test runners and can write to test files.
 
 A task can request to change its mode by using the
 [`switchModeTool`](../../src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged
 action.
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 ### Tool Permissioning
 
@@ -117,15 +121,17 @@ Before any tool is executed, the `ToolExecutor` performs a permission check. Thi
 
 This function checks a mapping that associates each mode with a list of allowed tool names or
 patterns.
-- If the tool is in the allowed list for the current mode, execution proceeds.
-- If the tool is not in the list, the function returns `false`, and the `ToolExecutor` throws a
+
+* If the tool is in the allowed list for the current mode, execution proceeds.
+* If the tool is not in the list, the function returns `false`, and the `ToolExecutor` throws a
   permission error.
 
 Some tools, like `askFollowupQuestionTool`, are considered **Always-Available Tools** and are
 permitted in all modes.
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 ### File Access Control
 
@@ -145,7 +151,8 @@ communicates the nature of the violation to the model, allowing it to take corre
 switching to an appropriate mode).
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 ### Governance Workflow Diagram
 
@@ -172,42 +179,43 @@ flowchart TD
 ```
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:*\*
+* *Understanding This System:*\*
 
-- **Next**: Check related documentation in the same directory
+* **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../architecture/README.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../README.md) for context
 
-- *Implementing Features:*\*
+* *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -224,27 +232,30 @@ You have reached the end of the security and governance document. Return to the
 [Best Practices Document](ORCHESTRATOR_BEST_PRACTICES.md).
 
 [Back to Top](#orchestrator-security--governance)
-- \*\*
+
+* \*\*
 
 End of document.
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+* *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-security--governance)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

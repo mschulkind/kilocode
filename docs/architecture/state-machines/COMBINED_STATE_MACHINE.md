@@ -1,56 +1,57 @@
 # Combined State Machine
 
 ## Table of Contents
-- [Combined State Machine](#combined-state-machine)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [Combined State Diagram](#combined-state-diagram)
-- [State Interactions](#state-interactions)
-- [SystemStart → ActiveSession](#systemstart-activesession)
-- [ActiveSession → TaskCompleted](#activesession-taskcompleted)
-- [ActiveSession → RaceCondition](#activesession-racecondition)
-- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
-- [Race Condition Flow](#race-condition-flow)
-- [Synchronized Execution Flow](#synchronized-execution-flow)
-- [State Machine Manager](#state-machine-manager)
-- [Key Transitions](#key-transitions)
-- [Normal Flow](#normal-flow)
-- [Race Condition Flow](#race-condition-flow)
-- [Synchronized Flow](#synchronized-flow)
-- [Problem and Solution](#problem-and-solution)
-- [Problem (RaceCondition State)](#problem-racecondition-state)
-- [Solution (SynchronizedExecution State)](#solution-synchronizedexecution-state)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Combined State Machine](#combined-state-machine)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [Combined State Diagram](#combined-state-diagram)
-- [State Interactions](#state-interactions)
-- [SystemStart → ActiveSession](#systemstart-activesession)
-- [ActiveSession → TaskCompleted](#activesession-taskcompleted)
-- [ActiveSession → RaceCondition](#activesession-racecondition)
-- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
-- [Race Condition Flow](#race-condition-flow)
-- [Synchronized Execution Flow](#synchronized-execution-flow)
-- [State Machine Manager](#state-machine-manager)
-- [Key Transitions](#key-transitions)
-- [Normal Flow](#normal-flow)
-- [Race Condition Flow](#race-condition-flow)
-- [Synchronized Flow](#synchronized-flow)
-- [Problem and Solution](#problem-and-solution)
-- [Problem (RaceCondition State)](#problem-racecondition-state)
-- [Solution (SynchronizedExecution State)](#solution-synchronizedexecution-state)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Combined State Machine](#combined-state-machine)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [Combined State Diagram](#combined-state-diagram)
+* [State Interactions](#state-interactions)
+* [SystemStart → ActiveSession](#systemstart-activesession)
+* [ActiveSession → TaskCompleted](#activesession-taskcompleted)
+* [ActiveSession → RaceCondition](#activesession-racecondition)
+* [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+* [Race Condition Flow](#race-condition-flow)
+* [Synchronized Execution Flow](#synchronized-execution-flow)
+* [State Machine Manager](#state-machine-manager)
+* [Key Transitions](#key-transitions)
+* [Normal Flow](#normal-flow)
+* [Race Condition Flow](#race-condition-flow)
+* [Synchronized Flow](#synchronized-flow)
+* [Problem and Solution](#problem-and-solution)
+* [Problem (RaceCondition State)](#problem-racecondition-state)
+* [Solution (SynchronizedExecution State)](#solution-synchronizedexecution-state)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Combined State Machine](#combined-state-machine)
+* [Table of Contents](#table-of-contents)
+* [Overview](#overview)
+* [Research Context](#research-context)
+* [Combined State Diagram](#combined-state-diagram)
+* [State Interactions](#state-interactions)
+* [SystemStart → ActiveSession](#systemstart-activesession)
+* [ActiveSession → TaskCompleted](#activesession-taskcompleted)
+* [ActiveSession → RaceCondition](#activesession-racecondition)
+* [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+* [Race Condition Flow](#race-condition-flow)
+* [Synchronized Execution Flow](#synchronized-execution-flow)
+* [State Machine Manager](#state-machine-manager)
+* [Key Transitions](#key-transitions)
+* [Normal Flow](#normal-flow)
+* [Race Condition Flow](#race-condition-flow)
+* [Synchronized Flow](#synchronized-flow)
+* [Problem and Solution](#problem-and-solution)
+* [Problem (RaceCondition State)](#problem-racecondition-state)
+* [Solution (SynchronizedExecution State)](#solution-synchronizedexecution-state)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -60,25 +61,26 @@
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Overview
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
 
 The Combined State Machine shows how Task, Session, and Recursive Call state machines interact to
 create the overall system behavior, including the race condition and its solution.
@@ -137,31 +139,31 @@ stateDiagram-v2
 
 ### SystemStart → ActiveSession
 
-- **Trigger**: User starts a new task
-- **Task State**: CREATED → INITIALIZING → RUNNING
-- **Session State**: NEW → ACTIVE
-- **Recursive Call State**: IDLE → RUNNING
+* **Trigger**: User starts a new task
+* **Task State**: CREATED → INITIALIZING → RUNNING
+* **Session State**: NEW → ACTIVE
+* **Recursive Call State**: IDLE → RUNNING
 
 ### ActiveSession → TaskCompleted
 
-- **Trigger**: Task finishes naturally
-- **Task State**: RUNNING → COMPLETED
-- **Session State**: ACTIVE → COMPLETED
-- **Recursive Call State**: RUNNING → IDLE
+* **Trigger**: Task finishes naturally
+* **Task State**: RUNNING → COMPLETED
+* **Session State**: ACTIVE → COMPLETED
+* **Recursive Call State**: RUNNING → IDLE
 
 ### ActiveSession → RaceCondition
 
-- **Trigger**: Navigation fix causes concurrent calls
-- **Task State**: RUNNING (concurrent)
-- **Session State**: ACTIVE
-- **Recursive Call State**: RUNNING → CONCURRENT
+* **Trigger**: Navigation fix causes concurrent calls
+* **Task State**: RUNNING (concurrent)
+* **Session State**: ACTIVE
+* **Recursive Call State**: RUNNING → CONCURRENT
 
 ### RaceCondition → SynchronizedExecution
 
-- **Trigger**: Proper synchronization implemented
-- **Task State**: RUNNING (synchronized)
-- **Session State**: ACTIVE
-- **Recursive Call State**: CONCURRENT → QUEUED → LOCKED
+* **Trigger**: Proper synchronization implemented
+* **Task State**: RUNNING (synchronized)
+* **Session State**: ACTIVE
+* **Recursive Call State**: CONCURRENT → QUEUED → LOCKED
 
 ## Race Condition Flow
 
@@ -264,16 +266,19 @@ class CombinedStateMachineManager {
 ## Key Transitions
 
 ### Normal Flow
+
 1. **SystemStart** → **ActiveSession**: User starts task
 2. **ActiveSession** → **TaskCompleted**: Task finishes
 3. **TaskCompleted** → **SystemStart**: New session
 
 ### Race Condition Flow
+
 1. **ActiveSession** → **RaceCondition**: Navigation fix triggers
 2. **RaceCondition**: Concurrent API calls cause jumbled responses
 3. **RaceCondition** → **SynchronizedExecution**: Fix implemented
 
 ### Synchronized Flow
+
 1. **SynchronizedExecution**: Calls processed with locks
 2. **SynchronizedExecution** → **ActiveSession**: Normal execution continues
 
@@ -281,51 +286,56 @@ class CombinedStateMachineManager {
 
 ### Problem (RaceCondition State)
 
-- **Concurrent API Calls**: Multiple `recursivelyMakeClineRequests()` calls
-- **Jumbled Responses**: API responses come back mixed up
-- **Chat Confusion**: UI gets confused by jumbled state
+* **Concurrent API Calls**: Multiple `recursivelyMakeClineRequests()` calls
+* **Jumbled Responses**: API responses come back mixed up
+* **Chat Confusion**: UI gets confused by jumbled state
 
 ### Solution (SynchronizedExecution State)
 
-- **Lock-Based Synchronization**: Only one call at a time
+* **Lock-Based Synchronization**: Only one call at a time
 
-- **Sequential Processing**: Calls processed in order
+* **Sequential Processing**: Calls processed in order
 
-- **Clean Responses**: API responses come back clean
+* **Clean Responses**: API responses come back clean
 
-- **Normal UI**: Chat interface works correctly
-- \*\*
+* **Normal UI**: Chat interface works correctly
 
-- *Related Documentation:*\*
-- [Task State Machine](TASK_STATE_MACHINE.md)
-- [Session State Machine](SESSION_STATE_MACHINE.md)
-- [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
-- [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* \*\*
+
+* *Related Documentation:*\*
+
+* [Task State Machine](TASK_STATE_MACHINE.md)
+
+* [Session State Machine](SESSION_STATE_MACHINE.md)
+
+* [Recursive Call State Machine](RECURSIVE_CALL_STATE_MACHINE.md)
+
+* [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:*\*
+* *Understanding Architecture:*\*
 
-- **Next**: Check related architecture documentation in the same directory
+* **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:*\*
+* *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Architecture Issues:*\*
+* *Troubleshooting Architecture Issues:*\*
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+* **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -334,21 +344,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

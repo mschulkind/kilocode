@@ -1,38 +1,39 @@
 # Orchestrator Task Delegation
 
 ## Table of Contents
-- [Orchestrator Task Delegation](#orchestrator-task-delegation)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [The Philosophy of Delegation](#the-philosophy-of-delegation)
-- [The Subtask Mechanism](#the-subtask-mechanism)
-- [Subtask Workflow Diagram](#subtask-workflow-diagram)
-- [Key Symbols and Their Roles](#key-symbols-and-their-roles)
-- [When to Use Subtasks](#when-to-use-subtasks)
-- [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Orchestrator Task Delegation](#orchestrator-task-delegation)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [The Philosophy of Delegation](#the-philosophy-of-delegation)
-- [The Subtask Mechanism](#the-subtask-mechanism)
-- [Subtask Workflow Diagram](#subtask-workflow-diagram)
-- [Key Symbols and Their Roles](#key-symbols-and-their-roles)
-- [When to Use Subtasks](#when-to-use-subtasks)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Orchestrator Task Delegation](#orchestrator-task-delegation)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [The Philosophy of Delegation](#the-philosophy-of-delegation)
+* [The Subtask Mechanism](#the-subtask-mechanism)
+* [Subtask Workflow Diagram](#subtask-workflow-diagram)
+* [Key Symbols and Their Roles](#key-symbols-and-their-roles)
+* [When to Use Subtasks](#when-to-use-subtasks)
+* [When You're Here](#when-youre-here)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Orchestrator Task Delegation](#orchestrator-task-delegation)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [The Philosophy of Delegation](#the-philosophy-of-delegation)
+* [The Subtask Mechanism](#the-subtask-mechanism)
+* [Subtask Workflow Diagram](#subtask-workflow-diagram)
+* [Key Symbols and Their Roles](#key-symbols-and-their-roles)
+* [When to Use Subtasks](#when-to-use-subtasks)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* This document explains the mechanism and strategy behind task delegation in the Kilo
+* *Purpose:*\* This document explains the mechanism and strategy behind task delegation in the Kilo
   Code Orchestrator. It covers how complex problems are decomposed into smaller, manageable subtasks
   and the lifecycle of those subtasks.
 
@@ -58,16 +59,17 @@
 
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+* **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
   orchestrator
   documentation.
-- **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the overall task lifecycle
+* **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the overall task lifecycle
   where delegation occurs.
-- **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Provides details on the
+* **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Provides details on the
   `startSubtask` and `completeSubtask` tools.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 ### The Philosophy of Delegation
 
@@ -79,24 +81,26 @@ break it down into a series of smaller, more focused subtasks.
 
 This approach has several advantages:
 
-- **Isolation**: Subtasks have their own context and history, preventing prompt contamination and
+* **Isolation**: Subtasks have their own context and history, preventing prompt contamination and
   allowing the model to focus on a specific goal.
-- **Specialization**: A subtask can be initiated in a different `Mode` than its parent, granting it
+* **Specialization**: A subtask can be initiated in a different `Mode` than its parent, granting it
   access to a specialized set of tools. For example, a `code` mode task could delegate to a `test`
   mode subtask.
-- **Resilience**: An error in a subtask does not automatically fail the parent task. The parent can
+* **Resilience**: An error in a subtask does not automatically fail the parent task. The parent can
   decide how to proceed based on the subtask's result.
-- **Clarity**: It creates a clear, hierarchical structure for complex work, which is easier to debug
+* **Clarity**: It creates a clear, hierarchical structure for complex work, which is easier to debug
   and manage.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 ### The Subtask Mechanism
 
 <a id="the-subtask-mechanism"></a>
 
 Task delegation is facilitated by a pair of specialized tools:
+
 1. **`startSubtask`**: This tool is called by the model when it identifies a piece of work that
    should be handled in isolation. It pauses the current (parent) task and initiates a new (child)
    task.
@@ -107,7 +111,8 @@ Task delegation is facilitated by a pair of specialized tools:
 The parent task is effectively in an `awaiting_subtask` state while the child task is active.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 ### Subtask Workflow Diagram
 
@@ -137,23 +142,26 @@ sequenceDiagram
 ```
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 ### Key Symbols and Their Roles
 
 <a id="key-symbols-and-their-roles"></a>
-- [`startSubtask`](`[FILE_MOVED_OR_RENAMED]`#L1628): The entry point for delegation. This function
+
+* [`startSubtask`](`[FILE_MOVED_OR_RENAMED]`#L1628): The entry point for delegation. This function
   is responsible for pausing the parent task and creating the new child `Task` instance. It takes
   the instructions for the new subtask as an argument.
-- [`completeSubtask`](`[FILE_MOVED_OR_RENAMED]`#L1669): The exit point for a subtask. This function
+* [`completeSubtask`](`[FILE_MOVED_OR_RENAMED]`#L1669): The exit point for a subtask. This function
   packages the subtask's final output and signals the parent task to resume its operation.
-- **`newTaskTool`**: While not strictly for subtasks, the
+* **`newTaskTool`**: While not strictly for subtasks, the
   [`newTaskTool`](`[FILE_MOVED_OR_RENAMED]`#L14) can be used to fire off independent, asynchronous
   tasks that do not block the parent. This is useful for "fire and forget" operations where the
   result is not immediately needed.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 ### When to Use Subtasks
 
@@ -162,52 +170,53 @@ sequenceDiagram
 The decision to delegate is made by the language model based on the complexity of the task at hand.
 Common scenarios for delegation include:
 
-- **Mode Switching for a Specific Action**: A task in `architect` mode needs to write code. It
+* **Mode Switching for a Specific Action**: A task in `architect` mode needs to write code. It
   delegates to a subtask in `code` mode to perform the file modifications.
-- **Complex Queries**: A task needs to gather information from multiple sources. It can delegate a
+* **Complex Queries**: A task needs to gather information from multiple sources. It can delegate a
   subtask for each source to run in parallel (if the architecture supports it) or sequentially.
-- **Refactoring**: A large-scale refactoring task can be broken down into subtasks for each file or
+* **Refactoring**: A large-scale refactoring task can be broken down into subtasks for each file or
   module that needs to be changed.
-- **Verification Steps**: A task can delegate to a `test` mode subtask to run verification checks on
+* **Verification Steps**: A task can delegate to a `test` mode subtask to run verification checks on
   the code it has just written.
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:*\*
+* *Understanding This System:*\*
 
-- **Next**: Check related documentation in the same directory
+* **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../architecture/README.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../README.md) for context
 
-- *Implementing Features:*\*
+* *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -224,27 +233,30 @@ You have reached the end of the task delegation document. Return to the
 [Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md).
 
 [Back to Top](#orchestrator-task-delegation)
-- \*\*
+
+* \*\*
 
 End of document.
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+* *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-task-delegation)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

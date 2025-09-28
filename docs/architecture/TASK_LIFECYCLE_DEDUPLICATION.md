@@ -1,83 +1,84 @@
 # Task Lifecycle Deduplication
 
 ## Table of Contents
-- [Task Lifecycle Deduplication](#task-lifecycle-deduplication)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Task Lifecycle Overview](#task-lifecycle-overview)
-- [Lifecycle States](#lifecycle-states)
-- [Task Creation Flow](#task-creation-flow)
-- [Message Queue Integration](#message-queue-integration)
-- [Message Queue Service](#message-queue-service)
-- [Queue Processing in Task](#queue-processing-in-task)
-- [Queue Processing Logic](#queue-processing-logic)
-- [Task Creation Deduplication](#task-creation-deduplication)
-- [ClineProvider Task Creation](#clineprovider-task-creation)
-- [Task Stack Management](#task-stack-management)
-- [Concurrent Execution Prevention](#concurrent-execution-prevention)
-- [Task State Management](#task-state-management)
-- [Request Processing Guard](#request-processing-guard)
-- [Message Queue State Check](#message-queue-state-check)
-- [State Synchronization](#state-synchronization)
-- [State Update Coordination](#state-update-coordination)
-- [Cross-Component State Sync](#crosscomponent-state-sync)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Multiple Task Instances](#issue-1-multiple-task-instances)
-- [Issue 2: Message Queue Duplication](#issue-2-message-queue-duplication)
-- [Issue 3: State Desynchronization](#issue-3-state-desynchronization)
-- [Performance Monitoring](#performance-monitoring)
-- [Task Creation Metrics](#task-creation-metrics)
-- [State Transition Tracking](#state-transition-tracking)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Task Lifecycle Deduplication](#task-lifecycle-deduplication)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Task Lifecycle Overview](#task-lifecycle-overview)
-- [Lifecycle States](#lifecycle-states)
-- [Task Creation Flow](#task-creation-flow)
-- [Message Queue Integration](#message-queue-integration)
-- [Message Queue Service](#message-queue-service)
-- [Queue Processing in Task](#queue-processing-in-task)
-- [Queue Processing Logic](#queue-processing-logic)
-- [Task Creation Deduplication](#task-creation-deduplication)
-- [ClineProvider Task Creation](#clineprovider-task-creation)
-- [Task Stack Management](#task-stack-management)
-- [Concurrent Execution Prevention](#concurrent-execution-prevention)
-- [Task State Management](#task-state-management)
-- [Request Processing Guard](#request-processing-guard)
-- [Message Queue State Check](#message-queue-state-check)
-- [State Synchronization](#state-synchronization)
-- [State Update Coordination](#state-update-coordination)
-- [Cross-Component State Sync](#crosscomponent-state-sync)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Multiple Task Instances](#issue-1-multiple-task-instances)
-- [Issue 2: Message Queue Duplication](#issue-2-message-queue-duplication)
-- [Issue 3: State Desynchronization](#issue-3-state-desynchronization)
-- [Performance Monitoring](#performance-monitoring)
-- [Task Creation Metrics](#task-creation-metrics)
-- [State Transition Tracking](#state-transition-tracking)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+* [Task Lifecycle Deduplication](#task-lifecycle-deduplication)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Executive Summary](#executive-summary)
+* [Research Context](#research-context)
+* [Task Lifecycle Overview](#task-lifecycle-overview)
+* [Lifecycle States](#lifecycle-states)
+* [Task Creation Flow](#task-creation-flow)
+* [Message Queue Integration](#message-queue-integration)
+* [Message Queue Service](#message-queue-service)
+* [Queue Processing in Task](#queue-processing-in-task)
+* [Queue Processing Logic](#queue-processing-logic)
+* [Task Creation Deduplication](#task-creation-deduplication)
+* [ClineProvider Task Creation](#clineprovider-task-creation)
+* [Task Stack Management](#task-stack-management)
+* [Concurrent Execution Prevention](#concurrent-execution-prevention)
+* [Task State Management](#task-state-management)
+* [Request Processing Guard](#request-processing-guard)
+* [Message Queue State Check](#message-queue-state-check)
+* [State Synchronization](#state-synchronization)
+* [State Update Coordination](#state-update-coordination)
+* [Cross-Component State Sync](#crosscomponent-state-sync)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Multiple Task Instances](#issue-1-multiple-task-instances)
+* [Issue 2: Message Queue Duplication](#issue-2-message-queue-duplication)
+* [Issue 3: State Desynchronization](#issue-3-state-desynchronization)
+* [Performance Monitoring](#performance-monitoring)
+* [Task Creation Metrics](#task-creation-metrics)
+* [State Transition Tracking](#state-transition-tracking)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Task Lifecycle Deduplication](#task-lifecycle-deduplication)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Executive Summary](#executive-summary)
+* [Research Context](#research-context)
+* [Task Lifecycle Overview](#task-lifecycle-overview)
+* [Lifecycle States](#lifecycle-states)
+* [Task Creation Flow](#task-creation-flow)
+* [Message Queue Integration](#message-queue-integration)
+* [Message Queue Service](#message-queue-service)
+* [Queue Processing in Task](#queue-processing-in-task)
+* [Queue Processing Logic](#queue-processing-logic)
+* [Task Creation Deduplication](#task-creation-deduplication)
+* [ClineProvider Task Creation](#clineprovider-task-creation)
+* [Task Stack Management](#task-stack-management)
+* [Concurrent Execution Prevention](#concurrent-execution-prevention)
+* [Task State Management](#task-state-management)
+* [Request Processing Guard](#request-processing-guard)
+* [Message Queue State Check](#message-queue-state-check)
+* [State Synchronization](#state-synchronization)
+* [State Update Coordination](#state-update-coordination)
+* [Cross-Component State Sync](#crosscomponent-state-sync)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Multiple Task Instances](#issue-1-multiple-task-instances)
+* [Issue 2: Message Queue Duplication](#issue-2-message-queue-duplication)
+* [Issue 3: State Desynchronization](#issue-3-state-desynchronization)
+* [Performance Monitoring](#performance-monitoring)
+* [Task Creation Metrics](#task-creation-metrics)
+* [State Transition Tracking](#state-transition-tracking)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Detailed documentation of task lifecycle management, message queue processing, and
+* *Purpose:*\* Detailed documentation of task lifecycle management, message queue processing, and
   deduplication mechanisms to prevent duplicate task creation and concurrent execution issues.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
@@ -101,21 +102,24 @@ document's role or purpose, this section helps orient you.
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- The Task Lifecycle Deduplication system manages task creation, message queue processing, and
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
+
+* The Task Lifecycle Deduplication system manages task creation, message queue processing, and
   prevents duplicate task execution. This system is critical for maintaining system stability and
   preventing resource conflicts in the KiloCode orchestrator.\*
 
 The Task Lifecycle system implements several deduplication mechanisms:
+
 1. **Task Creation Deduplication** - Prevents multiple task instances for single request
 2. **Message Queue Processing** - Coordinates message processing to prevent duplicates
 3. **State Synchronization** - Ensures consistent state across task lifecycle
@@ -437,14 +441,17 @@ public postStateToWebview(): void {
 
 ### Issue 1: Multiple Task Instances
 
-- *Symptoms*\*:
-- Multiple task IDs for single request
-- Concurrent task execution
-- Resource conflicts
+* *Symptoms*\*:
 
-- *Root Cause*\*: Task creation not properly checking for existing tasks
+* Multiple task IDs for single request
 
-- *Solution*\*:
+* Concurrent task execution
+
+* Resource conflicts
+
+* *Root Cause*\*: Task creation not properly checking for existing tasks
+
+* *Solution*\*:
 
 ```typescript
 // Enhanced task creation check
@@ -483,14 +490,17 @@ public async createTask(text?: string, images?: string[]): Promise<Task> {
 
 ### Issue 2: Message Queue Duplication
 
-- *Symptoms*\*:
-- Same message processed multiple times
-- Queue growing indefinitely
-- Duplicate API requests
+* *Symptoms*\*:
 
-- *Root Cause*\*: Message deduplication not working properly
+* Same message processed multiple times
 
-- *Solution*\*:
+* Queue growing indefinitely
+
+* Duplicate API requests
+
+* *Root Cause*\*: Message deduplication not working properly
+
+* *Solution*\*:
 
 ```typescript
 // Enhanced message deduplication
@@ -532,14 +542,17 @@ private createMessageSignature(text: string, images?: string[]): string {
 
 ### Issue 3: State Desynchronization
 
-- *Symptoms*\*:
-- UI state doesn't match task state
-- Buttons enabled when they should be disabled
-- Inconsistent behavior
+* *Symptoms*\*:
 
-- *Root Cause*\*: State updates not properly synchronized
+* UI state doesn't match task state
 
-- *Solution*\*:
+* Buttons enabled when they should be disabled
+
+* Inconsistent behavior
+
+* *Root Cause*\*: State updates not properly synchronized
+
+* *Solution*\*:
 
 ```typescript
 // Comprehensive state validation
@@ -654,21 +667,25 @@ const stateMetrics = {
 ```
 
 <a id="navigation-footer"></a>
-- Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
+
+* Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/TASK_LIFECYCLE_DEDUPLICATION.md#L1`
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [architecture](../architecture/) ·
   [↑ Table of Contents](#task-lifecycle-deduplication)
 
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

@@ -1,42 +1,43 @@
 # Orchestrator Error Handling
 
 ## Table of Contents
-- [Orchestrator Error Handling](#orchestrator-error-handling)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Error Handling Philosophy](#error-handling-philosophy)
-- [Types of Errors](#types-of-errors)
-- [The Recovery Loop](#the-recovery-loop)
-- [The "Mistake Limit"](#the-mistake-limit)
-- [Specific Error Scenarios](#specific-error-scenarios)
-- [Scenario: ](#scenario-)
-- [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
-- [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Orchestrator Error Handling](#orchestrator-error-handling)
-- [Table of Contents](#table-of-contents)
-- [Related Documents](#related-documents)
-- [Error Handling Philosophy](#error-handling-philosophy)
-- [Types of Errors](#types-of-errors)
-- [The Recovery Loop](#the-recovery-loop)
-- [The "Mistake Limit"](#the-mistake-limit)
-- [Specific Error Scenarios](#specific-error-scenarios)
-- [Scenario: ](#scenario-)
-- [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Orchestrator Error Handling](#orchestrator-error-handling)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Error Handling Philosophy](#error-handling-philosophy)
+* [Types of Errors](#types-of-errors)
+* [The Recovery Loop](#the-recovery-loop)
+* [The "Mistake Limit"](#the-mistake-limit)
+* [Specific Error Scenarios](#specific-error-scenarios)
+* [Scenario: ](#scenario-)
+* [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
+* [When You're Here](#when-youre-here)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Orchestrator Error Handling](#orchestrator-error-handling)
+* [Table of Contents](#table-of-contents)
+* [Related Documents](#related-documents)
+* [Error Handling Philosophy](#error-handling-philosophy)
+* [Types of Errors](#types-of-errors)
+* [The Recovery Loop](#the-recovery-loop)
+* [The "Mistake Limit"](#the-mistake-limit)
+* [Specific Error Scenarios](#specific-error-scenarios)
+* [Scenario: ](#scenario-)
+* [Scenario: Invalid Regex in ](#scenario-invalid-regex-in-)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* This document outlines the Kilo Code Orchestrator's strategies for handling errors,
+* *Purpose:*\* This document outlines the Kilo Code Orchestrator's strategies for handling errors,
   ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
   mechanisms, and the "Mistake Limit" concept.
 
@@ -63,16 +64,17 @@
 
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+* **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
   orchestrator
   documentation.
-- **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where
+* **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where
   errors can occur.
-- **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Details
+* **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Details
   permission-related errors like `FileRestrictionError`.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 ### Error Handling Philosophy
 
@@ -84,34 +86,36 @@ system attempts to recover by providing the error context back to the language m
 
 Key principles:
 
-- **Informative Feedback**: Errors are not just caught; they are formatted into a clear, descriptive
+* **Informative Feedback**: Errors are not just caught; they are formatted into a clear, descriptive
   message that is fed back into the task's execution loop.
-- **Model-Led Recovery**: The language model is responsible for attempting to correct its own
+* **Model-Led Recovery**: The language model is responsible for attempting to correct its own
   mistakes. If it tries to use a tool with incorrect parameters, the resulting error message should
   guide it to fix the call in its next attempt.
-- **Finite Retries**: To prevent infinite loops of failure, the system employs a "Mistake Limit" to
+* **Finite Retries**: To prevent infinite loops of failure, the system employs a "Mistake Limit" to
   halt tasks that are repeatedly failing.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 ### Types of Errors
 
 <a id="types-of-errors"></a>
 
-- **Tool Execution Errors**: The most common type. These occur when a tool fails to execute.
+* **Tool Execution Errors**: The most common type. These occur when a tool fails to execute.
   Examples include:
-- Invalid parameters (e.g., wrong file path).
-- Runtime exceptions within the tool's logic.
-- I/O failures.
-- **Parsing Errors**: The model produces malformed XML for a tool call that the `StreamingParser`
+* Invalid parameters (e.g., wrong file path).
+* Runtime exceptions within the tool's logic.
+* I/O failures.
+* **Parsing Errors**: The model produces malformed XML for a tool call that the `StreamingParser`
   cannot understand.
-- **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode.
+* **Permission Errors**: The model attempts to use a tool that is not allowed in the current mode.
   The primary example is [`FileRestrictionError`](`[FILE_MOVED_OR_RENAMED]`#L157).
-- **Catastrophic Errors**: Unrecoverable system-level errors that immediately halt the task.
+* **Catastrophic Errors**: Unrecoverable system-level errors that immediately halt the task.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 ### The Recovery Loop
 
@@ -139,7 +143,8 @@ sequenceDiagram
 This loop allows the model to learn from its mistakes within the context of a single task.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 ### The "Mistake Limit"
 
@@ -148,25 +153,27 @@ This loop allows the model to learn from its mistakes within the context of a si
 To prevent a task from getting stuck in a perpetual failure loop, the `Task` engine maintains a
 mistake counter.
 
-- **Increment**: The counter is incremented every time a tool execution error occurs.
-- **Threshold**: There is a pre-defined limit for the number of mistakes allowed within a single
+* **Increment**: The counter is incremented every time a tool execution error occurs.
+* **Threshold**: There is a pre-defined limit for the number of mistakes allowed within a single
   task.
-- **Termination**: If the mistake counter exceeds the threshold, the task is immediately terminated,
+* **Termination**: If the mistake counter exceeds the threshold, the task is immediately terminated,
   and a failure state is reported to the user. This prevents wasted resources and provides a clear
   signal that the current approach is not working.
-- **Reset**: The counter is reset upon successful tool execution, giving the model a "clean slate"
+* **Reset**: The counter is reset upon successful tool execution, giving the model a "clean slate"
   after a successful recovery.
 
 This concept is a crucial guardrail that ensures system stability.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 ### Specific Error Scenarios
 
 <a id="specific-error-scenarios"></a>
 
 #### Scenario: `FileRestrictionError`
+
 1. **Action**: Model in `architect` mode attempts to call `write_to_file`.
 2. **Check**: The `ToolExecutor` consults the `Mode & Permission Service` via
    [`isToolAllowedForMode`](`[FILE_MOVED_OR_RENAMED]`#L167). The check fails.
@@ -178,6 +185,7 @@ This concept is a crucial guardrail that ensures system stability.
    the file write.
 
 #### Scenario: Invalid Regex in `search_files`
+
 1. **Action**: Model calls `search_files` with a malformed regex pattern.
 2. **Error**: The tool's implementation catches the regex compilation error and returns an error
    result.
@@ -185,42 +193,43 @@ This concept is a crucial guardrail that ensures system stability.
 4. **Correction**: The model should fix the regex pattern in its next attempt.
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding This System:*\*
+* *Understanding This System:*\*
 
-- **Next**: Check related documentation in the same directory
+* **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../architecture/README.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../README.md) for context
 
-- *Implementing Features:*\*
+* *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Issues:*\*
+* *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../README.md) →
+  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -237,27 +246,30 @@ You have reached the end of the error handling document. Return to the
 [Security & Governance Document](ORCHESTRATOR_SECURITY_GOVERNANCE.md).
 
 [Back to Top](#orchestrator-error-handling)
-- \*\*
+
+* \*\*
 
 End of document.
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
+* *Navigation*\*: [docs](../) · [orchestrator](../orchestrator/) ·
   [↑ Table of Contents](#orchestrator-error-handling)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

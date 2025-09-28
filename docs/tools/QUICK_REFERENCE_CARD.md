@@ -1,103 +1,104 @@
 # Quick Reference Card
 
 ## Table of Contents
-- [Quick Reference Card](#quick-reference-card)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Essential Commands](#essential-commands)
-- [Validation](#validation)
-- [Maintenance](#maintenance)
-- [Reporting](#reporting)
-- [VS Code Shortcuts](#vs-code-shortcuts)
-- [Tasks](#tasks)
-- [Auto-fix](#autofix)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Required Sections](#required-sections)
-- [Every Document](#every-document)
-- [File Structure](#file-structure)
-- [Common Fixes](#common-fixes)
-- [Link Issues](#link-issues)
-- [Heading Hierarchy](#heading-hierarchy)
-- [Code Blocks](#code-blocks)
-- [Validation Rules](#validation-rules)
-- [Required](#required)
-- [Style](#style)
-- [Links](#links)
-- [Error Codes](#error-codes)
-- [Common Warnings](#common-warnings)
-- [Common Errors](#common-errors)
-- [File Patterns](#file-patterns)
-- [Naming](#naming)
-- [Organization](#organization)
-- [Performance Tips](#performance-tips)
-- [Large Files](#large-files)
-- [Validation Speed](#validation-speed)
-- [Troubleshooting](#troubleshooting)
-- [Quick Fixes](#quick-fixes)
-- [Debug Commands](#debug-commands)
-- [Team Workflow](#team-workflow)
-- [Before Committing](#before-committing)
-- [Code Review](#code-review)
-- [Regular Maintenance](#regular-maintenance)
-- [Resources](#resources)
-- [Documentation](#documentation)
-- [Tools](#tools)
-- [External](#external)
-- [Quick Reference Card](#quick-reference-card)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Essential Commands](#essential-commands)
-- [Validation](#validation)
-- [Maintenance](#maintenance)
-- [Reporting](#reporting)
-- [VS Code Shortcuts](#vs-code-shortcuts)
-- [Tasks](#tasks)
-- [Auto-fix](#autofix)
-- [](#)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Required Sections](#required-sections)
-- [Every Document](#every-document)
-- [File Structure](#file-structure)
-- [Common Fixes](#common-fixes)
-- [Link Issues](#link-issues)
-- [Heading Hierarchy](#heading-hierarchy)
-- [Code Blocks](#code-blocks)
-- [Validation Rules](#validation-rules)
-- [Required](#required)
-- [Style](#style)
-- [Links](#links)
-- [Error Codes](#error-codes)
-- [Common Warnings](#common-warnings)
-- [Common Errors](#common-errors)
-- [File Patterns](#file-patterns)
-- [Naming](#naming)
-- [Organization](#organization)
-- [Performance Tips](#performance-tips)
-- [Large Files](#large-files)
-- [Validation Speed](#validation-speed)
-- [Troubleshooting](#troubleshooting)
-- [Quick Fixes](#quick-fixes)
-- [Debug Commands](#debug-commands)
-- [Team Workflow](#team-workflow)
-- [Before Committing](#before-committing)
-- [Code Review](#code-review)
-- [Regular Maintenance](#regular-maintenance)
-- [Resources](#resources)
-- [Documentation](#documentation)
-- [Tools](#tools)
-- [External](#external)
+
+* [Quick Reference Card](#quick-reference-card)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Essential Commands](#essential-commands)
+* [Validation](#validation)
+* [Maintenance](#maintenance)
+* [Reporting](#reporting)
+* [VS Code Shortcuts](#vs-code-shortcuts)
+* [Tasks](#tasks)
+* [Auto-fix](#autofix)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Required Sections](#required-sections)
+* [Every Document](#every-document)
+* [File Structure](#file-structure)
+* [Common Fixes](#common-fixes)
+* [Link Issues](#link-issues)
+* [Heading Hierarchy](#heading-hierarchy)
+* [Code Blocks](#code-blocks)
+* [Validation Rules](#validation-rules)
+* [Required](#required)
+* [Style](#style)
+* [Links](#links)
+* [Error Codes](#error-codes)
+* [Common Warnings](#common-warnings)
+* [Common Errors](#common-errors)
+* [File Patterns](#file-patterns)
+* [Naming](#naming)
+* [Organization](#organization)
+* [Performance Tips](#performance-tips)
+* [Large Files](#large-files)
+* [Validation Speed](#validation-speed)
+* [Troubleshooting](#troubleshooting)
+* [Quick Fixes](#quick-fixes)
+* [Debug Commands](#debug-commands)
+* [Team Workflow](#team-workflow)
+* [Before Committing](#before-committing)
+* [Code Review](#code-review)
+* [Regular Maintenance](#regular-maintenance)
+* [Resources](#resources)
+* [Documentation](#documentation)
+* [Tools](#tools)
+* [External](#external)
+* [Quick Reference Card](#quick-reference-card)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Essential Commands](#essential-commands)
+* [Validation](#validation)
+* [Maintenance](#maintenance)
+* [Reporting](#reporting)
+* [VS Code Shortcuts](#vs-code-shortcuts)
+* [Tasks](#tasks)
+* [Auto-fix](#autofix)
+* [](#)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Required Sections](#required-sections)
+* [Every Document](#every-document)
+* [File Structure](#file-structure)
+* [Common Fixes](#common-fixes)
+* [Link Issues](#link-issues)
+* [Heading Hierarchy](#heading-hierarchy)
+* [Code Blocks](#code-blocks)
+* [Validation Rules](#validation-rules)
+* [Required](#required)
+* [Style](#style)
+* [Links](#links)
+* [Error Codes](#error-codes)
+* [Common Warnings](#common-warnings)
+* [Common Errors](#common-errors)
+* [File Patterns](#file-patterns)
+* [Naming](#naming)
+* [Organization](#organization)
+* [Performance Tips](#performance-tips)
+* [Large Files](#large-files)
+* [Validation Speed](#validation-speed)
+* [Troubleshooting](#troubleshooting)
+* [Quick Fixes](#quick-fixes)
+* [Debug Commands](#debug-commands)
+* [Team Workflow](#team-workflow)
+* [Before Committing](#before-committing)
+* [Code Review](#code-review)
+* [Regular Maintenance](#regular-maintenance)
+* [Resources](#resources)
+* [Documentation](#documentation)
+* [Tools](#tools)
+* [External](#external)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
@@ -184,12 +185,14 @@ node scripts/docs/validation-report.js --summary
 ## VS Code Shortcuts
 
 ### Tasks
-- `Ctrl+Shift+P` → "Tasks: Run Task"
-- Select: `docs: validate`, `docs: maintain`, `docs: report`
+
+* `Ctrl+Shift+P` → "Tasks: Run Task"
+* Select: `docs: validate`, `docs: maintain`, `docs: report`
 
 ### Auto-fix
-- `Ctrl+Shift+P` → "Markdown: Fix all markdownlint violations"
-- Auto-fix on save (enabled by default)
+
+* `Ctrl+Shift+P` → "Markdown: Fix all markdownlint violations"
+* Auto-fix on save (enabled by default)
 
 #
 
@@ -198,13 +201,15 @@ node scripts/docs/validation-report.js --summary
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation
-- `Ctrl+Shift+O` → Go to symbol in file
-- `Ctrl+T` → Go to symbol in workspace
-- `F12` → Go to definition
+
+* `Ctrl+Shift+O` → Go to symbol in file
+* `Ctrl+T` → Go to symbol in workspace
+* `F12` → Go to definition
 
 ## Required Sections
 
@@ -287,68 +292,78 @@ const example = "with syntax highlighting"
 ## Validation Rules
 
 ### Required
-- \[ ] Research Context section
-- \[ ] Navigation footer
-- \[ ] Table of Contents (if >500 words)
-- \[ ] Descriptive link text
-- \[ ] Proper heading hierarchy
+
+* \[ ] Research Context section
+* \[ ] Navigation footer
+* \[ ] Table of Contents (if >500 words)
+* \[ ] Descriptive link text
+* \[ ] Proper heading hierarchy
 
 ### Style
-- \[ ] Consistent formatting
-- \[ ] Alt text for images
-- \[ ] Working code examples
-- \[ ] Fun facts where appropriate
+
+* \[ ] Consistent formatting
+* \[ ] Alt text for images
+* \[ ] Working code examples
+* \[ ] Fun facts where appropriate
 
 ### Links
-- \[ ] All internal links work
-- \[ ] External links accessible
-- \[ ] Descriptive link text
-- \[ ] No broken references
+
+* \[ ] All internal links work
+* \[ ] External links accessible
+* \[ ] Descriptive link text
+* \[ ] No broken references
 
 ## Error Codes
 
 ### Common Warnings
-- `no-literal-urls` → Use descriptive link text
-- `missing-heading` → Add required section
-- `broken-link` → Fix or remove broken link
-- `inconsistent-list` → Use consistent formatting
+
+* `no-literal-urls` → Use descriptive link text
+* `missing-heading` → Add required section
+* `broken-link` → Fix or remove broken link
+* `inconsistent-list` → Use consistent formatting
 
 ### Common Errors
-- `missing-research-context` → Add Research Context section
-- `missing-navigation` → Add navigation footer
-- `broken-internal-link` → Fix file path
-- `invalid-heading-hierarchy` → Fix heading levels
+
+* `missing-research-context` → Add Research Context section
+* `missing-navigation` → Add navigation footer
+* `broken-internal-link` → Fix file path
+* `invalid-heading-hierarchy` → Fix heading levels
 
 ## File Patterns
 
 ### Naming
-- Use kebab-case: `my-document.md`
-- Be descriptive: `api-integration-guide.md`
-- Include version if needed: `v2-migration-guide.md`
+
+* Use kebab-case: `my-document.md`
+* Be descriptive: `api-integration-guide.md`
+* Include version if needed: `v2-migration-guide.md`
 
 ### Organization
-- Group by topic/feature
-- Use consistent directory structure
-- Keep related files together
-- Avoid deep nesting
+
+* Group by topic/feature
+* Use consistent directory structure
+* Keep related files together
+* Avoid deep nesting
 
 ## Performance Tips
 
 ### Large Files
-- Split into smaller sections
-- Use table of contents
-- Optimize images
-- Consider pagination
+
+* Split into smaller sections
+* Use table of contents
+* Optimize images
+* Consider pagination
 
 ### Validation Speed
-- Use incremental validation
-- Exclude large directories
-- Cache results when possible
-- Process in parallel
+
+* Use incremental validation
+* Exclude large directories
+* Cache results when possible
+* Process in parallel
 
 ## Troubleshooting
 
 ### Quick Fixes
+
 1. **Validation not running** → Check extensions, run `pnpm install`
 2. **Auto-fix not working** → Check VS Code settings, restart
 3. **Performance issues** → Exclude large dirs, use incremental
@@ -382,6 +397,7 @@ pnpm list | grep remark
 ## Team Workflow
 
 ### Before Committing
+
 1. Run `pnpm docs:validate`
 2. Fix any errors
 3. Run `pnpm docs:maintain`
@@ -389,6 +405,7 @@ pnpm list | grep remark
 5. Commit with descriptive message
 
 ### Code Review
+
 1. Check validation report
 2. Verify all links work
 3. Review content quality
@@ -396,25 +413,29 @@ pnpm list | grep remark
 5. Approve or request changes
 
 ### Regular Maintenance
-- Weekly: Run validation, check errors
-- Monthly: Update links, review content
-- Quarterly: Full documentation review
+
+* Weekly: Run validation, check errors
+* Monthly: Update links, review content
+* Quarterly: Full documentation review
 
 ## Resources
 
 ### Documentation
-- [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
-- [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
-- [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
-- [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
+
+* [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
+* [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
+* [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
+* [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
 
 ### Tools
-- [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Remark Configuration](../../.remarkrc)
-- [Package Scripts](../../package.json)
-- [VS Code Settings](../../.vscode/settings.json)
+
+* [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
+* [Remark Configuration](../../.remarkrc)
+* [Package Scripts](../../package.json)
+* [VS Code Settings](../../.vscode/settings.json)
 
 ### External
-- [Remark Documentation](https://remark.js.org/)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [VS Code Markdown](https://code.visualstudio.com/docs/languages/markdown)
+
+* [Remark Documentation](https://remark.js.org/)
+* [Markdown Guide](https://www.markdownguide.org/)
+* [VS Code Markdown](https://code.visualstudio.com/docs/languages/markdown)

@@ -1,83 +1,84 @@
 # MCP Integration
 
 ## Table of Contents
-- [MCP Integration](#mcp-integration)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [MCP Architecture](#mcp-architecture)
-- [Server Management](#server-management)
-- [MCP Hub](#mcp-hub)
-- [Server Manager](#server-manager)
-- [Tool Discovery](#tool-discovery)
-- [Tool Registry](#tool-registry)
-- [Tool Discovery Process](#tool-discovery-process)
-- [Resource Management](#resource-management)
-- [Resource Registry](#resource-registry)
-- [Resource Access](#resource-access)
-- [Communication Protocols](#communication-protocols)
-- [MCP Protocol Implementation](#mcp-protocol-implementation)
-- [Communication Flow](#communication-flow)
-- [Error Handling](#error-handling)
-- [Error Classification](#error-classification)
-- [Error Recovery](#error-recovery)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Server Connection Failures](#issue-1-server-connection-failures)
-- [Issue 2: Tool Discovery Issues](#issue-2-tool-discovery-issues)
-- [Issue 3: Resource Access Problems](#issue-3-resource-access-problems)
-- [Issue 4: Protocol Communication Errors](#issue-4-protocol-communication-errors)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [MCP Integration](#mcp-integration)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [MCP Architecture](#mcp-architecture)
-- [Server Management](#server-management)
-- [MCP Hub](#mcp-hub)
-- [Server Manager](#server-manager)
-- [Tool Discovery](#tool-discovery)
-- [Tool Registry](#tool-registry)
-- [Tool Discovery Process](#tool-discovery-process)
-- [Resource Management](#resource-management)
-- [Resource Registry](#resource-registry)
-- [Resource Access](#resource-access)
-- [Communication Protocols](#communication-protocols)
-- [MCP Protocol Implementation](#mcp-protocol-implementation)
-- [Communication Flow](#communication-flow)
-- [Error Handling](#error-handling)
-- [Error Classification](#error-classification)
-- [Error Recovery](#error-recovery)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Server Connection Failures](#issue-1-server-connection-failures)
-- [Issue 2: Tool Discovery Issues](#issue-2-tool-discovery-issues)
-- [Issue 3: Resource Access Problems](#issue-3-resource-access-problems)
-- [Issue 4: Protocol Communication Errors](#issue-4-protocol-communication-errors)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [MCP Integration](#mcp-integration)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [MCP Architecture](#mcp-architecture)
+* [Server Management](#server-management)
+* [MCP Hub](#mcp-hub)
+* [Server Manager](#server-manager)
+* [Tool Discovery](#tool-discovery)
+* [Tool Registry](#tool-registry)
+* [Tool Discovery Process](#tool-discovery-process)
+* [Resource Management](#resource-management)
+* [Resource Registry](#resource-registry)
+* [Resource Access](#resource-access)
+* [Communication Protocols](#communication-protocols)
+* [MCP Protocol Implementation](#mcp-protocol-implementation)
+* [Communication Flow](#communication-flow)
+* [Error Handling](#error-handling)
+* [Error Classification](#error-classification)
+* [Error Recovery](#error-recovery)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Server Connection Failures](#issue-1-server-connection-failures)
+* [Issue 2: Tool Discovery Issues](#issue-2-tool-discovery-issues)
+* [Issue 3: Resource Access Problems](#issue-3-resource-access-problems)
+* [Issue 4: Protocol Communication Errors](#issue-4-protocol-communication-errors)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [MCP Integration](#mcp-integration)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [MCP Architecture](#mcp-architecture)
+* [Server Management](#server-management)
+* [MCP Hub](#mcp-hub)
+* [Server Manager](#server-manager)
+* [Tool Discovery](#tool-discovery)
+* [Tool Registry](#tool-registry)
+* [Tool Discovery Process](#tool-discovery-process)
+* [Resource Management](#resource-management)
+* [Resource Registry](#resource-registry)
+* [Resource Access](#resource-access)
+* [Communication Protocols](#communication-protocols)
+* [MCP Protocol Implementation](#mcp-protocol-implementation)
+* [Communication Flow](#communication-flow)
+* [Error Handling](#error-handling)
+* [Error Classification](#error-classification)
+* [Error Recovery](#error-recovery)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Server Connection Failures](#issue-1-server-connection-failures)
+* [Issue 2: Tool Discovery Issues](#issue-2-tool-discovery-issues)
+* [Issue 3: Resource Access Problems](#issue-3-resource-access-problems)
+* [Issue 4: Protocol Communication Errors](#issue-4-protocol-communication-errors)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Comprehensive documentation of Model Context Protocol (MCP) integration, server
+* *Purpose:*\* Comprehensive documentation of Model Context Protocol (MCP) integration, server
   management, and tool discovery in the KiloCode system.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
@@ -114,10 +115,12 @@ document's role or purpose, this section helps orient you.
 \[Research or development methodology used]
 
 ## Executive Summary
-- The MCP Integration system provides comprehensive Model Context Protocol support for KiloCode,
+
+* The MCP Integration system provides comprehensive Model Context Protocol support for KiloCode,
   enabling seamless integration with external tools and resources through standardized MCP servers.\*
 
 The MCP Integration consists of:
+
 1. **MCP Hub** - Central MCP server management
 2. **Server Manager** - Individual server lifecycle management
 3. **Tool Discovery** - Tool and resource discovery mechanisms
@@ -180,21 +183,29 @@ graph TB
 
 ### MCP Hub
 
-- *Implementation*\*: `src/services/mcp/McpHub.ts` **Features**:
-- Server registration and management
-- Tool and resource discovery
-- Communication coordination
-- Error handling and recovery
+* *Implementation*\*: `src/services/mcp/McpHub.ts` **Features**:
 
-- *Hub Responsibilities*\*:
-- Server lifecycle management
-- Tool registry maintenance
-- Resource access coordination
-- Communication protocol handling
+* Server registration and management
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+* Tool and resource discovery
 
-- *McpHub Architecture*\*:
+* Communication coordination
+
+* Error handling and recovery
+
+* *Hub Responsibilities*\*:
+
+* Server lifecycle management
+
+* Tool registry maintenance
+
+* Resource access coordination
+
+* Communication protocol handling
+
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Implementation Details**:
+
+* *McpHub Architecture*\*:
 
 ```typescript
 export class McpHub {
@@ -211,31 +222,35 @@ export class McpHub {
 }
 ```
 
-- *Core Features*\*:
+* *Core Features*\*:
 
-- **Multi-Transport Support**: Stdio, SSE, and StreamableHTTP transport protocols
+* **Multi-Transport Support**: Stdio, SSE, and StreamableHTTP transport protocols
 
-- **Connection Management**: Comprehensive connection state management
+* **Connection Management**: Comprehensive connection state management
 
-- **Server Discovery**: Automatic server discovery and registration
+* **Server Discovery**: Automatic server discovery and registration
 
-- **Tool Registry**: Centralized tool and resource registry
+* **Tool Registry**: Centralized tool and resource registry
 
-- **Configuration Validation**: Schema-based configuration validation
+* **Configuration Validation**: Schema-based configuration validation
 
-- **File Watching**: Automatic server restart on configuration changes
+* **File Watching**: Automatic server restart on configuration changes
 
-- **Error Handling**: Comprehensive error handling and recovery
+* **Error Handling**: Comprehensive error handling and recovery
 
 ### Server Manager
 
-- *Implementation*\*: `src/services/mcp/McpServerManager.ts` **Features**:
-- Individual server management
-- Server configuration
-- Status monitoring
-- Event handling
+* *Implementation*\*: `src/services/mcp/McpServerManager.ts` **Features**:
 
-- *Server Lifecycle*\*:
+* Individual server management
+
+* Server configuration
+
+* Status monitoring
+
+* Event handling
+
+* *Server Lifecycle*\*:
 
 ```mermaid
 stateDiagram-v2
@@ -252,20 +267,24 @@ stateDiagram-v2
     Stopped --> [*]: Uninstall
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Server lifecycle
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Server lifecycle
   management, configuration handling, status monitoring
 
 ## Tool Discovery
 
 ### Tool Registry
 
-- *Tool Registration*\*:
-- Tool metadata management
-- Capability tracking
-- Version management
-- Dependency tracking
+* *Tool Registration*\*:
 
-- *Tool Metadata*\*:
+* Tool metadata management
+
+* Capability tracking
+
+* Version management
+
+* Dependency tracking
+
+* *Tool Metadata*\*:
 
 ```typescript
 interface MCPToolMetadata {
@@ -280,18 +299,19 @@ interface MCPToolMetadata {
 }
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Tool registry
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Tool registry
   architecture, metadata management, capability tracking
 
 ### Tool Discovery Process
 
-- *Discovery Mechanisms*\*:
+* *Discovery Mechanisms*\*:
+
 1. **Server Registration**: Tools registered during server startup
 2. **Dynamic Discovery**: Runtime tool discovery
 3. **Capability Queries**: Capability-based tool discovery
 4. **Dependency Resolution**: Tool dependency analysis
 
-- *Discovery Flow*\*:
+* *Discovery Flow*\*:
 
 ```mermaid
 sequenceDiagram
@@ -309,24 +329,24 @@ sequenceDiagram
     MCP Hub-->>Client: Available Tools
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Discovery mechanisms,
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Discovery mechanisms,
   tool registration, capability queries
 
 ## Resource Management
 
 ### Resource Registry
 
-- *Resource Types*\*:
+* *Resource Types*\*:
 
-- **File Resources**: File system access
+* **File Resources**: File system access
 
-- **Database Resources**: Database connections
+* **Database Resources**: Database connections
 
-- **API Resources**: External API access
+* **API Resources**: External API access
 
-- **Custom Resources**: Server-specific resources
+* **Custom Resources**: Server-specific resources
 
-- *Resource Metadata*\*:
+* *Resource Metadata*\*:
 
 ```typescript
 interface MCPResourceMetadata {
@@ -340,32 +360,32 @@ interface MCPResourceMetadata {
 }
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource registry
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource registry
   architecture, metadata management, access control
 
 ### Resource Access
 
-- *Access Patterns*\*:
+* *Access Patterns*\*:
 
-- **Read Access**: Resource reading operations
+* **Read Access**: Resource reading operations
 
-- **Write Access**: Resource modification operations
+* **Write Access**: Resource modification operations
 
-- **Stream Access**: Streaming resource access
+* **Stream Access**: Streaming resource access
 
-- **Batch Access**: Batch resource operations
+* **Batch Access**: Batch resource operations
 
-- *Access Control*\*:
+* *Access Control*\*:
 
-- **Authentication**: Resource access authentication
+* **Authentication**: Resource access authentication
 
-- **Authorization**: Permission-based access control
+* **Authorization**: Permission-based access control
 
-- **Rate Limiting**: Access rate limiting
+* **Rate Limiting**: Access rate limiting
 
-- **Audit Logging**: Access audit logging
+* **Audit Logging**: Access audit logging
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource access
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource access
   patterns,
   access control, security measures
 
@@ -373,33 +393,33 @@ interface MCPResourceMetadata {
 
 ### MCP Protocol Implementation
 
-- *Protocol Features*\*:
+* *Protocol Features*\*:
 
-- **JSON-RPC**: MCP protocol implementation
+* **JSON-RPC**: MCP protocol implementation
 
-- **WebSocket**: Real-time communication
+* **WebSocket**: Real-time communication
 
-- **HTTP**: RESTful communication
+* **HTTP**: RESTful communication
 
-- **Message Queuing**: Asynchronous communication
+* **Message Queuing**: Asynchronous communication
 
-- *Message Types*\*:
+* *Message Types*\*:
 
-- **Tool Invocation**: Tool execution requests
+* **Tool Invocation**: Tool execution requests
 
-- **Resource Access**: Resource access requests
+* **Resource Access**: Resource access requests
 
-- **Event Notifications**: Server event notifications
+* **Event Notifications**: Server event notifications
 
-- **Error Responses**: Error handling responses
+* **Error Responses**: Error handling responses
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Protocol
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Protocol
   implementation,
   message handling, communication patterns
 
 ### Communication Flow
 
-- *Request/Response Pattern*\*:
+* *Request/Response Pattern*\*:
 
 ```mermaid
 sequenceDiagram
@@ -416,105 +436,119 @@ sequenceDiagram
     MCP Hub-->>Client: Final Response
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Communication flow,
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Communication flow,
   request handling, response processing
 
 ## Error Handling
 
 ### Error Classification
 
-- *Error Types*\*:
+* *Error Types*\*:
 
-- **Server Errors**: Server-specific errors
+* **Server Errors**: Server-specific errors
 
-- **Protocol Errors**: MCP protocol errors
+* **Protocol Errors**: MCP protocol errors
 
-- **Tool Errors**: Tool execution errors
+* **Tool Errors**: Tool execution errors
 
-- **Resource Errors**: Resource access errors
+* **Resource Errors**: Resource access errors
 
-- *Error Handling Strategy*\*:
+* *Error Handling Strategy*\*:
 
-- **Error Detection**: Error identification and classification
+* **Error Detection**: Error identification and classification
 
-- **Error Recovery**: Automatic error recovery
+* **Error Recovery**: Automatic error recovery
 
-- **Error Reporting**: Error reporting and logging
+* **Error Reporting**: Error reporting and logging
 
-- **Error Prevention**: Proactive error prevention
+* **Error Prevention**: Proactive error prevention
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Error handling
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Error handling
   framework,
   recovery strategies, error reporting
 
 ### Error Recovery
 
-- *Recovery Mechanisms*\*:
+* *Recovery Mechanisms*\*:
 
-- **Retry Logic**: Automatic retry for transient errors
+* **Retry Logic**: Automatic retry for transient errors
 
-- **Fallback Strategies**: Alternative execution paths
+* **Fallback Strategies**: Alternative execution paths
 
-- **Circuit Breaker**: Service protection patterns
+* **Circuit Breaker**: Service protection patterns
 
-- **Graceful Degradation**: Reduced functionality mode
+* **Graceful Degradation**: Reduced functionality mode
 
-- *Recovery Flow*\*:
+* *Recovery Flow*\*:
+
 1. **Error Detection**: Error identification
 2. **Error Classification**: Error type determination
 3. **Recovery Strategy**: Recovery approach selection
 4. **Recovery Execution**: Recovery action execution
 5. **Recovery Validation**: Recovery success verification
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Recovery mechanisms,
+* *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Recovery mechanisms,
   fallback strategies, circuit breaker patterns
 
 ## Common Issues and Solutions
 
 ### Issue 1: Server Connection Failures
 
-- *Symptoms*\*:
-- Server connection errors
-- Communication timeouts
-- Server unavailability
+* *Symptoms*\*:
 
-- *Root Cause*\*: Network issues or server configuration problems **Solution**: Implement robust
+* Server connection errors
+
+* Communication timeouts
+
+* Server unavailability
+
+* *Root Cause*\*: Network issues or server configuration problems **Solution**: Implement robust
   connection management and retry logic
 
 ### Issue 2: Tool Discovery Issues
 
-- *Symptoms*\*:
-- Missing tools in registry
-- Tool registration failures
-- Capability mismatches
+* *Symptoms*\*:
 
-- *Root Cause*\*: Discovery mechanism failures or server compatibility issues **Solution**:
+* Missing tools in registry
+
+* Tool registration failures
+
+* Capability mismatches
+
+* *Root Cause*\*: Discovery mechanism failures or server compatibility issues **Solution**:
   Implement
   comprehensive discovery validation and error handling
 
 ### Issue 3: Resource Access Problems
 
-- *Symptoms*\*:
-- Resource access denied
-- Resource not found
-- Access permission errors
+* *Symptoms*\*:
 
-- *Root Cause*\*: Access control issues or resource configuration problems **Solution**: Implement
+* Resource access denied
+
+* Resource not found
+
+* Access permission errors
+
+* *Root Cause*\*: Access control issues or resource configuration problems **Solution**: Implement
   proper access control and resource validation
 
 ### Issue 4: Protocol Communication Errors
 
-- *Symptoms*\*:
-- Message parsing errors
-- Protocol version mismatches
-- Communication failures
+* *Symptoms*\*:
 
-- *Root Cause*\*: Protocol implementation issues or version incompatibilities **Solution**:
+* Message parsing errors
+
+* Protocol version mismatches
+
+* Communication failures
+
+* *Root Cause*\*: Protocol implementation issues or version incompatibilities **Solution**:
   Implement
   robust protocol handling and version management
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](architecture/SYSTEM_OVERVIEW.md) · Root:
+
+* Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
   · Source: `/docs/services/MCP_INTEGRATION.md#L1`
 
@@ -523,14 +557,17 @@ sequenceDiagram
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
   [↑ Table of Contents](#mcp-integration)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

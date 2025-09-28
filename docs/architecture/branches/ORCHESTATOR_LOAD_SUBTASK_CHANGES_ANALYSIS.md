@@ -1,72 +1,73 @@
 # Branch Analysis: catrielmuller/orchestator-load-subtask
 
 ## Table of Contents
-- [Branch Analysis: catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestator-load-subtask)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Quick Navigation](#quick-navigation)
-- [Research Context](#research-context)
-- [Race Condition Details](#race-condition-details)
-- [Summary of Intent](#summary-of-intent)
-- [Change 1: ](#change-1)
-- [Before](#before)
-- [After](#after)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
-- [Before](#before)
-- [After](#after)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
-- [Before](#before)
-- [After](#after)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
-- [Before](#before)
-- [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Net Impact](#net-impact)
-- [Recommendations](#recommendations)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Branch Analysis: catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestator-load-subtask)
-- [Table of Contents](#table-of-contents)
-- [Quick Navigation](#quick-navigation)
-- [Research Context](#research-context)
-- [Race Condition Details](#race-condition-details)
-- [Summary of Intent](#summary-of-intent)
-- [Change 1: ](#change-1)
-- [Before](#before)
-- [After](#after)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
-- [Before](#before)
-- [After](#after)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
-- [Before](#before)
-- [After](#after)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
-- [Before](#before)
-- [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
-- [Motivation](#motivation)
-- [Side Effect](#side-effect)
-- [Net Impact](#net-impact)
-- [Recommendations](#recommendations)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Branch Analysis: catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestator-load-subtask)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Quick Navigation](#quick-navigation)
+* [Research Context](#research-context)
+* [Race Condition Details](#race-condition-details)
+* [Summary of Intent](#summary-of-intent)
+* [Change 1: ](#change-1)
+* [Before](#before)
+* [After](#after)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
+* [Before](#before)
+* [After](#after)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
+* [Before](#before)
+* [After](#after)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
+* [Before](#before)
+* [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Net Impact](#net-impact)
+* [Recommendations](#recommendations)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Branch Analysis: catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestator-load-subtask)
+* [Table of Contents](#table-of-contents)
+* [Quick Navigation](#quick-navigation)
+* [Research Context](#research-context)
+* [Race Condition Details](#race-condition-details)
+* [Summary of Intent](#summary-of-intent)
+* [Change 1: ](#change-1)
+* [Before](#before)
+* [After](#after)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
+* [Before](#before)
+* [After](#after)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
+* [Before](#before)
+* [After](#after)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Change 4: Messaging/Conversation History Additions](#change-4-messagingconversation-history-additions)
+* [Before](#before)
+* [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
+* [Motivation](#motivation)
+* [Side Effect](#side-effect)
+* [Net Impact](#net-impact)
+* [Recommendations](#recommendations)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [When You're Here, You Can:](#when-youre-here-you-can)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
@@ -79,66 +80,75 @@ snippets and motivations. Focus on orchestrator/subtask resume behavior and unin
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Audience**: \[Who should read this document]
-- **Prerequisites**: \[What you should know before reading]
-- **Related Documents**: \[Links to related documentation]
+* **Purpose**: \[Brief description of what this document covers]
+* **Audience**: \[Who should read this document]
+* **Prerequisites**: \[What you should know before reading]
+* **Related Documents**: \[Links to related documentation]
 
 ## Quick Navigation
 
 ## Research Context
 
-- *Purpose:*\* \[Describe the purpose and scope of this document]
+* *Purpose:*\* \[Describe the purpose and scope of this document]
 
-- *Background:*\* \[Provide relevant background information]
+* *Background:*\* \[Provide relevant background information]
 
-- *Research Questions:*\* \[List key questions this document addresses]
+* *Research Questions:*\* \[List key questions this document addresses]
 
-- *Methodology:*\* \[Describe the approach or methodology used]
+* *Methodology:*\* \[Describe the approach or methodology used]
 
-- *Findings:*\* \[Summarize key findings or conclusions]
-- \*\*
-- [Root Cause Analysis of Duplicate API Requests](../race-condition/ROOT_CAUSE_ANALYSIS.md) -
+* *Findings:*\* \[Summarize key findings or conclusions]
+
+* \*\*
+
+* [Root Cause Analysis of Duplicate API Requests](../race-condition/ROOT_CAUSE_ANALYSIS.md) -
   Detailed investigation of the concurrent recursive calls race condition, including the problematic
   commit and code changes that created the issue. Provides comprehensive analysis of how the
   `continueParentTask` method introduced concurrent execution paths.
-- [Navigation Scenario and Parent Resumption Context](../race-condition/NAVIGATION_SCENARIO.md) -
+
+* [Navigation Scenario and Parent Resumption Context](../race-condition/NAVIGATION_SCENARIO.md) -
   Explains why the problematic change was made, focusing on the navigation state loss problem and
   parent reinitialization. Details the specific scenario where users navigate away from chat and
   return to resume subtasks.
-- [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md) -
+
+* [Solution Options and Synchronization Strategies](../race-condition/SOLUTION_RECOMMENDATIONS.md) -
   Proposes multiple approaches to fix the race condition, including lock-based solutions, call
   tracking, and subtask completion coordination. Includes implementation strategies and testing
   approaches for each solution.
 
 ## Race Condition Details
 
-- *The Specific Race Condition Created:*\*
+* *The Specific Race Condition Created:*\*
 
-- **Problem**: Concurrent calls to `recursivelyMakeClineRequests` from both the main orchestrator
+* **Problem**: Concurrent calls to `recursivelyMakeClineRequests` from both the main orchestrator
   loop and the new `continueParentTask` method
 
-- **Trigger**: When a subtask completes while the parent orchestrator is still actively running (no
+* **Trigger**: When a subtask completes while the parent orchestrator is still actively running (no
   navigation occurred)
 
-- **Symptoms**: Multiple simultaneous API requests with spinners, jumbled responses, XML corruption
+* **Symptoms**: Multiple simultaneous API requests with spinners, jumbled responses, XML corruption
   in chat history
 
-- **Severity**: 2-request race condition (common) and 3-request race condition (severe, causes
+* **Severity**: 2-request race condition (common) and 3-request race condition (severe, causes
   cascading failures)
 
-- *Detailed Analysis Links:*\*
-- [Race Condition State Machine](README.md) - Understanding the concurrent
+* *Detailed Analysis Links:*\*
+
+* [Race Condition State Machine](README.md) - Understanding the concurrent
   execution states
-- [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
+
+* [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) - How the orchestrator-subtask
   architecture works
-- [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) - Severity and user experience impact
-- [Testing Strategy](../race-condition/TESTING_STRATEGY.md) - How to reproduce and validate fixes
+
+* [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) - Severity and user experience impact
+
+* [Testing Strategy](../race-condition/TESTING_STRATEGY.md) - How to reproduce and validate fixes
 
 ## Summary of Intent
-- Goal: Ensure that when a subtask finishes after the user navigated away and returned, the parent
+
+* Goal: Ensure that when a subtask finishes after the user navigated away and returned, the parent
   orchestrator reliably continues execution.
-- Approach: Modify subtask completion flow to (a) rehydrate parent; (b) continue execution.
+* Approach: Modify subtask completion flow to (a) rehydrate parent; (b) continue execution.
 
 ## Change 1: `ClineProvider.finishSubTask` → `continueParentTask`
 
@@ -186,19 +196,22 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 ```
 
 ### Motivation
-- Guarantee parent rehydration and continuation when returning from history view.
+
+* Guarantee parent rehydration and continuation when returning from history view.
 
 ### Side Effect
-- When user never navigated away (parent already running), this created a second, concurrent call to
+
+* When user never navigated away (parent already running), this created a second, concurrent call to
   `recursivelyMakeClineRequests` racing with the main loop.
-- **Race Condition Details**: See [Race Condition State Machine](README.md) for
+* **Race Condition Details**: See [Race Condition State Machine](README.md) for
   the specific concurrent execution states and
   [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for severity analysis.
 
 ## Change 2: Parent Task Initialization Logic
 
 ### Before
-- Initialization happened implicitly in normal flow; rehydration during navigation was incomplete or
+
+* Initialization happened implicitly in normal flow; rehydration during navigation was incomplete or
   scattered.
 
 ### After
@@ -212,16 +225,19 @@ if (!parentTask.isInitialized) {
 ```
 
 ### Motivation
-- Robustly restore parent state after navigation.
+
+* Robustly restore parent state after navigation.
 
 ### Side Effect
-- Correct and needed for navigation; safe when gated, but paired with unconditional continuation
+
+* Correct and needed for navigation; safe when gated, but paired with unconditional continuation
   caused races in active sessions.
 
 ## Change 3: Background Continuation Pattern
 
 ### Before
-- Parent continuation relied on the main orchestrator loop.
+
+* Parent continuation relied on the main orchestrator loop.
 
 ### After
 
@@ -235,66 +251,74 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 ```
 
 ### Motivation
-- Avoid blocking UI thread; resume parent promptly.
+
+* Avoid blocking UI thread; resume parent promptly.
 
 ### Side Effect
-- Fire-and-forget makes concurrency invisible and hard to coordinate; increases chance of overlap
+
+* Fire-and-forget makes concurrency invisible and hard to coordinate; increases chance of overlap
   with main loop.
-- **Concurrency Analysis**: See [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) for
+* **Concurrency Analysis**: See [Code Flow Analysis](../race-condition/CODE_FLOW_ANALYSIS.md) for
   detailed explanation of how the orchestrator-subtask architecture creates this race condition.
 
 ## Change 4: Messaging/Conversation History Additions
 
 ### Before
-- `completeSubtask` appended results to parent history.
+
+* `completeSubtask` appended results to parent history.
 
 ### After (unchanged semantics, different call site)
-- Still appends, but now followed by an extra resume trigger.
+
+* Still appends, but now followed by an extra resume trigger.
 
 ### Motivation
-- Ensure result is visible before continuation.
+
+* Ensure result is visible before continuation.
 
 ### Side Effect
-- None by itself; duplication issues stem from extra resume call.
+
+* None by itself; duplication issues stem from extra resume call.
 
 ## Net Impact
-- Intended scenario (navigation away/back): improved.
-- Active scenario (no navigation): created duplicate, concurrent recursive calls (2-request, and in
+
+* Intended scenario (navigation away/back): improved.
+* Active scenario (no navigation): created duplicate, concurrent recursive calls (2-request, and in
   edge cases 3-request).
-- **Detailed Impact Analysis**: See [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for
+* **Detailed Impact Analysis**: See [Impact Assessment](../race-condition/IMPACT_ASSESSMENT.md) for
   comprehensive analysis of user experience impact and severity levels.
 
 ## Recommendations
-- Move continuation decision into a single authority (Request Arbiter) rather than firing from
+
+* Move continuation decision into a single authority (Request Arbiter) rather than firing from
   provider.
-- Treat parent initialization as an explicit precondition; if unmet, synthesize an init step first.
-- If keeping current design temporarily, add a task-level guard/lock and a reason-tagged API to
+* Treat parent initialization as an explicit precondition; if unmet, synthesize an init step first.
+* If keeping current design temporarily, add a task-level guard/lock and a reason-tagged API to
   prevent parallel recursion.
 
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-- *Understanding Architecture:*\*
+* *Understanding Architecture:*\*
 
-- **Next**: Check related architecture documentation in the same directory
+* **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
-- *Implementing Architecture Features:*\*
+* *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
-- *Troubleshooting Architecture Issues:*\*
+* *Troubleshooting Architecture Issues:*\*
 
-- **Next**: \[Race Condition Analysis]race-condition/README.md) →
+* **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -303,21 +327,22 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
-- \*\*
+
+* \*\*
 
 ## No Dead Ends Policy
 
 Every section in this document connects you to your next step:
 
-- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-- **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
-- **If you're ready to implement**: Jump to the implementation sections
+* **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
-- *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

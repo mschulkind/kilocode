@@ -1,77 +1,78 @@
 # Code Index Service
 
 ## Table of Contents
-- [Code Index Service](#code-index-service)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [Service Architecture](#service-architecture)
-- [Indexing System](#indexing-system)
-- [Code Index Manager](#code-index-manager)
-- [Indexing Process](#indexing-process)
-- [Search Engine](#search-engine)
-- [Search Service](#search-service)
-- [Query Processing](#query-processing)
-- [Vector Store Integration](#vector-store-integration)
-- [Embedding Management](#embedding-management)
-- [Storage Backend](#storage-backend)
-- [Performance & Caching](#performance-caching)
-- [Cache Management](#cache-management)
-- [Performance Optimization](#performance-optimization)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
-- [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
-- [Issue 3: Cache Inconsistency](#issue-3-cache-inconsistency)
-- [Issue 4: Storage Issues](#issue-4-storage-issues)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Navigation](#navigation)
-- [Code Index Service](#code-index-service)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Executive Summary](#executive-summary)
-- [Service Architecture](#service-architecture)
-- [Indexing System](#indexing-system)
-- [Code Index Manager](#code-index-manager)
-- [Indexing Process](#indexing-process)
-- [Search Engine](#search-engine)
-- [Search Service](#search-service)
-- [Query Processing](#query-processing)
-- [Vector Store Integration](#vector-store-integration)
-- [Embedding Management](#embedding-management)
-- [Storage Backend](#storage-backend)
-- [Performance & Caching](#performance-caching)
-- [Cache Management](#cache-management)
-- [Performance Optimization](#performance-optimization)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
-- [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
-- [Issue 3: Cache Inconsistency](#issue-3-cache-inconsistency)
-- [Issue 4: Storage Issues](#issue-4-storage-issues)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+* [Code Index Service](#code-index-service)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [Service Architecture](#service-architecture)
+* [Indexing System](#indexing-system)
+* [Code Index Manager](#code-index-manager)
+* [Indexing Process](#indexing-process)
+* [Search Engine](#search-engine)
+* [Search Service](#search-service)
+* [Query Processing](#query-processing)
+* [Vector Store Integration](#vector-store-integration)
+* [Embedding Management](#embedding-management)
+* [Storage Backend](#storage-backend)
+* [Performance & Caching](#performance-caching)
+* [Cache Management](#cache-management)
+* [Performance Optimization](#performance-optimization)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
+* [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
+* [Issue 3: Cache Inconsistency](#issue-3-cache-inconsistency)
+* [Issue 4: Storage Issues](#issue-4-storage-issues)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
+* [Navigation](#navigation)
+* [Code Index Service](#code-index-service)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Executive Summary](#executive-summary)
+* [Service Architecture](#service-architecture)
+* [Indexing System](#indexing-system)
+* [Code Index Manager](#code-index-manager)
+* [Indexing Process](#indexing-process)
+* [Search Engine](#search-engine)
+* [Search Service](#search-service)
+* [Query Processing](#query-processing)
+* [Vector Store Integration](#vector-store-integration)
+* [Embedding Management](#embedding-management)
+* [Storage Backend](#storage-backend)
+* [Performance & Caching](#performance-caching)
+* [Cache Management](#cache-management)
+* [Performance Optimization](#performance-optimization)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
+* [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
+* [Issue 3: Cache Inconsistency](#issue-3-cache-inconsistency)
+* [Issue 4: Storage Issues](#issue-4-storage-issues)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-- **Context**: Use this as a starting point or reference while navigating the project.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
+* **Context**: Use this as a starting point or reference while navigating the project.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive documentation of the Code Index service for semantic code search,
+* *Purpose:*\* Comprehensive documentation of the Code Index service for semantic code search,
   embedding management, and vector-based code analysis in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
@@ -107,10 +108,12 @@ document's role or purpose, this section helps orient you.
 \[Research or development methodology used]
 
 ## Executive Summary
-- The Code Index Service provides comprehensive semantic code search capabilities through vector
+
+* The Code Index Service provides comprehensive semantic code search capabilities through vector
   embeddings, enabling intelligent code discovery and analysis within the KiloCode system.\*
 
 The Code Index Service consists of:
+
 1. **CodeIndexManager** - Central orchestration and management
 2. **Indexing System** - Code parsing and embedding generation
 3. **Search Engine** - Vector-based semantic search
@@ -173,7 +176,7 @@ graph TB
 
 ### Code Index Manager
 
-- *Manager Architecture*\*:
+* *Manager Architecture*\*:
 
 ```typescript
 export class CodeIndexManager {
@@ -190,48 +193,49 @@ export class CodeIndexManager {
 }
 ```
 
-- *Core Features*\*:
+* *Core Features*\*:
 
-- **Singleton Pattern**: Per-workspace singleton instances
+* **Singleton Pattern**: Per-workspace singleton instances
 
-- **State Management**: Comprehensive indexing state tracking
+* **State Management**: Comprehensive indexing state tracking
 
-- **Service Orchestration**: Coordinated service initialization
+* **Service Orchestration**: Coordinated service initialization
 
-- **Error Recovery**: Robust error handling and recovery
+* **Error Recovery**: Robust error handling and recovery
 
-- **Progress Tracking**: Real-time indexing progress monitoring
+* **Progress Tracking**: Real-time indexing progress monitoring
 
 ### Indexing Process
 
-- *Indexing Workflow*\*:
+* *Indexing Workflow*\*:
+
 1. **File Discovery**: Automatic file discovery and filtering
 2. **Code Parsing**: Language-specific code parsing
 3. **Embedding Generation**: Vector embedding creation
 4. **Index Storage**: Embedding storage and indexing
 5. **Index Optimization**: Index optimization and maintenance
 
-- *Indexing States*\*:
+* *Indexing States*\*:
 
 ```typescript
 export type IndexingState = "Standby" | "Indexing" | "Searching" | "Error" | "Disabled"
 ```
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Multi-workspace Support**: Per-workspace index management
+* **Multi-workspace Support**: Per-workspace index management
 
-- **State Persistence**: Indexing state persistence and recovery
+* **State Persistence**: Indexing state persistence and recovery
 
-- **Progress Monitoring**: Real-time progress tracking
+* **Progress Monitoring**: Real-time progress tracking
 
-- **Error Handling**: Comprehensive error handling and recovery
+* **Error Handling**: Comprehensive error handling and recovery
 
 ## Search Engine
 
 ### Search Service
 
-- *Search Implementation*\*:
+* *Search Implementation*\*:
 
 ```typescript
 export class CodeIndexSearchService {
@@ -241,89 +245,89 @@ export class CodeIndexSearchService {
 }
 ```
 
-- *Search Features*\*:
+* *Search Features*\*:
 
-- **Semantic Search**: Vector-based semantic code search
+* **Semantic Search**: Vector-based semantic code search
 
-- **Similarity Search**: Code similarity detection and analysis
+* **Similarity Search**: Code similarity detection and analysis
 
-- **Context Retrieval**: Code context and relationship analysis
+* **Context Retrieval**: Code context and relationship analysis
 
-- **Result Ranking**: Intelligent result ranking and filtering
+* **Result Ranking**: Intelligent result ranking and filtering
 
 ### Query Processing
 
-- *Query Types*\*:
+* *Query Types*\*:
 
-- **Natural Language Queries**: Human-readable search queries
+* **Natural Language Queries**: Human-readable search queries
 
-- **Code Pattern Queries**: Specific code pattern searches
+* **Code Pattern Queries**: Specific code pattern searches
 
-- **Semantic Queries**: Meaning-based code searches
+* **Semantic Queries**: Meaning-based code searches
 
-- **Hybrid Queries**: Combined text and semantic searches
+* **Hybrid Queries**: Combined text and semantic searches
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Query Optimization**: Query optimization and processing
+* **Query Optimization**: Query optimization and processing
 
-- **Result Filtering**: Intelligent result filtering and ranking
+* **Result Filtering**: Intelligent result filtering and ranking
 
-- **Performance Optimization**: Efficient query processing
+* **Performance Optimization**: Efficient query processing
 
-- **Caching**: Query result caching and optimization
+* **Caching**: Query result caching and optimization
 
 ## Vector Store Integration
 
 ### Embedding Management
 
-- *Embedding Features*\*:
+* *Embedding Features*\*:
 
-- **Multi-language Support**: Support for multiple programming languages
+* **Multi-language Support**: Support for multiple programming languages
 
-- **Context Preservation**: Code context and relationship preservation
+* **Context Preservation**: Code context and relationship preservation
 
-- **Incremental Updates**: Incremental embedding updates
+* **Incremental Updates**: Incremental embedding updates
 
-- **Version Management**: Embedding version management
+* **Version Management**: Embedding version management
 
-- *Vector Operations*\*:
+* *Vector Operations*\*:
 
-- **Similarity Calculation**: Vector similarity calculations
+* **Similarity Calculation**: Vector similarity calculations
 
-- **Clustering**: Code clustering and grouping
+* **Clustering**: Code clustering and grouping
 
-- **Dimensionality Reduction**: Efficient vector representation
+* **Dimensionality Reduction**: Efficient vector representation
 
-- **Storage Optimization**: Optimized vector storage
+* **Storage Optimization**: Optimized vector storage
 
 ### Storage Backend
 
-- *Storage Features*\*:
+* *Storage Features*\*:
 
-- **Persistent Storage**: Long-term embedding storage
+* **Persistent Storage**: Long-term embedding storage
 
-- **Fast Retrieval**: Optimized retrieval performance
+* **Fast Retrieval**: Optimized retrieval performance
 
-- **Scalability**: Horizontal scaling capabilities
+* **Scalability**: Horizontal scaling capabilities
 
-- **Backup & Recovery**: Data backup and recovery
+* **Backup & Recovery**: Data backup and recovery
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Vector Database**: Specialized vector database integration
+* **Vector Database**: Specialized vector database integration
 
-- **Storage Optimization**: Efficient storage and retrieval
+* **Storage Optimization**: Efficient storage and retrieval
 
-- **Performance Tuning**: Database performance optimization
+* **Performance Tuning**: Database performance optimization
 
-- **Data Integrity**: Data integrity and consistency
+* **Data Integrity**: Data integrity and consistency
 
 ## Performance & Caching
 
 ### Cache Management
 
-- *Cache Implementation*\*:
+* *Cache Implementation*\*:
 
 ```typescript
 export class CacheManager {
@@ -333,93 +337,106 @@ export class CacheManager {
 }
 ```
 
-- *Cache Features*\*:
+* *Cache Features*\*:
 
-- **Multi-level Caching**: Embedding, search, and index caching
+* **Multi-level Caching**: Embedding, search, and index caching
 
-- **Cache Invalidation**: Intelligent cache invalidation
+* **Cache Invalidation**: Intelligent cache invalidation
 
-- **Memory Management**: Efficient memory usage
+* **Memory Management**: Efficient memory usage
 
-- **Performance Monitoring**: Cache performance monitoring
+* **Performance Monitoring**: Cache performance monitoring
 
 ### Performance Optimization
 
-- *Optimization Strategies*\*:
+* *Optimization Strategies*\*:
 
-- **Batch Processing**: Batch embedding generation and indexing
+* **Batch Processing**: Batch embedding generation and indexing
 
-- **Parallel Processing**: Parallel indexing and search operations
+* **Parallel Processing**: Parallel indexing and search operations
 
-- **Memory Optimization**: Efficient memory usage patterns
+* **Memory Optimization**: Efficient memory usage patterns
 
-- **Storage Optimization**: Optimized storage and retrieval
+* **Storage Optimization**: Optimized storage and retrieval
 
-- *Performance Metrics*\*:
+* *Performance Metrics*\*:
 
-- **Indexing Speed**: Files indexed per second
+* **Indexing Speed**: Files indexed per second
 
-- **Search Latency**: Query response time
+* **Search Latency**: Query response time
 
-- **Cache Hit Rate**: Cache effectiveness
+* **Cache Hit Rate**: Cache effectiveness
 
-- **Memory Usage**: Memory consumption patterns
+* **Memory Usage**: Memory consumption patterns
 
-- *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
+* *Implementation Status*\*: ✅ **RESEARCHED AND DOCUMENTED** **Key Features**:
 
-- **Performance Monitoring**: Built-in performance monitoring
+* **Performance Monitoring**: Built-in performance monitoring
 
-- **Optimization**: Continuous performance optimization
+* **Optimization**: Continuous performance optimization
 
-- **Resource Management**: Efficient resource utilization
+* **Resource Management**: Efficient resource utilization
 
-- **Scalability**: Horizontal and vertical scaling support
+* **Scalability**: Horizontal and vertical scaling support
 
 ## Common Issues and Solutions
 
 ### Issue 1: Indexing Performance Issues
 
-- *Symptoms*\*:
-- Slow indexing speed
-- High memory usage
-- Indexing timeouts
+* *Symptoms*\*:
 
-- *Root Cause*\*: Inefficient indexing algorithms or resource constraints **Solution**: Implement
+* Slow indexing speed
+
+* High memory usage
+
+* Indexing timeouts
+
+* *Root Cause*\*: Inefficient indexing algorithms or resource constraints **Solution**: Implement
   batch processing and memory optimization
 
 ### Issue 2: Search Accuracy Problems
 
-- *Symptoms*\*:
-- Poor search results
-- Irrelevant matches
-- Missing relevant code
+* *Symptoms*\*:
 
-- *Root Cause*\*: Embedding quality or search algorithm issues **Solution**: Improve embedding
+* Poor search results
+
+* Irrelevant matches
+
+* Missing relevant code
+
+* *Root Cause*\*: Embedding quality or search algorithm issues **Solution**: Improve embedding
   generation and search algorithms
 
 ### Issue 3: Cache Inconsistency
 
-- *Symptoms*\*:
-- Stale search results
-- Cache invalidation failures
-- Performance degradation
+* *Symptoms*\*:
 
-- *Root Cause*\*: Cache management or invalidation issues **Solution**: Implement proper cache
+* Stale search results
+
+* Cache invalidation failures
+
+* Performance degradation
+
+* *Root Cause*\*: Cache management or invalidation issues **Solution**: Implement proper cache
   invalidation and consistency checks
 
 ### Issue 4: Storage Issues
 
-- *Symptoms*\*:
-- Storage failures
-- Data corruption
-- Retrieval errors
+* *Symptoms*\*:
 
-- *Root Cause*\*: Storage backend or data integrity issues **Solution**: Implement robust storage
+* Storage failures
+
+* Data corruption
+
+* Retrieval errors
+
+* *Root Cause*\*: Storage backend or data integrity issues **Solution**: Implement robust storage
   with
   backup and recovery
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](architecture/SYSTEM_OVERVIEW.md) · Root:
+
+* Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
   · Source: `/docs/services/CODE_INDEX_SERVICE.md#L1`
 
@@ -428,14 +445,17 @@ export class CacheManager {
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
-- \*\*
 
-- *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* \*\*
+
+* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
   [↑ Table of Contents](#code-index-service)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)

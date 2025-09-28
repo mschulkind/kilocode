@@ -1,105 +1,106 @@
 # Priority Improvements
 
 ## Table of Contents
-- [Priority Improvements](#priority-improvements)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Executive Summary](#executive-summary)
-- [Critical Priority Improvements](#critical-priority-improvements)
-- [1. Fix Duplicate API Requests Race Condition](#1-fix-duplicate-api-requests-race-condition)
-- [2. Tool Execution Metrics and Monitoring](#2-tool-execution-metrics-and-monitoring)
-- [3. API Provider Error Handling Standardization](#3-api-provider-error-handling-standardization)
-- [High Priority Improvements](#high-priority-improvements)
-- [4. Tool Validation Framework Enhancement](#4-tool-validation-framework-enhancement)
-- [5. Provider Configuration Management](#5-provider-configuration-management)
-- [6. MCP Server Configuration Validation](#6-mcp-server-configuration-validation)
-- [7. Cloud Service Event System Enhancement](#7-cloud-service-event-system-enhancement)
-- [8. Bridge Communication Protocol Standardization](#8-bridge-communication-protocol-standardization)
-- [Medium Priority Improvements](#medium-priority-improvements)
-- [9. Tool Composition Pattern Documentation](#9-tool-composition-pattern-documentation)
-- [10. Provider Performance Optimization](#10-provider-performance-optimization)
-- [11. Tool Safety Enhancement](#11-tool-safety-enhancement)
-- [12. Marketplace Item Validation Framework](#12-marketplace-item-validation-framework)
-- [13. Tree Sitter Query Optimization](#13-tree-sitter-query-optimization)
-- [14. JetBrains Plugin IPC Protocol Enhancement](#14-jetbrains-plugin-ipc-protocol-enhancement)
-- [15. Provider Testing Framework](#15-provider-testing-framework)
-- [Low Priority Improvements](#low-priority-improvements)
-- [16. Tool Development CLI](#16-tool-development-cli)
-- [17. Provider Analytics Dashboard](#17-provider-analytics-dashboard)
-- [18. Tool Documentation Generator](#18-tool-documentation-generator)
-- [19. Provider Configuration Wizard](#19-provider-configuration-wizard)
-- [20. Browser Automation Enhancement](#20-browser-automation-enhancement)
-- [Implementation Roadmap](#implementation-roadmap)
-- [Phase 1: Critical Fixes (Week 1-2)](#phase-1-critical-fixes-week-12)
-- [Phase 2: Core Infrastructure (Week 3-4)](#phase-2-core-infrastructure-week-34)
-- [Phase 3: Service Enhancement (Week 5-6)](#phase-3-service-enhancement-week-56)
-- [Phase 4: Advanced Features (Week 7-8)](#phase-4-advanced-features-week-78)
-- [Phase 5: Integration & Testing (Week 9-10)](#phase-5-integration-testing-week-910)
-- [Phase 6: Monitoring & Analytics (Week 11-12)](#phase-6-monitoring-analytics-week-1112)
-- [Phase 7: Polish & Optimization (Week 13-14)](#phase-7-polish-optimization-week-1314)
-- [Success Metrics](#success-metrics)
-- [Critical Success Factors](#critical-success-factors)
-- [Performance Targets](#performance-targets)
-- [Quality Improvements](#quality-improvements)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Priority Improvements](#priority-improvements)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Executive Summary](#executive-summary)
-- [Critical Priority Improvements](#critical-priority-improvements)
-- [1. Fix Duplicate API Requests Race Condition](#1-fix-duplicate-api-requests-race-condition)
-- [2. Tool Execution Metrics and Monitoring](#2-tool-execution-metrics-and-monitoring)
-- [3. API Provider Error Handling Standardization](#3-api-provider-error-handling-standardization)
-- [High Priority Improvements](#high-priority-improvements)
-- [4. Tool Validation Framework Enhancement](#4-tool-validation-framework-enhancement)
-- [5. Provider Configuration Management](#5-provider-configuration-management)
-- [6. MCP Server Configuration Validation](#6-mcp-server-configuration-validation)
-- [7. Cloud Service Event System Enhancement](#7-cloud-service-event-system-enhancement)
-- [8. Bridge Communication Protocol Standardization](#8-bridge-communication-protocol-standardization)
-- [Medium Priority Improvements](#medium-priority-improvements)
-- [9. Tool Composition Pattern Documentation](#9-tool-composition-pattern-documentation)
-- [10. Provider Performance Optimization](#10-provider-performance-optimization)
-- [11. Tool Safety Enhancement](#11-tool-safety-enhancement)
-- [12. Marketplace Item Validation Framework](#12-marketplace-item-validation-framework)
-- [13. Tree Sitter Query Optimization](#13-tree-sitter-query-optimization)
-- [14. JetBrains Plugin IPC Protocol Enhancement](#14-jetbrains-plugin-ipc-protocol-enhancement)
-- [15. Provider Testing Framework](#15-provider-testing-framework)
-- [Low Priority Improvements](#low-priority-improvements)
-- [16. Tool Development CLI](#16-tool-development-cli)
-- [17. Provider Analytics Dashboard](#17-provider-analytics-dashboard)
-- [18. Tool Documentation Generator](#18-tool-documentation-generator)
-- [19. Provider Configuration Wizard](#19-provider-configuration-wizard)
-- [20. Browser Automation Enhancement](#20-browser-automation-enhancement)
-- [Implementation Roadmap](#implementation-roadmap)
-- [Phase 1: Critical Fixes (Week 1-2)](#phase-1-critical-fixes-week-12)
-- [Phase 2: Core Infrastructure (Week 3-4)](#phase-2-core-infrastructure-week-34)
-- [Phase 3: Service Enhancement (Week 5-6)](#phase-3-service-enhancement-week-56)
-- [Phase 4: Advanced Features (Week 7-8)](#phase-4-advanced-features-week-78)
-- [Phase 5: Integration & Testing (Week 9-10)](#phase-5-integration-testing-week-910)
-- [Phase 6: Monitoring & Analytics (Week 11-12)](#phase-6-monitoring-analytics-week-1112)
-- [Phase 7: Polish & Optimization (Week 13-14)](#phase-7-polish-optimization-week-1314)
-- [Success Metrics](#success-metrics)
-- [Critical Success Factors](#critical-success-factors)
-- [Performance Targets](#performance-targets)
-- [Quality Improvements](#quality-improvements)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Priority Improvements](#priority-improvements)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Executive Summary](#executive-summary)
+* [Critical Priority Improvements](#critical-priority-improvements)
+* [1. Fix Duplicate API Requests Race Condition](#1-fix-duplicate-api-requests-race-condition)
+* [2. Tool Execution Metrics and Monitoring](#2-tool-execution-metrics-and-monitoring)
+* [3. API Provider Error Handling Standardization](#3-api-provider-error-handling-standardization)
+* [High Priority Improvements](#high-priority-improvements)
+* [4. Tool Validation Framework Enhancement](#4-tool-validation-framework-enhancement)
+* [5. Provider Configuration Management](#5-provider-configuration-management)
+* [6. MCP Server Configuration Validation](#6-mcp-server-configuration-validation)
+* [7. Cloud Service Event System Enhancement](#7-cloud-service-event-system-enhancement)
+* [8. Bridge Communication Protocol Standardization](#8-bridge-communication-protocol-standardization)
+* [Medium Priority Improvements](#medium-priority-improvements)
+* [9. Tool Composition Pattern Documentation](#9-tool-composition-pattern-documentation)
+* [10. Provider Performance Optimization](#10-provider-performance-optimization)
+* [11. Tool Safety Enhancement](#11-tool-safety-enhancement)
+* [12. Marketplace Item Validation Framework](#12-marketplace-item-validation-framework)
+* [13. Tree Sitter Query Optimization](#13-tree-sitter-query-optimization)
+* [14. JetBrains Plugin IPC Protocol Enhancement](#14-jetbrains-plugin-ipc-protocol-enhancement)
+* [15. Provider Testing Framework](#15-provider-testing-framework)
+* [Low Priority Improvements](#low-priority-improvements)
+* [16. Tool Development CLI](#16-tool-development-cli)
+* [17. Provider Analytics Dashboard](#17-provider-analytics-dashboard)
+* [18. Tool Documentation Generator](#18-tool-documentation-generator)
+* [19. Provider Configuration Wizard](#19-provider-configuration-wizard)
+* [20. Browser Automation Enhancement](#20-browser-automation-enhancement)
+* [Implementation Roadmap](#implementation-roadmap)
+* [Phase 1: Critical Fixes (Week 1-2)](#phase-1-critical-fixes-week-12)
+* [Phase 2: Core Infrastructure (Week 3-4)](#phase-2-core-infrastructure-week-34)
+* [Phase 3: Service Enhancement (Week 5-6)](#phase-3-service-enhancement-week-56)
+* [Phase 4: Advanced Features (Week 7-8)](#phase-4-advanced-features-week-78)
+* [Phase 5: Integration & Testing (Week 9-10)](#phase-5-integration-testing-week-910)
+* [Phase 6: Monitoring & Analytics (Week 11-12)](#phase-6-monitoring-analytics-week-1112)
+* [Phase 7: Polish & Optimization (Week 13-14)](#phase-7-polish-optimization-week-1314)
+* [Success Metrics](#success-metrics)
+* [Critical Success Factors](#critical-success-factors)
+* [Performance Targets](#performance-targets)
+* [Quality Improvements](#quality-improvements)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Priority Improvements](#priority-improvements)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Executive Summary](#executive-summary)
+* [Critical Priority Improvements](#critical-priority-improvements)
+* [1. Fix Duplicate API Requests Race Condition](#1-fix-duplicate-api-requests-race-condition)
+* [2. Tool Execution Metrics and Monitoring](#2-tool-execution-metrics-and-monitoring)
+* [3. API Provider Error Handling Standardization](#3-api-provider-error-handling-standardization)
+* [High Priority Improvements](#high-priority-improvements)
+* [4. Tool Validation Framework Enhancement](#4-tool-validation-framework-enhancement)
+* [5. Provider Configuration Management](#5-provider-configuration-management)
+* [6. MCP Server Configuration Validation](#6-mcp-server-configuration-validation)
+* [7. Cloud Service Event System Enhancement](#7-cloud-service-event-system-enhancement)
+* [8. Bridge Communication Protocol Standardization](#8-bridge-communication-protocol-standardization)
+* [Medium Priority Improvements](#medium-priority-improvements)
+* [9. Tool Composition Pattern Documentation](#9-tool-composition-pattern-documentation)
+* [10. Provider Performance Optimization](#10-provider-performance-optimization)
+* [11. Tool Safety Enhancement](#11-tool-safety-enhancement)
+* [12. Marketplace Item Validation Framework](#12-marketplace-item-validation-framework)
+* [13. Tree Sitter Query Optimization](#13-tree-sitter-query-optimization)
+* [14. JetBrains Plugin IPC Protocol Enhancement](#14-jetbrains-plugin-ipc-protocol-enhancement)
+* [15. Provider Testing Framework](#15-provider-testing-framework)
+* [Low Priority Improvements](#low-priority-improvements)
+* [16. Tool Development CLI](#16-tool-development-cli)
+* [17. Provider Analytics Dashboard](#17-provider-analytics-dashboard)
+* [18. Tool Documentation Generator](#18-tool-documentation-generator)
+* [19. Provider Configuration Wizard](#19-provider-configuration-wizard)
+* [20. Browser Automation Enhancement](#20-browser-automation-enhancement)
+* [Implementation Roadmap](#implementation-roadmap)
+* [Phase 1: Critical Fixes (Week 1-2)](#phase-1-critical-fixes-week-12)
+* [Phase 2: Core Infrastructure (Week 3-4)](#phase-2-core-infrastructure-week-34)
+* [Phase 3: Service Enhancement (Week 5-6)](#phase-3-service-enhancement-week-56)
+* [Phase 4: Advanced Features (Week 7-8)](#phase-4-advanced-features-week-78)
+* [Phase 5: Integration & Testing (Week 9-10)](#phase-5-integration-testing-week-910)
+* [Phase 6: Monitoring & Analytics (Week 11-12)](#phase-6-monitoring-analytics-week-1112)
+* [Phase 7: Polish & Optimization (Week 13-14)](#phase-7-polish-optimization-week-1314)
+* [Success Metrics](#success-metrics)
+* [Critical Success Factors](#critical-success-factors)
+* [Performance Targets](#performance-targets)
+* [Quality Improvements](#quality-improvements)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document catalogs high-priority improvements identified through comprehensive
+* **Purpose**: This document catalogs high-priority improvements identified through comprehensive
   documentation research and codebase analysis.
-- **Context**: Use this as a starting point for understanding improvement opportunities and planning
+* **Context**: Use this as a starting point for understanding improvement opportunities and planning
   development work.
-- **Navigation**: Use the table of contents below to jump to specific topics.
+* **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
@@ -109,10 +110,11 @@ document's role or purpose, this section helps orient you.
 This document was created through comprehensive analysis of the KiloCode codebase, documentation
 research, and system architecture review. The improvements listed here represent opportunities
 identified through:
-- Code analysis of critical paths and error patterns
-- Documentation gap analysis and user experience research
-- Performance monitoring and reliability assessment
-- Security audit findings and best practice comparisons
+
+* Code analysis of critical paths and error patterns
+* Documentation gap analysis and user experience research
+* Performance monitoring and reliability assessment
+* Security audit findings and best practice comparisons
 
 Each improvement includes impact assessment, complexity analysis, and implementation timeline to
 support informed decision-making.
@@ -124,10 +126,11 @@ research, codebase analysis, and system architecture review. Improvements are ca
 priority and impact to support strategic planning.
 
 **Key Findings:**
-- 3 critical issues requiring immediate attention
-- 5 high-priority improvements for core functionality
-- 7 medium-priority enhancements for reliability
-- 5 low-priority optimizations for developer experience
+
+* 3 critical issues requiring immediate attention
+* 5 high-priority improvements for core functionality
+* 7 medium-priority enhancements for reliability
+* 5 low-priority optimizations for developer experience
 
 ## Critical Priority Improvements
 
@@ -341,36 +344,43 @@ priority and impact to support strategic planning.
 ## Implementation Roadmap
 
 ### Phase 1: Critical Fixes (Week 1-2)
+
 1. **Fix Duplicate API Requests Race Condition** - Immediate priority
 2. **Tool Execution Metrics** - Essential for monitoring
 3. **Tool Validation Framework** - Foundation for reliability
 
 ### Phase 2: Core Infrastructure (Week 3-4)
+
 4. **Provider Configuration Management** - Centralized configuration
 5. **MCP Server Configuration Validation** - Improved reliability
 6. **Provider Performance Optimization** - Performance improvements
 
 ### Phase 3: Service Enhancement (Week 5-6)
+
 7. **Cloud Service Event System** - Better error handling
 8. **Bridge Communication Protocol** - Standardized communication
 9. **Tool Safety Enhancement** - Improved data safety
 
 ### Phase 4: Advanced Features (Week 7-8)
+
 10. **Tool Composition Patterns** - Advanced workflows
 11. **Marketplace Validation** - Better marketplace reliability
 12. **Tree Sitter Optimization** - Performance improvements
 
 ### Phase 5: Integration & Testing (Week 9-10)
+
 13. **JetBrains Plugin Enhancement** - Better plugin reliability
 14. **Provider Testing Framework** - Comprehensive testing
 15. **Tool Development CLI** - Developer experience
 
 ### Phase 6: Monitoring & Analytics (Week 11-12)
+
 16. **Provider Analytics Dashboard** - Monitoring and insights
 17. **Tool Documentation Generator** - Automated documentation
 18. **Provider Configuration Wizard** - User experience
 
 ### Phase 7: Polish & Optimization (Week 13-14)
+
 19. **Browser Automation Enhancement** - Performance improvements
 20. **Performance Optimization** - Overall system optimization
 
@@ -378,36 +388,39 @@ priority and impact to support strategic planning.
 
 ### Critical Success Factors
 
-- **Zero Duplicate API Requests** - Complete elimination of race condition
-- **95% Tool Success Rate** - Improved tool reliability
-- **50% Faster Provider Setup** - Simplified configuration
+* **Zero Duplicate API Requests** - Complete elimination of race condition
+* **95% Tool Success Rate** - Improved tool reliability
+* **50% Faster Provider Setup** - Simplified configuration
 
 ### Performance Targets
 
-- **50% Reduction in Tool Errors** - Better validation and error handling
-- **30% Improvement in Response Times** - Performance optimization
-- **70% Faster Configuration** - Streamlined setup process
+* **50% Reduction in Tool Errors** - Better validation and error handling
+* **30% Improvement in Response Times** - Performance optimization
+* **70% Faster Configuration** - Streamlined setup process
 
 ### Quality Improvements
 
-- **100% API Provider Coverage** - Standardized error handling
-- **90% Test Coverage** - Comprehensive testing
-- **Zero Critical Security Issues** - Enhanced security measures
+* **100% API Provider Coverage** - Standardized error handling
+* **90% Test Coverage** - Comprehensive testing
+* **Zero Critical Security Issues** - Enhanced security measures
 
 ## No Dead Ends Policy
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
-- Each section provides clear navigation to related content
-- All internal links are validated and point to existing documents
-- Cross-references include context for better understanding
-- Implementation roadmap provides clear next steps for each improvement
+
+* Each section provides clear navigation to related content
+* All internal links are validated and point to existing documents
+* Cross-references include context for better understanding
+* Implementation roadmap provides clear next steps for each improvement
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Improvements Overview](README.md)
-- [← Technical Debt Analysis](TECHNICAL_DEBT.md)
-- [← Research Gaps](RESEARCH_GAPS.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Improvements Overview](README.md)
+* [← Technical Debt Analysis](TECHNICAL_DEBT.md)
+* [← Research Gaps](RESEARCH_GAPS.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)

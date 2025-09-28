@@ -6,33 +6,35 @@
 
 This document provides step-by-step guidance for migrating from the old validation system to the simplified validation system.
 
-- **Purpose**: This document guides you through the migration process from the old to the new validation system.
-- **Context**: Use this as a reference while migrating your validation configuration.
-- **Navigation**: Use the table of contents below to jump to specific sections.
+* **Purpose**: This document guides you through the migration process from the old to the new validation system.
+* **Context**: Use this as a reference while migrating your validation configuration.
+* **Navigation**: Use the table of contents below to jump to specific sections.
 
 ## Table of Contents
 
-- [Validation System Migration Guide](#validation-system-migration-guide)
-- [Pre-Migration Checklist](#pre-migration-checklist)
-- [Step-by-Step Migration](#step-by-step-migration)
-- [Post-Migration Verification](#post-migration-verification)
-- [Troubleshooting](#troubleshooting)
-- [Navigation](#navigation)
+* [Validation System Migration Guide](#validation-system-migration-guide)
+* [Pre-Migration Checklist](#pre-migration-checklist)
+* [Step-by-Step Migration](#step-by-step-migration)
+* [Post-Migration Verification](#post-migration-verification)
+* [Troubleshooting](#troubleshooting)
+* [Navigation](#navigation)
 
 ## Pre-Migration Checklist
 
 ### Before You Start
-- [ ] **Backup current configuration** - Create backup of `.remarkrc`
-- [ ] **Document current issues** - Note any existing validation problems
-- [ ] **Review breaking changes** - Read [Breaking Changes](./VALIDATION_SYSTEM_BREAKING_CHANGES.md)
-- [ ] **Plan migration window** - Schedule during low-activity period
-- [ ] **Notify team members** - Inform team about migration timeline
+
+* \[ ] **Backup current configuration** - Create backup of `.remarkrc`
+* \[ ] **Document current issues** - Note any existing validation problems
+* \[ ] **Review breaking changes** - Read [Breaking Changes](./VALIDATION_SYSTEM_BREAKING_CHANGES.md)
+* \[ ] **Plan migration window** - Schedule during low-activity period
+* \[ ] **Notify team members** - Inform team about migration timeline
 
 ### System Requirements
-- [ ] **Node.js version** - Ensure compatible Node.js version
-- [ ] **Dependencies** - Verify all required packages are installed
-- [ ] **File permissions** - Ensure write access to configuration files
-- [ ] **Git status** - Commit or stash any uncommitted changes
+
+* \[ ] **Node.js version** - Ensure compatible Node.js version
+* \[ ] **Dependencies** - Verify all required packages are installed
+* \[ ] **File permissions** - Ensure write access to configuration files
+* \[ ] **Git status** - Commit or stash any uncommitted changes
 
 ## Step-by-Step Migration
 
@@ -148,27 +150,31 @@ ls -la plugins/
 ## Post-Migration Verification
 
 ### Validation Checks
-- [ ] **Run full validation** - `pnpm docs:validate`
-- [ ] **Check error count** - Should see significant reduction
-- [ ] **Verify warnings** - Template placeholder warnings should be eliminated
-- [ ] **Test performance** - Validation should be faster
+
+* \[ ] **Run full validation** - `pnpm docs:validate`
+* \[ ] **Check error count** - Should see significant reduction
+* \[ ] **Verify warnings** - Template placeholder warnings should be eliminated
+* \[ ] **Test performance** - Validation should be faster
 
 ### Functionality Checks
-- [ ] **Required sections** - Still validated correctly
-- [ ] **Navigation links** - Still detected and validated
-- [ ] **Cross-references** - Still validated with improved accuracy
-- [ ] **Heading hierarchy** - Still enforced
+
+* \[ ] **Required sections** - Still validated correctly
+* \[ ] **Navigation links** - Still detected and validated
+* \[ ] **Cross-references** - Still validated with improved accuracy
+* \[ ] **Heading hierarchy** - Still enforced
 
 ### Performance Checks
-- [ ] **Validation time** - Should be reduced by ~44%
-- [ ] **Memory usage** - Should be optimized
-- [ ] **Error accuracy** - Should have fewer false positives
+
+* \[ ] **Validation time** - Should be reduced by ~44%
+* \[ ] **Memory usage** - Should be optimized
+* \[ ] **Error accuracy** - Should have fewer false positives
 
 ## Troubleshooting
 
 ### Common Issues
 
 #### Issue: "Plugin not found" errors
+
 ```bash
 # Solution: Verify plugin path
 ls -la plugins/remark-kilocode-unified.js
@@ -178,6 +184,7 @@ git checkout HEAD -- plugins/remark-kilocode-unified.js
 ```
 
 #### Issue: Configuration syntax errors
+
 ```bash
 # Solution: Validate JSON syntax
 cat .remarkrc | jq .
@@ -186,6 +193,7 @@ cat .remarkrc | jq .
 ```
 
 #### Issue: Increased validation errors
+
 ```bash
 # Solution: Check if old plugins are still referenced
 grep -r "remark-kilocode-standards" .
@@ -193,6 +201,7 @@ grep -r "remark-kilocode-comprehensive" .
 ```
 
 #### Issue: Performance regression
+
 ```bash
 # Solution: Check plugin loading
 node -e "console.log(require('./.remarkrc'))"
@@ -224,30 +233,34 @@ pnpm docs:validate
 ## Migration Timeline
 
 ### Recommended Timeline
-- **Week 1**: Preparation and backup
-- **Week 2**: Configuration migration
-- **Week 3**: Testing and validation
-- **Week 4**: Full deployment and cleanup
+
+* **Week 1**: Preparation and backup
+* **Week 2**: Configuration migration
+* **Week 3**: Testing and validation
+* **Week 4**: Full deployment and cleanup
 
 ### Rollback Window
-- **Keep backup** for at least 4 weeks after successful migration
-- **Monitor performance** for 2 weeks after migration
-- **Document issues** encountered during migration
+
+* **Keep backup** for at least 4 weeks after successful migration
+* **Monitor performance** for 2 weeks after migration
+* **Document issues** encountered during migration
 
 ## Success Metrics
 
 ### Migration Success Indicators
-- [ ] **Error reduction** - 90%+ reduction in validation errors
-- [ ] **Performance improvement** - 40%+ faster validation
-- [ ] **False positive elimination** - Template placeholder errors eliminated
-- [ ] **Functionality preservation** - All essential validation still works
+
+* \[ ] **Error reduction** - 90%+ reduction in validation errors
+* \[ ] **Performance improvement** - 40%+ faster validation
+* \[ ] **False positive elimination** - Template placeholder errors eliminated
+* \[ ] **Functionality preservation** - All essential validation still works
 
 ### Post-Migration Monitoring
-- [ ] **Daily validation** - Run validation daily for first week
-- [ ] **Performance tracking** - Monitor validation time
-- [ ] **Error tracking** - Watch for new error patterns
-- [ ] **Team feedback** - Gather feedback from team members
+
+* \[ ] **Daily validation** - Run validation daily for first week
+* \[ ] **Performance tracking** - Monitor validation time
+* \[ ] **Error tracking** - Watch for new error patterns
+* \[ ] **Team feedback** - Gather feedback from team members
 
 ## Navigation
 
-- **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-migration-guide)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-migration-guide)

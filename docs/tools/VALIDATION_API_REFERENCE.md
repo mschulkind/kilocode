@@ -1,156 +1,157 @@
 # Validation System API Reference
 
 ## Table of Contents
-- [Validation System API Reference](#validation-system-api-reference)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [CrossReferenceValidator](#crossreferencevalidator)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [validateFile(filePath: string): Promise](#validatefilefilepath-string-promise)
-- [validateAnchor(filePath: string, anchor: string): Promise](#validateanchorfilepath-string-anchor-string-promise)
-- [validateCrossReference(reference: string): Promise](#validatecrossreferencereference-string-promise)
-- [Interfaces](#interfaces)
-- [FileIndexBuilder](#fileindexbuilder)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [buildIndex(rootPath?: string): Promise](#buildindexrootpath-string-promise)
-- [getFileInfo(filePath: string): FileInfo | null](#getfileinfofilepath-string-fileinfo-null)
-- [isFileCached(filePath: string): boolean](#isfilecachedfilepath-string-boolean)
-- [updateFile(filePath: string): Promise](#updatefilefilepath-string-promise)
-- [Interfaces](#interfaces)
-- [DocumentTypeDetector](#documenttypedetector)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [detectType(filePath: string, content: string, structure: string): DocumentTypeResult](#detecttypefilepath-string-content-string-structure-string-documenttyperesult)
-- [getTypeInfo(type: string): TypeInfo | null](#gettypeinfotype-string-typeinfo-null)
-- [Interfaces](#interfaces)
-- [OrphanedSectionsDetector](#orphanedsectionsdetector)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [detectOrphanedSections(filePath: string, content: string): DetectionResult](#detectorphanedsectionsfilepath-string-content-string-detectionresult)
-- [Interfaces](#interfaces)
-- [ValidationRuleConfig](#validationruleconfig)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [getRulesForDocument(filePath: string, content: string, structure: string): Record\<string, ValidationRule>](#getrulesfordocumentfilepath-string-content-string-structure-string-recordstring-validationrule)
-- [getRuleValue(ruleName: string, filePath: string, content: string, structure: string): any](#getrulevaluerulename-string-filepath-string-content-string-structure-string-any)
-- [isRuleEnabled(ruleName: string, filePath: string, content: string, structure: string): boolean](#isruleenabledrulename-string-filepath-string-content-string-structure-string-boolean)
-- [updateRuleSet(type: string, ruleSet: RuleSet): void](#updaterulesettype-string-ruleset-ruleset-void)
-- [Interfaces](#interfaces)
-- [PerformanceMonitor](#performancemonitor)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [startOperation(operationName: string, metadata?: Record\<string, any>): () => void](#startoperationoperationname-string-metadata-recordstring-any-void)
-- [batchOperations](#batchoperations)
-- [generateReport(): PerformanceReport](#generatereport-performancereport)
-- [checkPerformanceRequirements(): { met: boolean; issues: string\[\] }](#checkperformancerequirements-met-boolean-issues-string-)
-- [Interfaces](#interfaces)
-- [PerformanceOptimizer](#performanceoptimizer)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [optimizeAll(): Promise\<OptimizationResult\[\]>](#optimizeall-promiseoptimizationresult)
-- [optimizeValidationComponents(): Promise](#optimizevalidationcomponents-promise)
-- [getOptimizationReport(): { currentPerformance: any; recommendations: string\[\]; estimatedImprovements: Record\<string, number> }](#getoptimizationreport-currentperformance-any-recommendations-string-estimatedimprovements-recordstring-number-)
-- [addStrategy(strategy: OptimizationStrategy): void](#addstrategystrategy-optimizationstrategy-void)
-- [removeStrategy(strategyName: string): boolean](#removestrategystrategyname-string-boolean)
-- [Interfaces](#interfaces)
-- [Global Instances](#global-instances)
-- [globalPerformanceMonitor](#globalperformancemonitor)
-- [globalPerformanceOptimizer](#globalperformanceoptimizer)
-- [Common Error Types](#common-error-types)
-- [ValidationError](#validationerror)
-- [PerformanceError](#performanceerror)
-- [Error Handling Examples](#error-handling-examples)
-- [Common Types](#common-types)
-- [Utility Types](#utility-types)
-- [Constants](#constants)
-- [Default Configuration](#default-configuration)
-- [Supported File Extensions](#supported-file-extensions)
-- [Document Type Patterns](#document-type-patterns)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Navigation](#navigation)
-- [Validation System API Reference](#validation-system-api-reference)
-- [Table of Contents](#table-of-contents)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [CrossReferenceValidator](#crossreferencevalidator)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [validateFile(filePath: string): Promise](#validatefilefilepath-string-promise)
-- [validateAnchor(filePath: string, anchor: string): Promise](#validateanchorfilepath-string-anchor-string-promise)
-- [validateCrossReference(reference: string): Promise](#validatecrossreferencereference-string-promise)
-- [Interfaces](#interfaces)
-- [FileIndexBuilder](#fileindexbuilder)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [buildIndex(rootPath?: string): Promise](#buildindexrootpath-string-promise)
-- [getFileInfo(filePath: string): FileInfo | null](#getfileinfofilepath-string-fileinfo-null)
-- [isFileCached(filePath: string): boolean](#isfilecachedfilepath-string-boolean)
-- [updateFile(filePath: string): Promise](#updatefilefilepath-string-promise)
-- [Interfaces](#interfaces)
-- [DocumentTypeDetector](#documenttypedetector)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [detectType(filePath: string, content: string, structure: string): DocumentTypeResult](#detecttypefilepath-string-content-string-structure-string-documenttyperesult)
-- [getTypeInfo(type: string): TypeInfo | null](#gettypeinfotype-string-typeinfo-null)
-- [Interfaces](#interfaces)
-- [OrphanedSectionsDetector](#orphanedsectionsdetector)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [detectOrphanedSections(filePath: string, content: string): DetectionResult](#detectorphanedsectionsfilepath-string-content-string-detectionresult)
-- [Interfaces](#interfaces)
-- [ValidationRuleConfig](#validationruleconfig)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [getRulesForDocument(filePath: string, content: string, structure: string): Record\<string, ValidationRule>](#getrulesfordocumentfilepath-string-content-string-structure-string-recordstring-validationrule)
-- [getRuleValue(ruleName: string, filePath: string, content: string, structure: string): any](#getrulevaluerulename-string-filepath-string-content-string-structure-string-any)
-- [isRuleEnabled(ruleName: string, filePath: string, content: string, structure: string): boolean](#isruleenabledrulename-string-filepath-string-content-string-structure-string-boolean)
-- [updateRuleSet(type: string, ruleSet: RuleSet): void](#updaterulesettype-string-ruleset-ruleset-void)
-- [Interfaces](#interfaces)
-- [PerformanceMonitor](#performancemonitor)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [startOperation(operationName: string, metadata?: Record\<string, any>): () => void](#startoperationoperationname-string-metadata-recordstring-any-void)
-- [batchOperations](#batchoperations)
-- [generateReport(): PerformanceReport](#generatereport-performancereport)
-- [checkPerformanceRequirements(): { met: boolean; issues: string\[\] }](#checkperformancerequirements-met-boolean-issues-string-)
-- [Interfaces](#interfaces)
-- [PerformanceOptimizer](#performanceoptimizer)
-- [Constructor](#constructor)
-- [Methods](#methods)
-- [optimizeAll(): Promise\<OptimizationResult\[\]>](#optimizeall-promiseoptimizationresult)
-- [optimizeValidationComponents(): Promise](#optimizevalidationcomponents-promise)
-- [getOptimizationReport(): { currentPerformance: any; recommendations: string\[\]; estimatedImprovements: Record\<string, number> }](#getoptimizationreport-currentperformance-any-recommendations-string-estimatedimprovements-recordstring-number-)
-- [addStrategy(strategy: OptimizationStrategy): void](#addstrategystrategy-optimizationstrategy-void)
-- [removeStrategy(strategyName: string): boolean](#removestrategystrategyname-string-boolean)
-- [Interfaces](#interfaces)
-- [Global Instances](#global-instances)
-- [globalPerformanceMonitor](#globalperformancemonitor)
-- [globalPerformanceOptimizer](#globalperformanceoptimizer)
-- [Common Error Types](#common-error-types)
-- [ValidationError](#validationerror)
-- [PerformanceError](#performanceerror)
-- [Error Handling Examples](#error-handling-examples)
-- [Common Types](#common-types)
-- [Utility Types](#utility-types)
-- [Constants](#constants)
-- [Default Configuration](#default-configuration)
-- [Supported File Extensions](#supported-file-extensions)
-- [Document Type Patterns](#document-type-patterns)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- ↑ [Table of Contents](#table-of-contents)
+
+* [Validation System API Reference](#validation-system-api-reference)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [CrossReferenceValidator](#crossreferencevalidator)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [validateFile(filePath: string): Promise](#validatefilefilepath-string-promise)
+* [validateAnchor(filePath: string, anchor: string): Promise](#validateanchorfilepath-string-anchor-string-promise)
+* [validateCrossReference(reference: string): Promise](#validatecrossreferencereference-string-promise)
+* [Interfaces](#interfaces)
+* [FileIndexBuilder](#fileindexbuilder)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [buildIndex(rootPath?: string): Promise](#buildindexrootpath-string-promise)
+* [getFileInfo(filePath: string): FileInfo | null](#getfileinfofilepath-string-fileinfo-null)
+* [isFileCached(filePath: string): boolean](#isfilecachedfilepath-string-boolean)
+* [updateFile(filePath: string): Promise](#updatefilefilepath-string-promise)
+* [Interfaces](#interfaces)
+* [DocumentTypeDetector](#documenttypedetector)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [detectType(filePath: string, content: string, structure: string): DocumentTypeResult](#detecttypefilepath-string-content-string-structure-string-documenttyperesult)
+* [getTypeInfo(type: string): TypeInfo | null](#gettypeinfotype-string-typeinfo-null)
+* [Interfaces](#interfaces)
+* [OrphanedSectionsDetector](#orphanedsectionsdetector)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [detectOrphanedSections(filePath: string, content: string): DetectionResult](#detectorphanedsectionsfilepath-string-content-string-detectionresult)
+* [Interfaces](#interfaces)
+* [ValidationRuleConfig](#validationruleconfig)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [getRulesForDocument(filePath: string, content: string, structure: string): Record\<string, ValidationRule>](#getrulesfordocumentfilepath-string-content-string-structure-string-recordstring-validationrule)
+* [getRuleValue(ruleName: string, filePath: string, content: string, structure: string): any](#getrulevaluerulename-string-filepath-string-content-string-structure-string-any)
+* [isRuleEnabled(ruleName: string, filePath: string, content: string, structure: string): boolean](#isruleenabledrulename-string-filepath-string-content-string-structure-string-boolean)
+* [updateRuleSet(type: string, ruleSet: RuleSet): void](#updaterulesettype-string-ruleset-ruleset-void)
+* [Interfaces](#interfaces)
+* [PerformanceMonitor](#performancemonitor)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [startOperation(operationName: string, metadata?: Record\<string, any>): () => void](#startoperationoperationname-string-metadata-recordstring-any-void)
+* [batchOperations](#batchoperations)
+* [generateReport(): PerformanceReport](#generatereport-performancereport)
+* [checkPerformanceRequirements(): { met: boolean; issues: string\[\] }](#checkperformancerequirements-met-boolean-issues-string-)
+* [Interfaces](#interfaces)
+* [PerformanceOptimizer](#performanceoptimizer)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [optimizeAll(): Promise\<OptimizationResult\[\]>](#optimizeall-promiseoptimizationresult)
+* [optimizeValidationComponents(): Promise](#optimizevalidationcomponents-promise)
+* [getOptimizationReport(): { currentPerformance: any; recommendations: string\[\]; estimatedImprovements: Record\<string, number> }](#getoptimizationreport-currentperformance-any-recommendations-string-estimatedimprovements-recordstring-number-)
+* [addStrategy(strategy: OptimizationStrategy): void](#addstrategystrategy-optimizationstrategy-void)
+* [removeStrategy(strategyName: string): boolean](#removestrategystrategyname-string-boolean)
+* [Interfaces](#interfaces)
+* [Global Instances](#global-instances)
+* [globalPerformanceMonitor](#globalperformancemonitor)
+* [globalPerformanceOptimizer](#globalperformanceoptimizer)
+* [Common Error Types](#common-error-types)
+* [ValidationError](#validationerror)
+* [PerformanceError](#performanceerror)
+* [Error Handling Examples](#error-handling-examples)
+* [Common Types](#common-types)
+* [Utility Types](#utility-types)
+* [Constants](#constants)
+* [Default Configuration](#default-configuration)
+* [Supported File Extensions](#supported-file-extensions)
+* [Document Type Patterns](#document-type-patterns)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* [Navigation](#navigation)
+* [Validation System API Reference](#validation-system-api-reference)
+* [Table of Contents](#table-of-contents)
+* [When You're Here](#when-youre-here)
+* [Research Context](#research-context)
+* [Technical Overview](#technical-overview)
+* [Background](#background)
+* [Methodology](#methodology)
+* [Overview](#overview)
+* [CrossReferenceValidator](#crossreferencevalidator)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [validateFile(filePath: string): Promise](#validatefilefilepath-string-promise)
+* [validateAnchor(filePath: string, anchor: string): Promise](#validateanchorfilepath-string-anchor-string-promise)
+* [validateCrossReference(reference: string): Promise](#validatecrossreferencereference-string-promise)
+* [Interfaces](#interfaces)
+* [FileIndexBuilder](#fileindexbuilder)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [buildIndex(rootPath?: string): Promise](#buildindexrootpath-string-promise)
+* [getFileInfo(filePath: string): FileInfo | null](#getfileinfofilepath-string-fileinfo-null)
+* [isFileCached(filePath: string): boolean](#isfilecachedfilepath-string-boolean)
+* [updateFile(filePath: string): Promise](#updatefilefilepath-string-promise)
+* [Interfaces](#interfaces)
+* [DocumentTypeDetector](#documenttypedetector)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [detectType(filePath: string, content: string, structure: string): DocumentTypeResult](#detecttypefilepath-string-content-string-structure-string-documenttyperesult)
+* [getTypeInfo(type: string): TypeInfo | null](#gettypeinfotype-string-typeinfo-null)
+* [Interfaces](#interfaces)
+* [OrphanedSectionsDetector](#orphanedsectionsdetector)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [detectOrphanedSections(filePath: string, content: string): DetectionResult](#detectorphanedsectionsfilepath-string-content-string-detectionresult)
+* [Interfaces](#interfaces)
+* [ValidationRuleConfig](#validationruleconfig)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [getRulesForDocument(filePath: string, content: string, structure: string): Record\<string, ValidationRule>](#getrulesfordocumentfilepath-string-content-string-structure-string-recordstring-validationrule)
+* [getRuleValue(ruleName: string, filePath: string, content: string, structure: string): any](#getrulevaluerulename-string-filepath-string-content-string-structure-string-any)
+* [isRuleEnabled(ruleName: string, filePath: string, content: string, structure: string): boolean](#isruleenabledrulename-string-filepath-string-content-string-structure-string-boolean)
+* [updateRuleSet(type: string, ruleSet: RuleSet): void](#updaterulesettype-string-ruleset-ruleset-void)
+* [Interfaces](#interfaces)
+* [PerformanceMonitor](#performancemonitor)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [startOperation(operationName: string, metadata?: Record\<string, any>): () => void](#startoperationoperationname-string-metadata-recordstring-any-void)
+* [batchOperations](#batchoperations)
+* [generateReport(): PerformanceReport](#generatereport-performancereport)
+* [checkPerformanceRequirements(): { met: boolean; issues: string\[\] }](#checkperformancerequirements-met-boolean-issues-string-)
+* [Interfaces](#interfaces)
+* [PerformanceOptimizer](#performanceoptimizer)
+* [Constructor](#constructor)
+* [Methods](#methods)
+* [optimizeAll(): Promise\<OptimizationResult\[\]>](#optimizeall-promiseoptimizationresult)
+* [optimizeValidationComponents(): Promise](#optimizevalidationcomponents-promise)
+* [getOptimizationReport(): { currentPerformance: any; recommendations: string\[\]; estimatedImprovements: Record\<string, number> }](#getoptimizationreport-currentperformance-any-recommendations-string-estimatedimprovements-recordstring-number-)
+* [addStrategy(strategy: OptimizationStrategy): void](#addstrategystrategy-optimizationstrategy-void)
+* [removeStrategy(strategyName: string): boolean](#removestrategystrategyname-string-boolean)
+* [Interfaces](#interfaces)
+* [Global Instances](#global-instances)
+* [globalPerformanceMonitor](#globalperformancemonitor)
+* [globalPerformanceOptimizer](#globalperformanceoptimizer)
+* [Common Error Types](#common-error-types)
+* [ValidationError](#validationerror)
+* [PerformanceError](#performanceerror)
+* [Error Handling Examples](#error-handling-examples)
+* [Common Types](#common-types)
+* [Utility Types](#utility-types)
+* [Constants](#constants)
+* [Default Configuration](#default-configuration)
+* [Supported File Extensions](#supported-file-extensions)
+* [Document Type Patterns](#document-type-patterns)
+* [No Dead Ends Policy](#no-dead-ends-policy)
+* [Navigation](#navigation)
+* ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -158,9 +159,9 @@
 
 This document provides \[purpose of document].
 
-- **Purpose**: \[Brief description of what this document covers]
-- **Context**: \[How this fits into the broader system/project]
-- **Navigation**: Use the table of contents below to jump to specific topics
+* **Purpose**: \[Brief description of what this document covers]
+* **Context**: \[How this fits into the broader system/project]
+* **Navigation**: Use the table of contents below to jump to specific topics
 
 ## Research Context
 
@@ -185,8 +186,9 @@ This document provides comprehensive API reference for the Zero Warnings Validat
 components and interfaces.
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Core Components
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Core Components
 
 ### CrossReferenceValidator
 
@@ -199,7 +201,8 @@ constructor(options: ValidationOptions = {})
 ```
 
 **Parameters:**
-- `options` (optional): Configuration options for the validator
+
+* `options` (optional): Configuration options for the validator
 
 **Example:**
 
@@ -219,7 +222,8 @@ const validator = new CrossReferenceValidator({
 Validates if a file exists and returns file metadata.
 
 **Parameters:**
-- `filePath`: Path to the file to validate
+
+* `filePath`: Path to the file to validate
 
 **Returns:** Promise resolving to `FileValidationResult`
 
@@ -236,8 +240,9 @@ console.log(`Last modified: ${result.lastModified}`)
 Validates if an anchor exists within a file.
 
 **Parameters:**
-- `filePath`: Path to the file containing the anchor
-- `anchor`: Anchor name to validate
+
+* `filePath`: Path to the file containing the anchor
+* `anchor`: Anchor name to validate
 
 **Returns:** Promise resolving to `AnchorValidationResult`
 
@@ -253,7 +258,8 @@ console.log(`Anchor exists: ${result.exists}`)
 Validates a complete cross-reference (file + optional anchor).
 
 **Parameters:**
-- `reference`: Cross-reference string (e.g., "./file.md#anchor")
+
+* `reference`: Cross-reference string (e.g., "./file.md#anchor")
 
 **Returns:** Promise resolving to `CrossReferenceResult`
 
@@ -311,7 +317,8 @@ constructor(options: FileIndexBuilderOptions = {})
 ```
 
 **Parameters:**
-- `options` (optional): Configuration options for the index builder
+
+* `options` (optional): Configuration options for the index builder
 
 **Example:**
 
@@ -332,7 +339,8 @@ const builder = new FileIndexBuilder({
 Builds an index of all markdown files in the specified directory.
 
 **Parameters:**
-- `rootPath` (optional): Root directory to index (defaults to current directory)
+
+* `rootPath` (optional): Root directory to index (defaults to current directory)
 
 **Returns:** Promise resolving to `BuildIndexResult`
 
@@ -349,7 +357,8 @@ console.log(`Found ${result.totalDirectories} directories`)
 Gets information about a specific file from the index.
 
 **Parameters:**
-- `filePath`: Path to the file
+
+* `filePath`: Path to the file
 
 **Returns:** `FileInfo` object or `null` if not found
 
@@ -368,7 +377,8 @@ if (fileInfo) {
 Checks if file information is cached.
 
 **Parameters:**
-- `filePath`: Path to the file
+
+* `filePath`: Path to the file
 
 **Returns:** `true` if cached, `false` otherwise
 
@@ -384,7 +394,8 @@ console.log(`File is cached: ${isCached}`)
 Updates information for a specific file in the index.
 
 **Parameters:**
-- `filePath`: Path to the file to update
+
+* `filePath`: Path to the file to update
 
 **Returns:** Promise resolving to `UpdateResult`
 
@@ -465,9 +476,10 @@ const detector = new DocumentTypeDetector()
 Detects the type of a document based on path, content, and structure.
 
 **Parameters:**
-- `filePath`: Path to the document file
-- `content`: Document content
-- `structure`: Document structure information
+
+* `filePath`: Path to the document file
+* `content`: Document content
+* `structure`: Document structure information
 
 **Returns:** `DocumentTypeResult` object
 
@@ -490,7 +502,8 @@ console.log(`Reasons: ${result.reasons.join(', ')}`)
 Gets information about a specific document type.
 
 **Parameters:**
-- `type`: Document type name
+
+* `type`: Document type name
 
 **Returns:** `TypeInfo` object or `null` if not found
 
@@ -532,7 +545,8 @@ constructor(options: OrphanedSectionsDetectorOptions)
 ```
 
 **Parameters:**
-- `options`: Configuration options for the detector
+
+* `options`: Configuration options for the detector
 
 **Example:**
 
@@ -554,8 +568,9 @@ const detector = new OrphanedSectionsDetector({
 Detects orphaned sections in a document.
 
 **Parameters:**
-- `filePath`: Path to the document file
-- `content`: Document content
+
+* `filePath`: Path to the document file
+* `content`: Document content
 
 **Returns:** `DetectionResult` object
 
@@ -617,7 +632,8 @@ constructor(options: ValidationRuleConfigOptions)
 ```
 
 **Parameters:**
-- `options`: Configuration options for the rule config
+
+* `options`: Configuration options for the rule config
 
 **Example:**
 
@@ -645,9 +661,10 @@ const config = new ValidationRuleConfig({
 Gets validation rules for a specific document.
 
 **Parameters:**
-- `filePath`: Path to the document file
-- `content`: Document content
-- `structure`: Document structure information
+
+* `filePath`: Path to the document file
+* `content`: Document content
+* `structure`: Document structure information
 
 **Returns:** Object containing validation rules
 
@@ -669,10 +686,11 @@ console.log(`Require headings: ${rules.requireHeadings.value}`)
 Gets the value of a specific validation rule for a document.
 
 **Parameters:**
-- `ruleName`: Name of the rule
-- `filePath`: Path to the document file
-- `content`: Document content
-- `structure`: Document structure information
+
+* `ruleName`: Name of the rule
+* `filePath`: Path to the document file
+* `content`: Document content
+* `structure`: Document structure information
 
 **Returns:** Rule value or `undefined` if not found
 
@@ -694,10 +712,11 @@ console.log(`Max line length: ${maxLineLength}`)
 Checks if a specific validation rule is enabled for a document.
 
 **Parameters:**
-- `ruleName`: Name of the rule
-- `filePath`: Path to the document file
-- `content`: Document content
-- `structure`: Document structure information
+
+* `ruleName`: Name of the rule
+* `filePath`: Path to the document file
+* `content`: Document content
+* `structure`: Document structure information
 
 **Returns:** `true` if enabled, `false` otherwise
 
@@ -719,8 +738,9 @@ console.log(`Rule enabled: ${isEnabled}`)
 Updates a rule set for a specific document type.
 
 **Parameters:**
-- `type`: Document type name
-- `ruleSet`: New rule set configuration
+
+* `type`: Document type name
+* `ruleSet`: New rule set configuration
 
 **Example:**
 
@@ -769,7 +789,8 @@ constructor(config: Partial<OptimizationConfig> = {})
 ```
 
 **Parameters:**
-- `config` (optional): Configuration options for the monitor
+
+* `config` (optional): Configuration options for the monitor
 
 **Example:**
 
@@ -790,8 +811,9 @@ const monitor = new PerformanceMonitor({
 Starts tracking a performance-sensitive operation.
 
 **Parameters:**
-- `operationName`: Name of the operation
-- `metadata` (optional): Additional metadata for the operation
+
+* `operationName`: Name of the operation
+* `metadata` (optional): Additional metadata for the operation
 
 **Returns:** Function to call when the operation ends
 
@@ -813,9 +835,10 @@ endOperation()
 Processes multiple operations in parallel batches.
 
 **Parameters:**
-- `operations`: Array of operation functions
-- `operationName`: Name for the batch operation
-- `options` (optional): Configuration options
+
+* `operations`: Array of operation functions
+* `operationName`: Name for the batch operation
+* `options` (optional): Configuration options
 
 **Returns:** Promise resolving to array of results
 
@@ -908,7 +931,8 @@ constructor(monitor?: PerformanceMonitor)
 ```
 
 **Parameters:**
-- `monitor` (optional): Performance monitor instance
+
+* `monitor` (optional): Performance monitor instance
 
 **Example:**
 
@@ -968,7 +992,8 @@ console.log('Estimated improvements:', report.estimatedImprovements)
 Adds a custom optimization strategy.
 
 **Parameters:**
-- `strategy`: Optimization strategy to add
+
+* `strategy`: Optimization strategy to add
 
 **Example:**
 
@@ -991,7 +1016,8 @@ optimizer.addStrategy(customStrategy)
 Removes an optimization strategy.
 
 **Parameters:**
-- `strategyName`: Name of the strategy to remove
+
+* `strategyName`: Name of the strategy to remove
 
 **Returns:** `true` if removed, `false` if not found
 
@@ -1055,8 +1081,9 @@ const report = globalPerformanceOptimizer.getOptimizationReport()
 ```
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Error Handling
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Error Handling
 
 ### Common Error Types
 
@@ -1101,8 +1128,9 @@ try {
 ```
 
 **Related Links:**
-- [Related Documentation](./related-doc.md)
-- [Additional Resources](./resources.md)## Type Definitions
+
+* [Related Documentation](./docs/tools/related-doc.md)
+* [Additional Resources](./docs/tools/resources.md)## Type Definitions
 
 ### Common Types
 
@@ -1163,17 +1191,20 @@ configuration options for each component.
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
-- [Additional Resources](../tools/README.md)
+
+* [Documentation Structure](../README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
-- [← Tools Overview](README.md)
-- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
-- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
-- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
-- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
-- [← Main Documentation](../README.md)
-- [← Project Root](../README.md)
+
+* [← Tools Overview](README.md)
+* [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+* [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+* [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+* [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+* [← Main Documentation](../README.md)
+* [← Project Root](../README.md)
