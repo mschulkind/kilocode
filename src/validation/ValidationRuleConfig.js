@@ -111,7 +111,14 @@ export class ValidationRuleConfig {
                     requireCodeBlocks: { enabled: false, value: false },
                     maxSectionLength: { enabled: true, value: 1000 },
                     requireLinks: { enabled: true, value: true },
-                    allowEmptySections: { enabled: false, value: false }
+                    allowEmptySections: { enabled: false, value: false },
+                    requireWhenYoureHere: { enabled: true, value: true },
+                    requireResearchContext: { enabled: true, value: true },
+                    requireNoDeadEndsPolicy: { enabled: true, value: true },
+                    requireNavigationFooter: { enabled: true, value: true },
+                    minSectionLength: { enabled: true, value: 30 },
+                    requireDescriptiveLinks: { enabled: true, value: true },
+                    suggestFunFact: { enabled: true, value: true }
                 }
             },
             technical: {
@@ -127,7 +134,15 @@ export class ValidationRuleConfig {
                     requireCodeBlocks: { enabled: true, value: true },
                     maxSectionLength: { enabled: true, value: 2000 },
                     requireLinks: { enabled: false, value: false },
-                    allowEmptySections: { enabled: true, value: true }
+                    allowEmptySections: { enabled: true, value: true },
+                    requireWhenYoureHere: { enabled: true, value: true },
+                    requireResearchContext: { enabled: true, value: true },
+                    requireNoDeadEndsPolicy: { enabled: true, value: true },
+                    requireNavigationFooter: { enabled: true, value: true },
+                    minSectionLength: { enabled: true, value: 50 },
+                    requireDescriptiveLinks: { enabled: true, value: true },
+                    suggestFunFact: { enabled: true, value: true },
+                    requireTechnicalSections: { enabled: true, value: true }
                 }
             },
             planning: {
@@ -143,7 +158,17 @@ export class ValidationRuleConfig {
                     requireCodeBlocks: { enabled: false, value: false },
                     maxSectionLength: { enabled: true, value: 1500 },
                     requireLinks: { enabled: true, value: true },
-                    allowEmptySections: { enabled: false, value: false }
+                    allowEmptySections: { enabled: false, value: false },
+                    requireWhenYoureHere: { enabled: true, value: true },
+                    requireResearchContext: { enabled: true, value: true },
+                    requireNoDeadEndsPolicy: { enabled: true, value: true },
+                    requireNavigationFooter: { enabled: true, value: true },
+                    minSectionLength: { enabled: true, value: 20 },
+                    requireDescriptiveLinks: { enabled: true, value: true },
+                    suggestFunFact: { enabled: true, value: true },
+                    requireProgressSummary: { enabled: true, value: true },
+                    requireSuccessCriteria: { enabled: true, value: true },
+                    requireTaskTracking: { enabled: true, value: true }
                 }
             },
             general: {
@@ -159,7 +184,14 @@ export class ValidationRuleConfig {
                     requireCodeBlocks: { enabled: false, value: false },
                     maxSectionLength: { enabled: true, value: 1500 },
                     requireLinks: { enabled: false, value: false },
-                    allowEmptySections: { enabled: true, value: true }
+                    allowEmptySections: { enabled: true, value: true },
+                    requireWhenYoureHere: { enabled: true, value: true },
+                    requireResearchContext: { enabled: true, value: true },
+                    requireNoDeadEndsPolicy: { enabled: true, value: true },
+                    requireNavigationFooter: { enabled: true, value: true },
+                    minSectionLength: { enabled: true, value: 50 },
+                    requireDescriptiveLinks: { enabled: true, value: true },
+                    suggestFunFact: { enabled: true, value: true }
                 }
             }
         };
@@ -249,7 +281,7 @@ export class ValidationRuleConfig {
             throw new Error('Rule set must have rules object');
         }
         // Check for required rules
-        const requiredRules = ['maxLineLength', 'requireHeadings'];
+        const requiredRules = ['maxLineLength', 'requireHeadings', 'requireWhenYoureHere', 'requireResearchContext', 'requireNoDeadEndsPolicy', 'requireNavigationFooter'];
         for (const requiredRule of requiredRules) {
             if (!ruleSet.rules[requiredRule]) {
                 throw new Error(`Rule set must include required rule: ${requiredRule}`);
@@ -288,6 +320,16 @@ export class ValidationRuleConfig {
             case 'requireCodeBlocks':
             case 'requireLinks':
             case 'allowEmptySections':
+            case 'requireWhenYoureHere':
+            case 'requireResearchContext':
+            case 'requireNoDeadEndsPolicy':
+            case 'requireNavigationFooter':
+            case 'requireDescriptiveLinks':
+            case 'suggestFunFact':
+            case 'requireTechnicalSections':
+            case 'requireProgressSummary':
+            case 'requireSuccessCriteria':
+            case 'requireTaskTracking':
                 if (typeof value !== 'boolean') {
                     throw new Error(`Rule '${ruleName}' must have a boolean value`);
                 }
