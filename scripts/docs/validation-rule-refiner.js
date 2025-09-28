@@ -636,11 +636,8 @@ function hasNavigationElement(navigation, element) {
   }
 
   updateValidationCalls(pluginContent) {
-    // Update cross-reference validation calls
-    pluginContent = pluginContent.replace(
-      /validateCrossReference\(/g,
-      'validateCrossReferenceRefined('
-    )
+    // Cross-reference validation calls remain unchanged
+    // The validateCrossReference method is already correct
     
     // Update TOC validation calls
     pluginContent = pluginContent.replace(

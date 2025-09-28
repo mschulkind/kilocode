@@ -364,7 +364,7 @@ return async (tree, file) => {
 				// Validate each cross-reference
 				for (const crossRef of documentStructure.crossReferences) {
 					try {
-						const result = await validationComponents.crossReferenceValidator.validateCrossReferenceRefined(
+						const result = await validationComponents.crossReferenceValidator.validateCrossReference(
 							crossRef.target
 						)
 						
