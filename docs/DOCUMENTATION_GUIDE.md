@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* Defines normative documentation standards and practices for contributors editing files
+- *Purpose:*\* Defines normative documentation standards and practices for contributors editing
+files
   in the `docs/` directory, ensuring consistency and discoverability across all KiloCode
   documentation.
 
@@ -36,7 +39,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 </details>
 
 ## Executive Summary
-- This guide is the authoritative contributor-facing standard for creating and updating documentation
+- This guide is the authoritative contributor-facing standard for creating and updating
+documentation
   under `/docs/`. It replaces older, inconsistent practices and provides prescriptive rules
   contributors MUST follow.\*
 
@@ -172,8 +176,14 @@ graph TD
   relevant.
 
 - *Examples*\*:
-- `[Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md) - Detailed investigation of the concurrent recursive calls race condition, including the problematic commit and code changes that created the issue. Provides comprehensive analysis of how the continueParentTask method introduced concurrent execution paths.`
-- `[Solution Options](race-condition/SOLUTION_RECOMMENDATIONS.md) - Proposes multiple approaches to fix the race condition, including lock-based solutions, call tracking, and subtask completion coordination. Includes implementation strategies and testing approaches for each solution.`
+- `[Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) - Detailed
+investigation of the concurrent recursive calls race condition, including the problematic commit and
+code changes that created the issue. Provides comprehensive analysis of how the continueParentTask
+method introduced concurrent execution paths.`
+- `[Solution Options](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Proposes
+multiple approaches to fix the race condition, including lock-based solutions, call tracking, and
+subtask completion coordination. Includes implementation strategies and testing approaches for each
+solution.`
 
 - *GitHub-Specific Considerations*\*:
 - All links will be viewed on GitHub.com, so ensure they work in the GitHub markdown renderer
@@ -208,7 +218,8 @@ export function slugify(input: string): string {
 ```bash
 # Run tests for a single file
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 cd src && npx vitest run tests/example.test.ts
 ```
@@ -228,9 +239,11 @@ graph TD
 - *Single Topic Focus*\*: Aim for single-topic documents. If a file exceeds ~1500 words or covers
   more than three distinct concerns, split it.
 
-- *Domain Indexes*\*: Use domain indexes to aggregate short docs rather than creating long monoliths.
+- *Domain Indexes*\*: Use domain indexes to aggregate short docs rather than creating long
+monoliths.
 
-- *Content Splitting*\*: When splitting content, create a redirecting top-level doc linking to subdocs
+- *Content Splitting*\*: When splitting content, create a redirecting top-level doc linking to
+subdocs
   and maintain consistent naming.
 
 - *Accessibility Standards*\*:
@@ -241,7 +254,8 @@ graph TD
 
 ## Navigation & User Experience
 
-- *Purpose*\*: Create intuitive navigation paths for different user types and scenarios, optimized for
+- *Purpose*\*: Create intuitive navigation paths for different user types and scenarios, optimized
+for
   expert engineers new to the KiloCode codebase.
 
 ### Quick Start Paths
@@ -411,21 +425,24 @@ enum ExampleState {
   waiting for the next user input. It's the visual cue that the turn boundary has been reached.
 
 - *Race Condition*\*: A situation where multiple processes or threads access shared resources
-  concurrently, leading to unpredictable behavior. In our context, this occurs when multiple API calls
+concurrently, leading to unpredictable behavior. In our context, this occurs when multiple API calls
   are made simultaneously, causing responses to be interleaved and corrupted.
 
-- *State Machine*\*: A computational model that describes how a system behaves in response to events,
+- *State Machine*\*: A computational model that describes how a system behaves in response to
+events,
   transitioning between different states based on current state and input. Each state represents a
   specific condition or mode of operation.
 
-- *Synchronization*\*: The coordination of multiple processes to ensure they don't interfere with each
+- *Synchronization*\*: The coordination of multiple processes to ensure they don't interfere with
+each
   other when accessing shared resources. This typically involves locks, semaphores, or other
   coordination mechanisms.
 
 - *Concurrent Execution*\*: Multiple operations happening simultaneously, which can lead to race
   conditions if not properly synchronized.
 
-- *Sequential Execution*\*: Operations happening one after another in a specific order, which prevents
+- *Sequential Execution*\*: Operations happening one after another in a specific order, which
+prevents
   race conditions but may reduce performance.
 
 ### System-Specific Terms
@@ -457,7 +474,8 @@ enum ExampleState {
 
 ```
 <a id="navigation-footer"></a>
-- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
+- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source:
+`/docs/FILENAME.md#L1`
 ```
 
 - *Link Requirements*\*:
@@ -467,9 +485,11 @@ enum ExampleState {
 
 - *Examples*\*:
 - From root docs/:
-  `Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source: `/docs/DOCUMENTATION\_GUIDE.md#L1\`
+`Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+`/docs/DOCUMENTATION\_GUIDE.md#L1\`
 - From subdirectory:
-  `Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source: `/docs/architecture/SYSTEM\_OVERVIEW.md#L1\`
+`Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
+`/docs/architecture/SYSTEM\_OVERVIEW.md#L1\`
 
 - *Link Validation*\*: All mentioned filenames must be clickable links for direct navigation and
   tooling validation.
@@ -518,7 +538,8 @@ Before submitting a PR, confirm the following items:
 ```markdown
 # Document Title
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Brief description of the document's purpose and audience.
 

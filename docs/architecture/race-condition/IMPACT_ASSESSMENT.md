@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers comprehensive analysis of the impact and severity of the API duplication race condition issue.
-- **Context**: Use this as a starting point for understanding the impact assessment and severity analysis of race condition issues.
+- **Purpose**: This document covers comprehensive analysis of the impact and severity of the API
+duplication race condition issue.
+- **Context**: Use this as a starting point for understanding the impact assessment and severity
+analysis of race condition issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of race condition impact and severity assessment in the KiloCode system. The assessment reflects findings from:
+This document was created through comprehensive analysis of race condition impact and severity
+assessment in the KiloCode system. The assessment reflects findings from:
 - Race condition impact analysis and severity assessment methodology development
 - User experience impact evaluation and business impact analysis
 - System performance impact assessment and reliability impact evaluation
@@ -344,8 +349,16 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Mitigation strategies provide actionable solutions
 
 ## Navigation
+
+### Example
+
+```markdown
+# Example markdown
+[Link](url)
+```
+
 - [← Race Condition Analysis](../README.md)
 - [← Problem Overview](PROBLEM_OVERVIEW.md)
 - [← Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
 - [← Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
-- [← Main Documentation](../../README.md)
+- [← Main Documentation](../README.md)

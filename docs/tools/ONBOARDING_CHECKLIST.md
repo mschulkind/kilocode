@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 This checklist ensures new team members are properly onboarded to KiloCode's documentation
 automation system.
@@ -215,7 +217,20 @@ automation system.
 - [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
 - [Quick Reference Card](./QUICK_REFERENCE_CARD.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

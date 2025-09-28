@@ -1,9 +1,10 @@
 # Orchestrator Error Handling
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* This document outlines the Kilo Code Orchestrator's strategies for handling errors,
-  ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
+ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
   mechanisms, and the "Mistake Limit" concept.
 
 > **Dinosaur Fun Fact**: Error handling is like a dinosaur's immune system - it detects threats
@@ -25,9 +26,11 @@
 
 ### Related Documents
 
-<a id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+<a
+id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
 - **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where
   errors can occur.
@@ -158,20 +161,20 @@ This concept is a crucial guardrail that ensures system stability.
 
 - **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -186,7 +189,7 @@ next, return to the appropriate README for guidance.
 <a id="navigation-footer"></a>
 
 You have reached the end of the error handling document. Return to the
-[Master Index](ORCHESTRATOR_INDEX.md) or proceed to the
+[Master Index](../orchestrator/ORCHESTRATOR_INDEX.md) or proceed to the
 [Security & Governance Document](ORCHESTRATOR_SECURITY_GOVERNANCE.md).
 
 [Back to Top](#orchestrator-error-handling)

@@ -1,6 +1,7 @@
 # File & Directory Conventions 📁
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive rules for naming, organizing, and structuring documentation files and
   directories to ensure consistency and discoverability across the KiloCode project.
@@ -146,7 +147,8 @@ docs/
 ```markdown
 # Architecture Documentation
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** System architecture and design patterns for KiloCode.
 
@@ -206,7 +208,8 @@ docs/
 ```
 # Good: Clear, focused purpose
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 docs/architecture/state-machines/
 ├── README.md
@@ -216,7 +219,8 @@ docs/architecture/state-machines/
 
 # Bad: Too many levels, unclear purpose
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 docs/architecture/state-machines/task-states/individual-states/
 ```
@@ -281,13 +285,15 @@ docs/standards/
 ```bash
 # Before (incorrect)
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 docs/standards/core/principles.md
 
 # After (correct)
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 docs/standards/core/PRINCIPLES.md
 ```
@@ -309,23 +315,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -335,4 +341,4 @@ next, return to [Standards Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

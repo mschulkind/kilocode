@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Comprehensive documentation of the Ghost Service for AI-powered code completion, inline
+- *Purpose:*\* Comprehensive documentation of the Ghost Service for AI-powered code completion,
+inline
   suggestions, and intelligent code assistance in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
@@ -27,6 +30,25 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Navigation Footer
 
 </details>
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Executive Summary
 - The Ghost Service provides comprehensive AI-powered code completion, inline suggestions, and
@@ -324,7 +346,8 @@ private isRequestCancelled: boolean = false
 - Irrelevant completions
 - Missing context awareness
 
-- *Root Cause*\*: Strategy selection or context analysis issues **Solution**: Improve context analysis
+- *Root Cause*\*: Strategy selection or context analysis issues **Solution**: Improve context
+analysis
   and strategy selection algorithms
 
 ### Issue 2: Performance Issues
@@ -358,8 +381,22 @@ private isRequestCancelled: boolean = false
   selection algorithms and context analysis
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+[`README.md`](../README.md)
   · Source: `/docs/services/GHOST_SERVICE.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

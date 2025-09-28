@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide outlines the best practices for writing and maintaining high-quality documentation in the
 KiloCode project.
@@ -22,7 +24,8 @@ KiloCode project.
 ```markdown
 # Main Title (H1) - Only one per document
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Major Section (H2)
 
@@ -109,7 +112,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ```markdown
 # Use Title Case for H1
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Use Sentence case for H2 and below
 
@@ -313,7 +317,9 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Ensure each section has sufficient content (50+ words)
 - Remove placeholder or empty sections
 
-**Note**: Some "orphaned sections" warnings may be false positives from the linter. If sections have meaningful content and proper hierarchy, these warnings can often be safely ignored after verification.
+**Note**: Some "orphaned sections" warnings may be false positives from the linter. If sections have
+meaningful content and proper hierarchy, these warnings can often be safely ignored after
+verification.
 
 ### 3. Cross-Reference Issues
 
@@ -325,7 +331,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Use descriptive link text instead of file names
 - Update links when moving or renaming files
 
-**Note**: Cross-reference warnings may be false positives if the target files exist. Verify file paths manually using `ls` or file system tools before assuming links are broken.
+**Note**: Cross-reference warnings may be false positives if the target files exist. Verify file
+paths manually using `ls` or file system tools before assuming links are broken.
 
 ### 4. Final Newline Issues
 
@@ -447,19 +454,22 @@ Use this process when:
 ```bash
 # Validate all documentation
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 pnpm docs:validate
 
 # Run maintenance
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 pnpm docs:maintain
 
 # Generate report
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 pnpm docs:report
 ```
@@ -474,7 +484,7 @@ pnpm docs:report
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ## Continuous Improvement
 
@@ -507,8 +517,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/DEVELOPMENT_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](../architecture/GETTING_STARTED.md)
 
 ## Navigation
 - [← Tools Overview](README.md)
@@ -517,4 +527,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
 - [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

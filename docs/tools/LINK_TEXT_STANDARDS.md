@@ -1,8 +1,42 @@
 # Link Text Standards Documentation
 
+## When You're Here
+
+💡 **Fun Fact**: [Interesting fact about the topic]
+
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
+
 ## Overview
 
-This document defines the standards for descriptive link text in KiloCode documentation. Proper link text improves accessibility, user experience, and helps users understand what they'll find when they click a link.
+This document defines the standards for descriptive link text in KiloCode documentation. Proper link
+text improves accessibility, user experience, and helps users understand what they'll find when they
+click a link.
 
 ## Link Text Principles
 
@@ -136,7 +170,20 @@ Link text should be long enough to be descriptive but short enough to be scannab
 [contributing](../CONTRIBUTING.md)
 ```
 
-### Navigation Links
+#
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
+
+## Navigation Links
 
 ```markdown
 <!-- ✅ Good patterns -->
@@ -338,8 +385,10 @@ const nonDescriptivePatterns = [
 ### External Resources
 
 - [WebAIM Link Text Guidelines](https://webaim.org/techniques/hypertext/link_text)
-- [WCAG Link Purpose Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)
-- [MDN Link Best Practices](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Link_text)
+- [WCAG Link Purpose
+Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)
+- [MDN Link Best
+Practices](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Link_text)
 
 ## Updates and Maintenance
 
@@ -350,7 +399,8 @@ This standard is maintained as part of the KiloCode documentation automation:
 3. **Community Feedback**: Standards evolve based on user feedback
 4. **Tool Improvements**: Automated tools are continuously improved
 
-For questions or issues with link text standards, see the [Validation System Documentation](./VALIDATION_SYSTEM.md).
+For questions or issues with link text standards, see the [Validation System
+Documentation](./VALIDATION_SYSTEM.md).
 
 ## Navigation
 

@@ -2,20 +2,42 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-- *Purpose:*\* Comprehensive reference for technical terms, concepts, and system-specific terminology
+- *Purpose:*\* Comprehensive reference for technical terms, concepts, and system-specific
+terminology
   used throughout KiloCode documentation.
 
 > **Quantum Physics Fun Fact**: Just as quantum entanglement allows particles to be instantly
 > connected regardless of distance, our glossary creates instant connections between concepts across
 > the entire documentation system! 🔬
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Core System Concepts
 
@@ -160,6 +182,19 @@ logic.
 - **TIMEOUT**: Recursive call exceeded time limit
 - **TRIPLE\_CONCURRENT**: Three simultaneous recursive calls (severe race condition)
 
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
+
 ## Navigation Terms
 
 ### **Breadcrumb Navigation**
@@ -184,7 +219,7 @@ implementation).
 Sequential path through documentation designed to build understanding progressively.
 
 ## 🔗 Related Documentation
-- [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
+- [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
   principles and structure
 - [Architecture Documentation](README.md) - System architecture and design patterns
 - [Orchestrator Documentation](README.md) - Task orchestration and lifecycle management
@@ -192,7 +227,7 @@ Sequential path through documentation designed to build understanding progressiv
 ## 🧭 Navigation Footer
 - [← Back to Documentation Hub](README.md)
 - [↑ Table of Contents](#core-system-concepts)
-- [→ Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md)
+- [→ Documentation Standards Guide](../DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
 - \*\*

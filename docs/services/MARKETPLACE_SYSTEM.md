@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation of the MCP server marketplace system, package management,
   and server discovery in the KiloCode system.
@@ -28,6 +30,25 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Navigation Footer
 
 </details>
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Executive Summary
 - The Marketplace System provides a comprehensive platform for discovering, installing, and managing
@@ -203,7 +224,8 @@ export class SimpleInstaller {
 		private readonly customModesManager?: CustomModesManager,
 	) {}
 
-	async installItem(item: MarketplaceItem, options: InstallOptions): Promise<{ filePath: string; line?: number }> {
+async installItem(item: MarketplaceItem, options: InstallOptions): Promise<{ filePath: string;
+line?: number }> {
 		// Installation logic for different item types
 	}
 }
@@ -334,7 +356,8 @@ interface ServerConfiguration {
 }
 ```
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration management,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration
+management,
   schema validation, settings persistence
 
 ### Remote Configuration
@@ -400,7 +423,8 @@ interface ServerConfiguration {
 
 - **Threat Detection**: Malicious behavior detection
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Sandboxing architecture,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Sandboxing
+architecture,
   security measures, threat detection
 
 ## Common Issues and Solutions
@@ -412,7 +436,8 @@ interface ServerConfiguration {
 - Dependency resolution failures
 - Validation errors
 
-- *Root Cause*\*: Package corruption or dependency conflicts **Solution**: Implement robust validation
+- *Root Cause*\*: Package corruption or dependency conflicts **Solution**: Implement robust
+validation
   and dependency resolution
 
 ### Issue 2: Server Discovery Issues
@@ -422,7 +447,8 @@ interface ServerConfiguration {
 - Search functionality failures
 - Metadata inconsistencies
 
-- *Root Cause*\*: Catalog synchronization issues or metadata corruption **Solution**: Implement proper
+- *Root Cause*\*: Catalog synchronization issues or metadata corruption **Solution**: Implement
+proper
   catalog management and synchronization
 
 ### Issue 3: Configuration Problems
@@ -432,7 +458,8 @@ interface ServerConfiguration {
 - Settings not persisting
 - Remote configuration issues
 
-- *Root Cause*\*: Configuration management or synchronization problems **Solution**: Implement robust
+- *Root Cause*\*: Configuration management or synchronization problems **Solution**: Implement
+robust
   configuration management and fallback mechanisms
 
 ### Issue 4: Security Vulnerabilities
@@ -442,12 +469,27 @@ interface ServerConfiguration {
 - Package validation failures
 - Sandbox violations
 
-- *Root Cause*\*: Insufficient security validation or sandboxing **Solution**: Implement comprehensive
+- *Root Cause*\*: Insufficient security validation or sandboxing **Solution**: Implement
+comprehensive
   security measures and validation
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+[`README.md`](../README.md)
   · Source: `/docs/services/MARKETPLACE_SYSTEM.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

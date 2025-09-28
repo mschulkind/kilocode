@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers comprehensive guide for diagnosing and resolving issues where KiloCode fires multiple API requests simultaneously.
-- **Context**: Use this as a starting point for troubleshooting duplicate API request issues and system confusion.
+- **Purpose**: This document covers comprehensive guide for diagnosing and resolving issues where
+KiloCode fires multiple API requests simultaneously.
+- **Context**: Use this as a starting point for troubleshooting duplicate API request issues and
+system confusion.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This document was created through comprehensive analysis of duplicate API request issues and troubleshooting strategies in the KiloCode system. The guide reflects findings from:
+This document was created through comprehensive analysis of duplicate API request issues and
+troubleshooting strategies in the KiloCode system. The guide reflects findings from:
 - Duplicate API request diagnosis and resolution strategy development
 - System architecture analysis for troubleshooting purposes
 - Common failure pattern identification and resolution approach research
@@ -31,7 +36,8 @@ The guide provides systematic approaches to diagnosing and resolving duplicate A
 
 ## System Architecture Overview
 
-The KiloCode system architecture consists of multiple layers that can contribute to duplicate API request issues.
+The KiloCode system architecture consists of multiple layers that can contribute to duplicate API
+request issues.
 
 **Key Components:**
 1. **UI Layer** - User interface and interaction handling
@@ -209,6 +215,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 - [← Architecture Documentation](README.md)
 - [← Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Investigation Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

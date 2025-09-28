@@ -1,6 +1,7 @@
 # Kilo Code Logging Documentation
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 This document provides comprehensive information about Kilo Code's logging system, including how to
 write logs, where messages are routed, viewing options, and configuration settings.
@@ -321,7 +322,8 @@ Comprehensive configuration options for controlling logging behavior.
 ```bash
 # API Configuration
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 LMNR_API_KEY=your_api_key
 LMNR_BASE_URL=https://api.lmnr.ai
@@ -330,7 +332,8 @@ LMNR_GRPC_PORT=8443
 
 # Service Control
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 LMNR_RECORD_IO=true          # Record span I/O (default: true)
 LMNR_ENABLED=true           # Enable Laminar service (default: true)
@@ -341,13 +344,15 @@ LMNR_ENABLED=true           # Enable Laminar service (default: true)
 ```bash
 # Development mode
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 NODE_ENV=development         # Enables additional console logging
 
 # IPC Communication
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 KILO_IPC_SOCKET_PATH=/tmp/kilo.sock    # Enables IPC logging
 ROO_CODE_IPC_SOCKET_PATH=/tmp/roo.sock # Alternative IPC path
@@ -562,24 +567,28 @@ logger.info("User action", {
 ```bash
 # Check environment variables
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 echo $NODE_ENV
 echo $KILO_IPC_SOCKET_PATH
 
 # View log files
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 tail -f ./logs/app.log
 cat /tmp/kilo-code-messages.log
 
 # Check VSCode output channels
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 # View → Output → Kilo-Code
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ```
 
@@ -599,15 +608,15 @@ monitoring across both VSCode and JetBrains platforms.
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -620,5 +629,5 @@ next, return to the appropriate README for guidance.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

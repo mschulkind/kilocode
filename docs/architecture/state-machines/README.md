@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Index and navigation for all state machine documents in this directory.
 
@@ -65,12 +67,13 @@ to use them together during design, debugging, and implementation.
 ## Related documentation
 - [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) Master
   narrative and navigation hub for the duplicate-API-request issue family.
-- [Orchestrator Documentation](../../orchestrator/README.md) Parent/child task orchestration concepts
+- [Orchestrator Documentation](../orchestrator/README.md) Parent/child task orchestration concepts
   and lifecycle.
 - \*\*
 
 <a id="navigation-footer"></a>
-- Back: [Architecture Documentation](../README.md) · Root: [Architecture Documentation](../README.md) · Source:
+- Back: [Architecture Documentation](../README.md) · Root: [Architecture
+Documentation](../README.md) · Source:
   `/docs/architecture/state-machines/README.md#L1`
 
 ## No Dead Ends Policy
@@ -81,7 +84,15 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
+
+### Example
+
+```markdown
+# Example markdown
+[Link](url)
+```
+
 - [← Architecture Overview](../README.md)
 - [← State Machines Overview](README.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

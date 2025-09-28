@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers browser automation capabilities and web interaction features in the KiloCode system.
-- **Context**: Use this as a starting point for understanding how KiloCode interacts with web browsers and processes web content.
+- **Purpose**: This document covers browser automation capabilities and web interaction features in
+the KiloCode system.
+- **Context**: Use this as a starting point for understanding how KiloCode interacts with web
+browsers and processes web content.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This document was created through comprehensive analysis of browser automation requirements and web interaction patterns in development environments. The automation system reflects findings from:
+This document was created through comprehensive analysis of browser automation requirements and web
+interaction patterns in development environments. The automation system reflects findings from:
 - Browser automation framework analysis (Puppeteer, Playwright, Selenium)
 - Web scraping and content extraction best practices
 - Cross-browser compatibility and testing research
@@ -31,7 +36,8 @@ The system provides reliable and efficient browser automation for web content pr
 
 ## Automation Overview
 
-The Browser Automation system provides comprehensive web browsing capabilities for KiloCode, enabling web content access, interaction, and processing through automated browser sessions.
+The Browser Automation system provides comprehensive web browsing capabilities for KiloCode,
+enabling web content access, interaction, and processing through automated browser sessions.
 
 **Core Components:**
 1. **Browser Session Management** - Automated browser session control
@@ -234,4 +240,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
 - [← Terminal Integration](TERMINAL_INTEGRATION.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

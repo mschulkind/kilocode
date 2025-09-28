@@ -2,7 +2,12 @@
 
 ## Overview
 
-This document defines the standards for organizing sections within KiloCode documentation. Proper section organization ensures consistent structure, logical flow, and improved readability across all documents.
+⚡ **Quick Note**: [Important information]
+
+
+This document defines the standards for organizing sections within KiloCode documentation. Proper
+section organization ensures consistent structure, logical flow, and improved readability across all
+documents.
 
 ## Section Organization Principles
 
@@ -380,7 +385,8 @@ const sectionOrganizationRules = {
   requiredSections: {
     navigation: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation'],
     technical: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation'],
-    planning: ['When You\'re Here', 'Research Context', 'Progress Summary', 'Success Criteria', 'No Dead Ends Policy', 'Navigation'],
+planning: ['When You\'re Here', 'Research Context', 'Progress Summary', 'Success Criteria', 'No Dead
+Ends Policy', 'Navigation'],
     general: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation']
   },
   
@@ -573,7 +579,8 @@ Section organization standards are maintained as part of the KiloCode documentat
 3. **Tool Improvements**: Validation and automation tools are continuously improved
 4. **Documentation Updates**: This guide is updated with new standards and examples
 
-For questions or issues with section organization, see the [Validation System Documentation](./VALIDATION_SYSTEM.md).
+For questions or issues with section organization, see the [Validation System
+Documentation](./VALIDATION_SYSTEM.md).
 
 ## Navigation
 

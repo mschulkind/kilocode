@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive summary of documentation coverage, progress tracking, and future
   documentation opportunities for the KiloCode repository.
@@ -27,6 +29,25 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Navigation Footer
 
 </details>
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Executive Summary
 - This document provides a comprehensive overview of the documentation progress for the KiloCode
@@ -373,6 +394,19 @@ This document is part of the KiloCode project documentation. If you're not famil
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
   `/docs/DOCUMENTATION_PROGRESS.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

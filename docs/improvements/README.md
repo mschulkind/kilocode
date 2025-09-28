@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document serves as the master index for all improvement-related documentation in the KiloCode project.
-- **Context**: Use this as a starting point for understanding technical debt, research gaps, and priority improvements.
+- **Purpose**: This document serves as the master index for all improvement-related documentation in
+the KiloCode project.
+- **Context**: Use this as a starting point for understanding technical debt, research gaps, and
+priority improvements.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This documentation directory was established through comprehensive analysis of the KiloCode codebase to systematically track and address improvement opportunities. The structure reflects findings from:
+This documentation directory was established through comprehensive analysis of the KiloCode codebase
+to systematically track and address improvement opportunities. The structure reflects findings from:
 - Technical debt analysis across all system components
 - Performance bottleneck identification and prioritization
 - Research gap analysis for areas requiring investigation
@@ -29,13 +34,16 @@ The organization supports both immediate tactical fixes and long-term strategic 
 
 ## Documentation Overview
 
-Welcome to the improvements documentation! This directory tracks technical debt, research gaps, and priority improvements for the KiloCode project. Each document provides detailed analysis and actionable recommendations for system enhancement.
+Welcome to the improvements documentation! This directory tracks technical debt, research gaps, and
+priority improvements for the KiloCode project. Each document provides detailed analysis and
+actionable recommendations for system enhancement.
 
 ## Quick Start Guide
 
 ### For Developers
 
-- **Something's Broken**: Check [Technical Debt Analysis](TECHNICAL_DEBT.md) for known issues and fixes
+- **Something's Broken**: Check [Technical Debt Analysis](TECHNICAL_DEBT.md) for known issues and
+fixes
 - **Planning Work**: Review [Priority Improvements](PRIORITY_IMPROVEMENTS.md) for high-impact tasks
 - **Research Needed**: Explore [Research Gaps](RESEARCH_GAPS.md) for areas requiring investigation
 
@@ -49,13 +57,16 @@ Welcome to the improvements documentation! This directory tracks technical debt,
 
 ### Core Documents
 
-- **[Priority Improvements](PRIORITY_IMPROVEMENTS.md)** - High-priority improvements and fixes with implementation roadmaps
-- **[Technical Debt Analysis](TECHNICAL_DEBT.md)** - Known technical debt and refactoring needs with impact assessment
+- **[Priority Improvements](PRIORITY_IMPROVEMENTS.md)** - High-priority improvements and fixes with
+implementation roadmaps
+- **[Technical Debt Analysis](TECHNICAL_DEBT.md)** - Known technical debt and refactoring needs with
+impact assessment
 - **[Research Gaps](RESEARCH_GAPS.md)** - Areas requiring further research and investigation
 
 ### Document Relationships
 
-Each document cross-references related improvements and provides navigation paths to related documentation. This creates a comprehensive improvement ecosystem rather than isolated lists.
+Each document cross-references related improvements and provides navigation paths to related
+documentation. This creates a comprehensive improvement ecosystem rather than isolated lists.
 
 ## Current Focus Areas
 
@@ -80,7 +91,7 @@ Each document cross-references related improvements and provides navigation path
 ### Implementation Context
 
 - **Tools**: [Development Tools](../tools/README.md) for implementation guidance
-- **Testing**: [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md) for validation approaches
+- **Testing**: [Testing Infrastructure](../testing/TESTING_STRATEGY.md) for validation approaches
 
 ## No Dead Ends Policy
 
@@ -95,4 +106,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](../architecture/README.md)
 - [← Standards Documentation](../standards/README.md)
 - [← Investigation Plans](../../plans/README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

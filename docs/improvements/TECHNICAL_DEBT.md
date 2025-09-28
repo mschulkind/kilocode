@@ -2,23 +2,29 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document catalogs technical debt identified through comprehensive codebase analysis and system architecture assessment.
-- **Context**: Use this as a starting point for understanding refactoring needs and planning technical improvements.
+- **Purpose**: This document catalogs technical debt identified through comprehensive codebase
+analysis and system architecture assessment.
+- **Context**: Use this as a starting point for understanding refactoring needs and planning
+technical improvements.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created through systematic analysis of the KiloCode codebase to identify technical debt requiring attention. The debt items listed here represent issues identified through:
+This document was created through systematic analysis of the KiloCode codebase to identify technical
+debt requiring attention. The debt items listed here represent issues identified through:
 - Code review identifying patterns that need refactoring
 - Architecture analysis revealing design inconsistencies
 - Performance monitoring showing optimization opportunities
 - Error pattern analysis highlighting reliability issues
 
-Each debt item includes impact assessment, complexity analysis, and implementation timeline to support technical improvement planning.
+Each debt item includes impact assessment, complexity analysis, and implementation timeline to
+support technical improvement planning.
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
@@ -29,7 +35,9 @@ Each debt item includes impact assessment, complexity analysis, and implementati
 
 ## Executive Summary
 
-This document catalogs 15 technical debt items identified through comprehensive codebase analysis and system architecture assessment. Technical debt is prioritized by impact and urgency to support strategic refactoring planning.
+This document catalogs 15 technical debt items identified through comprehensive codebase analysis
+and system architecture assessment. Technical debt is prioritized by impact and urgency to support
+strategic refactoring planning.
 
 **Key Findings:**
 - 3 critical debt items requiring immediate attention
@@ -46,7 +54,8 @@ This document catalogs 15 technical debt items identified through comprehensive 
 **Debt Type**: Logic Error
 **Estimated Effort**: 3-4 days
 
-**Description**: Non-atomic message queue processing leading to race conditions where multiple calls can dequeue the same message.
+**Description**: Non-atomic message queue processing leading to race conditions where multiple calls
+can dequeue the same message.
 
 **Code Example**:
 
@@ -80,7 +89,8 @@ if (!this.isProcessingQueue) {
 **Debt Type**: Architectural
 **Estimated Effort**: 1-2 weeks
 
-**Description**: Each provider implements error handling differently, leading to inconsistent user experience and debugging difficulties.
+**Description**: Each provider implements error handling differently, leading to inconsistent user
+experience and debugging difficulties.
 
 **Issues**:
 - Inconsistent error codes and messages
@@ -96,7 +106,8 @@ if (!this.isProcessingQueue) {
 **Debt Type**: Observability
 **Estimated Effort**: 2-3 days
 
-**Description**: Tools lack execution metrics, monitoring, and performance tracking, making it difficult to identify performance issues and failures.
+**Description**: Tools lack execution metrics, monitoring, and performance tracking, making it
+difficult to identify performance issues and failures.
 
 **Missing Metrics**:
 - Execution time tracking
@@ -270,4 +281,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Priority Improvements](PRIORITY_IMPROVEMENTS.md)
 - [← Research Gaps](RESEARCH_GAPS.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

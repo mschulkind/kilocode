@@ -1,8 +1,20 @@
 # Navigation Scenario Analysis
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+## When You're Here
 
-- *Purpose:*\* Detailed analysis of why the problematic change was made and the navigation scenario it
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
+
+- *Purpose:*\* Detailed analysis of why the problematic change was made and the navigation scenario
+it
   was designed to solve.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
@@ -160,7 +172,8 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 - **Active Execution Scenario**: User stays in chat during subtask execution (unintended side
   effect)
 
-- *The Race Condition*\*: In active execution, both the main task loop and subtask completion can call
+- *The Race Condition*\*: In active execution, both the main task loop and subtask completion can
+call
   `recursivelyMakeClineRequests` simultaneously, causing the API duplication issue.
 
 - *The Challenge*\*: The fix is necessary for navigation scenarios but causes problems in active
@@ -173,12 +186,14 @@ private async continueParentTask(lastMessage: string): Promise<void> {
 2. **Prevents the race condition** - no concurrent API calls in active execution
 3. **Maintains user experience** - seamless workflow in both scenarios
 
-- *The Answer*\*: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests` call
+- *The Answer*\*: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests`
+call
   executes at a time, regardless of the scenario.
 
 ## Why the Stack Differs Based on Navigation Path
 
-- *The Core Issue*\*: The task stack state depends entirely on **how you arrived** at viewing a given
+- *The Core Issue*\*: The task stack state depends entirely on **how you arrived** at viewing a
+given
   task, not just which task you're viewing.
 
 ### Path 1: Active Execution (Normal Flow)
@@ -438,4 +453,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
 - [← Testing Strategy](TESTING_STRATEGY.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

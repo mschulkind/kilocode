@@ -2,17 +2,23 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document outlines the plan to reduce duplication across architecture docs and improve discoverability with cross-links.
-- **Context**: Use this as a starting point for understanding documentation consolidation strategies and priorities.
+- **Purpose**: This document outlines the plan to reduce duplication across architecture docs and
+improve discoverability with cross-links.
+- **Context**: Use this as a starting point for understanding documentation consolidation strategies
+and priorities.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
-This document was created through comprehensive analysis of documentation duplication and consolidation opportunities in the KiloCode architecture documentation. The plan reflects findings from:
+This document was created through comprehensive analysis of documentation duplication and
+consolidation opportunities in the KiloCode architecture documentation. The plan reflects findings
+from:
 - Documentation duplication analysis and impact assessment
 - Cross-reference optimization and discoverability improvement research
 - Content organization and structure optimization studies
@@ -30,7 +36,8 @@ The plan provides a systematic approach to documentation consolidation and impro
 
 ## Consolidation Overview
 
-The Documentation Consolidation Plan aims to reduce duplication across architecture documentation and improve discoverability through strategic cross-linking and content organization.
+The Documentation Consolidation Plan aims to reduce duplication across architecture documentation
+and improve discoverability through strategic cross-linking and content organization.
 
 **Key Objectives:**
 
@@ -43,7 +50,8 @@ The Documentation Consolidation Plan aims to reduce duplication across architect
 
 ### A) Race Condition Summaries
 
-**Issue**: High-level summaries in `race-condition/PROBLEM_OVERVIEW.md` and `API_DUPLICATION_RACE_CONDITION_ANALYSIS.md` overlap.
+**Issue**: High-level summaries in `race-condition/PROBLEM_OVERVIEW.md` and
+`API_DUPLICATION_RACE_CONDITION_ANALYSIS.md` overlap.
 
 **Action**:
 - Keep the master index summary in `API_DUPLICATION_RACE_CONDITION_ANALYSIS.md`
@@ -52,7 +60,8 @@ The Documentation Consolidation Plan aims to reduce duplication across architect
 
 ### B) Navigation Scenario Details
 
-**Issue**: Parent reinitialization explanations appear in `NAVIGATION_SCENARIO.md` and scattered across other documents.
+**Issue**: Parent reinitialization explanations appear in `NAVIGATION_SCENARIO.md` and scattered
+across other documents.
 
 **Action**:
 - Consolidate navigation scenario details into a single authoritative source
@@ -61,7 +70,8 @@ The Documentation Consolidation Plan aims to reduce duplication across architect
 
 ### C) State Machine Documentation
 
-**Issue**: State machine explanations are duplicated across multiple documents with varying levels of detail.
+**Issue**: State machine explanations are duplicated across multiple documents with varying levels
+of detail.
 
 **Action**:
 - Create a comprehensive state machine reference document
@@ -182,8 +192,16 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation plan provides actionable next steps
 
 ## Navigation
+
+### Example
+
+```markdown
+# Example markdown
+[Link](url)
+```
+
 - [← Architecture Documentation](README.md)
 - [← Communication Layer](COMMUNICATION_LAYER_SYSTEM.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

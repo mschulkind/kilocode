@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive documentation of testing infrastructure, strategies, and patterns across
+- *Purpose:*\* Comprehensive documentation of testing infrastructure, strategies, and patterns
+across
   the KiloCode system.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
@@ -30,6 +33,25 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Navigation Footer
 
 </details>
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Executive Summary
 - The Testing Strategy provides comprehensive testing infrastructure and patterns for the KiloCode
@@ -248,7 +270,8 @@ describe("API Integration", () => {
 
 ### VS Code E2E Tests
 
-- *Location*\*: `apps/vscode-e2e/` **Framework**: VS Code Extension Testing **Configuration**: VS Code
+- *Location*\*: `apps/vscode-e2e/` **Framework**: VS Code Extension Testing **Configuration**: VS
+Code
   extension test configuration
 
 - *Test Categories*\*:
@@ -450,7 +473,8 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - High memory usage
 - Test timeouts
 
-- *Root Cause*\*: Inefficient test patterns or resource leaks **Solution**: Optimize test patterns and
+- *Root Cause*\*: Inefficient test patterns or resource leaks **Solution**: Optimize test patterns
+and
   implement proper cleanup
 
 ### Issue 4: Coverage Gaps
@@ -466,6 +490,19 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/testing/TESTING_STRATEGY.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

@@ -1,6 +1,7 @@
 # Orchestrator System Documentation 🎼
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 Welcome to the **conductor's podium** of our system! The orchestrator is like the maestro of a
 digital symphony - it coordinates all the different instruments (tasks) to create beautiful music
@@ -34,7 +35,8 @@ subtask coordination.
   Describes initialization, running, pausing, subtask spawning, waiting, and completion. Shows when
   control moves between parent and child tasks and where continuation points live. Use this to trace
   execution over time.
-- **[Orchestrator Index](ORCHESTRATOR_INDEX.md)** - The complete score of our orchestration system
+- **[Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md)** - The complete score of our
+orchestration system
   High-level map of orchestrator responsibilities, interfaces, and integration points. Links to
   lifecycle, tools, delegation, and error-handling pages. Start here for a complete understanding
   before diving deeper.
@@ -44,9 +46,10 @@ subtask coordination.
 #### 🎵 **Understanding the Symphony** (How It Works)
 
 - *For Expert Engineers New to KiloCode:*\*
-1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
    Subtask, etc.)
-2. **System Overview**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) - High-level architecture and
+2. **System Overview**: [Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md) - High-level
+architecture and
    responsibilities
 3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns
    and state management
@@ -107,18 +110,18 @@ one section of the orchestra plays at a time.
 
 - *Understanding Orchestrator Architecture:*\*
 
-- **Next**: [Orchestrator Index](ORCHESTRATOR_INDEX.md) →
+- **Next**: [Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md) →
   [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
 
 - **Related**: [State Machines](../architecture/README.md) for behavior modeling,
-  [Technical Glossary](../../GLOSSARY.md) for terminology
+  [Technical Glossary](../GLOSSARY.md) for terminology
 
 - *Investigating Execution Issues:*\*
 
 - **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
   [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -128,7 +131,7 @@ one section of the orchestra plays at a time.
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
+- **Related**: [Repository Development Guide](../architecture/GETTING_STARTED.md) for
   codebase patterns
 
 - *Understanding Current Problems:*\*
@@ -147,8 +150,8 @@ next, return to this README for guidance.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../../GLOSSARY.md)
+- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
+[→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md)
   · [↑ Table of Contents](#-navigation-map)
 - "The best orchestras have a conductor who knows when to let each section play, and when to bring
   them all together. Our system needs the same kind of coordination."\* 🎼

@@ -2,17 +2,23 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document serves as the master index and central hub for all KiloCode documentation.
-- **Context**: Use this as your starting point for understanding system architecture, development workflows, and troubleshooting guides.
+- **Purpose**: This document serves as the master index and central hub for all KiloCode
+documentation.
+- **Context**: Use this as your starting point for understanding system architecture, development
+workflows, and troubleshooting guides.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This documentation hub was established through comprehensive analysis of KiloCode's system architecture, development workflows, and user needs. The documentation structure reflects findings from:
+This documentation hub was established through comprehensive analysis of KiloCode's system
+architecture, development workflows, and user needs. The documentation structure reflects findings
+from:
 - User experience research for different types of documentation consumers
 - System architecture analysis across all components and layers
 - Development workflow analysis and optimization opportunities
@@ -30,7 +36,8 @@ The organization supports both immediate problem-solving and long-term system un
 
 ## Documentation Overview
 
-Welcome to the KiloCode documentation! This is your central hub for understanding the system architecture, development workflows, and troubleshooting guides.
+Welcome to the KiloCode documentation! This is your central hub for understanding the system
+architecture, development workflows, and troubleshooting guides.
 
 **Key Documentation Areas:**
 
@@ -43,23 +50,33 @@ Welcome to the KiloCode documentation! This is your central hub for understandin
 
 ### Emergency Response (Something's Broken)
 
-- **API Duplication Issues**: [API Duplication Investigation Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- **Race Condition Issues**: [Race Condition Analysis](../architecture/README.md) → [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+- **API Duplication Issues**: [API Duplication Investigation
+Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause
+Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- **Race Condition Issues**: [Race Condition Analysis](../architecture/README.md) → [Solution
+Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
 ### Deep Dive Research (Understanding the System)
 
-- **System Architecture**: [Architecture Documentation](../architecture/README.md) → [System Overview](../architecture/SYSTEM_OVERVIEW.md) → [Repository Overview](../architecture/REPOSITORY_OVERVIEW.md)
-- **Core Components**: [Orchestrator Documentation](../orchestrator/README.md) → [Communication Layer](../architecture/COMMUNICATION_LAYER_SYSTEM.md)
+- **System Architecture**: [Architecture Documentation](../architecture/README.md) → [System
+Overview](../architecture/SYSTEM_OVERVIEW.md) → [Repository
+Overview](../architecture/REPOSITORY_OVERVIEW.md)
+- **Core Components**: [Orchestrator Documentation](../orchestrator/README.md) → [Communication
+Layer](../architecture/COMMUNICATION_LAYER_SYSTEM.md)
 
 ### Implementation Journey (Active Development)
 
-- **Current Projects**: [Investigation Plans](../plans/README.md) → [Priority Improvements](improvements/PRIORITY_IMPROVEMENTS.md)
-- **Development Workflow**: [Getting Started Guide](../architecture/GETTING_STARTED.md) → [Development Guide](../architecture/DEVELOPMENT_GUIDE.md)
+- **Current Projects**: [Investigation Plans](../plans/README.md) → [Priority
+Improvements](improvements/PRIORITY_IMPROVEMENTS.md)
+- **Development Workflow**: [Getting Started Guide](../architecture/GETTING_STARTED.md) →
+[Development Guide](../architecture/GETTING_STARTED.md)
 
 ### New to Codebase
 
-- **Essential Terminology**: [Technical Glossary](../GLOSSARY.md) → [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
-- **System Understanding**: [Repository Overview](../architecture/REPOSITORY_OVERVIEW.md) → [Core Systems](../architecture/CORE_SYSTEMS.md)
+- **Essential Terminology**: [Technical Glossary](../GLOSSARY.md) → [Documentation
+Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
+- **System Understanding**: [Repository Overview](../architecture/REPOSITORY_OVERVIEW.md) → [Core
+Systems](../architecture/CORE_SYSTEMS.md)
 
 ## Expert Engineer Onboarding
 
@@ -67,7 +84,8 @@ Welcome to the KiloCode documentation! This is your central hub for understandin
 
 **Step 1: Essential Foundation**
 - [Technical Glossary](../GLOSSARY.md) - Essential terminology and concepts
-- [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md) - Documentation principles and structure
+- [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md) - Documentation principles and
+structure
 
 **Step 2: System Understanding**
 - [Architecture Documentation](../architecture/README.md) - High-level system design
@@ -76,38 +94,47 @@ Welcome to the KiloCode documentation! This is your central hub for understandin
 
 **Step 3: Current Context**
 - [Race Condition Analysis](../architecture/README.md) - Active problems and solutions
-- [API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) - Current investigation status
+- [API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) -
+Current investigation status
 
 **Step 4: Implementation Details**
 - [Orchestrator Documentation](../orchestrator/README.md) - Core execution patterns
-- [Development Guide](../architecture/DEVELOPMENT_GUIDE.md) - Development workflow
-- [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md) - Testing strategies
+- [Development Guide](../architecture/GETTING_STARTED.md) - Development workflow
+- [Testing Infrastructure](../testing/TESTING_STRATEGY.md) - Testing strategies
 
 ## Documentation Structure
 
 ### Core Documentation
 
-- **[Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)** - Complete guide to documentation principles and structure
-- **[Documentation Progress](DOCUMENTATION_PROGRESS.md)** - Tracking documentation coverage and improvements
+- **[Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)** - Complete guide to
+documentation principles and structure
+- **[Documentation Progress](DOCUMENTATION_PROGRESS.md)** - Tracking documentation coverage and
+improvements
 - **[Improvement Log](IMPROVEMENT_LOG.md)** - Running log of system improvements and technical debt
 
 ### Architecture & Design
 
-- **[Architecture Documentation](../architecture/README.md)** - System architecture, design patterns, and critical analysis
-- **[Orchestrator Documentation](../orchestrator/README.md)** - Task orchestration and coordination systems
+- **[Architecture Documentation](../architecture/README.md)** - System architecture, design
+patterns, and critical analysis
+- **[Orchestrator Documentation](../orchestrator/README.md)** - Task orchestration and coordination
+systems
 - **[Services Documentation](services/README.md)** - Service layer architecture and implementations
 
 ### Development Resources
 
 - **[Getting Started Guide](../architecture/GETTING_STARTED.md)** - Initial setup and configuration
-- **[Development Guide](../architecture/DEVELOPMENT_GUIDE.md)** - Development workflow and best practices
+- **[Development Guide](../architecture/GETTING_STARTED.md)** - Development workflow and best
+practices
 - **[Testing Documentation](testing/README.md)** - Testing strategies and infrastructure
 
 ### Critical Issues & Analysis
 
-- **[Race Condition Analysis](../architecture/README.md)** - Comprehensive race condition investigation
-- **[API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** - API duplication root cause analysis
-- **[Priority Improvements](improvements/PRIORITY_IMPROVEMENTS.md)** - Prioritized improvement roadmap
+- **[Race Condition Analysis](../architecture/README.md)** - Comprehensive race condition
+investigation
+- **[API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
+API duplication root cause analysis
+- **[Priority Improvements](improvements/PRIORITY_IMPROVEMENTS.md)** - Prioritized improvement
+roadmap
 
 ### Standards & Guidelines
 
@@ -138,7 +165,7 @@ Welcome to the KiloCode documentation! This is your central hub for understandin
 
 - **[Documentation Tools](tools/README.md)** - Documentation generation and validation tools
 - **[Build System](build/README.md)** - Build pipelines and deployment processes
-- **[Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)** - Testing frameworks and strategies
+- **[Testing Infrastructure](../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
 
 ### Integration Resources
 
@@ -149,7 +176,8 @@ Welcome to the KiloCode documentation! This is your central hub for understandin
 ### Planning & Tracking
 
 - **[Investigation Plans](../plans/README.md)** - Active investigation and development plans
-- **[Technical Debt Analysis](improvements/TECHNICAL_DEBT.md)** - Technical debt assessment and mitigation
+- **[Technical Debt Analysis](improvements/TECHNICAL_DEBT.md)** - Technical debt assessment and
+mitigation
 - **[Research Gaps](improvements/RESEARCH_GAPS.md)** - Areas requiring additional research
 
 ## No Dead Ends Policy

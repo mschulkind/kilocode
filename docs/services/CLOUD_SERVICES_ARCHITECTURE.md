@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive documentation of cloud services architecture, authentication flows, and
   cloud integration patterns in the KiloCode system.
@@ -31,8 +33,28 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 </details>
 
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
+
 ## Executive Summary
-- The Cloud Services Architecture provides comprehensive cloud integration capabilities for KiloCode,
+- The Cloud Services Architecture provides comprehensive cloud integration capabilities for
+KiloCode,
   including authentication, API management, telemetry collection, and bridge communication for cloud
   features.\*
 
@@ -196,7 +218,8 @@ interface StaticTokenConfig {
 - Usage tracking
 - Sharing functionality
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: API client architecture,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: API client
+architecture,
   endpoint management, error handling
 
 ### Cloud Service Manager
@@ -407,7 +430,8 @@ export class BridgeOrchestrator {
 - API configurations
 - Authentication settings
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration management,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration
+management,
   synchronization, validation
 
 ### Static Settings Service
@@ -449,7 +473,8 @@ export class BridgeOrchestrator {
 - Access control
 - Usage tracking
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Key management patterns,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Key management
+patterns,
   security measures, access control
 
 ## Performance & Scalability
@@ -468,7 +493,8 @@ export class BridgeOrchestrator {
 - Resource management
 - Performance monitoring
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance optimization,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance
+optimization,
   scalability patterns, monitoring
 
 ## Common Issues and Solutions
@@ -480,7 +506,8 @@ export class BridgeOrchestrator {
 - Token expiration
 - Authentication errors
 
-- *Root Cause*\*: Invalid credentials or token issues **Solution**: Implement proper token refresh and
+- *Root Cause*\*: Invalid credentials or token issues **Solution**: Implement proper token refresh
+and
   error handling
 
 ### Issue 2: Bridge Connection Issues
@@ -516,6 +543,19 @@ export class BridgeOrchestrator {
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/services/CLOUD_SERVICES_ARCHITECTURE.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

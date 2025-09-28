@@ -1,6 +1,7 @@
 # Orchestrator Master Index
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the
   Orchestrator's architecture, lifecycle, and core responsibilities, enabling developers to
@@ -46,27 +47,28 @@ outcomes.
 
 - **System Prompt Assembly:** Constructs the master prompt that guides the model by combining user
   requests, system instructions, and context. See
-  [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
+  [`getSystemPrompt`](../../src/core/task/Task.ts#L2499).
 
 - **Task Execution Loop:** Manages the primary loop that drives a task, from parsing the model's
   response to tool invocation and state management. See
-  [`initiateTaskLoop`](/src/core/task/Task.ts#L1699) and
-  [`recursivelyMakeClineRequests`](/src/core/task/Task.ts#L1735).
+  [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699) and
+  [`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735).
 
 - **Tool Management & Gating:** Provides and validates tools for the model, ensuring that only
   permitted tools are used by the active mode. Key tools include
-  [`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35),
-  [`newTaskTool`](/src/core/tools/newTaskTool.ts#L14), [`switchModeTool`](/src/core/tools/switchModeTool.ts#L8),
-  [`askFollowupQuestionTool`](/src/core/tools/askFollowupQuestionTool.ts#L6), and
-  [`updateTodoListTool`](/src/core/tools/updateTodoListTool.ts#L156).
+  [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35),
+[`newTaskTool`](../../src/core/tools/newTaskTool.ts#L14),
+[`switchModeTool`](../../src/core/tools/switchModeTool.ts#L8),
+  [`askFollowupQuestionTool`](../../src/core/tools/askFollowupQuestionTool.ts#L6), and
+  [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156).
 
 - **Mode-Based Permissions:** Enforces which tools and file operations are allowed for a given mode,
-  preventing unintended side effects. See [`isToolAllowedForMode`](/src/shared/modes.ts#L167)
-  and the resulting [`FileRestrictionError`](/src/shared/modes.ts#L157).
+  preventing unintended side effects. See [`isToolAllowedForMode`](../../src/shared/modes.ts#L167)
+  and the resulting [`FileRestrictionError`](../../src/shared/modes.ts#L157).
 
 - **Formatting & Presentation:** Ensures that all model outputs adhere to a strict markdown format
   for reliable parsing and presentation. See
-  [`markdownFormattingSection`](/src/core/prompts/sections/markdown-formatting.ts#L1).
+  [`markdownFormattingSection`](../../src/core/prompts/sections/markdown-formatting.ts#L1).
 - \*\*
 
 ## Core Concepts At a Glance
@@ -78,8 +80,8 @@ outcomes.
   (e.g., `read_file`, `apply_diff`).
 
 - **Subtask:** A discrete unit of work delegated by the Orchestrator to a specialized mode or
-  function, managed via [`startSubtask`](/src/core/task/Task.ts#L1628) and
-  [`completeSubtask`](/src/core/task/Task.ts#L1669).
+  function, managed via [`startSubtask`](../../src/core/task/Task.ts#L1628) and
+  [`completeSubtask`](../../src/core/task/Task.ts#L1669).
 
 - **Todo Gating:** A mechanism that requires the model to create and follow a plan (`todo list`) for
   complex tasks, ensuring structured execution.
@@ -94,7 +96,7 @@ outcomes.
   active file or user selections.
 
 - **File Restriction:** A security mechanism that limits file system access based on the active
-  mode's permissions, enforced via [`FileRestrictionError`](/src/shared/modes.ts#L157).
+  mode's permissions, enforced via [`FileRestrictionError`](../../src/shared/modes.ts#L157).
 - \*\*
 
 ## Lifecycle Snapshot
@@ -102,20 +104,20 @@ outcomes.
 A typical task follows this orchestrated sequence:
 1. **User Request:** A user submits a prompt in a specific mode.
 2. **Mode Resolution:** The system identifies the active mode and its associated permissions from
-   [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
+   [`src/shared/modes.ts`](../../src/shared/modes.ts#L69).
 3. **System Prompt Assembly:** The Orchestrator builds the full context for the model using
-   [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
+   [`getSystemPrompt`](../../src/core/task/Task.ts#L2499).
 4. **Task Loop Initiation:** The main control loop begins with
-   [`initiateTaskLoop`](/src/core/task/Task.ts#L1699).
+   [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699).
 5. **Streaming Parse & Tool Handling:** The model's response is parsed in real-time. Tool calls are
    identified and dispatched.
 6. **Gating & Guardrails:** The system checks for `todo` list compliance, file restrictions, and
-   other safety rules like those defined in [`isToolAllowedForMode`](/src/shared/modes.ts#L167).
+other safety rules like those defined in [`isToolAllowedForMode`](../../src/shared/modes.ts#L167).
 7. **Subtask Delegation:** If necessary, a subtask is created and managed via
-   [`startSubtask`](/src/core/task/Task.ts#L1628).
+   [`startSubtask`](../../src/core/task/Task.ts#L1628).
 8. **Result Propagation:** The result of the tool or subtask is fed back into the loop.
 9. **Completion or Anomaly:** The loop continues until
-   [`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35) is called or an
+   [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35) is called or an
    unrecoverable error occurs.
 - \*\*
 
@@ -123,29 +125,53 @@ A typical task follows this orchestrated sequence:
 
 This table maps out the complete Orchestrator documentation suite.
 
-| Document                              | Purpose                                                         | Primary Audience        | Key Cross-Links                       |
-| :------------------------------------ | :-------------------------------------------------------------- | :---------------------- | :------------------------------------ |
-| **ORCHESTRATOR\_INDEX.md**             | **This document.** High-level entry point and map.              | All Devs                | All sibling docs                      |
-| `ORCHESTRATOR_ARCHITECTURE.md`        | Details the static components and their interactions.           | Architects, New Devs    | `LIFECYCLE`, `TOOLS_REFERENCE`        |
-| `ORCHESTRATOR_LIFECYCLE.md`           | Traces the dynamic flow of a task from start to finish.         | All Devs                | `ARCHITECTURE`, `TASK_DELEGATION`     |
-| `ORCHESTRATOR_TASK_DELEGATION.md`     | Explains the subtask creation and management process.           | Core Devs               | `LIFECYCLE`, `ERROR_HANDLING`         |
-| `ORCHESTRATOR_TOOLS_REFERENCE.md`     | Provides a detailed reference for all core tools.               | All Devs                | `ARCHITECTURE`, `BEST_PRACTICES`      |
-| `ORCHESTRATOR_ERROR_HANDLING.md`      | Describes strategies for fault tolerance and recovery.          | Core Devs               | `LIFECYCLE`, `SECURITY_GOVERNANCE`    |
-| `ORCHESTRATOR_SECURITY_GOVERNANCE.md` | Covers permissions, gating, and safety guardrails.              | Security, Core Devs     | `TOOLS_REFERENCE`, `EXTENSIBILITY`    |
-| `ORCHESTRATOR_BEST_PRACTICES.md`      | Offers guidelines for developing with and for the Orchestrator. | All Devs                | `TOOLS_REFERENCE`, `ARCHITECTURE`     |
-| `ORCHESTRATOR_EXTENSIBILITY.md`       | Guides adding new modes, tools, and capabilities.               | Core Devs, Contributors | `SECURITY_GOVERNANCE`, `ARCHITECTURE` |
+| Document                              | Purpose
+| Primary Audience        | Key Cross-Links                       |
+| :------------------------------------ |
+:-------------------------------------------------------------- | :---------------------- |
+:------------------------------------ |
+| **ORCHESTRATOR\_INDEX.md**             | **This document.** High-level entry point and map.
+| All Devs                | All sibling docs                      |
+| `ORCHESTRATOR_ARCHITECTURE.md`        | Details the static components and their interactions.
+| Architects, New Devs    | `LIFECYCLE`, `TOOLS_REFERENCE`        |
+| `ORCHESTRATOR_LIFECYCLE.md`           | Traces the dynamic flow of a task from start to finish.
+| All Devs                | `ARCHITECTURE`, `TASK_DELEGATION`     |
+| `ORCHESTRATOR_TASK_DELEGATION.md`     | Explains the subtask creation and management process.
+| Core Devs               | `LIFECYCLE`, `ERROR_HANDLING`         |
+| `ORCHESTRATOR_TOOLS_REFERENCE.md`     | Provides a detailed reference for all core tools.
+| All Devs                | `ARCHITECTURE`, `BEST_PRACTICES`      |
+| `ORCHESTRATOR_ERROR_HANDLING.md`      | Describes strategies for fault tolerance and recovery.
+| Core Devs               | `LIFECYCLE`, `SECURITY_GOVERNANCE`    |
+| `ORCHESTRATOR_SECURITY_GOVERNANCE.md` | Covers permissions, gating, and safety guardrails.
+| Security, Core Devs     | `TOOLS_REFERENCE`, `EXTENSIBILITY`    |
+| `ORCHESTRATOR_BEST_PRACTICES.md`      | Offers guidelines for developing with and for the
+Orchestrator. | All Devs                | `TOOLS_REFERENCE`, `ARCHITECTURE`     |
+| `ORCHESTRATOR_EXTENSIBILITY.md`       | Guides adding new modes, tools, and capabilities.
+| Core Devs, Contributors | `SECURITY_GOVERNANCE`, `ARCHITECTURE` |
 - \*\*
 
 ## Quick Reference Matrix
 
-| Concept          | Primary Symbols                                                                                                              | Linked Detailed Doc                   |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
-| Mode Permissions | [`isToolAllowedForMode`](/src/shared/modes.ts#L167), [`FileRestrictionError`](/src/shared/modes.ts#L157)                     | `ORCHESTRATOR_SECURITY_GOVERNANCE.md` |
-| Task Lifecycle   | [`initiateTaskLoop`](/src/core/task/Task.ts#L1699), [`recursivelyMakeClineRequests`](/src/core/task/Task.ts#L1735)           | `ORCHESTRATOR_LIFECYCLE.md`           |
-| Subtasking       | [`startSubtask`](/src/core/task/Task.ts#L1628), [`completeSubtask`](/src/core/task/Task.ts#L1669)                            | `ORCHESTRATOR_TASK_DELEGATION.md`     |
-| Core Tools       | [`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35), [`newTaskTool`](/src/core/tools/newTaskTool.ts#L14) | `ORCHESTRATOR_TOOLS_REFERENCE.md`     |
-| Planning         | [`updateTodoListTool`](/src/core/tools/updateTodoListTool.ts#L156)                                                           | `ORCHESTRATOR_BEST_PRACTICES.md`      |
-| User Interaction | [`askFollowupQuestionTool`](/src/core/tools/askFollowupQuestionTool.ts#L6)                                                   | `ORCHESTRATOR_LIFECYCLE.md`           |
+| Concept          | Primary Symbols
+| Linked Detailed Doc                   |
+| :--------------- |
+:---------------------------------------------------------------------------------------------------------------------------
+| :------------------------------------ |
+| Mode Permissions | [`isToolAllowedForMode`](../../src/shared/modes.ts#L167),
+[`FileRestrictionError`](../../src/shared/modes.ts#L157)                     |
+`ORCHESTRATOR_SECURITY_GOVERNANCE.md` |
+| Task Lifecycle   | [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699),
+[`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735)           |
+`ORCHESTRATOR_LIFECYCLE.md`           |
+| Subtasking       | [`startSubtask`](../../src/core/task/Task.ts#L1628),
+[`completeSubtask`](../../src/core/task/Task.ts#L1669)                            |
+`ORCHESTRATOR_TASK_DELEGATION.md`     |
+| Core Tools       | [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35),
+[`newTaskTool`](../../src/core/tools/newTaskTool.ts#L14) | `ORCHESTRATOR_TOOLS_REFERENCE.md`     |
+| Planning         | [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156)
+| `ORCHESTRATOR_BEST_PRACTICES.md`      |
+| User Interaction | [`askFollowupQuestionTool`](../../src/core/tools/askFollowupQuestionTool.ts#L6)
+| `ORCHESTRATOR_LIFECYCLE.md`           |
 - \*\*
 
 ## Architecture Flow Diagram
@@ -178,13 +204,13 @@ flowchart TD
 The Orchestrator enforces several safety mechanisms to ensure predictable and secure operation:
 
 - **File Restrictions:** Modes are restricted to specific file patterns, preventing unauthorized
-  access. A [`FileRestrictionError`](/src/shared/modes.ts#L157) is thrown on violation.
+  access. A [`FileRestrictionError`](../../src/shared/modes.ts#L157) is thrown on violation.
 
 - **Single Tool Constraint:** The model is only permitted to call one tool at a time, simplifying
   parsing and execution logic.
 
 - **Todo Gating:** For complex tasks, the model must first generate a plan, which is then enforced
-  step-by-step via [`updateTodoListTool`](/src/core/tools/updateTodoListTool.ts#L156).
+  step-by-step via [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156).
 
 - **Missing Parameter Handling:** The system validates that all required parameters for a tool call
   are present before execution.
@@ -202,11 +228,11 @@ To keep documentation synchronized with the codebase, follow these principles:
 1. **Atomic Commits:** All code changes that affect Orchestrator logic MUST be accompanied by
    corresponding documentation updates in the same commit.
 2. **Symbol Link Integrity:** When refactoring, ensure all clickable code references like
-   [`initiateTaskLoop`](/src/core/task/Task.ts#L1699) are updated with correct line numbers.
+   [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699) are updated with correct line numbers.
 3. **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid
    diagrams.
 4. **Rules as Policy:** For automated verification of documentation rules, consider adding checks
-   inspired by the [Documentation Guide](../../DOCUMENTATION_GUIDE.md).
+   inspired by the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
 - \*\*
 
 ## Glossary
@@ -236,20 +262,20 @@ End of document.
 
 - **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -262,5 +288,5 @@ next, return to the appropriate README for guidance.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

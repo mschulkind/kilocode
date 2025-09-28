@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the terminal integration system for command execution, shell integration, and terminal management.
-- **Context**: Use this as a starting point for understanding how KiloCode integrates with terminal and shell environments.
+- **Purpose**: This document covers the terminal integration system for command execution, shell
+integration, and terminal management.
+- **Context**: Use this as a starting point for understanding how KiloCode integrates with terminal
+and shell environments.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created through comprehensive analysis of terminal integration patterns and shell interaction requirements in development environments. The integration system reflects findings from:
+This document was created through comprehensive analysis of terminal integration patterns and shell
+interaction requirements in development environments. The integration system reflects findings from:
 - Terminal emulation and shell integration research
 - Command execution security and safety analysis
 - Process management and monitoring best practices
@@ -31,7 +36,8 @@ The system provides secure and efficient terminal integration for development wo
 
 ## Integration Overview
 
-The Terminal Integration system provides comprehensive terminal management, command execution, and shell integration capabilities for seamless development workflow integration in KiloCode.
+The Terminal Integration system provides comprehensive terminal management, command execution, and
+shell integration capabilities for seamless development workflow integration in KiloCode.
 
 **Core Components:**
 1. **Terminal Management** - Terminal lifecycle and process management
@@ -226,4 +232,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Editor Integration](EDITOR_INTEGRATION.md)
 - [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

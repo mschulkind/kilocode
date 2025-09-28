@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers comprehensive API provider architecture, integration patterns, and multi-provider support.
-- **Context**: Use this as a starting point for understanding API provider patterns and implementation strategies.
+- **Purpose**: This document covers comprehensive API provider architecture, integration patterns,
+and multi-provider support.
+- **Context**: Use this as a starting point for understanding API provider patterns and
+implementation strategies.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of API provider patterns and multi-provider support requirements in the KiloCode system. The patterns reflect findings from:
+This document was created through comprehensive analysis of API provider patterns and multi-provider
+support requirements in the KiloCode system. The patterns reflect findings from:
 - API provider architecture analysis and best practices research
 - Multi-provider integration pattern analysis
 - Request/response handling optimization studies
@@ -33,7 +38,8 @@ The patterns provide a systematic approach to implementing robust API provider s
 
 ## Provider Architecture
 
-The API provider architecture supports multiple providers with consistent interfaces and flexible configuration options.
+The API provider architecture supports multiple providers with consistent interfaces and flexible
+configuration options.
 
 **Core Components:**
 1. **Provider Interface** - Standardized provider contract
@@ -304,7 +310,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Architecture Documentation](README.md)
-- [← API Duplication Analysis](API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-- [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← API Duplication Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+- [← Investigation Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

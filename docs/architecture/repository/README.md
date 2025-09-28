@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 Welcome to the repository overview documentation! 🏗️ This directory contains comprehensive
 information about the KiloCode repository structure, systems, and components.
@@ -51,10 +53,11 @@ information about the KiloCode repository structure, systems, and components.
 - **[WORKSPACE\_PACKAGES.md](WORKSPACE_PACKAGES.md)** - Workspace packages and libraries Catalog of
   shared packages (types, build, cloud, evals, ipc, telemetry, configs). Details exports, consumers,
   and dependency relationships. Use this to locate reusable building blocks.
-- **[APPLICATIONS.md](APPLICATIONS.md)** - Applications and interfaces Overview of docs, storybook,
+- **[Documentation](APPLICATIONS.md)** - Applications and interfaces Overview of docs, storybook,
   web apps, e2e test apps, and nightly builds. Clarifies technologies used and deployment targets.
   Useful when working outside the core extension.
-- **[TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)** - Testing tools and frameworks Explains
+- **[TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)** - Testing tools and frameworks
+Explains
   test layers (unit/integration/e2e/perf) and frameworks (Vitest, Playwright, Jest). Shows directory
   patterns and CI execution. Use as a guide to add or navigate tests.
 - **[BUILD\_PIPELINES.md](BUILD_PIPELINES.md)** - Build and CI/CD systems Documents build tools
@@ -69,11 +72,12 @@ information about the KiloCode repository structure, systems, and components.
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [Architecture Documentation](../README.md) for system architecture Global architecture
+- **Architecture**: See [Architecture Documentation](../README.md) for system architecture Global
+architecture
   index with quick links to race-condition docs, state machines, and improvements.
-- **Standards**: See [../../standards/](../../standards/) for development standards Documentation,
+- **Standards**: See [Parent directory](../../standards/) for development standards Documentation,
   navigation, and code standards that keep the repo consistent and discoverable.
-- **Plans**: See [../../../plans/](../../../plans/) for development plans Active and historical
+- **Plans**: See [Parent directory](../../../plans/) for development plans Active and historical
   plans that capture investigation and rollout steps.
 
 ## 🦕 Dinosaur Analogy
@@ -97,6 +101,14 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
+
+### Example
+
+```javascript
+// Example code
+const example = "Hello World";
+```
+
 - [← Architecture Overview](../README.md)
 - [← Repository Structure](README.md)
 - [← Development Guide](DEVELOPMENT_GUIDE.md)
@@ -104,4 +116,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Build Pipelines](BUILD_PIPELINES.md)
 - [← Core Systems](CORE_SYSTEMS.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

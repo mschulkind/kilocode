@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 This document provides a comprehensive overview of KiloCode's remark-based documentation automation
 workflow.
@@ -77,25 +79,29 @@ Content → Quality Metrics → Scoring → Improvement Suggestions
 ```bash
 # Validate all documentation
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 pnpm docs:validate
 
 # Run automated maintenance
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 pnpm docs:maintain
 
 # Generate validation report
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 pnpm docs:report
 
 # Validate specific file
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 npx remark docs/specific-file.md
 ```
@@ -200,7 +206,7 @@ Every documentation file must include:
 ### Getting Help
 1. Check this overview document
 2. Review [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-3. Consult [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+3. Consult [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 4. Check VS Code output logs for detailed error information
 
 ## Best Practices
@@ -256,10 +262,23 @@ After mastering the basic workflow:
 
 ## Related Documentation
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/DEVELOPMENT_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](../architecture/GETTING_STARTED.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 - [← Tools Overview](README.md)
@@ -268,4 +287,4 @@ After mastering the basic workflow:
 - [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
 - [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

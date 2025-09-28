@@ -1,10 +1,11 @@
 # Laminar Subsystems Index
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the Laminar
-  observability subsystems integrated into Kilo Code, enabling developers to understand, monitor, and
-  extend tracing capabilities across task execution, tool usage, and LLM interactions with confidence.
+observability subsystems integrated into Kilo Code, enabling developers to understand, monitor, and
+extend tracing capabilities across task execution, tool usage, and LLM interactions with confidence.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -128,33 +129,56 @@ graph TD
 
 This table maps out the complete Laminar subsystems suite and their relationships.
 
-| Document                           | Purpose                                                    | Primary Audience  | Key Cross-Links            |
-| :--------------------------------- | :--------------------------------------------------------- | :---------------- | :------------------------- |
-| **LAMINAR\_SUBSYSTEMS\_README.md**   | **This document.** High-level entry point and map.         | All Devs          | All sibling docs           |
-| `LAMINAR_DEPENDENCY_MANAGEMENT.md` | Package installation, version management, compatibility.   | DevOps, Core Devs | `LAMINAR_PORT.md`          |
-| `LAMINAR_CONFIGURATION_SYSTEM.md`  | Environment config, API keys, validation, security.        | Core Devs         | `LAMINAR_SERVICE_LAYER.md` |
-| `LAMINAR_SERVICE_LAYER.md`         | Singleton service, span lifecycle, exception recording.    | Core Devs         | All integration docs       |
-| `LAMINAR_DECORATOR_SYSTEM.md`      | Automatic instrumentation, method decoration, I/O capture. | Core Devs         | `LAMINAR_SERVICE_LAYER.md` |
-| `LAMINAR_TASK_SYSTEM.md`           | Task lifecycle tracing, LLM integration, performance.      | Core Devs         | `LAMINAR_PORT.md`          |
-| `LAMINAR_TOOL_SYSTEM.md`           | Tool execution monitoring, parameter tracking.             | Core Devs         | `LAMINAR_PORT.md`          |
-| `LAMINAR_LLM_INTEGRATION.md`       | API call tracing, token usage, cost tracking.              | Core Devs         | `LAMINAR_PORT.md`          |
-| `LAMINAR_AUTHENTICATION_SYSTEM.md` | User context, session tracking, privacy compliance.        | Core Devs         | `LAMINAR_PORT.md`          |
-| `LAMINAR_CHECKPOINT_SYSTEM.md`     | State persistence tracing, performance metrics.            | Core Devs         | `LAMINAR_PORT.md`          |
-| `LAMINAR_TESTING_SYSTEM.md`        | Integration tests, performance validation, accuracy.       | QA, Core Devs     | All subsystem docs         |
+| Document                           | Purpose                                                    |
+Primary Audience  | Key Cross-Links            |
+| :--------------------------------- | :--------------------------------------------------------- |
+:---------------- | :------------------------- |
+| **LAMINAR\_SUBSYSTEMS\_README.md**   | **This document.** High-level entry point and map.
+| All Devs          | All sibling docs           |
+| `LAMINAR_DEPENDENCY_MANAGEMENT.md` | Package installation, version management, compatibility.   |
+DevOps, Core Devs | `LAMINAR_PORT.md`          |
+| `LAMINAR_CONFIGURATION_SYSTEM.md`  | Environment config, API keys, validation, security.        |
+Core Devs         | `LAMINAR_SERVICE_LAYER.md` |
+| `LAMINAR_SERVICE_LAYER.md`         | Singleton service, span lifecycle, exception recording.    |
+Core Devs         | All integration docs       |
+| `LAMINAR_DECORATOR_SYSTEM.md`      | Automatic instrumentation, method decoration, I/O capture. |
+Core Devs         | `LAMINAR_SERVICE_LAYER.md` |
+| `LAMINAR_TASK_SYSTEM.md`           | Task lifecycle tracing, LLM integration, performance.      |
+Core Devs         | `LAMINAR_PORT.md`          |
+| `LAMINAR_TOOL_SYSTEM.md`           | Tool execution monitoring, parameter tracking.             |
+Core Devs         | `LAMINAR_PORT.md`          |
+| `LAMINAR_LLM_INTEGRATION.md`       | API call tracing, token usage, cost tracking.              |
+Core Devs         | `LAMINAR_PORT.md`          |
+| `LAMINAR_AUTHENTICATION_SYSTEM.md` | User context, session tracking, privacy compliance.        |
+Core Devs         | `LAMINAR_PORT.md`          |
+| `LAMINAR_CHECKPOINT_SYSTEM.md`     | State persistence tracing, performance metrics.            |
+Core Devs         | `LAMINAR_PORT.md`          |
+| `LAMINAR_TESTING_SYSTEM.md`        | Integration tests, performance validation, accuracy.       |
+QA, Core Devs     | All subsystem docs         |
 - \*\*
 
 ## Quick Reference Matrix
 
-| Concept              | Primary Components                              | Linked Detailed Doc                |
-| :------------------- | :---------------------------------------------- | :--------------------------------- |
-| Span Management      | `LaminarService.createSpan()`, `completeSpan()` | `LAMINAR_SERVICE_LAYER.md`         |
-| Task Tracing         | Task constructor, lifecycle methods             | `LAMINAR_TASK_SYSTEM.md`           |
-| Tool Monitoring      | Tool invocation wrappers, parameter capture     | `LAMINAR_TOOL_SYSTEM.md`           |
-| LLM Tracking         | API request/response interceptors               | `LAMINAR_LLM_INTEGRATION.md`       |
-| User Attribution     | Context propagation, session tracking           | `LAMINAR_AUTHENTICATION_SYSTEM.md` |
-| Automatic Decoration | `@observeDecorator`, method wrapping            | `LAMINAR_DECORATOR_SYSTEM.md`      |
-| Configuration        | Environment detection, API key management       | `LAMINAR_CONFIGURATION_SYSTEM.md`  |
-| Testing              | Integration suites, performance benchmarks      | `LAMINAR_TESTING_SYSTEM.md`        |
+| Concept              | Primary Components                              | Linked Detailed Doc
+|
+| :------------------- | :---------------------------------------------- |
+:--------------------------------- |
+| Span Management      | `LaminarService.createSpan()`, `completeSpan()` |
+`LAMINAR_SERVICE_LAYER.md`         |
+| Task Tracing         | Task constructor, lifecycle methods             | `LAMINAR_TASK_SYSTEM.md`
+|
+| Tool Monitoring      | Tool invocation wrappers, parameter capture     | `LAMINAR_TOOL_SYSTEM.md`
+|
+| LLM Tracking         | API request/response interceptors               |
+`LAMINAR_LLM_INTEGRATION.md`       |
+| User Attribution     | Context propagation, session tracking           |
+`LAMINAR_AUTHENTICATION_SYSTEM.md` |
+| Automatic Decoration | `@observeDecorator`, method wrapping            |
+`LAMINAR_DECORATOR_SYSTEM.md`      |
+| Configuration        | Environment detection, API key management       |
+`LAMINAR_CONFIGURATION_SYSTEM.md`  |
+| Testing              | Integration suites, performance benchmarks      |
+`LAMINAR_TESTING_SYSTEM.md`        |
 - \*\*
 
 ## Subsystem Flow Diagram
@@ -253,15 +277,15 @@ End of document.
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

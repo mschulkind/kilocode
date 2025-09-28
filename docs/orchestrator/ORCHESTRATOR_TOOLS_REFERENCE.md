@@ -1,6 +1,7 @@
 # Orchestrator Tools Reference
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* This document provides a comprehensive reference for the core tools available to the
   Kilo Code Orchestrator. Each entry details the tool's purpose, parameters, and provides a link to
@@ -27,7 +28,8 @@
 
 <a id="related-documents"></a>
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
 - **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Explains how tool
   access is governed by modes and permissions.
@@ -62,7 +64,8 @@ These tools are fundamental to the execution and completion of tasks.
 - **Purpose**: Signals the successful completion of a task. This is a terminal operation that ends
   the task lifecycle.
 
-- **Source**: [`src/core/tools/attemptCompletionTool.ts`](/src/core/tools/attemptCompletionTool.ts#L35)
+- **Source**:
+[`src/core/tools/attemptCompletionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L35)
 
 - **Parameters**:
 - `result`: A final message summarizing the work done.
@@ -78,7 +81,7 @@ These tools control the flow of execution, manage modes, and delegate work.
 
 - **Purpose**: Creates a new, independent task that runs asynchronously. This is a "fire-and-forget"
   operation; the parent task does not wait for the new task to complete.
-- **Source**: [`src/core/tools/newTaskTool.ts`](/src/core/tools/attemptCompletionTool.ts#L14)
+- **Source**: [`src/core/tools/newTaskTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L14)
 - **Parameters**:
 - `mode`: The mode in which to start the new task.
 - `message`: The initial user message or instructions for the new task.
@@ -87,7 +90,7 @@ These tools control the flow of execution, manage modes, and delegate work.
 
 - **Purpose**: Changes the active operational mode of the current task. This alters the set of
   available tools and permissions.
-- **Source**: [`src/core/tools/switchModeTool.ts`](/src/core/tools/attemptCompletionTool.ts#L8)
+- **Source**: [`src/core/tools/switchModeTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L8)
 - **Parameters**:
 - `mode_slug`: The slug of the mode to switch to (e.g., "code", "architect").
 - `reason`: An optional explanation for why the mode switch is necessary.
@@ -97,8 +100,8 @@ These tools control the flow of execution, manage modes, and delegate work.
 - **Purpose**: Manages the delegation of work to a synchronous, blocking subtask. See
   [Task Delegation Guide](ORCHESTRATOR_TASK_DELEGATION.md) for a detailed explanation.
 
-- **Source**: [`startSubtask`](/src/core/tools/attemptCompletionTool.ts#L1628),
-  [`completeSubtask`](/src/core/tools/attemptCompletionTool.ts#L1669)
+- **Source**: [`startSubtask`](../../src/core/tools/attemptCompletionTool.ts#L1628),
+  [`completeSubtask`](../../src/core/tools/attemptCompletionTool.ts#L1669)
 - \*\*
 
 ### User Interaction Tools
@@ -112,7 +115,8 @@ This category includes tools for communicating with the end-user.
 - **Purpose**: Pauses the task and asks the user for clarification or additional information. The
   task will not proceed until the user provides a response.
 
-- **Source**: [`src/core/tools/askFollowupQuestionTool.ts`](/src/core/tools/attemptCompletionTool.ts#L6)
+- **Source**:
+[`src/core/tools/askFollowupQuestionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L6)
 
 - **Parameters**:
 - `question`: The question to ask the user.
@@ -130,7 +134,8 @@ Tools for managing the internal state and plan of a task.
 - **Purpose**: Creates or overwrites the task's todo list. This is the primary mechanism for "Todo
   Gating," where the orchestrator tracks its plan and progress.
 
-- **Source**: [`src/core/tools/updateTodoListTool.ts`](/src/core/tools/attemptCompletionTool.ts#L156)
+- **Source**:
+[`src/core/tools/updateTodoListTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L156)
 
 - **Parameters**:
 - `todos`: A markdown-formatted checklist of tasks.
@@ -164,20 +169,20 @@ modes like `code`.
 
 - **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -191,7 +196,8 @@ next, return to the appropriate README for guidance.
 
 <a id="navigation-footer"></a>
 
-You have reached the end of the tools reference. Return to the [Master Index](ORCHESTRATOR_INDEX.md)
+You have reached the end of the tools reference. Return to the [Master
+Index](../orchestrator/ORCHESTRATOR_INDEX.md)
 or proceed to the [Error Handling Document](ORCHESTRATOR_ERROR_HANDLING.md).
 
 [Back to Top](#orchestrator-tools-reference)

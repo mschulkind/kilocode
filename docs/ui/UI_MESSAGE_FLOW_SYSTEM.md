@@ -2,11 +2,35 @@
 
 ## When You're Here
 
-This document provides comprehensive coverage of KiloCode's message flow system, including send button state management, message queuing, and request deduplication mechanisms.
+🔍 **Did You Know**: [Interesting insight]
+
+
+This document provides comprehensive coverage of KiloCode's message flow system, including send
+button state management, message queuing, and request deduplication mechanisms.
 
 - **Purpose**: Complete guide to message flow control and request management in the UI layer
-- **Context**: Essential for developers working on message handling, state management, or debugging request flow issues
+- **Context**: Essential for developers working on message handling, state management, or debugging
+request flow issues
 - **Navigation**: Use the table of contents below to jump to specific topics
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Table of Contents
 - [Overview](#overview)
@@ -20,11 +44,15 @@ This document provides comprehensive coverage of KiloCode's message flow system,
 
 ## Overview
 
-The UI Message Flow System manages user interactions with the chat interface, including send button state management, message queuing, and request deduplication mechanisms. This system is critical for preventing duplicate API requests and maintaining a consistent user experience across all chat interactions.
+The UI Message Flow System manages user interactions with the chat interface, including send button
+state management, message queuing, and request deduplication mechanisms. This system is critical for
+preventing duplicate API requests and maintaining a consistent user experience across all chat
+interactions.
 
 ## System Architecture
 
-The message flow system consists of interconnected components that work together to manage user input and prevent duplicate requests:
+The message flow system consists of interconnected components that work together to manage user
+input and prevent duplicate requests:
 
 1. **ChatView Component** - Main chat interface controller
 2. **ChatTextArea Component** - Input area with send button
@@ -104,7 +132,8 @@ const handleSendMessage = useCallback(
     "active:bg-[rgba(255,255,255,0.1)]",
     !sendingDisabled && "cursor-pointer",
     sendingDisabled &&
-      "opacity-40 cursor-not-allowed grayscale-[30%] hover:bg-transparent hover:border-[rgba(255,255,255,0.08)] active:bg-transparent",
+"opacity-40 cursor-not-allowed grayscale-[30%] hover:bg-transparent
+hover:border-[rgba(255,255,255,0.08)] active:bg-transparent",
   )}
 >
   <SendHorizontal className="w-4 h-4" />
@@ -294,7 +323,8 @@ const handleSendMessage = useCallback(
 // Implement state validation
 const validateButtonState = useCallback(() => {
     const currentTask = provider.getCurrentTask()
-    const expectedSendingDisabled = currentTask?.isStreaming || currentTask?.isWaitingForFirstChunk || false
+const expectedSendingDisabled = currentTask?.isStreaming || currentTask?.isWaitingForFirstChunk ||
+false
 
     if (sendingDisabled !== expectedSendingDisabled) {
         console.warn("Button state inconsistency detected, correcting")
@@ -341,7 +371,7 @@ useEffect(() => {
             sendingDisabled,
             enableButtons,
             isStreaming: currentTask?.isStreaming,
-            queuedMessages: queuedMessages.map((m) => ({ id: m.id, text: m.text.substring(0, 50) })),
+queuedMessages: queuedMessages.map((m) => ({ id: m.id, text: m.text.substring(0, 50) })),
             inputValue: inputValue.substring(0, 50),
         })
     }
@@ -381,6 +411,19 @@ const handleSendMessage = useCallback(
     [sendingDisabled],
 )
 ```
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 

@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-- *Purpose:*\* Comprehensive standards for documenting code, data structures, and technical content to
+- *Purpose:*\* Comprehensive standards for documenting code, data structures, and technical content
+to
   ensure clarity, maintainability, and accessibility for all users.
 
 > **Biology Fun Fact**: Just like how DNA contains the genetic code that determines how living
@@ -281,8 +284,10 @@ interface TaskStateProperties {
 enum RecursiveCallState {
 	IDLE = "idle", // No recursive calls active (the "vacuum state" - empty but ready)
 	RUNNING = "running", // Single recursive call active (the "stable particle" - predictable)
-	CONCURRENT = "concurrent", // Multiple recursive calls active (RACE CONDITION - "quantum entanglement gone wrong")
-	TRIPLE_CONCURRENT = "triple_concurrent", // 3+ simultaneous calls (SEVERE RACE CONDITION - "nuclear meltdown")
+CONCURRENT = "concurrent", // Multiple recursive calls active (RACE CONDITION - "quantum
+entanglement gone wrong")
+TRIPLE_CONCURRENT = "triple_concurrent", // 3+ simultaneous calls (SEVERE RACE CONDITION - "nuclear
+meltdown")
 	QUEUED = "queued", // Calls queued due to lock (the "waiting room" - orderly but patient)
 	LOCKED = "locked", // Lock acquired, processing (the "laboratory" - controlled environment)
 	TIMEOUT = "timeout", // Lock acquisition timed out (the "failed experiment" - gave up waiting)
@@ -442,7 +447,8 @@ class RecursiveCallManager {
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md) ·
+- *Navigation*\*: [Back to Standards](../../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md)
+·
   [Source: `/docs/standards/code/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

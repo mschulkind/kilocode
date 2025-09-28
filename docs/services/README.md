@@ -2,16 +2,37 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 Welcome to the services documentation! ⚙️ This directory covers all the microservices and service
 layers that power KiloCode's functionality.
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Directory Context
 
@@ -45,7 +66,8 @@ individual services operate within the larger system architecture.
 ## 📚 Documentation Structure
 
 - **[Repository Overview](README.md)** - Master index of all service documentation
-- **[CLOUD\_SERVICES\_ARCHITECTURE.md](CLOUD_SERVICES_ARCHITECTURE.md)** - Cloud service architecture
+- **[CLOUD\_SERVICES\_ARCHITECTURE.md](CLOUD_SERVICES_ARCHITECTURE.md)** - Cloud service
+architecture
 - **[CODE\_INDEX\_SERVICE.md](CODE_INDEX_SERVICE.md)** - Code indexing and search
 - **[CUSTOM\_MODES\_SYSTEM.md](CUSTOM_MODES_SYSTEM.md)** - Custom mode management
 - **[PROMPT\_SYSTEM.md](PROMPT_SYSTEM.md)** - Prompt engineering and management
@@ -56,9 +78,9 @@ individual services operate within the larger system architecture.
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [../architecture/](../architecture/) for system architecture
-- **Integrations**: See [../integrations/](../integrations/) for service integrations
-- **Standards**: See [../standards/](../standards/) for service standards
+- **Architecture**: See [This resource](../architecture/) for system architecture
+- **Integrations**: See [Parent directory](../integrations/) for service integrations
+- **Standards**: See [Parent directory](../standards/) for service standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -72,6 +94,19 @@ systems working together to survive, our system needs all services working in ha
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 - [← Main Documentation](../README.md)

@@ -2,17 +2,21 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-This document explains the complete flow of how linter names appear in the `docs:validate` command output, from configuration to final display.
+This document explains the complete flow of how linter names appear in the `docs:validate` command
+output, from configuration to final display.
 
 ## Overview
 
-The `docs:validate` command uses a multi-layered validation system that combines built-in remark-lint plugins, custom KiloCode plugins, and link validation tools. Each linter that detects an issue contributes its name to the validation output.
+The `docs:validate` command uses a multi-layered validation system that combines built-in
+remark-lint plugins, custom KiloCode plugins, and link validation tools. Each linter that detects an
+issue contributes its name to the validation output.
 
 ## Command Flow
 
@@ -88,7 +92,8 @@ The `remark-validate-links` plugin provides:
 **Output Format:**
 
 ```
-197:33-197:44    warning    Cannot find file `ui`    missing-file    remark-validate-links:missing-file
+197:33-197:44    warning    Cannot find file `ui`    missing-file
+remark-validate-links:missing-file
 ```
 
 ### 3. Custom KiloCode Plugins
@@ -111,7 +116,8 @@ This plugin provides advanced validation rules:
 - `remark-kilocode-comprehensive:kilocode-research-context-required` - Missing Research Context
 - `remark-kilocode-comprehensive:kilocode-navigation-footer-required` - Missing navigation footer
 - `remark-kilocode-comprehensive:kilocode-no-dead-ends-required` - Missing No Dead Ends Policy
-- `remark-kilocode-comprehensive:kilocode-when-youre-here-required` - Missing When You're Here section
+- `remark-kilocode-comprehensive:kilocode-when-youre-here-required` - Missing When You're Here
+section
 - `remark-kilocode-comprehensive:kilocode-fun-fact-suggestion` - Missing fun fact
 - `remark-kilocode-comprehensive:kilocode-heading-hierarchy` - Invalid heading hierarchy
 - `remark-kilocode-comprehensive:kilocode-heading-progression` - Poor heading progression
@@ -126,7 +132,8 @@ This plugin provides advanced validation rules:
 **Output Format:**
 
 ```
-1:1-1:51    warning    Document must include No Dead Ends Policy    remark-kilocode-comprehensive:kilocode-no-dead-ends-required
+1:1-1:51    warning    Document must include No Dead Ends Policy
+remark-kilocode-comprehensive:kilocode-no-dead-ends-required
 ```
 
 ## How Linter Names Are Set
@@ -204,7 +211,8 @@ Plugins are executed in the order defined in `.remarkrc`:
 ## Key Points
 1. **Source Names**: The `source` field identifies which plugin generated the message
 2. **Rule IDs**: The `ruleId` field identifies the specific rule within that plugin
-3. **Custom Plugins**: KiloCode custom plugins use descriptive rule IDs like `kilocode-descriptive-links`
+3. **Custom Plugins**: KiloCode custom plugins use descriptive rule IDs like
+`kilocode-descriptive-links`
 4. **Built-in Plugins**: Use simple rule IDs like `final-newline` or `no-literal-urls`
 5. **Link Validation**: Uses compound source names like `remark-validate-links:missing-file`
 
@@ -230,4 +238,4 @@ If linter names don't appear in output:
 - [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
 - [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

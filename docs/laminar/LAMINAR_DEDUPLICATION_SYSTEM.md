@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed documentation of the Laminar service deduplication mechanisms, span
   management, and system prompt optimization to prevent duplicate observability data and improve
@@ -31,10 +33,29 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 </details>
 
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
+
 ## Executive Summary
 - The Laminar Deduplication System manages observability spans and prevents duplicate data
   collection, particularly for system prompts which can be large and repetitive. This system is
-  crucial for maintaining performance and reducing data storage costs in the observability pipeline.\*
+crucial for maintaining performance and reducing data storage costs in the observability pipeline.\*
 
 The Laminar service implements several deduplication mechanisms to prevent:
 1. **Span Duplication** - Multiple spans for the same operation
@@ -139,13 +160,15 @@ public startSpan(
 
   // If service is disabled, skip
   if (!laminarConfig.enabled && !this.enabled) {
-    console.log(`[LAMINAR DEBUG] startSpan - Operation ID: ${operationId} - Skipped due to service disabled`)
+console.log(`[LAMINAR DEBUG] startSpan - Operation ID: ${operationId} - Skipped due to service
+disabled`)
     return
   }
 
   // If not initialized, queue the request
   if (!this.isInitialized) {
-    console.log(`[LAMINAR DEBUG] startSpan - Operation ID: ${operationId} - Service not initialized, queueing span request`)
+console.log(`[LAMINAR DEBUG] startSpan - Operation ID: ${operationId} - Service not initialized,
+queueing span request`)
     this.pendingSpanRequests.push({ spanType, options, isActive })
     return
   }
@@ -184,7 +207,8 @@ private _startSpanNow(
       this.activeSpans.set(spanType, span)
     }
 
-    console.log(`[LAMINAR DEBUG] _startSpanNow - Operation ID: ${operationId} - Completed - Span stored: name='${options.name}', isActive=${isActive}`)
+console.log(`[LAMINAR DEBUG] _startSpanNow - Operation ID: ${operationId} - Completed - Span stored:
+name='${options.name}', isActive=${isActive}`)
   } catch (error) {
     logger.error("Failed to start span (internal):", error)
   }
@@ -226,7 +250,8 @@ const stream = await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, 
 		spanType: "LLM",
 		sessionId: this.rootTaskId || this.taskId,
 		input: laminarService.getRecordSpanIO()
-			? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, ...cleanConversationHistory]
+? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
+...cleanConversationHistory]
 			: undefined,
 	})
 	return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
@@ -306,7 +331,8 @@ Replaces full system prompts with metadata:
 ```typescript
 // Replace full system prompt with metadata
 const spanInput = laminarService.getRecordSpanIO()
-	? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, ...cleanConversationHistory]
+? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
+...cleanConversationHistory]
 	: undefined
 ```
 
@@ -408,7 +434,8 @@ public startSpan(spanType: SpanType, options: {...}, isActive: boolean = false):
 ```typescript
 // Ensure proper recordSpanIO check
 const spanInput = laminarService.getRecordSpanIO()
-	? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, ...cleanConversationHistory]
+? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
+...cleanConversationHistory]
 	: undefined
 
 // Add validation
@@ -553,6 +580,19 @@ const processingMetrics = {
 <a id="navigation-footer"></a>
 - Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

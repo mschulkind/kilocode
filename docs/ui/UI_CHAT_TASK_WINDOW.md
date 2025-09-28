@@ -2,11 +2,36 @@
 
 ## When You're Here
 
-This document provides comprehensive coverage of KiloCode's chat interface and task window components. It covers user interaction patterns, message flow control, and troubleshooting procedures.
+💡 **Fun Fact**: [Interesting fact about the topic]
+
+
+This document provides comprehensive coverage of KiloCode's chat interface and task window
+components. It covers user interaction patterns, message flow control, and troubleshooting
+procedures.
 
 - **Purpose**: Complete guide to chat interface and task window implementation
-- **Context**: Essential reading for developers working on chat features or debugging message flow issues
+- **Context**: Essential reading for developers working on chat features or debugging message flow
+issues
 - **Navigation**: Use the table of contents below to jump to specific topics
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Table of Contents
 - [Overview](#overview)
@@ -21,30 +46,39 @@ This document provides comprehensive coverage of KiloCode's chat interface and t
 
 ## Overview
 
-This document describes the chat and task window user interface components, including user interaction patterns, message flow control, request payload construction, and troubleshooting procedures for duplicate API requests. The chat interface is the primary user interaction point for communicating with KiloCode's AI systems.
+This document describes the chat and task window user interface components, including user
+interaction patterns, message flow control, request payload construction, and troubleshooting
+procedures for duplicate API requests. The chat interface is the primary user interaction point for
+communicating with KiloCode's AI systems.
 
 ## UI Components
 
-The chat and task window interface consists of several key components that work together to provide a seamless user experience.
+The chat and task window interface consists of several key components that work together to provide
+a seamless user experience.
 
 ### Primary Panels and Controls
 
 - **Chat Input**: Free-text input field where users compose their prompts and messages
 - **Model Switcher**: Dropdown control for selecting the AI model for the next request
-- **Message List**: Chronological display of conversation history including user messages, system responses, and status indicators
+- **Message List**: Chronological display of conversation history including user messages, system
+responses, and status indicators
 - **Task View**: Optional panel displaying current plans, subtasks, and execution progress
-- **Status Indicators**: Visual feedback showing request states (pending, in progress, streaming, completed, error)
+- **Status Indicators**: Visual feedback showing request states (pending, in progress, streaming,
+completed, error)
 - **Action Controls**: Send button, Stop/Cancel functionality, and Retry options
 
 ### Display Conventions
 
-- **Message Format**: Each message displays author (User/System/Assistant), formatted content (Markdown), timestamp, and status badges
-- **Streaming Responses**: Real-time updates with streaming indicators and incremental content updates
+- **Message Format**: Each message displays author (User/System/Assistant), formatted content
+(Markdown), timestamp, and status badges
+- **Streaming Responses**: Real-time updates with streaming indicators and incremental content
+updates
 - **Idempotency**: UI attaches client-side request IDs to ensure operation consistency
 
 ## Message Flow Control
 
-The system implements a sophisticated control loop to manage when and how API requests are initiated, preventing duplicate requests and ensuring reliable communication.
+The system implements a sophisticated control loop to manage when and how API requests are
+initiated, preventing duplicate requests and ensuring reliable communication.
 
 ### High-Level Flow
 
@@ -68,7 +102,8 @@ sequenceDiagram
 
 - **User Actions**: Explicit send button press or shortcut key activation
 - **Orchestrator Actions**: Subtask execution, follow-up operations, or scheduled tasks
-- **Guard Conditions**: Validates no active requests exist for the same chat turn, payload validation passes, and unique request ID is generated
+- **Guard Conditions**: Validates no active requests exist for the same chat turn, payload
+validation passes, and unique request ID is generated
 - **Debouncing**: UI actions are debounced (100-250ms) to prevent rapid-fire requests
 
 ## Request Payloads and Timing
@@ -142,7 +177,8 @@ All timestamps are stored in ISO-8601 UTC format and displayed in local time in 
 
 ### Log Content
 
-Include request ID, timestamps, user action traces, and payload hashes for comprehensive debugging support.
+Include request ID, timestamps, user action traces, and payload hashes for comprehensive debugging
+support.
 
 ## Troubleshooting Guide
 
@@ -156,6 +192,19 @@ Include request ID, timestamps, user action traces, and payload hashes for compr
 
 - **Verbose Logging**: Enable detailed orchestrator logging for guard evaluation and retry analysis
 - **Network Traces**: Capture network and console traces with request IDs for reproduction
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 

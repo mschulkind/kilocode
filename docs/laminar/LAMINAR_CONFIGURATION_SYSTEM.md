@@ -1,6 +1,7 @@
 # Laminar Configuration System
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* This document details the configuration system for Laminar observability integration,
   covering environment-specific settings, API key management, validation mechanisms, and secure
@@ -265,12 +266,18 @@ const laminarService = new LaminarService(config)
 
 ## Code Reference Matrix
 
-| Component             | Primary Functions     | Key Files                      | Integration Points      |
-| --------------------- | --------------------- | ------------------------------ | ----------------------- |
-| Config Loading        | `loadLaminarConfig()` | `src/config/laminar-config.ts` | Service initialization  |
-| Environment Detection | `detectEnvironment()` | `src/config/laminar-config.ts` | Runtime behavior        |
-| Validation            | `validateConfig()`    | `src/config/laminar-config.ts` | Configuration integrity |
-| API Key Management    | `getApiKey()`         | `src/config/laminar-config.ts` | Secure storage access   |
+| Component             | Primary Functions     | Key Files                      | Integration
+Points      |
+| --------------------- | --------------------- | ------------------------------ |
+----------------------- |
+| Config Loading        | `loadLaminarConfig()` | `src/config/laminar-config.ts` | Service
+initialization  |
+| Environment Detection | `detectEnvironment()` | `src/config/laminar-config.ts` | Runtime behavior
+|
+| Validation            | `validateConfig()`    | `src/config/laminar-config.ts` | Configuration
+integrity |
+| API Key Management    | `getApiKey()`         | `src/config/laminar-config.ts` | Secure storage
+access   |
 
 ## Implementation Timeline
 
@@ -301,15 +308,15 @@ const laminarService = new LaminarService(config)
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

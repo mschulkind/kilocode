@@ -1,6 +1,17 @@
 # Core Systems
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed overview of the core systems and services that power KiloCode.
 
@@ -358,7 +369,7 @@ graph TD
 
 ## Next Steps
 1. **Explore Workspace Packages**: See [WORKSPACE\_PACKAGES.md](WORKSPACE_PACKAGES.md)
-2. **Understand Applications**: See [APPLICATIONS.md](APPLICATIONS.md)
+2. **Understand Applications**: See [Documentation](APPLICATIONS.md)
 3. **Learn Development**: See [DEVELOPMENT\_GUIDE.md](DEVELOPMENT_GUIDE.md)
 
 ## 🧭 Navigation Footer
@@ -369,8 +380,8 @@ graph TD
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../../architecture/) · [↑ Table of Contents](#core-systems)
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [repository](../architecture/) · [↑ Table of Contents](#core-systems)
 
 ## No Dead Ends Policy
 

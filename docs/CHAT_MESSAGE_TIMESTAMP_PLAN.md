@@ -1,6 +1,7 @@
 # CHAT MESSAGE TIMESTAMP PLAN
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 This document provides the comprehensive implementation plan for adding robust, user-visible
 timestamps to chat messages.
@@ -394,7 +395,8 @@ Operational checklist for enabling timestamp instrumentation
 - \[ ] Add a child logger in the code path producing lifecycle events:
   `logger.child({ ctx: "chat.timestamps" })`.
 - \[ ] Write structured events as shown above (phase, requestId, ts, monotonicSeq, deltaPrevMs).
-- \[ ] For production, enable a `CompactTransport` with an appropriate `level` and `fileOutput.path`.
+- \[ ] For production, enable a `CompactTransport` with an appropriate `level` and
+`fileOutput.path`.
 - \[ ] Add post-processing or log ingestion rules that convert delta `t` back to absolute timestamps
   for analysis.
 
@@ -444,12 +446,21 @@ if (Math.random() < 0.01) {
 
 ## Risks & mitigations
 
-| Risk                     | Mitigation                                                                                                                                                                |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Clock Skew**           | Use the orchestrator as the source of truth for the canonical timestamp. Log a warning and flag messages when client/server clock delta exceeds a threshold.              |
-| **Missing Timestamps**   | Implement a robust fallback for legacy data (`timestampInferred: true`) to prevent crashes and provide a reasonable default.                                              |
-| **Performance Overhead** | Memoize derived `localTimestamp` values. Ensure logging is asynchronous and does not block the message processing path.                                                   |
-| **Timezone Complexity**  | Persist all timestamps in UTC. Delegate all local time conversions to the client's browser API (`toLocaleTimeString`), which handles timezones and locales automatically. |
+| Risk                     | Mitigation
+|
+| ------------------------ |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|
+| **Clock Skew**           | Use the orchestrator as the source of truth for the canonical
+timestamp. Log a warning and flag messages when client/server clock delta exceeds a threshold.
+|
+| **Missing Timestamps**   | Implement a robust fallback for legacy data (`timestampInferred: true`)
+to prevent crashes and provide a reasonable default.                                              |
+| **Performance Overhead** | Memoize derived `localTimestamp` values. Ensure logging is asynchronous
+and does not block the message processing path.                                                   |
+| **Timezone Complexity**  | Persist all timestamps in UTC. Delegate all local time conversions to
+the client's browser API (`toLocaleTimeString`), which handles timezones and locales automatically.
+|
 
 ## Open questions
 - Should a user-configurable time format (12h vs. 24h) be added in a future iteration?
@@ -467,8 +478,9 @@ if (Math.random() < 0.01) {
 - 2025-09-19: Initial creation of this plan.
 
 <a id="navigation-footer"></a>
-- Back: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1) · Root: [`README.md`](README.md:1)
-  · Source: [`/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1`](/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1)
+- Back: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1) · Root:
+[`README.md`](README.md:1)
+  · Source: [`/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1`](../CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1)
 
 ## 🔍 Research Context & Next Steps
 
@@ -483,15 +495,15 @@ if (Math.random() < 0.01) {
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -504,5 +516,5 @@ next, return to the appropriate README for guidance.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
+- *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

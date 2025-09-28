@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation of the Code Index service for semantic code search,
   embedding management, and vector-based code analysis in KiloCode.
@@ -27,6 +29,25 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Navigation Footer
 
 </details>
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Executive Summary
 - The Code Index Service provides comprehensive semantic code search capabilities through vector
@@ -336,12 +357,27 @@ export class CacheManager {
 - Data corruption
 - Retrieval errors
 
-- *Root Cause*\*: Storage backend or data integrity issues **Solution**: Implement robust storage with
+- *Root Cause*\*: Storage backend or data integrity issues **Solution**: Implement robust storage
+with
   backup and recovery
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+[`README.md`](../README.md)
   · Source: `/docs/services/CODE_INDEX_SERVICE.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

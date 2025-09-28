@@ -1,6 +1,17 @@
 # Structure Validation ✅
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive validation checklist and guidelines for ensuring document structure
   compliance across all KiloCode documentation.
@@ -233,7 +244,8 @@
 ```markdown
 # API Duplication Analysis
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
 identification, impact assessment, and solution recommendations for developers and system
@@ -302,7 +314,7 @@ Follow these steps to implement the solution:
 4. **Monitor Performance**: Ensure solution doesn't impact performance
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
@@ -334,7 +346,8 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project from source.
 

@@ -2,11 +2,35 @@
 
 ## When You're Here
 
-This document provides a comprehensive overview of KiloCode's UI layer architecture, including component design, state management, and troubleshooting procedures.
+🔍 **Did You Know**: [Interesting insight]
+
+
+This document provides a comprehensive overview of KiloCode's UI layer architecture, including
+component design, state management, and troubleshooting procedures.
 
 - **Purpose**: Complete guide to UI layer system architecture and component implementation
-- **Context**: Essential for developers working on UI components, state management, or debugging UI issues
+- **Context**: Essential for developers working on UI components, state management, or debugging UI
+issues
 - **Navigation**: Use the table of contents below to jump to specific topics
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Table of Contents
 - [Overview](#overview)
@@ -21,11 +45,15 @@ This document provides a comprehensive overview of KiloCode's UI layer architect
 
 ## Overview
 
-The UI Layer system provides comprehensive user interface components for the KiloCode chat application, managing user interactions, state visualization, and communication with backend systems. This architecture ensures consistent behavior and maintainable code across all UI components.
+The UI Layer system provides comprehensive user interface components for the KiloCode chat
+application, managing user interactions, state visualization, and communication with backend
+systems. This architecture ensures consistent behavior and maintainable code across all UI
+components.
 
 ## System Components
 
-The UI Layer consists of three primary components that work together to provide a seamless user experience:
+The UI Layer consists of three primary components that work together to provide a seamless user
+experience:
 
 1. **Chat Interface** - Main chat view and message display system
 2. **Send Controls** - User input controls and request initiation mechanisms
@@ -158,7 +186,8 @@ const handleSendMessage = useCallback(
         "active:bg-[rgba(255,255,255,0.1)]",
         !sendingDisabled && "cursor-pointer",
         sendingDisabled &&
-            "opacity-40 cursor-not-allowed grayscale-[30%] hover:bg-transparent hover:border-[rgba(255,255,255,0.08)] active:bg-transparent",
+"opacity-40 cursor-not-allowed grayscale-[30%] hover:bg-transparent
+hover:border-[rgba(255,255,255,0.08)] active:bg-transparent",
     )}
 >
     <SendHorizontal className="w-4 h-4" />
@@ -399,7 +428,8 @@ const debouncedQueueMessage = useMemo(
 // Implement state validation
 const validateButtonState = useCallback(() => {
     const currentTask = provider.getCurrentTask()
-    const expectedSendingDisabled = currentTask?.isStreaming || currentTask?.isWaitingForFirstChunk || false
+const expectedSendingDisabled = currentTask?.isStreaming || currentTask?.isWaitingForFirstChunk ||
+false
 
     if (sendingDisabled !== expectedSendingDisabled) {
         console.warn("Button state inconsistency detected, correcting")
@@ -407,6 +437,19 @@ const validateButtonState = useCallback(() => {
     }
 }, [sendingDisabled, provider])
 ```
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 

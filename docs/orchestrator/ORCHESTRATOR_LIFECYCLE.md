@@ -1,8 +1,10 @@
 # Orchestrator Task Lifecycle
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-- *Purpose:*\* This document provides a detailed, step-by-step description of the orchestrator's task
+- *Purpose:*\* This document provides a detailed, step-by-step description of the orchestrator's
+task
   lifecycle, from the moment a request is received to its final completion. It covers state
   transitions, the execution loop, and subtask management.
 
@@ -16,7 +18,8 @@
 - [2. Lifecycle Overview](#lifecycle-overview)
 - [3. Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
 - [4. State Transitions](#state-transitions)
-- [5. The Execution Loop: `recursivelyMakeClineRequests`](#the-execution-loop-recursivelymakeclinerequests)
+- [5. The Execution Loop:
+`recursivelyMakeClineRequests`](#the-execution-loop-recursivelymakeclinerequests)
 - [6. Subtask Lifecycle](#subtask-lifecycle)
 - [7. Navigation Footer](#navigation-footer)
 
@@ -27,7 +30,8 @@
 
 <a id="related-documents"></a>
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
 - **[Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md)**: Describes the components
   involved in the lifecycle.
@@ -78,15 +82,16 @@ sequenceDiagram
 #### Stage 1: Initiation
 
 A task begins when an external caller (e.g., the VS Code extension UI) invokes the
-[`initiateTaskLoop`](/src/core/task/Task.ts#L1699) function. At this stage, the `Task` object is
+[`initiateTaskLoop`](../../src/core/task/Task.ts#L1699) function. At this stage, the `Task` object
+is
 created, initial state is set up, and the context for the task is established.
 
 #### Stage 2: Prompt Generation
 
 The `Task` engine constructs the initial prompt to be sent to the language model. This is handled by
-the [`getSystemPrompt`](/src/core/task/Task.ts#L2499) function, which assembles the user's
+the [`getSystemPrompt`](../../src/core/task/Task.ts#L2499) function, which assembles the user's
 request, conversation history, available tools, and formatting rules like
-[`markdownFormattingSection`](/src/core/prompts/sections/markdown-formatting.ts#L1).
+[`markdownFormattingSection`](../../src/core/prompts/sections/markdown-formatting.ts#L1).
 
 #### Stage 3: Model Response & Parsing
 
@@ -97,7 +102,7 @@ without waiting for the full response.
 #### Stage 4: Parsing & Execution Loop
 
 This is the core interactive phase of the lifecycle, driven by
-[`recursivelyMakeClineRequests`](/src/core/task/Task.ts#L1735). When the parser identifies a
+[`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735). When the parser identifies a
 valid tool call, the `ToolExecutor` validates and runs it. The result of the tool execution is then
 appended to the conversation history, and the loop continues by sending the updated context back to
 the model.
@@ -105,7 +110,8 @@ the model.
 #### Stage 5: Completion
 
 The loop terminates when the model invokes the special
-[`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35). This signals that the task's objective has
+[`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35). This signals that the
+task's objective has
 been met. The tool is responsible for packaging the final result and setting the task's status to
 "completed."
 
@@ -136,7 +142,8 @@ A task can exist in several states throughout its lifecycle:
 
 <a id="the-execution-loop-recursivelymakeclinerequests"></a>
 
-The function [`recursivelyMakeClineRequests`](/src/core/task/Task.ts#L1735) is the engine of the
+The function [`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735) is the engine of
+the
 lifecycle. It is not a simple loop but a recursive function that represents one full turn of the
 conversation with the model.
 1. **Call Model**: Sends the current context (history, tool results) to the model.
@@ -153,14 +160,14 @@ conversation with the model.
 <a id="subtask-lifecycle"></a>
 
 When the model determines a part of the task requires isolated execution, it can use the
-[`startSubtask`](/src/core/task/Task.ts#L1628) tool.
+[`startSubtask`](../../src/core/task/Task.ts#L1628) tool.
 1. **Pause Parent**: The parent task's state is set to `awaiting_subtask`.
 2. **Create Child**: A new `Task` instance is created with a specific, narrowed-down objective. This
    child task has its own independent lifecycle.
 3. **Execute Child**: The child task runs through its own initiation, execution, and completion
    stages.
 4. **Resume Parent**: Once the child task calls
-   [`completeSubtask`](/src/core/task/Task.ts#L1669), its result is passed back to the parent.
+   [`completeSubtask`](../../src/core/task/Task.ts#L1669), its result is passed back to the parent.
    The parent task's state is switched back to `in_progress`, and its execution loop continues, now
    with the information from the completed subtask.
 
@@ -172,7 +179,7 @@ When the model determines a part of the task requires isolated execution, it can
 <a id="navigation-footer"></a>
 
 You have reached the end of the lifecycle document. Return to the
-[Master Index](ORCHESTRATOR_INDEX.md) or proceed to the
+[Master Index](../orchestrator/ORCHESTRATOR_INDEX.md) or proceed to the
 [Task Delegation Document](ORCHESTRATOR_TASK_DELEGATION.md).
 
 [Back to Top](#orchestrator-task-lifecycle)
@@ -183,22 +190,23 @@ End of document.
 ## Provider network send points, duplicate-causes, and recommended docs-only changes
 
 ### Quick pointer to code
-- Task control loop: [`src/core/task/Task.ts`](/src/core/task/Task.ts#L2648)
+- Task control loop: [`src/core/task/Task.ts`](../../src/core/task/Task.ts#L2648)
 - Message queue:
-  [`src/core/message-queue/MessageQueueService.ts`](/src/core/message-queue/MessageQueueService.ts#L36)
+
+[`src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts#L36)
 - Provider entrypoints: `createMessage()` implementations under
-  [`src/api/providers/`](/src/api/providers/index.ts#L1)
+  [`src/api/providers/`](../../src/api/providers/index.ts#L1)
 
 ### Concrete send patterns (summary)
 - OpenAI-compatible SDK calls: client.chat.completions.create(...) (many handlers:
-  [`/\src/api/providers/openai.ts#L83`](/src/api/providers/openai.ts#L83),
-  [`/\src/api/providers/ollama.ts#L61`](/src/api/providers/ollama.ts#L61), etc.)
+  [`/\src/api/providers/openai.ts#L83`](../../src/api/providers/openai.ts#L83),
+  [`/\src/api/providers/ollama.ts#L61`](../../src/api/providers/ollama.ts#L61), etc.)
 - Responses API + SSE fallback: OpenAI Native handler uses SDK streaming and a fetch-based SSE
   fallback (see
-  [`/\src/api/providers/openai-native.ts#L296`](/src/api/providers/openai-native.ts#L296)).
+  [`/\src/api/providers/openai-native.ts#L296`](../../src/api/providers/openai-native.ts#L296)).
 - Vendor SDK streaming iterators: Anthropic, Gemini, Bedrock (e.g.,
-  [`/\src/api/providers/anthropic.ts#L80`](/src/api/providers/anthropic.ts#L80),
-  [`/\src/api/providers/bedrock.ts#L420`](/src/api/providers/bedrock.ts#L420)).
+  [`/\src/api/providers/anthropic.ts#L80`](../../src/api/providers/anthropic.ts#L80),
+  [`/\src/api/providers/bedrock.ts#L420`](../../src/api/providers/bedrock.ts#L420)).
 - Manual fetch() usages (SSE or JSON): OpenRouter image endpoint, OpenAI Native SSE fallback, Glama
   polling, etc.
 
@@ -206,7 +214,8 @@ End of document.
 1. Orchestrator-level retries + provider internal retries/fallbacks (e.g., OpenAI-native
    previous\_response retry + Task retry).
 2. Token refresh flows that retry the same request (Gemini/Qwen patterns).
-3. Race on conversation continuity (previous\_response\_id) causing a provider retry and orchestrator
+3. Race on conversation continuity (previous\_response\_id) causing a provider retry and
+orchestrator
    retry.
 4. Wrapper/provider switching (VirtualQuotaFallback) without cancelling in-flight streams.
 5. Duplicate or repeated fetchModel calls in provider code paths (observed pattern).
@@ -258,13 +267,13 @@ End of document.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [State Machines](../architecture/README.md) for behavior modeling
 
 - *Investigating Race Conditions:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md) →
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
@@ -275,7 +284,7 @@ End of document.
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
+- **Related**: [Repository Development Guide](../architecture/GETTING_STARTED.md) for
   codebase patterns
 
 - *Understanding Current Problems:*\*

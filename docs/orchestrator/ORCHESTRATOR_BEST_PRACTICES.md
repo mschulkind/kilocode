@@ -1,6 +1,7 @@
 # Orchestrator Best Practices
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* This document provides guidelines and best practices for developers working with the
   Kilo Code Orchestrator. Following these practices will lead to more robust, predictable, and
@@ -23,13 +24,15 @@
 
 ### Related Documents
 
-<a id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+<a
+id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
 - **[Extensibility Guide](ORCHESTRATOR_EXTENSIBILITY.md)**: Provides the technical details
   for creating new tools and modes.
-- **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-best-practices)
 - \*\*
@@ -47,7 +50,7 @@ The quality of the orchestrator's output is highly dependent on the quality of t
   prompt. The more context the model has, the less it needs to discover on its own.
 - **Leverage System Prompts**: Use the [`getSystemPrompt`](`[FILE_MOVED_OR_RENAMED]`#L2499) function
   to its full potential. Ensure that all necessary rules, constraints, and formatting guidelines
-  like [`markdownFormattingSection`](/src/core/prompts/sections/markdown-formatting.ts#L1) are
+  like [`markdownFormattingSection`](../../src/core/prompts/sections/markdown-formatting.ts#L1) are
   included.
 - **Iterate and Refine**: If a task does not perform as expected, analyze the conversation history.
   Often, a small tweak to the initial prompt or a custom rule can significantly improve performance.
@@ -83,11 +86,11 @@ When extending the system, adhere to these principles.
 - **Favor Delegation for Complexity**: Encourage the model to use subtasks for complex problems.
   This can be done by structuring prompts in a way that suggests a multi-step process.
 - **Use `updateTodoListTool` for Planning**: For any non-trivial task, the first step should be to
-  create a plan using [`updateTodoListTool`](/src/core/tools/updateTodoListTool.ts#L156). This
+  create a plan using [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156). This
   provides clarity and makes the task's progress auditable.
 - **Use `switchModeTool` Deliberately**: Mode switching should be a conscious decision to gain
   necessary permissions. The model should be prompted to provide a reason for the switch, which is
-  captured by the [`switchModeTool`](/src/core/tools/switchModeTool.ts#L8).
+  captured by the [`switchModeTool`](../../src/core/tools/switchModeTool.ts#L8).
 
 [Back to Top](#orchestrator-best-practices)
 - \*\*
@@ -122,8 +125,8 @@ When extending the system, adhere to these principles.
   [Orchestrator Extensibility](ORCHESTRATOR_EXTENSIBILITY.md) →
   [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for codebase
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Repository Development Guide](../architecture/GETTING_STARTED.md) for codebase
   patterns
 
 - *Understanding Current Problems:*\*
@@ -138,7 +141,7 @@ When extending the system, adhere to these principles.
 
 - **Next**: [Testing Strategy](../architecture/TESTING_STRATEGY.md) →
   [Implementation Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md) →
-  [Repository Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+  [Repository Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -158,4 +161,4 @@ next, return to [Orchestrator Documentation](README.md) for guidance.
 
 - *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
   [→ Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

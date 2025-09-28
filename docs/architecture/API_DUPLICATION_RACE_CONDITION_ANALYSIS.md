@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the API request duplication issue caused by concurrent recursive calls in the orchestrator-subtask execution flow.
-- **Context**: Use this as a starting point for understanding race condition analysis and API duplication issues.
+- **Purpose**: This document covers the API request duplication issue caused by concurrent recursive
+calls in the orchestrator-subtask execution flow.
+- **Context**: Use this as a starting point for understanding race condition analysis and API
+duplication issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of race conditions in the KiloCode orchestrator-subtask execution flow. The analysis reflects findings from:
+This document was created through comprehensive analysis of race conditions in the KiloCode
+orchestrator-subtask execution flow. The analysis reflects findings from:
 - Concurrent system behavior analysis and race condition identification
 - Orchestrator-subtask execution flow investigation
 - API request duplication pattern analysis
@@ -29,7 +34,8 @@ The analysis provides detailed insights into the root causes of API duplication 
 
 ## Race Condition Overview
 
-The API duplication issue is caused by concurrent recursive calls in the orchestrator-subtask execution flow, leading to multiple simultaneous API requests and jumbled responses.
+The API duplication issue is caused by concurrent recursive calls in the orchestrator-subtask
+execution flow, leading to multiple simultaneous API requests and jumbled responses.
 
 **Key Characteristics:**
 
@@ -148,7 +154,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Architecture Documentation](README.md)
-- [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [← Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Investigation Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Debug Implementation](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

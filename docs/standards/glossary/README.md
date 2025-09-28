@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 Welcome to the technical glossary! 📚 This directory contains definitions and explanations of
 technical terms used throughout the KiloCode documentation.
@@ -45,9 +47,9 @@ technical terms used throughout the KiloCode documentation.
 
 ## 🔗 Cross-References
 
-- **Core Standards**: See [../core/](../core/) for fundamental principles
-- **Code Standards**: See [../code/](../code/) for code-related terms
-- **Navigation Standards**: See [../navigation/](../navigation/) for navigation terms
+- **Core Standards**: See [Parent directory](../core/) for fundamental principles
+- **Code Standards**: See [Parent directory](../code/) for code-related terms
+- **Navigation Standards**: See [Parent directory](../navigation/) for navigation terms
 
 ## 🦕 Dinosaur Analogy
 
@@ -59,9 +61,9 @@ concepts (data structures vs. functions, different architectural layers, differe
 contexts)!
 
 ## 🧭 Navigation Footer
-- [← Back to Standards Home](../../../README.md)
+- [← Back to Standards Home](../../README.md)
 - [→ Core Standards](../core/README.md)
-- [↑ Table of Contents](../../../README.md)
+- [↑ Table of Contents](../../README.md)
 
 ## No Dead Ends Policy
 
@@ -72,7 +74,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Standards Overview](README.md)
-- [← Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [← Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [← Navigation Standards](navigation/README.md)
-- [← Main Documentation](../../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../../README.md)
+- [← Project Root](../README.md)

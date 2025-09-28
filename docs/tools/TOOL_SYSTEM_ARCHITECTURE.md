@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive documentation of the AI tool system architecture, execution patterns,
   validation mechanisms, and safety protocols in the KiloCode system.
@@ -30,6 +32,25 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Navigation Footer
 
 </details>
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Executive Summary
 - The Tool System Architecture provides the foundation for AI-powered operations in KiloCode,
@@ -314,14 +335,16 @@ export class ToolRepetitionDetector {
 - Execution timeout limits
 - Output filtering
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Safety framework design,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Safety framework
+design,
   threat modeling, mitigation strategies
 
 ## Tool Composition Patterns
 
 ### Sequential Composition
 
-- *Pattern*\*: Tools execute in sequence with data passing **Use Cases**: Multi-step file operations,
+- *Pattern*\*: Tools execute in sequence with data passing **Use Cases**: Multi-step file
+operations,
   complex transformations **Implementation**: Chain execution with intermediate result passing
 
 ### Parallel Composition
@@ -425,7 +448,8 @@ interface Tool {
 - Inconsistent results across runs
 - Resource exhaustion
 
-- *Root Cause*\*: Insufficient validation or resource management **Solution**: Implement comprehensive
+- *Root Cause*\*: Insufficient validation or resource management **Solution**: Implement
+comprehensive
   validation and resource monitoring
 
 ### Issue 2: Tool Chain Deadlocks
@@ -451,6 +475,19 @@ interface Tool {
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/tools/TOOL_SYSTEM_ARCHITECTURE.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

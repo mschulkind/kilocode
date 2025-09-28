@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers executive summary and problem description for the API duplication race condition issue.
-- **Context**: Use this as a starting point for understanding the problem overview and executive summary of race condition issues.
+- **Purpose**: This document covers executive summary and problem description for the API
+duplication race condition issue.
+- **Context**: Use this as a starting point for understanding the problem overview and executive
+summary of race condition issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of the API duplication race condition issue and its impact on the KiloCode system. The overview reflects findings from:
+This document was created through comprehensive analysis of the API duplication race condition issue
+and its impact on the KiloCode system. The overview reflects findings from:
 - API duplication race condition analysis and root cause identification
 - System behavior analysis and user experience impact assessment
 - Technical investigation and solution strategy development
@@ -30,11 +35,16 @@ The overview provides a comprehensive understanding of the problem and its impli
 
 ## Executive Summary
 
-The API duplication issue is caused by a **race condition** introduced in commit `749f3d22a` where both the main task loop and subtask completion can simultaneously call `recursivelyMakeClineRequests`, each making their own API request. This results in multiple simultaneous API calls with spinners appearing in the chat interface, causing jumbled responses and confused user experience.
+The API duplication issue is caused by a **race condition** introduced in commit `749f3d22a` where
+both the main task loop and subtask completion can simultaneously call
+`recursivelyMakeClineRequests`, each making their own API request. This results in multiple
+simultaneous API calls with spinners appearing in the chat interface, causing jumbled responses and
+confused user experience.
 
 ### Key Findings
 
-- **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution paths
+- **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution
+paths
 - **Impact**: Multiple API requests, jumbled responses, poor user experience
 - **Frequency**: Common occurrence during normal usage
 - **Severity**: High impact on user experience and system reliability
@@ -88,7 +98,8 @@ The race condition occurs in specific patterns and scenarios.
 
 ### Technical Root Cause
 
-The race condition is caused by concurrent execution of the same function from different execution paths.
+The race condition is caused by concurrent execution of the same function from different execution
+paths.
 
 **Execution Paths:**
 1. **Main Task Loop** - Primary execution path
@@ -256,8 +267,16 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Next steps provide actionable guidance
 
 ## Navigation
+
+### Example
+
+```bash
+# Example command
+command --option value
+```
+
 - [← Race Condition Analysis](../README.md)
 - [← Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
 - [← Impact Assessment](IMPACT_ASSESSMENT.md)
 - [← Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
-- [← Main Documentation](../../README.md)
+- [← Main Documentation](../README.md)

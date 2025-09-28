@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the Orchestration Layer system, including Task Engine, Message Queue Service, and Orchestrator components for task execution and coordination.
-- **Context**: Use this as a starting point for understanding task orchestration and coordination in the KiloCode system.
+- **Purpose**: This document covers the Orchestration Layer system, including Task Engine, Message
+Queue Service, and Orchestrator components for task execution and coordination.
+- **Context**: Use this as a starting point for understanding task orchestration and coordination in
+the KiloCode system.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
-This document was created through comprehensive analysis of orchestration requirements and task management system architecture in the KiloCode project. The system reflects findings from:
+This document was created through comprehensive analysis of orchestration requirements and task
+management system architecture in the KiloCode project. The system reflects findings from:
 - Task orchestration system architecture analysis and design patterns
 - Message queue service implementation and coordination strategy research
 - Task lifecycle management and state coordination system development
@@ -32,7 +37,8 @@ The system provides robust task orchestration and coordination capabilities.
 
 ## System Architecture
 
-The Orchestration Layer system manages task execution, coordination, and state management across the entire KiloCode system.
+The Orchestration Layer system manages task execution, coordination, and state management across the
+entire KiloCode system.
 
 **Core Components:**
 1. **Task Engine** - Task execution and management
@@ -141,7 +147,8 @@ class MessageQueueImpl implements MessageQueue {
 
 ### Orchestrator Overview
 
-The Orchestrator coordinates task execution and manages system-wide task scheduling and coordination.
+The Orchestrator coordinates task execution and manages system-wide task scheduling and
+coordination.
 
 **Key Features:**
 
@@ -353,6 +360,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
-- [← Orchestrator Documentation](../../orchestrator/README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Orchestrator Documentation](../orchestrator/README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

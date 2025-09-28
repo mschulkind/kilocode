@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive guide for managing code transfer and feature porting between KiloCode,
   Roo Code, and Cline repositories.
@@ -21,7 +23,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 - [Executive Summary](#executive-summary)
 - [Integration Overview](#integration-overview)
 - [Code Transfer Workflow](#code-transfer-workflow)
-- [Implementation Tradeoffs & Strategic Considerations](#implementation-tradeoffs--strategic-considerations)
+- [Implementation Tradeoffs & Strategic
+Considerations](#implementation-tradeoffs--strategic-considerations)
 - [Merge Conflict Prevention & Management](#merge-conflict-prevention--management)
 - [Change Tracking & Documentation Strategy](#change-tracking--documentation-strategy)
 - [Refactoring & Evolution Strategy](#refactoring--evolution-strategy)
@@ -488,7 +491,8 @@ purposes:
   minimal modifications. This helps distinguish between code that's been heavily adapted versus code
   that's been integrated more directly.
 
-- *Upstream Sync Markers*\*: Use these to mark sections that were synchronized from upstream KiloCode
+- *Upstream Sync Markers*\*: Use these to mark sections that were synchronized from upstream
+KiloCode
   (if applicable) or to indicate when large blocks of code were updated from upstream sources.
 
 - *Best Practices for Marker Usage*\*
@@ -893,7 +897,7 @@ Common risks in upstream/downstream integration include:
 - \*\*
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](README.md) · Root: [`../README.md`](../../README.md) · Source:
+- Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/architecture/UPSTREAM_DOWNSTREAM_INTEGRATION.md#L1`
 
 ## Navigation Footer

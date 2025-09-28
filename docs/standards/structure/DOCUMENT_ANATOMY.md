@@ -1,8 +1,10 @@
 # Document Anatomy 🧬
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* Detailed breakdown of the standardized document structure that every KiloCode document
+- *Purpose:*\* Detailed breakdown of the standardized document structure that every KiloCode
+document
   must follow, ensuring consistency and usability across all documentation.
 
 > **Biology Fun Fact**: Just like how DNA has a specific structure with base pairs, sugar-phosphate
@@ -107,13 +109,15 @@
 ```markdown
 # Good: Specific and descriptive
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 API Duplication Analysis State Machine Design Patterns Build Process Guide
 
 # Bad: Generic or unclear
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 Documentation Guide Stuff Things
 ```
@@ -137,7 +141,8 @@ Documentation Guide Stuff Things
 ```markdown
 # Good: Clear purpose and audience
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
 identification, impact assessment, and solution recommendations for developers and system
@@ -145,7 +150,8 @@ architects.
 
 # Bad: Vague or missing context
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:** This document explains things. **Purpose:** Guide for users.
 ```
@@ -258,23 +264,23 @@ the parent task.
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -300,7 +306,7 @@ next, return to [Standards Documentation](README.md) for guidance.
 
 ```markdown
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 
 <a id="navigation-footer"></a>
@@ -406,27 +412,32 @@ graph TD
 ```markdown
 # Bad: Multiple H1 headings
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 # Document Title
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Content here.
 
 # Another Title
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 More content here.
 
 # Good: Single H1 heading
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 # Document Title
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 Content here.
 
@@ -442,7 +453,8 @@ More content here.
 ```markdown
 # API Duplication Analysis
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
 identification, impact assessment, and solution recommendations for developers and system
@@ -507,7 +519,7 @@ Follow these steps to implement the solution:
 4. **Monitor Performance**: Ensure solution doesn't impact performance
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
@@ -516,7 +528,8 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project from source, including
 prerequisites, build steps, and troubleshooting common issues.
@@ -559,7 +572,8 @@ Common issues and solutions:
 ```
 - \*\*
 
-- *Navigation*\*: [Back to Structure](README.md) · [Next: Headings & Hierarchy](HEADINGS_HIERARCHY.md)
+- *Navigation*\*: [Back to Structure](README.md) · [Next: Headings &
+Hierarchy](HEADINGS_HIERARCHY.md)
   · [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers comprehensive guide for new developers, contributors, and users to understand and get started with KiloCode development.
-- **Context**: Use this as a starting point for understanding KiloCode development and getting started with the project.
+- **Purpose**: This document covers comprehensive guide for new developers, contributors, and users
+to understand and get started with KiloCode development.
+- **Context**: Use this as a starting point for understanding KiloCode development and getting
+started with the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
-This document was created through comprehensive analysis of developer onboarding needs and best practices for the KiloCode project. The guide reflects findings from:
+This document was created through comprehensive analysis of developer onboarding needs and best
+practices for the KiloCode project. The guide reflects findings from:
 - Developer onboarding experience analysis and improvement research
 - Development environment setup and configuration best practices
 - Codebase understanding and navigation strategy development
@@ -284,5 +289,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← Development Guide](repository/DEVELOPMENT_GUIDE.md)
 - [← Repository Structure](repository/REPOSITORY_STRUCTURE.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

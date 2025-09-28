@@ -2,21 +2,44 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-Welcome to the build system documentation! 🏗️ This directory contains comprehensive information about how KiloCode is built, packaged, and deployed.
+Welcome to the build system documentation! 🏗️ This directory contains comprehensive information
+about how KiloCode is built, packaged, and deployed.
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
 
-- **Something's Broken**: Start with [Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md) for troubleshooting and system context.
+- **Something's Broken**: Start with [Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md)
+for troubleshooting and system context.
 - **Need to Understand**: Review this README’s structure section for an overview and links.
 - **Implementation Journey**: Follow the build pipeline from source to deployment.
 
@@ -27,26 +50,46 @@ Welcome to the build system documentation! 🏗️ This directory contains compr
 
 ## 📚 Documentation Structure
 
-- **[Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md)** - Detailed architecture of the build system including tooling and CI.
+- **[Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md)** - Detailed architecture of the
+build system including tooling and CI.
 
 ## Directory context
 
-This directory documents how the monorepo is built and shipped across packages, apps, and the VS Code extension. It explains tooling, CI/CD workflows, and deployment strategies, and provides guidance for debugging and optimizing builds. Use the quick start paths to jump into common tasks.
+This directory documents how the monorepo is built and shipped across packages, apps, and the VS
+Code extension. It explains tooling, CI/CD workflows, and deployment strategies, and provides
+guidance for debugging and optimizing builds. Use the quick start paths to jump into common tasks.
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [../architecture/](../architecture/) for system architecture
-- **Services**: See [../services/](../services/) for build-related services
-- **Standards**: See [../standards/](../standards/) for documentation standards
+- **Architecture**: See [This resource](../architecture/) for system architecture
+- **Services**: See [Parent directory](../services/) for build-related services
+- **Standards**: See [Parent directory](../standards/) for documentation standards
 
 ## 🦕 Dinosaur Analogy
 
-Think of the build system like a dinosaur's digestive system - it takes raw materials (source code), processes them through various stages (compilation, bundling, testing), and produces the final output (packaged extension). Just like how different dinosaurs had different digestive systems optimized for their diet, our build system is optimized for TypeScript, React, and VS Code extensions!
+Think of the build system like a dinosaur's digestive system - it takes raw materials (source code),
+processes them through various stages (compilation, bundling, testing), and produces the final
+output (packaged extension). Just like how different dinosaurs had different digestive systems
+optimized for their diet, our build system is optimized for TypeScript, React, and VS Code
+extensions!
 
 ## 🧭 Navigation Footer
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 - [← Main Documentation](README.md)

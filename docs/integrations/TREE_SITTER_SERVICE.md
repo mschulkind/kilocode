@@ -2,17 +2,23 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the Tree Sitter code parsing service and language-specific parsing capabilities.
-- **Context**: Use this as a starting point for understanding how KiloCode analyzes and processes code using Tree Sitter.
+- **Purpose**: This document covers the Tree Sitter code parsing service and language-specific
+parsing capabilities.
+- **Context**: Use this as a starting point for understanding how KiloCode analyzes and processes
+code using Tree Sitter.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of Tree Sitter's parsing capabilities and code analysis requirements in development environments. The service architecture reflects findings from:
+This document was created through comprehensive analysis of Tree Sitter's parsing capabilities and
+code analysis requirements in development environments. The service architecture reflects findings
+from:
 - Tree Sitter parser performance and accuracy analysis
 - Language-specific parsing pattern research
 - AST (Abstract Syntax Tree) processing optimization studies
@@ -32,7 +38,8 @@ The system provides accurate and efficient code parsing for multiple programming
 
 ## Service Overview
 
-The Tree Sitter Service provides comprehensive code parsing and analysis capabilities for multiple programming languages, enabling semantic code understanding and analysis within the KiloCode system.
+The Tree Sitter Service provides comprehensive code parsing and analysis capabilities for multiple
+programming languages, enabling semantic code understanding and analysis within the KiloCode system.
 
 **Core Components:**
 1. **Language Parser** - Multi-language code parsing with Tree Sitter
@@ -236,4 +243,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Terminal Integration](TERMINAL_INTEGRATION.md)
 - [← Browser Automation](BROWSER_AUTOMATION.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

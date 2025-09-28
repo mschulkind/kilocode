@@ -1,6 +1,7 @@
 # Recursive Call State Machine
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Overview
 
@@ -49,8 +50,10 @@ system - it manages the delicate balance between order and chaos in our API call
 enum RecursiveCallState {
 	IDLE = "idle", // No recursive calls active (the "vacuum state" - empty but ready)
 	RUNNING = "running", // Single recursive call active (the "stable particle" - predictable)
-	CONCURRENT = "concurrent", // Multiple recursive calls active (RACE CONDITION - "quantum entanglement gone wrong")
-	TRIPLE_CONCURRENT = "triple_concurrent", // 3+ simultaneous calls (SEVERE RACE CONDITION - "nuclear meltdown")
+CONCURRENT = "concurrent", // Multiple recursive calls active (RACE CONDITION - "quantum
+entanglement gone wrong")
+TRIPLE_CONCURRENT = "triple_concurrent", // 3+ simultaneous calls (SEVERE RACE CONDITION - "nuclear
+meltdown")
 	QUEUED = "queued", // Calls queued due to lock (the "waiting room" - orderly but patient)
 	LOCKED = "locked", // Lock acquired, processing (the "laboratory" - controlled environment)
 	TIMEOUT = "timeout", // Lock acquisition timed out (the "failed experiment" - gave up waiting)
@@ -320,22 +323,22 @@ To prevent race conditions:
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -347,4 +350,4 @@ next, return to [Architecture Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

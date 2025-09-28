@@ -2,23 +2,29 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document provides an executive summary of the API request duplication investigation plan and implementation strategy.
-- **Context**: Use this as a starting point for understanding the API duplication investigation status and approach.
+- **Purpose**: This document provides an executive summary of the API request duplication
+investigation plan and implementation strategy.
+- **Context**: Use this as a starting point for understanding the API duplication investigation
+status and approach.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of API duplication issues in the KiloCode system. The investigation summary reflects findings from:
+This document was created through comprehensive analysis of API duplication issues in the KiloCode
+system. The investigation summary reflects findings from:
 - API request flow analysis and duplication pattern identification
 - System architecture review for potential duplication sources
 - User experience impact assessment of duplicate API calls
 - Root cause analysis methodology for distributed system issues
 
-The investigation provides a systematic approach to identifying and resolving API duplication problems.
+The investigation provides a systematic approach to identifying and resolving API duplication
+problems.
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
@@ -30,7 +36,8 @@ The investigation provides a systematic approach to identifying and resolving AP
 
 ## Problem Statement
 
-KiloCode frequently experiences multiple API requests with spinners appearing simultaneously in the chat view. The responses come back jumbled, confusing the chat interface.
+KiloCode frequently experiences multiple API requests with spinners appearing simultaneously in the
+chat view. The responses come back jumbled, confusing the chat interface.
 
 **Key Issues:**
 - Multiple API requests triggered simultaneously
@@ -166,8 +173,16 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation plan provides actionable next steps
 
 ## Navigation
+
+### Example
+
+```javascript
+// Example code
+const example = "Hello World";
+```
+
 - [← Architecture Documentation](README.md)
-- [← Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [← Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Debug Implementation](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- [← Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

@@ -1,6 +1,17 @@
 # Testing Strategy
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive testing approach for validating the race condition fix and ensuring
   system reliability.
@@ -145,7 +156,8 @@ describe("Orchestrator-Subtask Integration", () => {
 
 		// Verify no race conditions
 		expect(orchestrator.callHistory).toHaveLength(2)
-		expect(orchestrator.callHistory[0].endTime).toBeLessThanOrEqual(orchestrator.callHistory[1].startTime)
+
+expect(orchestrator.callHistory[0].endTime).toBeLessThanOrEqual(orchestrator.callHistory[1].startTime)
 	})
 })
 ```
@@ -235,7 +247,8 @@ describe("Load Testing", () => {
 		const tasks = Array.from({ length: 100 }, () => new Task("load-test"))
 
 		// Start many concurrent calls
-		const promises = tasks.map((task, index) => task.recursivelyMakeClineRequests([], false, `load-test-${index}`))
+const promises = tasks.map((task, index) => task.recursivelyMakeClineRequests([], false,
+`load-test-${index}`))
 
 		// All should complete successfully
 		const results = await Promise.all(promises)
@@ -288,7 +301,8 @@ describe("Stress Testing", () => {
 		const tasks = Array.from({ length: 1000 }, () => new Task("memory-test"))
 
 		// Create many tasks to test memory usage
-		const promises = tasks.map((task, index) => task.recursivelyMakeClineRequests([], false, `memory-${index}`))
+const promises = tasks.map((task, index) => task.recursivelyMakeClineRequests([], false,
+`memory-${index}`))
 
 		// Should complete without memory issues
 		const results = await Promise.all(promises)
@@ -480,8 +494,8 @@ class RaceConditionMonitor {
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [race-condition](../../architecture/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [race-condition](../architecture/) · ↑ Table of Contents
 
 ## No Dead Ends Policy
 

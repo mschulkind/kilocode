@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide helps you understand and fix common validation errors in KiloCode documentation.
 
@@ -55,7 +57,7 @@ Warning: Link text "https://example.com" is not descriptive
 ```markdown
 <!-- Bad -->
 
-[https://example.com](https://example.com)
+[Example](https://example.com)
 
 <!-- Good -->
 
@@ -103,7 +105,8 @@ Warning: Heading level should be 2, not 3
 ```markdown
 # Main Title (H1)
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Section Title (H2)
 
@@ -236,13 +239,15 @@ Many errors can be automatically fixed:
 ```bash
 # Fix auto-fixable issues
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 npx remark --use remark-stringify docs/
 
 # Fix specific file
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 npx remark --use remark-stringify docs/specific-file.md
 ```
@@ -346,7 +351,7 @@ For complex errors:
 1. This validation errors guide
 2. [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 3. [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-4. [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+4. [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ### Support
 1. Check VS Code output logs
@@ -357,9 +362,22 @@ For complex errors:
 ## Related Documentation
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 - [← Tools Overview](README.md)
@@ -368,4 +386,4 @@ For complex errors:
 - [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
 - [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

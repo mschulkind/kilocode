@@ -1,6 +1,7 @@
 # Laminar Task System Integration
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Mission:*\* To provide comprehensive documentation of the Task System's integration with Laminar
   observability, detailing how task lifecycle tracing, LLM interactions, and performance monitoring
@@ -367,14 +368,27 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 
 ## Code Reference Matrix
 
-| Component       | Primary Functions                                                                                                                   | Key Integration Points     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| Task Lifecycle  | [`constructor`](src/core/task/Task.ts#L317), [`startTask`](src/core/task/Task.ts#L1231), [`abortTask`](src/core/task/Task.ts#L1532) | Span creation/management   |
-| LLM Integration | [`attemptApiRequest`](src/core/task/Task.ts#L2667), [`recursivelyMakeClineRequests`](src/core/task/Task.ts#L1749)                   | Token usage, cost tracking |
-| Tool System     | [`toolRepetitionDetector`](src/core/task/Task.ts#L251), [`recordToolUsage`](src/core/task/Task.ts#L3002)                            | Tool execution monitoring  |
-| Checkpoints     | [`checkpointSave`](src/core/task/Task.ts#L2980), [`checkpointRestore`](src/core/task/Task.ts#L2983)                                 | State persistence tracing  |
-| Authentication  | [`getContext`](src/core/task/Task.ts#L454)                                                                                          | User context integration   |
-| Error Handling  | [`handleContextWindowExceededError`](src/core/task/Task.ts#L2606)                                                                   | Error recovery mechanisms  |
+| Component       | Primary Functions
+| Key Integration Points     |
+| --------------- |
+-----------------------------------------------------------------------------------------------------------------------------------
+| -------------------------- |
+| Task Lifecycle  | [`constructor`](src/core/task/Task.ts#L317),
+[`startTask`](src/core/task/Task.ts#L1231), [`abortTask`](src/core/task/Task.ts#L1532) | Span
+creation/management   |
+| LLM Integration | [`attemptApiRequest`](src/core/task/Task.ts#L2667),
+[`recursivelyMakeClineRequests`](src/core/task/Task.ts#L1749)                   | Token usage, cost
+tracking |
+| Tool System     | [`toolRepetitionDetector`](src/core/task/Task.ts#L251),
+[`recordToolUsage`](src/core/task/Task.ts#L3002)                            | Tool execution
+monitoring  |
+| Checkpoints     | [`checkpointSave`](src/core/task/Task.ts#L2980),
+[`checkpointRestore`](src/core/task/Task.ts#L2983)                                 | State
+persistence tracing  |
+| Authentication  | [`getContext`](src/core/task/Task.ts#L454)
+| User context integration   |
+| Error Handling  | [`handleContextWindowExceededError`](src/core/task/Task.ts#L2606)
+| Error recovery mechanisms  |
 - \*\*
 
 ## Implementation Timeline
@@ -406,15 +420,15 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

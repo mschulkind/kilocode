@@ -1,13 +1,15 @@
 # Laminar LLM Integration
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 Comprehensive documentation of how Laminar observability integrates with Kilo Code's
 LLM\<write\_to\_file> <path>docs/LAMINAR\_LLM\_INTEGRATION.md</path> <content>
 
 # Laminar LLM Integration
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 Comprehensive documentation of how Laminar observability integrates with Kilo Code's LLM (Large
 Language Model) interactions, providing detailed tracing for API calls, token usage, (Large Language
@@ -88,20 +90,24 @@ graph TD
 
  an LLM1. **Request Initiation**: Span creation when LLM call is initiated
 2. ** call is initiated, a new span is created withMetadata Capture**: request metadata
-2. **Request Capture**: All request parameters, Model, provider, and request parameters model recorded
+2. **Request Capture**: All request parameters, Model, provider, and request parameters model
+recorded
 3. **API Execution**: Actual LLM API call with timing measurement
 4. **Response Processing**: settings, Token and context are recorded
 3. **API Execution**: The actual API call is wrapped with timing and error tracking
 4. **Response counting Processing**: and cost calculation
-5. ** Response data, tokensCache Analysis**: used, and Cache performance usage patterns and metrics are captured
+5. ** Response data, tokensCache Analysis**: used, and Cache performance usage patterns and metrics
+are captured
 5. **Cost efficiency Calculation**: metrics
-6. ** RealSpan Final-time cost computationization**: Complete based on trace usage and data with performance rates
+6. ** RealSpan Final-time cost computationization**: Complete based on trace usage and data with
+performance rates
 6. **Span Finalization metrics
 
 ## LLM Call Tracing
 
 ###**: Span Hierarchy
-LLM spans are Complete span nested under with success/failure status and task spans, maintaining comprehensive metrics
+LLM spans are Complete span nested under with success/failure status and task spans, maintaining
+comprehensive metrics
 
 ## LLM Call Tracing
 
@@ -145,7 +151,8 @@ Task 1
 - **Timing Information**: Request start time, API latency, and total processing time
 - ** context,Cost and prompt details
 - **API Details**: Endpoint, request ID, and timing information
-- **Usage Metrics**: Data**: Real-time cost calculation Token counts, and cost calculations, and performance data
+- **Usage Metrics**: Data**: Real-time cost calculation Token counts, and cost calculations, and
+performance data
 
 ## Token Usage Tracking
 
@@ -167,7 +174,8 @@ Task 1
 Token usage is prompt
 - captured at **Output Tokens**: Tokens multiple levels received in:
  the response
-- **Cached- **Per-Request Tokens**:**: Tokens Individual served from cache instead of live API call API
+- **Cached- **Per-Request Tokens**:**: Tokens Individual served from cache instead of live API call
+API
 - **Total Tokens**: token Sum consumption
  of all token- **Per- types forTask**: billing purposes
 
@@ -424,14 +432,17 @@ disabled)
 ## Code Reference Matrix
 
 | Component | File | Key Methods | |
-\[`src/services/llm/ LaminLLMar Integration | |-----------|------Service.ts`]\(src/services/|-------------llm/LL|-------------------|
+\[`src/services/llm/ LaminLLMar Integration |
+|-----------|------Service.ts`]\(src/services/|-------------llm/LL|-------------------|
 |MService.ts) Task | ` LLM Integration | [`src/core/task/Task.ts`](callLLMsrc/core/task/Task.ts)()`,
 `|`makeLLMRequest()`, `calculateCost()` |process APILLMResponse()` | Span tracing creation, cost
 calculation | |, token Cache tracking | | Manager LLM Service |
-[`src/services | [`src/services/cache/llm/LLMService.ts/CacheManager.ts`](src/services/cache`](src/CacheManager.ts)
+[`src/services |
+[`src/services/cache/llm/LLMService.ts/CacheManager.ts`](src/services/cache`](src/CacheManager.ts)
 | `/services/llm/LLgetMService.ts) | `callAPI()`, `Cached()`, `calculatesetCost()` | APICached()` |
 Cache call wrapping, usage tracking | | Token Counter |
-[` costsrc calculation | | Token/services/llm/TokenCounter Counter | [`src/services/llm.ts`](src/services/llm/Token/TokenCounter.ts`](src/services/llCounter.ts)
+[` costsrc calculation | | Token/services/llm/TokenCounter Counter |
+[`src/services/llm.ts`](src/services/llm/Token/TokenCounter.ts`](src/services/llCounter.ts)
 | `countTokensm()`,
 `/TokenCounter.ts) | `countTokens()`, `trackUsage()` | Token accounting | |trackUsage()` | Token
 Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/services Cache Manager
@@ -442,7 +453,9 @@ Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/se
 
 <a id="navigation-footer">\</aResponse()\` | Cache>
 - Back:
-  \[`LAMINAR tracking | _SUB| Cost Calculator | [`SYSTEMS\_README.md`](LAMINsrc/services/llm/CostCalculatorAR_SUBSYSTEMS_README.md:1.ts) ·`]\(src/services/llm/C
+\[`LAMINAR tracking | _SUB| Cost Calculator |
+[`SYSTEMS\_README.md`](LAMINsrc/services/llm/CostCalculatorAR_SUBSYSTEMS_README.md:1.ts)
+·`]\(src/services/llm/C
   Root: \[`LAMINARostCalculator.ts) | `calculateCost\_SUBSYSTEMS\_README.md`](LAMIN()`,AR\_SUBSYSTEM
   `updateRates()` |S\_README.md:1 Cost computation |
 
@@ -464,15 +477,15 @@ Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/se
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

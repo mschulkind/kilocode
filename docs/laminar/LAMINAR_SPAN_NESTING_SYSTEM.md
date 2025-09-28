@@ -1,6 +1,7 @@
 # Laminar Span Nesting System
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* This document explains the span nesting architecture in Kilo Code's Laminar
   observability system, detailing how spans are created, nested, and queued, with specific focus on
@@ -40,11 +41,16 @@ initialization completes.
 
 ### Span Type Categories
 
-| Span Type | Description                            | Example Names                                | Created By     |
-| --------- | -------------------------------------- | -------------------------------------------- | -------------- |
-| DEFAULT   | General operations and task management | `task-{id}-task.root`, `task-{id}-task.step` | Task execution |
-| LLM       | Language model API calls               | `task-{id}-llm_call`                         | API requests   |
-| TOOL      | Tool execution and completion          | `attempt_completion`                         | Tool handlers  |
+| Span Type | Description                            | Example Names
+| Created By     |
+| --------- | -------------------------------------- | --------------------------------------------
+| -------------- |
+| DEFAULT   | General operations and task management | `task-{id}-task.root`, `task-{id}-task.step`
+| Task execution |
+| LLM       | Language model API calls               | `task-{id}-llm_call`
+| API requests   |
+| TOOL      | Tool execution and completion          | `attempt_completion`
+| Tool handlers  |
 
 ### Span Hierarchy
 
@@ -158,7 +164,8 @@ if (this.pendingSpanRequests.length > 0) {
 
 ### Root Cause Analysis
 
-- *Primary Issue:*\* Task spans are created during task initialization but may be queued indefinitely
+- *Primary Issue:*\* Task spans are created during task initialization but may be queued
+indefinitely
   if the Laminar service fails to initialize properly.
 
 - *Failure Scenarios:*\*
@@ -239,12 +246,18 @@ if (!laminarService.isInitialized) {
 
 ### Common Issues and Solutions
 
-| Issue               | Symptom                                | Solution                                  |
-| ------------------- | -------------------------------------- | ----------------------------------------- |
-| Service Not Enabled | No spans appear                        | Check `laminarConfig.enabled` and API key |
-| Backend Unreachable | Test span appears, task spans don't    | Verify Laminar server connectivity        |
-| Queue Not Processed | Spans queued but never sent            | Check initialization error handling       |
-| Span Names Mismatch | Spans created but not found for ending | Verify consistent span naming             |
+| Issue               | Symptom                                | Solution
+|
+| ------------------- | -------------------------------------- |
+----------------------------------------- |
+| Service Not Enabled | No spans appear                        | Check `laminarConfig.enabled` and
+API key |
+| Backend Unreachable | Test span appears, task spans don't    | Verify Laminar server connectivity
+|
+| Queue Not Processed | Spans queued but never sent            | Check initialization error handling
+|
+| Span Names Mismatch | Spans created but not found for ending | Verify consistent span naming
+|
 
 ### Debug Logging
 
@@ -264,12 +277,18 @@ console.log = console.log.bind(console)
 
 ## Code Reference Matrix
 
-| Component              | Primary Functions                           | Key Files                                 | Integration Points |
-| ---------------------- | ------------------------------------------- | ----------------------------------------- | ------------------ |
-| Service Initialization | `initialize()`, `getInstance()`             | `/src/services/laminar/LaminarService.ts` | Extension startup  |
-| Span Management        | `startSpan()`, `endSpan()`                  | `/src/services/laminar/LaminarService.ts` | All operations     |
-| Task Integration       | `initiateTaskLoop()`, `attemptApiRequest()` | `[FILE_MOVED_OR_RENAMED]`                 | Task execution     |
-| Tool Integration       | `attemptCompletionTool()`                   | `[FILE_MOVED_OR_RENAMED]`                 | Tool completion    |
+| Component              | Primary Functions                           | Key Files
+| Integration Points |
+| ---------------------- | ------------------------------------------- |
+----------------------------------------- | ------------------ |
+| Service Initialization | `initialize()`, `getInstance()`             |
+`/src/services/laminar/LaminarService.ts` | Extension startup  |
+| Span Management        | `startSpan()`, `endSpan()`                  |
+`/src/services/laminar/LaminarService.ts` | All operations     |
+| Task Integration       | `initiateTaskLoop()`, `attemptApiRequest()` | `[FILE_MOVED_OR_RENAMED]`
+| Task execution     |
+| Tool Integration       | `attemptCompletionTool()`                   | `[FILE_MOVED_OR_RENAMED]`
+| Tool completion    |
 
 ## Implementation Details
 
@@ -346,15 +365,15 @@ try {
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

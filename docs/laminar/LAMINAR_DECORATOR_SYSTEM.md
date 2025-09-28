@@ -1,6 +1,7 @@
 # Laminar Decorator System
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* This document describes the observeDecorator implementation for automatic
   instrumentation, detailing method decoration, input/output capture, performance monitoring, and
@@ -216,7 +217,8 @@ const endTime = performance.now()
 const duration = endTime - startTime
 
 span.setAttribute("duration.ms", duration)
-span.setAttribute("performance.category", duration > 1000 ? "slow" : duration > 100 ? "medium" : "fast")
+span.setAttribute("performance.category", duration > 1000 ? "slow" : duration > 100 ? "medium" :
+"fast")
 ```
 
 - *Performance Categories:*\*
@@ -378,12 +380,18 @@ observeDecorator.config({
 
 ## Code Reference Matrix
 
-| Component      | Primary Functions              | Key Files                                  | Integration Points     |
-| -------------- | ------------------------------ | ------------------------------------------ | ---------------------- |
-| Decorator      | `observeDecorator()`           | `src/services/laminar/observeDecorator.ts` | Method instrumentation |
-| Input Capture  | `captureInput()`               | `src/services/laminar/observeDecorator.ts` | Parameter recording    |
-| Output Capture | `captureOutput()`              | `src/services/laminar/observeDecorator.ts` | Return value tracking  |
-| Performance    | Duration and resource tracking | `src/services/laminar/observeDecorator.ts` | Performance monitoring |
+| Component      | Primary Functions              | Key Files                                  |
+Integration Points     |
+| -------------- | ------------------------------ | ------------------------------------------ |
+---------------------- |
+| Decorator      | `observeDecorator()`           | `src/services/laminar/observeDecorator.ts` |
+Method instrumentation |
+| Input Capture  | `captureInput()`               | `src/services/laminar/observeDecorator.ts` |
+Parameter recording    |
+| Output Capture | `captureOutput()`              | `src/services/laminar/observeDecorator.ts` |
+Return value tracking  |
+| Performance    | Duration and resource tracking | `src/services/laminar/observeDecorator.ts` |
+Performance monitoring |
 
 ## Implementation Timeline
 
@@ -414,15 +422,15 @@ observeDecorator.config({
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

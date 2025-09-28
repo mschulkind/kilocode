@@ -1,6 +1,7 @@
 # Laminar Configuration Guide
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Complete guide for configuring Laminar observability in your projects*\*
 
@@ -11,13 +12,15 @@ Here's a complete example of all Laminar configuration options:
 ```bash
 # Required: Your Laminar API key
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 export LMNR_API_KEY="lmnr_prod_1234567890abcdef"
 
 # Optional: Custom server configuration
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 export LMNR_BASE_URL="https://api.lmnr.ai"
 export LMNR_HTTP_PORT="443"
@@ -25,7 +28,8 @@ export LMNR_GRPC_PORT="8443"
 
 # Optional: Control behavior
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 export LMNR_ENABLED="true"
 export LMNR_RECORD_IO="true"
@@ -131,7 +135,8 @@ export LMNR_GRPC_PORT="8443"  # Default
 ```bash
 # .env.development
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 LMNR_API_KEY="dev_project_key_123"
 LMNR_BASE_URL="http://localhost:8000"
@@ -146,7 +151,8 @@ LMNR_RECORD_IO="true"
 ```bash
 # .env.staging
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 LMNR_API_KEY="staging_project_key_456"
 LMNR_BASE_URL="https://staging-laminar.company.com"
@@ -161,7 +167,8 @@ LMNR_RECORD_IO="false"  # Disable I/O recording for privacy
 ```bash
 # .env.production
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 LMNR_API_KEY="prod_project_key_789"
 LMNR_BASE_URL="https://api.lmnr.ai"
@@ -184,7 +191,8 @@ npm install @lmnr-ai/lmnr
 ```bash
 # Create .env file in your project root
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 echo 'LMNR_API_KEY="your-api-key"' >> .env
 echo 'LMNR_ENABLED="true"' >> .env
@@ -216,7 +224,8 @@ If you're using a `.env` file, make sure to load it:
 ```bash
 # Install dotenv if needed
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 npm install dotenv
 ```
@@ -321,15 +330,15 @@ For additional help:
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

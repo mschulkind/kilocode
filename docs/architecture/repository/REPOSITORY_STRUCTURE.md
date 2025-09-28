@@ -1,6 +1,17 @@
 # Repository Structure
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* High-level overview of the KiloCode repository organization and directory structure.
 
@@ -318,8 +329,8 @@ graph TB
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../../architecture/) · [↑ Table of Contents](#repository-structure)
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [repository](../architecture/) · [↑ Table of Contents](#repository-structure)
 
 ## No Dead Ends Policy
 

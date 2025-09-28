@@ -2,17 +2,21 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers branch analyses and proposals for orchestrator load subtask improvements.
+- **Purpose**: This document covers branch analyses and proposals for orchestrator load subtask
+improvements.
 - **Context**: Use this as a starting point for understanding branch analysis and cleanup proposals.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created through comprehensive analysis of branch changes and cleanup proposals for orchestrator load subtask functionality. The analysis reflects findings from:
+This document was created through comprehensive analysis of branch changes and cleanup proposals for
+orchestrator load subtask functionality. The analysis reflects findings from:
 - Branch change analysis and impact assessment
 - Code review and behavioral analysis
 - Cleanup proposal development and implementation planning
@@ -30,7 +34,8 @@ The analysis provides insights into branch improvements and optimization opportu
 
 ## Branch Analysis Overview
 
-This directory contains comprehensive analyses and proposals for orchestrator load subtask improvements, focusing on branch changes and cleanup strategies.
+This directory contains comprehensive analyses and proposals for orchestrator load subtask
+improvements, focusing on branch changes and cleanup strategies.
 
 **Key Analysis Areas:**
 
@@ -161,7 +166,15 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Recommendations provide actionable next steps
 
 ## Navigation
+
+### Example
+
+```bash
+# Example command
+command --option value
+```
+
 - [← Architecture Documentation](../README.md)
 - [← Kilo vs Roo Comparison](KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

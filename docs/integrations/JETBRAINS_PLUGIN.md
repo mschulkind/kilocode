@@ -2,23 +2,29 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the JetBrains IDE plugin architecture and host-plugin communication system.
-- **Context**: Use this as a starting point for understanding how KiloCode integrates with JetBrains IDEs.
+- **Purpose**: This document covers the JetBrains IDE plugin architecture and host-plugin
+communication system.
+- **Context**: Use this as a starting point for understanding how KiloCode integrates with JetBrains
+IDEs.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created through comprehensive analysis of JetBrains plugin development patterns and KiloCode's integration requirements. The plugin architecture reflects findings from:
+This document was created through comprehensive analysis of JetBrains plugin development patterns
+and KiloCode's integration requirements. The plugin architecture reflects findings from:
 - JetBrains IntelliJ Platform SDK analysis and best practices research
 - IPC communication pattern analysis for plugin-host interactions
 - User experience studies for IDE integration workflows
 - Performance analysis of plugin loading and execution
 
-The system provides seamless integration between KiloCode's AI capabilities and JetBrains development environments.
+The system provides seamless integration between KiloCode's AI capabilities and JetBrains
+development environments.
 
 ## Table of Contents
 - [Plugin Overview](#plugin-overview)
@@ -30,7 +36,8 @@ The system provides seamless integration between KiloCode's AI capabilities and 
 
 ## Plugin Overview
 
-The JetBrains Plugin provides KiloCode functionality within JetBrains IDEs through a dual-component architecture consisting of a TypeScript host application and a Kotlin plugin implementation.
+The JetBrains Plugin provides KiloCode functionality within JetBrains IDEs through a dual-component
+architecture consisting of a TypeScript host application and a Kotlin plugin implementation.
 
 **Core Features:**
 1. **Host Application** - TypeScript-based host application
@@ -184,4 +191,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Editor Integration](EDITOR_INTEGRATION.md)
 - [← Terminal Integration](TERMINAL_INTEGRATION.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

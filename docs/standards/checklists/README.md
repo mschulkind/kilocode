@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 Welcome to the documentation checklists! ✅ This directory contains checklists and validation tools
 for ensuring documentation quality and consistency.
@@ -45,9 +47,9 @@ for ensuring documentation quality and consistency.
 
 ## 🔗 Cross-References
 
-- **Core Standards**: See [../core/](../core/) for fundamental principles
-- **Structure Standards**: See [../structure/](../structure/) for structure validation
-- **Navigation Standards**: See [../navigation/](../navigation/) for navigation validation
+- **Core Standards**: See [Parent directory](../core/) for fundamental principles
+- **Structure Standards**: See [Parent directory](../structure/) for structure validation
+- **Navigation Standards**: See [Parent directory](../navigation/) for navigation validation
 
 ## 🦕 Dinosaur Analogy
 
@@ -57,9 +59,9 @@ preserving), we have checklists for each step of the documentation process (writ
 validating, publishing). Each checklist ensures we don't miss any important steps!
 
 ## 🧭 Navigation Footer
-- [← Back to Standards Home](../../../README.md)
+- [← Back to Standards Home](../../README.md)
 - [→ Core Standards](../core/README.md)
-- [↑ Table of Contents](../../../README.md)
+- [↑ Table of Contents](../../README.md)
 
 ## No Dead Ends Policy
 
@@ -70,7 +72,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Standards Overview](README.md)
-- [← Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [← Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [← Navigation Standards](navigation/README.md)
-- [← Main Documentation](../../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../../README.md)
+- [← Project Root](../README.md)

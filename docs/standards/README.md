@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation standards and practices for KiloCode contributors,
   organized into focused, cross-linked modules for efficient research and implementation.
@@ -46,7 +48,7 @@ This document is part of the KiloCode project documentation. If you're not famil
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
 - This is the master navigation hub for all documentation standards. Each section links to detailed,
-  focused modules that can be studied independently or as part of a comprehensive research journey.\*
+focused modules that can be studied independently or as part of a comprehensive research journey.\*
 
 - *Key Standards:*\*
 

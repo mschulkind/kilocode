@@ -1,6 +1,17 @@
 # Root Cause Analysis
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed investigation of the root cause of the API duplication race condition issue.
 
@@ -34,7 +45,7 @@
 async finishSubTask(lastMessage: string) {
     // Remove the last cline instance from the stack (this is the finished subtask)
     await this.removeClineFromStack()
-    // Resume the last cline instance in the stack (if it exists - this is the 'parent' calling task)
+// Resume the last cline instance in the stack (if it exists - this is the 'parent' calling task)
     await this.getCurrentTask()?.completeSubtask(lastMessage)
 }
 ```
@@ -50,7 +61,7 @@ async finishSubTask(lastMessage: string) {
 async finishSubTask(lastMessage: string) {
     // Remove the last cline instance from the stack (this is the finished subtask)
     await this.removeClineFromStack()
-    // Resume the last cline instance in the stack (if it exists - this is the 'parent' calling task)
+// Resume the last cline instance in the stack (if it exists - this is the 'parent' calling task)
     await this.continueParentTask(lastMessage) // kilocode_change
 }
 
@@ -69,7 +80,7 @@ private async continueParentTask(lastMessage: string): Promise<void> {
                     // RACE CONDITION: This call can run concurrently with main task loop
                     await parentTask.recursivelyMakeClineRequests([], false)
                 } catch (error) {
-                    this.log(`[continueParentTask] Error continuing parent task execution: ${error}`)
+this.log(`[continueParentTask] Error continuing parent task execution: ${error}`)
                 }
             }
             // Start the continuation in the background to avoid blocking
@@ -258,8 +269,8 @@ The fix solved the navigation problem but created a new race condition:
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [race-condition](../../architecture/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [race-condition](../architecture/) · ↑ Table of Contents
 
 ## No Dead Ends Policy
 

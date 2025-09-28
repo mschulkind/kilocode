@@ -1,6 +1,17 @@
 # Applications
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* Overview of the standalone applications and interfaces in the KiloCode monorepo.
 
@@ -451,8 +462,8 @@ graph TD
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../../architecture/) · [↑ Table of Contents](#applications)
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [repository](../architecture/) · [↑ Table of Contents](#applications)
 
 ## No Dead Ends Policy
 

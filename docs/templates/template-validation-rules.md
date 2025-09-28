@@ -2,7 +2,10 @@
 
 ## Overview
 
-This document defines the validation rules for standardized document templates to ensure consistent structure and eliminate validation warnings across all documentation. The validation system automatically checks documents against these rules to maintain high quality and consistency throughout the KiloCode project documentation.
+This document defines the validation rules for standardized document templates to ensure consistent
+structure and eliminate validation warnings across all documentation. The validation system
+automatically checks documents against these rules to maintain high quality and consistency
+throughout the KiloCode project documentation.
 
 The template validation system is designed to:
 - Ensure all documents follow consistent structural patterns
@@ -50,7 +53,8 @@ The template validation system is designed to:
 - Must have H1 title
 - Must include "When You're Here" section
 - Must include Research Context with technical overview
-- Must have at least one technical section (Architecture, API Reference, Implementation, Testing, or Troubleshooting)
+- Must have at least one technical section (Architecture, API Reference, Implementation, Testing, or
+Troubleshooting)
 - Must include No Dead Ends Policy
 - Must have Navigation footer
 - Maximum line length: 80 characters
@@ -202,7 +206,8 @@ This document provides a comprehensive getting started guide for new users.
 - **Context**: Essential for onboarding new team members
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-> **Onboarding Fun Fact**: Studies show that good documentation can reduce onboarding time by 60%! 🚀
+> **Onboarding Fun Fact**: Studies show that good documentation can reduce onboarding time by 60%!
+🚀
 
 ## Research Context
 
@@ -228,7 +233,8 @@ This document connects to:
 - [📚 Technical Glossary](../GLOSSARY.md)
 ```
 
-See also: [Validation System Documentation](../tools/VALIDATION_SYSTEM.md), [Best Practices Guide](../tools/DOCUMENTATION_BEST_PRACTICES.md)
+See also: [Validation System Documentation](../tools/VALIDATION_SYSTEM.md), [Best Practices
+Guide](../tools/DOCUMENTATION_BEST_PRACTICES.md)
 
 ### Bad Example - Missing Required Sections
 
@@ -242,7 +248,8 @@ This document helps new users get started.
 [Content without required sections...]
 ```
 
-This would fail validation due to missing "When You're Here", Research Context, and other required sections.
+This would fail validation due to missing "When You're Here", Research Context, and other required
+sections.
 
 ## Migration Guide
 
@@ -264,14 +271,16 @@ This would fail validation due to missing "When You're Here", Research Context, 
 
 ## Updates and Maintenance
 
-This validation system is maintained as part of the KiloCode documentation automation. Updates to template rules should be:
+This validation system is maintained as part of the KiloCode documentation automation. Updates to
+template rules should be:
 
 1. Documented in this file
 2. Implemented in the validation system
 3. Tested with sample documents
 4. Applied to existing documentation
 
-For questions or issues with template validation, see the [Validation System Documentation](../tools/VALIDATION_SYSTEM.md).
+For questions or issues with template validation, see the [Validation System
+Documentation](../tools/VALIDATION_SYSTEM.md).
 
 ## Navigation
 

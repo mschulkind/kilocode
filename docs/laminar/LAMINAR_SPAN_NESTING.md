@@ -1,8 +1,10 @@
 # Laminar Span Nesting and Queuing Mechanism
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-- *Purpose:*\* This document explains how span nesting works in the Laminar observability system, why
+- *Purpose:*\* This document explains how span nesting works in the Laminar observability system,
+why
   spans are queued before initialization, and how this affects chat history visibility.
 
 > **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
@@ -239,7 +241,8 @@ Enable detailed logging to track span lifecycle:
 ```bash
 # Set log level to debug
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 console.log(`[LAMINAR DEBUG] ${new Date().toISOString()} - Starting span: ${spanName}`)
 ```
@@ -303,15 +306,15 @@ private validateSpanConfig(options: SpanOptions): boolean {
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

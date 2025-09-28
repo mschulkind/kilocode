@@ -1,6 +1,7 @@
 # Laminar Testing System
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* This document outlines the comprehensive testing strategy for Laminar observability
   integration, covering integration tests, performance validation, trace accuracy assessment, and
@@ -416,7 +417,8 @@ export const createTestConfig = (): LaminarConfig => ({
 ```yaml
 # .github/workflows/test.yml
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 - name: Run Laminar Tests
   run: |
       cd src
@@ -440,7 +442,8 @@ export const createTestConfig = (): LaminarConfig => ({
 #!/bin/bash
 # pre-commit hook for Laminar tests
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 npx vitest run __tests__/laminar/ --passWithNoTests=false
 ```
@@ -481,12 +484,18 @@ npx vitest run __tests__/laminar/ --passWithNoTests=false
 
 ## Code Reference Matrix
 
-| Component         | Primary Functions                      | Key Files                                   | Integration Points |
-| ----------------- | -------------------------------------- | ------------------------------------------- | ------------------ |
-| Integration Tests | Subsystem interaction validation       | `src/__tests__/laminar/integration.test.ts` | All subsystems     |
-| Performance Tests | Overhead and scalability testing       | `src/__tests__/laminar/performance.test.ts` | Service layer      |
-| Accuracy Tests    | Trace content and hierarchy validation | `src/__tests__/laminar/accuracy.test.ts`    | Tracing system     |
-| Mock Utilities    | Test doubles and helpers               | `src/__tests__/laminar/mocks.ts`            | All tests          |
+| Component         | Primary Functions                      | Key Files
+| Integration Points |
+| ----------------- | -------------------------------------- |
+------------------------------------------- | ------------------ |
+| Integration Tests | Subsystem interaction validation       |
+`src/__tests__/laminar/integration.test.ts` | All subsystems     |
+| Performance Tests | Overhead and scalability testing       |
+`src/__tests__/laminar/performance.test.ts` | Service layer      |
+| Accuracy Tests    | Trace content and hierarchy validation |
+`src/__tests__/laminar/accuracy.test.ts`    | Tracing system     |
+| Mock Utilities    | Test doubles and helpers               | `src/__tests__/laminar/mocks.ts`
+| All tests          |
 
 ## Implementation Timeline
 
@@ -518,15 +527,15 @@ npx vitest run __tests__/laminar/ --passWithNoTests=false
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

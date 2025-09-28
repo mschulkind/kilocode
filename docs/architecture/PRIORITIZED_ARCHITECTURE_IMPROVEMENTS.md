@@ -2,23 +2,29 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers high-impact, near-to-mid term improvements around task/orchestrator, recursion, session management, and API execution.
-- **Context**: Use this as a starting point for understanding prioritized architecture improvements and strategic upgrades.
+- **Purpose**: This document covers high-impact, near-to-mid term improvements around
+task/orchestrator, recursion, session management, and API execution.
+- **Context**: Use this as a starting point for understanding prioritized architecture improvements
+and strategic upgrades.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
-This document was created through comprehensive analysis of architecture improvement opportunities and strategic upgrade planning in the KiloCode project. The improvements reflect findings from:
+This document was created through comprehensive analysis of architecture improvement opportunities
+and strategic upgrade planning in the KiloCode project. The improvements reflect findings from:
 - Architecture improvement opportunity analysis and impact assessment
 - Task/orchestrator system optimization and enhancement research
 - Recursion and session management improvement strategy development
 - API execution optimization and performance enhancement analysis
 
-The improvements provide strategic upgrades to complement race-condition work and enhance system capabilities.
+The improvements provide strategic upgrades to complement race-condition work and enhance system
+capabilities.
 
 ## Table of Contents
 - [Top Priorities](#top-priorities)
@@ -207,8 +213,16 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation strategy provides actionable next steps
 
 ## Navigation
+
+### Example
+
+```javascript
+// Example code
+const example = "Hello World";
+```
+
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
-- [← Race Condition Solutions](race-condition/SOLUTION_RECOMMENDATIONS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Race Condition Solutions](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

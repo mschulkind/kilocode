@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive standards for structuring individual documents, ensuring consistent
   anatomy and hierarchy across all KiloCode documentation.
@@ -43,7 +45,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
-- Every KiloCode document follows a standardized structure that ensures consistency, discoverability,
+- Every KiloCode document follows a standardized structure that ensures consistency,
+discoverability,
   and usability. This structure provides a predictable framework that helps both authors and readers
   navigate content effectively.\*
 
@@ -72,7 +75,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 ```markdown
 # Document Title
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:** Brief description of the document's purpose and audience.
 
@@ -118,7 +122,8 @@ More content here.
 ```markdown
 # Document Title (H1 - Title Case)
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Major section heading (H2 - Sentence case)
 
@@ -159,7 +164,8 @@ This section covers another main topic.
 
 ```
 <a id="navigation-footer"></a>
-- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
+- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source:
+`/docs/FILENAME.md#L1`
 ```
 
 - *Link Requirements*\*:
@@ -172,20 +178,23 @@ This section covers another main topic.
 ```markdown
 # From root docs/
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
   `/docs/DOCUMENTATION_GUIDE.md#L1`
 
 # From subdirectory
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 - Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/SYSTEM_OVERVIEW.md#L1`
 
 # From nested subdirectory
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/core/PRINCIPLES.md#L1`
 ```
 
@@ -228,27 +237,32 @@ This section covers another main topic.
 ```markdown
 # Bad: Multiple H1 headings
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 # Document Title
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Content here.
 
 # Another Title
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 More content here.
 
 # Good: Single H1 heading
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 # Document Title
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 Content here.
 
@@ -264,7 +278,8 @@ More content here.
 ```markdown
 # API Duplication Analysis
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
 identification, impact assessment, and solution recommendations.
@@ -326,7 +341,7 @@ Follow these steps to implement the solution:
 4. **Monitor Performance**: Ensure solution doesn't impact performance
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
@@ -335,7 +350,8 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project from source.
 
@@ -365,7 +381,8 @@ Common issues and solutions:
 ```
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Document Anatomy](DOCUMENT_ANATOMY.md) ·
+- *Navigation*\*: [Back to Standards](../../README.md) · [Next: Document
+Anatomy](DOCUMENT_ANATOMY.md) ·
   [Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

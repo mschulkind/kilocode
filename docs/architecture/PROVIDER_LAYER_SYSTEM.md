@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the Provider Layer system, including API Provider and Language Model components for external API communication and request processing.
-- **Context**: Use this as a starting point for understanding external API integration and provider management in the KiloCode system.
+- **Purpose**: This document covers the Provider Layer system, including API Provider and Language
+Model components for external API communication and request processing.
+- **Context**: Use this as a starting point for understanding external API integration and provider
+management in the KiloCode system.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created through comprehensive analysis of provider layer requirements and external API integration architecture in the KiloCode project. The system reflects findings from:
+This document was created through comprehensive analysis of provider layer requirements and external
+API integration architecture in the KiloCode project. The system reflects findings from:
 - Provider layer system architecture analysis and API integration strategy development
 - Language model integration and request processing optimization research
 - External API communication and error handling system design
@@ -32,7 +37,8 @@ The system provides robust external API integration and provider management capa
 
 ## System Architecture
 
-The Provider Layer system manages external API communication and provides unified access to various language models and services.
+The Provider Layer system manages external API communication and provides unified access to various
+language models and services.
 
 **Core Components:**
 1. **API Provider** - External API communication and management
@@ -57,7 +63,8 @@ graph TB
 
 ### Provider Overview
 
-The API Provider manages communication with external APIs and services, providing a unified interface for different providers.
+The API Provider manages communication with external APIs and services, providing a unified
+interface for different providers.
 
 **Key Features:**
 
@@ -382,5 +389,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← API Provider Patterns](API_PROVIDER_PATTERNS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

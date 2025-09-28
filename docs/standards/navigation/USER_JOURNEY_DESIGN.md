@@ -1,6 +1,7 @@
 # User Journey Design 🗺️
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive standards for designing user journeys that optimize the experience for
   different types of users with different goals, contexts, and expertise levels.
@@ -23,7 +24,8 @@
 </details>
 
 ## Executive Summary
-- User journey design creates optimal experiences for different types of users by understanding their
+- User journey design creates optimal experiences for different types of users by understanding
+their
   goals, constraints, and context. These standards ensure that documentation provides the right
   information at the right time in the right format for each user type.\*
 
@@ -121,7 +123,8 @@
 
 ### New Users
 
-- *Profile*\*: New team members, beginners, students **Goals**: Learn the system and understand basics
+- *Profile*\*: New team members, beginners, students **Goals**: Learn the system and understand
+basics
 
 - *Constraints*\*: Learning curve, need for context **Expertise**: Beginner **Context**: Onboarding,
   learning, training
@@ -186,7 +189,8 @@
 
 ### Context Awareness
 
-- *Principle*\*: Adapt content based on user context **Benefits**: Users get relevant information for
+- *Principle*\*: Adapt content based on user context **Benefits**: Users get relevant information
+for
   their situation **Implementation**: Use conditional content and smart navigation **Examples**:
   Experience level, time constraints, goals, tools
 
@@ -206,7 +210,8 @@
 
 ### Experience Level Adaptation
 
-- *Beginner*\*: More explanation, simpler language, more examples **Intermediate**: Balanced approach,
+- *Beginner*\*: More explanation, simpler language, more examples **Intermediate**: Balanced
+approach,
   moderate detail **Advanced**: Technical focus, quick reference **Expert**: Streamlined,
   implementation-focused
 
@@ -217,7 +222,8 @@
 
 This section provides a gentle introduction to the concept.
 
-- *What is a race condition?** A race condition occurs when multiple processes try to access the same
+- *What is a race condition?** A race condition occurs when multiple processes try to access the
+same
 resource simultaneously.
 
 ## For Advanced Users
@@ -486,7 +492,8 @@ const response = await task.ask("user_input", "Hello world")
 ```markdown
 # API Duplication Analysis
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition.
 
@@ -503,28 +510,33 @@ const response = await task.ask("user_input", "Hello world")
 
 ## Executive Summary
 
-_The API duplication issue is caused by a race condition where multiple API calls are made simultaneously._
+_The API duplication issue is caused by a race condition where multiple API calls are made
+simultaneously._
 
 ## Quick Start Paths
 
 ### 🚨 Emergency Response (5-10 minutes)
 
 - *For**: Developers fixing production issues
-- *Path**: Problem Identification → Root Cause Analysis → Solution Implementation → [Verification](#implementation-guide)
+- *Path**: Problem Identification → Root Cause Analysis → Solution Implementation →
+[Verification](#implementation-guide)
 
 ### 🔍 Deep Dive Research (30-60 minutes)
 
 - *For**: Architects understanding system design
-- *Path**: [System Overview](README.md) → [State Machines](README.md) → Race Condition Analysis → Advanced Topics
+- *Path**: [System Overview](README.md) → [State Machines](README.md) → Race Condition Analysis →
+Advanced Topics
 
 ### 🛠️ Implementation Journey (1-2 hours)
 
 - *For**: Developers implementing solutions
-- *Path**: Solution Design → [Code Implementation](#implementation-guide) → [Testing Strategy](README.md) → [Maintenance Guide](README.md)
+- *Path**: Solution Design → [Code Implementation](#implementation-guide) → [Testing
+Strategy](README.md) → [Maintenance Guide](README.md)
 
 ## Problem Description
 
-The issue manifests as multiple API requests with spinners appearing simultaneously in the chat interface.
+The issue manifests as multiple API requests with spinners appearing simultaneously in the chat
+interface.
 
 ### Symptoms
 - Multiple API requests with spinners
@@ -540,13 +552,16 @@ The issue manifests as multiple API requests with spinners appearing simultaneou
 
 ## Root Cause Analysis
 
-The race condition occurs when both the main task loop and subtask completion call `recursivelyMakeClineRequests` simultaneously.
+The race condition occurs when both the main task loop and subtask completion call
+`recursivelyMakeClineRequests` simultaneously.
 
 ### Technical Details
 
-The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to the parent task.
+The issue is introduced in commit `749f3d22a` where subtask completion triggers a recursive call to
+the parent task.
 
-- *Code Reference**: See [ask method implementation](`[FILE_MOVED_OR_RENAMED]`#L739) for detailed analysis.
+- *Code Reference**: See [ask method implementation](`[FILE_MOVED_OR_RENAMED]`#L739) for detailed
+analysis.
 
 ## Solution Recommendations
 
@@ -606,7 +621,8 @@ Follow these steps to implement the solution:
 4. **Maintenance**: Plan [Maintenance Guide](README.md)
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source: `/docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
+`/docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
 ````
 
 ### Minimal User Journey Example
@@ -614,7 +630,8 @@ Follow these steps to implement the solution:
 ```markdown
 # Build Process Guide
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project.
 
@@ -682,23 +699,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -708,4 +725,4 @@ next, return to [Standards Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

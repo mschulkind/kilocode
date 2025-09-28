@@ -1,6 +1,7 @@
 # Session State Machine
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Overview
 
@@ -216,22 +217,22 @@ The session state machine is crucial for understanding the race condition becaus
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -243,4 +244,4 @@ next, return to [Architecture Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

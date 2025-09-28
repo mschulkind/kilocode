@@ -1,6 +1,7 @@
 # Orchestrator Extensibility
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* This document provides guidance on how to extend the capabilities of the Kilo Code
   Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
@@ -23,13 +24,16 @@
 
 ### Related Documents
 
-<a id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+<a
+id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
-- **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices for
+- **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices
+for
   developing new tools and modes.
-- **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+- **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
 - \*\*
@@ -104,14 +108,15 @@ per-project basis. The system is designed to load `.md` files from a `.kilocode/
 the workspace root.
 
 These rule files are injected directly into the system prompt via
-[`getSystemPrompt`](/src/core/task/Task.ts#L2499). They can contain any information that helps guide
+[`getSystemPrompt`](../../src/core/task/Task.ts#L2499). They can contain any information that helps
+guide
 the model, such as:
 - "Do not use the `any` type in TypeScript."
 - "All new components must be registered in `src/components/index.ts`."
 - "API calls to the billing service must be routed through the `BillingAPIClient`."
 
 For a complete overview of how these rules are discovered and loaded, please refer to the
-[Documentation Guide](../../DOCUMENTATION_GUIDE.md).
+[Documentation Guide](../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
 - \*\*
@@ -124,20 +129,20 @@ For a complete overview of how these rules are discovered and loaded, please ref
 
 - **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -152,7 +157,7 @@ next, return to the appropriate README for guidance.
 <a id="navigation-footer"></a>
 
 You have reached the end of the extensibility document. Return to the
-[Master Index](ORCHESTRATOR_INDEX.md).
+[Master Index](../orchestrator/ORCHESTRATOR_INDEX.md).
 
 [Back to Top](#orchestrator-extensibility)
 - \*\*

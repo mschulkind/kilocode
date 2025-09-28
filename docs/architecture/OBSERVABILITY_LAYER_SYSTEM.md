@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the Observability Layer system, including Laminar Service and Span Management components for system monitoring, tracing, and performance tracking.
-- **Context**: Use this as a starting point for understanding system observability and monitoring capabilities.
+- **Purpose**: This document covers the Observability Layer system, including Laminar Service and
+Span Management components for system monitoring, tracing, and performance tracking.
+- **Context**: Use this as a starting point for understanding system observability and monitoring
+capabilities.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created through comprehensive analysis of observability requirements and monitoring system architecture in the KiloCode project. The system reflects findings from:
+This document was created through comprehensive analysis of observability requirements and
+monitoring system architecture in the KiloCode project. The system reflects findings from:
 - Observability system architecture analysis and monitoring strategy development
 - Laminar service implementation and span management research
 - Performance monitoring and error tracking system design
@@ -32,7 +37,8 @@ The system provides comprehensive observability capabilities for monitoring and 
 
 ## System Architecture
 
-The Observability Layer system provides comprehensive monitoring, tracing, and performance tracking capabilities across the entire KiloCode system.
+The Observability Layer system provides comprehensive monitoring, tracing, and performance tracking
+capabilities across the entire KiloCode system.
 
 **Core Components:**
 1. **Laminar Service** - Distributed tracing and span management
@@ -60,7 +66,8 @@ graph TB
 
 ### Service Overview
 
-The Laminar Service provides distributed tracing capabilities for monitoring request flow across system components.
+The Laminar Service provides distributed tracing capabilities for monitoring request flow across
+system components.
 
 **Key Features:**
 
@@ -101,7 +108,8 @@ class LaminarServiceImpl implements LaminarService {
 
 ### Span Lifecycle
 
-Spans represent individual operations within a distributed trace, providing detailed timing and context information.
+Spans represent individual operations within a distributed trace, providing detailed timing and
+context information.
 
 **Span Properties:**
 
@@ -350,5 +358,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← Laminar Documentation](../laminar/README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document provides fast, field-ready triage for multiple spinners and jumbled responses.
-- **Context**: Use this as a quick reference for immediate troubleshooting of duplicate API request issues.
+- **Purpose**: This document provides fast, field-ready triage for multiple spinners and jumbled
+responses.
+- **Context**: Use this as a quick reference for immediate troubleshooting of duplicate API request
+issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
-This document was created as a condensed version of the comprehensive troubleshooting guide for duplicate API request issues. The short version reflects findings from:
+This document was created as a condensed version of the comprehensive troubleshooting guide for
+duplicate API request issues. The short version reflects findings from:
 - Rapid triage procedure development for duplicate API request issues
 - Quick diagnostic method research for field troubleshooting
 - Immediate resolution strategy analysis for critical issues
@@ -158,5 +163,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← Full Troubleshooting Guide](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
 - [← Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

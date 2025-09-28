@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the Communication Layer system, including Webview Bridge and Message Handler components.
-- **Context**: Use this as a starting point for understanding communication between UI and backend systems.
+- **Purpose**: This document covers the Communication Layer system, including Webview Bridge and
+Message Handler components.
+- **Context**: Use this as a starting point for understanding communication between UI and backend
+systems.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This document was created through comprehensive analysis of the Communication Layer system architecture and implementation patterns. The system reflects findings from:
+This document was created through comprehensive analysis of the Communication Layer system
+architecture and implementation patterns. The system reflects findings from:
 - Inter-component communication pattern analysis and best practices research
 - Webview bridge implementation and optimization studies
 - Message handling and routing system design patterns
@@ -32,7 +37,8 @@ The system provides robust communication capabilities between UI and backend com
 
 ## System Architecture
 
-The Communication Layer system facilitates seamless communication between the UI and backend systems through a structured message passing architecture.
+The Communication Layer system facilitates seamless communication between the UI and backend systems
+through a structured message passing architecture.
 
 **Core Components:**
 1. **Webview Bridge** - Communication interface between webview and extension
@@ -58,7 +64,8 @@ graph TB
 
 ### Bridge Implementation
 
-The Webview Bridge provides a secure communication channel between the webview and the VS Code extension.
+The Webview Bridge provides a secure communication channel between the webview and the VS Code
+extension.
 
 **Key Features:**
 
@@ -330,5 +337,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← Orchestration Layer](ORCHESTRATION_LAYER_SYSTEM.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

@@ -2,7 +2,8 @@
 
 ## When You're Here
 
-This document provides a detailed [PLANNING TYPE] for [PROJECT OR INITIATIVE]. It covers [SPECIFIC PLANNING TOPICS OR AREAS].
+This document provides a detailed [PLANNING TYPE] for [PROJECT OR INITIATIVE]. It covers [SPECIFIC
+PLANNING TOPICS OR AREAS].
 
 - **Purpose**: [Clear explanation of what this planning document covers]
 - **Context**: [How this fits into the overall project planning]

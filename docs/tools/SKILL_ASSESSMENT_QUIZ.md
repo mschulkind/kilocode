@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-This quiz helps assess your current knowledge of KiloCode's documentation validation system and recommends appropriate training paths.
+This quiz helps assess your current knowledge of KiloCode's documentation validation system and
+recommends appropriate training paths.
 
 ## Instructions
 1. **Answer all questions honestly** - this helps us recommend the right training
@@ -41,7 +44,8 @@ What is the primary purpose of documentation validation?
 <summary>Answer</summary>
 - *B)** To ensure consistency, quality, and maintainability
 
-Documentation validation checks for syntax errors, style issues, link problems, and content quality to maintain high standards across all documentation.
+Documentation validation checks for syntax errors, style issues, link problems, and content quality
+to maintain high standards across all documentation.
 
 </details>
 
@@ -220,7 +224,7 @@ Add a proper Research Context section with relevant background information.
 
 ### Question 12
 
-You have this link: `[https://example.com](https://example.com)`. How should you fix it?
+You have this link: `[Example](https://example.com)`. How should you fix it?
 
 - *A)*\* Remove the link entirely\\
 - *B)*\* Change to `[Example Website](https://example.com)`\\
@@ -448,7 +452,8 @@ What is the purpose of pre-commit hooks in documentation?
 <summary>Answer</summary>
 - *B)** To prevent invalid documentation from being committed
 
-Pre-commit hooks run validation before allowing commits, ensuring only valid documentation is committed.
+Pre-commit hooks run validation before allowing commits, ensuring only valid documentation is
+committed.
 
 </details>
 
@@ -482,7 +487,8 @@ What is the purpose of validation reports?
 <summary>Answer</summary>
 - *B)** To provide detailed analysis of validation results
 
-Validation reports provide comprehensive analysis of validation results, trends, and recommendations.
+Validation reports provide comprehensive analysis of validation results, trends, and
+recommendations.
 
 </details>
 
@@ -550,7 +556,8 @@ What is the purpose of automated reporting?
 <summary>Answer</summary>
 - *B)** To provide regular insights into documentation quality and trends
 
-Automated reporting provides regular insights into documentation quality, trends, and areas for improvement.
+Automated reporting provides regular insights into documentation quality, trends, and areas for
+improvement.
 
 </details>
 - \*\*
@@ -779,6 +786,20 @@ Inconsistent results often indicate multiple tools running or cached data issues
 - [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
 - [Interactive Exercises](./practice/)
 
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
+
 ## Navigation Footer
 
-- *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)
+- *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
+Glossary](../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)

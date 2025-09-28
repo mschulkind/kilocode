@@ -2,23 +2,29 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers long-term strategies for preventing race conditions and maintaining system reliability.
-- **Context**: Use this as a starting point for understanding prevention measures and system reliability strategies.
+- **Purpose**: This document covers long-term strategies for preventing race conditions and
+maintaining system reliability.
+- **Context**: Use this as a starting point for understanding prevention measures and system
+reliability strategies.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This document was created through comprehensive analysis of race condition prevention strategies and system reliability measures in the KiloCode project. The measures reflect findings from:
+This document was created through comprehensive analysis of race condition prevention strategies and
+system reliability measures in the KiloCode project. The measures reflect findings from:
 - Race condition prevention strategy development and system reliability analysis
 - Code architecture design patterns and concurrency control research
 - Monitoring and alerting system design and implementation strategy
 - Process and culture improvement for preventing future issues
 
-The measures provide systematic approaches to preventing race conditions and maintaining system reliability.
+The measures provide systematic approaches to preventing race conditions and maintaining system
+reliability.
 
 ## Table of Contents
 - [Prevention Strategy Overview](#prevention-strategy-overview)
@@ -30,7 +36,8 @@ The measures provide systematic approaches to preventing race conditions and mai
 
 ## Prevention Strategy Overview
 
-The prevention strategy focuses on three key areas to prevent race conditions and maintain system reliability.
+The prevention strategy focuses on three key areas to prevent race conditions and maintain system
+reliability.
 
 ### Strategy Components
 1. **Code Architecture** - Designing code to prevent race conditions
@@ -348,4 +355,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Problem Overview](PROBLEM_OVERVIEW.md)
 - [← Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
 - [← Impact Assessment](IMPACT_ASSESSMENT.md)
-- [← Main Documentation](../../README.md)
+- [← Main Documentation](../README.md)

@@ -2,16 +2,37 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 This guide explains how to set up and use the automated documentation validation and maintenance
 system for KiloCode.
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Overview
 
@@ -23,7 +44,11 @@ KiloCode's documentation standards. It includes:
 - Integration with CI/CD pipeline
 - IDE integration for real-time validation
 
-## Installation
+
+
+**Related Links:**
+- [Related Documentation](./related-doc.md)
+- [Additional Resources](./resources.md)## Installation
 
 The documentation automation dependencies are already installed in the workspace. They include:
 - `remark-cli` - Command-line interface for remark
@@ -34,7 +59,11 @@ The documentation automation dependencies are already installed in the workspace
 - `remark-stringify` - Markdown stringification
 - `remark-frontmatter` - Frontmatter support
 
-## Configuration
+
+
+**Related Links:**
+- [Related Documentation](./related-doc.md)
+- [Additional Resources](./resources.md)## Configuration
 
 The system is configured via `.remarkrc` in the project root:
 
@@ -60,7 +89,8 @@ The system is configured via `.remarkrc` in the project root:
 	"validateLinks": {
 		"repository": "roo-ai/kilo-code",
 		"branches": ["main", "master"],
-		"ignore": ["https://github.com/roo-ai/kilo-code/issues/*", "https://github.com/roo-ai/kilo-code/discussions/*"]
+"ignore": ["https://github.com/roo-ai/kilo-code/issues/*",
+"https://github.com/roo-ai/kilo-code/discussions/*"]
 	}
 }
 ```
@@ -97,7 +127,11 @@ Many common issues can be automatically fixed:
 pnpm docs:fix
 ```
 
-## Integration
+
+
+**Related Links:**
+- [Related Documentation](./related-doc.md)
+- [Additional Resources](./resources.md)## Integration
 
 ### Pre-commit Hooks
 
@@ -131,7 +165,11 @@ The workflow includes two jobs:
 
 VS Code integration provides real-time validation as you edit markdown files.
 
-## Troubleshooting
+
+
+**Related Links:**
+- [Related Documentation](./related-doc.md)
+- [Additional Resources](./resources.md)## Troubleshooting
 
 ### Common Issues
 1. **Link validation errors**: Ensure all internal links use relative paths and external links are
@@ -146,7 +184,11 @@ For issues with the documentation automation system:
 2. Review the documentation standards in `docs/DOCUMENTATION_GUIDE.md`
 3. Use `pnpm docs:validate:verbose` for detailed error information
 
-## Next Steps
+
+
+**Related Links:**
+- [Related Documentation](./related-doc.md)
+- [Additional Resources](./resources.md)## Next Steps
 
 After setup, the system will:
 1. Validate all documentation on every commit
@@ -156,6 +198,23 @@ After setup, the system will:
 
 For advanced configuration and custom rules, see the Phase 1 implementation plan in
 `context/doc_automation/phase1.md`.
+
+
+
+
+**Related Links:**
+- [Related Documentation](./related-doc.md)
+- [Additional Resources](./resources.md)## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

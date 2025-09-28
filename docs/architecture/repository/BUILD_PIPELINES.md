@@ -1,6 +1,17 @@
 # Build Pipelines
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive overview of the build and CI/CD pipelines used in KiloCode.
 
@@ -240,7 +251,8 @@ export default defineConfig({
 ```yaml
 # .github/workflows/ci.yml
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 name: CI/CD Pipeline
 
@@ -501,8 +513,8 @@ jobs:
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../../architecture/) · [↑ Table of Contents](#build-pipelines)
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [repository](../architecture/) · [↑ Table of Contents](#build-pipelines)
 
 ## No Dead Ends Policy
 

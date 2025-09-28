@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-This training module introduces you to the fundamentals of documentation validation in the KiloCode system.
+This training module introduces you to the fundamentals of documentation validation in the KiloCode
+system.
 
 ## Learning Objectives
 
@@ -92,7 +95,7 @@ Brief description of the research and context behind this document.
 ```markdown
 <!-- Bad -->
 
-[https://example.com](https://example.com)
+[Example](https://example.com)
 
 <!-- Good -->
 
@@ -158,7 +161,7 @@ This is a test document with some validation issues.
 
 This section should be "Research Context" not "Missing Research Context".
 
-[Click here](https://example.com) for more information.
+[View details](https://example.com) for more information.
 
 ### Improper Heading
 
@@ -191,7 +194,8 @@ Some content here.
    ```
 4. **Add navigation footer**:
    ```markdown
-   **Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+**Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
+Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
    ```
 
 ### Verify Your Fixes
@@ -307,6 +311,20 @@ Some content here.
 - Training materials
 - Peer support network
 
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
+
 ## Navigation Footer
 
-- *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+- *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
+Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)

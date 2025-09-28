@@ -1,6 +1,7 @@
 # Orchestrator Security & Governance
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* This document details the security model of the Kilo Code Orchestrator, focusing on
   mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe
@@ -24,11 +25,14 @@
 
 ### Related Documents
 
-<a id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+<a
+id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
-- **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and their
+- **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and
+their
   intended functions.
 - **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how permission
   errors are handled.
@@ -57,7 +61,7 @@ permitted.
 
 Modes are the primary security mechanism in the orchestrator. Each mode defines a specific context
 and a corresponding set of allowed actions. The definitions for these modes and their capabilities
-are located in [`src/shared/modes.ts`](/src/shared/modes.ts#L69).
+are located in [`src/shared/modes.ts`](../../src/shared/modes.ts#L69).
 
 Examples of modes and their intended privilege levels:
 
@@ -68,7 +72,8 @@ Examples of modes and their intended privilege levels:
 - **`test`**: Running and creating tests. Has access to test runners and can write to test files.
 
 A task can request to change its mode by using the
-[`switchModeTool`](/src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged action.
+[`switchModeTool`](../../src/core/tools/switchModeTool.ts#L8), but this is an explicit, logged
+action.
 
 [Back to Top](#orchestrator-security--governance)
 - \*\*
@@ -78,7 +83,7 @@ A task can request to change its mode by using the
 <a id="tool-permissioning"></a>
 
 Before any tool is executed, the `ToolExecutor` performs a permission check. This is handled by the
-[`isToolAllowedForMode`](/src/shared/modes.ts#L167) function.
+[`isToolAllowedForMode`](../../src/shared/modes.ts#L167) function.
 
 This function checks a mapping that associates each mode with a list of allowed tool names or
 patterns.
@@ -104,7 +109,8 @@ This is enforced through file path pattern matching. For example, the `test` mod
 allowed to write to files matching `*.test.ts` or `__mocks__/*.ts`.
 
 When a tool attempts to access a file that violates the current mode's file access policy, a
-[`FileRestrictionError`](/src/shared/modes.ts#L157) is thrown. This error is specific and clearly
+[`FileRestrictionError`](../../src/shared/modes.ts#L157) is thrown. This error is specific and
+clearly
 communicates the nature of the violation to the model, allowing it to take corrective action (e.g.,
 switching to an appropriate mode).
 
@@ -146,20 +152,20 @@ flowchart TD
 
 - **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Architecture Documentation](../architecture/README.md) for context
 
 - *Implementing Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -174,7 +180,7 @@ next, return to the appropriate README for guidance.
 <a id="navigation-footer"></a>
 
 You have reached the end of the security and governance document. Return to the
-[Master Index](ORCHESTRATOR_INDEX.md) or proceed to the
+[Master Index](../orchestrator/ORCHESTRATOR_INDEX.md) or proceed to the
 [Best Practices Document](ORCHESTRATOR_BEST_PRACTICES.md).
 
 [Back to Top](#orchestrator-security--governance)

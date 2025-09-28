@@ -1,6 +1,7 @@
 # Laminar Service Layer
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* This document describes the LaminarService singleton implementation, detailing span
   lifecycle management, exception recording, telemetry integration, and the core infrastructure that
@@ -353,12 +354,18 @@ try {
 
 ## Code Reference Matrix
 
-| Component          | Primary Functions                    | Key Files                                | Integration Points     |
-| ------------------ | ------------------------------------ | ---------------------------------------- | ---------------------- |
-| Singleton          | `getInstance()`, instance management | `src/services/laminar/LaminarService.ts` | All subsystems         |
-| Span Management    | `createSpan()`, `completeSpan()`     | `src/services/laminar/LaminarService.ts` | Task execution         |
-| Exception Handling | `recordException()`                  | `src/services/laminar/LaminarService.ts` | Error tracking         |
-| Configuration      | Config validation and loading        | `src/services/laminar/LaminarService.ts` | Service initialization |
+| Component          | Primary Functions                    | Key Files
+| Integration Points     |
+| ------------------ | ------------------------------------ |
+---------------------------------------- | ---------------------- |
+| Singleton          | `getInstance()`, instance management |
+`src/services/laminar/LaminarService.ts` | All subsystems         |
+| Span Management    | `createSpan()`, `completeSpan()`     |
+`src/services/laminar/LaminarService.ts` | Task execution         |
+| Exception Handling | `recordException()`                  |
+`src/services/laminar/LaminarService.ts` | Error tracking         |
+| Configuration      | Config validation and loading        |
+`src/services/laminar/LaminarService.ts` | Service initialization |
 
 ## Implementation Timeline
 
@@ -389,15 +396,15 @@ try {
 
 - *Implementing Observability Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Observability Issues:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

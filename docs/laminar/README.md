@@ -2,16 +2,37 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 Welcome to the Laminar documentation! 🌊 This directory covers the Laminar observability and tracing
 system that provides deep insights into KiloCode's execution.
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## 🗺️ Navigation Guide
 
@@ -32,19 +53,21 @@ system that provides deep insights into KiloCode's execution.
 
 - **[Repository Overview](README.md)** - Master index of all Laminar documentation
 - **[LAMINAR\_SERVICE\_LAYER.md](LAMINAR_SERVICE_LAYER.md)** - Core service layer architecture
-- **[LAMINAR\_SPAN\_NESTING\_SYSTEM.md](LAMINAR_SPAN_NESTING_SYSTEM.md)** - Span nesting and hierarchy
+- **[LAMINAR\_SPAN\_NESTING\_SYSTEM.md](LAMINAR_SPAN_NESTING_SYSTEM.md)** - Span nesting and
+hierarchy
 - **[LAMINAR\_AUTHENTICATION\_SYSTEM.md](LAMINAR_AUTHENTICATION_SYSTEM.md)** - Authentication and
   security
-- **[LAMINAR\_CONFIGURATION\_SYSTEM.md](LAMINAR_CONFIGURATION_SYSTEM.md)** - Configuration management
+- **[LAMINAR\_CONFIGURATION\_SYSTEM.md](LAMINAR_CONFIGURATION_SYSTEM.md)** - Configuration
+management
 - **[LAMINAR\_LLM\_INTEGRATION.md](LAMINAR_LLM_INTEGRATION.md)** - LLM tracing and monitoring
 - **[LAMINAR\_TOOL\_SYSTEM.md](LAMINAR_TOOL_SYSTEM.md)** - Tool execution tracking
 - **[LAMINAR\_TESTING\_SYSTEM.md](LAMINAR_TESTING_SYSTEM.md)** - Testing and validation
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [../architecture/](../architecture/) for system architecture
-- **Services**: See [../services/](../services/) for related services
-- **Standards**: See [../standards/](../standards/) for observability standards
+- **Architecture**: See [This resource](../architecture/) for system architecture
+- **Services**: See [Parent directory](../services/) for related services
+- **Standards**: See [Parent directory](../standards/) for observability standards
 
 ## 🦕 Dinosaur Analogy
 
@@ -58,6 +81,19 @@ story of our code through the span hierarchy!
 - [← Back to Documentation Home](../README.md)
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation
 - [← Main Documentation](README.md)

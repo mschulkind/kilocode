@@ -102,7 +102,7 @@ For more information, see:
 
 ## Navigation
 
-- [← Back to Main Documentation](../../README.md)
+- [← Back to Main Documentation](../README.md)
 - [← Back to Category](../)
 - [→ Related Topic](../related-topic/)
 - [📚 Technical Glossary](../../docs/GLOSSARY.md)

@@ -1,6 +1,7 @@
 # Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Purpose: Compare Kilo’s analysis/proposal to the Roo-Code branch
 `catrielmuller/fix-orchestator-load-subtask`, relative to Roo `origin/main`. Highlight base
@@ -21,7 +22,8 @@ differences, touched files, behavioral deltas, and alignment/variance with our c
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
 - [Branch Analysis: orchestator-load-subtask (Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
-- [Cleanup Proposal: Replace orchestator-load-subtask (Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md)
+- [Cleanup Proposal: Replace orchestator-load-subtask
+(Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md)
 
 ## Repositories and Branches Compared
 - Kilo: current repo (analysis/proposal live here)
@@ -132,22 +134,22 @@ Tests (Kilo vs Roo)
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Troubleshooting Architecture Issues:*\*
 
 - **Next**: \[Race Condition Analysis]race-condition/README.md) →
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md)
 
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
@@ -156,7 +158,15 @@ Every page provides clear next steps based on your research goals. If you're uns
 next, return to [Architecture Documentation](README.md) for guidance.
 
 ## Navigation Footer
+
+### Example
+
+```bash
+# Example command
+command --option value
+```
+
 - \*\*
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

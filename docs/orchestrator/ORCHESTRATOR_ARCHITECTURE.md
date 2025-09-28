@@ -1,6 +1,7 @@
 # Orchestrator Architecture
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* This document provides a detailed overview of the Kilo Code Orchestrator's
   architecture, including its core components, their interactions, and the flow of data through the
@@ -25,9 +26,11 @@
 
 ### Related Documents
 
-<a id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
+<a
+id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
-- **[Orchestrator Master Index](ORCHESTRATOR_INDEX.md)**: The master index for all orchestrator
+- **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
+orchestrator
   documentation.
 - **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Provides a step-by-step breakdown of
   the task execution lifecycle.
@@ -65,19 +68,20 @@ The architecture comprises several key components that work in concert to execut
 
 - **Task Engine (`Task.ts`)**: The heart of the orchestrator. It manages the entire lifecycle of a
   task, from initiation to completion. Its main entry point is
-  [`initiateTaskLoop`](/src/core/task/Task.ts#L1699).
+  [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699).
 - **Streaming Parser**: This component is responsible for processing the output from the language
   model in real-time, identifying and extracting tool-call requests.
 - **Tool Executor**: Once a tool call is parsed, this component validates permissions and executes
-  the corresponding tool, such as [`attemptCompletionTool`](/src/core/tools/attemptCompletionTool.ts#L35).
+the corresponding tool, such as
+[`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35).
 - **Mode & Permission Service**: Manages the active operational `Mode` and enforces access control
   rules, determining which tools are available via
-  [`isToolAllowedForMode`](/src/shared/modes.ts#L167).
+  [`isToolAllowedForMode`](../../src/shared/modes.ts#L167).
 - **Subtask Manager**: Handles the delegation of work into smaller, isolated subtasks using
-  [`startSubtask`](/src/core/task/Task.ts#L1628) and
-  [`completeSubtask`](/src/core/task/Task.ts#L1669).
+  [`startSubtask`](../../src/core/task/Task.ts#L1628) and
+  [`completeSubtask`](../../src/core/task/Task.ts#L1669).
 - **Prompt Generation**: Constructs the system prompts sent to the model, incorporating rules and
-  context. A key function is [`getSystemPrompt`](/src/core/task/Task.ts#L2499).
+  context. A key function is [`getSystemPrompt`](../../src/core/task/Task.ts#L2499).
 
 [Back to Top](#orchestrator-architecture)
 - \*\*
@@ -122,7 +126,8 @@ sequenceDiagram
 
 The `Task` engine is the central coordinator. It maintains the state of the current operation,
 manages the conversation history with the model, and orchestrates calls to other components. The
-[`recursivelyMakeClineRequests`](/src/core/task/Task.ts#L1735) function is the primary driver of
+[`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1735) function is the primary driver
+of
 the iterative execution loop.
 
 #### Streaming Parser
@@ -135,7 +140,7 @@ response has been received, enabling parallel execution of long-running tasks.
 
 The executor acts as a gateway to the `ToolLibrary`. Before invoking a tool, it consults the **Mode
 & Permission Service**. If a tool is not permitted in the current mode, it throws a
-[`FileRestrictionError`](/src/shared/modes.ts#L157) or a similar permissions-related error,
+[`FileRestrictionError`](../../src/shared/modes.ts#L157) or a similar permissions-related error,
 which is then handled by the Task Engine.
 
 [Back to Top](#orchestrator-architecture)
@@ -146,8 +151,8 @@ which is then handled by the Task Engine.
 <a id="key-interactions"></a>
 
 - **Task Initiation to Tool Call**: A user request starts
-  [`initiateTaskLoop`](/src/core/task/Task.ts#L1699). The engine generates a prompt with
-  [`getSystemPrompt`](/src/core/task/Task.ts#L2499), which is sent to the model. The parser
+  [`initiateTaskLoop`](../../src/core/task/Task.ts#L1699). The engine generates a prompt with
+  [`getSystemPrompt`](../../src/core/task/Task.ts#L2499), which is sent to the model. The parser
   identifies a tool call, and the executor invokes it.
 - **Mode Switching**: A tool call to `switchModeTool` (file moved/renamed) instructs the **Mode &
   Permission Service** to change the active mode, altering the set of available tools for subsequent
@@ -174,13 +179,13 @@ which is then handled by the Task Engine.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [State Machines](../architecture/README.md) for behavior modeling
 
 - *Investigating Race Conditions:*\*
 
 - **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/ROOT_CAUSE_ANALYSIS.md) →
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
@@ -191,7 +196,7 @@ which is then handled by the Task Engine.
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
+- **Related**: [Repository Development Guide](../architecture/GETTING_STARTED.md) for
   codebase patterns
 
 - *Understanding Current Problems:*\*
@@ -209,5 +214,5 @@ next, return to [Orchestrator Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
-  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../GLOSSARY.md) ·
+  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
   [↑ Table of Contents](#-research-context--next-steps)

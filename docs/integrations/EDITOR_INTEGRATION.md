@@ -2,23 +2,30 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers the editor integration system for VS Code editor interaction, diff visualization, and editor utilities.
-- **Context**: Use this as a starting point for understanding how KiloCode integrates with VS Code and other editors.
+- **Purpose**: This document covers the editor integration system for VS Code editor interaction,
+diff visualization, and editor utilities.
+- **Context**: Use this as a starting point for understanding how KiloCode integrates with VS Code
+and other editors.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created through comprehensive analysis of KiloCode's editor integration requirements and VS Code extension development patterns. The integration system reflects findings from:
+This document was created through comprehensive analysis of KiloCode's editor integration
+requirements and VS Code extension development patterns. The integration system reflects findings
+from:
 - VS Code extension API analysis and best practices research
 - User experience studies for editor integration workflows
 - Performance analysis of editor manipulation operations
 - Security assessment of editor state management
 
-The system provides seamless integration between KiloCode's AI capabilities and the development environment.
+The system provides seamless integration between KiloCode's AI capabilities and the development
+environment.
 
 ## Table of Contents
 - [Integration Overview](#integration-overview)
@@ -30,7 +37,8 @@ The system provides seamless integration between KiloCode's AI capabilities and 
 
 ## Integration Overview
 
-The Editor Integration system provides comprehensive VS Code editor interaction, diff visualization, and editor utility capabilities for seamless development workflow integration in KiloCode.
+The Editor Integration system provides comprehensive VS Code editor interaction, diff visualization,
+and editor utility capabilities for seamless development workflow integration in KiloCode.
 
 **Core Components:**
 1. **Editor Utilities** - Core editor interaction and manipulation
@@ -199,4 +207,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← JetBrains Plugin](JETBRAINS_PLUGIN.md)
 - [← Terminal Integration](TERMINAL_INTEGRATION.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

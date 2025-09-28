@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Master index for comprehensive information about the KiloCode repository structure,
   systems, and components.
@@ -63,7 +65,8 @@ understanding:
   frameworks
 - **[Build Pipelines](../architecture/BUILD_PIPELINES.md)** - Build and CI/CD systems
 - **[Development Tools](../architecture/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
-- **[External Integrations](../architecture/EXTERNAL_INTEGRATIONS.md)** - External service integrations
+- **[External Integrations](../architecture/EXTERNAL_INTEGRATIONS.md)** - External service
+integrations
 - **[Development Guide](repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
 
 ## Executive Summary
@@ -116,9 +119,9 @@ applications, and services.
 
 ## 🔗 Cross-References
 
-- **Architecture**: See [Architecture Documentation](../../README.md) for system architecture
-- **Standards**: See [../standards/](../standards/) for development standards
-- **Plans**: See [../../plans/](../../plans/) for development plans
+- **Architecture**: See [Architecture Documentation](../README.md) for system architecture
+- **Standards**: See [Parent directory](../standards/) for development standards
+- **Plans**: See [Parent directory](../../plans/) for development plans
 
 ## 🦕 Dinosaur Analogy
 
@@ -129,9 +132,9 @@ architectural layer. Each directory is like a different excavation site, reveali
 of the system's structure!
 
 ## 🧭 Navigation Footer
-- [← Back to Architecture Home](../../README.md)
+- [← Back to Architecture Home](../README.md)
 - [→ Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)
-- [↑ Table of Contents](../../README.md)
+- [↑ Table of Contents](../README.md)
 
 ## Navigation Footer
 - \*\*
@@ -140,6 +143,14 @@ of the system's structure!
   [↑ Table of Contents](#repository-overview)
 
 ## No Dead Ends Policy
+
+### Example
+
+```markdown
+# Example markdown
+[Link](url)
+```
+
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
 - Each section provides clear navigation to related content

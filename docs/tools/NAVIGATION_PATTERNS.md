@@ -1,8 +1,42 @@
 # Navigation Patterns Documentation
 
+## When You're Here
+
+🔍 **Did You Know**: [Interesting insight]
+
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
+
 ## Overview
 
-This document defines the standardized navigation patterns used across all KiloCode documentation. These patterns ensure consistent navigation experience and help eliminate orphaned sections warnings.
+This document defines the standardized navigation patterns used across all KiloCode documentation.
+These patterns ensure consistent navigation experience and help eliminate orphaned sections
+warnings.
 
 ## Navigation Pattern Standards
 
@@ -25,7 +59,7 @@ All documents should include a navigation footer with the following structure:
 Breadcrumb navigation provides clear hierarchical context:
 
 ```markdown
-- [← Back to Main Documentation](../../README.md)
+- [← Back to Main Documentation](../README.md)
 - [← Back to Architecture Overview](../../docs/architecture/README.md)
 - [→ Next: Related Component](../related-component/)
 ```
@@ -105,7 +139,7 @@ Use consistent symbols for navigation elements:
 - [← Back to Documentation Tools](../tools/)
 - [← Back to Validation System](./VALIDATION_SYSTEM.md)
 - [→ Related Documentation](./DOCUMENTATION_BEST_PRACTICES.md)
-- [📚 Technical Glossary](../../GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)
 ```
 
@@ -116,8 +150,10 @@ Use consistent symbols for navigation elements:
 
 This document connects to:
 - [Validation System Documentation](./VALIDATION_SYSTEM.md) - Core validation system implementation
-- [Template Validation Rules](../templates/template-validation-rules.md) - Template compliance requirements
-- [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md) - General documentation guidelines
+- [Template Validation Rules](../templates/template-validation-rules.md) - Template compliance
+requirements
+- [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md) - General documentation
+guidelines
 
 For more information, see:
 - [Documentation Tools](../tools/) - All documentation automation tools
@@ -130,8 +166,8 @@ For more information, see:
 ## Links
 
 - [Back](../)
-- [Next](../next/)
-- [Glossary](../../GLOSSARY.md)
+- [Next section](../next/)
+- [Glossary](../GLOSSARY.md)
 ```
 
 This would fail validation due to:
@@ -219,11 +255,12 @@ Navigation patterns are maintained as part of the KiloCode documentation automat
 3. **Documentation**: This guide is updated with new patterns and examples
 4. **Testing**: All changes are tested with sample documents
 
-For questions or issues with navigation patterns, see the [Validation System Documentation](./VALIDATION_SYSTEM.md).
+For questions or issues with navigation patterns, see the [Validation System
+Documentation](./VALIDATION_SYSTEM.md).
 
 ## Navigation
 
 - [← Back to Documentation Tools](./)
 - [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-- [📚 Technical Glossary](../../GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)

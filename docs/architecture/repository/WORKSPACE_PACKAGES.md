@@ -1,6 +1,17 @@
 # Workspace Packages
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed overview of the workspace packages and shared libraries in the KiloCode
   monorepo.
@@ -448,7 +459,7 @@ graph TD
 - *Migration Guides*\*: Package migration and upgrade guides
 
 ## Next Steps
-1. **Explore Applications**: See [APPLICATIONS.md](APPLICATIONS.md)
+1. **Explore Applications**: See [Documentation](APPLICATIONS.md)
 2. **Understand Testing**: See [TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)
 3. **Learn Development**: See [DEVELOPMENT\_GUIDE.md](DEVELOPMENT_GUIDE.md)
 
@@ -460,8 +471,8 @@ graph TD
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../../architecture/) · [↑ Table of Contents](#workspace-packages)
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [repository](../architecture/) · [↑ Table of Contents](#workspace-packages)
 
 ## No Dead Ends Policy
 

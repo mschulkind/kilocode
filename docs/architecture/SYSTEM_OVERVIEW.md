@@ -1,6 +1,7 @@
 # System Overview
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed technical analysis of all subsystems, components, and architectural patterns
   in the KiloCode system with comprehensive research status and implementation details.
@@ -135,7 +136,8 @@ graph TB
 
 ### 2. Webview System (`src/core/webview/`) ✅ **FULLY DOCUMENTED**
 
-- *Status*\*: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 18 TypeScript
+- *Status*\*: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 18
+TypeScript
   files
 
 - *Components*\*:
@@ -633,23 +635,40 @@ graph TB
 
 ## Research Status Matrix
 
-| Subsystem                  | Documentation Status | Research Level | Priority | Next Actions                     |
-| -------------------------- | -------------------- | -------------- | -------- | -------------------------------- |
-| **Task Engine**            | ✅ Complete          | Complete       | High     | None                             |
-| **Webview System**         | ✅ Complete          | Complete       | High     | None                             |
-| **Message Queue**          | ✅ Complete          | Complete       | High     | None                             |
-| **Laminar Service**        | ✅ Complete          | Complete       | High     | None                             |
-| **Tool System**            | ⚠️ Partial           | Moderate       | Critical | Comprehensive documentation      |
-| **Cloud Services**         | ⚠️ Partial           | Moderate       | High     | Architecture documentation       |
-| **API Providers**          | ⚠️ Partial           | Basic          | High     | Provider patterns documentation  |
-| **Testing Infrastructure** | ⚠️ Partial           | Basic          | Medium   | Testing strategy documentation   |
-| **Build Pipeline**         | ⚠️ Partial           | Basic          | Medium   | Build architecture documentation |
-| **Marketplace**            | ⚠️ Partial           | Basic          | Medium   | Marketplace architecture         |
-| **MCP Integration**        | ⚠️ Partial           | Basic          | Medium   | MCP protocol documentation       |
-| **Code Index**             | ⚠️ Partial           | Basic          | Medium   | Embedding architecture           |
-| **Tree Sitter**            | ⚠️ Partial           | Basic          | Low      | Parser architecture              |
-| **JetBrains Plugin**       | ⚠️ Partial           | Basic          | Low      | Plugin architecture              |
-| **Browser Automation**     | ⚠️ Partial           | Basic          | Low      | Automation patterns              |
+| Subsystem                  | Documentation Status | Research Level | Priority | Next Actions
+|
+| -------------------------- | -------------------- | -------------- | -------- |
+-------------------------------- |
+| **Task Engine**            | ✅ Complete          | Complete       | High     | None
+|
+| **Webview System**         | ✅ Complete          | Complete       | High     | None
+|
+| **Message Queue**          | ✅ Complete          | Complete       | High     | None
+|
+| **Laminar Service**        | ✅ Complete          | Complete       | High     | None
+|
+| **Tool System**            | ⚠️ Partial           | Moderate       | Critical | Comprehensive
+documentation      |
+| **Cloud Services**         | ⚠️ Partial           | Moderate       | High     | Architecture
+documentation       |
+| **API Providers**          | ⚠️ Partial           | Basic          | High     | Provider patterns
+documentation  |
+| **Testing Infrastructure** | ⚠️ Partial           | Basic          | Medium   | Testing strategy
+documentation   |
+| **Build Pipeline**         | ⚠️ Partial           | Basic          | Medium   | Build architecture
+documentation |
+| **Marketplace**            | ⚠️ Partial           | Basic          | Medium   | Marketplace
+architecture         |
+| **MCP Integration**        | ⚠️ Partial           | Basic          | Medium   | MCP protocol
+documentation       |
+| **Code Index**             | ⚠️ Partial           | Basic          | Medium   | Embedding
+architecture           |
+| **Tree Sitter**            | ⚠️ Partial           | Basic          | Low      | Parser
+architecture              |
+| **JetBrains Plugin**       | ⚠️ Partial           | Basic          | Low      | Plugin
+architecture              |
+| **Browser Automation**     | ⚠️ Partial           | Basic          | Low      | Automation
+patterns              |
 
 ## Priority Research Areas
 
@@ -679,7 +698,8 @@ graph TB
 - *Understanding System Architecture:*\*
 
 - **Next**: [Repository Overview](./REPOSITORY_OVERVIEW.md) →
-  [Core Systems](../architecture/CORE_SYSTEMS.md) → [External Dependencies](./EXTERNAL_DEPENDENCIES.md)
+[Core Systems](../architecture/CORE_SYSTEMS.md) → [External
+Dependencies](./EXTERNAL_DEPENDENCIES.md)
 
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [State Machines](README.md) for behavior modeling
@@ -690,7 +710,7 @@ graph TB
   \[Root Cause Analysis]race-condition/ROOT\_CAUSE\_ANALYSIS.md) →
   \[Solution Recommendations]race-condition/SOLUTION\_RECOMMENDATIONS.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for execution patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for execution patterns
 
 - *Implementing System Features:*\*
 
@@ -724,5 +744,5 @@ next, return to [Architecture Documentation](./README.md) for guidance.
 - [← Repository Structure](repository/README.md)
 - [← Race Condition Analysis](race-condition/README.md)
 - [← State Machines](state-machines/README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

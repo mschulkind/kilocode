@@ -2,15 +2,36 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide helps you resolve common issues with KiloCode's documentation automation system.
+
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
 
 ## Common Issues
 
@@ -26,19 +47,22 @@ This guide helps you resolve common issues with KiloCode's documentation automat
 ```bash
 # Check if remark is installed
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 npx remark --version
 
 # Check configuration
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 cat .remarkrc
 
 # Test with single file
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 npx remark docs/README.md
 ```
@@ -75,13 +99,15 @@ npx remark docs/README.md
 ```bash
 # Check VS Code settings
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 grep -A 5 "codeActionsOnSave" .vscode/settings.json
 
 # Test manual fix
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 npx remark --use remark-stringify docs/
 ```
@@ -122,13 +148,15 @@ npx remark --use remark-stringify docs/
 ```bash
 # Check file counts
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 find docs/ -name "*.md" | wc -l
 
 # Check file sizes
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 find docs/ -name "*.md" -exec wc -c {} + | sort -n
 ```
@@ -138,7 +166,7 @@ find docs/ -name "*.md" -exec wc -c {} + | sort -n
 
    ```json
    {
-   	"markdown.validate.ignore": ["**/node_modules/**", "**/dist/**", "**/out/**", "**/large-docs/**"]
+"markdown.validate.ignore": ["**/node_modules/**", "**/dist/**", "**/out/**", "**/large-docs/**"]
    }
    ```
 2. **Use Incremental Validation**
@@ -164,13 +192,15 @@ find docs/ -name "*.md" -exec wc -c {} + | sort -n
 ```bash
 # Check specific link
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 npx remark-validate-links docs/file.md
 
 # Test external links
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 curl -I https://example.com
 ```
@@ -220,13 +250,15 @@ curl -I https://example.com
 ```bash
 # Check installed extensions
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 code --list-extensions | grep -i markdown
 
 # Check for conflicting settings
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 grep -r "markdown" .vscode/
 ```
@@ -264,13 +296,15 @@ grep -r "markdown" .vscode/
 ```bash
 # Set debug environment
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 export DEBUG=remark*
 
 # Run validation with debug output
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 npx remark docs/ --verbose
 ```
@@ -288,13 +322,15 @@ npx remark docs/ --verbose
 ```bash
 # Validate JSON syntax
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 cat .remarkrc | jq .
 
 # Test configuration
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 npx remark --config .remarkrc docs/
 ```
@@ -304,13 +340,15 @@ npx remark --config .remarkrc docs/
 ```bash
 # Verify scripts exist
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 grep -A 10 "docs:" package.json
 
 # Check dependencies
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 pnpm list | grep remark
 ```
@@ -322,13 +360,15 @@ pnpm list | grep remark
 ```bash
 # Check file permissions
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ls -la docs/
 
 # Fix permissions if needed
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 chmod -R 644 docs/
 ```
@@ -338,13 +378,15 @@ chmod -R 644 docs/
 ```bash
 # Check file encoding
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 file docs/file.md
 
 # Convert if needed
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 iconv -f ISO-8859-1 -t UTF-8 docs/file.md > docs/file-utf8.md
 ```
@@ -373,13 +415,15 @@ iconv -f ISO-8859-1 -t UTF-8 docs/file.md > docs/file-utf8.md
 ```bash
 # Run with verbose output
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 npx remark docs/ --verbose
 
 # Check for specific errors
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 npx remark docs/ 2>&1 | grep -i error
 ```
@@ -447,7 +491,20 @@ npx remark docs/ 2>&1 | grep -i error
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

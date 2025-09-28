@@ -1,6 +1,7 @@
 # Cross-References 🔗
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive standards for creating meaningful cross-references that connect related
   content and enable users to discover information efficiently throughout the KiloCode documentation
@@ -72,7 +73,8 @@
 The API duplication issue occurs when multiple requests are made simultaneously.
 
 - *Related Concepts**: See
-[Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
+[Race Condition
+Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
 for detailed technical explanation.
 
 ## Solution Recommendations
@@ -195,8 +197,9 @@ The race condition occurs when both main loop and subtask completion call
 
 ### Between Documents
 
-- *Placement*\*: Link to related documents in the same domain **Use When**: Related information exists
-  in other documents in the same domain **Benefits**: Access to related information while maintaining
+- *Placement*\*: Link to related documents in the same domain **Use When**: Related information
+exists
+in other documents in the same domain **Benefits**: Access to related information while maintaining
   domain context **Examples**:
 - "Related Documentation" sections
 - "Further Reading" sections
@@ -216,8 +219,9 @@ The race condition occurs when both main loop and subtask completion call
 
 ### Across Domains
 
-- *Placement*\*: Link to related content in different domains **Use When**: Related information exists
-  in other domains **Benefits**: Access to related information across the entire documentation system
+- *Placement*\*: Link to related content in different domains **Use When**: Related information
+exists
+in other domains **Benefits**: Access to related information across the entire documentation system
 
 - *Examples*\*:
 - "Architecture Impact" sections
@@ -256,16 +260,18 @@ requirements
 ```markdown
 # Good: Descriptive link text
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 See [Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for detailed
 technical explanation.
 
 # Bad: Generic link text
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-See [click here](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
+See [View details](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
 ```
 
 ### Functional Links
@@ -279,20 +285,23 @@ See [click here](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for mo
 ```markdown
 # Good: Functional link
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 [API Duplication Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 # Bad: Broken link
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [API Duplication Analysis](architecture/API_DUPLICATION_ANALYSIS.md) # Missing 'RACE*CONDITION*'
 ```
 
 ### Relevant Connections
 
-- *Requirement*\*: Cross-references should be relevant to the current content **Benefits**: Users find
+- *Requirement*\*: Cross-references should be relevant to the current content **Benefits**: Users
+find
   information that actually helps them **Criteria**: Ask "Does this link add value to the current
   content?" **Examples**: Link to related concepts, not random information
 
@@ -301,14 +310,16 @@ See [click here](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for mo
 ```markdown
 # Good: Relevant connection
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 The race condition occurs in the `ask` method. See
 [ask method implementation](`[FILE_MOVED_OR_RENAMED]`#L739) for details.
 
 # Bad: Irrelevant connection
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 The race condition occurs in the `ask` method. See [Build Process Guide](BUILD_PROCESS_GUIDE.md) for
 details.
@@ -317,7 +328,7 @@ details.
 ### Current Information
 
 - *Requirement*\*: Cross-references should point to current, up-to-date information **Benefits**:
-  Users get accurate, current information **Maintenance**: Regularly update links to ensure they point
+Users get accurate, current information **Maintenance**: Regularly update links to ensure they point
   to current content **Validation**: Check that linked content is still relevant and current
 
 - *Implementation*\*:
@@ -325,13 +336,15 @@ details.
 ```markdown
 # Good: Current information
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 See [Current API Documentation](https://docs.anthropic.com/api) for latest specifications.
 
 # Bad: Outdated information
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 See [Old API Documentation](https://old-docs.anthropic.com/api) for specifications.
 ```
@@ -342,7 +355,8 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 
 ### "See Also" Pattern
 
-- *Use*\*: Link to related concepts and information **Placement**: At the end of sections or documents
+- *Use*\*: Link to related concepts and information **Placement**: At the end of sections or
+documents
 
 - *Format*\*: Bulleted list of related links **Examples**: Related concepts, alternative approaches,
   background information
@@ -360,7 +374,8 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 
 ### "Next Steps" Pattern
 
-- *Use*\*: Link to subsequent actions and follow-up content **Placement**: At the end of process steps
+- *Use*\*: Link to subsequent actions and follow-up content **Placement**: At the end of process
+steps
   or implementation guides **Format**: Numbered list of next actions **Examples**: Implementation
   steps, testing procedures, maintenance tasks
 
@@ -369,7 +384,7 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 ```markdown
 ## Next Steps
 1. **Implement Solution**:
-   [Implementation Guide](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
+[Implementation Guide](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
 2. **Test Thoroughly**:
    [Testing Strategy](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
 3. **Monitor Performance**: [Performance Monitoring](architecture/PERFORMANCE_MONITORING.md)
@@ -390,7 +405,8 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 Before implementing this solution, ensure you have:
 
 - **Understanding**:
-  [Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
+[Race Condition
+Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
 - **Setup**: [Development Environment](DEVELOPMENT_ENVIRONMENT.md)
 - **Dependencies**: [Required Packages](PACKAGE_DEPENDENCIES.md)
 - **Access**: [API Credentials](API_CREDENTIALS.md)
@@ -410,7 +426,8 @@ Before implementing this solution, ensure you have:
 The synchronization mechanism uses a mutex to prevent concurrent calls.
 
 - *Example**: See
-[Synchronization Example](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-example)
+[Synchronization
+Example](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-example)
 for complete implementation.
 
 - *Use Cases**:
@@ -425,7 +442,7 @@ typical scenarios.
 ### Regular Validation
 
 - *Frequency*\*: Monthly or before major releases **Process**: Check all cross-references for
-  functionality and relevance **Tools**: Use automated link checking tools **Documentation**: Document
+functionality and relevance **Tools**: Use automated link checking tools **Documentation**: Document
   any issues found and resolutions
 
 - *Validation Checklist*\*:
@@ -438,7 +455,7 @@ typical scenarios.
 ### Content Updates
 
 - *Trigger*\*: When content is moved, renamed, or restructured **Process**: Update all
-  cross-references to reflect changes **Scope**: Check all documents that might reference the changed
+cross-references to reflect changes **Scope**: Check all documents that might reference the changed
   content **Validation**: Test updated links to ensure they work
 
 - *Update Process*\*:
@@ -452,7 +469,8 @@ typical scenarios.
 
 - *Purpose*\*: Continuously monitor cross-reference health **Tools**: Automated link checking tools
 
-- *Frequency*\*: Daily or weekly **Alerts**: Set up alerts for broken links **Resolution**: Fix broken
+- *Frequency*\*: Daily or weekly **Alerts**: Set up alerts for broken links **Resolution**: Fix
+broken
   links promptly
 
 - *Monitoring Setup*\*:
@@ -480,13 +498,15 @@ typical scenarios.
 ```markdown
 # Broken link example
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 [API Analysis](architecture/API_DUPLICATION_ANALYSIS.md) # File renamed
 
 # Fixed link example
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 [API Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) # Correct filename
 ```
@@ -503,14 +523,16 @@ typical scenarios.
 ```markdown
 # Irrelevant link example
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 The race condition occurs in the `ask` method. See [Build Process Guide](BUILD_PROCESS_GUIDE.md) for
 details.
 
 # Relevant link example
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 The race condition occurs in the `ask` method. See
 [ask method implementation](`[FILE_MOVED_OR_RENAMED]`#L739) for details.
@@ -518,7 +540,8 @@ The race condition occurs in the `ask` method. See
 
 ### Generic Link Text
 
-- *Causes*\*: Lazy writing, lack of attention to detail **Impact**: Users don't know what they'll find
+- *Causes*\*: Lazy writing, lack of attention to detail **Impact**: Users don't know what they'll
+find
 
 - *Prevention*\*: Careful writing, review process **Resolution**: Use descriptive link text
 
@@ -527,13 +550,15 @@ The race condition occurs in the `ask` method. See
 ```markdown
 # Generic link text example
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
-See [click here](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
+See [View details](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
 
 # Descriptive link text example
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 See [Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for detailed
 technical explanation.
@@ -550,13 +575,15 @@ technical explanation.
 ```markdown
 # Outdated information example
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 See [Old API Documentation](https://old-docs.anthropic.com/api) for specifications.
 
 # Current information example
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 See [Current API Documentation](https://docs.anthropic.com/api) for latest specifications.
 ```
@@ -568,7 +595,8 @@ See [Current API Documentation](https://docs.anthropic.com/api) for latest speci
 ```markdown
 # API Duplication Analysis
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition.
 
@@ -626,7 +654,8 @@ Implement a synchronization mechanism to ensure only one recursive call executes
 3. **Subtask Completion Coordination**: Coordinate subtask completion with main loop
 
 - *Examples**: See
-[Synchronization Examples](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-examples)
+[Synchronization
+Examples](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-examples)
 for implementation details.
 
 ## Implementation Guide
@@ -656,7 +685,7 @@ validation.
 - [Standards Compliance](README.md) - Documentation requirements
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
 ```
 
@@ -665,7 +694,8 @@ validation.
 ```markdown
 # Build Process Guide
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project.
 
@@ -721,23 +751,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -747,4 +777,4 @@ next, return to [Standards Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

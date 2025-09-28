@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers comprehensive catalog of all external dependencies, libraries, and conventions for using them in the KiloCode project.
-- **Context**: Use this as a starting point for understanding external dependencies and their usage patterns.
+- **Purpose**: This document covers comprehensive catalog of all external dependencies, libraries,
+and conventions for using them in the KiloCode project.
+- **Context**: Use this as a starting point for understanding external dependencies and their usage
+patterns.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This document was created through comprehensive analysis of external dependencies and their usage patterns in the KiloCode project. The catalog reflects findings from:
+This document was created through comprehensive analysis of external dependencies and their usage
+patterns in the KiloCode project. The catalog reflects findings from:
 - External dependency analysis and usage pattern research
 - Library integration and compatibility assessment
 - Performance and security impact evaluation
@@ -287,5 +292,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
 - [← Provider Layer](PROVIDER_LAYER_SYSTEM.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

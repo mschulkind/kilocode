@@ -1,6 +1,7 @@
 # Core Principles 🎯
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Detailed explanation of the foundational principles that guide all KiloCode
   documentation decisions and practices.
@@ -36,7 +37,7 @@
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
 - These principles form the philosophical foundation of our documentation system. They guide every
-  decision about content, structure, and user experience, ensuring consistency and quality across all
+decision about content, structure, and user experience, ensuring consistency and quality across all
   documentation.\*
 
 - *Core Principles:*\*
@@ -52,7 +53,8 @@
 
 - *"compass"*\* that guides all content decisions.
 
-- *Why It Matters*\*: Without a clear purpose, documents become unfocused, confusing, and difficult to
+- *Why It Matters*\*: Without a clear purpose, documents become unfocused, confusing, and difficult
+to
   maintain. A clear purpose helps:
 
 - **Authors** know what to include and exclude
@@ -119,7 +121,8 @@ contributors understand the philosophical foundation of our documentation system
 
 ## Linkable Architecture
 
-- *Definition*\*: Prefer stable anchors and cross-references. This creates the **"trail system"** that
+- *Definition*\*: Prefer stable anchors and cross-references. This creates the **"trail system"**
+that
   connects related concepts.
 
 - *Why It Matters*\*: Information doesn't exist in isolation. Effective linking creates a web of
@@ -162,7 +165,8 @@ contributors understand the philosophical foundation of our documentation system
 - *Definition*\*: Single-responsibility documents with clear content splits. Each document should be
   like a **"specialized tool"** - good at one thing.
 
-- *Why It Matters*\*: Focused documents are easier to write, maintain, and use. They reduce cognitive
+- *Why It Matters*\*: Focused documents are easier to write, maintain, and use. They reduce
+cognitive
   load and make information more digestible.
 
 - *Implementation*\*:
@@ -198,7 +202,8 @@ contributors understand the philosophical foundation of our documentation system
 - *Definition*\*: Semantic structure and descriptive text throughout. This ensures the documentation
   is **"inclusive"** for all users.
 
-- *Why It Matters*\*: Accessible documentation is usable by everyone, regardless of their abilities or
+- *Why It Matters*\*: Accessible documentation is usable by everyone, regardless of their abilities
+or
   the tools they use to access content.
 
 - *Implementation*\*:
@@ -247,11 +252,12 @@ contributors understand the philosophical foundation of our documentation system
 - *Discoverable + Linkable*\*: Good navigation makes linking more effective, and effective linking
   improves discoverability.
 
-- *Accessible + All Others*\*: Accessibility principles enhance all other principles by making content
+- *Accessible + All Others*\*: Accessibility principles enhance all other principles by making
+content
   more usable.
 
 - *Example Interaction*\*: A document with a clear purpose (Purpose-driven) about a specific topic
-  (Focused) with good navigation (Discoverable) and effective cross-references (Linkable) that's easy
+(Focused) with good navigation (Discoverable) and effective cross-references (Linkable) that's easy
   to read (Accessible) creates an optimal user experience.
 
 ## Implementation Guidelines
@@ -298,23 +304,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -324,4 +330,4 @@ next, return to [Standards Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

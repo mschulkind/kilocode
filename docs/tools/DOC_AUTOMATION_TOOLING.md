@@ -1,6 +1,7 @@
 # Documentation Automation & Tooling Options
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive guide to automate documentation maintenance, enforce style consistency,
   and implement our documentation standards as automated linters. Includes concrete toolset
@@ -234,7 +235,8 @@ function remarkKiloCodeStandards(options = {}) {
 		// Check for navigation footer
 		let hasNavFooter = false
 		visit(tree, "paragraph", (node) => {
-			if (node.children.some((child) => child.type === "text" && child.value.includes("**Navigation**:"))) {
+if (node.children.some((child) => child.type === "text" &&
+child.value.includes("**Navigation**:"))) {
 				hasNavFooter = true
 			}
 		})
@@ -277,11 +279,14 @@ module.exports = remarkKiloCodeStandards
 - *Linting and Validation:*\*
 - [remark-lint-no-dead-urls](https://github.com/remarkjs/remark-lint-no-dead-urls) - Check for dead
   URLs
-- [remark-lint-no-undefined-references](https://github.com/remarkjs/remark-lint-no-undefined-references) -
+-
+[remark-lint-no-undefined-references](https://github.com/remarkjs/remark-lint-no-undefined-references)
+-
   Validate reference links
 - [remark-lint-heading-increment](https://github.com/remarkjs/remark-lint-heading-increment) -
   Ensure proper heading hierarchy
-- [remark-lint-no-duplicate-headings](https://github.com/remarkjs/remark-lint-no-duplicate-headings) -
+- [remark-lint-no-duplicate-headings](https://github.com/remarkjs/remark-lint-no-duplicate-headings)
+-
   Prevent duplicate headings
 
 - *Content Enhancement:*\*
@@ -459,7 +464,8 @@ remark docs/ --frail --quiet
 ```yaml
 # .github/workflows/docs.yml
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 name: Documentation Pipeline
 on: [push, pull_request]
@@ -500,7 +506,8 @@ jobs:
 ```yaml
 # mkdocs.yml
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 plugins:
 - search
@@ -621,7 +628,8 @@ async function hybridPipeline() {
 ```yaml
 # mkdocs.yml
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 site_name: KiloCode Documentation
 site_description: Comprehensive documentation for KiloCode
@@ -731,7 +739,8 @@ function remarkDocStandards(options) {
 
 		// Check for Research Context section
 		const hasResearchContext = tree.children.some(
-			(node) => node.type === "heading" && node.children[0]?.value === "🔍 Research Context & Next Steps",
+(node) => node.type === "heading" && node.children[0]?.value === "🔍 Research Context & Next
+Steps",
 		)
 
 		if (!hasResearchContext) {
@@ -773,7 +782,8 @@ function remarkDocStandards(options) {
 ```bash
 # package.json scripts
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 {
   "scripts": {
@@ -784,7 +794,8 @@ function remarkDocStandards(options) {
     "docs:gfm": "markdownlint-cli2 docs/ --config .markdownlint-gfm.json",
     "docs:structure": "node scripts/docs/structure.js",
     "docs:mermaid": "node scripts/docs/mermaid.js",
-    "docs:all": "npm run docs:toc:check && npm run docs:lint && npm run docs:links && npm run docs:structure",
+"docs:all": "npm run docs:toc:check && npm run docs:lint && npm run docs:links && npm run
+docs:structure",
     "docs:fix": "npm run docs:toc && npm run docs:lint"
   }
 }
@@ -805,7 +816,8 @@ function remarkDocStandards(options) {
 ```toml
 # lychee.toml
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 [input]
 include = ["**/*.md"]
@@ -847,7 +859,8 @@ module.exports = remark()
 ```ini
 # .vale.ini
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 StylesPath = styles
 MinAlertLevel = suggestion
@@ -856,7 +869,8 @@ MinAlertLevel = suggestion
 BasedOnStyles = Vale, Microsoft, write-good
 ```
 
-- *Pros:*\* Highly customizable, comprehensive validation, extensible, full GFM support **Cons:** More
+- *Pros:*\* Highly customizable, comprehensive validation, extensible, full GFM support **Cons:**
+More
   complex setup, requires Node.js knowledge, multiple configuration files **Time to implement:** 1-2
   weeks
 
@@ -875,7 +889,8 @@ BasedOnStyles = Vale, Microsoft, write-good
 ```yaml
 # mkdocs.yml
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 plugins:
 - macros:
@@ -888,7 +903,8 @@ plugins:
 - glossary-links
 ```
 
-- *Pros:*\* Full automation, professional output, advanced features **Cons:** Complex setup, diverges
+- *Pros:*\* Full automation, professional output, advanced features **Cons:** Complex setup,
+diverges
   from plain Markdown **Time to implement:** 2-4 weeks
 
 ## Phased Implementation Approach
@@ -1204,11 +1220,11 @@ function validateNavigationFooter(content, filePath) {
   [Integration Plan](#integration-plan) → [Custom Linter Development](#custom-linter-development)
 
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Documentation Guide](../../DOCUMENTATION_GUIDE.md) for standards
+  [Documentation Guide](../DOCUMENTATION_GUIDE.md) for standards
 
 - *Understanding Current Documentation Standards:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
   [Standards Documentation](../standards/README.md) → This automation guide
 
 - **Related**: [Architecture Documentation](../architecture/README.md) for context
@@ -1219,7 +1235,7 @@ function validateNavigationFooter(content, filePath) {
   [Concrete Toolset Recommendations](#concrete-toolset-recommendations) →
   [Integration Plan](#integration-plan)
 
-- **Related**: [Repository Development Guide](../architecture/DEVELOPMENT_GUIDE.md) for
+- **Related**: [Repository Development Guide](../architecture/GETTING_STARTED.md) for
   technical setup
 
 - *Troubleshooting Automation Issues:*\*

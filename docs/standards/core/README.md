@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Essential foundational principles and rules that govern all KiloCode documentation,
   providing the bedrock upon which all other standards are built.
@@ -43,7 +45,7 @@ This document is part of the KiloCode project documentation. If you're not famil
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
 - These are the fundamental rules that every KiloCode contributor MUST follow. They form the
-  foundation for all other documentation standards and ensure consistency across the entire project.\*
+foundation for all other documentation standards and ensure consistency across the entire project.\*
 
 - *Essential Rules:*\*
 
@@ -63,14 +65,16 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 - *"compass"*\* that guides all content decisions.
 
-- *Discoverable*\*: Use predictable filenames, headings, and navigation elements. Think of this as the
+- *Discoverable*\*: Use predictable filenames, headings, and navigation elements. Think of this as
+the
 
 - *"map legend"*\* that helps users navigate the documentation.
 
 - *Linkable*\*: Prefer stable anchors and cross-references. This creates the **"trail system"** that
   connects related concepts.
 
-- *Focused*\*: Single-responsibility documents with clear content splits. Each document should be like
+- *Focused*\*: Single-responsibility documents with clear content splits. Each document should be
+like
   a **"specialized tool"** - good at one thing.
 
 - *Accessible*\*: Semantic structure and descriptive text throughout. This ensures the documentation
@@ -90,7 +94,7 @@ This document is part of the KiloCode project documentation. If you're not famil
 - Examples: `architecture/`, `services/`, `orchestrator/`, `laminar/`, `ui/`, `tools/`, `testing/`
 
 - *Index Files*\*:
-- Maintain a top-level [`README.md`](../../../README.md) that lists domain indexes
+- Maintain a top-level [`README.md`](../../README.md) that lists domain indexes
 - Use `README.md` in subdirectories when a directory contains multiple topical docs
 - Index files should provide clear navigation and categorization
 
@@ -129,9 +133,11 @@ This document is part of the KiloCode project documentation. If you're not famil
 - *Single Topic Focus*\*: Aim for single-topic documents. If a file exceeds ~1500 words or covers
   more than three distinct concerns, split it.
 
-- *Domain Indexes*\*: Use domain indexes to aggregate short docs rather than creating long monoliths.
+- *Domain Indexes*\*: Use domain indexes to aggregate short docs rather than creating long
+monoliths.
 
-- *Content Splitting*\*: When splitting content, create a redirecting top-level doc linking to subdocs
+- *Content Splitting*\*: When splitting content, create a redirecting top-level doc linking to
+subdocs
   and maintain consistent naming.
 
 - *Accessibility Standards*\*:

@@ -2,15 +2,18 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
-Welcome to the race condition analysis documentation! 🏃‍♂️💨 This directory contains detailed analysis
+Welcome to the race condition analysis documentation! 🏃‍♂️💨 This directory contains detailed
+analysis
 of the API duplication race condition issue in KiloCode.
 
 ## 🗺️ Navigation Guide
@@ -45,7 +48,8 @@ of the API duplication race condition issue in KiloCode.
 - **[PROBLEM\_OVERVIEW.md](PROBLEM_OVERVIEW.md)** - Executive summary and problem description A
   high-level summary of the API duplication issue, key symptoms, and scenarios (including the
   3-request variant). Use this for a quick situational understanding and to decide next steps.
-- **[ROOT\_CAUSE\_ANALYSIS.md](ROOT_CAUSE_ANALYSIS.md)** - Detailed root cause investigation Explains
+- **[ROOT\_CAUSE\_ANALYSIS.md](ROOT_CAUSE_ANALYSIS.md)** - Detailed root cause investigation
+Explains
   the problematic changes, the two competing recursion paths, and the timing conditions that produce
   races. Includes critical code locations and reasoning about event-loop interleaving.
 - **[CODE\_FLOW\_ANALYSIS.md](CODE_FLOW_ANALYSIS.md)** - Code flow and execution analysis Visualizes
@@ -69,12 +73,13 @@ of the API duplication race condition issue in KiloCode.
 
 ## 🔗 Cross-References
 
-- **State Machines**: See [../state-machines/](../state-machines/) for detailed state analysis The
+- **State Machines**: See [Parent directory](../state-machines/) for detailed state analysis The
   canonical source for Task, Session, Recursive Call, Combined, and Race-Condition state diagrams
   with properties and transitions.
-- **Orchestrator**: See [../orchestrator/](../../orchestrator/) for orchestrator-specific details
+- **Orchestrator**: See [Parent directory](../../orchestrator/) for orchestrator-specific details
   In-depth coverage of orchestrator responsibilities, lifecycle, and best practices.
-- **Architecture**: See [Architecture Documentation](../README.md) for system architecture overview Global entry
+- **Architecture**: See [Architecture Documentation](../README.md) for system architecture overview
+Global entry
   point for architecture with repository, observability, and planning links.
 
 ## 🦕 Dinosaur Analogy
@@ -97,6 +102,14 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
+
+### Example
+
+```javascript
+// Example code
+const example = "Hello World";
+```
+
 - [← Architecture Overview](../README.md)
 - [← Race Condition Analysis](README.md)
 - [← Root Cause Analysis](ROOT_CAUSE_ANALYSIS.md)
@@ -104,4 +117,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
 - [← Testing Strategy](TESTING_STRATEGY.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

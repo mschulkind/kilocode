@@ -1,6 +1,17 @@
 # Solution Recommendations
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Detailed recommendations for solving the API duplication race condition issue.
 
@@ -159,7 +170,7 @@ private async continueParentTask(lastMessage: string): Promise<void> {
                 parentTask.isExecuting = true
                 const continueExecution = async () => {
                     try {
-                        await parentTask.recursivelyMakeClineRequests([], false, 'subtask-completion')
+await parentTask.recursivelyMakeClineRequests([], false, 'subtask-completion')
                     } finally {
                         parentTask.isExecuting = false
                     }
@@ -249,7 +260,8 @@ export class Task {
 
 ```typescript
 // Main task loop
-const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails, "main-loop")
+const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails,
+"main-loop")
 
 // Subtask completion
 await parentTask.recursivelyMakeClineRequests([], false, "subtask-completion")
@@ -303,7 +315,8 @@ describe("Concurrent Load Testing", () => {
 		const tasks = Array.from({ length: 100 }, () => new Task(/* ... */))
 
 		// Start many concurrent calls
-		const promises = tasks.map((task, index) => task.recursivelyMakeClineRequests([], false, `load-test-${index}`))
+const promises = tasks.map((task, index) => task.recursivelyMakeClineRequests([], false,
+`load-test-${index}`))
 
 		// All should complete successfully
 		const results = await Promise.all(promises)
@@ -392,8 +405,8 @@ If code changes are needed:
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [race-condition](../../architecture/) · ↑ Table of Contents
+- *Navigation*\*: [docs](../../) · [architecture](../architecture/) ·
+  [race-condition](../architecture/) · ↑ Table of Contents
 
 ## No Dead Ends Policy
 

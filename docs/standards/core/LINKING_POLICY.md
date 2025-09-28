@@ -1,3 +1,5 @@
+# ## Descriptive Anchor Text (Required)
+
 ## Descriptive Anchor Text (Required)
 - Rule: All links MUST use descriptive anchor text that tells the reader where they are going and
   why it is relevant. Avoid bare file paths and naked URLs.
@@ -34,7 +36,8 @@
 
 # Linking Policy 🔗
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive standards for creating and maintaining links within KiloCode
   documentation, ensuring consistent navigation and discoverability across all documents.
@@ -56,7 +59,8 @@
 </details>
 
 ## Executive Summary
-- Effective linking creates a web of knowledge that helps users understand relationships and discover
+- Effective linking creates a web of knowledge that helps users understand relationships and
+discover
   related information. These standards ensure consistent, functional, and valuable links throughout
   our documentation.\*
 
@@ -81,21 +85,24 @@
 ```markdown
 # From root docs/
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [System Overview](architecture/SYSTEM_OVERVIEW.md) [Standards Guide](README.md)
 [API Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
 
 # From subdirectory
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [Architecture Index](../architecture/README.md) [Core Standards](../standards/core/README.md)
 [Back to Root](../README.md)
 
 # Same directory
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 [Next Section](NEXT_SECTION.md) [Related Concept](RELATED_CONCEPT.md)
 ```
@@ -119,27 +126,31 @@
 ```markdown
 # File reference
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 [Task.ts](`[FILE_MOVED_OR_RENAMED]`)
 
 # Specific line
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 [ask method](`[FILE_MOVED_OR_RENAMED]`#L739)
 
 # Multiple lines
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [recursivelyMakeClineRequests](`[FILE_MOVED_OR_RENAMED]`#L1790-1850)
 
 # Directory reference
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-[core directory](/src/core/)
+[core directory](../../src/core/)
 ```
 
 - *Line Number Rules*\*:
@@ -181,14 +192,16 @@
 ```markdown
 # To subdirectory
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 [Architecture](README.md) [Standards](README.md)
 [Services](README.md)
 
 # To specific file
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [API Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
 [Core Principles](standards/core/PRINCIPLES.md)
@@ -199,19 +212,22 @@
 ```markdown
 # To parent directory
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 [Back to Root](../README.md) [Architecture Overview](../architecture/README.md)
 
 # To sibling directory
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 [Standards](../standards/README.md) [Services](../services/README.md)
 
 # To nested subdirectory
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 [State Machines](../architecture/state-machines/README.md)
 [Core Standards](../standards/core/README.md)
@@ -222,19 +238,22 @@
 ```markdown
 # To root directory
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-[Back to Root](../../README.md) [Architecture](../architecture/README.md)
+[Back to Root](../README.md) [Architecture](../architecture/README.md)
 
 # To parent directory
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 [Back to Architecture](../README.md) [State Machines](../state-machines/README.md)
 
 # To sibling directory
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 [Standards](../../standards/README.md) [Services](../../services/README.md)
 ```
@@ -246,22 +265,25 @@
 ```markdown
 # Source files
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [`[FILE_MOVED_OR_RENAMED]`](`[FILE_MOVED_OR_RENAMED]`)
-[/src/services/laminar/LaminarService.ts](/src/services/laminar/LaminarService.ts)
+[/src/services/laminar/LaminarService.ts](../../src/services/laminar/LaminarService.ts)
 
 # Configuration files
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-[/package.json](/package.json) [/tsconfig.json](/tsconfig.json)
+[Package](/package.json) [/tsconfig.json](/tsconfig.json)
 
 # Documentation files
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
-[/docs/README.md](/docs/README.md) [/docs/standards/README.md](/docs/standards/README.md)
+[/docs/README.md](../README.md) [/docs/standards/README.md](../standards/README.md)
 ```
 
 ## Link Quality Standards
@@ -280,9 +302,9 @@
 - *Bad Examples*\*:
 
 ```markdown
-[click here](architecture/API_DUPLICATION_ANALYSIS.md)
+[View details](architecture/API_DUPLICATION_ANALYSIS.md)
 [more info](README.md) [this file](`[FILE_MOVED_OR_RENAMED]`#L739)
-[link](https://docs.anthropic.com/api)
+[Docs.anthropic.com Documentation](https://docs.anthropic.com/api)
 ```
 
 ### Link Value
@@ -339,14 +361,16 @@
 ```markdown
 # These work in GitHub
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 [API Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
 [ask method](`[FILE_MOVED_OR_RENAMED]`#L739) [External API](https://docs.anthropic.com/api)
 
 # These don't work well in GitHub
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
 [API Analysis][ref] [Custom HTML](<div>content</div>)
 ```
@@ -396,13 +420,15 @@
 ```markdown
 # Wrong
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-[API Analysis](/docs/architecture/API_DUPLICATION_ANALYSIS.md) [Task.ts](src/core/task/Task.ts)
+[API Analysis](../architecture/API_DUPLICATION_ANALYSIS.md) [Task.ts](src/core/task/Task.ts)
 
 # Correct
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [API Analysis](architecture/API_DUPLICATION_ANALYSIS.md) [Task.ts](`[FILE_MOVED_OR_RENAMED]`)
 ```
@@ -419,7 +445,8 @@
 ```markdown
 # Descriptive and specific
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [API Duplication Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
 [State Machine Design Patterns](README.md)
@@ -458,7 +485,8 @@
 - *Navigation Examples*\*:
 
 ```markdown
-- *Navigation**: [Back to Architecture](../architecture/) · [Next: State Machines](state-machines/) ·
+- *Navigation**: [Back to Architecture](../architecture/) · [Next: State Machines](state-machines/)
+·
 [Source: `/docs/standards/core/LINKING_POLICY.md#L1`](LINKING_POLICY.md#L1)
 ```
 
@@ -477,14 +505,16 @@ simultaneously.
 ```markdown
 # Bad
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-[click here](architecture/API_DUPLICATION_ANALYSIS.md)
+[View details](architecture/API_DUPLICATION_ANALYSIS.md)
 [more info](README.md) [this file](`[FILE_MOVED_OR_RENAMED]`#L739)
 
 # Good
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 [API Duplication Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
 [State Machine Documentation](README.md)
@@ -496,14 +526,16 @@ simultaneously.
 ```markdown
 # Bad
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
-[/docs/architecture/API_DUPLICATION_ANALYSIS.md](/docs/architecture/API_DUPLICATION_ANALYSIS.md)
-[src/core/task/Task.ts](src/core/task/Task.ts)
+[/docs/architecture/API_DUPLICATION_ANALYSIS.md](../architecture/API_DUPLICATION_ANALYSIS.md)
+[Task](src/core/task/Task.ts)
 
 # Good
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 [API Duplication Analysis](architecture/API_DUPLICATION_ANALYSIS.md)
 [Task.ts](`[FILE_MOVED_OR_RENAMED]`)
@@ -527,23 +559,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/DEVELOPMENT_GUIDE.md) →
-  [Testing Infrastructure](../../architecture/TESTING_INFRASTRUCTURE.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -553,4 +585,4 @@ next, return to [Standards Documentation](README.md) for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

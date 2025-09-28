@@ -2,7 +2,8 @@
 
 ## When You're Here
 
-This document provides [BRIEF TECHNICAL DESCRIPTION]. It covers [SPECIFIC TECHNICAL TOPICS OR AREAS].
+This document provides [BRIEF TECHNICAL DESCRIPTION]. It covers [SPECIFIC TECHNICAL TOPICS OR
+AREAS].
 
 - **Purpose**: [Clear explanation of what this technical document covers]
 - **Context**: [How this fits into the technical architecture/system]

@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive standards for creating intuitive navigation paths and user experiences
   that help different types of users efficiently find and use KiloCode documentation.
@@ -84,7 +86,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 ### Deep Dive Research (Understanding the System)
 
-- *Target Users*\*: Architects, researchers, new team members **Goal**: Comprehensive understanding of
+- *Target Users*\*: Architects, researchers, new team members **Goal**: Comprehensive understanding
+of
   system architecture
 
 - *Navigation Path*\*:
@@ -92,7 +95,7 @@ This document is part of the KiloCode project documentation. If you're not famil
 2. **Detailed Analysis**: [State Machines](README.md)
 3. **Related Systems**: [Orchestrator System](README.md)
 4. **Advanced Topics**:
-   [Race Condition Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+   [Race Condition Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 - *Key Features*\*:
 
@@ -127,7 +130,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 ## Cross-References
 
-- *Purpose*\*: Create meaningful connections between related content across the documentation system.
+- *Purpose*\*: Create meaningful connections between related content across the documentation
+system.
 
 ### Reference Types
 
@@ -479,7 +483,8 @@ This document is part of the KiloCode project documentation. If you're not famil
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Quick Start Paths](QUICK_START_PATHS.md)
+- *Navigation*\*: [Back to Standards](../../README.md) · [Next: Quick Start
+Paths](QUICK_START_PATHS.md)
   · [Source: `/docs/standards/navigation/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

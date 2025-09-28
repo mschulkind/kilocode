@@ -1,8 +1,20 @@
 # Navigation Footer 🧭
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+## When You're Here
 
-- *Purpose:*\* Standards for creating consistent navigation footers that provide cross-references and
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
+
+- *Purpose:*\* Standards for creating consistent navigation footers that provide cross-references
+and
   enable seamless navigation throughout the KiloCode documentation system.
 
 > **Cartography Fun Fact**: Just like how a compass rose on a map shows you the cardinal directions
@@ -76,7 +88,8 @@
 
 ```
 <a id="navigation-footer"></a>
-- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
+- Back: [`PARENT_README.md`](PARENT_README.md) · Root: [`README.md`](README.md) · Source:
+`/docs/FILENAME.md#L1`
 ```
 
 - *Format Elements*\*:
@@ -99,11 +112,11 @@
   `/docs/DOCUMENTATION_GUIDE.md#L1`
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/core/PRINCIPLES.md#L1`
 ```
 
@@ -123,7 +136,7 @@
 
 - **Parent Directory**: `[`README.md`](../README.md)`
 
-- **Nested Parent**: `[`README.md`](../../README.md)`
+- **Nested Parent**: `[`README.md`](../README.md)`
 
 ### Root Link
 
@@ -137,7 +150,7 @@
 
 - **From Subdirectory**: `[`README.md`](../README.md)`
 
-- **From Nested**: `[`README.md`](../../README.md)`
+- **From Nested**: `[`README.md`](../README.md)`
 
 ### Source Link
 
@@ -162,12 +175,14 @@
 ```markdown
 # To same directory
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
 
 # To subdirectory
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
   `/docs/architecture/FILENAME.md#L1`
 ```
@@ -177,13 +192,15 @@
 ```markdown
 # To parent directory
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 - Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/FILENAME.md#L1`
 
 # To sibling directory
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 - Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/FILENAME.md#L1`
 ```
@@ -193,14 +210,16 @@
 ```markdown
 # To parent directory
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
-- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/core/FILENAME.md#L1`
 
 # To grandparent directory
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
-- Back: [`README.md`](../../README.md) · Root: [`README.md`](../../README.md) · Source:
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/core/FILENAME.md#L1`
 ```
 
@@ -215,22 +234,26 @@
 ```markdown
 # Root level file
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 - Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
 
 # Subdirectory file
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 - Source: `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 
 # Nested subdirectory file
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 - Source: `/docs/standards/core/PRINCIPLES.md#L1`
 
 # Deeply nested file
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 - Source: `/docs/standards/structure/NAVIGATION_FOOTER.md#L1`
 ```
 
@@ -256,7 +279,7 @@
 
 ```markdown
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/core/PRINCIPLES.md#L1`
 ```
 
@@ -264,7 +287,7 @@
 
 ```markdown
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/structure/NAVIGATION_FOOTER.md#L1`
 ```
 
@@ -323,13 +346,15 @@
 ```markdown
 # Bad: Missing footer
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 Content here.
 
 # Good: Complete footer
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 Content here.
 
@@ -338,13 +363,15 @@ Content here.
 
 # Bad: Wrong path types
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
-- Back: [`README.md`](/docs/README.md) · Root: [`README.md`](/docs/README.md) · Source:
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `docs/FILENAME.md#L1`
 
 # Good: Correct path types
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source: `/docs/FILENAME.md#L1`
 
 # Bad: Missing #L1 anchor
@@ -361,7 +388,8 @@ Content here.
 ```markdown
 # API Duplication Analysis
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition.
 
@@ -393,7 +421,7 @@ The race condition occurs when both the main task loop and subtask completion ca
 Implement a synchronization mechanism to ensure only one recursive call executes at a time.
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
@@ -402,7 +430,8 @@ Implement a synchronization mechanism to ensure only one recursive call executes
 ```markdown
 # Build Process Guide
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project.
 
@@ -438,7 +467,8 @@ Common issues and solutions:
 ```markdown
 # Core Principles
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Detailed explanation of the foundational principles that guide all KiloCode
 documentation decisions.
@@ -468,7 +498,7 @@ Use predictable filenames, headings, and navigation elements.
 Prefer stable anchors and cross-references.
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/standards/core/PRINCIPLES.md#L1`
 ```
 

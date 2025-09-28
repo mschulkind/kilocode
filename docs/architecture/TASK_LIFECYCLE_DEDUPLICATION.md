@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Detailed documentation of task lifecycle management, message queue processing, and
   deduplication mechanisms to prevent duplicate task creation and concurrent execution issues.
@@ -226,7 +228,8 @@ public async createTask(
 
   await this.addClineToStack(task)
 
-  this.log(`[createTask] ${task.parentTask ? "child" : "parent"} task ${task.taskId}.${task.instanceId} instantiated`)
+this.log(`[createTask] ${task.parentTask ? "child" : "parent"} task
+${task.taskId}.${task.instanceId} instantiated`)
 
   return task
 }
@@ -279,7 +282,8 @@ export class Task extends EventEmitter {
 public async ask(type: string, text?: string, images?: string[]): Promise<void> {
   // Check if task can process requests
   if (!this.canProcessRequests()) {
-    console.log(`[Task] Cannot process request - streaming: ${this.isStreaming}, waiting: ${this.isWaitingForFirstChunk}`)
+console.log(`[Task] Cannot process request - streaming: ${this.isStreaming}, waiting:
+${this.isWaitingForFirstChunk}`)
     return
   }
 

@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document provides a practical, minimal playbook to instrument, reproduce, and verify duplicate API call race conditions.
-- **Context**: Use this as a quick reference for implementing debug logging for API duplication investigation.
+- **Purpose**: This document provides a practical, minimal playbook to instrument, reproduce, and
+verify duplicate API call race conditions.
+- **Context**: Use this as a quick reference for implementing debug logging for API duplication
+investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Research Context
 
-This document was created as a condensed version of the comprehensive API duplication debug implementation guide. The short version reflects findings from:
+This document was created as a condensed version of the comprehensive API duplication debug
+implementation guide. The short version reflects findings from:
 - API duplication race condition analysis and reproduction strategies
 - Minimal instrumentation requirements for effective debugging
 - Quick verification methods for duplicate API call detection
@@ -149,7 +154,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Architecture Documentation](README.md)
-- [← Full Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [← Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← Full Debug Implementation](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
+- [← Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

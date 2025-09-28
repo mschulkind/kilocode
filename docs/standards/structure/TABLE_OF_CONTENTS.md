@@ -1,6 +1,17 @@
 # Table of Contents 📑
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+## When You're Here
+
+This document provides [purpose of document].
+
+- **Purpose**: [Brief description of what this document covers]
+- **Context**: [How this fits into the broader system/project]
+- **Navigation**: Use the table of contents below to jump to specific topics
+
+
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Standards for creating and formatting table of contents (TOC) elements to ensure
   consistent navigation and discoverability across all KiloCode documentation.
@@ -32,10 +43,12 @@
 - *Background:*\* Inconsistent TOC formatting and missing TOCs in longer documents were making it
   difficult for users to navigate and find information efficiently.
 
-- *Research Questions:*\* What format should TOCs use? When are TOCs required? What content should be
+- *Research Questions:*\* What format should TOCs use? When are TOCs required? What content should
+be
   included?
 
-- *Methodology:*\* Analysis of documentation length patterns, user navigation needs, and markdown best
+- *Methodology:*\* Analysis of documentation length patterns, user navigation needs, and markdown
+best
   practices to determine optimal TOC standards.
 
 - *Findings:*\* Collapsible format with H2/H3 entries only, required for documents with 3+ H2s and
@@ -184,7 +197,8 @@
 ```markdown
 # Document Title
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 - *Purpose:** Brief description of the document's purpose and audience.
 
@@ -227,7 +241,8 @@ More content here.
 ```markdown
 # Build Process Guide (Simple, focused)
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:** Step-by-step instructions for building the project.
 
@@ -252,7 +267,8 @@ More content here.
 ```markdown
 # API Duplication Analysis (Complex, multiple topics)
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition.
 
@@ -327,7 +343,8 @@ More content here.
 ```markdown
 # Bad: Non-collapsible format
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 ## Table of Contents
 - [Section 1](#section-1)
@@ -335,7 +352,8 @@ More content here.
 
 # Good: Collapsible format
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 <details><summary>Table of Contents</summary>
 - [Section 1](#section-1)
@@ -345,7 +363,8 @@ More content here.
 
 # Bad: Including H4 entries
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 <details><summary>Table of Contents</summary>
 - [Section 1](#section-1)
@@ -357,7 +376,8 @@ More content here.
 
 # Good: Only H2 and H3 entries
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 <details><summary>Table of Contents</summary>
 - [Section 1](#section-1)
@@ -374,7 +394,8 @@ More content here.
 ```markdown
 # API Duplication Analysis
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Comprehensive analysis of the API duplication race condition, including root cause
 identification, impact assessment, and solution recommendations.
@@ -463,7 +484,7 @@ Common mistakes to avoid when implementing the solution.
 Examples of how to implement the solution.
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
@@ -472,7 +493,8 @@ Examples of how to implement the solution.
 ```markdown
 # Build Process Guide
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:** Step-by-step instructions for building the KiloCode project from source.
 
@@ -515,7 +537,8 @@ Common issues and solutions:
 ```markdown
 # Quick Reference
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:** Quick reference for common commands and shortcuts.
 

@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Welcome to the engagement and accessibility standards! 🎯 This directory covers guidelines for
 making documentation engaging, accessible, and user-friendly.
@@ -45,9 +47,9 @@ making documentation engaging, accessible, and user-friendly.
 
 ## 🔗 Cross-References
 
-- **Core Standards**: See [../core/](../core/) for fundamental principles
-- **Structure Standards**: See [../structure/](../structure/) for document structure
-- **Navigation Standards**: See [../navigation/](../navigation/) for navigation guidelines
+- **Core Standards**: See [Parent directory](../core/) for fundamental principles
+- **Structure Standards**: See [Parent directory](../structure/) for document structure
+- **Navigation Standards**: See [Parent directory](../navigation/) for navigation guidelines
 
 ## 🦕 Dinosaur Analogy
 
@@ -57,9 +59,9 @@ attracting mates or warning predators (bright colors, elaborate crests, distinct
 documentation uses different engagement techniques to attract and retain readers!
 
 ## 🧭 Navigation Footer
-- [← Back to Standards Home](../../../README.md)
+- [← Back to Standards Home](../../README.md)
 - [→ Core Standards](../core/README.md)
-- [↑ Table of Contents](../../../README.md)
+- [↑ Table of Contents](../../README.md)
 
 ## No Dead Ends Policy
 
@@ -70,7 +72,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Standards Overview](README.md)
-- [← Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [← Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [← Navigation Standards](navigation/README.md)
-- [← Main Documentation](../../../README.md)
-- [← Project Root](../../README.md)
+- [← Main Documentation](../../README.md)
+- [← Project Root](../README.md)

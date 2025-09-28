@@ -2,13 +2,15 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
 - **Context**: Use this as a starting point or reference while navigating the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive documentation of Model Context Protocol (MCP) integration, server
   management, and tool discovery in the KiloCode system.
@@ -29,9 +31,28 @@ This document is part of the KiloCode project documentation. If you're not famil
 
 </details>
 
+
+## Research Context
+
+### Technical Overview
+
+**Component**: [Component name]
+**Version**: [Version number]
+**Architecture**: [Architecture description]
+**Dependencies**: [Key dependencies]
+
+### Background
+
+[Background information about the topic]
+
+### Methodology
+
+[Research or development methodology used]
+
+
 ## Executive Summary
 - The MCP Integration system provides comprehensive Model Context Protocol support for KiloCode,
-  enabling seamless integration with external tools and resources through standardized MCP servers.\*
+enabling seamless integration with external tools and resources through standardized MCP servers.\*
 
 The MCP Integration consists of:
 1. **MCP Hub** - Central MCP server management
@@ -281,7 +302,8 @@ interface MCPResourceMetadata {
 
 - **Audit Logging**: Access audit logging
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource access patterns,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource access
+patterns,
   access control, security measures
 
 ## Communication Protocols
@@ -308,7 +330,8 @@ interface MCPResourceMetadata {
 
 - **Error Responses**: Error handling responses
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Protocol implementation,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Protocol
+implementation,
   message handling, communication patterns
 
 ### Communication Flow
@@ -357,7 +380,8 @@ sequenceDiagram
 
 - **Error Prevention**: Proactive error prevention
 
-- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Error handling framework,
+- *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Error handling
+framework,
   recovery strategies, error reporting
 
 ### Error Recovery
@@ -401,7 +425,8 @@ sequenceDiagram
 - Tool registration failures
 - Capability mismatches
 
-- *Root Cause*\*: Discovery mechanism failures or server compatibility issues **Solution**: Implement
+- *Root Cause*\*: Discovery mechanism failures or server compatibility issues **Solution**:
+Implement
   comprehensive discovery validation and error handling
 
 ### Issue 3: Resource Access Problems
@@ -421,12 +446,27 @@ sequenceDiagram
 - Protocol version mismatches
 - Communication failures
 
-- *Root Cause*\*: Protocol implementation issues or version incompatibilities **Solution**: Implement
+- *Root Cause*\*: Protocol implementation issues or version incompatibilities **Solution**:
+Implement
   robust protocol handling and version management
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root: [`README.md`](../README.md)
+- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+[`README.md`](../README.md)
   · Source: `/docs/services/MCP_INTEGRATION.md#L1`
+
+
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
 
 ## Navigation Footer
 - \*\*

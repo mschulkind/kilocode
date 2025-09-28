@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers deep technical analysis of the actual root cause of duplicate API request issues in KiloCode.
-- **Context**: Use this as a starting point for understanding the root cause analysis and technical investigation.
+- **Purpose**: This document covers deep technical analysis of the actual root cause of duplicate
+API request issues in KiloCode.
+- **Context**: Use this as a starting point for understanding the root cause analysis and technical
+investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together - documentation helps us understand how! ⚙️
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+documentation helps us understand how! ⚙️
 
 ## Research Context
 
-This document was created through comprehensive technical analysis of duplicate API request issues in the KiloCode system. The analysis reflects findings from:
+This document was created through comprehensive technical analysis of duplicate API request issues
+in the KiloCode system. The analysis reflects findings from:
 - Code examination and root cause identification for duplicate API requests
 - Race condition analysis and concurrency issue investigation
 - System architecture review and component interaction analysis
@@ -31,7 +36,8 @@ The analysis provides detailed insights into the technical root causes and solut
 
 ## Root Cause Identified
 
-The duplicate API request issue is caused by a race condition in the orchestrator-subtask execution flow, specifically in the parent resume functionality.
+The duplicate API request issue is caused by a race condition in the orchestrator-subtask execution
+flow, specifically in the parent resume functionality.
 
 **Primary Root Cause:**
 
@@ -50,7 +56,8 @@ The duplicate API request issue is caused by a race condition in the orchestrato
 
 ### Concurrency Issues
 
-The race condition occurs when multiple subtasks attempt to resume their parent task simultaneously, leading to duplicate API requests.
+The race condition occurs when multiple subtasks attempt to resume their parent task simultaneously,
+leading to duplicate API requests.
 
 **Race Condition Scenarios:**
 1. **Concurrent Subtask Execution** - Multiple subtasks complete simultaneously
@@ -182,7 +189,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 - [← Architecture Documentation](README.md)
-- [← API Duplication Investigation](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [← Race Condition Analysis](API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../../README.md)
+- [← API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Race Condition Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

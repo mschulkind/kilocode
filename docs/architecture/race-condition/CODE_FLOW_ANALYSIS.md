@@ -2,17 +2,22 @@
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this document's role or purpose, this section helps orient you.
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
 
-- **Purpose**: This document covers detailed analysis of the code execution flow and how the race condition manifests in the system.
-- **Context**: Use this as a starting point for understanding code flow analysis and race condition investigation.
+- **Purpose**: This document covers detailed analysis of the code execution flow and how the race
+condition manifests in the system.
+- **Context**: Use this as a starting point for understanding code flow analysis and race condition
+investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
-This document was created through comprehensive analysis of code execution flow and race condition manifestation in the KiloCode system. The analysis reflects findings from:
+This document was created through comprehensive analysis of code execution flow and race condition
+manifestation in the KiloCode system. The analysis reflects findings from:
 - Code execution flow analysis and race condition identification
 - Orchestrator-subtask architecture investigation and flow mapping
 - Race condition manifestation pattern analysis and root cause identification
@@ -30,7 +35,8 @@ The analysis provides detailed insights into code flow patterns and race conditi
 
 ## Complete Orchestrator-Subtask Architecture
 
-The orchestrator-subtask architecture provides the foundation for understanding how race conditions manifest in the system.
+The orchestrator-subtask architecture provides the foundation for understanding how race conditions
+manifest in the system.
 
 ### Architecture Overview
 
@@ -264,4 +270,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Problem Overview](PROBLEM_OVERVIEW.md)
 - [← Root Cause Analysis](ROOT_CAUSE_ANALYSIS.md)
 - [← Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
-- [← Main Documentation](../../README.md)
+- [← Main Documentation](../README.md)

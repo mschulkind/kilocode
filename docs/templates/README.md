@@ -2,11 +2,25 @@
 
 ## Overview
 
-This directory contains standardized document templates for the KiloCode project. These templates ensure consistent structure across all documentation and help eliminate validation warnings.
+This directory contains standardized document templates for the KiloCode project. These templates
+ensure consistent structure across all documentation and help eliminate validation warnings.
 
 ## Template Types
 
-### Navigation Documents
+#
+## No Dead Ends Policy
+
+This document connects to:
+- [Related Document 1](./related-doc-1.md) - [Brief description]
+- [Related Document 2](./related-doc-2.md) - [Brief description]
+- [Related Document 3](./related-doc-3.md) - [Brief description]
+
+For more information, see:
+- [Category Overview](../category/)
+- [Related Resources](../resources/)
+
+
+## Navigation Documents
 - **File**: `navigation-document-template.md`
 - **Use Case**: README files, getting started guides, index pages
 - **Required Sections**: When You're Here, Research Context, Table of Contents, Navigation Footer
@@ -16,19 +30,24 @@ This directory contains standardized document templates for the KiloCode project
 - **File**: `technical-document-template.md`
 - **Use Case**: API documentation, technical specifications, implementation guides
 - **Required Sections**: When You're Here, Research Context, Technical sections, Navigation Footer
-- **Examples**: [Validation System](../tools/VALIDATION_SYSTEM.md), [API Reference](../tools/VALIDATION_API_REFERENCE.md)
+- **Examples**: [Validation System](../tools/VALIDATION_SYSTEM.md), [API
+Reference](../tools/VALIDATION_API_REFERENCE.md)
 
 ### Planning Documents
 - **File**: `planning-document-template.md`
 - **Use Case**: Project plans, roadmaps, implementation checklists
-- **Required Sections**: When You're Here, Research Context, Progress Summary, Success Criteria, Navigation Footer
-- **Examples**: [Documentation Guide](../DOCUMENTATION_GUIDE.md), [Implementation Checklists](../tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md)
+- **Required Sections**: When You're Here, Research Context, Progress Summary, Success Criteria,
+Navigation Footer
+- **Examples**: [Documentation Guide](../DOCUMENTATION_GUIDE.md), [Implementation
+Checklists](../tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md)
 
 ### General Documents
 - **File**: `general-document-template.md`
 - **Use Case**: General information, mixed content, custom formats
-- **Required Sections**: When You're Here, Research Context, Main content sections, Navigation Footer
-- **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **Required Sections**: When You're Here, Research Context, Main content sections, Navigation
+Footer
+- **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting
+Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
 ## Usage
 
@@ -66,7 +85,8 @@ This document provides a comprehensive getting started guide for new users.
 - **Context**: Essential for onboarding new team members
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-> **Onboarding Fun Fact**: Studies show that good documentation can reduce onboarding time by 60%! 🚀
+> **Onboarding Fun Fact**: Studies show that good documentation can reduce onboarding time by 60%!
+🚀
 
 ## Research Context
 
@@ -140,14 +160,16 @@ See `template-validation-rules.md` for detailed validation rules and requirement
 
 ## Updates and Maintenance
 
-This template system is maintained as part of the KiloCode documentation automation. Updates to templates should be:
+This template system is maintained as part of the KiloCode documentation automation. Updates to
+templates should be:
 
 1. Documented in this README
 2. Updated in the validation system
 3. Tested with sample documents
 4. Applied to existing documentation
 
-For questions or issues with templates, see the [Validation System Documentation](../tools/VALIDATION_SYSTEM.md).
+For questions or issues with templates, see the [Validation System
+Documentation](../tools/VALIDATION_SYSTEM.md).
 
 ## Navigation
 

@@ -1,10 +1,13 @@
 # API Duplication Debug Implementation Guide
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems, this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid foundation, clear structure, and intuitive navigation! 🏗️
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+foundation, clear structure, and intuitive navigation! 🏗️
 
-- *Purpose:*\* Technical implementation guide for adding comprehensive debug logging to track down API
+- *Purpose:*\* Technical implementation guide for adding comprehensive debug logging to track down
+API
   request duplication issues in KiloCode.
 
 > **Cartography Fun Fact**: Just as cartographers use triangulation to pinpoint exact locations,
@@ -31,32 +34,35 @@
 - *Implementing Debug Logging:*\*
 
 - **Next**: Follow the implementation phases below →
-  [Testing Strategy](race-condition/TESTING_STRATEGY.md) →
-  [Solution Recommendations](race-condition/SOLUTION_RECOMMENDATIONS.md)
+  [Testing Strategy](../architecture/race-condition/TESTING_STRATEGY.md) →
+  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Race Condition Analysis](README.md) for context
 
 - *Understanding the Problem:*\*
 
-- **Next**: [Root Cause Analysis](race-condition/ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](race-condition/CODE_FLOW_ANALYSIS.md) → This implementation guide
+- **Next**: [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
+[Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) → This implementation
+guide
 
-- **Related**: [Short Debug Implementation Guide](./API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
+- **Related**: [Short Debug Implementation
+Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
   for quick reference
 
 - *Troubleshooting Issues:*\*
 
-- **Next**: [Short Troubleshooting Guide](./DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) → This
-  implementation guide → [Testing Strategy](race-condition/TESTING_STRATEGY.md)
+- **Next**: [Short Troubleshooting
+Guide](../architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) → This
+  implementation guide → [Testing Strategy](../architecture/race-condition/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Error Handling](../../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+- **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy
 
 This guide provides complete implementation steps with clear next actions. If you're unsure where to
-go next, return to [Architecture Documentation](../../README.md) for guidance.
+go next, return to [Architecture Documentation](../README.md) for guidance.
 
 ## Overview
 
@@ -630,7 +636,8 @@ class ProviderRequestTracker {
 	private static _requestCounter = 0
 	private static _activeRequests = new Map<string, ProviderRequestInfo>()
 
-	static startRequest(provider: string, taskId: string, model: string, requestType: string = "create"): string {
+static startRequest(provider: string, taskId: string, model: string, requestType: string =
+"create"): string {
 		const requestId = `${provider}_${++this._requestCounter}_${Date.now()}`
 
 		this._activeRequests.set(requestId, {
@@ -783,7 +790,8 @@ Add debug logging controls:
 ```typescript
 // Add to environment configuration
 const DEBUG_CONFIG = {
-	enableRequestTracking: process.env.NODE_ENV === "development" || process.env.KILOCODE_DEBUG === "true",
+enableRequestTracking: process.env.NODE_ENV === "development" || process.env.KILOCODE_DEBUG ===
+"true",
 	enableRaceConditionDetection: true,
 	enableUIStateMonitoring: true,
 	logLevel: process.env.KILOCODE_LOG_LEVEL || "info",
@@ -798,9 +806,11 @@ Create scripts to analyze debug logs:
 #!/bin/bash
 # analyze-debug-logs.sh
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why" behind the "what"! 💻
+> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
+behind the "what"! 💻
 
 echo "=== API Duplication Debug Analysis ==="
 echo ""
@@ -898,7 +908,7 @@ each component.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
+- *Navigation*\*: [← Back to Architecture Documentation](../README.md) ·
   [→ Race Condition Analysis](README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 
