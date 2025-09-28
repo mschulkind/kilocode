@@ -13,7 +13,7 @@
 - [Key States](#key-states)
 - [Session Inactivity Criteria](#session-inactivity-criteria)
 - [Race Condition Impact](#race-condition-impact)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation Footer](#navigation-footer)
@@ -29,7 +29,7 @@
 - [Key States](#key-states)
 - [Session Inactivity Criteria](#session-inactivity-criteria)
 - [Race Condition Impact](#race-condition-impact)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation Footer](#navigation-footer)
@@ -261,13 +261,13 @@ The session state machine is crucial for understanding the race condition becaus
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
 
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
@@ -297,9 +297,9 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

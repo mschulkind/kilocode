@@ -140,7 +140,7 @@ guides.
 ### Implementation Context
 
 - **Tools**: [Development Tools](../tools/README.md) for implementation guidance
-- **Testing**: [Testing Infrastructure](../testing/TESTING_STRATEGY.md) for integration testing
+- **Testing**: [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md) for integration testing
 
 ## No Dead Ends Policy
 

@@ -10,7 +10,7 @@
 - [Testing and Validation](#testing-and-validation)
 - [Navigation Footer](#navigation-footer)
 - [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [No Dead Ends Policy](#no-dead-ends-policy)
@@ -22,7 +22,7 @@
 - [Task Management and Delegation](#task-management-and-delegation)
 - [Testing and Validation](#testing-and-validation)
 - [Navigation Footer](#navigation-footer)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -178,7 +178,7 @@ document's role or purpose, this section helps orient you.
 
 - **Next**: [Testing Strategy](../architecture/TESTING_STRATEGY.md) →
   [Implementation Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md) →
-  [Repository Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  [Repository Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -206,7 +206,7 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 

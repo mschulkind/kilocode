@@ -23,7 +23,7 @@
 - [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
 - [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
 - [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
@@ -50,7 +50,7 @@
 - [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
 - [Docs-only recommendations (no code changes)](#docsonly-recommendations-no-code-changes)
 - [Suggested doc locations & links (insert these pages)](#suggested-doc-locations-links-insert-these-pages)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
@@ -384,7 +384,7 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 

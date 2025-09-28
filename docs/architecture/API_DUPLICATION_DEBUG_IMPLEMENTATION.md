@@ -4,14 +4,14 @@
 - [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
 - [Table of Contents](#table-of-contents)
 - [When You're Here](#when-youre-here)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [Research Context](#research-context)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Overview](#overview)
 - [Implementation Phases](#implementation-phases)
 - [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
-- [1.1 Task-Level Request Tracker](#11-tasklevel-request-tracker)
+- [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
 - [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
 - [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
 - [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
@@ -40,14 +40,14 @@
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
 - [Table of Contents](#table-of-contents)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [Research Context](#research-context)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Overview](#overview)
 - [Implementation Phases](#implementation-phases)
 - [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
-- [1.1 Task-Level Request Tracker](#11-tasklevel-request-tracker)
+- [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
 - [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
 - [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
 - [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
@@ -1002,7 +1002,7 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 

@@ -35,7 +35,7 @@
 - [Troubleshooting](#troubleshooting)
 - [Common Issues](#common-issues)
 - [Debug Commands](#debug-commands)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation Footer](#navigation-footer)
@@ -73,7 +73,7 @@
 - [Troubleshooting](#troubleshooting)
 - [Common Issues](#common-issues)
 - [Debug Commands](#debug-commands)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation Footer](#navigation-footer)
@@ -661,7 +661,7 @@ monitoring across both VSCode and JetBrains platforms.
 - *Implementing Features:*\*
 
 - **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
@@ -691,7 +691,7 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
 - **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 

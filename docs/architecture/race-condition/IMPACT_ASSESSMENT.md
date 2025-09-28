@@ -406,7 +406,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Mitigation strategies provide actionable solutions
 
 ## Navigation
-- 📚 [Technical Glossary](../../../GLOSSARY.md)
+- 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 

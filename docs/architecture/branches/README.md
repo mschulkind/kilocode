@@ -24,7 +24,7 @@
 - [Optimization Opportunities](#optimization-opportunities)
 - [Recommendations](#recommendations)
 - [Immediate Actions](#immediate-actions)
-- [Long-term Strategy](#longterm-strategy)
+- [Long-term Strategy](#long-term-strategy)
 - [Success Criteria](#success-criteria)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation](#navigation)
@@ -53,7 +53,7 @@
 - [Optimization Opportunities](#optimization-opportunities)
 - [Recommendations](#recommendations)
 - [Immediate Actions](#immediate-actions)
-- [Long-term Strategy](#longterm-strategy)
+- [Long-term Strategy](#long-term-strategy)
 - [Success Criteria](#success-criteria)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation](#navigation)
@@ -218,7 +218,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Recommendations provide actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](../../../GLOSSARY.md)
+- 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 

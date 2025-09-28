@@ -102,7 +102,7 @@ For more information, see:
 - **Required Sections**: When You're Here, Research Context, Main content sections, Navigation
   Footer
 - **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting
-  Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+  Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
 ## Usage
 

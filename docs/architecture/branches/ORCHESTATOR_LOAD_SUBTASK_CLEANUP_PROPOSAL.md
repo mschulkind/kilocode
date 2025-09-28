@@ -1,43 +1,43 @@
 # Cleanup Proposal: Replace `catrielmuller/orchestator-load-subtask`
 
 ## Table of Contents
-- [Cleanup Proposal: Replace ](#cleanup-proposal-replace-)
+- [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
 - [Table of Contents](#table-of-contents)
 - [When You're Here](#when-youre-here)
 - [Quick Navigation](#quick-navigation)
 - [Research Context](#research-context)
 - [Objectives](#objectives)
 - [Design Overview](#design-overview)
-- [Changes (Before → After)](#changes-before-after)
+- [Changes (Before → After)](#changes-before--after)
 - [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
-- [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiteraware-executor)
+- [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
 - [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
-- [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion-parent-init-intent)
+- [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion--parent-init-intent)
 - [Testing Plan](#testing-plan)
 - [Migration Plan](#migration-plan)
 - [Rollback](#rollback)
 - [Expected Outcomes](#expected-outcomes)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation Footer](#navigation-footer)
 - [No Dead Ends Policy](#no-dead-ends-policy)
-- [Cleanup Proposal: Replace ](#cleanup-proposal-replace-)
+- [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
 - [Table of Contents](#table-of-contents)
 - [Quick Navigation](#quick-navigation)
 - [Research Context](#research-context)
 - [Objectives](#objectives)
 - [Design Overview](#design-overview)
-- [Changes (Before → After)](#changes-before-after)
+- [Changes (Before → After)](#changes-before--after)
 - [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
-- [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiteraware-executor)
+- [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
 - [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
-- [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion-parent-init-intent)
+- [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion--parent-init-intent)
 - [Testing Plan](#testing-plan)
 - [Migration Plan](#migration-plan)
 - [Rollback](#rollback)
 - [Expected Outcomes](#expected-outcomes)
-- [🔍 Research Context & Next Steps](#-research-context-next-steps)
+- [🔍 Research Context & Next Steps](#-research-context--next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation Footer](#navigation-footer)
@@ -291,13 +291,13 @@ Motivation
 
 - **Next**: Check related architecture documentation in the same directory
 
-- **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 - *Implementing Architecture Features:*\*
 
 - **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
@@ -327,9 +327,9 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

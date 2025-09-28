@@ -20,7 +20,7 @@
 - [Business Impact](#business-impact)
 - [Solution Strategy](#solution-strategy)
 - [Immediate Solutions](#immediate-solutions)
-- [Long-term Solutions](#longterm-solutions)
+- [Long-term Solutions](#long-term-solutions)
 - [Next Steps](#next-steps)
 - [Immediate Actions](#immediate-actions)
 - [Long-term Actions](#longterm-actions)
@@ -47,7 +47,7 @@
 - [Business Impact](#business-impact)
 - [Solution Strategy](#solution-strategy)
 - [Immediate Solutions](#immediate-solutions)
-- [Long-term Solutions](#longterm-solutions)
+- [Long-term Solutions](#long-term-solutions)
 - [Next Steps](#next-steps)
 - [Immediate Actions](#immediate-actions)
 - [Long-term Actions](#longterm-actions)
@@ -315,7 +315,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Next steps provide actionable guidance
 
 ## Navigation
-- 📚 [Technical Glossary](../../../GLOSSARY.md)
+- 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 
