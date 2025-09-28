@@ -481,8 +481,6 @@ class ValidationRuleRefiner {
     // Apply refinements
     const refinedPlugin = this.applyRefinementsToPlugin(currentPlugin)
     
-    // Create backup
-    await this.createBackup(pluginPath, currentPlugin)
     
     // Write refined plugin
     await fs.writeFile(pluginPath, refinedPlugin)
@@ -665,11 +663,6 @@ function hasNavigationElement(navigation, element) {
     return pluginContent
   }
 
-  async createBackup(filePath, content) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-    const backupPath = filePath.replace('.js', `-backup-${timestamp}.js`)
-    await fs.writeFile(backupPath, content)
-  }
 
   async generateReports() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-')

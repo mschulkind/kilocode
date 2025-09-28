@@ -202,11 +202,6 @@ async function generateTOCForFile(filePath, config = {}) {
 		const changed = updatedContent !== content
 		
 		if (changed) {
-			// Backup original if requested
-			if (mergedConfig.backupOriginal) {
-				const backupPath = filePath + '.backup'
-				fs.writeFileSync(backupPath, content, 'utf8')
-			}
 			
 			// Write updated content
 			fs.writeFileSync(filePath, updatedContent, 'utf8')

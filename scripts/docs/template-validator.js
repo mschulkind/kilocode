@@ -29,7 +29,6 @@ const CONFIG = {
     exclude: ['!node_modules/**', '!.git/**', '!templates/**']
   },
   maxFileSize: 1024 * 1024, // 1MB
-  backupDir: path.join(__dirname, '../../backups'),
   reportsDir: path.join(__dirname, '../../reports')
 }
 
@@ -641,7 +640,6 @@ class TemplateValidator {
 
   async ensureDirectories() {
     await fs.mkdir(CONFIG.reportsDir, { recursive: true })
-    await fs.mkdir(CONFIG.backupDir, { recursive: true })
   }
 
   reportResults() {

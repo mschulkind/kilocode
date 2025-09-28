@@ -74,3 +74,10 @@ qdrant_storage/
 *.code-workspace
 
 .validation-cache.json
+
+# Documentation automation generated files
+reports/
+backups/
+docs_validate_output.log
+final_validation_output.log
+*.validation.log

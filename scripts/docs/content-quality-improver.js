@@ -28,7 +28,6 @@ const CONFIG = {
     exclude: ['!node_modules/**', '!.git/**', '!templates/**']
   },
   maxFileSize: 1024 * 1024, // 1MB
-  backupDir: path.join(__dirname, '../../backups'),
   reportsDir: path.join(__dirname, '../../reports')
 }
 
@@ -218,8 +217,6 @@ class ContentQualityImprover {
         // Apply safe improvements
         const improvedContent = this.applyImprovements(content, improvements)
         
-        // Create backup
-        await this.createBackup(filePath, content)
         
         // Write improved content
         await fs.writeFile(filePath, improvedContent)
@@ -636,14 +633,6 @@ class ContentQualityImprover {
     return improvedSections.join('## ')
   }
 
-  async createBackup(filePath, content) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-    const relativePath = path.relative(CONFIG.docsRoot, filePath)
-    const backupPath = path.join(CONFIG.backupDir, `${timestamp}-${relativePath.replace(/\//g, '-')}`)
-    
-    await fs.mkdir(path.dirname(backupPath), { recursive: true })
-    await fs.writeFile(backupPath, content)
-  }
 
   async generateReports() {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
@@ -741,7 +730,6 @@ class ContentQualityImprover {
     
     if (this.stats.improvementsApplied > 0) {
       console.log('\n✅ Content quality improvements applied successfully!')
-      console.log('📁 Backups created in:', CONFIG.backupDir)
     } else {
       console.log('\n📝 No improvements were needed for the processed files.')
     }

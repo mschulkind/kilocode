@@ -27,7 +27,6 @@ const CONFIG = {
     exclude: ['!node_modules/**', '!.git/**']
   },
   maxFileSize: 1024 * 1024, // 1MB
-  backupDir: path.join(__dirname, '../../backups')
 }
 
 // Non-descriptive link text patterns
@@ -189,7 +188,6 @@ class LinkTextStandardizer {
       
       // Save file if modified
       if (modifiedContent !== originalContent) {
-        await this.backupFile(filePath)
         await fs.writeFile(filePath, modifiedContent, 'utf8')
         this.stats.filesModified++
         console.log(`✅ Improved ${fileImprovements} links in ${path.relative(CONFIG.docsRoot, filePath)}`)
@@ -355,18 +353,6 @@ class LinkTextStandardizer {
     return linkText
   }
 
-  async backupFile(filePath) {
-    const relativePath = path.relative(CONFIG.docsRoot, filePath)
-    const backupPath = path.join(CONFIG.backupDir, relativePath)
-    const backupDir = path.dirname(backupPath)
-    
-    await fs.mkdir(backupDir, { recursive: true })
-    await fs.copyFile(filePath, backupPath)
-  }
-
-  async ensureBackupDir() {
-    await fs.mkdir(CONFIG.backupDir, { recursive: true })
-  }
 
   reportResults() {
     console.log('\n📊 Link Text Standardization Results:')
@@ -381,7 +367,6 @@ class LinkTextStandardizer {
     
     if (this.stats.linksImproved > 0) {
       console.log('\n✅ Link text standardization completed successfully!')
-      console.log(`   Backup files created in: ${CONFIG.backupDir}`)
     }
   }
 }
