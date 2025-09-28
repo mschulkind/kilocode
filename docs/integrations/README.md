@@ -91,7 +91,7 @@ with different development environments and tools.
 
 - **Service Integration**: Review [Tree-sitter Service Documentation](TREE_SITTER_SERVICE.md) for
   parsing service setup
-- **Architecture Overview**: Check [Integration Architecture](../architecture/README.md) for system
+- **Architecture Overview**: Check [Integration Architecture](architecture/README.md) for system
   design
 - **Security Considerations**: See [Integration Standards](../standards/README.md) for security
   guidelines
@@ -133,14 +133,14 @@ guides.
 
 ### Related Documentation
 
-- **Architecture**: [Integration Architecture](../architecture/README.md) for system design
+- **Architecture**: [Integration Architecture](architecture/README.md) for system design
 - **Services**: [Integration Services](../services/README.md) for service-specific documentation
 - **Standards**: [Integration Standards](../standards/README.md) for quality guidelines
 
 ### Implementation Context
 
 - **Tools**: [Development Tools](../tools/README.md) for implementation guidance
-- **Testing**: [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md) for integration testing
+- **Testing**: [Testing Infrastructure](../testing/TESTING_STRATEGY.md) for integration testing
 
 ## No Dead Ends Policy
 
@@ -151,11 +151,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Integration guides connect to actionable setup instructions
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Main Documentation](../README.md)
-- [← Architecture Documentation](../architecture/README.md)
+- [← Architecture Documentation](architecture/README.md)
 - [← Services Documentation](../services/README.md)
 - [← Standards Documentation](../standards/README.md)
 - [← Project Root](../README.md)

@@ -95,7 +95,7 @@ to use them together during design, debugging, and implementation.
 ## Related documentation
 - [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) Master
   narrative and navigation hub for the duplicate-API-request issue family.
-- [Orchestrator Documentation](../../orchestrator/README.md) Parent/child task orchestration concepts
+- [Orchestrator Documentation](../orchestrator/README.md) Parent/child task orchestration concepts
   and lifecycle.
 - \*\*
 
@@ -112,7 +112,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../../GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

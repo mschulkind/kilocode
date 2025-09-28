@@ -541,7 +541,7 @@ document's role or purpose, this section helps orient you.
 
 - *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Quick Start
   Paths](QUICK_START_PATHS.md)
-  · [Source: `/docs/standards/navigation/README.md#L1`](README.md#L1)
+  · [Source: `/docs/standards/../navigation/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️
@@ -554,4 +554,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../../GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)

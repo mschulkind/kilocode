@@ -195,7 +195,7 @@ Use consistent symbols for navigation elements:
 - [← Back to Documentation Tools](../tools/)
 - [← Back to Validation System](./VALIDATION_SYSTEM.md)
 - [→ Related Documentation](./DOCUMENTATION_BEST_PRACTICES.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
+- [📚 Technical Glossary](GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)
 ```
 
@@ -222,7 +222,7 @@ For more information, see:
 ## Links
 - [Back](../)
 - [Next section](../next/)
-- [Glossary](../GLOSSARY.md)
+- [Glossary](GLOSSARY.md)
 ```
 
 This would fail validation due to:
@@ -311,5 +311,5 @@ Documentation](./VALIDATION_SYSTEM.md).
 ## Navigation
 - [← Back to Documentation Tools](./)
 - [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
+- [📚 Technical Glossary](GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)

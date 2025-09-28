@@ -278,7 +278,7 @@ Every documentation file must include:
 ### Getting Help
 1. Check this overview document
 2. Review [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-3. Consult [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+3. Consult [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 4. Check VS Code output logs for detailed error information
 
 ## Best Practices
@@ -334,8 +334,8 @@ After mastering the basic workflow:
 
 ## Related Documentation
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/GETTING_STARTED.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](architecture/GETTING_STARTED.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
@@ -344,7 +344,7 @@ After mastering the basic workflow:
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation

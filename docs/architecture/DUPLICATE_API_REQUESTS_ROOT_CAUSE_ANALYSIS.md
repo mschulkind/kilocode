@@ -241,11 +241,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Immediate fix section provides actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Architecture Documentation](README.md)
-- [← API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← API Duplication Investigation](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
 - [← Race Condition Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 - [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

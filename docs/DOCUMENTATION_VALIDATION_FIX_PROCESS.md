@@ -233,8 +233,8 @@ Our detailed analysis revealed that the 2078 warnings fall into these distinct c
 - *Root Cause*\*: Path depth calculation errors in deeply nested documentation structures.
 
 - *Most Common Issues*\*:
-- `../GLOSSARY.md` → `../../GLOSSARY.md` (standards/ subdirectories)
-- `../DOCUMENTATION_GUIDE.md` → `../../DOCUMENTATION_GUIDE.md`
+- `GLOSSARY.md` → `../GLOSSARY.md` (standards/ subdirectories)
+- `../DOCUMENTATION_GUIDE.md` → `../DOCUMENTATION_GUIDE.md`
 - Deep nesting paths requiring additional `../` prefix corrections
 
 - *Status*\*: Patterns added to `PATH_FIXES` but NOT yet correctly targeting actual link occurrences
@@ -580,17 +580,17 @@ Every section in this document connects you to your next step:
 - **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 - **If you need context**: Check the [Research Context](#research-context) section
 - **If you're ready to implement**: Jump to the implementation sections
-- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
-- [← Architecture](../architecture/README.md)
-- [← Orchestrator](../orchestrator/README.md)
+- [← Architecture](architecture/README.md)
+- [← Orchestrator](orchestrator/README.md)
 - [← Standards](standards/README.md)
 - [← Plans](plans/README.md)
 - [← Tools](tools/README.md)

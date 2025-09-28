@@ -68,7 +68,7 @@ ensure consistent structure across all documentation and help eliminate validati
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Documents
@@ -76,7 +76,7 @@ For more information, see:
 - **File**: `navigation-document-template.md`
 - **Use Case**: README files, getting started guides, index pages
 - **Required Sections**: When You're Here, Research Context, Table of Contents, Navigation Footer
-- **Examples**: [Main README](../README.md), [Architecture Overview](../architecture/README.md)
+- **Examples**: [Main README](../README.md), [Architecture Overview](architecture/README.md)
 
 ### Technical Documents
 
@@ -92,7 +92,7 @@ For more information, see:
 - **Use Case**: Project plans, roadmaps, implementation checklists
 - **Required Sections**: When You're Here, Research Context, Progress Summary, Success Criteria,
   Navigation Footer
-- **Examples**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md), [Implementation
+- **Examples**: [Documentation Guide](../DOCUMENTATION_GUIDE.md), [Implementation
   Checklists](../tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md)
 
 ### General Documents
@@ -102,7 +102,7 @@ For more information, see:
 - **Required Sections**: When You're Here, Research Context, Main content sections, Navigation
   Footer
 - **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting
-  Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+  Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
 ## Usage
 
@@ -225,5 +225,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 ## Navigation
 - [← Back to Documentation Tools](../tools/)
 - [→ Template Validation Rules](./template-validation-rules.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
+- [📚 Technical Glossary](GLOSSARY.md)
 - [↑ Table of Contents](#document-templates)

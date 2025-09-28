@@ -81,8 +81,8 @@ document's role or purpose, this section helps orient you.
 
 ### Quick Start Paths
 
-- **Need an Overview**: Start with [Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)
-- **Understanding Systems**: Begin with [Core Systems](../architecture/CORE_SYSTEMS.md)
+- **Need an Overview**: Start with [Repository Structure](architecture/REPOSITORY_STRUCTURE.md)
+- **Understanding Systems**: Begin with [Core Systems](architecture/CORE_SYSTEMS.md)
 - **Development Journey**: Follow [Development Guide](repository/DEVELOPMENT_GUIDE.md)
 
 ### Current Focus
@@ -98,9 +98,9 @@ understanding:
 
 ### Core Documentation
 
-- **[Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)** - High-level repository
+- **[Repository Structure](architecture/REPOSITORY_STRUCTURE.md)** - High-level repository
   organization
-- **[Core Systems](../architecture/CORE_SYSTEMS.md)** - Core systems and services
+- **[Core Systems](architecture/CORE_SYSTEMS.md)** - Core systems and services
 - **[Workspace Packages](../architecture/WORKSPACE_PACKAGES.md)** - Workspace packages and libraries
 - **[Applications](../architecture/APPLICATIONS.md)** - Applications and interfaces
 
@@ -178,7 +178,7 @@ of the system's structure!
 
 ## 🧭 Navigation Footer
 - [← Back to Architecture Home](../../README.md)
-- [→ Repository Structure](../architecture/REPOSITORY_STRUCTURE.md)
+- [→ Repository Structure](architecture/REPOSITORY_STRUCTURE.md)
 - [↑ Table of Contents](../../README.md)
 
 ## Navigation Footer
@@ -202,4 +202,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

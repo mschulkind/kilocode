@@ -915,10 +915,10 @@ Inconsistent results often indicate multiple tools running or cached data issues
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
 - *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-  Glossary](../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)
+  Glossary](GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)

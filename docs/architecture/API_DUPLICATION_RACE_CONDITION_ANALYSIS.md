@@ -196,11 +196,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Solution recommendations provide actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Architecture Documentation](README.md)
-- [← Investigation Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Investigation Summary](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
 - [← Debug Implementation](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
 - [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

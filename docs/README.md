@@ -103,56 +103,56 @@ architecture, development workflows, and troubleshooting guides.
 ### Emergency Response (Something's Broken)
 
 - **API Duplication Issues**: [API Duplication Investigation
-  Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause
-  Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- **Race Condition Issues**: [Race Condition Analysis](../architecture/README.md) → [Solution
-  Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+  Summary](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause
+  Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- **Race Condition Issues**: [Race Condition Analysis](architecture/README.md) → [Solution
+  Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 
 ### Deep Dive Research (Understanding the System)
 
-- **System Architecture**: [Architecture Documentation](../architecture/README.md) → [System
-  Overview](../architecture/SYSTEM_OVERVIEW.md) → [Repository
-  Overview](../architecture/REPOSITORY_OVERVIEW.md)
-- **Core Components**: [Orchestrator Documentation](../orchestrator/README.md) → [Communication
-  Layer](../architecture/COMMUNICATION_LAYER_SYSTEM.md)
+- **System Architecture**: [Architecture Documentation](architecture/README.md) → [System
+  Overview](architecture/SYSTEM_OVERVIEW.md) → [Repository
+  Overview](architecture/REPOSITORY_OVERVIEW.md)
+- **Core Components**: [Orchestrator Documentation](orchestrator/README.md) → [Communication
+  Layer](architecture/COMMUNICATION_LAYER_SYSTEM.md)
 
 ### Implementation Journey (Active Development)
 
 - **Current Projects**: [Investigation Plans](../plans/README.md) → [Priority
   Improvements](improvements/PRIORITY_IMPROVEMENTS.md)
-- **Development Workflow**: [Getting Started Guide](../architecture/GETTING_STARTED.md) →
-  [Development Guide](../architecture/GETTING_STARTED.md)
+- **Development Workflow**: [Getting Started Guide](architecture/GETTING_STARTED.md) →
+  [Development Guide](architecture/GETTING_STARTED.md)
 
 ### New to Codebase
 
-- **Essential Terminology**: [Technical Glossary](../GLOSSARY.md) → [Documentation
+- **Essential Terminology**: [Technical Glossary](GLOSSARY.md) → [Documentation
   Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
-- **System Understanding**: [Repository Overview](../architecture/REPOSITORY_OVERVIEW.md) → [Core
-  Systems](../architecture/CORE_SYSTEMS.md)
+- **System Understanding**: [Repository Overview](architecture/REPOSITORY_OVERVIEW.md) → [Core
+  Systems](architecture/CORE_SYSTEMS.md)
 
 ## Expert Engineer Onboarding
 
 ### For Experienced Engineers New to KiloCode
 
 **Step 1: Essential Foundation**
-- [Technical Glossary](../GLOSSARY.md) - Essential terminology and concepts
+- [Technical Glossary](GLOSSARY.md) - Essential terminology and concepts
 - [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md) - Documentation principles and
   structure
 
 **Step 2: System Understanding**
-- [Architecture Documentation](../architecture/README.md) - High-level system design
-- [System Overview](../architecture/SYSTEM_OVERVIEW.md) - Core system components
-- [Repository Structure](../architecture/REPOSITORY_STRUCTURE.md) - Codebase organization
+- [Architecture Documentation](architecture/README.md) - High-level system design
+- [System Overview](architecture/SYSTEM_OVERVIEW.md) - Core system components
+- [Repository Structure](architecture/REPOSITORY_STRUCTURE.md) - Codebase organization
 
 **Step 3: Current Context**
-- [Race Condition Analysis](../architecture/README.md) - Active problems and solutions
-- [API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) -
+- [Race Condition Analysis](architecture/README.md) - Active problems and solutions
+- [API Duplication Investigation](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) -
   Current investigation status
 
 **Step 4: Implementation Details**
-- [Orchestrator Documentation](../orchestrator/README.md) - Core execution patterns
-- [Development Guide](../architecture/GETTING_STARTED.md) - Development workflow
-- [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md) - Testing strategies
+- [Orchestrator Documentation](orchestrator/README.md) - Core execution patterns
+- [Development Guide](architecture/GETTING_STARTED.md) - Development workflow
+- [Testing Infrastructure](../testing/TESTING_STRATEGY.md) - Testing strategies
 
 ## Documentation Structure
 
@@ -166,24 +166,24 @@ architecture, development workflows, and troubleshooting guides.
 
 ### Architecture & Design
 
-- **[Architecture Documentation](../architecture/README.md)** - System architecture, design
+- **[Architecture Documentation](architecture/README.md)** - System architecture, design
   patterns, and critical analysis
-- **[Orchestrator Documentation](../orchestrator/README.md)** - Task orchestration and coordination
+- **[Orchestrator Documentation](orchestrator/README.md)** - Task orchestration and coordination
   systems
 - **[Services Documentation](services/README.md)** - Service layer architecture and implementations
 
 ### Development Resources
 
-- **[Getting Started Guide](../architecture/GETTING_STARTED.md)** - Initial setup and configuration
-- **[Development Guide](../architecture/GETTING_STARTED.md)** - Development workflow and best
+- **[Getting Started Guide](architecture/GETTING_STARTED.md)** - Initial setup and configuration
+- **[Development Guide](architecture/GETTING_STARTED.md)** - Development workflow and best
   practices
 - **[Testing Documentation](testing/README.md)** - Testing strategies and infrastructure
 
 ### Critical Issues & Analysis
 
-- **[Race Condition Analysis](../architecture/README.md)** - Comprehensive race condition
+- **[Race Condition Analysis](architecture/README.md)** - Comprehensive race condition
   investigation
-- **[API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
+- **[API Duplication Investigation](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
   API duplication root cause analysis
 - **[Priority Improvements](improvements/PRIORITY_IMPROVEMENTS.md)** - Prioritized improvement
   roadmap
@@ -217,7 +217,7 @@ architecture, development workflows, and troubleshooting guides.
 
 - **[Documentation Tools](tools/README.md)** - Documentation generation and validation tools
 - **[Build System](build/README.md)** - Build pipelines and deployment processes
-- **[Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
+- **[Testing Infrastructure](../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
 
 ### Integration Resources
 
@@ -241,11 +241,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Quick start paths provide clear entry points for different user types
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Project Root](../README.md)
-- [← Architecture Documentation](../architecture/README.md)
-- [← Orchestrator Documentation](../orchestrator/README.md)
+- [← Architecture Documentation](architecture/README.md)
+- [← Orchestrator Documentation](orchestrator/README.md)
 - [← Services Documentation](services/README.md)
 - [← Standards Documentation](standards/README.md)

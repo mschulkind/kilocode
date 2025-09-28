@@ -482,7 +482,7 @@ const modeConfigSchema = z.object({
   import/export with validation and rollback
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+- Back: [`SYSTEM_OVERVIEW.md`](architecture/SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
   · Source: `/docs/services/CUSTOM_MODES_SYSTEM.md#L1`
 
@@ -491,7 +491,7 @@ const modeConfigSchema = z.object({
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -501,4 +501,4 @@ For more information, see:
   [↑ Table of Contents](#custom-modes-system)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

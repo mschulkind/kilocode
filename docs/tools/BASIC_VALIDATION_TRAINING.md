@@ -245,7 +245,7 @@ Some content here.
    ```
 
 **Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+Glossary](GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
 
 ```
 
@@ -370,11 +370,11 @@ This document connects to:
 - [Related Documentation](../README.md) - [Brief description]
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
 - *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+Glossary](GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
 ```

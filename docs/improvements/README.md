@@ -84,7 +84,7 @@ actionable recommendations for system enhancement.
 
 ### For Architects
 
-- **System Overview**: Start with [Architecture Documentation](../architecture/README.md)
+- **System Overview**: Start with [Architecture Documentation](architecture/README.md)
 - **Standards Review**: Check [Documentation Standards](../standards/README.md)
 - **Implementation Plans**: See [Investigation Plans](../../plans/README.md)
 
@@ -119,14 +119,14 @@ documentation. This creates a comprehensive improvement ecosystem rather than is
 
 ### Related Documentation
 
-- **Architecture**: [System Architecture](../architecture/README.md) for system design issues
+- **Architecture**: [System Architecture](architecture/README.md) for system design issues
 - **Plans**: [Investigation Plans](../../plans/README.md) for detailed research plans
 - **Standards**: [Documentation Standards](../standards/README.md) for quality improvements
 
 ### Implementation Context
 
 - **Tools**: [Development Tools](../tools/README.md) for implementation guidance
-- **Testing**: [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md) for validation approaches
+- **Testing**: [Testing Infrastructure](../testing/TESTING_STRATEGY.md) for validation approaches
 
 ## No Dead Ends Policy
 
@@ -137,11 +137,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation guidance connects to actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Main Documentation](../README.md)
-- [← Architecture Documentation](../architecture/README.md)
+- [← Architecture Documentation](architecture/README.md)
 - [← Standards Documentation](../standards/README.md)
 - [← Investigation Plans](../../plans/README.md)
 - [← Project Root](../README.md)

@@ -551,14 +551,14 @@ npx remark docs/ 2>&1 | grep -i error
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -568,4 +568,4 @@ For more information, see:
   [↑ Table of Contents](#troubleshooting-guide)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

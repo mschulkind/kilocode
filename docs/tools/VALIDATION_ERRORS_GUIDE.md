@@ -426,7 +426,7 @@ For complex errors:
 1. This validation errors guide
 2. [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 3. [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-4. [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+4. [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ### Support
 1. Check VS Code output logs
@@ -437,7 +437,7 @@ For complex errors:
 ## Related Documentation
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
@@ -446,7 +446,7 @@ For complex errors:
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation

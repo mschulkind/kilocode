@@ -315,7 +315,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Next steps provide actionable guidance
 
 ## Navigation
-- 📚 [Technical Glossary](../../GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

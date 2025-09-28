@@ -98,8 +98,8 @@ conditions, state machines, repository structure, and architectural improvements
 ### For Expert Engineers New to KiloCode
 
 - **Emergency Response** (Something's Broken): [Race Condition Analysis](race-condition/README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) → [Solution
-  Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) → [Solution
+  Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 - **Deep Dive Research** (Understanding the System): [Repository Overview](repository/README.md) →
   [Core Systems](repository/CORE_SYSTEMS.md) → [System Overview](SYSTEM_OVERVIEW.md)
 
@@ -135,7 +135,7 @@ conditions, state machines, repository structure, and architectural improvements
 
 - **[Race Condition Analysis](race-condition/README.md)** - Comprehensive race condition
   investigation
-- **[API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
+- **[API Duplication Investigation](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
   API duplication root cause analysis
 - **[Task Lifecycle Deduplication](TASK_LIFECYCLE_DEDUPLICATION.md)** - Task deduplication
   strategies
@@ -145,18 +145,18 @@ conditions, state machines, repository structure, and architectural improvements
 ### Race Condition Investigation
 
 - **[Problem Overview](race-condition/PROBLEM_OVERVIEW.md)** - Race condition symptoms and impact
-- **[Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)** -
+- **[Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)** -
   Technical root
   cause identification
-- **[Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)** -
+- **[Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)** -
   Proposed fixes and improvements
-- **[Testing Strategy](../architecture/TESTING_STRATEGY.md)** - Validation and
+- **[Testing Strategy](architecture/TESTING_STRATEGY.md)** - Validation and
   testing approaches
 
 ### API Duplication Analysis
 
 - **[API Duplication Investigation
-  Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** - Investigation overview
+  Summary](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** - Investigation overview
 - **[API Duplication Race Condition
   Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)** - Technical analysis
 - **[Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)** -
@@ -204,7 +204,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Quick start paths provide clear entry points for different user types
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 

@@ -269,10 +269,10 @@ This index provides access to all training materials for KiloCode's documentatio
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
-- *Navigation*\*: [← Back to Tools Overview](./README.md) · [📚 Technical Glossary](../GLOSSARY.md)
+- *Navigation*\*: [← Back to Tools Overview](./README.md) · [📚 Technical Glossary](GLOSSARY.md)
   · [↑ Table of Contents](#training-materials-index)

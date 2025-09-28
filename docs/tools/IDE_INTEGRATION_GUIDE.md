@@ -259,8 +259,8 @@ For issues with IDE integration:
 4. Check project documentation standards
 
 ## Related Documentation
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/GETTING_STARTED.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](architecture/GETTING_STARTED.md)
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
@@ -269,7 +269,7 @@ For issues with IDE integration:
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -279,4 +279,4 @@ For more information, see:
   [↑ Table of Contents](#ide-integration-guide)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

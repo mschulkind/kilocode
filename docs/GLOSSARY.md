@@ -276,7 +276,7 @@ logic.
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Terms
@@ -303,7 +303,7 @@ implementation).
 Sequential path through documentation designed to build understanding progressively.
 
 ## 🔗 Related Documentation
-- [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
+- [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
   principles and structure
 - [Architecture Documentation](README.md) - System architecture and design patterns
 - [Orchestrator Documentation](README.md) - Task orchestration and lifecycle management
@@ -311,7 +311,7 @@ Sequential path through documentation designed to build understanding progressiv
 ## 🧭 Navigation Footer
 - [← Back to Documentation Hub](README.md)
 - [↑ Table of Contents](#core-system-concepts)
-- [→ Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md)
+- [→ Documentation Standards Guide](../DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
 - \*\*
@@ -319,4 +319,4 @@ Sequential path through documentation designed to build understanding progressiv
 - *Navigation*\*: [docs](../docs/) · ↑ Table of Contents
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

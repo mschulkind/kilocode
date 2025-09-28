@@ -294,7 +294,7 @@ training materials and tooling provide a solid foundation for Phase 2 implementa
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -304,4 +304,4 @@ For more information, see:
   [↑ Table of Contents](#phase-1-completion-report)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

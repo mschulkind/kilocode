@@ -310,14 +310,14 @@ automation system.
 - [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
 - [Quick Reference Card](./QUICK_REFERENCE_CARD.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -326,4 +326,4 @@ For more information, see:
 - *Navigation*\*: [docs](../) · [tools](./) · ↑ Table of Contents
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

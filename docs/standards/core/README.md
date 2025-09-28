@@ -137,8 +137,8 @@ document's role or purpose, this section helps orient you.
 - *Doc-to-Doc Links*\*: Use relative paths within the `docs/` directory. Do NOT prefix with `docs/`.
 
 - *Examples*\*:
-- `[System Overview](../architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
-- `[Architecture Index](../architecture/README.md)` (from subdirectory)
+- `[System Overview](architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
+- `[Architecture Index](architecture/README.md)` (from subdirectory)
 - `[Getting Started](GETTING_STARTED.md)` (same directory)
 
 - *Code References*\*: Use absolute repo-root paths for code files.
@@ -200,7 +200,7 @@ document's role or purpose, this section helps orient you.
 
 - *Next Steps*\*:
 - [Document Structure](../structure/README.md) - How to structure individual documents
-- [Navigation & User Experience](../navigation/README.md) - How to create user journeys
+- [Navigation & User Experience](../../navigation/README.md) - How to create user journeys
 - [Code Documentation](../code/README.md) - How to document technical content
 - [Engagement & Accessibility](../engagement/README.md) - How to make docs accessible
 
@@ -227,4 +227,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](../../GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)

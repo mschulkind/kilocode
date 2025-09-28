@@ -110,7 +110,7 @@ extensions!
 
 ## 🧭 Navigation Footer
 - [← Back to Documentation Home](../README.md)
-- [→ Architecture Documentation](../architecture/README.md)
+- [→ Architecture Documentation](architecture/README.md)
 - [↑ Table of Contents](../README.md)
 
 ## No Dead Ends Policy
@@ -118,17 +118,17 @@ extensions!
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Main Documentation](README.md)
 - [← Project Root](README.md)
-- [← Architecture](../architecture/README.md)
-- [← Orchestrator](../orchestrator/README.md)
+- [← Architecture](architecture/README.md)
+- [← Orchestrator](orchestrator/README.md)
 - [← Standards](standards/README.md)
 - [← Plans](plans/README.md)
 - [← Tools](tools/README.md)

@@ -276,11 +276,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Resolution strategies provide actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Architecture Documentation](README.md)
 - [← Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [← Investigation Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
+- [← Investigation Summary](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)
 - [← Main Documentation](../../README.md)
 - [← Project Root](../../README.md)

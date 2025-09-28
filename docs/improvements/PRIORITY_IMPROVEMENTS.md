@@ -403,7 +403,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation roadmap provides clear next steps for each improvement
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Improvements Overview](README.md)

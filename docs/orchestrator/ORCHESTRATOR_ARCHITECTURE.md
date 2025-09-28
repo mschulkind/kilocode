@@ -224,14 +224,14 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [State Machines](../architecture/README.md) for behavior modeling
+- **Related**: [Technical Glossary](GLOSSARY.md) for terminology,
+  [State Machines](architecture/README.md) for behavior modeling
 
 - *Investigating Race Conditions:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md)
+- **Next**: [Race Condition Analysis](architecture/README.md) →
+  [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](architecture/CODE_FLOW_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -239,18 +239,18 @@ document's role or purpose, this section helps orient you.
 
 - **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
-  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+  [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Repository Development Guide](../architecture/GETTING_STARTED.md) for
+- **Related**: [Repository Development Guide](architecture/GETTING_STARTED.md) for
   codebase patterns
 
 - *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+- **Next**: [Race Condition Analysis](architecture/README.md) →
+  [Code Flow Analysis](architecture/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [State Machines](../architecture/README.md) for behavior analysis
+- **Related**: [State Machines](architecture/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
@@ -268,10 +268,10 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
-  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../GLOSSARY.md) ·
+  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](GLOSSARY.md) ·
   [↑ Table of Contents](#-research-context--next-steps)

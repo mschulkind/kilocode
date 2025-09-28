@@ -214,4 +214,4 @@ The simplified system achieves:
 
 ## Navigation
 
-- **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#validation-system-simplified-configuration)
+- **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#validation-system-simplified-configuration)

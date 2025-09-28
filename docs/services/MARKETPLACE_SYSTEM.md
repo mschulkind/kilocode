@@ -537,7 +537,7 @@ interface ServerConfiguration {
   security measures and validation
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+- Back: [`SYSTEM_OVERVIEW.md`](architecture/SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
   · Source: `/docs/services/MARKETPLACE_SYSTEM.md#L1`
 
@@ -546,7 +546,7 @@ interface ServerConfiguration {
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -556,4 +556,4 @@ For more information, see:
   [↑ Table of Contents](#marketplace-system)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

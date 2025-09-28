@@ -103,9 +103,9 @@ document's role or purpose, this section helps orient you.
 
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
-- [Root Cause Analysis of Duplicate API Requests](../../architecture/ROOT_CAUSE_ANALYSIS.md)
-- [Testing Strategy for Race Condition Fixes](../../architecture/TESTING_STRATEGY.md)
-- [Repository Structure Overview](../../architecture/REPOSITORY_STRUCTURE.md)
+- [Root Cause Analysis of Duplicate API Requests](../architecture/ROOT_CAUSE_ANALYSIS.md)
+- [Testing Strategy for Race Condition Fixes](../architecture/TESTING_STRATEGY.md)
+- [Repository Structure Overview](../architecture/REPOSITORY_STRUCTURE.md)
 
 ### Bad
 - `race-condition/ROOT_CAUSE_ANALYSIS.md`
@@ -180,7 +180,7 @@ documentation helps us understand how! ⚙️
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 documentation helps us understand how! ⚙️
 
-[Architecture Index](../architecture/README.md) [Core Standards](../standards/core/README.md)
+[Architecture Index](architecture/README.md) [Core Standards](../standards/core/README.md)
 [Back to Root](../README.md)
 
 # Same directory
@@ -299,7 +299,7 @@ documentation helps us understand how! ⚙️
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-[Back to Root](../README.md) [Architecture Overview](../architecture/README.md)
+[Back to Root](../README.md) [Architecture Overview](architecture/README.md)
 
 # To sibling directory
 
@@ -325,7 +325,7 @@ behind the "what"! 💻
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 documentation helps us understand how! ⚙️
 
-[Back to Root](../README.md) [Architecture](../architecture/README.md)
+[Back to Root](../README.md) [Architecture](architecture/README.md)
 
 # To parent directory
 
@@ -643,23 +643,23 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - **Next**: Check related standards documentation in the same directory
 
-- **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) for context
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
-  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
+- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
-- **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+- **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 - *Applying Standards to Documentation:*\*
 
-- **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../../architecture/README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+- **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+  [Architecture Documentation](../architecture/README.md) →
+  [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy
@@ -678,9 +678,9 @@ Every section in this document connects you to your next step:
 
 - **If you're ready to implement**: Jump to the implementation sections
 
-- **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

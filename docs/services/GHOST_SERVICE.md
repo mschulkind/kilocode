@@ -438,7 +438,7 @@ private isRequestCancelled: boolean = false
   selection algorithms and context analysis
 
 <a id="navigation-footer"></a>
-- Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+- Back: [`SYSTEM_OVERVIEW.md`](architecture/SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
   · Source: `/docs/services/GHOST_SERVICE.md#L1`
 
@@ -447,7 +447,7 @@ private isRequestCancelled: boolean = false
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](../architecture/README.md)
+- [Documentation Structure](architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -457,4 +457,4 @@ For more information, see:
   [↑ Table of Contents](#ghost-service)
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)

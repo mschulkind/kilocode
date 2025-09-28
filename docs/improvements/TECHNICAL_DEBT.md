@@ -336,7 +336,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Debt mitigation strategy provides clear next steps for technical improvements
 
 ## Navigation
-- 📚 [Technical Glossary](../GLOSSARY.md)
+- 📚 [Technical Glossary](GLOSSARY.md)
 
 ## Navigation
 - [← Improvements Overview](README.md)

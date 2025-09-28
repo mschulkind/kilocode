@@ -564,7 +564,7 @@ pnpm docs:report
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ## Continuous Improvement
 
@@ -597,8 +597,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 - [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-- [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
-- [Development Workflow](../architecture/GETTING_STARTED.md)
+- [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+- [Development Workflow](architecture/GETTING_STARTED.md)
 
 ## Navigation
 - [← Tools Overview](README.md)
