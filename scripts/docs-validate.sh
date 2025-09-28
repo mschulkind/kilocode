@@ -58,7 +58,7 @@ echo -e "${BLUE}🔍 Validating documentation...${NC}"
 
 # Run remark with all targets (suppress file content, show only warnings/errors)
 # Use script to force unbuffered output and prevent blocking with pipes
-script -qfc "remark \"${TARGETS[@]}\" --quiet > /dev/null" /dev/null
+script -qfc "npx remark \"${TARGETS[@]}\" --quiet > /dev/null" /dev/null
 
 # Show completion message
 echo -e "${GREEN}✅ Documentation validation completed!${NC}"
