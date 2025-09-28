@@ -713,7 +713,6 @@ class ContentQualityImprover {
 
   async ensureDirectories() {
     await fs.mkdir(CONFIG.reportsDir, { recursive: true })
-    await fs.mkdir(CONFIG.backupDir, { recursive: true })
   }
 
   reportResults() {

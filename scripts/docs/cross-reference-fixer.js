@@ -102,9 +102,6 @@ class CrossReferenceFixer {
     console.log('🔍 Starting cross-reference audit and fix...')
     
     try {
-      // Ensure backup directory exists
-      await this.ensureBackupDir()
-      
       // Find all markdown files
       const files = await this.findMarkdownFiles()
       console.log(`📁 Found ${files.length} markdown files`)
