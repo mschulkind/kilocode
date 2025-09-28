@@ -1,5 +1,45 @@
 # Tool System Architecture
 
+## Table of Contents
+- [Tool System Architecture](#tool-system-architecture)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [System Architecture](#system-architecture)
+- [Tool Categories](#tool-categories)
+- [File Operations Tools](#file-operations-tools)
+- [Command Execution Tools](#command-execution-tools)
+- [Code Analysis Tools](#code-analysis-tools)
+- [AI Integration Tools](#ai-integration-tools)
+- [Tool Execution Engine](#tool-execution-engine)
+- [Execution Flow](#execution-flow)
+- [Tool Chaining](#tool-chaining)
+- [Tool Validation & Safety](#tool-validation-safety)
+- [Validation Mechanisms](#validation-mechanisms)
+- [Safety Protocols](#safety-protocols)
+- [Tool Composition Patterns](#tool-composition-patterns)
+- [Sequential Composition](#sequential-composition)
+- [Parallel Composition](#parallel-composition)
+- [Conditional Composition](#conditional-composition)
+- [Error Handling & Rollback](#error-handling-rollback)
+- [Error Classification](#error-classification)
+- [Rollback Strategies](#rollback-strategies)
+- [Performance Optimization](#performance-optimization)
+- [Execution Optimization](#execution-optimization)
+- [Memory Management](#memory-management)
+- [Tool Development Guidelines](#tool-development-guidelines)
+- [Tool Interface Standards](#tool-interface-standards)
+- [Development Best Practices](#development-best-practices)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Tool Execution Failures](#issue-1-tool-execution-failures)
+- [Issue 2: Tool Chain Deadlocks](#issue-2-tool-chain-deadlocks)
+- [Issue 3: Security Vulnerabilities](#issue-3-security-vulnerabilities)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +50,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive documentation of the AI tool system architecture, execution patterns,
   validation mechanisms, and safety protocols in the KiloCode system.
@@ -33,24 +73,22 @@ this documentation provides structured guidance for understanding and implementi
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Tool System Architecture provides the foundation for AI-powered operations in KiloCode,
@@ -336,7 +374,7 @@ export class ToolRepetitionDetector {
 - Output filtering
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Safety framework
-design,
+  design,
   threat modeling, mitigation strategies
 
 ## Tool Composition Patterns
@@ -344,7 +382,7 @@ design,
 ### Sequential Composition
 
 - *Pattern*\*: Tools execute in sequence with data passing **Use Cases**: Multi-step file
-operations,
+  operations,
   complex transformations **Implementation**: Chain execution with intermediate result passing
 
 ### Parallel Composition
@@ -449,7 +487,7 @@ interface Tool {
 - Resource exhaustion
 
 - *Root Cause*\*: Insufficient validation or resource management **Solution**: Implement
-comprehensive
+  comprehensive
   validation and resource monitoring
 
 ### Issue 2: Tool Chain Deadlocks
@@ -476,18 +514,16 @@ comprehensive
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/tools/TOOL_SYSTEM_ARCHITECTURE.md#L1`
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

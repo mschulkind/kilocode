@@ -1,5 +1,27 @@
 # Repository Overview
 
+## Table of Contents
+- [Repository Overview](#repository-overview)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [Core Documentation](#core-documentation)
+- [Development & Infrastructure](#development-infrastructure)
+- [Executive Summary](#executive-summary)
+- [Quick Reference](#quick-reference)
+- [Repository Structure](#repository-structure)
+- [Core Systems](#core-systems)
+- [Development Workflow](#development-workflow)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +32,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Master index for comprehensive information about the KiloCode repository structure,
   systems, and components.
@@ -66,7 +88,7 @@ understanding:
 - **[Build Pipelines](../architecture/BUILD_PIPELINES.md)** - Build and CI/CD systems
 - **[Development Tools](../architecture/DEVELOPMENT_TOOLS.md)** - Development tools and utilities
 - **[External Integrations](../architecture/EXTERNAL_INTEGRATIONS.md)** - External service
-integrations
+  integrations
 - **[Development Guide](repository/DEVELOPMENT_GUIDE.md)** - Comprehensive development guide
 
 ## Executive Summary
@@ -150,7 +172,6 @@ of the system's structure!
 # Example markdown
 [Link](url)
 ```
-
 
 This document follows the "No Dead Ends" principle - every path leads to useful information.
 - Each section provides clear navigation to related content

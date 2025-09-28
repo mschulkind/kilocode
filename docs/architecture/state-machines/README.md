@@ -1,5 +1,18 @@
 # State Machines Documentation 🦕
 
+## Table of Contents
+- [State Machines Documentation 🦕](#state-machines-documentation)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Start Here](#start-here)
+- [Core State Machines](#core-state-machines)
+- [Combined and Specialized](#combined-and-specialized)
+- [Related documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +23,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Index and navigation for all state machine documents in this directory.
 
@@ -73,7 +86,7 @@ to use them together during design, debugging, and implementation.
 
 <a id="navigation-footer"></a>
 - Back: [Architecture Documentation](../README.md) · Root: [Architecture
-Documentation](../README.md) · Source:
+  Documentation](../README.md) · Source:
   `/docs/architecture/state-machines/README.md#L1`
 
 ## No Dead Ends Policy
@@ -91,7 +104,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 # Example markdown
 [Link](url)
 ```
-
 - [← Architecture Overview](../README.md)
 - [← State Machines Overview](README.md)
 - [← Main Documentation](../README.md)

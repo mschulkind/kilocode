@@ -1,5 +1,36 @@
 # Custom Modes System
 
+## Table of Contents
+- [Custom Modes System](#custom-modes-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [System Architecture](#system-architecture)
+- [Mode Configuration](#mode-configuration)
+- [Mode Schema](#mode-schema)
+- [Mode Types](#mode-types)
+- [Import/Export System](#importexport-system)
+- [Export Functionality](#export-functionality)
+- [Import Functionality](#import-functionality)
+- [File Management](#file-management)
+- [File System Integration](#file-system-integration)
+- [Caching System](#caching-system)
+- [Validation & Error Handling](#validation-error-handling)
+- [Schema Validation](#schema-validation)
+- [Error Handling](#error-handling)
+- [Performance & Caching](#performance-caching)
+- [Performance Optimization](#performance-optimization)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Mode Configuration Validation Failures](#issue-1-mode-configuration-validation-failures)
+- [Issue 2: File System Issues](#issue-2-file-system-issues)
+- [Issue 3: Cache Inconsistency](#issue-3-cache-inconsistency)
+- [Issue 4: Import/Export Failures](#issue-4-importexport-failures)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +41,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive documentation of the Custom Modes system for managing AI behavior
   configurations and custom prompt strategies in KiloCode.
@@ -31,24 +62,22 @@ documentation helps us understand how! ⚙️
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Custom Modes System provides comprehensive management of AI behavior configurations, custom
@@ -422,21 +451,19 @@ const modeConfigSchema = z.object({
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
-[`README.md`](../README.md)
+  [`README.md`](../README.md)
   · Source: `/docs/services/CUSTOM_MODES_SYSTEM.md#L1`
-
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

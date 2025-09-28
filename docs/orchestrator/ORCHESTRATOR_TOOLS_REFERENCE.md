@@ -1,7 +1,27 @@
 # Orchestrator Tools Reference
 
+## Table of Contents
+- [Orchestrator Tools Reference](#orchestrator-tools-reference)
+- [Related Documents](#related-documents)
+- [Tool Philosophy](#tool-philosophy)
+- [Core Task Flow Tools](#core-task-flow-tools)
+- [attemptCompletionTool](#attemptcompletiontool)
+- [Task Management Tools](#task-management-tools)
+- [newTaskTool](#newtasktool)
+- [switchModeTool](#switchmodetool)
+- [startSubtask](#startsubtask)
+- [User Interaction Tools](#user-interaction-tools)
+- [askFollowupQuestionTool](#askfollowupquestiontool)
+- [State & Planning Tools](#state-planning-tools)
+- [updateTodoListTool](#updatetodolisttool)
+- [File System Tools](#file-system-tools)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* This document provides a comprehensive reference for the core tools available to the
   Kilo Code Orchestrator. Each entry details the tool's purpose, parameters, and provides a link to
@@ -29,7 +49,7 @@ behind the "what"! 💻
 <a id="related-documents"></a>
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[Security & Governance](ORCHESTRATOR_SECURITY_GOVERNANCE.md)**: Explains how tool
   access is governed by modes and permissions.
@@ -65,7 +85,7 @@ These tools are fundamental to the execution and completion of tasks.
   the task lifecycle.
 
 - **Source**:
-[`src/core/tools/attemptCompletionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L35)
+  [`src/core/tools/attemptCompletionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L35)
 
 - **Parameters**:
 - `result`: A final message summarizing the work done.
@@ -116,7 +136,7 @@ This category includes tools for communicating with the end-user.
   task will not proceed until the user provides a response.
 
 - **Source**:
-[`src/core/tools/askFollowupQuestionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L6)
+  [`src/core/tools/askFollowupQuestionTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L6)
 
 - **Parameters**:
 - `question`: The question to ask the user.
@@ -135,7 +155,7 @@ Tools for managing the internal state and plan of a task.
   Gating," where the orchestrator tracks its plan and progress.
 
 - **Source**:
-[`src/core/tools/updateTodoListTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L156)
+  [`src/core/tools/updateTodoListTool.ts`](../../src/core/tools/attemptCompletionTool.ts#L156)
 
 - **Parameters**:
 - `todos`: A markdown-formatted checklist of tasks.

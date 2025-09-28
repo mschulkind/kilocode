@@ -1,7 +1,20 @@
 # Orchestrator Security & Governance
 
+## Table of Contents
+- [Orchestrator Security & Governance](#orchestrator-security-governance)
+- [Related Documents](#related-documents)
+- [Security Philosophy](#security-philosophy)
+- [Modes as a Security Boundary](#modes-as-a-security-boundary)
+- [Tool Permissioning](#tool-permissioning)
+- [File Access Control](#file-access-control)
+- [Governance Workflow Diagram](#governance-workflow-diagram)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* This document details the security model of the Kilo Code Orchestrator, focusing on
   mode-based permissions, file access restrictions, and other governance mechanisms that ensure safe
@@ -26,13 +39,14 @@ foundation, clear structure, and intuitive navigation! 🏗️
 ### Related Documents
 
 <a
+
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[ORCHESTRATOR\_TOOLS\_REFERENCE.md](ORCHESTRATOR_TOOLS_REFERENCE.md)**: Lists all tools and
-their
+  their
   intended functions.
 - **[Error Handling Guide](ORCHESTRATOR_ERROR_HANDLING.md)**: Explains how permission
   errors are handled.

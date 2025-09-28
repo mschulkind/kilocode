@@ -1,5 +1,50 @@
 # Documentation Best Practices
 
+## Table of Contents
+- [Documentation Best Practices](#documentation-best-practices)
+- [When You're Here](#when-youre-here)
+- [Writing Guidelines](#writing-guidelines)
+- [1. Structure and Organization](#1-structure-and-organization)
+- [2. Content Quality](#2-content-quality)
+- [3. Writing Style](#3-writing-style)
+- [Formatting Standards](#formatting-standards)
+- [1. Markdown Best Practices](#1-markdown-best-practices)
+- [2. Required Sections](#2-required-sections)
+- [3. Visual Elements](#3-visual-elements)
+- [Quality Assurance](#quality-assurance)
+- [1. Pre-Writing Checklist](#1-pre-writing-checklist)
+- [2. Writing Checklist](#2-writing-checklist)
+- [3. Post-Writing Checklist](#3-post-writing-checklist)
+- [Team Collaboration](#team-collaboration)
+- [1. Review Process](#1-review-process)
+- [2. Maintenance](#2-maintenance)
+- [3. Feedback Integration](#3-feedback-integration)
+- [Common Validation Issues and Solutions](#common-validation-issues-and-solutions)
+- [1. Quality Score Issues](#1-quality-score-issues)
+- [2. Orphaned Sections](#2-orphaned-sections)
+- [3. Cross-Reference Issues](#3-cross-reference-issues)
+- [4. Final Newline Issues](#4-final-newline-issues)
+- [Systematic Documentation Rewrite Process](#systematic-documentation-rewrite-process)
+- [When to Use Complete Rewrites](#when-to-use-complete-rewrites)
+- [Step-by-Step Process](#step-by-step-process)
+- [Expected Improvements](#expected-improvements)
+- [Real-World Example: UI Directory Processing](#real-world-example-ui-directory-processing)
+- [Common Pitfalls](#common-pitfalls)
+- [1. Content Issues](#1-content-issues)
+- [2. Formatting Issues](#2-formatting-issues)
+- [3. Organization Issues](#3-organization-issues)
+- [Tools and Resources](#tools-and-resources)
+- [1. Validation Tools](#1-validation-tools)
+- [2. VS Code Extensions](#2-vs-code-extensions)
+- [3. Reference Materials](#3-reference-materials)
+- [Continuous Improvement](#continuous-improvement)
+- [1. Metrics to Track](#1-metrics-to-track)
+- [2. Regular Reviews](#2-regular-reviews)
+- [3. Team Training](#3-team-training)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Related Documentation](#related-documentation)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +55,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide outlines the best practices for writing and maintaining high-quality documentation in the
 KiloCode project.
@@ -164,19 +209,13 @@ https://example.com ❌
 
 - *Table of Contents*\* (for files >500 words)
 
-```markdown
-## Table of Contents
-- [Introduction](#introduction)
-- [Main Content](#main-content)
-- [Examples](#examples)
-- [Conclusion](#conclusion)
-```
+````markdown
 
 - *Navigation Footer*\*
 
 ```markdown
 - *Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
-```
+````
 
 - *Research Context*\*
 
@@ -353,27 +392,23 @@ Use this process when:
 - Quality scores are consistently below threshold
 
 ### Step-by-Step Process
-
 1. **Initial Assessment**
-   - Run `pnpm docs:validate` on target directory
-   - Document initial error and warning counts
-   - Identify common patterns in issues
-
+- Run `pnpm docs:validate` on target directory
+- Document initial error and warning counts
+- Identify common patterns in issues
 2. **File-by-File Rewrite**
-   - Rewrite each file completely, one at a time
-   - Focus on content quality and proper structure
-   - Use descriptive headings and meaningful link text
-   - Include comprehensive examples and troubleshooting
-
+- Rewrite each file completely, one at a time
+- Focus on content quality and proper structure
+- Use descriptive headings and meaningful link text
+- Include comprehensive examples and troubleshooting
 3. **Validation After Rewrites**
-   - Run validation again after all files are rewritten
-   - Compare before/after error counts
-   - Document improvement metrics
-
+- Run validation again after all files are rewritten
+- Compare before/after error counts
+- Document improvement metrics
 4. **Best Practices Update**
-   - Update documentation best practices based on lessons learned
-   - Add specific guidance for common issues encountered
-   - Ensure process can be repeated for future directories
+- Update documentation best practices based on lessons learned
+- Add specific guidance for common issues encountered
+- Ensure process can be repeated for future directories
 
 ### Expected Improvements
 

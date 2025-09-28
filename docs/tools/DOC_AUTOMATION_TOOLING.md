@@ -1,7 +1,63 @@
 # Documentation Automation & Tooling Options
 
+## Table of Contents
+- [Documentation Automation & Tooling Options](#documentation-automation-tooling-options)
+- [Executive Summary](#executive-summary)
+- [Goals & Scope](#goals-scope)
+- [Options Catalog](#options-catalog)
+- [TOC Generation](#toc-generation)
+- [Link Checking](#link-checking)
+- [Prose/Style Linting](#prosestyle-linting)
+- [Templating: Footers/Headers/Blocks](#templating-footersheadersblocks)
+- [Diagram Validation](#diagram-validation)
+- [Cross-File Consistency Checks](#cross-file-consistency-checks)
+- [GitHub Flavored Markdown (GFM) Validation](#github-flavored-markdown-gfm-validation)
+- [Additional Tools](#additional-tools)
+- [Remark Ecosystem Deep Dive](#remark-ecosystem-deep-dive)
+- [What is Remark?](#what-is-remark)
+- [Core Remark Tools](#core-remark-tools)
+- [KiloCode-Specific Remark Setup](#kilocode-specific-remark-setup)
+- [Advanced Remark Tools](#advanced-remark-tools)
+- [](#)
+- [Remark for KiloCode Use Cases](#remark-for-kilocode-use-cases)
+- [Integration with KiloCode Workflow](#integration-with-kilocode-workflow)
+- [Remark vs Other Tools](#remark-vs-other-tools)
+- [MkDocs vs Remark: Comparison & Integration](#mkdocs-vs-remark-comparison-integration)
+- [Are They Mutually Exclusive?](#are-they-mutually-exclusive)
+- [Detailed Comparison](#detailed-comparison)
+- [Why Different Options Use Different Tools](#why-different-options-use-different-tools)
+- [Complementary Integration Strategies](#complementary-integration-strategies)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [KiloCode-Specific Recommendations](#kilocode-specific-recommendations)
+- [Configuration Examples](#configuration-examples)
+- [Documentation Standards as Linters](#documentation-standards-as-linters)
+- [Automatable Rules from Documentation Guide](#automatable-rules-from-documentation-guide)
+- [Custom Linter Implementation](#custom-linter-implementation)
+- [Concrete Toolset Recommendations](#concrete-toolset-recommendations)
+- [Option 1: Minimal Setup (Quick Start)](#option-1-minimal-setup-quick-start)
+- [Option 2: Advanced Setup (Recommended)](#option-2-advanced-setup-recommended)
+- [Option 3: Enterprise Setup (Full Automation)](#option-3-enterprise-setup-full-automation)
+- [Phased Implementation Approach](#phased-implementation-approach)
+- [Phase 1: Foundation (Week 1-2)](#phase-1-foundation-week-1-2)
+- [Phase 2: Standards Enforcement (Week 3-4)](#phase-2-standards-enforcement-week-3-4)
+- [Phase 3: Advanced Automation (Week 5-6)](#phase-3-advanced-automation-week-5-6)
+- [Phase 4: Optimization (Week 7-8)](#phase-4-optimization-week-7-8)
+- [Recommended Baseline Stack](#recommended-baseline-stack)
+- [Integration Plan](#integration-plan)
+- [Local Development](#local-development)
+- [CI (GitHub Actions)](#ci-github-actions)
+- [Custom Linter Development](#custom-linter-development)
+- [Implementation Priority](#implementation-priority)
+- [Custom Rule Examples](#custom-rule-examples)
+- [Future Enhancements](#future-enhancements)
+- [Phase 2+ Features](#phase-2-features)
+- [Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive guide to automate documentation maintenance, enforce style consistency,
   and implement our documentation standards as automated linters. Includes concrete toolset
@@ -65,16 +121,6 @@ Transform our documentation standards into automated linters and maintenance too
 - Gradual rollout with opt-in phases
 
 ## Options Catalog
-
-### TOC Generation
-- [doctoc](https://github.com/thlorenz/doctoc) (CLI)
-  * **Pros**: Simple, fast, works in-place, supports `--notitle`, `--maxlevel`, `--check` modes
-  * **Cons**: Less configurable formatting, limited customization options
-  * **Configuration**: `.doctocrc` file for settings, supports GitHub-style TOCs
-- [remark-toc](https://github.com/remarkjs/remark-toc) (Node/remark)
-  * **Pros**: Part of unified/remark pipeline, highly customizable, supports heading depth control
-  * **Cons**: Requires Node pipeline setup, more complex configuration
-  * **Configuration**: remark config with `toc: { heading: 'contents', maxDepth: 3 }`
 
 ### Link Checking
 - [lychee](https://github.com/lycheeverse/lychee) (Rust CLI,
@@ -279,15 +325,14 @@ module.exports = remarkKiloCodeStandards
 - *Linting and Validation:*\*
 - [remark-lint-no-dead-urls](https://github.com/remarkjs/remark-lint-no-dead-urls) - Check for dead
   URLs
--
+- ##
 [remark-lint-no-undefined-references](https://github.com/remarkjs/remark-lint-no-undefined-references)
--
-  Validate reference links
+
+Validate reference links
 - [remark-lint-heading-increment](https://github.com/remarkjs/remark-lint-heading-increment) -
   Ensure proper heading hierarchy
 - [remark-lint-no-duplicate-headings](https://github.com/remarkjs/remark-lint-no-duplicate-headings)
--
-  Prevent duplicate headings
+- Prevent duplicate headings
 
 - *Content Enhancement:*\*
 - [remark-emoji](https://github.com/rhysd/remark-emoji) - Convert emoji shortcodes to Unicode
@@ -870,7 +915,7 @@ BasedOnStyles = Vale, Microsoft, write-good
 ```
 
 - *Pros:*\* Highly customizable, comprehensive validation, extensible, full GFM support **Cons:**
-More
+  More
   complex setup, requires Node.js knowledge, multiple configuration files **Time to implement:** 1-2
   weeks
 
@@ -904,7 +949,7 @@ plugins:
 ```
 
 - *Pros:*\* Full automation, professional output, advanced features **Cons:** Complex setup,
-diverges
+  diverges
   from plain Markdown **Time to implement:** 2-4 weeks
 
 ## Phased Implementation Approach

@@ -1,17 +1,54 @@
 # Build Pipelines
 
+## Table of Contents
+- [Build Pipelines](#build-pipelines)
+- [When You're Here](#when-youre-here)
+- [Build System Overview](#build-system-overview)
+- [Research Context](#research-context)
+- [Build Tools](#build-tools)
+- [Turbo](#turbo)
+- [Webpack](#webpack)
+- [Vite](#vite)
+- [TypeScript Compiler](#typescript-compiler)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [GitHub Actions](#github-actions)
+- [Build Stages](#build-stages)
+- [Stage 1: Code Quality](#stage-1-code-quality)
+- [Stage 2: Testing](#stage-2-testing)
+- [Stage 3: Building](#stage-3-building)
+- [Stage 4: Deployment](#stage-4-deployment)
+- [Deployment Strategies](#deployment-strategies)
+- [VS Code Extension](#vs-code-extension)
+- [Web Applications](#web-applications)
+- [NPM Packages](#npm-packages)
+- [Documentation](#documentation)
+- [Build Optimization](#build-optimization)
+- [Caching Strategy](#caching-strategy)
+- [Parallel Execution](#parallel-execution)
+- [Incremental Builds](#incremental-builds)
+- [Quality Gates](#quality-gates)
+- [Code Quality Gates](#code-quality-gates)
+- [Test Quality Gates](#test-quality-gates)
+- [Build Quality Gates](#build-quality-gates)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Build Monitoring](#build-monitoring)
+- [Deployment Monitoring](#deployment-monitoring)
+- [Alerting](#alerting)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive overview of the build and CI/CD pipelines used in KiloCode.
 

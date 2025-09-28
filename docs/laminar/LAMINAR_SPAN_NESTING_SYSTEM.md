@@ -1,7 +1,38 @@
 # Laminar Span Nesting System
 
+## Table of Contents
+- [Laminar Span Nesting System](#laminar-span-nesting-system)
+- [Overview](#overview)
+- [Key Components](#key-components)
+- [Span Types and Hierarchy](#span-types-and-hierarchy)
+- [Span Type Categories](#span-type-categories)
+- [Span Hierarchy](#span-hierarchy)
+- [Span Creation and Lifecycle](#span-creation-and-lifecycle)
+- [Creation Process](#creation-process)
+- [Lifecycle Management](#lifecycle-management)
+- [Queuing Mechanism](#queuing-mechanism)
+- [When Queuing Occurs](#when-queuing-occurs)
+- [Queue vs Direct Creation](#queue-vs-direct-creation)
+- [Why Chat History Spans May Not Appear](#why-chat-history-spans-may-not-appear)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Test Connection vs Task Spans](#test-connection-vs-task-spans)
+- [Troubleshooting Span Issues](#troubleshooting-span-issues)
+- [Diagnostic Steps](#diagnostic-steps)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Debug Logging](#debug-logging)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Details](#implementation-details)
+- [Span Naming Convention](#span-naming-convention)
+- [Session Management](#session-management)
+- [Error Handling](#error-handling)
+- [Performance Considerations](#performance-considerations)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* This document explains the span nesting architecture in Kilo Code's Laminar
   observability system, detailing how spans are created, nested, and queued, with specific focus on
@@ -165,7 +196,7 @@ if (this.pendingSpanRequests.length > 0) {
 ### Root Cause Analysis
 
 - *Primary Issue:*\* Task spans are created during task initialization but may be queued
-indefinitely
+  indefinitely
   if the Laminar service fails to initialize properly.
 
 - *Failure Scenarios:*\*
@@ -249,7 +280,7 @@ if (!laminarService.isInitialized) {
 | Issue               | Symptom                                | Solution
 |
 | ------------------- | -------------------------------------- |
------------------------------------------ |
+\----------------------------------------- |
 | Service Not Enabled | No spans appear                        | Check `laminarConfig.enabled` and
 API key |
 | Backend Unreachable | Test span appears, task spans don't    | Verify Laminar server connectivity
@@ -280,7 +311,7 @@ console.log = console.log.bind(console)
 | Component              | Primary Functions                           | Key Files
 | Integration Points |
 | ---------------------- | ------------------------------------------- |
------------------------------------------ | ------------------ |
+\----------------------------------------- | ------------------ |
 | Service Initialization | `initialize()`, `getInstance()`             |
 `/src/services/laminar/LaminarService.ts` | Extension startup  |
 | Span Management        | `startSpan()`, `endSpan()`                  |

@@ -1,5 +1,20 @@
 # Race Condition Analysis Documentation
 
+## Table of Contents
+- [Race Condition Analysis Documentation](#race-condition-analysis-documentation)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +25,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 Welcome to the race condition analysis documentation! 🏃‍♂️💨 This directory contains detailed
 analysis
@@ -49,7 +64,7 @@ of the API duplication race condition issue in KiloCode.
   high-level summary of the API duplication issue, key symptoms, and scenarios (including the
   3-request variant). Use this for a quick situational understanding and to decide next steps.
 - **[ROOT\_CAUSE\_ANALYSIS.md](ROOT_CAUSE_ANALYSIS.md)** - Detailed root cause investigation
-Explains
+  Explains
   the problematic changes, the two competing recursion paths, and the timing conditions that produce
   races. Includes critical code locations and reasoning about event-loop interleaving.
 - **[CODE\_FLOW\_ANALYSIS.md](CODE_FLOW_ANALYSIS.md)** - Code flow and execution analysis Visualizes
@@ -79,7 +94,7 @@ Explains
 - **Orchestrator**: See [Parent directory](../../orchestrator/) for orchestrator-specific details
   In-depth coverage of orchestrator responsibilities, lifecycle, and best practices.
 - **Architecture**: See [Architecture Documentation](../README.md) for system architecture overview
-Global entry
+  Global entry
   point for architecture with repository, observability, and planning links.
 
 ## 🦕 Dinosaur Analogy
@@ -109,7 +124,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 // Example code
 const example = "Hello World";
 ```
-
 - [← Architecture Overview](../README.md)
 - [← Race Condition Analysis](README.md)
 - [← Root Cause Analysis](ROOT_CAUSE_ANALYSIS.md)

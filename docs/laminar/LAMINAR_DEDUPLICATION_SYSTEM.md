@@ -1,5 +1,43 @@
 # Laminar Deduplication System
 
+## Table of Contents
+- [Laminar Deduplication System](#laminar-deduplication-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [System Architecture](#system-architecture)
+- [Span Management](#span-management)
+- [Span Storage](#span-storage)
+- [Span Creation Process](#span-creation-process)
+- [Critical Span Creation Code](#critical-span-creation-code)
+- [Internal Span Creation](#internal-span-creation)
+- [System Prompt Optimization](#system-prompt-optimization)
+- [The Duplication Problem](#the-duplication-problem)
+- [Implementation in Task.ts](#implementation-in-taskts)
+- [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
+- [Deduplication Mechanisms](#deduplication-mechanisms)
+- [1. Active Span Deduplication](#1-active-span-deduplication)
+- [2. Span Name Deduplication](#2-span-name-deduplication)
+- [3. Input Data Deduplication](#3-input-data-deduplication)
+- [4. System Prompt Metadata](#4-system-prompt-metadata)
+- [Configuration and Control](#configuration-and-control)
+- [Laminar Configuration](#laminar-configuration)
+- [Runtime Control Methods](#runtime-control-methods)
+- [Configuration Updates](#configuration-updates)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
+- [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
+- [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
+- [Performance Impact](#performance-impact)
+- [Memory Usage Reduction](#memory-usage-reduction)
+- [Network Bandwidth Reduction](#network-bandwidth-reduction)
+- [Processing Time Improvement](#processing-time-improvement)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +48,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed documentation of the Laminar service deduplication mechanisms, span
   management, and system prompt optimization to prevent duplicate observability data and improve
@@ -33,24 +71,22 @@ this documentation provides structured guidance for understanding and implementi
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Laminar Deduplication System manages observability spans and prevents duplicate data
@@ -581,18 +617,16 @@ const processingMetrics = {
 - Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
   Root: [`README.md`](README.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

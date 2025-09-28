@@ -1,36 +1,67 @@
 # Navigation Patterns Documentation
 
+## Table of Contents
+- [Navigation Patterns Documentation](#navigation-patterns-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Navigation Pattern Standards](#navigation-pattern-standards)
+- [Standardized Navigation Footer Format](#standardized-navigation-footer-format)
+- [Breadcrumb Navigation](#breadcrumb-navigation)
+- [Cross-Reference Navigation Patterns](#cross-reference-navigation-patterns)
+- [Table of Contents Integration](#table-of-contents-integration)
+- [Navigation Symbols](#navigation-symbols)
+- [Validation Rules](#validation-rules)
+- [Required Navigation Elements](#required-navigation-elements)
+- [Navigation Consistency Rules](#navigation-consistency-rules)
+- [Cross-Reference Rules](#cross-reference-rules)
+- [Implementation Examples](#implementation-examples)
+- [Good Example - Complete Navigation](#good-example-complete-navigation)
+- [Good Example - Cross-References](#good-example-cross-references)
+- [Bad Example - Missing Navigation](#bad-example-missing-navigation)
+- [Best Practices](#best-practices)
+- [Navigation Design](#navigation-design)
+- [Cross-Reference Design](#cross-reference-design)
+- [Table of Contents Design](#table-of-contents-design)
+- [Validation Integration](#validation-integration)
+- [Validation Checks](#validation-checks)
+- [Error Types](#error-types)
+- [Migration Guide](#migration-guide)
+- [Converting Existing Documents](#converting-existing-documents)
+- [Common Issues and Fixes](#common-issues-and-fixes)
+- [Performance Considerations](#performance-considerations)
+- [Updates and Maintenance](#updates-and-maintenance)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-🔍 **Did You Know**: [Interesting insight]
+🔍 **Did You Know**: \[Interesting insight]
 
+This document provides \[purpose of document].
 
-This document provides [purpose of document].
-
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
-
-
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
@@ -46,7 +77,6 @@ All documents should include a navigation footer with the following structure:
 
 ```markdown
 ## Navigation
-
 - [← Back to [Parent Section]](../parent/)
 - [← Back to [Category]](../../category/)
 - [→ Related Topic](../related-topic/)
@@ -81,13 +111,10 @@ For more information, see:
 - [Related Topics](../related/)
 ```
 
-### Table of Contents Integration
-
 Documents with 3+ sections should include a table of contents:
 
 ```markdown
 ## Table of Contents
-
 - [Section 1](#section-1)
 - [Section 2](#section-2)
 - [Section 3](#section-3)
@@ -97,7 +124,6 @@ Documents with 3+ sections should include a table of contents:
 ## Navigation Symbols
 
 Use consistent symbols for navigation elements:
-
 - `←` - Back navigation
 - `→` - Forward/next navigation
 - `📚` - Technical Glossary link
@@ -107,7 +133,6 @@ Use consistent symbols for navigation elements:
 ## Validation Rules
 
 ### Required Navigation Elements
-
 1. **Back Navigation**: At least one back link using `←` symbol
 2. **Glossary Link**: Link to Technical Glossary using `📚` symbol
 3. **Table of Contents Link**: For documents with 3+ sections, link back to TOC using `↑`
@@ -115,7 +140,6 @@ Use consistent symbols for navigation elements:
 5. **Consistent Formatting**: Use standardized symbols and formatting
 
 ### Navigation Consistency Rules
-
 - All navigation links should use consistent symbols
 - Back links should use `← Back to [Section]` format
 - Forward links should use `→ [Next Section]` format
@@ -123,7 +147,6 @@ Use consistent symbols for navigation elements:
 - TOC links should use `↑ Table of Contents` format
 
 ### Cross-Reference Rules
-
 - No Dead Ends Policy sections must include connecting links
 - All cross-references must have descriptive text
 - Links should be organized logically (parent → related → external)
@@ -135,7 +158,6 @@ Use consistent symbols for navigation elements:
 
 ```markdown
 ## Navigation
-
 - [← Back to Documentation Tools](../tools/)
 - [← Back to Validation System](./VALIDATION_SYSTEM.md)
 - [→ Related Documentation](./DOCUMENTATION_BEST_PRACTICES.md)
@@ -164,7 +186,6 @@ For more information, see:
 
 ```markdown
 ## Links
-
 - [Back](../)
 - [Next section](../next/)
 - [Glossary](../GLOSSARY.md)
@@ -178,7 +199,6 @@ This would fail validation due to:
 ## Best Practices
 
 ### Navigation Design
-
 1. **Hierarchical Context**: Always provide clear hierarchical context
 2. **Logical Flow**: Organize links in logical order (back → forward → resources)
 3. **Descriptive Text**: Use descriptive text that explains the destination
@@ -186,7 +206,6 @@ This would fail validation due to:
 5. **Complete Coverage**: Ensure all major sections are accessible
 
 ### Cross-Reference Design
-
 1. **Meaningful Connections**: Only link to documents with meaningful relationships
 2. **Clear Descriptions**: Provide brief descriptions explaining the connection
 3. **Logical Organization**: Group related links together
@@ -194,7 +213,6 @@ This would fail validation due to:
 5. **No Dead Ends**: Ensure every document connects to others
 
 ### Table of Contents Design
-
 1. **Complete Coverage**: Include all major sections
 2. **Accurate Links**: Ensure all links work and point to correct sections
 3. **Logical Order**: Present sections in logical reading order
@@ -222,7 +240,6 @@ The navigation patterns are automatically validated by the `remark-kilocode-comp
 ## Migration Guide
 
 ### Converting Existing Documents
-
 1. **Add Navigation Footer**: Include standardized navigation footer
 2. **Update Link Format**: Convert existing links to use standard symbols
 3. **Add Cross-References**: Include No Dead Ends Policy with connecting links
@@ -249,7 +266,6 @@ Navigation pattern validation is optimized for:
 ## Updates and Maintenance
 
 Navigation patterns are maintained as part of the KiloCode documentation automation:
-
 1. **Pattern Updates**: New patterns are added based on community feedback
 2. **Validation Rules**: Rules are updated to reflect best practices
 3. **Documentation**: This guide is updated with new patterns and examples
@@ -259,7 +275,6 @@ For questions or issues with navigation patterns, see the [Validation System
 Documentation](./VALIDATION_SYSTEM.md).
 
 ## Navigation
-
 - [← Back to Documentation Tools](./)
 - [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
 - [📚 Technical Glossary](../GLOSSARY.md)

@@ -1,18 +1,43 @@
 # API Duplication Race Condition Analysis
 
+## Table of Contents
+- [API Duplication Race Condition Analysis](#api-duplication-race-condition-analysis)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Race Condition Overview](#race-condition-overview)
+- [Technical Analysis](#technical-analysis)
+- [Orchestrator-Subtask Flow](#orchestrator-subtask-flow)
+- [Race Condition Scenarios](#race-condition-scenarios)
+- [Execution Patterns](#execution-patterns)
+- [Root Cause Identification](#root-cause-identification)
+- [Primary Causes](#primary-causes)
+- [Contributing Factors](#contributing-factors)
+- [Technical Root Causes](#technical-root-causes)
+- [Impact Assessment](#impact-assessment)
+- [User Experience Impact](#user-experience-impact)
+- [System Performance Impact](#system-performance-impact)
+- [Business Impact](#business-impact)
+- [Solution Recommendations](#solution-recommendations)
+- [Immediate Solutions](#immediate-solutions)
+- [Architectural Solutions](#architectural-solutions)
+- [Long-term Solutions](#long-term-solutions)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the API request duplication issue caused by concurrent recursive
-calls in the orchestrator-subtask execution flow.
+  calls in the orchestrator-subtask execution flow.
 - **Context**: Use this as a starting point for understanding race condition analysis and API
-duplication issues.
+  duplication issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -24,13 +49,6 @@ orchestrator-subtask execution flow. The analysis reflects findings from:
 - Distributed system synchronization research
 
 The analysis provides detailed insights into the root causes of API duplication issues.
-
-## Table of Contents
-- [Race Condition Overview](#race-condition-overview)
-- [Technical Analysis](#technical-analysis)
-- [Root Cause Identification](#root-cause-identification)
-- [Impact Assessment](#impact-assessment)
-- [Solution Recommendations](#solution-recommendations)
 
 ## Race Condition Overview
 

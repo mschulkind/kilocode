@@ -1,18 +1,47 @@
 # Duplicate API Requests Troubleshooting (Short)
 
+## Table of Contents
+- [Duplicate API Requests Troubleshooting (Short)](#duplicate-api-requests-troubleshooting-short)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Triage Flow](#triage-flow)
+- [Step 1: Observe Symptoms](#step-1-observe-symptoms)
+- [Step 2: Collect Quick Data](#step-2-collect-quick-data)
+- [Step 3: Identify Scenario](#step-3-identify-scenario)
+- [Quick Diagnostics](#quick-diagnostics)
+- [Console Log Analysis](#console-log-analysis)
+- [Network Tab Analysis](#network-tab-analysis)
+- [System State Check](#system-state-check)
+- [Common Scenarios](#common-scenarios)
+- [Scenario 1: Two-Request Race](#scenario-1-two-request-race)
+- [Scenario 2: Multiple Subtasks](#scenario-2-multiple-subtasks)
+- [Scenario 3: User Action Duplication](#scenario-3-user-action-duplication)
+- [Scenario 4: Error Recovery Loop](#scenario-4-error-recovery-loop)
+- [Immediate Actions](#immediate-actions)
+- [Emergency Response](#emergency-response)
+- [Quick Fixes](#quick-fixes)
+- [Validation](#validation)
+- [Emergency Procedures](#emergency-procedures)
+- [Critical Issues](#critical-issues)
+- [Response Steps](#response-steps)
+- [Recovery Procedures](#recovery-procedures)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document provides fast, field-ready triage for multiple spinners and jumbled
-responses.
+  responses.
 - **Context**: Use this as a quick reference for immediate troubleshooting of duplicate API request
-issues.
+  issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -24,13 +53,6 @@ duplicate API request issues. The short version reflects findings from:
 - Emergency response procedure development for system problems
 
 The guide provides essential steps for rapid issue identification and resolution.
-
-## Table of Contents
-- [Triage Flow](#triage-flow)
-- [Quick Diagnostics](#quick-diagnostics)
-- [Common Scenarios](#common-scenarios)
-- [Immediate Actions](#immediate-actions)
-- [Emergency Procedures](#emergency-procedures)
 
 ## Triage Flow
 

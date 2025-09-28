@@ -1,5 +1,30 @@
 # How Linter Names Make It to the `docs:validate` Output
 
+## Table of Contents
+- [How Linter Names Make It to the ](#how-linter-names-make-it-to-the)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Command Flow](#command-flow)
+- [1. Command Execution](#1-command-execution)
+- [2. Validation Script](#2-validation-script)
+- [3. Remark Configuration](#3-remark-configuration)
+- [Linter Categories and Names](#linter-categories-and-names)
+- [1. Built-in Remark-Lint Plugins](#1-built-in-remark-lint-plugins)
+- [2. Link Validation Plugin](#2-link-validation-plugin)
+- [3. Custom KiloCode Plugins](#3-custom-kilocode-plugins)
+- [A. ](#a)
+- [B. ](#b)
+- [How Linter Names Are Set](#how-linter-names-are-set)
+- [1. Built-in Plugins](#1-built-in-plugins)
+- [2. Custom Plugins](#2-custom-plugins)
+- [3. Link Validation](#3-link-validation)
+- [Output Format Structure](#output-format-structure)
+- [Plugin Execution Order](#plugin-execution-order)
+- [Key Points](#key-points)
+- [Troubleshooting](#troubleshooting)
+- [Related Files](#related-files)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -117,7 +142,7 @@ This plugin provides advanced validation rules:
 - `remark-kilocode-comprehensive:kilocode-navigation-footer-required` - Missing navigation footer
 - `remark-kilocode-comprehensive:kilocode-no-dead-ends-required` - Missing No Dead Ends Policy
 - `remark-kilocode-comprehensive:kilocode-when-youre-here-required` - Missing When You're Here
-section
+  section
 - `remark-kilocode-comprehensive:kilocode-fun-fact-suggestion` - Missing fun fact
 - `remark-kilocode-comprehensive:kilocode-heading-hierarchy` - Invalid heading hierarchy
 - `remark-kilocode-comprehensive:kilocode-heading-progression` - Poor heading progression
@@ -212,7 +237,7 @@ Plugins are executed in the order defined in `.remarkrc`:
 1. **Source Names**: The `source` field identifies which plugin generated the message
 2. **Rule IDs**: The `ruleId` field identifies the specific rule within that plugin
 3. **Custom Plugins**: KiloCode custom plugins use descriptive rule IDs like
-`kilocode-descriptive-links`
+   `kilocode-descriptive-links`
 4. **Built-in Plugins**: Use simple rule IDs like `final-newline` or `no-literal-urls`
 5. **Link Validation**: Uses compound source names like `remark-validate-links:missing-file`
 

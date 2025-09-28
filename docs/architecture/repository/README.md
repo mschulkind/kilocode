@@ -1,5 +1,20 @@
 # Repository Overview Documentation
 
+## Table of Contents
+- [Repository Overview Documentation](#repository-overview-documentation)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +25,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 Welcome to the repository overview documentation! 🏗️ This directory contains comprehensive
 information about the KiloCode repository structure, systems, and components.
@@ -57,7 +72,7 @@ information about the KiloCode repository structure, systems, and components.
   web apps, e2e test apps, and nightly builds. Clarifies technologies used and deployment targets.
   Useful when working outside the core extension.
 - **[TESTING\_INFRASTRUCTURE.md](TESTING_INFRASTRUCTURE.md)** - Testing tools and frameworks
-Explains
+  Explains
   test layers (unit/integration/e2e/perf) and frameworks (Vitest, Playwright, Jest). Shows directory
   patterns and CI execution. Use as a guide to add or navigate tests.
 - **[BUILD\_PIPELINES.md](BUILD_PIPELINES.md)** - Build and CI/CD systems Documents build tools
@@ -73,7 +88,7 @@ Explains
 ## 🔗 Cross-References
 
 - **Architecture**: See [Architecture Documentation](../README.md) for system architecture Global
-architecture
+  architecture
   index with quick links to race-condition docs, state machines, and improvements.
 - **Standards**: See [Parent directory](../../standards/) for development standards Documentation,
   navigation, and code standards that keep the repo consistent and discoverable.
@@ -108,7 +123,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 // Example code
 const example = "Hello World";
 ```
-
 - [← Architecture Overview](../README.md)
 - [← Repository Structure](README.md)
 - [← Development Guide](DEVELOPMENT_GUIDE.md)

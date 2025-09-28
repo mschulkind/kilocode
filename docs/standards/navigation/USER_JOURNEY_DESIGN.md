@@ -1,7 +1,36 @@
 # User Journey Design 🗺️
 
+## Table of Contents
+- [User Journey Design 🗺️](#user-journey-design)
+- [Executive Summary](#executive-summary)
+- [User Type Analysis](#user-type-analysis)
+- [Emergency Responders](#emergency-responders)
+- [Researchers](#researchers)
+- [Implementers](#implementers)
+- [New Users](#new-users)
+- [Journey Optimization](#journey-optimization)
+- [Progressive Disclosure](#progressive-disclosure)
+- [Multiple Entry Points](#multiple-entry-points)
+- [Context Awareness](#context-awareness)
+- [Context Awareness](#context-awareness)
+- [Experience Level Adaptation](#experience-level-adaptation)
+- [Time Constraint Adaptation](#time-constraint-adaptation)
+- [Goal-Based Adaptation](#goal-based-adaptation)
+- [Journey Patterns](#journey-patterns)
+- [Problem-Solution Pattern](#problem-solution-pattern)
+- [Learning Pattern](#learning-pattern)
+- [Implementation Pattern](#implementation-pattern)
+- [Reference Pattern](#reference-pattern)
+- [Examples: Usage](#examples-usage)
+- [Related: See Also](#related-see-also)
+- [Minimal User Journey Example](#minimal-user-journey-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive standards for designing user journeys that optimize the experience for
   different types of users with different goals, contexts, and expertise levels.
@@ -25,7 +54,7 @@ foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Executive Summary
 - User journey design creates optimal experiences for different types of users by understanding
-their
+  their
   goals, constraints, and context. These standards ensure that documentation provides the right
   information at the right time in the right format for each user type.\*
 
@@ -124,7 +153,7 @@ their
 ### New Users
 
 - *Profile*\*: New team members, beginners, students **Goals**: Learn the system and understand
-basics
+  basics
 
 - *Constraints*\*: Learning curve, need for context **Expertise**: Beginner **Context**: Onboarding,
   learning, training
@@ -190,7 +219,7 @@ basics
 ### Context Awareness
 
 - *Principle*\*: Adapt content based on user context **Benefits**: Users get relevant information
-for
+  for
   their situation **Implementation**: Use conditional content and smart navigation **Examples**:
   Experience level, time constraints, goals, tools
 
@@ -211,7 +240,7 @@ for
 ### Experience Level Adaptation
 
 - *Beginner*\*: More explanation, simpler language, more examples **Intermediate**: Balanced
-approach,
+  approach,
   moderate detail **Advanced**: Technical focus, quick reference **Expert**: Streamlined,
   implementation-focused
 
@@ -704,7 +733,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

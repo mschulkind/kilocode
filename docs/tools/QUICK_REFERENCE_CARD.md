@@ -1,5 +1,50 @@
 # Quick Reference Card
 
+## Table of Contents
+- [Quick Reference Card](#quick-reference-card)
+- [When You're Here](#when-youre-here)
+- [Essential Commands](#essential-commands)
+- [Validation](#validation)
+- [Maintenance](#maintenance)
+- [Reporting](#reporting)
+- [VS Code Shortcuts](#vs-code-shortcuts)
+- [Tasks](#tasks)
+- [Auto-fix](#auto-fix)
+- [](#)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Required Sections](#required-sections)
+- [Every Document](#every-document)
+- [File Structure](#file-structure)
+- [Common Fixes](#common-fixes)
+- [Link Issues](#link-issues)
+- [Heading Hierarchy](#heading-hierarchy)
+- [Code Blocks](#code-blocks)
+- [Validation Rules](#validation-rules)
+- [Required](#required)
+- [Style](#style)
+- [Links](#links)
+- [Error Codes](#error-codes)
+- [Common Warnings](#common-warnings)
+- [Common Errors](#common-errors)
+- [File Patterns](#file-patterns)
+- [Naming](#naming)
+- [Organization](#organization)
+- [Performance Tips](#performance-tips)
+- [Large Files](#large-files)
+- [Validation Speed](#validation-speed)
+- [Troubleshooting](#troubleshooting)
+- [Quick Fixes](#quick-fixes)
+- [Debug Commands](#debug-commands)
+- [Team Workflow](#team-workflow)
+- [Before Committing](#before-committing)
+- [Code Review](#code-review)
+- [Regular Maintenance](#regular-maintenance)
+- [Resources](#resources)
+- [Documentation](#documentation)
+- [Tools](#tools)
+- [External](#external)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +55,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 Essential commands and shortcuts for KiloCode documentation automation.
 
@@ -102,17 +147,17 @@ node scripts/docs/validation-report.js --summary
 - Auto-fix on save (enabled by default)
 
 #
+
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation
 - `Ctrl+Shift+O` → Go to symbol in file
@@ -128,9 +173,6 @@ For more information, see:
 
 Brief description of research and context.
 
-## Table of Contents
-- [Section 1](#section-1)
-- [Section 2](#section-2)
 
 ## Main Content
 

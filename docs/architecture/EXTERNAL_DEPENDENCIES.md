@@ -1,18 +1,62 @@
 # External Dependencies
 
+## Table of Contents
+- [External Dependencies](#external-dependencies)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [AI/ML & Language Models](#aiml-language-models)
+- [Core AI Libraries](#core-ai-libraries)
+- [Model Integration](#model-integration)
+- [Usage Patterns](#usage-patterns)
+- [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+- [MCP Integration](#mcp-integration)
+- [MCP Components](#mcp-components)
+- [Configuration](#configuration)
+- [Cloud & Authentication](#cloud-authentication)
+- [Cloud Services](#cloud-services)
+- [Authentication](#authentication)
+- [Security](#security)
+- [Code Analysis & Processing](#code-analysis-processing)
+- [Code Analysis Tools](#code-analysis-tools)
+- [Processing Libraries](#processing-libraries)
+- [Integration Patterns](#integration-patterns)
+- [File Processing & Formats](#file-processing-formats)
+- [File Processing](#file-processing)
+- [Format Support](#format-support)
+- [Processing Patterns](#processing-patterns)
+- [UI & Frontend (Webview)](#ui-frontend-webview)
+- [Frontend Frameworks](#frontend-frameworks)
+- [Styling](#styling)
+- [State Management](#state-management)
+- [Development Tools & Build](#development-tools-build)
+- [Build Tools](#build-tools)
+- [Development Tools](#development-tools)
+- [Testing](#testing)
+- [Utilities & Helpers](#utilities-helpers)
+- [Utility Libraries](#utility-libraries)
+- [Async Utilities](#async-utilities)
+- [Data Processing](#data-processing)
+- [Dependency Management](#dependency-management)
+- [Package Management](#package-management)
+- [Version Management](#version-management)
+- [Best Practices](#best-practices)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers comprehensive catalog of all external dependencies, libraries,
-and conventions for using them in the KiloCode project.
+  and conventions for using them in the KiloCode project.
 - **Context**: Use this as a starting point for understanding external dependencies and their usage
-patterns.
+  patterns.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 ## Research Context
 
@@ -24,17 +68,6 @@ patterns in the KiloCode project. The catalog reflects findings from:
 - Best practices development for dependency management
 
 The catalog provides systematic guidance for managing and using external dependencies effectively.
-
-## Table of Contents
-- [AI/ML & Language Models](#aiml--language-models)
-- [Model Context Protocol (MCP)](#model-context-protocol-mcp)
-- [Cloud & Authentication](#cloud--authentication)
-- [Code Analysis & Processing](#code-analysis--processing)
-- [File Processing & Formats](#file-processing--formats)
-- [UI & Frontend (Webview)](#ui--frontend-webview)
-- [Development Tools & Build](#development-tools--build)
-- [Utilities & Helpers](#utilities--helpers)
-- [Dependency Management](#dependency-management)
 
 ## AI/ML & Language Models
 

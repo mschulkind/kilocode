@@ -1,47 +1,67 @@
 # UI Layer System Architecture
 
+## Table of Contents
+- [UI Layer System Architecture](#ui-layer-system-architecture)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [System Components](#system-components)
+- [Chat Interface Component](#chat-interface-component)
+- [ChatView Component](#chatview-component)
+- [Message Display System](#message-display-system)
+- [Send Controls Component](#send-controls-component)
+- [ChatTextArea Component](#chattextarea-component)
+- [Send Button Logic](#send-button-logic)
+- [Message Queue System](#message-queue-system)
+- [QueuedMessages Component](#queuedmessages-component)
+- [Queue State Integration](#queue-state-integration)
+- [State Management](#state-management)
+- [Primary State Variables](#primary-state-variables)
+- [State Transition Flow](#state-transition-flow)
+- [State Synchronization](#state-synchronization)
+- [Event Handling](#event-handling)
+- [Message Send Events](#message-send-events)
+- [Keyboard Events](#keyboard-events)
+- [Webview Communication](#webview-communication)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [Send Button Stuck Disabled](#send-button-stuck-disabled)
+- [Multiple Messages Queued](#multiple-messages-queued)
+- [Button State Inconsistency](#button-state-inconsistency)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-🔍 **Did You Know**: [Interesting insight]
-
+🔍 **Did You Know**: \[Interesting insight]
 
 This document provides a comprehensive overview of KiloCode's UI layer architecture, including
 component design, state management, and troubleshooting procedures.
 
 - **Purpose**: Complete guide to UI layer system architecture and component implementation
 - **Context**: Essential for developers working on UI components, state management, or debugging UI
-issues
+  issues
 - **Navigation**: Use the table of contents below to jump to specific topics
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
-
-## Table of Contents
-- [Overview](#overview)
-- [System Components](#system-components)
-- [Chat Interface Component](#chat-interface-component)
-- [Send Controls Component](#send-controls-component)
-- [Message Queue System](#message-queue-system)
-- [State Management](#state-management)
-- [Event Handling](#event-handling)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Navigation](#navigation)
+\[Research or development methodology used]
 
 ## Overview
 
@@ -54,7 +74,6 @@ components.
 
 The UI Layer consists of three primary components that work together to provide a seamless user
 experience:
-
 1. **Chat Interface** - Main chat view and message display system
 2. **Send Controls** - User input controls and request initiation mechanisms
 3. **Message Queue** - Visual representation and management of queued messages
@@ -438,21 +457,18 @@ false
 }, [sendingDisabled, provider])
 ```
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
 ## Navigation
-
 - [← Back to UI Documentation](README.md)
 - [→ Chat Task Window](UI_CHAT_TASK_WINDOW.md)
 - [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)

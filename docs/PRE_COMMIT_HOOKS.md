@@ -1,5 +1,42 @@
 # Pre-commit Hooks Documentation
 
+## Table of Contents
+- [Pre-commit Hooks Documentation](#pre-commit-hooks-documentation)
+- [When You're Here](#when-youre-here)
+- [Overview](#overview)
+- [Configuration](#configuration)
+- [Husky Setup](#husky-setup)
+- [Pre-commit Hook Flow](#pre-commit-hook-flow)
+- [Documentation Validation](#documentation-validation)
+- [Validation Commands](#validation-commands)
+- [Validation Rules](#validation-rules)
+- [Auto-fix Capabilities](#auto-fix-capabilities)
+- [Error Handling](#error-handling)
+- [Validation Failures](#validation-failures)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Link Validation Errors](#link-validation-errors)
+- [Missing Required Sections](#missing-required-sections)
+- [Heading Hierarchy Issues](#heading-hierarchy-issues)
+- [Bypassing Hooks (Emergency Only)](#bypassing-hooks-emergency-only)
+- [Skip Pre-commit Hook](#skip-pre-commit-hook)
+- [Skip All Hooks](#skip-all-hooks)
+- [Troubleshooting](#troubleshooting)
+- [Hook Not Running](#hook-not-running)
+- [Performance Issues](#performance-issues)
+- [Validation Errors](#validation-errors)
+- [Too Many Warnings](#too-many-warnings)
+- [False Positives](#false-positives)
+- [Best Practices](#best-practices)
+- [Before Committing](#before-committing)
+- [Commit Messages](#commit-messages)
+- [Integration with CI/CD](#integration-with-cicd)
+- [Maintenance](#maintenance)
+- [Updating Hook Configuration](#updating-hook-configuration)
+- [Adding New Validation Rules](#adding-new-validation-rules)
+- [Support](#support)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +47,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Overview
 
@@ -266,18 +303,16 @@ For issues with pre-commit hooks:
 4. **Ask team for help if needed**
 5. **Report bugs or false positives**
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

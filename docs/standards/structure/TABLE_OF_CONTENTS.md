@@ -1,17 +1,34 @@
-# Table of Contents 📑
+# ## When You're Here
 
 ## When You're Here
 
-This document provides [purpose of document].
+## Table of Contents
+- [Table of Contents 📑](#table-of-contents)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [TOC Requirements](#toc-requirements)
+- [Format Standards](#format-standards)
+- [Content Guidelines](#content-guidelines)
+- [Placement Rules](#placement-rules)
+- [Optional TOC Criteria](#optional-toc-criteria)
+- [TOC Validation](#toc-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete TOC Example](#complete-toc-example)
+- [Minimal TOC Example](#minimal-toc-example)
+- [No TOC Example](#no-toc-example)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+This document provides \[purpose of document].
+
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Standards for creating and formatting table of contents (TOC) elements to ensure
   consistent navigation and discoverability across all KiloCode documentation.
@@ -44,11 +61,11 @@ documentation helps us understand how! ⚙️
   difficult for users to navigate and find information efficiently.
 
 - *Research Questions:*\* What format should TOCs use? When are TOCs required? What content should
-be
+  be
   included?
 
 - *Methodology:*\* Analysis of documentation length patterns, user navigation needs, and markdown
-best
+  best
   practices to determine optimal TOC standards.
 
 - *Findings:*\* Collapsible format with H2/H3 entries only, required for documents with 3+ H2s and

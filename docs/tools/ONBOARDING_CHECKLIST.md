@@ -1,5 +1,51 @@
 # Documentation Automation Onboarding Checklist
 
+## Table of Contents
+- [Documentation Automation Onboarding Checklist](#documentation-automation-onboarding-checklist)
+- [When You're Here](#when-youre-here)
+- [Pre-Onboarding](#pre-onboarding)
+- [1. Prerequisites](#1-prerequisites)
+- [2. Initial Setup](#2-initial-setup)
+- [Phase 1: Basic Understanding](#phase-1-basic-understanding)
+- [1. Documentation System Overview](#1-documentation-system-overview)
+- [2. Tool Familiarization](#2-tool-familiarization)
+- [3. Standards and Guidelines](#3-standards-and-guidelines)
+- [Phase 2: Hands-On Practice](#phase-2-hands-on-practice)
+- [1. Basic Validation](#1-basic-validation)
+- [2. Advanced Features](#2-advanced-features)
+- [3. Real Documentation](#3-real-documentation)
+- [Phase 3: Team Integration](#phase-3-team-integration)
+- [1. Workflow Integration](#1-workflow-integration)
+- [2. Collaboration](#2-collaboration)
+- [3. Advanced Usage](#3-advanced-usage)
+- [Phase 4: Mastery](#phase-4-mastery)
+- [1. Expert Level](#1-expert-level)
+- [2. Process Improvement](#2-process-improvement)
+- [3. Knowledge Sharing](#3-knowledge-sharing)
+- [Testing and Validation](#testing-and-validation)
+- [1. Basic Tests](#1-basic-tests)
+- [2. Advanced Tests](#2-advanced-tests)
+- [3. Team Tests](#3-team-tests)
+- [Resources and Support](#resources-and-support)
+- [1. Documentation](#1-documentation)
+- [2. Tools](#2-tools)
+- [3. Support](#3-support)
+- [Completion Criteria](#completion-criteria)
+- [1. Technical Competence](#1-technical-competence)
+- [2. Process Understanding](#2-process-understanding)
+- [3. Team Integration](#3-team-integration)
+- [Ongoing Development](#ongoing-development)
+- [1. Regular Updates](#1-regular-updates)
+- [2. Continuous Learning](#2-continuous-learning)
+- [3. Process Evolution](#3-process-evolution)
+- [Success Metrics](#success-metrics)
+- [1. Individual Metrics](#1-individual-metrics)
+- [2. Team Metrics](#2-team-metrics)
+- [3. Process Metrics](#3-process-metrics)
+- [Related Documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +56,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 This checklist ensures new team members are properly onboarded to KiloCode's documentation
 automation system.
@@ -219,18 +265,16 @@ automation system.
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 - [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

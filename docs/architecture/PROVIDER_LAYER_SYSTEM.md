@@ -1,18 +1,50 @@
 # Provider Layer System
 
+## Table of Contents
+- [Provider Layer System](#provider-layer-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [System Architecture](#system-architecture)
+- [Architecture Overview](#architecture-overview)
+- [API Provider](#api-provider)
+- [Provider Overview](#provider-overview)
+- [Provider Implementation](#provider-implementation)
+- [Language Model Integration](#language-model-integration)
+- [Integration Overview](#integration-overview)
+- [Integration Implementation](#integration-implementation)
+- [Request Processing](#request-processing)
+- [Processing Pipeline](#processing-pipeline)
+- [Processing Implementation](#processing-implementation)
+- [Error Handling](#error-handling)
+- [Error Management](#error-management)
+- [Error Handling Implementation](#error-handling-implementation)
+- [Retry Logic](#retry-logic)
+- [Retry Strategy](#retry-strategy)
+- [Retry Implementation](#retry-implementation)
+- [Performance Optimization](#performance-optimization)
+- [Optimization Strategies](#optimization-strategies)
+- [Performance Monitoring](#performance-monitoring)
+- [Common Issues](#common-issues)
+- [Provider Issues](#provider-issues)
+- [Integration Issues](#integration-issues)
+- [Troubleshooting](#troubleshooting)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the Provider Layer system, including API Provider and Language
-Model components for external API communication and request processing.
+  Model components for external API communication and request processing.
 - **Context**: Use this as a starting point for understanding external API integration and provider
-management in the KiloCode system.
+  management in the KiloCode system.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -24,16 +56,6 @@ API integration architecture in the KiloCode project. The system reflects findin
 - Performance optimization and reliability enhancement strategy analysis
 
 The system provides robust external API integration and provider management capabilities.
-
-## Table of Contents
-- [System Architecture](#system-architecture)
-- [API Provider](#api-provider)
-- [Language Model Integration](#language-model-integration)
-- [Request Processing](#request-processing)
-- [Error Handling](#error-handling)
-- [Retry Logic](#retry-logic)
-- [Performance Optimization](#performance-optimization)
-- [Common Issues](#common-issues)
 
 ## System Architecture
 

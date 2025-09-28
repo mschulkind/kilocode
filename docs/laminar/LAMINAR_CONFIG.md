@@ -1,7 +1,40 @@
 # Laminar Configuration Guide
 
+## Table of Contents
+- [Laminar Configuration Guide](#laminar-configuration-guide)
+- [Quick Start Example](#quick-start-example)
+- [Configuration Settings](#configuration-settings)
+- [Required Settings](#required-settings)
+- [LMNR\_API\_KEY](#lmnrapikey)
+- [Optional Settings](#optional-settings)
+- [LMNR\_ENABLED](#lmnrenabled)
+- [LMNR\_RECORD\_IO](#lmnrrecordio)
+- [LMNR\_BASE\_URL](#lmnrbaseurl)
+- [LMNR\_HTTP\_PORT](#lmnrhttpport)
+- [LMNR\_GRPC\_PORT](#lmnrgrpcport)
+- [Environment-Specific Examples](#environment-specific-examples)
+- [Development Environment](#development-environment)
+- [Staging Environment](#staging-environment)
+- [Production Environment](#production-environment)
+- [Project Integration](#project-integration)
+- [Adding Laminar to Your Project](#adding-laminar-to-your-project)
+- [Loading Environment Variables](#loading-environment-variables)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [Testing Configuration](#testing-configuration)
+- [Security Considerations](#security-considerations)
+- [Migration Guide](#migration-guide)
+- [From Default Configuration](#from-default-configuration)
+- [From Custom Configuration](#from-custom-configuration)
+- [Support](#support)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Complete guide for configuring Laminar observability in your projects*\*
 

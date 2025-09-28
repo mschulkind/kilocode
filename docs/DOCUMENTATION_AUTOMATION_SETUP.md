@@ -1,5 +1,26 @@
 # Documentation Automation Setup Guide
 
+## Table of Contents
+- [Documentation Automation Setup Guide](#documentation-automation-setup-guide)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Usage](#usage)
+- [Available Scripts](#available-scripts)
+- [Basic Validation](#basic-validation)
+- [Auto-fixing Issues](#auto-fixing-issues)
+- [Pre-commit Hooks](#pre-commit-hooks)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [GitHub Actions Workflow](#github-actions-workflow)
+- [Workflow Features](#workflow-features)
+- [IDE Integration](#ide-integration)
+- [Common Issues](#common-issues)
+- [Getting Help](#getting-help)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,29 +31,27 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 This guide explains how to set up and use the automated documentation validation and maintenance
 system for KiloCode.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
@@ -43,8 +62,6 @@ KiloCode's documentation standards. It includes:
 - Custom KiloCode-specific validation rules
 - Integration with CI/CD pipeline
 - IDE integration for real-time validation
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -58,8 +75,6 @@ The documentation automation dependencies are already installed in the workspace
 - `remark-gfm` - GitHub Flavored Markdown support
 - `remark-stringify` - Markdown stringification
 - `remark-frontmatter` - Frontmatter support
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -127,8 +142,6 @@ Many common issues can be automatically fixed:
 pnpm docs:fix
 ```
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Integration
@@ -165,8 +178,6 @@ The workflow includes two jobs:
 
 VS Code integration provides real-time validation as you edit markdown files.
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Troubleshooting
@@ -184,8 +195,6 @@ For issues with the documentation automation system:
 2. Review the documentation standards in `docs/DOCUMENTATION_GUIDE.md`
 3. Use `pnpm docs:validate:verbose` for detailed error information
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Next Steps
@@ -199,22 +208,18 @@ After setup, the system will:
 For advanced configuration and custom rules, see the Phase 1 implementation plan in
 `context/doc_automation/phase1.md`.
 
-
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

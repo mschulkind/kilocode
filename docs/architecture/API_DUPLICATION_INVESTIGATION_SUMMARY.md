@@ -1,18 +1,48 @@
 # API Duplication Investigation Summary
 
+## Table of Contents
+- [API Duplication Investigation Summary](#api-duplication-investigation-summary)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Problem Statement](#problem-statement)
+- [Investigation Status](#investigation-status)
+- [Investigation Phases](#investigation-phases)
+- [Key Findings](#key-findings)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Primary Root Causes](#primary-root-causes)
+- [Contributing Factors](#contributing-factors)
+- [Technical Analysis](#technical-analysis)
+- [Solution Strategy](#solution-strategy)
+- [Immediate Actions](#immediate-actions)
+- [Long-term Solutions](#long-term-solutions)
+- [Implementation Approach](#implementation-approach)
+- [Implementation Plan](#implementation-plan)
+- [Phase 1: Immediate Fixes (Week 1-2)](#phase-1-immediate-fixes-week-1-2)
+- [Phase 2: Architectural Improvements (Month 1)](#phase-2-architectural-improvements-month-1)
+- [Phase 3: Long-term Enhancements (Month 2-3)](#phase-3-long-term-enhancements-month-2-3)
+- [Success Metrics](#success-metrics)
+- [Next Steps](#next-steps)
+- [Immediate Actions](#immediate-actions)
+- [Ongoing Activities](#ongoing-activities)
+- [Success Criteria](#success-criteria)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document provides an executive summary of the API request duplication
-investigation plan and implementation strategy.
+  investigation plan and implementation strategy.
 - **Context**: Use this as a starting point for understanding the API duplication investigation
-status and approach.
+  status and approach.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -25,14 +55,6 @@ system. The investigation summary reflects findings from:
 
 The investigation provides a systematic approach to identifying and resolving API duplication
 problems.
-
-## Table of Contents
-- [Problem Statement](#problem-statement)
-- [Investigation Status](#investigation-status)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Solution Strategy](#solution-strategy)
-- [Implementation Plan](#implementation-plan)
-- [Next Steps](#next-steps)
 
 ## Problem Statement
 
@@ -180,9 +202,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 // Example code
 const example = "Hello World";
 ```
-
 - [← Architecture Documentation](README.md)
 - [← Debug Implementation](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [← Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [← Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../README.md)

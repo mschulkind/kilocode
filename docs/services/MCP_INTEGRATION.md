@@ -1,5 +1,37 @@
 # MCP Integration
 
+## Table of Contents
+- [MCP Integration](#mcp-integration)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [MCP Architecture](#mcp-architecture)
+- [Server Management](#server-management)
+- [MCP Hub](#mcp-hub)
+- [Server Manager](#server-manager)
+- [Tool Discovery](#tool-discovery)
+- [Tool Registry](#tool-registry)
+- [Tool Discovery Process](#tool-discovery-process)
+- [Resource Management](#resource-management)
+- [Resource Registry](#resource-registry)
+- [Resource Access](#resource-access)
+- [Communication Protocols](#communication-protocols)
+- [MCP Protocol Implementation](#mcp-protocol-implementation)
+- [Communication Flow](#communication-flow)
+- [Error Handling](#error-handling)
+- [Error Classification](#error-classification)
+- [Error Recovery](#error-recovery)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Server Connection Failures](#issue-1-server-connection-failures)
+- [Issue 2: Tool Discovery Issues](#issue-2-tool-discovery-issues)
+- [Issue 3: Resource Access Problems](#issue-3-resource-access-problems)
+- [Issue 4: Protocol Communication Errors](#issue-4-protocol-communication-errors)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +42,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive documentation of Model Context Protocol (MCP) integration, server
   management, and tool discovery in the KiloCode system.
@@ -31,24 +63,22 @@ documentation helps us understand how! ⚙️
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The MCP Integration system provides comprehensive Model Context Protocol support for KiloCode,
@@ -303,7 +333,7 @@ interface MCPResourceMetadata {
 - **Audit Logging**: Access audit logging
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Resource access
-patterns,
+  patterns,
   access control, security measures
 
 ## Communication Protocols
@@ -331,7 +361,7 @@ patterns,
 - **Error Responses**: Error handling responses
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Protocol
-implementation,
+  implementation,
   message handling, communication patterns
 
 ### Communication Flow
@@ -381,7 +411,7 @@ sequenceDiagram
 - **Error Prevention**: Proactive error prevention
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Error handling
-framework,
+  framework,
   recovery strategies, error reporting
 
 ### Error Recovery
@@ -426,7 +456,7 @@ framework,
 - Capability mismatches
 
 - *Root Cause*\*: Discovery mechanism failures or server compatibility issues **Solution**:
-Implement
+  Implement
   comprehensive discovery validation and error handling
 
 ### Issue 3: Resource Access Problems
@@ -447,26 +477,24 @@ Implement
 - Communication failures
 
 - *Root Cause*\*: Protocol implementation issues or version incompatibilities **Solution**:
-Implement
+  Implement
   robust protocol handling and version management
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
-[`README.md`](../README.md)
+  [`README.md`](../README.md)
   · Source: `/docs/services/MCP_INTEGRATION.md#L1`
-
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

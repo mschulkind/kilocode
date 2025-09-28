@@ -1,18 +1,53 @@
 # Prioritized Architecture Improvements
 
+## Table of Contents
+- [Prioritized Architecture Improvements](#prioritized-architecture-improvements)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Top Priorities](#top-priorities)
+- [Tier 0: Critical Improvements](#tier-0-critical-improvements)
+- [Tier 1: High-Impact Improvements](#tier-1-high-impact-improvements)
+- [Priority Rationale](#priority-rationale)
+- [Strategic Improvements](#strategic-improvements)
+- [Request Arbiter Implementation](#request-arbiter-implementation)
+- [Declarative Execution Model](#declarative-execution-model)
+- [State Machine Optimization](#state-machine-optimization)
+- [Session Management Enhancement](#session-management-enhancement)
+- [Implementation Strategy](#implementation-strategy)
+- [Phase 1: Foundation (Month 1-2)](#phase-1-foundation-month-1-2)
+- [Phase 2: Core Features (Month 3-4)](#phase-2-core-features-month-3-4)
+- [Phase 3: Optimization (Month 5-6)](#phase-3-optimization-month-5-6)
+- [Phase 4: Monitoring (Month 7-8)](#phase-4-monitoring-month-7-8)
+- [Performance Enhancements](#performance-enhancements)
+- [Execution Performance](#execution-performance)
+- [Scalability Improvements](#scalability-improvements)
+- [Reliability Enhancements](#reliability-enhancements)
+- [Quality Improvements](#quality-improvements)
+- [Code Quality](#code-quality)
+- [Testing Quality](#testing-quality)
+- [Monitoring Quality](#monitoring-quality)
+- [Success Metrics](#success-metrics)
+- [Performance Metrics](#performance-metrics)
+- [Quality Metrics](#quality-metrics)
+- [Business Metrics](#business-metrics)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers high-impact, near-to-mid term improvements around
-task/orchestrator, recursion, session management, and API execution.
+  task/orchestrator, recursion, session management, and API execution.
 - **Context**: Use this as a starting point for understanding prioritized architecture improvements
-and strategic upgrades.
+  and strategic upgrades.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
@@ -25,14 +60,6 @@ and strategic upgrade planning in the KiloCode project. The improvements reflect
 
 The improvements provide strategic upgrades to complement race-condition work and enhance system
 capabilities.
-
-## Table of Contents
-- [Top Priorities](#top-priorities)
-- [Strategic Improvements](#strategic-improvements)
-- [Implementation Strategy](#implementation-strategy)
-- [Performance Enhancements](#performance-enhancements)
-- [Quality Improvements](#quality-improvements)
-- [Success Metrics](#success-metrics)
 
 ## Top Priorities
 
@@ -220,9 +247,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 // Example code
 const example = "Hello World";
 ```
-
 - [← Architecture Documentation](README.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)
-- [← Race Condition Solutions](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+- [← Race Condition Solutions](../architecture/SOLUTION_RECOMMENDATIONS.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../README.md)

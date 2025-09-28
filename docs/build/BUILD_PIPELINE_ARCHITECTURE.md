@@ -1,5 +1,41 @@
 # Build Pipeline Architecture
 
+## Table of Contents
+- [Build Pipeline Architecture](#build-pipeline-architecture)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [Build Architecture](#build-architecture)
+- [Package Management](#package-management)
+- [pnpm Workspace Configuration](#pnpm-workspace-configuration)
+- [Dependency Management](#dependency-management)
+- [Build Tools](#build-tools)
+- [Turbo Build Orchestration](#turbo-build-orchestration)
+- [ESBuild Configuration](#esbuild-configuration)
+- [Vite Configuration](#vite-configuration)
+- [Monorepo Structure](#monorepo-structure)
+- [Workspace Organization](#workspace-organization)
+- [Build Coordination](#build-coordination)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [GitHub Actions Workflow](#github-actions-workflow)
+- [Quality Gates](#quality-gates)
+- [Deployment Strategies](#deployment-strategies)
+- [VS Code Extension Packaging](#vs-code-extension-packaging)
+- [Release Management](#release-management)
+- [Performance Optimization](#performance-optimization)
+- [Build Performance](#build-performance)
+- [Bundle Optimization](#bundle-optimization)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Build Failures](#issue-1-build-failures)
+- [Issue 2: Slow Builds](#issue-2-slow-builds)
+- [Issue 3: Deployment Issues](#issue-3-deployment-issues)
+- [Issue 4: Cache Issues](#issue-4-cache-issues)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,13 +46,13 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation of build pipeline architecture, dependency management,
-and deployment strategies in the KiloCode system.
+  and deployment strategies in the KiloCode system.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
-can go, and how to get there without getting lost! 🗺️
+> can go, and how to get there without getting lost! 🗺️
 
 <details><summary>Table of Contents</summary>
 - [Executive Summary](#executive-summary)
@@ -32,29 +68,27 @@ can go, and how to get there without getting lost! 🗺️
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Build Pipeline Architecture provides comprehensive build, packaging, and deployment
-infrastructure for the KiloCode monorepo, ensuring efficient development workflows and reliable
-releases.\*
+  infrastructure for the KiloCode monorepo, ensuring efficient development workflows and reliable
+  releases.\*
 
 The Build Pipeline consists of:
 1. **Build Tools** - Turbo, ESBuild, Vite, TypeScript
@@ -551,23 +585,21 @@ jobs:
 
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
-`/docs/build/BUILD_PIPELINE_ARCHITECTURE.md#L1`
-
+  `/docs/build/BUILD_PIPELINE_ARCHITECTURE.md#L1`
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
 ## Navigation Footer
 - \*\*
 
 - *Navigation*\*: [docs](../) · [build](../docs/build/) · [↑ Table of
-Contents](#build-pipeline-architecture)
+  Contents](#build-pipeline-architecture)

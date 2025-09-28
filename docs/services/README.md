@@ -1,5 +1,24 @@
 # Services Documentation
 
+## Table of Contents
+- [Services Documentation](#services-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Directory Context](#directory-context)
+- [Key Focus Areas](#key-focus-areas)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,29 +29,27 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 Welcome to the services documentation! ⚙️ This directory covers all the microservices and service
 layers that power KiloCode's functionality.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Directory Context
 
@@ -67,7 +84,7 @@ individual services operate within the larger system architecture.
 
 - **[Repository Overview](README.md)** - Master index of all service documentation
 - **[CLOUD\_SERVICES\_ARCHITECTURE.md](CLOUD_SERVICES_ARCHITECTURE.md)** - Cloud service
-architecture
+  architecture
 - **[CODE\_INDEX\_SERVICE.md](CODE_INDEX_SERVICE.md)** - Code indexing and search
 - **[CUSTOM\_MODES\_SYSTEM.md](CUSTOM_MODES_SYSTEM.md)** - Custom mode management
 - **[PROMPT\_SYSTEM.md](PROMPT_SYSTEM.md)** - Prompt engineering and management
@@ -95,18 +112,16 @@ systems working together to survive, our system needs all services working in ha
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation
 - [← Main Documentation](../README.md)

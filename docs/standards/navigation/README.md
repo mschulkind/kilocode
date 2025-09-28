@@ -1,5 +1,32 @@
 # Navigation & User Experience 🧭
 
+## Table of Contents
+- [Navigation & User Experience 🧭](#navigation-user-experience)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Emergency Response (Something's Broken!)](#emergency-response-somethings-broken)
+- [Deep Dive Research (Understanding the System)](#deep-dive-research-understanding-the-system)
+- [Implementation Journey (Building the Fix)](#implementation-journey-building-the-fix)
+- [Cross-References](#cross-references)
+- [Reference Types](#reference-types)
+- [Cross-Reference Placement](#cross-reference-placement)
+- [User Journey Design](#user-journey-design)
+- [User Types](#user-types)
+- [Journey Optimization](#journey-optimization)
+- [Navigation Patterns](#navigation-patterns)
+- [Navigation Elements](#navigation-elements)
+- [Navigation Behaviors](#navigation-behaviors)
+- [User Experience Principles](#user-experience-principles)
+- [Accessibility](#accessibility)
+- [Usability](#usability)
+- [Implementation Guidelines](#implementation-guidelines)
+- [Daily Practice](#daily-practice)
+- [Quality Checks](#quality-checks)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +37,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive standards for creating intuitive navigation paths and user experiences
   that help different types of users efficiently find and use KiloCode documentation.
@@ -87,7 +114,7 @@ documentation helps us understand how! ⚙️
 ### Deep Dive Research (Understanding the System)
 
 - *Target Users*\*: Architects, researchers, new team members **Goal**: Comprehensive understanding
-of
+  of
   system architecture
 
 - *Navigation Path*\*:
@@ -131,7 +158,7 @@ of
 ## Cross-References
 
 - *Purpose*\*: Create meaningful connections between related content across the documentation
-system.
+  system.
 
 ### Reference Types
 
@@ -483,8 +510,8 @@ system.
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../../README.md) · [Next: Quick Start
-Paths](QUICK_START_PATHS.md)
+- *Navigation*\*: [Back to Standards](../README.md) · [Next: Quick Start
+  Paths](QUICK_START_PATHS.md)
   · [Source: `/docs/standards/navigation/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

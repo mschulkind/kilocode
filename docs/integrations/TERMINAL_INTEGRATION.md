@@ -1,18 +1,47 @@
 # Terminal Integration
 
+## Table of Contents
+- [Terminal Integration](#terminal-integration)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Integration Overview](#integration-overview)
+- [System Architecture](#system-architecture)
+- [Key Features](#key-features)
+- [Terminal Management](#terminal-management)
+- [Shell Integration](#shell-integration)
+- [Command Execution](#command-execution)
+- [Process Management](#process-management)
+- [Setup and Configuration](#setup-and-configuration)
+- [Prerequisites](#prerequisites)
+- [Installation Steps](#installation-steps)
+- [Configuration Options](#configuration-options)
+- [Usage Examples](#usage-examples)
+- [Basic Terminal Operations](#basic-terminal-operations)
+- [Shell Integration](#shell-integration)
+- [Process Management](#process-management)
+- [Security Considerations](#security-considerations)
+- [Command Safety](#command-safety)
+- [Access Control](#access-control)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the terminal integration system for command execution, shell
-integration, and terminal management.
+  integration, and terminal management.
 - **Context**: Use this as a starting point for understanding how KiloCode integrates with terminal
-and shell environments.
+  and shell environments.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -24,15 +53,6 @@ interaction requirements in development environments. The integration system ref
 - Cross-platform terminal compatibility studies
 
 The system provides secure and efficient terminal integration for development workflows.
-
-## Table of Contents
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Setup and Configuration](#setup-and-configuration)
-- [Usage Examples](#usage-examples)
-- [Security Considerations](#security-considerations)
-- [Troubleshooting](#troubleshooting)
 
 ## Integration Overview
 

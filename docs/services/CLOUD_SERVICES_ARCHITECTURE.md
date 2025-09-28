@@ -1,5 +1,42 @@
 # Cloud Services Architecture
 
+## Table of Contents
+- [Cloud Services Architecture](#cloud-services-architecture)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [Cloud Architecture](#cloud-architecture)
+- [Authentication System](#authentication-system)
+- [Web Authentication Service](#web-authentication-service)
+- [Static Token Authentication](#static-token-authentication)
+- [Cloud API Integration](#cloud-api-integration)
+- [Cloud API Client](#cloud-api-client)
+- [Cloud Service Manager](#cloud-service-manager)
+- [Bridge Communication](#bridge-communication)
+- [Bridge Orchestrator](#bridge-orchestrator)
+- [Bridge Channels](#bridge-channels)
+- [Telemetry & Analytics](#telemetry-analytics)
+- [Telemetry Client](#telemetry-client)
+- [Analytics Integration](#analytics-integration)
+- [Configuration Management](#configuration-management)
+- [Cloud Settings Service](#cloud-settings-service)
+- [Static Settings Service](#static-settings-service)
+- [Security & Privacy](#security-privacy)
+- [Security Measures](#security-measures)
+- [API Key Management](#api-key-management)
+- [Performance & Scalability](#performance-scalability)
+- [Performance Optimization](#performance-optimization)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Authentication Failures](#issue-1-authentication-failures)
+- [Issue 2: Bridge Connection Issues](#issue-2-bridge-connection-issues)
+- [Issue 3: API Rate Limiting](#issue-3-api-rate-limiting)
+- [Issue 4: Configuration Synchronization Issues](#issue-4-configuration-synchronization-issues)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +47,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive documentation of cloud services architecture, authentication flows, and
   cloud integration patterns in the KiloCode system.
@@ -33,28 +70,26 @@ documentation helps us understand how! ⚙️
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Cloud Services Architecture provides comprehensive cloud integration capabilities for
-KiloCode,
+  KiloCode,
   including authentication, API management, telemetry collection, and bridge communication for cloud
   features.\*
 
@@ -219,7 +254,7 @@ interface StaticTokenConfig {
 - Sharing functionality
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: API client
-architecture,
+  architecture,
   endpoint management, error handling
 
 ### Cloud Service Manager
@@ -431,7 +466,7 @@ export class BridgeOrchestrator {
 - Authentication settings
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration
-management,
+  management,
   synchronization, validation
 
 ### Static Settings Service
@@ -474,7 +509,7 @@ management,
 - Usage tracking
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Key management
-patterns,
+  patterns,
   security measures, access control
 
 ## Performance & Scalability
@@ -494,7 +529,7 @@ patterns,
 - Performance monitoring
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Performance
-optimization,
+  optimization,
   scalability patterns, monitoring
 
 ## Common Issues and Solutions
@@ -507,7 +542,7 @@ optimization,
 - Authentication errors
 
 - *Root Cause*\*: Invalid credentials or token issues **Solution**: Implement proper token refresh
-and
+  and
   error handling
 
 ### Issue 2: Bridge Connection Issues
@@ -544,18 +579,16 @@ and
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/services/CLOUD_SERVICES_ARCHITECTURE.md#L1`
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

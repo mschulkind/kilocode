@@ -1,5 +1,44 @@
 # Implementation Checklist Quick Reference
 
+## Table of Contents
+- [Implementation Checklist Quick Reference](#implementation-checklist-quick-reference)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Template Location](#template-location)
+- [Quick Setup](#quick-setup)
+- [1. Copy Template](#1-copy-template)
+- [2. Customize Header](#2-customize-header)
+- [3. Define Tasks](#3-define-tasks)
+- [Status Values](#status-values)
+- [Task ID Format](#task-id-format)
+- [Commit Message Format](#commit-message-format)
+- [Progress Tracking Rules](#progress-tracking-rules)
+- [For Each Task:](#for-each-task)
+- [Timestamp Format](#timestamp-format)
+- [Common Task Patterns](#common-task-patterns)
+- [Setup Tasks](#setup-tasks)
+- [Implementation Tasks](#implementation-tasks)
+- [Documentation Tasks](#documentation-tasks)
+- [Testing Tasks](#testing-tasks)
+- [Success Criteria Template](#success-criteria-template)
+- [File Organization](#file-organization)
+- [Directory Structure](#directory-structure)
+- [Naming Convention](#naming-convention)
+- [Best Practices](#best-practices)
+- [Task Design](#task-design)
+- [Progress Updates](#progress-updates)
+- [Quality Assurance](#quality-assurance)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Quick Commands](#quick-commands)
+- [Create New Checklist](#create-new-checklist)
+- [Update Progress](#update-progress)
+- [Complete Task](#complete-task)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,28 +49,26 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Quick reference for creating and using implementation checklists.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Template Location
 
@@ -260,18 +297,16 @@ code context/[proj_name]/phase1.md
 3. Update summary table
 4. Commit with task ID
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

@@ -1,5 +1,21 @@
 # Document Structure 🏗️
 
+## Table of Contents
+- [Document Structure 🏗️](#document-structure)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Document Anatomy](#document-anatomy)
+- [Headings & Hierarchy](#headings-hierarchy)
+- [Table of Contents](#table-of-contents)
+- [Navigation Footer](#navigation-footer)
+- [Structure Validation](#structure-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete Document Example](#complete-document-example)
+- [Minimal Document Example](#minimal-document-example)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +26,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive standards for structuring individual documents, ensuring consistent
   anatomy and hierarchy across all KiloCode documentation.
@@ -46,7 +62,7 @@ foundation, clear structure, and intuitive navigation! 🏗️
 - *Findings:*\* \[Summarize key findings or conclusions]
 - \*\*
 - Every KiloCode document follows a standardized structure that ensures consistency,
-discoverability,
+  discoverability,
   and usability. This structure provides a predictable framework that helps both authors and readers
   navigate content effectively.\*
 
@@ -146,14 +162,6 @@ This subsection covers another aspect.
 
 This section covers another main topic.
 ```
-
-## Table of Contents
-- Navigation Footer
-- [Structure Validation](#structure-validation)
-- [Common Mistakes](#common-mistakes)
-- Implementation Examples
-- [Complete Document Example](#complete-document-example)
-- [Minimal Document Example](#minimal-document-example)
 
 ## Navigation Footer
 
@@ -381,8 +389,8 @@ Common issues and solutions:
 ```
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../../README.md) · [Next: Document
-Anatomy](DOCUMENT_ANATOMY.md) ·
+- *Navigation*\*: [Back to Standards](../README.md) · [Next: Document
+  Anatomy](DOCUMENT_ANATOMY.md) ·
   [Source: `/docs/standards/structure/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

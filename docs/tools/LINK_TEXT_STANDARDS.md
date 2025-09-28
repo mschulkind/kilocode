@@ -1,36 +1,80 @@
 # Link Text Standards Documentation
 
+## Table of Contents
+- [Link Text Standards Documentation](#link-text-standards-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Link Text Principles](#link-text-principles)
+- [Accessibility First](#accessibility-first)
+- [User Experience](#user-experience)
+- [Standards and Guidelines](#standards-and-guidelines)
+- [Required Standards](#required-standards)
+- [1. Descriptive Text](#1-descriptive-text)
+- [2. Context Independence](#2-context-independence)
+- [3. Unique Identification](#3-unique-identification)
+- [Recommended Guidelines](#recommended-guidelines)
+- [1. Action-Oriented Text](#1-action-oriented-text)
+- [2. Consistent Formatting](#2-consistent-formatting)
+- [3. Appropriate Length](#3-appropriate-length)
+- [Common Patterns and Examples](#common-patterns-and-examples)
+- [File and Document Links](#file-and-document-links)
+- [](#)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Links](#navigation-links)
+- [Cross-Reference Links](#cross-reference-links)
+- [External Links](#external-links)
+- [Context-Specific Guidelines](#context-specific-guidelines)
+- [Architecture Documentation](#architecture-documentation)
+- [Tools Documentation](#tools-documentation)
+- [Standards Documentation](#standards-documentation)
+- [Automated Improvements](#automated-improvements)
+- [Link Text Standardizer](#link-text-standardizer)
+- [Common Improvements](#common-improvements)
+- [File Name Improvements](#file-name-improvements)
+- [Validation and Enforcement](#validation-and-enforcement)
+- [Automated Validation](#automated-validation)
+- [Validation Rules](#validation-rules)
+- [Error Types](#error-types)
+- [Best Practices Summary](#best-practices-summary)
+- [Do's](#dos)
+- [Don'ts](#donts)
+- [Tools and Resources](#tools-and-resources)
+- [Automated Tools](#automated-tools)
+- [Manual Review](#manual-review)
+- [External Resources](#external-resources)
+- [Updates and Maintenance](#updates-and-maintenance)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-💡 **Fun Fact**: [Interesting fact about the topic]
+💡 **Fun Fact**: \[Interesting fact about the topic]
 
+This document provides \[purpose of document].
 
-This document provides [purpose of document].
-
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
-
-
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
@@ -43,6 +87,7 @@ click a link.
 ### Accessibility First
 
 Link text should be:
+
 - **Descriptive**: Clearly indicate what the link leads to
 - **Self-contained**: Understandable without surrounding context
 - **Unique**: Distinguishable from other links on the page
@@ -61,6 +106,7 @@ Good link text helps users:
 ### Required Standards
 
 #### 1. Descriptive Text
+
 Link text must describe the destination or action, not just the link itself.
 
 ```markdown
@@ -76,6 +122,7 @@ Link text must describe the destination or action, not just the link itself.
 ```
 
 #### 2. Context Independence
+
 Link text should be understandable when read out of context.
 
 ```markdown
@@ -91,6 +138,7 @@ Link text should be understandable when read out of context.
 ```
 
 #### 3. Unique Identification
+
 Each link should have distinct, identifiable text.
 
 ```markdown
@@ -108,6 +156,7 @@ Each link should have distinct, identifiable text.
 ### Recommended Guidelines
 
 #### 1. Action-Oriented Text
+
 Use verbs to indicate actions when appropriate.
 
 ```markdown
@@ -119,6 +168,7 @@ Use verbs to indicate actions when appropriate.
 ```
 
 #### 2. Consistent Formatting
+
 Use consistent patterns for similar types of links.
 
 ```markdown
@@ -134,6 +184,7 @@ Use consistent patterns for similar types of links.
 ```
 
 #### 3. Appropriate Length
+
 Link text should be long enough to be descriptive but short enough to be scannable.
 
 ```markdown
@@ -171,17 +222,17 @@ Link text should be long enough to be descriptive but short enough to be scannab
 ```
 
 #
+
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Links
 
@@ -276,7 +327,6 @@ For more information, see:
 ### Link Text Standardizer
 
 The project includes an automated link text standardizer that:
-
 1. **Identifies Non-Descriptive Links**: Detects links with poor text
 2. **Applies Improvement Rules**: Uses predefined patterns to suggest better text
 3. **Context-Aware Improvements**: Considers document context for better suggestions
@@ -383,17 +433,15 @@ const nonDescriptivePatterns = [
 - **Peer Review**: Have others review link clarity
 
 ### External Resources
-
 - [WebAIM Link Text Guidelines](https://webaim.org/techniques/hypertext/link_text)
 - [WCAG Link Purpose
-Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)
+  Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)
 - [MDN Link Best
-Practices](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Link_text)
+  Practices](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Link_text)
 
 ## Updates and Maintenance
 
 This standard is maintained as part of the KiloCode documentation automation:
-
 1. **Regular Updates**: Standards are updated based on best practices
 2. **Automated Enforcement**: Validation rules are enforced automatically
 3. **Community Feedback**: Standards evolve based on user feedback
@@ -403,7 +451,6 @@ For questions or issues with link text standards, see the [Validation System
 Documentation](./VALIDATION_SYSTEM.md).
 
 ## Navigation
-
 - [← Back to Documentation Tools](./)
 - [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
 - [📚 Technical Glossary](../GLOSSARY.md)

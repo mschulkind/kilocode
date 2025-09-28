@@ -1,5 +1,39 @@
 # Documentation Standards Guide
 
+## Table of Contents
+- [Documentation Standards Guide](#documentation-standards-guide)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Core Principles](#core-principles)
+- [File & Directory Conventions](#file-directory-conventions)
+- [README Index Description Rules](#readme-index-description-rules)
+- [Document Structure](#document-structure)
+- [Headings & Hierarchy](#headings-hierarchy)
+- [Table of Contents Standards](#table-of-contents-standards)
+- [Linking Policy](#linking-policy)
+- [Code Blocks & Media](#code-blocks-media)
+- [Content Organization](#content-organization)
+- [Navigation & User Experience](#navigation-user-experience)
+- [Quick Start Paths](#quick-start-paths)
+- [Navigation Guidelines](#navigation-guidelines)
+- [Code Documentation Standards](#code-documentation-standards)
+- [Inline Comments for Data Structures](#inline-comments-for-data-structures)
+- [Code Snippet Organization](#code-snippet-organization)
+- [Engagement & Accessibility](#engagement-accessibility)
+- [Analogies and Metaphors](#analogies-and-metaphors)
+- [Fun Facts and Engagement](#fun-facts-and-engagement)
+- [Technical Glossary](#technical-glossary)
+- [Core Concepts](#core-concepts)
+- [System-Specific Terms](#system-specific-terms)
+- [Navigation Footer Specification](#navigation-footer-specification)
+- [Review & Submission Checklist](#review-submission-checklist)
+- [Basic Structure](#basic-structure)
+- [Linking and References](#linking-and-references)
+- [User Experience](#user-experience)
+- [Code Documentation](#code-documentation)
+- [Engagement and Accessibility](#engagement-and-accessibility)
+- [Implementation Guidelines](#implementation-guidelines)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,10 +44,10 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Defines normative documentation standards and practices for contributors editing
-files
+  files
   in the `docs/` directory, ensuring consistency and discoverability across all KiloCode
   documentation.
 
@@ -40,7 +74,7 @@ files
 
 ## Executive Summary
 - This guide is the authoritative contributor-facing standard for creating and updating
-documentation
+  documentation
   under `/docs/`. It replaces older, inconsistent practices and provides prescriptive rules
   contributors MUST follow.\*
 
@@ -144,8 +178,6 @@ graph TD
 
 - *Single H1 Rule*\*: Every file MUST contain exactly one H1 at the top.
 
-## Table of Contents Standards
-
 - *Placement*\*: Add the collapsible TOC immediately after the purpose statement.
 
 - *Content*\*: Include H2 and H3 entries only. Do not list H4.
@@ -178,12 +210,12 @@ graph TD
 - *Examples*\*:
 - `[Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) - Detailed
 investigation of the concurrent recursive calls race condition, including the problematic commit and
-code changes that created the issue. Provides comprehensive analysis of how the continueParentTask
-method introduced concurrent execution paths.`
+  code changes that created the issue. Provides comprehensive analysis of how the continueParentTask
+  method introduced concurrent execution paths.`
 - `[Solution Options](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md) - Proposes
-multiple approaches to fix the race condition, including lock-based solutions, call tracking, and
+  multiple approaches to fix the race condition, including lock-based solutions, call tracking, and
 subtask completion coordination. Includes implementation strategies and testing approaches for each
-solution.`
+  solution.`
 
 - *GitHub-Specific Considerations*\*:
 - All links will be viewed on GitHub.com, so ensure they work in the GitHub markdown renderer
@@ -240,10 +272,10 @@ graph TD
   more than three distinct concerns, split it.
 
 - *Domain Indexes*\*: Use domain indexes to aggregate short docs rather than creating long
-monoliths.
+  monoliths.
 
 - *Content Splitting*\*: When splitting content, create a redirecting top-level doc linking to
-subdocs
+  subdocs
   and maintain consistent naming.
 
 - *Accessibility Standards*\*:
@@ -255,7 +287,7 @@ subdocs
 ## Navigation & User Experience
 
 - *Purpose*\*: Create intuitive navigation paths for different user types and scenarios, optimized
-for
+  for
   expert engineers new to the KiloCode codebase.
 
 ### Quick Start Paths
@@ -429,12 +461,12 @@ concurrently, leading to unpredictable behavior. In our context, this occurs whe
   are made simultaneously, causing responses to be interleaved and corrupted.
 
 - *State Machine*\*: A computational model that describes how a system behaves in response to
-events,
+  events,
   transitioning between different states based on current state and input. Each state represents a
   specific condition or mode of operation.
 
 - *Synchronization*\*: The coordination of multiple processes to ensure they don't interfere with
-each
+  each
   other when accessing shared resources. This typically involves locks, semaphores, or other
   coordination mechanisms.
 
@@ -442,7 +474,7 @@ each
   conditions if not properly synchronized.
 
 - *Sequential Execution*\*: Operations happening one after another in a specific order, which
-prevents
+  prevents
   race conditions but may reduce performance.
 
 ### System-Specific Terms
@@ -485,11 +517,11 @@ prevents
 
 - *Examples*\*:
 - From root docs/:
-`Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
-`/docs/DOCUMENTATION\_GUIDE.md#L1\`
+  `Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
+  `/docs/DOCUMENTATION\_GUIDE.md#L1\`
 - From subdirectory:
-`Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
-`/docs/architecture/SYSTEM\_OVERVIEW.md#L1\`
+  `Back: [`README.md`](../README.md) · Root: [`README.md`](../README.md) · Source:
+  `/docs/architecture/SYSTEM\_OVERVIEW.md#L1\`
 
 - *Link Validation*\*: All mentioned filenames must be clickable links for direct navigation and
   tooling validation.

@@ -1,7 +1,19 @@
 # Orchestrator Extensibility
 
+## Table of Contents
+- [Orchestrator Extensibility](#orchestrator-extensibility)
+- [Related Documents](#related-documents)
+- [Extensibility Philosophy](#extensibility-philosophy)
+- [Adding New Tools (Gap)](#adding-new-tools-gap)
+- [Adding New Modes (Gap)](#adding-new-modes-gap)
+- [Adding Custom Rules](#adding-custom-rules)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* This document provides guidance on how to extend the capabilities of the Kilo Code
   Orchestrator. It covers the primary extension points: adding new tools, creating custom modes, and
@@ -25,13 +37,14 @@ behind the "what"! 💻
 ### Related Documents
 
 <a
+
 id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices
-for
+  for
   developing new tools and modes.
 - **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 

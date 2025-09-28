@@ -1,7 +1,28 @@
 # Orchestrator System Documentation 🎼
 
+## Table of Contents
+- [Orchestrator System Documentation 🎼](#orchestrator-system-documentation)
+- [Directory Context](#directory-context)
+- [Key Focus Areas](#key-focus-areas)
+- [🗺️ Navigation Map](#navigation-map)
+- [Core Concepts](#core-concepts)
+- [Quick Start Paths](#quick-start-paths)
+- [🎵 ](#)
+- [🚨 ](#)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🔬 Research Areas](#research-areas)
+- [Current Focus](#current-focus)
+- [Next Steps](#next-steps)
+- [🎯 Key Concepts](#key-concepts)
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 Welcome to the **conductor's podium** of our system! The orchestrator is like the maestro of a
 digital symphony - it coordinates all the different instruments (tasks) to create beautiful music
@@ -36,7 +57,7 @@ subtask coordination.
   control moves between parent and child tasks and where continuation points live. Use this to trace
   execution over time.
 - **[Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md)** - The complete score of our
-orchestration system
+  orchestration system
   High-level map of orchestrator responsibilities, interfaces, and integration points. Links to
   lifecycle, tools, delegation, and error-handling pages. Start here for a complete understanding
   before diving deeper.
@@ -49,7 +70,7 @@ orchestration system
 1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
    Subtask, etc.)
 2. **System Overview**: [Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md) - High-level
-architecture and
+   architecture and
    responsibilities
 3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns
    and state management

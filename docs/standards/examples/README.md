@@ -1,5 +1,19 @@
 # Documentation Examples
 
+## Table of Contents
+- [Documentation Examples](#documentation-examples)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +24,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Welcome to the documentation examples! 📖 This directory contains examples, templates, and sample
 documentation to guide your writing.
@@ -60,9 +74,9 @@ paleontology, our examples show different types of documentation (complete guide
 code snippets) to help you understand different aspects of technical writing!
 
 ## 🧭 Navigation Footer
-- [← Back to Standards Home](../../README.md)
+- [← Back to Standards Home](../README.md)
 - [→ Core Standards](../core/README.md)
-- [↑ Table of Contents](../../README.md)
+- [↑ Table of Contents](../README.md)
 
 ## No Dead Ends Policy
 
@@ -75,5 +89,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Standards Overview](README.md)
 - [← Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [← Navigation Standards](navigation/README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

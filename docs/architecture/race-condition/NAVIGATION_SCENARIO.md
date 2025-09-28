@@ -1,20 +1,46 @@
 # Navigation Scenario Analysis
 
+## Table of Contents
+- [Navigation Scenario Analysis](#navigation-scenario-analysis)
+- [When You're Here](#when-youre-here)
+- [Why This Change Was Made](#why-this-change-was-made)
+- [Research Context](#research-context)
+- [The Original Problem](#the-original-problem)
+- [The Navigation State Loss Problem](#the-navigation-state-loss-problem)
+- [The Specific Code Problem](#the-specific-code-problem)
+- [The Navigation Flow Diagram](#the-navigation-flow-diagram)
+- [The Solution Approach](#the-solution-approach)
+- [The Unintended Consequence](#the-unintended-consequence)
+- [The Complete Solution](#the-complete-solution)
+- [Why the Stack Differs Based on Navigation Path](#why-the-stack-differs-based-on-navigation-path)
+- [Path 1: Active Execution (Normal Flow)](#path-1-active-execution-normal-flow)
+- [Path 2: Navigation Return (Reconstruction Flow)](#path-2-navigation-return-reconstruction-flow)
+- [Chat History vs. Task vs. Chat Session](#chat-history-vs-task-vs-chat-session)
+- [Chat History (Persistent Data)](#chat-history-persistent-data)
+- [Task (Active Execution Context)](#task-active-execution-context)
+- [Chat Session (Active UI View)](#chat-session-active-ui-view)
+- [Relationship Diagram](#relationship-diagram)
+- [Session Inactivity and Task Completion](#session-inactivity-and-task-completion)
+- [What Counts as a Session Being Inactive?](#what-counts-as-a-session-being-inactive)
+- [What Counts as a Completed Task?](#what-counts-as-a-completed-task)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Detailed analysis of why the problematic change was made and the navigation scenario
-it
+  it
   was designed to solve.
 
 > **Dinosaur Fun Fact**: Architecture documentation is like a dinosaur fossil record - each layer
@@ -173,7 +199,7 @@ private async continueParentTask(lastMessage: string): Promise<void> {
   effect)
 
 - *The Race Condition*\*: In active execution, both the main task loop and subtask completion can
-call
+  call
   `recursivelyMakeClineRequests` simultaneously, causing the API duplication issue.
 
 - *The Challenge*\*: The fix is necessary for navigation scenarios but causes problems in active
@@ -187,13 +213,13 @@ call
 3. **Maintains user experience** - seamless workflow in both scenarios
 
 - *The Answer*\*: Synchronization mechanism that ensures only one `recursivelyMakeClineRequests`
-call
+  call
   executes at a time, regardless of the scenario.
 
 ## Why the Stack Differs Based on Navigation Path
 
 - *The Core Issue*\*: The task stack state depends entirely on **how you arrived** at viewing a
-given
+  given
   task, not just which task you're viewing.
 
 ### Path 1: Active Execution (Normal Flow)

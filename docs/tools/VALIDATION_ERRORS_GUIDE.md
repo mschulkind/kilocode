@@ -1,5 +1,45 @@
 # Validation Errors Guide
 
+## Table of Contents
+- [Validation Errors Guide](#validation-errors-guide)
+- [When You're Here](#when-youre-here)
+- [Error Categories](#error-categories)
+- [1. Syntax Errors](#1-syntax-errors)
+- [2. Link Errors](#2-link-errors)
+- [3. Structure Errors](#3-structure-errors)
+- [4. Style Errors](#4-style-errors)
+- [Common Error Patterns](#common-error-patterns)
+- [1. URL-Only Links](#1-url-only-links)
+- [2. Missing Alt Text](#2-missing-alt-text)
+- [3. Inconsistent Code Blocks](#3-inconsistent-code-blocks)
+- [Auto-Fix Capabilities](#auto-fix-capabilities)
+- [VS Code Auto-Fix](#vs-code-auto-fix)
+- [Command Line Auto-Fix](#command-line-auto-fix)
+- [Error Resolution Workflow](#error-resolution-workflow)
+- [1. Identify the Error](#1-identify-the-error)
+- [2. Understand the Error](#2-understand-the-error)
+- [3. Fix the Error](#3-fix-the-error)
+- [4. Verify the Fix](#4-verify-the-fix)
+- [Error Prevention](#error-prevention)
+- [1. Use VS Code Extensions](#1-use-vs-code-extensions)
+- [2. Follow Standards](#2-follow-standards)
+- [3. Regular Validation](#3-regular-validation)
+- [4. Team Guidelines](#4-team-guidelines)
+- [Advanced Error Handling](#advanced-error-handling)
+- [Custom Validation Rules](#custom-validation-rules)
+- [Suppressing Errors](#suppressing-errors)
+- [Error Reporting](#error-reporting)
+- [Troubleshooting](#troubleshooting)
+- [Validation Not Running](#validation-not-running)
+- [Auto-fix Not Working](#auto-fix-not-working)
+- [Performance Issues](#performance-issues)
+- [Getting Help](#getting-help)
+- [Resources](#resources)
+- [Support](#support)
+- [Related Documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +50,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide helps you understand and fix common validation errors in KiloCode documentation.
 
@@ -122,19 +162,16 @@ Warning: File is long (>500 words) but missing table of contents
 - *Fix:*\* Add table of contents:
 
 ```markdown
-## Table of Contents
-- [Introduction](#introduction)
-- [Main Content](#main-content)
-- [Conclusion](#conclusion)
-```
 
 ### 4. Style Errors
 
 - *Inconsistent Formatting*\*
 
 ```
+
 Warning: Inconsistent list formatting
-```
+
+````
 
 - *Fix:*\* Use consistent formatting:
 
@@ -143,7 +180,7 @@ Warning: Inconsistent list formatting
 - Item 1
 - Item 2
 - Item 3
-```
+````
 
 - *Missing Fun Facts*\*
 
@@ -366,18 +403,16 @@ For complex errors:
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation
 - [← Tools Overview](README.md)

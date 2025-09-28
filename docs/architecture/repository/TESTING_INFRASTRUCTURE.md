@@ -1,17 +1,48 @@
 # Testing Infrastructure
 
+## Table of Contents
+- [Testing Infrastructure](#testing-infrastructure)
+- [When You're Here](#when-youre-here)
+- [Testing Overview](#testing-overview)
+- [Research Context](#research-context)
+- [Testing Frameworks](#testing-frameworks)
+- [Vitest](#vitest)
+- [Playwright](#playwright)
+- [Jest](#jest)
+- [Testing Applications](#testing-applications)
+- [playwright-e2e](#playwright-e2e)
+- [vscode-e2e](#vscode-e2e)
+- [web-evals](#web-evals)
+- [Testing Strategy](#testing-strategy)
+- [Unit Testing](#unit-testing)
+- [Integration Testing](#integration-testing)
+- [End-to-End Testing](#end-to-end-testing)
+- [Performance Testing](#performance-testing)
+- [Test Data Management](#test-data-management)
+- [Test Fixtures](#test-fixtures)
+- [Test Utilities](#test-utilities)
+- [Continuous Integration](#continuous-integration)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Test Automation](#test-automation)
+- [Quality Assurance](#quality-assurance)
+- [Code Coverage](#code-coverage)
+- [Test Quality](#test-quality)
+- [Performance Monitoring](#performance-monitoring)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Comprehensive overview of the testing infrastructure and frameworks used in KiloCode.
 

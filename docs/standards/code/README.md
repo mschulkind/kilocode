@@ -1,5 +1,33 @@
 # Code Documentation 📝
 
+## Table of Contents
+- [Code Documentation 📝](#code-documentation)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Inline Comments](#inline-comments)
+- [Comment Requirements](#comment-requirements)
+- [Comment Format](#comment-format)
+- [Comment Types](#comment-types)
+- [Code Snippets](#code-snippets)
+- [Snippet Organization](#snippet-organization)
+- [Snippet Format](#snippet-format)
+- [Data Structures](#data-structures)
+- [Structure Documentation](#structure-documentation)
+- [Documentation Format](#documentation-format)
+- [Property Documentation](#property-documentation)
+- [Code Examples](#code-examples)
+- [Example Requirements](#example-requirements)
+- [Example Format](#example-format)
+- [Documentation Standards](#documentation-standards)
+- [Quality Standards](#quality-standards)
+- [Validation Requirements](#validation-requirements)
+- [Implementation Guidelines](#implementation-guidelines)
+- [Daily Practice](#daily-practice)
+- [Quality Checks](#quality-checks)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,10 +38,10 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive standards for documenting code, data structures, and technical content
-to
+  to
   ensure clarity, maintainability, and accessibility for all users.
 
 > **Biology Fun Fact**: Just like how DNA contains the genetic code that determines how living
@@ -447,8 +475,8 @@ class RecursiveCallManager {
 ## Navigation Footer
 - \*\*
 
-- *Navigation*\*: [Back to Standards](../../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md)
-·
+- *Navigation*\*: [Back to Standards](../README.md) · [Next: Inline Comments](INLINE_COMMENTS.md)
+  ·
   [Source: `/docs/standards/code/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

@@ -1,5 +1,23 @@
 # Build System Documentation
 
+## Table of Contents
+- [Build System Documentation](#build-system-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [Directory context](#directory-context)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,36 +28,34 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 Welcome to the build system documentation! 🏗️ This directory contains comprehensive information
 about how KiloCode is built, packaged, and deployed.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## 🗺️ Navigation Guide
 
 ### Quick Start Paths
 
 - **Something's Broken**: Start with [Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md)
-for troubleshooting and system context.
+  for troubleshooting and system context.
 - **Need to Understand**: Review this README’s structure section for an overview and links.
 - **Implementation Journey**: Follow the build pipeline from source to deployment.
 
@@ -51,7 +67,7 @@ for troubleshooting and system context.
 ## 📚 Documentation Structure
 
 - **[Build pipeline architecture](BUILD_PIPELINE_ARCHITECTURE.md)** - Detailed architecture of the
-build system including tooling and CI.
+  build system including tooling and CI.
 
 ## Directory context
 
@@ -78,18 +94,16 @@ extensions!
 - [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation
 - [← Main Documentation](README.md)

@@ -1,7 +1,22 @@
 # Orchestrator Error Handling
 
+## Table of Contents
+- [Orchestrator Error Handling](#orchestrator-error-handling)
+- [Related Documents](#related-documents)
+- [Error Handling Philosophy](#error-handling-philosophy)
+- [Types of Errors](#types-of-errors)
+- [The Recovery Loop](#the-recovery-loop)
+- [The "Mistake Limit"](#the-mistake-limit)
+- [Specific Error Scenarios](#specific-error-scenarios)
+- [Scenario: ](#scenario)
+- [Scenario: Invalid Regex in ](#scenario-invalid-regex-in)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* This document outlines the Kilo Code Orchestrator's strategies for handling errors,
 ensuring resilience, and maintaining a stable operational state. It covers error detection, recovery
@@ -27,10 +42,11 @@ ensuring resilience, and maintaining a stable operational state. It covers error
 ### Related Documents
 
 <a
+
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Describes the lifecycle stages where
   errors can occur.

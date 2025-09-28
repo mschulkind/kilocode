@@ -1,7 +1,62 @@
 # System Overview
 
+## Table of Contents
+- [System Overview](#system-overview)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [System Architecture](#system-architecture)
+- [Core Subsystems](#core-subsystems)
+- [1. Task Engine (](#1-task-engine)
+- [2. Webview System (](#2-webview-system)
+- [3. Message Queue System (](#3-message-queue-system)
+- [4. Tool System (](#4-tool-system)
+- [5. Prompt Management (](#5-prompt-management)
+- [Service Layer](#service-layer)
+- [1. Laminar Service (](#1-laminar-service)
+- [2. Cloud Services (](#2-cloud-services)
+- [3. Marketplace System (](#3-marketplace-system)
+- [4. MCP Integration (](#4-mcp-integration)
+- [5. Code Index Service (](#5-code-index-service)
+- [6. Tree Sitter Service (](#6-tree-sitter-service)
+- [Tool Ecosystem](#tool-ecosystem)
+- [Core AI Tools 🔍 ](#core-ai-tools)
+- [File Operations](#file-operations)
+- [Code Analysis](#code-analysis)
+- [Command Execution](#command-execution)
+- [AI Integration](#ai-integration)
+- [API Integration Layer](#api-integration-layer)
+- [Provider System (](#provider-system)
+- [Transform Layer (](#transform-layer)
+- [UI/UX Components](#uiux-components)
+- [React Component System (](#react-component-system)
+- [Chat Interface (](#chat-interface)
+- [Settings Management (](#settings-management)
+- [Cloud Integration (](#cloud-integration)
+- [Marketplace (](#marketplace)
+- [Testing & Quality Assurance](#testing-quality-assurance)
+- [Unit Testing 🔍 ](#unit-testing)
+- [Integration Testing 🔍 ](#integration-testing)
+- [End-to-End Testing 🔍 ](#end-to-end-testing)
+- [Build & Deployment Systems](#build-deployment-systems)
+- [Build Pipeline 🔍 ](#build-pipeline)
+- [Package Management 🔍 ](#package-management)
+- [CI/CD Pipeline 🔍 ](#cicd-pipeline)
+- [External Integrations](#external-integrations)
+- [JetBrains Plugin (](#jetbrains-plugin)
+- [Browser Automation (](#browser-automation)
+- [Research Status Matrix](#research-status-matrix)
+- [Priority Research Areas](#priority-research-areas)
+- [Critical Priority](#critical-priority)
+- [High Priority](#high-priority)
+- [Medium Priority](#medium-priority)
+- [Low Priority](#low-priority)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed technical analysis of all subsystems, components, and architectural patterns
   in the KiloCode system with comprehensive research status and implementation details.
@@ -137,7 +192,7 @@ graph TB
 ### 2. Webview System (`src/core/webview/`) ✅ **FULLY DOCUMENTED**
 
 - *Status*\*: ✅ **COMPREHENSIVE DOCUMENTATION** **Research Level**: Complete **Files**: 18
-TypeScript
+  TypeScript
   files
 
 - *Components*\*:
@@ -638,7 +693,7 @@ TypeScript
 | Subsystem                  | Documentation Status | Research Level | Priority | Next Actions
 |
 | -------------------------- | -------------------- | -------------- | -------- |
--------------------------------- |
+\-------------------------------- |
 | **Task Engine**            | ✅ Complete          | Complete       | High     | None
 |
 | **Webview System**         | ✅ Complete          | Complete       | High     | None
@@ -698,8 +753,8 @@ patterns              |
 - *Understanding System Architecture:*\*
 
 - **Next**: [Repository Overview](./REPOSITORY_OVERVIEW.md) →
-[Core Systems](../architecture/CORE_SYSTEMS.md) → [External
-Dependencies](./EXTERNAL_DEPENDENCIES.md)
+  [Core Systems](../architecture/CORE_SYSTEMS.md) → [External
+  Dependencies](./EXTERNAL_DEPENDENCIES.md)
 
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [State Machines](README.md) for behavior modeling
@@ -718,7 +773,7 @@ Dependencies](./EXTERNAL_DEPENDENCIES.md)
   [Testing Infrastructure](repository/TESTING_INFRASTRUCTURE.md) →
   [Build Pipelines](../architecture/BUILD_PIPELINES.md)
 
-- **Related**: [Orchestrator Best Practices](../../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) for
+- **Related**: [Orchestrator Best Practices](../orchestrator/ORCHESTRATOR_BEST_PRACTICES.md) for
   development patterns
 
 - *Planning Improvements:*\*

@@ -1,7 +1,32 @@
 # Combined State Machine
 
+## Table of Contents
+- [Combined State Machine](#combined-state-machine)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Combined State Diagram](#combined-state-diagram)
+- [State Interactions](#state-interactions)
+- [SystemStart → ActiveSession](#systemstart-activesession)
+- [ActiveSession → TaskCompleted](#activesession-taskcompleted)
+- [ActiveSession → RaceCondition](#activesession-racecondition)
+- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+- [Race Condition Flow](#race-condition-flow)
+- [Synchronized Execution Flow](#synchronized-execution-flow)
+- [State Machine Manager](#state-machine-manager)
+- [Key Transitions](#key-transitions)
+- [Normal Flow](#normal-flow)
+- [Race Condition Flow](#race-condition-flow)
+- [Synchronized Flow](#synchronized-flow)
+- [Problem and Solution](#problem-and-solution)
+- [Problem (RaceCondition State)](#problem-racecondition-state)
+- [Solution (SynchronizedExecution State)](#solution-synchronizedexecution-state)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Overview
 
@@ -253,7 +278,7 @@ class CombinedStateMachineManager {
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

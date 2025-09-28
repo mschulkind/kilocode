@@ -1,7 +1,23 @@
 # Session State Machine
 
+## Table of Contents
+- [Session State Machine](#session-state-machine)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [Session States](#session-states)
+- [Session State Properties](#session-state-properties)
+- [State Transition Diagram](#state-transition-diagram)
+- [State Transition Table](#state-transition-table)
+- [Key States](#key-states)
+- [Session Inactivity Criteria](#session-inactivity-criteria)
+- [Race Condition Impact](#race-condition-impact)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Overview
 
@@ -222,7 +238,7 @@ The session state machine is crucial for understanding the race condition becaus
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

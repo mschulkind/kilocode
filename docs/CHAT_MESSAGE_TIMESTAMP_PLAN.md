@@ -1,7 +1,38 @@
 # CHAT MESSAGE TIMESTAMP PLAN
 
+## Table of Contents
+- [CHAT MESSAGE TIMESTAMP PLAN](#chat-message-timestamp-plan)
+- [Executive summary](#executive-summary)
+- [Goals](#goals)
+- [Non-goals](#non-goals)
+- [Current state](#current-state)
+- [Requirements](#requirements)
+- [Functional requirements](#functional-requirements)
+- [Non-functional requirements](#non-functional-requirements)
+- [Data model](#data-model)
+- [Timestamp generation & normalization](#timestamp-generation-normalization)
+- [Event timeline instrumentation](#event-timeline-instrumentation)
+- [UI rendering](#ui-rendering)
+- [Persistence & rehydration](#persistence-rehydration)
+- [Edge cases](#edge-cases)
+- [Formatting rules](#formatting-rules)
+- [Instrumentation & logging](#instrumentation-logging)
+- [Testing strategy](#testing-strategy)
+- [Migration plan](#migration-plan)
+- [Risks & mitigations](#risks-mitigations)
+- [| Risk                     | Mitigation
+    |
+    | ------------------------ |](#risk-mitigation)
+- [Open questions](#open-questions)
+- [Acceptance criteria](#acceptance-criteria)
+- [Change log](#change-log)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 This document provides the comprehensive implementation plan for adding robust, user-visible
 timestamps to chat messages.
@@ -396,7 +427,7 @@ Operational checklist for enabling timestamp instrumentation
   `logger.child({ ctx: "chat.timestamps" })`.
 - \[ ] Write structured events as shown above (phase, requestId, ts, monotonicSeq, deltaPrevMs).
 - \[ ] For production, enable a `CompactTransport` with an appropriate `level` and
-`fileOutput.path`.
+  `fileOutput.path`.
 - \[ ] Add post-processing or log ingestion rules that convert delta `t` back to absolute timestamps
   for analysis.
 
@@ -449,7 +480,8 @@ if (Math.random() < 0.01) {
 | Risk                     | Mitigation
 |
 | ------------------------ |
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- ---------------------------
+
 |
 | **Clock Skew**           | Use the orchestrator as the source of truth for the canonical
 timestamp. Log a warning and flag messages when client/server clock delta exceeds a threshold.
@@ -479,7 +511,7 @@ the client's browser API (`toLocaleTimeString`), which handles timezones and loc
 
 <a id="navigation-footer"></a>
 - Back: [`ORCHESTRATOR_LIFECYCLE.md`](ORCHESTRATOR_LIFECYCLE.md:1) · Root:
-[`README.md`](README.md:1)
+  [`README.md`](README.md:1)
   · Source: [`/docs/CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1`](../CHAT_MESSAGE_TIMESTAMP_PLAN.md#L1)
 
 ## 🔍 Research Context & Next Steps

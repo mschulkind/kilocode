@@ -1,17 +1,50 @@
 # External Integrations
 
+## Table of Contents
+- [External Integrations](#external-integrations)
+- [When You're Here](#when-youre-here)
+- [Integration Overview](#integration-overview)
+- [Research Context](#research-context)
+- [AI Services](#ai-services)
+- [OpenAI API](#openai-api)
+- [Anthropic API](#anthropic-api)
+- [Azure OpenAI](#azure-openai)
+- [Cloud Services](#cloud-services)
+- [AWS Services](#aws-services)
+- [Azure Services](#azure-services)
+- [Google Cloud Platform](#google-cloud-platform)
+- [Development Platforms](#development-platforms)
+- [VS Code Marketplace](#vs-code-marketplace)
+- [NPM Registry](#npm-registry)
+- [GitHub](#github)
+- [Docker Hub](#docker-hub)
+- [Monitoring & Analytics](#monitoring-analytics)
+- [Laminar](#laminar)
+- [Telemetry Services](#telemetry-services)
+- [Analytics Platforms](#analytics-platforms)
+- [Integration Architecture](#integration-architecture)
+- [Service Layer](#service-layer)
+- [Configuration Management](#configuration-management)
+- [Monitoring and Observability](#monitoring-and-observability)
+- [Security Considerations](#security-considerations)
+- [Authentication](#authentication)
+- [Authorization](#authorization)
+- [Data Protection](#data-protection)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Overview of external service integrations and third-party dependencies used in
   KiloCode.

@@ -1,5 +1,41 @@
 # ## Descriptive Anchor Text (Required)
 
+## Table of Contents
+- [## Descriptive Anchor Text (Required)](#descriptive-anchor-text-required)
+- [Descriptive Anchor Text (Required)](#descriptive-anchor-text-required)
+- [Good](#good)
+- [Research Context](#research-context)
+- [Bad](#bad)
+- [Conventions](#conventions)
+- [Linking Policy 🔗](#linking-policy)
+- [Executive Summary](#executive-summary)
+- [Link Types and Rules](#link-types-and-rules)
+- [Doc-to-Doc Links](#doc-to-doc-links)
+- [Code References](#code-references)
+- [External Links](#external-links)
+- [Path Conventions](#path-conventions)
+- [Relative Paths (Doc-to-Doc)](#relative-paths-doc-to-doc)
+- [Absolute Paths (Code References)](#absolute-paths-code-references)
+- [Link Quality Standards](#link-quality-standards)
+- [Descriptive Link Text](#descriptive-link-text)
+- [Link Value](#link-value)
+- [Link Integrity](#link-integrity)
+- [GitHub-Specific Considerations](#github-specific-considerations)
+- [Link Maintenance](#link-maintenance)
+- [Regular Checks](#regular-checks)
+- [Link Testing](#link-testing)
+- [Common Mistakes](#common-mistakes)
+- [Path Mistakes](#path-mistakes)
+- [Link Text Mistakes](#link-text-mistakes)
+- [Maintenance Mistakes](#maintenance-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Good Linking Examples](#good-linking-examples)
+- [Bad Linking Examples](#bad-linking-examples)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## Descriptive Anchor Text (Required)
 - Rule: All links MUST use descriptive anchor text that tells the reader where they are going and
   why it is relevant. Avoid bare file paths and naked URLs.
@@ -37,7 +73,7 @@
 # Linking Policy 🔗
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive standards for creating and maintaining links within KiloCode
   documentation, ensuring consistent navigation and discoverability across all documents.
@@ -60,7 +96,7 @@ documentation helps us understand how! ⚙️
 
 ## Executive Summary
 - Effective linking creates a web of knowledge that helps users understand relationships and
-discover
+  discover
   related information. These standards ensure consistent, functional, and valuable links throughout
   our documentation.\*
 
@@ -564,7 +600,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

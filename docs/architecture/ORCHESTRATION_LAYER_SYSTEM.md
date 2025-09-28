@@ -1,18 +1,50 @@
 # Orchestration Layer System
 
+## Table of Contents
+- [Orchestration Layer System](#orchestration-layer-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [System Architecture](#system-architecture)
+- [Architecture Overview](#architecture-overview)
+- [Task Engine](#task-engine)
+- [Engine Overview](#engine-overview)
+- [Engine Implementation](#engine-implementation)
+- [Message Queue Service](#message-queue-service)
+- [Queue Overview](#queue-overview)
+- [Queue Implementation](#queue-implementation)
+- [Orchestrator](#orchestrator)
+- [Orchestrator Overview](#orchestrator-overview)
+- [Orchestrator Implementation](#orchestrator-implementation)
+- [Task Lifecycle Management](#task-lifecycle-management)
+- [Lifecycle Stages](#lifecycle-stages)
+- [Lifecycle Management](#lifecycle-management)
+- [State Coordination](#state-coordination)
+- [State Management](#state-management)
+- [State Coordination](#state-coordination)
+- [Performance Optimization](#performance-optimization)
+- [Optimization Strategies](#optimization-strategies)
+- [Performance Monitoring](#performance-monitoring)
+- [Common Issues](#common-issues)
+- [Task Execution Issues](#task-execution-issues)
+- [Coordination Issues](#coordination-issues)
+- [Troubleshooting](#troubleshooting)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the Orchestration Layer system, including Task Engine, Message
-Queue Service, and Orchestrator components for task execution and coordination.
+  Queue Service, and Orchestrator components for task execution and coordination.
 - **Context**: Use this as a starting point for understanding task orchestration and coordination in
-the KiloCode system.
+  the KiloCode system.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
@@ -24,16 +56,6 @@ management system architecture in the KiloCode project. The system reflects find
 - Performance optimization and scalability strategy analysis
 
 The system provides robust task orchestration and coordination capabilities.
-
-## Table of Contents
-- [System Architecture](#system-architecture)
-- [Task Engine](#task-engine)
-- [Message Queue Service](#message-queue-service)
-- [Orchestrator](#orchestrator)
-- [Task Lifecycle Management](#task-lifecycle-management)
-- [State Coordination](#state-coordination)
-- [Performance Optimization](#performance-optimization)
-- [Common Issues](#common-issues)
 
 ## System Architecture
 

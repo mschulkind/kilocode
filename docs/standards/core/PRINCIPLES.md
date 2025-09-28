@@ -1,7 +1,23 @@
 # Core Principles 🎯
 
+## Table of Contents
+- [Core Principles 🎯](#core-principles)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Purpose-Driven Documentation](#purpose-driven-documentation)
+- [Discoverable Content](#discoverable-content)
+- [Linkable Architecture](#linkable-architecture)
+- [Focused Scope](#focused-scope)
+- [Accessible Design](#accessible-design)
+- [Principle Interactions](#principle-interactions)
+- [Implementation Guidelines](#implementation-guidelines)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Detailed explanation of the foundational principles that guide all KiloCode
   documentation decisions and practices.
@@ -54,7 +70,7 @@ decision about content, structure, and user experience, ensuring consistency and
 - *"compass"*\* that guides all content decisions.
 
 - *Why It Matters*\*: Without a clear purpose, documents become unfocused, confusing, and difficult
-to
+  to
   maintain. A clear purpose helps:
 
 - **Authors** know what to include and exclude
@@ -122,7 +138,7 @@ contributors understand the philosophical foundation of our documentation system
 ## Linkable Architecture
 
 - *Definition*\*: Prefer stable anchors and cross-references. This creates the **"trail system"**
-that
+  that
   connects related concepts.
 
 - *Why It Matters*\*: Information doesn't exist in isolation. Effective linking creates a web of
@@ -166,7 +182,7 @@ that
   like a **"specialized tool"** - good at one thing.
 
 - *Why It Matters*\*: Focused documents are easier to write, maintain, and use. They reduce
-cognitive
+  cognitive
   load and make information more digestible.
 
 - *Implementation*\*:
@@ -203,7 +219,7 @@ cognitive
   is **"inclusive"** for all users.
 
 - *Why It Matters*\*: Accessible documentation is usable by everyone, regardless of their abilities
-or
+  or
   the tools they use to access content.
 
 - *Implementation*\*:
@@ -253,7 +269,7 @@ or
   improves discoverability.
 
 - *Accessible + All Others*\*: Accessibility principles enhance all other principles by making
-content
+  content
   more usable.
 
 - *Example Interaction*\*: A document with a clear purpose (Purpose-driven) about a specific topic
@@ -309,7 +325,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

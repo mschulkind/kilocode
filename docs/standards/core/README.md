@@ -1,5 +1,21 @@
 # Core Standards 🎯
 
+## Table of Contents
+- [Core Standards 🎯](#core-standards)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Core Principles](#core-principles)
+- [File & Directory Conventions](#file-directory-conventions)
+- [Linking Policy](#linking-policy)
+- [Content Organization](#content-organization)
+- [Quick Reference](#quick-reference)
+- [](#)
+- [](#)
+- [Related Standards](#related-standards)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +26,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Essential foundational principles and rules that govern all KiloCode documentation,
   providing the bedrock upon which all other standards are built.
@@ -66,7 +82,7 @@ foundation for all other documentation standards and ensure consistency across t
 - *"compass"*\* that guides all content decisions.
 
 - *Discoverable*\*: Use predictable filenames, headings, and navigation elements. Think of this as
-the
+  the
 
 - *"map legend"*\* that helps users navigate the documentation.
 
@@ -74,7 +90,7 @@ the
   connects related concepts.
 
 - *Focused*\*: Single-responsibility documents with clear content splits. Each document should be
-like
+  like
   a **"specialized tool"** - good at one thing.
 
 - *Accessible*\*: Semantic structure and descriptive text throughout. This ensures the documentation
@@ -94,7 +110,7 @@ like
 - Examples: `architecture/`, `services/`, `orchestrator/`, `laminar/`, `ui/`, `tools/`, `testing/`
 
 - *Index Files*\*:
-- Maintain a top-level [`README.md`](../../README.md) that lists domain indexes
+- Maintain a top-level [`README.md`](../README.md) that lists domain indexes
 - Use `README.md` in subdirectories when a directory contains multiple topical docs
 - Index files should provide clear navigation and categorization
 
@@ -134,10 +150,10 @@ like
   more than three distinct concerns, split it.
 
 - *Domain Indexes*\*: Use domain indexes to aggregate short docs rather than creating long
-monoliths.
+  monoliths.
 
 - *Content Splitting*\*: When splitting content, create a redirecting top-level doc linking to
-subdocs
+  subdocs
   and maintain consistent naming.
 
 - *Accessibility Standards*\*:

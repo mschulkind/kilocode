@@ -1,5 +1,34 @@
 # Ghost Service
 
+## Table of Contents
+- [Ghost Service](#ghost-service)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [Service Architecture](#service-architecture)
+- [Completion System](#completion-system)
+- [Ghost Provider](#ghost-provider)
+- [Completion Engine](#completion-engine)
+- [Strategy Management](#strategy-management)
+- [Completion Strategies](#completion-strategies)
+- [Strategy Orchestration](#strategy-orchestration)
+- [UI Integration](#ui-integration)
+- [Visual Feedback](#visual-feedback)
+- [User Experience](#user-experience)
+- [Performance & Optimization](#performance-optimization)
+- [Performance Monitoring](#performance-monitoring)
+- [Optimization Strategies](#optimization-strategies)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Completion Accuracy Problems](#issue-1-completion-accuracy-problems)
+- [Issue 2: Performance Issues](#issue-2-performance-issues)
+- [Issue 3: UI Integration Issues](#issue-3-ui-integration-issues)
+- [Issue 4: Strategy Selection Problems](#issue-4-strategy-selection-problems)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,10 +39,10 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive documentation of the Ghost Service for AI-powered code completion,
-inline
+  inline
   suggestions, and intelligent code assistance in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
@@ -31,24 +60,22 @@ inline
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Ghost Service provides comprehensive AI-powered code completion, inline suggestions, and
@@ -347,7 +374,7 @@ private isRequestCancelled: boolean = false
 - Missing context awareness
 
 - *Root Cause*\*: Strategy selection or context analysis issues **Solution**: Improve context
-analysis
+  analysis
   and strategy selection algorithms
 
 ### Issue 2: Performance Issues
@@ -382,21 +409,19 @@ analysis
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
-[`README.md`](../README.md)
+  [`README.md`](../README.md)
   · Source: `/docs/services/GHOST_SERVICE.md#L1`
-
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

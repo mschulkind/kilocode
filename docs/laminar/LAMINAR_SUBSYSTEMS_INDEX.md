@@ -1,13 +1,8 @@
 # Laminar Subsystems Index
 
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
-
-- *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the Laminar
-observability subsystems integrated into Kilo Code, enabling developers to understand, monitor, and
-extend tracing capabilities across task execution, tool usage, and LLM interactions with confidence.
-
 ## Table of Contents
+- [Laminar Subsystems Index](#laminar-subsystems-index)
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [High-Level Responsibilities](#high-level-responsibilities)
 - [Core Concepts At a Glance](#core-concepts-at-a-glance)
@@ -17,11 +12,19 @@ extend tracing capabilities across task execution, tool usage, and LLM interacti
 - [Quick Reference Matrix](#quick-reference-matrix)
 - [Subsystem Flow Diagram](#subsystem-flow-diagram)
 - [Observability Principles](#observability-principles)
-- [Change Management & Versioning](#change-management--versioning)
-- Glossary
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
+- [Change Management & Versioning](#change-management-versioning)
+- [Glossary](#glossary)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
+> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
+> documentation helps us understand how! ⚙️
+
+- *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the Laminar
+observability subsystems integrated into Kilo Code, enabling developers to understand, monitor, and
+extend tracing capabilities across task execution, tool usage, and LLM interactions with confidence.
 
 ## Overview
 

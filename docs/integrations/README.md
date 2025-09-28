@@ -1,18 +1,39 @@
 # Integrations Documentation
 
+## Table of Contents
+- [Integrations Documentation](#integrations-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Integration Overview](#integration-overview)
+- [Quick Start Guide](#quick-start-guide)
+- [For Developers](#for-developers)
+- [For System Administrators](#for-system-administrators)
+- [Documentation Structure](#documentation-structure)
+- [Core Integration Documents](#core-integration-documents)
+- [Integration Relationships](#integration-relationships)
+- [Current Focus Areas](#current-focus-areas)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
+- [Cross-References](#cross-references)
+- [Related Documentation](#related-documentation)
+- [Implementation Context](#implementation-context)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document serves as the master index for all external integration documentation
-in the KiloCode project.
+  in the KiloCode project.
 - **Context**: Use this as a starting point for understanding how KiloCode connects with external
-systems and tools.
+  systems and tools.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -26,13 +47,6 @@ integration requirements and capabilities. The structure reflects findings from:
 The organization supports both immediate integration setup and long-term integration strategy
 planning.
 
-## Table of Contents
-- [Integration Overview](#integration-overview)
-- [Quick Start Guide](#quick-start-guide)
-- [Documentation Structure](#documentation-structure)
-- [Current Focus Areas](#current-focus-areas)
-- [Cross-References](#cross-references)
-
 ## Integration Overview
 
 Welcome to the integrations documentation! This directory covers all external integrations and how
@@ -44,37 +58,37 @@ with different development environments and tools.
 ### For Developers
 
 - **Editor Setup**: Check [Editor Integration Guide](EDITOR_INTEGRATION.md) for VS Code and editor
-setup
+  setup
 - **JetBrains Users**: Review [JetBrains Plugin Documentation](JETBRAINS_PLUGIN.md) for IDE
-integration
+  integration
 - **Terminal Workflow**: See [Terminal Integration Guide](TERMINAL_INTEGRATION.md) for shell
-integration
+  integration
 - **Browser Automation**: Explore [Browser Automation Documentation](BROWSER_AUTOMATION.md) for web
-interaction capabilities
+  interaction capabilities
 
 ### For System Administrators
 
 - **Service Integration**: Review [Tree-sitter Service Documentation](TREE_SITTER_SERVICE.md) for
-parsing service setup
+  parsing service setup
 - **Architecture Overview**: Check [Integration Architecture](../architecture/README.md) for system
-design
+  design
 - **Security Considerations**: See [Integration Standards](../standards/README.md) for security
-guidelines
+  guidelines
 
 ## Documentation Structure
 
 ### Core Integration Documents
 
 - **[Editor Integration Guide](EDITOR_INTEGRATION.md)** - VS Code and editor integration with setup
-instructions and troubleshooting
+  instructions and troubleshooting
 - **[JetBrains Plugin Documentation](JETBRAINS_PLUGIN.md)** - JetBrains IDE plugin with installation
-and configuration
+  and configuration
 - **[Terminal Integration Guide](TERMINAL_INTEGRATION.md)** - Terminal and shell integration with
-command reference
+  command reference
 - **[Browser Automation Documentation](BROWSER_AUTOMATION.md)** - Browser automation capabilities
-with usage examples
+  with usage examples
 - **[Tree-sitter Service Documentation](TREE_SITTER_SERVICE.md)** - Tree-sitter parsing service with
-API reference
+  API reference
 
 ### Integration Relationships
 

@@ -1,13 +1,49 @@
 # API Duplication Debug Implementation Guide
 
+## Table of Contents
+- [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [Research Context](#research-context)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Overview](#overview)
+- [Implementation Phases](#implementation-phases)
+- [Phase 1: Core Request Tracking](#phase-1-core-request-tracking)
+- [1.1 Task-Level Request Tracker](#11-task-level-request-tracker)
+- [1.2 Ask Method Instrumentation](#12-ask-method-instrumentation)
+- [1.3 ProcessQueuedMessages Instrumentation](#13-processqueuedmessages-instrumentation)
+- [Phase 2: Message Queue Service Enhancement](#phase-2-message-queue-service-enhancement)
+- [2.1 Atomic Operations](#21-atomic-operations)
+- [Phase 3: UI State Monitoring](#phase-3-ui-state-monitoring)
+- [3.1 Chat UI Instrumentation](#31-chat-ui-instrumentation)
+- [3.2 Webview Message Handler Instrumentation](#32-webview-message-handler-instrumentation)
+- [Phase 4: Tool Completion Instrumentation](#phase-4-tool-completion-instrumentation)
+- [4.1 Tool Helper Function](#41-tool-helper-function)
+- [4.2 Update All Tool Files](#42-update-all-tool-files)
+- [Phase 5: API Provider Instrumentation](#phase-5-api-provider-instrumentation)
+- [5.1 Provider Request Tracking](#51-provider-request-tracking)
+- [5.2 Update Provider Files](#52-update-provider-files)
+- [Testing and Validation](#testing-and-validation)
+- [1. Unit Tests](#1-unit-tests)
+- [2. Integration Tests](#2-integration-tests)
+- [Deployment and Monitoring](#deployment-and-monitoring)
+- [1. Environment Configuration](#1-environment-configuration)
+- [2. Log Analysis Tools](#2-log-analysis-tools)
+- [3. Monitoring Dashboard](#3-monitoring-dashboard)
+- [Cleanup and Removal](#cleanup-and-removal)
+- [1. Feature Flags](#1-feature-flags)
+- [2. Removal Checklist](#2-removal-checklist)
+- [Conclusion](#conclusion)
+- [Navigation Footer](#navigation-footer)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Technical implementation guide for adding comprehensive debug logging to track down
-API
+  API
   request duplication issues in KiloCode.
 
 > **Cartography Fun Fact**: Just as cartographers use triangulation to pinpoint exact locations,
@@ -34,27 +70,27 @@ API
 - *Implementing Debug Logging:*\*
 
 - **Next**: Follow the implementation phases below →
-  [Testing Strategy](../architecture/race-condition/TESTING_STRATEGY.md) →
-  [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
+  [Testing Strategy](../architecture/TESTING_STRATEGY.md) →
+  [Solution Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
 - **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Race Condition Analysis](README.md) for context
 
 - *Understanding the Problem:*\*
 
-- **Next**: [Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md) →
-[Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md) → This implementation
-guide
+- **Next**: [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](../architecture/CODE_FLOW_ANALYSIS.md) → This implementation
+  guide
 
 - **Related**: [Short Debug Implementation
-Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
+  Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION_SHORT.md)
   for quick reference
 
 - *Troubleshooting Issues:*\*
 
 - **Next**: [Short Troubleshooting
-Guide](../architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) → This
-  implementation guide → [Testing Strategy](../architecture/race-condition/TESTING_STRATEGY.md)
+  Guide](../architecture/DUPLICATE_API_REQUESTS_TROUBLESHOOTING_SHORT.md) → This
+  implementation guide → [Testing Strategy](../architecture/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

@@ -1,18 +1,39 @@
 # Improvements Documentation
 
+## Table of Contents
+- [Improvements Documentation](#improvements-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Documentation Overview](#documentation-overview)
+- [Quick Start Guide](#quick-start-guide)
+- [For Developers](#for-developers)
+- [For Architects](#for-architects)
+- [Documentation Structure](#documentation-structure)
+- [Core Documents](#core-documents)
+- [Document Relationships](#document-relationships)
+- [Current Focus Areas](#current-focus-areas)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
+- [Cross-References](#cross-references)
+- [Related Documentation](#related-documentation)
+- [Implementation Context](#implementation-context)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document serves as the master index for all improvement-related documentation in
-the KiloCode project.
+  the KiloCode project.
 - **Context**: Use this as a starting point for understanding technical debt, research gaps, and
-priority improvements.
+  priority improvements.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -25,13 +46,6 @@ to systematically track and address improvement opportunities. The structure ref
 
 The organization supports both immediate tactical fixes and long-term strategic improvements.
 
-## Table of Contents
-- [Documentation Overview](#documentation-overview)
-- [Quick Start Guide](#quick-start-guide)
-- [Documentation Structure](#documentation-structure)
-- [Current Focus Areas](#current-focus-areas)
-- [Cross-References](#cross-references)
-
 ## Documentation Overview
 
 Welcome to the improvements documentation! This directory tracks technical debt, research gaps, and
@@ -43,7 +57,7 @@ actionable recommendations for system enhancement.
 ### For Developers
 
 - **Something's Broken**: Check [Technical Debt Analysis](TECHNICAL_DEBT.md) for known issues and
-fixes
+  fixes
 - **Planning Work**: Review [Priority Improvements](PRIORITY_IMPROVEMENTS.md) for high-impact tasks
 - **Research Needed**: Explore [Research Gaps](RESEARCH_GAPS.md) for areas requiring investigation
 
@@ -58,9 +72,9 @@ fixes
 ### Core Documents
 
 - **[Priority Improvements](PRIORITY_IMPROVEMENTS.md)** - High-priority improvements and fixes with
-implementation roadmaps
+  implementation roadmaps
 - **[Technical Debt Analysis](TECHNICAL_DEBT.md)** - Known technical debt and refactoring needs with
-impact assessment
+  impact assessment
 - **[Research Gaps](RESEARCH_GAPS.md)** - Areas requiring further research and investigation
 
 ### Document Relationships

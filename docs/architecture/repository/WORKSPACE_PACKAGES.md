@@ -1,17 +1,50 @@
 # Workspace Packages
 
+## Table of Contents
+- [Workspace Packages](#workspace-packages)
+- [When You're Here](#when-youre-here)
+- [Package Overview](#package-overview)
+- [Research Context](#research-context)
+- [Core Packages](#core-packages)
+- [@roo-code/types](#roo-codetypes)
+- [@roo-code/build](#roo-codebuild)
+- [@roo-code/cloud](#roo-codecloud)
+- [@roo-code/evals](#roo-codeevals)
+- [@roo-code/ipc](#roo-codeipc)
+- [@roo-code/telemetry](#roo-codetelemetry)
+- [Configuration Packages](#configuration-packages)
+- [@roo-code/config-eslint](#roo-codeconfig-eslint)
+- [@roo-code/config-typescript](#roo-codeconfig-typescript)
+- [Package Dependencies](#package-dependencies)
+- [Dependency Graph](#dependency-graph)
+- [External Dependencies](#external-dependencies)
+- [Package Management](#package-management)
+- [Workspace Configuration](#workspace-configuration)
+- [Build Process](#build-process)
+- [Publishing](#publishing)
+- [Development Workflow](#development-workflow)
+- [Package Development](#package-development)
+- [Package Testing](#package-testing)
+- [Package Documentation](#package-documentation)
+- [Quality Assurance](#quality-assurance)
+- [Code Quality](#code-quality)
+- [Testing](#testing)
+- [Documentation](#documentation)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed overview of the workspace packages and shared libraries in the KiloCode
   monorepo.

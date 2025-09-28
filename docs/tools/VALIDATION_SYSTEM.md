@@ -1,36 +1,72 @@
 # Validation System Documentation
 
+## Table of Contents
+
+🔍 **Did You Know**: [Interesting insight]
+
+- [Validation System Documentation](#validation-system-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Core Components](#core-components)
+- [Plugin Integration](#plugin-integration)
+- [Enhanced Cross-Reference Validation](#enhanced-cross-reference-validation)
+- [Intelligent Document Type Detection](#intelligent-document-type-detection)
+- [Context-Aware Orphaned Sections Detection](#context-aware-orphaned-sections-detection)
+- [Performance Optimization](#performance-optimization)
+- [Basic Usage](#basic-usage)
+- [Advanced Configuration](#advanced-configuration)
+- [Performance Monitoring](#performance-monitoring)
+- [Validation Rules](#validation-rules)
+- [Performance Configuration](#performance-configuration)
+- [CrossReferenceValidator](#crossreferencevalidator)
+- [FileIndexBuilder](#fileindexbuilder)
+- [DocumentTypeDetector](#documenttypedetector)
+- [OrphanedSectionsDetector](#orphanedsectionsdetector)
+- [ValidationRuleConfig](#validationruleconfig)
+- [PerformanceMonitor](#performancemonitor)
+- [PerformanceOptimizer](#performanceoptimizer)
+- [Performance Requirements](#performance-requirements)
+- [Document Organization](#document-organization)
+- [Performance Optimization](#performance-optimization)
+- [Validation Rules](#validation-rules)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [From Legacy Validation System](#from-legacy-validation-system)
+- [Configuration Migration](#configuration-migration)
+- [Development Setup](#development-setup)
+- [Adding New Validation Rules](#adding-new-validation-rules)
+- [Performance Optimization](#performance-optimization)
+
 ## When You're Here
 
-⚡ **Quick Note**: [Important information]
+⚡ **Quick Note**: \[Important information]
 
+This document provides \[purpose of document].
 
-This document provides [purpose of document].
-
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
-
-
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
@@ -39,8 +75,6 @@ to eliminate false positives and improve validation accuracy. The system provide
 validation rules, intelligent document type detection, and performance-optimized validation
 processes.
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Architecture
@@ -48,11 +82,10 @@ processes.
 ### Core Components
 
 The validation system consists of several key components:
-
 1. **CrossReferenceValidator** - Validates file references and anchor links
 2. **FileIndexBuilder** - Maintains an index of all markdown files for efficient lookup
 3. **DocumentTypeDetector** - Intelligently detects document types based on path, content, and
-structure
+   structure
 4. **OrphanedSectionsDetector** - Identifies orphaned sections with context-aware logic
 5. **ValidationRuleConfig** - Manages validation rules based on document type
 6. **PerformanceMonitor** - Tracks and optimizes validation performance
@@ -62,8 +95,6 @@ structure
 
 The system integrates through the `remark-kilocode-comprehensive` plugin, which orchestrates all
 validation components and provides a unified interface for validation operations.
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -87,6 +118,7 @@ The system automatically detects document types based on:
 - **Confidence Scoring**: Provides confidence levels for type detection
 
 Supported document types:
+
 - **Navigation Documents**: Index files, README files, navigation guides
 - **Technical Documents**: API documentation, technical specifications
 - **Planning Documents**: Project plans, implementation checklists
@@ -106,8 +138,6 @@ Supported document types:
 - **Memory Management**: Efficient memory usage with automatic cleanup
 - **Performance Monitoring**: Real-time tracking of validation performance
 - **Early Termination**: Stops validation early when critical errors are found
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -173,8 +203,6 @@ console.log(`Memory peak: ${report.memoryPeak / 1024 / 1024}MB`)
 await globalPerformanceOptimizer.optimizeAll()
 ```
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Configuration
@@ -222,8 +250,6 @@ The system supports different validation rules based on document type:
   batchSize: 10 // Batch size for parallel operations
 }
 ```
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -368,8 +394,6 @@ The validation system is designed to meet the following performance requirements
 - **Accuracy**: > 99% accuracy for cross-reference validation
 - **False Positives**: Zero false positive warnings
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Error Handling
@@ -381,40 +405,32 @@ The system provides comprehensive error handling:
 - **Memory Errors**: Automatic memory cleanup and garbage collection
 - **Validation Errors**: Detailed error messages with suggestions for fixes
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Best Practices
 
 ### Document Organization
-
 1. **Use Clear File Paths**: Organize documents in logical directory structures
 2. **Consistent Naming**: Use consistent naming conventions for files and sections
 3. **Proper Linking**: Use relative paths for internal links, absolute URLs for external links
 4. **Anchor Links**: Use descriptive anchor link formats
 
 ### Performance Optimization
-
 1. **Enable Caching**: Always enable caching for better performance
 2. **Use Parallel Processing**: Leverage parallel processing for independent operations
 3. **Monitor Performance**: Regularly check performance metrics and apply optimizations
 4. **Batch Operations**: Group related validation operations together
 
 ### Validation Rules
-
 1. **Document Type Specific**: Use different validation rules for different document types
 2. **Appropriate Thresholds**: Set thresholds based on your documentation needs
 3. **Regular Updates**: Keep validation rules updated as your documentation evolves
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Troubleshooting
 
 ### Common Issues
-
 1. **Slow Validation**: Enable performance optimization and check memory usage
 2. **False Positives**: Adjust validation rules and thresholds
 3. **Memory Issues**: Reduce batch size and enable memory monitoring
@@ -435,14 +451,11 @@ const processor = unified()
   .use(remarkStringify)
 ```
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Migration Guide
 
 ### From Legacy Validation System
-
 1. **Update Plugin Usage**: Replace old validation plugins with `remark-kilocode-comprehensive`
 2. **Configure New Options**: Set up new configuration options for enhanced features
 3. **Update Validation Rules**: Migrate existing validation rules to the new system
@@ -469,34 +482,27 @@ const processor = unified()
 }
 ```
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Contributing
 
 ### Development Setup
-
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Run tests: `npm test`
 4. Run validation: `npm run validate`
 
 ### Adding New Validation Rules
-
 1. Define the rule in `ValidationRuleConfig`
 2. Implement validation logic in the appropriate component
 3. Add tests for the new rule
 4. Update documentation
 
 ### Performance Optimization
-
 1. Profile the validation system to identify bottlenecks
 2. Implement optimization strategies in `PerformanceOptimizer`
 3. Test performance improvements
 4. Update performance benchmarks
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -504,19 +510,25 @@ const processor = unified()
 
 This validation system is part of the KiloCode project and follows the same licensing terms.
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
+## Navigation
 
+- [← Tools Overview](README.md)
+- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

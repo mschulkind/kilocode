@@ -1,5 +1,34 @@
 # Code Index Service
 
+## Table of Contents
+- [Code Index Service](#code-index-service)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [Service Architecture](#service-architecture)
+- [Indexing System](#indexing-system)
+- [Code Index Manager](#code-index-manager)
+- [Indexing Process](#indexing-process)
+- [Search Engine](#search-engine)
+- [Search Service](#search-service)
+- [Query Processing](#query-processing)
+- [Vector Store Integration](#vector-store-integration)
+- [Embedding Management](#embedding-management)
+- [Storage Backend](#storage-backend)
+- [Performance & Caching](#performance-caching)
+- [Cache Management](#cache-management)
+- [Performance Optimization](#performance-optimization)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
+- [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
+- [Issue 3: Cache Inconsistency](#issue-3-cache-inconsistency)
+- [Issue 4: Storage Issues](#issue-4-storage-issues)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +39,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation of the Code Index service for semantic code search,
   embedding management, and vector-based code analysis in KiloCode.
@@ -30,24 +59,22 @@ behind the "what"! 💻
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Code Index Service provides comprehensive semantic code search capabilities through vector
@@ -358,26 +385,24 @@ export class CacheManager {
 - Retrieval errors
 
 - *Root Cause*\*: Storage backend or data integrity issues **Solution**: Implement robust storage
-with
+  with
   backup and recovery
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
-[`README.md`](../README.md)
+  [`README.md`](../README.md)
   · Source: `/docs/services/CODE_INDEX_SERVICE.md#L1`
-
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

@@ -1,18 +1,50 @@
 # Documentation Consolidation Plan
 
+## Table of Contents
+- [Documentation Consolidation Plan](#documentation-consolidation-plan)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Consolidation Overview](#consolidation-overview)
+- [Priority Candidates](#priority-candidates)
+- [A) Race Condition Summaries](#a-race-condition-summaries)
+- [B) Navigation Scenario Details](#b-navigation-scenario-details)
+- [C) State Machine Documentation](#c-state-machine-documentation)
+- [D) API Provider Patterns](#d-api-provider-patterns)
+- [Consolidation Strategy](#consolidation-strategy)
+- [Content Analysis](#content-analysis)
+- [Cross-Reference Strategy](#cross-reference-strategy)
+- [Content Organization](#content-organization)
+- [Implementation Plan](#implementation-plan)
+- [Phase 1: Analysis and Planning (Week 1-2)](#phase-1-analysis-and-planning-week-1-2)
+- [Phase 2: Content Consolidation (Week 3-6)](#phase-2-content-consolidation-week-3-6)
+- [Phase 3: Quality Assurance (Week 7-8)](#phase-3-quality-assurance-week-7-8)
+- [Phase 4: Deployment and Monitoring (Week 9-10)](#phase-4-deployment-and-monitoring-week-9-10)
+- [Quality Assurance](#quality-assurance)
+- [Content Quality Standards](#content-quality-standards)
+- [Cross-Reference Validation](#cross-reference-validation)
+- [User Experience Testing](#user-experience-testing)
+- [Success Metrics](#success-metrics)
+- [Quantitative Metrics](#quantitative-metrics)
+- [Qualitative Metrics](#qualitative-metrics)
+- [Long-term Benefits](#long-term-benefits)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document outlines the plan to reduce duplication across architecture docs and
-improve discoverability with cross-links.
+  improve discoverability with cross-links.
 - **Context**: Use this as a starting point for understanding documentation consolidation strategies
-and priorities.
+  and priorities.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
@@ -25,14 +57,6 @@ from:
 - User experience analysis for documentation navigation
 
 The plan provides a systematic approach to documentation consolidation and improvement.
-
-## Table of Contents
-- [Consolidation Overview](#consolidation-overview)
-- [Priority Candidates](#priority-candidates)
-- [Consolidation Strategy](#consolidation-strategy)
-- [Implementation Plan](#implementation-plan)
-- [Quality Assurance](#quality-assurance)
-- [Success Metrics](#success-metrics)
 
 ## Consolidation Overview
 
@@ -199,7 +223,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 # Example markdown
 [Link](url)
 ```
-
 - [← Architecture Documentation](README.md)
 - [← Communication Layer](COMMUNICATION_LAYER_SYSTEM.md)
 - [← System Overview](SYSTEM_OVERVIEW.md)

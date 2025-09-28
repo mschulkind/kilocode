@@ -1,26 +1,29 @@
 # Orchestrator Master Index
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
-
-- *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the
-  Orchestrator's architecture, lifecycle, and core responsibilities, enabling developers to
-  understand, maintain, and extend its capabilities with confidence.
-
 ## Table of Contents
-- [Purpose & Scope](#purpose--scope)
+- [Orchestrator Master Index](#orchestrator-master-index)
+- [Table of Contents](#table-of-contents)
+- [Purpose & Scope](#purpose-scope)
 - [High-Level Responsibilities](#high-level-responsibilities)
 - [Core Concepts At a Glance](#core-concepts-at-a-glance)
 - [Lifecycle Snapshot](#lifecycle-snapshot)
 - [Documentation Map](#documentation-map)
 - [Quick Reference Matrix](#quick-reference-matrix)
 - [Architecture Flow Diagram](#architecture-flow-diagram)
-- [Guardrails & Safety Overview](#guardrails--safety-overview)
-- [Change Management & Versioning](#change-management--versioning)
-- Glossary
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
+- [Guardrails & Safety Overview](#guardrails-safety-overview)
+- [Change Management & Versioning](#change-management-versioning)
+- [Glossary](#glossary)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+> foundation, clear structure, and intuitive navigation! 🏗️
+
+- *Mission:*\* To provide a centralized, comprehensive, and easily navigable guide to the
+  Orchestrator's architecture, lifecycle, and core responsibilities, enabling developers to
+  understand, maintain, and extend its capabilities with confidence.
 
 ## Purpose & Scope
 
@@ -57,8 +60,8 @@ outcomes.
 - **Tool Management & Gating:** Provides and validates tools for the model, ensuring that only
   permitted tools are used by the active mode. Key tools include
   [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35),
-[`newTaskTool`](../../src/core/tools/newTaskTool.ts#L14),
-[`switchModeTool`](../../src/core/tools/switchModeTool.ts#L8),
+  [`newTaskTool`](../../src/core/tools/newTaskTool.ts#L14),
+  [`switchModeTool`](../../src/core/tools/switchModeTool.ts#L8),
   [`askFollowupQuestionTool`](../../src/core/tools/askFollowupQuestionTool.ts#L6), and
   [`updateTodoListTool`](../../src/core/tools/updateTodoListTool.ts#L156).
 
@@ -155,6 +158,7 @@ Orchestrator. | All Devs                | `TOOLS_REFERENCE`, `ARCHITECTURE`     
 | Concept          | Primary Symbols
 | Linked Detailed Doc                   |
 | :--------------- |
+
 :---------------------------------------------------------------------------------------------------------------------------
 | :------------------------------------ |
 | Mode Permissions | [`isToolAllowedForMode`](../../src/shared/modes.ts#L167),

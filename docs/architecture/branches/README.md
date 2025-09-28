@@ -1,17 +1,47 @@
 # Branch Analyses and Proposals
 
+## Table of Contents
+- [Branch Analyses and Proposals](#branch-analyses-and-proposals)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Branch Analysis Overview](#branch-analysis-overview)
+- [Change Analysis](#change-analysis)
+- [Orchestrator Load Subtask Changes](#orchestrator-load-subtask-changes)
+- [Code Change Impact](#code-change-impact)
+- [Performance Improvements](#performance-improvements)
+- [Cleanup Proposals](#cleanup-proposals)
+- [Strategic Cleanup Approach](#strategic-cleanup-approach)
+- [Implementation Strategy](#implementation-strategy)
+- [Quality Assurance](#quality-assurance)
+- [Implementation Strategy](#implementation-strategy)
+- [Phase 1: Analysis and Planning](#phase-1-analysis-and-planning)
+- [Phase 2: Development and Testing](#phase-2-development-and-testing)
+- [Phase 3: Deployment and Monitoring](#phase-3-deployment-and-monitoring)
+- [Performance Impact](#performance-impact)
+- [Expected Improvements](#expected-improvements)
+- [Monitoring Metrics](#monitoring-metrics)
+- [Optimization Opportunities](#optimization-opportunities)
+- [Recommendations](#recommendations)
+- [Immediate Actions](#immediate-actions)
+- [Long-term Strategy](#long-term-strategy)
+- [Success Criteria](#success-criteria)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers branch analyses and proposals for orchestrator load subtask
-improvements.
+  improvements.
 - **Context**: Use this as a starting point for understanding branch analysis and cleanup proposals.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -23,14 +53,6 @@ orchestrator load subtask functionality. The analysis reflects findings from:
 - Performance and reliability improvement strategies
 
 The analysis provides insights into branch improvements and optimization opportunities.
-
-## Table of Contents
-- [Branch Analysis Overview](#branch-analysis-overview)
-- [Change Analysis](#change-analysis)
-- [Cleanup Proposals](#cleanup-proposals)
-- [Implementation Strategy](#implementation-strategy)
-- [Performance Impact](#performance-impact)
-- [Recommendations](#recommendations)
 
 ## Branch Analysis Overview
 
@@ -173,8 +195,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 # Example command
 command --option value
 ```
-
 - [← Architecture Documentation](../README.md)
 - [← Kilo vs Roo Comparison](KILO_VS_ROO_SUBTASK_RESUME_COMPARISON.md)
 - [← Main Documentation](../README.md)
-- [← Project Root](../../README.md)
+- [← Project Root](../README.md)

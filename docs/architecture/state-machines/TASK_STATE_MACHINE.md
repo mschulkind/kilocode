@@ -1,7 +1,25 @@
 # Task State Machine
 
+## Table of Contents
+- [Task State Machine](#task-state-machine)
+- [Overview](#overview)
+- [Research Context](#research-context)
+- [🗺️ Navigation](#navigation)
+- [Quick Links](#quick-links)
+- [Key Concepts](#key-concepts)
+- [Task States](#task-states)
+- [Task State Properties](#task-state-properties)
+- [State Transition Diagram](#state-transition-diagram)
+- [State Transition Table](#state-transition-table)
+- [Key States](#key-states)
+- [Race Condition Impact](#race-condition-impact)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Overview
 
@@ -295,7 +313,7 @@ The task state machine is crucial for understanding the race condition because:
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

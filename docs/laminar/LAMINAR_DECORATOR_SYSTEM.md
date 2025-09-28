@@ -1,7 +1,40 @@
 # Laminar Decorator System
 
+## Table of Contents
+- [Laminar Decorator System](#laminar-decorator-system)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Decorator Architecture](#decorator-architecture)
+- [Core Decorator Implementation](#core-decorator-implementation)
+- [Decorator Options](#decorator-options)
+- [Automatic Instrumentation](#automatic-instrumentation)
+- [Method Decoration Process](#method-decoration-process)
+- [Class-Level Decoration](#class-level-decoration)
+- [Input/Output Capture](#inputoutput-capture)
+- [Input Capture](#input-capture)
+- [Output Capture](#output-capture)
+- [Performance Monitoring](#performance-monitoring)
+- [Execution Time Tracking](#execution-time-tracking)
+- [Resource Usage Monitoring](#resource-usage-monitoring)
+- [Integration Patterns](#integration-patterns)
+- [Existing Decorator Compatibility](#existing-decorator-compatibility)
+- [Framework Integration](#framework-integration)
+- [Error Handling](#error-handling)
+- [Exception Propagation](#exception-propagation)
+- [Decorator Failure Handling](#decorator-failure-handling)
+- [Configuration Options](#configuration-options)
+- [Global Configuration](#global-configuration)
+- [Environment-Specific Settings](#environment-specific-settings)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* This document describes the observeDecorator implementation for automatic
   instrumentation, detailing method decoration, input/output capture, performance monitoring, and
@@ -383,7 +416,7 @@ observeDecorator.config({
 | Component      | Primary Functions              | Key Files                                  |
 Integration Points     |
 | -------------- | ------------------------------ | ------------------------------------------ |
----------------------- |
+\---------------------- |
 | Decorator      | `observeDecorator()`           | `src/services/laminar/observeDecorator.ts` |
 Method instrumentation |
 | Input Capture  | `captureInput()`               | `src/services/laminar/observeDecorator.ts` |

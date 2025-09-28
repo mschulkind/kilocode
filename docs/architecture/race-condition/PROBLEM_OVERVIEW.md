@@ -1,18 +1,46 @@
 # Problem Overview
 
+## Table of Contents
+- [Problem Overview](#problem-overview)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [Key Findings](#key-findings)
+- [Problem Scope](#problem-scope)
+- [Problem Description](#problem-description)
+- [Symptoms](#symptoms)
+- [Occurrence Patterns](#occurrence-patterns)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Technical Root Cause](#technical-root-cause)
+- [Contributing Factors](#contributing-factors)
+- [Impact Assessment](#impact-assessment)
+- [User Experience Impact](#user-experience-impact)
+- [System Performance Impact](#system-performance-impact)
+- [Business Impact](#business-impact)
+- [Solution Strategy](#solution-strategy)
+- [Immediate Solutions](#immediate-solutions)
+- [Long-term Solutions](#long-term-solutions)
+- [Next Steps](#next-steps)
+- [Immediate Actions](#immediate-actions)
+- [Long-term Actions](#long-term-actions)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers executive summary and problem description for the API
-duplication race condition issue.
+  duplication race condition issue.
 - **Context**: Use this as a starting point for understanding the problem overview and executive
-summary of race condition issues.
+  summary of race condition issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -25,14 +53,6 @@ and its impact on the KiloCode system. The overview reflects findings from:
 
 The overview provides a comprehensive understanding of the problem and its implications.
 
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Problem Description](#problem-description)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Impact Assessment](#impact-assessment)
-- [Solution Strategy](#solution-strategy)
-- [Next Steps](#next-steps)
-
 ## Executive Summary
 
 The API duplication issue is caused by a **race condition** introduced in commit `749f3d22a` where
@@ -44,7 +64,7 @@ confused user experience.
 ### Key Findings
 
 - **Root Cause**: Concurrent calls to `recursivelyMakeClineRequests` from two different execution
-paths
+  paths
 - **Impact**: Multiple API requests, jumbled responses, poor user experience
 - **Frequency**: Common occurrence during normal usage
 - **Severity**: High impact on user experience and system reliability
@@ -274,7 +294,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 # Example command
 command --option value
 ```
-
 - [← Race Condition Analysis](../README.md)
 - [← Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
 - [← Impact Assessment](IMPACT_ASSESSMENT.md)

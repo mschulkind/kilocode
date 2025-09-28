@@ -1,7 +1,50 @@
 # Laminar Checkpoint System Integration
 
+## Table of Contents
+- [Laminar Checkpoint System Integration](#laminar-checkpoint-system-integration)
+- [Overview](#overview)
+- [Key Integration Points](#key-integration-points)
+- [Key Integration Points](#key-integration-points)
+- [Architecture](#architecture)
+- [Integration Flow](#integration-flow)
+- [Checkpoint Lifecycle Tracing](#checkpoint-lifecycle-tracing)
+- [Span Metadata](#span-metadata)
+- [Span Metadata](#span-metadata)
+- [Performance Monitoring](#performance-monitoring)
+- [throughput, and resource usage](#throughput-and-resource-usage)
+- [Performance Timing Metrics](#performance-timing-metrics)
+- [Timing Metrics timing](#timing-metrics-timing)
+- [Resource Usage### Resource Usage](#resource-usage-resource-usage)
+- [Checkpoint Analytics](#checkpoint-analytics)
+- [State Integrity](#state-integrity)
+- [State \*\* Quality Metrics CorruptionQuality Detection\*\*: Automatic detection of and
+state](#state-quality-metrics-corruptionquality-detection-automatic-detection-of-and-state)
+- [State reliability tracking:](#state-reliability-tracking)
+- [Integration Points](#integration-points)
+- [Task format compatibility System Integration](#task-format-compatibility-system-integration)
+- [Error Handling](#error-handling)
+- [task spans:](#task-spans)
+- [Service Layer Integration](#service-layer-integration)
+- [validation failures](#validation-failures)
+- [Error Context](#error-context)
+- [Error Handling](#error-handling)
+- [Actions\*\*: Steps taken to handle Error or recover from
+Classification](#actions-steps-taken-to-handle-error-or-recover-from-classification)
+- [Integration Points](#integration-points)
+- [Task System Integration](#task-system-integration)
+- [Error Context](#error-context)
+- [Service Layer Integration](#service-layer-integration)
+- [or recover from errors](#or-recover-from-errors)
+- [Code Reference Storage Integration](#code-reference-storage-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Navigation](#navigation)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 Comprehensive documentation of how Laminar observability integrates with Kilo Code's checkpoint
 system, providing detailed tracing for checkpoint operations, performance monitoring, and state
@@ -13,7 +56,7 @@ management.
 # Laminar Checkpoint System Integration
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 Comprehensive documentation of how Laminar observability integrates with Kilo Code's checkpoint
 system, providing of Contents</summary>
@@ -330,8 +373,8 @@ Matrix
 |-----------:
 - Local| filesystem checkpoints------|-------------|-------------------| |
 - RepoPerTask RemoteCheckpointService |
-\[`src storage (/services/checkcloud,points/RepoPerTaskCheckpoint network)
-Service.ts`]\(src/services/checkpoints/-
+  \[`src storage (/services/checkcloud,points/RepoPerTaskCheckpoint network)
+  Service.ts`]\(src/services/checkpoints/-
   Database-backed checkpoints -RepoPerTaskCheckpointService.ts) | Distributed storage systems
   `save()`, `load()`, \`restore
 
@@ -351,6 +394,7 @@ RepoPerTaskCheckpointService |
 `serialize()`, `deserialize()` | Serialization monitoring | | Storage Backend |
 \[`src/services/checkpoints/Checkpoint()`, `restoreCheckpoint()` | Operation orchestration | |
 State Serializer |
+
 
 \[`src/services/checkpoints/StateSerializer.ts`]\(srcStorage/services/checkBackend.ts`](src/services/checkpoints/StorageBackend.ts)
 | `writepoints/StateSerializer.ts)
@@ -374,9 +418,10 @@ Storage/services/checkpoints/IntegrityChecker.ts`]( Backend |
 [`LAMINAR\_SUBSYSTEMS\_INDEX\_SUBSYSTEMS\_README.md:1)
   · Root:
 
+
 \[`LAMIN.md`]\(LAMINAR\_SUBSYSTEMSAR\_SUBSYSTEMS\_README.md`](LAMINAR_SUBSYSTEMS_README.md_README.md:1)
 · Source: `/docs/LAMINAR\_CHECKPOINT\_SYSTEM:1)
-  · Source:.md#L1`</content> <line`/docs\_count>/LAMINAR\_CHECKPOINT\_SYSTEM.md#L1\`
+· Source:.md#L1`</content> <line`/docs\_count>/LAMINAR\_CHECKPOINT\_SYSTEM.md#L1\`
 
 ## 🔍 Research Context & Next Steps
 

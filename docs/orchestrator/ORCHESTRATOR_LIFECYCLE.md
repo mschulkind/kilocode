@@ -1,10 +1,39 @@
 # Orchestrator Task Lifecycle
 
+## Table of Contents
+- [Orchestrator Task Lifecycle](#orchestrator-task-lifecycle)
+- [Related Documents](#related-documents)
+- [Lifecycle Overview](#lifecycle-overview)
+- [Lifecycle Stages in Detail](#lifecycle-stages-in-detail)
+- [Stage 1: Initiation](#stage-1-initiation)
+- [Stage 2: Prompt Generation](#stage-2-prompt-generation)
+- [Stage 3: Model Response & Parsing](#stage-3-model-response-parsing)
+- [Stage 4: Parsing & Execution Loop](#stage-4-parsing-execution-loop)
+- [Stage 5: Completion](#stage-5-completion)
+- [Stage 6: Termination](#stage-6-termination)
+- [State Transitions](#state-transitions)
+- [The Execution Loop: ](#the-execution-loop)
+- [Subtask Lifecycle](#subtask-lifecycle)
+- [Navigation Footer](#navigation-footer)
+- [Provider network send points, duplicate-causes, and recommended docs-only
+changes](#provider-network-send-points-duplicate-causes-and-recommended-docs-only-changes)
+- [Quick pointer to code](#quick-pointer-to-code)
+- [Concrete send patterns (summary)](#concrete-send-patterns-summary)
+- [Likely causes of duplicate requests (doc
+summary)](#likely-causes-of-duplicate-requests-doc-summary)
+- [Docs-only recommendations (no code changes)](#docs-only-recommendations-no-code-changes)
+- [Suggested doc locations & links (insert these
+pages)](#suggested-doc-locations-links-insert-these-pages)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Next doc-step I will take (if you approve)](#next-doc-step-i-will-take-if-you-approve)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* This document provides a detailed, step-by-step description of the orchestrator's
-task
+  task
   lifecycle, from the moment a request is received to its final completion. It covers state
   transitions, the execution loop, and subtask management.
 
@@ -31,7 +60,7 @@ task
 <a id="related-documents"></a>
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[Orchestrator Architecture](ORCHESTRATOR_ARCHITECTURE.md)**: Describes the components
   involved in the lifecycle.
@@ -193,6 +222,7 @@ End of document.
 - Task control loop: [`src/core/task/Task.ts`](../../src/core/task/Task.ts#L2648)
 - Message queue:
 
+
 [`src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts#L36)
 - Provider entrypoints: `createMessage()` implementations under
   [`src/api/providers/`](../../src/api/providers/index.ts#L1)
@@ -215,7 +245,7 @@ End of document.
    previous\_response retry + Task retry).
 2. Token refresh flows that retry the same request (Gemini/Qwen patterns).
 3. Race on conversation continuity (previous\_response\_id) causing a provider retry and
-orchestrator
+   orchestrator
    retry.
 4. Wrapper/provider switching (VirtualQuotaFallback) without cancelling in-flight streams.
 5. Duplicate or repeated fetchModel calls in provider code paths (observed pattern).

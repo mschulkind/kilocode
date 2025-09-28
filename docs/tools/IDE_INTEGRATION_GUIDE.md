@@ -1,5 +1,44 @@
 # IDE Integration Guide
 
+## Table of Contents
+- [IDE Integration Guide](#ide-integration-guide)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [Setup](#setup)
+- [Required Extensions](#required-extensions)
+- [Configuration](#configuration)
+- [Markdown Validation](#markdown-validation)
+- [Markdown All in One](#markdown-all-in-one)
+- [Markdownlint](#markdownlint)
+- [Available Tasks](#available-tasks)
+- [docs: validate](#docs-validate)
+- [docs: maintain](#docs-maintain)
+- [docs: report](#docs-report)
+- [Real-time Validation](#real-time-validation)
+- [Features](#features)
+- [Error Types](#error-types)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Extension Not Working](#extension-not-working)
+- [Validation Not Running](#validation-not-running)
+- [Auto-fix Not Working](#auto-fix-not-working)
+- [Performance Issues](#performance-issues)
+- [Debug Mode](#debug-mode)
+- [Reset Configuration](#reset-configuration)
+- [Best Practices](#best-practices)
+- [File Organization](#file-organization)
+- [Writing Guidelines](#writing-guidelines)
+- [Validation Workflow](#validation-workflow)
+- [Integration with CI/CD](#integration-with-cicd)
+- [Support](#support)
+- [Related Documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,28 +49,26 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 This guide covers the VS Code integration for KiloCode's documentation automation system.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
@@ -187,18 +224,16 @@ For issues with IDE integration:
 - [Remark Configuration](../../.remarkrc)
 - [Package Scripts](../../package.json)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

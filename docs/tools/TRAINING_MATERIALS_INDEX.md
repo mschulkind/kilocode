@@ -1,5 +1,46 @@
 # Training Materials Index
 
+## Table of Contents
+- [Training Materials Index](#training-materials-index)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Quick Start Training](#quick-start-training)
+- [1. ](#1)
+- [2. ](#2)
+- [Intermediate Training](#intermediate-training)
+- [3. ](#3)
+- [4. ](#4)
+- [Advanced Training](#advanced-training)
+- [5. ](#5)
+- [6. ](#6)
+- [Specialized Training](#specialized-training)
+- [7. ](#7)
+- [8. ](#8)
+- [Training Resources](#training-resources)
+- [Interactive Exercises](#interactive-exercises)
+- [Reference Materials](#reference-materials)
+- [Assessment Tools](#assessment-tools)
+- [Training Paths](#training-paths)
+- [New Team Member Path](#new-team-member-path)
+- [Documentation Specialist Path](#documentation-specialist-path)
+- [Advanced User Path](#advanced-user-path)
+- [Getting Started](#getting-started)
+- [For New Users](#for-new-users)
+- [For Experienced Users](#for-experienced-users)
+- [Training Support](#training-support)
+- [Self-Paced Learning](#self-paced-learning)
+- [Team Training](#team-training)
+- [Ongoing Support](#ongoing-support)
+- [Feedback and Improvement](#feedback-and-improvement)
+- [Training Feedback](#training-feedback)
+- [Continuous Improvement](#continuous-improvement)
+- [Related Documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,28 +51,26 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 This index provides access to all training materials for KiloCode's documentation automation system.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Quick Start Training
 
@@ -184,20 +223,18 @@ This index provides access to all training materials for KiloCode's documentatio
 - [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
 ## Navigation Footer
 
 - *Navigation*\*: [← Back to Tools Overview](./README.md) · [📚 Technical Glossary](../GLOSSARY.md)
-· [↑ Table of Contents](#training-materials-index)
+  · [↑ Table of Contents](#training-materials-index)

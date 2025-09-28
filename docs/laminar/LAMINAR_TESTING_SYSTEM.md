@@ -1,7 +1,44 @@
 # Laminar Testing System
 
+## Table of Contents
+- [Laminar Testing System](#laminar-testing-system)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Testing Architecture](#testing-architecture)
+- [Test Categories](#test-categories)
+- [Test Organization](#test-organization)
+- [Integration Testing](#integration-testing)
+- [Subsystem Integration Tests](#subsystem-integration-tests)
+- [Configuration Integration](#configuration-integration)
+- [Performance Testing](#performance-testing)
+- [Overhead Measurement](#overhead-measurement)
+- [Scalability Testing](#scalability-testing)
+- [Trace Accuracy Validation](#trace-accuracy-validation)
+- [Span Content Validation](#span-content-validation)
+- [Exception Recording](#exception-recording)
+- [Subsystem Validation](#subsystem-validation)
+- [Task System Validation](#task-system-validation)
+- [Tool System Validation](#tool-system-validation)
+- [LLM Integration Validation](#llm-integration-validation)
+- [Mock and Test Utilities](#mock-and-test-utilities)
+- [Mock Implementations](#mock-implementations)
+- [Test Helpers](#test-helpers)
+- [Continuous Integration](#continuous-integration)
+- [CI Pipeline Integration](#ci-pipeline-integration)
+- [Automated Validation](#automated-validation)
+- [Test Maintenance](#test-maintenance)
+- [Test Organization](#test-organization)
+- [Flaky Test Prevention](#flaky-test-prevention)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* This document outlines the comprehensive testing strategy for Laminar observability
   integration, covering integration tests, performance validation, trace accuracy assessment, and
@@ -487,7 +524,7 @@ npx vitest run __tests__/laminar/ --passWithNoTests=false
 | Component         | Primary Functions                      | Key Files
 | Integration Points |
 | ----------------- | -------------------------------------- |
-------------------------------------------- | ------------------ |
+\------------------------------------------- | ------------------ |
 | Integration Tests | Subsystem interaction validation       |
 `src/__tests__/laminar/integration.test.ts` | All subsystems     |
 | Performance Tests | Overhead and scalability testing       |

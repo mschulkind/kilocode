@@ -1,18 +1,44 @@
 # JetBrains Plugin
 
+## Table of Contents
+- [JetBrains Plugin](#jetbrains-plugin)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Plugin Overview](#plugin-overview)
+- [System Architecture](#system-architecture)
+- [Key Components](#key-components)
+- [Host Application](#host-application)
+- [Plugin Implementation](#plugin-implementation)
+- [Communication Bridge](#communication-bridge)
+- [Build System](#build-system)
+- [Installation and Setup](#installation-and-setup)
+- [Prerequisites](#prerequisites)
+- [Installation Steps](#installation-steps)
+- [Configuration](#configuration)
+- [Usage Guide](#usage-guide)
+- [Basic Operations](#basic-operations)
+- [IDE Integration](#ide-integration)
+- [Advanced Features](#advanced-features)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the JetBrains IDE plugin architecture and host-plugin
-communication system.
+  communication system.
 - **Context**: Use this as a starting point for understanding how KiloCode integrates with JetBrains
-IDEs.
+  IDEs.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -25,14 +51,6 @@ and KiloCode's integration requirements. The plugin architecture reflects findin
 
 The system provides seamless integration between KiloCode's AI capabilities and JetBrains
 development environments.
-
-## Table of Contents
-- [Plugin Overview](#plugin-overview)
-- [System Architecture](#system-architecture)
-- [Key Components](#key-components)
-- [Installation and Setup](#installation-and-setup)
-- [Usage Guide](#usage-guide)
-- [Troubleshooting](#troubleshooting)
 
 ## Plugin Overview
 

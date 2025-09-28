@@ -1,17 +1,47 @@
 # Applications
 
+## Table of Contents
+- [Applications](#applications)
+- [When You're Here](#when-youre-here)
+- [Application Overview](#application-overview)
+- [Research Context](#research-context)
+- [Documentation Applications](#documentation-applications)
+- [kilocode-docs](#kilocode-docs)
+- [web-docs](#web-docs)
+- [Development Applications](#development-applications)
+- [storybook](#storybook)
+- [web-evals](#web-evals)
+- [web-roo-code](#web-roo-code)
+- [Testing Applications](#testing-applications)
+- [playwright-e2e](#playwright-e2e)
+- [vscode-e2e](#vscode-e2e)
+- [vscode-nightly](#vscode-nightly)
+- [Application Dependencies](#application-dependencies)
+- [Dependency Graph](#dependency-graph)
+- [External Dependencies](#external-dependencies)
+- [Development Workflow](#development-workflow)
+- [Application Development](#application-development)
+- [Application Testing](#application-testing)
+- [Application Deployment](#application-deployment)
+- [Quality Assurance](#quality-assurance)
+- [Code Quality](#code-quality)
+- [Testing](#testing)
+- [Documentation](#documentation)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Overview of the standalone applications and interfaces in the KiloCode monorepo.
 

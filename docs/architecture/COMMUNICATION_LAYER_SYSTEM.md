@@ -1,18 +1,49 @@
 # Communication Layer System
 
+## Table of Contents
+- [Communication Layer System](#communication-layer-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [System Architecture](#system-architecture)
+- [Architecture Overview](#architecture-overview)
+- [Webview Bridge](#webview-bridge)
+- [Bridge Implementation](#bridge-implementation)
+- [Bridge Configuration](#bridge-configuration)
+- [Message Handler](#message-handler)
+- [Message Processing](#message-processing)
+- [Handler Implementation](#handler-implementation)
+- [Message Types and Routing](#message-types-and-routing)
+- [Message Categories](#message-categories)
+- [Routing Strategy](#routing-strategy)
+- [State Synchronization](#state-synchronization)
+- [Synchronization Strategy](#synchronization-strategy)
+- [State Management](#state-management)
+- [Error Handling](#error-handling)
+- [Error Management](#error-management)
+- [Error Handling Implementation](#error-handling-implementation)
+- [Performance Optimization](#performance-optimization)
+- [Optimization Strategies](#optimization-strategies)
+- [Performance Monitoring](#performance-monitoring)
+- [Common Issues](#common-issues)
+- [Communication Issues](#communication-issues)
+- [Troubleshooting](#troubleshooting)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the Communication Layer system, including Webview Bridge and
-Message Handler components.
+  Message Handler components.
 - **Context**: Use this as a starting point for understanding communication between UI and backend
-systems.
+  systems.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 ## Research Context
 
@@ -24,16 +55,6 @@ architecture and implementation patterns. The system reflects findings from:
 - State synchronization and consistency management research
 
 The system provides robust communication capabilities between UI and backend components.
-
-## Table of Contents
-- [System Architecture](#system-architecture)
-- [Webview Bridge](#webview-bridge)
-- [Message Handler](#message-handler)
-- [Message Types and Routing](#message-types-and-routing)
-- [State Synchronization](#state-synchronization)
-- [Error Handling](#error-handling)
-- [Performance Optimization](#performance-optimization)
-- [Common Issues](#common-issues)
 
 ## System Architecture
 

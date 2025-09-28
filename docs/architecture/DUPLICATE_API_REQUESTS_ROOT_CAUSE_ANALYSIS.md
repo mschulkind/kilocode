@@ -1,18 +1,49 @@
 # Duplicate API Requests - Root Cause Analysis
 
+## Table of Contents
+- [Duplicate API Requests - Root Cause Analysis](#duplicate-api-requests-root-cause-analysis)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Root Cause Identified](#root-cause-identified)
+- [Race Condition Analysis](#race-condition-analysis)
+- [Concurrency Issues](#concurrency-issues)
+- [Synchronization Problems](#synchronization-problems)
+- [Code Flow Analysis](#code-flow-analysis)
+- [Execution Flow](#execution-flow)
+- [Problem Areas](#problem-areas)
+- [Critical Code Paths](#critical-code-paths)
+- [Critical Bug Locations](#critical-bug-locations)
+- [Primary Bug Locations](#primary-bug-locations)
+- [Specific Issues](#specific-issues)
+- [Proof of Concept](#proof-of-concept)
+- [Reproduction Steps](#reproduction-steps)
+- [Expected Behavior](#expected-behavior)
+- [Actual Behavior](#actual-behavior)
+- [Impact Assessment](#impact-assessment)
+- [User Experience Impact](#user-experience-impact)
+- [System Performance Impact](#system-performance-impact)
+- [Business Impact](#business-impact)
+- [Immediate Fix Required](#immediate-fix-required)
+- [Critical Fixes](#critical-fixes)
+- [Implementation Priority](#implementation-priority)
+- [Success Criteria](#success-criteria)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers deep technical analysis of the actual root cause of duplicate
-API request issues in KiloCode.
+  API request issues in KiloCode.
 - **Context**: Use this as a starting point for understanding the root cause analysis and technical
-investigation.
+  investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 ## Research Context
 
@@ -24,15 +55,6 @@ in the KiloCode system. The analysis reflects findings from:
 - Impact assessment and solution development for duplicate request problems
 
 The analysis provides detailed insights into the technical root causes and solution strategies.
-
-## Table of Contents
-- [Root Cause Identified](#root-cause-identified)
-- [Race Condition Analysis](#race-condition-analysis)
-- [Code Flow Analysis](#code-flow-analysis)
-- [Critical Bug Locations](#critical-bug-locations)
-- [Proof of Concept](#proof-of-concept)
-- [Impact Assessment](#impact-assessment)
-- [Immediate Fix Required](#immediate-fix-required)
 
 ## Root Cause Identified
 

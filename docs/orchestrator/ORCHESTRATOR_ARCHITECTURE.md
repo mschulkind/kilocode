@@ -1,7 +1,23 @@
 # Orchestrator Architecture
 
+## Table of Contents
+- [Orchestrator Architecture](#orchestrator-architecture)
+- [Related Documents](#related-documents)
+- [Architectural Philosophy](#architectural-philosophy)
+- [Core Components](#core-components)
+- [Data Flow Diagram](#data-flow-diagram)
+- [Component Deep Dive](#component-deep-dive)
+- [Task Engine](#task-engine)
+- [Streaming Parser](#streaming-parser)
+- [Tool Executor & Library](#tool-executor-library)
+- [Key Interactions](#key-interactions)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* This document provides a detailed overview of the Kilo Code Orchestrator's
   architecture, including its core components, their interactions, and the flow of data through the
@@ -27,10 +43,11 @@ behind the "what"! 💻
 ### Related Documents
 
 <a
+
 id="related-documents"></a>]\(7-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[ORCHESTRATOR\_LIFECYCLE.md](ORCHESTRATOR_LIFECYCLE.md)**: Provides a step-by-step breakdown of
   the task execution lifecycle.
@@ -72,8 +89,8 @@ The architecture comprises several key components that work in concert to execut
 - **Streaming Parser**: This component is responsible for processing the output from the language
   model in real-time, identifying and extracting tool-call requests.
 - **Tool Executor**: Once a tool call is parsed, this component validates permissions and executes
-the corresponding tool, such as
-[`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35).
+  the corresponding tool, such as
+  [`attemptCompletionTool`](../../src/core/tools/attemptCompletionTool.ts#L35).
 - **Mode & Permission Service**: Manages the active operational `Mode` and enforces access control
   rules, determining which tools are available via
   [`isToolAllowedForMode`](../../src/shared/modes.ts#L167).

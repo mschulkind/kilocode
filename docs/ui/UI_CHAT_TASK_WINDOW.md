@@ -1,9 +1,42 @@
 # Chat Task Window System
 
+## Table of Contents
+- [Chat Task Window System](#chat-task-window-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [UI Components](#ui-components)
+- [Primary Panels and Controls](#primary-panels-and-controls)
+- [Display Conventions](#display-conventions)
+- [Message Flow Control](#message-flow-control)
+- [High-Level Flow](#high-level-flow)
+- [Request Initiation Triggers](#request-initiation-triggers)
+- [Request Payloads and Timing](#request-payloads-and-timing)
+- [Payload Composition](#payload-composition)
+- [Timestamp Management](#timestamp-management)
+- [State Management and Rendering](#state-management-and-rendering)
+- [State Categories](#state-categories)
+- [Rendering Best Practices](#rendering-best-practices)
+- [Debugging Duplicate Requests](#debugging-duplicate-requests)
+- [Common Causes](#common-causes)
+- [Diagnostic Procedures](#diagnostic-procedures)
+- [Quick Resolution Steps](#quick-resolution-steps)
+- [Instrumentation and Logging](#instrumentation-and-logging)
+- [Recommended Log Points](#recommended-log-points)
+- [Log Content](#log-content)
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [User Experience Considerations](#user-experience-considerations)
+- [Developer Tools](#developer-tools)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-💡 **Fun Fact**: [Interesting fact about the topic]
-
+💡 **Fun Fact**: \[Interesting fact about the topic]
 
 This document provides comprehensive coverage of KiloCode's chat interface and task window
 components. It covers user interaction patterns, message flow control, and troubleshooting
@@ -11,38 +44,25 @@ procedures.
 
 - **Purpose**: Complete guide to chat interface and task window implementation
 - **Context**: Essential reading for developers working on chat features or debugging message flow
-issues
+  issues
 - **Navigation**: Use the table of contents below to jump to specific topics
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
-
-## Table of Contents
-- [Overview](#overview)
-- [UI Components](#ui-components)
-- [Message Flow Control](#message-flow-control)
-- [Request Payloads and Timing](#request-payloads-and-timing)
-- [State Management and Rendering](#state-management-and-rendering)
-- [Debugging Duplicate Requests](#debugging-duplicate-requests)
-- [Instrumentation and Logging](#instrumentation-and-logging)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Navigation](#navigation)
+\[Research or development methodology used]
 
 ## Overview
 
@@ -61,18 +81,18 @@ a seamless user experience.
 - **Chat Input**: Free-text input field where users compose their prompts and messages
 - **Model Switcher**: Dropdown control for selecting the AI model for the next request
 - **Message List**: Chronological display of conversation history including user messages, system
-responses, and status indicators
+  responses, and status indicators
 - **Task View**: Optional panel displaying current plans, subtasks, and execution progress
 - **Status Indicators**: Visual feedback showing request states (pending, in progress, streaming,
-completed, error)
+  completed, error)
 - **Action Controls**: Send button, Stop/Cancel functionality, and Retry options
 
 ### Display Conventions
 
 - **Message Format**: Each message displays author (User/System/Assistant), formatted content
-(Markdown), timestamp, and status badges
+  (Markdown), timestamp, and status badges
 - **Streaming Responses**: Real-time updates with streaming indicators and incremental content
-updates
+  updates
 - **Idempotency**: UI attaches client-side request IDs to ensure operation consistency
 
 ## Message Flow Control
@@ -103,7 +123,7 @@ sequenceDiagram
 - **User Actions**: Explicit send button press or shortcut key activation
 - **Orchestrator Actions**: Subtask execution, follow-up operations, or scheduled tasks
 - **Guard Conditions**: Validates no active requests exist for the same chat turn, payload
-validation passes, and unique request ID is generated
+  validation passes, and unique request ID is generated
 - **Debouncing**: UI actions are debounced (100-250ms) to prevent rapid-fire requests
 
 ## Request Payloads and Timing
@@ -154,7 +174,6 @@ All timestamps are stored in ISO-8601 UTC format and displayed in local time in 
 - **Retry Logic**: Timeout handling or fallback mechanisms creating additional requests
 
 ### Diagnostic Procedures
-
 1. **Add Logging Points**: Track enqueue, dispatch, and provider start events
 2. **Correlate Timestamps**: Use request IDs to trace request flow across layers
 3. **Identify Patterns**: Look for multiple enqueue events for single user actions
@@ -169,7 +188,6 @@ All timestamps are stored in ISO-8601 UTC format and displayed in local time in 
 ## Instrumentation and Logging
 
 ### Recommended Log Points
-
 - Request enqueue (UI level)
 - Request dispatch (Orchestrator level)
 - Provider start and chunk events
@@ -193,21 +211,18 @@ support.
 - **Verbose Logging**: Enable detailed orchestrator logging for guard evaluation and retry analysis
 - **Network Traces**: Capture network and console traces with request IDs for reproduction
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
 ## Navigation
-
 - [← Back to UI Documentation](README.md)
 - [→ UI Layer System](UI_LAYER_SYSTEM.md)
 - [→ Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)

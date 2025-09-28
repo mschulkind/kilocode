@@ -1,20 +1,46 @@
 # Navigation Footer 🧭
 
+## Table of Contents
+- [Navigation Footer 🧭](#navigation-footer)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Footer Requirements](#footer-requirements)
+- [Standard Format](#standard-format)
+- [Link Requirements](#link-requirements)
+- [Back Link](#back-link)
+- [Root Link](#root-link)
+- [Source Link](#source-link)
+- [Path Conventions](#path-conventions)
+- [Relative Paths (Back and Root Links)](#relative-paths-back-and-root-links)
+- [Absolute Paths (Source Links)](#absolute-paths-source-links)
+- [Footer Examples](#footer-examples)
+- [Root Level Document](#root-level-document)
+- [Subdirectory Document](#subdirectory-document)
+- [Nested Subdirectory Document](#nested-subdirectory-document)
+- [Deeply Nested Document](#deeply-nested-document)
+- [Footer Validation](#footer-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete Document with Footer](#complete-document-with-footer)
+- [Minimal Document with Footer](#minimal-document-with-footer)
+- [Nested Document with Footer](#nested-document-with-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Standards for creating consistent navigation footers that provide cross-references
-and
+  and
   enable seamless navigation throughout the KiloCode documentation system.
 
 > **Cartography Fun Fact**: Just like how a compass rose on a map shows you the cardinal directions

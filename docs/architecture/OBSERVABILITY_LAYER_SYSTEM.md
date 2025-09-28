@@ -1,18 +1,50 @@
 # Observability Layer System
 
+## Table of Contents
+- [Observability Layer System](#observability-layer-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [System Architecture](#system-architecture)
+- [Architecture Overview](#architecture-overview)
+- [Laminar Service](#laminar-service)
+- [Service Overview](#service-overview)
+- [Service Implementation](#service-implementation)
+- [Span Management](#span-management)
+- [Span Lifecycle](#span-lifecycle)
+- [Span Operations](#span-operations)
+- [Observability Data Collection](#observability-data-collection)
+- [Data Types](#data-types)
+- [Collection Strategy](#collection-strategy)
+- [Performance Monitoring](#performance-monitoring)
+- [Performance Metrics](#performance-metrics)
+- [Monitoring Implementation](#monitoring-implementation)
+- [Error Tracking](#error-tracking)
+- [Error Management](#error-management)
+- [Error Tracking Implementation](#error-tracking-implementation)
+- [Alerting and Notifications](#alerting-and-notifications)
+- [Alert Configuration](#alert-configuration)
+- [Alert Management](#alert-management)
+- [Common Issues](#common-issues)
+- [Performance Issues](#performance-issues)
+- [Monitoring Issues](#monitoring-issues)
+- [Troubleshooting](#troubleshooting)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the Observability Layer system, including Laminar Service and
-Span Management components for system monitoring, tracing, and performance tracking.
+  Span Management components for system monitoring, tracing, and performance tracking.
 - **Context**: Use this as a starting point for understanding system observability and monitoring
-capabilities.
+  capabilities.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -24,16 +56,6 @@ monitoring system architecture in the KiloCode project. The system reflects find
 - System health monitoring and alerting strategy development
 
 The system provides comprehensive observability capabilities for monitoring and troubleshooting.
-
-## Table of Contents
-- [System Architecture](#system-architecture)
-- [Laminar Service](#laminar-service)
-- [Span Management](#span-management)
-- [Observability Data Collection](#observability-data-collection)
-- [Performance Monitoring](#performance-monitoring)
-- [Error Tracking](#error-tracking)
-- [Alerting and Notifications](#alerting-and-notifications)
-- [Common Issues](#common-issues)
 
 ## System Architecture
 

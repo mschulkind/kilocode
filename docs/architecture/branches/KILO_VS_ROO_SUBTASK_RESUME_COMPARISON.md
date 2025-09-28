@@ -1,7 +1,26 @@
 # Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation
 
+## Table of Contents
+- [Kilo vs Roo Comparison: Subtask Resume & Orchestrator
+Continuation](#kilo-vs-roo-comparison-subtask-resume-orchestrator-continuation)
+- [Quick Navigation](#quick-navigation)
+- [Research Context](#research-context)
+- [Repositories and Branches Compared](#repositories-and-branches-compared)
+- [Roo Branch Diff (against origin/main)](#roo-branch-diff-against-originmain)
+- [Conceptual Before/After (Kilo vs Roo)](#conceptual-beforeafter-kilo-vs-roo)
+- [Base Differences That Matter](#base-differences-that-matter)
+- [Alignment With Our Cleanup Proposal](#alignment-with-our-cleanup-proposal)
+- [Recommended Mapping of Kilo Proposal to Roo](#recommended-mapping-of-kilo-proposal-to-roo)
+- [Side-by-Side Conceptual Diffs](#side-by-side-conceptual-diffs)
+- [Conclusion](#conclusion)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [Example](#example)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 Purpose: Compare Kilo’s analysis/proposal to the Roo-Code branch
 `catrielmuller/fix-orchestator-load-subtask`, relative to Roo `origin/main`. Highlight base
@@ -23,7 +42,7 @@ differences, touched files, behavioral deltas, and alignment/variance with our c
 - \*\*
 - [Branch Analysis: orchestator-load-subtask (Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CHANGES_ANALYSIS.md)
 - [Cleanup Proposal: Replace orchestator-load-subtask
-(Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md)
+  (Kilo)](./ORCHESTATOR_LOAD_SUBTASK_CLEANUP_PROPOSAL.md)
 
 ## Repositories and Branches Compared
 - Kilo: current repo (analysis/proposal live here)
@@ -139,7 +158,7 @@ Tests (Kilo vs Roo)
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -165,7 +184,6 @@ next, return to [Architecture Documentation](README.md) for guidance.
 # Example command
 command --option value
 ```
-
 - \*\*
 
 - *Navigation*\*: [← Back to Architecture Documentation](README.md) ·

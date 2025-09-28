@@ -1,5 +1,34 @@
 # Diff System
 
+## Table of Contents
+- [Diff System](#diff-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [System Architecture](#system-architecture)
+- [Diff Strategies](#diff-strategies)
+- [Multi Search Replace Strategy](#multi-search-replace-strategy)
+- [Multi File Search Replace Strategy](#multi-file-search-replace-strategy)
+- [Change Tracking](#change-tracking)
+- [Change Detection](#change-detection)
+- [Change History](#change-history)
+- [File Operations](#file-operations)
+- [File Modification](#file-modification)
+- [Insert Groups](#insert-groups)
+- [Performance & Optimization](#performance-optimization)
+- [Diff Processing Optimization](#diff-processing-optimization)
+- [Memory Management](#memory-management)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Diff Processing Performance](#issue-1-diff-processing-performance)
+- [Issue 2: Multi-file Operation Failures](#issue-2-multi-file-operation-failures)
+- [Issue 3: Change Validation Issues](#issue-3-change-validation-issues)
+- [Issue 4: Backup and Rollback Problems](#issue-4-backup-and-rollback-problems)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,10 +39,10 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive documentation of the diff system for file modification, change
-tracking,
+  tracking,
   and diff strategy management in KiloCode.
 
 > **Biology Fun Fact**: Services are like specialized organs in a living organism - each has a
@@ -31,24 +60,22 @@ tracking,
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Diff System provides comprehensive file modification capabilities through multiple diff
@@ -399,26 +426,24 @@ interface InsertGroup {
 - Data loss
 
 - *Root Cause*\*: Backup system or rollback mechanism issues **Solution**: Implement robust backup
-and
+  and
   rollback systems
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
-[`README.md`](../README.md)
+  [`README.md`](../README.md)
   · Source: `/docs/services/Diff_SYSTEM.md#L1`
-
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

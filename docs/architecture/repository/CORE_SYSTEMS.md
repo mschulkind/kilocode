@@ -1,17 +1,53 @@
 # Core Systems
 
+## Table of Contents
+- [Core Systems](#core-systems)
+- [When You're Here](#when-youre-here)
+- [System Architecture Overview](#system-architecture-overview)
+- [Research Context](#research-context)
+- [Core Services](#core-services)
+- [1. Orchestrator Service](#1-orchestrator-service)
+- [2. API Service](#2-api-service)
+- [3. Message Queue Service](#3-message-queue-service)
+- [4. Laminar Service](#4-laminar-service)
+- [5. Prompt Service](#5-prompt-service)
+- [6. Tool Service](#6-tool-service)
+- [System Components](#system-components)
+- [Task Management System](#task-management-system)
+- [Message Processing System](#message-processing-system)
+- [API Integration System](#api-integration-system)
+- [Observability System](#observability-system)
+- [Service Dependencies](#service-dependencies)
+- [Dependency Graph](#dependency-graph)
+- [Service Communication](#service-communication)
+- [Data Flow](#data-flow)
+- [Request Flow](#request-flow)
+- [Response Flow](#response-flow)
+- [Performance Characteristics](#performance-characteristics)
+- [Scalability](#scalability)
+- [Reliability](#reliability)
+- [Monitoring](#monitoring)
+- [Configuration Management](#configuration-management)
+- [Service Configuration](#service-configuration)
+- [Configuration Validation](#configuration-validation)
+- [Security Considerations](#security-considerations)
+- [Authentication](#authentication)
+- [Authorization](#authorization)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Detailed overview of the core systems and services that power KiloCode.
 

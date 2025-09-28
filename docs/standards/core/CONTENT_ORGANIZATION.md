@@ -1,10 +1,26 @@
 # Content Organization 📚
 
+## Table of Contents
+- [Content Organization 📚](#content-organization)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Single Topic Focus](#single-topic-focus)
+- [Content Splitting Guidelines](#content-splitting-guidelines)
+- [Domain Organization](#domain-organization)
+- [Accessibility Standards](#accessibility-standards)
+- [Content Hierarchy](#content-hierarchy)
+- [Cross-Reference Strategy](#cross-reference-strategy)
+- [Maintenance Principles](#maintenance-principles)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Guidelines for organizing content within documents and across the documentation
-system
+  system
   to ensure clarity, focus, and maintainability.
 
 > **Biology Fun Fact**: Just like how cells organize into tissues, tissues into organs, and organs
@@ -54,7 +70,7 @@ guidelines ensure that information is logically structured, appropriately focuse
 ## Single Topic Focus
 
 - *Principle*\*: Aim for single-topic documents. Each document should have one clear purpose and
-cover
+  cover
   one main concept.
 
 - *Benefits*\*:
@@ -414,7 +430,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

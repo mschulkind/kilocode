@@ -1,18 +1,54 @@
 # Duplicate API Requests Troubleshooting Guide
 
+## Table of Contents
+- [Duplicate API Requests Troubleshooting Guide](#duplicate-api-requests-troubleshooting-guide)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [System Architecture Overview](#system-architecture-overview)
+- [Architecture Flow](#architecture-flow)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Primary Causes](#primary-causes)
+- [Contributing Factors](#contributing-factors)
+- [Technical Root Causes](#technical-root-causes)
+- [Diagnostic Procedures](#diagnostic-procedures)
+- [Step 1: Initial Assessment](#step-1-initial-assessment)
+- [Step 2: Detailed Analysis](#step-2-detailed-analysis)
+- [Step 3: Root Cause Identification](#step-3-root-cause-identification)
+- [Subsystem Deep Dives](#subsystem-deep-dives)
+- [UI Layer Analysis](#ui-layer-analysis)
+- [Communication Layer Analysis](#communication-layer-analysis)
+- [Orchestration Layer Analysis](#orchestration-layer-analysis)
+- [Provider Layer Analysis](#provider-layer-analysis)
+- [Common Failure Patterns](#common-failure-patterns)
+- [Pattern 1: Race Conditions](#pattern-1-race-conditions)
+- [Pattern 2: State Inconsistency](#pattern-2-state-inconsistency)
+- [Pattern 3: Error Recovery Loops](#pattern-3-error-recovery-loops)
+- [Pattern 4: User Action Duplication](#pattern-4-user-action-duplication)
+- [Resolution Strategies](#resolution-strategies)
+- [Immediate Actions](#immediate-actions)
+- [Short-term Solutions](#short-term-solutions)
+- [Long-term Solutions](#long-term-solutions)
+- [Prevention Measures](#prevention-measures)
+- [Development Practices](#development-practices)
+- [System Design](#system-design)
+- [Operational Practices](#operational-practices)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers comprehensive guide for diagnosing and resolving issues where
-KiloCode fires multiple API requests simultaneously.
+  KiloCode fires multiple API requests simultaneously.
 - **Context**: Use this as a starting point for troubleshooting duplicate API request issues and
-system confusion.
+  system confusion.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 ## Research Context
 
@@ -24,15 +60,6 @@ troubleshooting strategies in the KiloCode system. The guide reflects findings f
 - Prevention measure development and implementation strategy analysis
 
 The guide provides systematic approaches to diagnosing and resolving duplicate API request issues.
-
-## Table of Contents
-- [System Architecture Overview](#system-architecture-overview)
-- [Root Cause Analysis](#root-cause-analysis)
-- [Diagnostic Procedures](#diagnostic-procedures)
-- [Subsystem Deep Dives](#subsystem-deep-dives)
-- [Common Failure Patterns](#common-failure-patterns)
-- [Resolution Strategies](#resolution-strategies)
-- [Prevention Measures](#prevention-measures)
 
 ## System Architecture Overview
 

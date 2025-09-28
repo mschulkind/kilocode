@@ -1,7 +1,53 @@
 # Laminar LLM Integration
 
+## Table of Contents
+- [Laminar LLM Integration](#laminar-llm-integration)
+- [Laminar LLM Integration](#laminar-llm-integration)
+- [Overview](#overview)
+- [between Kilo Code and Overview](#between-kilo-code-and-overview)
+- [Key Integration Points calls](#key-integration-points-calls)
+- [Key Integration dedicated Points](#key-integration-dedicated-points)
+- [Integration Flow](#integration-flow)
+- [Span Metadata](#span-metadata)
+- [Cost Attribution](#cost-attribution)
+- [Cost Calculation](#cost-calculation)
+- [Model Information Capture](#model-information-capture)
+- [Model Metadata](#model-metadata)
+- [Cost Attribution](#cost-attribution)
+- [Model Information Capture](#model-information-capture)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Performance Tracking Cache](#performance-tracking-cache)
+- [Cache Usage Tracking](#cache-usage-tracking)
+- [Performance Metrics Age of](#performance-metrics-age-of)
+- [cached responses](#cached-responses)
+- [Cache Response Time Tracking](#cache-response-time-tracking)
+- [improvements from cache usage](#improvements-from-cache-usage)
+- [Performance Metrics](#performance-metrics)
+- [Quality Metrics](#quality-metrics)
+- [Error Handling](#error-handling)
+- [Error Classification](#error-classification)
+- [Error Context](#error-context)
+- [Integration Points](#integration-points)
+- [Error Context](#error-context)
+- [TaskComprehensive error information System
+Integration](#taskcomprehensive-error-information-system-integration)
+- [Service Layer Integration](#service-layer-integration)
+- [Integration for LLM calls](#integration-for-llm-calls)
+- [counting Task System and Integration](#counting-task-system-and-integration)
+- [grouping](#grouping)
+- [Service Configuration Integration](#service-configuration-integration)
+- [Configuration Integration](#configuration-integration)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Code Reference Matrix](#code-reference-matrix)
+- [NavigationCached()](#navigationcached)
+- [Navigation](#navigation)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 Comprehensive documentation of how Laminar observability integrates with Kilo Code's
 LLM\<write\_to\_file> <path>docs/LAMINAR\_LLM\_INTEGRATION.md</path> <content>
@@ -9,7 +55,7 @@ LLM\<write\_to\_file> <path>docs/LAMINAR\_LLM\_INTEGRATION.md</path> <content>
 # Laminar LLM Integration
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 Comprehensive documentation of how Laminar observability integrates with Kilo Code's LLM (Large
 Language Model) interactions, providing detailed tracing for API calls, token usage, (Large Language
@@ -455,7 +501,7 @@ Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/se
 - Back:
 \[`LAMINAR tracking | _SUB| Cost Calculator |
 [`SYSTEMS\_README.md`](LAMINsrc/services/llm/CostCalculatorAR_SUBSYSTEMS_README.md:1.ts)
-·`]\(src/services/llm/C
+  ·`]\(src/services/llm/C
   Root: \[`LAMINARostCalculator.ts) | `calculateCost\_SUBSYSTEMS\_README.md`](LAMIN()`,AR\_SUBSYSTEM
   `updateRates()` |S\_README.md:1 Cost computation |
 

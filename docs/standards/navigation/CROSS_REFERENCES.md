@@ -1,7 +1,47 @@
 # Cross-References 🔗
 
+## Table of Contents
+- [Cross-References 🔗](#cross-references)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Cross-Reference Types](#cross-reference-types)
+- [Conceptual Links](#conceptual-links)
+- [Procedural Links](#procedural-links)
+- [Reference Links](#reference-links)
+- [Navigation Links](#navigation-links)
+- [Reference Placement](#reference-placement)
+- [Within Documents](#within-documents)
+- [Between Documents](#between-documents)
+- [Across Domains](#across-domains)
+- [Link Quality Standards](#link-quality-standards)
+- [Descriptive Link Text](#descriptive-link-text)
+- [Functional Links](#functional-links)
+- [Relevant Connections](#relevant-connections)
+- [Current Information](#current-information)
+- [Cross-Reference Patterns](#cross-reference-patterns)
+- ["See Also" Pattern](#see-also-pattern)
+- ["Next Steps" Pattern](#next-steps-pattern)
+- ["Prerequisites" Pattern](#prerequisites-pattern)
+- ["Examples" Pattern](#examples-pattern)
+- [Reference Maintenance](#reference-maintenance)
+- [Regular Validation](#regular-validation)
+- [Content Updates](#content-updates)
+- [Link Monitoring](#link-monitoring)
+- [Common Issues](#common-issues)
+- [Broken Links](#broken-links)
+- [Irrelevant Links](#irrelevant-links)
+- [Generic Link Text](#generic-link-text)
+- [Outdated Information](#outdated-information)
+- [Implementation Examples](#implementation-examples)
+- [Complete Cross-Reference Example](#complete-cross-reference-example)
+- [Minimal Cross-Reference Example](#minimal-cross-reference-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive standards for creating meaningful cross-references that connect related
   content and enable users to discover information efficiently throughout the KiloCode documentation
@@ -198,7 +238,7 @@ The race condition occurs when both main loop and subtask completion call
 ### Between Documents
 
 - *Placement*\*: Link to related documents in the same domain **Use When**: Related information
-exists
+  exists
 in other documents in the same domain **Benefits**: Access to related information while maintaining
   domain context **Examples**:
 - "Related Documentation" sections
@@ -220,7 +260,7 @@ in other documents in the same domain **Benefits**: Access to related informatio
 ### Across Domains
 
 - *Placement*\*: Link to related content in different domains **Use When**: Related information
-exists
+  exists
 in other domains **Benefits**: Access to related information across the entire documentation system
 
 - *Examples*\*:
@@ -301,7 +341,7 @@ documentation helps us understand how! ⚙️
 ### Relevant Connections
 
 - *Requirement*\*: Cross-references should be relevant to the current content **Benefits**: Users
-find
+  find
   information that actually helps them **Criteria**: Ask "Does this link add value to the current
   content?" **Examples**: Link to related concepts, not random information
 
@@ -356,7 +396,7 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 ### "See Also" Pattern
 
 - *Use*\*: Link to related concepts and information **Placement**: At the end of sections or
-documents
+  documents
 
 - *Format*\*: Bulleted list of related links **Examples**: Related concepts, alternative approaches,
   background information
@@ -375,7 +415,7 @@ documents
 ### "Next Steps" Pattern
 
 - *Use*\*: Link to subsequent actions and follow-up content **Placement**: At the end of process
-steps
+  steps
   or implementation guides **Format**: Numbered list of next actions **Examples**: Implementation
   steps, testing procedures, maintenance tasks
 
@@ -470,7 +510,7 @@ cross-references to reflect changes **Scope**: Check all documents that might re
 - *Purpose*\*: Continuously monitor cross-reference health **Tools**: Automated link checking tools
 
 - *Frequency*\*: Daily or weekly **Alerts**: Set up alerts for broken links **Resolution**: Fix
-broken
+  broken
   links promptly
 
 - *Monitoring Setup*\*:
@@ -541,7 +581,7 @@ The race condition occurs in the `ask` method. See
 ### Generic Link Text
 
 - *Causes*\*: Lazy writing, lack of attention to detail **Impact**: Users don't know what they'll
-find
+  find
 
 - *Prevention*\*: Careful writing, review process **Resolution**: Use descriptive link text
 
@@ -756,7 +796,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

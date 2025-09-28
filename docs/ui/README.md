@@ -1,9 +1,30 @@
 # UI Documentation
 
+## Table of Contents
+- [UI Documentation](#ui-documentation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Documentation Structure](#documentation-structure)
+- [Core Documents](#core-documents)
+- [Quick Navigation](#quick-navigation)
+- [For Developers](#for-developers)
+- [For Troubleshooting](#for-troubleshooting)
+- [System Integration](#system-integration)
+- [Key Concepts](#key-concepts)
+- [User Interface Design](#user-interface-design)
+- [Component Architecture](#component-architecture)
+- [Message Flow](#message-flow)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-💡 **Fun Fact**: [Interesting fact about the topic]
-
+💡 **Fun Fact**: \[Interesting fact about the topic]
 
 This document serves as the central entry point for understanding KiloCode's user interface
 architecture and implementation. It provides navigation and context for all UI-related
@@ -11,35 +32,25 @@ documentation.
 
 - **Purpose**: Overview and navigation for KiloCode's user interface layer documentation
 - **Context**: Use this as your starting point when working with UI components, chat systems, or
-message flow
+  message flow
 - **Navigation**: Use the table of contents below to jump to specific topics
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
-
-## Table of Contents
-- [Overview](#overview)
-- [Documentation Structure](#documentation-structure)
-- [Quick Navigation](#quick-navigation)
-- [System Integration](#system-integration)
-- [Key Concepts](#key-concepts)
-- [Navigation](#navigation)
+\[Research or development methodology used]
 
 ## Overview
 
@@ -54,11 +65,11 @@ The UI documentation is organized into three focused documents:
 ### Core Documents
 
 - **[UI Layer System](UI_LAYER_SYSTEM.md)** - Complete architecture and design patterns for the UI
-layer
+  layer
 - **[Chat Task Window](UI_CHAT_TASK_WINDOW.md)** - Chat interface and task window component
-implementation
+  implementation
 - **[Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md)** - Message routing, state management, and
-communication patterns
+  communication patterns
 
 ## Quick Navigation
 
@@ -72,16 +83,16 @@ communication patterns
 
 - **UI Component Issues**: Check [UI Layer System](UI_LAYER_SYSTEM.md) for component patterns
 - **Chat Interface Problems**: Review [Chat Task Window](UI_CHAT_TASK_WINDOW.md) for implementation
-details
+  details
 - **Message Routing Issues**: Consult [Message Flow System](UI_MESSAGE_FLOW_SYSTEM.md) for flow
-patterns
+  patterns
 
 ## System Integration
 
 The UI layer integrates with several other system components:
 
 - **Architecture Layer**: See the main [Architecture Documentation](../../docs/README.md) for
-system-wide patterns
+  system-wide patterns
 - **Service Layer**: Review service documentation for UI-related backend services
 - **Standards**: Follow project standards for UI development guidelines
 
@@ -102,20 +113,17 @@ maintainability, and consistent user experience across different parts of the ap
 The system implements sophisticated message routing and state management to ensure reliable
 communication between UI components, preventing duplicate requests and maintaining consistent state.
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
 ## Navigation
-
 - [← Back to Documentation Home](../../docs/README.md)
 - [→ Architecture Documentation](../../docs/README.md)

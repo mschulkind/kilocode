@@ -1,18 +1,48 @@
 # Browser Automation
 
+## Table of Contents
+- [Browser Automation](#browser-automation)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Automation Overview](#automation-overview)
+- [System Architecture](#system-architecture)
+- [Key Features](#key-features)
+- [Browser Session Management](#browser-session-management)
+- [Web Content Processing](#web-content-processing)
+- [Browser Discovery](#browser-discovery)
+- [Content Fetching](#content-fetching)
+- [Setup and Configuration](#setup-and-configuration)
+- [Prerequisites](#prerequisites)
+- [Installation Steps](#installation-steps)
+- [Configuration Options](#configuration-options)
+- [Usage Examples](#usage-examples)
+- [Basic Browser Operations](#basic-browser-operations)
+- [Content Processing](#content-processing)
+- [Advanced Features](#advanced-features)
+- [Best Practices](#best-practices)
+- [Performance Optimization](#performance-optimization)
+- [Security Considerations](#security-considerations)
+- [Reliability](#reliability)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers browser automation capabilities and web interaction features in
-the KiloCode system.
+  the KiloCode system.
 - **Context**: Use this as a starting point for understanding how KiloCode interacts with web
-browsers and processes web content.
+  browsers and processes web content.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 ## Research Context
 
@@ -24,15 +54,6 @@ interaction patterns in development environments. The automation system reflects
 - Performance optimization for automated browsing
 
 The system provides reliable and efficient browser automation for web content processing.
-
-## Table of Contents
-- [Automation Overview](#automation-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Setup and Configuration](#setup-and-configuration)
-- [Usage Examples](#usage-examples)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
 
 ## Automation Overview
 

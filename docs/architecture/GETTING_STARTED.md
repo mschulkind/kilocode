@@ -1,18 +1,64 @@
 # Getting Started Guide
 
+## Table of Contents
+- [Getting Started Guide](#getting-started-guide)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [System Requirements](#system-requirements)
+- [Development Tools](#development-tools)
+- [Knowledge Requirements](#knowledge-requirements)
+- [Quick Start](#quick-start)
+- [1. Clone the Repository](#1-clone-the-repository)
+- [2. Install Dependencies](#2-install-dependencies)
+- [3. Build the Project](#3-build-the-project)
+- [4. Run Tests](#4-run-tests)
+- [5. Start Development](#5-start-development)
+- [Development Environment Setup](#development-environment-setup)
+- [VS Code Configuration](#vs-code-configuration)
+- [Environment Variables](#environment-variables)
+- [Git Configuration](#git-configuration)
+- [Understanding the Codebase](#understanding-the-codebase)
+- [Project Structure](#project-structure)
+- [Key Directories](#key-directories)
+- [Architecture Overview](#architecture-overview)
+- [Core Concepts](#core-concepts)
+- [System Architecture](#system-architecture)
+- [Development Patterns](#development-patterns)
+- [Key Technologies](#key-technologies)
+- [Development Workflow](#development-workflow)
+- [Branch Strategy](#branch-strategy)
+- [Development Process](#development-process)
+- [Quality Assurance](#quality-assurance)
+- [Testing & Quality](#testing-quality)
+- [Testing Strategy](#testing-strategy)
+- [Quality Tools](#quality-tools)
+- [Testing Commands](#testing-commands)
+- [Contributing](#contributing)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Code Standards](#code-standards)
+- [Documentation](#documentation)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Getting Help](#getting-help)
+- [Debugging](#debugging)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers comprehensive guide for new developers, contributors, and users
-to understand and get started with KiloCode development.
+  to understand and get started with KiloCode development.
 - **Context**: Use this as a starting point for understanding KiloCode development and getting
-started with the project.
+  started with the project.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
@@ -24,17 +70,6 @@ practices for the KiloCode project. The guide reflects findings from:
 - Development workflow optimization and quality assurance research
 
 The guide provides systematic approaches to getting started with KiloCode development.
-
-## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
-- [Development Environment Setup](#development-environment-setup)
-- [Understanding the Codebase](#understanding-the-codebase)
-- [Core Concepts](#core-concepts)
-- [Development Workflow](#development-workflow)
-- [Testing & Quality](#testing--quality)
-- [Contributing](#contributing)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

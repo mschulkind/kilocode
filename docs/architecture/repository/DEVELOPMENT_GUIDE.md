@@ -1,17 +1,63 @@
 # Development Guide
 
+## Table of Contents
+- [Development Guide](#development-guide)
+- [When You're Here](#when-youre-here)
+- [Getting Started](#getting-started)
+- [Research Context](#research-context)
+- [Prerequisites](#prerequisites)
+- [Repository Setup](#repository-setup)
+- [Development Workflow](#development-workflow)
+- [Branch Strategy](#branch-strategy)
+- [Commit Strategy](#commit-strategy)
+- [Pull Request Process](#pull-request-process)
+- [Documentation Automation](#documentation-automation)
+- [Overview](#overview)
+- [Validation Process](#validation-process)
+- [Maintenance Process](#maintenance-process)
+- [Documentation Standards](#documentation-standards)
+- [VS Code Integration](#vs-code-integration)
+- [Troubleshooting](#troubleshooting)
+- [Code Standards](#code-standards)
+- [TypeScript Standards](#typescript-standards)
+- [React Standards](#react-standards)
+- [Testing Standards](#testing-standards)
+- [Project Structure](#project-structure)
+- [Monorepo Organization](#monorepo-organization)
+- [File Organization](#file-organization)
+- [Development Tools](#development-tools)
+- [VS Code Setup](#vs-code-setup)
+- [Git Configuration](#git-configuration)
+- [Testing](#testing)
+- [Running Tests](#running-tests)
+- [Test Types](#test-types)
+- [Building](#building)
+- [Build Commands](#build-commands)
+- [Build Output](#build-output)
+- [Debugging](#debugging)
+- [VS Code Debugging](#vs-code-debugging)
+- [Console Debugging](#console-debugging)
+- [Deployment](#deployment)
+- [Local Deployment](#local-deployment)
+- [Production Deployment](#production-deployment)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Getting Help](#getting-help)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive guide for developing and contributing to KiloCode.
 

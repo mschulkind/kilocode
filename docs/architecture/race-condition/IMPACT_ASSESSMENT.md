@@ -1,18 +1,51 @@
 # Impact Assessment
 
+## Table of Contents
+- [Impact Assessment](#impact-assessment)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Severity Levels](#severity-levels)
+- [Level 1: 2-Request Race Condition](#level-1-2-request-race-condition)
+- [Level 2: Multiple-Request Race Condition](#level-2-multiple-request-race-condition)
+- [Level 3: System-Wide Race Condition](#level-3-system-wide-race-condition)
+- [Impact Categories](#impact-categories)
+- [User Experience Impact](#user-experience-impact)
+- [System Performance Impact](#system-performance-impact)
+- [Business Impact](#business-impact)
+- [User Experience Impact](#user-experience-impact)
+- [Interface Issues](#interface-issues)
+- [Response Quality](#response-quality)
+- [System Performance Impact](#system-performance-impact)
+- [Performance Degradation](#performance-degradation)
+- [Resource Consumption](#resource-consumption)
+- [Business Impact](#business-impact)
+- [User Satisfaction](#user-satisfaction)
+- [Operational Impact](#operational-impact)
+- [Risk Assessment](#risk-assessment)
+- [Risk Categories](#risk-categories)
+- [Risk Mitigation](#risk-mitigation)
+- [Mitigation Strategies](#mitigation-strategies)
+- [Immediate Mitigation](#immediate-mitigation)
+- [Long-term Mitigation](#long-term-mitigation)
+- [Success Metrics](#success-metrics)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+- [Example](#example)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers comprehensive analysis of the impact and severity of the API
-duplication race condition issue.
+  duplication race condition issue.
 - **Context**: Use this as a starting point for understanding the impact assessment and severity
-analysis of race condition issues.
+  analysis of race condition issues.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -24,15 +57,6 @@ assessment in the KiloCode system. The assessment reflects findings from:
 - Risk assessment and mitigation strategy development
 
 The assessment provides detailed insights into the impact and severity of race condition issues.
-
-## Table of Contents
-- [Severity Levels](#severity-levels)
-- [Impact Categories](#impact-categories)
-- [User Experience Impact](#user-experience-impact)
-- [System Performance Impact](#system-performance-impact)
-- [Business Impact](#business-impact)
-- [Risk Assessment](#risk-assessment)
-- [Mitigation Strategies](#mitigation-strategies)
 
 ## Severity Levels
 
@@ -356,7 +380,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 # Example markdown
 [Link](url)
 ```
-
 - [← Race Condition Analysis](../README.md)
 - [← Problem Overview](PROBLEM_OVERVIEW.md)
 - [← Code Flow Analysis](CODE_FLOW_ANALYSIS.md)

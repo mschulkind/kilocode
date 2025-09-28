@@ -1,5 +1,37 @@
 # Marketplace System
 
+## Table of Contents
+- [Marketplace System](#marketplace-system)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [Marketplace Architecture](#marketplace-architecture)
+- [MCP Server Discovery](#mcp-server-discovery)
+- [Server Catalog](#server-catalog)
+- [Search and Discovery](#search-and-discovery)
+- [Package Management](#package-management)
+- [Installation System](#installation-system)
+- [Dependency Management](#dependency-management)
+- [Installation System](#installation-system)
+- [Package Installation](#package-installation)
+- [Update Management](#update-management)
+- [Configuration Management](#configuration-management)
+- [Server Configuration](#server-configuration)
+- [Remote Configuration](#remote-configuration)
+- [Security & Validation](#security-validation)
+- [Package Validation](#package-validation)
+- [Sandboxing](#sandboxing)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Installation Failures](#issue-1-installation-failures)
+- [Issue 2: Server Discovery Issues](#issue-2-server-discovery-issues)
+- [Issue 3: Configuration Problems](#issue-3-configuration-problems)
+- [Issue 4: Security Vulnerabilities](#issue-4-security-vulnerabilities)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +42,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation of the MCP server marketplace system, package management,
   and server discovery in the KiloCode system.
@@ -31,24 +63,22 @@ behind the "what"! 💻
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Marketplace System provides a comprehensive platform for discovering, installing, and managing
@@ -357,7 +387,7 @@ interface ServerConfiguration {
 ```
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Configuration
-management,
+  management,
   schema validation, settings persistence
 
 ### Remote Configuration
@@ -424,7 +454,7 @@ management,
 - **Threat Detection**: Malicious behavior detection
 
 - *Implementation Status*\*: ⚠️ **NEEDS DOCUMENTATION** **Research Needed**: Sandboxing
-architecture,
+  architecture,
   security measures, threat detection
 
 ## Common Issues and Solutions
@@ -437,7 +467,7 @@ architecture,
 - Validation errors
 
 - *Root Cause*\*: Package corruption or dependency conflicts **Solution**: Implement robust
-validation
+  validation
   and dependency resolution
 
 ### Issue 2: Server Discovery Issues
@@ -448,7 +478,7 @@ validation
 - Metadata inconsistencies
 
 - *Root Cause*\*: Catalog synchronization issues or metadata corruption **Solution**: Implement
-proper
+  proper
   catalog management and synchronization
 
 ### Issue 3: Configuration Problems
@@ -459,7 +489,7 @@ proper
 - Remote configuration issues
 
 - *Root Cause*\*: Configuration management or synchronization problems **Solution**: Implement
-robust
+  robust
   configuration management and fallback mechanisms
 
 ### Issue 4: Security Vulnerabilities
@@ -470,26 +500,24 @@ robust
 - Sandbox violations
 
 - *Root Cause*\*: Insufficient security validation or sandboxing **Solution**: Implement
-comprehensive
+  comprehensive
   security measures and validation
 
 <a id="navigation-footer"></a>
 - Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
-[`README.md`](../README.md)
+  [`README.md`](../README.md)
   · Source: `/docs/services/MARKETPLACE_SYSTEM.md#L1`
-
 
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

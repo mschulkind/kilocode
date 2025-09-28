@@ -1,5 +1,67 @@
 # Skill Assessment Quiz
 
+## Table of Contents
+- [Skill Assessment Quiz](#skill-assessment-quiz)
+- [When You're Here](#when-youre-here)
+- [Instructions](#instructions)
+- [Assessment Categories](#assessment-categories)
+- [Basic Knowledge (Questions 1-10)](#basic-knowledge-questions-1-10)
+- [Question 1](#question-1)
+- [Question 2](#question-2)
+- [Question 3](#question-3)
+- [Question 4](#question-4)
+- [Question 5](#question-5)
+- [Question 6](#question-6)
+- [Question 7](#question-7)
+- [Question 8](#question-8)
+- [Question 9](#question-9)
+- [Question 10](#question-10)
+- [Practical Skills (Questions 11-20)](#practical-skills-questions-11-20)
+- [Question 11](#question-11)
+- [Question 12](#question-12)
+- [Question 13](#question-13)
+- [Question 14](#question-14)
+- [Question 15](#question-15)
+- [Question 16](#question-16)
+- [Question 17](#question-17)
+- [Question 18](#question-18)
+- [Question 19](#question-19)
+- [Question 20](#question-20)
+- [Advanced Concepts (Questions 21-30)](#advanced-concepts-questions-21-30)
+- [Question 21](#question-21)
+- [Question 22](#question-22)
+- [Question 23](#question-23)
+- [Question 24](#question-24)
+- [Question 25](#question-25)
+- [Question 26](#question-26)
+- [Question 27](#question-27)
+- [Question 28](#question-28)
+- [Question 29](#question-29)
+- [Question 30](#question-30)
+- [Troubleshooting (Questions 31-40)](#troubleshooting-questions-31-40)
+- [Question 31](#question-31)
+- [Question 32](#question-32)
+- [Question 33](#question-33)
+- [Question 34](#question-34)
+- [Question 35](#question-35)
+- [Question 36](#question-36)
+- [Question 37](#question-37)
+- [Question 38](#question-38)
+- [Question 39](#question-39)
+- [Question 40](#question-40)
+- [Scoring and Recommendations](#scoring-and-recommendations)
+- [Scoring](#scoring)
+- [Recommended Training Paths](#recommended-training-paths)
+- [Beginner (0-20 points)](#beginner-0-20-points)
+- [Basic (21-25 points)](#basic-21-25-points)
+- [Intermediate (26-30 points)](#intermediate-26-30-points)
+- [Advanced (31-35 points)](#advanced-31-35-points)
+- [Expert (36-40 points)](#expert-36-40-points)
+- [Next Steps](#next-steps)
+- [Resources](#resources)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +72,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 This quiz helps assess your current knowledge of KiloCode's documentation validation system and
 recommends appropriate training paths.
@@ -786,20 +848,18 @@ Inconsistent results often indicate multiple tools running or cached data issues
 - [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
 - [Interactive Exercises](./practice/)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
 ## Navigation Footer
 
 - *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)
+  Glossary](../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)

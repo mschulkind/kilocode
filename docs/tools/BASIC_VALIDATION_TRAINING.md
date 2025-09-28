@@ -1,5 +1,29 @@
 # Basic Validation Training
 
+## Table of Contents
+- [Basic Validation Training](#basic-validation-training)
+- [When You're Here](#when-youre-here)
+- [Learning Objectives](#learning-objectives)
+- [Prerequisites](#prerequisites)
+- [What is Documentation Validation?](#what-is-documentation-validation)
+- [Why Validation Matters](#why-validation-matters)
+- [Validation Tools Overview](#validation-tools-overview)
+- [1. VS Code Extensions](#1-vs-code-extensions)
+- [2. Command Line Tools](#2-command-line-tools)
+- [3. Git Integration](#3-git-integration)
+- [Common Validation Errors](#common-validation-errors)
+- [1. Missing Required Sections](#1-missing-required-sections)
+- [2. Missing Navigation Footer](#2-missing-navigation-footer)
+- [3. Non-descriptive Link Text](#3-non-descriptive-link-text)
+- [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
+- [Hands-On Exercise 1: Basic Validation](#hands-on-exercise-1-basic-validation)
+- [Setup](#setup)
+- [Exercise Steps](#exercise-steps)
+- [Expected Results](#expected-results)
+- [Hands-On Exercise 2: Fixing Common Errors](#hands-on-exercise-2-fixing-common-errors)
+- [Exercise File](#exercise-file)
+- [Fix the Issues](#fix-the-issues)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +34,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 This training module introduces you to the fundamentals of documentation validation in the KiloCode
 system.
@@ -194,9 +218,12 @@ Some content here.
    ```
 4. **Add navigation footer**:
    ```markdown
+   ```
+
 **Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
 Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
-   ```
+
+```
 
 ### Verify Your Fixes
 1. Run validation: `pnpm docs:validate`
@@ -328,3 +355,4 @@ For more information, see:
 
 - *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
 Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+```

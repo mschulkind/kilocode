@@ -1,43 +1,123 @@
 # Validation System API Reference
 
+## Table of Contents
+- [Validation System API Reference](#validation-system-api-reference)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [CrossReferenceValidator](#crossreferencevalidator)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [validateFile(filePath: string): Promise](#validatefilefilepath-string-promise)
+- [validateAnchor(filePath: string, anchor: string):
+Promise](#validateanchorfilepath-string-anchor-string-promise)
+- [validateCrossReference(reference: string):
+Promise](#validatecrossreferencereference-string-promise)
+- [Interfaces](#interfaces)
+- [FileIndexBuilder](#fileindexbuilder)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [buildIndex(rootPath?: string): Promise](#buildindexrootpath-string-promise)
+- [getFileInfo(filePath: string): FileInfo | null](#getfileinfofilepath-string-fileinfo-null)
+- [isFileCached(filePath: string): boolean](#isfilecachedfilepath-string-boolean)
+- [updateFile(filePath: string): Promise](#updatefilefilepath-string-promise)
+- [Interfaces](#interfaces)
+- [DocumentTypeDetector](#documenttypedetector)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [detectType(filePath: string, content: string, structure: string):
+DocumentTypeResult](#detecttypefilepath-string-content-string-structure-string-documenttyperesult)
+- [getTypeInfo(type: string): TypeInfo | null](#gettypeinfotype-string-typeinfo-null)
+- [Interfaces](#interfaces)
+- [OrphanedSectionsDetector](#orphanedsectionsdetector)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [detectOrphanedSections(filePath: string, content: string):
+DetectionResult](#detectorphanedsectionsfilepath-string-content-string-detectionresult)
+- [Interfaces](#interfaces)
+- [ValidationRuleConfig](#validationruleconfig)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [getRulesForDocument(filePath: string, content: string, structure: string): Record\<string,
+ValidationRule>](#getrulesfordocumentfilepath-string-content-string-structure-string-recordstring-validationrule)
+- [getRuleValue(ruleName: string, filePath: string, content: string, structure: string):
+any](#getrulevaluerulename-string-filepath-string-content-string-structure-string-any)
+- [isRuleEnabled(ruleName: string, filePath: string, content: string, structure: string):
+boolean](#isruleenabledrulename-string-filepath-string-content-string-structure-string-boolean)
+- [updateRuleSet(type: string, ruleSet: RuleSet):
+void](#updaterulesettype-string-ruleset-ruleset-void)
+- [Interfaces](#interfaces)
+- [PerformanceMonitor](#performancemonitor)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [startOperation(operationName: string, metadata?: Record\<string, any>): () =>
+void](#startoperationoperationname-string-metadata-recordstring-any-void)
+- [batchOperations](#batchoperations)
+- [generateReport(): PerformanceReport](#generatereport-performancereport)
+- [checkPerformanceRequirements(): { met: boolean; issues: string\[\]
+}](#checkperformancerequirements-met-boolean-issues-string)
+- [Interfaces](#interfaces)
+- [PerformanceOptimizer](#performanceoptimizer)
+- [Constructor](#constructor)
+- [Methods](#methods)
+- [optimizeAll(): Promise\<OptimizationResult\[\]>](#optimizeall-promiseoptimizationresult)
+- [optimizeValidationComponents(): Promise](#optimizevalidationcomponents-promise)
+- [getOptimizationReport(): { currentPerformance: any; recommendations: string\[\];
+estimatedImprovements: Record\<string, number>
+}](#getoptimizationreport-currentperformance-any-recommendations-string-estimatedimprovements-recordstring-number)
+- [addStrategy(strategy: OptimizationStrategy):
+void](#addstrategystrategy-optimizationstrategy-void)
+- [removeStrategy(strategyName: string): boolean](#removestrategystrategyname-string-boolean)
+- [Interfaces](#interfaces)
+- [Global Instances](#global-instances)
+- [globalPerformanceMonitor](#globalperformancemonitor)
+- [globalPerformanceOptimizer](#globalperformanceoptimizer)
+- [Common Error Types](#common-error-types)
+- [ValidationError](#validationerror)
+- [PerformanceError](#performanceerror)
+- [Error Handling Examples](#error-handling-examples)
+- [Common Types](#common-types)
+- [Utility Types](#utility-types)
+- [Constants](#constants)
+- [Default Configuration](#default-configuration)
+- [Supported File Extensions](#supported-file-extensions)
+- [Document Type Patterns](#document-type-patterns)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-🔍 **Did You Know**: [Interesting insight]
+🔍 **Did You Know**: \[Interesting insight]
 
+This document provides \[purpose of document].
 
-This document provides [purpose of document].
-
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
-
-
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
 This document provides comprehensive API reference for the Zero Warnings Validation System
 components and interfaces.
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -57,6 +137,7 @@ constructor(options: ValidationOptions = {})
 - `options` (optional): Configuration options for the validator
 
 **Example:**
+
 ```javascript
 import { CrossReferenceValidator } from './src/validation/CrossReferenceValidator.js'
 
@@ -78,6 +159,7 @@ Validates if a file exists and returns file metadata.
 **Returns:** Promise resolving to `FileValidationResult`
 
 **Example:**
+
 ```javascript
 const result = await validator.validateFile('./docs/guide.md')
 console.log(`File exists: ${result.exists}`)
@@ -95,6 +177,7 @@ Validates if an anchor exists within a file.
 **Returns:** Promise resolving to `AnchorValidationResult`
 
 **Example:**
+
 ```javascript
 const result = await validator.validateAnchor('./docs/guide.md', 'installation')
 console.log(`Anchor exists: ${result.exists}`)
@@ -110,6 +193,7 @@ Validates a complete cross-reference (file + optional anchor).
 **Returns:** Promise resolving to `CrossReferenceResult`
 
 **Example:**
+
 ```javascript
 const result = await validator.validateCrossReference('./docs/guide.md#installation')
 console.log(`File exists: ${result.fileExists}`)
@@ -165,6 +249,7 @@ constructor(options: FileIndexBuilderOptions = {})
 - `options` (optional): Configuration options for the index builder
 
 **Example:**
+
 ```javascript
 import { FileIndexBuilder } from './src/validation/FileIndexBuilder.js'
 
@@ -187,6 +272,7 @@ Builds an index of all markdown files in the specified directory.
 **Returns:** Promise resolving to `BuildIndexResult`
 
 **Example:**
+
 ```javascript
 const result = await builder.buildIndex('/path/to/docs')
 console.log(`Indexed ${result.files.length} files`)
@@ -203,6 +289,7 @@ Gets information about a specific file from the index.
 **Returns:** `FileInfo` object or `null` if not found
 
 **Example:**
+
 ```javascript
 const fileInfo = builder.getFileInfo('./docs/guide.md')
 if (fileInfo) {
@@ -221,6 +308,7 @@ Checks if file information is cached.
 **Returns:** `true` if cached, `false` otherwise
 
 **Example:**
+
 ```javascript
 const isCached = builder.isFileCached('./docs/guide.md')
 console.log(`File is cached: ${isCached}`)
@@ -236,6 +324,7 @@ Updates information for a specific file in the index.
 **Returns:** Promise resolving to `UpdateResult`
 
 **Example:**
+
 ```javascript
 const result = await builder.updateFile('./docs/guide.md')
 console.log(`File updated: ${result.changed}`)
@@ -297,6 +386,7 @@ constructor()
 ```
 
 **Example:**
+
 ```javascript
 import { DocumentTypeDetector } from './src/validation/DocumentTypeDetector.js'
 
@@ -317,6 +407,7 @@ Detects the type of a document based on path, content, and structure.
 **Returns:** `DocumentTypeResult` object
 
 **Example:**
+
 ```javascript
 const result = detector.detectType(
   '/docs/README.md',
@@ -339,6 +430,7 @@ Gets information about a specific document type.
 **Returns:** `TypeInfo` object or `null` if not found
 
 **Example:**
+
 ```javascript
 const typeInfo = detector.getTypeInfo('navigation')
 if (typeInfo) {
@@ -378,6 +470,7 @@ constructor(options: OrphanedSectionsDetectorOptions)
 - `options`: Configuration options for the detector
 
 **Example:**
+
 ```javascript
 import { OrphanedSectionsDetector } from './src/validation/OrphanedSectionsDetector.js'
 
@@ -402,6 +495,7 @@ Detects orphaned sections in a document.
 **Returns:** `DetectionResult` object
 
 **Example:**
+
 ```javascript
 const result = detector.detectOrphanedSections(
   '/docs/guide.md',
@@ -461,6 +555,7 @@ constructor(options: ValidationRuleConfigOptions)
 - `options`: Configuration options for the rule config
 
 **Example:**
+
 ```javascript
 import { ValidationRuleConfig } from './src/validation/ValidationRuleConfig.js'
 
@@ -480,7 +575,7 @@ const config = new ValidationRuleConfig({
 
 #### Methods
 
-##### getRulesForDocument(filePath: string, content: string, structure: string): Record<string, ValidationRule>
+##### getRulesForDocument(filePath: string, content: string, structure: string): Record\<string, ValidationRule>
 
 Gets validation rules for a specific document.
 
@@ -492,6 +587,7 @@ Gets validation rules for a specific document.
 **Returns:** Object containing validation rules
 
 **Example:**
+
 ```javascript
 const rules = config.getRulesForDocument(
   '/docs/README.md',
@@ -516,6 +612,7 @@ Gets the value of a specific validation rule for a document.
 **Returns:** Rule value or `undefined` if not found
 
 **Example:**
+
 ```javascript
 const maxLineLength = config.getRuleValue(
   'maxLineLength',
@@ -540,6 +637,7 @@ Checks if a specific validation rule is enabled for a document.
 **Returns:** `true` if enabled, `false` otherwise
 
 **Example:**
+
 ```javascript
 const isEnabled = config.isRuleEnabled(
   'requireHeadings',
@@ -560,6 +658,7 @@ Updates a rule set for a specific document type.
 - `ruleSet`: New rule set configuration
 
 **Example:**
+
 ```javascript
 config.updateRuleSet('technical', {
   name: 'Technical Rules',
@@ -608,6 +707,7 @@ constructor(config: Partial<OptimizationConfig> = {})
 - `config` (optional): Configuration options for the monitor
 
 **Example:**
+
 ```javascript
 import { PerformanceMonitor } from './src/validation/PerformanceMonitor.js'
 
@@ -620,7 +720,7 @@ const monitor = new PerformanceMonitor({
 
 #### Methods
 
-##### startOperation(operationName: string, metadata?: Record<string, any>): () => void
+##### startOperation(operationName: string, metadata?: Record\<string, any>): () => void
 
 Starts tracking a performance-sensitive operation.
 
@@ -631,6 +731,7 @@ Starts tracking a performance-sensitive operation.
 **Returns:** Function to call when the operation ends
 
 **Example:**
+
 ```javascript
 const endOperation = monitor.startOperation('validation', {
   fileCount: 100,
@@ -642,7 +743,7 @@ const endOperation = monitor.startOperation('validation', {
 endOperation()
 ```
 
-##### batchOperations<T>(operations: Array<() => Promise<T>>, operationName: string, options?: { maxConcurrency?: number }): Promise<T[]>
+##### batchOperations<T>(operations: Array<() => Promise<T>>, operationName: string, options?: { maxConcurrency?: number }): Promise\<T\[]>
 
 Processes multiple operations in parallel batches.
 
@@ -654,6 +755,7 @@ Processes multiple operations in parallel batches.
 **Returns:** Promise resolving to array of results
 
 **Example:**
+
 ```javascript
 const operations = files.map(file => () => validateFile(file))
 const results = await monitor.batchOperations(
@@ -670,6 +772,7 @@ Generates a comprehensive performance report.
 **Returns:** `PerformanceReport` object
 
 **Example:**
+
 ```javascript
 const report = monitor.generateReport()
 console.log(`Total duration: ${report.totalDuration}ms`)
@@ -677,13 +780,14 @@ console.log(`Memory peak: ${report.memoryPeak / 1024 / 1024}MB`)
 console.log(`Recommendations: ${report.recommendations.join(', ')}`)
 ```
 
-##### checkPerformanceRequirements(): { met: boolean; issues: string[] }
+##### checkPerformanceRequirements(): { met: boolean; issues: string\[] }
 
 Checks if performance requirements are met.
 
 **Returns:** Object indicating if requirements are met and any issues
 
 **Example:**
+
 ```javascript
 const requirements = monitor.checkPerformanceRequirements()
 if (!requirements.met) {
@@ -742,6 +846,7 @@ constructor(monitor?: PerformanceMonitor)
 - `monitor` (optional): Performance monitor instance
 
 **Example:**
+
 ```javascript
 import { PerformanceOptimizer } from './src/validation/PerformanceOptimizer.js'
 
@@ -750,13 +855,14 @@ const optimizer = new PerformanceOptimizer(monitor)
 
 #### Methods
 
-##### optimizeAll(): Promise<OptimizationResult[]>
+##### optimizeAll(): Promise\<OptimizationResult\[]>
 
 Applies all available optimization strategies.
 
 **Returns:** Promise resolving to array of optimization results
 
 **Example:**
+
 ```javascript
 const results = await optimizer.optimizeAll()
 results.forEach(result => {
@@ -771,18 +877,20 @@ Optimizes all validation components.
 **Returns:** Promise that resolves when optimization is complete
 
 **Example:**
+
 ```javascript
 await optimizer.optimizeValidationComponents()
 console.log('Validation components optimized')
 ```
 
-##### getOptimizationReport(): { currentPerformance: any; recommendations: string[]; estimatedImprovements: Record<string, number> }
+##### getOptimizationReport(): { currentPerformance: any; recommendations: string\[]; estimatedImprovements: Record\<string, number> }
 
 Gets a report on current performance and optimization recommendations.
 
 **Returns:** Object containing performance data and recommendations
 
 **Example:**
+
 ```javascript
 const report = optimizer.getOptimizationReport()
 console.log('Current performance:', report.currentPerformance)
@@ -798,6 +906,7 @@ Adds a custom optimization strategy.
 - `strategy`: Optimization strategy to add
 
 **Example:**
+
 ```javascript
 const customStrategy = {
   name: 'custom_optimization',
@@ -822,6 +931,7 @@ Removes an optimization strategy.
 **Returns:** `true` if removed, `false` if not found
 
 **Example:**
+
 ```javascript
 const removed = optimizer.removeStrategy('custom_optimization')
 console.log(`Strategy removed: ${removed}`)
@@ -879,8 +989,6 @@ await globalPerformanceOptimizer.optimizeAll()
 const report = globalPerformanceOptimizer.getOptimizationReport()
 ```
 
-
-
 **Related Links:**
 - [Related Documentation](./related-doc.md)
 - [Additional Resources](./resources.md)## Error Handling
@@ -926,8 +1034,6 @@ try {
   console.error('Unexpected error:', error.message)
 }
 ```
-
-
 
 **Related Links:**
 - [Related Documentation](./related-doc.md)
@@ -990,12 +1096,20 @@ configuration options for each component.
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
+## Navigation
 
+- [← Tools Overview](README.md)
+- [← Troubleshooting Guide](TROUBLESHOOTING_GUIDE.md)
+- [← Validation Errors Guide](VALIDATION_ERRORS_GUIDE.md)
+- [← Remark Workflow Overview](REMARK_WORKFLOW_OVERVIEW.md)
+- [← Documentation Best Practices](DOCUMENTATION_BEST_PRACTICES.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../README.md)

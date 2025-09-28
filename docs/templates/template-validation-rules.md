@@ -1,5 +1,35 @@
 # Document Template Validation Rules
 
+## Table of Contents
+- [Document Template Validation Rules](#document-template-validation-rules)
+- [Overview](#overview)
+- [Template Types](#template-types)
+- [Navigation Documents](#navigation-documents)
+- [Technical Documents](#technical-documents)
+- [Planning Documents](#planning-documents)
+- [General Documents](#general-documents)
+- [Section Requirements](#section-requirements)
+- ["When You're Here" Section](#when-youre-here-section)
+- [Research Context Section](#research-context-section)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [Validation Implementation](#validation-implementation)
+- [Template Compliance Checking](#template-compliance-checking)
+- [Error Handling](#error-handling)
+- [Performance Requirements](#performance-requirements)
+- [Best Practices](#best-practices)
+- [Document Creation](#document-creation)
+- [Maintenance](#maintenance)
+- [Quality Assurance](#quality-assurance)
+- [Examples](#examples)
+- [Good Example - Navigation Document](#good-example-navigation-document)
+- [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+- [Migration Guide](#migration-guide)
+- [Converting Existing Documents](#converting-existing-documents)
+- [Common Issues and Fixes](#common-issues-and-fixes)
+- [Updates and Maintenance](#updates-and-maintenance)
+- [Navigation](#navigation)
+
 ## Overview
 
 This document defines the validation rules for standardized document templates to ensure consistent
@@ -54,7 +84,7 @@ The template validation system is designed to:
 - Must include "When You're Here" section
 - Must include Research Context with technical overview
 - Must have at least one technical section (Architecture, API Reference, Implementation, Testing, or
-Troubleshooting)
+  Troubleshooting)
 - Must include No Dead Ends Policy
 - Must have Navigation footer
 - Maximum line length: 80 characters
@@ -162,7 +192,6 @@ The validation system checks:
 - **Info**: Suggestions for improvement
 
 ### Performance Requirements
-
 - Template validation must complete within 30 seconds
 - Must handle documents up to 1MB in size
 - Must provide clear error messages with suggestions
@@ -170,7 +199,6 @@ The validation system checks:
 ## Best Practices
 
 ### Document Creation
-
 1. Choose appropriate template based on document type
 2. Fill in all required sections
 3. Use descriptive link text
@@ -178,14 +206,12 @@ The validation system checks:
 5. Ensure proper navigation structure
 
 ### Maintenance
-
 1. Keep templates up to date
 2. Validate against template rules
 3. Update cross-references when moving documents
 4. Maintain consistent formatting
 
 ### Quality Assurance
-
 1. Run template validation before committing
 2. Check for broken links
 3. Verify navigation structure
@@ -227,7 +253,6 @@ This document connects to:
 - [Troubleshooting Guide](./troubleshooting.md) - Common issues and solutions
 
 ## Navigation
-
 - [← Back to Main Documentation](../README.md)
 - [→ Next: Installation Guide](./installation.md)
 - [📚 Technical Glossary](../GLOSSARY.md)
@@ -254,7 +279,6 @@ sections.
 ## Migration Guide
 
 ### Converting Existing Documents
-
 1. **Identify Document Type**: Use the DocumentTypeDetector to determine the appropriate template
 2. **Add Required Sections**: Add missing required sections following the template structure
 3. **Update Navigation**: Ensure proper navigation structure and links
@@ -273,7 +297,6 @@ sections.
 
 This validation system is maintained as part of the KiloCode documentation automation. Updates to
 template rules should be:
-
 1. Documented in this file
 2. Implemented in the validation system
 3. Tested with sample documents
@@ -283,7 +306,6 @@ For questions or issues with template validation, see the [Validation System
 Documentation](../tools/VALIDATION_SYSTEM.md).
 
 ## Navigation
-
 - [← Back to Documentation Tools](../tools/)
 - [→ Template Examples](./README.md)
 - [📚 Technical Glossary](../GLOSSARY.md)

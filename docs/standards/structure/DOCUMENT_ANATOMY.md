@@ -1,10 +1,38 @@
 # Document Anatomy 🧬
 
+## Table of Contents
+- [Document Anatomy 🧬](#document-anatomy)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Required Elements](#required-elements)
+- [1. H1 Title](#1-h1-title)
+- [2. Purpose Statement](#2-purpose-statement)
+- [3. Collapsible TOC](#3-collapsible-toc)
+- [4. Executive Summary](#4-executive-summary)
+- [5. Body Content](#5-body-content)
+- [6. Navigation Footer](#6-navigation-footer)
+- [Element Details](#element-details)
+- [H1 Title](#h1-title)
+- [Purpose Statement](#purpose-statement)
+- [Collapsible TOC](#collapsible-toc)
+- [Executive Summary](#executive-summary)
+- [Body Content](#body-content)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+- [Structure Flow](#structure-flow)
+- [Element Validation](#element-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete Document Example](#complete-document-example)
+- [Minimal Document Example](#minimal-document-example)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Detailed breakdown of the standardized document structure that every KiloCode
-document
+  document
   must follow, ensuring consistency and usability across all documentation.
 
 > **Biology Fun Fact**: Just like how DNA has a specific structure with base pairs, sugar-phosphate
@@ -269,7 +297,7 @@ the parent task.
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -573,7 +601,7 @@ Common issues and solutions:
 - \*\*
 
 - *Navigation*\*: [Back to Structure](README.md) · [Next: Headings &
-Hierarchy](HEADINGS_HIERARCHY.md)
+  Hierarchy](HEADINGS_HIERARCHY.md)
   · [Source: `/docs/standards/structure/DOCUMENT_ANATOMY.md#L1`](DOCUMENT_ANATOMY.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -

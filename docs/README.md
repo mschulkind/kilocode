@@ -1,18 +1,48 @@
 # KiloCode Documentation Hub
 
+## Table of Contents
+- [KiloCode Documentation Hub](#kilocode-documentation-hub)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Documentation Overview](#documentation-overview)
+- [Quick Start Guide](#quick-start-guide)
+- [Emergency Response (Something's Broken)](#emergency-response-somethings-broken)
+- [Deep Dive Research (Understanding the System)](#deep-dive-research-understanding-the-system)
+- [Implementation Journey (Active Development)](#implementation-journey-active-development)
+- [New to Codebase](#new-to-codebase)
+- [Expert Engineer Onboarding](#expert-engineer-onboarding)
+- [For Experienced Engineers New to KiloCode](#for-experienced-engineers-new-to-kilocode)
+- [Documentation Structure](#documentation-structure)
+- [Core Documentation](#core-documentation)
+- [Architecture & Design](#architecture-design)
+- [Development Resources](#development-resources)
+- [Critical Issues & Analysis](#critical-issues-analysis)
+- [Standards & Guidelines](#standards-guidelines)
+- [Current Focus Areas](#current-focus-areas)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
+- [Long-term Goals (Quarter 1-2)](#long-term-goals-quarter-1-2)
+- [Development Resources](#development-resources)
+- [Essential Tools](#essential-tools)
+- [Integration Resources](#integration-resources)
+- [Planning & Tracking](#planning-tracking)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document serves as the master index and central hub for all KiloCode
-documentation.
+  documentation.
 - **Context**: Use this as your starting point for understanding system architecture, development
-workflows, and troubleshooting guides.
+  workflows, and troubleshooting guides.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 ## Research Context
 
@@ -25,14 +55,6 @@ from:
 - Critical issue investigation including race conditions and API duplication
 
 The organization supports both immediate problem-solving and long-term system understanding.
-
-## Table of Contents
-- [Documentation Overview](#documentation-overview)
-- [Quick Start Guide](#quick-start-guide)
-- [Expert Engineer Onboarding](#expert-engineer-onboarding)
-- [Documentation Structure](#documentation-structure)
-- [Current Focus Areas](#current-focus-areas)
-- [Development Resources](#development-resources)
 
 ## Documentation Overview
 
@@ -51,32 +73,32 @@ architecture, development workflows, and troubleshooting guides.
 ### Emergency Response (Something's Broken)
 
 - **API Duplication Issues**: [API Duplication Investigation
-Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause
-Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  Summary](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause
+  Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 - **Race Condition Issues**: [Race Condition Analysis](../architecture/README.md) → [Solution
-Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
+  Recommendations](../architecture/SOLUTION_RECOMMENDATIONS.md)
 
 ### Deep Dive Research (Understanding the System)
 
 - **System Architecture**: [Architecture Documentation](../architecture/README.md) → [System
-Overview](../architecture/SYSTEM_OVERVIEW.md) → [Repository
-Overview](../architecture/REPOSITORY_OVERVIEW.md)
+  Overview](../architecture/SYSTEM_OVERVIEW.md) → [Repository
+  Overview](../architecture/REPOSITORY_OVERVIEW.md)
 - **Core Components**: [Orchestrator Documentation](../orchestrator/README.md) → [Communication
-Layer](../architecture/COMMUNICATION_LAYER_SYSTEM.md)
+  Layer](../architecture/COMMUNICATION_LAYER_SYSTEM.md)
 
 ### Implementation Journey (Active Development)
 
 - **Current Projects**: [Investigation Plans](../plans/README.md) → [Priority
-Improvements](improvements/PRIORITY_IMPROVEMENTS.md)
+  Improvements](improvements/PRIORITY_IMPROVEMENTS.md)
 - **Development Workflow**: [Getting Started Guide](../architecture/GETTING_STARTED.md) →
-[Development Guide](../architecture/GETTING_STARTED.md)
+  [Development Guide](../architecture/GETTING_STARTED.md)
 
 ### New to Codebase
 
 - **Essential Terminology**: [Technical Glossary](../GLOSSARY.md) → [Documentation
-Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
+  Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
 - **System Understanding**: [Repository Overview](../architecture/REPOSITORY_OVERVIEW.md) → [Core
-Systems](../architecture/CORE_SYSTEMS.md)
+  Systems](../architecture/CORE_SYSTEMS.md)
 
 ## Expert Engineer Onboarding
 
@@ -85,7 +107,7 @@ Systems](../architecture/CORE_SYSTEMS.md)
 **Step 1: Essential Foundation**
 - [Technical Glossary](../GLOSSARY.md) - Essential terminology and concepts
 - [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md) - Documentation principles and
-structure
+  structure
 
 **Step 2: System Understanding**
 - [Architecture Documentation](../architecture/README.md) - High-level system design
@@ -95,7 +117,7 @@ structure
 **Step 3: Current Context**
 - [Race Condition Analysis](../architecture/README.md) - Active problems and solutions
 - [API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) -
-Current investigation status
+  Current investigation status
 
 **Step 4: Implementation Details**
 - [Orchestrator Documentation](../orchestrator/README.md) - Core execution patterns
@@ -107,34 +129,34 @@ Current investigation status
 ### Core Documentation
 
 - **[Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)** - Complete guide to
-documentation principles and structure
+  documentation principles and structure
 - **[Documentation Progress](DOCUMENTATION_PROGRESS.md)** - Tracking documentation coverage and
-improvements
+  improvements
 - **[Improvement Log](IMPROVEMENT_LOG.md)** - Running log of system improvements and technical debt
 
 ### Architecture & Design
 
 - **[Architecture Documentation](../architecture/README.md)** - System architecture, design
-patterns, and critical analysis
+  patterns, and critical analysis
 - **[Orchestrator Documentation](../orchestrator/README.md)** - Task orchestration and coordination
-systems
+  systems
 - **[Services Documentation](services/README.md)** - Service layer architecture and implementations
 
 ### Development Resources
 
 - **[Getting Started Guide](../architecture/GETTING_STARTED.md)** - Initial setup and configuration
 - **[Development Guide](../architecture/GETTING_STARTED.md)** - Development workflow and best
-practices
+  practices
 - **[Testing Documentation](testing/README.md)** - Testing strategies and infrastructure
 
 ### Critical Issues & Analysis
 
 - **[Race Condition Analysis](../architecture/README.md)** - Comprehensive race condition
-investigation
+  investigation
 - **[API Duplication Investigation](../architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
-API duplication root cause analysis
+  API duplication root cause analysis
 - **[Priority Improvements](improvements/PRIORITY_IMPROVEMENTS.md)** - Prioritized improvement
-roadmap
+  roadmap
 
 ### Standards & Guidelines
 
@@ -177,7 +199,7 @@ roadmap
 
 - **[Investigation Plans](../plans/README.md)** - Active investigation and development plans
 - **[Technical Debt Analysis](improvements/TECHNICAL_DEBT.md)** - Technical debt assessment and
-mitigation
+  mitigation
 - **[Research Gaps](improvements/RESEARCH_GAPS.md)** - Areas requiring additional research
 
 ## No Dead Ends Policy

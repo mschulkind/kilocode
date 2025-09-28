@@ -1,18 +1,42 @@
 # API Duplication Debug Implementation (Short)
 
+## Table of Contents
+- [API Duplication Debug Implementation (Short)](#api-duplication-debug-implementation-short)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Quick Implementation](#quick-implementation)
+- [Step 1: Request ID Generation](#step-1-request-id-generation)
+- [Step 2: Basic Logging](#step-2-basic-logging)
+- [Step 3: Duplicate Detection](#step-3-duplicate-detection)
+- [Essential Logging](#essential-logging)
+- [Request Entry Points](#request-entry-points)
+- [Key Metrics](#key-metrics)
+- [Log Format](#log-format)
+- [Verification Steps](#verification-steps)
+- [Step 1: Enable Logging](#step-1-enable-logging)
+- [Step 2: Reproduce Issue](#step-2-reproduce-issue)
+- [Step 3: Analyze Results](#step-3-analyze-results)
+- [Step 4: Validate Fix](#step-4-validate-fix)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Quick Fixes](#quick-fixes)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document provides a practical, minimal playbook to instrument, reproduce, and
-verify duplicate API call race conditions.
+  verify duplicate API call race conditions.
 - **Context**: Use this as a quick reference for implementing debug logging for API duplication
-investigation.
+  investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -24,12 +48,6 @@ implementation guide. The short version reflects findings from:
 - Practical implementation patterns for immediate deployment
 
 The guide provides essential steps for rapid API duplication investigation and resolution.
-
-## Table of Contents
-- [Quick Implementation](#quick-implementation)
-- [Essential Logging](#essential-logging)
-- [Verification Steps](#verification-steps)
-- [Troubleshooting](#troubleshooting)
 
 ## Quick Implementation
 
@@ -155,6 +173,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 - [← Architecture Documentation](README.md)
 - [← Full Debug Implementation](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [← Root Cause Analysis](../architecture/race-condition/ROOT_CAUSE_ANALYSIS.md)
+- [← Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../README.md)

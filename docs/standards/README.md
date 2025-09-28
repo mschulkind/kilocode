@@ -1,5 +1,29 @@
 # Documentation Standards 🏗️
 
+## Table of Contents
+- [Documentation Standards 🏗️](#documentation-standards)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [🚨 ](#)
+- [🔍 ](#)
+- [🛠️ ](#)
+- [Core Standards](#core-standards)
+- [Document Structure](#document-structure)
+- [Navigation & User Experience](#navigation-user-experience)
+- [Code Documentation](#code-documentation)
+- [Engagement & Accessibility](#engagement-accessibility)
+- [Technical Glossary](#technical-glossary)
+- [Implementation Checklists](#implementation-checklists)
+- [Examples & Templates](#examples-templates)
+- [Research Session Navigation](#research-session-navigation)
+- [](#)
+- [](#)
+- [](#)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +34,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation standards and practices for KiloCode contributors,
   organized into focused, cross-linked modules for efficient research and implementation.

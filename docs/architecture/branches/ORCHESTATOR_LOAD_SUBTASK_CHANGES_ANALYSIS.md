@@ -1,7 +1,42 @@
 # Branch Analysis: catrielmuller/orchestator-load-subtask
 
+## Table of Contents
+- [Branch Analysis:
+catrielmuller/orchestator-load-subtask](#branch-analysis-catrielmullerorchestator-load-subtask)
+- [Quick Navigation](#quick-navigation)
+- [Research Context](#research-context)
+- [Race Condition Details](#race-condition-details)
+- [Summary of Intent](#summary-of-intent)
+- [Change 1: ](#change-1)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 2: Parent Task Initialization Logic](#change-2-parent-task-initialization-logic)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 3: Background Continuation Pattern](#change-3-background-continuation-pattern)
+- [Before](#before)
+- [After](#after)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Change 4: Messaging/Conversation History
+Additions](#change-4-messagingconversation-history-additions)
+- [Before](#before)
+- [After (unchanged semantics, different call site)](#after-unchanged-semantics-different-call-site)
+- [Motivation](#motivation)
+- [Side Effect](#side-effect)
+- [Net Impact](#net-impact)
+- [Recommendations](#recommendations)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 Purpose: Analyze all notable changes on `catrielmuller/orchestator-load-subtask`, with before/after
 snippets and motivations. Focus on orchestrator/subtask resume behavior and unintended concurrency.
@@ -206,7 +241,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 
 - *Implementing Architecture Features:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

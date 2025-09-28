@@ -1,18 +1,44 @@
 # Editor Integration
 
+## Table of Contents
+- [Editor Integration](#editor-integration)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Integration Overview](#integration-overview)
+- [System Architecture](#system-architecture)
+- [Key Features](#key-features)
+- [Editor Utilities](#editor-utilities)
+- [Diff Visualization](#diff-visualization)
+- [Decoration Management](#decoration-management)
+- [State Management](#state-management)
+- [Setup and Configuration](#setup-and-configuration)
+- [Prerequisites](#prerequisites)
+- [Installation Steps](#installation-steps)
+- [Configuration Options](#configuration-options)
+- [Usage Examples](#usage-examples)
+- [Basic Editor Operations](#basic-editor-operations)
+- [Diff Visualization](#diff-visualization)
+- [Decoration Management](#decoration-management)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the editor integration system for VS Code editor interaction,
-diff visualization, and editor utilities.
+  diff visualization, and editor utilities.
 - **Context**: Use this as a starting point for understanding how KiloCode integrates with VS Code
-and other editors.
+  and other editors.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -26,14 +52,6 @@ from:
 
 The system provides seamless integration between KiloCode's AI capabilities and the development
 environment.
-
-## Table of Contents
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Setup and Configuration](#setup-and-configuration)
-- [Usage Examples](#usage-examples)
-- [Troubleshooting](#troubleshooting)
 
 ## Integration Overview
 

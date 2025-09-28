@@ -1,7 +1,44 @@
 # Laminar Service Layer
 
+## Table of Contents
+- [Laminar Service Layer](#laminar-service-layer)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Service Architecture](#service-architecture)
+- [Core Components](#core-components)
+- [Service Initialization](#service-initialization)
+- [Singleton Pattern Implementation](#singleton-pattern-implementation)
+- [Singleton Mechanics](#singleton-mechanics)
+- [Instance Management](#instance-management)
+- [Span Lifecycle Management](#span-lifecycle-management)
+- [Span Creation](#span-creation)
+- [Span Updates](#span-updates)
+- [Span Completion](#span-completion)
+- [Exception Recording](#exception-recording)
+- [Exception Capture](#exception-capture)
+- [Error Context](#error-context)
+- [Telemetry Integration](#telemetry-integration)
+- [Opt-out Compliance](#opt-out-compliance)
+- [Data Collection Policies](#data-collection-policies)
+- [Performance Considerations](#performance-considerations)
+- [Overhead Minimization](#overhead-minimization)
+- [Resource Management](#resource-management)
+- [Error Handling](#error-handling)
+- [Service Errors](#service-errors)
+- [Recovery Mechanisms](#recovery-mechanisms)
+- [Integration Points](#integration-points)
+- [Task System Integration](#task-system-integration)
+- [Other Subsystems](#other-subsystems)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* This document describes the LaminarService singleton implementation, detailing span
   lifecycle management, exception recording, telemetry integration, and the core infrastructure that
@@ -357,7 +394,7 @@ try {
 | Component          | Primary Functions                    | Key Files
 | Integration Points     |
 | ------------------ | ------------------------------------ |
----------------------------------------- | ---------------------- |
+\---------------------------------------- | ---------------------- |
 | Singleton          | `getInstance()`, instance management |
 `src/services/laminar/LaminarService.ts` | All subsystems         |
 | Span Management    | `createSpan()`, `completeSpan()`     |

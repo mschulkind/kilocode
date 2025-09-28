@@ -1,18 +1,48 @@
 # Code Flow Analysis
 
+## Table of Contents
+- [Code Flow Analysis](#code-flow-analysis)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Complete Orchestrator-Subtask Architecture](#complete-orchestrator-subtask-architecture)
+- [Architecture Overview](#architecture-overview)
+- [Key Components](#key-components)
+- [Race Condition Flow Analysis](#race-condition-flow-analysis)
+- [Normal Execution Flow](#normal-execution-flow)
+- [Race Condition Flow](#race-condition-flow)
+- [Code Execution Patterns](#code-execution-patterns)
+- [Pattern 1: Sequential Execution](#pattern-1-sequential-execution)
+- [Pattern 2: Concurrent Execution (Problematic)](#pattern-2-concurrent-execution-problematic)
+- [Pattern 3: Race Condition Manifestation](#pattern-3-race-condition-manifestation)
+- [Critical Code Paths](#critical-code-paths)
+- [Path 1: Subtask Completion](#path-1-subtask-completion)
+- [Path 2: Parent Resume](#path-2-parent-resume)
+- [Path 3: State Management](#path-3-state-management)
+- [Race Condition Manifestation](#race-condition-manifestation)
+- [Scenario 1: Concurrent Subtask Completion](#scenario-1-concurrent-subtask-completion)
+- [Scenario 2: State Update Race](#scenario-2-state-update-race)
+- [Scenario 3: Response Processing Race](#scenario-3-response-processing-race)
+- [Impact Analysis](#impact-analysis)
+- [System Impact](#system-impact)
+- [User Impact](#user-impact)
+- [Business Impact](#business-impact)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers detailed analysis of the code execution flow and how the race
-condition manifests in the system.
+  condition manifests in the system.
 - **Context**: Use this as a starting point for understanding code flow analysis and race condition
-investigation.
+  investigation.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 ## Research Context
 
@@ -24,14 +54,6 @@ manifestation in the KiloCode system. The analysis reflects findings from:
 - System behavior analysis and concurrency issue investigation
 
 The analysis provides detailed insights into code flow patterns and race condition behavior.
-
-## Table of Contents
-- [Complete Orchestrator-Subtask Architecture](#complete-orchestrator-subtask-architecture)
-- [Race Condition Flow Analysis](#race-condition-flow-analysis)
-- [Code Execution Patterns](#code-execution-patterns)
-- [Critical Code Paths](#critical-code-paths)
-- [Race Condition Manifestation](#race-condition-manifestation)
-- [Impact Analysis](#impact-analysis)
 
 ## Complete Orchestrator-Subtask Architecture
 

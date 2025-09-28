@@ -1,36 +1,74 @@
 # Validation System Migration Guide
 
+## Table of Contents
+- [Validation System Migration Guide](#validation-system-migration-guide)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Overview](#overview)
+- [What's New](#whats-new)
+- [Enhanced Features](#enhanced-features)
+- [New Components](#new-components)
+- [Migration Steps](#migration-steps)
+- [Step 1: Update Dependencies](#step-1-update-dependencies)
+- [Step 2: Update Plugin Usage](#step-2-update-plugin-usage)
+- [Step 3: Update Configuration](#step-3-update-configuration)
+- [Step 4: Update Validation Rules](#step-4-update-validation-rules)
+- [Step 5: Update Error Handling](#step-5-update-error-handling)
+- [Configuration Migration](#configuration-migration)
+- [Validation Options](#validation-options)
+- [Performance Options](#performance-options)
+- [Breaking Changes](#breaking-changes)
+- [API Changes](#api-changes)
+- [Configuration Changes](#configuration-changes)
+- [Performance Improvements](#performance-improvements)
+- [Validation Speed](#validation-speed)
+- [Memory Usage](#memory-usage)
+- [Accuracy](#accuracy)
+- [Troubleshooting Migration Issues](#troubleshooting-migration-issues)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [Performance Monitoring](#performance-monitoring)
+- [Testing Migration](#testing-migration)
+- [Validation Tests](#validation-tests)
+- [Performance Tests](#performance-tests)
+- [Accuracy Tests](#accuracy-tests)
+- [Rollback Plan](#rollback-plan)
+- [Support](#support)
+- [Getting Help](#getting-help)
+- [Resources](#resources)
+- [Conclusion](#conclusion)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
-💡 **Fun Fact**: [Interesting fact about the topic]
+💡 **Fun Fact**: \[Interesting fact about the topic]
 
+This document provides \[purpose of document].
 
-This document provides [purpose of document].
-
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
-
-
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Overview
 
@@ -233,14 +271,12 @@ const performanceConfig = {
 ## Breaking Changes
 
 ### API Changes
-
 1. **Plugin Name**: `remark-kilocode` → `remark-kilocode-comprehensive`
 2. **Option Names**: Updated option names for clarity
 3. **Return Format**: Enhanced return format with performance metrics
 4. **Error Format**: More detailed error information
 
 ### Configuration Changes
-
 1. **Rule Structure**: Rules are now organized by document type
 2. **Performance Options**: New performance optimization options
 3. **Validation Logic**: Enhanced validation logic with context awareness
@@ -265,7 +301,6 @@ const performanceConfig = {
 ## Troubleshooting Migration Issues
 
 ### Common Issues
-
 1. **Plugin Not Found**: Ensure you're using the correct plugin name
 2. **Configuration Errors**: Check that all configuration options are valid
 3. **Performance Issues**: Enable performance optimization options
@@ -350,7 +385,6 @@ expect(accuracyTest.falsePositives).toBe(0)
 ## Rollback Plan
 
 If you need to rollback to the old system:
-
 1. **Revert Dependencies**: Change package.json back to old version
 2. **Revert Configuration**: Use old configuration options
 3. **Revert Code**: Restore old plugin usage
@@ -379,7 +413,6 @@ const processor = unified()
 - **Migration Support**: Contact support for migration assistance
 
 ### Resources
-
 - [Validation System Documentation](./VALIDATION_SYSTEM.md)
 - [Performance Optimization Guide](./PERFORMANCE_OPTIMIZATION.md)
 - [API Reference](./API_REFERENCE.md)
@@ -392,6 +425,7 @@ and usability. While migration requires some configuration updates, the benefits
 effort required.
 
 Key benefits of migration:
+
 - **Zero False Positives**: Eliminate false positive warnings
 - **Better Performance**: <30s validation time
 - **Context Awareness**: Intelligent validation based on document type
@@ -403,22 +437,17 @@ Follow this guide to ensure a smooth migration to the new validation system.
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
 
-
-
 ## Navigation
-
 - [← Back to Main Documentation](../README.md)
 - [← Back to Category](../)
 - [→ Related Topic](../related-topic/)
 - [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#table-of-contents)
-
-

@@ -1,18 +1,48 @@
 # Tree Sitter Service
 
+## Table of Contents
+- [Tree Sitter Service](#tree-sitter-service)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Service Overview](#service-overview)
+- [System Architecture](#system-architecture)
+- [Supported Languages](#supported-languages)
+- [Primary Languages](#primary-languages)
+- [Additional Languages](#additional-languages)
+- [Query System](#query-system)
+- [Query Syntax](#query-syntax)
+- [Query Operations](#query-operations)
+- [Setup and Configuration](#setup-and-configuration)
+- [Prerequisites](#prerequisites)
+- [Installation Steps](#installation-steps)
+- [Configuration Options](#configuration-options)
+- [Usage Examples](#usage-examples)
+- [Basic Parsing](#basic-parsing)
+- [Code Analysis](#code-analysis)
+- [Advanced Queries](#advanced-queries)
+- [Performance Optimization](#performance-optimization)
+- [Caching Strategies](#caching-strategies)
+- [Optimization Techniques](#optimization-techniques)
+- [Troubleshooting](#troubleshooting)
+- [Common Issues](#common-issues)
+- [Debug Mode](#debug-mode)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers the Tree Sitter code parsing service and language-specific
-parsing capabilities.
+  parsing capabilities.
 - **Context**: Use this as a starting point for understanding how KiloCode analyzes and processes
-code using Tree Sitter.
+  code using Tree Sitter.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -25,16 +55,6 @@ from:
 - Code analysis and query system design patterns
 
 The system provides accurate and efficient code parsing for multiple programming languages.
-
-## Table of Contents
-- [Service Overview](#service-overview)
-- [System Architecture](#system-architecture)
-- [Supported Languages](#supported-languages)
-- [Query System](#query-system)
-- [Setup and Configuration](#setup-and-configuration)
-- [Usage Examples](#usage-examples)
-- [Performance Optimization](#performance-optimization)
-- [Troubleshooting](#troubleshooting)
 
 ## Service Overview
 

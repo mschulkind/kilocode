@@ -1,5 +1,50 @@
 # KiloCode Technical Glossary
 
+## Table of Contents
+- [KiloCode Technical Glossary](#kilocode-technical-glossary)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Core System Concepts](#core-system-concepts)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [System-Specific Terms](#system-specific-terms)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [State Definitions](#state-definitions)
+- [](#)
+- [](#)
+- [](#)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Terms](#navigation-terms)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [🔗 Related Documentation](#related-documentation)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,34 +55,32 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* Comprehensive reference for technical terms, concepts, and system-specific
-terminology
+  terminology
   used throughout KiloCode documentation.
 
 > **Quantum Physics Fun Fact**: Just as quantum entanglement allows particles to be instantly
 > connected regardless of distance, our glossary creates instant connections between concepts across
 > the entire documentation system! 🔬
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Core System Concepts
 
@@ -182,18 +225,16 @@ logic.
 - **TIMEOUT**: Recursive call exceeded time limit
 - **TRIPLE\_CONCURRENT**: Three simultaneous recursive calls (severe race condition)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Terms
 

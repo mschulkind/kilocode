@@ -1,7 +1,19 @@
 # Orchestrator Best Practices
 
+## Table of Contents
+- [Orchestrator Best Practices](#orchestrator-best-practices)
+- [Related Documents](#related-documents)
+- [Prompt Engineering Best Practices](#prompt-engineering-best-practices)
+- [Tool and Mode Development](#tool-and-mode-development)
+- [Task Management and Delegation](#task-management-and-delegation)
+- [Testing and Validation](#testing-and-validation)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* This document provides guidelines and best practices for developers working with the
   Kilo Code Orchestrator. Following these practices will lead to more robust, predictable, and
@@ -25,10 +37,11 @@ this documentation provides structured guidance for understanding and implementi
 ### Related Documents
 
 <a
+
 id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-a-idrelated-documentsa-)
 
 - **[Orchestrator Master Index](../orchestrator/ORCHESTRATOR_INDEX.md)**: The master index for all
-orchestrator
+  orchestrator
   documentation.
 - **[Extensibility Guide](ORCHESTRATOR_EXTENSIBILITY.md)**: Provides the technical details
   for creating new tools and modes.

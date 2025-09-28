@@ -1,17 +1,49 @@
 # Repository Structure
 
+## Table of Contents
+- [Repository Structure](#repository-structure)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Repository Structure Diagram](#repository-structure-diagram)
+- [Directory Structure](#directory-structure)
+- [Core Extension (](#core-extension)
+- [Webview UI (](#webview-ui)
+- [Workspace Packages (](#workspace-packages)
+- [Applications (](#applications)
+- [File Type Distribution](#file-type-distribution)
+- [TypeScript Files](#typescript-files)
+- [Configuration Files](#configuration-files)
+- [Documentation Files](#documentation-files)
+- [Monorepo Architecture](#monorepo-architecture)
+- [Workspace Configuration](#workspace-configuration)
+- [Dependency Management](#dependency-management)
+- [Development Workflow](#development-workflow)
+- [Local Development](#local-development)
+- [Package Development](#package-development)
+- [Application Development](#application-development)
+- [Build and Deployment](#build-and-deployment)
+- [Build Pipeline](#build-pipeline)
+- [Deployment Strategy](#deployment-strategy)
+- [Quality Assurance](#quality-assurance)
+- [Code Quality](#code-quality)
+- [Testing Strategy](#testing-strategy)
+- [Continuous Integration](#continuous-integration)
+- [Next Steps](#next-steps)
+- [🧭 Navigation Footer](#navigation-footer)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
-This document provides [purpose of document].
+This document provides \[purpose of document].
 
-- **Purpose**: [Brief description of what this document covers]
-- **Context**: [How this fits into the broader system/project]
+- **Purpose**: \[Brief description of what this document covers]
+- **Context**: \[How this fits into the broader system/project]
 - **Navigation**: Use the table of contents below to jump to specific topics
 
-
-
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 - *Purpose:*\* High-level overview of the KiloCode repository organization and directory structure.
 

@@ -1,5 +1,34 @@
 # Troubleshooting Guide
 
+## Table of Contents
+- [Troubleshooting Guide](#troubleshooting-guide)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Common Issues](#common-issues)
+- [1. Validation Not Running](#1-validation-not-running)
+- [2. Auto-fix Not Working](#2-auto-fix-not-working)
+- [3. Performance Issues](#3-performance-issues)
+- [4. Link Validation Errors](#4-link-validation-errors)
+- [5. Extension Conflicts](#5-extension-conflicts)
+- [Advanced Troubleshooting](#advanced-troubleshooting)
+- [1. Debug Mode](#1-debug-mode)
+- [2. Configuration Issues](#2-configuration-issues)
+- [3. File System Issues](#3-file-system-issues)
+- [Getting Help](#getting-help)
+- [1. Self-Diagnosis](#1-self-diagnosis)
+- [2. Log Analysis](#2-log-analysis)
+- [3. Team Support](#3-team-support)
+- [Prevention](#prevention)
+- [1. Regular Maintenance](#1-regular-maintenance)
+- [2. Best Practices](#2-best-practices)
+- [3. Team Training](#3-team-training)
+- [Related Documentation](#related-documentation)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,28 +39,26 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 This guide helps you resolve common issues with KiloCode's documentation automation system.
-
 
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Common Issues
 
@@ -166,15 +193,18 @@ find docs/ -name "*.md" -exec wc -c {} + | sort -n
 
    ```json
    {
-"markdown.validate.ignore": ["**/node_modules/**", "**/dist/**", "**/out/**", "**/large-docs/**"]
-   }
    ```
+
+"markdown.validate.ignore": \["**/node\_modules/**", "**/dist/**", "**/out/**", "**/large-docs/**"]
+}
+
+````
 2. **Use Incremental Validation**
 
-   ```bash
-   # Only validate changed files
-   git diff --name-only HEAD~1 | grep '\.md$' | xargs npx remark
-   ```
+```bash
+# Only validate changed files
+git diff --name-only HEAD~1 | grep '\.md$' | xargs npx remark
+````
 3. **Optimize Configuration**
 - Disable expensive rules for large files
 - Use caching for repeated validations
@@ -493,18 +523,16 @@ npx remark docs/ 2>&1 | grep -i error
 - [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
 - [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

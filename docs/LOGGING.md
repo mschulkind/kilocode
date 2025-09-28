@@ -1,12 +1,8 @@
 # Kilo Code Logging Documentation
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-This document provides comprehensive information about Kilo Code's logging system, including how to
-write logs, where messages are routed, viewing options, and configuration settings.
-
 ## Table of Contents
+- [Kilo Code Logging Documentation](#kilo-code-logging-documentation)
+- [Table of Contents](#table-of-contents)
 - [Writing to Logs from Code](#writing-to-logs-from-code)
 - [1. Console Logging](#1-console-logging)
 - [2. Custom Logger (CompactLogger)](#2-custom-logger-compactlogger)
@@ -38,9 +34,16 @@ write logs, where messages are routed, viewing options, and configuration settin
 - [Troubleshooting](#troubleshooting)
 - [Common Issues](#common-issues)
 - [Debug Commands](#debug-commands)
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
+> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
+
+This document provides comprehensive information about Kilo Code's logging system, including how to
+write logs, where messages are routed, viewing options, and configuration settings.
 
 ## Writing to Logs from Code
 

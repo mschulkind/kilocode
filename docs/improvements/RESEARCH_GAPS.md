@@ -1,18 +1,49 @@
 # Research Gaps
 
+## Table of Contents
+- [Research Gaps](#research-gaps)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [Critical Research Gaps](#critical-research-gaps)
+- [1. Duplicate API Requests Root Cause Analysis](#1-duplicate-api-requests-root-cause-analysis)
+- [2. Tool Execution Performance Analysis](#2-tool-execution-performance-analysis)
+- [3. API Provider Error Patterns](#3-api-provider-error-patterns)
+- [High Priority Research Areas](#high-priority-research-areas)
+- [4. Cloud Service Reliability Analysis](#4-cloud-service-reliability-analysis)
+- [5. MCP Integration Architecture](#5-mcp-integration-architecture)
+- [6. Provider Configuration Management](#6-provider-configuration-management)
+- [7. Tool Composition Patterns](#7-tool-composition-patterns)
+- [8. Bridge Communication Protocol](#8-bridge-communication-protocol)
+- [Medium Priority Research Areas](#medium-priority-research-areas)
+- [9. Tree Sitter Query Optimization](#9-tree-sitter-query-optimization)
+- [10. JetBrains Plugin IPC Protocol](#10-jetbrains-plugin-ipc-protocol)
+- [11. Browser Automation Reliability](#11-browser-automation-reliability)
+- [12. Marketplace Item Validation](#12-marketplace-item-validation)
+- [13. Provider Testing Framework](#13-provider-testing-framework)
+- [14. Tool Safety Mechanisms](#14-tool-safety-mechanisms)
+- [15. Provider Analytics and Monitoring](#15-provider-analytics-and-monitoring)
+- [Research Methodology](#research-methodology)
+- [Investigation Approach](#investigation-approach)
+- [Success Criteria](#success-criteria)
+- [Research Timeline](#research-timeline)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document identifies areas requiring further research and investigation in the
-KiloCode project.
+  KiloCode project.
 - **Context**: Use this as a starting point for understanding research needs and planning
-investigation work.
+  investigation work.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -26,13 +57,6 @@ opportunities identified through:
 
 Each research gap includes priority assessment, investigation scope, and expected outcomes to
 support research planning.
-
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Critical Research Gaps](#critical-research-gaps)
-- [High Priority Research Areas](#high-priority-research-areas)
-- [Medium Priority Research Areas](#medium-priority-research-areas)
-- [Research Methodology](#research-methodology)
 
 ## Executive Summary
 

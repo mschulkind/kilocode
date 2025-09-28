@@ -1,18 +1,53 @@
 # API Provider Patterns
 
+## Table of Contents
+- [API Provider Patterns](#api-provider-patterns)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Provider Architecture](#provider-architecture)
+- [Architecture Overview](#architecture-overview)
+- [Provider Types](#provider-types)
+- [Primary Providers](#primary-providers)
+- [Specialized Providers](#specialized-providers)
+- [Provider Characteristics](#provider-characteristics)
+- [Request/Response Handling](#requestresponse-handling)
+- [Request Processing](#request-processing)
+- [Response Processing](#response-processing)
+- [Streaming Implementation](#streaming-implementation)
+- [Streaming Support](#streaming-support)
+- [Streaming Patterns](#streaming-patterns)
+- [Error Handling](#error-handling)
+- [Error Types](#error-types)
+- [Retry Logic](#retry-logic)
+- [Configuration Management](#configuration-management)
+- [Provider Configuration](#provider-configuration)
+- [Performance Optimization](#performance-optimization)
+- [Optimization Strategies](#optimization-strategies)
+- [Performance Monitoring](#performance-monitoring)
+- [Security & Authentication](#security-authentication)
+- [Authentication Methods](#authentication-methods)
+- [Security Best Practices](#security-best-practices)
+- [Common Issues](#common-issues)
+- [Provider-Specific Issues](#provider-specific-issues)
+- [General Issues](#general-issues)
+- [Troubleshooting](#troubleshooting)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document covers comprehensive API provider architecture, integration patterns,
-and multi-provider support.
+  and multi-provider support.
 - **Context**: Use this as a starting point for understanding API provider patterns and
-implementation strategies.
+  implementation strategies.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 ## Research Context
 
@@ -24,17 +59,6 @@ support requirements in the KiloCode system. The patterns reflect findings from:
 - Performance and reliability analysis for provider implementations
 
 The patterns provide a systematic approach to implementing robust API provider support.
-
-## Table of Contents
-- [Provider Architecture](#provider-architecture)
-- [Provider Types](#provider-types)
-- [Request/Response Handling](#requestresponse-handling)
-- [Streaming Implementation](#streaming-implementation)
-- [Error Handling](#error-handling)
-- [Configuration Management](#configuration-management)
-- [Performance Optimization](#performance-optimization)
-- [Security & Authentication](#security--authentication)
-- [Common Issues](#common-issues)
 
 ## Provider Architecture
 

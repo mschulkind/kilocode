@@ -1,5 +1,44 @@
 # Testing Strategy
 
+## Table of Contents
+- [Testing Strategy](#testing-strategy)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Technical Overview](#technical-overview)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Executive Summary](#executive-summary)
+- [Testing Architecture](#testing-architecture)
+- [Unit Testing](#unit-testing)
+- [Vitest Framework](#vitest-framework)
+- [Core Extension Tests](#core-extension-tests)
+- [Webview UI Tests](#webview-ui-tests)
+- [Integration Testing](#integration-testing)
+- [API Integration Tests](#api-integration-tests)
+- [Service Integration Tests](#service-integration-tests)
+- [End-to-End Testing](#end-to-end-testing)
+- [Playwright E2E Tests](#playwright-e2e-tests)
+- [VS Code E2E Tests](#vs-code-e2e-tests)
+- [Test Infrastructure](#test-infrastructure)
+- [Mock Frameworks](#mock-frameworks)
+- [Test Helpers](#test-helpers)
+- [Mock and Fixture Patterns](#mock-and-fixture-patterns)
+- [Mock Factories](#mock-factories)
+- [Test Fixtures](#test-fixtures)
+- [Test Coverage Analysis](#test-coverage-analysis)
+- [Coverage Metrics](#coverage-metrics)
+- [Coverage Reporting](#coverage-reporting)
+- [Performance Testing](#performance-testing)
+- [Load Testing](#load-testing)
+- [Benchmark Testing](#benchmark-testing)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Issue 1: Test Flakiness](#issue-1-test-flakiness)
+- [Issue 2: Mock Complexity](#issue-2-mock-complexity)
+- [Issue 3: Test Performance](#issue-3-test-performance)
+- [Issue 4: Coverage Gaps](#issue-4-coverage-gaps)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,10 +49,10 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 - *Purpose:*\* Comprehensive documentation of testing infrastructure, strategies, and patterns
-across
+  across
   the KiloCode system.
 
 > **Cartography Fun Fact**: This documentation is like a map - it shows you where you are, where you
@@ -34,24 +73,22 @@ across
 
 </details>
 
-
 ## Research Context
 
 ### Technical Overview
 
-**Component**: [Component name]
-**Version**: [Version number]
-**Architecture**: [Architecture description]
-**Dependencies**: [Key dependencies]
+**Component**: \[Component name]
+**Version**: \[Version number]
+**Architecture**: \[Architecture description]
+**Dependencies**: \[Key dependencies]
 
 ### Background
 
-[Background information about the topic]
+\[Background information about the topic]
 
 ### Methodology
 
-[Research or development methodology used]
-
+\[Research or development methodology used]
 
 ## Executive Summary
 - The Testing Strategy provides comprehensive testing infrastructure and patterns for the KiloCode
@@ -271,7 +308,7 @@ describe("API Integration", () => {
 ### VS Code E2E Tests
 
 - *Location*\*: `apps/vscode-e2e/` **Framework**: VS Code Extension Testing **Configuration**: VS
-Code
+  Code
   extension test configuration
 
 - *Test Categories*\*:
@@ -474,7 +511,7 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 - Test timeouts
 
 - *Root Cause*\*: Inefficient test patterns or resource leaks **Solution**: Optimize test patterns
-and
+  and
   implement proper cleanup
 
 ### Issue 4: Coverage Gaps
@@ -491,18 +528,16 @@ and
 - Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
   `/docs/testing/TESTING_STRATEGY.md#L1`
 
-
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - [Brief description]
-- [Related Document 2](./related-doc-2.md) - [Brief description]
-- [Related Document 3](./related-doc-3.md) - [Brief description]
+- [Related Document 1](./related-doc-1.md) - \[Brief description]
+- [Related Document 2](./related-doc-2.md) - \[Brief description]
+- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
 - [Category Overview](../category/)
 - [Related Resources](../resources/)
-
 
 ## Navigation Footer
 - \*\*

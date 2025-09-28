@@ -1,7 +1,40 @@
 # Laminar Configuration System
 
+## Table of Contents
+- [Laminar Configuration System](#laminar-configuration-system)
+- [Overview](#overview)
+- [Role in Laminar Integration](#role-in-laminar-integration)
+- [Integration Scope](#integration-scope)
+- [Configuration Architecture](#configuration-architecture)
+- [Configuration Structure](#configuration-structure)
+- [File Organization](#file-organization)
+- [Environment Detection](#environment-detection)
+- [Environment Types](#environment-types)
+- [Environment-Specific Behavior](#environment-specific-behavior)
+- [API Key Management](#api-key-management)
+- [Secure Storage](#secure-storage)
+- [Key Validation](#key-validation)
+- [Configuration Validation](#configuration-validation)
+- [Validation Strategy](#validation-strategy)
+- [Error Handling](#error-handling)
+- [Security Considerations](#security-considerations)
+- [Data Protection](#data-protection)
+- [Privacy Compliance](#privacy-compliance)
+- [Error Handling](#error-handling)
+- [Configuration Errors](#configuration-errors)
+- [Runtime Configuration Issues](#runtime-configuration-issues)
+- [Integration Points](#integration-points)
+- [Service Layer Integration](#service-layer-integration)
+- [Other Subsystems](#other-subsystems)
+- [Code Reference Matrix](#code-reference-matrix)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* This document details the configuration system for Laminar observability integration,
   covering environment-specific settings, API key management, validation mechanisms, and secure
@@ -269,7 +302,7 @@ const laminarService = new LaminarService(config)
 | Component             | Primary Functions     | Key Files                      | Integration
 Points      |
 | --------------------- | --------------------- | ------------------------------ |
------------------------ |
+\----------------------- |
 | Config Loading        | `loadLaminarConfig()` | `src/config/laminar-config.ts` | Service
 initialization  |
 | Environment Detection | `detectEnvironment()` | `src/config/laminar-config.ts` | Runtime behavior

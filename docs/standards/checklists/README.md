@@ -1,5 +1,19 @@
 # Documentation Checklists
 
+## Table of Contents
+- [Documentation Checklists](#documentation-checklists)
+- [When You're Here](#when-youre-here)
+- [🗺️ Navigation Guide](#navigation-guide)
+- [Research Context](#research-context)
+- [Quick Start Paths](#quick-start-paths)
+- [Current Focus](#current-focus)
+- [📚 Documentation Structure](#documentation-structure)
+- [🔗 Cross-References](#cross-references)
+- [🦕 Dinosaur Analogy](#dinosaur-analogy)
+- [🧭 Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +24,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
+> documentation helps us understand how! ⚙️
 
 Welcome to the documentation checklists! ✅ This directory contains checklists and validation tools
 for ensuring documentation quality and consistency.
@@ -59,9 +73,9 @@ preserving), we have checklists for each step of the documentation process (writ
 validating, publishing). Each checklist ensures we don't miss any important steps!
 
 ## 🧭 Navigation Footer
-- [← Back to Standards Home](../../README.md)
+- [← Back to Standards Home](../README.md)
 - [→ Core Standards](../core/README.md)
-- [↑ Table of Contents](../../README.md)
+- [↑ Table of Contents](../README.md)
 
 ## No Dead Ends Policy
 
@@ -74,5 +88,5 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Standards Overview](README.md)
 - [← Documentation Guide](../DOCUMENTATION_GUIDE.md)
 - [← Navigation Standards](navigation/README.md)
-- [← Main Documentation](../../README.md)
-- [← Project Root](../README.md)
+- [← Main Documentation](../README.md)
+- [← Project Root](../../README.md)

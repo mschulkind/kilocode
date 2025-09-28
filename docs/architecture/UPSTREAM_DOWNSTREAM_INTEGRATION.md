@@ -1,5 +1,60 @@
 # Upstream/Downstream Integration Guide
 
+## Table of Contents
+- [Upstream/Downstream Integration Guide](#upstreamdownstream-integration-guide)
+- [When You're Here](#when-youre-here)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Integration Overview](#integration-overview)
+- [Project Relationships](#project-relationships)
+- [Remote Configuration](#remote-configuration)
+- [Code Transfer Workflow](#code-transfer-workflow)
+- [1. Upstream Sync Process](#1-upstream-sync-process)
+- [Regular Upstream Synchronization](#regular-upstream-synchronization)
+- [Conflict Resolution](#conflict-resolution)
+- [2. Feature Porting Process](#2-feature-porting-process)
+- [Roo Code Feature Integration](#roo-code-feature-integration)
+- [Cline Feature Integration](#cline-feature-integration)
+- [3. Quality Assurance](#3-quality-assurance)
+- [Automated Testing](#automated-testing)
+- [Compatibility Verification](#compatibility-verification)
+- [Implementation Tradeoffs & Strategic
+Considerations](#implementation-tradeoffs-strategic-considerations)
+- [Integration Strategy Selection](#integration-strategy-selection)
+- [Frequent Sync Strategy (Recommended for Active
+Projects)](#frequent-sync-strategy-recommended-for-active-projects)
+- [Feature-Based Sync Strategy](#feature-based-sync-strategy)
+- [Release-Based Sync Strategy](#release-based-sync-strategy)
+- [Merge Conflict Prevention & Management](#merge-conflict-prevention-management)
+- [Understanding Conflict Patterns](#understanding-conflict-patterns)
+- [Proactive Conflict Prevention](#proactive-conflict-prevention)
+- [Conflict Resolution Strategies](#conflict-resolution-strategies)
+- [Change Tracking & Documentation Strategy](#change-tracking-documentation-strategy)
+- [The Importance of Change Tracking](#the-importance-of-change-tracking)
+- [Comment-Based Documentation System](#comment-based-documentation-system)
+- [Automated Change Detection](#automated-change-detection)
+- [Integration Decision Documentation](#integration-decision-documentation)
+- [Refactoring & Evolution Strategy](#refactoring-evolution-strategy)
+- [The Challenge of Continuous Integration](#the-challenge-of-continuous-integration)
+- [Safe Refactoring Approaches](#safe-refactoring-approaches)
+- [Managing Breaking Changes](#managing-breaking-changes)
+- [Architectural Evolution](#architectural-evolution)
+- [Performance & Quality Considerations](#performance-quality-considerations)
+- [Understanding Integration Impact](#understanding-integration-impact)
+- [Performance Monitoring Strategy](#performance-monitoring-strategy)
+- [Bundle Size Management](#bundle-size-management)
+- [Quality Assurance Integration](#quality-assurance-integration)
+- [Long-term Performance Strategy](#long-term-performance-strategy)
+- [Monitoring & Maintenance Strategy](#monitoring-maintenance-strategy)
+- [Building a Healthy Integration Culture](#building-a-healthy-integration-culture)
+- [Integration Health Monitoring](#integration-health-monitoring)
+- [Long-term Maintenance Planning](#long-term-maintenance-planning)
+- [Community Relationship Management](#community-relationship-management)
+- [Continuous Improvement Process](#continuous-improvement-process)
+- [Risk Management](#risk-management)
+- [Navigation Footer](#navigation-footer)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -10,7 +65,7 @@ document's role or purpose, this section helps orient you.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-this documentation provides structured guidance for understanding and implementing solutions! 🔧
+> this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
 - *Purpose:*\* Comprehensive guide for managing code transfer and feature porting between KiloCode,
   Roo Code, and Cline repositories.
@@ -492,7 +547,7 @@ purposes:
   that's been integrated more directly.
 
 - *Upstream Sync Markers*\*: Use these to mark sections that were synchronized from upstream
-KiloCode
+  KiloCode
   (if applicable) or to indicate when large blocks of code were updated from upstream sources.
 
 - *Best Practices for Marker Usage*\*

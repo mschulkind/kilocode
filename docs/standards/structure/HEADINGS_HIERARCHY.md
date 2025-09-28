@@ -1,7 +1,25 @@
 # Headings & Hierarchy 📋
 
+## Table of Contents
+- [Headings & Hierarchy 📋](#headings-hierarchy)
+- [Executive Summary](#executive-summary)
+- [Research Context](#research-context)
+- [Hierarchy Rules](#hierarchy-rules)
+- [Heading Case Standards](#heading-case-standards)
+- [Single H1 Rule](#single-h1-rule)
+- [H4 Usage Guidelines](#h4-usage-guidelines)
+- [Hierarchy Validation](#hierarchy-validation)
+- [Common Mistakes](#common-mistakes)
+- [Implementation Examples](#implementation-examples)
+- [Complete Hierarchy Example](#complete-hierarchy-example)
+- [Minimal Hierarchy Example](#minimal-hierarchy-example)
+- [Navigation Footer](#navigation-footer)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
+- [When You're Here, You Can:](#when-youre-here-you-can)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+> foundation, clear structure, and intuitive navigation! 🏗️
 
 - *Purpose:*\* Detailed standards for heading structure, hierarchy, and formatting to ensure
   consistent document organization and navigation across all KiloCode documentation.
@@ -30,7 +48,7 @@ foundation, clear structure, and intuitive navigation! 🏗️
   KiloCode documentation to ensure consistent navigation and accessibility.
 
 - *Background:*\* Inconsistent heading structures across documentation files were creating
-navigation
+  navigation
 challenges and accessibility issues. This document provides clear guidelines for maintaining proper
   heading hierarchy.
 
@@ -41,12 +59,12 @@ challenges and accessibility issues. This document provides clear guidelines for
   markdown standards to create comprehensive guidelines.
 
 - *Findings:*\* Clear hierarchy rules (H1→H2→H3 only, with H4 for tight enumerations), consistent
-case
+  case
   standards (Title case for H1, sentence case for H2/H3), and single H1 rule provide the best
   structure.
 - \*\*
 - Consistent heading hierarchy is essential for document organization, navigation, and
-accessibility.
+  accessibility.
   These standards ensure that all KiloCode documentation follows a predictable structure that helps
   both authors and readers navigate content effectively.\*
 
@@ -600,7 +618,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 - *Implementing Documentation Standards:*\*
 
-- **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
+- **Next**: [Repository Development Guide](../../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 - **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns

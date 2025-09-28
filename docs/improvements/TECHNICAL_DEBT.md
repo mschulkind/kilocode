@@ -1,18 +1,51 @@
 # Technical Debt Analysis
 
+## Table of Contents
+- [Technical Debt Analysis](#technical-debt-analysis)
+- [When You're Here](#when-youre-here)
+- [Research Context](#research-context)
+- [Table of Contents](#table-of-contents)
+- [Executive Summary](#executive-summary)
+- [Critical Technical Debt](#critical-technical-debt)
+- [1. Race Condition in Message Queue Processing](#1-race-condition-in-message-queue-processing)
+- [2. Inconsistent Error Handling Across Providers](#2-inconsistent-error-handling-across-providers)
+- [3. Missing Tool Execution Metrics](#3-missing-tool-execution-metrics)
+- [High Priority Technical Debt](#high-priority-technical-debt)
+- [4. Inadequate Tool Validation](#4-inadequate-tool-validation)
+- [5. Provider Configuration Management](#5-provider-configuration-management)
+- [6. MCP Server Configuration Issues](#6-mcp-server-configuration-issues)
+- [7. Cloud Service Event System](#7-cloud-service-event-system)
+- [8. Bridge Communication Protocol](#8-bridge-communication-protocol)
+- [Medium Priority Technical Debt](#medium-priority-technical-debt)
+- [9. Tool Composition Patterns](#9-tool-composition-patterns)
+- [10. Provider Performance Optimization](#10-provider-performance-optimization)
+- [11. Tool Safety Mechanisms](#11-tool-safety-mechanisms)
+- [12. Marketplace Item Validation](#12-marketplace-item-validation)
+- [13. Tree Sitter Query Optimization](#13-tree-sitter-query-optimization)
+- [14. JetBrains Plugin IPC Protocol](#14-jetbrains-plugin-ipc-protocol)
+- [15. Provider Testing Framework](#15-provider-testing-framework)
+- [Debt Mitigation Strategy](#debt-mitigation-strategy)
+- [Immediate Actions (Week 1-2)](#immediate-actions-week-1-2)
+- [Short-term Improvements (Week 3-6)](#short-term-improvements-week-3-6)
+- [Medium-term Refactoring (Week 7-12)](#medium-term-refactoring-week-7-12)
+- [Long-term Optimization (Week 13-20)](#long-term-optimization-week-13-20)
+- [Success Metrics](#success-metrics)
+- [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation](#navigation)
+
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
 document's role or purpose, this section helps orient you.
 
 - **Purpose**: This document catalogs technical debt identified through comprehensive codebase
-analysis and system architecture assessment.
+  analysis and system architecture assessment.
 - **Context**: Use this as a starting point for understanding refactoring needs and planning
-technical improvements.
+  technical improvements.
 - **Navigation**: Use the table of contents below to jump to specific topics.
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
+> behind the "what"! 💻
 
 ## Research Context
 
@@ -25,13 +58,6 @@ debt requiring attention. The debt items listed here represent issues identified
 
 Each debt item includes impact assessment, complexity analysis, and implementation timeline to
 support technical improvement planning.
-
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Critical Technical Debt](#critical-technical-debt)
-- [High Priority Technical Debt](#high-priority-technical-debt)
-- [Medium Priority Technical Debt](#medium-priority-technical-debt)
-- [Debt Mitigation Strategy](#debt-mitigation-strategy)
 
 ## Executive Summary
 

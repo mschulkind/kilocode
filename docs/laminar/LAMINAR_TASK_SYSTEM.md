@@ -1,14 +1,8 @@
 # Laminar Task System Integration
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
-
-- *Mission:*\* To provide comprehensive documentation of the Task System's integration with Laminar
-  observability, detailing how task lifecycle tracing, LLM interactions, and performance monitoring
-  enable detailed insights into Kilo Code's execution flow while maintaining system reliability and
-  user privacy.
-
 ## Table of Contents
+- [Laminar Task System Integration](#laminar-task-system-integration)
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Role in Kilo Code](#role-in-kilo-code)
 - [Laminar Integration Scope](#laminar-integration-scope)
@@ -23,7 +17,7 @@ foundation, clear structure, and intuitive navigation! 🏗️
 - [Cost Tracking and Model Information](#cost-tracking-and-model-information)
 - [Cache Usage Tracking](#cache-usage-tracking)
 - [Authentication and User Context](#authentication-and-user-context)
-- User Context Integration
+- [User Context Integration](#user-context-integration)
 - [Privacy Considerations](#privacy-considerations)
 - [Performance Considerations](#performance-considerations)
 - [Overhead Minimization](#overhead-minimization)
@@ -37,11 +31,23 @@ foundation, clear structure, and intuitive navigation! 🏗️
 - [Tools Subsystem Integration](#tools-subsystem-integration)
 - [Checkpoints Subsystem Integration](#checkpoints-subsystem-integration)
 - [Service Layer Integration](#service-layer-integration)
-- Code Reference Matrix
-- Implementation Timeline
-- [🔍 Research Context & Next Steps](#-research-context--next-steps)
+- [Code Reference Matrix](#code-reference-matrix)
+- [| Component       | Primary Functions
+    | Key Integration Points     |
+    | --------------- |](#component-primary-functions-key-integration-points)
+- [Implementation Timeline](#implementation-timeline)
+- [🔍 Research Context & Next Steps](#research-context-next-steps)
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
+- [Navigation Footer](#navigation-footer)
+
+> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
+> foundation, clear structure, and intuitive navigation! 🏗️
+
+- *Mission:*\* To provide comprehensive documentation of the Task System's integration with Laminar
+  observability, detailing how task lifecycle tracing, LLM interactions, and performance monitoring
+  enable detailed insights into Kilo Code's execution flow while maintaining system reliability and
+  user privacy.
 
 ## Overview
 
@@ -371,7 +377,8 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 | Component       | Primary Functions
 | Key Integration Points     |
 | --------------- |
------------------------------------------------------------------------------------------------------------------------------------
+- ------------------
+
 | -------------------------- |
 | Task Lifecycle  | [`constructor`](src/core/task/Task.ts#L317),
 [`startTask`](src/core/task/Task.ts#L1231), [`abortTask`](src/core/task/Task.ts#L1532) | Span
