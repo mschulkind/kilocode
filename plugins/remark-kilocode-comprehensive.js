@@ -1037,7 +1037,8 @@ function validateNavigationConsistency(structure, issues, warnings, file) {
 			link.text.includes("→") ||
 			link.text.includes("Back to") ||
 			link.text.includes("Next:") ||
-			link.text.includes("Table of Contents"),
+			link.text.toLowerCase().includes("table of contents") ||
+			link.text.toLowerCase().includes("glossary"),
 	)
 
 	// Check for consistent navigation format
@@ -1058,12 +1059,11 @@ function validateNavigationConsistency(structure, issues, warnings, file) {
 	}
 
 	// Check for required navigation elements
-	const hasGlossaryLink = navigationLinks.some(
-		(link) => link.text.includes("📚") && link.text.toLowerCase().includes("glossary"),
-	)
-	const hasTOCLink = navigationLinks.some(
-		(link) => link.text.includes("↑") && link.text.toLowerCase().includes("table of contents"),
-	)
+	// For glossary link, check if link text contains "glossary" (emoji is in markdown, not link text)
+	const hasGlossaryLink = navigationLinks.some((link) => link.text.toLowerCase().includes("glossary"))
+	// For TOC link, check if link text contains "table of contents" (arrow is in markdown, not link text)
+	// Also check all links, not just navigation links, since TOC links might be in the main content
+	const hasTOCLink = structure.links.some((link) => link.text.toLowerCase().includes("table of contents"))
 
 	if (!hasGlossaryLink) {
 		warnings.push({
