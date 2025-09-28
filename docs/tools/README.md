@@ -4,6 +4,7 @@
 - [Tools Documentation](#tools-documentation)
 - [Table of Contents](#table-of-contents)
 - [When You're Here](#when-youre-here)
+- [Validation System](#validation-system)
 - [Research Context](#research-context)
 - [Technical Overview](#technical-overview)
 - [Background](#background)
@@ -102,6 +103,15 @@ tasks. Just as a T-Rex had powerful jaws for hunting, a Triceratops had defensiv
 Pterodactyl had wings for flying, our tools are specialized for different development tasks. Each
 tool is like a different dinosaur species, perfectly adapted to its specific function in the
 development ecosystem!
+
+## Validation System
+
+The validation system has been simplified for better performance and maintainability:
+
+- **[Validation System Simplified](./VALIDATION_SYSTEM_SIMPLIFIED.md)** - Overview of the simplified validation system
+- **[Migration Guide](./VALIDATION_SYSTEM_MIGRATION_GUIDE.md)** - Step-by-step migration instructions  
+- **[Breaking Changes](./VALIDATION_SYSTEM_BREAKING_CHANGES.md)** - List of breaking changes and impact
+- **[Finalization Report](./VALIDATION_SYSTEM_FINALIZATION.md)** - Complete project summary and results
 
 ## 🧭 Navigation Footer
 - [← Back to Documentation Home](../README.md)
