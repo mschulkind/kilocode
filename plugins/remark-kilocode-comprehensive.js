@@ -389,6 +389,9 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 	// Validate navigation patterns
 	validateNavigationPatterns(structure, issues, warnings, settings, file)
 
+	// Validate section organization
+	validateSectionOrganization(structure, issues, warnings, settings, file)
+
 	// Check for No Dead Ends Policy
 	if (
 		settings.requireNoDeadEndsPolicy &&
@@ -932,6 +935,207 @@ function validateNavigationConsistency(structure, issues, warnings, file) {
 			rule: "kilocode-toc-navigation-link",
 			suggestion: "Add a link back to Table of Contents using ↑ Table of Contents format",
 		})
+	}
+}
+
+/**
+ * Validate section organization
+ */
+function validateSectionOrganization(structure, issues, warnings, settings, file) {
+	const filePath = file.path || "unknown"
+	const relativePath = filePath.replace(process.cwd(), "")
+
+	// Validate heading hierarchy
+	validateHeadingHierarchy(structure.headings, issues, warnings, file)
+
+	// Validate section lengths
+	validateSectionLengths(structure, issues, warnings, file)
+
+	// Validate section naming consistency
+	validateSectionNaming(structure.headings, issues, warnings, file)
+
+	// Validate required sections for document type
+	validateRequiredSections(structure, issues, warnings, file, relativePath)
+}
+
+/**
+ * Validate heading hierarchy
+ */
+function validateHeadingHierarchy(headings, issues, warnings, file) {
+	let expectedDepth = 1
+	let previousDepth = 1
+
+	for (let i = 0; i < headings.length; i++) {
+		const heading = headings[i]
+
+		// Skip H1 (title)
+		if (heading.depth === 1) {
+			expectedDepth = 2
+			previousDepth = 1
+			continue
+		}
+
+		// Check for skipped levels
+		if (heading.depth > expectedDepth + 1) {
+			issues.push({
+				type: "error",
+				message: `Heading level ${heading.depth} skips level ${expectedDepth + 1}. Use proper heading hierarchy.`,
+				line: heading.line,
+				column: 1,
+				rule: "kilocode-heading-hierarchy",
+				suggestion: `Change to H${expectedDepth + 1} or add intermediate headings`,
+			})
+		}
+
+		// Check for heading depth consistency
+		if (i > 0 && heading.depth > previousDepth + 1) {
+			warnings.push({
+				type: "warning",
+				message: `Heading depth increased too quickly from H${previousDepth} to H${heading.depth}`,
+				line: heading.line,
+				column: 1,
+				rule: "kilocode-heading-progression",
+				suggestion: "Consider a more gradual progression in heading levels",
+			})
+		}
+
+		// Update expected depth
+		if (heading.depth <= expectedDepth) {
+			expectedDepth = heading.depth + 1
+		}
+		previousDepth = heading.depth
+	}
+}
+
+/**
+ * Validate section lengths
+ */
+function validateSectionLengths(structure, issues, warnings, file) {
+	const minLengths = { h2: 50, h3: 30, h4: 20, h5: 15, h6: 10 }
+	const maxLengths = { h2: 2000, h3: 1000, h4: 500, h5: 300, h6: 200 }
+
+	for (const heading of structure.headings) {
+		if (heading.depth === 1) continue // Skip title
+
+		const headingLevel = `h${heading.depth}`
+		const minLength = minLengths[headingLevel] || 10
+		const maxLength = maxLengths[headingLevel] || 200
+
+		// Estimate section length (this is a simplified approach)
+		const estimatedLength = heading.text.length * 10 // Rough estimate
+
+		if (estimatedLength < minLength) {
+			warnings.push({
+				type: "warning",
+				message: `Section "${heading.text}" appears too short (estimated ${estimatedLength} words, minimum ${minLength})`,
+				line: heading.line,
+				column: 1,
+				rule: "kilocode-section-length",
+				suggestion: "Consider expanding this section or combining it with related content",
+			})
+		}
+
+		if (estimatedLength > maxLength) {
+			warnings.push({
+				type: "warning",
+				message: `Section "${heading.text}" appears too long (estimated ${estimatedLength} words, maximum ${maxLength})`,
+				line: heading.line,
+				column: 1,
+				rule: "kilocode-section-length",
+				suggestion: "Consider breaking this section into multiple subsections",
+			})
+		}
+	}
+}
+
+/**
+ * Validate section naming consistency
+ */
+function validateSectionNaming(headings, issues, warnings, file) {
+	const sectionNames = headings.map(h => h.text.toLowerCase())
+	
+	// Check for duplicate section names
+	const duplicates = sectionNames.filter((name, index) => 
+		sectionNames.indexOf(name) !== index
+	)
+	
+	if (duplicates.length > 0) {
+		warnings.push({
+			type: "warning",
+			message: `Duplicate section names found: ${[...new Set(duplicates)].join(', ')}`,
+			line: 1,
+			column: 1,
+			rule: "kilocode-duplicate-sections",
+			suggestion: "Use unique, descriptive names for each section",
+		})
+	}
+
+	// Check for non-descriptive section names
+	const nonDescriptivePatterns = [
+		/^(section|part|chapter|step)\s*\d*$/i,
+		/^(intro|conclusion|summary)$/i,
+		/^(more|other|additional)$/i
+	]
+
+	for (const heading of headings) {
+		if (heading.depth === 1) continue // Skip title
+
+		for (const pattern of nonDescriptivePatterns) {
+			if (pattern.test(heading.text)) {
+				warnings.push({
+					type: "warning",
+					message: `Section "${heading.text}" has a non-descriptive name`,
+					line: heading.line,
+					column: 1,
+					rule: "kilocode-section-naming",
+					suggestion: "Use a more descriptive name that clearly indicates the section content",
+				})
+				break
+			}
+		}
+	}
+}
+
+/**
+ * Validate required sections for document type
+ */
+function validateRequiredSections(structure, issues, warnings, file, relativePath) {
+	// Determine document type
+	let documentType = 'general'
+	if (relativePath.includes('context/') || relativePath.includes('plans/')) {
+		documentType = 'planning'
+	} else if (relativePath.includes('architecture/') || relativePath.includes('api/')) {
+		documentType = 'technical'
+	} else if (relativePath.includes('README') || relativePath.includes('getting-started')) {
+		documentType = 'navigation'
+	}
+
+	// Define required sections for each document type
+	const requiredSections = {
+		navigation: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation'],
+		technical: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation'],
+		planning: ['When You\'re Here', 'Research Context', 'Progress Summary', 'Success Criteria', 'No Dead Ends Policy', 'Navigation'],
+		general: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation']
+	}
+
+	const documentRequiredSections = requiredSections[documentType] || requiredSections.general
+	const existingSections = structure.headings.map(h => h.text)
+
+	for (const requiredSection of documentRequiredSections) {
+		const hasSection = existingSections.some(section => 
+			section.toLowerCase().includes(requiredSection.toLowerCase())
+		)
+
+		if (!hasSection) {
+			issues.push({
+				type: "error",
+				message: `Document must include "${requiredSection}" section`,
+				line: 1,
+				column: 1,
+				rule: "kilocode-required-section",
+				suggestion: `Add a "${requiredSection}" section following the document template`,
+			})
+		}
 	}
 }
 
