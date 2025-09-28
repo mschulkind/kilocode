@@ -113,6 +113,23 @@ The current system uses multiple validation layers:
 4. **Context-Agnostic Rules**: Same rules applied regardless of document type or purpose
 5. **Threshold Sensitivity**: Quality metrics thresholds too strict for certain document types
 
+### Major System Issues (From Documentation Formatting Analysis)
+
+1. **High Complexity and Maintenance Overhead**
+   - **Issue**: 7 plugins in .remarkrc configuration, 2 custom plugins with overlapping functionality, 5+ validation scripts with different purposes
+   - **Impact**: Difficult to maintain, understand, and debug
+   - **Solution**: Consolidate plugins, simplify configuration, reduce custom tooling
+
+2. **False Positives from Standard Rules**
+   - **Issue**: `remark-lint-no-undefined-references` flags template placeholders like `[brief description of what this document covers]`
+   - **Impact**: High false positive rate, developer frustration
+   - **Solution**: Configure rule to ignore template placeholders, use ignore patterns
+
+4. **Inconsistent Standards and Overlapping Rules**
+   - **Issue**: Standards and comprehensive plugins have duplicate rules with different severity levels, custom requirements conflict with standard markdown practices
+   - **Impact**: Confusing validation output, inconsistent behavior
+   - **Solution**: Consolidate duplicate rules, align with standard markdown practices, use single severity level per rule
+
 ## Root Cause Analysis
 
 ### 1. Cross-Reference Validation Issues
