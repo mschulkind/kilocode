@@ -1,29 +1,33 @@
 # How Linter Names Make It to the `docs:validate` Output
-
 ## Table of Contents
-- [How Linter Names Make It to the ](#how-linter-names-make-it-to-the)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Command Flow](#command-flow)
-- [1. Command Execution](#1-command-execution)
-- [2. Validation Script](#2-validation-script)
-- [3. Remark Configuration](#3-remark-configuration)
-- [Linter Categories and Names](#linter-categories-and-names)
-- [1. Built-in Remark-Lint Plugins](#1-built-in-remark-lint-plugins)
-- [2. Link Validation Plugin](#2-link-validation-plugin)
-- [3. Custom KiloCode Plugins](#3-custom-kilocode-plugins)
-- [A. ](#a)
-- [B. ](#b)
-- [How Linter Names Are Set](#how-linter-names-are-set)
-- [1. Built-in Plugins](#1-built-in-plugins)
-- [2. Custom Plugins](#2-custom-plugins)
-- [3. Link Validation](#3-link-validation)
-- [Output Format Structure](#output-format-structure)
-- [Plugin Execution Order](#plugin-execution-order)
-- [Key Points](#key-points)
-- [Troubleshooting](#troubleshooting)
-- [Related Files](#related-files)
-- [Navigation](#navigation)
+
+- [How Linter Names Make It to the ](#how-linter-names-make-it-to-the-)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Overview](#overview)
+  - [Command Flow](#command-flow)
+    - [1. Command Execution](#1-command-execution)
+    - [2. Validation Script](#2-validation-script)
+    - [3. Remark Configuration](#3-remark-configuration)
+  - [Linter Categories and Names](#linter-categories-and-names)
+    - [1. Built-in Remark-Lint Plugins](#1-builtin-remarklint-plugins)
+    - [2. Link Validation Plugin](#2-link-validation-plugin)
+    - [3. Custom KiloCode Plugins](#3-custom-kilocode-plugins)
+      - [A. ](#a-)
+      - [B. ](#b-)
+  - [How Linter Names Are Set](#how-linter-names-are-set)
+    - [1. Built-in Plugins](#1-builtin-plugins)
+    - [2. Custom Plugins](#2-custom-plugins)
+    - [3. Link Validation](#3-link-validation)
+  - [Output Format Structure](#output-format-structure)
+  - [Plugin Execution Order](#plugin-execution-order)
+  - [Key Points](#key-points)
+  - [Troubleshooting](#troubleshooting)
+  - [Related Files](#related-files)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

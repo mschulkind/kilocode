@@ -1,19 +1,23 @@
 # Race Condition Analysis Documentation
-
 ## Table of Contents
+
 - [Race Condition Analysis Documentation](#race-condition-analysis-documentation)
-- [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#navigation-guide)
-- [Research Context](#research-context)
-- [Quick Start Paths](#quick-start-paths)
-- [Current Focus](#current-focus)
-- [📚 Documentation Structure](#documentation-structure)
-- [🔗 Cross-References](#cross-references)
-- [🦕 Dinosaur Analogy](#dinosaur-analogy)
-- [🧭 Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Example](#example)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [🗺️ Navigation Guide](#-navigation-guide)
+  - [Research Context](#research-context)
+    - [Quick Start Paths](#quick-start-paths)
+    - [Current Focus](#current-focus)
+  - [📚 Documentation Structure](#-documentation-structure)
+  - [🔗 Cross-References](#-crossreferences)
+  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+  - [🧭 Navigation Footer](#-navigation-footer)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+    - [Example](#example)
+
+
+
 
 ## When You're Here
 

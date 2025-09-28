@@ -1,6 +1,47 @@
 # Validation System Documentation
-
 ## Table of Contents
+
+- [Validation System Documentation](#validation-system-documentation)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+    - [Technical Overview](#technical-overview)
+    - [Background](#background)
+    - [Methodology](#methodology)
+  - [Overview](#overview)
+    - [Core Components](#core-components)
+    - [Plugin Integration](#plugin-integration)
+    - [Enhanced Cross-Reference Validation](#enhanced-crossreference-validation)
+    - [Intelligent Document Type Detection](#intelligent-document-type-detection)
+    - [Context-Aware Orphaned Sections Detection](#contextaware-orphaned-sections-detection)
+    - [Performance Optimization](#performance-optimization)
+    - [Basic Usage](#basic-usage)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Performance Monitoring](#performance-monitoring)
+    - [Validation Rules](#validation-rules)
+    - [Performance Configuration](#performance-configuration)
+    - [CrossReferenceValidator](#crossreferencevalidator)
+    - [FileIndexBuilder](#fileindexbuilder)
+    - [DocumentTypeDetector](#documenttypedetector)
+    - [OrphanedSectionsDetector](#orphanedsectionsdetector)
+    - [ValidationRuleConfig](#validationruleconfig)
+    - [PerformanceMonitor](#performancemonitor)
+    - [PerformanceOptimizer](#performanceoptimizer)
+  - [Performance Requirements](#performance-requirements)
+    - [Document Organization](#document-organization)
+    - [Performance Optimization](#performance-optimization)
+    - [Validation Rules](#validation-rules)
+    - [Common Issues](#common-issues)
+    - [Debug Mode](#debug-mode)
+    - [From Legacy Validation System](#from-legacy-validation-system)
+    - [Configuration Migration](#configuration-migration)
+    - [Development Setup](#development-setup)
+    - [Adding New Validation Rules](#adding-new-validation-rules)
+    - [Performance Optimization](#performance-optimization)
+  - [Navigation](#navigation)
+
+
+
 
 🔍 **Did You Know**: [Interesting insight]
 

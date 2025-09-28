@@ -1,26 +1,30 @@
 # Repository Overview
-
 ## Table of Contents
+
 - [Repository Overview](#repository-overview)
-- [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#navigation-guide)
-- [Research Context](#research-context)
-- [Quick Start Paths](#quick-start-paths)
-- [Current Focus](#current-focus)
-- [📚 Documentation Structure](#documentation-structure)
-- [Core Documentation](#core-documentation)
-- [Development & Infrastructure](#development-infrastructure)
-- [Executive Summary](#executive-summary)
-- [Quick Reference](#quick-reference)
-- [Repository Structure](#repository-structure)
-- [Core Systems](#core-systems)
-- [Development Workflow](#development-workflow)
-- [🔗 Cross-References](#cross-references)
-- [🦕 Dinosaur Analogy](#dinosaur-analogy)
-- [🧭 Navigation Footer](#navigation-footer)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Example](#example)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [🗺️ Navigation Guide](#-navigation-guide)
+  - [Research Context](#research-context)
+    - [Quick Start Paths](#quick-start-paths)
+    - [Current Focus](#current-focus)
+  - [📚 Documentation Structure](#-documentation-structure)
+    - [Core Documentation](#core-documentation)
+    - [Development & Infrastructure](#development-infrastructure)
+  - [Executive Summary](#executive-summary)
+  - [Quick Reference](#quick-reference)
+    - [Repository Structure](#repository-structure)
+    - [Core Systems](#core-systems)
+    - [Development Workflow](#development-workflow)
+  - [🔗 Cross-References](#-crossreferences)
+  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+  - [🧭 Navigation Footer](#-navigation-footer)
+  - [Navigation Footer](#navigation-footer)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+    - [Example](#example)
+
+
+
 
 ## When You're Here
 

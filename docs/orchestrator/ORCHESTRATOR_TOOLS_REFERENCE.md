@@ -1,24 +1,28 @@
 # Orchestrator Tools Reference
-
 ## Table of Contents
+
 - [Orchestrator Tools Reference](#orchestrator-tools-reference)
-- [Related Documents](#related-documents)
-- [Tool Philosophy](#tool-philosophy)
-- [Core Task Flow Tools](#core-task-flow-tools)
-- [attemptCompletionTool](#attemptcompletiontool)
-- [Task Management Tools](#task-management-tools)
-- [newTaskTool](#newtasktool)
-- [switchModeTool](#switchmodetool)
-- [startSubtask](#startsubtask)
-- [User Interaction Tools](#user-interaction-tools)
-- [askFollowupQuestionTool](#askfollowupquestiontool)
-- [State & Planning Tools](#state-planning-tools)
-- [updateTodoListTool](#updatetodolisttool)
-- [File System Tools](#file-system-tools)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+    - [Related Documents](#related-documents)
+    - [Tool Philosophy](#tool-philosophy)
+    - [Core Task Flow Tools](#core-task-flow-tools)
+      - [attemptCompletionTool](#attemptcompletiontool)
+    - [Task Management Tools](#task-management-tools)
+      - [newTaskTool](#newtasktool)
+      - [switchModeTool](#switchmodetool)
+      - [startSubtask](#startsubtask)
+    - [User Interaction Tools](#user-interaction-tools)
+      - [askFollowupQuestionTool](#askfollowupquestiontool)
+    - [State & Planning Tools](#state-planning-tools)
+      - [updateTodoListTool](#updatetodolisttool)
+    - [File System Tools](#file-system-tools)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+    - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻

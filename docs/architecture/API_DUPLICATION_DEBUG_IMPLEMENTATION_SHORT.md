@@ -1,28 +1,31 @@
 # API Duplication Debug Implementation (Short)
-
 ## Table of Contents
+
 - [API Duplication Debug Implementation (Short)](#api-duplication-debug-implementation-short)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Table of Contents](#table-of-contents)
-- [Quick Implementation](#quick-implementation)
-- [Step 1: Request ID Generation](#step-1-request-id-generation)
-- [Step 2: Basic Logging](#step-2-basic-logging)
-- [Step 3: Duplicate Detection](#step-3-duplicate-detection)
-- [Essential Logging](#essential-logging)
-- [Request Entry Points](#request-entry-points)
-- [Key Metrics](#key-metrics)
-- [Log Format](#log-format)
-- [Verification Steps](#verification-steps)
-- [Step 1: Enable Logging](#step-1-enable-logging)
-- [Step 2: Reproduce Issue](#step-2-reproduce-issue)
-- [Step 3: Analyze Results](#step-3-analyze-results)
-- [Step 4: Validate Fix](#step-4-validate-fix)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Quick Fixes](#quick-fixes)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+  - [Quick Implementation](#quick-implementation)
+    - [Step 1: Request ID Generation](#step-1-request-id-generation)
+    - [Step 2: Basic Logging](#step-2-basic-logging)
+    - [Step 3: Duplicate Detection](#step-3-duplicate-detection)
+  - [Essential Logging](#essential-logging)
+    - [Request Entry Points](#request-entry-points)
+    - [Key Metrics](#key-metrics)
+    - [Log Format](#log-format)
+  - [Verification Steps](#verification-steps)
+    - [Step 1: Enable Logging](#step-1-enable-logging)
+    - [Step 2: Reproduce Issue](#step-2-reproduce-issue)
+    - [Step 3: Analyze Results](#step-3-analyze-results)
+    - [Step 4: Validate Fix](#step-4-validate-fix)
+  - [Troubleshooting](#troubleshooting)
+    - [Common Issues](#common-issues)
+    - [Quick Fixes](#quick-fixes)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

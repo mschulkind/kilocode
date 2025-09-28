@@ -1,29 +1,32 @@
 # \[General Document Title]
-
 ## Table of Contents
-- [\[General Document Title\]](#general-document-title)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Overview](#overview)
-- [Background](#background)
-- [Key Points](#key-points)
-- [Context](#context)
-- [Table of Contents](#table-of-contents)
-- [Main Topic 1](#main-topic-1)
-- [Subsection 1.1](#subsection-11)
-- [Subsection 1.2](#subsection-12)
-- [Main Topic 2](#main-topic-2)
-- [Subsection 2.1](#subsection-21)
-- [Subsection 2.2](#subsection-22)
-- [Main Topic 3](#main-topic-3)
-- [Subsection 3.1](#subsection-31)
-- [Subsection 3.2](#subsection-32)
-- [Additional Information](#additional-information)
-- [Related Topics](#related-topics)
-- [Further Reading](#further-reading)
-- [Contact Information](#contact-information)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+
+- [[General Document Title]](#general-document-title)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+    - [Overview](#overview)
+    - [Background](#background)
+    - [Key Points](#key-points)
+    - [Context](#context)
+  - [Main Topic 1](#main-topic-1)
+    - [Subsection 1.1](#subsection-11)
+    - [Subsection 1.2](#subsection-12)
+  - [Main Topic 2](#main-topic-2)
+    - [Subsection 2.1](#subsection-21)
+    - [Subsection 2.2](#subsection-22)
+  - [Main Topic 3](#main-topic-3)
+    - [Subsection 3.1](#subsection-31)
+    - [Subsection 3.2](#subsection-32)
+  - [Additional Information](#additional-information)
+    - [Related Topics](#related-topics)
+    - [Further Reading](#further-reading)
+    - [Contact Information](#contact-information)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

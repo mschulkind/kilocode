@@ -1,25 +1,28 @@
 # Integrations Documentation
-
 ## Table of Contents
+
 - [Integrations Documentation](#integrations-documentation)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Table of Contents](#table-of-contents)
-- [Integration Overview](#integration-overview)
-- [Quick Start Guide](#quick-start-guide)
-- [For Developers](#for-developers)
-- [For System Administrators](#for-system-administrators)
-- [Documentation Structure](#documentation-structure)
-- [Core Integration Documents](#core-integration-documents)
-- [Integration Relationships](#integration-relationships)
-- [Current Focus Areas](#current-focus-areas)
-- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
-- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
-- [Cross-References](#cross-references)
-- [Related Documentation](#related-documentation)
-- [Implementation Context](#implementation-context)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+  - [Integration Overview](#integration-overview)
+  - [Quick Start Guide](#quick-start-guide)
+    - [For Developers](#for-developers)
+    - [For System Administrators](#for-system-administrators)
+  - [Documentation Structure](#documentation-structure)
+    - [Core Integration Documents](#core-integration-documents)
+    - [Integration Relationships](#integration-relationships)
+  - [Current Focus Areas](#current-focus-areas)
+    - [Immediate Priorities (Week 1-2)](#immediate-priorities-week-12)
+    - [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-13)
+  - [Cross-References](#crossreferences)
+    - [Related Documentation](#related-documentation)
+    - [Implementation Context](#implementation-context)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

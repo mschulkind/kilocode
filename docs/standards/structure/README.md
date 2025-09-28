@@ -1,20 +1,23 @@
 # Document Structure 🏗️
-
 ## Table of Contents
-- [Document Structure 🏗️](#document-structure)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Document Anatomy](#document-anatomy)
-- [Headings & Hierarchy](#headings-hierarchy)
-- [Table of Contents](#table-of-contents)
-- [Navigation Footer](#navigation-footer)
-- [Structure Validation](#structure-validation)
-- [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
-- [Complete Document Example](#complete-document-example)
-- [Minimal Document Example](#minimal-document-example)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+- [Document Structure 🏗️](#document-structure-)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Executive Summary](#executive-summary)
+  - [Research Context](#research-context)
+  - [Document Anatomy](#document-anatomy)
+  - [Headings & Hierarchy](#headings-hierarchy)
+  - [Navigation Footer](#navigation-footer)
+  - [Structure Validation](#structure-validation)
+  - [Common Mistakes](#common-mistakes)
+  - [Implementation Examples](#implementation-examples)
+    - [Complete Document Example](#complete-document-example)
+    - [Minimal Document Example](#minimal-document-example)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+
+
+
 
 ## When You're Here
 

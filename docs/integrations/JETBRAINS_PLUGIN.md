@@ -1,30 +1,33 @@
 # JetBrains Plugin
-
 ## Table of Contents
+
 - [JetBrains Plugin](#jetbrains-plugin)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Table of Contents](#table-of-contents)
-- [Plugin Overview](#plugin-overview)
-- [System Architecture](#system-architecture)
-- [Key Components](#key-components)
-- [Host Application](#host-application)
-- [Plugin Implementation](#plugin-implementation)
-- [Communication Bridge](#communication-bridge)
-- [Build System](#build-system)
-- [Installation and Setup](#installation-and-setup)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration](#configuration)
-- [Usage Guide](#usage-guide)
-- [Basic Operations](#basic-operations)
-- [IDE Integration](#ide-integration)
-- [Advanced Features](#advanced-features)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+  - [Plugin Overview](#plugin-overview)
+  - [System Architecture](#system-architecture)
+  - [Key Components](#key-components)
+    - [Host Application](#host-application)
+    - [Plugin Implementation](#plugin-implementation)
+    - [Communication Bridge](#communication-bridge)
+    - [Build System](#build-system)
+  - [Installation and Setup](#installation-and-setup)
+    - [Prerequisites](#prerequisites)
+    - [Installation Steps](#installation-steps)
+    - [Configuration](#configuration)
+  - [Usage Guide](#usage-guide)
+    - [Basic Operations](#basic-operations)
+    - [IDE Integration](#ide-integration)
+    - [Advanced Features](#advanced-features)
+  - [Troubleshooting](#troubleshooting)
+    - [Common Issues](#common-issues)
+    - [Debug Mode](#debug-mode)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

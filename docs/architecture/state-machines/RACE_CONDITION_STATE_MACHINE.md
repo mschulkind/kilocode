@@ -1,27 +1,31 @@
 # Race Condition State Machine
-
 ## Table of Contents
+
 - [Race Condition State Machine](#race-condition-state-machine)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [Race Condition States](#race-condition-states)
-- [State Descriptions](#state-descriptions)
-- [NormalExecution State](#normalexecution-state)
-- [RaceCondition State](#racecondition-state)
-- [SynchronizedExecution State](#synchronizedexecution-state)
-- [Race Condition Detection](#race-condition-detection)
-- [Synchronization Implementation](#synchronization-implementation)
-- [State Transition Triggers](#state-transition-triggers)
-- [NormalExecution → RaceCondition](#normalexecution-racecondition)
-- [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
-- [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
-- [Monitoring and Debugging](#monitoring-and-debugging)
-- [Key States](#key-states)
-- [Prevention Strategies](#prevention-strategies)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Research Context](#research-context)
+  - [Race Condition States](#race-condition-states)
+  - [State Descriptions](#state-descriptions)
+    - [NormalExecution State](#normalexecution-state)
+    - [RaceCondition State](#racecondition-state)
+    - [SynchronizedExecution State](#synchronizedexecution-state)
+  - [Race Condition Detection](#race-condition-detection)
+  - [Synchronization Implementation](#synchronization-implementation)
+  - [State Transition Triggers](#state-transition-triggers)
+    - [NormalExecution → RaceCondition](#normalexecution-racecondition)
+    - [RaceCondition → SynchronizedExecution](#racecondition-synchronizedexecution)
+    - [SynchronizedExecution → NormalExecution](#synchronizedexecution-normalexecution)
+  - [Monitoring and Debugging](#monitoring-and-debugging)
+  - [Key States](#key-states)
+  - [Prevention Strategies](#prevention-strategies)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻

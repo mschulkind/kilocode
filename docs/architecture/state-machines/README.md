@@ -1,17 +1,21 @@
 # State Machines Documentation 🦕
-
 ## Table of Contents
-- [State Machines Documentation 🦕](#state-machines-documentation)
-- [When You're Here](#when-youre-here)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [Start Here](#start-here)
-- [Core State Machines](#core-state-machines)
-- [Combined and Specialized](#combined-and-specialized)
-- [Related documentation](#related-documentation)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Example](#example)
+
+- [State Machines Documentation 🦕](#state-machines-documentation-)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Overview](#overview)
+  - [Research Context](#research-context)
+  - [Start Here](#start-here)
+  - [Core State Machines](#core-state-machines)
+  - [Combined and Specialized](#combined-and-specialized)
+  - [Related documentation](#related-documentation)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+    - [Example](#example)
+
+
+
 
 ## When You're Here
 

@@ -1,25 +1,29 @@
 # Documentation Automation Setup Guide
-
 ## Table of Contents
+
 - [Documentation Automation Setup Guide](#documentation-automation-setup-guide)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Technical Overview](#technical-overview)
-- [Background](#background)
-- [Methodology](#methodology)
-- [Overview](#overview)
-- [Usage](#usage)
-- [Available Scripts](#available-scripts)
-- [Basic Validation](#basic-validation)
-- [Auto-fixing Issues](#auto-fixing-issues)
-- [Pre-commit Hooks](#pre-commit-hooks)
-- [CI/CD Pipeline](#cicd-pipeline)
-- [GitHub Actions Workflow](#github-actions-workflow)
-- [Workflow Features](#workflow-features)
-- [IDE Integration](#ide-integration)
-- [Common Issues](#common-issues)
-- [Getting Help](#getting-help)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+    - [Technical Overview](#technical-overview)
+    - [Background](#background)
+    - [Methodology](#methodology)
+  - [Overview](#overview)
+  - [Usage](#usage)
+    - [Available Scripts](#available-scripts)
+    - [Basic Validation](#basic-validation)
+    - [Auto-fixing Issues](#autofixing-issues)
+    - [Pre-commit Hooks](#precommit-hooks)
+    - [CI/CD Pipeline](#cicd-pipeline)
+      - [GitHub Actions Workflow](#github-actions-workflow)
+      - [Workflow Features](#workflow-features)
+    - [IDE Integration](#ide-integration)
+    - [Common Issues](#common-issues)
+    - [Getting Help](#getting-help)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 ## When You're Here
 

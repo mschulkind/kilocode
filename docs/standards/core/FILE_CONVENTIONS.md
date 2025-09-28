@@ -1,20 +1,24 @@
 # File & Directory Conventions 📁
-
 ## Table of Contents
-- [File & Directory Conventions 📁](#file-directory-conventions)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Filename Standards](#filename-standards)
-- [Directory Structure](#directory-structure)
-- [Index File Conventions](#index-file-conventions)
-- [Naming Patterns](#naming-patterns)
-- [Organization Principles](#organization-principles)
-- [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
-- [Navigation Footer](#navigation-footer)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+- [File & Directory Conventions 📁](#file-directory-conventions-)
+  - [Table of Contents](#table-of-contents)
+  - [Executive Summary](#executive-summary)
+  - [Research Context](#research-context)
+  - [Filename Standards](#filename-standards)
+  - [Directory Structure](#directory-structure)
+  - [Index File Conventions](#index-file-conventions)
+  - [Naming Patterns](#naming-patterns)
+  - [Organization Principles](#organization-principles)
+  - [Common Mistakes](#common-mistakes)
+  - [Implementation Examples](#implementation-examples)
+  - [Navigation Footer](#navigation-footer)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️

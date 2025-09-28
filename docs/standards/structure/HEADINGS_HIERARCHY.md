@@ -1,22 +1,26 @@
 # Headings & Hierarchy 📋
-
 ## Table of Contents
-- [Headings & Hierarchy 📋](#headings-hierarchy)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Hierarchy Rules](#hierarchy-rules)
-- [Heading Case Standards](#heading-case-standards)
-- [Single H1 Rule](#single-h1-rule)
-- [H4 Usage Guidelines](#h4-usage-guidelines)
-- [Hierarchy Validation](#hierarchy-validation)
-- [Common Mistakes](#common-mistakes)
-- [Implementation Examples](#implementation-examples)
-- [Complete Hierarchy Example](#complete-hierarchy-example)
-- [Minimal Hierarchy Example](#minimal-hierarchy-example)
-- [Navigation Footer](#navigation-footer)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+- [Headings & Hierarchy 📋](#headings-hierarchy-)
+  - [Table of Contents](#table-of-contents)
+  - [Executive Summary](#executive-summary)
+  - [Research Context](#research-context)
+  - [Hierarchy Rules](#hierarchy-rules)
+  - [Heading Case Standards](#heading-case-standards)
+  - [Single H1 Rule](#single-h1-rule)
+  - [H4 Usage Guidelines](#h4-usage-guidelines)
+  - [Hierarchy Validation](#hierarchy-validation)
+  - [Common Mistakes](#common-mistakes)
+  - [Implementation Examples](#implementation-examples)
+    - [Complete Hierarchy Example](#complete-hierarchy-example)
+    - [Minimal Hierarchy Example](#minimal-hierarchy-example)
+  - [Navigation Footer](#navigation-footer)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️

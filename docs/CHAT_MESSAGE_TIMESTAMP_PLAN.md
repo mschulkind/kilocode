@@ -1,35 +1,36 @@
 # CHAT MESSAGE TIMESTAMP PLAN
-
 ## Table of Contents
+
 - [CHAT MESSAGE TIMESTAMP PLAN](#chat-message-timestamp-plan)
-- [Executive summary](#executive-summary)
-- [Goals](#goals)
-- [Non-goals](#non-goals)
-- [Current state](#current-state)
-- [Requirements](#requirements)
-- [Functional requirements](#functional-requirements)
-- [Non-functional requirements](#non-functional-requirements)
-- [Data model](#data-model)
-- [Timestamp generation & normalization](#timestamp-generation-normalization)
-- [Event timeline instrumentation](#event-timeline-instrumentation)
-- [UI rendering](#ui-rendering)
-- [Persistence & rehydration](#persistence-rehydration)
-- [Edge cases](#edge-cases)
-- [Formatting rules](#formatting-rules)
-- [Instrumentation & logging](#instrumentation-logging)
-- [Testing strategy](#testing-strategy)
-- [Migration plan](#migration-plan)
-- [Risks & mitigations](#risks-mitigations)
-- [| Risk                     | Mitigation
-    |
-    | ------------------------ |](#risk-mitigation)
-- [Open questions](#open-questions)
-- [Acceptance criteria](#acceptance-criteria)
-- [Change log](#change-log)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [Executive summary](#executive-summary)
+  - [Goals](#goals)
+  - [Non-goals](#nongoals)
+  - [Current state](#current-state)
+  - [Requirements](#requirements)
+    - [Functional requirements](#functional-requirements)
+    - [Non-functional requirements](#nonfunctional-requirements)
+  - [Data model](#data-model)
+  - [Timestamp generation & normalization](#timestamp-generation-normalization)
+  - [Event timeline instrumentation](#event-timeline-instrumentation)
+  - [UI rendering](#ui-rendering)
+  - [Persistence & rehydration](#persistence-rehydration)
+  - [Edge cases](#edge-cases)
+  - [Formatting rules](#formatting-rules)
+  - [Instrumentation & logging](#instrumentation-logging)
+  - [Testing strategy](#testing-strategy)
+  - [Migration plan](#migration-plan)
+  - [Risks & mitigations](#risks-mitigations)
+  - [Open questions](#open-questions)
+  - [Acceptance criteria](#acceptance-criteria)
+  - [Change log](#change-log)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧

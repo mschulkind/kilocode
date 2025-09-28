@@ -1,17 +1,21 @@
 # Orchestrator Task Delegation
-
 ## Table of Contents
+
 - [Orchestrator Task Delegation](#orchestrator-task-delegation)
-- [Related Documents](#related-documents)
-- [The Philosophy of Delegation](#the-philosophy-of-delegation)
-- [The Subtask Mechanism](#the-subtask-mechanism)
-- [Subtask Workflow Diagram](#subtask-workflow-diagram)
-- [Key Symbols and Their Roles](#key-symbols-and-their-roles)
-- [When to Use Subtasks](#when-to-use-subtasks)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+    - [Related Documents](#related-documents)
+    - [The Philosophy of Delegation](#the-philosophy-of-delegation)
+    - [The Subtask Mechanism](#the-subtask-mechanism)
+    - [Subtask Workflow Diagram](#subtask-workflow-diagram)
+    - [Key Symbols and Their Roles](#key-symbols-and-their-roles)
+    - [When to Use Subtasks](#when-to-use-subtasks)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+    - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️

@@ -1,25 +1,29 @@
 # Recursive Call State Machine
-
 ## Table of Contents
+
 - [Recursive Call State Machine](#recursive-call-state-machine)
-- [Overview](#overview)
-- [Research Context](#research-context)
-- [🗺️ Navigation](#navigation)
-- [Quick Links](#quick-links)
-- [Key Concepts](#key-concepts)
-- [Recursive Call States](#recursive-call-states)
-- [Recursive Call State Properties](#recursive-call-state-properties)
-- [State Transition Diagram](#state-transition-diagram)
-- [Race Condition Detection](#race-condition-detection)
-- [3-Request Race Condition](#3-request-race-condition)
-- [Synchronization States](#synchronization-states)
-- [State Machine Implementation](#state-machine-implementation)
-- [Key States](#key-states)
-- [Race Condition Prevention](#race-condition-prevention)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Research Context](#research-context)
+  - [🗺️ Navigation](#-navigation)
+    - [Quick Links](#quick-links)
+    - [Key Concepts](#key-concepts)
+  - [Recursive Call States](#recursive-call-states)
+  - [Recursive Call State Properties](#recursive-call-state-properties)
+  - [State Transition Diagram](#state-transition-diagram)
+  - [Race Condition Detection](#race-condition-detection)
+    - [3-Request Race Condition](#3request-race-condition)
+  - [Synchronization States](#synchronization-states)
+  - [State Machine Implementation](#state-machine-implementation)
+  - [Key States](#key-states)
+  - [Race Condition Prevention](#race-condition-prevention)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️

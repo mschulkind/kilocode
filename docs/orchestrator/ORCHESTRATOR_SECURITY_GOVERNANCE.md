@@ -1,17 +1,21 @@
 # Orchestrator Security & Governance
-
 ## Table of Contents
+
 - [Orchestrator Security & Governance](#orchestrator-security-governance)
-- [Related Documents](#related-documents)
-- [Security Philosophy](#security-philosophy)
-- [Modes as a Security Boundary](#modes-as-a-security-boundary)
-- [Tool Permissioning](#tool-permissioning)
-- [File Access Control](#file-access-control)
-- [Governance Workflow Diagram](#governance-workflow-diagram)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+    - [Related Documents](#related-documents)
+    - [Security Philosophy](#security-philosophy)
+    - [Modes as a Security Boundary](#modes-as-a-security-boundary)
+    - [Tool Permissioning](#tool-permissioning)
+    - [File Access Control](#file-access-control)
+    - [Governance Workflow Diagram](#governance-workflow-diagram)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+    - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️

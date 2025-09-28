@@ -1,18 +1,22 @@
 # Engagement & Accessibility Standards
-
 ## Table of Contents
+
 - [Engagement & Accessibility Standards](#engagement-accessibility-standards)
-- [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#navigation-guide)
-- [Research Context](#research-context)
-- [Quick Start Paths](#quick-start-paths)
-- [Current Focus](#current-focus)
-- [📚 Documentation Structure](#documentation-structure)
-- [🔗 Cross-References](#cross-references)
-- [🦕 Dinosaur Analogy](#dinosaur-analogy)
-- [🧭 Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [🗺️ Navigation Guide](#-navigation-guide)
+  - [Research Context](#research-context)
+    - [Quick Start Paths](#quick-start-paths)
+    - [Current Focus](#current-focus)
+  - [📚 Documentation Structure](#-documentation-structure)
+  - [🔗 Cross-References](#-crossreferences)
+  - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
+  - [🧭 Navigation Footer](#-navigation-footer)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

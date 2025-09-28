@@ -1,16 +1,20 @@
 # Orchestrator Extensibility
-
 ## Table of Contents
+
 - [Orchestrator Extensibility](#orchestrator-extensibility)
-- [Related Documents](#related-documents)
-- [Extensibility Philosophy](#extensibility-philosophy)
-- [Adding New Tools (Gap)](#adding-new-tools-gap)
-- [Adding New Modes (Gap)](#adding-new-modes-gap)
-- [Adding Custom Rules](#adding-custom-rules)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+    - [Related Documents](#related-documents)
+    - [Extensibility Philosophy](#extensibility-philosophy)
+    - [Adding New Tools (Gap)](#adding-new-tools-gap)
+    - [Adding New Modes (Gap)](#adding-new-modes-gap)
+    - [Adding Custom Rules](#adding-custom-rules)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+    - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻

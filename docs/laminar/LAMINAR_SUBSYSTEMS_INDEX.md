@@ -1,23 +1,26 @@
 # Laminar Subsystems Index
-
 ## Table of Contents
+
 - [Laminar Subsystems Index](#laminar-subsystems-index)
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [High-Level Responsibilities](#high-level-responsibilities)
-- [Core Concepts At a Glance](#core-concepts-at-a-glance)
-- [Integration Architecture](#integration-architecture)
-- [Architecture Layers](#architecture-layers)
-- [Documentation Map](#documentation-map)
-- [Quick Reference Matrix](#quick-reference-matrix)
-- [Subsystem Flow Diagram](#subsystem-flow-diagram)
-- [Observability Principles](#observability-principles)
-- [Change Management & Versioning](#change-management-versioning)
-- [Glossary](#glossary)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [High-Level Responsibilities](#highlevel-responsibilities)
+  - [Core Concepts At a Glance](#core-concepts-at-a-glance)
+  - [Integration Architecture](#integration-architecture)
+    - [Architecture Layers](#architecture-layers)
+  - [Documentation Map](#documentation-map)
+  - [Quick Reference Matrix](#quick-reference-matrix)
+  - [Subsystem Flow Diagram](#subsystem-flow-diagram)
+  - [Observability Principles](#observability-principles)
+  - [Change Management & Versioning](#change-management-versioning)
+  - [Glossary](#glossary)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️

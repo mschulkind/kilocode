@@ -1,30 +1,33 @@
 # Editor Integration
-
 ## Table of Contents
+
 - [Editor Integration](#editor-integration)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Table of Contents](#table-of-contents)
-- [Integration Overview](#integration-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Editor Utilities](#editor-utilities)
-- [Diff Visualization](#diff-visualization)
-- [Decoration Management](#decoration-management)
-- [State Management](#state-management)
-- [Setup and Configuration](#setup-and-configuration)
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Configuration Options](#configuration-options)
-- [Usage Examples](#usage-examples)
-- [Basic Editor Operations](#basic-editor-operations)
-- [Diff Visualization](#diff-visualization)
-- [Decoration Management](#decoration-management)
-- [Troubleshooting](#troubleshooting)
-- [Common Issues](#common-issues)
-- [Debug Mode](#debug-mode)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+  - [Integration Overview](#integration-overview)
+  - [System Architecture](#system-architecture)
+  - [Key Features](#key-features)
+    - [Editor Utilities](#editor-utilities)
+    - [Diff Visualization](#diff-visualization)
+    - [Decoration Management](#decoration-management)
+    - [State Management](#state-management)
+  - [Setup and Configuration](#setup-and-configuration)
+    - [Prerequisites](#prerequisites)
+    - [Installation Steps](#installation-steps)
+    - [Configuration Options](#configuration-options)
+  - [Usage Examples](#usage-examples)
+    - [Basic Editor Operations](#basic-editor-operations)
+    - [Diff Visualization](#diff-visualization)
+    - [Decoration Management](#decoration-management)
+  - [Troubleshooting](#troubleshooting)
+    - [Common Issues](#common-issues)
+    - [Debug Mode](#debug-mode)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+
+
+
 
 ## When You're Here
 

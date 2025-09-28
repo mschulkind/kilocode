@@ -1,20 +1,24 @@
 # Orchestrator Architecture
-
 ## Table of Contents
+
 - [Orchestrator Architecture](#orchestrator-architecture)
-- [Related Documents](#related-documents)
-- [Architectural Philosophy](#architectural-philosophy)
-- [Core Components](#core-components)
-- [Data Flow Diagram](#data-flow-diagram)
-- [Component Deep Dive](#component-deep-dive)
-- [Task Engine](#task-engine)
-- [Streaming Parser](#streaming-parser)
-- [Tool Executor & Library](#tool-executor-library)
-- [Key Interactions](#key-interactions)
-- [Navigation Footer](#navigation-footer)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Table of Contents](#table-of-contents)
+    - [Related Documents](#related-documents)
+    - [Architectural Philosophy](#architectural-philosophy)
+    - [Core Components](#core-components)
+    - [Data Flow Diagram](#data-flow-diagram)
+    - [Component Deep Dive](#component-deep-dive)
+      - [Task Engine](#task-engine)
+      - [Streaming Parser](#streaming-parser)
+      - [Tool Executor & Library](#tool-executor-library)
+    - [Key Interactions](#key-interactions)
+    - [Navigation Footer](#navigation-footer)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+
+
+
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻

@@ -1,20 +1,24 @@
 # Core Principles 🎯
-
 ## Table of Contents
-- [Core Principles 🎯](#core-principles)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Purpose-Driven Documentation](#purpose-driven-documentation)
-- [Discoverable Content](#discoverable-content)
-- [Linkable Architecture](#linkable-architecture)
-- [Focused Scope](#focused-scope)
-- [Accessible Design](#accessible-design)
-- [Principle Interactions](#principle-interactions)
-- [Implementation Guidelines](#implementation-guidelines)
-- [Navigation Footer](#navigation-footer)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+- [Core Principles 🎯](#core-principles-)
+  - [Table of Contents](#table-of-contents)
+  - [Executive Summary](#executive-summary)
+  - [Research Context](#research-context)
+  - [Purpose-Driven Documentation](#purposedriven-documentation)
+  - [Discoverable Content](#discoverable-content)
+  - [Linkable Architecture](#linkable-architecture)
+  - [Focused Scope](#focused-scope)
+  - [Accessible Design](#accessible-design)
+  - [Principle Interactions](#principle-interactions)
+  - [Implementation Guidelines](#implementation-guidelines)
+  - [Navigation Footer](#navigation-footer)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️

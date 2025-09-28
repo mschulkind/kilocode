@@ -1,27 +1,31 @@
 # Provider Instance Explanation
-
 ## Table of Contents
+
 - [Provider Instance Explanation](#provider-instance-explanation)
-- [Definition](#definition)
-- [Role and Responsibilities](#role-and-responsibilities)
-- [1. Request Handling](#1-request-handling)
-- [2. Instruction Building Coordination](#2-instruction-building-coordination)
-- [3. System Integration](#3-system-integration)
-- [Position in the Architecture](#position-in-the-architecture)
-- [In the Data Flow Sequence](#in-the-data-flow-sequence)
-- [Invocation Points](#invocation-points)
-- [Key Characteristics](#key-characteristics)
-- [Lazy Loading](#lazy-loading)
-- [Central Coordination](#central-coordination)
-- [Extension Lifecycle](#extension-lifecycle)
-- [Implementation Details](#implementation-details)
-- [File Location](#file-location)
-- [Integration Points](#integration-points)
-- [Summary](#summary)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [Definition](#definition)
+  - [Role and Responsibilities](#role-and-responsibilities)
+    - [1. Request Handling](#1-request-handling)
+    - [2. Instruction Building Coordination](#2-instruction-building-coordination)
+    - [3. System Integration](#3-system-integration)
+  - [Position in the Architecture](#position-in-the-architecture)
+    - [In the Data Flow Sequence](#in-the-data-flow-sequence)
+    - [Invocation Points](#invocation-points)
+  - [Key Characteristics](#key-characteristics)
+    - [Lazy Loading](#lazy-loading)
+    - [Central Coordination](#central-coordination)
+    - [Extension Lifecycle](#extension-lifecycle)
+  - [Implementation Details](#implementation-details)
+    - [File Location](#file-location)
+    - [Integration Points](#integration-points)
+  - [Summary](#summary)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️

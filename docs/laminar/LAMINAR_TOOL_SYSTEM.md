@@ -1,34 +1,35 @@
 # Laminar Tool System Integration
-
 ## Table of Contents
+
 - [Laminar Tool System Integration](#laminar-tool-system-integration)
-- [with Laminar Tool System Kilo Code's tool execution system, providing detailed tracing and
-monitoring capabilities for tool invocations, performance metrics, and
-Integration](#with-laminar-tool-system-kilo-codes-tool-execution-system-providing-detailed-tracing-and-monitoring-capabilities-for-tool-invocations-performance-metrics-and-integration)
-- [Overview](#overview)
-- [Overview](#overview)
-- [Key Integration Points integration adds comprehensive
-observability](#key-integration-points-integration-adds-comprehensive-observability)
-- [Key Integration full context](#key-integration-full-context)
-- [Architecture](#architecture)
-- [Architecture](#architecture)
-- [Span](#span)
-- [Span 1 Span](#span-1-span)
-- [Tool Span Metadata 1](#tool-span-metadata-1)
-- [Service Layer Integration](#service-layer-integration)
-- [With Task Laminar System](#with-task-laminar-system)
-- [Performance Considerations](#performance-considerations)
-- [levels Overhead](#levels-overhead)
-- [With Authentication System](#with-authentication-system)
-- [data handling](#data-handling)
-- [Performance Considerations](#performance-considerations)
-- [Overhead Management](#overhead-management)
-- [Error Handling](#error-handling)
-- [Exception Logging\*\*: Recording](#exception-logging-recording)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+- [with Laminar Tool System Kilo Code's tool execution system, providing detailed tracing and monitoring capabilities for tool invocations, performance metrics, and Integration](#with-laminar-tool-system-kilo-codes-tool-execution-system-providing-detailed-tracing-and-monitoring-capabilities-for-tool-invocations-performance-metrics-and-integration)
+  - [Overview](#overview)
+  - [Overview](#overview)
+    - [Key Integration Points integration adds comprehensive observability](#key-integration-points-integration-adds-comprehensive-observability)
+    - [Key Integration full context](#key-integration-full-context)
+  - [Architecture](#architecture)
+  - [Architecture](#architecture)
+  - [Span](#span)
+    - [Span 1 Span](#span-1-span)
+    - [Tool Span Metadata 1](#tool-span-metadata-1)
+    - [Service Layer Integration](#service-layer-integration)
+    - [With Task Laminar System](#with-task-laminar-system)
+  - [Performance Considerations](#performance-considerations)
+    - [levels Overhead](#levels-overhead)
+    - [With Authentication System](#with-authentication-system)
+    - [data handling](#data-handling)
+  - [Performance Considerations](#performance-considerations)
+    - [Overhead Management](#overhead-management)
+  - [Error Handling](#error-handling)
+    - [Exception Logging**: Recording](#exception-logging-recording)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻

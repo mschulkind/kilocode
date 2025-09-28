@@ -1,28 +1,28 @@
 # Cleanup Proposal: Replace `catrielmuller/orchestator-load-subtask`
-
 ## Table of Contents
-- [Cleanup Proposal: Replace ](#cleanup-proposal-replace)
-- [Quick Navigation](#quick-navigation)
-- [Research Context](#research-context)
-- [Objectives](#objectives)
-- [Design Overview](#design-overview)
-- [Changes (Before → After)](#changes-before-after)
-- [1) Provider: Stop directly calling recursion; emit intent
-instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
-- [2) Task: Wrap recursion in arbiter-aware
-executor](#2-task-wrap-recursion-in-arbiter-aware-executor)
-- [3) Arbiter: Single selection with explicit
-preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
-- [4) Executor: Idempotent recursion + parent init
-intent](#4-executor-idempotent-recursion-parent-init-intent)
-- [Testing Plan](#testing-plan)
-- [Migration Plan](#migration-plan)
-- [Rollback](#rollback)
-- [Expected Outcomes](#expected-outcomes)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+
+- [Cleanup Proposal: Replace ](#cleanup-proposal-replace-)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Navigation](#quick-navigation)
+  - [Research Context](#research-context)
+  - [Objectives](#objectives)
+  - [Design Overview](#design-overview)
+  - [Changes (Before → After)](#changes-before-after)
+    - [1) Provider: Stop directly calling recursion; emit intent instead](#1-provider-stop-directly-calling-recursion-emit-intent-instead)
+    - [2) Task: Wrap recursion in arbiter-aware executor](#2-task-wrap-recursion-in-arbiteraware-executor)
+    - [3) Arbiter: Single selection with explicit preconditions](#3-arbiter-single-selection-with-explicit-preconditions)
+    - [4) Executor: Idempotent recursion + parent init intent](#4-executor-idempotent-recursion-parent-init-intent)
+  - [Testing Plan](#testing-plan)
+  - [Migration Plan](#migration-plan)
+  - [Rollback](#rollback)
+  - [Expected Outcomes](#expected-outcomes)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️

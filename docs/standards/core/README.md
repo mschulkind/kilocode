@@ -1,20 +1,24 @@
 # Core Standards 🎯
-
 ## Table of Contents
-- [Core Standards 🎯](#core-standards)
-- [When You're Here](#when-youre-here)
-- [Executive Summary](#executive-summary)
-- [Research Context](#research-context)
-- [Core Principles](#core-principles)
-- [File & Directory Conventions](#file-directory-conventions)
-- [Linking Policy](#linking-policy)
-- [Content Organization](#content-organization)
-- [Quick Reference](#quick-reference)
-- [](#)
-- [](#)
-- [Related Standards](#related-standards)
-- [Navigation Footer](#navigation-footer)
-- [No Dead Ends Policy](#no-dead-ends-policy)
+
+- [Core Standards 🎯](#core-standards-)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Executive Summary](#executive-summary)
+  - [Research Context](#research-context)
+  - [Core Principles](#core-principles)
+  - [File & Directory Conventions](#file-directory-conventions)
+  - [Linking Policy](#linking-policy)
+  - [Content Organization](#content-organization)
+  - [Quick Reference](#quick-reference)
+    - [](#)
+    - [](#)
+  - [Related Standards](#related-standards)
+  - [Navigation Footer](#navigation-footer)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+
+
+
 
 ## When You're Here
 

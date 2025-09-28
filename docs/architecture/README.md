@@ -1,30 +1,33 @@
 # Architecture Documentation
-
 ## Table of Contents
+
 - [Architecture Documentation](#architecture-documentation)
-- [When You're Here](#when-youre-here)
-- [Research Context](#research-context)
-- [Table of Contents](#table-of-contents)
-- [Architecture Overview](#architecture-overview)
-- [Quick Start Guide](#quick-start-guide)
-- [For Expert Engineers New to KiloCode](#for-expert-engineers-new-to-kilocode)
-- [For System Architects](#for-system-architects)
-- [For Developers](#for-developers)
-- [System Components](#system-components)
-- [Core Architecture Layers](#core-architecture-layers)
-- [Critical System Analysis](#critical-system-analysis)
-- [Critical Analysis](#critical-analysis)
-- [Race Condition Investigation](#race-condition-investigation)
-- [API Duplication Analysis](#api-duplication-analysis)
-- [Repository Structure](#repository-structure)
-- [Repository Organization](#repository-organization)
-- [Development Resources](#development-resources)
-- [Development Resources](#development-resources)
-- [State Machines](#state-machines)
-- [External Integrations](#external-integrations)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation](#navigation)
-- [Example](#example)
+  - [Table of Contents](#table-of-contents)
+  - [When You're Here](#when-youre-here)
+  - [Research Context](#research-context)
+  - [Architecture Overview](#architecture-overview)
+  - [Quick Start Guide](#quick-start-guide)
+    - [For Expert Engineers New to KiloCode](#for-expert-engineers-new-to-kilocode)
+    - [For System Architects](#for-system-architects)
+    - [For Developers](#for-developers)
+  - [System Components](#system-components)
+    - [Core Architecture Layers](#core-architecture-layers)
+    - [Critical System Analysis](#critical-system-analysis)
+  - [Critical Analysis](#critical-analysis)
+    - [Race Condition Investigation](#race-condition-investigation)
+    - [API Duplication Analysis](#api-duplication-analysis)
+  - [Repository Structure](#repository-structure)
+    - [Repository Organization](#repository-organization)
+    - [Development Resources](#development-resources)
+  - [Development Resources](#development-resources)
+    - [State Machines](#state-machines)
+    - [External Integrations](#external-integrations)
+  - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation](#navigation)
+    - [Example](#example)
+
+
+
 
 ## When You're Here
 

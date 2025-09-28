@@ -1,23 +1,26 @@
 # Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation
-
 ## Table of Contents
-- [Kilo vs Roo Comparison: Subtask Resume & Orchestrator
-Continuation](#kilo-vs-roo-comparison-subtask-resume-orchestrator-continuation)
-- [Quick Navigation](#quick-navigation)
-- [Research Context](#research-context)
-- [Repositories and Branches Compared](#repositories-and-branches-compared)
-- [Roo Branch Diff (against origin/main)](#roo-branch-diff-against-originmain)
-- [Conceptual Before/After (Kilo vs Roo)](#conceptual-beforeafter-kilo-vs-roo)
-- [Base Differences That Matter](#base-differences-that-matter)
-- [Alignment With Our Cleanup Proposal](#alignment-with-our-cleanup-proposal)
-- [Recommended Mapping of Kilo Proposal to Roo](#recommended-mapping-of-kilo-proposal-to-roo)
-- [Side-by-Side Conceptual Diffs](#side-by-side-conceptual-diffs)
-- [Conclusion](#conclusion)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
-- [Example](#example)
+
+- [Kilo vs Roo Comparison: Subtask Resume & Orchestrator Continuation](#kilo-vs-roo-comparison-subtask-resume-orchestrator-continuation)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Navigation](#quick-navigation)
+  - [Research Context](#research-context)
+  - [Repositories and Branches Compared](#repositories-and-branches-compared)
+  - [Roo Branch Diff (against origin/main)](#roo-branch-diff-against-originmain)
+  - [Conceptual Before/After (Kilo vs Roo)](#conceptual-beforeafter-kilo-vs-roo)
+  - [Base Differences That Matter](#base-differences-that-matter)
+  - [Alignment With Our Cleanup Proposal](#alignment-with-our-cleanup-proposal)
+  - [Recommended Mapping of Kilo Proposal to Roo](#recommended-mapping-of-kilo-proposal-to-roo)
+  - [Side-by-Side Conceptual Diffs](#sidebyside-conceptual-diffs)
+  - [Conclusion](#conclusion)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+    - [Example](#example)
+
+
+
 
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧

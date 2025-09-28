@@ -1,22 +1,25 @@
 # Orchestrator Master Index
-
 ## Table of Contents
+
 - [Orchestrator Master Index](#orchestrator-master-index)
-- [Table of Contents](#table-of-contents)
-- [Purpose & Scope](#purpose-scope)
-- [High-Level Responsibilities](#high-level-responsibilities)
-- [Core Concepts At a Glance](#core-concepts-at-a-glance)
-- [Lifecycle Snapshot](#lifecycle-snapshot)
-- [Documentation Map](#documentation-map)
-- [Quick Reference Matrix](#quick-reference-matrix)
-- [Architecture Flow Diagram](#architecture-flow-diagram)
-- [Guardrails & Safety Overview](#guardrails-safety-overview)
-- [Change Management & Versioning](#change-management-versioning)
-- [Glossary](#glossary)
-- [🔍 Research Context & Next Steps](#research-context-next-steps)
-- [When You're Here, You Can:](#when-youre-here-you-can)
-- [No Dead Ends Policy](#no-dead-ends-policy)
-- [Navigation Footer](#navigation-footer)
+  - [Table of Contents](#table-of-contents)
+  - [Purpose & Scope](#purpose-scope)
+  - [High-Level Responsibilities](#highlevel-responsibilities)
+  - [Core Concepts At a Glance](#core-concepts-at-a-glance)
+  - [Lifecycle Snapshot](#lifecycle-snapshot)
+  - [Documentation Map](#documentation-map)
+  - [Quick Reference Matrix](#quick-reference-matrix)
+  - [Architecture Flow Diagram](#architecture-flow-diagram)
+  - [Guardrails & Safety Overview](#guardrails-safety-overview)
+  - [Change Management & Versioning](#change-management-versioning)
+  - [Glossary](#glossary)
+  - [🔍 Research Context & Next Steps](#-research-context-next-steps)
+    - [When You're Here, You Can:](#when-youre-here-you-can)
+    - [No Dead Ends Policy](#no-dead-ends-policy)
+  - [Navigation Footer](#navigation-footer)
+
+
+
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
