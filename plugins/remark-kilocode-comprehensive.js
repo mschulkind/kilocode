@@ -52,10 +52,10 @@ function remarkKiloCodeComprehensive(options = {}) {
 			const orphanedSectionsDetector = new OrphanedSectionsDetector({
 				documentTypeDetector,
 				fileIndexBuilder,
-				config: {}
+				config: {},
 			})
 			const validationRuleConfig = new ValidationRuleConfig({
-				documentTypeDetector
+				documentTypeDetector,
 			})
 
 			validationComponents = {
@@ -63,139 +63,141 @@ function remarkKiloCodeComprehensive(options = {}) {
 				crossReferenceValidator,
 				documentTypeDetector,
 				orphanedSectionsDetector,
-				validationRuleConfig
+				validationRuleConfig,
 			}
 		} catch (error) {
 			// Gracefully handle initialization errors
-			console.warn('Failed to initialize validation components:', error.message)
-			console.warn('Error details:', error)
+			console.warn("Failed to initialize validation components:", error.message)
+			console.warn("Error details:", error)
 		}
 	}
 
-	
-/**
- * Refined validation functions to reduce false positives
- */
+	/**
+	 * Refined validation functions to reduce false positives
+	 */
 
-/**
- * Enhanced cross-reference validation with context-aware path resolution
- */
-function validateCrossReferenceRefined(link, sourceFile, fileIndex) {
-  // Try direct path first
-  if (fileIndex.has(link)) return { valid: true }
-  
-  // Try relative path resolution
-  const resolvedPath = resolveRelativePath(link, sourceFile)
-  if (fileIndex.has(resolvedPath)) return { valid: true }
-  
-  // Check common false positive patterns
-  const commonFalsePositives = [
-    '../README.md',
-    '../GLOSSARY.md',
-    '../architecture/',
-    '../orchestrator/',
-    '../race-condition/'
-  ]
-  
-  if (commonFalsePositives.some(pattern => link.includes(pattern))) {
-    return { valid: false, warning: 'Common false positive pattern detected' }
-  }
-  
-  return { valid: false, error: 'File not found' }
-}
+	/**
+	 * Enhanced cross-reference validation with context-aware path resolution
+	 */
+	function validateCrossReferenceRefined(link, sourceFile, fileIndex) {
+		// Try direct path first
+		if (fileIndex.has(link)) return { valid: true }
 
-/**
- * Enhanced TOC validation with flexible heading matching
- */
-function validateTOCLinkRefined(linkId, headings) {
-  // Try exact match first
-  if (headings.some(h => h.id === linkId)) return { valid: true }
-  
-  // Try fuzzy matching for common patterns
-  const fuzzyMatch = headings.find(h => 
-    h.id.includes(linkId) || linkId.includes(h.id)
-  )
-  if (fuzzyMatch) return { valid: true, suggestion: fuzzyMatch.id }
-  
-  // Check common false positive patterns
-  const commonFalsePositives = [
-    'immediate-actions-1',
-    'long-term-solutions',
-    'phase-1-immediate-fixes',
-    'phase-3-long-term-enhancements'
-  ]
-  
-  if (commonFalsePositives.includes(linkId)) {
-    return { valid: false, warning: 'Common false positive pattern' }
-  }
-  
-  return { valid: false, error: 'Heading not found' }
-}
+		// Try relative path resolution
+		const resolvedPath = resolveRelativePath(link, sourceFile)
+		if (fileIndex.has(resolvedPath)) return { valid: true }
 
-/**
- * Enhanced section naming validation with contextual awareness
- */
-function validateSectionNameRefined(sectionName, documentType, context) {
-  // Acceptable section names
-  const acceptableNames = [
-    'Conclusion', 'Summary', 'Introduction', 'Overview',
-    'Getting Started', 'Quick Start', 'Installation', 'Setup'
-  ]
-  
-  if (acceptableNames.includes(sectionName)) return { valid: true }
-  
-  // Check context-specific appropriateness
-  if (isContextuallyAppropriate(sectionName, documentType, context)) {
-    return { valid: true }
-  }
-  
-  return { valid: false, error: 'Non-descriptive section name' }
-}
+		// Check common false positive patterns
+		const commonFalsePositives = [
+			"../README.md",
+			"../GLOSSARY.md",
+			"../architecture/",
+			"../orchestrator/",
+			"../race-condition/",
+		]
 
-/**
- * Enhanced navigation validation with conditional requirements
- */
-function validateNavigationRefined(navigation, documentType, context) {
-  // Document type-specific requirements
-  const requirements = {
-    technical: ['glossary_link', 'toc_link'],
-    planning: ['glossary_link', 'toc_link', 'progress_link'],
-    navigation: ['glossary_link', 'toc_link', 'back_link'],
-    general: ['glossary_link', 'toc_link']
-  }
-  
-  const docRequirements = requirements[documentType] || requirements.general
-  
-  for (const requirement of docRequirements) {
-    if (!hasNavigationElement(navigation, requirement)) {
-      return { valid: false, error: `Missing ${requirement} in navigation` }
-    }
-  }
-  
-  return { valid: true }
-}
+		if (commonFalsePositives.some((pattern) => link.includes(pattern))) {
+			return { valid: false, warning: "Common false positive pattern detected" }
+		}
 
-/**
- * Helper functions for refined validation
- */
-function resolveRelativePath(link, sourceFile) {
-  // Implement relative path resolution logic
-  const sourceDir = path.dirname(sourceFile)
-  return path.resolve(sourceDir, link)
-}
+		return { valid: false, error: "File not found" }
+	}
 
-function isContextuallyAppropriate(sectionName, documentType, context) {
-  // Implement context-aware validation logic
-  return true // Placeholder
-}
+	/**
+	 * Enhanced TOC validation with flexible heading matching
+	 */
+	function validateTOCLinkRefined(linkId, headings) {
+		// Try exact match first
+		if (headings.some((h) => h.id === linkId)) return { valid: true }
 
-function hasNavigationElement(navigation, element) {
-  // Implement navigation element checking logic
-  return true // Placeholder
-}
+		// Try fuzzy matching for common patterns
+		const fuzzyMatch = headings.find((h) => h.id.includes(linkId) || linkId.includes(h.id))
+		if (fuzzyMatch) return { valid: true, suggestion: fuzzyMatch.id }
 
+		// Check common false positive patterns
+		const commonFalsePositives = [
+			"immediate-actions-1",
+			"long-term-solutions",
+			"phase-1-immediate-fixes",
+			"phase-3-long-term-enhancements",
+		]
 
-return async (tree, file) => {
+		if (commonFalsePositives.includes(linkId)) {
+			return { valid: false, warning: "Common false positive pattern" }
+		}
+
+		return { valid: false, error: "Heading not found" }
+	}
+
+	/**
+	 * Enhanced section naming validation with contextual awareness
+	 */
+	function validateSectionNameRefined(sectionName, documentType, context) {
+		// Acceptable section names
+		const acceptableNames = [
+			"Conclusion",
+			"Summary",
+			"Introduction",
+			"Overview",
+			"Getting Started",
+			"Quick Start",
+			"Installation",
+			"Setup",
+		]
+
+		if (acceptableNames.includes(sectionName)) return { valid: true }
+
+		// Check context-specific appropriateness
+		if (isContextuallyAppropriate(sectionName, documentType, context)) {
+			return { valid: true }
+		}
+
+		return { valid: false, error: "Non-descriptive section name" }
+	}
+
+	/**
+	 * Enhanced navigation validation with conditional requirements
+	 */
+	function validateNavigationRefined(navigation, documentType, context) {
+		// Document type-specific requirements
+		const requirements = {
+			technical: ["glossary_link", "toc_link"],
+			planning: ["glossary_link", "toc_link", "progress_link"],
+			navigation: ["glossary_link", "toc_link", "back_link"],
+			general: ["glossary_link", "toc_link"],
+		}
+
+		const docRequirements = requirements[documentType] || requirements.general
+
+		for (const requirement of docRequirements) {
+			if (!hasNavigationElement(navigation, requirement)) {
+				return { valid: false, error: `Missing ${requirement} in navigation` }
+			}
+		}
+
+		return { valid: true }
+	}
+
+	/**
+	 * Helper functions for refined validation
+	 */
+	function resolveRelativePath(link, sourceFile) {
+		// Implement relative path resolution logic
+		const sourceDir = path.dirname(sourceFile)
+		return path.resolve(sourceDir, link)
+	}
+
+	function isContextuallyAppropriate(sectionName, documentType, context) {
+		// Implement context-aware validation logic
+		return true // Placeholder
+	}
+
+	function hasNavigationElement(navigation, element) {
+		// Implement navigation element checking logic
+		return true // Placeholder
+	}
+
+	return async (tree, file) => {
 		const issues = []
 		const warnings = []
 		const metrics = {
@@ -222,26 +224,18 @@ return async (tree, file) => {
 		}
 
 		// Detect document type and get validation rules
-		let documentType = { type: 'general', confidence: 0.5, reasons: [] }
+		let documentType = { type: "general", confidence: 0.5, reasons: [] }
 		let validationRules = {}
-		
+
 		if (validationComponents) {
 			try {
-				documentType = validationComponents.documentTypeDetector.detectType(
-					file.path || '',
-					'',
-					''
-				)
-				validationRules = validationComponents.validationRuleConfig.getRulesForDocument(
-					file.path || '',
-					'',
-					''
-				)
+				documentType = validationComponents.documentTypeDetector.detectType(file.path || "", "", "")
+				validationRules = validationComponents.validationRuleConfig.getRulesForDocument(file.path || "", "", "")
 			} catch (error) {
-				console.warn('Failed to detect document type or get validation rules:', error.message)
+				console.warn("Failed to detect document type or get validation rules:", error.message)
 			}
 		} else {
-			console.warn('Validation components not initialized, using defaults')
+			console.warn("Validation components not initialized, using defaults")
 		}
 
 		// Visit all nodes in the AST
@@ -360,15 +354,15 @@ return async (tree, file) => {
 			try {
 				// Build file index if needed
 				await validationComponents.fileIndexBuilder.buildIndex(process.cwd())
-				
+
 				// Validate each cross-reference
 				for (const crossRef of documentStructure.crossReferences) {
 					try {
 						const result = await validationComponents.crossReferenceValidator.validateCrossReference(
 							crossRef.target,
-							file.path
+							file.path,
 						)
-						
+
 						if (!result.valid) {
 							const message = result.error || `Cross-reference "${crossRef.target}" is invalid`
 							issues.push({
@@ -377,17 +371,17 @@ return async (tree, file) => {
 								line: crossRef.line,
 								column: 1,
 								rule: "kilocode-cross-reference",
-								suggestion: "Verify that the referenced document exists and the link is correct"
+								suggestion: "Verify that the referenced document exists and the link is correct",
 							})
 						}
 					} catch (error) {
 						// Handle individual validation errors gracefully
-						console.warn('Failed to validate cross-reference:', error.message)
+						console.warn("Failed to validate cross-reference:", error.message)
 					}
 				}
 			} catch (error) {
 				// Handle validation errors gracefully
-				console.warn('Failed to validate cross-references:', error.message)
+				console.warn("Failed to validate cross-references:", error.message)
 				// Fall back to basic validation
 				validateCrossReferences(documentStructure, issues, file)
 			}
@@ -398,28 +392,28 @@ return async (tree, file) => {
 			try {
 				const content = getTreeText(tree)
 				const result = validationComponents.orphanedSectionsDetector.detectOrphanedSections(
-					file.path || '',
-					content
+					file.path || "",
+					content,
 				)
-				
+
 				if (result.orphanedSections.length > 0) {
-					result.orphanedSections.forEach(section => {
+					result.orphanedSections.forEach((section) => {
 						warnings.push({
 							type: "warning",
 							message: `Potential orphaned section: ${section.content.substring(0, 50)}...`,
 							line: section.line || 1,
 							column: 1,
 							rule: "kilocode-orphaned-section",
-							suggestion: "Consider adding links or restructuring content to improve connectivity"
+							suggestion: "Consider adding links or restructuring content to improve connectivity",
 						})
 					})
 				}
-				
+
 				// Update document structure with detected orphaned sections
 				documentStructure.orphanedSections = result.orphanedSections
 			} catch (error) {
 				// Handle validation errors gracefully
-				console.warn('Failed to detect orphaned sections:', error.message)
+				console.warn("Failed to detect orphaned sections:", error.message)
 				// Fall back to basic validation
 				validateNoOrphanedDocuments(documentStructure, issues, warnings, file)
 			}
@@ -427,10 +421,14 @@ return async (tree, file) => {
 
 		// Report issues
 		issues.forEach((issue) => {
-			const message = file.message(issue.message, {
-				start: { line: issue.line, column: issue.column },
-				end: { line: issue.line, column: issue.column + 50 },
-			}, `remark-kilocode-comprehensive:${issue.rule}`)
+			const message = file.message(
+				issue.message,
+				{
+					start: { line: issue.line, column: issue.column },
+					end: { line: issue.line, column: issue.column + 50 },
+				},
+				`remark-kilocode-comprehensive:${issue.rule}`,
+			)
 
 			// Set fatal flag based on issue type
 			message.fatal = issue.type === "error"
@@ -442,10 +440,14 @@ return async (tree, file) => {
 
 		// Report warnings
 		warnings.forEach((warning) => {
-			const message = file.message(warning.message, {
-				start: { line: warning.line, column: warning.column },
-				end: { line: warning.line, column: warning.column + 50 },
-			}, `remark-kilocode-comprehensive:${warning.rule}`)
+			const message = file.message(
+				warning.message,
+				{
+					start: { line: warning.line, column: warning.column },
+					end: { line: warning.line, column: warning.column + 50 },
+				},
+				`remark-kilocode-comprehensive:${warning.rule}`,
+			)
 
 			// Warnings are never fatal
 			message.fatal = false
@@ -533,11 +535,7 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 	}
 
 	// Check for When You're Here section
-	if (
-		settings.requireWhenYoureHere &&
-		shouldHaveWhenYoureHere(relativePath) &&
-		!structure.hasWhenYoureHere
-	) {
+	if (settings.requireWhenYoureHere && shouldHaveWhenYoureHere(relativePath) && !structure.hasWhenYoureHere) {
 		issues.push({
 			type: "error",
 			message: "Document must include When You're Here section",
@@ -885,8 +883,12 @@ function validateNavigationPatterns(structure, issues, warnings, settings, file)
  * Validate breadcrumb navigation
  */
 function validateBreadcrumbNavigation(structure, issues, warnings, file) {
-	const navigationLinks = structure.links.filter(link => 
-		link.text.includes('←') || link.text.includes('→') || link.text.includes('Back to') || link.text.includes('Next:')
+	const navigationLinks = structure.links.filter(
+		(link) =>
+			link.text.includes("←") ||
+			link.text.includes("→") ||
+			link.text.includes("Back to") ||
+			link.text.includes("Next:"),
 	)
 
 	if (navigationLinks.length === 0) {
@@ -901,8 +903,8 @@ function validateBreadcrumbNavigation(structure, issues, warnings, file) {
 	}
 
 	// Check for proper breadcrumb format
-	const hasBackLink = navigationLinks.some(link => link.text.includes('←') || link.text.includes('Back to'))
-	const hasForwardLink = navigationLinks.some(link => link.text.includes('→') || link.text.includes('Next:'))
+	const hasBackLink = navigationLinks.some((link) => link.text.includes("←") || link.text.includes("Back to"))
+	const hasForwardLink = navigationLinks.some((link) => link.text.includes("→") || link.text.includes("Next:"))
 
 	if (!hasBackLink) {
 		warnings.push({
@@ -920,9 +922,9 @@ function validateBreadcrumbNavigation(structure, issues, warnings, file) {
  * Validate table of contents integration
  */
 function validateTableOfContentsIntegration(structure, issues, warnings, file) {
-	const hasTableOfContents = structure.headings.some(heading => 
-		heading.text.toLowerCase().includes('table of contents') || 
-		heading.text.toLowerCase().includes('contents')
+	const hasTableOfContents = structure.headings.some(
+		(heading) =>
+			heading.text.toLowerCase().includes("table of contents") || heading.text.toLowerCase().includes("contents"),
 	)
 
 	const headingCount = structure.headings.length
@@ -949,25 +951,46 @@ function validateTableOfContentsIntegration(structure, issues, warnings, file) {
  * Validate table of contents links
  */
 function validateTableOfContentsLinks(structure, issues, file) {
-	const tocLinks = structure.links.filter(link => link.url.startsWith('#'))
-	const headingIds = structure.headings.map(heading => 
-		heading.text.toLowerCase()
-			.replace(/[^\w\s]/g, '')
-			.replace(/\s+/g, '-')
+	const tocLinks = structure.links.filter((link) => link.url.startsWith("#"))
+	const headingIds = structure.headings.map((heading) =>
+		heading.text
+			.toLowerCase()
+			.replace(/[^\w\s]/g, "")
+			.replace(/\s+/g, "-"),
 	)
 
 	for (const link of tocLinks) {
 		const targetId = link.url.substring(1)
-		if (!headingIds.includes(targetId)) {
-			issues.push({
-				type: "error",
-				message: `Table of Contents link "${link.url}" does not match any heading`,
-				line: link.line,
-				column: 1,
-				rule: "kilocode-toc-link-mismatch",
-				suggestion: "Update the link to match an existing heading or add the missing heading",
-			})
+
+		// Check for exact match first
+		if (headingIds.includes(targetId)) {
+			continue
 		}
+
+		// Check for numbered duplicate (e.g., navigation-1, navigation-2)
+		const isNumberedDuplicate = targetId.match(/^(.+)-(\d+)$/)
+		if (isNumberedDuplicate) {
+			const baseId = isNumberedDuplicate[1]
+			const number = parseInt(isNumberedDuplicate[2])
+
+			// Count how many times this base ID appears
+			const duplicateCount = headingIds.filter((id) => id === baseId).length
+
+			// If the number is within the range of duplicates, it's valid
+			if (number >= 1 && number <= duplicateCount) {
+				continue
+			}
+		}
+
+		// If we get here, the link doesn't match any heading
+		issues.push({
+			type: "error",
+			message: `Table of Contents link "${link.url}" does not match any heading`,
+			line: link.line,
+			column: 1,
+			rule: "kilocode-toc-link-mismatch",
+			suggestion: "Update the link to match an existing heading or add the missing heading",
+		})
 	}
 }
 
@@ -1008,16 +1031,19 @@ function validateCrossReferenceNavigation(structure, issues, file) {
  * Validate navigation consistency
  */
 function validateNavigationConsistency(structure, issues, warnings, file) {
-	const navigationLinks = structure.links.filter(link => 
-		link.text.includes('←') || link.text.includes('→') || 
-		link.text.includes('Back to') || link.text.includes('Next:') ||
-		link.text.includes('Table of Contents')
+	const navigationLinks = structure.links.filter(
+		(link) =>
+			link.text.includes("←") ||
+			link.text.includes("→") ||
+			link.text.includes("Back to") ||
+			link.text.includes("Next:") ||
+			link.text.includes("Table of Contents"),
 	)
 
 	// Check for consistent navigation format
-	const hasConsistentFormat = navigationLinks.every(link => {
+	const hasConsistentFormat = navigationLinks.every((link) => {
 		const text = link.text
-		return text.includes('←') || text.includes('→') || text.includes('📚') || text.includes('↑')
+		return text.includes("←") || text.includes("→") || text.includes("📚") || text.includes("↑")
 	})
 
 	if (navigationLinks.length > 0 && !hasConsistentFormat) {
@@ -1032,11 +1058,11 @@ function validateNavigationConsistency(structure, issues, warnings, file) {
 	}
 
 	// Check for required navigation elements
-	const hasGlossaryLink = navigationLinks.some(link => 
-		link.text.includes('📚') && link.text.toLowerCase().includes('glossary')
+	const hasGlossaryLink = navigationLinks.some(
+		(link) => link.text.includes("📚") && link.text.toLowerCase().includes("glossary"),
 	)
-	const hasTOCLink = navigationLinks.some(link => 
-		link.text.includes('↑') && link.text.toLowerCase().includes('table of contents')
+	const hasTOCLink = navigationLinks.some(
+		(link) => link.text.includes("↑") && link.text.toLowerCase().includes("table of contents"),
 	)
 
 	if (!hasGlossaryLink) {
@@ -1176,17 +1202,15 @@ function validateSectionLengths(structure, issues, warnings, file) {
  * Validate section naming consistency
  */
 function validateSectionNaming(headings, issues, warnings, file) {
-	const sectionNames = headings.map(h => h.text.toLowerCase())
-	
+	const sectionNames = headings.map((h) => h.text.toLowerCase())
+
 	// Check for duplicate section names
-	const duplicates = sectionNames.filter((name, index) => 
-		sectionNames.indexOf(name) !== index
-	)
-	
+	const duplicates = sectionNames.filter((name, index) => sectionNames.indexOf(name) !== index)
+
 	if (duplicates.length > 0) {
 		warnings.push({
 			type: "warning",
-			message: `Duplicate section names found: ${[...new Set(duplicates)].join(', ')}`,
+			message: `Duplicate section names found: ${[...new Set(duplicates)].join(", ")}`,
 			line: 1,
 			column: 1,
 			rule: "kilocode-duplicate-sections",
@@ -1198,7 +1222,7 @@ function validateSectionNaming(headings, issues, warnings, file) {
 	const nonDescriptivePatterns = [
 		/^(section|part|chapter|step)\s*\d*$/i,
 		/^(intro|conclusion|summary)$/i,
-		/^(more|other|additional)$/i
+		/^(more|other|additional)$/i,
 	]
 
 	for (const heading of headings) {
@@ -1225,29 +1249,36 @@ function validateSectionNaming(headings, issues, warnings, file) {
  */
 function validateRequiredSections(structure, issues, warnings, file, relativePath) {
 	// Determine document type
-	let documentType = 'general'
-	if (relativePath.includes('context/') || relativePath.includes('plans/')) {
-		documentType = 'planning'
-	} else if (relativePath.includes('architecture/') || relativePath.includes('api/')) {
-		documentType = 'technical'
-	} else if (relativePath.includes('README') || relativePath.includes('getting-started')) {
-		documentType = 'navigation'
+	let documentType = "general"
+	if (relativePath.includes("context/") || relativePath.includes("plans/")) {
+		documentType = "planning"
+	} else if (relativePath.includes("architecture/") || relativePath.includes("api/")) {
+		documentType = "technical"
+	} else if (relativePath.includes("README") || relativePath.includes("getting-started")) {
+		documentType = "navigation"
 	}
 
 	// Define required sections for each document type
 	const requiredSections = {
-		navigation: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation'],
-		technical: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation'],
-		planning: ['When You\'re Here', 'Research Context', 'Progress Summary', 'Success Criteria', 'No Dead Ends Policy', 'Navigation'],
-		general: ['When You\'re Here', 'Research Context', 'No Dead Ends Policy', 'Navigation']
+		navigation: ["When You're Here", "Research Context", "No Dead Ends Policy", "Navigation"],
+		technical: ["When You're Here", "Research Context", "No Dead Ends Policy", "Navigation"],
+		planning: [
+			"When You're Here",
+			"Research Context",
+			"Progress Summary",
+			"Success Criteria",
+			"No Dead Ends Policy",
+			"Navigation",
+		],
+		general: ["When You're Here", "Research Context", "No Dead Ends Policy", "Navigation"],
 	}
 
 	const documentRequiredSections = requiredSections[documentType] || requiredSections.general
-	const existingSections = structure.headings.map(h => h.text)
+	const existingSections = structure.headings.map((h) => h.text)
 
 	for (const requiredSection of documentRequiredSections) {
-		const hasSection = existingSections.some(section => 
-			section.toLowerCase().includes(requiredSection.toLowerCase())
+		const hasSection = existingSections.some((section) =>
+			section.toLowerCase().includes(requiredSection.toLowerCase()),
 		)
 
 		if (!hasSection) {
@@ -1276,7 +1307,7 @@ function getNodeText(node) {
 	}
 
 	// Handle text nodes that might not have a value property
-	if (node.type === 'text' && node.data && node.data.value) {
+	if (node.type === "text" && node.data && node.data.value) {
 		return node.data.value
 	}
 

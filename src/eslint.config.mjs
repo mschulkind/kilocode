@@ -30,6 +30,18 @@ export default [
 		},
 	},
 	{
+		files: ["validation/**/*.js"],
+		languageOptions: {
+			globals: {
+				process: "readonly",
+				console: "readonly",
+				Buffer: "readonly",
+				global: "readonly",
+				performance: "readonly",
+			},
+		},
+	},
+	{
 		files: ["**/__test_cases__/**/*"],
 		rules: {
 			"no-undef": "off",
