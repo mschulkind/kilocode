@@ -1,7 +1,7 @@
 # File & Directory Conventions 📁
 
 ## Table of Contents
-- [File & Directory Conventions 📁](#file-directory-conventions-)
+- [File & Directory Conventions 📁](#file--directory-conventions-)
 - [Table of Contents](#table-of-contents)
 - [When You're Here](#when-youre-here)
 - [Executive Summary](#executive-summary)
@@ -18,7 +18,7 @@
 - [When You're Here, You Can:](#when-youre-here-you-can)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [No Dead Ends Policy](#no-dead-ends-policy)
-- [File & Directory Conventions 📁](#file-directory-conventions-)
+- [File & Directory Conventions 📁](#file--directory-conventions-)
 - [Table of Contents](#table-of-contents)
 - [Executive Summary](#executive-summary)
 - [Research Context](#research-context)
@@ -372,10 +372,10 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 - *Applying Standards to Documentation:*\*
 
 - **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../architecture/README.md) →
+  [Architecture Documentation](../../architecture/README.md) →
   [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy

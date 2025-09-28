@@ -238,7 +238,7 @@ For advanced configuration and custom rules, see the Phase 1 implementation plan
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -256,9 +256,9 @@ Every section in this document connects you to your next step:
 
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)

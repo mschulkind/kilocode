@@ -522,7 +522,7 @@ Common mistakes to avoid when implementing the solution.
 Examples of how to implement the solution.
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](architecture/README.md) · Root: [`README.md`](../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 

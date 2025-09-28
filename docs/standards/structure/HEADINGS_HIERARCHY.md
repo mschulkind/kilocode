@@ -555,7 +555,7 @@ Create comprehensive tests to validate the solution.
 Ensure the solution doesn't impact system performance.
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](architecture/README.md) · Root: [`README.md`](../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 
@@ -656,10 +656,10 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 - *Applying Standards to Documentation:*\*
 
 - **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../architecture/README.md) →
+  [Architecture Documentation](../../architecture/README.md) →
   [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy

@@ -366,7 +366,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Dependency management provides actionable guidance
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Architecture Documentation](README.md)

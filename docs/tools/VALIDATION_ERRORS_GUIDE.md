@@ -446,7 +446,7 @@ For complex errors:
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation

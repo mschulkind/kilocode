@@ -573,7 +573,7 @@ export const createMockTask = (overrides: Partial<Task> = {}): Task => ({
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
@@ -582,4 +582,4 @@ For more information, see:
 - *Navigation*\*: [docs](../) · [testing](../docs/testing/) · ↑ Table of Contents
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)

@@ -204,7 +204,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Quick start paths provide clear entry points for different user types
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

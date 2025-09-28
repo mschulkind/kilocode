@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-09-28T20:41:04.931Z",
+  "summary": {
+    "totalIssues": 0,
+    "errors": 0,
+    "warnings": 0,
+    "issuesByCategory": []
+  },
+  "detailed": {
+    "byCategory": {},
+    "byFile": {}
+  },
+  "fixes": {
+    "filesProcessed": 175,
+    "filesChanged": 0,
+    "totalChanges": 0
+  },
+  "recommendations": []
+}

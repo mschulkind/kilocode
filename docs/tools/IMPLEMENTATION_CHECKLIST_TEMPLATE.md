@@ -308,14 +308,14 @@ This document connects to:
 - [Related Documentation](../README.md) - [Brief description]
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 - --
 
 - *Navigation**: [← Back to Implementation Plan](../../plans/[PLAN_NAME].md) ·
-[📚 Technical Glossary](GLOSSARY.md) ·
+[📚 Technical Glossary](../GLOSSARY.md) ·
 [↑ Table of Contents](#phase-name-implementation-checklist)
 ```
 
@@ -419,5 +419,5 @@ context/
 - \*\*
 
 - *Navigation*\*: [← Back to Documentation Tools](../tools/) ·
-  [📚 Technical Glossary](GLOSSARY.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) ·
   [↑ Table of Contents](#implementation-checklist-template)

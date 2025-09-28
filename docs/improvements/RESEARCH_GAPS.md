@@ -377,7 +377,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Research methodology provides clear next steps for investigation
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Improvements Overview](README.md)

@@ -11,7 +11,7 @@
 - [Overview](#overview)
 - [Primary Requirements](#primary-requirements)
 - [Secondary Requirements](#secondary-requirements)
-- [Built-in Performance Monitor](#builtin-performance-monitor)
+- [Built-in Performance Monitor](#built-in-performance-monitor)
 - [Performance Metrics](#performance-metrics)
 - [Performance Reports](#performance-reports)
 - [1. Caching Optimization](#1-caching-optimization)
@@ -36,7 +36,7 @@
 - [Memory Usage Tests](#memory-usage-tests)
 - [Load Testing](#load-testing)
 - [Configuration Tuning](#configuration-tuning)
-- [System-Level Optimization](#systemlevel-optimization)
+- [System-Level Optimization](#system-level-optimization)
 - [Node.js Optimization](#nodejs-optimization)
 - [File System Optimization](#file-system-optimization)
 - [Common Performance Issues](#common-performance-issues)
@@ -57,7 +57,7 @@
 - [Overview](#overview)
 - [Primary Requirements](#primary-requirements)
 - [Secondary Requirements](#secondary-requirements)
-- [Built-in Performance Monitor](#builtin-performance-monitor)
+- [Built-in Performance Monitor](#built-in-performance-monitor)
 - [Performance Metrics](#performance-metrics)
 - [Performance Reports](#performance-reports)
 - [1. Caching Optimization](#1-caching-optimization)
@@ -82,7 +82,7 @@
 - [Memory Usage Tests](#memory-usage-tests)
 - [Load Testing](#load-testing)
 - [Configuration Tuning](#configuration-tuning)
-- [System-Level Optimization](#systemlevel-optimization)
+- [System-Level Optimization](#system-level-optimization)
 - [Node.js Optimization](#nodejs-optimization)
 - [File System Optimization](#file-system-optimization)
 - [Common Performance Issues](#common-performance-issues)
@@ -673,7 +673,7 @@ Key takeaways:
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## No Dead Ends Policy
@@ -684,11 +684,11 @@ Every section in this document connects you to your next step:
 - **If you need context**: Check the [Research Context](#research-context) section
 - **If you're ready to implement**: Jump to the implementation sections
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Back to Main Documentation](../README.md)
 - [← Back to Category](../)
 - [→ Related Topic](../related-topic/)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#table-of-contents)

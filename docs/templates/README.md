@@ -68,7 +68,7 @@ ensure consistent structure across all documentation and help eliminate validati
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Documents
@@ -76,7 +76,7 @@ For more information, see:
 - **File**: `navigation-document-template.md`
 - **Use Case**: README files, getting started guides, index pages
 - **Required Sections**: When You're Here, Research Context, Table of Contents, Navigation Footer
-- **Examples**: [Main README](../README.md), [Architecture Overview](architecture/README.md)
+- **Examples**: [Main README](../README.md), [Architecture Overview](../architecture/README.md)
 
 ### Technical Documents
 
@@ -225,5 +225,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 ## Navigation
 - [← Back to Documentation Tools](../tools/)
 - [→ Template Validation Rules](./template-validation-rules.md)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#document-templates)

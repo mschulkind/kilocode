@@ -12,17 +12,17 @@
 - [Linking Policy 🔗](#linking-policy-)
 - [Executive Summary](#executive-summary)
 - [Link Types and Rules](#link-types-and-rules)
-- [Doc-to-Doc Links](#doctodoc-links)
+- [Doc-to-Doc Links](#doc-to-doc-links)
 - [Code References](#code-references)
 - [External Links](#external-links)
 - [Path Conventions](#path-conventions)
-- [Relative Paths (Doc-to-Doc)](#relative-paths-doctodoc)
+- [Relative Paths (Doc-to-Doc)](#relative-paths-doc-to-doc)
 - [Absolute Paths (Code References)](#absolute-paths-code-references)
 - [Link Quality Standards](#link-quality-standards)
 - [Descriptive Link Text](#descriptive-link-text)
 - [Link Value](#link-value)
 - [Link Integrity](#link-integrity)
-- [GitHub-Specific Considerations](#githubspecific-considerations)
+- [GitHub-Specific Considerations](#github-specific-considerations)
 - [Link Maintenance](#link-maintenance)
 - [Regular Checks](#regular-checks)
 - [Link Testing](#link-testing)
@@ -48,17 +48,17 @@
 - [Linking Policy 🔗](#linking-policy-)
 - [Executive Summary](#executive-summary)
 - [Link Types and Rules](#link-types-and-rules)
-- [Doc-to-Doc Links](#doctodoc-links)
+- [Doc-to-Doc Links](#doc-to-doc-links)
 - [Code References](#code-references)
 - [External Links](#external-links)
 - [Path Conventions](#path-conventions)
-- [Relative Paths (Doc-to-Doc)](#relative-paths-doctodoc)
+- [Relative Paths (Doc-to-Doc)](#relative-paths-doc-to-doc)
 - [Absolute Paths (Code References)](#absolute-paths-code-references)
 - [Link Quality Standards](#link-quality-standards)
 - [Descriptive Link Text](#descriptive-link-text)
 - [Link Value](#link-value)
 - [Link Integrity](#link-integrity)
-- [GitHub-Specific Considerations](#githubspecific-considerations)
+- [GitHub-Specific Considerations](#github-specific-considerations)
 - [Link Maintenance](#link-maintenance)
 - [Regular Checks](#regular-checks)
 - [Link Testing](#link-testing)
@@ -180,7 +180,7 @@ documentation helps us understand how! ⚙️
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 documentation helps us understand how! ⚙️
 
-[Architecture Index](architecture/README.md) [Core Standards](../standards/core/README.md)
+[Architecture Index](../architecture/README.md) [Core Standards](../standards/core/README.md)
 [Back to Root](../README.md)
 
 # Same directory
@@ -299,7 +299,7 @@ documentation helps us understand how! ⚙️
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
-[Back to Root](../README.md) [Architecture Overview](architecture/README.md)
+[Back to Root](../README.md) [Architecture Overview](../architecture/README.md)
 
 # To sibling directory
 
@@ -325,7 +325,7 @@ behind the "what"! 💻
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 documentation helps us understand how! ⚙️
 
-[Back to Root](../README.md) [Architecture](architecture/README.md)
+[Back to Root](../README.md) [Architecture](../architecture/README.md)
 
 # To parent directory
 
@@ -656,10 +656,10 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 - *Applying Standards to Documentation:*\*
 
 - **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../architecture/README.md) →
+  [Architecture Documentation](../../architecture/README.md) →
   [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy

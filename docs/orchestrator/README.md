@@ -6,7 +6,7 @@
 - [When You're Here](#when-youre-here)
 - [Directory Context](#directory-context)
 - [Key Focus Areas](#key-focus-areas)
-- [🗺️ Navigation Map](#-navigation-map)
+- [🗺️ Navigation Map](#️-navigation-map)
 - [Core Concepts](#core-concepts)
 - [Quick Start Paths](#quick-start-paths)
 - [🎵 ](#-)
@@ -27,7 +27,7 @@
 - [Table of Contents](#table-of-contents)
 - [Directory Context](#directory-context)
 - [Key Focus Areas](#key-focus-areas)
-- [🗺️ Navigation Map](#-navigation-map)
+- [🗺️ Navigation Map](#️-navigation-map)
 - [Core Concepts](#core-concepts)
 - [Quick Start Paths](#quick-start-paths)
 - [🎵 ](#-)
@@ -100,22 +100,22 @@ subtask coordination.
 #### 🎵 **Understanding the Symphony** (How It Works)
 
 - *For Expert Engineers New to KiloCode:*\*
-1. **Start Here**: [Technical Glossary](GLOSSARY.md) - Essential terminology (Orchestrator, Task,
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
    Subtask, etc.)
 2. **System Overview**: [Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md) - High-level
    architecture and
    responsibilities
 3. **Deep Dive**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Detailed execution patterns
    and state management
-4. **Current Issues**: [Race Condition Analysis](architecture/README.md) - API
+4. **Current Issues**: [Race Condition Analysis](../architecture/README.md) - API
    duplication problems
 
 #### 🚨 **Emergency Response** (Something's Broken!)
-1. **Quick Diagnosis**: [Race Condition Analysis](architecture/README.md) -
+1. **Quick Diagnosis**: [Race Condition Analysis](../architecture/README.md) -
    Current API duplication issues
 2. **Understand Flow**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) - Execution patterns and
    state transitions
-3. **Find Solutions**: [State Machines](architecture/README.md) - Behavior
+3. **Find Solutions**: [State Machines](../architecture/README.md) - Behavior
    modeling and fixes
 4. **Implementation**:
    [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md) - Detailed
@@ -168,13 +168,13 @@ one section of the orchestra plays at a time.
   [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
 
-- **Related**: [State Machines](architecture/README.md) for behavior modeling,
-  [Technical Glossary](GLOSSARY.md) for terminology
+- **Related**: [State Machines](../architecture/README.md) for behavior modeling,
+  [Technical Glossary](../GLOSSARY.md) for terminology
 
 - *Investigating Execution Issues:*\*
 
 - **Next**: [Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) →
-  [Race Condition Analysis](architecture/README.md) →
+  [Race Condition Analysis](../architecture/README.md) →
   [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
@@ -190,11 +190,11 @@ one section of the orchestra plays at a time.
 
 - *Understanding Current Problems:*\*
 
-- **Next**: [Race Condition Analysis](architecture/README.md) →
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
   [Code Flow Analysis](architecture/CODE_FLOW_ANALYSIS.md) →
   [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [State Machines](architecture/README.md) for behavior analysis
+- **Related**: [State Machines](../architecture/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
@@ -205,7 +205,7 @@ next, return to this README for guidance.
 - \*\*
 
 - *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [→ Architecture Documentation](architecture/README.md) · [📚 Technical Glossary](GLOSSARY.md)
+  [→ Architecture Documentation](../architecture/README.md) · [📚 Technical Glossary](../GLOSSARY.md)
 
 ## No Dead Ends Policy
 
@@ -215,8 +215,8 @@ Every section in this document connects you to your next step:
 - **If you need context**: Check the [Research Context](#research-context) section
 - **If you're ready to implement**: Jump to the implementation sections
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
-  · [↑ Table of Contents](#-navigation-map)
+  · [↑ Table of Contents](#️-navigation-map)
 - "The best orchestras have a conductor who knows when to let each section play, and when to bring
   them all together. Our system needs the same kind of coordination."\* 🎼

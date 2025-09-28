@@ -192,12 +192,12 @@ Each link should have distinct, identifiable text.
 
 ```markdown
 <!-- ✅ Good -->
-[Architecture Overview](architecture/README.md)
+[Architecture Overview](../architecture/README.md)
 [Architecture Standards](../architecture/standards.md)
 [Architecture Best Practices](../architecture/best-practices.md)
 
 <!-- ❌ Bad -->
-[Architecture](architecture/README.md)
+[Architecture](../architecture/README.md)
 [Architecture](../architecture/standards.md)
 [Architecture](../architecture/best-practices.md)
 ```
@@ -277,7 +277,7 @@ Link text should be long enough to be descriptive but short enough to be scannab
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation Links
@@ -286,13 +286,13 @@ For more information, see:
 <!-- ✅ Good patterns -->
 [← Back to Main Documentation](../README.md)
 [→ Next: Installation Guide](./installation.md)
-[📚 Technical Glossary](GLOSSARY.md)
+[📚 Technical Glossary](../GLOSSARY.md)
 [↑ Table of Contents](#table-of-contents)
 
 <!-- ❌ Bad patterns -->
 [← Back](../README.md)
 [→ Next](./installation.md)
-[📚 Glossary](GLOSSARY.md)
+[📚 Glossary](../GLOSSARY.md)
 [↑ TOC](#table-of-contents)
 ```
 
@@ -499,5 +499,5 @@ Documentation](./VALIDATION_SYSTEM.md).
 ## Navigation
 - [← Back to Documentation Tools](./)
 - [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#link-text-standards-documentation)

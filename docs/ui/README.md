@@ -140,11 +140,11 @@ communication between UI components, preventing duplicate requests and maintaini
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Back to Documentation Home](../../docs/README.md)

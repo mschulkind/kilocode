@@ -4,7 +4,7 @@
 - [Repository Overview](#repository-overview)
 - [Table of Contents](#table-of-contents)
 - [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#-navigation-guide)
+- [🗺️ Navigation Guide](#️-navigation-guide)
 - [Research Context](#research-context)
 - [Quick Start Paths](#quick-start-paths)
 - [Current Focus](#current-focus)
@@ -16,7 +16,7 @@
 - [Repository Structure](#repository-structure)
 - [Core Systems](#core-systems)
 - [Development Workflow](#development-workflow)
-- [🔗 Cross-References](#-crossreferences)
+- [🔗 Cross-References](#-cross-references)
 - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
 - [🧭 Navigation Footer](#-navigation-footer)
 - [Navigation Footer](#navigation-footer)
@@ -26,7 +26,7 @@
 - [Repository Overview](#repository-overview)
 - [Table of Contents](#table-of-contents)
 - [When You're Here](#when-youre-here)
-- [🗺️ Navigation Guide](#-navigation-guide)
+- [🗺️ Navigation Guide](#️-navigation-guide)
 - [Research Context](#research-context)
 - [Quick Start Paths](#quick-start-paths)
 - [Current Focus](#current-focus)
@@ -38,7 +38,7 @@
 - [Repository Structure](#repository-structure)
 - [Core Systems](#core-systems)
 - [Development Workflow](#development-workflow)
-- [🔗 Cross-References](#-crossreferences)
+- [🔗 Cross-References](#-cross-references)
 - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
 - [🧭 Navigation Footer](#-navigation-footer)
 - [Navigation Footer](#navigation-footer)
@@ -202,4 +202,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Cross-references include context for better understanding
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)

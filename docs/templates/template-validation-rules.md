@@ -285,7 +285,7 @@ This document connects to:
 ## Navigation
 - [← Back to Main Documentation](../README.md)
 - [→ Next: Installation Guide](./installation.md)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 ```
 
 See also: [Validation System Documentation](../tools/VALIDATION_SYSTEM.md), [Best Practices
@@ -338,5 +338,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 ## Navigation
 - [← Back to Documentation Tools](../tools/)
 - [→ Template Examples](./README.md)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#document-template-validation-rules)

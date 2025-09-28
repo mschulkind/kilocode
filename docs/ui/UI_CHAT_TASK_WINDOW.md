@@ -13,7 +13,7 @@
 - [Primary Panels and Controls](#primary-panels-and-controls)
 - [Display Conventions](#display-conventions)
 - [Message Flow Control](#message-flow-control)
-- [High-Level Flow](#highlevel-flow)
+- [High-Level Flow](#high-level-flow)
 - [Request Initiation Triggers](#request-initiation-triggers)
 - [Request Payloads and Timing](#request-payloads-and-timing)
 - [Payload Composition](#payload-composition)
@@ -46,7 +46,7 @@
 - [Primary Panels and Controls](#primary-panels-and-controls)
 - [Display Conventions](#display-conventions)
 - [Message Flow Control](#message-flow-control)
-- [High-Level Flow](#highlevel-flow)
+- [High-Level Flow](#high-level-flow)
 - [Request Initiation Triggers](#request-initiation-triggers)
 - [Request Payloads and Timing](#request-payloads-and-timing)
 - [Payload Composition](#payload-composition)
@@ -250,11 +250,11 @@ support.
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Back to UI Documentation](README.md)

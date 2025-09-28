@@ -8,11 +8,11 @@
 - [Technical Overview](#technical-overview)
 - [Background](#background)
 - [Methodology](#methodology)
-- [🗺️ Navigation Guide](#-navigation-guide)
+- [🗺️ Navigation Guide](#️-navigation-guide)
 - [Quick Start Paths](#quick-start-paths)
 - [Current Focus](#current-focus)
 - [📚 Documentation Structure](#-documentation-structure)
-- [🔗 Cross-References](#-crossreferences)
+- [🔗 Cross-References](#-cross-references)
 - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
 - [🧭 Navigation Footer](#-navigation-footer)
 - [No Dead Ends Policy](#no-dead-ends-policy)
@@ -25,11 +25,11 @@
 - [Technical Overview](#technical-overview)
 - [Background](#background)
 - [Methodology](#methodology)
-- [🗺️ Navigation Guide](#-navigation-guide)
+- [🗺️ Navigation Guide](#️-navigation-guide)
 - [Quick Start Paths](#quick-start-paths)
 - [Current Focus](#current-focus)
 - [📚 Documentation Structure](#-documentation-structure)
-- [🔗 Cross-References](#-crossreferences)
+- [🔗 Cross-References](#-cross-references)
 - [🦕 Dinosaur Analogy](#-dinosaur-analogy)
 - [🧭 Navigation Footer](#-navigation-footer)
 - [No Dead Ends Policy](#no-dead-ends-policy)
@@ -105,7 +105,7 @@ development ecosystem!
 
 ## 🧭 Navigation Footer
 - [← Back to Documentation Home](../README.md)
-- [→ Architecture Documentation](architecture/README.md)
+- [→ Architecture Documentation](../architecture/README.md)
 - [↑ Table of Contents](../README.md)
 
 ## No Dead Ends Policy
@@ -113,11 +113,11 @@ development ecosystem!
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Tools Overview](README.md)

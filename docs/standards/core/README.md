@@ -138,7 +138,7 @@ document's role or purpose, this section helps orient you.
 
 - *Examples*\*:
 - `[System Overview](architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
-- `[Architecture Index](architecture/README.md)` (from subdirectory)
+- `[Architecture Index](../architecture/README.md)` (from subdirectory)
 - `[Getting Started](GETTING_STARTED.md)` (same directory)
 
 - *Code References*\*: Use absolute repo-root paths for code files.

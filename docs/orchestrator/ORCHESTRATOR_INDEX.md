@@ -294,8 +294,8 @@ End of document.
 
 - **Next**: Check related documentation in the same directory
 
-- **Related**: [Technical Glossary](GLOSSARY.md) for terminology,
-  [Architecture Documentation](architecture/README.md) for context
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+  [Architecture Documentation](../architecture/README.md) for context
 
 - *Implementing Features:*\*
 
@@ -306,7 +306,7 @@ End of document.
 
 - *Troubleshooting Issues:*\*
 
-- **Next**: [Race Condition Analysis](architecture/README.md) →
+- **Next**: [Race Condition Analysis](../architecture/README.md) →
   [Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 - **Related**: [Orchestrator Error Handling](orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
@@ -332,7 +332,7 @@ Every section in this document connects you to your next step:
 
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

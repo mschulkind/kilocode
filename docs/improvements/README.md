@@ -13,8 +13,8 @@
 - [Core Documents](#core-documents)
 - [Document Relationships](#document-relationships)
 - [Current Focus Areas](#current-focus-areas)
-- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-12)
-- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-13)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
 - [Cross-References](#crossreferences)
 - [Related Documentation](#related-documentation)
 - [Implementation Context](#implementation-context)
@@ -33,8 +33,8 @@
 - [Core Documents](#core-documents)
 - [Document Relationships](#document-relationships)
 - [Current Focus Areas](#current-focus-areas)
-- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-12)
-- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-13)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
 - [Cross-References](#crossreferences)
 - [Related Documentation](#related-documentation)
 - [Implementation Context](#implementation-context)
@@ -84,7 +84,7 @@ actionable recommendations for system enhancement.
 
 ### For Architects
 
-- **System Overview**: Start with [Architecture Documentation](architecture/README.md)
+- **System Overview**: Start with [Architecture Documentation](../architecture/README.md)
 - **Standards Review**: Check [Documentation Standards](../standards/README.md)
 - **Implementation Plans**: See [Investigation Plans](../../plans/README.md)
 
@@ -119,7 +119,7 @@ documentation. This creates a comprehensive improvement ecosystem rather than is
 
 ### Related Documentation
 
-- **Architecture**: [System Architecture](architecture/README.md) for system design issues
+- **Architecture**: [System Architecture](../architecture/README.md) for system design issues
 - **Plans**: [Investigation Plans](../../plans/README.md) for detailed research plans
 - **Standards**: [Documentation Standards](../standards/README.md) for quality improvements
 
@@ -137,11 +137,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation guidance connects to actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Main Documentation](../README.md)
-- [← Architecture Documentation](architecture/README.md)
+- [← Architecture Documentation](../architecture/README.md)
 - [← Standards Documentation](../standards/README.md)
 - [← Investigation Plans](../../plans/README.md)
 - [← Project Root](../README.md)

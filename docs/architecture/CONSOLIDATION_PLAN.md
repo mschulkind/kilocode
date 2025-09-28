@@ -7,8 +7,8 @@
 - [Research Context](#research-context)
 - [Consolidation Overview](#consolidation-overview)
 - [Priority Candidates](#priority-candidates)
-- [A) Race Condition Summaries](#a-race-condition-summaries)
-- [B) Navigation Scenario Details](#b-navigation-scenario-details)
+- [A) Race Condition Summaries](#arace-condition-summaries)
+- [B) Navigation Scenario Details](#bnavigation-scenario-details)
 - [C) State Machine Documentation](#c-state-machine-documentation)
 - [D) API Provider Patterns](#d-api-provider-patterns)
 - [Consolidation Strategy](#consolidation-strategy)
@@ -38,8 +38,8 @@
 - [Research Context](#research-context)
 - [Consolidation Overview](#consolidation-overview)
 - [Priority Candidates](#priority-candidates)
-- [A) Race Condition Summaries](#a-race-condition-summaries)
-- [B) Navigation Scenario Details](#b-navigation-scenario-details)
+- [A) Race Condition Summaries](#arace-condition-summaries)
+- [B) Navigation Scenario Details](#bnavigation-scenario-details)
 - [C) State Machine Documentation](#c-state-machine-documentation)
 - [D) API Provider Patterns](#d-api-provider-patterns)
 - [Consolidation Strategy](#consolidation-strategy)
@@ -248,7 +248,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Implementation plan provides actionable next steps
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

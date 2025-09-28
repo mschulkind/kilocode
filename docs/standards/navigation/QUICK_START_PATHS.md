@@ -683,10 +683,10 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 - *Applying Standards to Documentation:*\*
 
 - **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
-  [Architecture Documentation](../architecture/README.md) →
+  [Architecture Documentation](../../architecture/README.md) →
   [Orchestrator Documentation](../orchestrator/README.md)
 
-- **Related**: [Race Condition Analysis](../architecture/README.md) for current
+- **Related**: [Race Condition Analysis](../../architecture/README.md) for current
   issues
 
 ### No Dead Ends Policy

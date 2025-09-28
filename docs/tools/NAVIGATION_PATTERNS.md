@@ -114,7 +114,7 @@ All documents should include a navigation footer with the following structure:
 - [← Back to [Parent Section]](../parent/)
 - [← Back to [Category]](../../category/)
 - [→ Related Topic](../related-topic/)
-- [📚 Technical Glossary](../../docs/GLOSSARY.md)
+- [📚 Technical Glossary](../../docs/../GLOSSARY.md)
 - [↑ Table of Contents](#table-of-contents)
 ```
 
@@ -124,7 +124,7 @@ Breadcrumb navigation provides clear hierarchical context:
 
 ```markdown
 - [← Back to Main Documentation](../README.md)
-- [← Back to Architecture Overview](../../docs/architecture/README.md)
+- [← Back to Architecture Overview](../../docs/../architecture/README.md)
 - [→ Next: Related Component](../related-component/)
 ```
 
@@ -195,7 +195,7 @@ Use consistent symbols for navigation elements:
 - [← Back to Documentation Tools](../tools/)
 - [← Back to Validation System](./VALIDATION_SYSTEM.md)
 - [→ Related Documentation](./DOCUMENTATION_BEST_PRACTICES.md)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)
 ```
 
@@ -222,7 +222,7 @@ For more information, see:
 ## Links
 - [Back](../)
 - [Next section](../next/)
-- [Glossary](GLOSSARY.md)
+- [Glossary](../GLOSSARY.md)
 ```
 
 This would fail validation due to:
@@ -311,5 +311,5 @@ Documentation](./VALIDATION_SYSTEM.md).
 ## Navigation
 - [← Back to Documentation Tools](./)
 - [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)

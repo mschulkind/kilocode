@@ -15,18 +15,18 @@
 - [For Experienced Engineers New to KiloCode](#for-experienced-engineers-new-to-kilocode)
 - [Documentation Structure](#documentation-structure)
 - [Core Documentation](#core-documentation)
-- [Architecture & Design](#architecture-design)
+- [Architecture & Design](#architecture--design)
 - [Development Resources](#development-resources)
-- [Critical Issues & Analysis](#critical-issues-analysis)
-- [Standards & Guidelines](#standards-guidelines)
+- [Critical Issues & Analysis](#critical-issues--analysis)
+- [Standards & Guidelines](#standards--guidelines)
 - [Current Focus Areas](#current-focus-areas)
-- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-12)
-- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-13)
-- [Long-term Goals (Quarter 1-2)](#longterm-goals-quarter-12)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
+- [Long-term Goals (Quarter 1-2)](#long-term-goals-quarter-1-2)
 - [Development Resources](#development-resources)
 - [Essential Tools](#essential-tools)
 - [Integration Resources](#integration-resources)
-- [Planning & Tracking](#planning-tracking)
+- [Planning & Tracking](#planning--tracking)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation](#navigation)
 - [Navigation](#navigation)
@@ -44,18 +44,18 @@
 - [For Experienced Engineers New to KiloCode](#for-experienced-engineers-new-to-kilocode)
 - [Documentation Structure](#documentation-structure)
 - [Core Documentation](#core-documentation)
-- [Architecture & Design](#architecture-design)
+- [Architecture & Design](#architecture--design)
 - [Development Resources](#development-resources)
-- [Critical Issues & Analysis](#critical-issues-analysis)
-- [Standards & Guidelines](#standards-guidelines)
+- [Critical Issues & Analysis](#critical-issues--analysis)
+- [Standards & Guidelines](#standards--guidelines)
 - [Current Focus Areas](#current-focus-areas)
-- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-12)
-- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-13)
-- [Long-term Goals (Quarter 1-2)](#longterm-goals-quarter-12)
+- [Immediate Priorities (Week 1-2)](#immediate-priorities-week-1-2)
+- [Strategic Initiatives (Month 1-3)](#strategic-initiatives-month-1-3)
+- [Long-term Goals (Quarter 1-2)](#long-term-goals-quarter-1-2)
 - [Development Resources](#development-resources)
 - [Essential Tools](#essential-tools)
 - [Integration Resources](#integration-resources)
-- [Planning & Tracking](#planning-tracking)
+- [Planning & Tracking](#planning--tracking)
 - [No Dead Ends Policy](#no-dead-ends-policy)
 - [Navigation](#navigation)
 - ↑ [Table of Contents](#table-of-contents)
@@ -105,12 +105,12 @@ architecture, development workflows, and troubleshooting guides.
 - **API Duplication Issues**: [API Duplication Investigation
   Summary](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) → [Root Cause
   Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- **Race Condition Issues**: [Race Condition Analysis](architecture/README.md) → [Solution
+- **Race Condition Issues**: [Race Condition Analysis](../architecture/README.md) → [Solution
   Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 
 ### Deep Dive Research (Understanding the System)
 
-- **System Architecture**: [Architecture Documentation](architecture/README.md) → [System
+- **System Architecture**: [Architecture Documentation](../architecture/README.md) → [System
   Overview](architecture/SYSTEM_OVERVIEW.md) → [Repository
   Overview](architecture/REPOSITORY_OVERVIEW.md)
 - **Core Components**: [Orchestrator Documentation](orchestrator/README.md) → [Communication
@@ -125,7 +125,7 @@ architecture, development workflows, and troubleshooting guides.
 
 ### New to Codebase
 
-- **Essential Terminology**: [Technical Glossary](GLOSSARY.md) → [Documentation
+- **Essential Terminology**: [Technical Glossary](../GLOSSARY.md) → [Documentation
   Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
 - **System Understanding**: [Repository Overview](architecture/REPOSITORY_OVERVIEW.md) → [Core
   Systems](architecture/CORE_SYSTEMS.md)
@@ -135,17 +135,17 @@ architecture, development workflows, and troubleshooting guides.
 ### For Experienced Engineers New to KiloCode
 
 **Step 1: Essential Foundation**
-- [Technical Glossary](GLOSSARY.md) - Essential terminology and concepts
+- [Technical Glossary](../GLOSSARY.md) - Essential terminology and concepts
 - [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md) - Documentation principles and
   structure
 
 **Step 2: System Understanding**
-- [Architecture Documentation](architecture/README.md) - High-level system design
+- [Architecture Documentation](../architecture/README.md) - High-level system design
 - [System Overview](architecture/SYSTEM_OVERVIEW.md) - Core system components
 - [Repository Structure](architecture/REPOSITORY_STRUCTURE.md) - Codebase organization
 
 **Step 3: Current Context**
-- [Race Condition Analysis](architecture/README.md) - Active problems and solutions
+- [Race Condition Analysis](../architecture/README.md) - Active problems and solutions
 - [API Duplication Investigation](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md) -
   Current investigation status
 
@@ -166,7 +166,7 @@ architecture, development workflows, and troubleshooting guides.
 
 ### Architecture & Design
 
-- **[Architecture Documentation](architecture/README.md)** - System architecture, design
+- **[Architecture Documentation](../architecture/README.md)** - System architecture, design
   patterns, and critical analysis
 - **[Orchestrator Documentation](orchestrator/README.md)** - Task orchestration and coordination
   systems
@@ -181,7 +181,7 @@ architecture, development workflows, and troubleshooting guides.
 
 ### Critical Issues & Analysis
 
-- **[Race Condition Analysis](architecture/README.md)** - Comprehensive race condition
+- **[Race Condition Analysis](../architecture/README.md)** - Comprehensive race condition
   investigation
 - **[API Duplication Investigation](architecture/API_DUPLICATION_INVESTIGATION_SUMMARY.md)** -
   API duplication root cause analysis
@@ -241,11 +241,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Quick start paths provide clear entry points for different user types
 
 ## Navigation
-- 📚 [Technical Glossary](GLOSSARY.md)
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Project Root](../README.md)
-- [← Architecture Documentation](architecture/README.md)
+- [← Architecture Documentation](../architecture/README.md)
 - [← Orchestrator Documentation](orchestrator/README.md)
 - [← Services Documentation](services/README.md)
 - [← Standards Documentation](standards/README.md)

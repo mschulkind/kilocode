@@ -394,7 +394,7 @@ Follow these steps to implement the solution:
 4. **Monitor Performance**: Ensure solution doesn't impact performance
 
 <a id="navigation-footer"></a>
-- Back: [`README.md`](architecture/README.md) · Root: [`README.md`](../README.md) · Source:
+- Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
   `/docs/architecture/API_DUPLICATION_ANALYSIS.md#L1`
 ```
 

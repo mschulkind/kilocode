@@ -121,7 +121,7 @@ document's role or purpose, this section helps orient you.
   [Testing Strategy](architecture/TESTING_STRATEGY.md) →
   [Solution Recommendations](architecture/SOLUTION_RECOMMENDATIONS.md)
 
-- **Related**: [Technical Glossary](GLOSSARY.md) for terminology,
+- **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Race Condition Analysis](README.md) for context
 
 - *Understanding the Problem:*\*
@@ -152,7 +152,7 @@ go next, return to [Architecture Documentation](../../README.md) for guidance.
 
 This document provides step-by-step implementation instructions for adding debug logging to identify
 and resolve the [race condition](README.md) causing duplicate
-[API requests](GLOSSARY.md). The implementation is designed to be non-intrusive
+[API requests](../GLOSSARY.md). The implementation is designed to be non-intrusive
 and easily removable after the issue is resolved.
 
 ## Implementation Phases
@@ -1004,10 +1004,10 @@ Every section in this document connects you to your next step:
 
 - **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-- **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
   [→ Race Condition Analysis](README.md) ·
-  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 
 - *Last Updated:*\* 2024-12-19 **Status:** Ready for Implementation **Priority:** Critical

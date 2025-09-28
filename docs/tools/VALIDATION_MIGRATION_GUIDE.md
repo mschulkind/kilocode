@@ -482,12 +482,12 @@ Follow this guide to ensure a smooth migration to the new validation system.
 This document connects to:
 
 For more information, see:
-- [Documentation Structure](architecture/README.md)
+- [Documentation Structure](../architecture/README.md)
 - [Additional Resources](../tools/README.md)
 
 ## Navigation
 - [← Back to Main Documentation](../README.md)
 - [← Back to Category](../)
 - [→ Related Topic](../related-topic/)
-- [📚 Technical Glossary](GLOSSARY.md)
+- [📚 Technical Glossary](../GLOSSARY.md)
 - [↑ Table of Contents](#table-of-contents)
