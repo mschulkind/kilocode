@@ -31,9 +31,6 @@
   - [Updates and Maintenance](#updates-and-maintenance)
   - [Navigation](#navigation)
 
-
-
-
 ## Overview
 
 This document defines the validation rules for standardized document templates to ensure consistent

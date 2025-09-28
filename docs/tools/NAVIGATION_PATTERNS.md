@@ -36,9 +36,6 @@
   - [Updates and Maintenance](#updates-and-maintenance)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 🔍 **Did You Know**: \[Interesting insight]

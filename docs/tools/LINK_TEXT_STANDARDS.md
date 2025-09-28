@@ -50,9 +50,6 @@
   - [Updates and Maintenance](#updates-and-maintenance)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 💡 **Fun Fact**: \[Interesting fact about the topic]
@@ -230,13 +227,10 @@ Link text should be long enough to be descriptive but short enough to be scannab
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - \[Brief description]
-- [Related Document 2](./related-doc-2.md) - \[Brief description]
-- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
-- [Category Overview](../category/)
-- [Related Resources](../resources/)
+- [Documentation Structure](../architecture/README.md)
+- [Additional Resources](../tools/README.md)
 
 ## Navigation Links
 

@@ -34,8 +34,7 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation](#navigation)
 
-
-
+- ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -217,13 +216,15 @@ support.
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - \[Brief description]
-- [Related Document 2](./related-doc-2.md) - \[Brief description]
-- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
-- [Category Overview](../category/)
-- [Related Resources](../resources/)
+- [Documentation Structure](../architecture/README.md)
+- [Additional Resources](../tools/README.md)
+
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Back to UI Documentation](README.md)

@@ -16,9 +16,6 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 This document provides \[BRIEF DESCRIPTION OF PURPOSE]. It covers \[SPECIFIC TOPICS OR AREAS].
@@ -74,9 +71,6 @@ This document provides \[BRIEF DESCRIPTION OF PURPOSE]. It covers \[SPECIFIC TOP
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](path/to/related-doc1.md) - \[Brief description]
-- [Related Document 2](path/to/related-doc2.md) - \[Brief description]
-- [External Resource](https://example.com) - \[Brief description]
 
 For more information, see:
 - [Parent Category](../../category/)

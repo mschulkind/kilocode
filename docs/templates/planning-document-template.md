@@ -39,9 +39,6 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 This document provides a detailed \[PLANNING TYPE] for \[PROJECT OR INITIATIVE]. It covers
@@ -201,9 +198,6 @@ PLANNING TOPICS OR AREAS].
 ## No Dead Ends Policy
 
 This planning document connects to:
-- [Related Plan](path/to/related-plan.md) - \[Brief description]
-- [Implementation Guide](path/to/implementation.md) - \[Brief description]
-- [Project Overview](path/to/project-overview.md) - \[Brief description]
 
 For more information, see:
 - [Project Plans](../../plans/)

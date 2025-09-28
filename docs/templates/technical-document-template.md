@@ -34,9 +34,6 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 This document provides \[BRIEF TECHNICAL DESCRIPTION]. It covers \[SPECIFIC TECHNICAL TOPICS OR
@@ -157,9 +154,6 @@ AREAS].
 ## No Dead Ends Policy
 
 This technical document connects to:
-- [Related Technical Doc](path/to/related-tech-doc.md) - \[Brief description]
-- [API Documentation](path/to/api-docs.md) - \[Brief description]
-- [Implementation Guide](path/to/implementation.md) - \[Brief description]
 
 For more information, see:
 - [Technical Architecture](../architecture/)

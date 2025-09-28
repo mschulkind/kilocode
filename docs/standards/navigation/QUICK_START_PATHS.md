@@ -40,9 +40,6 @@
     - [When You're Here, You Can:](#when-youre-here-you-can)
     - [No Dead Ends Policy](#no-dead-ends-policy)
 
-
-
-
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
@@ -64,6 +61,16 @@
 - [Common Path Issues](#common-path-issues)
 
 </details>
+
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
+
+- **Purpose**: [Brief description of what this document covers]
+- **Audience**: [Who should read this document]
+- **Prerequisites**: [What you should know before reading]
+- **Related Documents**: [Links to related documentation]
 
 ## Executive Summary
 
@@ -647,6 +654,16 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Standards Documentation](README.md) for guidance.
 - \*\*
+
+## No Dead Ends Policy
+
+Every section in this document connects you to your next step:
+
+- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+- **If you need context**: Check the [Research Context](#research-context) section
+- **If you're ready to implement**: Jump to the implementation sections
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Standards Documentation](README.md) ·
   [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

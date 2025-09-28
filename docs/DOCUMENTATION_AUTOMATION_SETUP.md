@@ -22,9 +22,6 @@
     - [Getting Help](#getting-help)
   - [Navigation Footer](#navigation-footer)
 
-
-
-
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -217,15 +214,27 @@ For advanced configuration and custom rules, see the Phase 1 implementation plan
 - [Additional Resources](./resources.md)## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - \[Brief description]
-- [Related Document 2](./related-doc-2.md) - \[Brief description]
-- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
-- [Category Overview](../category/)
-- [Related Resources](../resources/)
+- [Documentation Structure](../architecture/README.md)
+- [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 - \*\*
 
+## No Dead Ends Policy
+
+Every section in this document connects you to your next step:
+
+- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+- **If you need context**: Check the [Research Context](#research-context) section
+- **If you're ready to implement**: Jump to the implementation sections
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
 - *Navigation*\*: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

@@ -1,4 +1,6 @@
 # Navigation Footer 🧭
+- ↑ [Table of Contents](#table-of-contents)
+
 ## Table of Contents
 
 - [Navigation Footer 🧭](#navigation-footer-)
@@ -28,9 +30,6 @@
     - [Nested Document with Footer](#nested-document-with-footer)
   - [Navigation Footer](#navigation-footer)
   - [No Dead Ends Policy](#no-dead-ends-policy)
-
-
-
 
 ## When You're Here
 
@@ -548,3 +547,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

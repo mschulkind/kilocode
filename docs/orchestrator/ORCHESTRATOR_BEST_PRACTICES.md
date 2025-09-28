@@ -13,9 +13,6 @@
     - [When You're Here, You Can:](#when-youre-here-you-can)
     - [No Dead Ends Policy](#no-dead-ends-policy)
 
-
-
-
 > **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
 > this documentation provides structured guidance for understanding and implementing solutions! 🔧
 
@@ -132,6 +129,16 @@ When extending the system, adhere to these principles.
 
 <a id="navigation-footer"></a>
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
+
+- **Purpose**: [Brief description of what this document covers]
+- **Audience**: [Who should read this document]
+- **Prerequisites**: [What you should know before reading]
+- **Related Documents**: [Links to related documentation]
+
 ## 🔍 Research Context & Next Steps
 
 ### When You're Here, You Can:
@@ -175,6 +182,16 @@ When extending the system, adhere to these principles.
 Every page provides clear next steps based on your research goals. If you're unsure where to go
 next, return to [Orchestrator Documentation](README.md) for guidance.
 - \*\*
+
+## No Dead Ends Policy
+
+Every section in this document connects you to your next step:
+
+- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+- **If you need context**: Check the [Research Context](#research-context) section
+- **If you're ready to implement**: Jump to the implementation sections
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
   [→ Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) ·

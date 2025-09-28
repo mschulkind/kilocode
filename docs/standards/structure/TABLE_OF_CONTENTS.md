@@ -20,10 +20,9 @@
   - [Navigation Footer](#navigation-footer)
   - [No Dead Ends Policy](#no-dead-ends-policy)
 
-
+- ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
-
 
 This document provides \[purpose of document].
 
@@ -598,3 +597,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

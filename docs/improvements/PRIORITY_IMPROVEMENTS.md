@@ -45,8 +45,7 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation](#navigation)
 
-
-
+- ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -359,6 +358,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
 - Implementation roadmap provides clear next steps for each improvement
+
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 - [← Improvements Overview](README.md)

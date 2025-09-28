@@ -15,9 +15,6 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -95,3 +92,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - [← Navigation Standards](navigation/README.md)
 - [← Main Documentation](../README.md)
 - [← Project Root](../../README.md)
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

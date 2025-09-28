@@ -23,9 +23,6 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
     - [Example](#example)
 
-
-
-
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -181,3 +178,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

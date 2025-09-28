@@ -42,9 +42,6 @@
   - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation Footer](#navigation-footer)
 
-
-
-
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this
@@ -230,13 +227,10 @@ This index provides access to all training materials for KiloCode's documentatio
 ## No Dead Ends Policy
 
 This document connects to:
-- [Related Document 1](./related-doc-1.md) - \[Brief description]
-- [Related Document 2](./related-doc-2.md) - \[Brief description]
-- [Related Document 3](./related-doc-3.md) - \[Brief description]
 
 For more information, see:
-- [Category Overview](../category/)
-- [Related Resources](../resources/)
+- [Documentation Structure](../architecture/README.md)
+- [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 

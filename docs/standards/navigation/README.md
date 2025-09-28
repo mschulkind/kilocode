@@ -1,4 +1,6 @@
 # Navigation & User Experience 🧭
+- ↑ [Table of Contents](#table-of-contents)
+
 ## Table of Contents
 
 - [Navigation & User Experience 🧭](#navigation-user-experience-)
@@ -27,9 +29,6 @@
     - [Quality Checks](#quality-checks)
   - [Navigation Footer](#navigation-footer)
   - [No Dead Ends Policy](#no-dead-ends-policy)
-
-
-
 
 ## When You're Here
 
@@ -527,3 +526,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

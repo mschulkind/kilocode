@@ -1275,6 +1275,11 @@ function getNodeText(node) {
 		return node.children.map((child) => getNodeText(child)).join("")
 	}
 
+	// Handle text nodes that might not have a value property
+	if (node.type === 'text' && node.data && node.data.value) {
+		return node.data.value
+	}
+
 	return ""
 }
 

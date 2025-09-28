@@ -42,9 +42,6 @@
     - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation Footer](#navigation-footer)
 
-
-
-
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 > foundation, clear structure, and intuitive navigation! 🏗️
 
@@ -89,6 +86,16 @@ Navigation]\(#navigation)
 \</details## Overview
 
 The Checkpoint>
+
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
+
+- **Purpose**: [Brief description of what this document covers]
+- **Audience**: [Who should read this document]
+- **Prerequisites**: [What you should know before reading]
+- **Related Documents**: [Links to related documentation]
 
 ## Overview
 
@@ -397,7 +404,6 @@ RepoPerTaskCheckpointService |
 \[`src/services/checkpoints/Checkpoint()`, `restoreCheckpoint()` | Operation orchestration | |
 State Serializer |
 
-
 \[`src/services/checkpoints/StateSerializer.ts`]\(srcStorage/services/checkBackend.ts`](src/services/checkpoints/StorageBackend.ts)
 | `writepoints/StateSerializer.ts)
 | `serialize()`, `deserialize()`
@@ -419,7 +425,6 @@ Storage/services/checkpoints/IntegrityChecker.ts`]( Backend |
 \[`LAMIN.md`]\(AR\_SUBLAMINAR\_SUBSYSTEMSSYSTEMS\_README.md`](LAM_README.md:1) · Root:INAR
 [`LAMINAR\_SUBSYSTEMS\_INDEX\_SUBSYSTEMS\_README.md:1)
   · Root:
-
 
 \[`LAMIN.md`]\(LAMINAR\_SUBSYSTEMSAR\_SUBSYSTEMS\_README.md`](LAMINAR_SUBSYSTEMS_README.md_README.md:1)
 · Source: `/docs/LAMINAR\_CHECKPOINT\_SYSTEM:1)
@@ -458,6 +463,16 @@ next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
 - \*\*
+
+## No Dead Ends Policy
+
+Every section in this document connects you to your next step:
+
+- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+- **If you need context**: Check the [Research Context](#research-context) section
+- **If you're ready to implement**: Jump to the implementation sections
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

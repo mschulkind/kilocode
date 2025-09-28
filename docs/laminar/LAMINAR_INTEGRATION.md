@@ -28,9 +28,6 @@
     - [No Dead Ends Policy](#no-dead-ends-policy)
   - [Navigation Footer](#navigation-footer)
 
-
-
-
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 > documentation helps us understand how! ⚙️
 
@@ -48,6 +45,16 @@ execution, tool usage, and LLM interactions.
 - [Differences from Cline](#differences-from-cline)
 
 </details>
+
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
+
+- **Purpose**: [Brief description of what this document covers]
+- **Audience**: [Who should read this document]
+- **Prerequisites**: [What you should know before reading]
+- **Related Documents**: [Links to related documentation]
 
 ## What is Laminar?
 
@@ -315,6 +322,16 @@ next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation Footer
 - \*\*
+
+## No Dead Ends Policy
+
+Every section in this document connects you to your next step:
+
+- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+- **If you need context**: Check the [Research Context](#research-context) section
+- **If you're ready to implement**: Jump to the implementation sections
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 - *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

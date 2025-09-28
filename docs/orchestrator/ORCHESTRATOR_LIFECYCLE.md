@@ -27,9 +27,6 @@
     - [No Dead Ends Policy](#no-dead-ends-policy)
     - [Next doc-step I will take (if you approve)](#next-docstep-i-will-take-if-you-approve)
 
-
-
-
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 > behind the "what"! 💻
 
@@ -217,12 +214,21 @@ You have reached the end of the lifecycle document. Return to the
 
 End of document.
 
+## When You're Here
+
+This document is part of the KiloCode project documentation. If you're not familiar with this
+document's role or purpose, this section helps orient you.
+
+- **Purpose**: [Brief description of what this document covers]
+- **Audience**: [Who should read this document]
+- **Prerequisites**: [What you should know before reading]
+- **Related Documents**: [Links to related documentation]
+
 ## Provider network send points, duplicate-causes, and recommended docs-only changes
 
 ### Quick pointer to code
 - Task control loop: [`src/core/task/Task.ts`](../../src/core/task/Task.ts#L2648)
 - Message queue:
-
 
 [`src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts#L36)
 - Provider entrypoints: `createMessage()` implementations under
@@ -340,5 +346,20 @@ testing checklist. Tell me to proceed and I will create:
 - `docs/TESTING_STRATEGY.md`
 - \*\*
 
+## No Dead Ends Policy
+
+Every section in this document connects you to your next step:
+
+- **If you're new here**: Start with the [When You're Here](#when-youre-here) section
+- **If you need context**: Check the [Research Context](#research-context) section
+- **If you're ready to implement**: Jump to the implementation sections
+- **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+- **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+
 - *Navigation*\*: [docs/](../) · [orchestrator/](./) ·
   [↑ Table of Contents](#orchestrator-task-lifecycle)
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

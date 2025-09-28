@@ -46,9 +46,6 @@
   - [Related Documentation](#related-documentation)
   - [Navigation](#navigation)
 
-
-
-
 ## When You're Here
 
 This document is part of the KiloCode project documentation. If you're not familiar with this

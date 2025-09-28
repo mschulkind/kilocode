@@ -29,9 +29,6 @@
   - [Navigation Footer](#navigation-footer)
   - [No Dead Ends Policy](#no-dead-ends-policy)
 
-
-
-
 ## When You're Here
 
 This document provides \[purpose of document].
@@ -186,7 +183,6 @@ describe("Orchestrator-Subtask Integration", () => {
 
 		// Verify no race conditions
 		expect(orchestrator.callHistory).toHaveLength(2)
-
 
 expect(orchestrator.callHistory[0].endTime).toBeLessThanOrEqual(orchestrator.callHistory[1].startTime)
 	})
@@ -534,3 +530,8 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - Each section provides clear navigation to related content
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
+

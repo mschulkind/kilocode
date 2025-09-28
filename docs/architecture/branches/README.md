@@ -30,8 +30,7 @@
   - [Navigation](#navigation)
     - [Example](#example)
 
-
-
+- ↑ [Table of Contents](#table-of-contents)
 
 ## When You're Here
 
@@ -189,6 +188,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 - All internal links are validated and point to existing documents
 - Cross-references include context for better understanding
 - Recommendations provide actionable next steps
+
+
+## Navigation
+
+- 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 
