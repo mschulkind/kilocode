@@ -49,10 +49,8 @@ function generateTOC(content, config = {}) {
 		
 		if (!shouldOmit) {
 			const id = text.toLowerCase()
-				.replace(/[^a-z0-9\s-]/g, '')
+				.replace(/[^\w\s]/g, '')
 				.replace(/\s+/g, '-')
-				.replace(/-+/g, '-')
-				.replace(/^-|-$/g, '')
 			
 			headings.push({
 				level,
