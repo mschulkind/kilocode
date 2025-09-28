@@ -386,6 +386,9 @@ function validateComprehensiveStandards(structure, issues, warnings, settings, f
 		})
 	}
 
+	// Validate navigation patterns
+	validateNavigationPatterns(structure, issues, warnings, settings, file)
+
 	// Check for No Dead Ends Policy
 	if (
 		settings.requireNoDeadEndsPolicy &&
@@ -727,6 +730,209 @@ function shouldHaveFunFact(filePath) {
 	const funFactPatterns = ["context/doc_automation/", "plans/", "docs/architecture/", "docs/standards/"]
 
 	return funFactPatterns.some((pattern) => filePath.includes(pattern))
+}
+
+/**
+ * Validate navigation patterns
+ */
+function validateNavigationPatterns(structure, issues, warnings, settings, file) {
+	const filePath = file.path || "unknown"
+	const relativePath = filePath.replace(process.cwd(), "")
+
+	// Check for breadcrumb navigation
+	if (structure.hasNavigationFooter) {
+		validateBreadcrumbNavigation(structure, issues, file)
+	}
+
+	// Check for table of contents integration
+	validateTableOfContentsIntegration(structure, issues, warnings, file)
+
+	// Check for cross-reference navigation patterns
+	validateCrossReferenceNavigation(structure, issues, file)
+
+	// Check for navigation consistency
+	validateNavigationConsistency(structure, issues, warnings, file)
+}
+
+/**
+ * Validate breadcrumb navigation
+ */
+function validateBreadcrumbNavigation(structure, issues, file) {
+	const navigationLinks = structure.links.filter(link => 
+		link.text.includes('←') || link.text.includes('→') || link.text.includes('Back to') || link.text.includes('Next:')
+	)
+
+	if (navigationLinks.length === 0) {
+		issues.push({
+			type: "warning",
+			message: "Navigation footer should include breadcrumb-style navigation links",
+			line: 1,
+			column: 1,
+			rule: "kilocode-breadcrumb-navigation",
+			suggestion: "Add breadcrumb navigation with back/forward links using ← and → symbols",
+		})
+	}
+
+	// Check for proper breadcrumb format
+	const hasBackLink = navigationLinks.some(link => link.text.includes('←') || link.text.includes('Back to'))
+	const hasForwardLink = navigationLinks.some(link => link.text.includes('→') || link.text.includes('Next:'))
+
+	if (!hasBackLink) {
+		warnings.push({
+			type: "warning",
+			message: "Navigation footer should include back navigation links",
+			line: 1,
+			column: 1,
+			rule: "kilocode-back-navigation",
+			suggestion: "Add back navigation links using '← Back to [Section]' format",
+		})
+	}
+}
+
+/**
+ * Validate table of contents integration
+ */
+function validateTableOfContentsIntegration(structure, issues, warnings, file) {
+	const hasTableOfContents = structure.headings.some(heading => 
+		heading.text.toLowerCase().includes('table of contents') || 
+		heading.text.toLowerCase().includes('contents')
+	)
+
+	const headingCount = structure.headings.length
+	const shouldHaveTOC = headingCount >= 3
+
+	if (shouldHaveTOC && !hasTableOfContents) {
+		warnings.push({
+			type: "warning",
+			message: "Document with multiple headings should have a Table of Contents",
+			line: 1,
+			column: 1,
+			rule: "kilocode-table-of-contents",
+			suggestion: "Add a Table of Contents section with links to all major headings",
+		})
+	}
+
+	// Check if TOC links match actual headings
+	if (hasTableOfContents) {
+		validateTableOfContentsLinks(structure, issues, file)
+	}
+}
+
+/**
+ * Validate table of contents links
+ */
+function validateTableOfContentsLinks(structure, issues, file) {
+	const tocLinks = structure.links.filter(link => link.url.startsWith('#'))
+	const headingIds = structure.headings.map(heading => 
+		heading.text.toLowerCase()
+			.replace(/[^\w\s]/g, '')
+			.replace(/\s+/g, '-')
+	)
+
+	for (const link of tocLinks) {
+		const targetId = link.url.substring(1)
+		if (!headingIds.includes(targetId)) {
+			issues.push({
+				type: "error",
+				message: `Table of Contents link "${link.url}" does not match any heading`,
+				line: link.line,
+				column: 1,
+				rule: "kilocode-toc-link-mismatch",
+				suggestion: "Update the link to match an existing heading or add the missing heading",
+			})
+		}
+	}
+}
+
+/**
+ * Validate cross-reference navigation patterns
+ */
+function validateCrossReferenceNavigation(structure, issues, file) {
+	const crossRefLinks = structure.crossReferences
+	const hasInternalLinks = crossRefLinks.length > 0
+
+	if (!hasInternalLinks && structure.hasNoDeadEndsPolicy) {
+		warnings.push({
+			type: "warning",
+			message: "No Dead Ends Policy section should include connecting links",
+			line: 1,
+			column: 1,
+			rule: "kilocode-no-dead-ends-links",
+			suggestion: "Add links to related documents in the No Dead Ends Policy section",
+		})
+	}
+
+	// Check for descriptive link text in cross-references
+	for (const link of crossRefLinks) {
+		if (isNonDescriptiveLink(link.text, link.target)) {
+			issues.push({
+				type: "error",
+				message: `Cross-reference "${link.text}" is not descriptive`,
+				line: link.line,
+				column: 1,
+				rule: "kilocode-non-descriptive-crossref",
+				suggestion: "Use descriptive text that explains what the linked document contains",
+			})
+		}
+	}
+}
+
+/**
+ * Validate navigation consistency
+ */
+function validateNavigationConsistency(structure, issues, warnings, file) {
+	const navigationLinks = structure.links.filter(link => 
+		link.text.includes('←') || link.text.includes('→') || 
+		link.text.includes('Back to') || link.text.includes('Next:') ||
+		link.text.includes('Table of Contents')
+	)
+
+	// Check for consistent navigation format
+	const hasConsistentFormat = navigationLinks.every(link => {
+		const text = link.text
+		return text.includes('←') || text.includes('→') || text.includes('📚') || text.includes('↑')
+	})
+
+	if (navigationLinks.length > 0 && !hasConsistentFormat) {
+		warnings.push({
+			type: "warning",
+			message: "Navigation links should use consistent formatting",
+			line: 1,
+			column: 1,
+			rule: "kilocode-navigation-consistency",
+			suggestion: "Use consistent symbols (←, →, 📚, ↑) for navigation links",
+		})
+	}
+
+	// Check for required navigation elements
+	const hasGlossaryLink = navigationLinks.some(link => 
+		link.text.includes('📚') && link.text.toLowerCase().includes('glossary')
+	)
+	const hasTOCLink = navigationLinks.some(link => 
+		link.text.includes('↑') && link.text.toLowerCase().includes('table of contents')
+	)
+
+	if (!hasGlossaryLink) {
+		warnings.push({
+			type: "warning",
+			message: "Navigation should include a link to the Technical Glossary",
+			line: 1,
+			column: 1,
+			rule: "kilocode-glossary-link",
+			suggestion: "Add a link to the Technical Glossary using 📚 Technical Glossary format",
+		})
+	}
+
+	if (structure.headings.length >= 3 && !hasTOCLink) {
+		warnings.push({
+			type: "warning",
+			message: "Navigation should include a link back to Table of Contents",
+			line: 1,
+			column: 1,
+			rule: "kilocode-toc-navigation-link",
+			suggestion: "Add a link back to Table of Contents using ↑ Table of Contents format",
+		})
+	}
 }
 
 /**
