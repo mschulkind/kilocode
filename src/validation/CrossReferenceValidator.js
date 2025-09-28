@@ -5,7 +5,7 @@
  * caching, and error handling to eliminate false positive cross-reference warnings.
  */
 import { promises as fs } from "fs";
-import { resolve } from "path";
+import path, { resolve } from "path";
 export class CrossReferenceValidator {
     constructor(options = {}) {
         this.fileCache = new Map();
@@ -115,14 +115,16 @@ export class CrossReferenceValidator {
     /**
      * Validate a complete cross-reference (file + optional anchor)
      */
-    async validateCrossReference(reference) {
+    async validateCrossReference(reference, currentFilePath = null) {
         const { filePath, anchor } = this.parseReference(reference);
+        // Resolve relative paths using current file context
+        const resolvedFilePath = this.resolvePath(filePath, currentFilePath);
         // Validate file existence
-        const fileResult = await this.validateFile(filePath);
+        const fileResult = await this.validateFile(resolvedFilePath);
         if (!fileResult.exists) {
             return {
                 reference,
-                filePath,
+                filePath: resolvedFilePath,
                 anchor,
                 fileExists: false,
                 anchorExists: false,
@@ -135,7 +137,7 @@ export class CrossReferenceValidator {
         if (!anchor) {
             return {
                 reference,
-                filePath,
+                filePath: resolvedFilePath,
                 anchor,
                 fileExists: true,
                 anchorExists: true, // null anchor is considered valid
@@ -144,10 +146,10 @@ export class CrossReferenceValidator {
             };
         }
         // Validate anchor
-        const anchorResult = await this.validateAnchor(filePath, anchor);
+        const anchorResult = await this.validateAnchor(resolvedFilePath, anchor);
         return {
             reference,
-            filePath,
+            filePath: resolvedFilePath,
             anchor,
             fileExists: true,
             anchorExists: anchorResult.found,
@@ -188,6 +190,25 @@ export class CrossReferenceValidator {
             misses: this.misses,
         };
     }
+    /**
+     * Resolve a relative path using the current file's directory as context
+     */
+    resolvePath(filePath, currentFilePath) {
+        // If it's already an absolute path, return as-is
+        if (path.isAbsolute(filePath)) {
+            return filePath;
+        }
+        
+        // If no current file path provided, assume relative to current working directory
+        if (!currentFilePath) {
+            return resolve(process.cwd(), filePath);
+        }
+        
+        // Resolve relative to the current file's directory
+        const currentDir = path.dirname(currentFilePath);
+        return resolve(currentDir, filePath);
+    }
+
     /**
      * Parse a cross-reference into file path and anchor
      */
