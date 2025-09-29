@@ -1,12 +1,14 @@
 # Chapter 9: The Missing Property Mystery 🕵️‍♂️
 
-*The final piece of the puzzle fell into place when Captain Architecture discovered the missing property.*
+![The Missing Property Mystery](../images/chapters/chapter9-missing-property-mystery.svg)
+
+_The final piece of the puzzle fell into place when Captain Architecture discovered the missing property._
 
 ---
 
 ## The Mystery Unfolds 🔍
 
-*"Why don't we have an `isExecuting` property?"* Captain Architecture wondered. *"How can we not know if a task is currently executing?"*
+_"Why don't we have an `isExecuting` property?"_ Captain Architecture wondered. _"How can we not know if a task is currently executing?"_
 
 The hero's investigation revealed a shocking truth: **The `isExecuting` property doesn't exist in the current code!**
 
@@ -17,14 +19,14 @@ Captain Architecture examined the current Task class:
 ```typescript
 // Current Task class
 class Task {
-    isInitialized: boolean = false
-    isPaused: boolean = false
-    // isExecuting: boolean = false  ← MISSING!
-    abandoned: boolean = false
+	isInitialized: boolean = false
+	isPaused: boolean = false
+	// isExecuting: boolean = false  ← MISSING!
+	abandoned: boolean = false
 }
 ```
 
-*"This is like trying to track a dinosaur's mood with only three emotions: hungry, sleepy, and confused,"* Captain Architecture thought. *"But what about 'currently eating'?"*
+_"This is like trying to track a dinosaur's mood with only three emotions: hungry, sleepy, and confused,"_ Captain Architecture thought. _"But what about 'currently eating'?"_
 
 ## The Execution Flow Problem 🔄
 
@@ -33,12 +35,12 @@ The hero's X-Ray Vision revealed the execution flow:
 ```typescript
 // Main task loop
 while (!this.abort) {
-    const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
-    // This method can run for MINUTES!
+	const didEndLoop = await this.recursivelyMakeClineRequests(nextUserContent, includeFileDetails)
+	// This method can run for MINUTES!
 }
 ```
 
-*"The problem is that `recursivelyMakeClineRequests()` can run for minutes, but we have no way to track if it's currently running,"* Captain Architecture realized.
+_"The problem is that `recursivelyMakeClineRequests()` can run for minutes, but we have no way to track if it's currently running,"_ Captain Architecture realized.
 
 ## The Task Stack Architecture 🏗️
 
@@ -59,8 +61,8 @@ public getCurrentTask(): Task | undefined {
 ```typescript
 // Task stack example:
 clineStack = [
-    parentTask,    // ← Bottom of stack (paused)
-    subtask       // ← Top of stack (currently executing)
+	parentTask, // ← Bottom of stack (paused)
+	subtask, // ← Top of stack (currently executing)
 ]
 
 // Only subtask can execute
@@ -78,6 +80,7 @@ Captain Architecture realized that the problem wasn't about concurrency between 
 **NO** - Only one task can execute at a time:
 
 ### **Scenario 1: Parent-Child Relationship** 👨‍👦
+
 ```typescript
 // Parent starts subtask
 await parentTask.startSubtask("Do something")
@@ -86,6 +89,7 @@ await parentTask.startSubtask("Do something")
 ```
 
 ### **Scenario 2: Multiple Independent Tasks** 🔄
+
 ```typescript
 // Task 1 is running
 const task1 = await provider.createTask("Build website")
@@ -110,35 +114,36 @@ The hero envisioned the solution:
 
 ```typescript
 class Task {
-    isInitialized: boolean = false
-    isPaused: boolean = false
-    isExecuting: boolean = false      // ← ADD THIS
-    abandoned: boolean = false
-    
-    async recursivelyMakeClineRequests(...args) {
-        if (this.isExecuting) {
-            console.log("Already executing, skipping duplicate call")
-            return
-        }
-        
-        this.isExecuting = true
-        try {
-            // Original implementation
-            return await this._recursivelyMakeClineRequests(...args)
-        } finally {
-            this.isExecuting = false
-        }
-    }
+	isInitialized: boolean = false
+	isPaused: boolean = false
+	isExecuting: boolean = false // ← ADD THIS
+	abandoned: boolean = false
+
+	async recursivelyMakeClineRequests(...args) {
+		if (this.isExecuting) {
+			console.log("Already executing, skipping duplicate call")
+			return
+		}
+
+		this.isExecuting = true
+		try {
+			// Original implementation
+			return await this._recursivelyMakeClineRequests(...args)
+		} finally {
+			this.isExecuting = false
+		}
+	}
 }
 ```
 
 ## The Dinosaur's Understanding 🦕
 
-*"Ah! So only one dinosaur can eat at a time, but I need to know if my friend is currently eating before I try to eat the same carcass! That's why I need to track who's eating!"* 🍖
+_"Ah! So only one dinosaur can eat at a time, but I need to know if my friend is currently eating before I try to eat the same carcass! That's why I need to track who's eating!"_ 🍖
 
 ## The Complete Picture 🎯
 
 **Task execution is sequential, not concurrent**:
+
 - Only the top task in the stack can execute
 - Other tasks are paused and waiting
 - We need `isExecuting` to prevent duplicate calls within the same task
@@ -164,7 +169,8 @@ The investigation continues in [Chapter 10: The Clean Architecture Vision](part4
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Chapter 8: The Redundant Condition Discovery](chapter8.md)
 - [→ Chapter 10: The Clean Architecture Vision](../part4/chapter10.md)
 - [↑ Table of Contents](../README.md)
@@ -172,6 +178,7 @@ The investigation continues in [Chapter 10: The Clean Architecture Vision](part4
 ---
 
 **Key Insights from This Chapter**:
+
 - 🕵️‍♂️ **The Mystery**: The `isExecuting` property was missing from the code
 - 🔄 **The Problem**: No way to track execution state within tasks
 - 💡 **The Hero's Insight**: Sometimes the missing piece is the simplest one
@@ -179,4 +186,4 @@ The investigation continues in [Chapter 10: The Clean Architecture Vision](part4
 
 ---
 
-*"The best mysteries are solved by asking the right questions."* 🦸‍♂️
+_"The best mysteries are solved by asking the right questions."_ 🦸‍♂️
