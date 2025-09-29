@@ -1,6 +1,8 @@
 # Chapter 10: The Clean Architecture Vision 🏗️
 
-*Armed with all the evidence, Captain Architecture began to envision a better world - a world where code was clean, responsibilities were clear, and bugs were rare.*
+![The Clean Architecture Vision](../images/chapters/chapter10-clean-architecture-vision.svg)
+
+_Armed with all the evidence, Captain Architecture began to envision a better world - a world where code was clean, responsibilities were clear, and bugs were rare._
 
 ---
 
@@ -18,14 +20,14 @@ graph TB
         A --> D[State Management]
         A --> E[UI Updates]
     end
-    
+
     subgraph "Clean Architecture Vision"
         F[Subtask Handler] --> G[Complete Work]
         H[Parent Manager] --> I[Manage Own State]
         H --> J[Handle Own Execution]
         K[UI Manager] --> L[Display Results]
     end
-    
+
     style A fill:#ff6b6b
     style F fill:#90EE90
     style H fill:#90EE90
@@ -37,106 +39,112 @@ graph TB
 ### **1. Clear Separation of Concerns** 🎯
 
 **Current (Bad) Design**:
+
 ```typescript
 // The Subtask Handler's confused responsibilities
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        // Initialize parent? ← NOT MY JOB!
-        // Manage parent execution? ← NOT MY JOB!
-        // Handle UI updates? ← NOT MY JOB!
-    }
+	async finishSubTask(lastMessage: string) {
+		// Initialize parent? ← NOT MY JOB!
+		// Manage parent execution? ← NOT MY JOB!
+		// Handle UI updates? ← NOT MY JOB!
+	}
 }
 ```
 
 **Clean Architecture Vision**:
+
 ```typescript
 // Clear responsibilities
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        // Just finish the subtask
-        await this.completeSubtask(lastMessage)
-        // Emit event for other components to handle
-        this.emit('subtaskCompleted', { lastMessage })
-    }
+	async finishSubTask(lastMessage: string) {
+		// Just finish the subtask
+		await this.completeSubtask(lastMessage)
+		// Emit event for other components to handle
+		this.emit("subtaskCompleted", { lastMessage })
+	}
 }
 ```
 
 ### **2. Explicit State Management** 📊
 
 **Current (Confusing) Design**:
+
 ```typescript
 // Unclear state
 class Task {
-    isInitialized: boolean = false    // What does this mean?
-    isPaused: boolean = false         // When is this true?
-    // isExecuting: boolean = false  // Missing!
+	isInitialized: boolean = false // What does this mean?
+	isPaused: boolean = false // When is this true?
+	// isExecuting: boolean = false  // Missing!
 }
 ```
 
 **Clean Architecture Vision**:
+
 ```typescript
 // Clear state machine
 enum TaskState {
-    CREATED = "created",
-    INITIALIZING = "initializing", 
-    RUNNING = "running",
-    PAUSED_FOR_SUBTASK = "paused_for_subtask",
-    WAITING_FOR_RESUME = "waiting_for_resume",
-    COMPLETED = "completed",
-    FAILED = "failed"
+	CREATED = "created",
+	INITIALIZING = "initializing",
+	RUNNING = "running",
+	PAUSED_FOR_SUBTASK = "paused_for_subtask",
+	WAITING_FOR_RESUME = "waiting_for_resume",
+	COMPLETED = "completed",
+	FAILED = "failed",
 }
 
 class Task {
-    private state: TaskState = TaskState.CREATED
-    private isExecuting: boolean = false
-    
-    async startExecution() {
-        if (this.state === TaskState.CREATED) {
-            this.state = TaskState.INITIALIZING
-            await this.initialize()
-            this.state = TaskState.RUNNING
-        }
-    }
+	private state: TaskState = TaskState.CREATED
+	private isExecuting: boolean = false
+
+	async startExecution() {
+		if (this.state === TaskState.CREATED) {
+			this.state = TaskState.INITIALIZING
+			await this.initialize()
+			this.state = TaskState.RUNNING
+		}
+	}
 }
 ```
 
 ### **3. Event-Driven Communication** 📡
 
 **Current (Tight Coupling) Design**:
+
 ```typescript
 // Direct method calls
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        // Directly calling parent methods
-        await parentTask.completeSubtask(lastMessage)
-        if (!parentTask.isPaused && parentTask.isInitialized) {
-            await parentTask.recursivelyMakeClineRequests([], false)
-        }
-    }
+	async finishSubTask(lastMessage: string) {
+		// Directly calling parent methods
+		await parentTask.completeSubtask(lastMessage)
+		if (!parentTask.isPaused && parentTask.isInitialized) {
+			await parentTask.recursivelyMakeClineRequests([], false)
+		}
+	}
 }
 ```
 
 **Clean Architecture Vision**:
+
 ```typescript
 // Event-driven communication
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        // Just emit event
-        this.eventEmitter.emit('subtaskCompleted', { lastMessage })
-    }
+	async finishSubTask(lastMessage: string) {
+		// Just emit event
+		this.eventEmitter.emit("subtaskCompleted", { lastMessage })
+	}
 }
 
 class Task {
-    constructor() {
-        this.eventEmitter.on('subtaskCompleted', this.handleSubtaskCompletion.bind(this))
-    }
-    
-    private async handleSubtaskCompletion(data: { lastMessage: string }) {
-        await this.completeSubtask(data.lastMessage)
-        if (this.shouldContinueAfterSubtask()) {
-            await this.continueExecution()
-        }
-    }
+	constructor() {
+		this.eventEmitter.on("subtaskCompleted", this.handleSubtaskCompletion.bind(this))
+	}
+
+	private async handleSubtaskCompletion(data: { lastMessage: string }) {
+		await this.completeSubtask(data.lastMessage)
+		if (this.shouldContinueAfterSubtask()) {
+			await this.continueExecution()
+		}
+	}
 }
 ```
 
@@ -145,6 +153,7 @@ class Task {
 **The Hero's Tenth Insight**: Good architecture isn't about perfect code - it's about clear responsibilities and predictable behavior.
 
 Captain Architecture realized that the goal wasn't to write perfect code, but to write code that was:
+
 - **Easy to understand** - Clear responsibilities
 - **Easy to debug** - Clear call chains
 - **Easy to maintain** - Clear boundaries
@@ -157,15 +166,15 @@ Captain Architecture realized that the goal wasn't to write perfect code, but to
 ```typescript
 // Each class has one job
 class SubtaskHandler {
-    // Only handles subtask completion
+	// Only handles subtask completion
 }
 
 class ParentTaskManager {
-    // Only handles parent task logic
+	// Only handles parent task logic
 }
 
 class UIManager {
-    // Only handles UI updates
+	// Only handles UI updates
 }
 ```
 
@@ -174,10 +183,10 @@ class UIManager {
 ```typescript
 // Components communicate through events
 class Task {
-    constructor() {
-        this.eventEmitter.on('subtaskCompleted', this.handleSubtaskCompletion.bind(this))
-        this.eventEmitter.on('userInput', this.handleUserInput.bind(this))
-    }
+	constructor() {
+		this.eventEmitter.on("subtaskCompleted", this.handleSubtaskCompletion.bind(this))
+		this.eventEmitter.on("userInput", this.handleUserInput.bind(this))
+	}
 }
 ```
 
@@ -186,10 +195,10 @@ class Task {
 ```typescript
 // Clear state transitions
 enum TaskState {
-    CREATED = "created",
-    RUNNING = "running",
-    PAUSED_FOR_SUBTASK = "paused_for_subtask",
-    COMPLETED = "completed"
+	CREATED = "created",
+	RUNNING = "running",
+	PAUSED_FOR_SUBTASK = "paused_for_subtask",
+	COMPLETED = "completed",
 }
 ```
 
@@ -204,14 +213,14 @@ graph TB
         EC --> ES[Execution Service]
         ES --> API[API Layer]
     end
-    
+
     subgraph "Clear Responsibilities"
         UI --> |"User Input"| EC
         EC --> |"State Updates"| TS
         EC --> |"Execution Commands"| ES
         ES --> |"API Calls"| API
     end
-    
+
     style EC fill:#90EE90
     style TS fill:#87CEEB
     style ES fill:#DDA0DD
@@ -220,21 +229,25 @@ graph TB
 ## The Benefits of Clean Architecture 🌟
 
 ### **1. Predictable Behavior** 🎯
+
 - Clear state transitions
 - Explicit execution paths
 - No hidden side effects
 
 ### **2. Easy Debugging** 🔍
+
 - Clear call chains
 - Explicit responsibilities
 - Isolated components
 
 ### **3. Easy Testing** 🧪
+
 - Clear interfaces
 - Isolated components
 - Mockable dependencies
 
 ### **4. Easy Maintenance** 🔧
+
 - Clear boundaries
 - Loose coupling
 - Single responsibility
@@ -256,7 +269,8 @@ The vision continues in [Chapter 11: The Implementation Plan](chapter11.md), whe
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Chapter 9: The Missing Property Mystery](../part3/chapter9.md)
 - [→ Chapter 11: The Implementation Plan](chapter11.md)
 - [↑ Table of Contents](../README.md)
@@ -264,6 +278,7 @@ The vision continues in [Chapter 11: The Implementation Plan](chapter11.md), whe
 ---
 
 **Key Insights from This Chapter**:
+
 - ✨ **The Vision**: Clean architecture with clear responsibilities
 - 🏛️ **The Three Pillars**: Separation of concerns, state management, event-driven communication
 - 💡 **The Hero's Insight**: Good architecture is about clarity, not perfection
@@ -271,4 +286,4 @@ The vision continues in [Chapter 11: The Implementation Plan](chapter11.md), whe
 
 ---
 
-*"The best architecture isn't the most complex - it's the one that makes the system's behavior predictable."* 🦸‍♂️
+_"The best architecture isn't the most complex - it's the one that makes the system's behavior predictable."_ 🦸‍♂️
