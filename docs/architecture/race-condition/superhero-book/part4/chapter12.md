@@ -1,6 +1,8 @@
 # Chapter 12: The Hero's Victory 🏆
 
-*The final battle was not against a supervillain, but against complexity itself.*
+![The Hero's Victory](../images/chapters/chapter12-heros-victory.svg)
+
+_The final battle was not against a supervillain, but against complexity itself._
 
 ---
 
@@ -15,20 +17,20 @@ Captain Architecture implemented the solution step by step, each phase bringing 
 ```typescript
 // Added isExecuting property
 class Task {
-    private isExecuting: boolean = false
-    
-    async recursivelyMakeClineRequests(...args) {
-        if (this.isExecuting) {
-            return // Skip duplicate calls
-        }
-        
-        this.isExecuting = true
-        try {
-            return await this._recursivelyMakeClineRequests(...args)
-        } finally {
-            this.isExecuting = false
-        }
-    }
+	private isExecuting: boolean = false
+
+	async recursivelyMakeClineRequests(...args) {
+		if (this.isExecuting) {
+			return // Skip duplicate calls
+		}
+
+		this.isExecuting = true
+		try {
+			return await this._recursivelyMakeClineRequests(...args)
+		} finally {
+			this.isExecuting = false
+		}
+	}
 }
 ```
 
@@ -39,16 +41,16 @@ class Task {
 ```typescript
 // Simplified the subtask completion flow
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        await this.removeClineFromStack()
-        await this.getCurrentTask()?.completeSubtask(lastMessage)
-        
-        // Let the parent handle its own continuation
-        const parentTask = this.getCurrentTask()
-        if (parentTask && !parentTask.isExecuting) {
-            await parentTask.continueExecution()
-        }
-    }
+	async finishSubTask(lastMessage: string) {
+		await this.removeClineFromStack()
+		await this.getCurrentTask()?.completeSubtask(lastMessage)
+
+		// Let the parent handle its own continuation
+		const parentTask = this.getCurrentTask()
+		if (parentTask && !parentTask.isExecuting) {
+			await parentTask.continueExecution()
+		}
+	}
 }
 ```
 
@@ -61,28 +63,28 @@ class SubtaskHandler {
 ```typescript
 // Clear state management
 enum TaskState {
-    CREATED = "created",
-    RUNNING = "running", 
-    PAUSED_FOR_SUBTASK = "paused_for_subtask",
-    COMPLETED = "completed"
+	CREATED = "created",
+	RUNNING = "running",
+	PAUSED_FOR_SUBTASK = "paused_for_subtask",
+	COMPLETED = "completed",
 }
 
 class Task {
-    private state: TaskState = TaskState.CREATED
-    private isExecuting: boolean = false
-    
-    async completeSubtask(lastMessage: string) {
-        // Add result to conversation
-        this.addToConversation(lastMessage)
-        
-        // Transition state
-        if (this.state === TaskState.PAUSED_FOR_SUBTASK) {
-            this.state = TaskState.RUNNING
-            if (!this.isExecuting) {
-                await this.continueExecution()
-            }
-        }
-    }
+	private state: TaskState = TaskState.CREATED
+	private isExecuting: boolean = false
+
+	async completeSubtask(lastMessage: string) {
+		// Add result to conversation
+		this.addToConversation(lastMessage)
+
+		// Transition state
+		if (this.state === TaskState.PAUSED_FOR_SUBTASK) {
+			this.state = TaskState.RUNNING
+			if (!this.isExecuting) {
+				await this.continueExecution()
+			}
+		}
+	}
 }
 ```
 
@@ -93,23 +95,23 @@ class Task {
 ```typescript
 // Loose coupling through events
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        await this.completeSubtask(lastMessage)
-        this.eventEmitter.emit('subtaskCompleted', { lastMessage })
-    }
+	async finishSubTask(lastMessage: string) {
+		await this.completeSubtask(lastMessage)
+		this.eventEmitter.emit("subtaskCompleted", { lastMessage })
+	}
 }
 
 class Task {
-    constructor() {
-        this.eventEmitter.on('subtaskCompleted', this.handleSubtaskCompletion.bind(this))
-    }
-    
-    private async handleSubtaskCompletion(data: { lastMessage: string }) {
-        await this.completeSubtask(data.lastMessage)
-        if (this.shouldContinueAfterSubtask()) {
-            await this.continueExecution()
-        }
-    }
+	constructor() {
+		this.eventEmitter.on("subtaskCompleted", this.handleSubtaskCompletion.bind(this))
+	}
+
+	private async handleSubtaskCompletion(data: { lastMessage: string }) {
+		await this.completeSubtask(data.lastMessage)
+		if (this.shouldContinueAfterSubtask()) {
+			await this.continueExecution()
+		}
+	}
 }
 ```
 
@@ -121,43 +123,43 @@ class Task {
 
 ```typescript
 // Test 1: Duplicate execution prevention
-describe('Duplicate Execution Prevention', () => {
-    test('should not make duplicate API calls', async () => {
-        const task = new Task()
-        const apiCallSpy = jest.spyOn(task, 'recursivelyMakeClineRequests')
-        
-        await task.startExecution()
-        await task.completeSubtask("test result")
-        
-        expect(apiCallSpy).toHaveBeenCalledTimes(1) // ✅ Only one call
-    })
+describe("Duplicate Execution Prevention", () => {
+	test("should not make duplicate API calls", async () => {
+		const task = new Task()
+		const apiCallSpy = jest.spyOn(task, "recursivelyMakeClineRequests")
+
+		await task.startExecution()
+		await task.completeSubtask("test result")
+
+		expect(apiCallSpy).toHaveBeenCalledTimes(1) // ✅ Only one call
+	})
 })
 
 // Test 2: State machine transitions
-describe('Task State Machine', () => {
-    test('should transition states correctly', async () => {
-        const task = new Task()
-        
-        expect(task.getState()).toBe(TaskState.CREATED)
-        await task.startExecution()
-        expect(task.getState()).toBe(TaskState.RUNNING)
-        await task.pauseForSubtask()
-        expect(task.getState()).toBe(TaskState.PAUSED_FOR_SUBTASK)
-    })
+describe("Task State Machine", () => {
+	test("should transition states correctly", async () => {
+		const task = new Task()
+
+		expect(task.getState()).toBe(TaskState.CREATED)
+		await task.startExecution()
+		expect(task.getState()).toBe(TaskState.RUNNING)
+		await task.pauseForSubtask()
+		expect(task.getState()).toBe(TaskState.PAUSED_FOR_SUBTASK)
+	})
 })
 
 // Test 3: Event-driven communication
-describe('Event-Driven Communication', () => {
-    test('should emit events correctly', async () => {
-        const task = new Task()
-        const eventSpy = jest.spyOn(task.eventEmitter, 'emit')
-        
-        await task.completeSubtask("test result")
-        
-        expect(eventSpy).toHaveBeenCalledWith('subtaskCompleted', {
-            lastMessage: "test result"
-        })
-    })
+describe("Event-Driven Communication", () => {
+	test("should emit events correctly", async () => {
+		const task = new Task()
+		const eventSpy = jest.spyOn(task.eventEmitter, "emit")
+
+		await task.completeSubtask("test result")
+
+		expect(eventSpy).toHaveBeenCalledWith("subtaskCompleted", {
+			lastMessage: "test result",
+		})
+	})
 })
 ```
 
@@ -174,14 +176,14 @@ graph TB
         EC --> ES[Execution Service]
         ES --> API[API Layer]
     end
-    
+
     subgraph "Clear Responsibilities"
         UI --> |"User Input"| EC
         EC --> |"State Updates"| TS
         EC --> |"Execution Commands"| ES
         ES --> |"API Calls"| API
     end
-    
+
     style EC fill:#90EE90
     style TS fill:#87CEEB
     style ES fill:#DDA0DD
@@ -190,6 +192,7 @@ graph TB
 ## The Victory Metrics 📈
 
 ### **Technical Victory** 🔧
+
 - ✅ **Zero duplicate API calls** (regardless of navigation)
 - ✅ **Clear separation of concerns** (each component has one job)
 - ✅ **Predictable state management** (clear state machine)
@@ -197,6 +200,7 @@ graph TB
 - ✅ **Maintainable code** (loose coupling, clear interfaces)
 
 ### **User Experience Victory** 👥
+
 - ✅ **Faster response times** (no duplicate processing)
 - ✅ **More reliable behavior** (predictable state transitions)
 - ✅ **Better error handling** (clear error boundaries)
@@ -217,27 +221,32 @@ Captain Architecture realized that the victory wasn't just about fixing the bug 
 ## The Lessons Learned 📚
 
 ### **1. Question Everything** 🤔
-*"The obvious explanation is often wrong. Always dig deeper."*
+
+_"The obvious explanation is often wrong. Always dig deeper."_
 
 ### **2. Separate Concerns** 🎯
-*"Each component should have one job and do it well."*
+
+_"Each component should have one job and do it well."_
 
 ### **3. Make State Explicit** 📊
-*"Hidden state leads to hidden bugs. Make everything visible."*
+
+_"Hidden state leads to hidden bugs. Make everything visible."_
 
 ### **4. Use Accurate Terminology** 📝
-*"Wrong labels lead to wrong solutions. Call things what they are."*
+
+_"Wrong labels lead to wrong solutions. Call things what they are."_
 
 ### **5. Iterate Toward Clarity** 🔄
-*"Perfect architecture emerges from iteration, not from perfect initial design."*
+
+_"Perfect architecture emerges from iteration, not from perfect initial design."_
 
 ## The Hero's Victory Speech 🎤
 
-*"Every bug tells a story. Every architectural problem is an opportunity to learn. The 'race condition' that wasn't really a race condition taught us more about clean architecture than any textbook ever could."*
+_"Every bug tells a story. Every architectural problem is an opportunity to learn. The 'race condition' that wasn't really a race condition taught us more about clean architecture than any textbook ever could."_
 
-*"Remember: good architecture isn't about writing perfect code - it's about writing code that's easy to understand, easy to debug, and easy to maintain. When each component has a clear job and clear boundaries, everything works together harmoniously."*
+_"Remember: good architecture isn't about writing perfect code - it's about writing code that's easy to understand, easy to debug, and easy to maintain. When each component has a clear job and clear boundaries, everything works together harmoniously."_
 
-*"The real victory isn't just fixing the bug - it's building a system that won't have this kind of bug again."*
+_"The real victory isn't just fixing the bug - it's building a system that won't have this kind of bug again."_
 
 ---
 
@@ -247,7 +256,8 @@ The journey concludes in [Epilogue: The Hero's Wisdom](epilogue.md), where Capta
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Chapter 11: The Implementation Plan](chapter11.md)
 - [→ Epilogue: The Hero's Wisdom](epilogue.md)
 - [↑ Table of Contents](../README.md)
@@ -255,6 +265,7 @@ The journey concludes in [Epilogue: The Hero's Wisdom](epilogue.md), where Capta
 ---
 
 **Key Insights from This Chapter**:
+
 - 🏆 **The Victory**: Successfully implemented clean architecture
 - ✅ **The Results**: Zero duplicate calls, clear responsibilities, predictable behavior
 - 💡 **The Hero's Insight**: Best architecture makes behavior predictable
@@ -262,4 +273,4 @@ The journey concludes in [Epilogue: The Hero's Wisdom](epilogue.md), where Capta
 
 ---
 
-*"The best victories aren't just about winning - they're about building something better."* 🦸‍♂️
+_"The best victories aren't just about winning - they're about building something better."_ 🦸‍♂️
