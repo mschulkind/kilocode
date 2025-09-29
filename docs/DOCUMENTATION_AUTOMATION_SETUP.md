@@ -227,7 +227,7 @@ VS Code integration provides real-time validation as you edit markdown files.
 For issues with the documentation automation system:
 
 1. Check the validation output for specific error messages
-2. Review the documentation standards in `docs/DOCUMENTATION_GUIDE.md`
+2. Review the documentation standards in `do../../DOCUMENTATION_GUIDE.md`
 3. Use `pnpm docs:validate:verbose` for detailed error information
 
 **Related Links:**

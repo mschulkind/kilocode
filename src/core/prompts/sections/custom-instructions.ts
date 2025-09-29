@@ -24,7 +24,7 @@ import type { SystemPromptSettings } from "../types.js"
 
 import { LANGUAGES } from "../../../shared/language.js"
 import { ClineRulesToggles } from "../../../shared/cline-rules.js" // kilocode_change
-import { getRooDirectoriesForCwd } from "../../../services/roo-config.js"
+import { getRooDirectoriesForCwd } from "../../../services/roo-config/index.js"
 
 /**
  * Safely read a file and return its trimmed content
@@ -274,7 +274,7 @@ async function loadAgentRulesFile(cwd: string): Promise<string> {
 
 					// Extract the resolved path from fileInfo
 					if (fileInfo.length > 0) {
-						resolvedPath = fileInfo[0].resolvedPath
+						resolvedPath = fileInfo[0]?.resolvedPath || ""
 					}
 				}
 			} catch (err) {

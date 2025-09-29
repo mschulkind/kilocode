@@ -158,7 +158,7 @@ architecture, development workflows, and troubleshooting guides.
 
 * [Orchestrator Documentation](../orchestrator/README.md) - Core execution patterns
 * [Development Guide](GETTING_STARTED.md) - Development workflow
-* [Testing Infrastructure](../testing/TESTING_STRATEGY.md) - Testing strategies
+* [Testing Infrastructure](../../testing/TESTING_STRATEGY.md) - Testing strategies
 
 ## Documentation Structure
 
@@ -226,7 +226,7 @@ architecture, development workflows, and troubleshooting guides.
 
 * **[Documentation Tools](tools/README.md)** - Documentation generation and validation tools
 * **[Build System](build/README.md)** - Build pipelines and deployment processes
-* **[Testing Infrastructure](../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
+* **[Testing Infrastructure](../../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
 
 ### Integration Resources
 

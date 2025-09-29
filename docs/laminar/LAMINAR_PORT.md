@@ -304,7 +304,7 @@ describe('LaminarPort', () => {
   * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
 * **Implementing Observability Features:**
-  * **Next**: [Repository Development Guide](../architecture/../architecture/GETTING_STARTED.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Next**: [Repository Development Guide](../architecture/../architectu../../GETTING_STARTED.md) → [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
   * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 * **Troubleshooting Observability Issues:**

@@ -11,7 +11,7 @@
 * [Component Deep Dive](#component-deep-dive)
 * [Task Engine](#task-engine)
 * [Streaming Parser](#streaming-parser)
-* [Tool Executor & Library](#tool-executor-library)
+* [Tool Executor & Library](#tool-executor--library)
 * [Key Interactions](#key-interactions)
 * [Navigation Footer](#navigation-footer)
 * [When You're Here](#when-youre-here)
@@ -28,7 +28,7 @@
 * [Component Deep Dive](#component-deep-dive)
 * [Task Engine](#task-engine)
 * [Streaming Parser](#streaming-parser)
-* [Tool Executor & Library](#tool-executor-library)
+* [Tool Executor & Library](#tool-executor--library)
 * [Key Interactions](#key-interactions)
 * [Navigation Footer](#navigation-footer)
 * [🔍 Research Context & Next Steps](#-research-context--next-steps)
@@ -231,7 +231,7 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [State Machines](../README.md) for behavior modeling
 
 * *Investigating Race Conditions:*\*
@@ -276,10 +276,10 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
-  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../GLOSSARY.md) ·
+  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../../GLOSSARY.md) ·
   [↑ Table of Contents](#-research-context--next-steps)

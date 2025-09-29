@@ -931,4 +931,4 @@ For more information, see:
 ## Navigation Footer
 
 * *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-  Glossary](../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)
+  Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#skill-assessment-quiz)

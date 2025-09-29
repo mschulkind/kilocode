@@ -279,7 +279,7 @@ The Laminar service provides observability, logging, and monitoring capabilities
 - [Core Systems](CORE_SYSTEMS.md)
 - [Architecture Guidelines](ARCHITECTURE_GUIDELINES.md)
 - [Development Tools](DEVELOPMENT_TOOLS.md)
-- [Testing Strategy](../testing/TESTING_STRATEGY.md)
+- [Testing Strategy](../../../testing/TESTING_STRATEGY.md)
 
 ## Navigation Footer
 

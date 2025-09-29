@@ -8,7 +8,7 @@
 * [Executive Summary](#executive-summary)
 * [Research Context](#research-context)
 * [Core Principles](#core-principles)
-* [File & Directory Conventions](#file-directory-conventions)
+* [File & Directory Conventions](#file--directory-conventions)
 * [Linking Policy](#linking-policy)
 * [Content Organization](#content-organization)
 * [Quick Reference](#quick-reference)
@@ -24,7 +24,7 @@
 * [Executive Summary](#executive-summary)
 * [Research Context](#research-context)
 * [Core Principles](#core-principles)
-* [File & Directory Conventions](#file-directory-conventions)
+* [File & Directory Conventions](#file--directory-conventions)
 * [Linking Policy](#linking-policy)
 * [Content Organization](#content-organization)
 * [Quick Reference](#quick-reference)
@@ -231,7 +231,7 @@ document's role or purpose, this section helps orient you.
 
 * [Document Structure](../structure/README.md) - How to structure individual documents
 
-* [Navigation & User Experience](../../navigation/README.md) - How to create user journeys
+* [Navigation & User Experience](../navigation/README.md) - How to create user journeys
 
 * [Code Documentation](../code/README.md) - How to document technical content
 
@@ -249,7 +249,7 @@ document's role or purpose, this section helps orient you.
 
 * \*\*
 
-* *Navigation*\*: [Back to Standards](../../../../README.md) ·
+* *Navigation*\*: [Back to Standards](../../../README.md) ·
   [Next: Document Structure](../structure/README.md) ·
   [Source: `/docs/standards/core/README.md#L1`](README.md#L1)
 
@@ -266,4 +266,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

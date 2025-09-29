@@ -128,7 +128,7 @@ export class RooIgnoreController {
 
 		// Split command into parts and get the base command
 		const parts = command.trim().split(/\s+/)
-		const baseCommand = parts[0].toLowerCase()
+		const baseCommand = parts[0]?.toLowerCase()
 
 		// Commands that read file contents
 		const fileReadingCommands = [
@@ -149,10 +149,11 @@ export class RooIgnoreController {
 			"sls",
 		]
 
-		if (fileReadingCommands.includes(baseCommand)) {
+		if (baseCommand && fileReadingCommands.includes(baseCommand)) {
 			// Check each argument that could be a file path
 			for (let i = 1; i < parts.length; i++) {
 				const arg = parts[i]
+				if (!arg) continue
 				// Skip command flags/options (both Unix and PowerShell style)
 				if (arg.startsWith("-") || arg.startsWith("/")) {
 					continue

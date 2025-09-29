@@ -168,7 +168,7 @@ This document provides \[purpose of document].
 ```markdown
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
-  `/docs/DOCUMENTATION_GUIDE.md#L1`
+  `/do../../../DOCUMENTATION_GUIDE.md#L1`
 
 <a id="navigation-footer"></a>
 - Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
@@ -295,7 +295,7 @@ foundation, clear structure, and intuitive navigation! 🏗️
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 foundation, clear structure, and intuitive navigation! 🏗️
-- Source: `/docs/DOCUMENTATION_GUIDE.md#L1`
+- Source: `/do../../../DOCUMENTATION_GUIDE.md#L1`
 
 # Subdirectory file
 
@@ -323,7 +323,7 @@ this documentation provides structured guidance for understanding and implementi
 ```markdown
 <a id="navigation-footer"></a>
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
-  `/docs/DOCUMENTATION_GUIDE.md#L1`
+  `/do../../../DOCUMENTATION_GUIDE.md#L1`
 ```
 
 ### Subdirectory Document
@@ -614,4 +614,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

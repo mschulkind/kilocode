@@ -464,7 +464,7 @@ interface AssistantMessageParser {
 <a id="navigation-footer"></a>
 
 * Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
-  `/docs/services/PROMPT_SYSTEM.md#L1`
+ ../services/PROMPT_SYSTEM.md#L1`
 
 ## No Dead Ends Policy
 
@@ -479,9 +479,9 @@ For more information, see:
 
 * \*\*
 
-* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* *Navigation*\*: [docs](../) · [services](../services/) ·
   [↑ Table of Contents](#prompt-system)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

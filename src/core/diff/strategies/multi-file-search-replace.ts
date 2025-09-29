@@ -493,8 +493,8 @@ Each file requires its own path, start_line, and diff elements.
 			let startLine = replacement.startLine + (replacement.startLine === 0 ? 0 : delta)
 
 			// First unescape any escaped markers in the content
-			searchContent = this.unescapeMarkers(searchContent)
-			replaceContent = this.unescapeMarkers(replaceContent)
+			searchContent = this.unescapeMarkers(searchContent || "")
+			replaceContent = this.unescapeMarkers(replaceContent || "")
 
 			// Strip line numbers from search and replace content if every line starts with a line number
 			const hasAllLineNumbers =
@@ -502,7 +502,10 @@ Each file requires its own path, start_line, and diff elements.
 				(everyLineHasLineNumbers(searchContent) && replaceContent.trim() === "")
 
 			if (hasAllLineNumbers && startLine === 0) {
-				startLine = parseInt(searchContent.split("\n")[0].split("|")[0])
+				const firstLine = searchContent.split("\n")[0]
+				if (firstLine) {
+					startLine = parseInt(firstLine.split("|")[0] || "0")
+				}
 			}
 
 			if (hasAllLineNumbers) {

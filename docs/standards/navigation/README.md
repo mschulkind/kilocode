@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Navigation & User Experience 🧭](#navigation-user-experience-)
+* [Navigation & User Experience 🧭](#navigation--user-experience-)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Executive Summary](#executive-summary)
@@ -11,9 +11,9 @@
 * [Emergency Response (Something's Broken!)](#emergency-response-somethings-broken)
 * [Deep Dive Research (Understanding the System)](#deep-dive-research-understanding-the-system)
 * [Implementation Journey (Building the Fix)](#implementation-journey-building-the-fix)
-* [Cross-References](#crossreferences)
+* [Cross-References](#cross-references)
 * [Reference Types](#reference-types)
-* [Cross-Reference Placement](#crossreference-placement)
+* [Cross-Reference Placement](#cross-reference-placement)
 * [User Journey Design](#user-journey-design)
 * [User Types](#user-types)
 * [Journey Optimization](#journey-optimization)
@@ -30,7 +30,7 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
 * ↑ [Table of Contents](#table-of-contents)
-* [Navigation & User Experience 🧭](#navigation-user-experience-)
+* [Navigation & User Experience 🧭](#navigation--user-experience-)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Executive Summary](#executive-summary)
@@ -39,9 +39,9 @@
 * [Emergency Response (Something's Broken!)](#emergency-response-somethings-broken)
 * [Deep Dive Research (Understanding the System)](#deep-dive-research-understanding-the-system)
 * [Implementation Journey (Building the Fix)](#implementation-journey-building-the-fix)
-* [Cross-References](#crossreferences)
+* [Cross-References](#cross-references)
 * [Reference Types](#reference-types)
-* [Cross-Reference Placement](#crossreference-placement)
+* [Cross-Reference Placement](#cross-reference-placement)
 * [User Journey Design](#user-journey-design)
 * [User Types](#user-types)
 * [Journey Optimization](#journey-optimization)
@@ -563,7 +563,7 @@ document's role or purpose, this section helps orient you.
 
 * *Navigation*\*: [Back to Standards](../../../README.md) · [Next: Quick Start
   Paths](QUICK_START_PATHS.md)
-  · [Source: `/docs/standards/../navigation/README.md#L1`](README.md#L1)
+  · [Source: `/docs/standar../navigation/README.md#L1`](README.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️
@@ -578,4 +578,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

@@ -20,9 +20,9 @@
 * [Vector Store Integration](#vector-store-integration)
 * [Embedding Management](#embedding-management)
 * [Storage Backend](#storage-backend)
-* [Performance & Caching](#performance-caching)
+* [Performance & Caching](#performance--caching)
 * [Cache Management](#cache-management)
-* [Performance Optimization](#performance-optimization)
+* [Performance Optimization](#performance--optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
 * [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
@@ -49,9 +49,9 @@
 * [Vector Store Integration](#vector-store-integration)
 * [Embedding Management](#embedding-management)
 * [Storage Backend](#storage-backend)
-* [Performance & Caching](#performance-caching)
+* [Performance & Caching](#performance--caching)
 * [Cache Management](#cache-management)
-* [Performance Optimization](#performance-optimization)
+* [Performance Optimization](#performance--optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
 * [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
@@ -438,7 +438,7 @@ export class CacheManager {
 
 * Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../../README.md)
-  · Source: `/docs/services/CODE_INDEX_SERVICE.md#L1`
+  · Source:../services/CODE_INDEX_SERVICE.md#L1`
 
 ## No Dead Ends Policy
 
@@ -447,7 +447,7 @@ This document connects to:
 For more information, see:
 
 * [Documentation Structure](../../README.md)
-* [Additional Resources](../../tools/README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
@@ -458,4 +458,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

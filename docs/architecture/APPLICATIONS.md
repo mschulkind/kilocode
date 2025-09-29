@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Applications](#applications)
+* Applications
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)

@@ -7,14 +7,14 @@ import { Task } from "../task/Task.js"
 
 import { getWorkspacePath } from "../../utils/path.js"
 import { checkGitInstalled } from "../../utils/git.js"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 
 import { ClineApiReqInfo } from "../../shared/ExtensionMessage.js"
 import { getApiMetrics } from "../../shared/getApiMetrics.js"
 
 import { DIFF_VIEW_URI_SCHEME } from "../../integrations/editor/DiffViewProvider.js"
 
-import { CheckpointServiceOptions, RepoPerTaskCheckpointService } from "../../services/checkpoints.js"
+import { CheckpointServiceOptions, RepoPerTaskCheckpointService } from "../../services/checkpoints/index.js"
 
 // kilocode_change start
 import { TelemetryEventName } from "@roo-code/types"
@@ -103,7 +103,8 @@ export async function getCheckpointService(
 		task.checkpointService = service
 		return service
 	} catch (err) {
-		log(`[Task#getCheckpointService] ${err.message}`)
+		const errorMessage = err instanceof Error ? err.message : String(err)
+		log(`[Task#getCheckpointService] ${errorMessage}`)
 		task.enableCheckpoints = false
 		reportError("Task#getCheckpointService", err) // kilocode_change
 		task.checkpointServiceInitializing = false
@@ -144,7 +145,7 @@ async function checkGitInstallation(
 			task.checkpointServiceInitializing = false
 		})
 
-		service.on("checkpoint", ({ fromHash: from, toHash: to, suppressMessage }) => {
+		service.on("checkpoint", ({ fromHash: from, toHash: to, suppressMessage }: { fromHash: string; toHash: string; suppressMessage?: boolean }) => {
 			try {
 				// Always update the current checkpoint hash in the webview, including the suppress flag
 				provider?.postMessageToWebview({
@@ -181,12 +182,14 @@ async function checkGitInstallation(
 		try {
 			await service.initShadowGit()
 		} catch (err) {
-			log(`[Task#getCheckpointService] initShadowGit -> ${err.message}`)
+			const errorMessage = err instanceof Error ? err.message : String(err)
+			log(`[Task#getCheckpointService] initShadowGit -> ${errorMessage}`)
 			task.enableCheckpoints = false
 			reportError("getCheckpointService:initShadowGit", err) // kilocode_change
 		}
 	} catch (err) {
-		log(`[Task#getCheckpointService] Unexpected error during Git check: ${err.message}`)
+		const errorMessage = err instanceof Error ? err.message : String(err)
+		log(`[Task#getCheckpointService] Unexpected error during Git check: ${errorMessage}`)
 		console.error("Git check error:", err)
 		task.enableCheckpoints = false
 		task.checkpointServiceInitializing = false
@@ -206,7 +209,7 @@ export async function checkpointSave(task: Task, force = false, suppressMessage 
 	// Start the checkpoint process in the background.
 	return service
 		.saveCheckpoint(`Task: ${task.taskId}, Time: ${Date.now()}`, { allowEmpty: force, suppressMessage })
-		.catch((err) => {
+		.catch((err: unknown) => {
 			console.error("[Task#checkpointSave] caught unexpected error, disabling checkpoints", err)
 			task.enableCheckpoints = false
 			reportError("checkpointSave", err) // kilocode_change
@@ -328,7 +331,7 @@ export async function checkpointDiff(task: Task, { ts, previousCommitHash, commi
 		await vscode.commands.executeCommand(
 			"vscode.changes",
 			mode === "full" ? "Changes since task started" : "Changes compare with next checkpoint",
-			changes.map((change) => [
+			changes.map((change: any) => [
 				vscode.Uri.file(change.paths.absolute),
 				vscode.Uri.parse(`${DIFF_VIEW_URI_SCHEME}:${change.paths.relative}`).with({
 					query: Buffer.from(change.content.before ?? "").toString("base64"),

@@ -10,7 +10,7 @@ import { getCommitInfo, getWorkingState } from "../../utils/git.js"
 
 import { openFile } from "../../integrations/misc/open-file.js"
 import { extractTextFromFile } from "../../integrations/misc/extract-text.js"
-import { diagnosticsToProblemsString } from "../../integrations/diagnostics.js"
+import { diagnosticsToProblemsString } from "../../integrations/diagnostics/index.js"
 
 import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher.js"
 
@@ -19,7 +19,7 @@ import { FileContextTracker } from "../context-tracking/FileContextTracker.js"
 import { RooIgnoreController } from "../ignore/RooIgnoreController.js"
 import { getCommand, type Command } from "../../services/command/commands.js"
 
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 import { isSupportedImageFormat } from "../tools/helpers/imageHelpers.js" // kilocode_change
 
 function getUrlErrorMessage(error: unknown): string {
@@ -93,7 +93,7 @@ export async function parseMentions(
 	const commandExistenceChecks = await Promise.all(
 		Array.from(uniqueCommandNames).map(async (commandName) => {
 			try {
-				const command = await getCommand(cwd, commandName)
+				const command = await getCommand(cwd, commandName || "")
 				return { commandName, command }
 			} catch (error) {
 				// If there's an error checking command existence, treat it as non-existent
@@ -104,7 +104,7 @@ export async function parseMentions(
 
 	// Store valid commands for later use
 	for (const { commandName, command } of commandExistenceChecks) {
-		if (command) {
+		if (command && commandName) {
 			validCommands.set(commandName, command)
 		}
 	}
@@ -112,7 +112,7 @@ export async function parseMentions(
 	// Only replace text for commands that actually exist
 	let parsedText = text
 	for (const [match, commandName] of commandMatches) {
-		if (validCommands.has(commandName)) {
+		if (commandName && validCommands.has(commandName)) {
 			parsedText = parsedText.replace(match, `Command '${commandName}' (see below for command content)`)
 		}
 	}
@@ -145,7 +145,7 @@ export async function parseMentions(
 		try {
 			await urlContentFetcher.launchBrowser()
 		} catch (error) {
-			launchBrowserError = error
+			launchBrowserError = error instanceof Error ? error : new Error(String(error))
 			const errorMessage = error instanceof Error ? error.message : String(error)
 			vscode.window.showErrorMessage(`Error fetching content for ${urlMention}: ${errorMessage}`)
 		}
@@ -199,10 +199,11 @@ export async function parseMentions(
 					}
 				}
 			} catch (error) {
+				const errorMessage = error instanceof Error ? error.message : String(error)
 				if (mention.endsWith("/")) {
-					parsedText += `\n\n<folder_content path="${mentionPath}">\nError fetching content: ${error.message}\n</folder_content>`
+					parsedText += `\n\n<folder_content path="${mentionPath}">\nError fetching content: ${errorMessage}\n</folder_content>`
 				} else {
-					parsedText += `\n\n<file_content path="${mentionPath}">\nError fetching content: ${error.message}\n</file_content>`
+					parsedText += `\n\n<file_content path="${mentionPath}">\nError fetching content: ${errorMessage}\n</file_content>`
 				}
 			}
 		} else if (mention === "problems") {
@@ -210,28 +211,32 @@ export async function parseMentions(
 				const problems = await getWorkspaceProblems(cwd, includeDiagnosticMessages, maxDiagnosticMessages)
 				parsedText += `\n\n<workspace_diagnostics>\n${problems}\n</workspace_diagnostics>`
 			} catch (error) {
-				parsedText += `\n\n<workspace_diagnostics>\nError fetching diagnostics: ${error.message}\n</workspace_diagnostics>`
+				const errorMessage = error instanceof Error ? error.message : String(error)
+				parsedText += `\n\n<workspace_diagnostics>\nError fetching diagnostics: ${errorMessage}\n</workspace_diagnostics>`
 			}
 		} else if (mention === "git-changes") {
 			try {
 				const workingState = await getWorkingState(cwd)
 				parsedText += `\n\n<git_working_state>\n${workingState}\n</git_working_state>`
 			} catch (error) {
-				parsedText += `\n\n<git_working_state>\nError fetching working state: ${error.message}\n</git_working_state>`
+				const errorMessage = error instanceof Error ? error.message : String(error)
+				parsedText += `\n\n<git_working_state>\nError fetching working state: ${errorMessage}\n</git_working_state>`
 			}
 		} else if (/^[a-f0-9]{7,40}$/.test(mention)) {
 			try {
 				const commitInfo = await getCommitInfo(mention, cwd)
 				parsedText += `\n\n<git_commit hash="${mention}">\n${commitInfo}\n</git_commit>`
 			} catch (error) {
-				parsedText += `\n\n<git_commit hash="${mention}">\nError fetching commit info: ${error.message}\n</git_commit>`
+				const errorMessage = error instanceof Error ? error.message : String(error)
+				parsedText += `\n\n<git_commit hash="${mention}">\nError fetching commit info: ${errorMessage}\n</git_commit>`
 			}
 		} else if (mention === "terminal") {
 			try {
 				const terminalOutput = await getLatestTerminalOutput()
 				parsedText += `\n\n<terminal_output>\n${terminalOutput}\n</terminal_output>`
 			} catch (error) {
-				parsedText += `\n\n<terminal_output>\nError fetching terminal output: ${error.message}\n</terminal_output>`
+				const errorMessage = error instanceof Error ? error.message : String(error)
+				parsedText += `\n\n<terminal_output>\nError fetching terminal output: ${errorMessage}\n</terminal_output>`
 			}
 		}
 	}
@@ -246,7 +251,8 @@ export async function parseMentions(
 			commandOutput += command.content
 			parsedText += `\n\n<command name="${commandName}">\n${commandOutput}\n</command>`
 		} catch (error) {
-			parsedText += `\n\n<command name="${commandName}">\nError loading command '${commandName}': ${error.message}\n</command>`
+			const errorMessage = error instanceof Error ? error.message : String(error)
+			parsedText += `\n\n<command name="${commandName}">\nError loading command '${commandName}': ${errorMessage}\n</command>`
 		}
 	}
 
@@ -254,7 +260,8 @@ export async function parseMentions(
 		try {
 			await urlContentFetcher.closeBrowser()
 		} catch (error) {
-			console.error(`Error closing browser: ${error.message}`)
+			const errorMessage = error instanceof Error ? error.message : String(error)
+			console.error(`Error closing browser: ${errorMessage}`)
 		}
 	}
 
@@ -287,7 +294,8 @@ async function getFileOrFolderContent(
 				const content = await extractTextFromFile(absPath, maxReadFileLine)
 				return content
 			} catch (error) {
-				return `(Failed to read contents of ${mentionPath}): ${error.message}`
+				const errorMessage = error instanceof Error ? error.message : String(error)
+				return `(Failed to read contents of ${mentionPath}): ${errorMessage}`
 			}
 		} else if (stats.isDirectory()) {
 			const entries = await fs.readdir(absPath, { withFileTypes: true })
@@ -297,6 +305,7 @@ async function getFileOrFolderContent(
 
 			for (let index = 0; index < entries.length; index++) {
 				const entry = entries[index]
+				if (!entry) continue
 				const isLast = index === entries.length - 1
 				const linePrefix = isLast ? "└── " : "├── "
 				const entryPath = path.join(absPath, entry.name)
@@ -344,7 +353,8 @@ async function getFileOrFolderContent(
 			return `(Failed to read contents of ${mentionPath})`
 		}
 	} catch (error) {
-		throw new Error(`Failed to access path "${mentionPath}": ${error.message}`)
+		const errorMessage = error instanceof Error ? error.message : String(error)
+		throw new Error(`Failed to access path "${mentionPath}": ${errorMessage}`)
 	}
 }
 
@@ -400,9 +410,9 @@ export async function getLatestTerminalOutput(): Promise<string> {
 		if (lastLine) {
 			let i = lines.length - 1
 
-			while (i >= 0 && !lines[i].trim().startsWith(lastLine)) {
-				i--
-			}
+		while (i >= 0 && !lines[i]?.trim().startsWith(lastLine)) {
+			i--
+		}
 
 			terminalContents = lines.slice(Math.max(i, 0)).join("\n")
 		}

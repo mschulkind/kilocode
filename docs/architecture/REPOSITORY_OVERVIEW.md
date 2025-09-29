@@ -11,7 +11,7 @@
 * [Current Focus](#current-focus)
 * [📚 Documentation Structure](#-documentation-structure)
 * [Core Documentation](#core-documentation)
-* [Development & Infrastructure](#development-infrastructure)
+* [Development & Infrastructure](#development--infrastructure)
 * [Executive Summary](#executive-summary)
 * [Quick Reference](#quick-reference)
 * [Repository Structure](#repository-structure)
@@ -33,7 +33,7 @@
 * [Current Focus](#current-focus)
 * [📚 Documentation Structure](#-documentation-structure)
 * [Core Documentation](#core-documentation)
-* [Development & Infrastructure](#development-infrastructure)
+* [Development & Infrastructure](#development--infrastructure)
 * [Executive Summary](#executive-summary)
 * [Quick Reference](#quick-reference)
 * [Repository Structure](#repository-structure)
@@ -209,4 +209,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

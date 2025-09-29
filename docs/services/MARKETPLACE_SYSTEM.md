@@ -23,7 +23,7 @@
 * [Configuration Management](#configuration-management)
 * [Server Configuration](#server-configuration)
 * [Remote Configuration](#remote-configuration)
-* [Security & Validation](#security-validation)
+* [Security & Validation](#security--validation)
 * [Package Validation](#package-validation)
 * [Sandboxing](#sandboxing)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -55,7 +55,7 @@
 * [Configuration Management](#configuration-management)
 * [Server Configuration](#server-configuration)
 * [Remote Configuration](#remote-configuration)
-* [Security & Validation](#security-validation)
+* [Security & Validation](#security--validation)
 * [Package Validation](#package-validation)
 * [Sandboxing](#sandboxing)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -587,7 +587,7 @@ interface ServerConfiguration {
 
 * Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
-  · Source: `/docs/services/MARKETPLACE_SYSTEM.md#L1`
+  · Source:../services/MARKETPLACE_SYSTEM.md#L1`
 
 ## No Dead Ends Policy
 
@@ -602,9 +602,9 @@ For more information, see:
 
 * \*\*
 
-* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* *Navigation*\*: [docs](../) · [services](../services/) ·
   [↑ Table of Contents](#marketplace-system)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

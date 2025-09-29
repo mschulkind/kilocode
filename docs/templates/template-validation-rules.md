@@ -24,8 +24,8 @@
 * [Maintenance](#maintenance)
 * [Quality Assurance](#quality-assurance)
 * [Examples](#examples)
-* [Good Example - Navigation Document](#good-example-navigation-document)
-* [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+* [Good Example - Navigation Document](#good-example---navigation-document)
+* [Bad Example - Missing Required Sections](#bad-example---missing-required-sections)
 * [Migration Guide](#migration-guide)
 * [Converting Existing Documents](#converting-existing-documents)
 * [Common Issues and Fixes](#common-issues-and-fixes)
@@ -53,8 +53,8 @@
 * [Maintenance](#maintenance)
 * [Quality Assurance](#quality-assurance)
 * [Examples](#examples)
-* [Good Example - Navigation Document](#good-example-navigation-document)
-* [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+* [Good Example - Navigation Document](#good-example---navigation-document)
+* [Bad Example - Missing Required Sections](#bad-example---missing-required-sections)
 * [Migration Guide](#migration-guide)
 * [Converting Existing Documents](#converting-existing-documents)
 * [Common Issues and Fixes](#common-issues-and-fixes)
@@ -304,7 +304,7 @@ This document connects to:
 ## Navigation
 - [← Back to Main Documentation](../README.md)
 - [→ Next: Installation Guide](./installation.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
+- [📚 Technical Glossary](../../../GLOSSARY.md)
 ```
 
 See also: [Validation System Documentation](../tools/VALIDATION_SYSTEM.md), [Best Practices
@@ -360,5 +360,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](../tools/)
 * [→ Template Examples](./README.md)
-* [📚 Technical Glossary](../GLOSSARY.md)
+* [📚 Technical Glossary](../../../GLOSSARY.md)
 * [↑ Table of Contents](#document-template-validation-rules)

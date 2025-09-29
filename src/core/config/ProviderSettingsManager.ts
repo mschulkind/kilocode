@@ -360,7 +360,7 @@ export class ProviderSettingsManager {
 						throw new Error(`Config with name '${name}' not found`)
 					}
 
-					providerSettings = providerProfiles.apiConfigs[name]
+					providerSettings = providerProfiles.apiConfigs[name] || {}
 				} else {
 					const id = params.id
 
@@ -660,7 +660,7 @@ export class ProviderSettingsManager {
 							if (existingNames.has(cloudName)) {
 								// There's a conflict - rename the existing non-cloud profile
 								const conflictingProfile = providerProfiles.apiConfigs[cloudName]
-								if (conflictingProfile.id !== cloudProfile.id) {
+								if (conflictingProfile && conflictingProfile.id !== cloudProfile.id) {
 									const newName = this.findUniqueProfileName(cloudName, existingNames)
 									providerProfiles.apiConfigs[newName] = conflictingProfile
 									existingNames.add(newName)
@@ -702,7 +702,7 @@ export class ProviderSettingsManager {
 						// Handle name conflict with existing non-cloud profile
 						if (existingNames.has(cloudName)) {
 							const existingProfile = providerProfiles.apiConfigs[cloudName]
-							if (existingProfile.id !== cloudProfile.id) {
+							if (existingProfile && existingProfile.id !== cloudProfile.id) {
 								// Rename the existing profile
 								const newName = this.findUniqueProfileName(cloudName, existingNames)
 								providerProfiles.apiConfigs[newName] = existingProfile

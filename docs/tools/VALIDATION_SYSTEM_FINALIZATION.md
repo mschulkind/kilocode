@@ -223,4 +223,4 @@ The system is now ready for production deployment with significantly improved pe
 
 ## Navigation
 
-* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-finalization-report)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-finalization-report)

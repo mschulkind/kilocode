@@ -7,14 +7,14 @@
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
 * [Research Context](#research-context)
-* [🗺️ Navigation](#-navigation)
+* [🗺️ Navigation](#️-navigation)
 * [Quick Links](#quick-links)
 * [Key Concepts](#key-concepts)
 * [Recursive Call States](#recursive-call-states)
 * [Recursive Call State Properties](#recursive-call-state-properties)
 * [State Transition Diagram](#state-transition-diagram)
 * [Race Condition Detection](#race-condition-detection)
-* [3-Request Race Condition](#3request-race-condition)
+* [3-Request Race Condition](#3-request-race-condition)
 * [Synchronization States](#synchronization-states)
 * [State Machine Implementation](#state-machine-implementation)
 * [Key States](#key-states)
@@ -28,14 +28,14 @@
 * [Table of Contents](#table-of-contents)
 * [Overview](#overview)
 * [Research Context](#research-context)
-* [🗺️ Navigation](#-navigation)
+* [🗺️ Navigation](#️-navigation)
 * [Quick Links](#quick-links)
 * [Key Concepts](#key-concepts)
 * [Recursive Call States](#recursive-call-states)
 * [Recursive Call State Properties](#recursive-call-state-properties)
 * [State Transition Diagram](#state-transition-diagram)
 * [Race Condition Detection](#race-condition-detection)
-* [3-Request Race Condition](#3request-race-condition)
+* [3-Request Race Condition](#3-request-race-condition)
 * [Synchronization States](#synchronization-states)
 * [State Machine Implementation](#state-machine-implementation)
 * [Key States](#key-states)
@@ -389,13 +389,13 @@ To prevent race conditions:
 
 * **Next**: Check related architecture documentation in the same directory
 
-* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](README.md) for context
 
 * *Implementing Architecture Features:*\*
 
-* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
-  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
@@ -426,9 +426,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Architecture Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

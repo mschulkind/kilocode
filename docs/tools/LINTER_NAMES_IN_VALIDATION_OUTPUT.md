@@ -11,13 +11,13 @@
 * [2. Validation Script](#2-validation-script)
 * [3. Remark Configuration](#3-remark-configuration)
 * [Linter Categories and Names](#linter-categories-and-names)
-* [1. Built-in Remark-Lint Plugins](#1-builtin-remarklint-plugins)
+* [1. Built-in Remark-Lint Plugins](#1-built-in-remark-lint-plugins)
 * [2. Link Validation Plugin](#2-link-validation-plugin)
 * [3. Custom KiloCode Plugins](#3-custom-kilocode-plugins)
 * [A. ](#a)
 * [B. ](#b)
 * [How Linter Names Are Set](#how-linter-names-are-set)
-* [1. Built-in Plugins](#1-builtin-plugins)
+* [1. Built-in Plugins](#1-built-in-plugins)
 * [2. Custom Plugins](#2-custom-plugins)
 * [3. Link Validation](#3-link-validation)
 * [Output Format Structure](#output-format-structure)
@@ -37,13 +37,13 @@
 * [2. Validation Script](#2-validation-script)
 * [3. Remark Configuration](#3-remark-configuration)
 * [Linter Categories and Names](#linter-categories-and-names)
-* [1. Built-in Remark-Lint Plugins](#1-builtin-remarklint-plugins)
+* [1. Built-in Remark-Lint Plugins](#1-built-in-remark-lint-plugins)
 * [2. Link Validation Plugin](#2-link-validation-plugin)
 * [3. Custom KiloCode Plugins](#3-custom-kilocode-plugins)
 * [A. ](#a)
 * [B. ](#b)
 * [How Linter Names Are Set](#how-linter-names-are-set)
-* [1. Built-in Plugins](#1-builtin-plugins)
+* [1. Built-in Plugins](#1-built-in-plugins)
 * [2. Custom Plugins](#2-custom-plugins)
 * [3. Link Validation](#3-link-validation)
 * [Output Format Structure](#output-format-structure)
@@ -301,12 +301,12 @@ Every section in this document connects you to your next step:
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 * **If you need context**: Check the [Research Context](#research-context) section
 * **If you're ready to implement**: Jump to the implementation sections
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 

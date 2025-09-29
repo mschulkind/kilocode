@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Build Pipelines](#build-pipelines)
+* [Build Pipelines](#build-pipeline)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)
@@ -32,13 +32,13 @@ This document provides comprehensive information about the build pipeline archit
 ## Related Documentation
 - [Development Tools](DEVELOPMENT_TOOLS.md)
 - [Core Systems](CORE_SYSTEMS.md)
-- [Testing Strategy](../testing/TESTING_STRATEGY.md)
+- [Testing Strategy](../../../testing/TESTING_STRATEGY.md)
 
 ## Navigation Footer
 
 - [Development Tools](DEVELOPMENT_TOOLS.md)
 - [Core Systems](CORE_SYSTEMS.md)
-- [Testing Strategy](../testing/TESTING_STRATEGY.md)
+- [Testing Strategy](../../../testing/TESTING_STRATEGY.md)
 - [Architecture Overview](ARCHITECTURE_OVERVIEW.md)
 
 ## No Dead Ends Policy

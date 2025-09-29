@@ -68,4 +68,4 @@ This document provides performance benchmarks and recommendations for the docume
 
 ## Navigation
 
-* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#performance-benchmark-report)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#performance-benchmark-report)

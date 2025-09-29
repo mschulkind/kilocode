@@ -21,7 +21,7 @@ import { CodeIndexManager } from "../../services/code-index/manager.js"
 
 import { PromptVariables, loadSystemPromptFile } from "./sections/custom-system-prompt.js"
 
-import { getToolDescriptionsForMode } from "./tools.js"
+import { getToolDescriptionsForMode } from "./tools/index.js"
 import {
 	getRulesSection,
 	getSystemInfoSection,
@@ -33,7 +33,7 @@ import {
 	getModesSection,
 	addCustomInstructions,
 	markdownFormattingSection,
-} from "./sections.js"
+} from "./sections/index.js"
 import { type ClineProviderState } from "../webview/ClineProvider.js" // kilocode_change
 
 // Helper function to get prompt component, filtering out empty objects
@@ -83,7 +83,7 @@ async function generatePrompt(
 	const { roleDefinition, baseInstructions } = getModeSelection(mode, promptComponent, customModeConfigs)
 
 	// Check if MCP functionality should be included
-	const hasMcpGroup = modeConfig.groups.some((groupEntry) => getGroupName(groupEntry) === "mcp")
+	const hasMcpGroup = modeConfig?.groups?.some((groupEntry) => getGroupName(groupEntry) === "mcp") || false
 	const hasMcpServers = mcpHub && mcpHub.getServers().length > 0
 	const shouldIncludeMcp = hasMcpGroup && hasMcpServers
 
@@ -224,7 +224,7 @@ ${customInstructions}`
 		context,
 		cwd,
 		supportsComputerUse,
-		currentMode.slug,
+		currentMode?.slug || "",
 		mcpHub,
 		effectiveDiffStrategy,
 		browserViewportSize,

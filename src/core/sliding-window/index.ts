@@ -2,8 +2,8 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { ApiHandler } from "../../api.js"
-import { MAX_CONDENSE_THRESHOLD, MIN_CONDENSE_THRESHOLD, summarizeConversation, SummarizeResponse } from "../condense.js"
+import { ApiHandler } from "../../api/index.js"
+import { MAX_CONDENSE_THRESHOLD, MIN_CONDENSE_THRESHOLD, summarizeConversation, SummarizeResponse } from "../condense/index.js"
 import { ApiMessage } from "../task-persistence/apiMessages.js"
 import { ANTHROPIC_DEFAULT_MAX_TOKENS } from "@roo-code/types"
 
@@ -40,10 +40,13 @@ export async function estimateTokenCount(
  */
 export function truncateConversation(messages: ApiMessage[], fracToRemove: number, taskId: string): ApiMessage[] {
 	TelemetryService.instance.captureSlidingWindowTruncation(taskId)
-	const truncatedMessages = [messages[0]]
+	const truncatedMessages: ApiMessage[] = []
+	if (messages[0]) {
+		truncatedMessages.push(messages[0])
+	}
 	const rawMessagesToRemove = Math.floor((messages.length - 1) * fracToRemove)
 	const messagesToRemove = rawMessagesToRemove - (rawMessagesToRemove % 2)
-	const remainingMessages = messages.slice(messagesToRemove + 1)
+	const remainingMessages = messages.slice(messagesToRemove + 1).filter((msg): msg is ApiMessage => msg !== undefined)
 	truncatedMessages.push(...remainingMessages)
 
 	return truncatedMessages
@@ -79,7 +82,7 @@ type TruncateOptions = {
 	currentProfileId: string
 }
 
-type TruncateResponse = SummarizeResponse & { prevContextTokens: number }
+type TruncateResponse = SummarizeResponse & { prevContextTokens: number; totalTokens: number }
 
 /**
  * Conditionally truncates the conversation messages if the total token count
@@ -110,6 +113,7 @@ export async function truncateConversationIfNeeded({
 
 	// Estimate tokens for the last message (which is always a user message)
 	const lastMessage = messages[messages.length - 1]
+	if (!lastMessage) return { messages, totalTokens, summary: "", cost: 0, prevContextTokens: 0 }
 	const lastMessageContent = lastMessage.content
 	const lastMessageTokens = Array.isArray(lastMessageContent)
 		? await estimateTokenCount(lastMessageContent, apiHandler)
@@ -160,7 +164,7 @@ export async function truncateConversationIfNeeded({
 				error = result.error
 				cost = result.cost
 			} else {
-				return { ...result, prevContextTokens }
+				return { ...result, prevContextTokens, totalTokens }
 			}
 		}
 	}
@@ -168,8 +172,8 @@ export async function truncateConversationIfNeeded({
 	// Fall back to sliding window truncation if needed
 	if (prevContextTokens > allowedTokens) {
 		const truncatedMessages = truncateConversation(messages, 0.5, taskId)
-		return { messages: truncatedMessages, prevContextTokens, summary: "", cost, error }
+		return { messages: truncatedMessages, prevContextTokens, summary: "", cost, error, totalTokens }
 	}
 	// No truncation or condensation needed
-	return { messages, summary: "", cost, prevContextTokens, error }
+	return { messages, summary: "", cost, prevContextTokens, error, totalTokens }
 }

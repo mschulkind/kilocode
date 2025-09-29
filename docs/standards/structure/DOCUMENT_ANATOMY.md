@@ -338,19 +338,19 @@ the parent task.
 
 * **Next**: Check related standards documentation in the same directory
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
+* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 * *Applying Standards to Documentation:*\*
 
-* **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
+* **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
   [Architecture Documentation](../../README.md) →
   [Orchestrator Documentation](../../orchestrator/README.md)
 
@@ -699,9 +699,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [Back to Structure](README.md) · [Next: Headings &
   Hierarchy](HEADINGS_HIERARCHY.md)
@@ -709,7 +709,7 @@ Every section in this document connects you to your next step:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
 layer by layer, with an eye for the unexpected fault lines."\* 🗺️

@@ -16,8 +16,8 @@
 * [Creating a New Document](#creating-a-new-document)
 * [Template Validation](#template-validation)
 * [Examples](#examples)
-* [Good Example - Navigation Document](#good-example-navigation-document)
-* [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+* [Good Example - Navigation Document](#good-example---navigation-document)
+* [Bad Example - Missing Required Sections](#bad-example---missing-required-sections)
 * [Validation Rules](#validation-rules)
 * [Best Practices](#best-practices)
 * [Document Creation](#document-creation)
@@ -42,8 +42,8 @@
 * [Creating a New Document](#creating-a-new-document)
 * [Template Validation](#template-validation)
 * [Examples](#examples)
-* [Good Example - Navigation Document](#good-example-navigation-document)
-* [Bad Example - Missing Required Sections](#bad-example-missing-required-sections)
+* [Good Example - Navigation Document](#good-example---navigation-document)
+* [Bad Example - Missing Required Sections](#bad-example---missing-required-sections)
 * [Validation Rules](#validation-rules)
 * [Best Practices](#best-practices)
 * [Document Creation](#document-creation)
@@ -94,7 +94,7 @@ For more information, see:
 * **Use Case**: Project plans, roadmaps, implementation checklists
 * **Required Sections**: When You're Here, Research Context, Progress Summary, Success Criteria,
   Navigation Footer
-* **Examples**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md), [Implementation
+* **Examples**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md), [Implementation
   Checklists](../tools/IMPLEMENTATION_CHECKLIST_TEMPLATE.md)
 
 ### General Documents
@@ -104,7 +104,7 @@ For more information, see:
 * **Required Sections**: When You're Here, Research Context, Main content sections, Navigation
   Footer
 * **Examples**: [Best Practices](../tools/DOCUMENTATION_BEST_PRACTICES.md), [Troubleshooting
-  Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+  Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
 ## Usage
 
@@ -235,5 +235,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](../tools/)
 * [→ Template Validation Rules](./template-validation-rules.md)
-* [📚 Technical Glossary](../GLOSSARY.md)
+* [📚 Technical Glossary](../../../GLOSSARY.md)
 * [↑ Table of Contents](#document-templates)

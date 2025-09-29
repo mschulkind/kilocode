@@ -16,13 +16,13 @@
 * [Common Validation Errors](#common-validation-errors)
 * [1. Missing Required Sections](#1-missing-required-sections)
 * [2. Missing Navigation Footer](#2-missing-navigation-footer)
-* [3. Non-descriptive Link Text](#3-nondescriptive-link-text)
+* [3. Non-descriptive Link Text](#3-non-descriptive-link-text)
 * [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
-* [Hands-On Exercise 1: Basic Validation](#handson-exercise-1-basic-validation)
+* [Hands-On Exercise 1: Basic Validation](#hands-on-exercise-1-basic-validation)
 * [Setup](#setup)
 * [Exercise Steps](#exercise-steps)
 * [Expected Results](#expected-results)
-* [Hands-On Exercise 2: Fixing Common Errors](#handson-exercise-2-fixing-common-errors)
+* [Hands-On Exercise 2: Fixing Common Errors](#hands-on-exercise-2-fixing-common-errors)
 * [Exercise File](#exercise-file)
 * [Fix the Issues](#fix-the-issues)
 * [Basic Validation Training](#basic-validation-training)
@@ -39,13 +39,13 @@
 * [Common Validation Errors](#common-validation-errors)
 * [1. Missing Required Sections](#1-missing-required-sections)
 * [2. Missing Navigation Footer](#2-missing-navigation-footer)
-* [3. Non-descriptive Link Text](#3-nondescriptive-link-text)
+* [3. Non-descriptive Link Text](#3-non-descriptive-link-text)
 * [4. Improper Heading Hierarchy](#4-improper-heading-hierarchy)
-* [Hands-On Exercise 1: Basic Validation](#handson-exercise-1-basic-validation)
+* [Hands-On Exercise 1: Basic Validation](#hands-on-exercise-1-basic-validation)
 * [Setup](#setup)
 * [Exercise Steps](#exercise-steps)
 * [Expected Results](#expected-results)
-* [Hands-On Exercise 2: Fixing Common Errors](#handson-exercise-2-fixing-common-errors)
+* [Hands-On Exercise 2: Fixing Common Errors](#hands-on-exercise-2-fixing-common-errors)
 * [Exercise File](#exercise-file)
 * [Fix the Issues](#fix-the-issues)
 
@@ -257,7 +257,7 @@ Some content here.
    ```
 
 **Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
 
 ```
 
@@ -388,5 +388,5 @@ For more information, see:
 ## Navigation Footer
 
 - *Navigation*\*: [← Back to Training Index](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
 ```

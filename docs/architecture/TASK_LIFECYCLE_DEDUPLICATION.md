@@ -23,7 +23,7 @@
 * [Message Queue State Check](#message-queue-state-check)
 * [State Synchronization](#state-synchronization)
 * [State Update Coordination](#state-update-coordination)
-* [Cross-Component State Sync](#crosscomponent-state-sync)
+* [Cross-Component State Sync](#cross-component-state-sync)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Multiple Task Instances](#issue-1-multiple-task-instances)
 * [Issue 2: Message Queue Duplication](#issue-2-message-queue-duplication)
@@ -55,7 +55,7 @@
 * [Message Queue State Check](#message-queue-state-check)
 * [State Synchronization](#state-synchronization)
 * [State Update Coordination](#state-update-coordination)
-* [Cross-Component State Sync](#crosscomponent-state-sync)
+* [Cross-Component State Sync](#cross-component-state-sync)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Multiple Task Instances](#issue-1-multiple-task-instances)
 * [Issue 2: Message Queue Duplication](#issue-2-message-queue-duplication)
@@ -688,4 +688,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

@@ -233,4 +233,4 @@ The validation system has been significantly simplified to reduce complexity and
 
 ## Navigation
 
-* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-breaking-changes)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-breaking-changes)

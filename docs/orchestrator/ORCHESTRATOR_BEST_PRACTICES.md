@@ -60,7 +60,7 @@ id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-
   documentation.
 * **[Extensibility Guide](ORCHESTRATOR_EXTENSIBILITY.md)**: Provides the technical details
   for creating new tools and modes.
-* **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+* **[Documentation Guide](../../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-best-practices)
 
@@ -168,7 +168,7 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Extensibility](ORCHESTRATOR_EXTENSIBILITY.md) →
   [Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
 
-* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Repository Development Guide](GETTING_STARTED.md) for codebase
   patterns
 
@@ -182,9 +182,9 @@ document's role or purpose, this section helps orient you.
 
 * *Testing and Validation:*\*
 
-* **Next**: [Testing Strategy](../../testing/TESTING_STRATEGY.md) →
+* **Next**: [Testing Strategy](../../../testing/TESTING_STRATEGY.md) →
   [Implementation Guide](../architecture/API_DUPLICATION_DEBUG_IMPLEMENTATION.md) →
-  [Repository Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
+  [Repository Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -213,10 +213,10 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
   [→ Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

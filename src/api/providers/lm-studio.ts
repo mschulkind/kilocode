@@ -147,18 +147,21 @@ export class LmStudioHandler extends BaseProvider implements SingleCompletionHan
 		const models = getModelsFromCache("lmstudio")
 		if (models && this.options.lmStudioModelId && models[this.options.lmStudioModelId]) {
 			const modelInfo = models[this.options.lmStudioModelId]
-			return {
-				id: this.options.lmStudioModelId,
-				info: {
-					...modelInfo,
-					supportsComputerUse: modelInfo.supportsComputerUse || false
-				},
+			if (modelInfo) {
+				return {
+					id: this.options.lmStudioModelId,
+					info: {
+						...modelInfo,
+						supportsComputerUse: modelInfo.supportsComputerUse || false
+					},
+				}
 			}
-		} else {
-			return {
-				id: this.options.lmStudioModelId || "",
-				info: openAiModelInfoSaneDefaults,
-			}
+		}
+		
+		// Fallback if no model found
+		return {
+			id: this.options.lmStudioModelId || "",
+			info: openAiModelInfoSaneDefaults,
 		}
 	}
 

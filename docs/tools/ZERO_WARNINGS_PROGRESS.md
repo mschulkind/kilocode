@@ -43,4 +43,4 @@ This document tracks progress toward achieving zero warnings and errors in the d
 
 ## Navigation
 
-* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#zero-warnings-progress-report)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#zero-warnings-progress-report)

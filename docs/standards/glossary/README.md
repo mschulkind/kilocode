@@ -110,11 +110,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 
 * [← Standards Overview](README.md)
-* [← Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [← Documentation Guide](../../../DOCUMENTATION_GUIDE.md)
 * [← Navigation Standards](../navigation/README.md)
 * [← Main Documentation](../../../README.md)
 * [← Project Root](../../README.md)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

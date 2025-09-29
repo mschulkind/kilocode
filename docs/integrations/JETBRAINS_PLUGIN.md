@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [JetBrains Plugin](#jetbrains-plugin)
+* [JetBrains Plugin](#jetbrains-plugin-jetbrains--partially-researched)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)
@@ -27,7 +27,7 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
 * [Navigation](#navigation)
-* [JetBrains Plugin](#jetbrains-plugin)
+* [JetBrains Plugin](#jetbrains-plugin-jetbrains--partially-researched)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)

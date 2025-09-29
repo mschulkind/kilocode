@@ -52,19 +52,19 @@ export async function parseKiloSlashCommands(
 			// match[1] is the command with any leading whitespace (e.g. " /newtask")
 			// match[2] is just the command name (e.g. "newtask")
 
-			const commandName = match[2] // casing matters
-			const command = commandReplacements[commandName]
+		const commandName = match[2] // casing matters
+		const command = commandName ? commandReplacements[commandName] : undefined
 
-			if (command) {
-				const fullMatchStartIndex = match.index
+		if (command) {
+			const fullMatchStartIndex = match.index || 0
 
-				// find position of slash command within the full match
-				const fullMatch = match[0]
-				const relativeStartIndex = fullMatch.indexOf(match[1])
+			// find position of slash command within the full match
+			const fullMatch = match[0]
+			const relativeStartIndex = fullMatch.indexOf(match[1] || "")
 
-				// calculate absolute indices in the original string
-				const slashCommandStartIndex = fullMatchStartIndex + relativeStartIndex
-				const slashCommandEndIndex = slashCommandStartIndex + match[1].length
+			// calculate absolute indices in the original string
+			const slashCommandStartIndex = fullMatchStartIndex + relativeStartIndex
+			const slashCommandEndIndex = slashCommandStartIndex + (match[1]?.length || 0)
 
 				// remove the slash command and add custom instructions at the top of this message
 				const textWithoutSlashCommand =
@@ -85,13 +85,13 @@ export async function parseKiloSlashCommands(
 					const workflowContent = (await fs.readFile(matchingWorkflow.fullPath, "utf8")).trim()
 
 					// find position of slash command within the full match
-					const fullMatchStartIndex = match.index
+					const fullMatchStartIndex = match.index || 0
 					const fullMatch = match[0]
-					const relativeStartIndex = fullMatch.indexOf(match[1])
+					const relativeStartIndex = fullMatch.indexOf(match[1] || "")
 
 					// calculate absolute indices in the original string
 					const slashCommandStartIndex = fullMatchStartIndex + relativeStartIndex
-					const slashCommandEndIndex = slashCommandStartIndex + match[1].length
+					const slashCommandEndIndex = slashCommandStartIndex + (match[1]?.length || 0)
 
 					// remove the slash command and add custom instructions at the top of this message
 					const textWithoutSlashCommand =

@@ -8,7 +8,7 @@ import { combineCommandSequences } from "../../shared/combineCommandSequences.js
 import { getApiMetrics } from "../../shared/getApiMetrics.js"
 import { findLastIndex } from "../../shared/array.js"
 import { getTaskDirectoryPath } from "../../utils/storage.js"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 
 const taskSizeCache = new NodeCache({ stdTTL: 30, checkperiod: 5 * 60 })
 
@@ -64,7 +64,7 @@ export async function taskMetadata({
 			messages[findLastIndex(messages, (m) => !(m.ask === "resume_task" || m.ask === "resume_completed_task"))] ||
 			taskMessage
 
-		timestamp = lastRelevantMessage.ts
+		timestamp = lastRelevantMessage?.ts || 0
 
 		tokenUsage = getApiMetrics(combineApiRequests(combineCommandSequences(messages.slice(1))))
 

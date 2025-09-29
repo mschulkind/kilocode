@@ -25,7 +25,7 @@
 * [Link Validation](#link-validation)
 * [Structure Validation](#structure-validation)
 * [Content Validation](#content-validation)
-* [Pre-Submission Process](#presubmission-process)
+* [Pre-Submission Process](#pre-submission-process)
 * [1. Content Review](#1-content-review)
 * [2. Structure Validation](#2-structure-validation)
 * [3. Link Validation](#3-link-validation)
@@ -65,7 +65,7 @@
 * [Link Validation](#link-validation)
 * [Structure Validation](#structure-validation)
 * [Content Validation](#content-validation)
-* [Pre-Submission Process](#presubmission-process)
+* [Pre-Submission Process](#pre-submission-process)
 * [1. Content Review](#1-content-review)
 * [2. Structure Validation](#2-structure-validation)
 * [3. Link Validation](#3-link-validation)
@@ -528,7 +528,7 @@ Common issues and solutions:
 * \*\*
 
 * *Navigation*\*: [Back to Structure](README.md) ·
-  [Next: Navigation & User Experience](../../navigation/README.md) ·
+  [Next: Navigation & User Experience](../navigation/README.md) ·
   [Source: `/docs/standards/structure/STRUCTURE_VALIDATION.md#L1`](STRUCTURE_VALIDATION.md#L1)
 
 \_"The best way to understand a complex system is to map it like a geologist maps rock formations -
@@ -544,4 +544,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

@@ -2,13 +2,13 @@
 
 ## Table of Contents
 
-* [Document Structure 🏗️](#document-structure-)
+* [Document Structure 🏗️](#document-structure-️)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Executive Summary](#executive-summary)
 * [Research Context](#research-context)
 * [Document Anatomy](#document-anatomy)
-* [Headings & Hierarchy](#headings-hierarchy)
+* [Headings & Hierarchy](#headings--hierarchy)
 * [Navigation Footer](#navigation-footer)
 * [Structure Validation](#structure-validation)
 * [Common Mistakes](#common-mistakes)
@@ -17,13 +17,13 @@
 * [Minimal Document Example](#minimal-document-example)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
-* [Document Structure 🏗️](#document-structure-)
+* [Document Structure 🏗️](#document-structure-️)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Executive Summary](#executive-summary)
 * [Research Context](#research-context)
 * [Document Anatomy](#document-anatomy)
-* [Headings & Hierarchy](#headings-hierarchy)
+* [Headings & Hierarchy](#headings--hierarchy)
 * [Navigation Footer](#navigation-footer)
 * [Structure Validation](#structure-validation)
 * [Common Mistakes](#common-mistakes)
@@ -210,7 +210,7 @@ This section covers another main topic.
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 foundation, clear structure, and intuitive navigation! 🏗️
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
-  `/docs/DOCUMENTATION_GUIDE.md#L1`
+  `/do../../../DOCUMENTATION_GUIDE.md#L1`
 
 # From subdirectory
 
@@ -448,4 +448,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

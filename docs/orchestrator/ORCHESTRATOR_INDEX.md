@@ -5,15 +5,15 @@
 * [Orchestrator Master Index](#orchestrator-master-index)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
-* [Purpose & Scope](#purpose-scope)
-* [High-Level Responsibilities](#highlevel-responsibilities)
+* [Purpose & Scope](#purpose--scope)
+* [High-Level Responsibilities](#high-level-responsibilities)
 * [Core Concepts At a Glance](#core-concepts-at-a-glance)
 * [Lifecycle Snapshot](#lifecycle-snapshot)
 * [Documentation Map](#documentation-map)
 * [Quick Reference Matrix](#quick-reference-matrix)
 * [Architecture Flow Diagram](#architecture-flow-diagram)
-* [Guardrails & Safety Overview](#guardrails-safety-overview)
-* [Change Management & Versioning](#change-management-versioning)
+* [Guardrails & Safety Overview](#guardrails--safety-overview)
+* [Change Management & Versioning](#change-management--versioning)
 * [Glossary](#glossary)
 * [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
@@ -22,15 +22,15 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Orchestrator Master Index](#orchestrator-master-index)
 * [Table of Contents](#table-of-contents)
-* [Purpose & Scope](#purpose-scope)
-* [High-Level Responsibilities](#highlevel-responsibilities)
+* [Purpose & Scope](#purpose--scope)
+* [High-Level Responsibilities](#high-level-responsibilities)
 * [Core Concepts At a Glance](#core-concepts-at-a-glance)
 * [Lifecycle Snapshot](#lifecycle-snapshot)
 * [Documentation Map](#documentation-map)
 * [Quick Reference Matrix](#quick-reference-matrix)
 * [Architecture Flow Diagram](#architecture-flow-diagram)
-* [Guardrails & Safety Overview](#guardrails-safety-overview)
-* [Change Management & Versioning](#change-management-versioning)
+* [Guardrails & Safety Overview](#guardrails--safety-overview)
+* [Change Management & Versioning](#change-management--versioning)
 * [Glossary](#glossary)
 * [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
@@ -275,7 +275,7 @@ To keep documentation synchronized with the codebase, follow these principles:
 3. **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid
    diagrams.
 4. **Rules as Policy:** For automated verification of documentation rules, consider adding checks
-   inspired by the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
+   inspired by the [Documentation Guide](../../../DOCUMENTATION_GUIDE.md).
 
 * \*\*
 
@@ -307,20 +307,20 @@ End of document.
 
 * **Next**: Check related documentation in the same directory
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
   [Architecture Documentation](../README.md) for context
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
-  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 * *Troubleshooting Issues:*\*
 
-* **Next**: [Race Condition Analysis](../../architecture/README.md) →
-  [Root Cause Analysis](../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../architecture/README.md) →
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -344,9 +344,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

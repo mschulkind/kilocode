@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Browser Automation](#browser-automation)
+* [Browser Automation](#browser-automation-src-services-browser--partially-researched)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)
@@ -31,7 +31,7 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
 * [Navigation](#navigation)
-* [Browser Automation](#browser-automation)
+* [Browser Automation](#browser-automation-src-services-browser--partially-researched)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)

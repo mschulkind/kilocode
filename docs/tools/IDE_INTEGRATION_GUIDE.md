@@ -20,14 +20,14 @@
 * [docs: validate](#docs-validate)
 * [docs: maintain](#docs-maintain)
 * [docs: report](#docs-report)
-* [Real-time Validation](#realtime-validation)
+* [Real-time Validation](#real-time-validation)
 * [Features](#features)
 * [Error Types](#error-types)
 * [Troubleshooting](#troubleshooting)
 * [Common Issues](#common-issues)
 * [Extension Not Working](#extension-not-working)
 * [Validation Not Running](#validation-not-running)
-* [Auto-fix Not Working](#autofix-not-working)
+* [Auto-fix Not Working](#auto-fix-not-working)
 * [Performance Issues](#performance-issues)
 * [Debug Mode](#debug-mode)
 * [Reset Configuration](#reset-configuration)
@@ -59,14 +59,14 @@
 * [docs: validate](#docs-validate)
 * [docs: maintain](#docs-maintain)
 * [docs: report](#docs-report)
-* [Real-time Validation](#realtime-validation)
+* [Real-time Validation](#real-time-validation)
 * [Features](#features)
 * [Error Types](#error-types)
 * [Troubleshooting](#troubleshooting)
 * [Common Issues](#common-issues)
 * [Extension Not Working](#extension-not-working)
 * [Validation Not Running](#validation-not-running)
-* [Auto-fix Not Working](#autofix-not-working)
+* [Auto-fix Not Working](#auto-fix-not-working)
 * [Performance Issues](#performance-issues)
 * [Debug Mode](#debug-mode)
 * [Reset Configuration](#reset-configuration)
@@ -277,7 +277,7 @@ For issues with IDE integration:
 
 ## Related Documentation
 
-* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [Documentation Guide](../../../DOCUMENTATION_GUIDE.md)
 * [Development Workflow](GETTING_STARTED.md)
 * [Remark Configuration](../../.remarkrc)
 * [Package Scripts](../../package.json)
@@ -300,4 +300,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

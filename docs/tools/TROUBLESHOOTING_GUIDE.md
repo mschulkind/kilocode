@@ -11,7 +11,7 @@
 * [Methodology](#methodology)
 * [Common Issues](#common-issues)
 * [1. Validation Not Running](#1-validation-not-running)
-* [2. Auto-fix Not Working](#2-autofix-not-working)
+* [2. Auto-fix Not Working](#2-auto-fix-not-working)
 * [3. Performance Issues](#3-performance-issues)
 * [4. Link Validation Errors](#4-link-validation-errors)
 * [5. Extension Conflicts](#5-extension-conflicts)
@@ -20,7 +20,7 @@
 * [2. Configuration Issues](#2-configuration-issues)
 * [3. File System Issues](#3-file-system-issues)
 * [Getting Help](#getting-help)
-* [1. Self-Diagnosis](#1-selfdiagnosis)
+* [1. Self-Diagnosis](#1-self-diagnosis)
 * [2. Log Analysis](#2-log-analysis)
 * [3. Team Support](#3-team-support)
 * [Prevention](#prevention)
@@ -40,7 +40,7 @@
 * [Methodology](#methodology)
 * [Common Issues](#common-issues)
 * [1. Validation Not Running](#1-validation-not-running)
-* [2. Auto-fix Not Working](#2-autofix-not-working)
+* [2. Auto-fix Not Working](#2-auto-fix-not-working)
 * [3. Performance Issues](#3-performance-issues)
 * [4. Link Validation Errors](#4-link-validation-errors)
 * [5. Extension Conflicts](#5-extension-conflicts)
@@ -49,7 +49,7 @@
 * [2. Configuration Issues](#2-configuration-issues)
 * [3. File System Issues](#3-file-system-issues)
 * [Getting Help](#getting-help)
-* [1. Self-Diagnosis](#1-selfdiagnosis)
+* [1. Self-Diagnosis](#1-self-diagnosis)
 * [2. Log Analysis](#2-log-analysis)
 * [3. Team Support](#3-team-support)
 * [Prevention](#prevention)
@@ -608,7 +608,7 @@ npx remark docs/ 2>&1 | grep -i error
 * [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 * [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 * [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
-* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [Documentation Guide](../../../DOCUMENTATION_GUIDE.md)
 
 ## No Dead Ends Policy
 
@@ -628,4 +628,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

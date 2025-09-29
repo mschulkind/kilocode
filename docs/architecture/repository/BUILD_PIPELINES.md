@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Build Pipelines](#build-pipelines)
+* [Build Pipelines](#build-pipeline)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Build System Overview](#build-system-overview)
@@ -41,7 +41,7 @@
 * [Navigation Footer](#navigation-footer)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
-* [Build Pipelines](#build-pipelines)
+* [Build Pipelines](#build-pipeline)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Build System Overview](#build-system-overview)
@@ -604,7 +604,7 @@ jobs:
 * \*\*
 
 * *Navigation*\*: [docs](../../) · [architecture](../../architecture/) ·
-  [repository](../../architecture/) · [↑ Table of Contents](#build-pipelines)
+  [repository](../../architecture/) · [↑ Table of Contents](#build-pipeline)
 
 ## No Dead Ends Policy
 
@@ -616,4 +616,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

@@ -7,9 +7,9 @@
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)
 * [Severity Levels](#severity-levels)
-* [Level 1: 2-Request Race Condition](#level-1-2request-race-condition)
-* [Level 2: Multiple-Request Race Condition](#level-2-multiplerequest-race-condition)
-* [Level 3: System-Wide Race Condition](#level-3-systemwide-race-condition)
+* [Level 1: 2-Request Race Condition](#level-1-2-request-race-condition)
+* [Level 2: Multiple-Request Race Condition](#level-2-multiple-request-race-condition)
+* [Level 3: System-Wide Race Condition](#level-3-system-wide-race-condition)
 * [Impact Categories](#impact-categories)
 * [User Experience Impact](#user-experience-impact)
 * [System Performance Impact](#system-performance-impact)
@@ -28,7 +28,7 @@
 * [Risk Mitigation](#risk-mitigation)
 * [Mitigation Strategies](#mitigation-strategies)
 * [Immediate Mitigation](#immediate-mitigation)
-* [Long-term Mitigation](#longterm-mitigation)
+* [Long-term Mitigation](#long-term-mitigation)
 * [Success Metrics](#success-metrics)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
@@ -39,9 +39,9 @@
 * [When You're Here](#when-youre-here)
 * [Research Context](#research-context)
 * [Severity Levels](#severity-levels)
-* [Level 1: 2-Request Race Condition](#level-1-2request-race-condition)
-* [Level 2: Multiple-Request Race Condition](#level-2-multiplerequest-race-condition)
-* [Level 3: System-Wide Race Condition](#level-3-systemwide-race-condition)
+* [Level 1: 2-Request Race Condition](#level-1-2-request-race-condition)
+* [Level 2: Multiple-Request Race Condition](#level-2-multiple-request-race-condition)
+* [Level 3: System-Wide Race Condition](#level-3-system-wide-race-condition)
 * [Impact Categories](#impact-categories)
 * [User Experience Impact](#user-experience-impact)
 * [System Performance Impact](#system-performance-impact)
@@ -60,7 +60,7 @@
 * [Risk Mitigation](#risk-mitigation)
 * [Mitigation Strategies](#mitigation-strategies)
 * [Immediate Mitigation](#immediate-mitigation)
-* [Long-term Mitigation](#longterm-mitigation)
+* [Long-term Mitigation](#long-term-mitigation)
 * [Success Metrics](#success-metrics)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
@@ -413,7 +413,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 ## Navigation
 

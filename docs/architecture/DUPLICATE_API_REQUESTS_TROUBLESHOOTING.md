@@ -28,7 +28,7 @@
 * [Pattern 4: User Action Duplication](#pattern-4-user-action-duplication)
 * [Resolution Strategies](#resolution-strategies)
 * [Immediate Actions](#immediate-actions)
-* [Short-term Solutions](#shortterm-solutions)
+* [Short-term Solutions](#short-term-solutions)
 * [Long-term Solutions](#long-term-solutions)
 * [Prevention Measures](#prevention-measures)
 * [Development Practices](#development-practices)
@@ -63,7 +63,7 @@
 * [Pattern 4: User Action Duplication](#pattern-4-user-action-duplication)
 * [Resolution Strategies](#resolution-strategies)
 * [Immediate Actions](#immediate-actions)
-* [Short-term Solutions](#shortterm-solutions)
+* [Short-term Solutions](#short-term-solutions)
 * [Long-term Solutions](#long-term-solutions)
 * [Prevention Measures](#prevention-measures)
 * [Development Practices](#development-practices)
@@ -288,7 +288,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 ## Navigation
 

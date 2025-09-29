@@ -5,14 +5,14 @@
 * [Documentation Automation Onboarding Checklist](#documentation-automation-onboarding-checklist)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
-* [Pre-Onboarding](#preonboarding)
+* [Pre-Onboarding](#pre-onboarding)
 * [1. Prerequisites](#1-prerequisites)
 * [2. Initial Setup](#2-initial-setup)
 * [Phase 1: Basic Understanding](#phase-1-basic-understanding)
 * [1. Documentation System Overview](#1-documentation-system-overview)
 * [2. Tool Familiarization](#2-tool-familiarization)
 * [3. Standards and Guidelines](#3-standards-and-guidelines)
-* [Phase 2: Hands-On Practice](#phase-2-handson-practice)
+* [Phase 2: Hands-On Practice](#phase-2-hands-on-practice)
 * [1. Basic Validation](#1-basic-validation)
 * [2. Advanced Features](#2-advanced-features)
 * [3. Real Documentation](#3-real-documentation)
@@ -51,14 +51,14 @@
 * [Documentation Automation Onboarding Checklist](#documentation-automation-onboarding-checklist)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
-* [Pre-Onboarding](#preonboarding)
+* [Pre-Onboarding](#pre-onboarding)
 * [1. Prerequisites](#1-prerequisites)
 * [2. Initial Setup](#2-initial-setup)
 * [Phase 1: Basic Understanding](#phase-1-basic-understanding)
 * [1. Documentation System Overview](#1-documentation-system-overview)
 * [2. Tool Familiarization](#2-tool-familiarization)
 * [3. Standards and Guidelines](#3-standards-and-guidelines)
-* [Phase 2: Hands-On Practice](#phase-2-handson-practice)
+* [Phase 2: Hands-On Practice](#phase-2-hands-on-practice)
 * [1. Basic Validation](#1-basic-validation)
 * [2. Advanced Features](#2-advanced-features)
 * [3. Real Documentation](#3-real-documentation)
@@ -341,7 +341,7 @@ automation system.
 * [Troubleshooting Guide](./TROUBLESHOOTING_GUIDE.md)
 * [Quick Reference Card](./QUICK_REFERENCE_CARD.md)
 * [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [Documentation Guide](../../../DOCUMENTATION_GUIDE.md)
 
 ## No Dead Ends Policy
 
@@ -360,4 +360,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

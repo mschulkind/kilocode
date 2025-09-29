@@ -39,4 +39,4 @@ This document analyzes the code flow and execution patterns.
 
 ## Navigation
 
-* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#code-flow-analysis)
+* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#code-flow-analysis)

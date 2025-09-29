@@ -24,7 +24,7 @@
 * [Long-term Solutions](#long-term-solutions)
 * [Next Steps](#next-steps)
 * [Immediate Actions](#immediate-actions)
-* [Long-term Actions](#longterm-actions)
+* [Long-term Actions](#long-term-actions)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
 * [Navigation](#navigation)
@@ -51,7 +51,7 @@
 * [Long-term Solutions](#long-term-solutions)
 * [Next Steps](#next-steps)
 * [Immediate Actions](#immediate-actions)
-* [Long-term Actions](#longterm-actions)
+* [Long-term Actions](#long-term-actions)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
 * [Example](#example)
@@ -325,7 +325,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 ## Navigation
 

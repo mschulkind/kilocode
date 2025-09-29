@@ -32,13 +32,13 @@ This document provides comprehensive information about development tools.
 ## Related Documentation
 - [Applications](APPLICATIONS.md)
 - [Build Pipelines](BUILD_PIPELINES.md)
-- [Testing Strategy](../testing/TESTING_STRATEGY.md)
+- [Testing Strategy](../../../testing/TESTING_STRATEGY.md)
 
 ## Navigation Footer
 
 - [Applications](APPLICATIONS.md)
 - [Build Pipelines](BUILD_PIPELINES.md)
-- [Testing Strategy](../testing/TESTING_STRATEGY.md)
+- [Testing Strategy](../../../testing/TESTING_STRATEGY.md)
 - [Architecture Overview](ARCHITECTURE_OVERVIEW.md)
 
 ## No Dead Ends Policy

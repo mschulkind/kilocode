@@ -12,7 +12,7 @@ This document describes the workspace packages and their organization.
 
 ## Table of Contents
 
-* [Workspace Packages](#workspace-packages)
+* Workspace Packages
 * [Research Context](#research-context)
 * [Navigation](#navigation)
 
@@ -41,4 +41,4 @@ This document describes the workspace packages and their organization.
 
 ## Navigation
 
-* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#workspace-packages)
+* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#workspace-packages)

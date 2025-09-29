@@ -550,7 +550,7 @@ sequenceDiagram
 
 * Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
-  · Source: `/docs/services/MCP_INTEGRATION.md#L1`
+  · Source:../services/MCP_INTEGRATION.md#L1`
 
 ## No Dead Ends Policy
 
@@ -565,9 +565,9 @@ For more information, see:
 
 * \*\*
 
-* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* *Navigation*\*: [docs](../) · [services](../services/) ·
   [↑ Table of Contents](#mcp-integration)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

@@ -344,7 +344,7 @@ Handle configuration issues:
   * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
 * **Implementing Observability Features:**
-  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
   * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 * **Troubleshooting Observability Issues:**

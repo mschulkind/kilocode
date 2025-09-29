@@ -24,7 +24,7 @@ import { formatReminderSection } from "./reminder.js"
 // kilocode_change start
 import { OpenRouterHandler } from "../../api/providers/openrouter.js"
 import { TelemetryService } from "@roo-code/telemetry"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 import { NativeOllamaHandler } from "../../api/providers/native-ollama.js"
 // kilocode_change end
 
@@ -216,7 +216,7 @@ export async function getEnvironmentDetails(cline: Task, includeFileDetails: boo
 		try {
 			await cline.api.fetchModel()
 		} catch (e) {
-			TelemetryService.instance.captureException(e, { context: "getEnvironmentDetails" })
+			TelemetryService.instance.captureException(e instanceof Error ? e : new Error(String(e)), { context: "getEnvironmentDetails" })
 			await cline.say(
 				"error",
 				t("kilocode:task.notLoggedInError", { error: e instanceof Error ? e.message : String(e) }),

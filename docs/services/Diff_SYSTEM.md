@@ -20,12 +20,12 @@
 * [File Operations](#file-operations)
 * [File Modification](#file-modification)
 * [Insert Groups](#insert-groups)
-* [Performance & Optimization](#performance-optimization)
+* [Performance & Optimization](#performance--optimization)
 * [Diff Processing Optimization](#diff-processing-optimization)
 * [Memory Management](#memory-management)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Diff Processing Performance](#issue-1-diff-processing-performance)
-* [Issue 2: Multi-file Operation Failures](#issue-2-multifile-operation-failures)
+* [Issue 2: Multi-file Operation Failures](#issue-2-multi-file-operation-failures)
 * [Issue 3: Change Validation Issues](#issue-3-change-validation-issues)
 * [Issue 4: Backup and Rollback Problems](#issue-4-backup-and-rollback-problems)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -49,12 +49,12 @@
 * [File Operations](#file-operations)
 * [File Modification](#file-modification)
 * [Insert Groups](#insert-groups)
-* [Performance & Optimization](#performance-optimization)
+* [Performance & Optimization](#performance--optimization)
 * [Diff Processing Optimization](#diff-processing-optimization)
 * [Memory Management](#memory-management)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Diff Processing Performance](#issue-1-diff-processing-performance)
-* [Issue 2: Multi-file Operation Failures](#issue-2-multifile-operation-failures)
+* [Issue 2: Multi-file Operation Failures](#issue-2-multi-file-operation-failures)
 * [Issue 3: Change Validation Issues](#issue-3-change-validation-issues)
 * [Issue 4: Backup and Rollback Problems](#issue-4-backup-and-rollback-problems)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -478,7 +478,7 @@ interface InsertGroup {
 
 * Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../../README.md)
-  · Source: `/docs/services/Diff_SYSTEM.md#L1`
+  · Source:../services/Diff_SYSTEM.md#L1`
 
 ## No Dead Ends Policy
 
@@ -487,7 +487,7 @@ This document connects to:
 For more information, see:
 
 * [Documentation Structure](../../README.md)
-* [Additional Resources](../../tools/README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
@@ -498,4 +498,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

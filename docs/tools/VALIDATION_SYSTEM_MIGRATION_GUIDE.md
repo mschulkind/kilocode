@@ -263,4 +263,4 @@ pnpm docs:validate
 
 ## Navigation
 
-* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-migration-guide)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-migration-guide)

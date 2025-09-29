@@ -88,13 +88,15 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 
 	const block = cloneDeep(cline.assistantMessageContent[cline.currentStreamingContentIndex]) // need to create copy bc while stream is updating the array, it could be updating the reference block properties too
 
+	if (!block) return
+
 	switch (block.type) {
 		case "text": {
 			if (cline.didRejectTool || cline.didAlreadyUseTool) {
 				break
 			}
 
-			let content = block.content
+			let content = block.type === "text" ? block.content : ""
 
 			if (content) {
 				// Have to do this for partial and complete since sending
@@ -160,6 +162,7 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 		}
 		case "tool_use":
 			const toolDescription = (): string => {
+				if (block.type !== "tool_use") return `[tool_use]`
 				switch (block.name) {
 					case "execute_command":
 						return `[${block.name} for '${block.params.command}']`
@@ -244,6 +247,8 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 						return `[${block.name} for '${block.params.command}'${block.params.args ? ` with args: ${block.params.args}` : ""}]`
 					case "generate_image":
 						return `[${block.name} for '${block.params.path}']`
+					default:
+						return `[${block.name}]`
 				}
 			}
 
@@ -394,7 +399,8 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 				)
 			} catch (error) {
 				cline.consecutiveMistakeCount++
-				pushToolResult(formatResponse.toolError(error.message))
+				const errorMessage = error instanceof Error ? error.message : String(error)
+				pushToolResult(formatResponse.toolError(errorMessage))
 				break
 			}
 
@@ -667,6 +673,7 @@ async function checkpointSaveAndMark(task: Task) {
 		await task.checkpointSave(true)
 		task.currentStreamingDidCheckpoint = true
 	} catch (error) {
-		console.error(`[Task#presentAssistantMessage] Error saving checkpoint: ${error.message}`, error)
+		const errorMessage = error instanceof Error ? error.message : String(error)
+		console.error(`[Task#presentAssistantMessage] Error saving checkpoint: ${errorMessage}`, error)
 	}
 }

@@ -20,7 +20,7 @@
 * [UI Integration](#ui-integration)
 * [Visual Feedback](#visual-feedback)
 * [User Experience](#user-experience)
-* [Performance & Optimization](#performance-optimization)
+* [Performance & Optimization](#performance--optimization)
 * [Performance Monitoring](#performance-monitoring)
 * [Optimization Strategies](#optimization-strategies)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -49,7 +49,7 @@
 * [UI Integration](#ui-integration)
 * [Visual Feedback](#visual-feedback)
 * [User Experience](#user-experience)
-* [Performance & Optimization](#performance-optimization)
+* [Performance & Optimization](#performance--optimization)
 * [Performance Monitoring](#performance-monitoring)
 * [Optimization Strategies](#optimization-strategies)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -457,7 +457,7 @@ private isRequestCancelled: boolean = false
 
 * Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../README.md)
-  · Source: `/docs/services/GHOST_SERVICE.md#L1`
+  · Source:../services/GHOST_SERVICE.md#L1`
 
 ## No Dead Ends Policy
 
@@ -472,9 +472,9 @@ For more information, see:
 
 * \*\*
 
-* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* *Navigation*\*: [docs](../) · [services](../services/) ·
   [↑ Table of Contents](#ghost-service)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

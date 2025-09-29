@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
 import pWaitFor from "p-wait-for"
 import { ClineProvider } from "../../webview/ClineProvider.js"
-import { t } from "../../../i18n.js"
+import { t } from "../../../i18n/index.js"
 import { WebviewMessage } from "../../../shared/WebviewMessage.js"
 import { Task } from "../../task/Task.js"
 import axios from "axios"
@@ -174,9 +174,12 @@ export const editMessageHandler = async (provider: ClineProvider, message: Webvi
 		}
 		// Update the message text in the UI
 		const updatedMessages = [...currentCline.clineMessages]
-		updatedMessages[messageIndex] = {
-			...updatedMessages[messageIndex],
-			text: newText,
+		const currentMessage = updatedMessages[messageIndex]
+		if (currentMessage) {
+			updatedMessages[messageIndex] = {
+				...currentMessage,
+				text: newText,
+			}
 		}
 		await currentCline.overwriteClineMessages(updatedMessages)
 

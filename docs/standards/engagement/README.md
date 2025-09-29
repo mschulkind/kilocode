@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Engagement & Accessibility Standards](#engagement-accessibility-standards)
+* [Engagement & Accessibility Standards](#engagement--accessibility-standards)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [🗺️ Navigation Guide](#️-navigation-guide)
@@ -16,7 +16,7 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
 * [Navigation](#navigation)
-* [Engagement & Accessibility Standards](#engagement-accessibility-standards)
+* [Engagement & Accessibility Standards](#engagement--accessibility-standards)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [🗺️ Navigation Guide](#️-navigation-guide)
@@ -108,11 +108,11 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 
 * [← Standards Overview](README.md)
-* [← Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [← Documentation Guide](../../../DOCUMENTATION_GUIDE.md)
 * [← Navigation Standards](../navigation/README.md)
 * [← Main Documentation](../../../README.md)
 * [← Project Root](../../README.md)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

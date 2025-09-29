@@ -20,11 +20,11 @@
 * [File Management](#file-management)
 * [File System Integration](#file-system-integration)
 * [Caching System](#caching-system)
-* [Validation & Error Handling](#validation-error-handling)
+* [Validation & Error Handling](#validation--error-handling)
 * [Schema Validation](#schema-validation)
 * [Error Handling](#error-handling)
-* [Performance & Caching](#performance-caching)
-* [Performance Optimization](#performance-optimization)
+* [Performance & Caching](#performance--caching)
+* [Performance Optimization](#performance--optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Mode Configuration Validation Failures](#issue-1-mode-configuration-validation-failures)
 * [Issue 2: File System Issues](#issue-2-file-system-issues)
@@ -51,11 +51,11 @@
 * [File Management](#file-management)
 * [File System Integration](#file-system-integration)
 * [Caching System](#caching-system)
-* [Validation & Error Handling](#validation-error-handling)
+* [Validation & Error Handling](#validation--error-handling)
 * [Schema Validation](#schema-validation)
 * [Error Handling](#error-handling)
-* [Performance & Caching](#performance-caching)
-* [Performance Optimization](#performance-optimization)
+* [Performance & Caching](#performance--caching)
+* [Performance Optimization](#performance--optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Mode Configuration Validation Failures](#issue-1-mode-configuration-validation-failures)
 * [Issue 2: File System Issues](#issue-2-file-system-issues)
@@ -500,7 +500,7 @@ const modeConfigSchema = z.object({
 
 * Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
   [`README.md`](../../README.md)
-  · Source: `/docs/services/CUSTOM_MODES_SYSTEM.md#L1`
+  · Source:../services/CUSTOM_MODES_SYSTEM.md#L1`
 
 ## No Dead Ends Policy
 
@@ -509,7 +509,7 @@ This document connects to:
 For more information, see:
 
 * [Documentation Structure](../../README.md)
-* [Additional Resources](../../tools/README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
@@ -520,4 +520,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

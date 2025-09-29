@@ -13,19 +13,19 @@
 * [Navigation Pattern Standards](#navigation-pattern-standards)
 * [Standardized Navigation Footer Format](#standardized-navigation-footer-format)
 * [Breadcrumb Navigation](#breadcrumb-navigation)
-* [Cross-Reference Navigation Patterns](#crossreference-navigation-patterns)
+* [Cross-Reference Navigation Patterns](#cross-reference-navigation-patterns)
 * [Navigation Symbols](#navigation-symbols)
 * [Validation Rules](#validation-rules)
 * [Required Navigation Elements](#required-navigation-elements)
 * [Navigation Consistency Rules](#navigation-consistency-rules)
-* [Cross-Reference Rules](#crossreference-rules)
+* [Cross-Reference Rules](#cross-reference-rules)
 * [Implementation Examples](#implementation-examples)
-* [Good Example - Complete Navigation](#good-example-complete-navigation)
-* [Good Example - Cross-References](#good-example-crossreferences)
-* [Bad Example - Missing Navigation](#bad-example-missing-navigation)
+* [Good Example - Complete Navigation](#good-example---complete-navigation)
+* [Good Example - Cross-References](#good-example---cross-references)
+* [Bad Example - Missing Navigation](#bad-example---missing-navigation)
 * [Best Practices](#best-practices)
 * [Navigation Design](#navigation-design)
-* [Cross-Reference Design](#crossreference-design)
+* [Cross-Reference Design](#cross-reference-design)
 * [Table of Contents Design](#table-of-contents-design)
 * [Validation Integration](#validation-integration)
 * [Validation Checks](#validation-checks)
@@ -47,19 +47,19 @@
 * [Navigation Pattern Standards](#navigation-pattern-standards)
 * [Standardized Navigation Footer Format](#standardized-navigation-footer-format)
 * [Breadcrumb Navigation](#breadcrumb-navigation)
-* [Cross-Reference Navigation Patterns](#crossreference-navigation-patterns)
+* [Cross-Reference Navigation Patterns](#cross-reference-navigation-patterns)
 * [Navigation Symbols](#navigation-symbols)
 * [Validation Rules](#validation-rules)
 * [Required Navigation Elements](#required-navigation-elements)
 * [Navigation Consistency Rules](#navigation-consistency-rules)
-* [Cross-Reference Rules](#crossreference-rules)
+* [Cross-Reference Rules](#cross-reference-rules)
 * [Implementation Examples](#implementation-examples)
-* [Good Example - Complete Navigation](#good-example-complete-navigation)
-* [Good Example - Cross-References](#good-example-crossreferences)
-* [Bad Example - Missing Navigation](#bad-example-missing-navigation)
+* [Good Example - Complete Navigation](#good-example---complete-navigation)
+* [Good Example - Cross-References](#good-example---cross-references)
+* [Bad Example - Missing Navigation](#bad-example---missing-navigation)
 * [Best Practices](#best-practices)
 * [Navigation Design](#navigation-design)
-* [Cross-Reference Design](#crossreference-design)
+* [Cross-Reference Design](#cross-reference-design)
 * [Table of Contents Design](#table-of-contents-design)
 * [Validation Integration](#validation-integration)
 * [Validation Checks](#validation-checks)
@@ -115,7 +115,7 @@ All documents should include a navigation footer with the following structure:
 - [← Back to [Parent Section]](../parent/)
 - [← Back to [Category]](../../category/)
 - [→ Related Topic](../related-topic/)
-- [📚 Technical Glossary](../../docs/../GLOSSARY.md)
+- [📚 Technical Glossary](../../do../../GLOSSARY.md)
 - [↑ Table of Contents](#table-of-contents)
 ```
 
@@ -125,7 +125,7 @@ Breadcrumb navigation provides clear hierarchical context:
 
 ```markdown
 - [← Back to Main Documentation](../README.md)
-- [← Back to Architecture Overview](../../docs/../architecture/README.md)
+- [← Back to Architecture Overview](../../do../architecture/README.md)
 - [→ Next: Related Component](../related-component/)
 ```
 
@@ -200,7 +200,7 @@ Use consistent symbols for navigation elements:
 - [← Back to Documentation Tools](../tools/)
 - [← Back to Validation System](./VALIDATION_SYSTEM.md)
 - [→ Related Documentation](./DOCUMENTATION_BEST_PRACTICES.md)
-- [📚 Technical Glossary](../GLOSSARY.md)
+- [📚 Technical Glossary](../../GLOSSARY.md)
 - [↑ Table of Contents](#navigation-patterns-documentation)
 ```
 
@@ -227,7 +227,7 @@ For more information, see:
 ## Links
 - [Back](../)
 - [Next section](../next/)
-- [Glossary](../GLOSSARY.md)
+- [Glossary](../../GLOSSARY.md)
 ```
 
 This would fail validation due to:
@@ -323,5 +323,5 @@ Documentation](./VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](./)
 * [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-* [📚 Technical Glossary](../GLOSSARY.md)
+* [📚 Technical Glossary](../../GLOSSARY.md)
 * [↑ Table of Contents](#navigation-patterns-documentation)

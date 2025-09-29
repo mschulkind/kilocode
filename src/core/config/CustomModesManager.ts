@@ -10,11 +10,11 @@ import { type ModeConfig, type PromptComponent, customModesSettingsSchema, modeC
 
 import { fileExistsAtPath } from "../../utils/fs.js"
 import { getWorkspacePath } from "../../utils/path.js"
-import { getGlobalRooDirectory, getProjectRooDirectoryForCwd /*kilocode_change*/ } from "../../services/roo-config.js"
-import { logger } from "../../utils/logging.js"
+import { getGlobalRooDirectory, getProjectRooDirectoryForCwd /*kilocode_change*/ } from "../../services/roo-config/index.js"
+import { logger } from "../../utils/logging/index.js"
 import { GlobalFileNames } from "../../shared/globalFileNames.js"
 import { ensureSettingsDirectoryExists } from "../../utils/globalContext.js"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 
 const ROOMODES_FILENAME = ".kilocodemodes"
 
@@ -717,7 +717,7 @@ export class CustomModesManager {
 	public async exportModeWithRules(slug: string, customPrompts?: PromptComponent): Promise<ExportResult> {
 		try {
 			// Import modes from shared to check built-in modes
-			const { modes: builtInModes } = await import("../../shared/modes")
+			const { modes: builtInModes } = await import("../../shared/modes.js")
 
 			// Get all current modes
 			const allModes = await this.getCustomModes()
@@ -746,7 +746,7 @@ export class CustomModesManager {
 
 				// If still not found, check if it's a built-in mode
 				if (!mode) {
-					const builtInMode = builtInModes.find((m) => m.slug === slug)
+					const builtInMode = builtInModes.find((m: any) => m.slug === slug)
 					if (builtInMode) {
 						// Use the built-in mode as the base
 						mode = { ...builtInMode }
@@ -757,7 +757,7 @@ export class CustomModesManager {
 			}
 
 			// Determine the base directory based on mode source
-			const isGlobalMode = mode.source === "global"
+			const isGlobalMode = mode?.source === "global"
 			let baseDir: string
 			if (isGlobalMode) {
 				// For global modes, use the global .roo directory

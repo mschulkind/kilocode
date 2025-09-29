@@ -12,7 +12,7 @@ import { TelemetryService } from "@roo-code/telemetry"
 import { ProviderSettingsManager, providerProfilesSchema } from "./ProviderSettingsManager.js"
 import { ContextProxy } from "./ContextProxy.js"
 import { CustomModesManager } from "./CustomModesManager.js"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 
 export type ImportOptions = {
 	providerSettingsManager: ProviderSettingsManager
@@ -118,7 +118,7 @@ export const importSettings = async ({ providerSettingsManager, contextProxy, cu
 		return { success: false, error: "User cancelled file selection" }
 	}
 
-	return importSettingsFromPath(uris[0].fsPath, {
+	return importSettingsFromPath(uris[0]?.fsPath || "", {
 		providerSettingsManager,
 		contextProxy,
 		customModesManager,

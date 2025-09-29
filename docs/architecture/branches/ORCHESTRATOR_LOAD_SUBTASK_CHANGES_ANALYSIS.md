@@ -50,7 +50,7 @@ The orchestrator subtask loading system has undergone several iterations to impr
 
 ## Navigation Footer
 
-- [Getting Started](../GETTING_STARTED.md)
+- [Getting Started](../../../GETTING_STARTED.md)
 - [System Overview](../SYSTEM_OVERVIEW.md)
 - [Core Systems](../CORE_SYSTEMS.md)
 

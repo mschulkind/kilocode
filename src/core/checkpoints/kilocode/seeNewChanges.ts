@@ -1,15 +1,16 @@
 import { TelemetryService } from "@roo-code/telemetry"
-import { getCheckpointService } from ".."
+import { getCheckpointService } from "../index.js"
 import { DIFF_VIEW_URI_SCHEME } from "../../../integrations/editor/DiffViewProvider.js"
 import { Task } from "../../task/Task.js"
-import { t } from "../../../i18n.js"
+import { t } from "../../../i18n/index.js"
 import * as vscode from "vscode"
 import { CommitRange } from "@roo-code/types"
 
 function findLast<T>(array: Array<T>, predicate: (value: T, index: number, obj: T[]) => boolean): number {
 	let index = array.length - 1
 	for (; index >= 0; index--) {
-		if (predicate(array[index], index, array)) {
+		const item = array[index]
+		if (item && predicate(item, index, array)) {
 			break
 		}
 	}
@@ -56,8 +57,8 @@ export async function getCommitRangeForNewCompletion(task: Task): Promise<Commit
 					)
 				: -1
 
-		const toCommit = lastCheckpointIndex >= 0 ? messages[lastCheckpointIndex].text : undefined
-		const fromCommit = previousCheckpointIndex >= 0 ? messages[previousCheckpointIndex].text : firstCommit
+		const toCommit = lastCheckpointIndex >= 0 ? messages[lastCheckpointIndex]?.text : undefined
+		const fromCommit = previousCheckpointIndex >= 0 ? messages[previousCheckpointIndex]?.text : firstCommit
 
 		if (!toCommit || !fromCommit || fromCommit === toCommit) {
 			console.log(`getCommitRangeForNewCompletion: invalid commit range '${fromCommit}' to '${toCommit}'.`)
@@ -73,7 +74,7 @@ export async function getCommitRangeForNewCompletion(task: Task): Promise<Commit
 		return result
 	} catch (err) {
 		console.error("getCommitRangeForNewCompletion: exception", err)
-		TelemetryService.instance.captureException(err, { context: "getCommitRangeForNewCompletion" })
+		TelemetryService.instance.captureException(err instanceof Error ? err : new Error(String(err)), { context: "getCommitRangeForNewCompletion" })
 		return undefined
 	}
 }

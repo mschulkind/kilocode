@@ -20,7 +20,7 @@
 * [NPM Registry](#npm-registry)
 * [GitHub](#github)
 * [Docker Hub](#docker-hub)
-* [Monitoring & Analytics](#monitoring-analytics)
+* [Monitoring & Analytics](#monitoring--analytics)
 * [Laminar](#laminar)
 * [Telemetry Services](#telemetry-services)
 * [Analytics Platforms](#analytics-platforms)
@@ -55,7 +55,7 @@
 * [NPM Registry](#npm-registry)
 * [GitHub](#github)
 * [Docker Hub](#docker-hub)
-* [Monitoring & Analytics](#monitoring-analytics)
+* [Monitoring & Analytics](#monitoring--analytics)
 * [Laminar](#laminar)
 * [Telemetry Services](#telemetry-services)
 * [Analytics Platforms](#analytics-platforms)
@@ -652,4 +652,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

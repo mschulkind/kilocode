@@ -20,17 +20,17 @@
 * [Bridge Communication](#bridge-communication)
 * [Bridge Orchestrator](#bridge-orchestrator)
 * [Bridge Channels](#bridge-channels)
-* [Telemetry & Analytics](#telemetry-analytics)
+* [Telemetry & Analytics](#telemetry--analytics)
 * [Telemetry Client](#telemetry-client)
 * [Analytics Integration](#analytics-integration)
 * [Configuration Management](#configuration-management)
 * [Cloud Settings Service](#cloud-settings-service)
 * [Static Settings Service](#static-settings-service)
-* [Security & Privacy](#security-privacy)
+* [Security & Privacy](#security--privacy)
 * [Security Measures](#security-measures)
 * [API Key Management](#api-key-management)
-* [Performance & Scalability](#performance-scalability)
-* [Performance Optimization](#performance-optimization)
+* [Performance & Scalability](#performance--scalability)
+* [Performance Optimization](#performance--optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Authentication Failures](#issue-1-authentication-failures)
 * [Issue 2: Bridge Connection Issues](#issue-2-bridge-connection-issues)
@@ -57,17 +57,17 @@
 * [Bridge Communication](#bridge-communication)
 * [Bridge Orchestrator](#bridge-orchestrator)
 * [Bridge Channels](#bridge-channels)
-* [Telemetry & Analytics](#telemetry-analytics)
+* [Telemetry & Analytics](#telemetry--analytics)
 * [Telemetry Client](#telemetry-client)
 * [Analytics Integration](#analytics-integration)
 * [Configuration Management](#configuration-management)
 * [Cloud Settings Service](#cloud-settings-service)
 * [Static Settings Service](#static-settings-service)
-* [Security & Privacy](#security-privacy)
+* [Security & Privacy](#security--privacy)
 * [Security Measures](#security-measures)
 * [API Key Management](#api-key-management)
-* [Performance & Scalability](#performance-scalability)
-* [Performance Optimization](#performance-optimization)
+* [Performance & Scalability](#performance--scalability)
+* [Performance Optimization](#performance--optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Authentication Failures](#issue-1-authentication-failures)
 * [Issue 2: Bridge Connection Issues](#issue-2-bridge-connection-issues)
@@ -714,7 +714,7 @@ export class BridgeOrchestrator {
 <a id="navigation-footer"></a>
 
 * Back: [`README.md`](./README.md) · Root: [`../README.md`](../../README.md) · Source:
-  `/docs/services/CLOUD_SERVICES_ARCHITECTURE.md#L1`
+ ../services/CLOUD_SERVICES_ARCHITECTURE.md#L1`
 
 ## No Dead Ends Policy
 
@@ -723,7 +723,7 @@ This document connects to:
 For more information, see:
 
 * [Documentation Structure](../../README.md)
-* [Additional Resources](../../tools/README.md)
+* [Additional Resources](../tools/README.md)
 
 ## Navigation Footer
 
@@ -734,4 +734,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)

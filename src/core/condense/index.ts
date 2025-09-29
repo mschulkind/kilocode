@@ -2,8 +2,8 @@ import Anthropic from "@anthropic-ai/sdk"
 
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { t } from "../../i18n.js"
-import { ApiHandler } from "../../api.js"
+import { t } from "../../i18n/index.js"
+import { ApiHandler } from "../../api/index.js"
 import { ApiMessage } from "../task-persistence/apiMessages.js"
 import { maybeRemoveImageBlocks } from "../../api/transform/image-cleaning.js"
 
@@ -215,7 +215,7 @@ export async function summarizeConversation(
 		const error = t("common:errors.condense_context_grew", { prevContextTokens, newContextTokens })
 		return { ...response, cost, error }
 	}
-	return { messages: newMessages, summary, cost, newContextTokens }
+	return { messages: newMessages.filter((msg): msg is ApiMessage => msg !== undefined), summary, cost, newContextTokens }
 }
 
 /* Returns the list of all messages since the last summary message, including the summary. Returns all messages if there is no summary. */
@@ -232,7 +232,7 @@ export function getMessagesSinceLastSummary(messages: ApiMessage[]): ApiMessage[
 	// Bedrock requires the first message to be a user message.
 	// We preserve the original first message to maintain context.
 	// See https://github.com/RooCodeInc/Roo-Code/issues/4147
-	if (messagesSinceSummary.length > 0 && messagesSinceSummary[0].role !== "user") {
+	if (messagesSinceSummary.length > 0 && messagesSinceSummary[0]?.role !== "user") {
 		// Get the original first message (should always be a user message with the task)
 		const originalFirstMessage = messages[0]
 		if (originalFirstMessage && originalFirstMessage.role === "user") {

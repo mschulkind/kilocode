@@ -15,7 +15,7 @@
 * [Network Tab Analysis](#network-tab-analysis)
 * [System State Check](#system-state-check)
 * [Common Scenarios](#common-scenarios)
-* [Scenario 1: Two-Request Race](#scenario-1-tworequest-race)
+* [Scenario 1: Two-Request Race](#scenario-1-two-request-race)
 * [Scenario 2: Multiple Subtasks](#scenario-2-multiple-subtasks)
 * [Scenario 3: User Action Duplication](#scenario-3-user-action-duplication)
 * [Scenario 4: Error Recovery Loop](#scenario-4-error-recovery-loop)
@@ -43,7 +43,7 @@
 * [Network Tab Analysis](#network-tab-analysis)
 * [System State Check](#system-state-check)
 * [Common Scenarios](#common-scenarios)
-* [Scenario 1: Two-Request Race](#scenario-1-tworequest-race)
+* [Scenario 1: Two-Request Race](#scenario-1-two-request-race)
 * [Scenario 2: Multiple Subtasks](#scenario-2-multiple-subtasks)
 * [Scenario 3: User Action Duplication](#scenario-3-user-action-duplication)
 * [Scenario 4: Error Recovery Loop](#scenario-4-error-recovery-loop)
@@ -221,7 +221,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../../GLOSSARY.md)
 
 ## Navigation
 
