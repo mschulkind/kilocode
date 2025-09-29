@@ -1,6 +1,8 @@
 # Chapter 3: The Red Herring 🐟
 
-*Every good mystery has a red herring - a clue that leads investigators down the wrong path.*
+![The Red Herring](../images/chapters/chapter3-red-herring.svg)
+
+_Every good mystery has a red herring - a clue that leads investigators down the wrong path._
 
 ---
 
@@ -12,13 +14,14 @@ The team had labeled this issue a "race condition," and Captain Architecture ini
 - **Timing-dependent behavior** ✅
 - **Unpredictable outcomes** ✅
 
-*"But wait,"* Captain Architecture thought, *"if this is a race condition, where are the competing threads? Where's the shared state being modified concurrently?"*
+_"But wait,"_ Captain Architecture thought, _"if this is a race condition, where are the competing threads? Where's the shared state being modified concurrently?"_
 
 ## The Hero's X-Ray Vision 🔍
 
 Captain Architecture's X-Ray Vision superpower activated, revealing the truth beneath the surface:
 
 ### **What Everyone Thought Was Happening** 🤔
+
 ```typescript
 // Classic race condition scenario
 Thread 1: if (counter === 0) counter++  // Reads 0, increments to 1
@@ -27,6 +30,7 @@ Thread 2: if (counter === 0) counter++  // Also reads 0, increments to 1
 ```
 
 ### **What Was Actually Happening** 💡
+
 ```typescript
 // Duplicate execution from the same code path
 Main Loop: await parentTask.recursivelyMakeClineRequests([], false)  // Call 1
@@ -51,23 +55,26 @@ while (!this.abort) {
 }
 ```
 
-*"This isn't a race condition,"* Captain Architecture realized. *"This is duplicate execution from the same code path! It's like someone calling the same function twice and wondering why they get two results."*
+_"This isn't a race condition,"_ Captain Architecture realized. _"This is duplicate execution from the same code path! It's like someone calling the same function twice and wondering why they get two results."_
 
 ## The Red Herring's Deception 🎭
 
 The "race condition" label was a red herring because:
 
 ### **False Concurrency** ❌
+
 - No competing threads
 - No concurrent access to shared state
 - Sequential execution, not parallel
 
 ### **False Timing** ❌
+
 - Timing was predictable, not random
 - Calls happened in sequence, not simultaneously
 - No race to access resources
 
 ### **False Symptoms** ❌
+
 - Symptoms looked like concurrency issues
 - But the cause was architectural design
 - The "race" was actually duplicate execution
@@ -89,13 +96,13 @@ graph TB
         B --> C[Concurrency Problem]
         C --> D[Thread Synchronization]
     end
-    
+
     subgraph "The Real Problem"
         E[Multiple API Calls] --> F[Duplicate Execution]
         F --> G[Architectural Problem]
         G --> H[Design Flaw]
     end
-    
+
     style B fill:#ff6b6b
     style C fill:#ff6b6b
     style D fill:#ff6b6b
@@ -106,7 +113,7 @@ graph TB
 
 ## The Misleading Terminology Trap 🕳️
 
-*"This is like calling a peaceful grazing session a 'violent stampede',"* Captain Architecture thought. *"The words don't match the reality."*
+_"This is like calling a peaceful grazing session a 'violent stampede',"_ Captain Architecture thought. _"The words don't match the reality."_
 
 The problem with misleading terminology:
 
@@ -123,7 +130,7 @@ With the red herring identified, Captain Architecture prepared to dig deeper int
 
 The hero realized that the issue wasn't about preventing concurrency - it was about preventing duplicate execution from the same code path.
 
-*"The real question isn't 'How do we prevent a race condition?'"* Captain Architecture thought. *"The real question is 'Why is the same operation being triggered twice?'"*
+_"The real question isn't 'How do we prevent a race condition?'"_ Captain Architecture thought. _"The real question is 'Why is the same operation being triggered twice?'"_
 
 ## The Path Forward 🛤️
 
@@ -141,7 +148,8 @@ The investigation continues in [Chapter 4: The Task vs Session Mystery](part2/ch
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Chapter 2: The Investigation Begins](chapter2.md)
 - [→ Chapter 4: The Task vs Session Mystery](../part2/chapter4.md)
 - [↑ Table of Contents](../README.md)
@@ -149,6 +157,7 @@ The investigation continues in [Chapter 4: The Task vs Session Mystery](part2/ch
 ---
 
 **Key Insights from This Chapter**:
+
 - 🐟 **The Red Herring**: "Race condition" diagnosis was misleading
 - 🔍 **The Real Problem**: Duplicate execution from the same code path
 - 💡 **The Hero's Insight**: Wrong labels lead to wrong solutions
@@ -156,4 +165,4 @@ The investigation continues in [Chapter 4: The Task vs Session Mystery](part2/ch
 
 ---
 
-*"The best detectives don't just solve the case - they solve the right case."* 🦸‍♂️
+_"The best detectives don't just solve the case - they solve the right case."_ 🦸‍♂️

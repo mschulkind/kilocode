@@ -1,6 +1,8 @@
 # Chapter 1: The Mysterious Bug 🐛
 
-*The call came in at 3 AM. The kind of call that makes superheroes sigh and reach for their coffee.*
+![The Mysterious Bug](../images/chapters/chapter1-mysterious-bug.svg)
+
+_The call came in at 3 AM. The kind of call that makes superheroes sigh and reach for their coffee._
 
 ---
 
@@ -10,29 +12,30 @@ Captain Architecture arrived on the scene, cape billowing dramatically in the se
 
 ```
 [ERROR] Multiple API requests detected
-[WARNING] Response ordering compromised  
+[WARNING] Response ordering compromised
 [CRITICAL] Chat history corrupted with XML fragments
 ```
 
-*"This looks like a classic race condition,"* muttered the junior developer on the scene.
+_"This looks like a classic race condition,"_ muttered the junior developer on the scene.
 
-*"Hold on,"* Captain Architecture said, squinting at the logs. *"Something doesn't add up here. Race conditions don't usually cause XML corruption. This feels... different."*
+_"Hold on,"_ Captain Architecture said, squinting at the logs. _"Something doesn't add up here. Race conditions don't usually cause XML corruption. This feels... different."_
 
 ## The Victim's Testimony 👥
 
 The first victim's report was chilling:
 
-*"It's like the AI is having a conversation with itself. And it's not a very coherent conversation. Sometimes it asks itself questions, sometimes it answers questions that were never asked, and sometimes the whole chat just becomes a mess of XML tags and error messages."*
+_"It's like the AI is having a conversation with itself. And it's not a very coherent conversation. Sometimes it asks itself questions, sometimes it answers questions that were never asked, and sometimes the whole chat just becomes a mess of XML tags and error messages."_
 
 Another user reported:
 
-*"I asked it to write a simple function, and suddenly I had three different responses all mixed together. It was like watching three people try to write the same code at the same time."*
+_"I asked it to write a simple function, and suddenly I had three different responses all mixed together. It was like watching three people try to write the same code at the same time."_
 
 ## The Evidence 📊
 
 Captain Architecture began collecting evidence. The symptoms were clear:
 
 ### **Symptom 1: Duplicate API Calls** 🔄
+
 ```typescript
 // What users experienced
 User: "Write a function to sort an array"
@@ -41,6 +44,7 @@ AI Response 2: "Here's another function that sorts..." // ← DUPLICATE!
 ```
 
 ### **Symptom 2: Jumbled Responses** 🎭
+
 ```typescript
 // What users saw
 User: "What is 2+2?"
@@ -48,6 +52,7 @@ AI Response: "The answer is 4. Here's how to calculate it: 2+2=4. Wait, let me t
 ```
 
 ### **Symptom 3: XML Corruption** 💥
+
 ```typescript
 // The worst case scenario
 User: "Help me debug this code"
@@ -59,10 +64,10 @@ AI Response: "<error>Invalid response</error><function>def debug()</function><er
 The team had quickly labeled this issue a "race condition," and Captain Architecture initially accepted this diagnosis. After all, the symptoms seemed to fit:
 
 - **Multiple processes accessing shared resources** ✅
-- **Timing-dependent behavior** ✅  
+- **Timing-dependent behavior** ✅
 - **Unpredictable outcomes** ✅
 
-*"But wait,"* Captain Architecture thought, *"if this is a race condition, where are the competing threads? Where's the shared state being modified concurrently?"*
+_"But wait,"_ Captain Architecture thought, _"if this is a race condition, where are the competing threads? Where's the shared state being modified concurrently?"_
 
 ## The Hero's First Insight 💡
 
@@ -76,12 +81,12 @@ graph TB
         A[Multiple API Calls] --> B[Race Condition]
         B --> C[Concurrency Problem]
     end
-    
+
     subgraph "What Captain Architecture Saw"
         D[Multiple API Calls] --> E[Same Code Path]
         E --> F[Architectural Problem]
     end
-    
+
     style B fill:#ff6b6b
     style C fill:#ff6b6b
     style E fill:#90EE90
@@ -90,7 +95,7 @@ graph TB
 
 ## The Investigation Begins 🔍
 
-*"This isn't adding up,"* Captain Architecture thought. *"If this were a true race condition, we'd see evidence of concurrent access to shared state. But what I'm seeing looks more like... duplicate execution from the same code path."*
+_"This isn't adding up,"_ Captain Architecture thought. _"If this were a true race condition, we'd see evidence of concurrent access to shared state. But what I'm seeing looks more like... duplicate execution from the same code path."_
 
 The hero decided to dig deeper. The investigation would require mapping out the entire system architecture, understanding the execution flow, and identifying where the duplication was actually happening.
 
@@ -99,8 +104,9 @@ The hero decided to dig deeper. The investigation would require mapping out the 
 As Captain Architecture prepared to investigate further, they realized this was no ordinary bug. This was an architectural mystery that would require all of their superpowers to solve.
 
 The clues were there:
+
 - Duplicate API calls
-- Jumbled responses  
+- Jumbled responses
 - XML corruption
 - Timing-dependent behavior
 
@@ -108,7 +114,7 @@ But the question remained: **What was really causing this chaos?**
 
 ## The Hero's Resolve 💪
 
-*"Every great bug has a story,"* Captain Architecture mused, *"and this one is about to become a legend."*
+_"Every great bug has a story,"_ Captain Architecture mused, _"and this one is about to become a legend."_
 
 With determination in their heart and a debugger in their hand, our hero prepared to embark on the investigation that would change everything.
 
@@ -120,7 +126,8 @@ The investigation continues in [Chapter 2: The Investigation Begins](part2/chapt
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Prologue: The Hero's Origin Story](prologue.md)
 - [→ Chapter 2: The Investigation Begins](part1/chapter2.md)
 - [↑ Table of Contents](README.md)
@@ -128,11 +135,12 @@ The investigation continues in [Chapter 2: The Investigation Begins](part2/chapt
 ---
 
 **Key Insights from This Chapter**:
+
 - 🐛 **The Bug**: Duplicate API calls, jumbled responses, XML corruption
-- 🤔 **The Initial Diagnosis**: Labeled as a "race condition" 
+- 🤔 **The Initial Diagnosis**: Labeled as a "race condition"
 - 💡 **The Hero's Insight**: The obvious explanation might be wrong
 - 🔍 **The Next Step**: Deep investigation into the system architecture
 
 ---
 
-*"Sometimes the most dangerous bugs are the ones that look like something else entirely."* 🦸‍♂️
+_"Sometimes the most dangerous bugs are the ones that look like something else entirely."_ 🦸‍♂️

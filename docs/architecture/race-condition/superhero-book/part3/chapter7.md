@@ -1,12 +1,14 @@
 # Chapter 7: The Truth About "Race Conditions" 🎭
 
-*The moment of revelation came during a late-night debugging session, when Captain Architecture finally saw the truth.*
+![The Truth About Race Conditions](../images/chapters/chapter7-truth-about-race-conditions.svg)
+
+_The moment of revelation came during a late-night debugging session, when Captain Architecture finally saw the truth._
 
 ---
 
 ## The Moment of Clarity 💡
 
-*"This isn't a race condition at all,"* the hero realized. *"This is duplicate execution from the same code path!"*
+_"This isn't a race condition at all,"_ the hero realized. _"This is duplicate execution from the same code path!"_
 
 The revelation came like a lightning bolt, illuminating the entire investigation in a new light.
 
@@ -43,7 +45,7 @@ while (!this.abort) {
 }
 ```
 
-*"This isn't a race condition,"* Captain Architecture realized. *"This is duplicate execution from the same code path! It's like someone calling the same function twice and wondering why they get two results."*
+_"This isn't a race condition,"_ Captain Architecture realized. _"This is duplicate execution from the same code path! It's like someone calling the same function twice and wondering why they get two results."_
 
 ## The Hero's Seventh Insight 💡
 
@@ -56,16 +58,19 @@ Captain Architecture realized that calling it a "race condition" had obscured th
 The "race condition" label was a red herring because:
 
 ### **False Concurrency** ❌
+
 - No competing threads
 - No concurrent access to shared state
 - Sequential execution, not parallel
 
 ### **False Timing** ❌
+
 - Timing was predictable, not random
 - Calls happened in sequence, not simultaneously
 - No race to access resources
 
 ### **False Symptoms** ❌
+
 - Symptoms looked like concurrency issues
 - But the cause was architectural design
 - The "race" was actually duplicate execution
@@ -81,13 +86,13 @@ graph TB
         B --> C[Concurrency Problem]
         C --> D[Thread Synchronization]
     end
-    
+
     subgraph "The Real Problem"
         E[Multiple API Calls] --> F[Duplicate Execution]
         F --> G[Architectural Problem]
         G --> H[Design Flaw]
     end
-    
+
     style B fill:#ff6b6b
     style C fill:#ff6b6b
     style D fill:#ff6b6b
@@ -109,18 +114,20 @@ The hero realized that the problem wasn't about preventing concurrency - it was 
 Captain Architecture mapped out the execution paths:
 
 ### **Path 1: Main Task Loop** 🔄
+
 ```typescript
 // Normal execution flow
 User Input → Task Stack → Orchestrator → recursivelyMakeClineRequests() → API Call
 ```
 
 ### **Path 2: Subtask Completion** 🤖
+
 ```typescript
 // Problematic execution flow
 Subtask Completion → Subtask Handler → continueParentTask() → recursivelyMakeClineRequests() → API Call
 ```
 
-*"Both paths lead to the same destination,"* Captain Architecture thought. *"But they're taking different routes to get there."*
+_"Both paths lead to the same destination,"_ Captain Architecture thought. _"But they're taking different routes to get there."_
 
 ## The Solution Becomes Clear ✨
 
@@ -132,7 +139,7 @@ With the real problem identified, the solution became clear:
 
 ## The Hero's Realization 🎯
 
-*"The issue isn't concurrency** - it's that **the same logical operation is being triggered twice**:
+\*"The issue isn't concurrency** - it's that **the same logical operation is being triggered twice\*\*:
 
 1. **Main task loop**: "Continue processing"
 2. **Subtask completion**: "Continue processing" (unintended duplicate)
@@ -156,7 +163,8 @@ The investigation continues in [Chapter 8: The Redundant Condition Discovery](ch
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Chapter 6: The State Management Nightmare](../part2/chapter6.md)
 - [→ Chapter 8: The Redundant Condition Discovery](chapter8.md)
 - [↑ Table of Contents](../README.md)
@@ -164,6 +172,7 @@ The investigation continues in [Chapter 8: The Redundant Condition Discovery](ch
 ---
 
 **Key Insights from This Chapter**:
+
 - 🎭 **The Truth**: "Race condition" was actually duplicate execution
 - 🔍 **The Real Problem**: Same logical operation triggered twice
 - 💡 **The Hero's Insight**: Accurate terminology is crucial
@@ -171,4 +180,4 @@ The investigation continues in [Chapter 8: The Redundant Condition Discovery](ch
 
 ---
 
-*"The best revelations don't just solve the problem - they reveal the right problem to solve."* 🦸‍♂️
+_"The best revelations don't just solve the problem - they reveal the right problem to solve."_ 🦸‍♂️
