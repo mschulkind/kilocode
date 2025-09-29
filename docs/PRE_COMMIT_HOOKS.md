@@ -361,11 +361,11 @@ This document connects to:
 For more information, see:
 
 * [Documentation Structure](../README.md)
-* [Additional Resources](../tools/README.md)
+* [Additional Resources](tools/README.md)
 
 ## Navigation Footer
 
 * \*\*
 
 * *Navigation*\*: [← Back to Documentation Guide](../../DOCUMENTATION_GUIDE.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)
+  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)

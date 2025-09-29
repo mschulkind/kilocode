@@ -1,3 +1,3 @@
-export * from "./useClipboard"
-export * from "./useRooPortal"
-export * from "./useNonInteractiveClick"
+export * from "./useClipboard.js"
+export * from "./useRooPortal.js"
+export * from "./useNonInteractiveClick.js"

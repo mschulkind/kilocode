@@ -2,378 +2,217 @@
 
 ## Table of Contents
 
-* [Laminar Decorator System](#laminar-decorator-system)
-* [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
-* [Role in Laminar Integration](#role-in-laminar-integration)
-* [Integration Scope](#integration-scope)
 * [Decorator Architecture](#decorator-architecture)
-* [Core Decorator Implementation](#core-decorator-implementation)
-* [Decorator Options](#decorator-options)
 * [Automatic Instrumentation](#automatic-instrumentation)
-* [Method Decoration Process](#method-decoration-process)
-* [Class-Level Decoration](#classlevel-decoration)
 * [Input/Output Capture](#inputoutput-capture)
-* [Input Capture](#input-capture)
-* [Output Capture](#output-capture)
 * [Performance Monitoring](#performance-monitoring)
-* [Execution Time Tracking](#execution-time-tracking)
-* [Resource Usage Monitoring](#resource-usage-monitoring)
 * [Integration Patterns](#integration-patterns)
-* [Existing Decorator Compatibility](#existing-decorator-compatibility)
-* [Framework Integration](#framework-integration)
 * [Error Handling](#error-handling)
-* [Exception Propagation](#exception-propagation)
-* [Decorator Failure Handling](#decorator-failure-handling)
 * [Configuration Options](#configuration-options)
-* [Global Configuration](#global-configuration)
-* [Environment-Specific Settings](#environmentspecific-settings)
 * [Code Reference Matrix](#code-reference-matrix)
-* [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Laminar Decorator System](#laminar-decorator-system)
-* [Table of Contents](#table-of-contents)
-* [Overview](#overview)
-* [Role in Laminar Integration](#role-in-laminar-integration)
-* [Integration Scope](#integration-scope)
-* [Decorator Architecture](#decorator-architecture)
-* [Core Decorator Implementation](#core-decorator-implementation)
-* [Decorator Options](#decorator-options)
-* [Automatic Instrumentation](#automatic-instrumentation)
-* [Method Decoration Process](#method-decoration-process)
-* [Class-Level Decoration](#classlevel-decoration)
-* [Input/Output Capture](#inputoutput-capture)
-* [Input Capture](#input-capture)
-* [Output Capture](#output-capture)
-* [Performance Monitoring](#performance-monitoring)
-* [Execution Time Tracking](#execution-time-tracking)
-* [Resource Usage Monitoring](#resource-usage-monitoring)
-* [Integration Patterns](#integration-patterns)
-* [Existing Decorator Compatibility](#existing-decorator-compatibility)
-* [Framework Integration](#framework-integration)
-* [Error Handling](#error-handling)
-* [Exception Propagation](#exception-propagation)
-* [Decorator Failure Handling](#decorator-failure-handling)
-* [Configuration Options](#configuration-options)
-* [Global Configuration](#global-configuration)
-* [Environment-Specific Settings](#environmentspecific-settings)
-* [Code Reference Matrix](#code-reference-matrix)
-* [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-> behind the "what"! 💻
-
-* *Purpose:*\* This document describes the observeDecorator implementation for automatic
-  instrumentation, detailing method decoration, input/output capture, performance monitoring, and
-  seamless integration with existing decorator patterns in Kilo Code.
-
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
-> instant connections between distant parts of the system, allowing us to observe the entire state
-> from any single point! ⚛️
-
-<details><summary>Table of Contents</summary>
-- [Overview](#overview)
-- [Decorator Architecture](#decorator-architecture)
-- [Automatic Instrumentation](#automatic-instrumentation)
-- [Input/Output Capture](#inputoutput-capture)
-- [Performance Monitoring](#performance-monitoring)
-- [Integration Patterns](#integration-patterns)
-- Error Handling
-- [Configuration Options](#configuration-options)
-- Code Reference Matrix
-- Implementation Timeline
-
-</details>
+* [Research Context & Next Steps](#research-context--next-steps)
+* [Navigation](#navigation)
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this
-document's role or purpose, this section helps orient you.
+This document provides comprehensive documentation of the Laminar decorator system, including automatic instrumentation, performance monitoring, and integration patterns.
 
-* **Purpose**: \[Brief description of what this document covers]
-* **Audience**: \[Who should read this document]
-* **Prerequisites**: \[What you should know before reading]
-* **Related Documents**: \[Links to related documentation]
+* **Purpose**: Laminar decorator system architecture and implementation
+* **Audience**: Developers implementing decorator-based observability
+* **Prerequisites**: Understanding of TypeScript decorators and instrumentation
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
 
 ## Overview
 
-The Decorator System provides automatic instrumentation capabilities through the observeDecorator,
-enabling seamless tracing of method executions, input/output capture, and performance monitoring
-across Kilo Code subsystems.
+The Laminar Decorator System provides automatic instrumentation for TypeScript/JavaScript code using decorators, enabling comprehensive observability without manual instrumentation.
 
 ### Role in Laminar Integration
 
-The decorator system is responsible for:
+The decorator system serves as the primary instrumentation mechanism:
 
-* **Automatic Instrumentation:** Applying tracing without code modifications
-* **Method Decoration:** Wrapping methods with observability logic
-* **Input/Output Tracking:** Capturing method parameters and return values
-* **Performance Metrics:** Measuring execution time and resource usage
-* **Error Propagation:** Maintaining exception handling integrity
+- **Automatic Instrumentation**: Decorators automatically add observability to methods and classes
+- **Performance Monitoring**: Built-in performance tracking and resource monitoring
+- **Input/Output Capture**: Automatic capture of method inputs and outputs
+- **Error Tracking**: Comprehensive error handling and propagation
 
 ### Integration Scope
 
-This subsystem enables non-invasive observability, allowing existing code to be instrumented with
-minimal changes while providing comprehensive monitoring and tracing capabilities.
+The decorator system integrates with:
+
+- **Method Instrumentation**: Individual method tracing
+- **Class Instrumentation**: Class-level observability
+- **Framework Integration**: Integration with popular frameworks
+- **Custom Decorators**: Support for custom decorator implementations
 
 ## Decorator Architecture
 
 ### Core Decorator Implementation
 
-* *observeDecorator Function:*\*
+The system provides several core decorators:
 
 ```typescript
-function observeDecorator(spanName?: string, options?: ObserveOptions): MethodDecorator {
-	return function (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) {
-		const originalMethod = descriptor.value
+// Method-level tracing
+@LaminarTrace('operation-name')
+async function myFunction(param1: string, param2: number) {
+  // Function implementation
+}
 
-		descriptor.value = async function (...args: any[]) {
-			const span = await createObservationSpan(spanName || propertyKey.toString(), options)
+// Class-level tracing
+@LaminarClass('service-name')
+class MyService {
+  @LaminarMethod('method-name')
+  async processData(data: any) {
+    // Method implementation
+  }
+}
 
-			try {
-				const result = await originalMethod.apply(this, args)
-				span.setAttribute("result.type", typeof result)
-				return result
-			} catch (error) {
-				span.recordException(error)
-				throw error
-			} finally {
-				span.end()
-			}
-		}
-
-		return descriptor
-	}
+// Performance monitoring
+@LaminarPerformance({ threshold: 1000 })
+async function slowOperation() {
+  // Operation implementation
 }
 ```
-
-* *Decorator Components:*\*
-
-* **Span Creation:** Automatic span initialization
-
-* **Method Wrapping:** Preservation of original method behavior
-
-* **Error Handling:** Exception recording and re-throwing
-
-* **Resource Cleanup:** Proper span completion
 
 ### Decorator Options
 
-* *Configuration Interface:*\*
+Decorators support various configuration options:
 
 ```typescript
-interface ObserveOptions {
-	captureInput?: boolean
-	captureOutput?: boolean
-	includeStackTrace?: boolean
-	customAttributes?: Record<string, any>
-	parentSpan?: Span
+interface LaminarTraceOptions {
+  name?: string;           // Custom span name
+  tags?: Record<string, any>; // Additional tags
+  recordIO?: boolean;      // Record inputs/outputs
+  recordErrors?: boolean;  // Record errors
+  timeout?: number;        // Operation timeout
+}
+
+interface LaminarPerformanceOptions {
+  threshold?: number;      // Performance threshold in ms
+  recordMetrics?: boolean; // Record performance metrics
+  alertOnSlow?: boolean;  // Alert on slow operations
 }
 ```
-
-* *Option Descriptions:*\*
-* `captureInput`: Whether to record method parameters
-* `captureOutput`: Whether to record return values
-* `includeStackTrace`: Include stack traces in error recording
-* `customAttributes`: Additional span attributes
-* `parentSpan`: Explicit parent span for nesting
 
 ## Automatic Instrumentation
 
 ### Method Decoration Process
 
-* *Decoration Flow:*\*
+The decoration process follows these steps:
 
-1. **Target Identification:** Identify methods to instrument
-2. **Decorator Application:** Apply observeDecorator to target methods
-3. **Wrapper Installation:** Replace original method with instrumented version
-4. **Span Management:** Handle span lifecycle during execution
-
-* *Application Examples:*\*
-
-```typescript
-class CheckpointService {
-	@observeDecorator("checkpoint.save")
-	async save(data: any): Promise<void> {
-		// Implementation
-	}
-
-	@observeDecorator("checkpoint.restore", { captureInput: true })
-	async restore(id: string): Promise<any> {
-		// Implementation
-	}
-}
-```
+1. **Method Analysis**: Analyze method signature and metadata
+2. **Span Creation**: Create Laminar span for the method
+3. **Input Capture**: Capture method inputs (if enabled)
+4. **Execution Wrapping**: Wrap method execution with observability
+5. **Output Capture**: Capture method outputs (if enabled)
+6. **Span Completion**: Complete span with results and metadata
 
 ### Class-Level Decoration
 
-* *Class Decoration Pattern:*\*
+Class-level decoration provides:
 
-```typescript
-function observeClass(options?: ObserveOptions): ClassDecorator {
-	return function (target: any) {
-		const prototype = target.prototype
-		const methodNames = Object.getOwnPropertyNames(prototype)
-
-		methodNames.forEach((methodName) => {
-			const descriptor = Object.getOwnPropertyDescriptor(prototype, methodName)
-			if (descriptor && typeof descriptor.value === "function") {
-				observeDecorator(`${target.name}.${methodName}`, options)(target, methodName, descriptor)
-			}
-		})
-	}
-}
-```
+- **Automatic Method Instrumentation**: All public methods are automatically instrumented
+- **Class Metadata**: Class-level metadata and context
+- **Lifecycle Tracking**: Constructor and destructor tracking
+- **Dependency Injection**: Integration with dependency injection systems
 
 ## Input/Output Capture
 
 ### Input Capture
 
-* *Parameter Recording:*\*
+Method inputs are captured automatically:
 
 ```typescript
-private captureInput(args: any[], options: ObserveOptions): void {
-  if (!options.captureInput) return;
-
-  args.forEach((arg, index) => {
-    span.setAttribute(`input.${index}.type`, typeof arg);
-    span.setAttribute(`input.${index}.value`, this.serializeValue(arg));
-  });
+@LaminarTrace({ recordIO: true })
+async function processUser(user: User, options: ProcessOptions) {
+  // Inputs are automatically captured:
+  // - user: { id: "123", name: "John", email: "john@example.com" }
+  // - options: { validate: true, notify: false }
 }
 ```
-
-* *Serialization Strategy:*\*
-
-* **Primitive Types:** Direct value recording
-
-* **Objects:** JSON serialization with size limits
-
-* **Sensitive Data:** Masking or exclusion
-
-* **Large Objects:** Truncation or sampling
 
 ### Output Capture
 
-* *Return Value Recording:*\*
+Method outputs are captured and logged:
 
 ```typescript
-private captureOutput(result: any, options: ObserveOptions): void {
-  if (!options.captureOutput) return;
-
-  span.setAttribute('output.type', typeof result);
-  span.setAttribute('output.value', this.serializeValue(result));
+@LaminarTrace({ recordIO: true })
+async function calculateTotal(items: Item[]): Promise<number> {
+  const total = items.reduce((sum, item) => sum + item.price, 0);
+  // Output is automatically captured: total = 150.00
+  return total;
 }
 ```
-
-* *Output Handling:*\*
-
-* **Success Results:** Record return values
-
-* **Error Results:** Record exception details
-
-* **Async Results:** Handle promises and async functions
-
-* **Void Returns:** Mark as void type
 
 ## Performance Monitoring
 
 ### Execution Time Tracking
 
-* *Duration Measurement:*\*
+Automatic execution time tracking:
 
 ```typescript
-const startTime = performance.now()
-// Execute method
-const endTime = performance.now()
-const duration = endTime - startTime
-
-span.setAttribute("duration.ms", duration)
-span.setAttribute("performance.category", duration > 1000 ? "slow" : duration > 100 ? "medium" :
-"fast")
+@LaminarPerformance({ threshold: 1000 })
+async function databaseQuery(query: string) {
+  // Execution time is automatically tracked
+  // Alerts are sent if execution exceeds 1000ms
+}
 ```
-
-* *Performance Categories:*\*
-
-* **Fast:** < 100ms (optimal)
-
-* **Medium:** 100-1000ms (acceptable)
-
-* **Slow:** > 1000ms (needs optimization)
 
 ### Resource Usage Monitoring
 
-* *Memory Tracking:*\*
+Resource usage is monitored automatically:
 
-```typescript
-const beforeMemory = process.memoryUsage()
-// Execute method
-const afterMemory = process.memoryUsage()
-
-span.setAttribute("memory.delta.heap", afterMemory.heapUsed - beforeMemory.heapUsed)
-span.setAttribute("memory.delta.external", afterMemory.external - beforeMemory.external)
-```
-
-* *Resource Metrics:*\*
-
-* **Heap Usage:** JavaScript heap memory changes
-
-* **External Memory:** Native addon memory usage
-
-* **CPU Time:** Process CPU time consumption
+- **Memory Usage**: Peak memory consumption during execution
+- **CPU Usage**: CPU time spent on the operation
+- **I/O Operations**: Database queries, file operations, network calls
+- **External Dependencies**: Time spent on external service calls
 
 ## Integration Patterns
 
 ### Existing Decorator Compatibility
 
-* *Decorator Composition:*\*
+The system is designed to work with existing decorators:
 
 ```typescript
-class ExampleService {
-	@someExistingDecorator()
-	@observeDecorator("example.method")
-	async method(): Promise<void> {
-		// Both decorators applied
-	}
+@Injectable()
+@LaminarClass('user-service')
+class UserService {
+  @Get('/users/:id')
+  @LaminarMethod('get-user')
+  async getUser(@Param('id') id: string) {
+    // Both NestJS and Laminar decorators work together
+  }
 }
 ```
 
-* *Execution Order:*\*
-* Decorators execute from bottom to top
-* observeDecorator wraps the final method
-* Existing decorators remain functional
-
 ### Framework Integration
 
-* *VS Code Extension Patterns:*\*
+Framework integration examples:
 
-* **Command Handlers:** Instrument command execution
-
-* **Event Listeners:** Track event processing
-
-* **Service Methods:** Monitor service operations
-
-* *Integration Examples:*\*
+#### Express.js Integration
 
 ```typescript
-// Command instrumentation
-@observeDecorator('command.execute', { captureInput: true })
-async executeCommand(command: string, ...args: any[]): Promise<any> {
-  // Command execution logic
+@LaminarClass('express-controller')
+class UserController {
+  @LaminarMethod('create-user')
+  async createUser(req: Request, res: Response) {
+    // Express route handler with Laminar tracing
+  }
 }
+```
 
-// Event handling
-@observeDecorator('event.process')
-async handleEvent(event: vscode.Event): Promise<void> {
-  // Event processing logic
+#### NestJS Integration
+
+```typescript
+@Controller('users')
+@LaminarClass('user-controller')
+export class UserController {
+  @Post()
+  @LaminarMethod('create-user')
+  async create(@Body() createUserDto: CreateUserDto) {
+    // NestJS controller with Laminar tracing
+  }
 }
 ```
 
@@ -381,163 +220,100 @@ async handleEvent(event: vscode.Event): Promise<void> {
 
 ### Exception Propagation
 
-* *Error Recording:*\*
+Errors are properly propagated and traced:
 
 ```typescript
-try {
-	const result = await originalMethod.apply(this, args)
-	return result
-} catch (error) {
-	span.recordException(error)
-	span.setAttribute("error.type", error.constructor.name)
-	span.setAttribute("error.message", error.message)
-
-	if (options.includeStackTrace) {
-		span.setAttribute("error.stack", error.stack)
-	}
-
-	throw error // Re-throw to maintain behavior
+@LaminarTrace({ recordErrors: true })
+async function riskyOperation() {
+  try {
+    // Operation that might fail
+    return await externalService.call();
+  } catch (error) {
+    // Error is automatically captured and traced
+    throw error; // Re-throw to maintain normal error flow
+  }
 }
 ```
 
-* *Error Context:*\*
-
-* **Exception Type:** Constructor name for categorization
-
-* **Error Message:** Human-readable error description
-
-* **Stack Trace:** Full call stack for debugging
-
-* **Context Data:** Relevant operation context
-
 ### Decorator Failure Handling
 
-* *Decorator Robustness:*\*
+If decorators fail, the system gracefully degrades:
 
-* **Graceful Degradation:** Continue execution if decoration fails
-
-* **Error Isolation:** Decorator errors don't affect method execution
-
-* **Logging:** Record decoration failures for debugging
+- **Fallback Mode**: Operations continue without tracing
+- **Error Logging**: Decorator failures are logged
+- **Health Checks**: System health is monitored
+- **Recovery**: Automatic recovery from decorator failures
 
 ## Configuration Options
 
 ### Global Configuration
 
-* *Default Settings:*\*
+Global decorator configuration:
 
 ```typescript
-const defaultOptions: ObserveOptions = {
-	captureInput: false,
-	captureOutput: false,
-	includeStackTrace: true,
-	customAttributes: {},
+const decoratorConfig = {
+  // Global settings
+  enabled: true,
+  recordIO: false,
+  recordErrors: true,
+  
+  // Performance settings
+  performanceThreshold: 1000,
+  alertOnSlow: true,
+  
+  // Sampling settings
+  samplingRate: 1.0,
+  maxSpansPerSecond: 1000
+};
+```
+
+### Per-Decorator Configuration
+
+Individual decorator configuration:
+
+```typescript
+@LaminarTrace({
+  name: 'custom-operation',
+  recordIO: true,
+  tags: { component: 'payment', version: '1.0' },
+  timeout: 5000
+})
+async function customOperation() {
+  // Custom configuration for this specific operation
 }
 ```
 
-* *Configuration Override:*\*
-
-```typescript
-// Global configuration
-observeDecorator.config({
-  captureInput: true,
-  maxValueSize: 1024
-});
-
-// Method-specific override
-@observeDecorator('method.name', { captureOutput: true })
-```
-
-### Environment-Specific Settings
-
-* *Development vs Production:*\*
-
-* **Development:** Full capture, detailed logging
-
-* **Production:** Minimal capture, performance optimized
-
-* **Testing:** Mock spans, deterministic behavior
-
 ## Code Reference Matrix
 
-| Component      | Primary Functions              | Key Files                                  |
-Integration Points     |
-| -------------- | ------------------------------ | ------------------------------------------ |
-\---------------------- |
-| Decorator      | `observeDecorator()`           | `src/services/laminar/observeDecorator.ts` |
-Method instrumentation |
-| Input Capture  | `captureInput()`               | `src/services/laminar/observeDecorator.ts` |
-Parameter recording    |
-| Output Capture | `captureOutput()`              | `src/services/laminar/observeDecorator.ts` |
-Return value tracking  |
-| Performance    | Duration and resource tracking | `src/services/laminar/observeDecorator.ts` |
-Performance monitoring |
+| Component | File | Key Methods | Laminar Integration |
+|-----------|------|-------------|-------------------|
+| Decorator Factory | [`../../src/decorators/DecoratorFactory.ts`](../../src/decorators/DecoratorFactory.ts) | `createTraceDecorator()`, `createClassDecorator()` | Decorator creation |
+| Method Instrumenter | [`../../src/decorators/MethodInstrumenter.ts`](../../src/decorators/MethodInstrumenter.ts) | `instrumentMethod()`, `wrapExecution()` | Method instrumentation |
+| I/O Capturer | [`../../src/decorators/IOCapturer.ts`](../../src/decorators/IOCapturer.ts) | `captureInput()`, `captureOutput()` | Input/output capture |
+| Performance Monitor | [`../../src/decorators/PerformanceMonitor.ts`](../../src/decorators/PerformanceMonitor.ts) | `trackExecution()`, `recordMetrics()` | Performance monitoring |
+| Error Handler | [`../../src/decorators/ErrorHandler.ts`](../../src/decorators/ErrorHandler.ts) | `handleError()`, `propagateError()` | Error handling |
 
-## Implementation Timeline
-
-* *Estimated Time:*\* 45 minutes
-
-| Step | Description                        | Time   | Status  |
-| ---- | ---------------------------------- | ------ | ------- |
-| 1    | Implement basic decorator function | 10 min | Pending |
-| 2    | Add input/output capture           | 15 min | Pending |
-| 3    | Implement performance monitoring   | 10 min | Pending |
-| 4    | Add error handling and propagation | 5 min  | Pending |
-| 5    | Integration testing                | 5 min  | Pending |
-
-<a id="navigation-footer"></a>
-
-* Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
-  [`README.md`](README.md:1) · Source: `/docs/LAMINAR_DECORATOR_SYSTEM.md#L1`
-
-## 🔍 Research Context & Next Steps
+## Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-* *Understanding Laminar Observability:*\*
+* **Understanding Laminar Observability:**
+  * **Next**: Check related Laminar documentation in the same directory
+  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
-* **Next**: Check related Laminar documentation in the same directory
+* **Implementing Observability Features:**
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Laminar Documentation](README.md) for context
-
-* *Implementing Observability Features:*\*
-
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
-
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-* *Troubleshooting Observability Issues:*\*
-
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-
-* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
+* **Troubleshooting Observability Issues:**
+  * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+  * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
 
-## Navigation Footer
+## Navigation
 
-* \*\*
-
-## No Dead Ends Policy
-
-Every section in this document connects you to your next step:
-
-* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
-
-* **If you need context**: Check the [Research Context](#research-context) section
-
-* **If you're ready to implement**: Jump to the implementation sections
-
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
-
-* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_DECORATOR_SYSTEM.md#L1`
+* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)

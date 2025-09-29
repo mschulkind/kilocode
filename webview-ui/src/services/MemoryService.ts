@@ -1,7 +1,7 @@
 // kilocode_change - new file
-import { telemetryClient } from "../utils/TelemetryClient"
+import { telemetryClient } from "../utils/TelemetryClient.js"
 import { TelemetryEventName } from "@roo-code/types"
-import { createSampledFunction } from "../utils/sampling"
+import { createSampledFunction } from "../utils/sampling.js"
 
 interface PerformanceMemory {
 	usedJSHeapSize?: number

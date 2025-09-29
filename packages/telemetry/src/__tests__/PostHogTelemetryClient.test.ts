@@ -7,7 +7,7 @@ import { PostHog } from "posthog-node"
 
 import { type TelemetryPropertiesProvider, TelemetryEventName } from "@roo-code/types"
 
-import { PostHogTelemetryClient } from "../PostHogTelemetryClient"
+import { PostHogTelemetryClient } from "../PostHogTelemetryClient.js"
 
 vi.mock("posthog-node")
 

@@ -1,6 +1,6 @@
 import type { Command } from "@roo/ExtensionMessage"
 
-import { getContextMenuOptions, ContextMenuOptionType } from "../utils/context-mentions"
+import { getContextMenuOptions, ContextMenuOptionType } from "../utils/context-mentions.js"
 
 describe("Command Autocomplete", () => {
 	const mockCommands: Command[] = [

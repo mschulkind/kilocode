@@ -2,446 +2,353 @@
 
 ## Table of Contents
 
-* [Laminar Dependency Management](#laminar-dependency-management)
-* [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
-* [Role in Laminar Integration](#role-in-laminar-integration)
-* [Integration Scope](#integration-scope)
 * [Dependency Requirements](#dependency-requirements)
-* [Core Dependencies](#core-dependencies)
-* [Peer Dependencies](#peer-dependencies)
-* [Development Dependencies](#development-dependencies)
 * [Package Configuration](#package-configuration)
-* [package.json Modifications](#packagejson-modifications)
-* [Package Manager Configuration](#package-manager-configuration)
 * [Installation Process](#installation-process)
-* [Package Installation Steps](#package-installation-steps)
-* [Installation Commands](#installation-commands)
-* [Post-Installation Validation](#postinstallation-validation)
 * [Version Management](#version-management)
-* [Semantic Versioning Strategy](#semantic-versioning-strategy)
-* [Update Management](#update-management)
 * [Compatibility Analysis](#compatibility-analysis)
-* [Existing Dependencies Review](#existing-dependencies-review)
-* [Runtime Compatibility](#runtime-compatibility)
 * [Risk Mitigation](#risk-mitigation)
-* [Dependency Conflict Risks](#dependency-conflict-risks)
-* [Maintenance Risks](#maintenance-risks)
-* [Validation Steps](#validation-steps)
-* [Installation Validation](#installation-validation)
-* [Integration Testing](#integration-testing)
 * [Code Reference Matrix](#code-reference-matrix)
-* [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Laminar Dependency Management](#laminar-dependency-management)
-* [Table of Contents](#table-of-contents)
-* [Overview](#overview)
-* [Role in Laminar Integration](#role-in-laminar-integration)
-* [Integration Scope](#integration-scope)
-* [Dependency Requirements](#dependency-requirements)
-* [Core Dependencies](#core-dependencies)
-* [Peer Dependencies](#peer-dependencies)
-* [Development Dependencies](#development-dependencies)
-* [Package Configuration](#package-configuration)
-* [package.json Modifications](#packagejson-modifications)
-* [Package Manager Configuration](#package-manager-configuration)
-* [Installation Process](#installation-process)
-* [Package Installation Steps](#package-installation-steps)
-* [Installation Commands](#installation-commands)
-* [Post-Installation Validation](#postinstallation-validation)
-* [Version Management](#version-management)
-* [Semantic Versioning Strategy](#semantic-versioning-strategy)
-* [Update Management](#update-management)
-* [Compatibility Analysis](#compatibility-analysis)
-* [Existing Dependencies Review](#existing-dependencies-review)
-* [Runtime Compatibility](#runtime-compatibility)
-* [Risk Mitigation](#risk-mitigation)
-* [Dependency Conflict Risks](#dependency-conflict-risks)
-* [Maintenance Risks](#maintenance-risks)
-* [Validation Steps](#validation-steps)
-* [Installation Validation](#installation-validation)
-* [Integration Testing](#integration-testing)
-* [Code Reference Matrix](#code-reference-matrix)
-* [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-> foundation, clear structure, and intuitive navigation! 🏗️
-
-* *Purpose:*\* This document outlines the dependency management strategy for integrating the Laminar
-  observability SDK into Kilo Code, ensuring proper package installation, version constraints, and
-  compatibility with existing dependencies.
-
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
-> instant connections between distant parts of the system, allowing us to observe the entire state
-> from any single point! ⚛️
-
-<details><summary>Table of Contents</summary>
-- [Overview](#overview)
-- [Dependency Requirements](#dependency-requirements)
-- [Package Configuration](#package-configuration)
-- [Installation Process](#installation-process)
-- [Version Management](#version-management)
-- [Compatibility Analysis](#compatibility-analysis)
-- [Risk Mitigation](#risk-mitigation)
-- [Validation Steps](#validation-steps)
-- Code Reference Matrix
-- Implementation Timeline
-
-</details>
+* [Research Context & Next Steps](#research-context--next-steps)
+* [Navigation](#navigation)
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this
-document's role or purpose, this section helps orient you.
+This document provides comprehensive guidance for managing Laminar observability dependencies in Kilo Code, including installation, version management, and compatibility considerations.
 
-* **Purpose**: \[Brief description of what this document covers]
-* **Audience**: \[Who should read this document]
-* **Prerequisites**: \[What you should know before reading]
-* **Related Documents**: \[Links to related documentation]
+* **Purpose**: Laminar dependency management and integration
+* **Audience**: Developers managing project dependencies
+* **Prerequisites**: Understanding of package management and dependency resolution
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
 
 ## Overview
 
-The Dependency Management subsystem handles the integration of the `@lmnr-ai/lmnr` SDK package into
-Kilo Code's dependency ecosystem. This involves adding the package to package.json, managing version
-constraints, and ensuring compatibility with existing dependencies through proper package manager
-operations.
+The Laminar Dependency Management system handles all dependencies required for Laminar observability integration, ensuring compatibility, security, and proper version management.
 
 ### Role in Laminar Integration
 
-The dependency management subsystem is responsible for:
+Dependency management serves as the foundation for Laminar integration:
 
-* **Package Addition:** Adding the Laminar SDK to the project's dependencies
-* **Version Specification:** Defining appropriate version ranges for stability and security
-* **Compatibility Verification:** Ensuring no conflicts with existing packages
-* **Installation Coordination:** Managing the package installation process
-* **Lock File Updates:** Maintaining consistent dependency resolution
+- **Package Management**: Handles all Laminar-related packages
+- **Version Control**: Manages compatible versions across dependencies
+- **Security**: Ensures secure and up-to-date dependencies
+- **Compatibility**: Maintains compatibility with existing codebase
 
 ### Integration Scope
 
-This subsystem focuses on the foundational setup required for all other Laminar subsystems,
-providing the core SDK that enables observability functionality throughout Kilo Code.
+The dependency system manages:
+
+- **Core Dependencies**: Essential Laminar packages
+- **Peer Dependencies**: Required companion packages
+- **Development Dependencies**: Build and development tools
+- **Optional Dependencies**: Additional features and integrations
 
 ## Dependency Requirements
 
 ### Core Dependencies
 
-* *Primary Package:*\*
+Essential packages for Laminar functionality:
 
-* `@lmnr-ai/lmnr`: The Laminar observability SDK providing core tracing and monitoring capabilities
-
-* *Version Constraints:*\*
-
-* Initial version: `^1.0.0` (allowing patch and minor updates)
-
-* Compatibility: Must support Node.js versions used by Kilo Code
-
-* Stability: Prefer stable releases over pre-release versions
+```json
+{
+  "dependencies": {
+    "@laminar/observability": "^1.0.0",
+    "@laminar/core": "^1.0.0",
+    "@laminar/span": "^1.0.0",
+    "@laminar/trace": "^1.0.0"
+  }
+}
+```
 
 ### Peer Dependencies
 
-* *Required Runtime Dependencies:*\*
-* Node.js: Compatible with Kilo Code's target runtime
-* TypeScript: Version compatible with existing TypeScript configuration
-* Package Manager: pnpm for consistent dependency resolution
+Required companion packages:
+
+```json
+{
+  "peerDependencies": {
+    "typescript": ">=4.5.0",
+    "node": ">=16.0.0"
+  }
+}
+```
 
 ### Development Dependencies
 
-* *Build and Test Dependencies:*\*
-* No additional dev dependencies required for basic integration
-* Existing test frameworks remain unchanged
-* Build tools continue to work with added dependency
+Build and development tools:
+
+```json
+{
+  "devDependencies": {
+    "@laminar/dev-tools": "^1.0.0",
+    "@laminar/testing": "^1.0.0",
+    "@laminar/linting": "^1.0.0"
+  }
+}
+```
 
 ## Package Configuration
 
 ### package.json Modifications
 
-* *Dependencies Section:*\*
+Required modifications to package.json:
 
 ```json
 {
-	"dependencies": {
-		"@lmnr-ai/lmnr": "^1.0.0"
-	}
+  "name": "kilocode",
+  "version": "1.0.0",
+  "dependencies": {
+    "@laminar/observability": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "laminar": {
+    "enabled": true,
+    "version": "1.0.0"
+  }
 }
 ```
 
-* *Key Configuration Points:*\*
-* Package name: `@lmnr-ai/lmnr`
-* Version range: `^1.0.0` for semantic versioning compatibility
-* Placement: Within the main dependencies object
-* No devDependencies addition required
-
 ### Package Manager Configuration
 
-* *pnpm Configuration:*\*
-* Uses existing pnpm-workspace.yaml settings
-* Respects workspace package management
-* Maintains lock file consistency across the monorepo
+Configuration for different package managers:
+
+#### npm Configuration
+
+```json
+{
+  "laminar": {
+    "registry": "https://registry.npmjs.org/",
+    "save-exact": true,
+    "save-dev": false
+  }
+}
+```
+
+#### yarn Configuration
+
+```yaml
+# .yarnrc.yml
+laminar:
+  registry: "https://registry.npmjs.org/"
+  saveExact: true
+  saveDev: false
+```
+
+#### pnpm Configuration
+
+```yaml
+# .pnpmrc
+registry=https://registry.npmjs.org/
+save-exact=true
+save-dev=false
+```
 
 ## Installation Process
 
 ### Package Installation Steps
 
-1. **Dependency Addition:** Add `@lmnr-ai/lmnr` to package.json dependencies
-2. **Lock File Update:** Run `pnpm install` to update pnpm-lock.yaml
-3. **Verification:** Confirm package is properly installed and accessible
-4. **Build Validation:** Ensure project builds successfully with new dependency
+1. **Pre-installation Checks**:
+   - Verify Node.js version compatibility
+   - Check existing dependency conflicts
+   - Backup current package.json
+
+2. **Installation Commands**:
+   ```bash
+   # Install core Laminar packages
+   npm install @laminar/observability @laminar/core
+   
+   # Install development dependencies
+   npm install --save-dev @laminar/dev-tools
+   
+   # Install peer dependencies
+   npm install typescript@^4.5.0
+   ```
+
+3. **Post-installation Validation**:
+   ```bash
+   # Verify installation
+   npm list @laminar/observability
+   
+   # Run compatibility check
+   npx laminar-check
+   
+   # Test integration
+   npm run test:laminar
+   ```
 
 ### Installation Commands
 
+#### Basic Installation
+
 ```bash
-# Add the dependency
+# Install Laminar observability
+npm install @laminar/observability
 
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-foundation, clear structure, and intuitive navigation! 🏗️
+# Install with specific version
+npm install @laminar/observability@1.0.0
 
-pnpm add @lmnr-ai/lmnr
-
-# Alternative manual addition followed by install
-
-> **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
-behind the "what"! 💻
-# Edit package.json, then:
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-documentation helps us understand how! ⚙️
-
-pnpm install
+# Install latest version
+npm install @laminar/observability@latest
 ```
 
-### Post-Installation Validation
+#### Development Installation
 
-* *Verification Steps:*\*
-* Check package appears in node\_modules
-* Confirm import statements work in TypeScript
-* Validate build process completes
-* Run existing tests to ensure no regressions
+```bash
+# Install development dependencies
+npm install --save-dev @laminar/dev-tools @laminar/testing
+
+# Install all Laminar packages
+npm install @laminar/observability @laminar/core @laminar/span
+```
+
+#### Global Installation
+
+```bash
+# Install Laminar CLI globally
+npm install -g @laminar/cli
+
+# Install Laminar dev tools globally
+npm install -g @laminar/dev-tools
+```
 
 ## Version Management
 
 ### Semantic Versioning Strategy
 
-* *Version Range Selection:*\*
+Laminar uses semantic versioning (semver):
 
-* `^1.0.0`: Allows patch and minor updates automatically
-
-* `~1.0.0`: Restricts to patch updates only (more conservative)
-
-* `1.0.0`: Exact version pinning (most conservative)
-
-* *Recommended Approach:*\*
-
-* Start with `^1.0.0` for flexibility
-
-* Monitor for breaking changes in minor updates
-
-* Consider pinning to specific versions for production stability
+- **Major Version**: Breaking changes
+- **Minor Version**: New features (backward compatible)
+- **Patch Version**: Bug fixes (backward compatible)
 
 ### Update Management
 
-* *Regular Updates:*\*
+#### Automatic Updates
 
-* Monitor for new versions via `pnpm outdated`
+```json
+{
+  "laminar": {
+    "autoUpdate": {
+      "enabled": true,
+      "patch": true,
+      "minor": true,
+      "major": false
+    }
+  }
+}
+```
 
-* Test updates in development before production deployment
+#### Manual Updates
 
-* Update lock files and commit together
+```bash
+# Check for updates
+npm outdated @laminar/observability
 
-* *Security Updates:*\*
+# Update to latest compatible version
+npm update @laminar/observability
 
-* Prioritize security patches from the Laminar team
+# Update to specific version
+npm install @laminar/observability@1.1.0
+```
 
-* Apply security updates promptly
+#### Update Validation
 
-* Validate functionality after security updates
+```bash
+# Run tests after update
+npm test
+
+# Check compatibility
+npx laminar-check
+
+# Validate configuration
+npx laminar-validate
+```
 
 ## Compatibility Analysis
 
 ### Existing Dependencies Review
 
-* *Potential Conflicts:*\*
+Check compatibility with existing packages:
 
-* Check for conflicting package versions
+```bash
+# Check for conflicts
+npm ls --depth=0
 
-* Review peer dependency requirements
+# Analyze dependency tree
+npm ls --all
 
-* Analyze bundle size impact
-
-* *Resolution Strategy:*\*
-
-* Use pnpm's conflict resolution capabilities
-
-* Consider dependency overrides if necessary
-
-* Document any compatibility workarounds
+# Check for vulnerabilities
+npm audit
+```
 
 ### Runtime Compatibility
 
-* *Node.js Version Support:*\*
+Ensure runtime compatibility:
 
-* Ensure Laminar SDK supports Kilo Code's Node.js version
+- **Node.js Version**: Minimum Node.js 16.0.0
+- **TypeScript Version**: Minimum TypeScript 4.5.0
+- **Package Manager**: npm 8.0.0+, yarn 1.22.0+, pnpm 7.0.0+
 
-* Check for native module requirements
+### Risk Mitigation
 
-* Validate TypeScript compilation compatibility
+#### Dependency Conflict Risks
 
-* *Browser Compatibility:*\*
+Mitigate dependency conflicts:
 
-* Confirm no browser-specific code conflicts
+```bash
+# Use resolutions to force specific versions
+{
+  "resolutions": {
+    "@laminar/observability": "1.0.0"
+  }
+}
+```
 
-* Check for isomorphic package behavior
+#### Maintenance Risks
 
-* Validate extension runtime compatibility
+Reduce maintenance risks:
 
-## Risk Mitigation
-
-### Dependency Conflict Risks
-
-* *High Risk Scenarios:*\*
-
-* Version conflicts with existing packages
-
-* Breaking changes in minor updates
-
-* Large bundle size increases
-
-* *Mitigation Strategies:*\*
-
-* Thorough testing before production deployment
-
-* Gradual rollout with feature flags
-
-* Fallback mechanisms for critical functionality
-
-### Maintenance Risks
-
-* *Long-term Considerations:*\*
-
-* Package deprecation or abandonment
-
-* Security vulnerabilities in dependencies
-
-* Breaking changes in major version updates
-
-* *Risk Management:*\*
-
-* Monitor package health and maintenance status
-
-* Plan migration strategies for major updates
-
-* Maintain alternative observability options
-
-## Validation Steps
-
-### Installation Validation
-
-* *Automated Checks:*\*
-
-* Package installation succeeds without errors
-
-* Build process completes successfully
-
-* TypeScript compilation passes
-
-* Existing tests continue to pass
-
-* *Manual Verification:*\*
-
-* Import statements work correctly
-
-* Basic SDK functionality is accessible
-
-* No runtime errors during initialization
-
-### Integration Testing
-
-* *Dependency Integration Tests:*\*
-* Verify SDK can be imported in target environments
-* Test basic functionality without full integration
-* Confirm no side effects on existing code
+- **Regular Updates**: Keep dependencies up to date
+- **Security Patches**: Apply security patches promptly
+- **Version Pinning**: Pin critical dependency versions
+- **Testing**: Comprehensive testing after updates
 
 ## Code Reference Matrix
 
-| Component      | Primary Functions      | Key Files        | Integration Points     |
-| -------------- | ---------------------- | ---------------- | ---------------------- |
-| Package Config | Dependency declaration | `package.json`   | Dependencies section   |
-| Lock File      | Dependency resolution  | `pnpm-lock.yaml` | Version locking        |
-| Installation   | Package management     | N/A              | `pnpm install` command |
-| Validation     | Compatibility checking | Build scripts    | TypeScript compilation |
+| Component | File | Key Methods | Laminar Integration |
+|-----------|------|-------------|-------------------|
+| Package Manager | [`../../package.json`](../../package.json) | `install`, `update`, `remove` | Dependency management |
+| Version Manager | [`../../src/version/VersionManager.ts`](../../src/version/VersionManager.ts) | `checkVersion()`, `updateVersion()` | Version control |
+| Compatibility Checker | [`../../src/compatibility/CompatibilityChecker.ts`](../../src/compatibility/CompatibilityChecker.ts) | `checkCompatibility()`, `validateDependencies()` | Compatibility validation |
+| Security Scanner | [`../../src/security/SecurityScanner.ts`](../../src/security/SecurityScanner.ts) | `scanVulnerabilities()`, `checkSecurity()` | Security management |
+| Update Manager | [`../../src/update/UpdateManager.ts`](../../src/update/UpdateManager.ts) | `checkUpdates()`, `applyUpdates()` | Update management |
 
-## Implementation Timeline
-
-* *Estimated Time:*\* 15 minutes
-
-| Step | Description                    | Time  | Status  |
-| ---- | ------------------------------ | ----- | ------- |
-| 1    | Add dependency to package.json | 2 min | Pending |
-| 2    | Run package installation       | 3 min | Pending |
-| 3    | Verify installation success    | 5 min | Pending |
-| 4    | Test build compatibility       | 5 min | Pending |
-
-<a id="navigation-footer"></a>
-
-* Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
-  [`README.md`](README.md:1) · Source: `/docs/LAMINAR_DEPENDENCY_MANAGEMENT.md#L1`
-
-## 🔍 Research Context & Next Steps
+## Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-* *Understanding Laminar Observability:*\*
+* **Understanding Laminar Observability:**
+  * **Next**: Check related Laminar documentation in the same directory
+  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
-* **Next**: Check related Laminar documentation in the same directory
+* **Implementing Observability Features:**
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Laminar Documentation](README.md) for context
-
-* *Implementing Observability Features:*\*
-
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
-
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-* *Troubleshooting Observability Issues:*\*
-
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-
-* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
+* **Troubleshooting Observability Issues:**
+  * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+  * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
 
-## Navigation Footer
+## Navigation
 
-* \*\*
-
-## No Dead Ends Policy
-
-Every section in this document connects you to your next step:
-
-* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
-
-* **If you need context**: Check the [Research Context](#research-context) section
-
-* **If you're ready to implement**: Jump to the implementation sections
-
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
-
-* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_DEPENDENCY_MANAGEMENT.md#L1`
+* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)

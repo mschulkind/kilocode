@@ -62,7 +62,7 @@ id="related-documents"></a>]\(6-navigation-footer-details-----related-documents-
 * **[ORCHESTRATOR\_BEST\_PRACTICES.md](ORCHESTRATOR_BEST_PRACTICES.md)**: Contains best practices
   for
   developing new tools and modes.
-* **[Documentation Guide](../../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
+* **[Documentation Guide](../DOCUMENTATION_GUIDE.md)**: Documentation standards and practices.
 
 [Back to Top](#orchestrator-extensibility)
 
@@ -121,7 +121,7 @@ type of task.
 The process for adding a new mode is currently under development. The anticipated steps are:
 
 1. **Definition**: Defining the new mode's name, purpose, and slug in the central mode registry,
-   likely [`src/shared/modes.ts`](`[FILE_MOVED_OR_RENAMED]`#L69).
+   likely [`src/shared/modes.ts`](../../src/shared/modes.ts#L69).
 2. **Permission Assignment**: Creating a mapping that links the new mode to a specific set of
    allowed tools.
 3. **File Access Policy**: Optionally defining a file access policy that restricts the mode's
@@ -152,7 +152,7 @@ the model, such as:
 * "API calls to the billing service must be routed through the `BillingAPIClient`."
 
 For a complete overview of how these rules are discovered and loaded, please refer to the
-[Documentation Guide](../../DOCUMENTATION_GUIDE.md).
+[Documentation Guide](../DOCUMENTATION_GUIDE.md).
 
 [Back to Top](#orchestrator-extensibility)
 
@@ -181,15 +181,15 @@ document's role or purpose, this section helps orient you.
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 * *Troubleshooting Issues:*\*
 
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../../architecture/README.md) →
+  [Root Cause Analysis](../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

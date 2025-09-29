@@ -3,7 +3,7 @@ import * as vscode from "vscode"
 
 import { TelemetryEventName, type TelemetryEvent } from "@roo-code/types"
 
-import { BaseTelemetryClient } from "./BaseTelemetryClient"
+import { BaseTelemetryClient } from "./BaseTelemetryClient.js"
 
 /**
  * PostHogTelemetryClient handles telemetry event tracking for the Roo Code extension.

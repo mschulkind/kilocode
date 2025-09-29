@@ -1,4 +1,4 @@
-import { calculateTaskTimelineSizes } from "../calculateTaskTimelineSizes"
+import { calculateTaskTimelineSizes } from "../calculateTaskTimelineSizes.js"
 import type { ClineMessage } from "@roo-code/types"
 
 describe("calculateTaskTimelineSizes", () => {

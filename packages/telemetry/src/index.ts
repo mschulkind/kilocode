@@ -1,3 +1,3 @@
-export * from "./BaseTelemetryClient"
-export * from "./PostHogTelemetryClient"
-export * from "./TelemetryService"
+export * from "./BaseTelemetryClient.js"
+export * from "./PostHogTelemetryClient.js"
+export * from "./TelemetryService.js"

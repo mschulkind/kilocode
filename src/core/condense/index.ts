@@ -120,7 +120,7 @@ export async function summarizeConversation(
 		return { ...response, error }
 	}
 
-	const keepMessages = messages.slice(-N_MESSAGES_TO_KEEP)
+	const keepMessages = messages.slice(-N_MESSAGES_TO_KEEP).filter((msg): msg is ApiMessage => msg !== undefined)
 	// Check if there's a recent summary in the messages we're keeping
 	const recentSummaryExists = keepMessages.some((message) => message.isSummary)
 
@@ -190,7 +190,7 @@ export async function summarizeConversation(
 	const summaryMessage: ApiMessage = {
 		role: "assistant",
 		content: summary,
-		ts: keepMessages[0].ts,
+		ts: keepMessages[0]?.ts || Date.now(),
 		isSummary: true,
 	}
 

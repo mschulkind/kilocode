@@ -2,492 +2,311 @@
 
 ## Table of Contents
 
-* [Laminar Configuration System](#laminar-configuration-system)
-* [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
-* [Role in Laminar Integration](#role-in-laminar-integration)
-* [Integration Scope](#integration-scope)
 * [Configuration Architecture](#configuration-architecture)
-* [Configuration Structure](#configuration-structure)
-* [File Organization](#file-organization)
 * [Environment Detection](#environment-detection)
-* [Environment Types](#environment-types)
-* [Environment-Specific Behavior](#environmentspecific-behavior)
 * [API Key Management](#api-key-management)
-* [Secure Storage](#secure-storage)
-* [Key Validation](#key-validation)
 * [Configuration Validation](#configuration-validation)
-* [Validation Strategy](#validation-strategy)
-* [Error Handling](#error-handling)
 * [Security Considerations](#security-considerations)
-* [Data Protection](#data-protection)
-* [Privacy Compliance](#privacy-compliance)
 * [Error Handling](#error-handling)
-* [Configuration Errors](#configuration-errors)
-* [Runtime Configuration Issues](#runtime-configuration-issues)
 * [Integration Points](#integration-points)
-* [Service Layer Integration](#service-layer-integration)
-* [Other Subsystems](#other-subsystems)
 * [Code Reference Matrix](#code-reference-matrix)
-* [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Laminar Configuration System](#laminar-configuration-system)
-* [Table of Contents](#table-of-contents)
-* [Overview](#overview)
-* [Role in Laminar Integration](#role-in-laminar-integration)
-* [Integration Scope](#integration-scope)
-* [Configuration Architecture](#configuration-architecture)
-* [Configuration Structure](#configuration-structure)
-* [File Organization](#file-organization)
-* [Environment Detection](#environment-detection)
-* [Environment Types](#environment-types)
-* [Environment-Specific Behavior](#environmentspecific-behavior)
-* [API Key Management](#api-key-management)
-* [Secure Storage](#secure-storage)
-* [Key Validation](#key-validation)
-* [Configuration Validation](#configuration-validation)
-* [Validation Strategy](#validation-strategy)
-* [Error Handling](#error-handling)
-* [Security Considerations](#security-considerations)
-* [Data Protection](#data-protection)
-* [Privacy Compliance](#privacy-compliance)
-* [Error Handling](#error-handling)
-* [Configuration Errors](#configuration-errors)
-* [Runtime Configuration Issues](#runtime-configuration-issues)
-* [Integration Points](#integration-points)
-* [Service Layer Integration](#service-layer-integration)
-* [Other Subsystems](#other-subsystems)
-* [Code Reference Matrix](#code-reference-matrix)
-* [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-> this documentation provides structured guidance for understanding and implementing solutions! 🔧
-
-* *Purpose:*\* This document details the configuration system for Laminar observability integration,
-  covering environment-specific settings, API key management, validation mechanisms, and secure
-  configuration handling within Kilo Code.
-
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
-> instant connections between distant parts of the system, allowing us to observe the entire state
-> from any single point! ⚛️
-
-<details><summary>Table of Contents</summary>
-- [Overview](#overview)
-- [Configuration Architecture](#configuration-architecture)
-- [Environment Detection](#environment-detection)
-- [API Key Management](#api-key-management)
-- [Configuration Validation](#configuration-validation)
-- [Security Considerations](#security-considerations)
-- Error Handling
-- Integration Points
-- Code Reference Matrix
-- Implementation Timeline
-
-</details>
+* [Research Context & Next Steps](#research-context--next-steps)
+* [Navigation](#navigation)
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this
-document's role or purpose, this section helps orient you.
+This document provides comprehensive documentation of the Laminar configuration system, including environment detection, API key management, validation, and security considerations.
 
-* **Purpose**: \[Brief description of what this document covers]
-* **Audience**: \[Who should read this document]
-* **Prerequisites**: \[What you should know before reading]
-* **Related Documents**: \[Links to related documentation]
+* **Purpose**: Laminar configuration system architecture and implementation
+* **Audience**: Developers implementing configuration management
+* **Prerequisites**: Understanding of configuration systems and environment management
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
 
 ## Overview
 
-The Configuration System manages all settings required for Laminar observability integration,
-providing environment-specific configuration, secure API key handling, and validation mechanisms to
-ensure proper system operation.
+The Laminar Configuration System provides centralized configuration management for Laminar observability integration, including environment detection, API key management, validation, and security features.
 
 ### Role in Laminar Integration
 
-The configuration system is responsible for:
+The configuration system serves as the foundation for all Laminar observability features:
 
-* **Environment Management:** Detecting and adapting to different deployment environments
-* **API Key Security:** Secure storage and access of Laminar API credentials
-* **Configuration Validation:** Ensuring all required settings are present and valid
-* **Dynamic Loading:** Runtime configuration loading and updates
-* **Privacy Compliance:** Respecting telemetry opt-out preferences
+- **Environment Detection**: Automatically detects and configures for different environments
+- **API Key Management**: Secure handling and validation of API keys
+- **Configuration Validation**: Ensures all configuration values are valid and complete
+- **Security Management**: Implements security best practices for configuration data
 
 ### Integration Scope
 
-This subsystem provides the foundational configuration that enables all other Laminar subsystems,
-ensuring consistent and secure observability setup across different environments and user
-preferences.
+The configuration system integrates with:
+
+- **Environment Variables**: Primary source of configuration data
+- **File-based Configuration**: Support for configuration files
+- **Runtime Configuration**: Dynamic configuration updates
+- **Security Systems**: Integration with security and privacy systems
 
 ## Configuration Architecture
 
 ### Configuration Structure
 
-* *Core Configuration Interface:*\*
+The configuration system uses a hierarchical structure:
 
 ```typescript
 interface LaminarConfig {
-	apiKey: string
-	environment: "development" | "production"
-	enabled: boolean
-	endpoint?: string
-	timeout?: number
+  // Core settings
+  apiKey: string;
+  enabled: boolean;
+  baseUrl: string;
+  
+  // Performance settings
+  recordIO: boolean;
+  maxSpans: number;
+  batchSize: number;
+  
+  // Network settings
+  httpPort: number;
+  grpcPort: number;
+  timeout: number;
+  
+  // Security settings
+  encryption: boolean;
+  compression: boolean;
+  rateLimit: number;
 }
 ```
 
-* *Configuration Layers:*\*
-
-* **Environment Variables:** Primary source for sensitive data like API keys
-
-* **Default Values:** Sensible defaults for optional settings
-
-* **Runtime Overrides:** Dynamic configuration updates
-
-* **Validation Layer:** Configuration integrity checking
-
 ### File Organization
 
-* *Configuration File Location:*\*
+Configuration files are organized as follows:
 
-* Path: `src/config/laminar-config.ts`
-
-* Purpose: Centralized configuration management
-
-* Exports: Configuration interface and loading functions
-
-* *Key Components:*\*
-
-* Configuration type definitions
-
-* Environment detection logic
-
-* API key retrieval and masking
-
-* Validation functions
-
-* Export interface for other subsystems
+```
+config/
+├── laminar/
+│   ├── base.ts          # Base configuration
+│   ├── development.ts   # Development overrides
+│   ├── staging.ts       # Staging overrides
+│   ├── production.ts    # Production overrides
+│   └── validation.ts    # Validation schemas
+└── environments/
+    ├── .env.development
+    ├── .env.staging
+    └── .env.production
+```
 
 ## Environment Detection
 
 ### Environment Types
 
-* *Supported Environments:*\*
+The system supports multiple environment types:
 
-* `development`: Local development with debug logging
-
-* `production`: Production deployment with optimized settings
-
-* `test`: Testing environment with mock configurations
-
-* *Detection Logic:*\*
-
-```typescript
-const detectEnvironment = (): Environment => {
-	if (process.env.NODE_ENV === "production") return "production"
-	if (process.env.NODE_ENV === "test") return "test"
-	return "development"
-}
-```
+- **Development**: Local development environment
+- **Staging**: Pre-production testing environment
+- **Production**: Live production environment
+- **Testing**: Automated testing environment
 
 ### Environment-Specific Behavior
 
-* *Development Environment:*\*
+Each environment has specific configuration behavior:
 
-* Debug logging enabled
+#### Development Environment
 
-* Relaxed validation rules
+```typescript
+const developmentConfig = {
+  enabled: true,
+  recordIO: true,
+  baseUrl: 'https://dev-api.laminar.dev',
+  logLevel: 'debug',
+  debugMode: true
+};
+```
 
-* Local API endpoints allowed
+#### Staging Environment
 
-* *Production Environment:*\*
+```typescript
+const stagingConfig = {
+  enabled: true,
+  recordIO: false,
+  baseUrl: 'https://staging-api.laminar.dev',
+  logLevel: 'info',
+  debugMode: false
+};
+```
 
-* Minimal logging for performance
+#### Production Environment
 
-* Strict validation requirements
-
-* Secure API key handling
-
-* *Test Environment:*\*
-
-* Mock configurations
-
-* Isolated testing setup
-
-* Deterministic behavior
+```typescript
+const productionConfig = {
+  enabled: true,
+  recordIO: false,
+  baseUrl: 'https://api.laminar.dev',
+  logLevel: 'warn',
+  debugMode: false
+};
+```
 
 ## API Key Management
 
 ### Secure Storage
 
-* *Storage Mechanisms:*\*
+API keys are stored securely using multiple methods:
 
-* Environment variables for production
-
-* VS Code secure storage for user-specific keys
-
-* Configuration files for development (gitignored)
-
-* *Key Naming Convention:*\*
-
-* Environment variable: `LAMINAR_API_KEY`
-
-* VS Code setting: `kilocode.laminar.apiKey`
-
-* Configuration property: `apiKey`
+- **Environment Variables**: Primary storage method
+- **Encrypted Files**: For sensitive environments
+- **Key Vaults**: Integration with external key management systems
+- **Runtime Injection**: Dynamic key injection at runtime
 
 ### Key Validation
 
-* *Validation Rules:*\*
+API keys are validated before use:
 
-* Non-empty string requirement
-
-* Format validation (if applicable)
-
-* Connectivity testing (optional)
-
-* Expiration checking (if supported)
-
-* *Security Measures:*\*
-
-* Never log API keys in plain text
-
-* Mask keys in error messages and logs
-
-* Rotate keys periodically
-
-* Access control based on environment
+```typescript
+const validateApiKey = (key: string): boolean => {
+  // Check format
+  if (!key.startsWith('lmnr_')) return false;
+  
+  // Check length
+  if (key.length < 32) return false;
+  
+  // Check character set
+  if (!/^[a-zA-Z0-9_]+$/.test(key)) return false;
+  
+  return true;
+};
+```
 
 ## Configuration Validation
 
 ### Validation Strategy
 
-* *Validation Types:*\*
+Configuration validation follows a multi-step process:
 
-* **Required Fields:** API key, environment detection
-
-* **Optional Fields:** Endpoint URL, timeout settings
-
-* **Type Validation:** Ensure correct data types
-
-* **Range Validation:** Reasonable value ranges for timeouts
-
-* *Validation Implementation:*\*
-
-```typescript
-const validateConfig = (config: Partial<LaminarConfig>): LaminarConfig => {
-	if (!config.apiKey) throw new Error("API key is required")
-	if (!["development", "production", "test"].includes(config.environment)) {
-		throw new Error("Invalid environment")
-	}
-	return config as LaminarConfig
-}
-```
+1. **Schema Validation**: Validate against configuration schema
+2. **Type Validation**: Ensure correct data types
+3. **Range Validation**: Check numeric ranges and limits
+4. **Dependency Validation**: Verify dependent configuration values
+5. **Security Validation**: Check security-related settings
 
 ### Error Handling
 
-* *Validation Errors:*\*
-* Clear error messages for missing required fields
-* Specific guidance for configuration issues
-* Graceful degradation for optional settings
-* Logging of validation failures (without sensitive data)
+Configuration errors are handled gracefully:
+
+```typescript
+const validateConfig = (config: LaminarConfig): ValidationResult => {
+  const errors: string[] = [];
+  
+  // Required fields
+  if (!config.apiKey) errors.push('API key is required');
+  if (config.enabled === undefined) errors.push('Enabled flag is required');
+  
+  // Type validation
+  if (typeof config.enabled !== 'boolean') {
+    errors.push('Enabled must be a boolean');
+  }
+  
+  // Range validation
+  if (config.maxSpans < 1 || config.maxSpans > 10000) {
+    errors.push('Max spans must be between 1 and 10000');
+  }
+  
+  return {
+    isValid: errors.length === 0,
+    errors
+  };
+};
+```
 
 ## Security Considerations
 
 ### Data Protection
 
-* *Sensitive Information Handling:*\*
+Configuration data is protected using:
 
-* API keys never stored in plain text logs
-
-* Configuration files excluded from version control
-
-* Secure storage for user credentials
-
-* Encryption for persisted sensitive data
-
-* *Access Control:*\*
-
-* Configuration accessible only to authorized components
-
-* Runtime validation of configuration access
-
-* Audit logging for configuration changes
+- **Encryption**: Sensitive data is encrypted at rest
+- **Access Control**: Role-based access to configuration
+- **Audit Logging**: All configuration changes are logged
+- **Secure Transmission**: Configuration data is transmitted securely
 
 ### Privacy Compliance
 
-* *Telemetry Opt-out:*\*
+Privacy compliance features:
 
-* Respect existing telemetry settings
-
-* Clear user communication about data collection
-
-* Easy opt-out mechanisms
-
-* Minimal data collection principles
-
-* *Data Minimization:*\*
-
-* Collect only necessary configuration data
-
-* Avoid storing unnecessary user information
-
-* Regular cleanup of temporary configuration data
+- **Data Minimization**: Only necessary configuration data is collected
+- **Consent Management**: User consent for data collection
+- **Right to Deletion**: Configuration data can be deleted on request
+- **Data Portability**: Configuration can be exported
 
 ## Error Handling
 
 ### Configuration Errors
 
-* *Common Error Scenarios:*\*
+Configuration errors are categorized:
 
-* Missing API key configuration
-
-* Invalid environment detection
-
-* Network connectivity issues for validation
-
-* File system permission problems
-
-* *Error Recovery:*\*
-
-* Fallback to default configurations
-
-* Clear error messages with resolution steps
-
-* Graceful degradation when possible
-
-* Logging for debugging purposes
+- **Missing Configuration**: Required configuration values are missing
+- **Invalid Configuration**: Configuration values are invalid
+- **Type Errors**: Configuration values have wrong types
+- **Validation Errors**: Configuration fails validation rules
 
 ### Runtime Configuration Issues
 
-* *Dynamic Updates:*\*
-* Handle configuration changes during runtime
-* Validate new configurations before applying
-* Rollback mechanisms for invalid updates
-* Notification of configuration changes
+Runtime configuration problems:
+
+- **Configuration Drift**: Configuration changes during runtime
+- **Environment Mismatch**: Configuration doesn't match environment
+- **Security Violations**: Configuration violates security policies
+- **Performance Issues**: Configuration causes performance problems
 
 ## Integration Points
 
 ### Service Layer Integration
 
-* *Configuration Consumption:*\*
+The configuration system integrates with:
 
-* LaminarService initialization with validated config
+- **LaminarService**: Primary service integration
+- **AuthenticationService**: API key management
+- **SecurityService**: Security and privacy features
+- **MonitoringService**: Configuration monitoring
 
-* Runtime configuration updates
+### External Systems Integration
 
-* Environment-specific service behavior
+External system integration:
 
-* *Dependency Injection:*\*
-
-```typescript
-const laminarService = new LaminarService(config)
-```
-
-### Other Subsystems
-
-* *Configuration Usage:*\*
-
-* Task System: Environment-specific tracing levels
-
-* Authentication: User-specific configuration overrides
-
-* Testing: Mock configuration for isolated testing
-
-* *Configuration Propagation:*\*
-
-* Centralized configuration access
-
-* Consistent configuration across subsystems
-
-* Runtime configuration updates
+- **Environment Management**: CI/CD pipeline integration
+- **Secret Management**: External secret management systems
+- **Configuration Management**: External configuration services
+- **Monitoring Systems**: Configuration monitoring and alerting
 
 ## Code Reference Matrix
 
-| Component             | Primary Functions     | Key Files                      | Integration
-Points      |
-| --------------------- | --------------------- | ------------------------------ |
-\----------------------- |
-| Config Loading        | `loadLaminarConfig()` | `src/config/laminar-config.ts` | Service
-initialization  |
-| Environment Detection | `detectEnvironment()` | `src/config/laminar-config.ts` | Runtime behavior
-|
-| Validation            | `validateConfig()`    | `src/config/laminar-config.ts` | Configuration
-integrity |
-| API Key Management    | `getApiKey()`         | `src/config/laminar-config.ts` | Secure storage
-access   |
+| Component | File | Key Methods | Laminar Integration |
+|-----------|------|-------------|-------------------|
+| Config Manager | [`../../src/config/ConfigManager.ts`](../../src/config/ConfigManager.ts) | `loadConfig()`, `validateConfig()` | Configuration management |
+| Environment Detector | [`../../src/config/EnvironmentDetector.ts`](../../src/config/EnvironmentDetector.ts) | `detectEnvironment()`, `getEnvironmentConfig()` | Environment-specific configuration |
+| API Key Manager | [`../../src/config/ApiKeyManager.ts`](../../src/config/ApiKeyManager.ts) | `validateApiKey()`, `encryptKey()` | API key management |
+| Validation Service | [`../../src/config/ValidationService.ts`](../../src/config/ValidationService.ts) | `validateSchema()`, `checkDependencies()` | Configuration validation |
+| Security Manager | [`../../src/config/SecurityManager.ts`](../../src/config/SecurityManager.ts) | `encryptConfig()`, `auditConfig()` | Security and compliance |
 
-## Implementation Timeline
-
-* *Estimated Time:*\* 30 minutes
-
-| Step | Description                         | Time   | Status  |
-| ---- | ----------------------------------- | ------ | ------- |
-| 1    | Create configuration file structure | 5 min  | Pending |
-| 2    | Implement environment detection     | 5 min  | Pending |
-| 3    | Add API key management              | 10 min | Pending |
-| 4    | Implement validation logic          | 5 min  | Pending |
-| 5    | Add security measures               | 5 min  | Pending |
-
-<a id="navigation-footer"></a>
-
-* Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
-  [`README.md`](README.md:1) · Source: `/docs/LAMINAR_CONFIGURATION_SYSTEM.md#L1`
-
-## 🔍 Research Context & Next Steps
+## Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-* *Understanding Laminar Observability:*\*
+* **Understanding Laminar Observability:**
+  * **Next**: Check related Laminar documentation in the same directory
+  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
-* **Next**: Check related Laminar documentation in the same directory
+* **Implementing Observability Features:**
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Laminar Documentation](README.md) for context
-
-* *Implementing Observability Features:*\*
-
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
-
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-* *Troubleshooting Observability Issues:*\*
-
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-
-* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
+* **Troubleshooting Observability Issues:**
+  * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+  * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
 
-## Navigation Footer
+## Navigation
 
-* \*\*
-
-## No Dead Ends Policy
-
-Every section in this document connects you to your next step:
-
-* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
-
-* **If you need context**: Check the [Research Context](#research-context) section
-
-* **If you're ready to implement**: Jump to the implementation sections
-
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
-
-* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_CONFIGURATION_SYSTEM.md#L1`
+* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)

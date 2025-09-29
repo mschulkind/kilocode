@@ -1,4 +1,4 @@
-import { escapeSpaces, convertToMentionPath } from "../path-mentions"
+import { escapeSpaces, convertToMentionPath } from "../path-mentions.js"
 
 describe("Path Mentions Utilities", () => {
 	describe("escapeSpaces", () => {

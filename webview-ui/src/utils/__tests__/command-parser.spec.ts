@@ -1,4 +1,4 @@
-import { extractPatternsFromCommand } from "../command-parser"
+import { extractPatternsFromCommand } from "../command-parser.js"
 
 describe("extractPatternsFromCommand", () => {
 	it("should extract simple command pattern", () => {

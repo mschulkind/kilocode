@@ -2,531 +2,265 @@
 
 ## Table of Contents
 
-* [Laminar Checkpoint System Integration](#laminar-checkpoint-system-integration)
-* [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
-* [Key Integration Points](#key-integration-points)
-* [Key Integration Points](#key-integration-points)
 * [Architecture](#architecture)
-* [Integration Flow](#integration-flow)
 * [Checkpoint Lifecycle Tracing](#checkpoint-lifecycle-tracing)
 * [Span Metadata](#span-metadata)
-* [Span Metadata](#span-metadata)
 * [Performance Monitoring](#performance-monitoring)
-* [throughput, and resource usage](#throughput-and-resource-usage)
-* [Performance Timing Metrics](#performance-timing-metrics)
-* [Timing Metrics timing](#timing-metrics-timing)
-* [Resource Usage### Resource Usage](#resource-usage-resource-usage)
 * [Checkpoint Analytics](#checkpoint-analytics)
-* [State Integrity](#state-integrity)
-* [State \*\* Quality Metrics CorruptionQuality Detection\*\*: Automatic detection of and state](#state-quality-metrics-corruptionquality-detection-automatic-detection-of-and-state)
-* [State reliability tracking:](#state-reliability-tracking)
 * [Integration Points](#integration-points)
-* [Task format compatibility System Integration](#task-format-compatibility-system-integration)
 * [Error Handling](#error-handling)
-* [task spans:](#task-spans)
-* [Service Layer Integration](#service-layer-integration)
-* [validation failures](#validation-failures)
-* [Error Context](#error-context)
-* [Error Handling](#error-handling)
-* [Actions\*\*: Steps taken to handle Error or recover from Classification](#actions-steps-taken-to-handle-error-or-recover-from-classification)
-* [Integration Points](#integration-points)
-* [Task System Integration](#task-system-integration)
-* [Error Context](#error-context)
-* [Service Layer Integration](#service-layer-integration)
-* [or recover from errors](#or-recover-from-errors)
-* [Code Reference Storage Integration](#code-reference-storage-integration)
 * [Code Reference Matrix](#code-reference-matrix)
+* [Research Context & Next Steps](#research-context--next-steps)
 * [Navigation](#navigation)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Laminar Checkpoint System Integration](#laminar-checkpoint-system-integration)
-* [Table of Contents](#table-of-contents)
-* [Overview](#overview)
-* [Key Integration Points](#key-integration-points)
-* [Key Integration Points](#key-integration-points)
-* [Architecture](#architecture)
-* [Integration Flow](#integration-flow)
-* [Checkpoint Lifecycle Tracing](#checkpoint-lifecycle-tracing)
-* [Span Metadata](#span-metadata)
-* [Span Metadata](#span-metadata)
-* [Performance Monitoring](#performance-monitoring)
-* [throughput, and resource usage](#throughput-and-resource-usage)
-* [Performance Timing Metrics](#performance-timing-metrics)
-* [Timing Metrics timing](#timing-metrics-timing)
-* [Resource Usage### Resource Usage](#resource-usage-resource-usage)
-* [Checkpoint Analytics](#checkpoint-analytics)
-* [State Integrity](#state-integrity)
-* [State \*\* Quality Metrics CorruptionQuality Detection\*\*: Automatic detection of and state](#state-quality-metrics-corruptionquality-detection-automatic-detection-of-and-state)
-* [State reliability tracking:](#state-reliability-tracking)
-* [Integration Points](#integration-points)
-* [Task format compatibility System Integration](#task-format-compatibility-system-integration)
-* [Error Handling](#error-handling)
-* [task spans:](#task-spans)
-* [Service Layer Integration](#service-layer-integration)
-* [validation failures](#validation-failures)
-* [Error Context](#error-context)
-* [Error Handling](#error-handling)
-* [Actions\*\*: Steps taken to handle Error or recover from Classification](#actions-steps-taken-to-handle-error-or-recover-from-classification)
-* [Integration Points](#integration-points)
-* [Task System Integration](#task-system-integration)
-* [Error Context](#error-context)
-* [Service Layer Integration](#service-layer-integration)
-* [or recover from errors](#or-recover-from-errors)
-* [Code Reference Storage Integration](#code-reference-storage-integration)
-* [Code Reference Matrix](#code-reference-matrix)
-* [Navigation](#navigation)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-> foundation, clear structure, and intuitive navigation! 🏗️
-
-Comprehensive documentation of how Laminar observability integrates with Kilo Code's checkpoint
-system, providing detailed tracing for checkpoint operations, performance monitoring, and state
-management.
-
-<details><summary>Table<write_to_file>
-<path>docs/LAMINAR_CHECKPOINT_SYSTEM.md</path>
-<content>
-# Laminar Checkpoint System Integration
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-> documentation helps us understand how! ⚙️
-
-Comprehensive documentation of how Laminar observability integrates with Kilo Code's checkpoint
-system, providing of Contents</summary>
-
-* \[Overview]\(#overview detailed tracing for checkpoint operations, performance monitoring, and
-  state management.
-
-<details><summary>Table)
-- Architecture
-- [Checkpoint of Contents</summary>
-- [Overview](#overview)
-- \[Architecture]\(#architecture Lifecycle)
-- Tracing]\(#checkpoint-lifecycle-tracing)
-- \[ \[CheckpointPerformance Lifecycle Tracing]\(#checkpoint-lifecycle-tracing-monitoring)
-  -performance-monitoring)
-- \State ManagementPerformance Tracking
-- Error Handling
-- \[Integration Points
-- Code Reference Matrix Monitoring]\(#performance-monitoring)
-- State Management Tracking
-- Integration Points -- Navigation
-
-</details Error Handling
-- Code Reference Matrix
-- [>
-
-Navigation]\(#navigation)
-
-\</details## Overview
-
-The Checkpoint>
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this
-document's role or purpose, this section helps orient you.
+This document provides comprehensive documentation of how Laminar observability integrates with Kilo Code's checkpoint system, providing detailed tracing for state management, performance monitoring, and checkpoint lifecycle operations.
 
-* **Purpose**: \[Brief description of what this document covers]
-* **Audience**: \[Who should read this document]
-* **Prerequisites**: \[What you should know before reading]
-* **Related Documents**: \[Links to related documentation]
+* **Purpose**: Checkpoint system integration with Laminar observability
+* **Audience**: Developers implementing checkpoint and state management features
+* **Prerequisites**: Understanding of Laminar observability and checkpoint systems
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
 
 ## Overview
 
-The Checkpoint System System manages task state persistence and recovery in Kilo Code. The Laminar
-integration adds comprehensive observability to checkpoint manages the operations persistence and
-restoration, of enabling detailed monitoring of task state save/load operations, performance
-metrics, and throughout state management patterns the execution.
+The Laminar Checkpoint System provides comprehensive observability for state management, checkpoint creation, restoration, and performance monitoring in Kilo Code. This integration enables detailed tracing of checkpoint lifecycle, state integrity, and performance metrics.
 
 ### Key Integration Points
 
-* lifecycle. The Laminar integration **Operation Tracing**: Every checkpoint adds comprehensive
-  observability to checkpoint operations, operation creates enabling detailed monitoring of a
-  dedicated span save/load operations, performance metrics, and
-* **Performance Metrics**: Save state/load timing and resource consistency usage tracking
-* \*\*State.
-
-### Key Integration Points
-
-* **Operation Analytics**: Tracing\*\*: Every checkpoint save/load Checkpoint size, operation is
-  traced frequency, and with full context
-* **Performance Metrics effectiveness monitoring**: Timing
-* \*\* andError Classification\*\*: resource usage Checkpoint for checkpoint operations
-* \*\* failureState Validation\*\*: analysis and recovery tracking
-* **Usage Patterns**: Checkpoint frequency and Tracking of state consistency and integrity
-* **Error Classification**: Detailed error handling and recovery size tracking
+* **Checkpoint Lifecycle**: Complete tracing of checkpoint creation, restoration, and cleanup
+* **State Integrity**: Monitoring of state consistency and corruption detection
+* **Performance Metrics**: Detailed timing and resource usage tracking
+* **Storage Integration**: Observability for checkpoint storage operations
+* **Error Handling**: Comprehensive error tracking and recovery monitoring
 
 ## Architecture
 
-````mermaid trend analysis
-
-## Architecture
-
-```m
+```mermaid
 graph TD
-    A[Taskermaid
-graph TD
-    A[ Execution] --> B[Checkpoint Operation]
-Task Execution    B] --> B[Checkpoint Operation --> C[Laminar Span]
-    B --> C[Lamin Creation]
-    C --> D[arOperation Span Creation]
-    C --> D Metadata[Operation Metadata Capture]
-    D --> E[ Capture]
-    D --> E[Checkpoint Execution]
-    E --> F[Checkpoint Execution]
-    E --> F[ResultResult Processing]
-    F --> G[ Validation]
-Performance    F --> G[Performance Recording]
-    G --> H[Span Recording Completion]
-]
+    A[State Change] --> B[Checkpoint Trigger]
+    B --> C[Laminar Span Creation]
+    C --> D[State Serialization]
+    D --> E[Storage Operation]
+    E --> F[Validation]
+    F --> G[Metadata Update]
     G --> H[Span Completion]
-    H --> I[Metrics    H --> I[ Aggregation]
-````
-
-### Integration Flow
-
-1Metrics Aggregation]
-
+    H --> I[Performance Metrics]
 ```
 
 ### Integration Flow
-1. **Span Creation**: When a. **Span Creation**: When checkpoint operation checkpoint operation is
-initiated, a starts, new span span is created
-2. ** is created withMetadata Capture operation metadata
-2. ****: Operation type,Context Capture**: task context, and state information Task state recorded
-3. **Execution Monitoring**: Checkpoint save/load, operation type, and environment details recorded
-3. **Execution Monitoring operation with**: Checkpoint save/load timing measurement
-4. **Result Validation**: State operation wrapped with timing integrity and consistency
-4. **Result Analysis**: checks
-5. **Performance Success/f Recordingailure status and performance**: metrics captured
- Resource usage and timing5. ** metricsState captured
-6. **Span Finalization Analytics**: Checkpoint**: Complete size, span with success/failure status
+
+1. **State Change Detection**: System detects significant state changes
+2. **Checkpoint Trigger**: Checkpoint creation is initiated
+3. **Span Creation**: Laminar span tracks the entire checkpoint process
+4. **State Serialization**: Current state is serialized for storage
+5. **Storage Operation**: Checkpoint data is written to storage
+6. **Validation**: Checkpoint integrity is verified
+7. **Metadata Update**: Checkpoint metadata is updated
+8. **Performance Tracking**: Timing and resource metrics are recorded
 
 ## Checkpoint Lifecycle Tracing
 
-### Span compression ratio, and Hierarchy
+### Checkpoint Creation
 
- storageCheckpoint spans are nested under task spans, maintaining execution context:
+Creation process is comprehensively traced:
 
-```
+- **Trigger Events**: What caused the checkpoint creation
+- **State Size**: Amount of data being checkpointed
+- **Serialization Time**: Time taken to serialize state
+- **Storage Duration**: Time to write checkpoint to storage
+- **Validation Results**: Integrity check outcomes
 
-Task metrics 6. **Span Finalization Span ├── Checkpoint**: Complete trace Span 1 │ with ├── Save
-Operation │ ├── comprehensive State checkpoint data
+### Checkpoint Restoration
 
-## Checkpoint Lifecycle Tracing
+Restoration process monitoring:
 
-Serialization │ ├──### Span Hierarchy Checkpoint spans are nested Storage under task spans:
+- **Restore Trigger**: What initiated the restoration
+- **Data Loading**: Time to load checkpoint data from storage
+- **Deserialization**: Time to reconstruct state from data
+- **State Validation**: Verification of restored state integrity
+- **Recovery Success**: Whether restoration completed successfully
 
-```
-Task Span
-├── Checkpoint Span 1
-│   ├── Save Operation
-│   ├── Write
-│   └── State Validation
-├── Checkpoint Span 2
-│   ├── Load Operation
-│   ├── State Deserialization
-│   ├── Serialization
-│   ├── Integrity Check
-│   └── Storage Restoration Write
-└── Checkpoint Span
-│   └──3
-```
+### Checkpoint Cleanup
 
-### Span Metadata
+Cleanup operations tracking:
 
-Each Verification ├── Checkpoint Span 2 checkpoint span includes comprehensive metadata:
+- **Cleanup Triggers**: What initiated cleanup (age, space, etc.)
+- **Data Removal**: Time to remove checkpoint data
+- **Storage Reclamation**: Space freed up by cleanup
+- **Cleanup Success**: Whether cleanup completed successfully
 
-* \*\* └── Checkpoint Span 3 Operation Type\*\*: Save, load, or restore\`\`\`
+## Span Metadata
 
-### Span Metadata
+### Checkpoint Information
 
-Each checkpoint span includes operation
+Each checkpoint span includes:
 
-* **Task Context**: Task:
-* ID **Operation Type**: Save, load,, user context, and execution state
-* delete, \*\* or list operations
-* **State Information**:Checkpoint ID\*\*: Unique identifier for the Size, complexity, and
-  checkpoint
-* \*\*Task content type
-* \*\* Context\*\*:Storage Details\*\*: Associated task ID and Location, format execution context
-* **, andStorage Details**: compression used
-* **Performance Location, size, and Data**: Timing, compression information resource
-* **Performance Data**: Timing, usage, and throughput
+- **Checkpoint ID**: Unique identifier for the checkpoint
+- **Timestamp**: When the checkpoint was created
+- **State Version**: Version of the state being checkpointed
+- **Data Size**: Size of checkpoint data in bytes
+- **Compression Ratio**: If compression was applied
+- **Storage Location**: Where checkpoint is stored
+
+### Performance Data
+
+Performance metrics captured:
+
+- **Creation Time**: Total time to create checkpoint
+- **Restoration Time**: Total time to restore from checkpoint
+- **Storage I/O**: Read/write operations and timing
+- **Memory Usage**: Memory consumed during operations
+- **CPU Usage**: CPU time spent on checkpoint operations
 
 ## Performance Monitoring
 
-### throughput, and resource usage
+### Timing Metrics
 
-## Performance Timing Metrics
+Detailed timing information:
 
-Detailed Monitoring
+- **Serialization Time**: Time to convert state to storage format
+- **Storage Write Time**: Time to write data to storage
+- **Validation Time**: Time to verify checkpoint integrity
+- **Total Checkpoint Time**: End-to-end checkpoint creation time
+- **Restoration Time**: Time to restore state from checkpoint
 
-### Timing Metrics timing
-
-| Comprehensive timing analysis information for checkpoint operations: |
-| -------------------------------------------------------------------: |
-
-* \*\* **Serialization Time**: TimeOperation Duration\*\*: Total time for to convert state to
-  checkpoint operations
-* \*\* storable format
-* **Serialization Time**: Time toI serialize/deserialize/O Time\*\*: Time spent reading task state
-* **I/O from Time**: Time spent/writing to storage
-* **Deserialization Time**: Time to restore state from storage on storage
-* read/write operations
-* **Compression Time**: Time **Validation Time**: Time spent verifying state integrity
-
-for data compression/decompression
-
-### Resource Usage### Resource Usage
+### Resource Usage
 
 Resource consumption tracking:
 
-Resource consumption tracking- **Memory Usage**::
+- **Memory Usage**: Peak memory during checkpoint operations
+- **Storage Space**: Disk space used by checkpoints
+- **Network I/O**: If using remote storage
+- **CPU Utilization**: CPU time for checkpoint operations
+- **I/O Operations**: Number of read/write operations
 
-* Peak memory **Memory Usage**: Peak memory during checkpoint operations during- **CPU Usage**:
-  Processing time serialization/deserialization
-* **CPU Usage**: Processing for serialization time for/compression
-* **Storage I/O**: compression/de Read/writecompression
-* **Storage I/O**: throughput and Read/write operations and latency
-* \*\*Network data Usage transfer rates
-* **Network**: For Usage\*\*: For remote checkpoint storage
+### Throughput Metrics
 
-remote checkpoint storage## State Management Tracking
+System performance indicators:
 
-### Checkpoint Analytics
+- **Checkpoints per Second**: Rate of checkpoint creation
+- **Restoration Rate**: How quickly checkpoints can be restored
+- **Storage Efficiency**: Compression and deduplication ratios
+- **Queue Length**: Number of pending checkpoint operations
+- **Error Rate**: Percentage of failed checkpoint operations
 
-Detailed state management metrics:
-
-* **Checkpoint Size**: Size of serialized
-
-state## State Management Tracking
+## Checkpoint Analytics
 
 ### State Integrity
 
-Tracking of state consistency and integrity:
+Quality metrics and corruption detection:
 
-* \*\* data
+- **Checksum Validation**: Data integrity verification
+- **Version Consistency**: State version tracking
+- **Corruption Detection**: Automatic detection of data corruption
+- **Recovery Success Rate**: Percentage of successful restorations
+- **Data Loss Incidents**: Tracking of any data loss events
 
-* **Compression Ratio**:Checksum Validation\*\*: Effectiveness of Crypt compressionographic
-  verification of state data algorithms
+### State Reliability
 
-* **Change Frequency**:
+Reliability tracking:
 
-* **Version How often Compatibility**: Ensuring state format checkpoints are compatibility created
+- **Checkpoint Success Rate**: Percentage of successful checkpoints
+- **Restoration Success Rate**: Percentage of successful restorations
+- **Mean Time to Recovery**: Average time to restore from checkpoint
+- **Checkpoint Age Distribution**: How long checkpoints are kept
+- **Storage Health**: Health of checkpoint storage systems
 
-* **- **Retention Policy**:Dependency Tracking**: Checkpoint Related state lifecycle components and
-  relationships and cleanup patterns
+### Usage Patterns
 
-* ### State \*\* Quality Metrics CorruptionQuality Detection\*\*: Automatic detection of and state
+Usage analytics:
 
-corruption
-
-### State reliability tracking:
-
-* **Data Integrity**: Evolution Monitoring Verification of checkpoint data consistency
-* **Recovery Success**: Rate of successful state restoration how state- \*\* changes over time:
-* **Change Frequency**: How often state is modified
-* **Change Size**: Magnitude of state modifications
-* **CorCheckpoint Frequencyruption Detection**: How\*\*: often checkpoints are Identification of
-  created
-* \*\*Retention corrupted checkpoints
-* **Version Policy**: Compatibility\*\*: State retention and cleanup Checkpoint patterns
-
-## Integration Points
-
-### Task format compatibility System Integration
-
-Checkpoint spans are children of tracking
-
-## Error Handling
-
-### task spans:
-
-* Task context propagation for Error Classification Checkpoint errors are categorized:
-* correlation
-* User session tracking **Storage Errors across checkpoint operations -**: Disk space Hierarchical
-  span, permission, or I/O failures
-* **Serialization Errors**: relationships
-* Task-level checkpoint aggregation
-
-### Service Layer Integration
-
-The LaminarService provides checkpoint tracing State serialization infrastructure:
-
-* Standardized span creation for checkpoint/deserialization failures
-* \*\* operations
-* Performance monitoringCompression Errors\*\*: Data utilities
-* State validation compression/decompression issues
-* \*\* helpers
-* Error handling andIntegrity Errors\*\*: Data corruption or recovery logic
-
-### validation failures
-
-### Error Context
-
-Comprehensive Storage Integration error informationIntegration with:
-
-* **Error various storage backends Location**::
-* Local Where in the checkpoint process file system the error occurred
-* \*\* operations
-* Remote storageAffected Data\*\*: What services state data was
-* Database impacted persistence
-* Cloud storage
-* \*\*Recovery providers
-
-## Error Handling
-
-### Actions\*\*: Steps taken to handle Error or recover from Classification
-
-Checkpoint errors are errors
-
-* **Impact Assessment**: How the error categorized for analysis:
-* **Storage Errors**: I/O failures, permission issues, disk space
-* **Serialization Errors**: affects task execution
+- **Checkpoint Frequency**: How often checkpoints are created
+- **Restoration Frequency**: How often checkpoints are used
+- **Peak Usage Times**: When checkpoint activity is highest
+- **Storage Growth**: Rate of checkpoint storage growth
+- **Cleanup Patterns**: When and how often cleanup occurs
 
 ## Integration Points
 
 ### Task System Integration
 
-Checkpoint spans are State conversion failures, format issues
+Checkpoint spans are integrated with task execution:
 
-* **Integrity Errors**: children of task spans:
-* Task ID propagation Checksum for correlation
-* failures, corruption detection
-* \*\* Execution context inheritance -Compatibility Errors\*\*: Version mismatches State change,
-  format incompat tracking -ibilities
-
-### Error Context
-
-Comprehensive error information captured:
-
-* \*\* RecoveryError Codes\*\*: Specific operation error identifiers
-* \*\* tracingOperation Context
+- Task state changes trigger checkpoint creation
+- Checkpoint restoration includes task context
+- Task execution respects checkpoint boundaries
+- Task failures can trigger checkpoint restoration
 
 ### Service Layer Integration
 
-The\*\*: What LaminarService provides checkpoint utilities:
+The LaminarService provides checkpoint utilities:
 
-* was being attempted when error occurred
-* Standardized \*\* span creation for checkpoint operations
-* Performance monitoringState Information\*\*: helpers
-* Error classification Details about the and state reporting
-* State analytics being processed and metrics
-* **Recovery Actions**: Steps taken to handle
+- Checkpoint creation helpers
+- State serialization utilities
+- Storage integration helpers
+- Performance monitoring tools
 
-### or recover from errors
+### Storage Integration
 
-## Code Reference Storage Integration
+Integration with storage systems:
 
-Matrix
+- Local file system checkpoints
+- Remote storage integration
+- Database checkpoint storage
+- Cloud storage solutions
 
-| Component | File | KeyIntegration with various storage back Methods |ends Laminar Integration |
-|-----------:
+## Error Handling
 
-* Local| filesystem checkpoints------|-------------|-------------------| |
-* RepoPerTask RemoteCheckpointService |
-  \[`src storage (/services/checkcloud,points/RepoPerTaskCheckpoint network)
-  Service.ts`]\(src/services/checkpoints/-
-  Database-backed checkpoints -RepoPerTaskCheckpointService.ts) | Distributed storage systems
-  `save()`, `load()`, \`restore
+### Checkpoint Errors
+
+Checkpoint failures are categorized:
+
+- **Serialization Errors**: State cannot be serialized
+- **Storage Errors**: Cannot write to storage
+- **Validation Errors**: Checkpoint integrity checks fail
+- **Restoration Errors**: Cannot restore from checkpoint
+- **Cleanup Errors**: Cannot remove old checkpoints
+
+### Error Context
+
+Comprehensive error information:
+
+- **Error Location**: Where in checkpoint process error occurred
+- **State Information**: What state was being processed
+- **Storage Details**: Storage system status and errors
+- **Recovery Actions**: Steps taken to handle or recover from errors
+- **Impact Assessment**: How error affects system operation
 
 ## Code Reference Matrix
 
-|
-Component()` | Span creation, performance tracking | | Checkpoint Manager | [`src/services/checkpoints/CheckpointManager.ts`](src/services/checkpoints/CheckpointManager.ts) |
-`createCheckpoint()`, `restoreCheckpoint()` | Operation orchestration | | State Serializer | File | [`src/services/checkpoints/StateSerializer.ts`](src |/services/checkpoints/StateSerializer.ts) | Key
-Methods | Laminar Integration | |-----------|------|-------------|-------------------| |
-RepoPerTaskCheckpointService | [`src/services/checkpoints/RepoPerTaskCheckpointService.ts`](src/services/checkpoints/RepoPerTaskCheckpointService.ts)
-| `save()`, `load()`, `delete()` | Span creation, performance tracking | | Checkpoint Manager | [`src/services/checkpoints/CheckpointManager.ts`](src/services/checkpoints/CheckpointManager.ts) |
-`create
-`serialize()`, `deserialize()` | Serialization monitoring | | Storage Backend |
-\[`src/services/checkpoints/Checkpoint()`, `restoreCheckpoint()` | Operation orchestration | |
-State Serializer |
+| Component | File | Key Methods | Laminar Integration |
+|-----------|------|-------------|-------------------|
+| Checkpoint Manager | [`../../src/core/checkpoint/CheckpointManager.ts`](../../src/core/checkpoint/CheckpointManager.ts) | `createCheckpoint()`, `restoreCheckpoint()` | Checkpoint lifecycle tracing |
+| State Serializer | [`../../src/core/checkpoint/StateSerializer.ts`](../../src/core/checkpoint/StateSerializer.ts) | `serialize()`, `deserialize()` | Serialization performance tracking |
+| Storage Manager | [`../../src/core/checkpoint/StorageManager.ts`](../../src/core/checkpoint/StorageManager.ts) | `store()`, `retrieve()` | Storage operation monitoring |
+| LaminarService Checkpoint | [`../../src/services/laminar/LaminarService.ts`](../../src/services/laminar/LaminarService.ts) | `trackCheckpoint()`, `trackRestoration()` | Checkpoint span creation |
+| Validation Service | [`../../src/services/checkpoint/ValidationService.ts`](../../src/services/checkpoint/ValidationService.ts) | `validateCheckpoint()`, `verifyIntegrity()` | Validation monitoring |
 
-\[`src/services/checkpoints/StateSerializer.ts`]\(srcStorage/services/checkBackend.ts`](src/services/checkpoints/StorageBackend.ts)
-| `writepoints/StateSerializer.ts)
-| `serialize()`, `deserialize()`
-|()`, `read()` | I/O operation Serialization monitoring | tracing| | | Integrity Checker | [`src
-Storage/services/checkpoints/IntegrityChecker.ts`]( Backend | [`src/services/checkpoints/src/services/checkpoints/IntegrityChecker.tsStorageBackend.ts`](src/services/checkpoints)
-| `validate()`, `/StorageBackend.ts)
-| `writechecksum()` | State validation()`, `read()\` | I/O tracking |
-
-## Navigation
-
-\<a id=" performance tracking |
-
-\##navigation Navigation
-
-<a id="navigation-footer">\</-footer"></a>
-
-* Back: \[\`LAMaINAR\_SUBSYSTEMS\_INDEX>
-* Back:
-  \[`LAMIN.md`]\(AR\_SUBLAMINAR\_SUBSYSTEMSSYSTEMS\_README.md`](LAM_README.md:1) · Root:INAR [`LAMINAR\_SUBSYSTEMS\_INDEX\_SUBSYSTEMS\_README.md:1)
-  · Root:
-
-\[`LAMIN.md`]\(LAMINAR\_SUBSYSTEMSAR\_SUBSYSTEMS\_README.md`](LAMINAR_SUBSYSTEMS_README.md_README.md:1)
-· Source: `/docs/LAMINAR\_CHECKPOINT\_SYSTEM:1)
-· Source:.md#L1`</content> <line`/docs\_count>/LAMINAR\_CHECKPOINT\_SYSTEM.md#L1\`
-
-## 🔍 Research Context & Next Steps
+## Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-* *Understanding Laminar Observability:*\*
+* **Understanding Laminar Observability:**
+  * **Next**: Check related Laminar documentation in the same directory
+  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
-* **Next**: Check related Laminar documentation in the same directory
+* **Implementing Observability Features:**
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Laminar Documentation](README.md) for context
-
-* *Implementing Observability Features:*\*
-
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
-
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-* *Troubleshooting Observability Issues:*\*
-
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-
-* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
+* **Troubleshooting Observability Issues:**
+  * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+  * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
 
-## Navigation Footer
+## Navigation
 
-* \*\*
-
-## No Dead Ends Policy
-
-Every section in this document connects you to your next step:
-
-* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
-
-* **If you need context**: Check the [Research Context](#research-context) section
-
-* **If you're ready to implement**: Jump to the implementation sections
-
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
-
-* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_CHECKPOINT_SYSTEM.md#L1`
+* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)

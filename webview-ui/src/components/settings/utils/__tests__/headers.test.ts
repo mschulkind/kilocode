@@ -1,4 +1,4 @@
-import { convertHeadersToObject } from "../headers"
+import { convertHeadersToObject } from "../headers.js"
 
 describe("convertHeadersToObject", () => {
 	it("should convert headers array to object", () => {

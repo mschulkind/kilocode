@@ -1,5 +1,5 @@
 import type { ClineMessage } from "@roo-code/types"
-import { consolidateMessagesForTimeline } from "../consolidateMessagesForTimeline"
+import { consolidateMessagesForTimeline } from "../consolidateMessagesForTimeline.js"
 
 function createMessage(id: string): ClineMessage {
 	return {

@@ -235,21 +235,21 @@ document's role or purpose, this section helps orient you.
 * **Next**: Check related documentation in the same directory
 
 * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Architecture Documentation](../README.md) for context
+  [Architecture Documentation](../../architecture/README.md) for context
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](./README.md) for integration patterns
 
 * *Troubleshooting Issues:*\*
 
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../../architecture/README.md) →
+  [Root Cause Analysis](../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
-* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
+* **Related**: [Orchestrator Error Handling](./ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
 
 ### No Dead Ends Policy

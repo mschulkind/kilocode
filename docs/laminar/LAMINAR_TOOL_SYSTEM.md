@@ -520,3 +520,4 @@ Every section in this document connects you to your next step:
 
 * *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+

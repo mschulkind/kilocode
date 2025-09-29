@@ -1,4 +1,4 @@
-import { createSampledFunction } from "../sampling"
+import { createSampledFunction } from "../sampling.js"
 import { vi } from "vitest"
 
 describe("createSampledFunction", () => {

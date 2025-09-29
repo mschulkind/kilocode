@@ -550,7 +550,7 @@ persistence tracing  |
 
 <a id="navigation-footer"></a>
 
-* Back: [`LAMINAR_SUBSYSTEMS_README.md`](LAMINAR_SUBSYSTEMS_README.md:1) · Root:
+* Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root:
   [`README.md`](README.md:1) · Source: `/docs/LAMINAR_TASK_SYSTEM.md#L1`
 
 ## 🔍 Research Context & Next Steps
@@ -604,3 +604,4 @@ Every section in this document connects you to your next step:
 
 * *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
   [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+

@@ -3,9 +3,9 @@ import * as path from "path"
 
 import * as vscode from "vscode"
 
-import { RooCodeAPI, TokenUsage } from "../../src/exports/roo-code"
+import { RooCodeAPI, TokenUsage } from "../../src/exports/roo-code.js"
 
-import { waitUntilReady, waitUntilCompleted, sleep } from "./utils"
+import { waitUntilReady, waitUntilCompleted, sleep } from "./utils.js"
 
 export async function run() {
 	/**

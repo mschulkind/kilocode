@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react"
 
-import { useEscapeKey } from "./useEscapeKey"
+import { useEscapeKey } from "./useEscapeKey.js"
 
 describe("useEscapeKey", () => {
 	let mockOnEscape: ReturnType<typeof vi.fn>

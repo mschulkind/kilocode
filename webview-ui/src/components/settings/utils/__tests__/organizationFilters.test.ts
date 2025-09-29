@@ -1,6 +1,6 @@
 import type { ModelInfo, OrganizationAllowList } from "@roo-code/types"
 
-import { filterProviders, filterModels } from "../organizationFilters"
+import { filterProviders, filterModels } from "../organizationFilters.js"
 
 describe("organizationFilters", () => {
 	const mockProviders = [

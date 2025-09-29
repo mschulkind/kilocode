@@ -1,7 +1,7 @@
 import type { ClineMessage } from "@roo-code/types"
 import { combineApiRequests } from "@roo/combineApiRequests"
 import { combineCommandSequences } from "@roo/combineCommandSequences"
-import { shouldShowInTimeline } from "../messageColors"
+import { shouldShowInTimeline } from "../messageColors.js"
 
 /**
  * Processes grouped messages using the existing shared utilities:

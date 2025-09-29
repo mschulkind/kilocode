@@ -5,7 +5,7 @@ import type { Command } from "@roo/ExtensionMessage"
 
 import { mentionRegex } from "@roo/context-mentions"
 
-import { escapeSpaces } from "./path-mentions"
+import { escapeSpaces } from "./path-mentions.js"
 
 /**
  * Gets the description for a mode, prioritizing description > whenToUse > roleDefinition

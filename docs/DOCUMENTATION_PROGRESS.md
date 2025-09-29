@@ -551,7 +551,7 @@ This document connects to:
 For more information, see:
 
 * [Documentation Structure](../README.md)
-* [Additional Resources](../tools/README.md)
+* [Additional Resources](tools/README.md)
 
 ## Navigation Footer
 
@@ -561,4 +561,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](GLOSSARY.md)

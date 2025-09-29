@@ -16,8 +16,8 @@ Project plans and implementation roadmaps for KiloCode.
 - Success criteria
 
 ## Related Documentation
-- [Architecture Overview](ARCHITECTURE_OVERVIEW.md)
-- [System Overview](SYSTEM_OVERVIEW.md)
+- [Architecture Overview](../architecture/ARCHITECTURE_OVERVIEW.md)
+- [System Overview](../architecture/SYSTEM_OVERVIEW.md)
 
 ---
 *This document is part of the KiloCode documentation system.*

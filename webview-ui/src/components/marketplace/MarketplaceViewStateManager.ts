@@ -12,9 +12,9 @@
  */
 
 import { MarketplaceItem } from "@roo-code/types"
-import { vscode } from "../../utils/vscode"
-import { WebviewMessage } from "../../../../src/shared/WebviewMessage"
-import type { MarketplaceInstalledMetadata } from "../../../../src/shared/ExtensionMessage"
+import { vscode } from "../../utils/vscode.js"
+import { WebviewMessage } from "../../../../src/shared/WebviewMessage.js"
+import type { MarketplaceInstalledMetadata } from "../../../../src/shared/ExtensionMessage.js"
 
 export interface ViewState {
 	allItems: MarketplaceItem[]

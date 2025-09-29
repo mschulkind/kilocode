@@ -2,7 +2,7 @@ import type { ProviderSettings, OrganizationAllowList } from "@roo-code/types"
 
 import { RouterModels } from "@roo/api"
 
-import { getModelValidationError, validateApiConfigurationExcludingModelErrors } from "../validate"
+import { getModelValidationError, validateApiConfigurationExcludingModelErrors } from "../validate.js"
 
 describe("Model Validation Functions", () => {
 	const mockRouterModels: RouterModels = {

@@ -90,8 +90,8 @@ KiloCode's documentation standards. It includes:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Installation
+* [Related Documentation](tools/related-doc.md)
+* [Additional Resources](tools/resources.md)## Installation
 
 The documentation automation dependencies are already installed in the workspace. They include:
 
@@ -105,8 +105,8 @@ The documentation automation dependencies are already installed in the workspace
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Configuration
+* [Related Documentation](tools/related-doc.md)
+* [Additional Resources](tools/resources.md)## Configuration
 
 The system is configured via `.remarkrc` in the project root:
 
@@ -173,8 +173,8 @@ pnpm docs:fix
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Integration
+* [Related Documentation](tools/related-doc.md)
+* [Additional Resources](tools/resources.md)## Integration
 
 ### Pre-commit Hooks
 
@@ -212,8 +212,8 @@ VS Code integration provides real-time validation as you edit markdown files.
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Troubleshooting
+* [Related Documentation](tools/related-doc.md)
+* [Additional Resources](tools/resources.md)## Troubleshooting
 
 ### Common Issues
 
@@ -232,8 +232,8 @@ For issues with the documentation automation system:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Next Steps
+* [Related Documentation](tools/related-doc.md)
+* [Additional Resources](tools/resources.md)## Next Steps
 
 After setup, the system will:
 
@@ -247,15 +247,15 @@ For advanced configuration and custom rules, see the Phase 1 implementation plan
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## No Dead Ends Policy
+* [Related Documentation](tools/related-doc.md)
+* [Additional Resources](tools/resources.md)## No Dead Ends Policy
 
 This document connects to:
 
 For more information, see:
 
 * [Documentation Structure](../README.md)
-* [Additional Resources](../tools/README.md)
+* [Additional Resources](tools/README.md)
 
 ## Navigation Footer
 
@@ -271,12 +271,12 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
 
 * *Navigation*\*: [docs](../docs/) · [↑ Table of Contents](#documentation-automation-setup-guide)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](GLOSSARY.md)

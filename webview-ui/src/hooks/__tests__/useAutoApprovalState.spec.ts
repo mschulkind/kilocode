@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react"
-import { useAutoApprovalState } from "../useAutoApprovalState"
+import { useAutoApprovalState } from "../useAutoApprovalState.js"
 
 describe("useAutoApprovalState", () => {
 	describe("hasEnabledOptions", () => {

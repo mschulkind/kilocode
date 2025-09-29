@@ -6,7 +6,7 @@ import { defineConfig, type PluginOption, type Plugin } from "vite"
 import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
 
-import { sourcemapPlugin } from "./src/vite-plugins/sourcemapPlugin"
+import { sourcemapPlugin } from "./src/vite-plugins/sourcemapPlugin.js"
 
 function getGitSha() {
 	let gitSha: string | undefined = undefined

@@ -1,4 +1,4 @@
-import { MarketplaceViewStateManager, ViewStateTransition } from "../MarketplaceViewStateManager"
+import { MarketplaceViewStateManager, ViewStateTransition } from "../MarketplaceViewStateManager.js"
 import { MarketplaceItem } from "@roo-code/types"
 
 // Mock vscode module

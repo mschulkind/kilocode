@@ -1,8 +1,7 @@
 {
   "plugins": [
     "remark-preset-lint-recommended",
-    "remark-validate-links",
-    "./plugins/remark-kilocode-comprehensive.js"
+    "remark-validate-links"
   ],
   "settings": {
     "bullet": "-",

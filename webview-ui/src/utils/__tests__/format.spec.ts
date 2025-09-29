@@ -1,4 +1,4 @@
-import { formatLargeNumber, formatDate, formatTimeAgo } from "../format"
+import { formatLargeNumber, formatDate, formatTimeAgo } from "../format.js"
 
 // Mock i18next
 vi.mock("i18next", () => ({

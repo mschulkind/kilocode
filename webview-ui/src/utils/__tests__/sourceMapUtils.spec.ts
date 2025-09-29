@@ -1,4 +1,4 @@
-import { parseStackTrace, applySourceMapsToStack, enhanceErrorWithSourceMaps } from "../sourceMapUtils"
+import { parseStackTrace, applySourceMapsToStack, enhanceErrorWithSourceMaps } from "../sourceMapUtils.js"
 
 // Mock console.debug to avoid cluttering test output
 beforeEach(() => {

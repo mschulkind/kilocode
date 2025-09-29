@@ -95,7 +95,7 @@ export async function seeNewChanges(task: Task, commitRange: CommitRange) {
 		await vscode.commands.executeCommand(
 			"vscode.changes",
 			t("kilocode:seeNewChanges.title"),
-			changes.map((change) => [
+			changes.map((change: any) => [
 				vscode.Uri.file(change.paths.absolute),
 				vscode.Uri.parse(`${DIFF_VIEW_URI_SCHEME}:${change.paths.relative}`).with({
 					query: Buffer.from(change.content.before ?? "").toString("base64"),
@@ -107,7 +107,7 @@ export async function seeNewChanges(task: Task, commitRange: CommitRange) {
 		)
 	} catch (err) {
 		vscode.window.showErrorMessage(t("kilocode:seeNewChanges.error"))
-		TelemetryService.instance.captureException(err, { context: "seeNewChanges" })
+		TelemetryService.instance.captureException(err instanceof Error ? err : new Error(String(err)), { context: "seeNewChanges" })
 		return undefined
 	}
 }

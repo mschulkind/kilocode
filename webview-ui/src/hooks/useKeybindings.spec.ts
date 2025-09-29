@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
 import { renderHook, waitFor } from "@testing-library/react"
-import { useKeybindings } from "./useKeybindings"
+import { useKeybindings } from "./useKeybindings.js"
 import { vscode } from "@/utils/vscode"
 
 vi.mock("@/utils/vscode", () => ({

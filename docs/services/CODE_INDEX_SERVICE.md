@@ -436,8 +436,8 @@ export class CacheManager {
 
 <a id="navigation-footer"></a>
 
-* Back: [`SYSTEM_OVERVIEW.md`](SYSTEM_OVERVIEW.md) · Root:
-  [`README.md`](../README.md)
+* Back: [`SYSTEM_OVERVIEW.md`](../architecture/SYSTEM_OVERVIEW.md) · Root:
+  [`README.md`](../../README.md)
   · Source: `/docs/services/CODE_INDEX_SERVICE.md#L1`
 
 ## No Dead Ends Policy
@@ -446,16 +446,16 @@ This document connects to:
 
 For more information, see:
 
-* [Documentation Structure](../README.md)
-* [Additional Resources](../tools/README.md)
+* [Documentation Structure](../../README.md)
+* [Additional Resources](../../tools/README.md)
 
 ## Navigation Footer
 
 * \*\*
 
-* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* *Navigation*\*: [docs](../../) · [services](./) ·
   [↑ Table of Contents](#code-index-service)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

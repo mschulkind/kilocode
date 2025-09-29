@@ -12,7 +12,7 @@ import {
 	CommandValidator,
 	createCommandValidator,
 	containsDangerousSubstitution,
-} from "../command-validation"
+} from "../command-validation.js"
 
 describe("Command Validation", () => {
 	describe("parseCommand", () => {

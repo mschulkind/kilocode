@@ -350,13 +350,13 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
 * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [State Machines](../README.md) for behavior modeling
+  [State Machines](../../architecture/README.md) for behavior modeling
 
 * *Investigating Race Conditions:*\*
 
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
-  [Code Flow Analysis](CODE_FLOW_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../../architecture/README.md) →
+  [Root Cause Analysis](../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Code Flow Analysis](../../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
@@ -364,23 +364,23 @@ document's role or purpose, this section helps orient you.
 
 * **Next**: [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md) →
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
-  [Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
+  [Solution Recommendations](../../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 
-* **Related**: [Repository Development Guide](GETTING_STARTED.md) for
+* **Related**: [Repository Development Guide](../GETTING_STARTED.md) for
   codebase patterns
 
 * *Understanding Current Problems:*\*
 
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Code Flow Analysis](CODE_FLOW_ANALYSIS.md) →
-  [Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)
+* **Next**: [Race Condition Analysis](../../architecture/README.md) →
+  [Code Flow Analysis](../../architecture/race-condition/CODE_FLOW_ANALYSIS.md) →
+  [Solution Recommendations](../../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 
-* **Related**: [State Machines](../README.md) for behavior analysis
+* **Related**: [State Machines](../../architecture/README.md) for behavior analysis
 
 ### No Dead Ends Policy
 
 Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Orchestrator Documentation](README.md) for guidance.
+next, return to [Orchestrator Documentation](../README.md) for guidance.
 
 ### Next doc-step I will take (if you approve)
 

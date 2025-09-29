@@ -713,7 +713,7 @@ export class BridgeOrchestrator {
 
 <a id="navigation-footer"></a>
 
-* Back: [`README.md`](README.md) · Root: [`../README.md`](../README.md) · Source:
+* Back: [`README.md`](./README.md) · Root: [`../README.md`](../../README.md) · Source:
   `/docs/services/CLOUD_SERVICES_ARCHITECTURE.md#L1`
 
 ## No Dead Ends Policy
@@ -722,16 +722,16 @@ This document connects to:
 
 For more information, see:
 
-* [Documentation Structure](../README.md)
-* [Additional Resources](../tools/README.md)
+* [Documentation Structure](../../README.md)
+* [Additional Resources](../../tools/README.md)
 
 ## Navigation Footer
 
 * \*\*
 
-* *Navigation*\*: [docs](../) · [services](../docs/services/) ·
+* *Navigation*\*: [docs](../../) · [services](./) ·
   [↑ Table of Contents](#cloud-services-architecture)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

@@ -8,7 +8,7 @@
  * This implementation is compatible with VSCode's Content Security Policy.
  */
 
-import { enhanceErrorWithSourceMaps } from "./sourceMapUtils"
+import { enhanceErrorWithSourceMaps } from "./sourceMapUtils.js"
 
 /**
  * Initialize source map support for production builds

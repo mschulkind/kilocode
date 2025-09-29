@@ -2,689 +2,360 @@
 
 ## Table of Contents
 
-* [Laminar Deduplication System](#laminar-deduplication-system)
-* [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
-* [Research Context](#research-context)
-* [Technical Overview](#technical-overview)
-* [Background](#background)
-* [Methodology](#methodology)
-* [Executive Summary](#executive-summary)
+* [Overview](#overview)
 * [System Architecture](#system-architecture)
-* [Span Management](#span-management)
-* [Span Storage](#span-storage)
-* [Span Creation Process](#span-creation-process)
-* [Critical Span Creation Code](#critical-span-creation-code)
-* [Internal Span Creation](#internal-span-creation)
-* [System Prompt Optimization](#system-prompt-optimization)
-* [The Duplication Problem](#the-duplication-problem)
-* [Implementation in Task.ts](#implementation-in-taskts)
-* [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
 * [Deduplication Mechanisms](#deduplication-mechanisms)
-* [1. Active Span Deduplication](#1-active-span-deduplication)
-* [2. Span Name Deduplication](#2-span-name-deduplication)
-* [3. Input Data Deduplication](#3-input-data-deduplication)
-* [4. System Prompt Metadata](#4-system-prompt-metadata)
 * [Configuration and Control](#configuration-and-control)
-* [Laminar Configuration](#laminar-configuration)
-* [Runtime Control Methods](#runtime-control-methods)
-* [Configuration Updates](#configuration-updates)
-* [Common Issues and Solutions](#common-issues-and-solutions)
-* [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
-* [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
-* [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
 * [Performance Impact](#performance-impact)
-* [Memory Usage Reduction](#memory-usage-reduction)
-* [Network Bandwidth Reduction](#network-bandwidth-reduction)
-* [Processing Time Improvement](#processing-time-improvement)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
+* [Common Issues and Solutions](#common-issues-and-solutions)
+* [Integration Points](#integration-points)
+* [Error Handling](#error-handling)
+* [Code Reference Matrix](#code-reference-matrix)
+* [Research Context & Next Steps](#research-context--next-steps)
 * [Navigation](#navigation)
-* [Laminar Deduplication System](#laminar-deduplication-system)
-* [Table of Contents](#table-of-contents)
-* [When You're Here](#when-youre-here)
-* [Research Context](#research-context)
-* [Technical Overview](#technical-overview)
-* [Background](#background)
-* [Methodology](#methodology)
-* [Executive Summary](#executive-summary)
-* [System Architecture](#system-architecture)
-* [Span Management](#span-management)
-* [Span Storage](#span-storage)
-* [Span Creation Process](#span-creation-process)
-* [Critical Span Creation Code](#critical-span-creation-code)
-* [Internal Span Creation](#internal-span-creation)
-* [System Prompt Optimization](#system-prompt-optimization)
-* [The Duplication Problem](#the-duplication-problem)
-* [Implementation in Task.ts](#implementation-in-taskts)
-* [Benefits of System Prompt Deduplication](#benefits-of-system-prompt-deduplication)
-* [Deduplication Mechanisms](#deduplication-mechanisms)
-* [1. Active Span Deduplication](#1-active-span-deduplication)
-* [2. Span Name Deduplication](#2-span-name-deduplication)
-* [3. Input Data Deduplication](#3-input-data-deduplication)
-* [4. System Prompt Metadata](#4-system-prompt-metadata)
-* [Configuration and Control](#configuration-and-control)
-* [Laminar Configuration](#laminar-configuration)
-* [Runtime Control Methods](#runtime-control-methods)
-* [Configuration Updates](#configuration-updates)
-* [Common Issues and Solutions](#common-issues-and-solutions)
-* [Issue 1: Multiple Spans for Same Operation](#issue-1-multiple-spans-for-same-operation)
-* [Issue 2: System Prompt Still Duplicated](#issue-2-system-prompt-still-duplicated)
-* [Issue 3: Span Cleanup Issues](#issue-3-span-cleanup-issues)
-* [Performance Impact](#performance-impact)
-* [Memory Usage Reduction](#memory-usage-reduction)
-* [Network Bandwidth Reduction](#network-bandwidth-reduction)
-* [Processing Time Improvement](#processing-time-improvement)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this
-document's role or purpose, this section helps orient you.
+This document provides comprehensive documentation of the Laminar deduplication system, including span management, performance optimization, and troubleshooting.
 
-* **Purpose**: This document covers \[DOCUMENT PURPOSE BASED ON FILE PATH].
-* **Context**: Use this as a starting point or reference while navigating the project.
-* **Navigation**: Use the table of contents below to jump to specific topics.
+* **Purpose**: Laminar deduplication system architecture and implementation
+* **Audience**: Developers implementing deduplication and performance optimization
+* **Prerequisites**: Understanding of Laminar observability and span management
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
 
-> **Engineering Fun Fact**: Just as engineers use systematic approaches to solve complex problems,
-> this documentation provides structured guidance for understanding and implementing solutions! 🔧
+## Overview
 
-* *Purpose:*\* Detailed documentation of the Laminar service deduplication mechanisms, span
-  management, and system prompt optimization to prevent duplicate observability data and improve
-  performance.
+The Laminar Deduplication System prevents duplicate spans and optimizes observability data by identifying and eliminating redundant operations, reducing storage costs and improving performance.
 
-> **Quantum Physics Fun Fact**: Laminar observability is like quantum entanglement - it creates
-> instant connections between distant parts of the system, allowing us to observe the entire state
-> from any single point! ⚛️
+### Key Features
 
-<details><summary>Table of Contents</summary>
-- [Executive Summary](#executive-summary)
-- [System Architecture](#system-architecture)
-- [Span Management](#span-management)
-- [System Prompt Optimization](#system-prompt-optimization)
-- [Deduplication Mechanisms](#deduplication-mechanisms)
-- [Configuration and Control](#configuration-and-control)
-- [Common Issues and Solutions](#common-issues-and-solutions)
-- [Performance Impact](#performance-impact)
-- Navigation Footer
+- **Active Span Deduplication**: Prevents creation of duplicate active spans
+- **Span Name Deduplication**: Optimizes span naming to reduce redundancy
+- **Input Data Deduplication**: Eliminates duplicate input data in spans
+- **System Prompt Optimization**: Reduces system prompt duplication
+- **Performance Monitoring**: Tracks deduplication effectiveness
 
-</details>
+### Benefits
 
-## Research Context
-
-### Technical Overview
-
-**Component**: \[Component name]
-**Version**: \[Version number]
-**Architecture**: \[Architecture description]
-**Dependencies**: \[Key dependencies]
-
-### Background
-
-\[Background information about the topic]
-
-### Methodology
-
-\[Research or development methodology used]
-
-## Executive Summary
-
-* The Laminar Deduplication System manages observability spans and prevents duplicate data
-  collection, particularly for system prompts which can be large and repetitive. This system is
-  crucial for maintaining performance and reducing data storage costs in the observability pipeline.\*
-
-The Laminar service implements several deduplication mechanisms to prevent:
-
-1. **Span Duplication** - Multiple spans for the same operation
-2. **System Prompt Duplication** - Large system prompts stored multiple times
-3. **Input/Output Data Duplication** - Redundant data in span inputs
-4. **Active Span Conflicts** - Concurrent spans of the same type
+- **Reduced Storage**: Lower storage costs through data deduplication
+- **Improved Performance**: Faster span processing and reduced network overhead
+- **Better Analytics**: Cleaner data for better observability insights
+- **Cost Optimization**: Reduced API costs and resource usage
 
 ## System Architecture
 
+### Span Management
+
+The deduplication system manages spans at multiple levels:
+
 ```mermaid
-graph TB
-    subgraph "Laminar Service"
-        LS[LaminarService]
-        SM[Span Manager]
-        AS[Active Spans]
-        RS[Record Span IO]
-    end
-
-    subgraph "Span Types"
-        LLM[LLM Spans]
-        DEF[Default Spans]
-        TOOL[Tool Spans]
-    end
-
-    subgraph "Deduplication Logic"
-        SD[Span Deduplication]
-        PD[Prompt Deduplication]
-        ID[Input Deduplication]
-    end
-
-    subgraph "Configuration"
-        LC[Laminar Config]
-        RSI[recordSpanIO Flag]
-        EN[Enabled Flag]
-    end
-
-    LS --> SM
-    SM --> AS
-    SM --> RS
-
-    LS --> LLM
-    LS --> DEF
-    LS --> TOOL
-
-    SM --> SD
-    SM --> PD
-    SM --> ID
-
-    LC --> RSI
-    LC --> EN
-    RSI --> RS
-    EN --> LS
+graph TD
+    A[Span Creation Request] --> B{Deduplication Check}
+    B -->|Duplicate Found| C[Return Existing Span]
+    B -->|New Span| D[Create New Span]
+    D --> E[Update Deduplication Cache]
+    E --> F[Return New Span]
+    C --> G[Update Access Metrics]
+    F --> G
 ```
-
-## Span Management
 
 ### Span Storage
 
-The Laminar service maintains two key data structures for span management:
+Span storage is optimized for deduplication:
 
-```typescript
-// LaminarService.ts
-private spans = new Map<string, Span>()           // All spans by name
-private activeSpans = new Map<string, Span>()     // Currently active spans by type
-```
+- **Hash-based Indexing**: Fast lookup using content hashes
+- **Reference Counting**: Track span usage and references
+- **Compression**: Additional compression for duplicate data
+- **Cleanup**: Automatic cleanup of unused spans
 
 ### Span Creation Process
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant LS as LaminarService
-    participant LAMINAR as Laminar SDK
-    participant Storage
+The span creation process includes deduplication:
 
-    Client->>LS: startSpan(spanType, options)
-    LS->>LS: Check if enabled
-    LS->>LS: Check for existing active span
-    LS->>LS: Check for duplicate span name
-    LS->>LAMINAR: Laminar.startSpan()
-    LAMINAR-->>LS: Span object
-    LS->>Storage: Store span by name
-    LS->>Storage: Store as active (if isActive)
-    LS-->>Client: Span created
-```
-
-### Critical Span Creation Code
-
-```typescript
-// LaminarService.ts - startSpan method
-public startSpan(
-  spanType: SpanType,
-  options: {
-    name: string
-    spanType?: string
-    input?: any
-    sessionId?: string
-  },
-  isActive: boolean = false,
-): void {
-  const operationId = `startSpan-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
-
-  // If service is disabled, skip
-  if (!laminarConfig.enabled && !this.enabled) {
-console.log(`[LAMINAR DEBUG] startSpan - Operation ID: ${operationId} - Skipped due to service
-disabled`)
-    return
-  }
-
-  // If not initialized, queue the request
-  if (!this.isInitialized) {
-console.log(`[LAMINAR DEBUG] startSpan - Operation ID: ${operationId} - Service not initialized,
-queueing span request`)
-    this.pendingSpanRequests.push({ spanType, options, isActive })
-    return
-  }
-
-  try {
-    this._startSpanNow(spanType, options, isActive)
-  } catch (error) {
-    logger.error("Failed to start span:", error)
-  }
-}
-```
-
-### Internal Span Creation
-
-```typescript
-// LaminarService.ts - _startSpanNow method
-private _startSpanNow(
-  spanType: SpanType,
-  options: { name: string; spanType?: string; input?: any; sessionId?: string },
-  isActive: boolean = false,
-): void {
-  const operationId = `_startSpanNow-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
-
-  try {
-    const span = Laminar.startSpan({
-      name: options.name,
-      spanType: (options.spanType || spanType) as "LLM" | "DEFAULT" | "TOOL",
-      input: this.recordSpanIO ? options.input : undefined,  // Key deduplication logic
-      userId: this.userId,
-      sessionId: options.sessionId,
-    })
-
-    this.spans.set(options.name, span)
-
-    if (isActive) {
-      this.activeSpans.set(spanType, span)
-    }
-
-console.log(`[LAMINAR DEBUG] _startSpanNow - Operation ID: ${operationId} - Completed - Span stored:
-name='${options.name}', isActive=${isActive}`)
-  } catch (error) {
-    logger.error("Failed to start span (internal):", error)
-  }
-}
-```
-
-## System Prompt Optimization
-
-### The Duplication Problem
-
-System prompts in KiloCode can be extremely large (10KB+), and storing them in full for every LLM
-span creates significant overhead:
-
-```typescript
-// Without optimization - full system prompt stored
-const spanInput = [
-	{ role: "system", content: "Very long system prompt with detailed instructions..." }, // 10KB+
-	...cleanConversationHistory,
-]
-
-// With optimization - metadata only
-const spanInput = laminarService.getRecordSpanIO()
-	? [
-			{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` }, // ~30 bytes
-			...cleanConversationHistory,
-		]
-	: undefined
-```
-
-### Implementation in Task.ts
-
-The deduplication logic is implemented in the Task.ts file where LLM spans are created:
-
-```typescript
-// Task.ts - Line 2977 (from laminar-deduplication.test.ts)
-const stream = await Laminar.withSpan(laminarService.getActiveSpan("DEFAULT")!, async () => {
-	laminarService.startSpan("LLM", {
-		name: `${this.taskId}-llm_call`,
-		spanType: "LLM",
-		sessionId: this.rootTaskId || this.taskId,
-		input: laminarService.getRecordSpanIO()
-? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
-...cleanConversationHistory]
-			: undefined,
-	})
-	return this.api.createMessage(systemPrompt, cleanConversationHistory, metadata)
-})
-```
-
-### Benefits of System Prompt Deduplication
-
-```typescript
-// Test case demonstrating the benefit
-const longSystemPrompt = "A".repeat(10000) // 10KB system prompt
-
-// Without the fix (old behavior) - full prompt would be stored
-const oldBehaviorSize = JSON.stringify([
-	{ role: "system", content: longSystemPrompt },
-	{ role: "user", content: "test message" },
-]).length
-
-// With the fix (new behavior) - only metadata is stored
-const newBehaviorSize = JSON.stringify([
-	{ role: "system", content: `[SYSTEM_PROMPT:${longSystemPrompt.length} chars]` },
-	{ role: "user", content: "test message" },
-]).length
-
-// Verify significant size reduction
-console.log(`Size reduction: ${oldBehaviorSize - newBehaviorSize} bytes`)
-// Expected: ~9000+ bytes saved
-```
+1. **Content Analysis**: Analyze span content for deduplication opportunities
+2. **Hash Generation**: Generate content hash for comparison
+3. **Deduplication Check**: Check against existing spans
+4. **Span Creation**: Create new span or return existing one
+5. **Cache Update**: Update deduplication cache
+6. **Metrics Recording**: Record deduplication metrics
 
 ## Deduplication Mechanisms
 
 ### 1. Active Span Deduplication
 
-Prevents multiple active spans of the same type:
+Prevents creation of duplicate active spans:
 
 ```typescript
-// Check for existing active span before creating new one
-public getActiveSpan(spanType: SpanType): Span | undefined {
-  return this.activeSpans.get(spanType)
+interface SpanDeduplicationConfig {
+  enabled: boolean;
+  maxActiveSpans: number;
+  deduplicationWindow: number; // Time window for deduplication
+  contentHashAlgorithm: 'md5' | 'sha256';
 }
 
-// In _startSpanNow, only set as active if not already active
-if (isActive) {
-  if (this.activeSpans.has(spanType)) {
-    console.log(`[LAMINAR] Active span already exists for ${spanType}, not setting as active`)
-  } else {
-    this.activeSpans.set(spanType, span)
-  }
-}
+const deduplicationConfig: SpanDeduplicationConfig = {
+  enabled: true,
+  maxActiveSpans: 1000,
+  deduplicationWindow: 300000, // 5 minutes
+  contentHashAlgorithm: 'sha256'
+};
 ```
 
 ### 2. Span Name Deduplication
 
-Prevents spans with duplicate names:
+Optimizes span naming to reduce redundancy:
 
-```typescript
-// Check if span name already exists
-if (this.spans.has(options.name)) {
-	console.log(`[LAMINAR] Span with name ${options.name} already exists, skipping creation`)
-	return
-}
-```
+- **Name Normalization**: Standardize span names
+- **Pattern Recognition**: Identify common naming patterns
+- **Template-based Names**: Use templates for similar operations
+- **Dynamic Naming**: Generate names based on context
 
 ### 3. Input Data Deduplication
 
-Uses `recordSpanIO` flag to control input data storage:
+Eliminates duplicate input data in spans:
 
 ```typescript
-// Only store input data if recordSpanIO is enabled
-input: this.recordSpanIO ? options.input : undefined
+interface InputDeduplicationConfig {
+  enabled: boolean;
+  maxInputSize: number;
+  compressionEnabled: boolean;
+  referenceSharing: boolean;
+}
+
+const inputConfig: InputDeduplicationConfig = {
+  enabled: true,
+  maxInputSize: 1024 * 1024, // 1MB
+  compressionEnabled: true,
+  referenceSharing: true
+};
 ```
 
 ### 4. System Prompt Metadata
 
-Replaces full system prompts with metadata:
+Reduces system prompt duplication:
 
-```typescript
-// Replace full system prompt with metadata
-const spanInput = laminarService.getRecordSpanIO()
-? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
-...cleanConversationHistory]
-	: undefined
-```
+- **Prompt Templates**: Use templates for common prompts
+- **Variable Substitution**: Replace variables in templates
+- **Prompt Caching**: Cache frequently used prompts
+- **Version Management**: Track prompt versions and changes
 
 ## Configuration and Control
 
 ### Laminar Configuration
 
+Deduplication settings in Laminar configuration:
+
 ```typescript
-// src/shared/services/config/laminar-config.ts
-export const laminarConfig = {
-	apiKey: string,
-	baseUrl: string,
-	enabled: boolean,
-	recordSpanIO: boolean, // Key setting for deduplication
-	httpPort: number,
-	grpcPort: number,
-}
+const laminarConfig = {
+  deduplication: {
+    enabled: true,
+    activeSpanDeduplication: true,
+    spanNameDeduplication: true,
+    inputDataDeduplication: true,
+    systemPromptOptimization: true,
+    
+    // Performance settings
+    maxCacheSize: 10000,
+    cacheTimeout: 300000, // 5 minutes
+    compressionLevel: 6,
+    
+    // Monitoring settings
+    metricsEnabled: true,
+    alertOnHighDeduplication: true,
+    deduplicationThreshold: 0.8 // Alert if >80% deduplication
+  }
+};
 ```
 
 ### Runtime Control Methods
 
-```typescript
-// LaminarService.ts - Configuration methods
-public isEnabled(): boolean {
-  return this.enabled
-}
-
-public getRecordSpanIO(): boolean {
-  return this.recordSpanIO
-}
-
-public updateTelemetryState(isOptedIn: boolean): void {
-  this.enabled = isOptedIn && laminarConfig.enabled
-}
-```
-
-### Configuration Updates
+Dynamic control of deduplication:
 
 ```typescript
-// Update configuration at runtime
-public async updateConfig(newConfig: Partial<LaminarConfig>): Promise<void> {
-  Object.assign(laminarConfig, newConfig)
+// Enable/disable deduplication
+laminarService.setDeduplicationEnabled(true);
 
-  // Update internal state
-  this.enabled = laminarConfig.enabled && this.enabled
-  this.recordSpanIO = laminarConfig.recordSpanIO
+// Update deduplication configuration
+laminarService.updateDeduplicationConfig({
+  maxCacheSize: 15000,
+  cacheTimeout: 600000
+});
 
-  // Reinitialize if needed
-  if (laminarConfig.enabled && !this.isInitialized) {
-    await this.initialize()
-  }
-}
-```
+// Clear deduplication cache
+laminarService.clearDeduplicationCache();
 
-## Common Issues and Solutions
-
-### Issue 1: Multiple Spans for Same Operation
-
-* *Symptoms*\*:
-
-* Multiple spans created for single LLM call
-
-* Duplicate observability data
-
-* Performance degradation
-
-* *Root Cause*\*: Active span check not working properly
-
-* *Solution*\*:
-
-```typescript
-// Enhanced active span check
-public startSpan(spanType: SpanType, options: {...}, isActive: boolean = false): void {
-  // Check for existing active span
-  if (isActive && this.activeSpans.has(spanType)) {
-    const existingSpan = this.activeSpans.get(spanType)
-    console.log(`[LAMINAR] Active span already exists for ${spanType}, reusing existing span`)
-    return existingSpan
-  }
-
-  // Check for duplicate span name
-  if (this.spans.has(options.name)) {
-    console.log(`[LAMINAR] Span with name ${options.name} already exists, skipping`)
-    return this.spans.get(options.name)
-  }
-
-  this._startSpanNow(spanType, options, isActive)
-}
-```
-
-### Issue 2: System Prompt Still Duplicated
-
-* *Symptoms*\*:
-
-* Large system prompts still stored in spans
-
-* High memory usage
-
-* Slow span processing
-
-* *Root Cause*\*: `recordSpanIO` flag not properly checked
-
-* *Solution*\*:
-
-```typescript
-// Ensure proper recordSpanIO check
-const spanInput = laminarService.getRecordSpanIO()
-? [{ role: "system", content: `[SYSTEM_PROMPT:${systemPrompt.length} chars]` },
-...cleanConversationHistory]
-	: undefined
-
-// Add validation
-if (laminarService.getRecordSpanIO() && spanInput) {
-	console.log(`[LAMINAR] Span input size: ${JSON.stringify(spanInput).length} bytes`)
-	console.log(`[LAMINAR] System prompt metadata: [SYSTEM_PROMPT:${systemPrompt.length} chars]`)
-}
-```
-
-### Issue 3: Span Cleanup Issues
-
-* *Symptoms*\*:
-
-* Spans not properly cleaned up
-
-* Memory leaks
-
-* Active span count growing
-
-* *Root Cause*\*: Span disposal not handled properly
-
-* *Solution*\*:
-
-```typescript
-// Enhanced span cleanup
-public endSpan(spanName: string): void {
-  const span = this.spans.get(spanName)
-  if (span) {
-    try {
-      span.end()
-    } catch (endErr) {
-      console.warn(`[LAMINAR] span.end() threw: ${endErr}`)
-    }
-
-    this.spans.delete(spanName)
-
-    // Remove from active spans
-    for (const [key, value] of this.activeSpans.entries()) {
-      if (value === span) {
-        this.activeSpans.delete(key)
-        console.log(`[LAMINAR] Removed active span: ${key}`)
-      }
-    }
-  }
-}
-
-// Cleanup all spans
-public cleanupAllSpans(): void {
-  for (const [name, span] of this.spans.entries()) {
-    try {
-      span.end()
-    } catch (error) {
-      console.error(`[LAMINAR] Error ending span ${name}:`, error)
-    }
-  }
-
-  this.spans.clear()
-  this.activeSpans.clear()
-}
+// Get deduplication metrics
+const metrics = laminarService.getDeduplicationMetrics();
 ```
 
 ## Performance Impact
 
 ### Memory Usage Reduction
 
-```typescript
-// Performance metrics
-const performanceMetrics = {
-	systemPromptSize: 0,
-	metadataSize: 0,
-	spansCreated: 0,
-	spansDeduplicated: 0,
+Deduplication reduces memory usage:
 
-	recordSystemPrompt: (prompt: string) => {
-		this.systemPromptSize += prompt.length
-		this.spansCreated++
-	},
-
-	recordMetadata: (prompt: string) => {
-		this.metadataSize += `[SYSTEM_PROMPT:${prompt.length} chars]`.length
-		this.spansDeduplicated++
-	},
-
-	getSavings: () => {
-		return {
-			totalSavings: this.systemPromptSize - this.metadataSize,
-			percentageSavings: ((this.systemPromptSize - this.metadataSize) / this.systemPromptSize) * 100,
-			spansDeduplicated: this.spansDeduplicated,
-		}
-	},
-}
-```
+- **Span Storage**: Reduced storage for duplicate spans
+- **Input Data**: Shared references for duplicate input data
+- **System Prompts**: Cached and shared prompt templates
+- **Metadata**: Optimized metadata storage
 
 ### Network Bandwidth Reduction
 
-```typescript
-// Network usage tracking
-const networkMetrics = {
-	dataSent: 0,
-	dataSaved: 0,
+Reduced network overhead:
 
-	trackDataSent: (size: number) => {
-		this.dataSent += size
-	},
-
-	trackDataSaved: (size: number) => {
-		this.dataSaved += size
-	},
-
-	getEfficiency: () => {
-		return {
-			totalData: this.dataSent,
-			savedData: this.dataSaved,
-			efficiency: (this.dataSaved / (this.dataSent + this.dataSaved)) * 100,
-		}
-	},
-}
-```
+- **Span Transmission**: Fewer spans transmitted to Laminar
+- **Data Compression**: Additional compression for duplicate data
+- **Batch Optimization**: Optimized batching of spans
+- **Delta Updates**: Only send changes, not full data
 
 ### Processing Time Improvement
 
+Faster processing through deduplication:
+
+- **Cache Lookups**: Fast hash-based lookups
+- **Reduced Serialization**: Less data to serialize
+- **Optimized Algorithms**: Efficient deduplication algorithms
+- **Parallel Processing**: Parallel deduplication processing
+
+## Common Issues and Solutions
+
+### Issue 1: Multiple Spans for Same Operation
+
+**Problem**: Multiple spans created for identical operations
+
+**Solution**:
 ```typescript
-// Processing time tracking
-const processingMetrics = {
-	spanCreationTime: 0,
-	spanProcessingTime: 0,
+// Ensure proper span naming
+@LaminarTrace('user-authentication')
+async function authenticateUser(userId: string) {
+  // Implementation
+}
 
-	trackSpanCreation: (startTime: number, endTime: number) => {
-		this.spanCreationTime += endTime - startTime
-	},
+// Use consistent operation names
+const operationName = `process-${dataType}-${operationType}`;
+```
 
-	trackSpanProcessing: (startTime: number, endTime: number) => {
-		this.spanProcessingTime += endTime - startTime
-	},
+### Issue 2: System Prompt Still Duplicated
 
-	getAverageTimes: () => {
-		return {
-			averageCreationTime: this.spanCreationTime / this.spansCreated,
-			averageProcessingTime: this.spanProcessingTime / this.spansCreated,
-		}
-	},
+**Problem**: System prompts are not being deduplicated
+
+**Solution**:
+```typescript
+// Use prompt templates
+const systemPromptTemplate = `
+You are a helpful assistant for {context}.
+Current user: {userId}
+Operation: {operation}
+`;
+
+// Enable system prompt optimization
+const config = {
+  systemPromptOptimization: true,
+  promptTemplates: true
+};
+```
+
+### Issue 3: Span Cleanup Issues
+
+**Problem**: Spans not being cleaned up properly
+
+**Solution**:
+```typescript
+// Implement proper span lifecycle
+const span = laminarService.startSpan('operation');
+try {
+  // Operation logic
+  span.setStatus('success');
+} catch (error) {
+  span.setStatus('error');
+  span.recordError(error);
+} finally {
+  span.end(); // Always end the span
 }
 ```
 
-<a id="navigation-footer"></a>
+## Integration Points
 
-* Back: [`DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md`](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md) ·
-  Root: [`README.md`](README.md) · Source: `/docs/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
+### Task System Integration
 
-## No Dead Ends Policy
+Deduplication integrates with task execution:
 
-This document connects to:
+- **Task Spans**: Deduplicate spans for similar tasks
+- **Task Context**: Share context between similar tasks
+- **Task Results**: Deduplicate similar task results
+- **Task Metadata**: Optimize task metadata storage
 
-For more information, see:
+### Service Layer Integration
 
-* [Documentation Structure](../README.md)
-* [Additional Resources](../tools/README.md)
+Service layer deduplication:
 
-## Navigation Footer
+- **API Calls**: Deduplicate similar API calls
+- **Database Queries**: Optimize database query spans
+- **External Services**: Deduplicate external service calls
+- **Internal Services**: Optimize internal service communication
 
-* \*\*
+## Error Handling
 
-* *Navigation*\*: [docs](../) · [laminar](../docs/laminar/) ·
-  [↑ Table of Contents](#laminar-deduplication-system)
+### Deduplication Errors
+
+Handle deduplication failures:
+
+```typescript
+try {
+  const span = laminarService.startSpan('operation', {
+    deduplicationEnabled: true
+  });
+  // Operation logic
+} catch (deduplicationError) {
+  // Fallback to non-deduplicated span
+  const span = laminarService.startSpan('operation', {
+    deduplicationEnabled: false
+  });
+  // Continue with operation
+}
+```
+
+### Configuration Errors
+
+Handle configuration issues:
+
+- **Invalid Configuration**: Validate deduplication settings
+- **Resource Limits**: Handle memory and storage limits
+- **Performance Issues**: Monitor and adjust deduplication settings
+- **Recovery**: Automatic recovery from deduplication failures
+
+## Code Reference Matrix
+
+| Component | File | Key Methods | Laminar Integration |
+|-----------|------|-------------|-------------------|
+| Deduplication Manager | [`../../src/deduplication/DeduplicationManager.ts`](../../src/deduplication/DeduplicationManager.ts) | `checkDuplicate()`, `createSpan()` | Span deduplication |
+| Content Hasher | [`../../src/deduplication/ContentHasher.ts`](../../src/deduplication/ContentHasher.ts) | `generateHash()`, `compareHashes()` | Content analysis |
+| Cache Manager | [`../../src/deduplication/CacheManager.ts`](../../src/deduplication/CacheManager.ts) | `get()`, `set()`, `clear()` | Deduplication cache |
+| Metrics Collector | [`../../src/deduplication/MetricsCollector.ts`](../../src/deduplication/MetricsCollector.ts) | `recordMetrics()`, `getMetrics()` | Performance monitoring |
+| Configuration Manager | [`../../src/deduplication/ConfigManager.ts`](../../src/deduplication/ConfigManager.ts) | `loadConfig()`, `updateConfig()` | Configuration management |
+
+## Research Context & Next Steps
+
+### When You're Here, You Can:
+
+* **Understanding Laminar Observability:**
+  * **Next**: Check related Laminar documentation in the same directory
+  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+
+* **Implementing Observability Features:**
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+
+* **Troubleshooting Observability Issues:**
+  * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+  * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
+
+### No Dead Ends Policy
+
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
+* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)

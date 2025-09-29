@@ -2,633 +2,325 @@
 
 ## Table of Contents
 
-* [Laminar LLM Integration](#laminar-llm-integration)
-* [Table of Contents](#table-of-contents)
-* [Laminar LLM Integration](#laminar-llm-integration)
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
-* [between Kilo Code and Overview](#between-kilo-code-and-overview)
-* [Key Integration Points calls](#key-integration-points-calls)
-* [Key Integration dedicated Points](#key-integration-dedicated-points)
+* [Key Integration Points](#key-integration-points)
 * [Integration Flow](#integration-flow)
 * [Span Metadata](#span-metadata)
 * [Cost Attribution](#cost-attribution)
-* [Cost Calculation](#cost-calculation)
-* [Model Information Capture](#model-information-capture)
-* [Model Metadata](#model-metadata)
-* [Cost Attribution](#cost-attribution)
 * [Model Information Capture](#model-information-capture)
 * [Cache Usage Tracking](#cache-usage-tracking)
-* [Performance Tracking Cache](#performance-tracking-cache)
-* [Cache Usage Tracking](#cache-usage-tracking)
-* [Performance Metrics Age of](#performance-metrics-age-of)
-* [cached responses](#cached-responses)
-* [Cache Response Time Tracking](#cache-response-time-tracking)
-* [improvements from cache usage](#improvements-from-cache-usage)
 * [Performance Metrics](#performance-metrics)
-* [Quality Metrics](#quality-metrics)
 * [Error Handling](#error-handling)
-* [Error Classification](#error-classification)
-* [Error Context](#error-context)
-* [Integration Points](#integration-points)
-* [Error Context](#error-context)
-* [TaskComprehensive error information System Integration](#taskcomprehensive-error-information-system-integration)
-* [Service Layer Integration](#service-layer-integration)
-* [Integration for LLM calls](#integration-for-llm-calls)
-* [counting Task System and Integration](#counting-task-system-and-integration)
-* [grouping](#grouping)
-* [Service Configuration Integration](#service-configuration-integration)
-* [Configuration Integration](#configuration-integration)
 * [Code Reference Matrix](#code-reference-matrix)
-* [Code Reference Matrix](#code-reference-matrix)
-* [NavigationCached()](#navigationcached)
+* [Research Context & Next Steps](#research-context--next-steps)
 * [Navigation](#navigation)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Laminar LLM Integration](#laminar-llm-integration)
-* [Table of Contents](#table-of-contents)
-* [Laminar LLM Integration](#laminar-llm-integration)
-* [Overview](#overview)
-* [between Kilo Code and Overview](#between-kilo-code-and-overview)
-* [Key Integration Points calls](#key-integration-points-calls)
-* [Key Integration dedicated Points](#key-integration-dedicated-points)
-* [Integration Flow](#integration-flow)
-* [Span Metadata](#span-metadata)
-* [Cost Attribution](#cost-attribution)
-* [Cost Calculation](#cost-calculation)
-* [Model Information Capture](#model-information-capture)
-* [Model Metadata](#model-metadata)
-* [Cost Attribution](#cost-attribution)
-* [Model Information Capture](#model-information-capture)
-* [Cache Usage Tracking](#cache-usage-tracking)
-* [Performance Tracking Cache](#performance-tracking-cache)
-* [Cache Usage Tracking](#cache-usage-tracking)
-* [Performance Metrics Age of](#performance-metrics-age-of)
-* [cached responses](#cached-responses)
-* [Cache Response Time Tracking](#cache-response-time-tracking)
-* [improvements from cache usage](#improvements-from-cache-usage)
-* [Performance Metrics](#performance-metrics)
-* [Quality Metrics](#quality-metrics)
-* [Error Handling](#error-handling)
-* [Error Classification](#error-classification)
-* [Error Context](#error-context)
-* [Integration Points](#integration-points)
-* [Error Context](#error-context)
-* [TaskComprehensive error information System Integration](#taskcomprehensive-error-information-system-integration)
-* [Service Layer Integration](#service-layer-integration)
-* [Integration for LLM calls](#integration-for-llm-calls)
-* [counting Task System and Integration](#counting-task-system-and-integration)
-* [grouping](#grouping)
-* [Service Configuration Integration](#service-configuration-integration)
-* [Configuration Integration](#configuration-integration)
-* [Code Reference Matrix](#code-reference-matrix)
-* [Code Reference Matrix](#code-reference-matrix)
-* [NavigationCached()](#navigationcached)
-* [Navigation](#navigation)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
-* [When You're Here, You Can:](#when-youre-here-you-can)
-* [No Dead Ends Policy](#no-dead-ends-policy)
-* [Navigation Footer](#navigation-footer)
-
-> **System Fun Fact**: Every complex system is just a collection of simple parts working together -
-> documentation helps us understand how! ⚙️
-
-Comprehensive documentation of how Laminar observability integrates with Kilo Code's
-LLM\<write\_to\_file> <path>docs/LAMINAR\_LLM\_INTEGRATION.md</path> <content>
-
-# Laminar LLM Integration
-
-> **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
-> foundation, clear structure, and intuitive navigation! 🏗️
-
-Comprehensive documentation of how Laminar observability integrates with Kilo Code's LLM (Large
-Language Model) interactions, providing detailed tracing for API calls, token usage, (Large Language
-Model) interactions, costs, providing detailed and model performance tracing for metrics.
-
-<details><summary>Table of Contents</summary>
-- Overview
-- Architecture
-- LLM Call Tracing
-- Token Usage Tracking
-- Cost Monitoring
-- Model Information Capture
-- Cache Usage Tracking
-- Performance Metrics
-- Error Handling
-- Integration Points
-- Code Reference Matrix
-- Research Context & Next Steps
 
 ## When You're Here
 
-This document is part of the KiloCode project documentation. If you're not familiar with this
-document's role or purpose, this section helps orient you.
+This document provides comprehensive documentation of Laminar integration with Large Language Models (LLMs) in Kilo Code, including cost tracking, performance monitoring, and model attribution.
 
-* **Purpose**: \[Brief description of what this document covers]
-* **Audience**: \[Who should read this document]
-* **Prerequisites**: \[What you should know before reading]
-* **Related Documents**: \[Links to related documentation]
+* **Purpose**: LLM integration with Laminar observability
+* **Audience**: Developers implementing LLM features and cost tracking
+* **Prerequisites**: Understanding of LLM APIs and observability concepts
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
 
 ## Overview
 
-The LLM IntegrationIntegration Points]\(#key-integration-points)
+The Laminar LLM Integration provides comprehensive observability for Large Language Model operations, including cost tracking, performance monitoring, model attribution, and cache usage analysis.
 
-* Code Reference Matrix
-* Navigation
+### Key Features
 
-</details all interactions>
+- **Cost Attribution**: Track and attribute LLM costs to specific operations
+- **Model Performance**: Monitor model response times and quality
+- **Token Usage**: Track input and output token consumption
+- **Cache Optimization**: Monitor cache hit rates and effectiveness
+- **Error Tracking**: Comprehensive error logging for LLM operations
 
-## between Kilo Code and Overview
+### Integration Scope
 
-The LLM Integration external subsystem language model APIs handles. The Laminar integration all
-interactions provides comprehensive observ between Kilo Code and external language modelability for
-these interactions, capturing detailed metrics about APIs. The Laminar token integration provides
-usage comprehensive observability for these interactions,, enabling detailed monitoring of costs,
-model performance, and cache effectiveness API.
+The LLM integration covers:
 
-### Key Integration Points calls
+- **API Calls**: All LLM API interactions
+- **Model Selection**: Dynamic model selection and routing
+- **Cost Calculation**: Real-time cost calculation and attribution
+- **Performance Monitoring**: Response time and throughput tracking
+- **Quality Metrics**: Response quality and accuracy tracking
 
-* **API Call Tracing**:, resource Every usage, and performance characteristics LLM API call creates
-  a.
+## Key Integration Points
 
-### Key Integration dedicated Points
+### LLM API Calls
 
-span with full context
+All LLM API calls are instrumented with Laminar spans:
 
-* **- **API Call Tracing**:Token Accounting**: Precise tracking of input, output, and cached Every
-  LLM tokens
-* **Cost Calculation**: Real request-time cost/response is captured with full context
-* **Token Accounting**: Input computation based on token usage and model rates,
-* \*\*Model output, and cache token usage is tracked
-* **Cost Calculation**: Real-time cost Metadata computation based\*\*: Capture of model on usage
-  patterns version , provider, and- \*\*Model configuration details Metadata\*\*:
-* **Cache Analytics**: Model Tracking of cache version, provider, and hits configuration, misses,
-  and effectiveness details
-* \*\*
+```typescript
+const span = laminar.startSpan('llm-api-call', {
+  tags: {
+    model: 'gpt-4',
+    provider: 'openai',
+    operation: 'completion'
+  }
+});
 
-Cache## Architecture
-
-```mermaid
-graph TD
-    A[Task Execution] --> B[LLM Request]
-    B --> C[Laminar Span Creation]
-    C --> D[Request Metadata Capture]
-    D --> E[API Call Execution]
-    E --> F[Response Processing]
-    F --> G[Token Usage Recording]
-    G --> H[Cost Calculation]
-    H --> I[Span Completion]
-    I --> J[Metrics Aggregation]
+try {
+  const response = await llmService.callModel(prompt, options);
+  span.setStatus('success');
+  return response;
+} catch (error) {
+  span.setStatus('error');
+  span.recordError(error);
+  throw error;
+} finally {
+  span.end();
+}
 ```
 
-### Integration Flow
+### Model Selection
 
-1 Completion] . \*\* I --> J\[Span Creation\*\*: WhenMetrics Aggregation]
+Model selection is tracked and monitored:
 
+```typescript
+const modelSpan = laminar.startSpan('model-selection', {
+  tags: {
+    criteria: 'cost-optimized',
+    availableModels: ['gpt-4', 'gpt-3.5-turbo'],
+    selectedModel: 'gpt-3.5-turbo'
+  }
+});
 ```
 
-### Integration Flow
+### Cost Tracking
 
- an LLM1. **Request Initiation**: Span creation when LLM call is initiated
-2. ** call is initiated, a new span is created withMetadata Capture**: request metadata
-2. **Request Capture**: All request parameters, Model, provider, and request parameters model
-recorded
-3. **API Execution**: Actual LLM API call with timing measurement
-4. **Response Processing**: settings, Token and context are recorded
-3. **API Execution**: The actual API call is wrapped with timing and error tracking
-4. **Response counting Processing**: and cost calculation
-5. ** Response data, tokensCache Analysis**: used, and Cache performance usage patterns and metrics
-are captured
-5. **Cost efficiency Calculation**: metrics
-6. ** RealSpan Final-time cost computationization**: Complete based on trace usage and data with
-performance rates
-6. **Span Finalization metrics
+Cost calculation and attribution:
 
-## LLM Call Tracing
+```typescript
+const costSpan = laminar.startSpan('cost-calculation', {
+  tags: {
+    inputTokens: 150,
+    outputTokens: 75,
+    model: 'gpt-4',
+    costPerToken: 0.00003
+  }
+});
+```
 
-###**: Span Hierarchy
-LLM spans are Complete span nested under with success/failure status and task spans, maintaining
-comprehensive metrics
+## Integration Flow
 
-## LLM Call Tracing
+### LLM Request Lifecycle
+
+The complete LLM request lifecycle is traced:
+
+1. **Request Initiation**: User or system initiates LLM request
+2. **Model Selection**: Appropriate model is selected based on criteria
+3. **Cost Estimation**: Estimated cost is calculated
+4. **API Call**: Request is sent to LLM provider
+5. **Response Processing**: Response is processed and validated
+6. **Cost Attribution**: Actual cost is calculated and attributed
+7. **Caching**: Response is cached if applicable
+8. **Completion**: Span is completed with results
 
 ### Span Hierarchy
 
-LLM spans are nested under task spans, maintaining execution context:
+LLM operations create a hierarchy of spans:
 
 ```
-
-Task Span ├── execution context LLM Span:
-
-```
-Task 1
-│   ├── Span
-├── LLM Span 1
-│   ├── Request Metadata
-│   ├── API Call Timing
-│   ├── Request Preparation Token
-│   ├── Usage
-│   └── Response Processing API Call
-├── LLM Execution
-│   ├── Response Span 2
- Processing
-│   └── Token└── LLM Span Accounting
- ├── LLM Span 23
+llm-operation
+├── model-selection
+├── cost-calculation
+├── api-call
+│   ├── request-preparation
+│   ├── network-call
+│   └── response-processing
+├── cache-operation (if applicable)
+└── cost-attribution
 ```
 
-### Span Metadata
+## Span Metadata
 
-└── LLM SpanEach LLM span includes comprehensive metadata3
+### Request Information
 
-````
+Each LLM span includes comprehensive request metadata:
 
-### Span Metadata
+- **Model Information**: Model name, version, and capabilities
+- **Provider Details**: API provider and endpoint information
+- **Request Parameters**: Temperature, max tokens, and other parameters
+- **User Context**: User ID and session information
+- **Request ID**: Unique identifier for the request
 
-:
-- **EachModel LLM span includes comprehensive metadata:
-- **Model Information**: Model name, version Information**:, Provider, model name, and provider
-- **Request Context**: version, and configuration
-- **Request Details**: Prompt length, temperature, max tokens, and other Task parameters ID, user
-- **Timing Information**: Request start time, API latency, and total processing time
-- ** context,Cost and prompt details
-- **API Details**: Endpoint, request ID, and timing information
-- **Usage Metrics**: Data**: Real-time cost calculation Token counts, and cost calculations, and
-performance data
+### Response Information
 
-## Token Usage Tracking
+Response metadata is captured:
 
-### Token rate information Categories
-
-- **The system tracks multipleCache token types Status**: Whether:
-- **Input Tokens**: Tokens sent to the the LLM response came from cache or live API
-
-## Token Usage Tracking
-
-- **Output Tokens**: Tokens received### Token from the LLM
-- **Cache Categories
- Read Tokens**: TokensThe served system tracks from cache
-- **Cache multiple Write Tokens**: Tokens token types for comprehensive written to cache
-
-### accounting:
-
-- **Input Tokens**: Tokens sent Tracking in the request Implementation
-Token usage is prompt
-- captured at **Output Tokens**: Tokens multiple levels received in:
- the response
-- **Cached- **Per-Request Tokens**:**: Tokens Individual served from cache instead of live API call
-API
-- **Total Tokens**: token Sum consumption
- of all token- **Per- types forTask**: billing purposes
-
-### Aggregate token usage across all LLM calls Tracking Implementation in a task
-
-- **Per
-- SessionToken usage**: Cumulative is captured at usage across user sessions
-- ** multiplePer- levels:
-
-```typescript
-Model**:// Usage patterns by model Example token tracking in Task.ts
-const type tokenMetrics = {
-  and inputTokens: provider
-
-## Cost Monitoring
-
-### request Cost Calculation
-
-.tokenReal-time cost computation based onCount,
-  outputTokens: response.usage:
-- **Token.com Rates**:pletion_tokens,
-  cachedTokens: response.usage.cached_tokens Provider-specific pricing per token || 0,
-  totalTokens:
-- **Model Multipliers**: response Cost adjustments for different model.usage.total_tokens
-};
-
-span tiers
-- **Cache.setAttributes({
-  ' Creditsllm**: Cost.tokens reductions for cache.input': tokenMetrics.inputTokens,
-  'llm.tokens.output': token hits
-- **MetricsVolume.outputTokens,
-  'llm Discounts**:.tokens Tiered pricing for.cached': tokenMetrics.cachedTokens,
-  'llm.tokens.total': token high-volume usage
-
-### CostMetrics.totalTokens
-
-});
-````
+- **Response Quality**: Quality metrics and validation results
+- **Token Usage**: Input and output token counts
+- **Processing Time**: Total processing time and breakdown
+- **Cache Status**: Whether response was served from cache
+- **Error Information**: Any errors or warnings
 
 ## Cost Attribution
 
-Costs are attributed Monitoring
-
 ### Cost Calculation
 
-Real-time cost computation based on at multiple levels:
+Real-time cost calculation for each LLM operation:
 
-* **: Per-- **TokenTask**: Rates**: Provider-specific rates for input Total cost of all LLM/output
-  tokens calls in
-* \*\*Model a task
-* **Per Multipliers**: Different rates for-User\*\*: different model Cumulative costs per user
-  capabilities session
-* \*\*Cache
-* **Per-Model**: Discounts\*\*: Cost breakdown Reduced by model costs for and provider cached
-  responses
-* \*\*
-* **Per-Feature**: Cost allocation to specific functionality
+```typescript
+interface CostCalculation {
+  inputTokens: number;
+  outputTokens: number;
+  model: string;
+  costPerInputToken: number;
+  costPerOutputToken: number;
+  totalCost: number;
+  currency: string;
+}
+```
+
+### Cost Attribution
+
+Costs are attributed to:
+
+- **User Level**: Individual user cost tracking
+- **Project Level**: Project-based cost allocation
+- **Operation Level**: Specific operation cost tracking
+- **Model Level**: Cost per model usage
+- **Time Level**: Cost trends over time
+
+### Cost Monitoring
+
+Comprehensive cost monitoring:
+
+- **Daily/Weekly/Monthly Costs**: Cost trends and patterns
+- **Cost Alerts**: Alerts for unusual cost spikes
+- **Budget Tracking**: Budget vs actual cost monitoring
+- **Cost Optimization**: Recommendations for cost reduction
 
 ## Model Information Capture
 
 ### Model Metadata
 
-Comprehensive model information is capturedVolume Discounts\*\*: Tiered pricing for high-volume
-usage
+Detailed model information is captured:
 
-### Cost Attribution
+- **Model Name**: Full model identifier
+- **Model Version**: Specific version information
+- **Model Capabilities**: Supported features and limitations
+- **Provider Information**: API provider details
+- **Pricing Information**: Cost per token and usage limits
 
-Costs are attributed:
+### Model Performance
 
-* at multiple **Model Name**: levels:
-* **Per Specific model identifier (e.g., Request**: gpt-4 Individual API, cl call costs
-* \*\*Per Taskaude-3) \*\*:- **Provider**: Aggregated costs for API provider (OpenAI, Anthropic
-  entire, etc task execution
-* \*\*Per.)
-* **Version**: Model User version\*\*: Total and costs for release user sessions information
-* \*\*Capabilities
-* **Per Model**: Costs\*\*: broken down by model Supported type
+Model performance tracking:
 
-## Model Information Capture
-
-features and### limitations Model Metadata Comprehensive model information is
-
-* **Configuration**: captured:
-* **Provider**: Temperature, max tokens, and other OpenAI parameters
-
-\###, Anthropic, Google Model, etc.
-
-* **Model Name Performance**: Tracking gpt-4, Performance metrics claude- by3 model:
-* **Response Time**:, gem Averageini-pro and, etc.
-* \*\*Model percentile response times
-* \*\* Version\*\*: Specific versionSuccess Rate or checkpoint
-* **Configuration**: Temperature,\*\*: top API call success and error rates\_p,
-* **Token Efficiency**: max Tokens per\_tokens request, etc.
-* **Capabilities**: and Function calling, cost efficiency
-* **Quality Metrics**: vision, Response quality etc.
-
-and relevance### Model scores
+- **Response Time**: Average and percentile response times
+- **Throughput**: Requests per second capacity
+- **Error Rate**: Model-specific error rates
+- **Quality Metrics**: Response quality and accuracy
+- **Availability**: Model uptime and availability
 
 ## Cache Usage Tracking
 
-### Performance Tracking Cache
+### Cache Operations
 
-Performance metrics Operations The system by tracks model:
+Cache operations are monitored:
 
-* **Response Time cache**: Average read and and write operations:
-* \*\* percentileCache Hits\*\*: latencies
-* **Success Rate**: Requests served from cache
-* API call success **Cache Misses**: Requests requiring percentages
-* \*\*Token API calls
-* **Cache Efficiency**: Writes\*\*: New Output responses stored in cache
-* **Cache quality Invalidation**: Cache per token entries removed used
-* \*\*Cost or updated
+- **Cache Hits**: Successful cache retrievals
+- **Cache Misses**: Failed cache lookups
+- **Cache Writes**: New cache entries
+- **Cache Invalidations**: Cache entry removals
+- **Cache Performance**: Cache response times
 
-Efficiency### Cache\*\*: Value Performance Metrics delivered per dollar spentDetailed cache
+### Cache Optimization
 
-## Cache Usage Tracking
+Cache optimization insights:
 
-efficiency### Cache measurements:
-
-* **Hit Rate**: Metrics Percentage of requests served from cacheDetailed cache performance
-* \*\* tracking: Cache- **Cache Hit Rate**: Percentage of Latency\*\*: Time to requests retrieve
-  served from cache
-* **Cache Miss Rate cached**: Percentage responses
-* **Storage Efficiency**: requiring live API Cache size calls
-* vs. **Cache Effectiveness**: hit rate Token savings optimization
-* \*\* from cache usageCost
-* **Cache Savings**: Cost Freshness reduction from\*\*: cache usage
-
-## Performance Metrics Age of
-
-### cached responses
-
-### Cache Response Time Tracking
-
-Integration Cache usage is trackedMultiple timing across metrics the system are captured:
-
-* \*\*:
-* **ReadAPI Latency**: Time for Operations\*\*: Cache lookups and LLM API hits
-* **Write Operations**: to respond
-* \*\* New responsesNetwork Latency\*\*: added to Network round cache
-* \*\*-trip time
-* **ProcessingInvalid Time**:ation Time Events\*\*: to Cache entries process removed
-  request/response
-* \*\*Total or updated Round
-* **-trip**: End-toPerformance-end request Impact\*\*: Latency time
-
-### improvements from cache usage
+- **Hit Rate Analysis**: Cache effectiveness metrics
+- **Cache Size**: Memory usage and growth
+- **Eviction Patterns**: Cache eviction frequency
+- **Optimization Opportunities**: Potential improvements
 
 ## Performance Metrics
 
-Throughput### Response Metrics TimeSystem throughput Analysis
+### Response Time Metrics
 
-* \*\*API Latency measurements:
-* **Requests**: Time per Second\*\*: spent waiting API call for API frequency
-* \*\* response
-* **Processing Time**: Total timeToken Throughput\*\*: for request Tokens processed per second
-* \*\*Concurrent processing
-* \*\* Requests\*\*:Time to Parallel First Token\*\*: Streaming response request handling
-* \*\* startQueue time
-* **Token Depth Generation Rate**:\*\*: Request Tokens queuing and per second generation back speed
+Detailed response time tracking:
 
-logs
+- **Total Response Time**: End-to-end response time
+- **API Call Time**: Time spent on API calls
+- **Processing Time**: Time spent processing responses
+- **Network Time**: Network latency and transfer time
+- **Queue Time**: Time spent waiting in queues
 
-### Quality Metrics
+### Throughput Metrics
 
-* \*\*## Error Handling
+System throughput monitoring:
 
-\###Response Error Classification Completeness\*\*: LLM errors are categorized for analysis:
+- **Requests per Second**: Overall request rate
+- **Tokens per Second**: Token processing rate
+- **Concurrent Requests**: Number of simultaneous requests
+- **Queue Length**: Pending request queue size
+- **Error Rate**: Percentage of failed requests
 
-* **API Errors**: Provider API failures and Whether rate limits responses meet expectations
-* **Error Rates**: API error frequencies
-* \*\* and types
-* **RetryNetwork Errors**: Patterns\*\*: Failed Connectivity and request retry timeout issues
-* **Token Errors**: behavior Token- **Fallback limit Usage**: Alternative and model encoding
-  problems
-* usage patterns
+### Resource Usage
+
+Resource consumption tracking:
+
+- **Memory Usage**: Peak and average memory consumption
+- **CPU Usage**: CPU time spent on LLM operations
+- **Network Usage**: Bandwidth and data transfer
+- **Storage Usage**: Cache and temporary storage usage
 
 ## Error Handling
 
-### Error Classification
+### LLM-Specific Errors
 
-LLM errors \*\* areAuthentication categorized for Errors\*\*: better analysis:
+LLM operation errors are categorized:
 
-* \*\* API key andAPI Errors\*\*: Provider permission-side errors (rate issues
+- **API Errors**: Provider API errors and rate limits
+- **Model Errors**: Model-specific errors and limitations
+- **Network Errors**: Connectivity and timeout issues
+- **Validation Errors**: Input/output validation failures
+- **Cost Errors**: Cost calculation and attribution errors
 
-### Error Context
+### Error Recovery
 
-Comprehensive error information limits, captured:
+Error recovery mechanisms:
 
-* \*\*Error server errors Codes)
-* \***\*: Specific errorNetwork identifiers Errors**: from Connectivity providers and
-* **Error Messages**: Detailed timeout issues
-* \*\* error descriptions
-* **RetryAuthentication Errors**: Information\*\*: Retry attempts and API key and backoff strategies
-* \*\* permission issues -Recovery Actions\*\*: Steps taken **Validation Errors**: Request to handle
-  errors
-
-## Integration Points
-
-parameter validation failures
-
-### Error Context
-
-### TaskComprehensive error information System Integration
-
-LLM spans are includes:
-
-* \*\*Error children of task spans:
-* Task Codes\*\*: Specific error context propagation for correlation
-* User identifiers session from providers
-* \*\* tracking across LLM calls -Error Messages\*\*: Detailed error descriptions
-* \*\* Hierarchical span relationships
-* Task-levelRequest usage aggregation Context\*\*:
-
-### Service Layer Integration
-
-What wasThe Lamin beingarService provides attempted when LLM tracing infrastructure:
-
-* error occurred
-* **Retry Information**: Standardized span creation Automatic retry attempts and outcomes
-
-## Integration for LLM calls
-
-* Points Token
-
-### counting Task System and Integration
-
-LLM spans are cost calculation utilities
-
-* children of task spans Cache:
-* Task usage tracking ID propagation and for metrics
-* Error correlation
-* User context inheritance
-* Session handling and-based retry logic
-
-### grouping
-
-* Hierarchical span relationships
-
-### Service Configuration Integration
-
-Tracing Layer Integration The LaminarService behavior provides LLM-specific utilities:
-
-* Standardized span creation for LLM calls
-* Token counting and cost calculation is helpers configurable:
-* Tracing level- (detailed, summary, Cache integration disabled)
-* Cost calculation and parameters
-* tracking
-* Cache Model tracking metadata management preferences
-* Privacy
-
-### Configuration Integration
-
-LLM tracing and respects data configuration settings:
-
-* Tracing retention settings level configuration
+- **Retry Logic**: Automatic retry with exponential backoff
+- **Fallback Models**: Alternative model selection
+- **Circuit Breaker**: Protection against cascading failures
+- **Graceful Degradation**: Fallback to cached responses
+- **Error Reporting**: Comprehensive error logging and alerting
 
 ## Code Reference Matrix
 
-(detailed|, Component | File | Key Methods | summary, Laminar Integration | |-----------|------
-disabled)
+| Component | File | Key Methods | Laminar Integration |
+|-----------|------|-------------|-------------------|
+| LLM Service | [`../../src/llm/LLMService.ts`](../../src/llm/LLMService.ts) | `callModel()`, `selectModel()` | LLM API tracing |
+| Cost Calculator | [`../../src/llm/CostCalculator.ts`](../../src/llm/CostCalculator.ts) | `calculateCost()`, `attributeCost()` | Cost tracking |
+| Model Registry | [`../../src/llm/ModelRegistry.ts`](../../src/llm/ModelRegistry.ts) | `getModel()`, `listModels()` | Model metadata |
+| Cache Manager | [`../../src/llm/CacheManager.ts`](../../src/llm/CacheManager.ts) | `get()`, `set()`, `invalidate()` | Cache tracking |
+| Performance Tracker | [`../../src/llm/PerformanceTracker.ts`](../../src/llm/PerformanceTracker.ts) | `trackResponse()`, `recordMetrics()` | Performance monitoring |
 
-* Cost|-------------|-------------------| | tracking enable Task LLM Integration |
-  \[`src/core/taskment /Task.ts`]\(src-/core/task/Task.ts Cache usage) |
-  `makeLLMRequest reporting ()`, `process- Privacy andLLMResponse()` | Span creation, data token
-  tracking | | LLM Service retention settings
-
-## Code Reference Matrix
-
-| Component | File | Key Methods | |
-\[`src/services/llm/ LaminLLMar Integration |
-|-----------|------Service.ts`]\(src/services/|-------------llm/LL|-------------------|
-|MService.ts) Task | ` LLM Integration | [`src/core/task/Task.ts`](callLLMsrc/core/task/Task.ts)()`,
-`|`makeLLMRequest()`, `calculateCost()` |process APILLMResponse()` | Span tracing creation, cost
-calculation | |, token Cache tracking | | Manager LLM Service |
-[`src/services | [`src/services/cache/llm/LLMService.ts/CacheManager.ts`](src/services/cache`](src/CacheManager.ts)
-| `/services/llm/LLgetMService.ts) | `callAPI()`, `Cached()`, `calculatesetCost()` | APICached()` |
-Cache call wrapping, usage tracking | | Token Counter |
-[` costsrc calculation | | Token/services/llm/TokenCounter Counter | [`src/services/llm.ts`](src/services/llm/Token/TokenCounter.ts`](src/services/llCounter.ts)
-| `countTokensm()`,
-`/TokenCounter.ts) | `countTokens()`, `trackUsage()` | Token accounting | |trackUsage()` | Token
-Cost Calculator | \[`src/services/ll accounting | |m/CostCalculator.ts`]\(src/services Cache Manager
-| \[`src/services/ll/llm/CostCalculator.ts)m/C | `calculateacheManager.ts`](src/servicesCost/()`,
-`llm/CacheManager.ts)update | `getRates()\` | Cost computation |
-
-## NavigationCached()`, `store
-
-<a id="navigation-footer">\</aResponse()\` | Cache>
-
-* Back:
-  \[`LAMINAR tracking | _SUB| Cost Calculator | [`SYSTEMS\_README.md`](LAMINsrc/services/llm/CostCalculatorAR_SUBSYSTEMS_README.md:1.ts)
-  ·`]\(src/services/llm/C
-  Root: \[`LAMINARostCalculator.ts) | `calculateCost\_SUBSYSTEMS\_README.md`](LAMIN()`,AR\_SUBSYSTEM
-  `updateRates()` |S\_README.md:1 Cost computation |
-
-## Navigation
-
-\<a id) · Source: \`/docs/LAMIN="navigation-footer"></a>
-
-* Back: \[`LAMINAR_SUBSYSTEMSAR_LLM_INTEGRATION.md#L1` \_INDEX
-
-## 🔍 Research Context & Next Steps
+## Research Context & Next Steps
 
 ### When You're Here, You Can:
 
-* *Understanding Laminar Observability:*\*
+* **Understanding Laminar Observability:**
+  * **Next**: Check related Laminar documentation in the same directory
+  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
-* **Next**: Check related Laminar documentation in the same directory
+* **Implementing Observability Features:**
+  * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
-  [Laminar Documentation](README.md) for context
-
-* *Implementing Observability Features:*\*
-
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
-
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
-
-* *Troubleshooting Observability Issues:*\*
-
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-
-* **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
-  common issues
+* **Troubleshooting Observability Issues:**
+  * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
+  * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for common issues
 
 ### No Dead Ends Policy
 
-Every page provides clear next steps based on your research goals. If you're unsure where to go
-next, return to [Laminar Documentation](README.md) for guidance.
+Every page provides clear next steps based on your research goals. If you're unsure where to go next, return to [Laminar Documentation](README.md) for guidance.
 
-## Navigation Footer
+## Navigation
 
-* \*\*
-
-## No Dead Ends Policy
-
-Every section in this document connects you to your next step:
-
-* **If you're new here**: Start with the [When You're Here](#when-youre-here) section
-
-* **If you need context**: Check the [Research Context](#research-context) section
-
-* **If you're ready to implement**: Jump to the implementation sections
-
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
-
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
-
-* *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+* **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_LLM_INTEGRATION.md#L1`
+* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)

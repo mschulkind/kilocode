@@ -7,9 +7,9 @@ import type { Mock } from "vitest"
 
 import { ProviderSettings, ModelInfo, BEDROCK_CLAUDE_SONNET_4_MODEL_ID } from "@roo-code/types"
 
-import { useSelectedModel } from "../useSelectedModel"
-import { useRouterModels } from "../useRouterModels"
-import { useOpenRouterModelProviders } from "../useOpenRouterModelProviders"
+import { useSelectedModel } from "../useSelectedModel.js"
+import { useRouterModels } from "../useRouterModels.js"
+import { useOpenRouterModelProviders } from "../useOpenRouterModelProviders.js"
 import { ExtensionStateContextProvider } from "@src/context/ExtensionStateContext" // kilocode_change
 
 vi.mock("../useRouterModels")

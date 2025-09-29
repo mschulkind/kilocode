@@ -65,9 +65,9 @@ import {
 
 import type { ModelRecord, RouterModels } from "@roo/api"
 
-import { useRouterModels } from "./useRouterModels"
-import { useOpenRouterModelProviders } from "./useOpenRouterModelProviders"
-import { useLmStudioModels } from "./useLmStudioModels"
+import { useRouterModels } from "./useRouterModels.js"
+import { useOpenRouterModelProviders } from "./useOpenRouterModelProviders.js"
+import { useLmStudioModels } from "./useLmStudioModels.js"
 import { useExtensionState } from "@/context/ExtensionStateContext" // kilocode_change
 
 // kilocode_change start
@@ -85,7 +85,7 @@ export const useModelProviders = (kilocodeDefaultModel: string, apiConfiguration
 	)
 }
 // kilocode_change end
-import { useOllamaModels } from "./useOllamaModels"
+import { useOllamaModels } from "./useOllamaModels.js"
 
 export const useSelectedModel = (apiConfiguration?: ProviderSettings) => {
 	const provider = apiConfiguration?.apiProvider || "anthropic"

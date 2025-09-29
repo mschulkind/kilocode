@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { MarketplaceViewStateManager, ViewState } from "./MarketplaceViewStateManager"
+import { MarketplaceViewStateManager, ViewState } from "./MarketplaceViewStateManager.js"
 
 export function useStateManager(existingManager?: MarketplaceViewStateManager) {
 	const [manager] = useState(() => existingManager || new MarketplaceViewStateManager())

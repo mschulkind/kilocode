@@ -275,7 +275,7 @@ To keep documentation synchronized with the codebase, follow these principles:
 3. **Diagram Updates:** Architectural or lifecycle changes must be reflected in the relevant Mermaid
    diagrams.
 4. **Rules as Policy:** For automated verification of documentation rules, consider adding checks
-   inspired by the [Documentation Guide](../../DOCUMENTATION_GUIDE.md).
+   inspired by the [Documentation Guide](../DOCUMENTATION_GUIDE.md).
 
 * \*\*
 
@@ -312,15 +312,15 @@ End of document.
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
-  [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 * *Troubleshooting Issues:*\*
 
-* **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+* **Next**: [Race Condition Analysis](../../architecture/README.md) →
+  [Root Cause Analysis](../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

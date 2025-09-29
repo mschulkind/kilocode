@@ -49,7 +49,7 @@ import {
 	cerebrasDefaultModelId,
 } from "@roo-code/types"
 import type { ModelRecord, RouterModels } from "@roo/api"
-import { useRouterModels } from "../../ui/hooks/useRouterModels"
+import { useRouterModels } from "../../ui/hooks/useRouterModels.js"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 
 const FALLBACK_MODELS = {

@@ -5,7 +5,7 @@
 // tsup.config.ts
 import { defineConfig } from "tsup"
 
-import { dependencies } from "./package.json"
+import { dependencies } from "./package.json.js"
 
 export default defineConfig({
 	entry: ["src/extension.ts"], // Your entry file

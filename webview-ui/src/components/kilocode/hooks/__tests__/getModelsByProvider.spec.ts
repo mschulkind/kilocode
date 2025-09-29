@@ -1,6 +1,6 @@
 import { ModelInfo, ProviderName, providerNames } from "@roo-code/types"
 import { RouterModels } from "@roo/api"
-import { getModelsByProvider } from "../useProviderModels"
+import { getModelsByProvider } from "../useProviderModels.js"
 
 describe("getModelsByProvider", () => {
 	it("returns models for all providers", () => {

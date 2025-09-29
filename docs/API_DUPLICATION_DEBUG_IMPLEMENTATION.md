@@ -31,15 +31,15 @@ This document provides implementation guidance for debugging API duplication iss
 
 ## Related Documentation
 - [API Duplication Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [Performance Optimization](PERFORMANCE_OPTIMIZATION.md)
+- [Duplicate API Requests Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- [Performance Optimization](tools/PERFORMANCE_OPTIMIZATION.md)
 
 ## Navigation Footer
 
 - [API Duplication Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
-- [Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
-- [Performance Optimization](PERFORMANCE_OPTIMIZATION.md)
-- [Architecture Overview](ARCHITECTURE_OVERVIEW.md)
+- [Duplicate API Requests Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- [Performance Optimization](tools/PERFORMANCE_OPTIMIZATION.md)
+- [Architecture Overview](architecture/ARCHITECTURE_OVERVIEW.md)
 
 ## No Dead Ends Policy
 
