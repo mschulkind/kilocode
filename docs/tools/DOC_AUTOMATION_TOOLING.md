@@ -1482,7 +1482,7 @@ function validateNavigationFooter(content, filePath) {
 * **Next**: Choose implementation option (Minimal/Advanced/Enterprise) →
   [Integration Plan](#integration-plan) → [Custom Linter Development](#custom-linter-development)
 
-* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [Documentation Guide](../../DOCUMENTATION_GUIDE.md) for standards
 
 * *Understanding Current Documentation Standards:*\*
@@ -1529,9 +1529,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Tools Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

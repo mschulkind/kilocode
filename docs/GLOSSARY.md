@@ -325,4 +325,4 @@ Sequential path through documentation designed to build understanding progressiv
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)

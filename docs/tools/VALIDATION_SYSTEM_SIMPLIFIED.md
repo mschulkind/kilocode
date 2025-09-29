@@ -236,4 +236,4 @@ The simplified system achieves:
 * **Migration Guide**: [Validation System Migration Guide](./VALIDATION_SYSTEM_MIGRATION_GUIDE.md)
 * **Breaking Changes**: [Validation System Breaking Changes](./VALIDATION_SYSTEM_BREAKING_CHANGES.md)
 * **Finalization Report**: [Validation System Finalization](./VALIDATION_SYSTEM_FINALIZATION.md)
-* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#validation-system-simplified-configuration)
+* **Navigation**: [← Back to Documentation Tools](../README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#validation-system-simplified-configuration)

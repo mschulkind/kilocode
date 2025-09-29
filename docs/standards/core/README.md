@@ -147,7 +147,7 @@ document's role or purpose, this section helps orient you.
 
 * *Examples*\*:
 
-* `[System Overview](architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
+* `[System Overview](SYSTEM_OVERVIEW.md)` (from root docs/)
 
 * `[Architecture Index](../architecture/README.md)` (from subdirectory)
 
@@ -266,4 +266,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)

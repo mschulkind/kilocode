@@ -130,7 +130,7 @@ documentation. This creates a comprehensive improvement ecosystem rather than is
 ### Implementation Context
 
 * **Tools**: [Development Tools](../tools/README.md) for implementation guidance
-* **Testing**: [Testing Infrastructure](../../testing/TESTING_STRATEGY.md) for validation approaches
+* **Testing**: [Testing Infrastructure](../testing/TESTING_STRATEGY.md) for validation approaches
 
 ## No Dead Ends Policy
 
@@ -143,7 +143,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

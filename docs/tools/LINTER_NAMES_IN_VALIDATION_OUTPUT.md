@@ -301,12 +301,12 @@ Every section in this document connects you to your next step:
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 * **If you need context**: Check the [Research Context](#research-context) section
 * **If you're ready to implement**: Jump to the implementation sections
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

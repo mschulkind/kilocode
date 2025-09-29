@@ -117,6 +117,21 @@ export class CrossReferenceValidator {
 		const { filePath, anchor } = this.parseReference(reference)
 		// Resolve relative paths using current file context
 		const resolvedFilePath = this.resolvePath(filePath, currentFilePath)
+		
+		// Check if this is a template placeholder
+		if (resolvedFilePath && typeof resolvedFilePath === 'object' && resolvedFilePath.isTemplate) {
+			return {
+				reference,
+				filePath: filePath,
+				anchor,
+				fileExists: true,
+				anchorExists: true,
+				valid: true,
+				cached: false,
+				isTemplate: true,
+			}
+		}
+		
 		// Validate file existence
 		const fileResult = await this.validateFile(resolvedFilePath)
 		if (!fileResult.exists) {
@@ -200,6 +215,10 @@ export class CrossReferenceValidator {
 		// Handle common false positive patterns
 		const resolvedPath = this.handleCommonPatterns(filePath, currentFilePath)
 		if (resolvedPath) {
+			// If it's a template placeholder, return a special marker
+			if (resolvedPath.isTemplate) {
+				return { isTemplate: true, valid: true }
+			}
 			return resolvedPath
 		}
 
@@ -217,6 +236,11 @@ export class CrossReferenceValidator {
 	 * Handle common cross-reference patterns that are often false positives
 	 */
 	handleCommonPatterns(filePath, currentFilePath) {
+		// Check for template placeholders first
+		if (this.isTemplatePlaceholder(filePath)) {
+			return { isTemplate: true, valid: true }
+		}
+
 		const commonMappings = {
 			// GLOSSARY.md references - most common false positive
 			"GLOSSARY.md": resolve(process.cwd(), "docs/GLOSSARY.md"),
@@ -257,6 +281,27 @@ export class CrossReferenceValidator {
 		}
 
 		return null // No common pattern matched
+	}
+
+	/**
+	 * Check if a file path is a template placeholder
+	 */
+	isTemplatePlaceholder(filePath) {
+		const templatePatterns = [
+			/\[.*\]/, // [anything]
+			/\[FILE_MOVED_OR_RENAMED\]/,
+			/\[DOCUMENT PURPOSE BASED ON FILE PATH\]/,
+			/\[Component name\]/,
+			/\[Version number\]/,
+			/\[Architecture description\]/,
+			/\[Key dependencies\]/,
+			/\[Background information about the topic\]/,
+			/\[Research or development methodology used\]/,
+			/\[Brief description of what this document covers\]/,
+			/\[How this fits into the broader system\/project\]/,
+		]
+
+		return templatePatterns.some(pattern => pattern.test(filePath))
 	}
 
 	/**

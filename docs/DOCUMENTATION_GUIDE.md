@@ -239,7 +239,7 @@ graph TD
 
 * *Examples*\*:
 
-* `[System Overview](architecture/SYSTEM_OVERVIEW.md)` (from root docs/)
+* `[System Overview](SYSTEM_OVERVIEW.md)` (from root docs/)
 
 * `[Architecture Index](../architecture/README.md)` (from subdirectory)
 
@@ -363,7 +363,7 @@ Every major documentation area MUST include quick start paths for different user
 
 * *🚨 Emergency Response*\* (Something's Broken!):
 
-1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) for terminology
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) for terminology
 2. Problem identification and symptoms
 3. Root cause analysis
 4. Solution implementation
@@ -371,7 +371,7 @@ Every major documentation area MUST include quick start paths for different user
 
 * *🔬 Deep Dive Research*\* (Understanding the System):
 
-1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) for terminology
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) for terminology
 2. Conceptual overview
 3. Detailed technical analysis
 4. Related systems and interactions
@@ -379,7 +379,7 @@ Every major documentation area MUST include quick start paths for different user
 
 * *🛠️ Implementation Journey*\* (Building the Fix):
 
-1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) for terminology
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) for terminology
 2. Solution recommendations
 3. Technical implementation details
 4. Testing and validation
@@ -387,7 +387,7 @@ Every major documentation area MUST include quick start paths for different user
 
 * *📚 New to Codebase*\* (Expert Engineer Onboarding):
 
-1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) - Essential terminology
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology
 2. **System Overview**: [Architecture Documentation](README.md) - High-level design
 3. **Current Issues**: [Race Condition Analysis](README.md) - Active
    problems
@@ -419,7 +419,7 @@ Every major documentation area MUST include quick start paths for different user
 
 * Quick links for common scenarios
 
-* Links to [Technical Glossary](../../GLOSSARY.md) for terminology
+* Links to [Technical Glossary](../GLOSSARY.md) for terminology
 
 * *User Journey Optimization*\*: Structure content to support different user types:
 
@@ -717,8 +717,8 @@ Every section in this document connects you to your next step:
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 * **If you need context**: Check the [Research Context](#research-context) section
 * **If you're ready to implement**: Jump to the implementation sections
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 <a id="navigation-footer"></a>
 
@@ -727,4 +727,4 @@ Every section in this document connects you to your next step:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)

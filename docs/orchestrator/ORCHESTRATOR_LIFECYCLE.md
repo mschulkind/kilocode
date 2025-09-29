@@ -349,7 +349,7 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
   [State Machines](../README.md) for behavior modeling
 
 * *Investigating Race Conditions:*\*
@@ -402,13 +402,13 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 * *Navigation*\*: [docs/](../) · [orchestrator/](./) ·
   [↑ Table of Contents](#orchestrator-task-lifecycle)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)

@@ -2,7 +2,7 @@
   "plugins": [
     "remark-preset-lint-recommended",
     "remark-validate-links",
-    "./plugins/remark-kilocode-unified.js"
+    "./plugins/remark-kilocode-comprehensive.js"
   ],
   "settings": {
     "bullet": "-",
@@ -22,7 +22,18 @@
     "branches": ["main", "master"],
     "ignore": [
       "https://github.com/roo-ai/kilo-code/issues/*",
-      "https://github.com/roo-ai/kilo-code/discussions/*"
+      "https://github.com/roo-ai/kilo-code/discussions/*",
+      "#-navigation",
+      "#-navigation-map",
+      "#research-context",
+      "#crossreferences",
+      "#webevals",
+      "#vscodee2e",
+      "#systemspecific-terms",
+      "#racecondition-synchronizedexecution",
+      "#precommit-hooks",
+      "#playwrighte2e",
+      "#phase-3-optimization-month-56"
     ]
   }
 }

@@ -102,7 +102,7 @@ subtask coordination.
 
 * *For Expert Engineers New to KiloCode:*\*
 
-1. **Start Here**: [Technical Glossary](../../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
+1. **Start Here**: [Technical Glossary](../GLOSSARY.md) - Essential terminology (Orchestrator, Task,
    Subtask, etc.)
 2. **System Overview**: [Orchestrator Index](../orchestrator/ORCHESTRATOR_INDEX.md) - High-level
    architecture and
@@ -173,7 +173,7 @@ one section of the orchestra plays at a time.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md)
 
 * **Related**: [State Machines](../README.md) for behavior modeling,
-  [Technical Glossary](../../GLOSSARY.md) for terminology
+  [Technical Glossary](../GLOSSARY.md) for terminology
 
 * *Investigating Execution Issues:*\*
 
@@ -210,7 +210,7 @@ next, return to this README for guidance.
 * \*\*
 
 * *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [→ Architecture Documentation](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md)
+  [→ Architecture Documentation](../README.md) · [📚 Technical Glossary](../GLOSSARY.md)
 
 ## No Dead Ends Policy
 
@@ -219,8 +219,8 @@ Every section in this document connects you to your next step:
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 * **If you need context**: Check the [Research Context](#research-context) section
 * **If you're ready to implement**: Jump to the implementation sections
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
-* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
   · [↑ Table of Contents](#️-navigation-map)
 * "The best orchestras have a conductor who knows when to let each section play, and when to bring

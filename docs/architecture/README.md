@@ -152,7 +152,7 @@ conditions, state machines, repository structure, and architectural improvements
   cause identification
 * **[Solution Recommendations](SOLUTION_RECOMMENDATIONS.md)** -
   Proposed fixes and improvements
-* **[Testing Strategy](../../testing/TESTING_STRATEGY.md)** - Validation and
+* **[Testing Strategy](../testing/TESTING_STRATEGY.md)** - Validation and
   testing approaches
 
 ### API Duplication Analysis
@@ -208,7 +208,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../GLOSSARY.md)
+* 📚 [Technical Glossary](../GLOSSARY.md)
 
 ## Navigation
 

@@ -38,4 +38,4 @@ This document provides solution recommendations for architectural issues and imp
 
 ## Navigation
 
-* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#solution-recommendations)
+* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#solution-recommendations)

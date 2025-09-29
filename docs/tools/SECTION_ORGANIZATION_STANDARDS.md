@@ -671,7 +671,7 @@ For more information, see:
 
 * [← Back to API Documentation](../api/)
 * [→ Next: Authentication Guide](./authentication.md)
-* [📚 Technical Glossary](../../GLOSSARY.md)
+* [📚 Technical Glossary](../GLOSSARY.md)
 * [↑ Table of Contents](#api-documentation-standards)
 
 ````
@@ -748,5 +748,5 @@ Documentation](./VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](./)
 * [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-* [📚 Technical Glossary](../../GLOSSARY.md)
+* [📚 Technical Glossary](../GLOSSARY.md)
 * [↑ Table of Contents](#section-organization-standards-documentation)

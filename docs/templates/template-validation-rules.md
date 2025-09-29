@@ -360,5 +360,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](../tools/)
 * [→ Template Examples](./README.md)
-* [📚 Technical Glossary](../../GLOSSARY.md)
+* [📚 Technical Glossary](../GLOSSARY.md)
 * [↑ Table of Contents](#document-template-validation-rules)

@@ -257,7 +257,7 @@ Some content here.
    ```
 
 **Navigation**: [← Back to Training](./TRAINING_MATERIALS_INDEX.md) · [📚 Technical
-Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
+Glossary](../GLOSSARY.md) · [↑ Table of Contents](#basic-validation-training)
 
 ```
 

@@ -298,5 +298,5 @@ For more information, see:
 
 ## Navigation Footer
 
-* *Navigation*\*: [← Back to Tools Overview](./README.md) · [📚 Technical Glossary](../../GLOSSARY.md)
+* *Navigation*\*: [← Back to Tools Overview](./README.md) · [📚 Technical Glossary](../GLOSSARY.md)
   · [↑ Table of Contents](#training-materials-index)

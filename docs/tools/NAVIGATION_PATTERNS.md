@@ -323,5 +323,5 @@ Documentation](./VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](./)
 * [→ Validation System Documentation](./VALIDATION_SYSTEM.md)
-* [📚 Technical Glossary](../../GLOSSARY.md)
+* [📚 Technical Glossary](../GLOSSARY.md)
 * [↑ Table of Contents](#navigation-patterns-documentation)

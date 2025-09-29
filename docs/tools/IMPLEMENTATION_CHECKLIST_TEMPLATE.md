@@ -434,5 +434,5 @@ context/
 * \*\*
 
 * *Navigation*\*: [← Back to Documentation Tools](../tools/) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) ·
+  [📚 Technical Glossary](../GLOSSARY.md) ·
   [↑ Table of Contents](#implementation-checklist-template)
