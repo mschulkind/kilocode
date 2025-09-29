@@ -1,6 +1,8 @@
 # Chapter 4: The Task vs Session Mystery 🕵️‍♂️
 
-*In every good mystery, there comes a point where the hero must question fundamental assumptions.*
+![The Task vs Session Mystery](../images/chapters/chapter4-task-vs-session.svg)
+
+_In every good mystery, there comes a point where the hero must question fundamental assumptions._
 
 ---
 
@@ -8,7 +10,7 @@
 
 Captain Architecture discovered that the system had two different concepts that seemed to overlap confusingly: **Tasks** and **Sessions**.
 
-*"Are these the same thing? Are they different? Why do we have both?"* the hero wondered.
+_"Are these the same thing? Are they different? Why do we have both?"_ the hero wondered.
 
 ## The Confusing Reality 😵
 
@@ -17,44 +19,45 @@ The investigation revealed a complex relationship:
 ```typescript
 // The confusing reality
 class Task {
-    isInitialized: boolean = false
-    isPaused: boolean = false
-    // Purpose: Execute work, process AI requests
+	isInitialized: boolean = false
+	isPaused: boolean = false
+	// Purpose: Execute work, process AI requests
 }
 
 class Session {
-    isActive: boolean = false
-    currentView: string = ""
-    // Purpose: Display UI, handle user interaction
+	isActive: boolean = false
+	currentView: string = ""
+	// Purpose: Display UI, handle user interaction
 }
 ```
 
-*"This is like having both a 'car' and a 'vehicle' class,"* Captain Architecture thought. *"They're related, but the relationship is unclear."*
+_"This is like having both a 'car' and a 'vehicle' class,"_ Captain Architecture thought. _"They're related, but the relationship is unclear."_
 
 ## The Mystery Deepens 🌊
 
-**The Mystery Deepened**: 
+**The Mystery Deepened**:
+
 - Tasks could exist without Sessions
-- Sessions could exist without Tasks  
+- Sessions could exist without Tasks
 - Sometimes they were tightly coupled
 - Sometimes they were completely separate
 
 ```mermaid
 graph LR
     subgraph "The Confusion"
-        T1[Task 1: Build Website] 
+        T1[Task 1: Build Website]
         T2[Task 2: Fix Bug]
         T3[Task 3: Write Docs]
-        
+
         S1[Session 1: Chat A]
         S2[Session 2: Chat B]
         S3[Session 3: Chat C]
     end
-    
+
     T1 -.-> S1
     T2 -.-> S2
     T3 -.-> S3
-    
+
     style T1 fill:#ff9999
     style T2 fill:#ff9999
     style S1 fill:#99ccff
@@ -70,18 +73,21 @@ Captain Architecture realized that the problem wasn't that we have both Tasks an
 ## The Relationship Analysis 🔍
 
 ### **What Tasks Are Supposed To Do** 🎯
+
 - Execute work
 - Process AI requests
 - Manage execution state
 - Handle subtask coordination
 
 ### **What Sessions Are Supposed To Do** 🖥️
+
 - Display UI
 - Handle user interaction
 - Manage view state
 - Coordinate user experience
 
 ### **What They're Actually Doing** 😵
+
 - Tasks are managing UI state
 - Sessions are managing execution state
 - Both are handling user interaction
@@ -98,7 +104,7 @@ graph TB
         S --> T[Task]
         T --> API[API Calls]
     end
-    
+
     subgraph "What Actually Happens"
         U --> S
         U --> T
@@ -107,16 +113,16 @@ graph TB
         T --> API
         S --> API
     end
-    
+
     style S fill:#ff6b6b
     style T fill:#ff6b6b
 ```
 
-*"This is like having two chefs in the same kitchen, both trying to cook the same meal,"* Captain Architecture thought. *"They're stepping on each other's toes and making a mess."*
+_"This is like having two chefs in the same kitchen, both trying to cook the same meal,"_ Captain Architecture thought. _"They're stepping on each other's toes and making a mess."_
 
 ## The Real Problem 🎯
 
-*"The problem isn't that we have both Tasks and Sessions,"* Captain Architecture realized. *"The problem is that we don't understand when to use which one, and they're stepping on each other's responsibilities."*
+_"The problem isn't that we have both Tasks and Sessions,"_ Captain Architecture realized. _"The problem is that we don't understand when to use which one, and they're stepping on each other's responsibilities."_
 
 The confusion was causing:
 
@@ -132,41 +138,44 @@ This confusion was particularly evident in the Subtask Handler, which seemed to 
 ```typescript
 // The Subtask Handler's confused responsibilities
 class SubtaskHandler {
-    async finishSubTask(lastMessage: string) {
-        // Task responsibility: Complete subtask
-        await this.completeSubtask(lastMessage)
-        
-        // Session responsibility: Update UI
-        await this.updateUI()
-        
-        // Task responsibility: Continue execution
-        await this.continueExecution()
-        
-        // Session responsibility: Handle user interaction
-        await this.handleUserInteraction()
-    }
+	async finishSubTask(lastMessage: string) {
+		// Task responsibility: Complete subtask
+		await this.completeSubtask(lastMessage)
+
+		// Session responsibility: Update UI
+		await this.updateUI()
+
+		// Task responsibility: Continue execution
+		await this.continueExecution()
+
+		// Session responsibility: Handle user interaction
+		await this.handleUserInteraction()
+	}
 }
 ```
 
-*"This is like a janitor trying to run the entire company,"* Captain Architecture thought. *"The Subtask Handler has become a god object that knows too much and does too much."*
+_"This is like a janitor trying to run the entire company,"_ Captain Architecture thought. _"The Subtask Handler has become a god object that knows too much and does too much."_
 
 ## The Path to Clarity 🛤️
 
 Captain Architecture realized that the solution wasn't to eliminate either Tasks or Sessions, but to clarify their responsibilities:
 
 ### **Clear Task Responsibilities** 🎯
+
 - Execute work
 - Manage execution state
 - Handle subtask coordination
 - Process AI requests
 
 ### **Clear Session Responsibilities** 🖥️
+
 - Display UI
 - Handle user interaction
 - Manage view state
 - Coordinate user experience
 
 ### **Clear Boundaries** 🚧
+
 - Tasks don't manage UI
 - Sessions don't manage execution
 - Clear interfaces between them
@@ -186,7 +195,8 @@ The investigation continues in [Chapter 5: The Subtask Handler's Secret](chapter
 
 ---
 
-**Navigation**: 
+**Navigation**:
+
 - [← Chapter 3: The Red Herring](../part1/chapter3.md)
 - [→ Chapter 5: The Subtask Handler's Secret](chapter5.md)
 - [↑ Table of Contents](../README.md)
@@ -194,6 +204,7 @@ The investigation continues in [Chapter 5: The Subtask Handler's Secret](chapter
 ---
 
 **Key Insights from This Chapter**:
+
 - 🤔 **The Mystery**: Two concepts (Task vs Session) with unclear boundaries
 - 🔍 **The Confusion**: Both stepping on each other's responsibilities
 - 💡 **The Hero's Insight**: Confusion in code reflects confusion in mental model
@@ -201,4 +212,4 @@ The investigation continues in [Chapter 5: The Subtask Handler's Secret](chapter
 
 ---
 
-*"The best architects don't just build systems - they build systems that are easy to understand."* 🦸‍♂️
+_"The best architects don't just build systems - they build systems that are easy to understand."_ 🦸‍♂️
