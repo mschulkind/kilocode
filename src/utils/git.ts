@@ -3,7 +3,7 @@ import * as path from "path"
 import { promises as fs } from "fs"
 import { exec } from "child_process"
 import { promisify } from "util"
-import { truncateOutput } from "../integrations/misc/extract-text"
+import { truncateOutput } from "../integrations/misc/extract-text.js"
 
 const execAsync = promisify(exec)
 const GIT_OUTPUT_LINE_LIMIT = 500

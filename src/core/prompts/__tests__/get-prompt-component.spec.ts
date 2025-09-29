@@ -1,6 +1,6 @@
 import type { CustomModePrompts } from "@roo-code/types"
 
-import { getPromptComponent } from "../system"
+import { getPromptComponent } from "../system.js"
 
 describe("getPromptComponent", () => {
 	it("should return undefined for empty objects", () => {

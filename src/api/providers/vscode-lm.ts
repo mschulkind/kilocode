@@ -3,14 +3,14 @@ import * as vscode from "vscode"
 
 import { type ModelInfo, openAiModelInfoSaneDefaults } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { SELECTOR_SEPARATOR, stringifyVsCodeLmModelSelector } from "../../shared/vsCodeSelectorUtils"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { SELECTOR_SEPARATOR, stringifyVsCodeLmModelSelector } from "../../shared/vsCodeSelectorUtils.js"
 
-import { ApiStream } from "../transform/stream"
-import { convertToVsCodeLmMessages, extractTextCountFromMessage } from "../transform/vscode-lm-format"
+import { ApiStream } from "../transform/stream.js"
+import { convertToVsCodeLmMessages, extractTextCountFromMessage } from "../transform/vscode-lm-format.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 /**
  * Handles interaction with VS Code's Language Model API for chat-based operations.
@@ -114,7 +114,7 @@ export class VsCodeLmHandler extends BaseProvider implements SingleCompletionHan
 			const models = await vscode.lm.selectChatModels(selector)
 
 			// Use first available model or create a minimal model object
-			if (models && Array.isArray(models) && models.length > 0) {
+			if (models && Array.isArray(models) && models.length > 0 && models[0]) {
 				return models[0]
 			}
 

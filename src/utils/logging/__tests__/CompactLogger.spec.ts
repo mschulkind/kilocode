@@ -1,8 +1,8 @@
 // npx vitest utils/logging/__tests__/CompactLogger.spec.ts
 
-import { CompactLogger } from "../CompactLogger"
-import { MockTransport } from "./MockTransport"
-import { LogLevel } from "../types"
+import { CompactLogger } from "../CompactLogger.js"
+import { MockTransport } from "./MockTransport.js"
+import { LogLevel } from "../types.js"
 
 describe("CompactLogger", () => {
 	let transport: MockTransport

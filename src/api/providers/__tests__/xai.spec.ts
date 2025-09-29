@@ -16,7 +16,7 @@ import type { Anthropic } from "@anthropic-ai/sdk"
 
 import { xaiDefaultModelId, xaiModels } from "@roo-code/types"
 
-import { XAIHandler } from "../xai"
+import { XAIHandler } from "../xai.js"
 
 describe("XAIHandler", () => {
 	let handler: XAIHandler

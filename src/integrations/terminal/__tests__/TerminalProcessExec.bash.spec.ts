@@ -3,10 +3,10 @@
 import * as vscode from "vscode"
 import { execSync } from "child_process"
 
-import { ExitCodeDetails } from "../types"
-import { TerminalProcess } from "../TerminalProcess"
-import { Terminal } from "../Terminal"
-import { TerminalRegistry } from "../TerminalRegistry"
+import { ExitCodeDetails } from "../types.js"
+import { TerminalProcess } from "../TerminalProcess.js"
+import { Terminal } from "../Terminal.js"
+import { TerminalRegistry } from "../TerminalRegistry.js"
 
 // Mock the vscode module
 vi.mock("vscode", () => {
@@ -279,7 +279,7 @@ async function testTerminalCommand(
 }
 
 // Import the test purposes from the common file
-import { TEST_PURPOSES, LARGE_OUTPUT_PARAMS, TEST_TEXT } from "./TerminalProcessExec.common"
+import { TEST_PURPOSES, LARGE_OUTPUT_PARAMS, TEST_TEXT } from "./TerminalProcessExec.common.js"
 
 describe("TerminalProcess with Bash Command Output", () => {
 	beforeAll(() => {

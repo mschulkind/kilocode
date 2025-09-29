@@ -1,8 +1,8 @@
 // npx vitest services/code-index/processors/__tests__/parser.spec.ts
 
-import { CodeParser, codeParser } from "../parser"
-import { loadRequiredLanguageParsers } from "../../../tree-sitter/languageParser"
-import { parseMarkdown } from "../../../tree-sitter/markdownParser"
+import { CodeParser, codeParser } from "../parser.js"
+import { loadRequiredLanguageParsers } from "../../../tree-sitter/languageParser.js"
+import { parseMarkdown } from "../../../tree-sitter/markdownParser.js"
 import { readFile } from "fs/promises"
 import { Node } from "web-tree-sitter"
 

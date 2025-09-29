@@ -1,6 +1,6 @@
-import { ApiMessage } from "../../core/task-persistence/apiMessages"
+import { ApiMessage } from "../../core/task-persistence/apiMessages.js"
 
-import { ApiHandler } from "../index"
+import { ApiHandler } from "../index.js"
 
 /* Removes image blocks from messages if they are not supported by the Api Handler */
 export function maybeRemoveImageBlocks(messages: ApiMessage[], apiHandler: ApiHandler): ApiMessage[] {

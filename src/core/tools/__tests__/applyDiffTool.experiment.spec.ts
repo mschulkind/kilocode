@@ -1,5 +1,5 @@
-import { applyDiffTool } from "../multiApplyDiffTool"
-import { EXPERIMENT_IDS } from "../../../shared/experiments"
+import { applyDiffTool } from "../multiApplyDiffTool.js"
+import { EXPERIMENT_IDS } from "../../../shared/experiments.js"
 
 // Mock the applyDiffTool module
 vi.mock("../applyDiffTool", () => ({
@@ -7,7 +7,7 @@ vi.mock("../applyDiffTool", () => ({
 }))
 
 // Import after mocking to get the mocked version
-import { applyDiffToolLegacy } from "../applyDiffTool"
+import { applyDiffToolLegacy } from "../applyDiffTool.js"
 
 describe("applyDiffTool experiment routing", () => {
 	let mockCline: any

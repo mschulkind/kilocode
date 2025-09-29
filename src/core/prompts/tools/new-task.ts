@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 /**
  * Prompt when todos are NOT required (default)

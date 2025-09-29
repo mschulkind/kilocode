@@ -3,16 +3,16 @@ import OpenAI from "openai"
 
 import { deepInfraDefaultModelId, deepInfraDefaultModelInfo } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { calculateApiCostOpenAI } from "../../shared/cost"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { calculateApiCostOpenAI } from "../../shared/cost.js"
 
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { RouterProvider } from "./router-provider"
-import { getModelParams } from "../transform/model-params"
-import { getModels } from "./fetchers/modelCache"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { RouterProvider } from "./router-provider.js"
+import { getModelParams } from "../transform/model-params.js"
+import { getModels } from "./fetchers/modelCache.js"
 
 export class DeepInfraHandler extends RouterProvider implements SingleCompletionHandler {
 	constructor(options: ApiHandlerOptions) {

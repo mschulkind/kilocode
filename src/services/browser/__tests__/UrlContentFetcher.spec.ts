@@ -2,7 +2,7 @@
 
 import * as path from "path"
 
-import { UrlContentFetcher } from "../UrlContentFetcher"
+import { UrlContentFetcher } from "../UrlContentFetcher.js"
 
 // Mock dependencies
 vi.mock("vscode", () => ({

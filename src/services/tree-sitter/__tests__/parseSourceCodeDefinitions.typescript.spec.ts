@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions } from "./helpers"
-import { typescriptQuery } from "../queries"
-import sampleTypeScriptContent from "./fixtures/sample-typescript"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import { typescriptQuery } from "../queries.js"
+import sampleTypeScriptContent from "./fixtures/sample-typescript.js"
 
 describe("TypeScript Source Code Definition Tests", () => {
 	const testOptions = {

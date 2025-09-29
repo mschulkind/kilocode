@@ -10,15 +10,15 @@ import {
 	ANTHROPIC_DEFAULT_MAX_TOKENS,
 } from "@roo-code/types"
 
-import { ApiHandlerOptions } from "../../shared/api"
-import { safeJsonParse } from "../../shared/safeJsonParse"
+import { ApiHandlerOptions } from "../../shared/api.js"
+import { safeJsonParse } from "../../shared/safeJsonParse.js"
 
-import { ApiStream } from "../transform/stream"
-import { addCacheBreakpoints } from "../transform/caching/vertex"
-import { getModelParams } from "../transform/model-params"
+import { ApiStream } from "../transform/stream.js"
+import { addCacheBreakpoints } from "../transform/caching/vertex.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 // https://docs.anthropic.com/en/api/claude-on-vertex-ai
 export class AnthropicVertexHandler extends BaseProvider implements SingleCompletionHandler {
@@ -202,11 +202,11 @@ export class AnthropicVertexHandler extends BaseProvider implements SingleComple
 			}
 
 			const response = await this.client.messages.create(params)
-			const content = response.content[0]
+		const content = response.content[0]
 
-			if (content.type === "text") {
-				return content.text
-			}
+		if (content && content.type === "text" && "text" in content) {
+			return content.text
+		}
 
 			return ""
 		} catch (error) {

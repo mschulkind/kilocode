@@ -1,8 +1,8 @@
 // npx vitest run src/integrations/terminal/__tests__/TerminalRegistry.spec.ts
 
 import * as vscode from "vscode"
-import { Terminal } from "../Terminal"
-import { TerminalRegistry } from "../TerminalRegistry"
+import { Terminal } from "../Terminal.js"
+import { TerminalRegistry } from "../TerminalRegistry.js"
 
 const PAGER = process.platform === "win32" ? "" : "cat"
 

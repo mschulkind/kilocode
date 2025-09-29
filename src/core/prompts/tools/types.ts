@@ -1,5 +1,5 @@
-import { DiffStrategy } from "../../../shared/tools"
-import { McpHub } from "../../../services/mcp/McpHub"
+import { DiffStrategy } from "../../../shared/tools.js"
+import { McpHub } from "../../../services/mcp/McpHub.js"
 import { Experiments } from "@roo-code/types"
 
 export type ToolArgs = {

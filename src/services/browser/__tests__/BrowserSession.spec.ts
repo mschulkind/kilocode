@@ -1,7 +1,7 @@
 // npx vitest services/browser/__tests__/BrowserSession.spec.ts
 
-import { BrowserSession } from "../BrowserSession"
-import { discoverChromeHostUrl, tryChromeHostUrl } from "../browserDiscovery"
+import { BrowserSession } from "../BrowserSession.js"
+import { discoverChromeHostUrl, tryChromeHostUrl } from "../browserDiscovery.js"
 
 // Mock dependencies
 vi.mock("vscode", () => ({

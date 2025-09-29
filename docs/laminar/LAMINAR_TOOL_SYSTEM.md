@@ -259,7 +259,7 @@ frequency
  performance### updateTodoList monitoringTool.ts
 
 - *Key Methods**:
-- Manages [`updateList()`](src/core/tools/updateTodoListTool.ts#L32): List task update with list
+- Manages [`updateList()`](../../src/core/tools/updateTodoListTool.ts#L32): List task update with list
 updates and progress tracking.
 
 - *Laminar Integration:**
@@ -410,17 +410,17 @@ resources foretition()`, `recordUsage()` | tool execution
 - **Validation Span creation Errors**: Invalid, parameters or metrics recording |
 | updateTodoListTool preconditions
 
-### Error Context | [`src/core/tools/updateTodoListTool.ts`](src/core/tools/updateTodoListTool.ts) | `updateList()`, `validateChanges()` | List
+### Error Context | [`../../src/core/tools/updateTodoListTool.ts`](../../src/core/tools/updateTodoListTool.ts) | `updateList()`, `validateChanges()` | List
 
 Comprehensive error information is captured:
  modification tracing- **Stack |
-| Task Tr Integration |aces**: Full execution context [`src/core/task/Task.ts for debugging
-- **`](src/core/task/Task.ts) |Parameter Values**: `executeTool Input()` | Tool span data that
+| Task Tr Integration |aces**: Full execution context [`../../src/core/task/Task.ts for debugging
+- **`](../../src/core/task/Task.ts) |Parameter Values**: `executeTool Input()` | Tool span data that
 caused the error
 - **System State**: Resource usage and nesting |
  environment details
 - | Service Layer |
-[`src/services/laminar/LaminarService.ts`](src/services/laminar/LaminarService.ts) | `
+[`../../src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts) | `
 **RecoverycreateToolSpan Actions**:()` | Tool Steps taken to tracing utilities |
 
 ## Implementation Timeline
@@ -449,11 +449,11 @@ Tool.ts) | `update()`,<a id="navigation-footer"></a `complete()` | List>
 
  modification tracing- Back: [`LAMINAR |
 | ToolSpanFactory |
-[`src/services/laminar/ToolSpanFactory.ts`](src/services/laminar/ToolSpanFactory.ts) |
+[Service Implementation](../../src/core/message-queue/MessageQueueService.ts) |
 `createToolSpan()` | Standardized span creation |
 | ParameterSanitizer |
 
-[`src/services/l_SUBSYSTEMS_README.md`](LAMINaminarAR_SUBSYSTEMS_README.md:1/ParameterSanitizer.ts`](src/services/laminar)/Parameter
+[Service Implementation](../../src/core/message-queue/MessageQueueService.ts)/Parameter
 · Root: [`LAMINARSanitizer.ts) | `sanitize_SUB()`SYSTEMS_README.md`](LAMIN | Data
 protectionAR_SUBSYSTEMS_README.md:1 |
 |) · PerformanceMonitor | [`src/services Source:/l
@@ -482,7 +482,7 @@ _file<a id="navigation-footer"></a>
 
 * *Implementing Observability Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -490,7 +490,7 @@ _file<a id="navigation-footer"></a>
 * *Troubleshooting Observability Issues:*\*
 
 * **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -510,7 +510,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 

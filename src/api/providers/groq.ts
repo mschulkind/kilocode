@@ -2,13 +2,13 @@ import { type GroqModelId, groqDefaultModelId, groqModels } from "@roo-code/type
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import type { ApiHandlerCreateMessageMetadata } from "../index"
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { calculateApiCostOpenAI } from "../../shared/cost"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerCreateMessageMetadata } from "../index.js"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { calculateApiCostOpenAI } from "../../shared/cost.js"
 
-import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
+import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider.js"
 
 // Enhanced usage interface to support Groq's cached token fields
 interface GroqUsage extends OpenAI.CompletionUsage {

@@ -11,10 +11,10 @@ import {
 	DEFAULT_MODES,
 } from "@roo-code/types"
 
-import { addCustomInstructions } from "../core/prompts/sections/custom-instructions"
+import { addCustomInstructions } from "../core/prompts/sections/custom-instructions.js"
 
-import { EXPERIMENT_IDS } from "./experiments"
-import { TOOL_GROUPS, ALWAYS_AVAILABLE_TOOLS } from "./tools"
+import { EXPERIMENT_IDS } from "./experiments.js"
+import { TOOL_GROUPS, ALWAYS_AVAILABLE_TOOLS } from "./tools.js"
 
 export type Mode = string
 

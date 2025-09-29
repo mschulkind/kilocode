@@ -4,9 +4,9 @@ import * as fs from "fs"
 import * as childProcess from "child_process"
 import * as vscode from "vscode"
 import ignore from "ignore"
-import { arePathsEqual } from "../../utils/path"
-import { getBinPath } from "../../services/ripgrep"
-import { DIRS_TO_IGNORE } from "./constants"
+import { arePathsEqual } from "../../utils/path.js"
+import { getBinPath } from "../../services/ripgrep.js"
+import { DIRS_TO_IGNORE } from "./constants.js"
 
 /**
  * Context object for directory scanning operations

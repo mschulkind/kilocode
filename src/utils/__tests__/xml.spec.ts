@@ -1,4 +1,4 @@
-import { parseXml, parseXmlForDiff } from "../xml"
+import { parseXml, parseXmlForDiff } from "../xml.js"
 
 describe("parseXml", () => {
 	describe("type conversion", () => {

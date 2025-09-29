@@ -3,8 +3,8 @@ import Anthropic from "@anthropic-ai/sdk"
 import * as vscode from "vscode"
 import axios from "axios"
 import { TelemetryService } from "@roo-code/telemetry"
-import { ContextProxy } from "../core/config/ContextProxy"
-import { ClineProvider } from "../core/webview/ClineProvider"
+import { ContextProxy } from "../core/config/ContextProxy.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
 
 // All the common mocks
 export function setupCommonMocks() {

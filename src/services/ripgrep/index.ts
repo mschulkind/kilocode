@@ -4,8 +4,8 @@ import * as readline from "readline"
 
 import * as vscode from "vscode"
 
-import { RooIgnoreController } from "../../core/ignore/RooIgnoreController"
-import { fileExistsAtPath } from "../../utils/fs"
+import { RooIgnoreController } from "../../core/ignore/RooIgnoreController.js"
+import { fileExistsAtPath } from "../../utils/fs.js"
 /*
 This file provides functionality to perform regex searches on files using ripgrep.
 Inspired by: https://github.com/DiscreteTom/vscode-ripgrep-utils

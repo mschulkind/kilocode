@@ -6,13 +6,13 @@ import {
 	type ModelInfo,
 	getClaudeCodeModelId,
 } from "@roo-code/types"
-import { type ApiHandler } from ".."
-import { ApiStreamUsageChunk, type ApiStream } from "../transform/stream"
-import { runClaudeCode } from "../../integrations/claude-code/run"
-import { filterMessagesForClaudeCode } from "../../integrations/claude-code/message-filter"
-import { BaseProvider } from "./base-provider"
-import { t } from "../../i18n"
-import { ApiHandlerOptions } from "../../shared/api"
+import { type ApiHandler } from "../index.js"
+import { ApiStreamUsageChunk, type ApiStream } from "../transform/stream.js"
+import { runClaudeCode } from "../../integrations/claude-code/run.js"
+import { filterMessagesForClaudeCode } from "../../integrations/claude-code/message-filter.js"
+import { BaseProvider } from "./base-provider.js"
+import { t } from "../../i18n/index.js"
+import { ApiHandlerOptions } from "../../shared/api.js"
 
 export class ClaudeCodeHandler extends BaseProvider implements ApiHandler {
 	private options: ApiHandlerOptions
@@ -72,7 +72,7 @@ export class ClaudeCodeHandler extends BaseProvider implements ApiHandler {
 				const message = chunk.message
 
 				if (message.stop_reason !== null) {
-					const content = "text" in message.content[0] ? message.content[0] : undefined
+					const content = message.content[0] && "text" in message.content[0] ? message.content[0] : undefined
 
 					const isError = content && content.text.startsWith(`API Error`)
 					if (isError) {

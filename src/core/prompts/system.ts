@@ -9,19 +9,19 @@ import type {
 	Experiments, // kilocode_change
 } from "@roo-code/types"
 
-import type { SystemPromptSettings } from "./types"
+import type { SystemPromptSettings } from "./types.js"
 
-import { Mode, modes, defaultModeSlug, getModeBySlug, getGroupName, getModeSelection } from "../../shared/modes"
-import { DiffStrategy } from "../../shared/tools"
-import { formatLanguage } from "../../shared/language"
-import { isEmpty } from "../../utils/object"
+import { Mode, modes, defaultModeSlug, getModeBySlug, getGroupName, getModeSelection } from "../../shared/modes.js"
+import { DiffStrategy } from "../../shared/tools.js"
+import { formatLanguage } from "../../shared/language.js"
+import { isEmpty } from "../../utils/object.js"
 
-import { McpHub } from "../../services/mcp/McpHub"
-import { CodeIndexManager } from "../../services/code-index/manager"
+import { McpHub } from "../../services/mcp/McpHub.js"
+import { CodeIndexManager } from "../../services/code-index/manager.js"
 
-import { PromptVariables, loadSystemPromptFile } from "./sections/custom-system-prompt"
+import { PromptVariables, loadSystemPromptFile } from "./sections/custom-system-prompt.js"
 
-import { getToolDescriptionsForMode } from "./tools"
+import { getToolDescriptionsForMode } from "./tools.js"
 import {
 	getRulesSection,
 	getSystemInfoSection,
@@ -33,8 +33,8 @@ import {
 	getModesSection,
 	addCustomInstructions,
 	markdownFormattingSection,
-} from "./sections"
-import { type ClineProviderState } from "../webview/ClineProvider" // kilocode_change
+} from "./sections.js"
+import { type ClineProviderState } from "../webview/ClineProvider.js" // kilocode_change
 
 // Helper function to get prompt component, filtering out empty objects
 export function getPromptComponent(

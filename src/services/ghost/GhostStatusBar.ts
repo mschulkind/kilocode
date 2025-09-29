@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { t } from "../../i18n"
+import { t } from "../../i18n.js"
 
 interface GhostStatusBarStateProps {
 	enabled?: boolean

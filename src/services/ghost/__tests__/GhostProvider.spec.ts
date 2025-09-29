@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach, vi } from "vitest"
 import * as fs from "node:fs"
 import * as path from "node:path"
-import { MockWorkspace } from "./MockWorkspace"
+import { MockWorkspace } from "./MockWorkspace.js"
 import * as vscode from "vscode"
-import { GhostStrategy } from "../GhostStrategy"
-import { GhostWorkspaceEdit } from "../GhostWorkspaceEdit"
-import { GhostSuggestionContext } from "../types"
+import { GhostStrategy } from "../GhostStrategy.js"
+import { GhostWorkspaceEdit } from "../GhostWorkspaceEdit.js"
+import { GhostSuggestionContext } from "../types.js"
 
 vi.mock("vscode", () => ({
 	Uri: {

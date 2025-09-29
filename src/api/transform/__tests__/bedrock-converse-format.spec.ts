@@ -1,6 +1,6 @@
 // npx vitest run src/api/transform/__tests__/bedrock-converse-format.spec.ts
 
-import { convertToBedrockConverseMessages } from "../bedrock-converse-format"
+import { convertToBedrockConverseMessages } from "../bedrock-converse-format.js"
 import { Anthropic } from "@anthropic-ai/sdk"
 import { ContentBlock, ToolResultContentBlock } from "@aws-sdk/client-bedrock-runtime"
 

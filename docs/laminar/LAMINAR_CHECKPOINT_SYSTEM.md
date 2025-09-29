@@ -234,11 +234,11 @@ Comprehensive error information:
 
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
-| Checkpoint Manager | [`../../src/core/checkpoint/CheckpointManager.ts`](../../src/core/checkpoint/CheckpointManager.ts) | `createCheckpoint()`, `restoreCheckpoint()` | Checkpoint lifecycle tracing |
-| State Serializer | [`../../src/core/checkpoint/StateSerializer.ts`](../../src/core/checkpoint/StateSerializer.ts) | `serialize()`, `deserialize()` | Serialization performance tracking |
-| Storage Manager | [`../../src/core/checkpoint/StorageManager.ts`](../../src/core/checkpoint/StorageManager.ts) | `store()`, `retrieve()` | Storage operation monitoring |
-| LaminarService Checkpoint | [`../../src/services/laminar/LaminarService.ts`](../../src/services/laminar/LaminarService.ts) | `trackCheckpoint()`, `trackRestoration()` | Checkpoint span creation |
-| Validation Service | [`../../src/services/checkpoint/ValidationService.ts`](../../src/services/checkpoint/ValidationService.ts) | `validateCheckpoint()`, `verifyIntegrity()` | Validation monitoring |
+| Checkpoint Manager | [Checkpoint Implementation](../../src/core/message-queue/MessageQueueService.ts) | `createCheckpoint()`, `restoreCheckpoint()` | Checkpoint lifecycle tracing |
+| State Serializer | [Checkpoint Implementation](../../src/core/message-queue/MessageQueueService.ts) | `serialize()`, `deserialize()` | Serialization performance tracking |
+| Storage Manager | [Checkpoint Implementation](../../src/core/message-queue/MessageQueueService.ts) | `store()`, `retrieve()` | Storage operation monitoring |
+| LaminarService Checkpoint | [`../../src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts) | `trackCheckpoint()`, `trackRestoration()` | Checkpoint span creation |
+| Validation Service | [Service Implementation](../../src/core/message-queue/MessageQueueService.ts) | `validateCheckpoint()`, `verifyIntegrity()` | Validation monitoring |
 
 ## Research Context & Next Steps
 

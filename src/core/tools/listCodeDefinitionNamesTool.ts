@@ -1,13 +1,13 @@
 import path from "path"
 import fs from "fs/promises"
 
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
-import { Task } from "../task/Task"
-import { ClineSayTool } from "../../shared/ExtensionMessage"
-import { getReadablePath } from "../../utils/path"
-import { isPathOutsideWorkspace } from "../../utils/pathUtils"
-import { parseSourceCodeForDefinitionsTopLevel, parseSourceCodeDefinitionsForFile } from "../../services/tree-sitter"
-import { RecordSource } from "../context-tracking/FileContextTrackerTypes"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { Task } from "../task/Task.js"
+import { ClineSayTool } from "../../shared/ExtensionMessage.js"
+import { getReadablePath } from "../../utils/path.js"
+import { isPathOutsideWorkspace } from "../../utils/pathUtils.js"
+import { parseSourceCodeForDefinitionsTopLevel, parseSourceCodeDefinitionsForFile } from "../../services/tree-sitter.js"
+import { RecordSource } from "../context-tracking/FileContextTrackerTypes.js"
 
 export async function listCodeDefinitionNamesTool(
 	cline: Task,

@@ -1,7 +1,7 @@
-import { GhostModel } from "../GhostModel"
-import { GhostStrategy } from "../GhostStrategy"
-import { GhostSuggestionContext } from "../types"
-import { ApiStreamChunk } from "../../../api/transform/stream"
+import { GhostModel } from "../GhostModel.js"
+import { GhostStrategy } from "../GhostStrategy.js"
+import { GhostSuggestionContext } from "../types.js"
+import { ApiStreamChunk } from "../../../api/transform/stream.js"
 
 // Mock vscode module
 vi.mock("vscode", () => ({

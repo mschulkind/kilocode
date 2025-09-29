@@ -1,5 +1,5 @@
-import { CodeIndexManager } from "../manager"
-import { CodeIndexServiceFactory } from "../service-factory"
+import { CodeIndexManager } from "../manager.js"
+import { CodeIndexServiceFactory } from "../service-factory.js"
 import type { MockedClass } from "vitest"
 import * as path from "path"
 

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import * as vscode from "vscode"
 import { userInfo } from "os"
-import { getShell } from "../shell"
+import { getShell } from "../shell.js"
 
 // Mock vscode module
 vi.mock("vscode", () => ({

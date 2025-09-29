@@ -1,6 +1,6 @@
 // streamUtils/bashStream.ts
 import { execSync } from "child_process"
-import { CommandStream } from "./index"
+import { CommandStream } from "./index.js"
 
 /**
  * Creates a stream with real command output using Bash

@@ -1,7 +1,7 @@
 import * as path from "path"
 
-import { CheckpointServiceOptions } from "./types"
-import { ShadowCheckpointService } from "./ShadowCheckpointService"
+import { CheckpointServiceOptions } from "./types.js"
+import { ShadowCheckpointService } from "./ShadowCheckpointService.js"
 
 export class RepoPerTaskCheckpointService extends ShadowCheckpointService {
 	public static create({ taskId, workspaceDir, shadowDir, log = console.log }: CheckpointServiceOptions) {

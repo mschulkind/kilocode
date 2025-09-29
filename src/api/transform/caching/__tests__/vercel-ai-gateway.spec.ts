@@ -1,7 +1,7 @@
 // npx vitest run src/api/transform/caching/__tests__/vercel-ai-gateway.spec.ts
 
 import OpenAI from "openai"
-import { addCacheBreakpoints } from "../vercel-ai-gateway"
+import { addCacheBreakpoints } from "../vercel-ai-gateway.js"
 
 describe("Vercel AI Gateway Caching", () => {
 	describe("addCacheBreakpoints", () => {

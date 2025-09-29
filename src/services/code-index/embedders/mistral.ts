@@ -1,7 +1,7 @@
-import { OpenAICompatibleEmbedder } from "./openai-compatible"
-import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces/embedder"
-import { MAX_ITEM_TOKENS } from "../constants"
-import { t } from "../../../i18n"
+import { OpenAICompatibleEmbedder } from "./openai-compatible.js"
+import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces/embedder.js"
+import { MAX_ITEM_TOKENS } from "../constants.js"
+import { t } from "../../../i18n.js"
 import { TelemetryEventName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 

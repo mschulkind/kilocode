@@ -12,8 +12,8 @@ import {
 	extractRepositoryName,
 	getWorkspaceGitInfo,
 	convertGitUrlToHttps,
-} from "../git"
-import { truncateOutput } from "../../integrations/misc/extract-text"
+} from "../git.js"
+import { truncateOutput } from "../../integrations/misc/extract-text.js"
 
 type ExecFunction = (
 	command: string,

@@ -2,9 +2,9 @@
 
 import * as vscode from "vscode"
 import { TelemetryService } from "@roo-code/telemetry"
-import { ClineProvider } from "../ClineProvider"
-import { ContextProxy } from "../../config/ContextProxy"
-import { Task } from "../../task/Task"
+import { ClineProvider } from "../ClineProvider.js"
+import { ContextProxy } from "../../config/ContextProxy.js"
+import { Task } from "../../task/Task.js"
 import type { HistoryItem, ProviderName } from "@roo-code/types"
 
 vi.mock("vscode", () => ({

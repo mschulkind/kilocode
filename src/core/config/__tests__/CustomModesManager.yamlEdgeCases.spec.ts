@@ -10,11 +10,11 @@ import * as vscode from "vscode"
 
 import type { ModeConfig } from "@roo-code/types"
 
-import { fileExistsAtPath } from "../../../utils/fs"
-import { getWorkspacePath } from "../../../utils/path"
-import { GlobalFileNames } from "../../../shared/globalFileNames"
+import { fileExistsAtPath } from "../../../utils/fs.js"
+import { getWorkspacePath } from "../../../utils/path.js"
+import { GlobalFileNames } from "../../../shared/globalFileNames.js"
 
-import { CustomModesManager } from "../CustomModesManager"
+import { CustomModesManager } from "../CustomModesManager.js"
 
 vi.mock("vscode", () => ({
 	workspace: {

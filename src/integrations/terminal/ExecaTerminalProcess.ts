@@ -2,8 +2,8 @@ import { execa, ExecaError } from "execa"
 import psTree from "ps-tree"
 import process from "process"
 
-import type { RooTerminal } from "./types"
-import { BaseTerminalProcess } from "./BaseTerminalProcess"
+import type { RooTerminal } from "./types.js"
+import { BaseTerminalProcess } from "./BaseTerminalProcess.js"
 
 export class ExecaTerminalProcess extends BaseTerminalProcess {
 	private terminalRef: WeakRef<RooTerminal>

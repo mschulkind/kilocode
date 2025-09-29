@@ -1,4 +1,4 @@
-import { VectorStoreSearchResult } from "./vector-store"
+import { VectorStoreSearchResult } from "./vector-store.js"
 import * as vscode from "vscode"
 
 /**

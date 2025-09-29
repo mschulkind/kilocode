@@ -1,9 +1,9 @@
-import { Task } from "../task/Task"
-import { ClineProvider } from "./ClineProvider"
-import { saveTaskMessages } from "../task-persistence"
+import { Task } from "../task/Task.js"
+import { ClineProvider } from "./ClineProvider.js"
+import { saveTaskMessages } from "../task-persistence.js"
 import * as vscode from "vscode"
 import pWaitFor from "p-wait-for"
-import { t } from "../../i18n"
+import { t } from "../../i18n.js"
 
 export interface CheckpointRestoreConfig {
 	provider: ClineProvider

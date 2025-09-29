@@ -1,7 +1,7 @@
 // Test to verify progress reporting functionality
 import { spawnSync } from "child_process"
 import type { Mock } from "vitest"
-import { GitExtensionService } from "../GitExtensionService"
+import { GitExtensionService } from "../GitExtensionService.js"
 
 vi.mock("child_process", () => ({
 	spawnSync: vi.fn(),

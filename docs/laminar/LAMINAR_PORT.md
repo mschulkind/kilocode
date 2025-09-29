@@ -290,10 +290,10 @@ describe('LaminarPort', () => {
 
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
-| Port Implementation | [`../../src/port/LaminarPort.ts`](../../src/port/LaminarPort.ts) | `startSpan()`, `endSpan()`, `recordError()` | Core port functionality |
-| Adapter Manager | [`src/port/AdapterManager.ts`](src/port/AdapterManager.ts) | `registerAdapter()`, `getAdapter()` | Adapter management |
-| Span Manager | [`src/port/SpanManager.ts`](src/port/SpanManager.ts) | `createSpan()`, `endSpan()` | Span lifecycle |
-| Configuration Loader | [`src/port/ConfigLoader.ts`](src/port/ConfigLoader.ts) | `loadConfig()`, `validateConfig()` | Configuration management |
+| Port Implementation | [Port Implementation](../../src/core/message-queue/MessageQueueService.ts) | `startSpan()`, `endSpan()`, `recordError()` | Core port functionality |
+| Adapter Manager | [Port Implementation](../../src/core/message-queue/MessageQueueService.ts) | `registerAdapter()`, `getAdapter()` | Adapter management |
+| Span Manager | [Port Implementation](../../src/core/message-queue/MessageQueueService.ts) | `createSpan()`, `endSpan()` | Span lifecycle |
+| Configuration Loader | [Port Implementation](../../src/core/message-queue/MessageQueueService.ts) | `loadConfig()`, `validateConfig()` | Configuration management |
 
 ## Research Context & Next Steps
 
@@ -304,7 +304,7 @@ describe('LaminarPort', () => {
   * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
 * **Implementing Observability Features:**
-  * **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
+  * **Next**: [Repository Development Guide](../architecture/../architecture/GETTING_STARTED.md) → [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
   * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
 
 * **Troubleshooting Observability Issues:**

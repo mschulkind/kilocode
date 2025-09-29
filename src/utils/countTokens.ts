@@ -1,8 +1,8 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import workerpool from "workerpool"
 
-import { countTokensResultSchema } from "../workers/types"
-import { tiktoken } from "./tiktoken"
+import { countTokensResultSchema } from "../workers/types.js"
+import { tiktoken } from "./tiktoken.js"
 
 let pool: workerpool.Pool | null | undefined = undefined
 

@@ -2,7 +2,7 @@ import axios from "axios"
 import { z } from "zod"
 import type { ModelInfo } from "@roo-code/types"
 import { IO_INTELLIGENCE_CACHE_DURATION } from "@roo-code/types"
-import type { ModelRecord } from "../../../shared/api"
+import type { ModelRecord } from "../../../shared/api.js"
 
 /**
  * IO Intelligence Model Schema

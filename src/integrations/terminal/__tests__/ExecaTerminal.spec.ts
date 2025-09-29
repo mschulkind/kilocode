@@ -1,7 +1,7 @@
 // npx vitest run src/integrations/terminal/__tests__/ExecaTerminal.spec.ts
 
-import { RooTerminalCallbacks } from "../types"
-import { ExecaTerminal } from "../ExecaTerminal"
+import { RooTerminalCallbacks } from "../types.js"
+import { ExecaTerminal } from "../ExecaTerminal.js"
 
 describe("ExecaTerminal", () => {
 	it("should run terminal commands and collect output", async () => {

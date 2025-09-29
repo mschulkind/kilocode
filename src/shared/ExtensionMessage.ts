@@ -15,21 +15,21 @@ import type {
 	QueuedMessage,
 } from "@roo-code/types"
 
-import { GitCommit } from "../utils/git"
+import { GitCommit } from "../utils/git.js"
 
-import { McpServer } from "./mcp"
-import { McpMarketplaceCatalog, McpDownloadResponse } from "./kilocode/mcp"
-import { Mode } from "./modes"
-import { ModelRecord, RouterModels } from "./api"
+import { McpServer } from "./mcp.js"
+import { McpMarketplaceCatalog, McpDownloadResponse } from "./kilocode/mcp.js"
+import { Mode } from "./modes.js"
+import { ModelRecord, RouterModels } from "./api.js"
 // kilocode_change start
 import {
 	ProfileDataResponsePayload,
 	BalanceDataResponsePayload,
 	TaskHistoryResponsePayload,
 	TasksByIdResponsePayload,
-} from "./WebviewMessage"
-import { ClineRulesToggles } from "./cline-rules"
-import { KiloCodeWrapperProperties } from "./kilocode/wrapper"
+} from "./WebviewMessage.js"
+import { ClineRulesToggles } from "./cline-rules.js"
+import { KiloCodeWrapperProperties } from "./kilocode/wrapper.js"
 // kilocode_change end
 
 // Command interface for frontend/backend communication

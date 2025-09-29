@@ -2,9 +2,9 @@ import * as vscode from "vscode"
 
 import { CodeActionId, CodeActionName } from "@roo-code/types"
 
-import { getCodeActionCommand } from "../utils/commands"
-import { EditorUtils } from "../integrations/editor/EditorUtils"
-import { ClineProvider } from "../core/webview/ClineProvider"
+import { getCodeActionCommand } from "../utils/commands.js"
+import { EditorUtils } from "../integrations/editor/EditorUtils.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
 
 export const registerCodeActions = (context: vscode.ExtensionContext) => {
 	registerCodeAction(context, "explainCode", "EXPLAIN")

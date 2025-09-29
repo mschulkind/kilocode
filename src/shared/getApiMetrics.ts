@@ -1,8 +1,8 @@
 import type { TokenUsage, ClineMessage } from "@roo-code/types"
 
 // kilocode_change start
-import { type ClineSayTool } from "./ExtensionMessage"
-import { safeJsonParse } from "./safeJsonParse"
+import { type ClineSayTool } from "./ExtensionMessage.js"
+import { safeJsonParse } from "./safeJsonParse.js"
 // kilocode_change end
 
 export type ParsedApiReqStartedTextType = {

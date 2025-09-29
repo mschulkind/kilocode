@@ -8,15 +8,15 @@ import dotenvx from "@dotenvx/dotenvx"
 
 import { type ModelInfo, type GeminiCliModelId, geminiCliDefaultModelId, geminiCliModels } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { t } from "../../i18n"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { t } from "../../i18n/index.js"
 
-import { convertAnthropicContentToGemini, convertAnthropicMessageToGemini } from "../transform/gemini-format"
-import type { ApiStream } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
+import { convertAnthropicContentToGemini, convertAnthropicMessageToGemini } from "../transform/gemini-format.js"
+import type { ApiStream } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { BaseProvider } from "./base-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { BaseProvider } from "./base-provider.js"
 
 // OAuth2 Configuration (from Cline implementation)
 const OAUTH_CLIENT_ID = "681255809395-oo8ft2oprdrnp9e3aqf6av3hmdib135j.apps.googleusercontent.com"

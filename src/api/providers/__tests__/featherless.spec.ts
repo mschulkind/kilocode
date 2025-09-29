@@ -10,7 +10,7 @@ import {
 	DEEP_SEEK_DEFAULT_TEMPERATURE,
 } from "@roo-code/types"
 
-import { FeatherlessHandler } from "../featherless"
+import { FeatherlessHandler } from "../featherless.js"
 
 // Create mock functions
 const mockCreate = vi.fn()

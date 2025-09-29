@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
-import { runSlashCommandTool } from "../runSlashCommandTool"
-import { Task } from "../../task/Task"
-import { formatResponse } from "../../prompts/responses"
-import { getCommand, getCommandNames } from "../../../services/command/commands"
+import { runSlashCommandTool } from "../runSlashCommandTool.js"
+import { Task } from "../../task/Task.js"
+import { formatResponse } from "../../prompts/responses.js"
+import { getCommand, getCommandNames } from "../../../services/command/commands.js"
 
 // Mock dependencies
 vi.mock("../../../services/command/commands", () => ({

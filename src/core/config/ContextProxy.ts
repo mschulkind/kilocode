@@ -18,7 +18,7 @@ import {
 } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { logger } from "../../utils/logging"
+import { logger } from "../../utils/logging.js"
 
 type GlobalStateKey = keyof GlobalState
 type SecretStateKey = keyof SecretState

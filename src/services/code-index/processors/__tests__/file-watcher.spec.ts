@@ -2,7 +2,7 @@
 
 import * as vscode from "vscode"
 
-import { FileWatcher } from "../file-watcher"
+import { FileWatcher } from "../file-watcher.js"
 
 // Mock TelemetryService
 vi.mock("../../../../../packages/telemetry/src/TelemetryService", () => ({

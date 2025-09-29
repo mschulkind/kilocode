@@ -3,11 +3,11 @@ import { Anthropic } from "@anthropic-ai/sdk"
 import { rooDefaultModelId, rooModels, type RooModelId } from "@roo-code/types"
 import { CloudService } from "@roo-code/cloud"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { ApiStream } from "../transform/stream"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { ApiStream } from "../transform/stream.js"
 
-import type { ApiHandlerCreateMessageMetadata } from "../index"
-import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
+import type { ApiHandlerCreateMessageMetadata } from "../index.js"
+import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider.js"
 
 export class RooHandler extends BaseOpenAiCompatibleProvider<RooModelId> {
 	constructor(options: ApiHandlerOptions) {

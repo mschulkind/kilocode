@@ -3,7 +3,7 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import { rooDefaultModelId, rooModels } from "@roo-code/types"
 
-import { ApiHandlerOptions } from "../../../shared/api"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 
 // Mock OpenAI client
 const mockCreate = vitest.fn()
@@ -98,7 +98,7 @@ vitest.mock("../../../i18n", () => ({
 }))
 
 // Import after mocks are set up
-import { RooHandler } from "../roo"
+import { RooHandler } from "../roo.js"
 import { CloudService } from "@roo-code/cloud"
 
 describe("RooHandler", () => {

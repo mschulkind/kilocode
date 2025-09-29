@@ -6,8 +6,8 @@ vitest.mock("vscode", () => ({}))
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 
-import { VercelAiGatewayHandler } from "../vercel-ai-gateway"
-import { ApiHandlerOptions } from "../../../shared/api"
+import { VercelAiGatewayHandler } from "../vercel-ai-gateway.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 import { vercelAiGatewayDefaultModelId, VERCEL_AI_GATEWAY_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
 // Mock dependencies

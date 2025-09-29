@@ -1,8 +1,8 @@
-import { OpenAiHandler } from "./openai"
-import type { ApiHandlerOptions } from "../../shared/api"
+import { OpenAiHandler } from "./openai.js"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 import { DOUBAO_API_BASE_URL, doubaoDefaultModelId, doubaoModels } from "@roo-code/types"
-import { getModelParams } from "../transform/model-params"
-import { ApiStreamUsageChunk } from "../transform/stream"
+import { getModelParams } from "../transform/model-params.js"
+import { ApiStreamUsageChunk } from "../transform/stream.js"
 
 // Core types for Doubao API
 interface ChatCompletionMessageParam {

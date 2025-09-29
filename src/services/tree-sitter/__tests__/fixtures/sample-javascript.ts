@@ -2,7 +2,7 @@ export default String.raw`
 // Import statements test - inherently single-line, exempt from 4-line requirement
 import React, { useState, useEffect } from 'react';
 import { render } from 'react-dom';
-import * as utils from './utils';
+import * as utils from './utils.js';
 
 // Function declaration test - standard function with block body
 function testFunctionDefinition(

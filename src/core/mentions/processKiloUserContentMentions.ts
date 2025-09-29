@@ -1,12 +1,12 @@
 import { Anthropic } from "@anthropic-ai/sdk"
-import { parseMentions } from "./index"
-import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher"
-import { FileContextTracker } from "../context-tracking/FileContextTracker"
+import { parseMentions } from "./index.js"
+import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher.js"
+import { FileContextTracker } from "../context-tracking/FileContextTracker.js"
 
-import { GlobalFileNames } from "../../shared/globalFileNames"
-import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules"
-import { parseKiloSlashCommands } from "../slash-commands/kilo"
-import { refreshWorkflowToggles } from "../context/instructions/workflows" // kilocode_change
+import { GlobalFileNames } from "../../shared/globalFileNames.js"
+import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules.js"
+import { parseKiloSlashCommands } from "../slash-commands/kilo.js"
+import { refreshWorkflowToggles } from "../context/instructions/workflows.js" // kilocode_change
 
 import * as vscode from "vscode" // kilocode_change
 

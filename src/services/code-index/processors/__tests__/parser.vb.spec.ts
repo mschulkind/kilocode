@@ -1,4 +1,4 @@
-import { CodeParser } from "../parser"
+import { CodeParser } from "../parser.js"
 
 // Mock TelemetryService
 vi.mock("../../../../../packages/telemetry/src/TelemetryService", () => ({
@@ -9,7 +9,7 @@ vi.mock("../../../../../packages/telemetry/src/TelemetryService", () => ({
 	},
 }))
 
-import { shouldUseFallbackChunking } from "../../shared/supported-extensions"
+import { shouldUseFallbackChunking } from "../../shared/supported-extensions.js"
 
 describe("CodeParser - VB.NET and Fallback Extensions Support", () => {
 	let parser: CodeParser

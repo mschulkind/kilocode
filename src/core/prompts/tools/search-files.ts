@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getSearchFilesDescription(args: ToolArgs): string {
 	return `## search_files

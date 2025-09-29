@@ -2,8 +2,8 @@
 import * as vscode from "vscode"
 import * as path from "path"
 import { spawnSync } from "child_process"
-import { shouldExcludeLockFile } from "./exclusionUtils"
-import { RooIgnoreController } from "../../core/ignore/RooIgnoreController"
+import { shouldExcludeLockFile } from "./exclusionUtils.js"
+import { RooIgnoreController } from "../../core/ignore/RooIgnoreController.js"
 
 export interface GitChange {
 	filePath: string

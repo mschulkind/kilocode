@@ -2,10 +2,10 @@ import Anthropic from "@anthropic-ai/sdk"
 
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { t } from "../../i18n"
-import { ApiHandler } from "../../api"
-import { ApiMessage } from "../task-persistence/apiMessages"
-import { maybeRemoveImageBlocks } from "../../api/transform/image-cleaning"
+import { t } from "../../i18n.js"
+import { ApiHandler } from "../../api.js"
+import { ApiMessage } from "../task-persistence/apiMessages.js"
+import { maybeRemoveImageBlocks } from "../../api/transform/image-cleaning.js"
 
 export const N_MESSAGES_TO_KEEP = 3
 export const MIN_CONDENSE_THRESHOLD = 5 // Minimum percentage of context window to trigger condensing

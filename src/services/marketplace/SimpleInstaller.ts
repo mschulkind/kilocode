@@ -3,9 +3,9 @@ import * as path from "path"
 import * as fs from "fs/promises"
 import * as yaml from "yaml"
 import type { MarketplaceItem, MarketplaceItemType, InstallMarketplaceItemOptions, McpParameter } from "@roo-code/types"
-import { GlobalFileNames } from "../../shared/globalFileNames"
-import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
-import type { CustomModesManager } from "../../core/config/CustomModesManager"
+import { GlobalFileNames } from "../../shared/globalFileNames.js"
+import { ensureSettingsDirectoryExists } from "../../utils/globalContext.js"
+import type { CustomModesManager } from "../../core/config/CustomModesManager.js"
 
 export interface InstallOptions extends InstallMarketplaceItemOptions {
 	target: "project" | "global"

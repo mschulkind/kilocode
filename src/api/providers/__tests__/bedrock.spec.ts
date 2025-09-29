@@ -23,7 +23,7 @@ vi.mock("@aws-sdk/client-bedrock-runtime", () => {
 	}
 })
 
-import { AwsBedrockHandler } from "../bedrock"
+import { AwsBedrockHandler } from "../bedrock.js"
 import { ConverseStreamCommand, BedrockRuntimeClient } from "@aws-sdk/client-bedrock-runtime"
 import { BEDROCK_CLAUDE_SONNET_4_MODEL_ID } from "@roo-code/types"
 

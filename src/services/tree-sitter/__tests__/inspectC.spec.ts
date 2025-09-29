@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { cQuery } from "../queries"
-import sampleCContent from "./fixtures/sample-c"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { cQuery } from "../queries.js"
+import sampleCContent from "./fixtures/sample-c.js"
 
 describe("inspectC", () => {
 	const testOptions = {

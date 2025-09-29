@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import { join } from "path"
 
-import { fileExistsAtPath } from "../../utils/fs"
+import { fileExistsAtPath } from "../../utils/fs.js"
 
 const getBuildArtifactPatterns = () => [
 	".gradle/",

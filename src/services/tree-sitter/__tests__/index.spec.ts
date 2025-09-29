@@ -1,10 +1,10 @@
 import * as fs from "fs/promises"
 import type { Mock } from "vitest"
 
-import { parseSourceCodeForDefinitionsTopLevel } from "../index"
-import { listFiles } from "../../glob/list-files"
-import { loadRequiredLanguageParsers } from "../languageParser"
-import { fileExistsAtPath } from "../../../utils/fs"
+import { parseSourceCodeForDefinitionsTopLevel } from "../index.js"
+import { listFiles } from "../../glob/list-files.js"
+import { loadRequiredLanguageParsers } from "../languageParser.js"
+import { fileExistsAtPath } from "../../../utils/fs.js"
 
 // Mock dependencies
 vi.mock("../../glob/list-files")

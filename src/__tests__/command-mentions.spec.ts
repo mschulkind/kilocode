@@ -1,6 +1,6 @@
-import { parseMentions } from "../core/mentions"
-import { UrlContentFetcher } from "../services/browser/UrlContentFetcher"
-import { getCommand } from "../services/command/commands"
+import { parseMentions } from "../core/mentions.js"
+import { UrlContentFetcher } from "../services/browser/UrlContentFetcher.js"
+import { getCommand } from "../services/command/commands.js"
 
 // Mock the dependencies
 vi.mock("../services/command/commands")

@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 
-import { hasAnyToggles, loadEnabledRules } from "./kilo"
+import { hasAnyToggles, loadEnabledRules } from "./kilo.js"
 
 // kilocode_change start
 let vscodeAPI: typeof import("vscode") | undefined
@@ -20,11 +20,11 @@ import { Dirent } from "fs"
 
 import { isLanguage } from "@roo-code/types"
 
-import type { SystemPromptSettings } from "../types"
+import type { SystemPromptSettings } from "../types.js"
 
-import { LANGUAGES } from "../../../shared/language"
-import { ClineRulesToggles } from "../../../shared/cline-rules" // kilocode_change
-import { getRooDirectoriesForCwd } from "../../../services/roo-config"
+import { LANGUAGES } from "../../../shared/language.js"
+import { ClineRulesToggles } from "../../../shared/cline-rules.js" // kilocode_change
+import { getRooDirectoriesForCwd } from "../../../services/roo-config.js"
 
 /**
  * Safely read a file and return its trimmed content

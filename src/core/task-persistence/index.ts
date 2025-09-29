@@ -1,3 +1,3 @@
-export { type ApiMessage, readApiMessages, saveApiMessages } from "./apiMessages"
-export { readTaskMessages, saveTaskMessages } from "./taskMessages"
-export { taskMetadata } from "./taskMetadata"
+export { type ApiMessage, readApiMessages, saveApiMessages } from "./apiMessages.js"
+export { readTaskMessages, saveTaskMessages } from "./taskMessages.js"
+export { taskMetadata } from "./taskMetadata.js"

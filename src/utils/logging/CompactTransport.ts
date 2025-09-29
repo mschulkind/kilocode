@@ -4,7 +4,7 @@
 
 import { writeFileSync, mkdirSync } from "fs"
 import { dirname } from "path"
-import { CompactTransportConfig, ICompactTransport, CompactLogEntry, LogLevel, LOG_LEVELS } from "./types"
+import { CompactTransportConfig, ICompactTransport, CompactLogEntry, LogLevel, LOG_LEVELS } from "./types.js"
 
 /**
  * Default configuration for the transport

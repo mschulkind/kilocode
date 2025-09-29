@@ -3,9 +3,9 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import { AnthropicVertex } from "@anthropic-ai/vertex-sdk"
 
-import { ApiStreamChunk } from "../../transform/stream"
+import { ApiStreamChunk } from "../../transform/stream.js"
 
-import { AnthropicVertexHandler } from "../anthropic-vertex"
+import { AnthropicVertexHandler } from "../anthropic-vertex.js"
 
 vitest.mock("@anthropic-ai/vertex-sdk", () => ({
 	AnthropicVertex: vitest.fn().mockImplementation(() => ({

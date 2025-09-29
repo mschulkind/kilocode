@@ -1,5 +1,5 @@
-import { GhostStreamingParser } from "../GhostStreamingParser"
-import { GhostSuggestionContext } from "../types"
+import { GhostStreamingParser } from "../GhostStreamingParser.js"
+import { GhostSuggestionContext } from "../types.js"
 
 // Mock vscode module
 vi.mock("vscode", () => ({

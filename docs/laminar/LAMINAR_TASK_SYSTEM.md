@@ -188,13 +188,13 @@ Laminar observability is integrated at key points throughout the Task System lif
 
 * *Key Integration Points:*\*
 
-* [`constructor`](src/core/task/Task.ts#L317): Task span initialization
+* [`constructor`](../../src/core/task/Task.ts#L317): Task span initialization
 
-* [`startTask`](src/core/task/Task.ts#L1231): Task execution span creation
+* [`startTask`](../../src/core/task/Task.ts#L1231): Task execution span creation
 
-* [`abortTask`](src/core/task/Task.ts#L1532): Span completion on abort
+* [`abortTask`](../../src/core/task/Task.ts#L1532): Span completion on abort
 
-* [`dispose`](src/core/task/Task.ts#L1558): Final span cleanup
+* [`dispose`](../../src/core/task/Task.ts#L1558): Final span cleanup
 
 ### Span Hierarchy
 
@@ -285,11 +285,11 @@ case "usage":
 
 * *Key Code Locations:*\*
 
-* [`recursivelyMakeClineRequests`](src/core/task/Task.ts#L1749): Main LLM interaction loop
+* [`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1749): Main LLM interaction loop
 
-* [`attemptApiRequest`](src/core/task/Task.ts#L2667): API request execution
+* [`attemptApiRequest`](../../src/core/task/Task.ts#L2667): API request execution
 
-* [`drainStreamInBackgroundToFindAllUsage`](src/core/task/Task.ts#L2092): Background usage
+* [`drainStreamInBackgroundToFindAllUsage`](../../src/core/task/Task.ts#L2092): Background usage
   collection
 
 * \*\*
@@ -459,11 +459,11 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 
 * *Integration Points:*\*
 
-* [`toolRepetitionDetector`](src/core/task/Task.ts#L251): Tool loop prevention
+* [`toolRepetitionDetector`](../../src/core/task/Task.ts#L251): Tool loop prevention
 
-* [`recordToolUsage`](src/core/task/Task.ts#L3002): Usage metrics collection
+* [`recordToolUsage`](../../src/core/task/Task.ts#L3002): Usage metrics collection
 
-* [`recordToolError`](src/core/task/Task.ts#L3010): Error tracking
+* [`recordToolError`](../../src/core/task/Task.ts#L3010): Error tracking
 
 ### Checkpoints Subsystem Integration
 
@@ -479,11 +479,11 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 
 * *Integration Points:*\*
 
-* [`checkpointSave`](src/core/task/Task.ts#L2980): Save operation tracing
+* [`checkpointSave`](../../src/core/task/Task.ts#L2980): Save operation tracing
 
-* [`checkpointRestore`](src/core/task/Task.ts#L2983): Restore operation tracing
+* [`checkpointRestore`](../../src/core/task/Task.ts#L2983): Restore operation tracing
 
-* [`checkpointDiff`](src/core/task/Task.ts#L2986): Diff operation tracing
+* [`checkpointDiff`](../../src/core/task/Task.ts#L2986): Diff operation tracing
 
 ### Service Layer Integration
 
@@ -499,11 +499,11 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 
 * *Key Services:*\*
 
-* [`UrlContentFetcher`](src/core/task/Task.ts#L61): Web content retrieval
+* [`UrlContentFetcher`](../../src/core/task/Task.ts#L61): Web content retrieval
 
-* [`BrowserSession`](src/core/task/Task.ts#L62): Browser automation
+* [`BrowserSession`](../../src/core/task/Task.ts#L62): Browser automation
 
-* [`MessageQueueService`](src/core/task/Task.ts#L292): Async message processing
+* [`MessageQueueService`](../../src/core/task/Task.ts#L292): Async message processing
 
 * \*\*
 
@@ -516,21 +516,21 @@ The Task System integrates with multiple subsystems through Laminar tracing:
 ***
 
 | -------------------------- |
-| Task Lifecycle  | [`constructor`](src/core/task/Task.ts#L317),
-[`startTask`](src/core/task/Task.ts#L1231), [`abortTask`](src/core/task/Task.ts#L1532) | Span
+| Task Lifecycle  | [`constructor`](../../src/core/task/Task.ts#L317),
+[`startTask`](../../src/core/task/Task.ts#L1231), [`abortTask`](../../src/core/task/Task.ts#L1532) | Span
 creation/management   |
-| LLM Integration | [`attemptApiRequest`](src/core/task/Task.ts#L2667),
-[`recursivelyMakeClineRequests`](src/core/task/Task.ts#L1749)                   | Token usage, cost
+| LLM Integration | [`attemptApiRequest`](../../src/core/task/Task.ts#L2667),
+[`recursivelyMakeClineRequests`](../../src/core/task/Task.ts#L1749)                   | Token usage, cost
 tracking |
-| Tool System     | [`toolRepetitionDetector`](src/core/task/Task.ts#L251),
-[`recordToolUsage`](src/core/task/Task.ts#L3002)                            | Tool execution
+| Tool System     | [`toolRepetitionDetector`](../../src/core/task/Task.ts#L251),
+[`recordToolUsage`](../../src/core/task/Task.ts#L3002)                            | Tool execution
 monitoring  |
-| Checkpoints     | [`checkpointSave`](src/core/task/Task.ts#L2980),
-[`checkpointRestore`](src/core/task/Task.ts#L2983)                                 | State
+| Checkpoints     | [`checkpointSave`](../../src/core/task/Task.ts#L2980),
+[`checkpointRestore`](../../src/core/task/Task.ts#L2983)                                 | State
 persistence tracing  |
-| Authentication  | [`getContext`](src/core/task/Task.ts#L454)
+| Authentication  | [`getContext`](../../src/core/task/Task.ts#L454)
 | User context integration   |
-| Error Handling  | [`handleContextWindowExceededError`](src/core/task/Task.ts#L2606)
+| Error Handling  | [`handleContextWindowExceededError`](../../src/core/task/Task.ts#L2606)
 | Error recovery mechanisms  |
 
 * \*\*
@@ -550,7 +550,7 @@ persistence tracing  |
 
 <a id="navigation-footer"></a>
 
-* Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root:
+* Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md) · Root:
   [`README.md`](README.md:1) · Source: `/docs/LAMINAR_TASK_SYSTEM.md#L1`
 
 ## 🔍 Research Context & Next Steps
@@ -566,7 +566,7 @@ persistence tracing  |
 
 * *Implementing Observability Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -574,7 +574,7 @@ persistence tracing  |
 * *Troubleshooting Observability Issues:*\*
 
 * **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -594,7 +594,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 

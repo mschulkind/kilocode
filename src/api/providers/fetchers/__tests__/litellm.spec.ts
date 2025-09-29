@@ -3,8 +3,8 @@ vi.mock("axios")
 
 import type { Mock } from "vitest"
 import axios from "axios"
-import { getLiteLLMModels } from "../litellm"
-import { DEFAULT_HEADERS } from "../../constants"
+import { getLiteLLMModels } from "../litellm.js"
+import { DEFAULT_HEADERS } from "../../constants.js"
 
 const mockedAxios = axios as typeof axios & {
 	get: Mock

@@ -1,8 +1,8 @@
-import { applyDiffTool } from "../multiApplyDiffTool"
-import { EXPERIMENT_IDS } from "../../../shared/experiments"
+import { applyDiffTool } from "../multiApplyDiffTool.js"
+import { EXPERIMENT_IDS } from "../../../shared/experiments.js"
 import * as fs from "fs/promises"
-import * as fileUtils from "../../../utils/fs"
-import * as pathUtils from "../../../utils/path"
+import * as fileUtils from "../../../utils/fs.js"
+import * as pathUtils from "../../../utils/path.js"
 
 // Mock dependencies
 vi.mock("fs/promises")

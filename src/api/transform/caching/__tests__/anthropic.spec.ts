@@ -2,7 +2,7 @@
 
 import OpenAI from "openai"
 
-import { addCacheBreakpoints } from "../anthropic"
+import { addCacheBreakpoints } from "../anthropic.js"
 
 describe("addCacheBreakpoints (Anthropic)", () => {
 	const systemPrompt = "You are a helpful assistant."

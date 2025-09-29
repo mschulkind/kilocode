@@ -1,6 +1,6 @@
 import { type ToolName, toolNames } from "@roo-code/types"
-import { TextContent, ToolUse, ToolParamName, toolParamNames } from "../../shared/tools"
-import { AssistantMessageContent } from "./parseAssistantMessage"
+import { TextContent, ToolUse, ToolParamName, toolParamNames } from "../../shared/tools.js"
+import { AssistantMessageContent } from "./parseAssistantMessage.js"
 
 /**
  * Parser for assistant messages. Maintains state between chunks

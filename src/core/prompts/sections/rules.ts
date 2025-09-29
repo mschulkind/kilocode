@@ -1,10 +1,10 @@
-import { DiffStrategy } from "../../../shared/tools"
-import { CodeIndexManager } from "../../../services/code-index/manager"
+import { DiffStrategy } from "../../../shared/tools.js"
+import { CodeIndexManager } from "../../../services/code-index/manager.js"
 
 // kilocode_change start
-import { getMorphEditingInstructions } from "../tools/edit-file"
-import { type ClineProviderState } from "../../webview/ClineProvider"
-import { isMorphAvailable } from "../../tools/editFileTool"
+import { getMorphEditingInstructions } from "../tools/edit-file.js"
+import { type ClineProviderState } from "../../webview/ClineProvider.js"
+import { isMorphAvailable } from "../../tools/editFileTool.js"
 // kilocode_change end
 
 function getEditingInstructions(diffStrategy?: DiffStrategy): string {

@@ -1,7 +1,7 @@
 import { SystemContentBlock } from "@aws-sdk/client-bedrock-runtime"
-import { CacheStrategy } from "./base-strategy"
-import { CacheResult, CachePointPlacement } from "./types"
-import { logger } from "../../../utils/logging"
+import { CacheStrategy } from "./base-strategy.js"
+import { CacheResult, CachePointPlacement } from "./types.js"
+import { logger } from "../../../utils/logging/index.js"
 
 /**
  * Strategy for handling multiple cache points.
@@ -96,7 +96,8 @@ export class MultiPointStrategy extends CacheStrategy {
 		}
 
 		// Calculate tokens in new messages (added since last cache point placement)
-		const lastPreviousIndex = previousPlacements[previousPlacements.length - 1].index
+		const lastPreviousPlacement = previousPlacements[previousPlacements.length - 1]
+		const lastPreviousIndex = lastPreviousPlacement?.index || 0
 		const newMessagesTokens = this.config.messages
 			.slice(lastPreviousIndex + 1)
 			.reduce((acc, curr) => acc + this.estimateTokenCount(curr), 0)
@@ -145,7 +146,9 @@ export class MultiPointStrategy extends CacheStrategy {
 				let smallestGap = Number.MAX_VALUE
 
 				for (let i = 0; i < tokensBetweenPlacements.length - 1; i++) {
-					const gap = tokensBetweenPlacements[i] + tokensBetweenPlacements[i + 1]
+					const currentTokens = tokensBetweenPlacements[i] || 0
+					const nextTokens = tokensBetweenPlacements[i + 1] || 0
+					const gap = currentTokens + nextTokens
 					if (gap < smallestGap) {
 						smallestGap = gap
 						smallestGapIndex = i
@@ -170,17 +173,20 @@ export class MultiPointStrategy extends CacheStrategy {
 
 					// Combine the two placements with the smallest gap
 					for (let i = 0; i < previousPlacements.length; i++) {
+						const currentPlacement = previousPlacements[i]
 						if (i !== smallestGapIndex && i !== smallestGapIndex + 1) {
 							// Keep this placement
-							if (previousPlacements[i].index < totalMessages) {
-								placements.push(previousPlacements[i])
+							if (currentPlacement && currentPlacement.index < totalMessages) {
+								placements.push(currentPlacement)
 							}
 						} else if (i === smallestGapIndex) {
 							// Replace with a combined placement
-							const combinedEndIndex = previousPlacements[i + 1].index
+							const nextPlacement = previousPlacements[i + 1]
+							const combinedEndIndex = nextPlacement?.index || 0
 
 							// Find the optimal placement within this combined range
-							const startOfRange = i === 0 ? 0 : previousPlacements[i - 1].index + 1
+							const prevPlacement = previousPlacements[i - 1]
+							const startOfRange = i === 0 ? 0 : (prevPlacement?.index || 0) + 1
 							const combinedPlacement = this.findOptimalPlacementForRange(
 								startOfRange,
 								combinedEndIndex,
@@ -257,7 +263,8 @@ export class MultiPointStrategy extends CacheStrategy {
 		// Find the last user message in the range
 		let lastUserMessageIndex = -1
 		for (let i = endIndex; i >= startIndex; i--) {
-			if (this.config.messages[i].role === "user") {
+			const message = this.config.messages[i]
+			if (message && message.role === "user") {
 				lastUserMessageIndex = i
 				break
 			}

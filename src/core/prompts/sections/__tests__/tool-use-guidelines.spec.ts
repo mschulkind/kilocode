@@ -1,5 +1,5 @@
-import { getToolUseGuidelinesSection } from "../tool-use-guidelines"
-import type { CodeIndexManager } from "../../../../services/code-index/manager"
+import { getToolUseGuidelinesSection } from "../tool-use-guidelines.js"
+import type { CodeIndexManager } from "../../../../services/code-index/manager.js"
 
 describe("getToolUseGuidelinesSection", () => {
 	// Mock CodeIndexManager with codebase search available

@@ -4,7 +4,7 @@ import { Writable } from "stream"
 import * as path from "path"
 import * as os from "os"
 
-import { safeWriteJson } from "../safeWriteJson"
+import { safeWriteJson } from "../safeWriteJson.js"
 
 const originalFsPromisesRename = actualFsPromises.rename
 const originalFsPromisesUnlink = actualFsPromises.unlink

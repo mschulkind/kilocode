@@ -17,10 +17,10 @@ import * as fs from "fs/promises"
 import * as path from "path"
 import * as vscode from "vscode"
 import { z } from "zod"
-import { t } from "../../i18n"
+import { t } from "../../i18n.js"
 
-import { ClineProvider } from "../../core/webview/ClineProvider"
-import { GlobalFileNames } from "../../shared/globalFileNames"
+import { ClineProvider } from "../../core/webview/ClineProvider.js"
+import { GlobalFileNames } from "../../shared/globalFileNames.js"
 import {
 	McpResource,
 	McpResourceResponse,
@@ -28,11 +28,11 @@ import {
 	McpServer,
 	McpTool,
 	McpToolCallResponse,
-} from "../../shared/mcp"
-import { fileExistsAtPath } from "../../utils/fs"
-import { arePathsEqual, getWorkspacePath } from "../../utils/path"
-import { injectVariables } from "../../utils/config"
-import { NotificationService } from "./kilocode/NotificationService"
+} from "../../shared/mcp.js"
+import { fileExistsAtPath } from "../../utils/fs.js"
+import { arePathsEqual, getWorkspacePath } from "../../utils/path.js"
+import { injectVariables } from "../../utils/config.js"
+import { NotificationService } from "./kilocode/NotificationService.js"
 
 // Discriminated union for connection states
 export type ConnectedMcpConnection = {

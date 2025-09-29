@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { elixirQuery } from "../queries"
-import sampleElixirContent from "./fixtures/sample-elixir"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { elixirQuery } from "../queries.js"
+import sampleElixirContent from "./fixtures/sample-elixir.js"
 
 describe("inspectElixir", () => {
 	const testOptions = {

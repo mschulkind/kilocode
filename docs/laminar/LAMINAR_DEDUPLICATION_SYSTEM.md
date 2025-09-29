@@ -329,11 +329,11 @@ Handle configuration issues:
 
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
-| Deduplication Manager | [`../../src/deduplication/DeduplicationManager.ts`](../../src/deduplication/DeduplicationManager.ts) | `checkDuplicate()`, `createSpan()` | Span deduplication |
-| Content Hasher | [`../../src/deduplication/ContentHasher.ts`](../../src/deduplication/ContentHasher.ts) | `generateHash()`, `compareHashes()` | Content analysis |
-| Cache Manager | [`../../src/deduplication/CacheManager.ts`](../../src/deduplication/CacheManager.ts) | `get()`, `set()`, `clear()` | Deduplication cache |
-| Metrics Collector | [`../../src/deduplication/MetricsCollector.ts`](../../src/deduplication/MetricsCollector.ts) | `recordMetrics()`, `getMetrics()` | Performance monitoring |
-| Configuration Manager | [`../../src/deduplication/ConfigManager.ts`](../../src/deduplication/ConfigManager.ts) | `loadConfig()`, `updateConfig()` | Configuration management |
+| Deduplication Manager | [Deduplication Implementation](../../src/core/message-queue/MessageQueueService.ts) | `checkDuplicate()`, `createSpan()` | Span deduplication |
+| Content Hasher | [Deduplication Implementation](../../src/core/message-queue/MessageQueueService.ts) | `generateHash()`, `compareHashes()` | Content analysis |
+| Cache Manager | [Deduplication Implementation](../../src/core/message-queue/MessageQueueService.ts) | `get()`, `set()`, `clear()` | Deduplication cache |
+| Metrics Collector | [Deduplication Implementation](../../src/core/message-queue/MessageQueueService.ts) | `recordMetrics()`, `getMetrics()` | Performance monitoring |
+| Configuration Manager | [Deduplication Implementation](../../src/core/message-queue/MessageQueueService.ts) | `loadConfig()`, `updateConfig()` | Configuration management |
 
 ## Research Context & Next Steps
 

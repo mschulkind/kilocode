@@ -1,11 +1,11 @@
 import * as vscode from "vscode"
 
-import { Task } from "../task/Task"
-import { CodeIndexManager } from "../../services/code-index/manager"
-import { getWorkspacePath } from "../../utils/path"
-import { formatResponse } from "../prompts/responses"
-import { VectorStoreSearchResult } from "../../services/code-index/interfaces"
-import { AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolUse } from "../../shared/tools"
+import { Task } from "../task/Task.js"
+import { CodeIndexManager } from "../../services/code-index/manager.js"
+import { getWorkspacePath } from "../../utils/path.js"
+import { formatResponse } from "../prompts/responses.js"
+import { VectorStoreSearchResult } from "../../services/code-index/interfaces.js"
+import { AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolUse } from "../../shared/tools.js"
 import path from "path"
 
 export async function codebaseSearchTool(

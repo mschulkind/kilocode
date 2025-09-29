@@ -1,7 +1,7 @@
 import { Fzf } from "fzf"
 import { HistoryItem } from "@roo-code/types"
-import { highlightFzfMatch } from "../../../webview-ui/src/utils/highlight" // weird hack, but apparently it works
-import { TaskHistoryRequestPayload, TaskHistoryResponsePayload } from "../WebviewMessage"
+import { highlightFzfMatch } from "../../../webview-ui/src/utils/highlight.js" // weird hack, but apparently it works
+import { TaskHistoryRequestPayload, TaskHistoryResponsePayload } from "../WebviewMessage.js"
 
 const PAGE_SIZE = 10
 

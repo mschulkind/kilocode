@@ -2,8 +2,8 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { OpenAiNativeHandler } from "../openai-native"
-import { ApiHandlerOptions } from "../../../shared/api"
+import { OpenAiNativeHandler } from "../openai-native.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 
 // Mock OpenAI client - now everything uses Responses API
 const mockResponsesCreate = vitest.fn()

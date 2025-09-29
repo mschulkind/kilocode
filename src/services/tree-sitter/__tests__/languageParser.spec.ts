@@ -1,7 +1,7 @@
 // npx vitest services/tree-sitter/__tests__/languageParser.spec.ts
 
 import * as path from "path"
-import { loadRequiredLanguageParsers } from "../languageParser"
+import { loadRequiredLanguageParsers } from "../languageParser.js"
 
 // Path to the directory containing the WASM files.
 const WASM_DIR = path.join(__dirname, "../../../node_modules/tree-sitter-wasms/out")

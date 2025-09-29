@@ -1,7 +1,7 @@
-import type { RooTerminalCallbacks, RooTerminalProcessResultPromise } from "./types"
-import { BaseTerminal } from "./BaseTerminal"
-import { ExecaTerminalProcess } from "./ExecaTerminalProcess"
-import { mergePromise } from "./mergePromise"
+import type { RooTerminalCallbacks, RooTerminalProcessResultPromise } from "./types.js"
+import { BaseTerminal } from "./BaseTerminal.js"
+import { ExecaTerminalProcess } from "./ExecaTerminalProcess.js"
+import { mergePromise } from "./mergePromise.js"
 
 export class ExecaTerminal extends BaseTerminal {
 	constructor(id: number, cwd: string) {

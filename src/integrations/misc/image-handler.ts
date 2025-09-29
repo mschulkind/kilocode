@@ -1,8 +1,8 @@
 import * as path from "path"
 import * as os from "os"
 import * as vscode from "vscode"
-import { getWorkspacePath } from "../../utils/path"
-import { t } from "../../i18n"
+import { getWorkspacePath } from "../../utils/path.js"
+import { t } from "../../i18n.js"
 
 export async function openImage(dataUriOrPath: string, options?: { values?: { action?: string } }) {
 	// Check if it's a file path (absolute or relative)

@@ -1,4 +1,4 @@
-import { fileExistsAtPath, isDirectory } from "../../../utils/fs"
+import { fileExistsAtPath, isDirectory } from "../../../utils/fs.js"
 import * as path from "path"
 import fs from "fs/promises"
 

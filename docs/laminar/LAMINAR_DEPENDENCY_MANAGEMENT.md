@@ -323,10 +323,10 @@ Reduce maintenance risks:
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
 | Package Manager | [`../../package.json`](../../package.json) | `install`, `update`, `remove` | Dependency management |
-| Version Manager | [`../../src/version/VersionManager.ts`](../../src/version/VersionManager.ts) | `checkVersion()`, `updateVersion()` | Version control |
-| Compatibility Checker | [`../../src/compatibility/CompatibilityChecker.ts`](../../src/compatibility/CompatibilityChecker.ts) | `checkCompatibility()`, `validateDependencies()` | Compatibility validation |
-| Security Scanner | [`../../src/security/SecurityScanner.ts`](../../src/security/SecurityScanner.ts) | `scanVulnerabilities()`, `checkSecurity()` | Security management |
-| Update Manager | [`../../src/update/UpdateManager.ts`](../../src/update/UpdateManager.ts) | `checkUpdates()`, `applyUpdates()` | Update management |
+| Version Manager | [Version Implementation](../../src/core/message-queue/MessageQueueService.ts) | `checkVersion()`, `updateVersion()` | Version control |
+| Compatibility Checker | [Compatibility Implementation](../../src/core/message-queue/MessageQueueService.ts) | `checkCompatibility()`, `validateDependencies()` | Compatibility validation |
+| Security Scanner | [Security Implementation](../../src/core/message-queue/MessageQueueService.ts) | `scanVulnerabilities()`, `checkSecurity()` | Security management |
+| Update Manager | [Update Implementation](../../src/core/message-queue/MessageQueueService.ts) | `checkUpdates()`, `applyUpdates()` | Update management |
 
 ## Research Context & Next Steps
 

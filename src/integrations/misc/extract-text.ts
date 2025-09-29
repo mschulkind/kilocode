@@ -4,9 +4,9 @@ import pdf from "pdf-parse/lib/pdf-parse"
 import mammoth from "mammoth"
 import fs from "fs/promises"
 import { isBinaryFile } from "isbinaryfile"
-import { extractTextFromXLSX } from "./extract-text-from-xlsx"
-import { countFileLines } from "./line-counter"
-import { readLines } from "./read-lines"
+import { extractTextFromXLSX } from "./extract-text-from-xlsx.js"
+import { countFileLines } from "./line-counter.js"
+import { readLines } from "./read-lines.js"
 
 async function extractTextFromPDF(filePath: string): Promise<string> {
 	const dataBuffer = await fs.readFile(filePath)

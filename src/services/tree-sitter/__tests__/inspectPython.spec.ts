@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { samplePythonContent } from "./fixtures/sample-python"
-import { pythonQuery } from "../queries"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { samplePythonContent } from "./fixtures/sample-python.js"
+import { pythonQuery } from "../queries.js"
 
 // Python test options
 const pythonOptions = {

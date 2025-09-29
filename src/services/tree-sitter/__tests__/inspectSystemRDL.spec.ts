@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import systemrdlQuery from "../queries/systemrdl"
-import sampleSystemRDLContent from "./fixtures/sample-systemrdl"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import systemrdlQuery from "../queries/systemrdl.js"
+import sampleSystemRDLContent from "./fixtures/sample-systemrdl.js"
 
 describe("inspectSystemRDL", () => {
 	const testOptions = {

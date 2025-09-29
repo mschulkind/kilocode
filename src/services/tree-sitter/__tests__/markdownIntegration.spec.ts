@@ -13,7 +13,7 @@ vi.mock("../../../utils/fs", () => ({
 import * as fs from "fs/promises"
 import type { Mock } from "vitest"
 
-import { parseSourceCodeDefinitionsForFile } from "../index"
+import { parseSourceCodeDefinitionsForFile } from "../index.js"
 
 describe("Markdown Integration Tests", () => {
 	beforeEach(() => {

@@ -2,9 +2,9 @@
 
 import type { Mock } from "vitest"
 import * as path from "path"
-import { countFileLines } from "../line-counter"
-import { readLines } from "../read-lines"
-import { extractTextFromFile, addLineNumbers } from "../extract-text"
+import { countFileLines } from "../line-counter.js"
+import { readLines } from "../read-lines.js"
+import { extractTextFromFile, addLineNumbers } from "../extract-text.js"
 
 // Mock the required functions
 vitest.mock("../line-counter")

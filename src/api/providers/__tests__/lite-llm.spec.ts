@@ -1,8 +1,8 @@
 import OpenAI from "openai"
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { LiteLLMHandler } from "../lite-llm"
-import { ApiHandlerOptions } from "../../../shared/api"
+import { LiteLLMHandler } from "../lite-llm.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 import { litellmDefaultModelId, litellmDefaultModelInfo } from "@roo-code/types"
 
 // Mock vscode first to avoid import errors

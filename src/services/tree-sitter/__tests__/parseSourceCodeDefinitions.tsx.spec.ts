@@ -31,8 +31,8 @@ TODO: The following structures can be parsed by tree-sitter but lack query suppo
    - Parsed but no specific patterns for React synthetic events
 */
 
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
-import sampleTsxContent from "./fixtures/sample-tsx"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
+import sampleTsxContent from "./fixtures/sample-tsx.js"
 
 // Mock fs module
 vi.mock("fs/promises")

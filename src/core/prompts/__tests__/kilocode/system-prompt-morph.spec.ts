@@ -45,10 +45,10 @@ vi.mock("fs/promises")
 
 import * as vscode from "vscode"
 
-import { SYSTEM_PROMPT } from "../../system"
-import { defaultModeSlug, modes, Mode } from "../../../../shared/modes"
+import { SYSTEM_PROMPT } from "../../system.js"
+import { defaultModeSlug, modes, Mode } from "../../../../shared/modes.js"
 import "../../../../utils/path"
-import { MultiSearchReplaceDiffStrategy } from "../../../diff/strategies/multi-search-replace"
+import { MultiSearchReplaceDiffStrategy } from "../../../diff/strategies/multi-search-replace.js"
 
 // Mock the sections
 vi.mock("../../sections/modes", () => ({

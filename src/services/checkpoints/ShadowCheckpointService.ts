@@ -8,17 +8,17 @@ import simpleGit, { SimpleGit } from "simple-git"
 import pWaitFor from "p-wait-for"
 import * as vscode from "vscode"
 
-import { fileExistsAtPath } from "../../utils/fs"
-import { executeRipgrep } from "../../services/search/file-search"
-import { t } from "../../i18n"
+import { fileExistsAtPath } from "../../utils/fs.js"
+import { executeRipgrep } from "../../services/search/file-search.js"
+import { t } from "../../i18n.js"
 
-import { CheckpointDiff, CheckpointResult, CheckpointEventMap } from "./types"
-import { getExcludePatterns } from "./excludes"
+import { CheckpointDiff, CheckpointResult, CheckpointEventMap } from "./types.js"
+import { getExcludePatterns } from "./excludes.js"
 
 // kilocode_change start
 import { TelemetryService } from "@roo-code/telemetry"
 import { TelemetryEventName } from "@roo-code/types"
-import { stringifyError } from "../../shared/kilocode/errorUtils"
+import { stringifyError } from "../../shared/kilocode/errorUtils.js"
 function reportError(callsite: string, error: unknown) {
 	TelemetryService.instance.captureEvent(TelemetryEventName.CHECKPOINT_FAILURE, {
 		callsite,

@@ -4,7 +4,7 @@ import * as vscode from "vscode"
 import { RooCodeEventName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { Task } from "../task/Task"
+import { Task } from "../task/Task.js"
 import {
 	ToolResponse,
 	ToolUse,
@@ -14,10 +14,10 @@ import {
 	RemoveClosingTag,
 	ToolDescription,
 	AskFinishSubTaskApproval,
-} from "../../shared/tools"
-import { formatResponse } from "../prompts/responses"
-import { Package } from "../../shared/package"
-import { getCommitRangeForNewCompletion } from "../checkpoints/kilocode/seeNewChanges"
+} from "../../shared/tools.js"
+import { formatResponse } from "../prompts/responses.js"
+import { Package } from "../../shared/package.js"
+import { getCommitRangeForNewCompletion } from "../checkpoints/kilocode/seeNewChanges.js"
 
 // kilocode_change start
 async function getClineMessageOptions(task: Task) {

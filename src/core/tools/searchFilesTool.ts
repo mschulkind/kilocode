@@ -1,11 +1,11 @@
 import path from "path"
 
-import { Task } from "../task/Task"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
-import { ClineSayTool } from "../../shared/ExtensionMessage"
-import { getReadablePath } from "../../utils/path"
-import { isPathOutsideWorkspace } from "../../utils/pathUtils"
-import { regexSearchFiles } from "../../services/ripgrep"
+import { Task } from "../task/Task.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { ClineSayTool } from "../../shared/ExtensionMessage.js"
+import { getReadablePath } from "../../utils/path.js"
+import { isPathOutsideWorkspace } from "../../utils/pathUtils.js"
+import { regexSearchFiles } from "../../services/ripgrep.js"
 
 export async function searchFilesTool(
 	cline: Task,

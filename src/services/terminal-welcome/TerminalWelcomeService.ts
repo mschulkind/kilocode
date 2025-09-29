@@ -1,7 +1,7 @@
 // kilocode_change - new file
 import * as vscode from "vscode"
-import { t } from "../../i18n"
-import { getKeybindingForCommand } from "../../utils/keybindings"
+import { t } from "../../i18n.js"
+import { getKeybindingForCommand } from "../../utils/keybindings.js"
 
 /**
  * Service that displays welcome messages in newly opened terminals

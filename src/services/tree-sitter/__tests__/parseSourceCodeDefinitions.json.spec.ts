@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import { javascriptQuery } from "../queries"
-import sampleJsonContent from "./fixtures/sample-json"
+import { testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import { javascriptQuery } from "../queries.js"
+import sampleJsonContent from "./fixtures/sample-json.js"
 
 // JSON test options
 const jsonOptions = {

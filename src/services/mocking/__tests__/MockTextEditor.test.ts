@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { MockTextEditor } from "../MockTextEditor"
+import { MockTextEditor } from "../MockTextEditor.js"
 
 describe("MockTextEditor", () => {
 	it("should correctly parse cursor position from marker", () => {

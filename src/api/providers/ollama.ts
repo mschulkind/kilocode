@@ -3,18 +3,18 @@ import OpenAI from "openai"
 
 import { type ModelInfo, openAiModelInfoSaneDefaults, DEEP_SEEK_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { XmlMatcher } from "../../utils/xml-matcher"
+import { XmlMatcher } from "../../utils/xml-matcher.js"
 
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { convertToR1Format } from "../transform/r1-format"
-import { ApiStream } from "../transform/stream"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { convertToR1Format } from "../transform/r1-format.js"
+import { ApiStream } from "../transform/stream.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { getApiRequestTimeout } from "./utils/timeout-config"
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { getApiRequestTimeout } from "./utils/timeout-config.js"
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 type CompletionUsage = OpenAI.Chat.Completions.ChatCompletionChunk["usage"]
 

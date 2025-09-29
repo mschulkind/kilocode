@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { ocamlQuery } from "../queries"
-import { sampleOCaml } from "./fixtures/sample-ocaml"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { ocamlQuery } from "../queries.js"
+import { sampleOCaml } from "./fixtures/sample-ocaml.js"
 
 describe("inspectOCaml", () => {
 	const testOptions = {

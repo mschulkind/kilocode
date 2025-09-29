@@ -3,10 +3,10 @@ import type { Mock } from "vitest"
 // Mock dependencies - must come before imports
 vi.mock("../../../api/providers/fetchers/modelCache")
 
-import { webviewMessageHandler } from "../webviewMessageHandler"
-import type { ClineProvider } from "../ClineProvider"
-import { getModels } from "../../../api/providers/fetchers/modelCache"
-import type { ModelRecord } from "../../../shared/api"
+import { webviewMessageHandler } from "../webviewMessageHandler.js"
+import type { ClineProvider } from "../ClineProvider.js"
+import { getModels } from "../../../api/providers/fetchers/modelCache.js"
+import type { ModelRecord } from "../../../shared/api.js"
 
 const mockGetModels = getModels as Mock<typeof getModels>
 
@@ -37,7 +37,7 @@ const mockClineProvider = {
 	createTaskWithHistoryItem: vi.fn(),
 } as unknown as ClineProvider
 
-import { t } from "../../../i18n"
+import { t } from "../../../i18n.js"
 
 vi.mock("vscode", () => ({
 	window: {
@@ -86,9 +86,9 @@ import * as vscode from "vscode"
 import * as fs from "fs/promises"
 import * as os from "os"
 import * as path from "path"
-import * as fsUtils from "../../../utils/fs"
-import { getWorkspacePath } from "../../../utils/path"
-import { ensureSettingsDirectoryExists } from "../../../utils/globalContext"
+import * as fsUtils from "../../../utils/fs.js"
+import { getWorkspacePath } from "../../../utils/path.js"
+import { ensureSettingsDirectoryExists } from "../../../utils/globalContext.js"
 import type { ModeConfig } from "@roo-code/types"
 
 vi.mock("../../../utils/fs")

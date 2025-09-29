@@ -1,6 +1,6 @@
 import type { PromptComponent } from "@roo-code/types"
 
-import { getModeSelection, modes } from "../modes"
+import { getModeSelection, modes } from "../modes.js"
 
 describe("getModeSelection with empty promptComponent", () => {
 	it("should use built-in mode instructions when promptComponent is undefined", () => {

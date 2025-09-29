@@ -1,7 +1,7 @@
-import { GhostSuggestionContext } from "../types"
-import { BasePromptStrategy } from "./BasePromptStrategy"
-import { UseCaseType } from "../types/PromptStrategy"
-import { CURSOR_MARKER } from "../ghostConstants"
+import { GhostSuggestionContext } from "../types.js"
+import { BasePromptStrategy } from "./BasePromptStrategy.js"
+import { UseCaseType } from "../types/PromptStrategy.js"
+import { CURSOR_MARKER } from "../ghostConstants.js"
 
 /**
  * Strategy for refactoring selected code

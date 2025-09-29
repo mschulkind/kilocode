@@ -2,9 +2,9 @@
 
 import * as fs from "fs/promises"
 
-import { extractTextFromFile } from "../extract-text"
-import { countFileLines } from "../line-counter"
-import { readLines } from "../read-lines"
+import { extractTextFromFile } from "../extract-text.js"
+import { countFileLines } from "../line-counter.js"
+import { readLines } from "../read-lines.js"
 import { isBinaryFile } from "isbinaryfile"
 
 // Mock all dependencies

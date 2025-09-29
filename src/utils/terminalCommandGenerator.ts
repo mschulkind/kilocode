@@ -1,12 +1,12 @@
 // kilocode_change - new file
 import * as vscode from "vscode"
-import { ContextProxy } from "../core/config/ContextProxy"
-import { ProviderSettingsManager } from "../core/config/ProviderSettingsManager"
-import { supportPrompt } from "../shared/support-prompt"
-import { singleCompletionHandler } from "./single-completion-handler"
+import { ContextProxy } from "../core/config/ContextProxy.js"
+import { ProviderSettingsManager } from "../core/config/ProviderSettingsManager.js"
+import { supportPrompt } from "../shared/support-prompt.js"
+import { singleCompletionHandler } from "./single-completion-handler.js"
 import type { ProviderSettings } from "@roo-code/types"
-import { t } from "../i18n"
-import { getLatestTerminalOutput } from "../core/mentions"
+import { t } from "../i18n.js"
+import { getLatestTerminalOutput } from "../core/mentions.js"
 
 export interface TerminalCommandGeneratorOptions {
 	outputChannel: vscode.OutputChannel

@@ -19,7 +19,7 @@ vi.mock("vscode", () => ({
 	},
 }))
 
-import { getShikiTheme, getThemeColors } from "../ThemeMapper"
+import { getShikiTheme, getThemeColors } from "../ThemeMapper.js"
 import * as vscode from "vscode"
 
 describe("ThemeMapper", () => {

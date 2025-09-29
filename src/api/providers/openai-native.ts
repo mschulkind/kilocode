@@ -14,15 +14,15 @@ import {
 	type ServiceTier,
 } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { calculateApiCostOpenAI } from "../../shared/cost"
+import { calculateApiCostOpenAI } from "../../shared/cost.js"
 
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 export type OpenAiNativeModel = ReturnType<OpenAiNativeHandler["getModel"]>
 
@@ -638,7 +638,7 @@ export class OpenAiNativeHandler extends BaseProvider implements SingleCompletio
 		// This method now only handles formatting based on whether we have a previous response ID
 
 		// Check for previous response ID from metadata or fallback to lastResponseId
-		const isFirstMessage = messages.length === 1 && messages[0].role === "user"
+		const isFirstMessage = messages.length === 1 && messages[0]?.role === "user"
 		const previousResponseId = metadata?.previousResponseId ?? (!isFirstMessage ? this.lastResponseId : undefined)
 
 		if (previousResponseId) {

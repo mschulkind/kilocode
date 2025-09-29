@@ -2,9 +2,9 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { ApiHandler } from "../../api"
-import { MAX_CONDENSE_THRESHOLD, MIN_CONDENSE_THRESHOLD, summarizeConversation, SummarizeResponse } from "../condense"
-import { ApiMessage } from "../task-persistence/apiMessages"
+import { ApiHandler } from "../../api.js"
+import { MAX_CONDENSE_THRESHOLD, MIN_CONDENSE_THRESHOLD, summarizeConversation, SummarizeResponse } from "../condense.js"
+import { ApiMessage } from "../task-persistence/apiMessages.js"
 import { ANTHROPIC_DEFAULT_MAX_TOKENS } from "@roo-code/types"
 
 /**

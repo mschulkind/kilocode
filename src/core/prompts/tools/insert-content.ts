@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getInsertContentDescription(args: ToolArgs): string {
 	return `## insert_content
@@ -17,7 +17,7 @@ Example for inserting imports at start of file:
 <line>1</line>
 <content>
 // Add imports at start of file
-import { sum } from './math';
+import { sum } from './math.js';
 </content>
 </insert_content>
 

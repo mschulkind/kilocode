@@ -2,12 +2,12 @@ import OpenAI from "openai"
 
 import type { ModelInfo } from "@roo-code/types"
 
-import { ApiHandlerOptions, RouterName, ModelRecord } from "../../shared/api"
+import { ApiHandlerOptions, RouterName, ModelRecord } from "../../shared/api.js"
 
-import { BaseProvider } from "./base-provider"
-import { getModels } from "./fetchers/modelCache"
+import { BaseProvider } from "./base-provider.js"
+import { getModels } from "./fetchers/modelCache.js"
 
-import { DEFAULT_HEADERS } from "./constants"
+import { DEFAULT_HEADERS } from "./constants.js"
 
 const TEMPERATURE_UNSUPPORTED_PREFIXES = ["openai/o3", "openai/gpt5", "gpt-5"] // kilocode_change
 

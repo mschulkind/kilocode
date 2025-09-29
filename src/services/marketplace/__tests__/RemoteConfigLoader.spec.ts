@@ -1,7 +1,7 @@
 // npx vitest services/marketplace/__tests__/RemoteConfigLoader.spec.ts
 
 import axios from "axios"
-import { RemoteConfigLoader } from "../RemoteConfigLoader"
+import { RemoteConfigLoader } from "../RemoteConfigLoader.js"
 import type { MarketplaceItemType } from "@roo-code/types"
 
 // Mock axios

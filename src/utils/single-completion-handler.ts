@@ -1,5 +1,5 @@
 import type { ProviderSettings } from "@roo-code/types"
-import { buildApiHandler, SingleCompletionHandler, ApiHandler } from "../api" //kilocode_change
+import { buildApiHandler, SingleCompletionHandler, ApiHandler } from "../api.js" //kilocode_change
 
 /**
  * Enhances a prompt using the configured API without creating a full Cline instance or task history.

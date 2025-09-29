@@ -1,8 +1,8 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import * as path from "path"
 import * as diff from "diff"
-import { RooIgnoreController, LOCK_TEXT_SYMBOL } from "../ignore/RooIgnoreController"
-import { RooProtectedController } from "../protect/RooProtectedController"
+import { RooIgnoreController, LOCK_TEXT_SYMBOL } from "../ignore/RooIgnoreController.js"
+import { RooProtectedController } from "../protect/RooProtectedController.js"
 
 export const formatResponse = {
 	duplicateFileReadNotice: () =>

@@ -2,7 +2,7 @@
 
 import type { ModelInfo } from "@roo-code/types"
 
-import { calculateApiCostAnthropic, calculateApiCostOpenAI } from "../../shared/cost"
+import { calculateApiCostAnthropic, calculateApiCostOpenAI } from "../../shared/cost.js"
 
 describe("Cost Utility", () => {
 	describe("calculateApiCostAnthropic", () => {

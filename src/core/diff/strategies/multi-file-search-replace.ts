@@ -1,9 +1,9 @@
 import { distance } from "fastest-levenshtein"
 import { ToolProgressStatus } from "@roo-code/types"
 
-import { addLineNumbers, everyLineHasLineNumbers, stripLineNumbers } from "../../../integrations/misc/extract-text"
-import { ToolUse, DiffStrategy, DiffResult } from "../../../shared/tools"
-import { normalizeString } from "../../../utils/text-normalization"
+import { addLineNumbers, everyLineHasLineNumbers, stripLineNumbers } from "../../../integrations/misc/extract-text.js"
+import { ToolUse, DiffStrategy, DiffResult } from "../../../shared/tools.js"
+import { normalizeString } from "../../../utils/text-normalization.js"
 
 const BUFFER_LINES = 40 // Number of extra context lines to show before and after matches
 

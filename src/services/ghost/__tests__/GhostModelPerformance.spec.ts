@@ -1,10 +1,10 @@
 import * as vscode from "vscode"
 import { describe, it, expect } from "vitest"
-import { GhostStrategy } from "../GhostStrategy"
-import { MockWorkspace } from "./MockWorkspace"
-import { ApiHandler, buildApiHandler } from "../../../api"
-import { GhostModel } from "../GhostModel"
-import { allowNetConnect } from "../../../vitest.setup"
+import { GhostStrategy } from "../GhostStrategy.js"
+import { MockWorkspace } from "./MockWorkspace.js"
+import { ApiHandler, buildApiHandler } from "../../../api.js"
+import { GhostModel } from "../GhostModel.js"
+import { allowNetConnect } from "../../../vitest.setup.js"
 
 const KEYS = {
 	KILOCODE: null,

@@ -5,10 +5,10 @@ vitest.mock("vscode", () => ({}))
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { ApiStreamChunk } from "../../transform/stream"
+import { ApiStreamChunk } from "../../transform/stream.js"
 
 import { t } from "i18next"
-import { VertexHandler } from "../vertex"
+import { VertexHandler } from "../vertex.js"
 
 describe("VertexHandler", () => {
 	let handler: VertexHandler

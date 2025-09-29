@@ -1,7 +1,7 @@
 import { parseSourceCodeDefinitionsForFile, setMinComponentLines } from ".."
 import * as fs from "fs/promises"
 import * as path from "path"
-import tsxQuery from "../queries/tsx"
+import tsxQuery from "../queries/tsx.js"
 import { Parser, Language } from "web-tree-sitter"
 
 vi.mock("fs/promises")

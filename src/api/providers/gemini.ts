@@ -11,17 +11,17 @@ import type { JWTInput } from "google-auth-library"
 
 import { type ModelInfo, type GeminiModelId, geminiDefaultModelId, geminiModels } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { safeJsonParse } from "../../shared/safeJsonParse"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { safeJsonParse } from "../../shared/safeJsonParse.js"
 
-import { convertAnthropicContentToGemini, convertAnthropicMessageToGemini } from "../transform/gemini-format"
+import { convertAnthropicContentToGemini, convertAnthropicMessageToGemini } from "../transform/gemini-format.js"
 import { t } from "i18next"
-import type { ApiStream, GroundingSource } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
+import type { ApiStream, GroundingSource } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { BaseProvider } from "./base-provider"
-import { throwMaxCompletionTokensReachedError } from "./kilocode/verifyFinishReason"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { BaseProvider } from "./base-provider.js"
+import { throwMaxCompletionTokensReachedError } from "./kilocode/verifyFinishReason.js"
 
 type GeminiHandlerOptions = ApiHandlerOptions & {
 	isVertex?: boolean
@@ -102,27 +102,29 @@ export class GeminiHandler extends BaseProvider implements SingleCompletionHandl
 				if (chunk.candidates && chunk.candidates.length > 0) {
 					const candidate = chunk.candidates[0]
 
-					// kilocode_change start
-					if (candidate.finishReason === FinishReason.MAX_TOKENS) {
-						throwMaxCompletionTokensReachedError()
-					}
-					// kilocode_change end
+					if (candidate) {
+						// kilocode_change start
+						if (candidate.finishReason === FinishReason.MAX_TOKENS) {
+							throwMaxCompletionTokensReachedError()
+						}
+						// kilocode_change end
 
-					if (candidate.groundingMetadata) {
-						pendingGroundingMetadata = candidate.groundingMetadata
-					}
+						if (candidate.groundingMetadata) {
+							pendingGroundingMetadata = candidate.groundingMetadata
+						}
 
-					if (candidate.content && candidate.content.parts) {
-						for (const part of candidate.content.parts) {
-							if (part.thought) {
-								// This is a thinking/reasoning part
-								if (part.text) {
-									yield { type: "reasoning", text: part.text }
-								}
-							} else {
-								// This is regular content
-								if (part.text) {
-									yield { type: "text", text: part.text }
+						if (candidate.content && candidate.content.parts) {
+							for (const part of candidate.content.parts) {
+								if (part.thought) {
+									// This is a thinking/reasoning part
+									if (part.text) {
+										yield { type: "reasoning", text: part.text }
+									}
+								} else {
+									// This is regular content
+									if (part.text) {
+										yield { type: "text", text: part.text }
+									}
 								}
 							}
 						}

@@ -2,10 +2,10 @@
 
 import type { Mock } from "vitest"
 
-import { RooIgnoreController } from "../RooIgnoreController"
+import { RooIgnoreController } from "../RooIgnoreController.js"
 import * as path from "path"
 import * as fs from "fs/promises"
-import { fileExistsAtPath } from "../../../utils/fs"
+import { fileExistsAtPath } from "../../../utils/fs.js"
 
 // Mock dependencies
 vi.mock("fs/promises")

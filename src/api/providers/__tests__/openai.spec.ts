@@ -1,11 +1,11 @@
 // npx vitest run api/providers/__tests__/openai.spec.ts
 
-import { OpenAiHandler, getOpenAiModels } from "../openai"
-import { ApiHandlerOptions } from "../../../shared/api"
+import { OpenAiHandler, getOpenAiModels } from "../openai.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 import { openAiModelInfoSaneDefaults } from "@roo-code/types"
-import { Package } from "../../../shared/package"
+import { Package } from "../../../shared/package.js"
 import axios from "axios"
 
 const mockCreate = vitest.fn()

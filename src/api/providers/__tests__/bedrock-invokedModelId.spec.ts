@@ -1,8 +1,8 @@
 // npx vitest run src/api/providers/__tests__/bedrock-invokedModelId.spec.ts
 
-import { ApiHandlerOptions } from "../../../shared/api"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 
-import { AwsBedrockHandler, StreamEvent } from "../bedrock"
+import { AwsBedrockHandler, StreamEvent } from "../bedrock.js"
 
 // Mock AWS SDK credential providers and Bedrock client
 vitest.mock("@aws-sdk/credential-providers", () => ({

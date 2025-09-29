@@ -21,9 +21,9 @@ import {
 } from "@roo-code/types"
 import { IpcServer } from "@roo-code/ipc"
 
-import { Package } from "../shared/package"
-import { ClineProvider } from "../core/webview/ClineProvider"
-import { openClineInNewTab } from "../activate/registerCommands"
+import { Package } from "../shared/package.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
+import { openClineInNewTab } from "../activate/registerCommands.js"
 
 export class API extends EventEmitter<RooCodeEvents> implements RooCodeAPI {
 	private readonly outputChannel: vscode.OutputChannel

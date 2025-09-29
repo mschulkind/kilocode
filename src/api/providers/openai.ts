@@ -10,21 +10,21 @@ import {
 	OPENAI_AZURE_AI_INFERENCE_PATH,
 } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { XmlMatcher } from "../../utils/xml-matcher"
+import { XmlMatcher } from "../../utils/xml-matcher.js"
 
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { convertToR1Format } from "../transform/r1-format"
-import { convertToSimpleMessages } from "../transform/simple-format"
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { convertToR1Format } from "../transform/r1-format.js"
+import { convertToSimpleMessages } from "../transform/simple-format.js"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import { DEFAULT_HEADERS } from "./constants"
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { getApiRequestTimeout } from "./utils/timeout-config"
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import { DEFAULT_HEADERS } from "./constants.js"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { getApiRequestTimeout } from "./utils/timeout-config.js"
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 // TODO: Rename this to OpenAICompatibleHandler. Also, I think the
 // `OpenAINativeHandler` can subclass from this, since it's obviously

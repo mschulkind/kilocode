@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { tlaPlusQuery } from "../queries"
-import sampleTLAPlusContent from "./fixtures/sample-tlaplus"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { tlaPlusQuery } from "../queries.js"
+import sampleTLAPlusContent from "./fixtures/sample-tlaplus.js"
 
 describe("inspectTLAPlus", () => {
 	const testOptions = {

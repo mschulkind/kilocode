@@ -1,11 +1,11 @@
 import { deepSeekModels, deepSeekDefaultModelId } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import type { ApiStreamUsageChunk } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
+import type { ApiStreamUsageChunk } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import { OpenAiHandler } from "./openai"
+import { OpenAiHandler } from "./openai.js"
 
 export class DeepSeekHandler extends OpenAiHandler {
 	constructor(options: ApiHandlerOptions) {

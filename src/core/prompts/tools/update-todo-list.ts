@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 /**
  * Get the description for the update_todo_list tool.

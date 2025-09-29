@@ -1,5 +1,5 @@
 import path from "path"
-import { RooProtectedController } from "../RooProtectedController"
+import { RooProtectedController } from "../RooProtectedController.js"
 
 describe("RooProtectedController", () => {
 	const TEST_CWD = "/test/workspace"

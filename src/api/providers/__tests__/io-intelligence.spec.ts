@@ -1,7 +1,7 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { IOIntelligenceHandler } from "../io-intelligence"
-import type { ApiHandlerOptions } from "../../../shared/api"
+import { IOIntelligenceHandler } from "../io-intelligence.js"
+import type { ApiHandlerOptions } from "../../../shared/api.js"
 
 const mockCreate = vi.fn()
 

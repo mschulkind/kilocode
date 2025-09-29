@@ -1,6 +1,6 @@
 // npx vitest utils/logging/__tests__/CompactTransport.spec.ts
 
-import { CompactTransport } from "../CompactTransport"
+import { CompactTransport } from "../CompactTransport.js"
 import fs from "fs"
 import path from "path"
 

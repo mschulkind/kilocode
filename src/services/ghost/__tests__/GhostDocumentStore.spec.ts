@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from "vitest"
 import * as vscode from "vscode"
-import { GhostDocumentStore } from "../GhostDocumentStore"
-import { ASTContext } from "../types"
-import { MockTextDocument } from "../../mocking/MockTextDocument"
+import { GhostDocumentStore } from "../GhostDocumentStore.js"
+import { ASTContext } from "../types.js"
+import { MockTextDocument } from "../../mocking/MockTextDocument.js"
 
 // Mock vscode
 vi.mock("vscode", () => ({

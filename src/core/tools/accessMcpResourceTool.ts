@@ -1,7 +1,7 @@
-import { ClineAskUseMcpServer } from "../../shared/ExtensionMessage"
-import { ToolUse, RemoveClosingTag, AskApproval, HandleError, PushToolResult } from "../../shared/tools"
-import { Task } from "../task/Task"
-import { formatResponse } from "../prompts/responses"
+import { ClineAskUseMcpServer } from "../../shared/ExtensionMessage.js"
+import { ToolUse, RemoveClosingTag, AskApproval, HandleError, PushToolResult } from "../../shared/tools.js"
+import { Task } from "../task/Task.js"
+import { formatResponse } from "../prompts/responses.js"
 
 export async function accessMcpResourceTool(
 	cline: Task,

@@ -1,6 +1,6 @@
 // npx vitest run api/providers/utils/__tests__/timeout-config.spec.ts
 
-import { getApiRequestTimeout } from "../timeout-config"
+import { getApiRequestTimeout } from "../timeout-config.js"
 import * as vscode from "vscode"
 
 // Mock vscode

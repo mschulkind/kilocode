@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getListFilesDescription(args: ToolArgs): string {
 	return `## list_files

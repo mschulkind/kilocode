@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
-import { GhostSuggestionsState } from "./GhostSuggestions"
-import { GhostSuggestionEditOperation } from "./types"
-import { calculateDiff, type BackgroundRange } from "./utils/CharacterDiff"
-import { createSVGDecorationType, type SVGDecorationContent } from "./utils/createSVGDecorationType"
+import { GhostSuggestionsState } from "./GhostSuggestions.js"
+import { GhostSuggestionEditOperation } from "./types.js"
+import { calculateDiff, type BackgroundRange } from "./utils/CharacterDiff.js"
+import { createSVGDecorationType, type SVGDecorationContent } from "./utils/createSVGDecorationType.js"
 
 export const DELETION_DECORATION_OPTIONS: vscode.DecorationRenderOptions = {
 	isWholeLine: false,

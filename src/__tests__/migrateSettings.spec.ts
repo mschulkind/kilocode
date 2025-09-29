@@ -1,9 +1,9 @@
 import * as vscode from "vscode"
 import * as path from "path"
 import * as fs from "fs/promises"
-import { fileExistsAtPath } from "../utils/fs"
-import { GlobalFileNames } from "../shared/globalFileNames"
-import { migrateSettings } from "../utils/migrateSettings"
+import { fileExistsAtPath } from "../utils/fs.js"
+import { GlobalFileNames } from "../shared/globalFileNames.js"
+import { migrateSettings } from "../utils/migrateSettings.js"
 
 // Mock dependencies
 vitest.mock("vscode")

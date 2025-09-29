@@ -1,10 +1,10 @@
 import type { Anthropic } from "@anthropic-ai/sdk"
 
-import { ClaudeCodeHandler } from "../claude-code"
-import { runClaudeCode } from "../../../integrations/claude-code/run"
-import type { ApiHandlerOptions } from "../../../shared/api"
-import type { ClaudeCodeMessage } from "../../../integrations/claude-code/types"
-import type { ApiStreamUsageChunk } from "../../transform/stream"
+import { ClaudeCodeHandler } from "../claude-code.js"
+import { runClaudeCode } from "../../../integrations/claude-code/run.js"
+import type { ApiHandlerOptions } from "../../../shared/api.js"
+import type { ClaudeCodeMessage } from "../../../integrations/claude-code/types.js"
+import type { ApiStreamUsageChunk } from "../../transform/stream.js"
 
 // Mock the runClaudeCode function
 vi.mock("../../../integrations/claude-code/run", () => ({

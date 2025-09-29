@@ -1,9 +1,9 @@
 import { QdrantClient } from "@qdrant/js-client-rest"
 import { createHash } from "crypto"
 
-import { QdrantVectorStore } from "../qdrant-client"
-import { getWorkspacePath } from "../../../../utils/path"
-import { DEFAULT_MAX_SEARCH_RESULTS, DEFAULT_SEARCH_MIN_SCORE } from "../../constants"
+import { QdrantVectorStore } from "../qdrant-client.js"
+import { getWorkspacePath } from "../../../../utils/path.js"
+import { DEFAULT_MAX_SEARCH_RESULTS, DEFAULT_SEARCH_MIN_SCORE } from "../../constants.js"
 
 // Mocks
 vitest.mock("@qdrant/js-client-rest")

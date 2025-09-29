@@ -1,6 +1,6 @@
-import { sampleHtmlContent } from "./fixtures/sample-html"
-import { htmlQuery } from "../queries"
-import { testParseSourceCodeDefinitions } from "./helpers"
+import { sampleHtmlContent } from "./fixtures/sample-html.js"
+import { htmlQuery } from "../queries.js"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
 
 describe("HTML Source Code Definition Tests", () => {
 	let parseResult: string

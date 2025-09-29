@@ -22,7 +22,7 @@ vi.mock("../../path", () => ({
 	arePathsEqual: vi.fn().mockReturnValue(false),
 }))
 
-import { listFiles } from "../list-files"
+import { listFiles } from "../list-files.js"
 import * as childProcess from "child_process"
 
 describe("list-files gitignore support", () => {

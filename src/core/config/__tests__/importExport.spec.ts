@@ -8,11 +8,11 @@ import * as vscode from "vscode"
 import type { ProviderName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { importSettings, importSettingsFromFile, importSettingsWithFeedback, exportSettings } from "../importExport"
-import { ProviderSettingsManager } from "../ProviderSettingsManager"
-import { ContextProxy } from "../ContextProxy"
-import { CustomModesManager } from "../CustomModesManager"
-import { safeWriteJson } from "../../../utils/safeWriteJson"
+import { importSettings, importSettingsFromFile, importSettingsWithFeedback, exportSettings } from "../importExport.js"
+import { ProviderSettingsManager } from "../ProviderSettingsManager.js"
+import { ContextProxy } from "../ContextProxy.js"
+import { CustomModesManager } from "../CustomModesManager.js"
+import { safeWriteJson } from "../../../utils/safeWriteJson.js"
 
 import type { Mock } from "vitest"
 

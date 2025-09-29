@@ -1,5 +1,5 @@
-import { Terminal } from "../Terminal"
-import { getWorkspacePath } from "../../../utils/path"
+import { Terminal } from "../Terminal.js"
+import { getWorkspacePath } from "../../../utils/path.js"
 import { MockedFunction } from "vitest"
 
 vi.mock("../../../utils/path", () => ({ getWorkspacePath: vi.fn() }))

@@ -5,7 +5,7 @@
  * based on document type and context.
  */
 
-import { DocumentTypeDetector, DocumentTypeResult } from './DocumentTypeDetector'
+import { DocumentTypeDetector, DocumentTypeResult } from './DocumentTypeDetector.js'
 
 export interface ValidationRule {
   enabled: boolean

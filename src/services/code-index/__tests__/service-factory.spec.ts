@@ -1,10 +1,10 @@
 import type { MockedClass, MockedFunction } from "vitest"
-import { CodeIndexServiceFactory } from "../service-factory"
-import { OpenAiEmbedder } from "../embedders/openai"
-import { CodeIndexOllamaEmbedder } from "../embedders/ollama"
-import { OpenAICompatibleEmbedder } from "../embedders/openai-compatible"
-import { GeminiEmbedder } from "../embedders/gemini"
-import { QdrantVectorStore } from "../vector-store/qdrant-client"
+import { CodeIndexServiceFactory } from "../service-factory.js"
+import { OpenAiEmbedder } from "../embedders/openai.js"
+import { CodeIndexOllamaEmbedder } from "../embedders/ollama.js"
+import { OpenAICompatibleEmbedder } from "../embedders/openai-compatible.js"
+import { GeminiEmbedder } from "../embedders/gemini.js"
+import { QdrantVectorStore } from "../vector-store/qdrant-client.js"
 
 // Mock the embedders and vector store
 vitest.mock("../embedders/openai")
@@ -35,7 +35,7 @@ const MockedGeminiEmbedder = GeminiEmbedder as MockedClass<typeof GeminiEmbedder
 const MockedQdrantVectorStore = QdrantVectorStore as MockedClass<typeof QdrantVectorStore>
 
 // Import the mocked functions
-import { getDefaultModelId, getModelDimension } from "../../../shared/embeddingModels"
+import { getDefaultModelId, getModelDimension } from "../../../shared/embeddingModels.js"
 const mockGetDefaultModelId = getDefaultModelId as MockedFunction<typeof getDefaultModelId>
 const mockGetModelDimension = getModelDimension as MockedFunction<typeof getModelDimension>
 

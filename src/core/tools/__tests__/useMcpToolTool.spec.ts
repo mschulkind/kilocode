@@ -1,8 +1,8 @@
 // npx vitest core/tools/__tests__/useMcpToolTool.spec.ts
 
-import { useMcpToolTool } from "../useMcpToolTool"
-import { Task } from "../../task/Task"
-import { ToolUse } from "../../../shared/tools"
+import { useMcpToolTool } from "../useMcpToolTool.js"
+import { Task } from "../../task/Task.js"
+import { ToolUse } from "../../../shared/tools.js"
 
 // Mock dependencies
 vi.mock("../../prompts/responses", () => ({

@@ -18,9 +18,9 @@ vi.mock("../../../utils/fs", () => ({
 	fileExistsAtPath: vi.fn().mockImplementation(() => Promise.resolve(true)),
 }))
 
-import { csharpQuery } from "../queries"
-import { testParseSourceCodeDefinitions } from "./helpers"
-import sampleCSharpContent from "./fixtures/sample-c-sharp"
+import { csharpQuery } from "../queries.js"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import sampleCSharpContent from "./fixtures/sample-c-sharp.js"
 
 // C# test options
 const csharpOptions = {

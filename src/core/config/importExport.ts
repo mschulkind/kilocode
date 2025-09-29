@@ -1,4 +1,4 @@
-import { safeWriteJson } from "../../utils/safeWriteJson"
+import { safeWriteJson } from "../../utils/safeWriteJson.js"
 import os from "os"
 import * as path from "path"
 import fs from "fs/promises"
@@ -9,10 +9,10 @@ import { z, ZodError } from "zod"
 import { globalSettingsSchema } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { ProviderSettingsManager, providerProfilesSchema } from "./ProviderSettingsManager"
-import { ContextProxy } from "./ContextProxy"
-import { CustomModesManager } from "./CustomModesManager"
-import { t } from "../../i18n"
+import { ProviderSettingsManager, providerProfilesSchema } from "./ProviderSettingsManager.js"
+import { ContextProxy } from "./ContextProxy.js"
+import { CustomModesManager } from "./CustomModesManager.js"
+import { t } from "../../i18n.js"
 
 export type ImportOptions = {
 	providerSettingsManager: ProviderSettingsManager

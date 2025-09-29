@@ -7,7 +7,7 @@
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { promises as fs } from 'fs'
-import { CrossReferenceValidator } from '../CrossReferenceValidator'
+import { CrossReferenceValidator } from '../CrossReferenceValidator.js'
 
 // Mock fs.promises
 vi.mock('fs', () => ({

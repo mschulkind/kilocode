@@ -1,4 +1,4 @@
-import i18next from "./setup"
+import i18next from "./setup.js"
 
 /**
  * Initialize i18next with the specified language

@@ -4,23 +4,23 @@ import * as path from "path"
 import * as vscode from "vscode"
 import { isBinaryFile } from "isbinaryfile"
 
-import { mentionRegexGlobal, commandRegexGlobal, unescapeSpaces } from "../../shared/context-mentions"
+import { mentionRegexGlobal, commandRegexGlobal, unescapeSpaces } from "../../shared/context-mentions.js"
 
-import { getCommitInfo, getWorkingState } from "../../utils/git"
+import { getCommitInfo, getWorkingState } from "../../utils/git.js"
 
-import { openFile } from "../../integrations/misc/open-file"
-import { extractTextFromFile } from "../../integrations/misc/extract-text"
-import { diagnosticsToProblemsString } from "../../integrations/diagnostics"
+import { openFile } from "../../integrations/misc/open-file.js"
+import { extractTextFromFile } from "../../integrations/misc/extract-text.js"
+import { diagnosticsToProblemsString } from "../../integrations/diagnostics.js"
 
-import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher"
+import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher.js"
 
-import { FileContextTracker } from "../context-tracking/FileContextTracker"
+import { FileContextTracker } from "../context-tracking/FileContextTracker.js"
 
-import { RooIgnoreController } from "../ignore/RooIgnoreController"
-import { getCommand, type Command } from "../../services/command/commands"
+import { RooIgnoreController } from "../ignore/RooIgnoreController.js"
+import { getCommand, type Command } from "../../services/command/commands.js"
 
-import { t } from "../../i18n"
-import { isSupportedImageFormat } from "../tools/helpers/imageHelpers" // kilocode_change
+import { t } from "../../i18n.js"
+import { isSupportedImageFormat } from "../tools/helpers/imageHelpers.js" // kilocode_change
 
 function getUrlErrorMessage(error: unknown): string {
 	const errorMessage = error instanceof Error ? error.message : String(error)
@@ -415,4 +415,4 @@ export async function getLatestTerminalOutput(): Promise<string> {
 }
 
 // Export processUserContentMentions from its own file
-export { processUserContentMentions } from "./processUserContentMentions"
+export { processUserContentMentions } from "./processUserContentMentions.js"

@@ -2,8 +2,8 @@
  * @fileoverview Implementation of the compact logging system's main logger class
  */
 
-import { ILogger, LogMeta, CompactLogEntry, LogLevel } from "./types"
-import { CompactTransport } from "./CompactTransport"
+import { ILogger, LogMeta, CompactLogEntry, LogLevel } from "./types.js"
+import { CompactTransport } from "./CompactTransport.js"
 
 /**
  * Main logger implementation providing compact, efficient logging capabilities

@@ -1,6 +1,6 @@
 import path from "path"
 
-import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../get-relative-path"
+import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../get-relative-path.js"
 
 describe("get-relative-path", () => {
 	describe("generateNormalizedAbsolutePath", () => {

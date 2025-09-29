@@ -10,9 +10,9 @@ vi.mock("../../../utils/fs", () => ({
 	fileExistsAtPath: vi.fn().mockImplementation(() => Promise.resolve(true)),
 }))
 
-import { rubyQuery } from "../queries"
-import { testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import sampleRubyContent from "./fixtures/sample-ruby"
+import { rubyQuery } from "../queries.js"
+import { testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import sampleRubyContent from "./fixtures/sample-ruby.js"
 
 const rubyOptions = {
 	language: "ruby",

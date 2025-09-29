@@ -6,7 +6,7 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from "vitest"
-import { DocumentTypeDetector, DocumentType, DocumentTypeConfig } from "../DocumentTypeDetector"
+import { DocumentTypeDetector, DocumentType, DocumentTypeConfig } from "../DocumentTypeDetector.js"
 
 describe("DocumentTypeDetector", () => {
 	let detector: DocumentTypeDetector

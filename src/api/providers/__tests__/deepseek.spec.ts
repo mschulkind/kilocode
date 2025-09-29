@@ -72,9 +72,9 @@ import type { Anthropic } from "@anthropic-ai/sdk"
 
 import { deepSeekDefaultModelId } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../../shared/api"
+import type { ApiHandlerOptions } from "../../../shared/api.js"
 
-import { DeepSeekHandler } from "../deepseek"
+import { DeepSeekHandler } from "../deepseek.js"
 
 describe("DeepSeekHandler", () => {
 	let handler: DeepSeekHandler

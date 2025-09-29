@@ -10,12 +10,12 @@ import * as vscode from "vscode"
 
 import type { ModeConfig } from "@roo-code/types"
 
-import { fileExistsAtPath } from "../../../utils/fs"
-import { getWorkspacePath, arePathsEqual } from "../../../utils/path"
-import { GlobalFileNames } from "../../../shared/globalFileNames"
+import { fileExistsAtPath } from "../../../utils/fs.js"
+import { getWorkspacePath, arePathsEqual } from "../../../utils/path.js"
+import { GlobalFileNames } from "../../../shared/globalFileNames.js"
 
-import { CustomModesManager } from "../CustomModesManager"
-import { getProjectRooDirectoryForCwd } from "../../../services/roo-config" // kilocode_change
+import { CustomModesManager } from "../CustomModesManager.js"
+import { getProjectRooDirectoryForCwd } from "../../../services/roo-config.js" // kilocode_change
 
 vi.mock("vscode", () => ({
 	workspace: {

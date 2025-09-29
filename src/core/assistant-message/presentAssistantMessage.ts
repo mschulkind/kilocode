@@ -4,44 +4,44 @@ import { serializeError } from "serialize-error"
 import type { ToolName, ClineAsk, ToolProgressStatus } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { defaultModeSlug, getModeBySlug } from "../../shared/modes"
-import type { ToolParamName, ToolResponse } from "../../shared/tools"
+import { defaultModeSlug, getModeBySlug } from "../../shared/modes.js"
+import type { ToolParamName, ToolResponse } from "../../shared/tools.js"
 
-import { fetchInstructionsTool } from "../tools/fetchInstructionsTool"
-import { listFilesTool } from "../tools/listFilesTool"
-import { getReadFileToolDescription, readFileTool } from "../tools/readFileTool"
-import { getSimpleReadFileToolDescription, simpleReadFileTool } from "../tools/simpleReadFileTool"
+import { fetchInstructionsTool } from "../tools/fetchInstructionsTool.js"
+import { listFilesTool } from "../tools/listFilesTool.js"
+import { getReadFileToolDescription, readFileTool } from "../tools/readFileTool.js"
+import { getSimpleReadFileToolDescription, simpleReadFileTool } from "../tools/simpleReadFileTool.js"
 import { shouldUseSingleFileRead } from "@roo-code/types"
-import { writeToFileTool } from "../tools/writeToFileTool"
-import { applyDiffTool } from "../tools/multiApplyDiffTool"
-import { insertContentTool } from "../tools/insertContentTool"
-import { searchAndReplaceTool } from "../tools/searchAndReplaceTool"
-import { editFileTool } from "../tools/editFileTool" // kilocode_change: Morph fast apply
-import { listCodeDefinitionNamesTool } from "../tools/listCodeDefinitionNamesTool"
-import { searchFilesTool } from "../tools/searchFilesTool"
-import { browserActionTool } from "../tools/browserActionTool"
-import { executeCommandTool } from "../tools/executeCommandTool"
-import { useMcpToolTool } from "../tools/useMcpToolTool"
-import { accessMcpResourceTool } from "../tools/accessMcpResourceTool"
-import { askFollowupQuestionTool } from "../tools/askFollowupQuestionTool"
-import { switchModeTool } from "../tools/switchModeTool"
-import { attemptCompletionTool } from "../tools/attemptCompletionTool"
-import { newTaskTool } from "../tools/newTaskTool"
+import { writeToFileTool } from "../tools/writeToFileTool.js"
+import { applyDiffTool } from "../tools/multiApplyDiffTool.js"
+import { insertContentTool } from "../tools/insertContentTool.js"
+import { searchAndReplaceTool } from "../tools/searchAndReplaceTool.js"
+import { editFileTool } from "../tools/editFileTool.js" // kilocode_change: Morph fast apply
+import { listCodeDefinitionNamesTool } from "../tools/listCodeDefinitionNamesTool.js"
+import { searchFilesTool } from "../tools/searchFilesTool.js"
+import { browserActionTool } from "../tools/browserActionTool.js"
+import { executeCommandTool } from "../tools/executeCommandTool.js"
+import { useMcpToolTool } from "../tools/useMcpToolTool.js"
+import { accessMcpResourceTool } from "../tools/accessMcpResourceTool.js"
+import { askFollowupQuestionTool } from "../tools/askFollowupQuestionTool.js"
+import { switchModeTool } from "../tools/switchModeTool.js"
+import { attemptCompletionTool } from "../tools/attemptCompletionTool.js"
+import { newTaskTool } from "../tools/newTaskTool.js"
 
-import { updateTodoListTool } from "../tools/updateTodoListTool"
-import { runSlashCommandTool } from "../tools/runSlashCommandTool"
-import { generateImageTool } from "../tools/generateImageTool"
+import { updateTodoListTool } from "../tools/updateTodoListTool.js"
+import { runSlashCommandTool } from "../tools/runSlashCommandTool.js"
+import { generateImageTool } from "../tools/generateImageTool.js"
 
-import { formatResponse } from "../prompts/responses"
-import { validateToolUse } from "../tools/validateToolUse"
-import { Task } from "../task/Task"
-import { newRuleTool } from "../tools/newRuleTool" // kilocode_change
-import { reportBugTool } from "../tools/reportBugTool" // kilocode_change
-import { condenseTool } from "../tools/condenseTool" // kilocode_change
-import { codebaseSearchTool } from "../tools/codebaseSearchTool"
-import { experiments, EXPERIMENT_IDS } from "../../shared/experiments"
-import { applyDiffToolLegacy } from "../tools/applyDiffTool"
-import { yieldPromise } from "../kilocode"
+import { formatResponse } from "../prompts/responses.js"
+import { validateToolUse } from "../tools/validateToolUse.js"
+import { Task } from "../task/Task.js"
+import { newRuleTool } from "../tools/newRuleTool.js" // kilocode_change
+import { reportBugTool } from "../tools/reportBugTool.js" // kilocode_change
+import { condenseTool } from "../tools/condenseTool.js" // kilocode_change
+import { codebaseSearchTool } from "../tools/codebaseSearchTool.js"
+import { experiments, EXPERIMENT_IDS } from "../../shared/experiments.js"
+import { applyDiffToolLegacy } from "../tools/applyDiffTool.js"
+import { yieldPromise } from "../kilocode.js"
 
 /**
  * Processes and presents assistant message content to the user interface.

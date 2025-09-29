@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from "vitest"
 import * as vscode from "vscode"
-import { GhostStrategy } from "../GhostStrategy"
-import { GhostSuggestionContext, ASTContext } from "../types"
-import { MockTextDocument } from "../../mocking/MockTextDocument"
-import { StreamingParseResult } from "../GhostStreamingParser"
+import { GhostStrategy } from "../GhostStrategy.js"
+import { GhostSuggestionContext, ASTContext } from "../types.js"
+import { MockTextDocument } from "../../mocking/MockTextDocument.js"
+import { StreamingParseResult } from "../GhostStreamingParser.js"
 
 // Create a mock Node class for testing
 class MockNode {

@@ -1,6 +1,6 @@
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
-import systemrdlQuery from "../queries/systemrdl"
-import sampleSystemRDLContent from "./fixtures/sample-systemrdl"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
+import systemrdlQuery from "../queries/systemrdl.js"
+import sampleSystemRDLContent from "./fixtures/sample-systemrdl.js"
 
 // Mock fs module
 vi.mock("fs/promises")

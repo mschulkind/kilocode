@@ -3,7 +3,7 @@
  * Provides a default logger instance with Jest environment detection
  */
 
-import { CompactLogger } from "./CompactLogger"
+import { CompactLogger } from "./CompactLogger.js"
 
 /**
  * No-operation logger implementation for production environments

@@ -1,14 +1,14 @@
 import * as vscode from "vscode"
-import { WebviewMessage } from "../../shared/WebviewMessage"
-import { defaultModeSlug, getModeBySlug, getGroupName } from "../../shared/modes"
-import { buildApiHandler } from "../../api"
-import { experiments as experimentsModule, EXPERIMENT_IDS } from "../../shared/experiments"
+import { WebviewMessage } from "../../shared/WebviewMessage.js"
+import { defaultModeSlug, getModeBySlug, getGroupName } from "../../shared/modes.js"
+import { buildApiHandler } from "../../api.js"
+import { experiments as experimentsModule, EXPERIMENT_IDS } from "../../shared/experiments.js"
 
-import { SYSTEM_PROMPT } from "../prompts/system"
-import { MultiSearchReplaceDiffStrategy } from "../diff/strategies/multi-search-replace"
-import { MultiFileSearchReplaceDiffStrategy } from "../diff/strategies/multi-file-search-replace"
+import { SYSTEM_PROMPT } from "../prompts/system.js"
+import { MultiSearchReplaceDiffStrategy } from "../diff/strategies/multi-search-replace.js"
+import { MultiFileSearchReplaceDiffStrategy } from "../diff/strategies/multi-file-search-replace.js"
 
-import { ClineProvider } from "./ClineProvider"
+import { ClineProvider } from "./ClineProvider.js"
 
 export const generateSystemPrompt = async (provider: ClineProvider, message: WebviewMessage) => {
 	const state = await provider.getState() // kilocode_change

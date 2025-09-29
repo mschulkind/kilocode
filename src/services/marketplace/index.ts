@@ -1,3 +1,3 @@
-export * from "./SimpleInstaller"
-export * from "./MarketplaceManager"
+export * from "./SimpleInstaller.js"
+export * from "./MarketplaceManager.js"
 export type { MarketplaceItemType } from "@roo-code/types"

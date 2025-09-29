@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest"
-import { OpenAiNativeHandler } from "../openai-native"
+import { OpenAiNativeHandler } from "../openai-native.js"
 import { openAiNativeModels } from "@roo-code/types"
 
 describe("OpenAiNativeHandler - normalizeUsage", () => {

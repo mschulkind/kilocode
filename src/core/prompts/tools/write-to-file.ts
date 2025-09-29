@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getWriteToFileDescription(args: ToolArgs): string {
 	return `## write_to_file

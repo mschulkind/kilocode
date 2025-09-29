@@ -19,7 +19,7 @@ vi.mock("@aws-sdk/client-bedrock-runtime", () => ({
 	ConverseCommand: vi.fn(),
 }))
 
-import { AwsBedrockHandler } from "../bedrock"
+import { AwsBedrockHandler } from "../bedrock.js"
 import { Anthropic } from "@anthropic-ai/sdk"
 
 describe("AwsBedrockHandler Error Handling", () => {

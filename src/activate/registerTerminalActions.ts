@@ -2,10 +2,10 @@ import * as vscode from "vscode"
 
 import { TerminalActionId, TerminalActionPromptType } from "@roo-code/types"
 
-import { getTerminalCommand } from "../utils/commands"
-import { ClineProvider } from "../core/webview/ClineProvider"
-import { Terminal } from "../integrations/terminal/Terminal"
-import { t } from "../i18n"
+import { getTerminalCommand } from "../utils/commands.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
+import { Terminal } from "../integrations/terminal/Terminal.js"
+import { t } from "../i18n/index.js"
 
 export const registerTerminalActions = (context: vscode.ExtensionContext) => {
 	registerTerminalAction(context, "terminalAddToContext", "TERMINAL_ADD_TO_CONTEXT")

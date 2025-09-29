@@ -2,7 +2,7 @@
 
 import type { ProviderSettings, OrganizationAllowList } from "@roo-code/types"
 
-import { ProfileValidator } from "../ProfileValidator"
+import { ProfileValidator } from "../ProfileValidator.js"
 
 describe("ProfileValidator", () => {
 	describe("isProfileAllowed", () => {

@@ -55,8 +55,8 @@ vi.mock("vscode", () => {
 })
 
 import * as vscode from "vscode"
-import { VsCodeLmHandler } from "../vscode-lm"
-import type { ApiHandlerOptions } from "../../../shared/api"
+import { VsCodeLmHandler } from "../vscode-lm.js"
+import type { ApiHandlerOptions } from "../../../shared/api.js"
 import type { Anthropic } from "@anthropic-ai/sdk"
 
 const mockLanguageModelChat = {

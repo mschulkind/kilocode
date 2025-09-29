@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach, beforeAll, vi } from "vitest"
 import * as vscode from "vscode"
-import { GhostDecorations } from "../GhostDecorations"
-import { GhostSuggestionsState } from "../GhostSuggestions"
-import { GhostSuggestionEditOperation } from "../types"
-import { initializeHighlighter } from "../utils/CodeHighlighter"
+import { GhostDecorations } from "../GhostDecorations.js"
+import { GhostSuggestionsState } from "../GhostSuggestions.js"
+import { GhostSuggestionEditOperation } from "../types.js"
+import { initializeHighlighter } from "../utils/CodeHighlighter.js"
 
 // Mock the SVG decoration utilities
 vi.mock("../utils/createSVGDecorationType", () => ({

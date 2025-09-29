@@ -1,11 +1,11 @@
 import { QdrantClient, Schemas } from "@qdrant/js-client-rest"
 import { createHash } from "crypto"
 import * as path from "path"
-import { getWorkspacePath } from "../../../utils/path"
-import { IVectorStore } from "../interfaces/vector-store"
-import { Payload, VectorStoreSearchResult } from "../interfaces"
-import { DEFAULT_MAX_SEARCH_RESULTS, DEFAULT_SEARCH_MIN_SCORE } from "../constants"
-import { t } from "../../../i18n"
+import { getWorkspacePath } from "../../../utils/path.js"
+import { IVectorStore } from "../interfaces/vector-store.js"
+import { Payload, VectorStoreSearchResult } from "../interfaces.js"
+import { DEFAULT_MAX_SEARCH_RESULTS, DEFAULT_SEARCH_MIN_SCORE } from "../constants.js"
+import { t } from "../../../i18n.js"
 
 /**
  * Qdrant implementation of the vector store interface

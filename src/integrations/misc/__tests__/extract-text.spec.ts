@@ -6,7 +6,7 @@ import {
 	applyRunLengthEncoding,
 	processCarriageReturns,
 	processBackspaces,
-} from "../extract-text"
+} from "../extract-text.js"
 
 describe("addLineNumbers", () => {
 	it("should add line numbers starting from 1 by default", () => {

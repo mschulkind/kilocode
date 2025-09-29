@@ -2,14 +2,14 @@ import * as path from "path"
 
 import type { MockedFunction } from "vitest"
 
-import { fileExistsAtPath } from "../../../utils/fs"
-import { detectCodeOmission } from "../../../integrations/editor/detect-omission"
-import { isPathOutsideWorkspace } from "../../../utils/pathUtils"
-import { getReadablePath } from "../../../utils/path"
-import { unescapeHtmlEntities } from "../../../utils/text-normalization"
-import { everyLineHasLineNumbers, stripLineNumbers } from "../../../integrations/misc/extract-text"
-import { ToolUse, ToolResponse } from "../../../shared/tools"
-import { writeToFileTool } from "../writeToFileTool"
+import { fileExistsAtPath } from "../../../utils/fs.js"
+import { detectCodeOmission } from "../../../integrations/editor/detect-omission.js"
+import { isPathOutsideWorkspace } from "../../../utils/pathUtils.js"
+import { getReadablePath } from "../../../utils/path.js"
+import { unescapeHtmlEntities } from "../../../utils/text-normalization.js"
+import { everyLineHasLineNumbers, stripLineNumbers } from "../../../integrations/misc/extract-text.js"
+import { ToolUse, ToolResponse } from "../../../shared/tools.js"
+import { writeToFileTool } from "../writeToFileTool.js"
 
 vi.mock("path", async () => {
 	const originalPath = await vi.importActual("path")

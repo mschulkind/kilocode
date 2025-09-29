@@ -28,13 +28,13 @@ vi.mock("../io-intelligence")
 
 // Then imports
 import type { Mock } from "vitest"
-import { getModels } from "../modelCache"
-import { getLiteLLMModels } from "../litellm"
-import { getOpenRouterModels } from "../openrouter"
-import { getRequestyModels } from "../requesty"
-import { getGlamaModels } from "../glama"
-import { getUnboundModels } from "../unbound"
-import { getIOIntelligenceModels } from "../io-intelligence"
+import { getModels } from "../modelCache.js"
+import { getLiteLLMModels } from "../litellm.js"
+import { getOpenRouterModels } from "../openrouter.js"
+import { getRequestyModels } from "../requesty.js"
+import { getGlamaModels } from "../glama.js"
+import { getUnboundModels } from "../unbound.js"
+import { getIOIntelligenceModels } from "../io-intelligence.js"
 
 const mockGetLiteLLMModels = getLiteLLMModels as Mock<typeof getLiteLLMModels>
 const mockGetOpenRouterModels = getOpenRouterModels as Mock<typeof getOpenRouterModels>

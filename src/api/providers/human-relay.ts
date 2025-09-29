@@ -3,10 +3,10 @@ import * as vscode from "vscode"
 
 import type { ModelInfo } from "@roo-code/types"
 
-import { getCommand } from "../../utils/commands"
-import { ApiStream } from "../transform/stream"
+import { getCommand } from "../../utils/commands.js"
+import { ApiStream } from "../transform/stream.js"
 
-import type { ApiHandler, SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import type { ApiHandler, SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 /**
  * Human Relay API processor

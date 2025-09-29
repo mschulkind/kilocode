@@ -1,8 +1,8 @@
 // npx vitest src/core/assistant-message/__tests__/AssistantMessageParser.spec.ts
 
-import { AssistantMessageParser } from "../AssistantMessageParser"
-import { AssistantMessageContent } from "../parseAssistantMessage"
-import { TextContent, ToolUse } from "../../../shared/tools"
+import { AssistantMessageParser } from "../AssistantMessageParser.js"
+import { AssistantMessageContent } from "../parseAssistantMessage.js"
+import { TextContent, ToolUse } from "../../../shared/tools.js"
 
 /**
  * Helper to filter out empty text content blocks.

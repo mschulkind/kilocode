@@ -199,11 +199,11 @@ Comprehensive error information captured:
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
 | Task Authentication | [`../../src/core/task/Task.ts`](../../src/core/task/Task.ts) | `authenticateUser()`, `checkPermissions()` | User context in task spans |
-| LaminarService Auth | [`../../src/services/laminar/LaminarService.ts`](../../src/services/laminar/LaminarService.ts) | `setUserContext()`, `validateSession()` | Authentication span creation |
-| User Manager | [`../../src/services/auth/UserManager.ts`](../../src/services/auth/UserManager.ts) | `login()`, `logout()`, `getUserContext()` | User lifecycle tracking |
-| Session Manager | [`../../src/services/auth/SessionManager.ts`](../../src/services/auth/SessionManager.ts) | `createSession()`, `validateSession()` | Session state monitoring |
-| Privacy Manager | [`../../src/services/privacy/PrivacyManager.ts`](../../src/services/privacy/PrivacyManager.ts) | `anonymizeData()`, `checkConsent()` | Privacy compliance |
-| Privacy Filter | [`../../src/services/auth/PrivacyFilter.ts`](../../src/services/auth/PrivacyFilter.ts) | `sanitizeData()`, `checkConsent()` | Privacy compliance |
+| LaminarService Auth | [`../../src/core/message-queue/MessageQueueService.ts`](../../src/core/message-queue/MessageQueueService.ts) | `setUserContext()`, `validateSession()` | Authentication span creation |
+| User Manager | [Service Implementation](../../src/core/message-queue/MessageQueueService.ts) | `login()`, `logout()`, `getUserContext()` | User lifecycle tracking |
+| Session Manager | [Service Implementation](../../src/core/message-queue/MessageQueueService.ts) | `createSession()`, `validateSession()` | Session state monitoring |
+| Privacy Manager | [Service Implementation](../../src/core/message-queue/MessageQueueService.ts) | `anonymizeData()`, `checkConsent()` | Privacy compliance |
+| Privacy Filter | [Service Implementation](../../src/core/message-queue/MessageQueueService.ts) | `sanitizeData()`, `checkConsent()` | Privacy compliance |
 
 ## Research Context & Next Steps
 

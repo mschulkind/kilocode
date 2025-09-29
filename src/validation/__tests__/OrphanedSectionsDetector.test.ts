@@ -6,9 +6,9 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from "vitest"
-import { OrphanedSectionsDetector, OrphanedSection, DetectionConfig } from "../OrphanedSectionsDetector"
-import { DocumentTypeDetector } from "../DocumentTypeDetector"
-import { FileIndexBuilder } from "../FileIndexBuilder"
+import { OrphanedSectionsDetector, OrphanedSection, DetectionConfig } from "../OrphanedSectionsDetector.js"
+import { DocumentTypeDetector } from "../DocumentTypeDetector.js"
+import { FileIndexBuilder } from "../FileIndexBuilder.js"
 
 // Mock dependencies
 vi.mock("../DocumentTypeDetector")

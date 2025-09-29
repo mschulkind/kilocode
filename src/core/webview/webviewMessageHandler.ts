@@ -1,4 +1,4 @@
-import { safeWriteJson } from "../../utils/safeWriteJson"
+import { safeWriteJson } from "../../utils/safeWriteJson.js"
 import * as path from "path"
 import * as os from "os"
 import * as fs from "fs/promises"
@@ -6,13 +6,13 @@ import pWaitFor from "p-wait-for"
 import * as vscode from "vscode"
 // kilocode_change start
 import axios from "axios"
-import { getKiloBaseUriFromToken } from "../../shared/kilocode/token"
+import { getKiloBaseUriFromToken } from "../../shared/kilocode/token.js"
 import {
 	ProfileData,
 	SeeNewChangesPayload,
 	TaskHistoryRequestPayload,
 	TasksByIdRequestPayload,
-} from "../../shared/WebviewMessage"
+} from "../../shared/WebviewMessage.js"
 // kilocode_change end
 
 import {
@@ -27,57 +27,57 @@ import {
 import { CloudService } from "@roo-code/cloud"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { type ApiMessage } from "../task-persistence/apiMessages"
-import { saveTaskMessages } from "../task-persistence"
+import { type ApiMessage } from "../task-persistence/apiMessages.js"
+import { saveTaskMessages } from "../task-persistence.js"
 
-import { ClineProvider } from "./ClineProvider"
-import { handleCheckpointRestoreOperation } from "./checkpointRestoreHandler"
-import { changeLanguage, t } from "../../i18n"
-import { Package } from "../../shared/package"
-import { RouterName, toRouterName, ModelRecord } from "../../shared/api"
-import { MessageEnhancer } from "./messageEnhancer"
+import { ClineProvider } from "./ClineProvider.js"
+import { handleCheckpointRestoreOperation } from "./checkpointRestoreHandler.js"
+import { changeLanguage, t } from "../../i18n.js"
+import { Package } from "../../shared/package.js"
+import { RouterName, toRouterName, ModelRecord } from "../../shared/api.js"
+import { MessageEnhancer } from "./messageEnhancer.js"
 
 import {
 	type WebviewMessage,
 	type EditQueuedMessagePayload,
 	checkoutDiffPayloadSchema,
 	checkoutRestorePayloadSchema,
-} from "../../shared/WebviewMessage"
-import { checkExistKey } from "../../shared/checkExistApiConfig"
-import { experimentDefault } from "../../shared/experiments"
-import { Terminal } from "../../integrations/terminal/Terminal"
-import { openFile } from "../../integrations/misc/open-file"
-import { openImage, saveImage } from "../../integrations/misc/image-handler"
-import { selectImages } from "../../integrations/misc/process-images"
-import { getTheme } from "../../integrations/theme/getTheme"
-import { discoverChromeHostUrl, tryChromeHostUrl } from "../../services/browser/browserDiscovery"
-import { searchWorkspaceFiles } from "../../services/search/file-search"
-import { fileExistsAtPath } from "../../utils/fs"
-import { playTts, setTtsEnabled, setTtsSpeed, stopTts } from "../../utils/tts"
-import { showSystemNotification } from "../../integrations/notifications" // kilocode_change
-import { singleCompletionHandler } from "../../utils/single-completion-handler" // kilocode_change
-import { searchCommits } from "../../utils/git"
-import { exportSettings, importSettingsWithFeedback } from "../config/importExport"
-import { getOpenAiModels } from "../../api/providers/openai"
-import { getVsCodeLmModels } from "../../api/providers/vscode-lm"
-import { openMention } from "../mentions"
-import { getWorkspacePath } from "../../utils/path"
-import { Mode, defaultModeSlug } from "../../shared/modes"
-import { getModels, flushModels } from "../../api/providers/fetchers/modelCache"
-import { GetModelsOptions } from "../../shared/api"
-import { generateSystemPrompt } from "./generateSystemPrompt"
-import { getCommand } from "../../utils/commands"
-import { toggleWorkflow, toggleRule, createRuleFile, deleteRuleFile } from "./kilorules"
-import { mermaidFixPrompt } from "../prompts/utilities/mermaid" // kilocode_change
-import { editMessageHandler, fetchKilocodeNotificationsHandler } from "../kilocode/webview/webviewMessageHandlerUtils" // kilocode_change
+} from "../../shared/WebviewMessage.js"
+import { checkExistKey } from "../../shared/checkExistApiConfig.js"
+import { experimentDefault } from "../../shared/experiments.js"
+import { Terminal } from "../../integrations/terminal/Terminal.js"
+import { openFile } from "../../integrations/misc/open-file.js"
+import { openImage, saveImage } from "../../integrations/misc/image-handler.js"
+import { selectImages } from "../../integrations/misc/process-images.js"
+import { getTheme } from "../../integrations/theme/getTheme.js"
+import { discoverChromeHostUrl, tryChromeHostUrl } from "../../services/browser/browserDiscovery.js"
+import { searchWorkspaceFiles } from "../../services/search/file-search.js"
+import { fileExistsAtPath } from "../../utils/fs.js"
+import { playTts, setTtsEnabled, setTtsSpeed, stopTts } from "../../utils/tts.js"
+import { showSystemNotification } from "../../integrations/notifications.js" // kilocode_change
+import { singleCompletionHandler } from "../../utils/single-completion-handler.js" // kilocode_change
+import { searchCommits } from "../../utils/git.js"
+import { exportSettings, importSettingsWithFeedback } from "../config/importExport.js"
+import { getOpenAiModels } from "../../api/providers/openai.js"
+import { getVsCodeLmModels } from "../../api/providers/vscode-lm.js"
+import { openMention } from "../mentions.js"
+import { getWorkspacePath } from "../../utils/path.js"
+import { Mode, defaultModeSlug } from "../../shared/modes.js"
+import { getModels, flushModels } from "../../api/providers/fetchers/modelCache.js"
+import { GetModelsOptions } from "../../shared/api.js"
+import { generateSystemPrompt } from "./generateSystemPrompt.js"
+import { getCommand } from "../../utils/commands.js"
+import { toggleWorkflow, toggleRule, createRuleFile, deleteRuleFile } from "./kilorules.js"
+import { mermaidFixPrompt } from "../prompts/utilities/mermaid.js" // kilocode_change
+import { editMessageHandler, fetchKilocodeNotificationsHandler } from "../kilocode/webview/webviewMessageHandlerUtils.js" // kilocode_change
 
 const ALLOWED_VSCODE_SETTINGS = new Set(["terminal.integrated.inheritEnv"])
 
-import { MarketplaceManager, MarketplaceItemType } from "../../services/marketplace"
-import { setPendingTodoList } from "../tools/updateTodoListTool"
-import { UsageTracker } from "../../utils/usage-tracker"
-import { seeNewChanges } from "../checkpoints/kilocode/seeNewChanges" // kilocode_change
-import { getTaskHistory } from "../../shared/kilocode/getTaskHistory" // kilocode_change
+import { MarketplaceManager, MarketplaceItemType } from "../../services/marketplace.js"
+import { setPendingTodoList } from "../tools/updateTodoListTool.js"
+import { UsageTracker } from "../../utils/usage-tracker.js"
+import { seeNewChanges } from "../checkpoints/kilocode/seeNewChanges.js" // kilocode_change
+import { getTaskHistory } from "../../shared/kilocode/getTaskHistory.js" // kilocode_change
 
 export const webviewMessageHandler = async (
 	provider: ClineProvider,

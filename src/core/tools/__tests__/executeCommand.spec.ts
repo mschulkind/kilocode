@@ -4,11 +4,11 @@
 import * as path from "path"
 import * as fs from "fs/promises"
 
-import { ExecuteCommandOptions } from "../executeCommandTool"
-import { TerminalRegistry } from "../../../integrations/terminal/TerminalRegistry"
-import { Terminal } from "../../../integrations/terminal/Terminal"
-import { ExecaTerminal } from "../../../integrations/terminal/ExecaTerminal"
-import type { RooTerminalCallbacks } from "../../../integrations/terminal/types"
+import { ExecuteCommandOptions } from "../executeCommandTool.js"
+import { TerminalRegistry } from "../../../integrations/terminal/TerminalRegistry.js"
+import { Terminal } from "../../../integrations/terminal/Terminal.js"
+import { ExecaTerminal } from "../../../integrations/terminal/ExecaTerminal.js"
+import type { RooTerminalCallbacks } from "../../../integrations/terminal/types.js"
 
 // Mock fs to control directory existence checks
 vitest.mock("fs/promises")
@@ -21,7 +21,7 @@ vitest.mock("../../../integrations/terminal/Terminal")
 vitest.mock("../../../integrations/terminal/ExecaTerminal")
 
 // Import the actual executeCommand function (not mocked)
-import { executeCommand } from "../executeCommandTool"
+import { executeCommand } from "../executeCommandTool.js"
 
 // Tests for the executeCommand function
 describe("executeCommand", () => {

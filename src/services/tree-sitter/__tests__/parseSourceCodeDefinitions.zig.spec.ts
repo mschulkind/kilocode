@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions } from "./helpers"
-import { sampleZig } from "./fixtures/sample-zig"
-import { zigQuery } from "../queries"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import { sampleZig } from "./fixtures/sample-zig.js"
+import { zigQuery } from "../queries.js"
 
 describe("Zig Source Code Definition Tests", () => {
 	let parseResult: string

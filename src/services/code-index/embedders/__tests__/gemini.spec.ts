@@ -1,7 +1,7 @@
 import { vitest, describe, it, expect, beforeEach } from "vitest"
 import type { MockedClass } from "vitest"
-import { GeminiEmbedder } from "../gemini"
-import { OpenAICompatibleEmbedder } from "../openai-compatible"
+import { GeminiEmbedder } from "../gemini.js"
+import { OpenAICompatibleEmbedder } from "../openai-compatible.js"
 
 // Mock the OpenAICompatibleEmbedder
 vitest.mock("../openai-compatible")

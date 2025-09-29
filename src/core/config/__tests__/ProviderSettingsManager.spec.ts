@@ -4,7 +4,7 @@ import { ExtensionContext } from "vscode"
 
 import type { ProviderSettings } from "@roo-code/types"
 
-import { ProviderSettingsManager, ProviderProfiles, SyncCloudProfilesResult } from "../ProviderSettingsManager"
+import { ProviderSettingsManager, ProviderProfiles, SyncCloudProfilesResult } from "../ProviderSettingsManager.js"
 
 // Mock VSCode ExtensionContext
 const mockSecrets = {

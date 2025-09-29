@@ -1,4 +1,4 @@
-import { truncateOutput, applyRunLengthEncoding, processBackspaces, processCarriageReturns } from "../misc/extract-text"
+import { truncateOutput, applyRunLengthEncoding, processBackspaces, processCarriageReturns } from "../misc/extract-text.js"
 import { DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@roo-code/types"
 
 import type {
@@ -8,7 +8,7 @@ import type {
 	RooTerminalProcess,
 	RooTerminalProcessResultPromise,
 	ExitCodeDetails,
-} from "./types"
+} from "./types.js"
 
 export abstract class BaseTerminal implements RooTerminal {
 	public readonly provider: RooTerminalProvider

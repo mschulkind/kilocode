@@ -1,6 +1,6 @@
-import { javaQuery } from "../queries"
-import { testParseSourceCodeDefinitions } from "./helpers"
-import sampleJavaContent from "./fixtures/sample-java"
+import { javaQuery } from "../queries.js"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import sampleJavaContent from "./fixtures/sample-java.js"
 
 /*
 TODO: The following structures can be parsed by tree-sitter but lack query support:

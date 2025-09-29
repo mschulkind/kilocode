@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
 import type Anthropic from "@anthropic-ai/sdk"
 import { execa } from "execa"
-import { ClaudeCodeMessage } from "./types"
+import { ClaudeCodeMessage } from "./types.js"
 import readline from "readline"
 import { CLAUDE_CODE_DEFAULT_MAX_OUTPUT_TOKENS } from "@roo-code/types"
 import * as os from "os"
@@ -9,7 +9,7 @@ import * as os from "os"
 import path from "node:path"
 import crypto from "node:crypto"
 import fs from "node:fs/promises"
-import { t } from "../../i18n"
+import { t } from "../../i18n.js"
 
 export const MAX_SYSTEM_PROMPT_LENGTH = 65536
 // kilocode_change end

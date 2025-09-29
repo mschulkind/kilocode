@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
 import * as vscode from "vscode"
 
-import { ClineProvider } from "../ClineProvider"
-import { Task } from "../../task/Task"
-import { ContextProxy } from "../../config/ContextProxy"
+import { ClineProvider } from "../ClineProvider.js"
+import { Task } from "../../task/Task.js"
+import { ContextProxy } from "../../config/ContextProxy.js"
 import { HistoryItem } from "@roo-code/types"
 
 // Mock vscode and dependencies

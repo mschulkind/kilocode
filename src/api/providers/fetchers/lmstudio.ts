@@ -1,7 +1,7 @@
 import { ModelInfo, lMStudioDefaultModelInfo } from "@roo-code/types"
 import { LLM, LLMInfo, LLMInstanceInfo, LMStudioClient } from "@lmstudio/sdk"
 import axios from "axios"
-import { flushModels, getModels } from "./modelCache"
+import { flushModels, getModels } from "./modelCache.js"
 
 const modelsWithLoadedDetails = new Set<string>()
 
@@ -24,7 +24,7 @@ export const forceFullModelDetailsLoad = async (baseUrl: string, modelId: string
 		// Mark this model as having full details loaded
 		modelsWithLoadedDetails.add(modelId)
 	} catch (error) {
-		if (error.code === "ECONNREFUSED") {
+		if (error && typeof error === "object" && "code" in error && error.code === "ECONNREFUSED") {
 			console.warn(`Error connecting to LMStudio at ${baseUrl}`)
 		} else {
 			console.error(
@@ -117,7 +117,7 @@ export async function getLMStudioModels(baseUrl = "http://localhost:1234"): Prom
 			modelsWithLoadedDetails.add(lmstudioModel.modelKey)
 		}
 	} catch (error) {
-		if (error.code === "ECONNREFUSED") {
+		if (error && typeof error === "object" && "code" in error && error.code === "ECONNREFUSED") {
 			console.warn(`Error connecting to LMStudio at ${baseUrl}`)
 		} else {
 			console.error(

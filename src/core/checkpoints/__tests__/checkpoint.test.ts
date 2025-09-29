@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
-import { Task } from "../../task/Task"
-import { ClineProvider } from "../../webview/ClineProvider"
-import { checkpointSave, checkpointRestore, checkpointDiff, getCheckpointService } from "../index"
+import { Task } from "../../task/Task.js"
+import { ClineProvider } from "../../webview/ClineProvider.js"
+import { checkpointSave, checkpointRestore, checkpointDiff, getCheckpointService } from "../index.js"
 import * as vscode from "vscode"
 
 // Mock vscode

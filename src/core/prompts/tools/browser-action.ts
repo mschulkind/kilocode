@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getBrowserActionDescription(args: ToolArgs): string | undefined {
 	if (!args.supportsComputerUse) {

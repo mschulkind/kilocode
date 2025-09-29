@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions } from "./helpers"
-import { cQuery } from "../queries"
-import sampleCContent from "./fixtures/sample-c"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import { cQuery } from "../queries.js"
+import sampleCContent from "./fixtures/sample-c.js"
 
 describe("C Source Code Definition Tests", () => {
 	let parseResult: string

@@ -1,5 +1,5 @@
 // streamUtils/mockStream.ts
-import { CommandStream } from "./index"
+import { CommandStream } from "./index.js"
 
 /**
  * Base function to create a mock stream with predefined output for testing without executing real commands

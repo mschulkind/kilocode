@@ -3,7 +3,7 @@
 import axios from "axios"
 import { VERCEL_AI_GATEWAY_VISION_ONLY_MODELS, VERCEL_AI_GATEWAY_VISION_AND_TOOLS_MODELS } from "@roo-code/types"
 
-import { getVercelAiGatewayModels, parseVercelAiGatewayModel } from "../vercel-ai-gateway"
+import { getVercelAiGatewayModels, parseVercelAiGatewayModel } from "../vercel-ai-gateway.js"
 
 vitest.mock("axios")
 const mockedAxios = axios as any

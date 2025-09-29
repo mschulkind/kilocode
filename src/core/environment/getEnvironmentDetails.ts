@@ -8,24 +8,24 @@ import delay from "delay"
 import type { ExperimentId } from "@roo-code/types"
 import { DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@roo-code/types"
 
-import { EXPERIMENT_IDS, experiments as Experiments } from "../../shared/experiments"
-import { formatLanguage } from "../../shared/language"
-import { defaultModeSlug, getFullModeDetails, getModeBySlug, isToolAllowedForMode } from "../../shared/modes"
-import { getApiMetrics } from "../../shared/getApiMetrics"
-import { listFiles } from "../../services/glob/list-files"
-import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry"
-import { Terminal } from "../../integrations/terminal/Terminal"
-import { arePathsEqual } from "../../utils/path"
-import { formatResponse } from "../prompts/responses"
+import { EXPERIMENT_IDS, experiments as Experiments } from "../../shared/experiments.js"
+import { formatLanguage } from "../../shared/language.js"
+import { defaultModeSlug, getFullModeDetails, getModeBySlug, isToolAllowedForMode } from "../../shared/modes.js"
+import { getApiMetrics } from "../../shared/getApiMetrics.js"
+import { listFiles } from "../../services/glob/list-files.js"
+import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry.js"
+import { Terminal } from "../../integrations/terminal/Terminal.js"
+import { arePathsEqual } from "../../utils/path.js"
+import { formatResponse } from "../prompts/responses.js"
 
-import { Task } from "../task/Task"
-import { formatReminderSection } from "./reminder"
+import { Task } from "../task/Task.js"
+import { formatReminderSection } from "./reminder.js"
 
 // kilocode_change start
-import { OpenRouterHandler } from "../../api/providers/openrouter"
+import { OpenRouterHandler } from "../../api/providers/openrouter.js"
 import { TelemetryService } from "@roo-code/telemetry"
-import { t } from "../../i18n"
-import { NativeOllamaHandler } from "../../api/providers/native-ollama"
+import { t } from "../../i18n.js"
+import { NativeOllamaHandler } from "../../api/providers/native-ollama.js"
 // kilocode_change end
 
 export async function getEnvironmentDetails(cline: Task, includeFileDetails: boolean = false) {

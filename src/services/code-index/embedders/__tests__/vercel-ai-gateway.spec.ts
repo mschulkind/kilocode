@@ -1,7 +1,7 @@
 // npx vitest run src/services/code-index/embedders/__tests__/vercel-ai-gateway.spec.ts
 
-import { VercelAiGatewayEmbedder } from "../vercel-ai-gateway"
-import { OpenAICompatibleEmbedder } from "../openai-compatible"
+import { VercelAiGatewayEmbedder } from "../vercel-ai-gateway.js"
+import { OpenAICompatibleEmbedder } from "../openai-compatible.js"
 
 // Mock the OpenAICompatibleEmbedder
 vi.mock("../openai-compatible", () => ({

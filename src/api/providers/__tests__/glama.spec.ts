@@ -2,8 +2,8 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { GlamaHandler } from "../glama"
-import { ApiHandlerOptions } from "../../../shared/api"
+import { GlamaHandler } from "../glama.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 
 // Mock dependencies
 vitest.mock("../fetchers/modelCache", () => ({

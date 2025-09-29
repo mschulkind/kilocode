@@ -3,8 +3,8 @@
  * Transforms technical errors into user-friendly messages
  */
 
-import i18n from "../../../i18n/setup"
-import { isAnyRecognizedKiloCodeError } from "../../../shared/kilocode/errorUtils"
+import i18n from "../../../i18n/setup.js"
+import { isAnyRecognizedKiloCodeError } from "../../../shared/kilocode/errorUtils.js"
 
 /**
  * Handles OpenAI client errors and transforms them into user-friendly messages

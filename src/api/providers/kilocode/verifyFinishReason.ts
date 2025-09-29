@@ -1,5 +1,5 @@
 import { ChatCompletionChunk } from "openai/resources/index.mjs"
-import { t } from "../../../i18n"
+import { t } from "../../../i18n/index.js"
 import { TelemetryService } from "@roo-code/telemetry"
 import { TelemetryEventName } from "@roo-code/types"
 

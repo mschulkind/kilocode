@@ -70,7 +70,7 @@ export function convertToBedrockConverseMessages(anthropicMessages: Anthropic.Me
 				}
 
 				// Extract format from media_type (e.g., "image/jpeg" -> "jpeg")
-				const format = messageBlock.source.media_type.split("/")[1]
+				const format = messageBlock.source.media_type.split("/")[1] || "unknown"
 				if (!["png", "jpeg", "gif", "webp"].includes(format)) {
 					throw new Error(`Unsupported image format: ${format}`)
 				}

@@ -1,9 +1,9 @@
 import { ProviderSettings, ClineMessage } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { MessageEnhancer } from "../messageEnhancer"
-import * as singleCompletionHandlerModule from "../../../utils/single-completion-handler"
-import { ProviderSettingsManager } from "../../config/ProviderSettingsManager"
+import { MessageEnhancer } from "../messageEnhancer.js"
+import * as singleCompletionHandlerModule from "../../../utils/single-completion-handler.js"
+import { ProviderSettingsManager } from "../../config/ProviderSettingsManager.js"
 
 // Mock dependencies
 vi.mock("../../../utils/single-completion-handler")

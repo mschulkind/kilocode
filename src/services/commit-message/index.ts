@@ -1,7 +1,7 @@
 // kilocode_change - new file
 import * as vscode from "vscode"
-import { CommitMessageProvider } from "./CommitMessageProvider"
-import { t } from "../../i18n"
+import { CommitMessageProvider } from "./CommitMessageProvider.js"
+import { t } from "../../i18n.js"
 
 /**
  * Registers the commit message provider with the extension context.

@@ -1,6 +1,6 @@
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
-import { tomlQuery } from "../queries"
-import { sampleToml } from "./fixtures/sample-toml"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
+import { tomlQuery } from "../queries.js"
+import { sampleToml } from "./fixtures/sample-toml.js"
 
 // Mock fs module
 vi.mock("fs/promises")

@@ -3,15 +3,15 @@ import OpenAI from "openai"
 
 import type { ModelInfo } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { DEFAULT_HEADERS } from "./constants"
-import { BaseProvider } from "./base-provider"
-import { verifyFinishReason } from "./kilocode/verifyFinishReason"
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { DEFAULT_HEADERS } from "./constants.js"
+import { BaseProvider } from "./base-provider.js"
+import { verifyFinishReason } from "./kilocode/verifyFinishReason.js"
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 type BaseOpenAiCompatibleProviderOptions<ModelName extends string> = ApiHandlerOptions & {
 	providerName: string

@@ -1,6 +1,6 @@
 // kilocode_change whole file
 
-import { ClineRulesToggles } from "../../shared/cline-rules"
+import { ClineRulesToggles } from "../../shared/cline-rules.js"
 import fs from "fs/promises"
 import path from "path"
 import {
@@ -8,7 +8,7 @@ import {
 	newRuleToolResponse,
 	reportBugToolResponse,
 	condenseToolResponse,
-} from "../prompts/commands"
+} from "../prompts/commands.js"
 
 function enabledWorkflowToggles(workflowToggles: ClineRulesToggles) {
 	return Object.entries(workflowToggles)

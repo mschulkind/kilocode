@@ -8,14 +8,14 @@ import {
 	VERCEL_AI_GATEWAY_PROMPT_CACHING_MODELS,
 } from "@roo-code/types"
 
-import { ApiHandlerOptions } from "../../shared/api"
+import { ApiHandlerOptions } from "../../shared/api.js"
 
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { addCacheBreakpoints } from "../transform/caching/vercel-ai-gateway"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { addCacheBreakpoints } from "../transform/caching/vercel-ai-gateway.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { RouterProvider } from "./router-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { RouterProvider } from "./router-provider.js"
 
 // Extend OpenAI's CompletionUsage to include Vercel AI Gateway specific fields
 interface VercelAiGatewayUsage extends OpenAI.CompletionUsage {

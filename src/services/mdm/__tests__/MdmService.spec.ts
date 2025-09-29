@@ -58,7 +58,7 @@ vi.mock("../../../i18n", () => ({
 import * as fs from "fs"
 import * as os from "os"
 import * as vscode from "vscode"
-import { MdmService } from "../MdmService"
+import { MdmService } from "../MdmService.js"
 import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@roo-code/cloud"
 
 const mockFs = fs as any

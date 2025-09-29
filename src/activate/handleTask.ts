@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
 
-import { Package } from "../shared/package"
-import { ClineProvider } from "../core/webview/ClineProvider"
-import { t } from "../i18n"
+import { Package } from "../shared/package.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
+import { t } from "../i18n/index.js"
 
 export const handleNewTask = async (
 	// kilocode_change start: Add profile and mode switching support

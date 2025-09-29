@@ -1,8 +1,8 @@
-import { Task } from "../task/Task"
-import { fetchInstructions } from "../prompts/instructions/instructions"
-import { ClineSayTool } from "../../shared/ExtensionMessage"
-import { formatResponse } from "../prompts/responses"
-import { ToolUse, AskApproval, HandleError, PushToolResult } from "../../shared/tools"
+import { Task } from "../task/Task.js"
+import { fetchInstructions } from "../prompts/instructions/instructions.js"
+import { ClineSayTool } from "../../shared/ExtensionMessage.js"
+import { formatResponse } from "../prompts/responses.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult } from "../../shared/tools.js"
 
 export async function fetchInstructionsTool(
 	cline: Task,

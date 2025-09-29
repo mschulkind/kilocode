@@ -7,16 +7,16 @@ import delay from "delay"
 import { CommandExecutionStatus, DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { Task } from "../task/Task"
+import { Task } from "../task/Task.js"
 
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolResponse } from "../../shared/tools"
-import { formatResponse } from "../prompts/responses"
-import { unescapeHtmlEntities } from "../../utils/text-normalization"
-import { ExitCodeDetails, RooTerminalCallbacks, RooTerminalProcess } from "../../integrations/terminal/types"
-import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry"
-import { Terminal } from "../../integrations/terminal/Terminal"
-import { Package } from "../../shared/package"
-import { t } from "../../i18n"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolResponse } from "../../shared/tools.js"
+import { formatResponse } from "../prompts/responses.js"
+import { unescapeHtmlEntities } from "../../utils/text-normalization.js"
+import { ExitCodeDetails, RooTerminalCallbacks, RooTerminalProcess } from "../../integrations/terminal/types.js"
+import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry.js"
+import { Terminal } from "../../integrations/terminal/Terminal.js"
+import { Package } from "../../shared/package.js"
+import { t } from "../../i18n.js"
 
 class ShellIntegrationError extends Error {}
 

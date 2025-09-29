@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { GhostSuggestionsState } from "../GhostSuggestions"
-import { GhostSuggestionEditOperation } from "../types"
+import { GhostSuggestionsState } from "../GhostSuggestions.js"
+import { GhostSuggestionEditOperation } from "../types.js"
 
 describe("GhostSuggestions", () => {
 	let ghostSuggestions: GhostSuggestionsState

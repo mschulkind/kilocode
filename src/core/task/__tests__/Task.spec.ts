@@ -9,14 +9,14 @@ import { Anthropic } from "@anthropic-ai/sdk"
 import type { GlobalState, ProviderSettings, ModelInfo } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { Task } from "../Task"
-import { ClineProvider } from "../../webview/ClineProvider"
-import { ApiStreamChunk } from "../../../api/transform/stream"
-import { ContextProxy } from "../../config/ContextProxy"
-import { processUserContentMentions } from "../../mentions/processUserContentMentions"
-import { MultiSearchReplaceDiffStrategy } from "../../diff/strategies/multi-search-replace"
-import { MultiFileSearchReplaceDiffStrategy } from "../../diff/strategies/multi-file-search-replace"
-import { EXPERIMENT_IDS } from "../../../shared/experiments"
+import { Task } from "../Task.js"
+import { ClineProvider } from "../../webview/ClineProvider.js"
+import { ApiStreamChunk } from "../../../api/transform/stream.js"
+import { ContextProxy } from "../../config/ContextProxy.js"
+import { processUserContentMentions } from "../../mentions/processUserContentMentions.js"
+import { MultiSearchReplaceDiffStrategy } from "../../diff/strategies/multi-search-replace.js"
+import { MultiFileSearchReplaceDiffStrategy } from "../../diff/strategies/multi-file-search-replace.js"
+import { EXPERIMENT_IDS } from "../../../shared/experiments.js"
 
 // Mock delay before any imports that might use it
 vi.mock("delay", () => ({

@@ -1,7 +1,7 @@
-import { Task } from "../task/Task"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
-import { formatResponse } from "../prompts/responses"
-import { parseXml } from "../../utils/xml"
+import { Task } from "../task/Task.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { formatResponse } from "../prompts/responses.js"
+import { parseXml } from "../../utils/xml.js"
 
 export async function askFollowupQuestionTool(
 	cline: Task,

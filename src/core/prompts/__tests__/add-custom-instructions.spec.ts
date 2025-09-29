@@ -47,12 +47,12 @@ import * as vscode from "vscode"
 
 import { ModeConfig } from "@roo-code/types"
 
-import { SYSTEM_PROMPT } from "../system"
-import { McpHub } from "../../../services/mcp/McpHub"
-import { defaultModeSlug, modes, Mode } from "../../../shared/modes"
+import { SYSTEM_PROMPT } from "../system.js"
+import { McpHub } from "../../../services/mcp/McpHub.js"
+import { defaultModeSlug, modes, Mode } from "../../../shared/modes.js"
 import "../../../utils/path"
-import { addCustomInstructions } from "../sections/custom-instructions"
-import { MultiSearchReplaceDiffStrategy } from "../../diff/strategies/multi-search-replace"
+import { addCustomInstructions } from "../sections/custom-instructions.js"
+import { MultiSearchReplaceDiffStrategy } from "../../diff/strategies/multi-search-replace.js"
 
 // Mock the sections
 vi.mock("../sections/modes", () => ({

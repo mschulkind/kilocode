@@ -1,7 +1,7 @@
 // kilocode_change new file
 
 import { describe, it, expect, vi, beforeEach } from "vitest"
-import { GeminiCliHandler } from "../gemini-cli"
+import { GeminiCliHandler } from "../gemini-cli.js"
 import { geminiCliDefaultModelId, geminiCliModels } from "@roo-code/types"
 import * as fs from "fs/promises"
 import axios from "axios"

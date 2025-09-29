@@ -2,30 +2,30 @@ import * as path from "path"
 import fs from "fs/promises"
 
 import NodeCache from "node-cache"
-import { safeWriteJson } from "../../../utils/safeWriteJson"
+import { safeWriteJson } from "../../../utils/safeWriteJson.js"
 
-import { ContextProxy } from "../../../core/config/ContextProxy"
-import { getCacheDirectoryPath } from "../../../utils/storage"
-import { RouterName, ModelRecord } from "../../../shared/api"
-import { fileExistsAtPath } from "../../../utils/fs"
+import { ContextProxy } from "../../../core/config/ContextProxy.js"
+import { getCacheDirectoryPath } from "../../../utils/storage.js"
+import { RouterName, ModelRecord } from "../../../shared/api.js"
+import { fileExistsAtPath } from "../../../utils/fs.js"
 
-import { getOpenRouterModels } from "./openrouter"
-import { getVercelAiGatewayModels } from "./vercel-ai-gateway"
-import { getRequestyModels } from "./requesty"
-import { getGlamaModels } from "./glama"
-import { getUnboundModels } from "./unbound"
-import { getLiteLLMModels } from "./litellm"
-import { GetModelsOptions } from "../../../shared/api"
-import { getKiloBaseUriFromToken } from "../../../shared/kilocode/token"
-import { getOllamaModels } from "./ollama"
-import { getLMStudioModels } from "./lmstudio"
-import { getIOIntelligenceModels } from "./io-intelligence"
+import { getOpenRouterModels } from "./openrouter.js"
+import { getVercelAiGatewayModels } from "./vercel-ai-gateway.js"
+import { getRequestyModels } from "./requesty.js"
+import { getGlamaModels } from "./glama.js"
+import { getUnboundModels } from "./unbound.js"
+import { getLiteLLMModels } from "./litellm.js"
+import { GetModelsOptions } from "../../../shared/api.js"
+import { getKiloBaseUriFromToken } from "../../../shared/kilocode/token.js"
+import { getOllamaModels } from "./ollama.js"
+import { getLMStudioModels } from "./lmstudio.js"
+import { getIOIntelligenceModels } from "./io-intelligence.js"
 
 // kilocode_change start
 import { cerebrasModels } from "@roo-code/types"
 // kilocode_change end
 
-import { getDeepInfraModels } from "./deepinfra"
+import { getDeepInfraModels } from "./deepinfra.js"
 const memoryCache = new NodeCache({ stdTTL: 5 * 60, checkperiod: 5 * 60 })
 
 export /*kilocode_change*/ async function writeModels(router: RouterName, data: ModelRecord) {

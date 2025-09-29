@@ -5,8 +5,8 @@
  * navigation patterns, and document connectivity to avoid false positives.
  */
 
-import { DocumentTypeDetector, DocumentTypeResult } from "./DocumentTypeDetector"
-import { FileIndexBuilder, FileEntry } from "./FileIndexBuilder"
+import { DocumentTypeDetector, DocumentTypeResult } from "./DocumentTypeDetector.js"
+import { FileIndexBuilder, FileEntry } from "./FileIndexBuilder.js"
 
 export interface DetectionConfig {
 	minSectionLength: number

@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { elispQuery } from "../queries/elisp"
-import sampleElispContent from "./fixtures/sample-elisp"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { elispQuery } from "../queries/elisp.js"
+import sampleElispContent from "./fixtures/sample-elisp.js"
 
 describe("inspectElisp", () => {
 	const testOptions = {

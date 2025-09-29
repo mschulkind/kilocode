@@ -1,14 +1,14 @@
 import OpenAI from "openai"
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import type { ApiHandlerOptions, ModelRecord } from "../../shared/api"
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { DEFAULT_HEADERS } from "./constants"
-import { BaseProvider } from "./base-provider"
-import { getHuggingFaceModels, getCachedHuggingFaceModels } from "./fetchers/huggingface"
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import type { ApiHandlerOptions, ModelRecord } from "../../shared/api.js"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { DEFAULT_HEADERS } from "./constants.js"
+import { BaseProvider } from "./base-provider.js"
+import { getHuggingFaceModels, getCachedHuggingFaceModels } from "./fetchers/huggingface.js"
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 export class HuggingFaceHandler extends BaseProvider implements SingleCompletionHandler {
 	private client: OpenAI

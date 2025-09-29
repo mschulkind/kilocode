@@ -1,14 +1,14 @@
 import { OpenAI } from "openai"
-import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces/embedder"
+import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces/embedder.js"
 import {
 	MAX_BATCH_TOKENS,
 	MAX_ITEM_TOKENS,
 	MAX_BATCH_RETRIES as MAX_RETRIES,
 	INITIAL_RETRY_DELAY_MS as INITIAL_DELAY_MS,
-} from "../constants"
-import { getDefaultModelId, getModelQueryPrefix } from "../../../shared/embeddingModels"
-import { t } from "../../../i18n"
-import { withValidationErrorHandling, HttpError, formatEmbeddingError } from "../shared/validation-helpers"
+} from "../constants.js"
+import { getDefaultModelId, getModelQueryPrefix } from "../../../shared/embeddingModels.js"
+import { t } from "../../../i18n.js"
+import { withValidationErrorHandling, HttpError, formatEmbeddingError } from "../shared/validation-helpers.js"
 import { TelemetryEventName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 import { Mutex } from "async-mutex"

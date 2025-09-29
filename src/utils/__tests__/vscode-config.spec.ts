@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import * as vscode from "vscode"
-import { canReadLocalFiles, readUserConfigFile, readJSON5File } from "../vscode-config"
+import { canReadLocalFiles, readUserConfigFile, readJSON5File } from "../vscode-config.js"
 import { promises as fs } from "fs"
 import * as os from "os"
 

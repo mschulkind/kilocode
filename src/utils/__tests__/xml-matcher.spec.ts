@@ -1,4 +1,4 @@
-import { XmlMatcher } from "../xml-matcher"
+import { XmlMatcher } from "../xml-matcher.js"
 
 describe("XmlMatcher", () => {
 	it("only match at position 0", () => {

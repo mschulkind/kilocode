@@ -2,15 +2,15 @@
 
 import * as path from "path"
 
-import { countFileLines } from "../../../integrations/misc/line-counter"
-import { readLines } from "../../../integrations/misc/read-lines"
-import { extractTextFromFile } from "../../../integrations/misc/extract-text"
-import { parseSourceCodeDefinitionsForFile } from "../../../services/tree-sitter"
+import { countFileLines } from "../../../integrations/misc/line-counter.js"
+import { readLines } from "../../../integrations/misc/read-lines.js"
+import { extractTextFromFile } from "../../../integrations/misc/extract-text.js"
+import { parseSourceCodeDefinitionsForFile } from "../../../services/tree-sitter.js"
 import { isBinaryFile } from "isbinaryfile"
-import { ReadFileToolUse, ToolParamName, ToolResponse } from "../../../shared/tools"
-import { readFileTool } from "../readFileTool"
-import { formatResponse } from "../../prompts/responses"
-import { DEFAULT_MAX_IMAGE_FILE_SIZE_MB, DEFAULT_MAX_TOTAL_IMAGE_SIZE_MB } from "../helpers/imageHelpers"
+import { ReadFileToolUse, ToolParamName, ToolResponse } from "../../../shared/tools.js"
+import { readFileTool } from "../readFileTool.js"
+import { formatResponse } from "../../prompts/responses.js"
+import { DEFAULT_MAX_IMAGE_FILE_SIZE_MB, DEFAULT_MAX_TOTAL_IMAGE_SIZE_MB } from "../helpers/imageHelpers.js"
 
 vi.mock("path", async () => {
 	const originalPath = await vi.importActual("path")

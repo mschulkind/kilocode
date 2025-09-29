@@ -1,8 +1,8 @@
 // npx vitest services/tree-sitter/__tests__/parseSourceCodeDefinitions.swift.spec.ts
 
-import { swiftQuery } from "../queries"
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
-import sampleSwiftContent from "./fixtures/sample-swift"
+import { swiftQuery } from "../queries.js"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
+import sampleSwiftContent from "./fixtures/sample-swift.js"
 
 // Swift test options
 const testOptions = {

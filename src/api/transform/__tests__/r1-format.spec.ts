@@ -1,6 +1,6 @@
 // npx vitest run api/transform/__tests__/r1-format.spec.ts
 
-import { convertToR1Format } from "../r1-format"
+import { convertToR1Format } from "../r1-format.js"
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 

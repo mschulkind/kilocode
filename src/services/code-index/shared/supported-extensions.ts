@@ -1,4 +1,4 @@
-import { extensions as allExtensions } from "../../tree-sitter"
+import { extensions as allExtensions } from "../../tree-sitter.js"
 
 // Include all extensions including markdown for the scanner
 export const scannerExtensions = allExtensions

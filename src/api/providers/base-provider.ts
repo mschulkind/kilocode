@@ -2,9 +2,9 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import type { ModelInfo } from "@roo-code/types"
 
-import type { ApiHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { ApiStream } from "../transform/stream"
-import { countTokens } from "../../utils/countTokens"
+import type { ApiHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { ApiStream } from "../transform/stream.js"
+import { countTokens } from "../../utils/countTokens.js"
 
 /**
  * Base class for API providers that implements common functionality.

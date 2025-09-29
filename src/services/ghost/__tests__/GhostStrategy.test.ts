@@ -1,9 +1,9 @@
 import * as vscode from "vscode"
 import { describe, it, expect, beforeEach, vi } from "vitest"
-import { GhostStrategy } from "../GhostStrategy"
-import { GhostSuggestionContext } from "../types"
-import { PromptStrategyManager } from "../PromptStrategyManager"
-import { UseCaseType } from "../types/PromptStrategy"
+import { GhostStrategy } from "../GhostStrategy.js"
+import { GhostSuggestionContext } from "../types.js"
+import { PromptStrategyManager } from "../PromptStrategyManager.js"
+import { UseCaseType } from "../types/PromptStrategy.js"
 import { skip } from "node:test"
 
 describe("GhostStrategy", () => {

@@ -1,6 +1,6 @@
 import type { CommandId, CodeActionId, TerminalActionId } from "@roo-code/types"
 
-import { Package } from "../shared/package"
+import { Package } from "../shared/package.js"
 
 export const getCommand = (id: CommandId) => `${Package.name}.${id}`
 

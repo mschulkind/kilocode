@@ -1,15 +1,15 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import { Message, Ollama } from "ollama"
 import { ModelInfo, openAiModelInfoSaneDefaults, DEEP_SEEK_DEFAULT_TEMPERATURE } from "@roo-code/types"
-import { ApiStream } from "../transform/stream"
-import { BaseProvider } from "./base-provider"
-import type { ApiHandlerOptions } from "../../shared/api"
-import { getOllamaModels } from "./fetchers/ollama"
-import { XmlMatcher } from "../../utils/xml-matcher"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { ApiStream } from "../transform/stream.js"
+import { BaseProvider } from "./base-provider.js"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { getOllamaModels } from "./fetchers/ollama.js"
+import { XmlMatcher } from "../../utils/xml-matcher.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 // kilocode_change start
-import { fetchWithTimeout } from "./kilocode/fetchWithTimeout"
+import { fetchWithTimeout } from "./kilocode/fetchWithTimeout.js"
 const OLLAMA_TIMEOUT_MS = 3_600_000
 
 const TOKEN_ESTIMATION_FACTOR = 4 //Industry standard technique for estimating token counts without actually implementing a parser/tokenizer

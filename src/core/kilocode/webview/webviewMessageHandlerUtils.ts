@@ -1,11 +1,11 @@
 import * as vscode from "vscode"
 import pWaitFor from "p-wait-for"
-import { ClineProvider } from "../../webview/ClineProvider"
-import { t } from "../../../i18n"
-import { WebviewMessage } from "../../../shared/WebviewMessage"
-import { Task } from "../../task/Task"
+import { ClineProvider } from "../../webview/ClineProvider.js"
+import { t } from "../../../i18n.js"
+import { WebviewMessage } from "../../../shared/WebviewMessage.js"
+import { Task } from "../../task/Task.js"
 import axios from "axios"
-import { getKiloBaseUriFromToken } from "../../../shared/kilocode/token"
+import { getKiloBaseUriFromToken } from "../../../shared/kilocode/token.js"
 
 // Helper function to delete messages for resending
 const deleteMessagesForResend = async (cline: Task, originalMessageIndex: number, originalMessageTs: number) => {

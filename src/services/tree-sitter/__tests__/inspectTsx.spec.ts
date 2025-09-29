@@ -1,5 +1,5 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import sampleTsxContent from "./fixtures/sample-tsx"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import sampleTsxContent from "./fixtures/sample-tsx.js"
 
 describe("inspectTsx", () => {
 	const testOptions = {

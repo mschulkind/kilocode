@@ -3,10 +3,10 @@
 import type { ToolUsage } from "@roo-code/types"
 import * as vscode from "vscode"
 
-import { Task } from "../../task/Task"
-import { formatResponse } from "../../prompts/responses"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../../shared/tools"
-import { unescapeHtmlEntities } from "../../../utils/text-normalization"
+import { Task } from "../../task/Task.js"
+import { formatResponse } from "../../prompts/responses.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../../shared/tools.js"
+import { unescapeHtmlEntities } from "../../../utils/text-normalization.js"
 
 // Mock dependencies
 vitest.mock("execa", () => ({
@@ -31,7 +31,7 @@ const mockExecuteCommand = vitest.fn().mockImplementation(() => {
 vitest.mock("../executeCommandTool")
 
 // Import after mocking
-import { executeCommandTool } from "../executeCommandTool"
+import { executeCommandTool } from "../executeCommandTool.js"
 
 // Now manually restore and mock the functions
 beforeEach(() => {

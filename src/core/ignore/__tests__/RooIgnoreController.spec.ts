@@ -2,12 +2,12 @@
 
 import type { Mock } from "vitest"
 
-import { RooIgnoreController, LOCK_TEXT_SYMBOL } from "../RooIgnoreController"
+import { RooIgnoreController, LOCK_TEXT_SYMBOL } from "../RooIgnoreController.js"
 import * as vscode from "vscode"
 import * as path from "path"
 import * as fs from "fs/promises"
 import * as fsSync from "fs"
-import { fileExistsAtPath } from "../../../utils/fs"
+import { fileExistsAtPath } from "../../../utils/fs.js"
 
 // Mock dependencies
 vi.mock("fs/promises")

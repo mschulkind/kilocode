@@ -1,6 +1,6 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import { ContentBlock, SystemContentBlock, Message, ConversationRole } from "@aws-sdk/client-bedrock-runtime"
-import { CacheStrategyConfig, CacheResult, CachePointPlacement } from "./types"
+import { CacheStrategyConfig, CacheResult, CachePointPlacement } from "./types.js"
 
 export abstract class CacheStrategy {
 	/**
@@ -149,11 +149,14 @@ export abstract class CacheStrategy {
 		const result: Message[] = []
 		for (let i = 0; i < messages.length; i++) {
 			const placement = placements.find((p) => p.index === i)
+			const message = messages[i]
 
-			if (placement) {
-				messages[i].content?.push(this.createCachePoint())
+			if (placement && message) {
+				message.content?.push(this.createCachePoint())
 			}
-			result.push(messages[i])
+			if (message) {
+				result.push(message)
+			}
 		}
 
 		return result

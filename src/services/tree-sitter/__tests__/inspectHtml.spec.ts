@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { htmlQuery } from "../queries"
-import { sampleHtmlContent } from "./fixtures/sample-html"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { htmlQuery } from "../queries.js"
+import { sampleHtmlContent } from "./fixtures/sample-html.js"
 
 describe("inspectHtml", () => {
 	const testOptions = {

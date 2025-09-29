@@ -280,11 +280,11 @@ External system integration:
 
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
-| Config Manager | [`../../src/config/ConfigManager.ts`](../../src/config/ConfigManager.ts) | `loadConfig()`, `validateConfig()` | Configuration management |
-| Environment Detector | [`../../src/config/EnvironmentDetector.ts`](../../src/config/EnvironmentDetector.ts) | `detectEnvironment()`, `getEnvironmentConfig()` | Environment-specific configuration |
-| API Key Manager | [`../../src/config/ApiKeyManager.ts`](../../src/config/ApiKeyManager.ts) | `validateApiKey()`, `encryptKey()` | API key management |
-| Validation Service | [`../../src/config/ValidationService.ts`](../../src/config/ValidationService.ts) | `validateSchema()`, `checkDependencies()` | Configuration validation |
-| Security Manager | [`../../src/config/SecurityManager.ts`](../../src/config/SecurityManager.ts) | `encryptConfig()`, `auditConfig()` | Security and compliance |
+| Config Manager | [Config Implementation](../../src/core/config/ProviderSettingsManager.ts) | `loadConfig()`, `validateConfig()` | Configuration management |
+| Environment Detector | [Config Implementation](../../src/core/config/ProviderSettingsManager.ts) | `detectEnvironment()`, `getEnvironmentConfig()` | Environment-specific configuration |
+| API Key Manager | [Config Implementation](../../src/core/config/ProviderSettingsManager.ts) | `validateApiKey()`, `encryptKey()` | API key management |
+| Validation Service | [Config Implementation](../../src/core/config/ProviderSettingsManager.ts) | `validateSchema()`, `checkDependencies()` | Configuration validation |
+| Security Manager | [Config Implementation](../../src/core/config/ProviderSettingsManager.ts) | `encryptConfig()`, `auditConfig()` | Security and compliance |
 
 ## Research Context & Next Steps
 

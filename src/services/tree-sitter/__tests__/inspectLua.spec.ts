@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import { luaQuery } from "../queries"
-import sampleLuaContent from "./fixtures/sample-lua"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import { luaQuery } from "../queries.js"
+import sampleLuaContent from "./fixtures/sample-lua.js"
 
 describe("inspectLua", () => {
 	const testOptions = {

@@ -22,11 +22,11 @@ vitest.mock("vscode", () => ({
 
 import * as vscode from "vscode"
 import type { ExtensionContext } from "vscode"
-import { ProviderSettingsManager } from "../../../core/config/ProviderSettingsManager"
-import { ContextProxy } from "../../../core/config/ContextProxy"
-import { buildApiHandler } from "../../index"
-import { VirtualQuotaFallbackHandler } from "../virtual-quota-fallback"
-import { UsageTracker } from "../../../utils/usage-tracker"
+import { ProviderSettingsManager } from "../../../core/config/ProviderSettingsManager.js"
+import { ContextProxy } from "../../../core/config/ContextProxy.js"
+import { buildApiHandler } from "../../index.js"
+import { VirtualQuotaFallbackHandler } from "../virtual-quota-fallback.js"
+import { UsageTracker } from "../../../utils/usage-tracker.js"
 import { UsageEvent } from "@roo-code/types"
 
 // Mock dependencies

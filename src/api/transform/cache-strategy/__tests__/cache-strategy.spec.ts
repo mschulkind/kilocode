@@ -1,9 +1,9 @@
 import { ContentBlock, SystemContentBlock, BedrockRuntimeClient } from "@aws-sdk/client-bedrock-runtime"
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { MultiPointStrategy } from "../multi-point-strategy"
-import { CacheStrategyConfig, ModelInfo, CachePointPlacement } from "../types"
-import { AwsBedrockHandler } from "../../../providers/bedrock"
+import { MultiPointStrategy } from "../multi-point-strategy.js"
+import { CacheStrategyConfig, ModelInfo, CachePointPlacement } from "../types.js"
+import { AwsBedrockHandler } from "../../../providers/bedrock.js"
 
 // Common test utilities
 const defaultModelInfo: ModelInfo = {

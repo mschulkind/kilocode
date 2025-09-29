@@ -1,7 +1,7 @@
 import os from "os"
 import osName from "os-name"
 
-import { getShell } from "../../../utils/shell"
+import { getShell } from "../../../utils/shell.js"
 
 export function getSystemInfoSection(cwd: string): string {
 	let details = `====

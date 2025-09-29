@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { calculateDiff } from "../CharacterDiff"
+import { calculateDiff } from "../CharacterDiff.js"
 
 describe("CharacterDiff", () => {
 	describe("calculateDiff", () => {

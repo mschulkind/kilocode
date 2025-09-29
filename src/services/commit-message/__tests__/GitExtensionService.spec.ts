@@ -3,7 +3,7 @@
 import { spawnSync } from "child_process"
 import * as path from "path"
 import type { Mock } from "vitest"
-import { GitExtensionService } from "../GitExtensionService"
+import { GitExtensionService } from "../GitExtensionService.js"
 
 vi.mock("child_process", () => ({
 	spawnSync: vi.fn(),

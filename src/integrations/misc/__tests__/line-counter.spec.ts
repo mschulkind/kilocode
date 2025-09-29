@@ -1,6 +1,6 @@
 import type { Mock } from "vitest"
 import fs from "fs"
-import { countFileLines } from "../line-counter"
+import { countFileLines } from "../line-counter.js"
 
 // Mock the fs module
 vitest.mock("fs", () => ({

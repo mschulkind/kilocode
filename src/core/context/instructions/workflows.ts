@@ -1,10 +1,10 @@
 import path from "path"
 import os from "os"
 import * as vscode from "vscode"
-import { ClineRulesToggles } from "../../../shared/cline-rules"
-import { ContextProxy } from "../../config/ContextProxy"
-import { GlobalFileNames } from "../../../shared/globalFileNames"
-import { synchronizeRuleToggles } from "./rule-helpers"
+import { ClineRulesToggles } from "../../../shared/cline-rules.js"
+import { ContextProxy } from "../../config/ContextProxy.js"
+import { GlobalFileNames } from "../../../shared/globalFileNames.js"
+import { synchronizeRuleToggles } from "./rule-helpers.js"
 
 async function refreshLocalWorkflowToggles(
 	proxy: ContextProxy,

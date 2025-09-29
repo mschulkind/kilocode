@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import { vueQuery } from "../queries/vue"
-import { sampleVue } from "./fixtures/sample-vue"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import { vueQuery } from "../queries/vue.js"
+import { sampleVue } from "./fixtures/sample-vue.js"
 
 describe("Vue Parser", () => {
 	const testOptions = {

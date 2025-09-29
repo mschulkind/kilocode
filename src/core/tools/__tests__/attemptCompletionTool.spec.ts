@@ -1,6 +1,6 @@
 import { TodoItem } from "@roo-code/types"
 
-import { AttemptCompletionToolUse } from "../../../shared/tools"
+import { AttemptCompletionToolUse } from "../../../shared/tools.js"
 
 // Mock the formatResponse module before importing the tool
 vi.mock("../../prompts/responses", () => ({
@@ -30,8 +30,8 @@ vi.mock("../../../shared/package", () => ({
 	},
 }))
 
-import { attemptCompletionTool } from "../attemptCompletionTool"
-import { Task } from "../../task/Task"
+import { attemptCompletionTool } from "../attemptCompletionTool.js"
+import { Task } from "../../task/Task.js"
 import * as vscode from "vscode"
 
 describe("attemptCompletionTool", () => {

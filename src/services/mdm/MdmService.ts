@@ -5,7 +5,7 @@ import { z } from "zod"
 
 import { CloudService, getClerkBaseUrl, PRODUCTION_CLERK_BASE_URL } from "@roo-code/cloud"
 
-import { t } from "../../i18n"
+import { t } from "../../i18n.js"
 
 // MDM Configuration Schema
 const mdmConfigSchema = z.object({

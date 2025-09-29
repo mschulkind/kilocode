@@ -1,12 +1,12 @@
 import * as path from "path"
 
-import { Task } from "../task/Task"
-import { ClineSayTool } from "../../shared/ExtensionMessage"
-import { formatResponse } from "../prompts/responses"
-import { listFiles } from "../../services/glob/list-files"
-import { getReadablePath } from "../../utils/path"
-import { isPathOutsideWorkspace } from "../../utils/pathUtils"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
+import { Task } from "../task/Task.js"
+import { ClineSayTool } from "../../shared/ExtensionMessage.js"
+import { formatResponse } from "../prompts/responses.js"
+import { listFiles } from "../../services/glob/list-files.js"
+import { getReadablePath } from "../../utils/path.js"
+import { isPathOutsideWorkspace } from "../../utils/pathUtils.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
 
 /**
  * Implements the list_files tool.

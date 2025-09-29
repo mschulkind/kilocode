@@ -1,6 +1,6 @@
 // kilocode_change - new file
 import packageJson from "../package.json"
-import { readUserConfigFile } from "./vscode-config"
+import { readUserConfigFile } from "./vscode-config.js"
 
 export type KeybindingEntry = {
 	key?: string

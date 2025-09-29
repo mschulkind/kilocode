@@ -5,12 +5,12 @@
  * validation system performance to meet <30s validation time requirements.
  */
 
-import { PerformanceMonitor, PerformanceMetrics } from "./PerformanceMonitor"
-import { FileIndexBuilder } from "./FileIndexBuilder"
-import { CrossReferenceValidator } from "./CrossReferenceValidator"
-import { DocumentTypeDetector } from "./DocumentTypeDetector"
-import { OrphanedSectionsDetector } from "./OrphanedSectionsDetector"
-import { ValidationRuleConfig } from "./ValidationRuleConfig"
+import { PerformanceMonitor, PerformanceMetrics } from "./PerformanceMonitor.js"
+import { FileIndexBuilder } from "./FileIndexBuilder.js"
+import { CrossReferenceValidator } from "./CrossReferenceValidator.js"
+import { DocumentTypeDetector } from "./DocumentTypeDetector.js"
+import { OrphanedSectionsDetector } from "./OrphanedSectionsDetector.js"
+import { ValidationRuleConfig } from "./ValidationRuleConfig.js"
 
 export interface OptimizationStrategy {
 	name: string

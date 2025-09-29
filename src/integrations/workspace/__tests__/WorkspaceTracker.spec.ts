@@ -1,9 +1,9 @@
 import type { Mock } from "vitest"
 import * as vscode from "vscode"
-import WorkspaceTracker from "../WorkspaceTracker"
-import { ClineProvider } from "../../../core/webview/ClineProvider"
-import { listFiles } from "../../../services/glob/list-files"
-import { getWorkspacePath } from "../../../utils/path"
+import WorkspaceTracker from "../WorkspaceTracker.js"
+import { ClineProvider } from "../../../core/webview/ClineProvider.js"
+import { listFiles } from "../../../services/glob/list-files.js"
+import { getWorkspacePath } from "../../../utils/path.js"
 
 // Mock functions - must be defined before vitest.mock calls
 const mockOnDidCreate = vitest.fn()

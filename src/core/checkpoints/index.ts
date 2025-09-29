@@ -3,22 +3,22 @@ import * as vscode from "vscode"
 
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { Task } from "../task/Task"
+import { Task } from "../task/Task.js"
 
-import { getWorkspacePath } from "../../utils/path"
-import { checkGitInstalled } from "../../utils/git"
-import { t } from "../../i18n"
+import { getWorkspacePath } from "../../utils/path.js"
+import { checkGitInstalled } from "../../utils/git.js"
+import { t } from "../../i18n.js"
 
-import { ClineApiReqInfo } from "../../shared/ExtensionMessage"
-import { getApiMetrics } from "../../shared/getApiMetrics"
+import { ClineApiReqInfo } from "../../shared/ExtensionMessage.js"
+import { getApiMetrics } from "../../shared/getApiMetrics.js"
 
-import { DIFF_VIEW_URI_SCHEME } from "../../integrations/editor/DiffViewProvider"
+import { DIFF_VIEW_URI_SCHEME } from "../../integrations/editor/DiffViewProvider.js"
 
-import { CheckpointServiceOptions, RepoPerTaskCheckpointService } from "../../services/checkpoints"
+import { CheckpointServiceOptions, RepoPerTaskCheckpointService } from "../../services/checkpoints.js"
 
 // kilocode_change start
 import { TelemetryEventName } from "@roo-code/types"
-import { stringifyError } from "../../shared/kilocode/errorUtils"
+import { stringifyError } from "../../shared/kilocode/errorUtils.js"
 
 function reportError(callsite: string, error: unknown) {
 	TelemetryService.instance.captureEvent(TelemetryEventName.CHECKPOINT_FAILURE, {

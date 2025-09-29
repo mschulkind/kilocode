@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions, inspectTreeStructure } from "./helpers"
-import { sampleZig } from "./fixtures/sample-zig"
-import { zigQuery } from "../queries"
+import { testParseSourceCodeDefinitions, inspectTreeStructure } from "./helpers.js"
+import { sampleZig } from "./fixtures/sample-zig.js"
+import { zigQuery } from "../queries.js"
 
 describe("Zig Tree-sitter Parser", () => {
 	it("should inspect tree structure", async () => {

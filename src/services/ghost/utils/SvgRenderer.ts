@@ -1,8 +1,8 @@
 // kilocode_change - new file: SvgRenderer class for Shiki HTML-to-SVG conversion with diff highlighting
-import { escapeHtml } from "../../../shared/utils/escapeHtml"
-import { parseHtmlDocument } from "./htmlParser"
-import { calculateTextWidth } from "./textMeasurement"
-import { type ThemeColors } from "./ThemeMapper"
+import { escapeHtml } from "../../../shared/utils/escapeHtml.js"
+import { parseHtmlDocument } from "./htmlParser.js"
+import { calculateTextWidth } from "./textMeasurement.js"
+import { type ThemeColors } from "./ThemeMapper.js"
 
 // DOM Node type constants for cross-environment compatibility
 const TEXT_NODE = 3

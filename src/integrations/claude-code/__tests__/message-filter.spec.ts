@@ -1,6 +1,6 @@
 import type { Anthropic } from "@anthropic-ai/sdk"
 
-import { filterMessagesForClaudeCode } from "../message-filter"
+import { filterMessagesForClaudeCode } from "../message-filter.js"
 
 describe("filterMessagesForClaudeCode", () => {
 	test("should pass through string messages unchanged", () => {

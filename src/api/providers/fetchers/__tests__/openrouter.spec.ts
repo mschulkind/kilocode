@@ -11,7 +11,7 @@ import {
 	OPEN_ROUTER_REQUIRED_REASONING_BUDGET_MODELS,
 } from "@roo-code/types"
 
-import { getOpenRouterModelEndpoints, getOpenRouterModels, parseOpenRouterModel } from "../openrouter"
+import { getOpenRouterModelEndpoints, getOpenRouterModels, parseOpenRouterModel } from "../openrouter.js"
 
 nockBack.fixtures = path.join(__dirname, "fixtures")
 nockBack.setMode("lockdown")

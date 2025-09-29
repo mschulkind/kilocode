@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, beforeAll } from "vitest"
-import type { ClineProvider } from "../../webview/ClineProvider"
+import type { ClineProvider } from "../../webview/ClineProvider.js"
 import type { ProviderSettings } from "@roo-code/types"
 
 // Mock vscode module before importing Task

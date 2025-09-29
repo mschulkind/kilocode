@@ -12,15 +12,15 @@ import {
 } from "@roo-code/types" // kilocode_change: openRouterDefaultModelId
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { ExtensionMessage, ExtensionState } from "../../../shared/ExtensionMessage"
-import { defaultModeSlug } from "../../../shared/modes"
-import { experimentDefault } from "../../../shared/experiments"
-import { setTtsEnabled } from "../../../utils/tts"
-import { ContextProxy } from "../../config/ContextProxy"
-import { Task, TaskOptions } from "../../task/Task"
-import { safeWriteJson } from "../../../utils/safeWriteJson"
+import { ExtensionMessage, ExtensionState } from "../../../shared/ExtensionMessage.js"
+import { defaultModeSlug } from "../../../shared/modes.js"
+import { experimentDefault } from "../../../shared/experiments.js"
+import { setTtsEnabled } from "../../../utils/tts.js"
+import { ContextProxy } from "../../config/ContextProxy.js"
+import { Task, TaskOptions } from "../../task/Task.js"
+import { safeWriteJson } from "../../../utils/safeWriteJson.js"
 
-import { ClineProvider } from "../ClineProvider"
+import { ClineProvider } from "../ClineProvider.js"
 
 // Mock setup must come before imports.
 vi.mock("../../prompts/sections/custom-instructions")

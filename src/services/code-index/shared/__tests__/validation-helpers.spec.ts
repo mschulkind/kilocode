@@ -1,4 +1,4 @@
-import { sanitizeErrorMessage } from "../validation-helpers"
+import { sanitizeErrorMessage } from "../validation-helpers.js"
 
 describe("sanitizeErrorMessage", () => {
 	it("should sanitize Unix-style file paths", () => {

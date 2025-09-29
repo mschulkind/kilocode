@@ -1,8 +1,8 @@
 import * as path from "path"
 import * as os from "os"
 import * as vscode from "vscode"
-import { arePathsEqual, getWorkspacePath } from "../../utils/path"
-import { t } from "../../i18n"
+import { arePathsEqual, getWorkspacePath } from "../../utils/path.js"
+import { t } from "../../i18n.js"
 
 interface OpenFileOptions {
 	create?: boolean

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest"
 import * as vscode from "vscode"
-import { MockWorkspace } from "./MockWorkspace"
-import { createMockWorkspaceEdit } from "./MockWorkspaceEdit"
+import { MockWorkspace } from "./MockWorkspace.js"
+import { createMockWorkspaceEdit } from "./MockWorkspaceEdit.js"
 
 // Mock VS Code API objects for test environment
 export const mockVscode = {

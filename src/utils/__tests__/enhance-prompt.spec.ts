@@ -2,9 +2,9 @@
 
 import type { ProviderSettings } from "@roo-code/types"
 
-import { singleCompletionHandler } from "../single-completion-handler"
-import { buildApiHandler, SingleCompletionHandler } from "../../api"
-import { supportPrompt } from "../../shared/support-prompt"
+import { singleCompletionHandler } from "../single-completion-handler.js"
+import { buildApiHandler, SingleCompletionHandler } from "../../api.js"
+import { supportPrompt } from "../../shared/support-prompt.js"
 
 // Mock the API handler
 vi.mock("../../api", () => ({

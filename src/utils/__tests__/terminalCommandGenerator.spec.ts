@@ -1,9 +1,9 @@
 // kilocode_change - new file
 import { describe, it, expect, vi, beforeEach } from "vitest"
 import * as vscode from "vscode"
-import { generateTerminalCommand } from "../terminalCommandGenerator"
-import { ContextProxy } from "../../core/config/ContextProxy"
-import { singleCompletionHandler } from "../single-completion-handler"
+import { generateTerminalCommand } from "../terminalCommandGenerator.js"
+import { ContextProxy } from "../../core/config/ContextProxy.js"
+import { singleCompletionHandler } from "../single-completion-handler.js"
 
 vi.mock("vscode")
 vi.mock("../../core/config/ContextProxy")

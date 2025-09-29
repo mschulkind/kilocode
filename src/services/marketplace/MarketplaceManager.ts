@@ -8,13 +8,13 @@ import type { OrganizationSettings, MarketplaceItem, MarketplaceItemType, McpMar
 import { TelemetryService } from "@roo-code/telemetry"
 import { CloudService } from "@roo-code/cloud"
 
-import { GlobalFileNames } from "../../shared/globalFileNames"
-import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
-import { t } from "../../i18n"
-import type { CustomModesManager } from "../../core/config/CustomModesManager"
+import { GlobalFileNames } from "../../shared/globalFileNames.js"
+import { ensureSettingsDirectoryExists } from "../../utils/globalContext.js"
+import { t } from "../../i18n.js"
+import type { CustomModesManager } from "../../core/config/CustomModesManager.js"
 
-import { RemoteConfigLoader } from "./RemoteConfigLoader"
-import { SimpleInstaller } from "./SimpleInstaller"
+import { RemoteConfigLoader } from "./RemoteConfigLoader.js"
+import { SimpleInstaller } from "./SimpleInstaller.js"
 
 export interface MarketplaceItemsResponse {
 	organizationMcps: MarketplaceItem[]

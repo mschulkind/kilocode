@@ -24,15 +24,15 @@ import {
 	BEDROCK_CLAUDE_SONNET_4_MODEL_ID,
 } from "@roo-code/types"
 
-import { ApiStream } from "../transform/stream"
-import { BaseProvider } from "./base-provider"
-import { logger } from "../../utils/logging"
-import { MultiPointStrategy } from "../transform/cache-strategy/multi-point-strategy"
-import { ModelInfo as CacheModelInfo } from "../transform/cache-strategy/types"
-import { convertToBedrockConverseMessages as sharedConverter } from "../transform/bedrock-converse-format"
-import { getModelParams } from "../transform/model-params"
-import { shouldUseReasoningBudget } from "../../shared/api"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { ApiStream } from "../transform/stream.js"
+import { BaseProvider } from "./base-provider.js"
+import { logger } from "../../utils/logging/index.js"
+import { MultiPointStrategy } from "../transform/cache-strategy/multi-point-strategy.js"
+import { ModelInfo as CacheModelInfo } from "../transform/cache-strategy/types.js"
+import { convertToBedrockConverseMessages as sharedConverter } from "../transform/bedrock-converse-format.js"
+import { getModelParams } from "../transform/model-params.js"
+import { shouldUseReasoningBudget } from "../../shared/api.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 /************************************************************************************
  *
@@ -330,7 +330,7 @@ export class AwsBedrockHandler extends BaseProvider implements SingleCompletionH
 		const usePromptCache = Boolean(this.options.awsUsePromptCache && this.supportsAwsPromptCache(modelConfig))
 
 		const conversationId =
-			messages.length > 0
+			messages.length > 0 && messages[0]
 				? `conv_${messages[0].role}_${
 						typeof messages[0].content === "string"
 							? messages[0].content.substring(0, 20)
@@ -680,6 +680,7 @@ export class AwsBedrockHandler extends BaseProvider implements SingleCompletionH
 			if (
 				response?.output?.message?.content &&
 				response.output.message.content.length > 0 &&
+				response.output.message.content[0] &&
 				response.output.message.content[0].text &&
 				response.output.message.content[0].text.trim().length > 0
 			) {
@@ -1297,7 +1298,7 @@ Please check:
 	 */
 	private formatErrorMessage(error: unknown, errorType: string, _isStreamContext: boolean): string {
 		const definition = AwsBedrockHandler.ERROR_TYPES[errorType] || AwsBedrockHandler.ERROR_TYPES.GENERIC
-		let template = definition.messageTemplate
+		let template = definition?.messageTemplate || "An error occurred"
 
 		// Prepare template variables
 		const templateVars: Record<string, string> = {}
@@ -1344,7 +1345,7 @@ Please check:
 
 		// Log the error
 		const definition = AwsBedrockHandler.ERROR_TYPES[errorType]
-		const logMethod = definition.logLevel
+		const logMethod = definition?.logLevel || "error"
 		const contextName = isStreamContext ? "createMessage" : "completePrompt"
 		logger[logMethod](`${errorType} error in ${contextName}`, {
 			ctx: "bedrock",

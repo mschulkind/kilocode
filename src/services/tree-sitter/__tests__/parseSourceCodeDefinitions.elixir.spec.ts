@@ -1,6 +1,6 @@
-import { elixirQuery } from "../queries"
-import { testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import sampleElixirContent from "./fixtures/sample-elixir"
+import { elixirQuery } from "../queries.js"
+import { testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import sampleElixirContent from "./fixtures/sample-elixir.js"
 
 // Elixir test options
 const elixirOptions = {

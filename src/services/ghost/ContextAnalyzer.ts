@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { GhostSuggestionContext } from "./types"
-import { ContextAnalysis, UseCaseType } from "./types/PromptStrategy"
+import { GhostSuggestionContext } from "./types.js"
+import { ContextAnalysis, UseCaseType } from "./types/PromptStrategy.js"
 
 /**
  * Analyzes GhostSuggestionContext to determine the appropriate use case and context properties

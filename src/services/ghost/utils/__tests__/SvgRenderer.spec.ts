@@ -21,10 +21,10 @@ vi.mock("vscode", () => ({
 	},
 }))
 
-import { SvgRenderer } from "../SvgRenderer"
-import { initializeHighlighter, generateHighlightedHtmlWithRanges } from "../CodeHighlighter"
-import { getThemeColors } from "../ThemeMapper"
-import { type BackgroundRange } from "../CharacterDiff"
+import { SvgRenderer } from "../SvgRenderer.js"
+import { initializeHighlighter, generateHighlightedHtmlWithRanges } from "../CodeHighlighter.js"
+import { getThemeColors } from "../ThemeMapper.js"
+import { type BackgroundRange } from "../CharacterDiff.js"
 
 describe("SvgRenderer", () => {
 	beforeAll(async () => {

@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { typescriptQuery } from "../queries"
-import sampleTypeScriptContent from "./fixtures/sample-typescript"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { typescriptQuery } from "../queries.js"
+import sampleTypeScriptContent from "./fixtures/sample-typescript.js"
 
 describe("inspectTypeScript", () => {
 	const testOptions = {

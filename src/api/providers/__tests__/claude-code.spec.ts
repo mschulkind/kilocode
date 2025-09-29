@@ -1,6 +1,6 @@
-import { ClaudeCodeHandler } from "../claude-code"
-import { ApiHandlerOptions } from "../../../shared/api"
-import { ClaudeCodeMessage } from "../../../integrations/claude-code/types"
+import { ClaudeCodeHandler } from "../claude-code.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
+import { ClaudeCodeMessage } from "../../../integrations/claude-code/types.js"
 
 // Mock the runClaudeCode function
 vi.mock("../../../integrations/claude-code/run", () => ({

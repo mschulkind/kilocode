@@ -4,19 +4,19 @@ import delay from "delay"
 import type { CommandId } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { getCommand } from "../utils/commands"
-import { ClineProvider } from "../core/webview/ClineProvider"
-import { exportSettings } from "../core/config/importExport" // kilocode_change
-import { ContextProxy } from "../core/config/ContextProxy"
-import { focusPanel } from "../utils/focusPanel"
+import { getCommand } from "../utils/commands.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
+import { exportSettings } from "../core/config/importExport.js" // kilocode_change
+import { ContextProxy } from "../core/config/ContextProxy.js"
+import { focusPanel } from "../utils/focusPanel.js"
 
-import { registerHumanRelayCallback, unregisterHumanRelayCallback, handleHumanRelayResponse } from "./humanRelay"
-import { handleNewTask } from "./handleTask"
-import { CodeIndexManager } from "../services/code-index/manager"
-import { importSettingsWithFeedback } from "../core/config/importExport"
-import { MdmService } from "../services/mdm/MdmService"
-import { t } from "../i18n"
-import { generateTerminalCommand } from "../utils/terminalCommandGenerator" // kilocode_change
+import { registerHumanRelayCallback, unregisterHumanRelayCallback, handleHumanRelayResponse } from "./humanRelay.js"
+import { handleNewTask } from "./handleTask.js"
+import { CodeIndexManager } from "../services/code-index/manager.js"
+import { importSettingsWithFeedback } from "../core/config/importExport.js"
+import { MdmService } from "../services/mdm/MdmService.js"
+import { t } from "../i18n/index.js"
+import { generateTerminalCommand } from "../utils/terminalCommandGenerator.js" // kilocode_change
 
 /**
  * Helper to get the visible ClineProvider instance or log if not found.
@@ -189,7 +189,7 @@ const getCommandsMap = ({ context, outputChannel }: RegisterCommandOptions): Rec
 	handleHumanRelayResponse: handleHumanRelayResponse,
 	newTask: handleNewTask,
 	setCustomStoragePath: async () => {
-		const { promptForCustomStoragePath } = await import("../utils/storage")
+		const { promptForCustomStoragePath } = await import("../utils/storage.js")
 		await promptForCustomStoragePath()
 	},
 	importSettings: async (filePath?: string) => {
@@ -268,7 +268,7 @@ const getCommandsMap = ({ context, outputChannel }: RegisterCommandOptions): Rec
 			const uri = vscode.Uri.parse(uriString)
 
 			// Import and use the existing handleUri function
-			const { handleUri } = await import("./handleUri")
+			const { handleUri } = await import("./handleUri.js")
 			await handleUri(uri)
 
 			outputChannel.appendLine(`Successfully handled external URI: ${uriString}`)

@@ -294,11 +294,11 @@ Error recovery mechanisms:
 
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
-| LLM Service | [`../../src/llm/LLMService.ts`](../../src/llm/LLMService.ts) | `callModel()`, `selectModel()` | LLM API tracing |
-| Cost Calculator | [`../../src/llm/CostCalculator.ts`](../../src/llm/CostCalculator.ts) | `calculateCost()`, `attributeCost()` | Cost tracking |
-| Model Registry | [`../../src/llm/ModelRegistry.ts`](../../src/llm/ModelRegistry.ts) | `getModel()`, `listModels()` | Model metadata |
-| Cache Manager | [`../../src/llm/CacheManager.ts`](../../src/llm/CacheManager.ts) | `get()`, `set()`, `invalidate()` | Cache tracking |
-| Performance Tracker | [`../../src/llm/PerformanceTracker.ts`](../../src/llm/PerformanceTracker.ts) | `trackResponse()`, `recordMetrics()` | Performance monitoring |
+| LLM Service | [LLM Implementation](../../src/core/message-queue/MessageQueueService.ts) | `callModel()`, `selectModel()` | LLM API tracing |
+| Cost Calculator | [LLM Implementation](../../src/core/message-queue/MessageQueueService.ts) | `calculateCost()`, `attributeCost()` | Cost tracking |
+| Model Registry | [LLM Implementation](../../src/core/message-queue/MessageQueueService.ts) | `getModel()`, `listModels()` | Model metadata |
+| Cache Manager | [LLM Implementation](../../src/core/message-queue/MessageQueueService.ts) | `get()`, `set()`, `invalidate()` | Cache tracking |
+| Performance Tracker | [LLM Implementation](../../src/core/message-queue/MessageQueueService.ts) | `trackResponse()`, `recordMetrics()` | Performance monitoring |
 
 ## Research Context & Next Steps
 

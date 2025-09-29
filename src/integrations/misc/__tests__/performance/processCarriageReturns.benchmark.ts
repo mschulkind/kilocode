@@ -1,4 +1,4 @@
-import { processCarriageReturns, applyRunLengthEncoding, truncateOutput } from "../../extract-text"
+import { processCarriageReturns, applyRunLengthEncoding, truncateOutput } from "../../extract-text.js"
 
 /**
  * Enhanced Benchmark test for terminal output processing functions

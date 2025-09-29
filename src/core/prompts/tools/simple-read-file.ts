@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 /**
  * Generate a simplified read_file tool description for models that only support single file reads

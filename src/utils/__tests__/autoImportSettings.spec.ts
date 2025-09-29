@@ -53,10 +53,10 @@ vi.mock("../../core/config/ProviderSettingsManager", async (importOriginal) => {
 vi.mock("../../core/config/ContextProxy")
 vi.mock("../../core/config/CustomModesManager")
 
-import { autoImportSettings } from "../autoImportSettings"
+import { autoImportSettings } from "../autoImportSettings.js"
 import * as vscode from "vscode"
 import fsPromises from "fs/promises"
-import { fileExistsAtPath } from "../fs"
+import { fileExistsAtPath } from "../fs.js"
 
 describe("autoImportSettings", () => {
 	let mockProviderSettingsManager: any

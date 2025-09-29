@@ -3,7 +3,7 @@ import { LMStudioClient, LLMInstanceInfo, LLMInfo } from "@lmstudio/sdk"
 
 import { ModelInfo, lMStudioDefaultModelInfo } from "@roo-code/types"
 
-import { getLMStudioModels, parseLMStudioModel } from "../lmstudio"
+import { getLMStudioModels, parseLMStudioModel } from "../lmstudio.js"
 
 // Mock axios
 vi.mock("axios")

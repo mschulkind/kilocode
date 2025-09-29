@@ -1,10 +1,10 @@
 import * as vscode from "vscode"
-import { SvgRenderer } from "./SvgRenderer"
-import { getLanguageForDocument, generateHighlightedHtmlWithRanges } from "./CodeHighlighter"
-import { type BackgroundRange } from "./CharacterDiff"
-import { getEditorConfiguration, type EditorConfig } from "../EditorConfiguration"
-import { calculateContainerWidth, calculateCharacterWidth } from "./textMeasurement"
-import { getThemeColors } from "./ThemeMapper"
+import { SvgRenderer } from "./SvgRenderer.js"
+import { getLanguageForDocument, generateHighlightedHtmlWithRanges } from "./CodeHighlighter.js"
+import { type BackgroundRange } from "./CharacterDiff.js"
+import { getEditorConfiguration, type EditorConfig } from "../EditorConfiguration.js"
+import { calculateContainerWidth, calculateCharacterWidth } from "./textMeasurement.js"
+import { getThemeColors } from "./ThemeMapper.js"
 
 export interface SVGDecorationContent {
 	text: string

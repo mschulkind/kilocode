@@ -2,7 +2,7 @@
 
 import type { ExperimentId } from "@roo-code/types"
 
-import { EXPERIMENT_IDS, experimentConfigsMap, experiments as Experiments } from "../experiments"
+import { EXPERIMENT_IDS, experimentConfigsMap, experiments as Experiments } from "../experiments.js"
 
 describe("experiments", () => {
 	describe("POWER_STEERING", () => {

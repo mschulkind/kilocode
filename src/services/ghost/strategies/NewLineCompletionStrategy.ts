@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
-import { GhostSuggestionContext } from "../types"
-import { UseCaseType } from "../types/PromptStrategy"
-import { BasePromptStrategy } from "./BasePromptStrategy"
-import { CURSOR_MARKER } from "../ghostConstants"
+import { GhostSuggestionContext } from "../types.js"
+import { UseCaseType } from "../types/PromptStrategy.js"
+import { BasePromptStrategy } from "./BasePromptStrategy.js"
+import { CURSOR_MARKER } from "../ghostConstants.js"
 
 /**
  * Strategy for proactive code completion on new/empty lines

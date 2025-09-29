@@ -4,10 +4,10 @@ import type { Mock } from "vitest"
 
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { ApiHandler } from "../../../api"
-import { ApiMessage } from "../../task-persistence/apiMessages"
-import { maybeRemoveImageBlocks } from "../../../api/transform/image-cleaning"
-import { summarizeConversation, getMessagesSinceLastSummary, N_MESSAGES_TO_KEEP } from "../index"
+import { ApiHandler } from "../../../api.js"
+import { ApiMessage } from "../../task-persistence/apiMessages.js"
+import { maybeRemoveImageBlocks } from "../../../api/transform/image-cleaning.js"
+import { summarizeConversation, getMessagesSinceLastSummary, N_MESSAGES_TO_KEEP } from "../index.js"
 
 vi.mock("../../../api/transform/image-cleaning", () => ({
 	maybeRemoveImageBlocks: vi.fn((messages: ApiMessage[], _apiHandler: ApiHandler) => [...messages]),

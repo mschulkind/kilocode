@@ -22,9 +22,9 @@ TODO: The following C++ structures can be parsed by tree-sitter but lack query s
    Example: using size_type = std::size_t;
 */
 
-import { testParseSourceCodeDefinitions } from "./helpers"
-import { cppQuery } from "../queries"
-import sampleCppContent from "./fixtures/sample-cpp"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import { cppQuery } from "../queries.js"
+import sampleCppContent from "./fixtures/sample-cpp.js"
 
 describe("parseSourceCodeDefinitions (C++)", () => {
 	const testOptions = {

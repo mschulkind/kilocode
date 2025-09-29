@@ -1,13 +1,13 @@
 import * as vscode from "vscode"
 import * as path from "path"
-import { CodeIndexConfigManager } from "./config-manager"
-import { CodeIndexStateManager, IndexingState } from "./state-manager"
-import { IFileWatcher, IVectorStore, BatchProcessingSummary } from "./interfaces"
-import { DirectoryScanner } from "./processors"
-import { CacheManager } from "./cache-manager"
+import { CodeIndexConfigManager } from "./config-manager.js"
+import { CodeIndexStateManager, IndexingState } from "./state-manager.js"
+import { IFileWatcher, IVectorStore, BatchProcessingSummary } from "./interfaces.js"
+import { DirectoryScanner } from "./processors.js"
+import { CacheManager } from "./cache-manager.js"
 import { TelemetryService } from "@roo-code/telemetry"
 import { TelemetryEventName } from "@roo-code/types"
-import { t } from "../../i18n"
+import { t } from "../../i18n.js"
 
 /**
  * Manages the code indexing workflow, coordinating between different services and managers.

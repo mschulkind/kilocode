@@ -1,8 +1,8 @@
 // npx vitest services/tree-sitter/__tests__/inspectSwift.spec.ts
 
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import { swiftQuery } from "../queries"
-import sampleSwiftContent from "./fixtures/sample-swift"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import { swiftQuery } from "../queries.js"
+import sampleSwiftContent from "./fixtures/sample-swift.js"
 
 // This is insanely slow for some reason.
 describe.skip("inspectSwift", () => {

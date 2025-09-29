@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { openFile } from "../open-file"
+import { openFile } from "../open-file.js"
 
 // Mock vscode module
 vi.mock("vscode", () => ({

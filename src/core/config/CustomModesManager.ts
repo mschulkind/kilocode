@@ -8,13 +8,13 @@ import stripBom from "strip-bom"
 
 import { type ModeConfig, type PromptComponent, customModesSettingsSchema, modeConfigSchema } from "@roo-code/types"
 
-import { fileExistsAtPath } from "../../utils/fs"
-import { getWorkspacePath } from "../../utils/path"
-import { getGlobalRooDirectory, getProjectRooDirectoryForCwd /*kilocode_change*/ } from "../../services/roo-config"
-import { logger } from "../../utils/logging"
-import { GlobalFileNames } from "../../shared/globalFileNames"
-import { ensureSettingsDirectoryExists } from "../../utils/globalContext"
-import { t } from "../../i18n"
+import { fileExistsAtPath } from "../../utils/fs.js"
+import { getWorkspacePath } from "../../utils/path.js"
+import { getGlobalRooDirectory, getProjectRooDirectoryForCwd /*kilocode_change*/ } from "../../services/roo-config.js"
+import { logger } from "../../utils/logging.js"
+import { GlobalFileNames } from "../../shared/globalFileNames.js"
+import { ensureSettingsDirectoryExists } from "../../utils/globalContext.js"
+import { t } from "../../i18n.js"
 
 const ROOMODES_FILENAME = ".kilocodemodes"
 

@@ -1,5 +1,5 @@
 import path from "path"
-import { fileExistsAtPath } from "../../utils/fs"
+import { fileExistsAtPath } from "../../utils/fs.js"
 import fs from "fs/promises"
 import fsSync from "fs"
 import ignore, { Ignore } from "ignore"

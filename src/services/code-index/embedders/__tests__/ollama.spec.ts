@@ -1,6 +1,6 @@
 import type { MockedFunction } from "vitest"
 
-import { CodeIndexOllamaEmbedder } from "../ollama"
+import { CodeIndexOllamaEmbedder } from "../ollama.js"
 
 // Mock fetch
 global.fetch = vitest.fn() as MockedFunction<typeof fetch>

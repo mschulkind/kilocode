@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
-import { handleCheckpointRestoreOperation } from "../checkpointRestoreHandler"
-import { saveTaskMessages } from "../../task-persistence"
+import { handleCheckpointRestoreOperation } from "../checkpointRestoreHandler.js"
+import { saveTaskMessages } from "../../task-persistence.js"
 import pWaitFor from "p-wait-for"
 import * as vscode from "vscode"
 

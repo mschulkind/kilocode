@@ -1,20 +1,20 @@
 import path from "path"
 import { isBinaryFile } from "isbinaryfile"
 
-import { Task } from "../task/Task"
-import { ClineSayTool } from "../../shared/ExtensionMessage"
-import { formatResponse } from "../prompts/responses"
-import { t } from "../../i18n"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
-import { RecordSource } from "../context-tracking/FileContextTrackerTypes"
-import { isPathOutsideWorkspace } from "../../utils/pathUtils"
-import { getReadablePath } from "../../utils/path"
-import { countFileLines } from "../../integrations/misc/line-counter"
-import { readLines } from "../../integrations/misc/read-lines"
-import { extractTextFromFile, addLineNumbers, getSupportedBinaryFormats } from "../../integrations/misc/extract-text"
-import { parseSourceCodeDefinitionsForFile } from "../../services/tree-sitter"
-import { parseXml } from "../../utils/xml"
-import { blockFileReadWhenTooLarge } from "./kilocode"
+import { Task } from "../task/Task.js"
+import { ClineSayTool } from "../../shared/ExtensionMessage.js"
+import { formatResponse } from "../prompts/responses.js"
+import { t } from "../../i18n.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { RecordSource } from "../context-tracking/FileContextTrackerTypes.js"
+import { isPathOutsideWorkspace } from "../../utils/pathUtils.js"
+import { getReadablePath } from "../../utils/path.js"
+import { countFileLines } from "../../integrations/misc/line-counter.js"
+import { readLines } from "../../integrations/misc/read-lines.js"
+import { extractTextFromFile, addLineNumbers, getSupportedBinaryFormats } from "../../integrations/misc/extract-text.js"
+import { parseSourceCodeDefinitionsForFile } from "../../services/tree-sitter.js"
+import { parseXml } from "../../utils/xml.js"
+import { blockFileReadWhenTooLarge } from "./kilocode.js"
 import {
 	DEFAULT_MAX_IMAGE_FILE_SIZE_MB,
 	DEFAULT_MAX_TOTAL_IMAGE_SIZE_MB,
@@ -22,7 +22,7 @@ import {
 	validateImageForProcessing,
 	processImageFile,
 	ImageMemoryTracker,
-} from "./helpers/imageHelpers"
+} from "./helpers/imageHelpers.js"
 
 export function getReadFileToolDescription(blockName: string, blockParams: any): string {
 	// Handle both single path and multiple files via args

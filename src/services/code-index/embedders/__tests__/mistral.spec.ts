@@ -1,7 +1,7 @@
 import type { MockedClass } from "vitest"
 
-import { MistralEmbedder } from "../mistral"
-import { OpenAICompatibleEmbedder } from "../openai-compatible"
+import { MistralEmbedder } from "../mistral.js"
+import { OpenAICompatibleEmbedder } from "../openai-compatible.js"
 
 // Mock the OpenAICompatibleEmbedder
 vitest.mock("../openai-compatible")

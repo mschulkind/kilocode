@@ -3,12 +3,12 @@ import getFolderSize from "get-folder-size"
 
 import type { ClineMessage, HistoryItem } from "@roo-code/types"
 
-import { combineApiRequests } from "../../shared/combineApiRequests"
-import { combineCommandSequences } from "../../shared/combineCommandSequences"
-import { getApiMetrics } from "../../shared/getApiMetrics"
-import { findLastIndex } from "../../shared/array"
-import { getTaskDirectoryPath } from "../../utils/storage"
-import { t } from "../../i18n"
+import { combineApiRequests } from "../../shared/combineApiRequests.js"
+import { combineCommandSequences } from "../../shared/combineCommandSequences.js"
+import { getApiMetrics } from "../../shared/getApiMetrics.js"
+import { findLastIndex } from "../../shared/array.js"
+import { getTaskDirectoryPath } from "../../utils/storage.js"
+import { t } from "../../i18n.js"
 
 const taskSizeCache = new NodeCache({ stdTTL: 30, checkperiod: 5 * 60 })
 

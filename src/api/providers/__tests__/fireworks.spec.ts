@@ -5,7 +5,7 @@ import OpenAI from "openai"
 
 import { type FireworksModelId, fireworksDefaultModelId, fireworksModels } from "@roo-code/types"
 
-import { FireworksHandler } from "../fireworks"
+import { FireworksHandler } from "../fireworks.js"
 
 // Create mock functions
 const mockCreate = vi.fn()

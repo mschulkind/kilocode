@@ -4,15 +4,15 @@ import OpenAI from "openai"
 
 import { glamaDefaultModelId, glamaDefaultModelInfo, GLAMA_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
-import { Package } from "../../shared/package"
-import { ApiHandlerOptions } from "../../shared/api"
+import { Package } from "../../shared/package.js"
+import { ApiHandlerOptions } from "../../shared/api.js"
 
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { addCacheBreakpoints } from "../transform/caching/anthropic"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { addCacheBreakpoints } from "../transform/caching/anthropic.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { RouterProvider } from "./router-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { RouterProvider } from "./router-provider.js"
 
 const DEFAULT_HEADERS = {
 	"X-Glama-Metadata": JSON.stringify({

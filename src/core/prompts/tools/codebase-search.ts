@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getCodebaseSearchDescription(args: ToolArgs): string {
 	return `## codebase_search

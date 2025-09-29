@@ -3,8 +3,8 @@
 // node --expose-gc --import tsx src/core/assistant-message/__tests__/parseAssistantMessageBenchmark.ts
 
 import { performance } from "perf_hooks"
-import { parseAssistantMessage as parseAssistantMessageV1 } from "../parseAssistantMessage"
-import { parseAssistantMessageV2 } from "../parseAssistantMessageV2"
+import { parseAssistantMessage as parseAssistantMessageV1 } from "../parseAssistantMessage.js"
+import { parseAssistantMessageV2 } from "../parseAssistantMessageV2.js"
 
 const formatNumber = (num: number): string => {
 	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")

@@ -2,9 +2,9 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { ApiHandlerOptions } from "../../../shared/api"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 
-import { UnboundHandler } from "../unbound"
+import { UnboundHandler } from "../unbound.js"
 
 // Mock dependencies
 vitest.mock("../fetchers/modelCache", () => ({

@@ -287,11 +287,11 @@ async function customOperation() {
 
 | Component | File | Key Methods | Laminar Integration |
 |-----------|------|-------------|-------------------|
-| Decorator Factory | [`../../src/decorators/DecoratorFactory.ts`](../../src/decorators/DecoratorFactory.ts) | `createTraceDecorator()`, `createClassDecorator()` | Decorator creation |
-| Method Instrumenter | [`../../src/decorators/MethodInstrumenter.ts`](../../src/decorators/MethodInstrumenter.ts) | `instrumentMethod()`, `wrapExecution()` | Method instrumentation |
-| I/O Capturer | [`../../src/decorators/IOCapturer.ts`](../../src/decorators/IOCapturer.ts) | `captureInput()`, `captureOutput()` | Input/output capture |
-| Performance Monitor | [`../../src/decorators/PerformanceMonitor.ts`](../../src/decorators/PerformanceMonitor.ts) | `trackExecution()`, `recordMetrics()` | Performance monitoring |
-| Error Handler | [`../../src/decorators/ErrorHandler.ts`](../../src/decorators/ErrorHandler.ts) | `handleError()`, `propagateError()` | Error handling |
+| Decorator Factory | [Decorator Implementation](../../src/core/tools/ToolRepetitionDetector.ts) | `createTraceDecorator()`, `createClassDecorator()` | Decorator creation |
+| Method Instrumenter | [Decorator Implementation](../../src/core/tools/ToolRepetitionDetector.ts) | `instrumentMethod()`, `wrapExecution()` | Method instrumentation |
+| I/O Capturer | [Decorator Implementation](../../src/core/tools/ToolRepetitionDetector.ts) | `captureInput()`, `captureOutput()` | Input/output capture |
+| Performance Monitor | [Decorator Implementation](../../src/core/tools/ToolRepetitionDetector.ts) | `trackExecution()`, `recordMetrics()` | Performance monitoring |
+| Error Handler | [Decorator Implementation](../../src/core/tools/ToolRepetitionDetector.ts) | `handleError()`, `propagateError()` | Error handling |
 
 ## Research Context & Next Steps
 

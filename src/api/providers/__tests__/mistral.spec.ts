@@ -39,9 +39,9 @@ vi.mock("@mistralai/mistralai", () => {
 })
 
 import type { Anthropic } from "@anthropic-ai/sdk"
-import { MistralHandler } from "../mistral"
-import type { ApiHandlerOptions } from "../../../shared/api"
-import type { ApiStreamTextChunk, ApiStreamReasoningChunk } from "../../transform/stream"
+import { MistralHandler } from "../mistral.js"
+import type { ApiHandlerOptions } from "../../../shared/api.js"
+import type { ApiStreamTextChunk, ApiStreamReasoningChunk } from "../../transform/stream.js"
 
 describe("MistralHandler", () => {
 	let handler: MistralHandler

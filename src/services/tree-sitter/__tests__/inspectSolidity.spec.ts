@@ -1,6 +1,6 @@
-import { debugLog, inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { solidityQuery } from "../queries"
-import { sampleSolidity } from "./fixtures/sample-solidity"
+import { debugLog, inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { solidityQuery } from "../queries.js"
+import { sampleSolidity } from "./fixtures/sample-solidity.js"
 
 describe("inspectSolidity", () => {
 	const testOptions = {

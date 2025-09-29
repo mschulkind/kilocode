@@ -5,16 +5,16 @@ import { Anthropic } from "@anthropic-ai/sdk"
 import type { ModelInfo } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { BaseProvider } from "../../../api/providers/base-provider"
-import { ApiMessage } from "../../task-persistence/apiMessages"
-import * as condenseModule from "../../condense"
+import { BaseProvider } from "../../../api/providers/base-provider.js"
+import { ApiMessage } from "../../task-persistence/apiMessages.js"
+import * as condenseModule from "../../condense.js"
 
 import {
 	TOKEN_BUFFER_PERCENTAGE,
 	estimateTokenCount,
 	truncateConversation,
 	truncateConversationIfNeeded,
-} from "../index"
+} from "../index.js"
 
 // Create a mock ApiHandler for testing
 class MockApiHandler extends BaseProvider {

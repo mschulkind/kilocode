@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
-import { phpQuery } from "../queries"
-import samplePhpContent from "./fixtures/sample-php"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
+import { phpQuery } from "../queries.js"
+import samplePhpContent from "./fixtures/sample-php.js"
 
 describe("inspectPhp", () => {
 	const testOptions = {

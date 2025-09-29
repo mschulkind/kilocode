@@ -1,10 +1,10 @@
 import * as fs from "fs/promises"
 import * as path from "path"
-import { listFiles } from "../glob/list-files"
-import { LanguageParser, loadRequiredLanguageParsers } from "./languageParser"
-import { fileExistsAtPath } from "../../utils/fs"
-import { parseMarkdown } from "./markdownParser"
-import { RooIgnoreController } from "../../core/ignore/RooIgnoreController"
+import { listFiles } from "../glob/list-files.js"
+import { LanguageParser, loadRequiredLanguageParsers } from "./languageParser.js"
+import { fileExistsAtPath } from "../../utils/fs.js"
+import { parseMarkdown } from "./markdownParser.js"
+import { RooIgnoreController } from "../../core/ignore/RooIgnoreController.js"
 import { QueryCapture } from "web-tree-sitter"
 
 // Private constant

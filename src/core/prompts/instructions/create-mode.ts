@@ -1,6 +1,6 @@
 import * as path from "path"
 import * as vscode from "vscode"
-import { GlobalFileNames } from "../../../shared/globalFileNames"
+import { GlobalFileNames } from "../../../shared/globalFileNames.js"
 
 export async function createModeInstructions(context: vscode.ExtensionContext | undefined): Promise<string> {
 	if (!context) throw new Error("Missing VSCode Extension Context")

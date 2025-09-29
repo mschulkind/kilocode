@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { GhostSuggestionEditOperation, GhostSuggestionEditOperationsOffset } from "./types"
+import { GhostSuggestionEditOperation, GhostSuggestionEditOperationsOffset } from "./types.js"
 
 class GhostSuggestionFile {
 	public fileUri: vscode.Uri

@@ -3,7 +3,7 @@ import { z } from "zod"
 
 import { type ModelInfo } from "@roo-code/types"
 
-import { DEFAULT_HEADERS } from "../constants"
+import { DEFAULT_HEADERS } from "../constants.js"
 
 // DeepInfra models endpoint follows OpenAI /models shape with an added metadata object.
 

@@ -2,16 +2,16 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import { type CerebrasModelId, cerebrasDefaultModelId, cerebrasModels } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
-import { calculateApiCostOpenAI } from "../../shared/cost"
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { XmlMatcher } from "../../utils/xml-matcher"
+import type { ApiHandlerOptions } from "../../shared/api.js"
+import { calculateApiCostOpenAI } from "../../shared/cost.js"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { XmlMatcher } from "../../utils/xml-matcher.js"
 
-import type { ApiHandlerCreateMessageMetadata, SingleCompletionHandler } from "../index"
-import { BaseProvider } from "./base-provider"
-import { DEFAULT_HEADERS } from "./constants"
-import { t } from "../../i18n"
+import type { ApiHandlerCreateMessageMetadata, SingleCompletionHandler } from "../index.js"
+import { BaseProvider } from "./base-provider.js"
+import { DEFAULT_HEADERS } from "./constants.js"
+import { t } from "../../i18n/index.js"
 
 const CEREBRAS_BASE_URL = "https://api.cerebras.ai/v1"
 const CEREBRAS_DEFAULT_TEMPERATURE = 0

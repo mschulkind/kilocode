@@ -1,9 +1,9 @@
-import { ApiHandlerOptions } from "../../shared/api"
-import { ContextProxy } from "../../core/config/ContextProxy"
-import { EmbedderProvider } from "./interfaces/manager"
-import { CodeIndexConfig, PreviousConfigSnapshot } from "./interfaces/config"
-import { DEFAULT_SEARCH_MIN_SCORE, DEFAULT_MAX_SEARCH_RESULTS } from "./constants"
-import { getDefaultModelId, getModelDimension, getModelScoreThreshold } from "../../shared/embeddingModels"
+import { ApiHandlerOptions } from "../../shared/api.js"
+import { ContextProxy } from "../../core/config/ContextProxy.js"
+import { EmbedderProvider } from "./interfaces/manager.js"
+import { CodeIndexConfig, PreviousConfigSnapshot } from "./interfaces/config.js"
+import { DEFAULT_SEARCH_MIN_SCORE, DEFAULT_MAX_SEARCH_RESULTS } from "./constants.js"
+import { getDefaultModelId, getModelDimension, getModelScoreThreshold } from "../../shared/embeddingModels.js"
 
 /**
  * Manages configuration state and validation for the code indexing feature.

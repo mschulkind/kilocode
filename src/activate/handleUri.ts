@@ -2,7 +2,7 @@ import * as vscode from "vscode"
 
 import { CloudService } from "@roo-code/cloud"
 
-import { ClineProvider } from "../core/webview/ClineProvider"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
 
 export const handleUri = async (uri: vscode.Uri) => {
 	const path = uri.path

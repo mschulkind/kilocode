@@ -27,7 +27,7 @@ vi.mock("vscode", () => ({
 }))
 
 // Import after mocking
-import { showSystemNotification } from "../index"
+import { showSystemNotification } from "../index.js"
 import * as os from "os"
 
 const mockedExeca = vi.mocked(execa)

@@ -10,14 +10,14 @@ import {
 	ANTHROPIC_DEFAULT_MAX_TOKENS,
 } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { ApiStream } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
+import { ApiStream } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { calculateApiCostAnthropic } from "../../shared/cost"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { calculateApiCostAnthropic } from "../../shared/cost.js"
 
 export class AnthropicHandler extends BaseProvider implements SingleCompletionHandler {
 	private options: ApiHandlerOptions

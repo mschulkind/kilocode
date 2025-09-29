@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from "vitest"
 import * as vscode from "vscode"
-import { GhostContext } from "../GhostContext"
-import { GhostDocumentStore } from "../GhostDocumentStore"
-import { GhostStrategy } from "../GhostStrategy"
-import { GhostSuggestionContext } from "../types"
-import { MockTextDocument } from "../../mocking/MockTextDocument"
+import { GhostContext } from "../GhostContext.js"
+import { GhostDocumentStore } from "../GhostDocumentStore.js"
+import { GhostStrategy } from "../GhostStrategy.js"
+import { GhostSuggestionContext } from "../types.js"
+import { MockTextDocument } from "../../mocking/MockTextDocument.js"
 
 // Mock vscode
 vi.mock("vscode", () => ({

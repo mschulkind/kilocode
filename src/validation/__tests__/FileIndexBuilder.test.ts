@@ -7,7 +7,7 @@
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { promises as fs } from 'fs'
-import { FileIndexBuilder } from '../FileIndexBuilder'
+import { FileIndexBuilder } from '../FileIndexBuilder.js'
 
 // Mock fs.promises
 vi.mock('fs', () => ({

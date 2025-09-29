@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions } from "./helpers"
-import sampleLuaContent from "./fixtures/sample-lua"
-import { luaQuery } from "../queries"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import sampleLuaContent from "./fixtures/sample-lua.js"
+import { luaQuery } from "../queries.js"
 
 const luaOptions = {
 	language: "lua",

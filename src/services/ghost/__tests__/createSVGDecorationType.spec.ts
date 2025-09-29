@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, beforeAll, vi } from "vitest"
 import * as vscode from "vscode"
-import { createSVGDecorationType, type SVGDecorationContent } from "../utils/createSVGDecorationType"
-import { initializeHighlighter } from "../utils/CodeHighlighter"
+import { createSVGDecorationType, type SVGDecorationContent } from "../utils/createSVGDecorationType.js"
+import { initializeHighlighter } from "../utils/CodeHighlighter.js"
 
 // Mock the utilities
 vi.mock("../utils/CodeHighlighter", () => ({

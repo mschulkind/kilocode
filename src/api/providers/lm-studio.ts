@@ -4,20 +4,20 @@ import axios from "axios"
 
 import { type ModelInfo, openAiModelInfoSaneDefaults, LMSTUDIO_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { XmlMatcher } from "../../utils/xml-matcher"
+import { XmlMatcher } from "../../utils/xml-matcher.js"
 
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { ApiStream } from "../transform/stream"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { ApiStream } from "../transform/stream.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { fetchWithTimeout } from "./kilocode/fetchWithTimeout"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { fetchWithTimeout } from "./kilocode/fetchWithTimeout.js"
 
 const LMSTUDIO_TIMEOUT_MS = 3_600_000 // kilocode_change
-import { getModels, getModelsFromCache } from "./fetchers/modelCache"
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import { getModels, getModelsFromCache } from "./fetchers/modelCache.js"
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 export class LmStudioHandler extends BaseProvider implements SingleCompletionHandler {
 	protected options: ApiHandlerOptions
@@ -146,9 +146,13 @@ export class LmStudioHandler extends BaseProvider implements SingleCompletionHan
 	override getModel(): { id: string; info: ModelInfo } {
 		const models = getModelsFromCache("lmstudio")
 		if (models && this.options.lmStudioModelId && models[this.options.lmStudioModelId]) {
+			const modelInfo = models[this.options.lmStudioModelId]
 			return {
 				id: this.options.lmStudioModelId,
-				info: models[this.options.lmStudioModelId],
+				info: {
+					...modelInfo,
+					supportsComputerUse: modelInfo.supportsComputerUse || false
+				},
 			}
 		} else {
 			return {

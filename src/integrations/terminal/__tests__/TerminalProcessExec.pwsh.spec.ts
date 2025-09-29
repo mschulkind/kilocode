@@ -2,12 +2,12 @@
 
 import * as vscode from "vscode"
 
-import { ExitCodeDetails } from "../types"
-import { TerminalProcess } from "../TerminalProcess"
-import { Terminal } from "../Terminal"
-import { TerminalRegistry } from "../TerminalRegistry"
-import { createPowerShellStream } from "./streamUtils/pwshStream"
-import { createPowerShellMockStream, isPowerShellCoreAvailable } from "./streamUtils"
+import { ExitCodeDetails } from "../types.js"
+import { TerminalProcess } from "../TerminalProcess.js"
+import { Terminal } from "../Terminal.js"
+import { TerminalRegistry } from "../TerminalRegistry.js"
+import { createPowerShellStream } from "./streamUtils/pwshStream.js"
+import { createPowerShellMockStream, isPowerShellCoreAvailable } from "./streamUtils.js"
 
 // Skip this test if PowerShell Core is not available
 const hasPwsh = isPowerShellCoreAvailable()
@@ -229,7 +229,7 @@ async function testPowerShellCommand(
 }
 
 // Import the test purposes from the common file
-import { TEST_PURPOSES, LARGE_OUTPUT_PARAMS, TEST_TEXT } from "./TerminalProcessExec.common"
+import { TEST_PURPOSES, LARGE_OUTPUT_PARAMS, TEST_TEXT } from "./TerminalProcessExec.common.js"
 
 describePlatform("TerminalProcess with PowerShell Command Output", () => {
 	beforeAll(() => {

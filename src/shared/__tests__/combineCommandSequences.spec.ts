@@ -2,7 +2,7 @@
 
 import type { ClineMessage } from "@roo-code/types"
 
-import { combineCommandSequences } from "../combineCommandSequences"
+import { combineCommandSequences } from "../combineCommandSequences.js"
 
 describe("combineCommandSequences", () => {
 	describe("command sequences", () => {

@@ -1,16 +1,16 @@
 import { OpenAI } from "openai"
-import { OpenAiNativeHandler } from "../../../api/providers/openai-native"
-import { ApiHandlerOptions } from "../../../shared/api"
-import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces"
+import { OpenAiNativeHandler } from "../../../api/providers/openai-native.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
+import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces.js"
 import {
 	MAX_BATCH_TOKENS,
 	MAX_ITEM_TOKENS,
 	MAX_BATCH_RETRIES as MAX_RETRIES,
 	INITIAL_RETRY_DELAY_MS as INITIAL_DELAY_MS,
-} from "../constants"
-import { getModelQueryPrefix } from "../../../shared/embeddingModels"
-import { t } from "../../../i18n"
-import { withValidationErrorHandling, formatEmbeddingError, HttpError } from "../shared/validation-helpers"
+} from "../constants.js"
+import { getModelQueryPrefix } from "../../../shared/embeddingModels.js"
+import { t } from "../../../i18n.js"
+import { withValidationErrorHandling, formatEmbeddingError, HttpError } from "../shared/validation-helpers.js"
 import { TelemetryEventName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 

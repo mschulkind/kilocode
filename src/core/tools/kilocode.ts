@@ -1,4 +1,4 @@
-import { Task } from "../task/Task"
+import { Task } from "../task/Task.js"
 
 const SIZE_LIMIT_AS_CONTEXT_WINDOW_FRACTION = 0.8
 

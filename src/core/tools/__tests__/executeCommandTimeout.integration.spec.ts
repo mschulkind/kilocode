@@ -3,9 +3,9 @@
 
 import * as vscode from "vscode"
 import * as fs from "fs/promises"
-import { executeCommand, executeCommandTool, ExecuteCommandOptions } from "../executeCommandTool"
-import { Task } from "../../task/Task"
-import { TerminalRegistry } from "../../../integrations/terminal/TerminalRegistry"
+import { executeCommand, executeCommandTool, ExecuteCommandOptions } from "../executeCommandTool.js"
+import { Task } from "../../task/Task.js"
+import { TerminalRegistry } from "../../../integrations/terminal/TerminalRegistry.js"
 
 // Mock dependencies
 vitest.mock("vscode", () => ({

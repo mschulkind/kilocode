@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
-import { webviewMessageHandler } from "../webviewMessageHandler"
-import { saveTaskMessages } from "../../task-persistence"
-import { handleCheckpointRestoreOperation } from "../checkpointRestoreHandler"
+import { webviewMessageHandler } from "../webviewMessageHandler.js"
+import { saveTaskMessages } from "../../task-persistence.js"
+import { handleCheckpointRestoreOperation } from "../checkpointRestoreHandler.js"
 
 // Mock dependencies
 vi.mock("../../task-persistence")

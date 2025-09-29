@@ -1,4 +1,4 @@
-import type { RooTerminalProcess, RooTerminalProcessResultPromise } from "./types"
+import type { RooTerminalProcess, RooTerminalProcessResultPromise } from "./types.js"
 
 // Similar to execa's ResultPromise, this lets us create a mixin of both a
 // TerminalProcess and a Promise:

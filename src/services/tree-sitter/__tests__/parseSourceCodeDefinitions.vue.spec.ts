@@ -8,9 +8,9 @@ TODO: The following structures can be parsed by tree-sitter but lack query suppo
    (attribute (attribute_name) (quoted_attribute_value (attribute_value)))
 */
 
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
-import { sampleVue } from "./fixtures/sample-vue"
-import { vueQuery } from "../queries/vue"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
+import { sampleVue } from "./fixtures/sample-vue.js"
+import { vueQuery } from "../queries/vue.js"
 
 // Mock fs module
 vi.mock("fs/promises")

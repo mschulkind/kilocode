@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import { rustQuery } from "../queries"
-import sampleRustContent from "./fixtures/sample-rust"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import { rustQuery } from "../queries.js"
+import sampleRustContent from "./fixtures/sample-rust.js"
 
 describe("inspectRust", () => {
 	const testOptions = {

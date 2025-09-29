@@ -1,9 +1,9 @@
 import * as vscode from "vscode"
 import * as path from "path"
 
-import { listFiles } from "../../services/glob/list-files"
-import { ClineProvider } from "../../core/webview/ClineProvider"
-import { toRelativePath, getWorkspacePath } from "../../utils/path"
+import { listFiles } from "../../services/glob/list-files.js"
+import { ClineProvider } from "../../core/webview/ClineProvider.js"
+import { toRelativePath, getWorkspacePath } from "../../utils/path.js"
 
 const MAX_INITIAL_FILES = 1_000
 

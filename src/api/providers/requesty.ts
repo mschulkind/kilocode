@@ -3,20 +3,20 @@ import OpenAI from "openai"
 
 import { type ModelInfo, requestyDefaultModelId, requestyDefaultModelInfo } from "@roo-code/types"
 
-import type { ApiHandlerOptions, ModelRecord } from "../../shared/api"
-import { calculateApiCostOpenAI } from "../../shared/cost"
+import type { ApiHandlerOptions, ModelRecord } from "../../shared/api.js"
+import { calculateApiCostOpenAI } from "../../shared/cost.js"
 
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
-import { getModelParams } from "../transform/model-params"
-import { AnthropicReasoningParams } from "../transform/reasoning"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
+import { getModelParams } from "../transform/model-params.js"
+import { AnthropicReasoningParams } from "../transform/reasoning.js"
 
-import { DEFAULT_HEADERS } from "./constants"
-import { getModels } from "./fetchers/modelCache"
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { toRequestyServiceUrl } from "../../shared/utils/requesty"
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import { DEFAULT_HEADERS } from "./constants.js"
+import { getModels } from "./fetchers/modelCache.js"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { toRequestyServiceUrl } from "../../shared/utils/requesty.js"
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 // Requesty usage includes an extra field for Anthropic use cases.
 // Safely cast the prompt token details section to the appropriate structure.

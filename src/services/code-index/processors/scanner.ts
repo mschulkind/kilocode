@@ -1,19 +1,19 @@
-import { listFiles } from "../../glob/list-files"
+import { listFiles } from "../../glob/list-files.js"
 import { Ignore } from "ignore"
-import { RooIgnoreController } from "../../../core/ignore/RooIgnoreController"
+import { RooIgnoreController } from "../../../core/ignore/RooIgnoreController.js"
 import { stat } from "fs/promises"
 import * as path from "path"
-import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../shared/get-relative-path"
-import { getWorkspacePathForContext } from "../../../utils/path"
-import { scannerExtensions } from "../shared/supported-extensions"
+import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../shared/get-relative-path.js"
+import { getWorkspacePathForContext } from "../../../utils/path.js"
+import { scannerExtensions } from "../shared/supported-extensions.js"
 import * as vscode from "vscode"
-import { CodeBlock, ICodeParser, IEmbedder, IVectorStore, IDirectoryScanner } from "../interfaces"
+import { CodeBlock, ICodeParser, IEmbedder, IVectorStore, IDirectoryScanner } from "../interfaces.js"
 import { createHash } from "crypto"
 import { v5 as uuidv5 } from "uuid"
 import pLimit from "p-limit"
 import { Mutex } from "async-mutex"
-import { CacheManager } from "../cache-manager"
-import { t } from "../../../i18n"
+import { CacheManager } from "../cache-manager.js"
+import { t } from "../../../i18n.js"
 import {
 	QDRANT_CODE_BLOCK_NAMESPACE,
 	MAX_FILE_SIZE_BYTES,
@@ -24,12 +24,12 @@ import {
 	PARSING_CONCURRENCY,
 	BATCH_PROCESSING_CONCURRENCY,
 	MAX_PENDING_BATCHES,
-} from "../constants"
-import { isPathInIgnoredDirectory } from "../../glob/ignore-utils"
+} from "../constants.js"
+import { isPathInIgnoredDirectory } from "../../glob/ignore-utils.js"
 import { TelemetryService } from "@roo-code/telemetry"
 import { TelemetryEventName } from "@roo-code/types"
-import { sanitizeErrorMessage } from "../shared/validation-helpers"
-import { Package } from "../../../shared/package"
+import { sanitizeErrorMessage } from "../shared/validation-helpers.js"
+import { Package } from "../../../shared/package.js"
 
 export class DirectoryScanner implements IDirectoryScanner {
 	private readonly batchSegmentThreshold: number

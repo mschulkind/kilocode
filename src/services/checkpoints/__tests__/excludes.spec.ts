@@ -2,8 +2,8 @@
 
 import { join } from "path"
 import fs from "fs/promises"
-import { fileExistsAtPath } from "../../../utils/fs"
-import { getExcludePatterns } from "../excludes"
+import { fileExistsAtPath } from "../../../utils/fs.js"
+import { getExcludePatterns } from "../excludes.js"
 
 // Mock fs/promises
 vi.mock("fs/promises", () => ({

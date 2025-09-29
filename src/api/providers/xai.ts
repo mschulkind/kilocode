@@ -3,17 +3,17 @@ import OpenAI from "openai"
 
 import { type XAIModelId, xaiDefaultModelId, xaiModels } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { ApiStream } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { getModelParams } from "../transform/model-params"
+import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { getModelParams } from "../transform/model-params.js"
 
-import { DEFAULT_HEADERS } from "./constants"
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { verifyFinishReason } from "./kilocode/verifyFinishReason" // kilocode_change
-import { handleOpenAIError } from "./utils/openai-error-handler"
+import { DEFAULT_HEADERS } from "./constants.js"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { verifyFinishReason } from "./kilocode/verifyFinishReason.js" // kilocode_change
+import { handleOpenAIError } from "./utils/openai-error-handler.js"
 
 const XAI_DEFAULT_TEMPERATURE = 0
 

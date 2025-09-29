@@ -1,9 +1,9 @@
 // npx vitest src/core/assistant-message/__tests__/parseAssistantMessage.spec.ts
 
-import { TextContent, ToolUse } from "../../../shared/tools"
+import { TextContent, ToolUse } from "../../../shared/tools.js"
 
-import { AssistantMessageContent, parseAssistantMessage as parseAssistantMessageV1 } from "../parseAssistantMessage"
-import { parseAssistantMessageV2 } from "../parseAssistantMessageV2"
+import { AssistantMessageContent, parseAssistantMessage as parseAssistantMessageV1 } from "../parseAssistantMessage.js"
+import { parseAssistantMessageV2 } from "../parseAssistantMessageV2.js"
 
 const isEmptyTextContent = (block: AssistantMessageContent) =>
 	block.type === "text" && (block as TextContent).content === ""

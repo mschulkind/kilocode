@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
 import { structuredPatch } from "diff"
-import { GhostSuggestionContext, GhostSuggestionEditOperationType } from "./types"
-import { GhostSuggestionsState } from "./GhostSuggestions"
-import { CURSOR_MARKER } from "./ghostConstants"
+import { GhostSuggestionContext, GhostSuggestionEditOperationType } from "./types.js"
+import { GhostSuggestionsState } from "./GhostSuggestions.js"
+import { CURSOR_MARKER } from "./ghostConstants.js"
 
 export interface StreamingParseResult {
 	suggestions: GhostSuggestionsState

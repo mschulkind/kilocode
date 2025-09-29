@@ -8,7 +8,7 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import { type GroqModelId, groqDefaultModelId, groqModels } from "@roo-code/types"
 
-import { GroqHandler } from "../groq"
+import { GroqHandler } from "../groq.js"
 
 vitest.mock("openai", () => {
 	const createMock = vitest.fn()

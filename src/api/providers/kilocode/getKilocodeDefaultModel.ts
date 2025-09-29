@@ -1,9 +1,9 @@
 import { openRouterDefaultModelId, type ProviderSettings } from "@roo-code/types"
-import { getKiloBaseUriFromToken } from "../../../shared/kilocode/token"
+import { getKiloBaseUriFromToken } from "../../../shared/kilocode/token.js"
 import { TelemetryService } from "@roo-code/telemetry"
 import { z } from "zod"
-import { fetchWithTimeout } from "./fetchWithTimeout"
-import { DEFAULT_HEADERS } from "../constants"
+import { fetchWithTimeout } from "./fetchWithTimeout.js"
+import { DEFAULT_HEADERS } from "../constants.js"
 
 type KilocodeToken = string
 
@@ -51,7 +51,7 @@ async function fetchKilocodeDefaultModel(
 		return defaultModel
 	} catch (err) {
 		console.error("Failed to get default model", err)
-		TelemetryService.instance.captureException(err, { context: "getKilocodeDefaultModel" })
+		TelemetryService.instance.captureException(err instanceof Error ? err : new Error(String(err)), { context: "getKilocodeDefaultModel" })
 		return openRouterDefaultModelId
 	}
 }

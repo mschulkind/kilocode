@@ -39,11 +39,11 @@ vi.mock("../../../utils/fs", () => ({
 	createDirectoriesForFile: vi.fn().mockResolvedValue([]),
 }))
 
-import { SYSTEM_PROMPT } from "../system"
-import { defaultModeSlug, modes, getModeBySlug } from "../../../shared/modes"
+import { SYSTEM_PROMPT } from "../system.js"
+import { defaultModeSlug, modes, getModeBySlug } from "../../../shared/modes.js"
 import * as vscode from "vscode"
 import * as fs from "fs/promises"
-import { toPosix } from "./utils"
+import { toPosix } from "./utils.js"
 
 // Get the mocked fs module
 const mockedFs = vi.mocked(fs)

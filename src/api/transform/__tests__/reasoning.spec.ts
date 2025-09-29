@@ -10,7 +10,7 @@ import {
 	OpenRouterReasoningParams,
 	AnthropicReasoningParams,
 	OpenAiReasoningParams,
-} from "../reasoning"
+} from "../reasoning.js"
 
 describe("reasoning.ts", () => {
 	const baseModel: ModelInfo = {

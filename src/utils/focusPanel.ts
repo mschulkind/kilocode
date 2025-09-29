@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { Package } from "../shared/package"
-import { ClineProvider } from "../core/webview/ClineProvider"
+import { Package } from "../shared/package.js"
+import { ClineProvider } from "../core/webview/ClineProvider.js"
 
 /**
  * Focus the active panel (either tab or sidebar)

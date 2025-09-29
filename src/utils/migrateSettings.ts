@@ -1,8 +1,8 @@
 import * as vscode from "vscode"
 import * as path from "path"
 import * as fs from "fs/promises"
-import { fileExistsAtPath } from "./fs"
-import { GlobalFileNames } from "../shared/globalFileNames"
+import { fileExistsAtPath } from "./fs.js"
+import { GlobalFileNames } from "../shared/globalFileNames.js"
 import * as yaml from "yaml"
 
 const deprecatedCustomModesJSONFilename = "custom_modes.json"

@@ -1,7 +1,7 @@
 // npx vitest services/code-index/__tests__/config-manager.spec.ts
 
-import { CodeIndexConfigManager } from "../config-manager"
-import { PreviousConfigSnapshot } from "../interfaces/config"
+import { CodeIndexConfigManager } from "../config-manager.js"
+import { PreviousConfigSnapshot } from "../interfaces/config.js"
 
 // Mock ContextProxy
 vi.mock("../../../core/config/ContextProxy")
@@ -10,7 +10,7 @@ vi.mock("../../../core/config/ContextProxy")
 vi.mock("../../../shared/embeddingModels")
 
 // Import mocked functions
-import { getDefaultModelId, getModelDimension, getModelScoreThreshold } from "../../../shared/embeddingModels"
+import { getDefaultModelId, getModelDimension, getModelScoreThreshold } from "../../../shared/embeddingModels.js"
 
 // Type the mocked functions
 const mockedGetDefaultModelId = vi.mocked(getDefaultModelId)

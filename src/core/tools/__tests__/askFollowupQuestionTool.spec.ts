@@ -1,5 +1,5 @@
-import { askFollowupQuestionTool } from "../askFollowupQuestionTool"
-import { ToolUse } from "../../../shared/tools"
+import { askFollowupQuestionTool } from "../askFollowupQuestionTool.js"
+import { ToolUse } from "../../../shared/tools.js"
 
 describe("askFollowupQuestionTool", () => {
 	let mockCline: any

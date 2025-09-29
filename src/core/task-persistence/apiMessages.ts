@@ -1,13 +1,13 @@
-import { safeWriteJson } from "../../utils/safeWriteJson"
+import { safeWriteJson } from "../../utils/safeWriteJson.js"
 import * as path from "path"
 import * as fs from "fs/promises"
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { fileExistsAtPath } from "../../utils/fs"
+import { fileExistsAtPath } from "../../utils/fs.js"
 
-import { GlobalFileNames } from "../../shared/globalFileNames"
-import { getTaskDirectoryPath } from "../../utils/storage"
+import { GlobalFileNames } from "../../shared/globalFileNames.js"
+import { getTaskDirectoryPath } from "../../utils/storage.js"
 
 export type ApiMessage = Anthropic.MessageParam & { ts?: number; isSummary?: boolean }
 

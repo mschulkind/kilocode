@@ -5,7 +5,7 @@ import {
 	ANTHROPIC_DEFAULT_MAX_TOKENS,
 } from "@roo-code/types"
 
-import { getModelMaxOutputTokens, shouldUseReasoningBudget, shouldUseReasoningEffort } from "../api"
+import { getModelMaxOutputTokens, shouldUseReasoningBudget, shouldUseReasoningEffort } from "../api.js"
 
 describe("getModelMaxOutputTokens", () => {
 	const mockModel: ModelInfo = {

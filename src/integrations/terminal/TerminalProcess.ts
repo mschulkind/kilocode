@@ -10,9 +10,9 @@ import stripAnsi from "strip-ansi"
 import * as vscode from "vscode"
 import { inspect } from "util"
 
-import type { ExitCodeDetails } from "./types"
-import { BaseTerminalProcess } from "./BaseTerminalProcess"
-import { Terminal } from "./Terminal"
+import type { ExitCodeDetails } from "./types.js"
+import { BaseTerminalProcess } from "./BaseTerminalProcess.js"
+import { Terminal } from "./Terminal.js"
 
 export class TerminalProcess extends BaseTerminalProcess {
 	private terminalRef: WeakRef<Terminal>

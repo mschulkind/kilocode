@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { JETBRAIN_PRODUCTS, KiloCodeWrapperProperties } from "../../shared/kilocode/wrapper"
+import { JETBRAIN_PRODUCTS, KiloCodeWrapperProperties } from "../../shared/kilocode/wrapper.js"
 
 export const getKiloCodeWrapperProperties = (): KiloCodeWrapperProperties => {
 	const appName = vscode.env.appName

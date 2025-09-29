@@ -4,9 +4,9 @@ import { Anthropic } from "@anthropic-ai/sdk"
 import type { ModelInfo } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { BaseProvider } from "../../../api/providers/base-provider"
-import { ApiMessage } from "../../task-persistence/apiMessages"
-import { summarizeConversation, getMessagesSinceLastSummary, N_MESSAGES_TO_KEEP } from "../index"
+import { BaseProvider } from "../../../api/providers/base-provider.js"
+import { ApiMessage } from "../../task-persistence/apiMessages.js"
+import { summarizeConversation, getMessagesSinceLastSummary, N_MESSAGES_TO_KEEP } from "../index.js"
 
 // Create a mock ApiHandler for testing
 class MockApiHandler extends BaseProvider {

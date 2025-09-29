@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types"
+import { ToolArgs } from "./types.js"
 
 export function getGenerateImageDescription(args: ToolArgs): string {
 	return `## generate_image

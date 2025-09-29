@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { createOutputChannelLogger, createDualLogger } from "../outputChannelLogger"
+import { createOutputChannelLogger, createDualLogger } from "../outputChannelLogger.js"
 
 // Mock VSCode output channel
 const mockOutputChannel = {

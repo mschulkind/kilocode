@@ -22,9 +22,9 @@ TODO: The following structures can be parsed by tree-sitter but lack query suppo
    Example: Nested functions with nonlocal/global declarations
 */
 
-import { testParseSourceCodeDefinitions, debugLog } from "./helpers"
-import { samplePythonContent } from "./fixtures/sample-python"
-import { pythonQuery } from "../queries"
+import { testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
+import { samplePythonContent } from "./fixtures/sample-python.js"
+import { pythonQuery } from "../queries.js"
 
 // Python test options
 const pythonOptions = {

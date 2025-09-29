@@ -3,13 +3,13 @@ import { Mistral } from "@mistralai/mistralai"
 
 import { type MistralModelId, mistralDefaultModelId, mistralModels, MISTRAL_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
-import { ApiHandlerOptions } from "../../shared/api"
+import { ApiHandlerOptions } from "../../shared/api.js"
 
-import { convertToMistralMessages } from "../transform/mistral-format"
-import { ApiStream } from "../transform/stream"
+import { convertToMistralMessages } from "../transform/mistral-format.js"
+import { ApiStream } from "../transform/stream.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
 
 // Type helper to handle thinking chunks from Mistral API
 // The SDK includes ThinkChunk but TypeScript has trouble with the discriminated union

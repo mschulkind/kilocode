@@ -1,7 +1,7 @@
 // kilocode_change - new file
 // npx vitest core/webview/__tests__/ClineProvider.kilocode-organization.spec.ts
 
-import { setupCommonMocks, setupProvider, createMockWebviewView } from "../../../__tests__/common-mocks"
+import { setupCommonMocks, setupProvider, createMockWebviewView } from "../../../__tests__/common-mocks.js"
 
 // Setup all mocks before any imports
 setupCommonMocks()

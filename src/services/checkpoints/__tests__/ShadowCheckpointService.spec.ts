@@ -7,10 +7,10 @@ import { EventEmitter } from "events"
 
 import { simpleGit, SimpleGit } from "simple-git"
 
-import { fileExistsAtPath } from "../../../utils/fs"
-import * as fileSearch from "../../../services/search/file-search"
+import { fileExistsAtPath } from "../../../utils/fs.js"
+import * as fileSearch from "../../../services/search/file-search.js"
 
-import { RepoPerTaskCheckpointService } from "../RepoPerTaskCheckpointService"
+import { RepoPerTaskCheckpointService } from "../RepoPerTaskCheckpointService.js"
 
 // kilocode_change start
 vi.mock("@roo-code/telemetry", () => ({

@@ -1,8 +1,8 @@
 import fs from "fs/promises"
 import * as path from "path"
 import matter from "gray-matter"
-import { getGlobalRooDirectory, getProjectRooDirectoryForCwd } from "../roo-config"
-import { getBuiltInCommands, getBuiltInCommand } from "./built-in-commands"
+import { getGlobalRooDirectory, getProjectRooDirectoryForCwd } from "../roo-config.js"
+import { getBuiltInCommands, getBuiltInCommand } from "./built-in-commands.js"
 
 export interface Command {
 	name: string

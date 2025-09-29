@@ -3,16 +3,16 @@ import OpenAI from "openai"
 
 import { unboundDefaultModelId, unboundDefaultModelInfo } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { addCacheBreakpoints as addAnthropicCacheBreakpoints } from "../transform/caching/anthropic"
-import { addCacheBreakpoints as addGeminiCacheBreakpoints } from "../transform/caching/gemini"
-import { addCacheBreakpoints as addVertexCacheBreakpoints } from "../transform/caching/vertex"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { addCacheBreakpoints as addAnthropicCacheBreakpoints } from "../transform/caching/anthropic.js"
+import { addCacheBreakpoints as addGeminiCacheBreakpoints } from "../transform/caching/gemini.js"
+import { addCacheBreakpoints as addVertexCacheBreakpoints } from "../transform/caching/vertex.js"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
-import { RouterProvider } from "./router-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { RouterProvider } from "./router-provider.js"
 
 const ORIGIN_APP = "roo-code"
 
@@ -84,7 +84,7 @@ export class UnboundHandler extends RouterProvider implements SingleCompletionHa
 		}
 
 		const requestOptions: UnboundChatCompletionCreateParamsStreaming = {
-			model: modelId.split("/")[1],
+			model: modelId.split("/")[1] || modelId,
 			max_tokens: maxTokens,
 			messages: openAiMessages,
 			stream: true,
@@ -137,7 +137,7 @@ export class UnboundHandler extends RouterProvider implements SingleCompletionHa
 
 		try {
 			const requestOptions: UnboundChatCompletionCreateParamsNonStreaming = {
-				model: modelId.split("/")[1],
+				model: modelId.split("/")[1] || modelId,
 				messages: [{ role: "user", content: prompt }],
 				unbound_metadata: {
 					originApp: ORIGIN_APP,

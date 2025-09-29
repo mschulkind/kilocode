@@ -1,9 +1,9 @@
 // npx vitest core/mentions/__tests__/processUserContentMentions.spec.ts
 
-import { processUserContentMentions } from "../processUserContentMentions"
-import { parseMentions } from "../index"
-import { UrlContentFetcher } from "../../../services/browser/UrlContentFetcher"
-import { FileContextTracker } from "../../context-tracking/FileContextTracker"
+import { processUserContentMentions } from "../processUserContentMentions.js"
+import { parseMentions } from "../index.js"
+import { UrlContentFetcher } from "../../../services/browser/UrlContentFetcher.js"
+import { FileContextTracker } from "../../context-tracking/FileContextTracker.js"
 
 // Mock the parseMentions function
 vi.mock("../index", () => ({

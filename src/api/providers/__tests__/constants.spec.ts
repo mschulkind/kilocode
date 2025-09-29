@@ -1,7 +1,7 @@
 // npx vitest run src/api/providers/__tests__/constants.spec.ts
 
-import { DEFAULT_HEADERS } from "../constants"
-import { Package } from "../../../shared/package"
+import { DEFAULT_HEADERS } from "../constants.js"
+import { Package } from "../../../shared/package.js"
 
 describe("DEFAULT_HEADERS", () => {
 	it("should contain all required headers", () => {

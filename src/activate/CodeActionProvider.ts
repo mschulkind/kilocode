@@ -1,10 +1,10 @@
 import * as vscode from "vscode"
 
 import { CodeActionName, CodeActionId } from "@roo-code/types"
-import { Package } from "../shared/package"
+import { Package } from "../shared/package.js"
 
-import { getCodeActionCommand } from "../utils/commands"
-import { EditorUtils } from "../integrations/editor/EditorUtils"
+import { getCodeActionCommand } from "../utils/commands.js"
+import { EditorUtils } from "../integrations/editor/EditorUtils.js"
 
 export const TITLES: Record<CodeActionName, string> = {
 	EXPLAIN: "Explain with Kilo Code",

@@ -3,11 +3,11 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
-import { CrossReferenceValidator } from "../CrossReferenceValidator"
-import { FileIndexBuilder } from "../FileIndexBuilder"
-import { DocumentTypeDetector } from "../DocumentTypeDetector"
-import { OrphanedSectionsDetector } from "../OrphanedSectionsDetector"
-import { ValidationRuleConfig } from "../ValidationRuleConfig"
+import { CrossReferenceValidator } from "../CrossReferenceValidator.js"
+import { FileIndexBuilder } from "../FileIndexBuilder.js"
+import { DocumentTypeDetector } from "../DocumentTypeDetector.js"
+import { OrphanedSectionsDetector } from "../OrphanedSectionsDetector.js"
+import { ValidationRuleConfig } from "../ValidationRuleConfig.js"
 
 // Mock the validation modules
 vi.mock("../CrossReferenceValidator")

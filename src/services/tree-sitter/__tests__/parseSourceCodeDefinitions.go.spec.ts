@@ -17,9 +17,9 @@ TODO: The following structures can be parsed by tree-sitter but lack query suppo
    - Would enable capturing pointer type definitions
 */
 
-import sampleGoContent from "./fixtures/sample-go"
-import { testParseSourceCodeDefinitions } from "./helpers"
-import goQuery from "../queries/go"
+import sampleGoContent from "./fixtures/sample-go.js"
+import { testParseSourceCodeDefinitions } from "./helpers.js"
+import goQuery from "../queries/go.js"
 
 describe("Go Source Code Definition Tests", () => {
 	let parseResult: string

@@ -1,8 +1,8 @@
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
-import { Task } from "../task/Task"
-import { checkpointSave } from "../checkpoints"
-import { createAndOpenGitHubIssue } from "../../utils/github-url-utils"
-import { formatResponse } from "../prompts/responses"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { Task } from "../task/Task.js"
+import { checkpointSave } from "../checkpoints.js"
+import { createAndOpenGitHubIssue } from "../../utils/github-url-utils.js"
+import { formatResponse } from "../prompts/responses.js"
 import * as vscode from "vscode"
 import * as os from "os"
 

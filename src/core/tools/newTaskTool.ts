@@ -3,13 +3,13 @@ import * as vscode from "vscode"
 
 import { TodoItem } from "@roo-code/types"
 
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
-import { Task } from "../task/Task"
-import { defaultModeSlug, getModeBySlug } from "../../shared/modes"
-import { formatResponse } from "../prompts/responses"
-import { t } from "../../i18n"
-import { parseMarkdownChecklist } from "./updateTodoListTool"
-import { Package } from "../../shared/package"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { Task } from "../task/Task.js"
+import { defaultModeSlug, getModeBySlug } from "../../shared/modes.js"
+import { formatResponse } from "../prompts/responses.js"
+import { t } from "../../i18n.js"
+import { parseMarkdownChecklist } from "./updateTodoListTool.js"
+import { Package } from "../../shared/package.js"
 
 export async function newTaskTool(
 	task: Task,

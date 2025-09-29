@@ -1,14 +1,14 @@
 // npx vitest run api/providers/__tests__/ollama-timeout.spec.ts
 
-import { OllamaHandler } from "../ollama"
-import { ApiHandlerOptions } from "../../../shared/api"
+import { OllamaHandler } from "../ollama.js"
+import { ApiHandlerOptions } from "../../../shared/api.js"
 
 // Mock the timeout config utility
 vitest.mock("../utils/timeout-config", () => ({
 	getApiRequestTimeout: vitest.fn(),
 }))
 
-import { getApiRequestTimeout } from "../utils/timeout-config"
+import { getApiRequestTimeout } from "../utils/timeout-config.js"
 
 // Mock OpenAI
 const mockOpenAIConstructor = vitest.fn()

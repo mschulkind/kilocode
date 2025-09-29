@@ -1,15 +1,15 @@
-import { GhostSuggestionContext } from "./types"
-import { PromptStrategy } from "./types/PromptStrategy"
-import { ContextAnalyzer } from "./ContextAnalyzer"
+import { GhostSuggestionContext } from "./types.js"
+import { PromptStrategy } from "./types/PromptStrategy.js"
+import { ContextAnalyzer } from "./ContextAnalyzer.js"
 
 // Import all strategies
-import { UserRequestStrategy } from "./strategies/UserRequestStrategy"
-import { ErrorFixStrategy } from "./strategies/ErrorFixStrategy"
-import { SelectionRefactorStrategy } from "./strategies/SelectionRefactorStrategy"
-import { CommentDrivenStrategy } from "./strategies/CommentDrivenStrategy"
-import { NewLineCompletionStrategy } from "./strategies/NewLineCompletionStrategy"
-import { InlineCompletionStrategy } from "./strategies/InlineCompletionStrategy"
-import { AutoTriggerStrategy } from "./strategies/AutoTriggerStrategy"
+import { UserRequestStrategy } from "./strategies/UserRequestStrategy.js"
+import { ErrorFixStrategy } from "./strategies/ErrorFixStrategy.js"
+import { SelectionRefactorStrategy } from "./strategies/SelectionRefactorStrategy.js"
+import { CommentDrivenStrategy } from "./strategies/CommentDrivenStrategy.js"
+import { NewLineCompletionStrategy } from "./strategies/NewLineCompletionStrategy.js"
+import { InlineCompletionStrategy } from "./strategies/InlineCompletionStrategy.js"
+import { AutoTriggerStrategy } from "./strategies/AutoTriggerStrategy.js"
 
 /**
  * Manages prompt strategies and selects the appropriate one based on context

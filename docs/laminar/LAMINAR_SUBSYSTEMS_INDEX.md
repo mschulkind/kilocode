@@ -6,7 +6,7 @@
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Overview](#overview)
-* [High-Level Responsibilities](#highlevel-responsibilities)
+* [High-Level Responsibilities](#high-level-responsibilities)
 * [Core Concepts At a Glance](#core-concepts-at-a-glance)
 * [Integration Architecture](#integration-architecture)
 * [Architecture Layers](#architecture-layers)
@@ -14,7 +14,7 @@
 * [Quick Reference Matrix](#quick-reference-matrix)
 * [Subsystem Flow Diagram](#subsystem-flow-diagram)
 * [Observability Principles](#observability-principles)
-* [Change Management & Versioning](#change-management-versioning)
+* [Change Management & Versioning](#change-management--versioning)
 * [Glossary](#glossary)
 * [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
@@ -24,7 +24,7 @@
 * [Laminar Subsystems Index](#laminar-subsystems-index)
 * [Table of Contents](#table-of-contents)
 * [Overview](#overview)
-* [High-Level Responsibilities](#highlevel-responsibilities)
+* [High-Level Responsibilities](#high-level-responsibilities)
 * [Core Concepts At a Glance](#core-concepts-at-a-glance)
 * [Integration Architecture](#integration-architecture)
 * [Architecture Layers](#architecture-layers)
@@ -32,7 +32,7 @@
 * [Quick Reference Matrix](#quick-reference-matrix)
 * [Subsystem Flow Diagram](#subsystem-flow-diagram)
 * [Observability Principles](#observability-principles)
-* [Change Management & Versioning](#change-management-versioning)
+* [Change Management & Versioning](#change-management--versioning)
 * [Glossary](#glossary)
 * [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
@@ -321,7 +321,7 @@ End of document.
 
 * *Implementing Observability Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -329,7 +329,7 @@ End of document.
 * *Troubleshooting Observability Issues:*\*
 
 * **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -349,7 +349,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 

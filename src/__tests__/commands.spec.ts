@@ -4,7 +4,7 @@ import {
 	getCommandNames,
 	getCommandNameFromFile,
 	isMarkdownFile,
-} from "../services/command/commands"
+} from "../services/command/commands.js"
 
 describe("Command Utilities", () => {
 	const testCwd = "/test/project"

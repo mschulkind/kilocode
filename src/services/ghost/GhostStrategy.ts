@@ -1,6 +1,6 @@
-import { GhostSuggestionContext } from "./types"
-import { GhostStreamingParser, StreamingParseResult } from "./GhostStreamingParser"
-import { PromptStrategyManager } from "./PromptStrategyManager"
+import { GhostSuggestionContext } from "./types.js"
+import { GhostStreamingParser, StreamingParseResult } from "./GhostStreamingParser.js"
+import { PromptStrategyManager } from "./PromptStrategyManager.js"
 
 export class GhostStrategy {
 	private streamingParser: GhostStreamingParser

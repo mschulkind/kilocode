@@ -6,13 +6,13 @@ import * as path from "path"
 
 import { type ModelInfo, type QwenCodeModelId, qwenCodeModels, qwenCodeDefaultModelId } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api"
+import type { ApiHandlerOptions } from "../../shared/api.js"
 
-import { convertToOpenAiMessages } from "../transform/openai-format"
-import { ApiStream } from "../transform/stream"
+import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { ApiStream } from "../transform/stream.js"
 
-import { BaseProvider } from "./base-provider"
-import type { SingleCompletionHandler } from "../index"
+import { BaseProvider } from "./base-provider.js"
+import type { SingleCompletionHandler } from "../index.js"
 
 const QWEN_OAUTH_BASE_URL = "https://chat.qwen.ai"
 const QWEN_OAUTH_TOKEN_ENDPOINT = `${QWEN_OAUTH_BASE_URL}/api/v1/oauth2/token`
@@ -45,7 +45,7 @@ function getQwenCachedCredentialPath(customPath?: string): string {
 
 function objectToUrlEncoded(data: Record<string, string>): string {
 	return Object.keys(data)
-		.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+		.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key] || "")}`)
 		.join("&")
 }
 
@@ -247,13 +247,13 @@ export class QwenCodeHandler extends BaseProvider implements SingleCompletionHan
 									// Outside thinking block
 									yield {
 										type: "text",
-										text: parts[i],
+										text: parts[i] || "",
 									}
 								} else {
 									// Inside thinking block
 									yield {
 										type: "reasoning",
-										text: parts[i],
+										text: parts[i] || "",
 									}
 								}
 							}

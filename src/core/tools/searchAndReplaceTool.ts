@@ -4,15 +4,15 @@ import fs from "fs/promises"
 import delay from "delay"
 
 // Internal imports
-import { Task } from "../task/Task"
-import { AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolUse } from "../../shared/tools"
-import { formatResponse } from "../prompts/responses"
-import { ClineSayTool } from "../../shared/ExtensionMessage"
-import { getReadablePath } from "../../utils/path"
-import { fileExistsAtPath } from "../../utils/fs"
-import { RecordSource } from "../context-tracking/FileContextTrackerTypes"
+import { Task } from "../task/Task.js"
+import { AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolUse } from "../../shared/tools.js"
+import { formatResponse } from "../prompts/responses.js"
+import { ClineSayTool } from "../../shared/ExtensionMessage.js"
+import { getReadablePath } from "../../utils/path.js"
+import { fileExistsAtPath } from "../../utils/fs.js"
+import { RecordSource } from "../context-tracking/FileContextTrackerTypes.js"
 import { DEFAULT_WRITE_DELAY_MS } from "@roo-code/types"
-import { EXPERIMENT_IDS, experiments } from "../../shared/experiments"
+import { EXPERIMENT_IDS, experiments } from "../../shared/experiments.js"
 
 /**
  * Tool for performing search and replace operations on files

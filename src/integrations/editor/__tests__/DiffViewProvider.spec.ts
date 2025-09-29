@@ -1,4 +1,4 @@
-import { DiffViewProvider, DIFF_VIEW_URI_SCHEME, DIFF_VIEW_LABEL_CHANGES } from "../DiffViewProvider"
+import { DiffViewProvider, DIFF_VIEW_URI_SCHEME, DIFF_VIEW_LABEL_CHANGES } from "../DiffViewProvider.js"
 import * as vscode from "vscode"
 import * as path from "path"
 import delay from "delay"

@@ -382,7 +382,7 @@ private validateSpanConfig(options: SpanOptions): boolean {
 
 <a id="navigation-footer"></a>
 
-* Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md:1) · Root:
+* Back: [`LAMINAR_SUBSYSTEMS_INDEX.md`](LAMINAR_SUBSYSTEMS_INDEX.md) · Root:
   [`README.md`](README.md:1) · Source: `/docs/LAMINAR_SPAN_NESTING.md#L1`
 
 ## 🔍 Research Context & Next Steps
@@ -398,7 +398,7 @@ private validateSpanConfig(options: SpanOptions): boolean {
 
 * *Implementing Observability Features:*\*
 
-* **Next**: [Repository Development Guide](GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../architecture/GETTING_STARTED.md) →
   [Testing Infrastructure](../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -406,7 +406,7 @@ private validateSpanConfig(options: SpanOptions): boolean {
 * *Troubleshooting Observability Issues:*\*
 
 * **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -426,7 +426,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 

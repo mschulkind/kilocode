@@ -1,8 +1,8 @@
 // kilocode_change - new file
 import * as vscode from "vscode"
-import { CommitMessageProvider } from "../CommitMessageProvider"
-import { GitExtensionService, GitChange } from "../GitExtensionService"
-import { singleCompletionHandler } from "../../../utils/single-completion-handler"
+import { CommitMessageProvider } from "../CommitMessageProvider.js"
+import { GitExtensionService, GitChange } from "../GitExtensionService.js"
+import { singleCompletionHandler } from "../../../utils/single-completion-handler.js"
 import type { Mock } from "vitest"
 
 // Mock dependencies
