@@ -30,6 +30,9 @@
 - [Why do we check isPaused and isInitialized when we already know them?](#why-do-we-check-ispaused-and-isinitialized-when-we-already-know-them)
 - [How can we not know isExecuting? Can 2 tasks have isExecuting true simultaneously?](#how-can-we-not-know-isexecuting-can-2-tasks-have-isexecuting-true-simultaneously)
 
+### Reference 📘
+- [Method-to-Class Map](#method-to-class-map)
+
 ---
 
 ## Question 1: Why Call ClineRequest When Parent is Already Initialized?
@@ -1358,6 +1361,48 @@ class Task {
 - The "race condition" is really duplicate execution within the same task, not between different tasks
 
 **The fix**: Add `isExecuting` tracking to prevent the same task from making duplicate API calls! 🎯
+
+---
+
+## Method-to-Class Map
+
+Clarifies which object/class owns each method discussed here, plus file locations. Proposed methods are marked as proposed.
+
+- ClineProvider (`src/core/webview/ClineProvider.ts`)
+  - `finishSubTask(lastMessage: string)`
+  - `continueParentTask(lastMessage: string)`
+  - `removeClineFromStack()`
+  - `addClineToStack(task: Task)`
+  - `getCurrentTask(): Task | undefined`
+  - `postStateToWebview()` / `postMessageToWebview(...)`
+  - `showTaskWithId(id: string)`
+
+- Task (`src/core/task/Task.ts`)
+  - `initiateTaskLoop(...)` (main loop that calls `recursivelyMakeClineRequests`)
+  - `recursivelyMakeClineRequests(nextUserContent: any[], includeFileDetails: boolean)`
+  - `completeSubtask(lastMessage: string)`
+  - `startSubtask(...)`
+  - `waitForSubtask(...)`
+  - `say(kind: string, message: string)`
+  - `addToApiConversationHistory(entry)`
+  - `getSavedClineMessages()` / `getSavedApiConversationHistory()`
+  - Properties: `isInitialized: boolean`, `isPaused: boolean`, `abandoned: boolean`
+
+- Task (proposed refinements; suggested in `src/core/task/Task.ts`)
+  - `isExecuting: boolean` (property) — track active API execution
+  - `continueAfterSubtask()` — explicit continuation hook after subtask
+  - `continueExecution()` / `resumeExecution()` — resume main loop from safe point
+  - `resumeFromNavigation()` — idempotent resume, may reconstruct from history
+  - `ensureInitialized()` / `initializeFromHistory()` — load messages and API history
+  - `continueExecutionIfNeeded()` — guard-checked continuation based on state
+
+- Session/UI layer (webview side; patterns in `src/core/webview`)
+  - User-initiated resume handlers (e.g., `onResumeButtonClick` → task resume)
+  - Presentation-only methods (`postStateToWebview`, `postMessageToWebview`)
+
+Notes
+- Where duplicate responsibilities exist today (e.g., initialization in `continueParentTask`), ownership should move into `Task` to restore separation of concerns.
+- Proposed methods reflect the recommended refactor; naming can align with existing conventions.
 
 ---
 
