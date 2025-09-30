@@ -367,5 +367,5 @@ For more information, see:
 
 * \*\*
 
-* *Navigation*\*: [← Back to Documentation Guide](../../DOCUMENTATION_GUIDE.md) ·
-  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#pre-commit-hooks-documentation)
+* *Navigation*\*: [← Back to Documentation Guide](../DOCUMENTATION_GUIDE.md) ·
+  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#precommit-hooks-documentation)

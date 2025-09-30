@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
-* [Cross-References 🔗](#cross-references-)
+* [Cross-References 🔗](#crossreferences-)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Executive Summary](#executive-summary)
 * [Research Context](#research-context)
-* [Cross-Reference Types](#cross-reference-types)
+* [Cross-Reference Types](#crossreference-types)
 * [Conceptual Links](#conceptual-links)
 * [Procedural Links](#procedural-links)
 * [Reference Links](#reference-links)
@@ -21,7 +21,7 @@
 * [Functional Links](#functional-links)
 * [Relevant Connections](#relevant-connections)
 * [Current Information](#current-information)
-* [Cross-Reference Patterns](#cross-reference-patterns)
+* [Cross-Reference Patterns](#crossreference-patterns)
 * ["See Also" Pattern](#see-also-pattern)
 * ["Next Steps" Pattern](#next-steps-pattern)
 * ["Prerequisites" Pattern](#prerequisites-pattern)
@@ -39,15 +39,15 @@
 * [Complete Cross-Reference Example](#complete-cross-reference-example)
 * [Minimal Cross-Reference Example](#minimal-cross-reference-example)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
-* [Cross-References 🔗](#cross-references-)
+* [Cross-References 🔗](#crossreferences-)
 * [Table of Contents](#table-of-contents)
 * [Executive Summary](#executive-summary)
 * [Research Context](#research-context)
-* [Cross-Reference Types](#cross-reference-types)
+* [Cross-Reference Types](#crossreference-types)
 * [Conceptual Links](#conceptual-links)
 * [Procedural Links](#procedural-links)
 * [Reference Links](#reference-links)
@@ -61,7 +61,7 @@
 * [Functional Links](#functional-links)
 * [Relevant Connections](#relevant-connections)
 * [Current Information](#current-information)
-* [Cross-Reference Patterns](#cross-reference-patterns)
+* [Cross-Reference Patterns](#crossreference-patterns)
 * ["See Also" Pattern](#see-also-pattern)
 * ["Next Steps" Pattern](#next-steps-pattern)
 * ["Prerequisites" Pattern](#prerequisites-pattern)
@@ -79,7 +79,7 @@
 * [Complete Cross-Reference Example](#complete-cross-reference-example)
 * [Minimal Cross-Reference Example](#minimal-cross-reference-example)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -96,10 +96,10 @@
 
 <details><summary>Table of Contents</summary>
 - [Executive Summary](#executive-summary)
-- [Cross-Reference Types](#cross-reference-types)
+- [Cross-Reference Types](#crossreference-types)
 - [Reference Placement](#reference-placement)
 - [Link Quality Standards](#link-quality-standards)
-- [Cross-Reference Patterns](#cross-reference-patterns)
+- [Cross-Reference Patterns](#crossreference-patterns)
 - [Reference Maintenance](#reference-maintenance)
 - [Common Issues](#common-issues)
 - Implementation Examples
@@ -889,7 +889,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
@@ -925,4 +925,4 @@ Every section in this document connects you to your next step:
 * **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

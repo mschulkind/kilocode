@@ -20,7 +20,7 @@
 * [UI Integration](#ui-integration)
 * [Visual Feedback](#visual-feedback)
 * [User Experience](#user-experience)
-* [Performance & Optimization](#performance--optimization)
+* [Performance & Optimization](#performance-optimization)
 * [Performance Monitoring](#performance-monitoring)
 * [Optimization Strategies](#optimization-strategies)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -49,7 +49,7 @@
 * [UI Integration](#ui-integration)
 * [Visual Feedback](#visual-feedback)
 * [User Experience](#user-experience)
-* [Performance & Optimization](#performance--optimization)
+* [Performance & Optimization](#performance-optimization)
 * [Performance Monitoring](#performance-monitoring)
 * [Optimization Strategies](#optimization-strategies)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -85,7 +85,7 @@ document's role or purpose, this section helps orient you.
 - [Completion System](#completion-system)
 - [Strategy Management](#strategy-management)
 - [UI Integration](#ui-integration)
-- [Performance & Optimization](#performance--optimization)
+- [Performance & Optimization](#performance-optimization)
 - [Common Issues and Solutions](#common-issues-and-solutions)
 - Navigation Footer
 
@@ -477,4 +477,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

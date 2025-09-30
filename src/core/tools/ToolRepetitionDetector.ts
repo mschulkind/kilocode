@@ -1,5 +1,5 @@
 import { ToolUse } from "../../shared/tools.js"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 
 /**
  * Class for detecting consecutive identical tool calls

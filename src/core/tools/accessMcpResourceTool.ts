@@ -87,7 +87,7 @@ export async function accessMcpResourceTool(
 			return
 		}
 	} catch (error) {
-		await handleError("accessing MCP resource", error)
+		await handleError("accessing MCP resource", error instanceof Error ? error : new Error(String(error)))
 		return
 	}
 }

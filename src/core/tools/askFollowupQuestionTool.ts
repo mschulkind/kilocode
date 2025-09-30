@@ -48,7 +48,8 @@ export async function askFollowupQuestionTool(
 				} catch (error) {
 					cline.consecutiveMistakeCount++
 					cline.recordToolError("ask_followup_question")
-					await cline.say("error", `Failed to parse operations: ${error.message}`)
+					const errorMessage = error instanceof Error ? error.message : String(error)
+					await cline.say("error", `Failed to parse operations: ${errorMessage}`)
 					pushToolResult(formatResponse.toolError("Invalid operations xml format"))
 					return
 				}
@@ -83,7 +84,7 @@ export async function askFollowupQuestionTool(
 			return
 		}
 	} catch (error) {
-		await handleError("asking question", error)
+		await handleError("asking question", error instanceof Error ? error : new Error(String(error)))
 		return
 	}
 }

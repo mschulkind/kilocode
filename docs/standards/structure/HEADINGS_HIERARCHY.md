@@ -17,7 +17,7 @@
 * [Complete Hierarchy Example](#complete-hierarchy-example)
 * [Minimal Hierarchy Example](#minimal-hierarchy-example)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -35,7 +35,7 @@
 * [Complete Hierarchy Example](#complete-hierarchy-example)
 * [Minimal Hierarchy Example](#minimal-hierarchy-example)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -689,7 +689,7 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
@@ -725,4 +725,4 @@ Every section in this document connects you to your next step:
 * **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

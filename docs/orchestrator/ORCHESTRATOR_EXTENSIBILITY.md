@@ -10,7 +10,7 @@
 * [Adding New Modes (Gap)](#adding-new-modes-gap)
 * [Adding Custom Rules](#adding-custom-rules)
 * [When You're Here](#when-youre-here)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -23,7 +23,7 @@
 * [Adding New Tools (Gap)](#adding-new-tools-gap)
 * [Adding New Modes (Gap)](#adding-new-modes-gap)
 * [Adding Custom Rules](#adding-custom-rules)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -181,7 +181,7 @@ document's role or purpose, this section helps orient you.
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -189,7 +189,7 @@ document's role or purpose, this section helps orient you.
 * *Troubleshooting Issues:*\*
 
 * **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

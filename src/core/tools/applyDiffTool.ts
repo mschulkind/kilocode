@@ -252,7 +252,7 @@ export async function applyDiffToolLegacy(
 			return
 		}
 	} catch (error) {
-		await handleError("applying diff", error)
+		await handleError("applying diff", error instanceof Error ? error : new Error(String(error)))
 		await cline.diffViewProvider.reset()
 		cline.processQueuedMessages()
 		return

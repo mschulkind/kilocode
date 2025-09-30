@@ -176,8 +176,8 @@ time and <200MB memory usage.
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Performance Requirements
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Performance Requirements
 
 ### Primary Requirements
 
@@ -194,8 +194,8 @@ time and <200MB memory usage.
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Performance Monitoring
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Performance Monitoring
 
 ### Built-in Performance Monitor
 
@@ -251,8 +251,8 @@ report.recommendations.forEach(rec => console.log(`- ${rec}`))
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Optimization Strategies
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Optimization Strategies
 
 ### 1. Caching Optimization
 
@@ -457,8 +457,8 @@ await globalPerformanceOptimizer.optimizeAll()
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Performance Testing
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Performance Testing
 
 ### Benchmark Tests
 
@@ -520,8 +520,8 @@ console.log(`Completed ${concurrentValidations} validations in ${endTime - start
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Performance Tuning
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Performance Tuning
 
 ### Configuration Tuning
 
@@ -590,8 +590,8 @@ const stream = createReadStream(largeFile, { encoding: 'utf8' })
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Troubleshooting Performance Issues
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Troubleshooting Performance Issues
 
 ### Common Performance Issues
 
@@ -634,8 +634,8 @@ console.log('Optimization recommendations:', report.recommendations)
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Best Practices
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Best Practices
 
 ### Performance Best Practices
 
@@ -665,8 +665,8 @@ console.log('Optimization recommendations:', report.recommendations)
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Conclusion
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Conclusion
 
 The Zero Warnings Validation System is designed for high performance with comprehensive optimization
 capabilities. By following this guide and implementing the recommended optimization strategies, you
@@ -682,8 +682,8 @@ Key takeaways:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## No Dead Ends Policy
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## No Dead Ends Policy
 
 This document connects to:
 

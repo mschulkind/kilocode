@@ -22,7 +22,7 @@
 * [Storage Backend](#storage-backend)
 * [Performance & Caching](#performance--caching)
 * [Cache Management](#cache-management)
-* [Performance Optimization](#performance--optimization)
+* [Performance Optimization](#performance-optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
 * [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
@@ -51,7 +51,7 @@
 * [Storage Backend](#storage-backend)
 * [Performance & Caching](#performance--caching)
 * [Cache Management](#cache-management)
-* [Performance Optimization](#performance--optimization)
+* [Performance Optimization](#performance-optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Indexing Performance Issues](#issue-1-indexing-performance-issues)
 * [Issue 2: Search Accuracy Problems](#issue-2-search-accuracy-problems)
@@ -458,4 +458,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

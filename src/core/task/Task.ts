@@ -720,8 +720,9 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 	private findMessageByTimestamp(ts: number): ClineMessage | undefined {
 		for (let i = this.clineMessages.length - 1; i >= 0; i--) {
-			if (this.clineMessages[i].ts === ts) {
-				return this.clineMessages[i]
+			const message = this.clineMessages[i]
+			if (message && message.ts === ts) {
+				return message
 			}
 		}
 
@@ -954,7 +955,10 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 			if (lastFollowUpIndex !== -1) {
 				// Mark this follow-up as answered
-				this.clineMessages[lastFollowUpIndex].isAnswered = true
+				const followUpMessage = this.clineMessages[lastFollowUpIndex]
+				if (followUpMessage) {
+					followUpMessage.isAnswered = true
+				}
 				// Save the updated messages
 				this.saveClineMessages().catch((error) => {
 					console.error("Failed to save answered follow-up state:", error)
@@ -1312,10 +1316,12 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 		if (lastApiReqStartedIndex !== -1) {
 			const lastApiReqStarted = modifiedClineMessages[lastApiReqStartedIndex]
-			const { cost, cancelReason }: ClineApiReqInfo = JSON.parse(lastApiReqStarted.text || "{}")
+			if (lastApiReqStarted) {
+				const { cost, cancelReason }: ClineApiReqInfo = JSON.parse(lastApiReqStarted.text || "{}")
 
-			if (cost === undefined && cancelReason === undefined) {
-				modifiedClineMessages.splice(lastApiReqStartedIndex, 1)
+				if (cost === undefined && cancelReason === undefined) {
+					modifiedClineMessages.splice(lastApiReqStartedIndex, 1)
+				}
 			}
 		}
 
@@ -1407,7 +1413,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 		if (existingApiConversationHistory.length > 0) {
 			const lastMessage = existingApiConversationHistory[existingApiConversationHistory.length - 1]
 
-			if (lastMessage.role === "assistant") {
+			if (lastMessage && lastMessage.role === "assistant") {
 				const content = Array.isArray(lastMessage.content)
 					? lastMessage.content
 					: [{ type: "text", text: lastMessage.content }]
@@ -1428,7 +1434,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 					modifiedApiConversationHistory = [...existingApiConversationHistory]
 					modifiedOldUserContent = []
 				}
-			} else if (lastMessage.role === "user") {
+			} else if (lastMessage && lastMessage.role === "user") {
 				const previousAssistantMessage: ApiMessage | undefined =
 					existingApiConversationHistory[existingApiConversationHistory.length - 2]
 

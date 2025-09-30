@@ -25,7 +25,7 @@
 * [Overhead Management](#overhead-management)
 * [Error Handling](#error-handling)
 * [Exception Logging\*\*: Recording](#exception-logging-recording)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -52,7 +52,7 @@
 * [Overhead Management](#overhead-management)
 * [Error Handling](#error-handling)
 * [Exception Logging\*\*: Recording](#exception-logging-recording)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -490,7 +490,7 @@ _file<a id="navigation-footer"></a>
 * *Troubleshooting Observability Issues:*\*
 
 * **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -510,7 +510,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
+* **If you need context**: Check the [Research Context](#research-context) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 
@@ -519,5 +519,5 @@ Every section in this document connects you to your next step:
 * **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
 

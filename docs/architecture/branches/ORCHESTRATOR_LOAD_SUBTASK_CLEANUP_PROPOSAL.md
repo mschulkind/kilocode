@@ -91,7 +91,7 @@ The current subtask loading system has accumulated technical debt and performanc
 
 ## Navigation Footer
 
-- [Getting Started](../../../GETTING_STARTED.md)
+- [Getting Started](../../GETTING_STARTED.md)
 - [System Overview](../SYSTEM_OVERVIEW.md)
 - [Core Systems](../CORE_SYSTEMS.md)
 

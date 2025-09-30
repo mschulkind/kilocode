@@ -40,4 +40,4 @@ This document describes the core systems and their interactions.
 
 ## Navigation
 
-* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#core-systems)
+* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#core-systems)

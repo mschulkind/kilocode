@@ -15,7 +15,7 @@
 * [Guardrails & Safety Overview](#guardrails--safety-overview)
 * [Change Management & Versioning](#change-management--versioning)
 * [Glossary](#glossary)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -32,7 +32,7 @@
 * [Guardrails & Safety Overview](#guardrails--safety-overview)
 * [Change Management & Versioning](#change-management--versioning)
 * [Glossary](#glossary)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -312,7 +312,7 @@ End of document.
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
@@ -320,7 +320,7 @@ End of document.
 * *Troubleshooting Issues:*\*
 
 * **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -349,4 +349,4 @@ Every section in this document connects you to your next step:
 * **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Documentation Hub](../../README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

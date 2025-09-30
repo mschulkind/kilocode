@@ -187,8 +187,8 @@ components and interfaces.
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Core Components
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Core Components
 
 ### CrossReferenceValidator
 
@@ -1082,8 +1082,8 @@ const report = globalPerformanceOptimizer.getOptimizationReport()
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Error Handling
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Error Handling
 
 ### Common Error Types
 
@@ -1129,8 +1129,8 @@ try {
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Type Definitions
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Type Definitions
 
 ### Common Types
 

@@ -53,7 +53,7 @@
 * [High Priority](#high-priority)
 * [Medium Priority](#medium-priority)
 * [Low Priority](#low-priority)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -108,7 +108,7 @@
 * [High Priority](#high-priority)
 * [Medium Priority](#medium-priority)
 * [Low Priority](#low-priority)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation](#navigation)
@@ -999,7 +999,7 @@ patterns              |
   [Core Systems](CORE_SYSTEMS.md) → [External
   Dependencies](./EXTERNAL_DEPENDENCIES.md)
 
-* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [State Machines](README.md) for behavior modeling
 
 * *Investigating Current Issues:*\*
@@ -1034,8 +1034,8 @@ next, return to [Architecture Documentation](./README.md) for guidance.
 <a id="navigation-footer"></a>
 
 * *Navigation*\*: [← Back to Architecture Documentation](./README.md) ·
-  [→ Repository Overview](./REPOSITORY_OVERVIEW.md) · [📚 Technical Glossary](../../../GLOSSARY.md) ·
-  [↑ Table of Contents](#-research-context--next-steps)
+  [→ Repository Overview](./REPOSITORY_OVERVIEW.md) · [📚 Technical Glossary](../../GLOSSARY.md) ·
+  [↑ Table of Contents](#research-context--next-steps)
 
 ## No Dead Ends Policy
 
@@ -1044,8 +1044,8 @@ Every section in this document connects you to your next step:
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 * **If you need context**: Check the [Research Context](#research-context) section
 * **If you're ready to implement**: Jump to the implementation sections
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
-* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 

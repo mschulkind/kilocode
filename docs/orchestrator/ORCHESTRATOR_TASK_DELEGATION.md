@@ -11,7 +11,7 @@
 * [Key Symbols and Their Roles](#key-symbols-and-their-roles)
 * [When to Use Subtasks](#when-to-use-subtasks)
 * [When You're Here](#when-youre-here)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -25,7 +25,7 @@
 * [Subtask Workflow Diagram](#subtask-workflow-diagram)
 * [Key Symbols and Their Roles](#key-symbols-and-their-roles)
 * [When to Use Subtasks](#when-to-use-subtasks)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -206,7 +206,7 @@ document's role or purpose, this section helps orient you.
 
 * *Implementing Features:*\*
 
-* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](./README.md) for integration patterns
@@ -214,7 +214,7 @@ document's role or purpose, this section helps orient you.
 * *Troubleshooting Issues:*\*
 
 * **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](./ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues

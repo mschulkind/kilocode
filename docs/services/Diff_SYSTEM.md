@@ -20,7 +20,7 @@
 * [File Operations](#file-operations)
 * [File Modification](#file-modification)
 * [Insert Groups](#insert-groups)
-* [Performance & Optimization](#performance--optimization)
+* [Performance & Optimization](#performance-optimization)
 * [Diff Processing Optimization](#diff-processing-optimization)
 * [Memory Management](#memory-management)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -49,7 +49,7 @@
 * [File Operations](#file-operations)
 * [File Modification](#file-modification)
 * [Insert Groups](#insert-groups)
-* [Performance & Optimization](#performance--optimization)
+* [Performance & Optimization](#performance-optimization)
 * [Diff Processing Optimization](#diff-processing-optimization)
 * [Memory Management](#memory-management)
 * [Common Issues and Solutions](#common-issues-and-solutions)
@@ -85,7 +85,7 @@ document's role or purpose, this section helps orient you.
 - [Diff Strategies](#diff-strategies)
 - [Change Tracking](#change-tracking)
 - [File Operations](#file-operations)
-- [Performance & Optimization](#performance--optimization)
+- [Performance & Optimization](#performance-optimization)
 - [Common Issues and Solutions](#common-issues-and-solutions)
 - Navigation Footer
 
@@ -498,4 +498,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

@@ -31,13 +31,13 @@ This document provides a comprehensive summary of the API duplication investigat
 
 ## Related Documentation
 - [API Duplication Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [Duplicate API Requests Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- [Duplicate API Requests Root Cause Analysis](../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 - [Performance Optimization](tools/PERFORMANCE_OPTIMIZATION.md)
 
 ## Navigation Footer
 
 - [API Duplication Debug Implementation](API_DUPLICATION_DEBUG_IMPLEMENTATION.md)
-- [Duplicate API Requests Root Cause Analysis](architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+- [Duplicate API Requests Root Cause Analysis](../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 - [Performance Optimization](tools/PERFORMANCE_OPTIMIZATION.md)
 - [Architecture Overview](architecture/ARCHITECTURE_OVERVIEW.md)
 

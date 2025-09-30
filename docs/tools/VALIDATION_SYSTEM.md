@@ -157,8 +157,8 @@ processes.
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Architecture
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Architecture
 
 ### Core Components
 
@@ -180,8 +180,8 @@ validation components and provides a unified interface for validation operations
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Features
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Features
 
 ### Enhanced Cross-Reference Validation
 
@@ -224,8 +224,8 @@ Supported document types:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Usage
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Usage
 
 ### Basic Usage
 
@@ -289,8 +289,8 @@ await globalPerformanceOptimizer.optimizeAll()
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Configuration
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Configuration
 
 ### Validation Rules
 
@@ -338,8 +338,8 @@ The system supports different validation rules based on document type:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## API Reference
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## API Reference
 
 ### CrossReferenceValidator
 
@@ -482,8 +482,8 @@ The validation system is designed to meet the following performance requirements
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Error Handling
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Error Handling
 
 The system provides comprehensive error handling:
 
@@ -494,8 +494,8 @@ The system provides comprehensive error handling:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Best Practices
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Best Practices
 
 ### Document Organization
 
@@ -519,8 +519,8 @@ The system provides comprehensive error handling:
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Troubleshooting
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Troubleshooting
 
 ### Common Issues
 
@@ -546,8 +546,8 @@ const processor = unified()
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Migration Guide
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Migration Guide
 
 ### From Legacy Validation System
 
@@ -579,8 +579,8 @@ const processor = unified()
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## Contributing
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## Contributing
 
 ### Development Setup
 
@@ -605,15 +605,15 @@ const processor = unified()
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## License
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## License
 
 This validation system is part of the KiloCode project and follows the same licensing terms.
 
 **Related Links:**
 
-* [Related Documentation](./docs/tools/related-doc.md)
-* [Additional Resources](./docs/tools/resources.md)## No Dead Ends Policy
+* [Related Documentation](./related-doc.md)
+* [Additional Resources](./resources.md)## No Dead Ends Policy
 
 This document connects to:
 

@@ -608,7 +608,7 @@ npx remark docs/ 2>&1 | grep -i error
 * [Validation Errors Guide](./VALIDATION_ERRORS_GUIDE.md)
 * [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
 * [Documentation Best Practices](./DOCUMENTATION_BEST_PRACTICES.md)
-* [Documentation Guide](../../../DOCUMENTATION_GUIDE.md)
+* [Documentation Guide](../DOCUMENTATION_GUIDE.md)
 
 ## No Dead Ends Policy
 

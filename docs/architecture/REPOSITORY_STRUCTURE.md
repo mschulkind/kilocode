@@ -40,4 +40,4 @@ This document describes the repository structure and organization.
 
 ## Navigation
 
-* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#repository-structure)
+* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#repository-structure)

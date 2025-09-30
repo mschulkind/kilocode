@@ -30,7 +30,7 @@
 * [Security Measures](#security-measures)
 * [API Key Management](#api-key-management)
 * [Performance & Scalability](#performance--scalability)
-* [Performance Optimization](#performance--optimization)
+* [Performance Optimization](#performance-optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Authentication Failures](#issue-1-authentication-failures)
 * [Issue 2: Bridge Connection Issues](#issue-2-bridge-connection-issues)
@@ -67,7 +67,7 @@
 * [Security Measures](#security-measures)
 * [API Key Management](#api-key-management)
 * [Performance & Scalability](#performance--scalability)
-* [Performance Optimization](#performance--optimization)
+* [Performance Optimization](#performance-optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Authentication Failures](#issue-1-authentication-failures)
 * [Issue 2: Bridge Connection Issues](#issue-2-bridge-connection-issues)
@@ -734,4 +734,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

@@ -15,7 +15,7 @@
 * [Key Interactions](#key-interactions)
 * [Navigation Footer](#navigation-footer)
 * [When You're Here](#when-youre-here)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -31,7 +31,7 @@
 * [Tool Executor & Library](#tool-executor--library)
 * [Key Interactions](#key-interactions)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -282,4 +282,4 @@ Every section in this document connects you to your next step:
 
 * *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
   [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../../GLOSSARY.md) ·
-  [↑ Table of Contents](#-research-context--next-steps)
+  [↑ Table of Contents](#research-context--next-steps)

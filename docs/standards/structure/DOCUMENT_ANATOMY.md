@@ -20,7 +20,7 @@
 * [Collapsible TOC](#collapsible-toc)
 * [Executive Summary](#executive-summary)
 * [Body Content](#body-content)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -49,7 +49,7 @@
 * [Collapsible TOC](#collapsible-toc)
 * [Executive Summary](#executive-summary)
 * [Body Content](#body-content)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -343,7 +343,7 @@ the parent task.
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../../../GETTING_STARTED.md) →
+* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
 
 * **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns

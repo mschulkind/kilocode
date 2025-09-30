@@ -38,7 +38,7 @@
 * [Recommended Implementation Order:](#recommended-implementation-order)
 * [Resource Requirements:](#resource-requirements)
 * [Success Metrics:](#success-metrics)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -83,7 +83,7 @@
 * [Recommended Implementation Order:](#recommended-implementation-order)
 * [Resource Requirements:](#resource-requirements)
 * [Success Metrics:](#success-metrics)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -335,7 +335,7 @@ next, return to the appropriate README for guidance.
 * \*\*
 
 * *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
-  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
 
 ## Recent Documentation Overhaul (Completed)
 

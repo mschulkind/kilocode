@@ -240,7 +240,7 @@ Our detailed analysis revealed that the 2078 warnings fall into these distinct c
 
 * `../GLOSSARY.md` → `../GLOSSARY.md` (standards/ subdirectories)
 
-* `../../DOCUMENTATION_GUIDE.md` → `../../DOCUMENTATION_GUIDE.md`
+* `../DOCUMENTATION_GUIDE.md` → `../DOCUMENTATION_GUIDE.md`
 
 * Deep nesting paths requiring additional `../` prefix corrections
 

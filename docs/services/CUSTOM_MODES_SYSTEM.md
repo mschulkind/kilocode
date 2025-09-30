@@ -24,7 +24,7 @@
 * [Schema Validation](#schema-validation)
 * [Error Handling](#error-handling)
 * [Performance & Caching](#performance--caching)
-* [Performance Optimization](#performance--optimization)
+* [Performance Optimization](#performance-optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Mode Configuration Validation Failures](#issue-1-mode-configuration-validation-failures)
 * [Issue 2: File System Issues](#issue-2-file-system-issues)
@@ -55,7 +55,7 @@
 * [Schema Validation](#schema-validation)
 * [Error Handling](#error-handling)
 * [Performance & Caching](#performance--caching)
-* [Performance Optimization](#performance--optimization)
+* [Performance Optimization](#performance-optimization)
 * [Common Issues and Solutions](#common-issues-and-solutions)
 * [Issue 1: Mode Configuration Validation Failures](#issue-1-mode-configuration-validation-failures)
 * [Issue 2: File System Issues](#issue-2-file-system-issues)
@@ -520,4 +520,4 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

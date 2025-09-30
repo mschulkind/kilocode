@@ -1483,11 +1483,11 @@ function validateNavigationFooter(content, filePath) {
   [Integration Plan](#integration-plan) → [Custom Linter Development](#custom-linter-development)
 
 * **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) for standards
+  [Documentation Guide](../DOCUMENTATION_GUIDE.md) for standards
 
 * *Understanding Current Documentation Standards:*\*
 
-* **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
+* **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
   [Standards Documentation](../standards/README.md) → This automation guide
 
 * **Related**: [Architecture Documentation](../README.md) for context
@@ -1498,7 +1498,7 @@ function validateNavigationFooter(content, filePath) {
   [Concrete Toolset Recommendations](#concrete-toolset-recommendations) →
   [Integration Plan](#integration-plan)
 
-* **Related**: [Repository Development Guide](GETTING_STARTED.md) for
+* **Related**: [Repository Development Guide](../GETTING_STARTED.md) for
   technical setup
 
 * *Troubleshooting Automation Issues:*\*

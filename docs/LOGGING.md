@@ -36,7 +36,7 @@
 * [Troubleshooting](#troubleshooting)
 * [Common Issues](#common-issues)
 * [Debug Commands](#debug-commands)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -74,7 +74,7 @@
 * [Troubleshooting](#troubleshooting)
 * [Common Issues](#common-issues)
 * [Debug Commands](#debug-commands)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -765,4 +765,4 @@ Every section in this document connects you to your next step:
 * **If you need help**: Check the [Technical Glossary](GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
-  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
+  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)

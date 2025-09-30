@@ -416,7 +416,7 @@ pnpm docs:report
 
 * [Validation Errors Guide](../../tools/VALIDATION_ERRORS_GUIDE.md)
 
-* [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+* [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
 * [Documentation Best Practices](../../tools/DOCUMENTATION_BEST_PRACTICES.md)
 
@@ -970,4 +970,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

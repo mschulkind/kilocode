@@ -24,7 +24,7 @@
 * [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
 * [Docs-only recommendations (no code changes)](#docs-only-recommendations-no-code-changes)
 * [Suggested doc locations & links (insert these pages)](#suggested-doc-locations--links-insert-these-pages)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Next doc-step I will take (if you approve)](#next-doc-step-i-will-take-if-you-approve)
@@ -51,7 +51,7 @@
 * [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
 * [Docs-only recommendations (no code changes)](#docs-only-recommendations-no-code-changes)
 * [Suggested doc locations & links (insert these pages)](#suggested-doc-locations--links-insert-these-pages)
-* [🔍 Research Context & Next Steps](#-research-context--next-steps)
+* [🔍 Research Context & Next Steps](#research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Next doc-step I will take (if you approve)](#next-doc-step-i-will-take-if-you-approve)
@@ -355,7 +355,7 @@ document's role or purpose, this section helps orient you.
 * *Investigating Race Conditions:*\*
 
 * **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
@@ -366,7 +366,7 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 
-* **Related**: [Repository Development Guide](../../../GETTING_STARTED.md) for
+* **Related**: [Repository Development Guide](../../../../GETTING_STARTED.md) for
   codebase patterns
 
 * *Understanding Current Problems:*\*

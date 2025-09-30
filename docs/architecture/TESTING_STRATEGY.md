@@ -38,4 +38,4 @@ This document outlines the testing strategy for the architectural components.
 
 ## Navigation
 
-* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#testing-strategy)
+* **Navigation**: [← Back to Architecture](../README.md) · [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#testing-strategy)
