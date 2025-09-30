@@ -1,6 +1,6 @@
 # Chapter 7: The Truth About "Race Conditions" 🎭
 
-![The Truth About Race Conditions](../images/chapters/chapter7-truth-about-race-conditions.svg)
+![The Truth About Race Conditions](../images/chapters/chapter7-truth-about-race-conditions.png)
 
 _The moment of revelation came during a late-night debugging session, when Captain Architecture finally saw the truth._
 

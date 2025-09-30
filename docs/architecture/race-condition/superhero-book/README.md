@@ -101,9 +101,9 @@ Enjoy the narrative flow from [Prologue](prologue.md) to [Epilogue](epilogue.md)
 
 | Character                   |                                  Image                                   | Description                                                  |
 | :-------------------------- | :----------------------------------------------------------------------: | :----------------------------------------------------------- |
-| **🦸‍♂️ Captain Architecture** | ![Captain Architecture](images/characters/captain-architecture-hero.svg) | Our hero, a developer with architectural superpowers         |
-| **🤖 The Subtask Handler**  |  ![The Subtask Handler](images/characters/subtask-handler-villain.svg)   | The well-meaning but overreaching villain                    |
-| **📊 The State Manager**    |    ![The State Manager](images/characters/state-manager-confused.svg)    | A confused character who doesn't know its own state          |
+| **🦸‍♂️ Captain Architecture** | ![Captain Architecture](images/characters/captain-architecture-hero.png) | Our hero, a developer with architectural superpowers         |
+| **🤖 The Subtask Handler**  |  ![The Subtask Handler](images/characters/subtask-handler-villain.png)   | The well-meaning but overreaching villain                    |
+| **📊 The State Manager**    |    ![The State Manager](images/characters/state-manager-confused.png)    | A confused character who doesn't know its own state          |
 | **🎭 The Task vs Session**  |                                                                          | Two characters who look similar but serve different purposes |
 | **🐛 The "Race Condition"** |                                                                          | A mislabeled villain who isn't what it seems                 |
 

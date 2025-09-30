@@ -1,6 +1,6 @@
 # Chapter 6: The State Management Nightmare 🌪️
 
-![The State Management Nightmare](../images/chapters/chapter6-state-management-nightmare.svg)
+![The State Management Nightmare](../images/chapters/chapter6-state-management-nightmare.png)
 
 _In the darkest depths of the codebase, Captain Architecture discovered the true horror: state management gone wrong._
 

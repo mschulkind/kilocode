@@ -1,6 +1,6 @@
 # Chapter 11: The Implementation Plan 🗺️
 
-![The Implementation Plan](../images/chapters/chapter11-implementation-plan.svg)
+![The Implementation Plan](../images/chapters/chapter11-implementation-plan.png)
 
 _With the vision clear, Captain Architecture began to plan the path to salvation._
 

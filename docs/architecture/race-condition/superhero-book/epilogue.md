@@ -1,6 +1,6 @@
 # Epilogue: The Hero's Wisdom 🦸‍♂️✨
 
-![The Hero's Wisdom](images/chapters/epilogue-heros-wisdom.svg)
+![The Hero's Wisdom](images/chapters/epilogue-heros-wisdom.png)
 
 _As Captain Architecture surveyed the clean, well-organized codebase, a sense of satisfaction filled their heart. The mission was complete, but the lessons learned would last a lifetime._
 

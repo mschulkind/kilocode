@@ -1,6 +1,6 @@
 # Chapter 9: The Missing Property Mystery 🕵️‍♂️
 
-![The Missing Property Mystery](../images/chapters/chapter9-missing-property-mystery.svg)
+![The Missing Property Mystery](../images/chapters/chapter9-missing-property-mystery.png)
 
 _The final piece of the puzzle fell into place when Captain Architecture discovered the missing property._
 
