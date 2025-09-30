@@ -1607,10 +1607,9 @@ export class ClineProvider
 				this.log(`[continueParentTask] Parent task ${parentTask.taskId} subtask completed`)
 
 				// Check if the parent task needs to continue its execution
-				// If the parent task was created from history reconstruction, it may not have
-				// an active execution loop running, so we need to continue it manually
-				if (!parentTask.isPaused && parentTask.isInitialized) {
-					this.log(`[continueParentTask] Parent task is unpaused and initialized, continuing execution`)
+				// Only continue if the parent is not already executing to prevent duplicate API calls
+				if (!parentTask.isExecuting) {
+					this.log(`[continueParentTask] Parent task is not executing, continuing execution`)
 
 					// Continue the parent task's execution with the subtask result
 					// The subtask result has already been added to the conversation by completeSubtask

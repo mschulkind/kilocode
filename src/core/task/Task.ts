@@ -227,6 +227,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 	abortReason?: ClineApiReqCancelReason
 	isInitialized = false
 	isPaused: boolean = false
+	isExecuting: boolean = false
 	pausedModeSlug: string = defaultModeSlug
 	private pauseInterval: NodeJS.Timeout | undefined
 
@@ -1753,6 +1754,24 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 	}
 
 	public async recursivelyMakeClineRequests(
+		userContent: Anthropic.Messages.ContentBlockParam[],
+		includeFileDetails: boolean = false,
+	): Promise<boolean> {
+		// Prevent duplicate execution
+		if (this.isExecuting) {
+			console.log(`[Task] Already executing, skipping duplicate call for task ${this.taskId}.${this.instanceId}`)
+			return false
+		}
+
+		this.isExecuting = true
+		try {
+			return await this._recursivelyMakeClineRequests(userContent, includeFileDetails)
+		} finally {
+			this.isExecuting = false
+		}
+	}
+
+	private async _recursivelyMakeClineRequests(
 		userContent: Anthropic.Messages.ContentBlockParam[],
 		includeFileDetails: boolean = false,
 	): Promise<boolean> {
