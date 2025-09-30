@@ -1,6 +1,6 @@
 # Chapter 1: The Mysterious Bug 🐛
 
-![The Mysterious Bug](../images/chapters/chapter1-mysterious-bug.png)
+![The Mysterious Bug](../images/covers/part1-cover.png)
 
 _The call came in at 3 AM. The kind of call that makes superheroes sigh and reach for their coffee._
 

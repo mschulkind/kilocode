@@ -1,6 +1,6 @@
 # Chapter 8: The Redundant Condition Discovery 🔍
 
-![The Redundant Condition Discovery](../images/chapters/chapter8-redundant-condition-discovery.png)
+![The Redundant Condition Discovery](../images/scenes/part3-scene-01.png)
 
 _In a moment of clarity, Captain Architecture discovered something that would change everything._
 
