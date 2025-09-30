@@ -270,10 +270,14 @@ images/
 
 ### **Image Specifications**
 
-- **Format**: PNG with transparency for overlays
-- **Resolution**: 1920x1080 for full-page, 800x600 for inline
+- **Format**: PNG (RGB, non-interlaced)
+- **Aspect Ratios**:
+    - **Character Portraits**: 4:3 (horizontal, 1024×768 typical)
+    - **Chapter Covers**: 16:9 (widescreen, 1920×1080 typical)
+    - **Scene Illustrations**: 16:9 (widescreen, 1920×1080 typical)
 - **Style**: Consistent digital art style throughout
 - **Colors**: Follow the established color palette
+- **Note**: Exact pixel dimensions may vary by generation method (Imagen API vs local Stable Diffusion), but aspect ratios are preserved
 
 ---
 

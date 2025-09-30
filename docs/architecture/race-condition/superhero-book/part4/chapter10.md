@@ -1,6 +1,6 @@
 # Chapter 10: The Clean Architecture Vision 🏗️
 
-![The Clean Architecture Vision](../images/chapters/chapter10-clean-architecture-vision.svg)
+![The Clean Architecture Vision](../images/chapters/chapter10-clean-architecture-vision.png)
 
 _Armed with all the evidence, Captain Architecture began to envision a better world - a world where code was clean, responsibilities were clear, and bugs were rare._
 

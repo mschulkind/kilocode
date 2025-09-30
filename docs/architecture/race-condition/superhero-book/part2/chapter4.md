@@ -1,6 +1,6 @@
 # Chapter 4: The Task vs Session Mystery 🕵️‍♂️
 
-![The Task vs Session Mystery](../images/chapters/chapter4-task-vs-session.svg)
+![The Task vs Session Mystery](../images/chapters/chapter4-task-vs-session.png)
 
 _In every good mystery, there comes a point where the hero must question fundamental assumptions._
 

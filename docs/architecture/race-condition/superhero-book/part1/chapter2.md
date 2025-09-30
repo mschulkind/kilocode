@@ -1,6 +1,6 @@
 # Chapter 2: The Investigation Begins 🔍
 
-![The Investigation Begins](../images/chapters/chapter2-investigation.svg)
+![The Investigation Begins](../images/chapters/chapter2-investigation.png)
 
 _Every good detective story needs a crime scene, and this one had the most complex crime scene of all: a distributed system with multiple moving parts._
 

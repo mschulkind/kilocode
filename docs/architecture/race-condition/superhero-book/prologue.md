@@ -1,6 +1,6 @@
 # Prologue: The Hero's Origin Story 🦸‍♂️
 
-![The Hero's Origin Story](images/chapters/prologue-hero-origin.svg)
+![The Hero's Origin Story](images/chapters/prologue-hero-origin.png)
 
 _In a world where code runs wild and bugs multiply like digital gremlins, one developer dared to ask the question that would change everything: "Why is this happening?"_
 
