@@ -1,6 +1,6 @@
 # Chapter 5: The Subtask Handler's Secret 🤫
 
-![The Subtask Handler's Secret](../images/chapters/chapter5-subtask-handler-secret.png)
+![The Subtask Handler's Secret](../images/scenes/part2-scene-01.png)
 
 _Every villain has a backstory, and the Subtask Handler was no exception._
 

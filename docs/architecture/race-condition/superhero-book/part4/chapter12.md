@@ -1,6 +1,6 @@
 # Chapter 12: The Hero's Victory 🏆
 
-![The Hero's Victory](../images/chapters/chapter12-heros-victory.png)
+![The Hero's Victory](../images/scenes/epilogue-scene-01.png)
 
 _The final battle was not against a supervillain, but against complexity itself._
 

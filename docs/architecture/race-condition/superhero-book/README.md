@@ -99,13 +99,13 @@ Enjoy the narrative flow from [Prologue](prologue.md) to [Epilogue](epilogue.md)
 
 ## 🎭 The Cast of Characters
 
-| Character                   |                                  Image                                   | Description                                                  |
-| :-------------------------- | :----------------------------------------------------------------------: | :----------------------------------------------------------- |
-| **🦸‍♂️ Captain Architecture** | ![Captain Architecture](images/characters/captain-architecture-hero.png) | Our hero, a developer with architectural superpowers         |
-| **🤖 The Subtask Handler**  |  ![The Subtask Handler](images/characters/subtask-handler-villain.png)   | The well-meaning but overreaching villain                    |
-| **📊 The State Manager**    |    ![The State Manager](images/characters/state-manager-confused.png)    | A confused character who doesn't know its own state          |
-| **🎭 The Task vs Session**  |                                                                          | Two characters who look similar but serve different purposes |
-| **🐛 The "Race Condition"** |                                                                          | A mislabeled villain who isn't what it seems                 |
+| Character                   |                                    Image                                     | Description                                                  |
+| :-------------------------- | :--------------------------------------------------------------------------: | :----------------------------------------------------------- |
+| **🦸‍♂️ Captain Architecture** | ![Captain Architecture](images/characters/captain-architecture-portrait.png) | Our hero, a developer with architectural superpowers         |
+| **🤖 The Subtask Handler**  |    ![The Subtask Handler](images/characters/subtask-handler-portrait.png)    | The well-meaning but overreaching villain                    |
+| **📊 The State Manager**    |      ![The State Manager](images/characters/state-manager-confused.png)      | A confused character who doesn't know its own state          |
+| **🎭 The Task vs Session**  |                                                                              | Two characters who look similar but serve different purposes |
+| **🐛 The "Race Condition"** |                                                                              | A mislabeled villain who isn't what it seems                 |
 
 ---
 

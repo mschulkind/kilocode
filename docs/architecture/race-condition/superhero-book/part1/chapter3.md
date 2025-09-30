@@ -1,6 +1,6 @@
 # Chapter 3: The Red Herring 🐟
 
-![The Red Herring](../images/chapters/chapter3-red-herring.png)
+![The Red Herring](../images/scenes/part1-scene-02.png)
 
 _Every good mystery has a red herring - a clue that leads investigators down the wrong path._
 
