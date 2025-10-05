@@ -1,7 +1,7 @@
-import { Client } from "@modelcontextprotocol/sdk/client/index"
-import { StdioClientTransport, getDefaultEnvironment } from "@modelcontextprotocol/sdk/client/stdio"
-import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse"
-import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp"
+import { Client } from "@modelcontextprotocol/sdk/client/index.js"
+import { StdioClientTransport, getDefaultEnvironment } from "@modelcontextprotocol/sdk/client/stdio.js"
+import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js"
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
 import ReconnectingEventSource from "reconnecting-eventsource"
 import {
 	CallToolResultSchema,
@@ -9,7 +9,7 @@ import {
 	ListResourceTemplatesResultSchema,
 	ListToolsResultSchema,
 	ReadResourceResultSchema,
-} from "@modelcontextprotocol/sdk/types"
+} from "@modelcontextprotocol/sdk/types.js"
 import chokidar, { FSWatcher } from "chokidar"
 import delay from "delay"
 import deepEqual from "fast-deep-equal"
