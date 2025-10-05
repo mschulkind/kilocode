@@ -1,5 +1,5 @@
 import { ExtensionContext } from "vscode"
-import { ProviderProfiles } from "../ProviderSettingsManager.js"
+import { ProviderProfiles } from "../ProviderSettingsManager"
 
 export async function migrateMorphApiKey(context: ExtensionContext, providerProfiles: ProviderProfiles) {
 	let isDirty = false

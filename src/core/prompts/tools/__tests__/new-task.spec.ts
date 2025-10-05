@@ -1,5 +1,5 @@
-import { getNewTaskDescription } from "../new-task.js"
-import { ToolArgs } from "../types.js"
+import { getNewTaskDescription } from "../new-task"
+import { ToolArgs } from "../types"
 
 describe("getNewTaskDescription", () => {
 	it("should NOT show todos parameter at all when setting is disabled", () => {

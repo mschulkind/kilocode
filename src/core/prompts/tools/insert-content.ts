@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getInsertContentDescription(args: ToolArgs): string {
 	return `## insert_content

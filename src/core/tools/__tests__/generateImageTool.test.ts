@@ -1,13 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest"
-import { generateImageTool } from "../generateImageTool.js"
-import { ToolUse } from "../../../shared/tools.js"
-import { Task } from "../../task/Task.js"
+import { generateImageTool } from "../generateImageTool"
+import { ToolUse } from "../../../shared/tools"
+import { Task } from "../../task/Task"
 import * as fs from "fs/promises"
-import * as pathUtils from "../../../utils/pathUtils.js"
-import * as fileUtils from "../../../utils/fs.js"
-import { formatResponse } from "../../prompts/responses.js"
-import { EXPERIMENT_IDS } from "../../../shared/experiments.js"
-import { OpenRouterHandler } from "../../../api/providers/openrouter.js"
+import * as pathUtils from "../../../utils/pathUtils"
+import * as fileUtils from "../../../utils/fs"
+import { formatResponse } from "../../prompts/responses"
+import { EXPERIMENT_IDS } from "../../../shared/experiments"
+import { OpenRouterHandler } from "../../../api/providers/openrouter"
 
 // Mock dependencies
 vi.mock("fs/promises")

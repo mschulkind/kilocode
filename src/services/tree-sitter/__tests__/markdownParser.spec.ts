@@ -1,4 +1,4 @@
-import { parseMarkdown, formatMarkdownCaptures } from "../markdownParser.js"
+import { parseMarkdown, formatMarkdownCaptures } from "../markdownParser"
 
 describe("markdownParser", () => {
 	it("should parse ATX headers (# style) and return captures", () => {

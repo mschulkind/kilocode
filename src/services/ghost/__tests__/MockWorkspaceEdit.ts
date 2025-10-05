@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { mockVscode } from "./MockWorkspace.spec.js"
+import { mockVscode } from "./MockWorkspace.spec"
 
 export function createMockWorkspaceEdit(): vscode.WorkspaceEdit {
 	const _edits = new Map<string, vscode.TextEdit[]>()

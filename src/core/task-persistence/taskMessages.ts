@@ -1,13 +1,13 @@
-import { safeWriteJson } from "../../utils/safeWriteJson.js"
+import { safeWriteJson } from "../../utils/safeWriteJson"
 import * as path from "path"
 import * as fs from "fs/promises"
 
 import type { ClineMessage } from "@roo-code/types"
 
-import { fileExistsAtPath } from "../../utils/fs.js"
+import { fileExistsAtPath } from "../../utils/fs"
 
-import { GlobalFileNames } from "../../shared/globalFileNames.js"
-import { getTaskDirectoryPath } from "../../utils/storage.js"
+import { GlobalFileNames } from "../../shared/globalFileNames"
+import { getTaskDirectoryPath } from "../../utils/storage"
 
 export type ReadTaskMessagesOptions = {
 	taskId: string

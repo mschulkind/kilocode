@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { rubyQuery } from "../queries.js"
-import sampleRubyContent from "./fixtures/sample-ruby.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { rubyQuery } from "../queries"
+import sampleRubyContent from "./fixtures/sample-ruby"
 
 describe("inspectRuby", () => {
 	const testOptions = {

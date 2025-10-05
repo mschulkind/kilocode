@@ -2,9 +2,9 @@ import * as fs from "fs/promises"
 import * as path from "path"
 import type { MockedFunction } from "vitest"
 
-import { fileExistsAtPath } from "../../../utils/fs.js"
-import { ToolUse, ToolResponse } from "../../../shared/tools.js"
-import { insertContentTool } from "../insertContentTool.js"
+import { fileExistsAtPath } from "../../../utils/fs"
+import { ToolUse, ToolResponse } from "../../../shared/tools"
+import { insertContentTool } from "../insertContentTool"
 
 // Helper to normalize paths to POSIX format for cross-platform testing
 const toPosix = (filePath: string) => filePath.replace(/\\/g, "/")

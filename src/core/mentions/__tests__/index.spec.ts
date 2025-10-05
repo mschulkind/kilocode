@@ -2,8 +2,8 @@
 
 import * as vscode from "vscode"
 
-import { parseMentions } from "../index.js"
-import { UrlContentFetcher } from "../../../services/browser/UrlContentFetcher.js"
+import { parseMentions } from "../index"
+import { UrlContentFetcher } from "../../../services/browser/UrlContentFetcher"
 
 // Mock vscode
 vi.mock("vscode", () => ({

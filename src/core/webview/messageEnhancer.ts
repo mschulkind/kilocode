@@ -1,9 +1,9 @@
 import { ProviderSettings, ClineMessage, GlobalState, TelemetryEventName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
-import { supportPrompt } from "../../shared/support-prompt.js"
-import { singleCompletionHandler } from "../../utils/single-completion-handler.js"
-import { ProviderSettingsManager } from "../config/ProviderSettingsManager.js"
-import { ClineProvider } from "./ClineProvider.js"
+import { supportPrompt } from "../../shared/support-prompt"
+import { singleCompletionHandler } from "../../utils/single-completion-handler"
+import { ProviderSettingsManager } from "../config/ProviderSettingsManager"
+import { ClineProvider } from "./ClineProvider"
 
 export interface MessageEnhancerOptions {
 	text: string

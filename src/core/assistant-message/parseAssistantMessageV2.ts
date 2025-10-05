@@ -1,6 +1,6 @@
 import { type ToolName, toolNames } from "@roo-code/types"
 
-import { TextContent, ToolUse, ToolParamName, toolParamNames } from "../../shared/tools.js"
+import { TextContent, ToolUse, ToolParamName, toolParamNames } from "../../shared/tools"
 
 export type AssistantMessageContent = TextContent | ToolUse
 

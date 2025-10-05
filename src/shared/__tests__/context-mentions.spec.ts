@@ -1,4 +1,4 @@
-import { mentionRegex, mentionRegexGlobal } from "../context-mentions.js"
+import { mentionRegex, mentionRegexGlobal } from "../context-mentions"
 
 describe("mentionRegex and mentionRegexGlobal", () => {
 	// Test cases for various mention types

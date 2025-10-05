@@ -2,7 +2,7 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { convertAnthropicMessageToGemini } from "../gemini-format.js"
+import { convertAnthropicMessageToGemini } from "../gemini-format"
 
 describe("convertAnthropicMessageToGemini", () => {
 	it("should convert a simple text message", () => {

@@ -2,11 +2,11 @@
 
 import { type ModelInfo, ANTHROPIC_DEFAULT_MAX_TOKENS } from "@roo-code/types"
 
-import { getModelParams } from "../model-params.js"
+import { getModelParams } from "../model-params"
 import {
 	DEFAULT_HYBRID_REASONING_MODEL_MAX_TOKENS,
 	DEFAULT_HYBRID_REASONING_MODEL_THINKING_TOKENS,
-} from "../../../shared/api.js"
+} from "../../../shared/api"
 
 describe("getModelParams", () => {
 	const baseModel: ModelInfo = {

@@ -1,7 +1,7 @@
 import { ioIntelligenceDefaultModelId, ioIntelligenceModels, type IOIntelligenceModelId } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
-import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider.js"
+import type { ApiHandlerOptions } from "../../shared/api"
+import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
 
 export class IOIntelligenceHandler extends BaseOpenAiCompatibleProvider<IOIntelligenceModelId> {
 	constructor(options: ApiHandlerOptions) {

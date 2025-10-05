@@ -29,7 +29,7 @@ vi.mock("vscode", () => ({
 	},
 }))
 
-import { initializeHighlighter, getLanguageForDocument } from "../CodeHighlighter.js"
+import { initializeHighlighter, getLanguageForDocument } from "../CodeHighlighter"
 
 describe("CodeHighlighter", () => {
 	beforeEach(() => {

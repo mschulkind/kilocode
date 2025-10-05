@@ -39,10 +39,10 @@ vi.mock("../checkpointRestoreHandler", () => ({
 }))
 
 // Import after mocks
-import { webviewMessageHandler } from "../webviewMessageHandler.js"
-import type { ClineProvider } from "../ClineProvider.js"
+import { webviewMessageHandler } from "../webviewMessageHandler"
+import type { ClineProvider } from "../ClineProvider"
 import type { ClineMessage } from "@roo-code/types"
-import type { ApiMessage } from "../../task-persistence/apiMessages.js"
+import type { ApiMessage } from "../../task-persistence/apiMessages"
 
 describe("webviewMessageHandler - Edit Message with Timestamp Fallback", () => {
 	let mockClineProvider: ClineProvider

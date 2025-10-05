@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { migrateSettings } from "../migrateSettings.js"
+import { migrateSettings } from "../migrateSettings"
 
 // Mock vscode module
 vi.mock("vscode", () => ({

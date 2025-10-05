@@ -2,8 +2,8 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { OllamaHandler } from "../ollama.js"
-import { ApiHandlerOptions } from "../../../shared/api.js"
+import { OllamaHandler } from "../ollama"
+import { ApiHandlerOptions } from "../../../shared/api"
 
 const mockCreate = vitest.fn()
 

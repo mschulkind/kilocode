@@ -34,7 +34,7 @@ vi.mock("../../../../services/roo-config", () => ({
 	getGlobalRooDirectory: mockGetGlobalRooDirectory,
 }))
 
-import { loadRuleFiles, addCustomInstructions } from "../custom-instructions.js"
+import { loadRuleFiles, addCustomInstructions } from "../custom-instructions"
 
 describe("custom-instructions global .roo support", () => {
 	const mockCwd = "/mock/project"

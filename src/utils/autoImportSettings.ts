@@ -2,11 +2,11 @@ import * as vscode from "vscode"
 import * as path from "path"
 import * as os from "os"
 
-import { Package } from "../shared/package.js"
-import { fileExistsAtPath } from "./fs.js"
-import { t } from "../i18n.js"
+import { Package } from "../shared/package"
+import { fileExistsAtPath } from "./fs"
+import { t } from "../i18n"
 
-import { importSettingsFromPath, ImportOptions } from "../core/config/importExport.js"
+import { importSettingsFromPath, ImportOptions } from "../core/config/importExport"
 
 /**
  * Automatically imports RooCode settings from a specified path if it exists.

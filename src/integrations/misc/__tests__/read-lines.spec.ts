@@ -1,6 +1,6 @@
 import { promises as fs } from "fs"
 import path from "path"
-import { readLines } from "../read-lines.js"
+import { readLines } from "../read-lines"
 
 describe("nthline", () => {
 	const testFile = path.join(__dirname, "test.txt")

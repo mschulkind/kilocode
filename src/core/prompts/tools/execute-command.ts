@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getExecuteCommandDescription(args: ToolArgs): string | undefined {
 	return `## execute_command

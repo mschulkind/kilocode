@@ -1,6 +1,6 @@
 import { GlobalState, ClineMessage, ClineAsk } from "@roo-code/types"
-import { getApiMetrics } from "../../shared/getApiMetrics.js"
-import { ClineAskResponse } from "../../shared/WebviewMessage.js"
+import { getApiMetrics } from "../../shared/getApiMetrics"
+import { ClineAskResponse } from "../../shared/WebviewMessage"
 
 export interface AutoApprovalResult {
 	shouldProceed: boolean

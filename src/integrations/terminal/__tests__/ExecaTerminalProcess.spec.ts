@@ -22,8 +22,8 @@ vitest.mock("ps-tree", () => ({
 }))
 
 import { execa } from "execa"
-import { ExecaTerminalProcess } from "../ExecaTerminalProcess.js"
-import type { RooTerminal } from "../types.js"
+import { ExecaTerminalProcess } from "../ExecaTerminalProcess"
+import type { RooTerminal } from "../types"
 
 describe("ExecaTerminalProcess", () => {
 	let mockTerminal: RooTerminal

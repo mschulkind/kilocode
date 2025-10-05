@@ -1,7 +1,7 @@
 // npx vitest run src/api/providers/__tests__/anthropic.spec.ts
 
-import { AnthropicHandler } from "../anthropic.js"
-import { ApiHandlerOptions } from "../../../shared/api.js"
+import { AnthropicHandler } from "../anthropic"
+import { ApiHandlerOptions } from "../../../shared/api"
 
 const mockCreate = vitest.fn()
 

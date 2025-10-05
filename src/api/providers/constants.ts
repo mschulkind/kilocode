@@ -1,5 +1,5 @@
-import { X_KILOCODE_VERSION } from "../../shared/kilocode/headers.js"
-import { Package } from "../../shared/package.js"
+import { X_KILOCODE_VERSION } from "../../shared/kilocode/headers"
+import { Package } from "../../shared/package"
 
 export const DEFAULT_HEADERS = {
 	"HTTP-Referer": "https://kilocode.ai",

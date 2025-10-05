@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
-import { scalaQuery } from "../queries.js"
-import { sampleScala } from "./fixtures/sample-scala.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions, debugLog } from "./helpers"
+import { scalaQuery } from "../queries"
+import { sampleScala } from "./fixtures/sample-scala"
 
 describe("inspectScala", () => {
 	const testOptions = {

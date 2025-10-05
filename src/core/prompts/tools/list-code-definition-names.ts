@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getListCodeDefinitionNamesDescription(args: ToolArgs): string {
 	return `## list_code_definition_names

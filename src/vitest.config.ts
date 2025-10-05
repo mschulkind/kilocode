@@ -1,6 +1,6 @@
 import { defineConfig } from "vitest/config"
 import path from "path"
-import { resolveVerbosity } from "./utils/vitest-verbosity.js"
+import { resolveVerbosity } from "./utils/vitest-verbosity"
 
 const { silent, reporters, onConsoleLog } = resolveVerbosity()
 

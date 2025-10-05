@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest"
 import * as vscode from "vscode"
-import { getEditorConfiguration } from "../EditorConfiguration.js"
+import { getEditorConfiguration } from "../EditorConfiguration"
 
 // Mock vscode module
 vi.mock("vscode", () => ({

@@ -1,7 +1,7 @@
 // kilocode_change - new file
 import * as vscode from "vscode"
-import { GhostProvider } from "./GhostProvider.js"
-import { ClineProvider } from "../../core/webview/ClineProvider.js"
+import { GhostProvider } from "./GhostProvider"
+import { ClineProvider } from "../../core/webview/ClineProvider"
 
 export const registerGhostProvider = (context: vscode.ExtensionContext, cline: ClineProvider) => {
 	const ghost = GhostProvider.initialize(context, cline)

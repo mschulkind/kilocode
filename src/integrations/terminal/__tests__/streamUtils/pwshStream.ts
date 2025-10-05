@@ -1,6 +1,6 @@
 // streamUtils/pwshStream.ts
 import { execSync } from "child_process"
-import { CommandStream } from "./index.js"
+import { CommandStream } from "./index"
 
 /**
  * Creates a stream with real command output using PowerShell Core

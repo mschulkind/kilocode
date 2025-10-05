@@ -1,12 +1,12 @@
-import { Task } from "../task/Task.js"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
+import { Task } from "../task/Task"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
 import {
 	BrowserAction,
 	BrowserActionResult,
 	browserActions,
 	ClineSayBrowserAction,
-} from "../../shared/ExtensionMessage.js"
-import { formatResponse } from "../prompts/responses.js"
+} from "../../shared/ExtensionMessage"
+import { formatResponse } from "../prompts/responses"
 
 export async function browserActionTool(
 	cline: Task,

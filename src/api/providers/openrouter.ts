@@ -9,26 +9,26 @@ import {
 	DEEP_SEEK_DEFAULT_TEMPERATURE,
 } from "@roo-code/types"
 
-import type { ApiHandlerOptions, ModelRecord } from "../../shared/api.js"
+import type { ApiHandlerOptions, ModelRecord } from "../../shared/api"
 
-import { convertToOpenAiMessages } from "../transform/openai-format.js"
-import { ApiStreamChunk } from "../transform/stream.js"
-import { convertToR1Format } from "../transform/r1-format.js"
-import { addCacheBreakpoints as addAnthropicCacheBreakpoints } from "../transform/caching/anthropic.js"
-import { addCacheBreakpoints as addGeminiCacheBreakpoints } from "../transform/caching/gemini.js"
-import type { OpenRouterReasoningParams } from "../transform/reasoning.js"
-import { getModelParams } from "../transform/model-params.js"
+import { convertToOpenAiMessages } from "../transform/openai-format"
+import { ApiStreamChunk } from "../transform/stream"
+import { convertToR1Format } from "../transform/r1-format"
+import { addCacheBreakpoints as addAnthropicCacheBreakpoints } from "../transform/caching/anthropic"
+import { addCacheBreakpoints as addGeminiCacheBreakpoints } from "../transform/caching/gemini"
+import type { OpenRouterReasoningParams } from "../transform/reasoning"
+import { getModelParams } from "../transform/model-params"
 
-import { getModels } from "./fetchers/modelCache.js"
-import { getModelEndpoints } from "./fetchers/modelEndpointCache.js"
+import { getModels } from "./fetchers/modelCache"
+import { getModelEndpoints } from "./fetchers/modelEndpointCache"
 
-import { DEFAULT_HEADERS } from "./constants.js"
-import { BaseProvider } from "./base-provider.js"
+import { DEFAULT_HEADERS } from "./constants"
+import { BaseProvider } from "./base-provider"
 import type {
 	ApiHandlerCreateMessageMetadata, // kilocode_change
 	SingleCompletionHandler,
-} from "../index.js"
-import { verifyFinishReason } from "./kilocode/verifyFinishReason.js"
+} from "../index"
+import { verifyFinishReason } from "./kilocode/verifyFinishReason"
 
 // kilocode_change start
 type OpenRouterProviderParams = {
@@ -40,7 +40,7 @@ type OpenRouterProviderParams = {
 	sort?: "price" | "throughput" | "latency"
 }
 // kilocode_change end
-import { handleOpenAIError } from "./utils/openai-error-handler.js"
+import { handleOpenAIError } from "./utils/openai-error-handler"
 
 // Image generation types
 interface ImageGenerationResponse {

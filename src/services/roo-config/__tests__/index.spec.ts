@@ -28,7 +28,7 @@ import {
 	readFileIfExists,
 	getRooDirectoriesForCwd,
 	loadConfiguration,
-} from "../index.js"
+} from "../index"
 
 describe("RooConfigService", () => {
 	beforeEach(() => {

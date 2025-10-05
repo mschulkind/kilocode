@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getSearchAndReplaceDescription(args: ToolArgs): string {
 	return `## search_and_replace

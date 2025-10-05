@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { kotlinQuery } from "../queries.js"
-import sampleKotlinContent from "./fixtures/sample-kotlin.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { kotlinQuery } from "../queries"
+import sampleKotlinContent from "./fixtures/sample-kotlin"
 
 describe("inspectKotlin", () => {
 	const testOptions = {

@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { GhostProvider } from "./GhostProvider.js"
-import { t } from "../../i18n.js"
+import { GhostProvider } from "./GhostProvider"
+import { t } from "../../i18n"
 
 export class GhostCodeActionProvider implements vscode.CodeActionProvider {
 	public readonly providedCodeActionKinds = {

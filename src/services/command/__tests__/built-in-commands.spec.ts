@@ -1,4 +1,4 @@
-import { getBuiltInCommands, getBuiltInCommand, getBuiltInCommandNames } from "../built-in-commands.js"
+import { getBuiltInCommands, getBuiltInCommand, getBuiltInCommandNames } from "../built-in-commands"
 
 describe("Built-in Commands", () => {
 	describe("getBuiltInCommands", () => {

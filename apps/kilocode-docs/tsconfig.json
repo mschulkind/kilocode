@@ -1,8 +1,12 @@
 {
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
-  "compilerOptions": {
-    "baseUrl": "."
-  },
+    "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@site/*": ["./src/*"]
+    }
+  },</search>
+</search_and_replace>
   "exclude": [".docusaurus", "build"]
 }

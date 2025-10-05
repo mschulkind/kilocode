@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
-import { cssQuery } from "../queries.js"
-import sampleCSSContent from "./fixtures/sample-css.js"
+import { testParseSourceCodeDefinitions, debugLog } from "./helpers"
+import { cssQuery } from "../queries"
+import sampleCSSContent from "./fixtures/sample-css"
 
 describe("parseSourceCodeDefinitionsForFile with CSS", () => {
 	const testOptions = {

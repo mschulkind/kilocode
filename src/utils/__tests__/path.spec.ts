@@ -3,7 +3,7 @@
 import os from "os"
 import * as path from "path"
 
-import { arePathsEqual, getReadablePath, getWorkspacePath } from "../path.js"
+import { arePathsEqual, getReadablePath, getWorkspacePath } from "../path"
 
 // Mock modules
 

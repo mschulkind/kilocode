@@ -1,5 +1,5 @@
-import { getObjectiveSection } from "../objective.js"
-import type { CodeIndexManager } from "../../../../services/code-index/manager.js"
+import { getObjectiveSection } from "../objective"
+import type { CodeIndexManager } from "../../../../services/code-index/manager"
 
 describe("getObjectiveSection", () => {
 	// Mock CodeIndexManager with codebase search available

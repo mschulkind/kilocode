@@ -1,6 +1,6 @@
 import { execSync } from "child_process"
 
-import { TerminalProcess } from "../TerminalProcess.js"
+import { TerminalProcess } from "../TerminalProcess"
 
 describe("TerminalProcess.interpretExitCode", () => {
 	it("should handle undefined exit code", () => {

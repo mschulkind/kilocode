@@ -1,6 +1,6 @@
 import { EventEmitter } from "events"
 
-import type { RooTerminalProcess, RooTerminalProcessEvents, ExitCodeDetails } from "./types.js"
+import type { RooTerminalProcess, RooTerminalProcessEvents, ExitCodeDetails } from "./types"
 
 export abstract class BaseTerminalProcess extends EventEmitter<RooTerminalProcessEvents> implements RooTerminalProcess {
 	public command: string = ""

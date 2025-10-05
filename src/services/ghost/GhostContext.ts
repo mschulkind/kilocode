@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { GhostSuggestionContext } from "./types.js"
-import { GhostDocumentStore } from "./GhostDocumentStore.js"
+import { GhostSuggestionContext } from "./types"
+import { GhostDocumentStore } from "./GhostDocumentStore"
 
 export class GhostContext {
 	private documentStore: GhostDocumentStore

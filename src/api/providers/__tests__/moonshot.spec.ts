@@ -66,9 +66,9 @@ import type { Anthropic } from "@anthropic-ai/sdk"
 
 import { moonshotDefaultModelId } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../../shared/api.js"
+import type { ApiHandlerOptions } from "../../../shared/api"
 
-import { MoonshotHandler } from "../moonshot.js"
+import { MoonshotHandler } from "../moonshot"
 
 describe("MoonshotHandler", () => {
 	let handler: MoonshotHandler

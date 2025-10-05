@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { tomlQuery } from "../queries.js"
-import { sampleToml } from "./fixtures/sample-toml.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { tomlQuery } from "../queries"
+import { sampleToml } from "./fixtures/sample-toml"
 
 describe("inspectTOML", () => {
 	const testOptions = {

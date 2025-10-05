@@ -1,8 +1,8 @@
 import { TelemetryService } from "@roo-code/telemetry"
-import { getCheckpointService } from "../index.js"
-import { DIFF_VIEW_URI_SCHEME } from "../../../integrations/editor/DiffViewProvider.js"
-import { Task } from "../../task/Task.js"
-import { t } from "../../../i18n/index.js"
+import { getCheckpointService } from "../index"
+import { DIFF_VIEW_URI_SCHEME } from "../../../integrations/editor/DiffViewProvider"
+import { Task } from "../../task/Task"
+import { t } from "../../../i18n/index"
 import * as vscode from "vscode"
 import { CommitRange } from "@roo-code/types"
 

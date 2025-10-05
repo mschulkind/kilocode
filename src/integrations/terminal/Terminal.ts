@@ -1,11 +1,11 @@
 import * as vscode from "vscode"
 import pWaitFor from "p-wait-for"
 
-import type { RooTerminalCallbacks, RooTerminalProcessResultPromise } from "./types.js"
-import { BaseTerminal } from "./BaseTerminal.js"
-import { TerminalProcess } from "./TerminalProcess.js"
-import { ShellIntegrationManager } from "./ShellIntegrationManager.js"
-import { mergePromise } from "./mergePromise.js"
+import type { RooTerminalCallbacks, RooTerminalProcessResultPromise } from "./types"
+import { BaseTerminal } from "./BaseTerminal"
+import { TerminalProcess } from "./TerminalProcess"
+import { ShellIntegrationManager } from "./ShellIntegrationManager"
+import { mergePromise } from "./mergePromise"
 import { getWorkspacePath } from "../../utils/path.js" // kilocode_change
 
 export class Terminal extends BaseTerminal {

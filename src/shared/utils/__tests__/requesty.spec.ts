@@ -1,4 +1,4 @@
-import { toRequestyServiceUrl } from "../requesty.js"
+import { toRequestyServiceUrl } from "../requesty"
 
 describe("toRequestyServiceUrl", () => {
 	beforeEach(() => {

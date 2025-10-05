@@ -1,9 +1,9 @@
 // kilocode_change start
-import { getSupportedBinaryFormats } from "../../../integrations/misc/extract-text.js"
-import { SUPPORTED_IMAGE_FORMATS } from "../../tools/helpers/imageHelpers.js"
+import { getSupportedBinaryFormats } from "../../../integrations/misc/extract-text"
+import { SUPPORTED_IMAGE_FORMATS } from "../../tools/helpers/imageHelpers"
 // kilocode_change end
 
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getReadFileDescription(args: ToolArgs): string {
 	const maxConcurrentReads = args.settings?.maxConcurrentFileReads ?? 5

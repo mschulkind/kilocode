@@ -9,9 +9,9 @@ import {
 	zaiApiLineConfigs, // kilocode_change
 } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerOptions } from "../../shared/api"
 
-import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider.js"
+import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
 
 export class ZAiHandler extends BaseOpenAiCompatibleProvider<InternationalZAiModelId | MainlandZAiModelId> {
 	constructor(options: ApiHandlerOptions) {

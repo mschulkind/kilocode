@@ -2,7 +2,7 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { addCacheBreakpoints } from "../vertex.js"
+import { addCacheBreakpoints } from "../vertex"
 
 describe("addCacheBreakpoints (Vertex)", () => {
 	it("should return an empty array if input is empty", () => {

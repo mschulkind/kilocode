@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { cppQuery } from "../queries.js"
-import sampleCppContent from "./fixtures/sample-cpp.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { cppQuery } from "../queries"
+import sampleCppContent from "./fixtures/sample-cpp"
 
 describe("C++ Tree-sitter Parser", () => {
 	const testOptions = {

@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { MockTextDocument } from "./MockTextDocument.js"
+import { MockTextDocument } from "./MockTextDocument"
 
 /**
  * Special character used to mark cursor position in test documents.

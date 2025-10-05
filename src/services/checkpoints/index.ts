@@ -1,3 +1,3 @@
-export type { CheckpointServiceOptions } from "./types.js"
+export type { CheckpointServiceOptions } from "./types"
 
-export { RepoPerTaskCheckpointService } from "./RepoPerTaskCheckpointService.js"
+export { RepoPerTaskCheckpointService } from "./RepoPerTaskCheckpointService"

@@ -2,7 +2,7 @@
 
 import type { MarketplaceItem } from "@roo-code/types"
 
-import { MarketplaceManager } from "../MarketplaceManager.js"
+import { MarketplaceManager } from "../MarketplaceManager"
 
 // Mock CloudService
 vi.mock("@roo-code/cloud", () => ({

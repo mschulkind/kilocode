@@ -15,7 +15,7 @@ import {
 	// kilocode_change end
 } from "@roo-code/types"
 
-import { Mode } from "./modes.js"
+import { Mode } from "./modes"
 
 export type ClineAskResponse =
 	| "yesButtonClicked"

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest"
-import { webviewMessageHandler } from "../webviewMessageHandler.js"
+import { webviewMessageHandler } from "../webviewMessageHandler"
 import * as vscode from "vscode"
-import { ClineProvider } from "../ClineProvider.js"
+import { ClineProvider } from "../ClineProvider"
 
 // Mock the saveTaskMessages function
 vi.mock("../../task-persistence", () => ({

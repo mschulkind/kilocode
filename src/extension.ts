@@ -17,22 +17,22 @@ import { CloudService, BridgeOrchestrator } from "@roo-code/cloud"
 import { TelemetryService, PostHogTelemetryClient } from "@roo-code/telemetry"
 
 import "./utils/path" // Necessary to have access to String.prototype.toPosix.
-import { createOutputChannelLogger, createDualLogger } from "./utils/outputChannelLogger.js"
+import { createOutputChannelLogger, createDualLogger } from "./utils/outputChannelLogger"
 
-import { Package } from "./shared/package.js"
-import { formatLanguage } from "./shared/language.js"
-import { ContextProxy } from "./core/config/ContextProxy.js"
-import { ClineProvider } from "./core/webview/ClineProvider.js"
-import { DIFF_VIEW_URI_SCHEME } from "./integrations/editor/DiffViewProvider.js"
-import { TerminalRegistry } from "./integrations/terminal/TerminalRegistry.js"
-import { McpServerManager } from "./services/mcp/McpServerManager.js"
-import { CodeIndexManager } from "./services/code-index/manager.js"
-import { registerCommitMessageProvider } from "./services/commit-message.js"
-import { MdmService } from "./services/mdm/MdmService.js"
-import { migrateSettings } from "./utils/migrateSettings.js"
-import { checkAndRunAutoLaunchingTask as checkAndRunAutoLaunchingTask } from "./utils/autoLaunchingTask.js"
-import { autoImportSettings } from "./utils/autoImportSettings.js"
-import { API } from "./extension/api.js"
+import { Package } from "./shared/package"
+import { formatLanguage } from "./shared/language"
+import { ContextProxy } from "./core/config/ContextProxy"
+import { ClineProvider } from "./core/webview/ClineProvider"
+import { DIFF_VIEW_URI_SCHEME } from "./integrations/editor/DiffViewProvider"
+import { TerminalRegistry } from "./integrations/terminal/TerminalRegistry"
+import { McpServerManager } from "./services/mcp/McpServerManager"
+import { CodeIndexManager } from "./services/code-index/manager"
+import { registerCommitMessageProvider } from "./services/commit-message"
+import { MdmService } from "./services/mdm/MdmService"
+import { migrateSettings } from "./utils/migrateSettings"
+import { checkAndRunAutoLaunchingTask as checkAndRunAutoLaunchingTask } from "./utils/autoLaunchingTask"
+import { autoImportSettings } from "./utils/autoImportSettings"
+import { API } from "./extension/api"
 
 import {
 	handleUri,
@@ -40,8 +40,8 @@ import {
 	registerCodeActions,
 	registerTerminalActions,
 	CodeActionProvider,
-} from "./activate.js"
-import { initializeI18n } from "./i18n.js"
+} from "./activate"
+import { initializeI18n } from "./i18n"
 import { registerGhostProvider } from "./services/ghost.js" // kilocode_change
 import { registerMainThreadForwardingLogger } from "./utils/fowardingLogger.js" // kilocode_change
 import { getKiloCodeWrapperProperties } from "./core/kilocode/wrapper.js" // kilocode_change

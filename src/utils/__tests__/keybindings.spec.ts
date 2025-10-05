@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
-import { getKeybindingsForCommands, getKeybindingForCommand } from "../keybindings.js"
-import * as vscodeConfig from "../vscode-config.js"
+import { getKeybindingsForCommands, getKeybindingForCommand } from "../keybindings"
+import * as vscodeConfig from "../vscode-config"
 
 vi.mock("../vscode-config")
 

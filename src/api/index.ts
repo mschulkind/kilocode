@@ -2,7 +2,7 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import type { ProviderSettings, ModelInfo } from "@roo-code/types"
 
-import { ApiStream } from "./transform/stream.js"
+import { ApiStream } from "./transform/stream"
 
 import {
 	GlamaHandler,
@@ -44,11 +44,11 @@ import {
 	FeatherlessHandler,
 	VercelAiGatewayHandler,
 	DeepInfraHandler,
-} from "./providers/index.js"
+} from "./providers/index"
 // kilocode_change start
-import { KilocodeOpenrouterHandler } from "./providers/kilocode-openrouter.js"
+import { KilocodeOpenrouterHandler } from "./providers/kilocode-openrouter"
 // kilocode_change end
-import { NativeOllamaHandler } from "./providers/native-ollama.js"
+import { NativeOllamaHandler } from "./providers/native-ollama"
 
 export interface SingleCompletionHandler {
 	completePrompt(prompt: string): Promise<string>

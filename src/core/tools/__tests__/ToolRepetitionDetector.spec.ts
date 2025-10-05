@@ -2,9 +2,9 @@
 
 import type { ToolName } from "@roo-code/types"
 
-import type { ToolUse } from "../../../shared/tools.js"
+import type { ToolUse } from "../../../shared/tools"
 
-import { ToolRepetitionDetector } from "../ToolRepetitionDetector.js"
+import { ToolRepetitionDetector } from "../ToolRepetitionDetector"
 
 vitest.mock("../../../i18n", () => ({
 	t: vitest.fn((key, options) => {

@@ -2,7 +2,7 @@
 
 import { Anthropic } from "@anthropic-ai/sdk"
 
-import { convertToMistralMessages } from "../mistral-format.js"
+import { convertToMistralMessages } from "../mistral-format"
 
 describe("convertToMistralMessages", () => {
 	it("should convert simple text messages for user and assistant roles", () => {

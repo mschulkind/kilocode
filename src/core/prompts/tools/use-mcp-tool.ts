@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getUseMcpToolDescription(args: ToolArgs): string | undefined {
 	if (!args.mcpHub) {

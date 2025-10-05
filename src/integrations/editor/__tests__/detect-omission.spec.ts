@@ -1,4 +1,4 @@
-import { detectCodeOmission } from "../detect-omission.js"
+import { detectCodeOmission } from "../detect-omission"
 
 describe("detectCodeOmission", () => {
 	const originalContent = `function example() {

@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions } from "./helpers.js"
-import { solidityQuery } from "../queries.js"
-import { sampleSolidity } from "./fixtures/sample-solidity.js"
+import { testParseSourceCodeDefinitions } from "./helpers"
+import { solidityQuery } from "../queries"
+import { sampleSolidity } from "./fixtures/sample-solidity"
 
 describe("Solidity Source Code Definition Tests", () => {
 	let parseResult: string

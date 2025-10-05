@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
-import { GhostSuggestionContext } from "../types.js"
-import { PromptStrategy, UseCaseType } from "../types/PromptStrategy.js"
-import { CURSOR_MARKER } from "../ghostConstants.js"
+import { GhostSuggestionContext } from "../types"
+import { PromptStrategy, UseCaseType } from "../types/PromptStrategy"
+import { CURSOR_MARKER } from "../ghostConstants"
 
 /**
  * Abstract base class for all prompt strategies

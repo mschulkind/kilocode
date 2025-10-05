@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import sampleGoContent from "./fixtures/sample-go.js"
-import goQuery from "../queries/go.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import sampleGoContent from "./fixtures/sample-go"
+import goQuery from "../queries/go"
 
 describe("Go Tree-sitter Parser", () => {
 	// Test 1: Get query structure output

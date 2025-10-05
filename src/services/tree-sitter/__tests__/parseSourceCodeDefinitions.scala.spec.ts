@@ -1,6 +1,6 @@
-import { scalaQuery } from "../queries.js"
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
-import { sampleScala as sampleScalaContent } from "./fixtures/sample-scala.js"
+import { scalaQuery } from "../queries"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
+import { sampleScala as sampleScalaContent } from "./fixtures/sample-scala"
 
 // Scala test options
 const scalaOptions = {

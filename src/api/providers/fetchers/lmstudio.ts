@@ -1,7 +1,7 @@
 import { ModelInfo, lMStudioDefaultModelInfo } from "@roo-code/types"
 import { LLM, LLMInfo, LLMInstanceInfo, LMStudioClient } from "@lmstudio/sdk"
 import axios from "axios"
-import { flushModels, getModels } from "./modelCache.js"
+import { flushModels, getModels } from "./modelCache"
 
 const modelsWithLoadedDetails = new Set<string>()
 

@@ -1,13 +1,13 @@
-import { safeWriteJson } from "../../utils/safeWriteJson.js"
+import { safeWriteJson } from "../../utils/safeWriteJson"
 import * as path from "path"
 import * as vscode from "vscode"
-import { getTaskDirectoryPath } from "../../utils/storage.js"
-import { GlobalFileNames } from "../../shared/globalFileNames.js"
-import { fileExistsAtPath } from "../../utils/fs.js"
+import { getTaskDirectoryPath } from "../../utils/storage"
+import { GlobalFileNames } from "../../shared/globalFileNames"
+import { fileExistsAtPath } from "../../utils/fs"
 import fs from "fs/promises"
-import { ContextProxy } from "../config/ContextProxy.js"
-import type { FileMetadataEntry, RecordSource, TaskMetadata } from "./FileContextTrackerTypes.js"
-import { ClineProvider } from "../webview/ClineProvider.js"
+import { ContextProxy } from "../config/ContextProxy"
+import type { FileMetadataEntry, RecordSource, TaskMetadata } from "./FileContextTrackerTypes"
+import { ClineProvider } from "../webview/ClineProvider"
 
 // This class is responsible for tracking file operations that may result in stale context.
 // If a user modifies a file outside of Roo, the context may become stale and need to be updated.

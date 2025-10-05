@@ -6,8 +6,8 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from "vitest"
-import { ValidationRuleConfig, ValidationRule, RuleSet, ValidationRuleConfigOptions } from "../ValidationRuleConfig.js"
-import { DocumentTypeDetector } from "../DocumentTypeDetector.js"
+import { ValidationRuleConfig, ValidationRule, RuleSet, ValidationRuleConfigOptions } from "../ValidationRuleConfig"
+import { DocumentTypeDetector } from "../DocumentTypeDetector"
 
 // Mock dependencies
 vi.mock("../DocumentTypeDetector")

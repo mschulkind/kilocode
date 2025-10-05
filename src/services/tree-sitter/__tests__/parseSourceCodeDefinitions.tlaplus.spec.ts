@@ -1,6 +1,6 @@
-import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers.js"
-import { tlaPlusQuery } from "../queries.js"
-import sampleTLAPlusContent from "./fixtures/sample-tlaplus.js"
+import { initializeTreeSitter, testParseSourceCodeDefinitions } from "./helpers"
+import { tlaPlusQuery } from "../queries"
+import sampleTLAPlusContent from "./fixtures/sample-tlaplus"
 
 // Mock fs module
 vi.mock("fs/promises")

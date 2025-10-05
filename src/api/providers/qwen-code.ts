@@ -6,13 +6,13 @@ import * as path from "path"
 
 import { type ModelInfo, type QwenCodeModelId, qwenCodeModels, qwenCodeDefaultModelId } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerOptions } from "../../shared/api"
 
-import { convertToOpenAiMessages } from "../transform/openai-format.js"
-import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format"
+import { ApiStream } from "../transform/stream"
 
-import { BaseProvider } from "./base-provider.js"
-import type { SingleCompletionHandler } from "../index.js"
+import { BaseProvider } from "./base-provider"
+import type { SingleCompletionHandler } from "../index"
 
 const QWEN_OAUTH_BASE_URL = "https://chat.qwen.ai"
 const QWEN_OAUTH_TOKEN_ENDPOINT = `${QWEN_OAUTH_BASE_URL}/api/v1/oauth2/token`

@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import * as path from "path"
 
-import { getCommand, getCommands } from "../commands.js"
+import { getCommand, getCommands } from "../commands"
 
 // Mock fs and path modules
 vi.mock("fs/promises")

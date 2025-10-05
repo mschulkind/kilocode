@@ -4,22 +4,22 @@ import * as path from "path"
 import * as vscode from "vscode"
 import { isBinaryFile } from "isbinaryfile"
 
-import { mentionRegexGlobal, commandRegexGlobal, unescapeSpaces } from "../../shared/context-mentions.js"
+import { mentionRegexGlobal, commandRegexGlobal, unescapeSpaces } from "../../shared/context-mentions"
 
-import { getCommitInfo, getWorkingState } from "../../utils/git.js"
+import { getCommitInfo, getWorkingState } from "../../utils/git"
 
-import { openFile } from "../../integrations/misc/open-file.js"
-import { extractTextFromFile } from "../../integrations/misc/extract-text.js"
-import { diagnosticsToProblemsString } from "../../integrations/diagnostics/index.js"
+import { openFile } from "../../integrations/misc/open-file"
+import { extractTextFromFile } from "../../integrations/misc/extract-text"
+import { diagnosticsToProblemsString } from "../../integrations/diagnostics/index"
 
-import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher.js"
+import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher"
 
-import { FileContextTracker } from "../context-tracking/FileContextTracker.js"
+import { FileContextTracker } from "../context-tracking/FileContextTracker"
 
-import { RooIgnoreController } from "../ignore/RooIgnoreController.js"
-import { getCommand, type Command } from "../../services/command/commands.js"
+import { RooIgnoreController } from "../ignore/RooIgnoreController"
+import { getCommand, type Command } from "../../services/command/commands"
 
-import { t } from "../../i18n/index.js"
+import { t } from "../../i18n/index"
 import { isSupportedImageFormat } from "../tools/helpers/imageHelpers.js" // kilocode_change
 
 function getUrlErrorMessage(error: unknown): string {
@@ -425,4 +425,4 @@ export async function getLatestTerminalOutput(): Promise<string> {
 }
 
 // Export processUserContentMentions from its own file
-export { processUserContentMentions } from "./processUserContentMentions.js"
+export { processUserContentMentions } from "./processUserContentMentions"

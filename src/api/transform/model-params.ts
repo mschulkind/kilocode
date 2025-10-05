@@ -13,7 +13,7 @@ import {
 	shouldUseReasoningBudget,
 	shouldUseReasoningEffort,
 	getModelMaxOutputTokens,
-} from "../../shared/api.js"
+} from "../../shared/api"
 
 import {
 	type AnthropicReasoningParams,
@@ -24,7 +24,7 @@ import {
 	getOpenAiReasoning,
 	getGeminiReasoning,
 	getOpenRouterReasoning,
-} from "./reasoning.js"
+} from "./reasoning"
 
 type Format = "anthropic" | "openai" | "gemini" | "openrouter"
 

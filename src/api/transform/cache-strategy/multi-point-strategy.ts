@@ -1,7 +1,7 @@
 import { SystemContentBlock } from "@aws-sdk/client-bedrock-runtime"
-import { CacheStrategy } from "./base-strategy.js"
-import { CacheResult, CachePointPlacement } from "./types.js"
-import { logger } from "../../../utils/logging/index.js"
+import { CacheStrategy } from "./base-strategy"
+import { CacheResult, CachePointPlacement } from "./types"
+import { logger } from "../../../utils/logging/index"
 
 /**
  * Strategy for handling multiple cache points.

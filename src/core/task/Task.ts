@@ -40,56 +40,56 @@ import { TelemetryService } from "@roo-code/telemetry"
 import { CloudService, BridgeOrchestrator } from "@roo-code/cloud"
 
 // api
-import { ApiHandler, ApiHandlerCreateMessageMetadata, buildApiHandler } from "../../api/index.js"
-import { ApiStream, GroundingSource } from "../../api/transform/stream.js"
-import { maybeRemoveImageBlocks } from "../../api/transform/image-cleaning.js"
+import { ApiHandler, ApiHandlerCreateMessageMetadata, buildApiHandler } from "../../api/index"
+import { ApiStream, GroundingSource } from "../../api/transform/stream"
+import { maybeRemoveImageBlocks } from "../../api/transform/image-cleaning"
 
 // shared
-import { findLastIndex } from "../../shared/array.js"
-import { combineApiRequests } from "../../shared/combineApiRequests.js"
-import { combineCommandSequences } from "../../shared/combineCommandSequences.js"
-import { t } from "../../i18n/index.js"
-import { ClineApiReqCancelReason, ClineApiReqInfo } from "../../shared/ExtensionMessage.js"
-import { getApiMetrics, hasTokenUsageChanged } from "../../shared/getApiMetrics.js"
-import { ClineAskResponse } from "../../shared/WebviewMessage.js"
-import { defaultModeSlug } from "../../shared/modes.js"
-import { DiffStrategy } from "../../shared/tools.js"
-import { EXPERIMENT_IDS, experiments } from "../../shared/experiments.js"
-import { getModelMaxOutputTokens } from "../../shared/api.js"
+import { findLastIndex } from "../../shared/array"
+import { combineApiRequests } from "../../shared/combineApiRequests"
+import { combineCommandSequences } from "../../shared/combineCommandSequences"
+import { t } from "../../i18n/index"
+import { ClineApiReqCancelReason, ClineApiReqInfo } from "../../shared/ExtensionMessage"
+import { getApiMetrics, hasTokenUsageChanged } from "../../shared/getApiMetrics"
+import { ClineAskResponse } from "../../shared/WebviewMessage"
+import { defaultModeSlug } from "../../shared/modes"
+import { DiffStrategy } from "../../shared/tools"
+import { EXPERIMENT_IDS, experiments } from "../../shared/experiments"
+import { getModelMaxOutputTokens } from "../../shared/api"
 
 // services
-import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher.js"
-import { BrowserSession } from "../../services/browser/BrowserSession.js"
-import { McpHub } from "../../services/mcp/McpHub.js"
-import { McpServerManager } from "../../services/mcp/McpServerManager.js"
-import { RepoPerTaskCheckpointService } from "../../services/checkpoints/index.js"
+import { UrlContentFetcher } from "../../services/browser/UrlContentFetcher"
+import { BrowserSession } from "../../services/browser/BrowserSession"
+import { McpHub } from "../../services/mcp/McpHub"
+import { McpServerManager } from "../../services/mcp/McpServerManager"
+import { RepoPerTaskCheckpointService } from "../../services/checkpoints/index"
 
 // integrations
-import { DiffViewProvider } from "../../integrations/editor/DiffViewProvider.js"
-import { findToolName, formatContentBlockToMarkdown } from "../../integrations/misc/export-markdown.js"
-import { RooTerminalProcess } from "../../integrations/terminal/types.js"
-import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry.js"
+import { DiffViewProvider } from "../../integrations/editor/DiffViewProvider"
+import { findToolName, formatContentBlockToMarkdown } from "../../integrations/misc/export-markdown"
+import { RooTerminalProcess } from "../../integrations/terminal/types"
+import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry"
 
 // utils
-import { calculateApiCostAnthropic } from "../../shared/cost.js"
-import { getWorkspacePath } from "../../utils/path.js"
+import { calculateApiCostAnthropic } from "../../shared/cost"
+import { getWorkspacePath } from "../../utils/path"
 
 // prompts
-import { formatResponse } from "../prompts/responses.js"
-import { SYSTEM_PROMPT } from "../prompts/system.js"
+import { formatResponse } from "../prompts/responses"
+import { SYSTEM_PROMPT } from "../prompts/system"
 
 // core modules
-import { ToolRepetitionDetector } from "../tools/ToolRepetitionDetector.js"
-import { restoreTodoListForTask } from "../tools/updateTodoListTool.js"
-import { FileContextTracker } from "../context-tracking/FileContextTracker.js"
-import { RooIgnoreController } from "../ignore/RooIgnoreController.js"
-import { RooProtectedController } from "../protect/RooProtectedController.js"
-import { type AssistantMessageContent, presentAssistantMessage } from "../assistant-message/index.js"
-import { AssistantMessageParser } from "../assistant-message/AssistantMessageParser.js"
-import { truncateConversationIfNeeded } from "../sliding-window/index.js"
-import { ClineProvider } from "../webview/ClineProvider.js"
-import { MultiSearchReplaceDiffStrategy } from "../diff/strategies/multi-search-replace.js"
-import { MultiFileSearchReplaceDiffStrategy } from "../diff/strategies/multi-file-search-replace.js"
+import { ToolRepetitionDetector } from "../tools/ToolRepetitionDetector"
+import { restoreTodoListForTask } from "../tools/updateTodoListTool"
+import { FileContextTracker } from "../context-tracking/FileContextTracker"
+import { RooIgnoreController } from "../ignore/RooIgnoreController"
+import { RooProtectedController } from "../protect/RooProtectedController"
+import { type AssistantMessageContent, presentAssistantMessage } from "../assistant-message/index"
+import { AssistantMessageParser } from "../assistant-message/AssistantMessageParser"
+import { truncateConversationIfNeeded } from "../sliding-window/index"
+import { ClineProvider } from "../webview/ClineProvider"
+import { MultiSearchReplaceDiffStrategy } from "../diff/strategies/multi-search-replace"
+import { MultiFileSearchReplaceDiffStrategy } from "../diff/strategies/multi-file-search-replace"
 import {
 	type ApiMessage,
 	readApiMessages,
@@ -97,9 +97,9 @@ import {
 	readTaskMessages,
 	saveTaskMessages,
 	taskMetadata,
-} from "../task-persistence/index.js"
-import { getEnvironmentDetails } from "../environment/getEnvironmentDetails.js"
-import { checkContextWindowExceededError } from "../context/context-management/context-error-handling.js"
+} from "../task-persistence/index"
+import { getEnvironmentDetails } from "../environment/getEnvironmentDetails"
+import { checkContextWindowExceededError } from "../context/context-management/context-error-handling"
 import {
 	type CheckpointDiffOptions,
 	type CheckpointRestoreOptions,
@@ -107,19 +107,19 @@ import {
 	checkpointSave,
 	checkpointRestore,
 	checkpointDiff,
-} from "../checkpoints/index.js"
+} from "../checkpoints/index"
 import { processKiloUserContentMentions } from "../mentions/processKiloUserContentMentions.js" // kilocode_change
 import { refreshWorkflowToggles } from "../context/instructions/workflows.js" // kilocode_change
 import { parseMentions } from "../mentions/index.js" // kilocode_change
 import { parseKiloSlashCommands } from "../slash-commands/kilo.js" // kilocode_change
 import { GlobalFileNames } from "../../shared/globalFileNames.js" // kilocode_change
 import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules.js" // kilocode_change
-import { getMessagesSinceLastSummary, summarizeConversation } from "../condense/index.js"
-import { Gpt5Metadata, ClineMessageWithMetadata } from "./types.js"
-import { MessageQueueService } from "../message-queue/MessageQueueService.js"
+import { getMessagesSinceLastSummary, summarizeConversation } from "../condense/index"
+import { Gpt5Metadata, ClineMessageWithMetadata } from "./types"
+import { MessageQueueService } from "../message-queue/MessageQueueService"
 
-import { AutoApprovalHandler } from "./AutoApprovalHandler.js"
-import { isAnyRecognizedKiloCodeError, isPaymentRequiredError } from "../../shared/kilocode/errorUtils.js"
+import { AutoApprovalHandler } from "./AutoApprovalHandler"
+import { isAnyRecognizedKiloCodeError, isPaymentRequiredError } from "../../shared/kilocode/errorUtils"
 
 const MAX_EXPONENTIAL_BACKOFF_SECONDS = 600 // 10 minutes
 const DEFAULT_USAGE_COLLECTION_TIMEOUT_MS = 5000 // 5 seconds

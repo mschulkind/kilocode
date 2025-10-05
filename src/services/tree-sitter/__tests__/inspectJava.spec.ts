@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { javaQuery } from "../queries.js"
-import sampleJavaContent from "./fixtures/sample-java.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { javaQuery } from "../queries"
+import sampleJavaContent from "./fixtures/sample-java"
 
 describe("inspectJava", () => {
 	const testOptions = {

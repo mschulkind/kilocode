@@ -2,11 +2,11 @@
 
 import type { Mock } from "vitest"
 
-import { formatResponse } from "../responses.js"
-import { RooIgnoreController, LOCK_TEXT_SYMBOL } from "../../ignore/RooIgnoreController.js"
-import { fileExistsAtPath } from "../../../utils/fs.js"
+import { formatResponse } from "../responses"
+import { RooIgnoreController, LOCK_TEXT_SYMBOL } from "../../ignore/RooIgnoreController"
+import { fileExistsAtPath } from "../../../utils/fs"
 import * as fs from "fs/promises"
-import { toPosix } from "./utils.js"
+import { toPosix } from "./utils"
 
 // Mock dependencies
 vi.mock("../../../utils/fs")

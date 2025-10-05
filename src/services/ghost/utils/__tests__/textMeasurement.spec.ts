@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { calculateContainerWidth, calculateTextWidth } from "../textMeasurement.js"
+import { calculateContainerWidth, calculateTextWidth } from "../textMeasurement"
 
 describe("calculateContainerWidth", () => {
 	it("should provide adequate width for single line text", () => {

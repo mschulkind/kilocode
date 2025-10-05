@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { cssQuery } from "../queries.js"
-import sampleCSSContent from "./fixtures/sample-css.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { cssQuery } from "../queries"
+import sampleCSSContent from "./fixtures/sample-css"
 
 describe("CSS Tree-sitter Parser", () => {
 	const testOptions = {

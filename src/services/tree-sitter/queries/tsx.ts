@@ -1,4 +1,4 @@
-import typescriptQuery from "./typescript.js"
+import typescriptQuery from "./typescript"
 
 /**
  * Tree-sitter Query for TSX Files

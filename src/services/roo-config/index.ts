@@ -1,7 +1,7 @@
 import * as path from "path"
 import * as os from "os"
 import fs from "fs/promises"
-import fsSync from "fs" // kilocode_change
+import fsSync from "fs.js" // kilocode_change
 
 /**
  * Gets the global .roo directory path based on the current platform

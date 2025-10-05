@@ -3,16 +3,16 @@ import OpenAI from "openai"
 
 import { unboundDefaultModelId, unboundDefaultModelInfo } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerOptions } from "../../shared/api"
 
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
-import { convertToOpenAiMessages } from "../transform/openai-format.js"
-import { addCacheBreakpoints as addAnthropicCacheBreakpoints } from "../transform/caching/anthropic.js"
-import { addCacheBreakpoints as addGeminiCacheBreakpoints } from "../transform/caching/gemini.js"
-import { addCacheBreakpoints as addVertexCacheBreakpoints } from "../transform/caching/vertex.js"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
+import { convertToOpenAiMessages } from "../transform/openai-format"
+import { addCacheBreakpoints as addAnthropicCacheBreakpoints } from "../transform/caching/anthropic"
+import { addCacheBreakpoints as addGeminiCacheBreakpoints } from "../transform/caching/gemini"
+import { addCacheBreakpoints as addVertexCacheBreakpoints } from "../transform/caching/vertex"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
-import { RouterProvider } from "./router-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { RouterProvider } from "./router-provider"
 
 const ORIGIN_APP = "roo-code"
 

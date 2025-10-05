@@ -2,7 +2,7 @@
 
 import * as vscode from "vscode"
 
-import { EditorUtils } from "../EditorUtils.js"
+import { EditorUtils } from "../EditorUtils"
 
 // Use simple classes to simulate VSCode's Range and Position behavior.
 vi.mock("vscode", () => {

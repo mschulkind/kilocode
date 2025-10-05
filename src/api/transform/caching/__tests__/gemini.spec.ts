@@ -2,7 +2,7 @@
 
 import OpenAI from "openai"
 
-import { addCacheBreakpoints } from "../gemini.js"
+import { addCacheBreakpoints } from "../gemini"
 
 describe("addCacheBreakpoints", () => {
 	const systemPrompt = "You are a helpful assistant."

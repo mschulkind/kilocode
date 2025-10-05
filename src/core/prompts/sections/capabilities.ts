@@ -1,10 +1,10 @@
-import { DiffStrategy } from "../../../shared/tools.js"
-import { McpHub } from "../../../services/mcp/McpHub.js"
-import { CodeIndexManager } from "../../../services/code-index/manager.js"
+import { DiffStrategy } from "../../../shared/tools"
+import { McpHub } from "../../../services/mcp/McpHub"
+import { CodeIndexManager } from "../../../services/code-index/manager"
 
 // kilocode_change start
-import { ClineProviderState } from "../../webview/ClineProvider.js"
-import { isMorphAvailable } from "../../tools/editFileTool.js"
+import { ClineProviderState } from "../../webview/ClineProvider"
+import { isMorphAvailable } from "../../tools/editFileTool"
 // kilocode_change end
 
 export function getCapabilitiesSection(

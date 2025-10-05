@@ -1,13 +1,13 @@
-import { ApiHandlerOptions, ModelRecord } from "../../shared/api.js"
-import { CompletionUsage, OpenRouterHandler } from "./openrouter.js"
-import { getModelParams } from "../transform/model-params.js"
-import { getModels } from "./fetchers/modelCache.js"
+import { ApiHandlerOptions, ModelRecord } from "../../shared/api"
+import { CompletionUsage, OpenRouterHandler } from "./openrouter"
+import { getModelParams } from "../transform/model-params"
+import { getModels } from "./fetchers/modelCache"
 import { DEEP_SEEK_DEFAULT_TEMPERATURE, openRouterDefaultModelId, openRouterDefaultModelInfo } from "@roo-code/types"
-import { getKiloBaseUriFromToken } from "../../shared/kilocode/token.js"
-import { ApiHandlerCreateMessageMetadata } from "../index.js"
-import { getModelEndpoints } from "./fetchers/modelEndpointCache.js"
-import { getKilocodeDefaultModel } from "./kilocode/getKilocodeDefaultModel.js"
-import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TASKID, X_KILOCODE_TESTER } from "../../shared/kilocode/headers.js"
+import { getKiloBaseUriFromToken } from "../../shared/kilocode/token"
+import { ApiHandlerCreateMessageMetadata } from "../index"
+import { getModelEndpoints } from "./fetchers/modelEndpointCache"
+import { getKilocodeDefaultModel } from "./kilocode/getKilocodeDefaultModel"
+import { X_KILOCODE_ORGANIZATIONID, X_KILOCODE_TASKID, X_KILOCODE_TESTER } from "../../shared/kilocode/headers"
 
 /**
  * A custom OpenRouter handler that overrides the getModel function

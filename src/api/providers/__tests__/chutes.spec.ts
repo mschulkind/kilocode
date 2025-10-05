@@ -5,7 +5,7 @@ import OpenAI from "openai"
 
 import { type ChutesModelId, chutesDefaultModelId, chutesModels, DEEP_SEEK_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
-import { ChutesHandler } from "../chutes.js"
+import { ChutesHandler } from "../chutes"
 
 // Create mock functions
 const mockCreate = vi.fn()

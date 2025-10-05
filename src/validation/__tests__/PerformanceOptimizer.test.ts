@@ -3,8 +3,8 @@
  */
 
 import { describe, it, expect, beforeEach, vi } from "vitest"
-import { PerformanceOptimizer, OptimizationStrategy } from "../PerformanceOptimizer.js"
-import { PerformanceMonitor } from "../PerformanceMonitor.js"
+import { PerformanceOptimizer, OptimizationStrategy } from "../PerformanceOptimizer"
+import { PerformanceMonitor } from "../PerformanceMonitor"
 
 describe("PerformanceOptimizer", () => {
 	let optimizer: PerformanceOptimizer

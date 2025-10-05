@@ -1,6 +1,6 @@
-import { debugLog, testParseSourceCodeDefinitions } from "./helpers.js"
-import { embeddedTemplateQuery } from "../queries.js"
-import sampleEmbeddedTemplateContent from "./fixtures/sample-embedded_template.js"
+import { debugLog, testParseSourceCodeDefinitions } from "./helpers"
+import { embeddedTemplateQuery } from "../queries"
+import sampleEmbeddedTemplateContent from "./fixtures/sample-embedded_template"
 
 describe("parseSourceCodeDefinitions (Embedded Template)", () => {
 	const testOptions = {

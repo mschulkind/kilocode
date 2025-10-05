@@ -2,7 +2,7 @@
 
 import type { ClineMessage, ClineSay } from "@roo-code/types"
 
-import { combineApiRequests } from "../combineApiRequests.js"
+import { combineApiRequests } from "../combineApiRequests"
 
 describe("combineApiRequests", () => {
 	// Helper function to create a basic api_req_started message

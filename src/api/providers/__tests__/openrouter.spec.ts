@@ -6,9 +6,9 @@ vitest.mock("vscode", () => ({}))
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 
-import { OpenRouterHandler } from "../openrouter.js"
-import { ApiHandlerOptions } from "../../../shared/api.js"
-import { Package } from "../../../shared/package.js"
+import { OpenRouterHandler } from "../openrouter"
+import { ApiHandlerOptions } from "../../../shared/api"
+import { Package } from "../../../shared/package"
 
 // Mock dependencies
 vitest.mock("openai")

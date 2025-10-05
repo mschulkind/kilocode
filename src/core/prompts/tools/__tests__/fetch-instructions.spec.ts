@@ -1,4 +1,4 @@
-import { getFetchInstructionsDescription } from "../fetch-instructions.js"
+import { getFetchInstructionsDescription } from "../fetch-instructions"
 
 describe("getFetchInstructionsDescription", () => {
 	it("should include create_mcp_server when enableMcpServerCreation is true", () => {

@@ -1,14 +1,14 @@
 // npx vitest services/marketplace/__tests__/SimpleInstaller.spec.ts
 
-import { SimpleInstaller } from "../SimpleInstaller.js"
+import { SimpleInstaller } from "../SimpleInstaller"
 import * as fs from "fs/promises"
 import * as yaml from "yaml"
 import * as vscode from "vscode"
 import * as os from "os"
 import type { MarketplaceItem } from "@roo-code/types"
-import type { CustomModesManager } from "../../../core/config/CustomModesManager.js"
+import type { CustomModesManager } from "../../../core/config/CustomModesManager"
 import * as path from "path"
-import { fileExistsAtPath } from "../../../utils/fs.js"
+import { fileExistsAtPath } from "../../../utils/fs"
 
 vi.mock("fs/promises", () => ({
 	readFile: vi.fn(),

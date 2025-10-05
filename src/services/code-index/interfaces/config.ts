@@ -1,5 +1,5 @@
 import { ApiHandlerOptions } from "../../../shared/api.js" // Adjust path if needed
-import { EmbedderProvider } from "./manager.js"
+import { EmbedderProvider } from "./manager"
 
 /**
  * Configuration state for the code indexing feature

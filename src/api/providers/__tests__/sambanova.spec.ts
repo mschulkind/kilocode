@@ -8,7 +8,7 @@ import { Anthropic } from "@anthropic-ai/sdk"
 
 import { type SambaNovaModelId, sambaNovaDefaultModelId, sambaNovaModels } from "@roo-code/types"
 
-import { SambaNovaHandler } from "../sambanova.js"
+import { SambaNovaHandler } from "../sambanova"
 
 vitest.mock("openai", () => {
 	const createMock = vitest.fn()

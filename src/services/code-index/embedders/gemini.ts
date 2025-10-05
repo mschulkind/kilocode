@@ -1,7 +1,7 @@
-import { OpenAICompatibleEmbedder } from "./openai-compatible.js"
-import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces/embedder.js"
-import { GEMINI_MAX_ITEM_TOKENS } from "../constants.js"
-import { t } from "../../../i18n.js"
+import { OpenAICompatibleEmbedder } from "./openai-compatible"
+import { IEmbedder, EmbeddingResponse, EmbedderInfo } from "../interfaces/embedder"
+import { GEMINI_MAX_ITEM_TOKENS } from "../constants"
+import { t } from "../../../i18n"
 import { TelemetryEventName } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
@@ -58,6 +58,7 @@ export class GeminiEmbedder implements IEmbedder {
 				stack: error instanceof Error ? error.stack : undefined,
 				location: "GeminiEmbedder:createEmbeddings",
 			})
+			console.error("Gemini embedder error in createEmbeddings:", error) // kilocode_change
 			throw error
 		}
 	}

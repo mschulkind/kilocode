@@ -1,14 +1,14 @@
 // streamUtils/index.ts
-import { createBashCommandStream } from "./bashStream.js"
-import { createCmdCommandStream } from "./cmdStream.js"
-import { createPowerShellStream } from "./pwshStream.js"
+import { createBashCommandStream } from "./bashStream"
+import { createCmdCommandStream } from "./cmdStream"
+import { createPowerShellStream } from "./pwshStream"
 import {
 	createBaseMockStream,
 	createBashMockStream,
 	createCmdMockStream,
 	createPowerShellMockStream,
 	createChunkedMockStream,
-} from "./mockStream.js"
+} from "./mockStream"
 
 /**
  * Common interface for all command streams

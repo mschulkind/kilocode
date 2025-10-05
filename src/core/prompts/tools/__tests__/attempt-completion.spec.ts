@@ -1,4 +1,4 @@
-import { getAttemptCompletionDescription } from "../attempt-completion.js"
+import { getAttemptCompletionDescription } from "../attempt-completion"
 
 describe("getAttemptCompletionDescription", () => {
 	it("should NOT include command parameter in the description", () => {

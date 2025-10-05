@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 
-import { diagnosticsToProblemsString } from "../index.js"
+import { diagnosticsToProblemsString } from "../index"
 
 // Mock path module
 vitest.mock("path", () => ({

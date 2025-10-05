@@ -1,6 +1,6 @@
 // npx vitest run src/shared/__tests__/language.spec.ts
 
-import { formatLanguage } from "../language.js"
+import { formatLanguage } from "../language"
 
 describe("formatLanguage", () => {
 	it("should uppercase region code in locale string", () => {

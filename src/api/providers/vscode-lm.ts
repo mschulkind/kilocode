@@ -3,14 +3,14 @@ import * as vscode from "vscode"
 
 import { type ModelInfo, openAiModelInfoSaneDefaults } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
-import { SELECTOR_SEPARATOR, stringifyVsCodeLmModelSelector } from "../../shared/vsCodeSelectorUtils.js"
+import type { ApiHandlerOptions } from "../../shared/api"
+import { SELECTOR_SEPARATOR, stringifyVsCodeLmModelSelector } from "../../shared/vsCodeSelectorUtils"
 
-import { ApiStream } from "../transform/stream.js"
-import { convertToVsCodeLmMessages, extractTextCountFromMessage } from "../transform/vscode-lm-format.js"
+import { ApiStream } from "../transform/stream"
+import { convertToVsCodeLmMessages, extractTextCountFromMessage } from "../transform/vscode-lm-format"
 
-import { BaseProvider } from "./base-provider.js"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { BaseProvider } from "./base-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
 
 /**
  * Handles interaction with VS Code's Language Model API for chat-based operations.

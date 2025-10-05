@@ -1,6 +1,6 @@
 import * as path from "path"
 import * as fs from "fs"
-import { listFiles } from "../list-files.js"
+import { listFiles } from "../list-files"
 
 // Mock ripgrep
 vi.mock("../../ripgrep", () => ({

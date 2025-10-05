@@ -1,6 +1,6 @@
 // npx vitest services/code-index/processors/__tests__/scanner.spec.ts
 
-import { DirectoryScanner } from "../scanner.js"
+import { DirectoryScanner } from "../scanner"
 import { stat } from "fs/promises"
 
 // Mock TelemetryService

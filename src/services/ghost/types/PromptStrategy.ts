@@ -1,4 +1,4 @@
-import { GhostSuggestionContext } from "../types.js"
+import { GhostSuggestionContext } from "../types"
 
 /**
  * Enum representing different use case types for prompt strategies

@@ -1,11 +1,11 @@
-import { Task } from "../task/Task.js"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
-import { formatResponse } from "../prompts/responses.js"
+import { Task } from "../task/Task"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
+import { formatResponse } from "../prompts/responses"
 
 import cloneDeep from "clone-deep"
 import crypto from "crypto"
 import { TodoItem, TodoStatus, todoStatusSchema } from "@roo-code/types"
-import { getLatestTodo } from "../../shared/todo.js"
+import { getLatestTodo } from "../../shared/todo"
 
 let approvedTodoList: TodoItem[] | undefined = undefined
 

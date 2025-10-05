@@ -1,5 +1,5 @@
-import { McpHub } from "../../../services/mcp/McpHub.js"
-import { DiffStrategy } from "../../../shared/tools.js"
+import { McpHub } from "../../../services/mcp/McpHub"
+import { DiffStrategy } from "../../../shared/tools"
 
 export async function createMCPServerInstructions(
 	mcpHub: McpHub | undefined,
@@ -93,7 +93,7 @@ weather-server/
 #!/usr/bin/env node
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod";
+import { z } from "zod.js";
 import axios from 'axios';
 
 const API_KEY = process.env.OPENWEATHER_API_KEY; // provided by MCP config

@@ -1,7 +1,7 @@
 // npx vitest run api/providers/__tests__/native-ollama.spec.ts
 
-import { NativeOllamaHandler } from "../native-ollama.js"
-import { ApiHandlerOptions } from "../../../shared/api.js"
+import { NativeOllamaHandler } from "../native-ollama"
+import { ApiHandlerOptions } from "../../../shared/api"
 
 // Mock the ollama package
 const mockChat = vitest.fn()

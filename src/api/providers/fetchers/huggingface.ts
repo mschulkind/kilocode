@@ -7,7 +7,7 @@ import {
 	HUGGINGFACE_DEFAULT_MAX_TOKENS,
 	HUGGINGFACE_DEFAULT_CONTEXT_WINDOW,
 } from "@roo-code/types"
-import type { ModelRecord } from "../../../shared/api.js"
+import type { ModelRecord } from "../../../shared/api"
 
 /**
  * HuggingFace Provider Schema

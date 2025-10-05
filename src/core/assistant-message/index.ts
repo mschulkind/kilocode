@@ -1,2 +1,2 @@
-export { type AssistantMessageContent, parseAssistantMessage } from "./parseAssistantMessage.js"
-export { presentAssistantMessage } from "./presentAssistantMessage.js"
+export { type AssistantMessageContent, parseAssistantMessage } from "./parseAssistantMessage"
+export { presentAssistantMessage } from "./presentAssistantMessage"

@@ -2,12 +2,12 @@
 
 import * as vscode from "vscode"
 
-import { ExitCodeDetails } from "../types.js"
-import { TerminalProcess } from "../TerminalProcess.js"
-import { Terminal } from "../Terminal.js"
-import { TerminalRegistry } from "../TerminalRegistry.js"
-import { createCmdCommandStream } from "./streamUtils/cmdStream.js"
-import { createCmdMockStream } from "./streamUtils.js"
+import { ExitCodeDetails } from "../types"
+import { TerminalProcess } from "../TerminalProcess"
+import { Terminal } from "../Terminal"
+import { TerminalRegistry } from "../TerminalRegistry"
+import { createCmdCommandStream } from "./streamUtils/cmdStream"
+import { createCmdMockStream } from "./streamUtils"
 
 // Skip this test on non-Windows platforms
 const isWindows = process.platform === "win32"
@@ -226,7 +226,7 @@ async function testCmdCommand(
 }
 
 // Import the test purposes from the common file
-import { TEST_PURPOSES, LARGE_OUTPUT_PARAMS, TEST_TEXT } from "./TerminalProcessExec.common.js"
+import { TEST_PURPOSES, LARGE_OUTPUT_PARAMS, TEST_TEXT } from "./TerminalProcessExec.common"
 
 describePlatform("TerminalProcess with CMD Command Output", () => {
 	beforeAll(() => {

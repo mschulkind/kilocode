@@ -2,10 +2,10 @@
 
 import * as vscode from "vscode"
 
-import { mergePromise } from "../mergePromise.js"
-import { TerminalProcess } from "../TerminalProcess.js"
-import { Terminal } from "../Terminal.js"
-import { TerminalRegistry } from "../TerminalRegistry.js"
+import { mergePromise } from "../mergePromise"
+import { TerminalProcess } from "../TerminalProcess"
+import { Terminal } from "../Terminal"
+import { TerminalRegistry } from "../TerminalRegistry"
 
 vi.mock("execa", () => ({
 	execa: vi.fn(),

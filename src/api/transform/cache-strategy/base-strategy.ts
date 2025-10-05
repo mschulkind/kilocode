@@ -1,6 +1,6 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import { ContentBlock, SystemContentBlock, Message, ConversationRole } from "@aws-sdk/client-bedrock-runtime"
-import { CacheStrategyConfig, CacheResult, CachePointPlacement } from "./types.js"
+import { CacheStrategyConfig, CacheResult, CachePointPlacement } from "./types"
 
 export abstract class CacheStrategy {
 	/**

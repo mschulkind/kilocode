@@ -4,7 +4,7 @@ import { Writable } from "stream"
 import * as path from "path"
 import * as os from "os"
 
-import { safeWriteJson } from "../safeWriteJson.js"
+import { safeWriteJson } from "../safeWriteJson"
 
 const originalFsPromisesRename = actualFsPromises.rename
 const originalFsPromisesUnlink = actualFsPromises.unlink
@@ -43,7 +43,7 @@ vi.mock("fs", async () => {
 	}
 })
 
-import * as fs from "fs/promises" // This will now be the mocked version
+import * as fs from "fs/promises.js" // This will now be the mocked version
 
 describe("safeWriteJson", () => {
 	let originalConsoleError: typeof console.error

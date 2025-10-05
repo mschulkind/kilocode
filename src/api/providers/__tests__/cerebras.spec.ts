@@ -18,7 +18,7 @@ vi.mock("../constants", () => ({
 	},
 }))
 
-import { CerebrasHandler } from "../cerebras.js"
+import { CerebrasHandler } from "../cerebras"
 import { cerebrasModels, type CerebrasModelId } from "@roo-code/types"
 
 // Mock fetch globally

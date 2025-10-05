@@ -3,7 +3,7 @@
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 
-import { convertToOpenAiMessages } from "../openai-format.js"
+import { convertToOpenAiMessages } from "../openai-format"
 
 describe("convertToOpenAiMessages", () => {
 	it("should convert simple text messages", () => {

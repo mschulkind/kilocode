@@ -7,13 +7,13 @@ import {
 import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI from "openai"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
-import { XmlMatcher } from "../../utils/xml-matcher.js"
-import { convertToR1Format } from "../transform/r1-format.js"
-import { convertToOpenAiMessages } from "../transform/openai-format.js"
-import { ApiStream } from "../transform/stream.js"
+import type { ApiHandlerOptions } from "../../shared/api"
+import { XmlMatcher } from "../../utils/xml-matcher"
+import { convertToR1Format } from "../transform/r1-format"
+import { convertToOpenAiMessages } from "../transform/openai-format"
+import { ApiStream } from "../transform/stream"
 
-import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider.js"
+import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
 
 export class FeatherlessHandler extends BaseOpenAiCompatibleProvider<FeatherlessModelId> {
 	constructor(options: ApiHandlerOptions) {

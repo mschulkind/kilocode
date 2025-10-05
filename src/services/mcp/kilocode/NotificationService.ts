@@ -1,5 +1,5 @@
-import { Client } from "@modelcontextprotocol/sdk/client/index.js"
-import { LoggingMessageNotificationSchema } from "@modelcontextprotocol/sdk/types.js"
+import { Client } from "@modelcontextprotocol/sdk/client/index"
+import { LoggingMessageNotificationSchema } from "@modelcontextprotocol/sdk/types"
 import * as vscode from "vscode"
 
 // Define LogLevel explicitly to avoid deep type inference issues

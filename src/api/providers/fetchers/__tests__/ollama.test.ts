@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { getOllamaModels, parseOllamaModel } from "../ollama.js"
+import { getOllamaModels, parseOllamaModel } from "../ollama"
 import ollamaModelsData from "./fixtures/ollama-model-details.json"
 
 // Mock axios

@@ -1,6 +1,6 @@
 import * as path from "path"
 import * as childProcess from "child_process"
-import { listFiles } from "../list-files.js"
+import { listFiles } from "../list-files"
 
 vi.mock("child_process")
 vi.mock("fs")

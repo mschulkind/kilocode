@@ -4,18 +4,18 @@ import delay from "delay"
 import type { CommandId } from "@roo-code/types"
 import { TelemetryService } from "@roo-code/telemetry"
 
-import { getCommand } from "../utils/commands.js"
-import { ClineProvider } from "../core/webview/ClineProvider.js"
+import { getCommand } from "../utils/commands"
+import { ClineProvider } from "../core/webview/ClineProvider"
 import { exportSettings } from "../core/config/importExport.js" // kilocode_change
-import { ContextProxy } from "../core/config/ContextProxy.js"
-import { focusPanel } from "../utils/focusPanel.js"
+import { ContextProxy } from "../core/config/ContextProxy"
+import { focusPanel } from "../utils/focusPanel"
 
-import { registerHumanRelayCallback, unregisterHumanRelayCallback, handleHumanRelayResponse } from "./humanRelay.js"
-import { handleNewTask } from "./handleTask.js"
-import { CodeIndexManager } from "../services/code-index/manager.js"
-import { importSettingsWithFeedback } from "../core/config/importExport.js"
-import { MdmService } from "../services/mdm/MdmService.js"
-import { t } from "../i18n/index.js"
+import { registerHumanRelayCallback, unregisterHumanRelayCallback, handleHumanRelayResponse } from "./humanRelay"
+import { handleNewTask } from "./handleTask"
+import { CodeIndexManager } from "../services/code-index/manager"
+import { importSettingsWithFeedback } from "../core/config/importExport"
+import { MdmService } from "../services/mdm/MdmService"
+import { t } from "../i18n/index"
 import { generateTerminalCommand } from "../utils/terminalCommandGenerator.js" // kilocode_change
 
 /**

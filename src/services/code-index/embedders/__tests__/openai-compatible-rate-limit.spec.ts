@@ -1,7 +1,7 @@
 import type { MockedClass, MockedFunction } from "vitest"
 import { OpenAI } from "openai"
 
-import { OpenAICompatibleEmbedder } from "../openai-compatible.js"
+import { OpenAICompatibleEmbedder } from "../openai-compatible"
 
 // Mock the OpenAI SDK
 vi.mock("openai")

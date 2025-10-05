@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { McpHub } from "./McpHub.js"
-import { ClineProvider } from "../../core/webview/ClineProvider.js"
+import { McpHub } from "./McpHub"
+import { ClineProvider } from "../../core/webview/ClineProvider"
 
 /**
  * Singleton manager for MCP server instances.

@@ -2,7 +2,7 @@
 
 import type { ProviderSettings } from "@roo-code/types"
 
-import { checkExistKey } from "../checkExistApiConfig.js"
+import { checkExistKey } from "../checkExistApiConfig"
 
 describe("checkExistKey", () => {
 	it("should return false for undefined config", () => {

@@ -2,7 +2,7 @@ import type { Mock } from "vitest"
 import * as vscode from "vscode"
 import { createHash } from "crypto"
 import debounce from "lodash.debounce"
-import { CacheManager } from "../cache-manager.js"
+import { CacheManager } from "../cache-manager"
 
 // Mock safeWriteJson utility
 vitest.mock("../../../utils/safeWriteJson", () => ({
@@ -10,7 +10,7 @@ vitest.mock("../../../utils/safeWriteJson", () => ({
 }))
 
 // Import the mocked version
-import { safeWriteJson } from "../../../utils/safeWriteJson.js"
+import { safeWriteJson } from "../../../utils/safeWriteJson"
 
 // Mock vscode
 vitest.mock("vscode", () => ({

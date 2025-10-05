@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { PointStruct } from "./vector-store.js"
+import { PointStruct } from "./vector-store"
 
 /**
  * Interface for code file parser

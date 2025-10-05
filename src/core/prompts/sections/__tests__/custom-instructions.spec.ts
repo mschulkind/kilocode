@@ -47,7 +47,7 @@ vi.mock("path", async () => ({
 import fs from "fs/promises"
 import type { PathLike } from "fs"
 
-import { loadRuleFiles, addCustomInstructions } from "../custom-instructions.js"
+import { loadRuleFiles, addCustomInstructions } from "../custom-instructions"
 
 // Create mock functions
 const readFileMock = vi.fn()

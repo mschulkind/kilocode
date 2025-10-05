@@ -1,4 +1,4 @@
-import { sanitizeErrorMessage } from "../validation-helpers.js"
+import { sanitizeErrorMessage } from "../validation-helpers"
 
 describe("sanitizeErrorMessage", () => {
 	it("should sanitize Unix-style file paths", () => {
@@ -8,7 +8,7 @@ describe("sanitizeErrorMessage", () => {
 	})
 
 	it("should sanitize Windows-style file paths", () => {
-		const input = "Cannot access C:\\Users\\username\\Documents\\project\\file.js"
+		const input = "Cannot access C:\\Users\\username\\Documents\\project\\file"
 		const expected = "Cannot access [REDACTED_PATH]"
 		expect(sanitizeErrorMessage(input)).toBe(expected)
 	})

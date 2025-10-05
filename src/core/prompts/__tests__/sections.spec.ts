@@ -1,6 +1,6 @@
-import { addCustomInstructions } from "../sections/custom-instructions.js"
-import { getCapabilitiesSection } from "../sections/capabilities.js"
-import type { DiffStrategy, DiffResult, DiffItem } from "../../../shared/tools.js"
+import { addCustomInstructions } from "../sections/custom-instructions"
+import { getCapabilitiesSection } from "../sections/capabilities"
+import type { DiffStrategy, DiffResult, DiffItem } from "../../../shared/tools"
 
 describe("addCustomInstructions", () => {
 	it("adds vscode language to custom instructions", async () => {

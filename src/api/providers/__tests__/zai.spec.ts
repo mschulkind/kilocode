@@ -16,7 +16,7 @@ import {
 	ZAI_DEFAULT_TEMPERATURE,
 } from "@roo-code/types"
 
-import { ZAiHandler } from "../zai.js"
+import { ZAiHandler } from "../zai"
 
 vitest.mock("openai", () => {
 	const createMock = vitest.fn()

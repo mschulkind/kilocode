@@ -1,4 +1,4 @@
-import { ToolArgs } from "./types.js"
+import { ToolArgs } from "./types"
 
 export function getAttemptCompletionDescription(args?: ToolArgs): string {
 	return `## attempt_completion

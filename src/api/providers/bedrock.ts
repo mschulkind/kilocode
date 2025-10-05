@@ -24,15 +24,15 @@ import {
 	BEDROCK_CLAUDE_SONNET_4_MODEL_ID,
 } from "@roo-code/types"
 
-import { ApiStream } from "../transform/stream.js"
-import { BaseProvider } from "./base-provider.js"
-import { logger } from "../../utils/logging/index.js"
-import { MultiPointStrategy } from "../transform/cache-strategy/multi-point-strategy.js"
-import { ModelInfo as CacheModelInfo } from "../transform/cache-strategy/types.js"
-import { convertToBedrockConverseMessages as sharedConverter } from "../transform/bedrock-converse-format.js"
-import { getModelParams } from "../transform/model-params.js"
-import { shouldUseReasoningBudget } from "../../shared/api.js"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { ApiStream } from "../transform/stream"
+import { BaseProvider } from "./base-provider"
+import { logger } from "../../utils/logging/index"
+import { MultiPointStrategy } from "../transform/cache-strategy/multi-point-strategy"
+import { ModelInfo as CacheModelInfo } from "../transform/cache-strategy/types"
+import { convertToBedrockConverseMessages as sharedConverter } from "../transform/bedrock-converse-format"
+import { getModelParams } from "../transform/model-params"
+import { shouldUseReasoningBudget } from "../../shared/api"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
 
 /************************************************************************************
  *

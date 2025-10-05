@@ -2,7 +2,7 @@
 
 import type { ClineMessage } from "@roo-code/types"
 
-import { getApiMetrics } from "../getApiMetrics.js"
+import { getApiMetrics } from "../getApiMetrics"
 
 describe("getApiMetrics", () => {
 	// Helper function to create a basic api_req_started message

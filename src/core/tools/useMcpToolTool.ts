@@ -1,9 +1,9 @@
-import { Task } from "../task/Task.js"
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
-import { formatResponse } from "../prompts/responses.js"
-import { ClineAskUseMcpServer } from "../../shared/ExtensionMessage.js"
+import { Task } from "../task/Task"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
+import { formatResponse } from "../prompts/responses"
+import { ClineAskUseMcpServer } from "../../shared/ExtensionMessage"
 import { McpExecutionStatus } from "@roo-code/types"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n"
 import { McpToolCallResponse } from "../../shared/mcp.js" // kilocode_change
 import { summarizeSuccessfulMcpOutputWhenTooLong } from "./kilocode.js" // kilocode_change
 

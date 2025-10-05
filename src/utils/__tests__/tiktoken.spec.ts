@@ -1,6 +1,6 @@
 // npx vitest utils/__tests__/tiktoken.spec.ts
 
-import { tiktoken } from "../tiktoken.js"
+import { tiktoken } from "../tiktoken"
 import { Anthropic } from "@anthropic-ai/sdk"
 
 describe("tiktoken", () => {

@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { GhostSuggestionEditOperation, GhostSuggestionEditOperationsOffset } from "./types.js"
-import { GhostSuggestionsState } from "./GhostSuggestions.js"
+import { GhostSuggestionEditOperation, GhostSuggestionEditOperationsOffset } from "./types"
+import { GhostSuggestionsState } from "./GhostSuggestions"
 
 export class GhostWorkspaceEdit {
 	private locked: boolean = false

@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
-import { Mode } from "../../../shared/modes.js"
-import { fileExistsAtPath } from "../../../utils/fs.js"
+import { Mode } from "../../../shared/modes"
+import { fileExistsAtPath } from "../../../utils/fs"
 
 export type PromptVariables = {
 	workspace?: string

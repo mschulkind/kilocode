@@ -3,10 +3,10 @@ import fs from "fs/promises"
 import type { Mock } from "vitest"
 import type { ExtensionContext, Uri } from "vscode"
 
-import type { ClineProvider } from "../../../core/webview/ClineProvider.js"
+import type { ClineProvider } from "../../../core/webview/ClineProvider"
 
-import type { McpHub as McpHubType, McpConnection, ConnectedMcpConnection, DisconnectedMcpConnection } from "../McpHub.js"
-import { ServerConfigSchema, McpHub } from "../McpHub.js"
+import type { McpHub as McpHubType, McpConnection, ConnectedMcpConnection, DisconnectedMcpConnection } from "../McpHub"
+import { ServerConfigSchema, McpHub } from "../McpHub"
 
 // Mock fs/promises before importing anything that uses it
 vi.mock("fs/promises", () => ({
@@ -37,7 +37,7 @@ vi.mock("fs/promises", () => ({
 }))
 
 // Import safeWriteJson to use in mocks
-import { safeWriteJson } from "../../../utils/safeWriteJson.js"
+import { safeWriteJson } from "../../../utils/safeWriteJson"
 
 // Mock safeWriteJson
 vi.mock("../../../utils/safeWriteJson", () => ({

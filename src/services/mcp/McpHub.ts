@@ -1,7 +1,7 @@
-import { Client } from "@modelcontextprotocol/sdk/client/index.js"
-import { StdioClientTransport, getDefaultEnvironment } from "@modelcontextprotocol/sdk/client/stdio.js"
-import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js"
-import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js"
+import { Client } from "@modelcontextprotocol/sdk/client/index"
+import { StdioClientTransport, getDefaultEnvironment } from "@modelcontextprotocol/sdk/client/stdio"
+import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse"
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp"
 import ReconnectingEventSource from "reconnecting-eventsource"
 import {
 	CallToolResultSchema,
@@ -9,7 +9,7 @@ import {
 	ListResourceTemplatesResultSchema,
 	ListToolsResultSchema,
 	ReadResourceResultSchema,
-} from "@modelcontextprotocol/sdk/types.js"
+} from "@modelcontextprotocol/sdk/types"
 import chokidar, { FSWatcher } from "chokidar"
 import delay from "delay"
 import deepEqual from "fast-deep-equal"
@@ -17,10 +17,10 @@ import * as fs from "fs/promises"
 import * as path from "path"
 import * as vscode from "vscode"
 import { z } from "zod"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n"
 
-import { ClineProvider } from "../../core/webview/ClineProvider.js"
-import { GlobalFileNames } from "../../shared/globalFileNames.js"
+import { ClineProvider } from "../../core/webview/ClineProvider"
+import { GlobalFileNames } from "../../shared/globalFileNames"
 import {
 	McpResource,
 	McpResourceResponse,
@@ -28,11 +28,11 @@ import {
 	McpServer,
 	McpTool,
 	McpToolCallResponse,
-} from "../../shared/mcp.js"
-import { fileExistsAtPath } from "../../utils/fs.js"
-import { arePathsEqual, getWorkspacePath } from "../../utils/path.js"
-import { injectVariables } from "../../utils/config.js"
-import { NotificationService } from "./kilocode/NotificationService.js"
+} from "../../shared/mcp"
+import { fileExistsAtPath } from "../../utils/fs"
+import { arePathsEqual, getWorkspacePath } from "../../utils/path"
+import { injectVariables } from "../../utils/config"
+import { NotificationService } from "./kilocode/NotificationService"
 
 // Discriminated union for connection states
 export type ConnectedMcpConnection = {

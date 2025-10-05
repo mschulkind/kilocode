@@ -1,4 +1,4 @@
-import { EXPERIMENT_IDS, experimentConfigsMap, experimentDefault, experiments } from "../experiments.js"
+import { EXPERIMENT_IDS, experimentConfigsMap, experimentDefault, experiments } from "../experiments"
 
 describe("PREVENT_FOCUS_DISRUPTION experiment", () => {
 	it("should include PREVENT_FOCUS_DISRUPTION in EXPERIMENT_IDS", () => {

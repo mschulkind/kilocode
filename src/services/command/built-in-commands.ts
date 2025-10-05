@@ -1,4 +1,4 @@
-import { Command } from "./commands.js"
+import { Command } from "./commands"
 
 interface BuiltInCommandDefinition {
 	name: string

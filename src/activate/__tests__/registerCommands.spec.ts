@@ -1,8 +1,8 @@
 import type { Mock } from "vitest"
 import * as vscode from "vscode"
-import { ClineProvider } from "../../core/webview/ClineProvider.js"
+import { ClineProvider } from "../../core/webview/ClineProvider"
 
-import { getVisibleProviderOrLog } from "../registerCommands.js"
+import { getVisibleProviderOrLog } from "../registerCommands"
 
 vi.mock("execa", () => ({
 	execa: vi.fn(),

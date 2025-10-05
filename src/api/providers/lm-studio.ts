@@ -4,20 +4,20 @@ import axios from "axios"
 
 import { type ModelInfo, openAiModelInfoSaneDefaults, LMSTUDIO_DEFAULT_TEMPERATURE } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerOptions } from "../../shared/api"
 
-import { XmlMatcher } from "../../utils/xml-matcher.js"
+import { XmlMatcher } from "../../utils/xml-matcher"
 
-import { convertToOpenAiMessages } from "../transform/openai-format.js"
-import { ApiStream } from "../transform/stream.js"
+import { convertToOpenAiMessages } from "../transform/openai-format"
+import { ApiStream } from "../transform/stream"
 
-import { BaseProvider } from "./base-provider.js"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
-import { fetchWithTimeout } from "./kilocode/fetchWithTimeout.js"
+import { BaseProvider } from "./base-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { fetchWithTimeout } from "./kilocode/fetchWithTimeout"
 
 const LMSTUDIO_TIMEOUT_MS = 3_600_000 // kilocode_change
-import { getModels, getModelsFromCache } from "./fetchers/modelCache.js"
-import { handleOpenAIError } from "./utils/openai-error-handler.js"
+import { getModels, getModelsFromCache } from "./fetchers/modelCache"
+import { handleOpenAIError } from "./utils/openai-error-handler"
 
 export class LmStudioHandler extends BaseProvider implements SingleCompletionHandler {
 	protected options: ApiHandlerOptions

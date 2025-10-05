@@ -5,12 +5,12 @@ import {
 	BATCH_SEGMENT_THRESHOLD,
 	MAX_BATCH_RETRIES,
 	INITIAL_RETRY_DELAY_MS,
-} from "../constants.js"
+} from "../constants"
 import { createHash } from "crypto"
-import { RooIgnoreController } from "../../../core/ignore/RooIgnoreController.js"
+import { RooIgnoreController } from "../../../core/ignore/RooIgnoreController"
 import { v5 as uuidv5 } from "uuid"
 import { Ignore } from "ignore"
-import { scannerExtensions } from "../shared/supported-extensions.js"
+import { scannerExtensions } from "../shared/supported-extensions"
 import {
 	IFileWatcher,
 	FileProcessingResult,
@@ -18,15 +18,15 @@ import {
 	IVectorStore,
 	PointStruct,
 	BatchProcessingSummary,
-} from "../interfaces.js"
-import { codeParser } from "./parser.js"
-import { CacheManager } from "../cache-manager.js"
-import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../shared/get-relative-path.js"
-import { isPathInIgnoredDirectory } from "../../glob/ignore-utils.js"
+} from "../interfaces"
+import { codeParser } from "./parser"
+import { CacheManager } from "../cache-manager"
+import { generateNormalizedAbsolutePath, generateRelativeFilePath } from "../shared/get-relative-path"
+import { isPathInIgnoredDirectory } from "../../glob/ignore-utils"
 import { TelemetryService } from "@roo-code/telemetry"
 import { TelemetryEventName } from "@roo-code/types"
-import { sanitizeErrorMessage } from "../shared/validation-helpers.js"
-import { Package } from "../../../shared/package.js"
+import { sanitizeErrorMessage } from "../shared/validation-helpers"
+import { Package } from "../../../shared/package"
 
 /**
  * Implementation of the file watcher interface

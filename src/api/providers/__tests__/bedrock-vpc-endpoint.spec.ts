@@ -23,7 +23,7 @@ vi.mock("@aws-sdk/client-bedrock-runtime", () => {
 	}
 })
 
-import { AwsBedrockHandler } from "../bedrock.js"
+import { AwsBedrockHandler } from "../bedrock"
 import { BedrockRuntimeClient } from "@aws-sdk/client-bedrock-runtime"
 
 // Get access to the mocked functions

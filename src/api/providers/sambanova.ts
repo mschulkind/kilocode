@@ -1,8 +1,8 @@
 import { type SambaNovaModelId, sambaNovaDefaultModelId, sambaNovaModels } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerOptions } from "../../shared/api"
 
-import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider.js"
+import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
 
 export class SambaNovaHandler extends BaseOpenAiCompatibleProvider<SambaNovaModelId> {
 	constructor(options: ApiHandlerOptions) {

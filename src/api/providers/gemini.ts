@@ -11,17 +11,17 @@ import type { JWTInput } from "google-auth-library"
 
 import { type ModelInfo, type GeminiModelId, geminiDefaultModelId, geminiModels } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
-import { safeJsonParse } from "../../shared/safeJsonParse.js"
+import type { ApiHandlerOptions } from "../../shared/api"
+import { safeJsonParse } from "../../shared/safeJsonParse"
 
-import { convertAnthropicContentToGemini, convertAnthropicMessageToGemini } from "../transform/gemini-format.js"
+import { convertAnthropicContentToGemini, convertAnthropicMessageToGemini } from "../transform/gemini-format"
 import { t } from "i18next"
-import type { ApiStream, GroundingSource } from "../transform/stream.js"
-import { getModelParams } from "../transform/model-params.js"
+import type { ApiStream, GroundingSource } from "../transform/stream"
+import { getModelParams } from "../transform/model-params"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
-import { BaseProvider } from "./base-provider.js"
-import { throwMaxCompletionTokensReachedError } from "./kilocode/verifyFinishReason.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { BaseProvider } from "./base-provider"
+import { throwMaxCompletionTokensReachedError } from "./kilocode/verifyFinishReason"
 
 type GeminiHandlerOptions = ApiHandlerOptions & {
 	isVertex?: boolean

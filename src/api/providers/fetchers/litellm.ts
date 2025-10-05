@@ -2,9 +2,9 @@ import axios from "axios"
 
 import { LITELLM_COMPUTER_USE_MODELS } from "@roo-code/types"
 
-import type { ModelRecord } from "../../../shared/api.js"
+import type { ModelRecord } from "../../../shared/api"
 
-import { DEFAULT_HEADERS } from "../constants.js"
+import { DEFAULT_HEADERS } from "../constants"
 /**
  * Fetches available models from a LiteLLM server
  *

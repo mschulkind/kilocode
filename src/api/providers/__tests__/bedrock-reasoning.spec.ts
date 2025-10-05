@@ -1,8 +1,8 @@
 // npx vitest api/providers/__tests__/bedrock-reasoning.test.ts
 
-import { AwsBedrockHandler } from "../bedrock.js"
+import { AwsBedrockHandler } from "../bedrock"
 import { BedrockRuntimeClient, ConverseStreamCommand } from "@aws-sdk/client-bedrock-runtime"
-import { logger } from "../../../utils/logging.js"
+import { logger } from "../../../utils/logging"
 
 // Mock the AWS SDK
 vi.mock("@aws-sdk/client-bedrock-runtime")

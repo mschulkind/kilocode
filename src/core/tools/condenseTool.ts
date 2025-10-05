@@ -1,6 +1,6 @@
-import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
-import { Task } from "../task/Task.js"
-import { formatResponse } from "../prompts/responses.js"
+import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools"
+import { Task } from "../task/Task"
+import { formatResponse } from "../prompts/responses"
 import { summarizeConversation } from "../condense/index.js" // kilocode_change
 
 export const condenseTool = async (

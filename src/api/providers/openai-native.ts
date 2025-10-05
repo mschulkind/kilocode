@@ -14,15 +14,15 @@ import {
 	type ServiceTier,
 } from "@roo-code/types"
 
-import type { ApiHandlerOptions } from "../../shared/api.js"
+import type { ApiHandlerOptions } from "../../shared/api"
 
-import { calculateApiCostOpenAI } from "../../shared/cost.js"
+import { calculateApiCostOpenAI } from "../../shared/cost"
 
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
-import { getModelParams } from "../transform/model-params.js"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
+import { getModelParams } from "../transform/model-params"
 
-import { BaseProvider } from "./base-provider.js"
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
+import { BaseProvider } from "./base-provider"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
 
 export type OpenAiNativeModel = ReturnType<OpenAiNativeHandler["getModel"]>
 

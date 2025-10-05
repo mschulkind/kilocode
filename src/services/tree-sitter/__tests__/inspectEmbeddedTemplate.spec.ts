@@ -1,6 +1,6 @@
-import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers.js"
-import { embeddedTemplateQuery } from "../queries.js"
-import sampleEmbeddedTemplateContent from "./fixtures/sample-embedded_template.js"
+import { inspectTreeStructure, testParseSourceCodeDefinitions } from "./helpers"
+import { embeddedTemplateQuery } from "../queries"
+import sampleEmbeddedTemplateContent from "./fixtures/sample-embedded_template"
 
 describe("inspectEmbeddedTemplate", () => {
 	const testOptions = {

@@ -1,9 +1,9 @@
 import type { Mock } from "vitest"
 import * as vscode from "vscode"
 
-import { EditorUtils } from "../../integrations/editor/EditorUtils.js"
+import { EditorUtils } from "../../integrations/editor/EditorUtils"
 
-import { CodeActionProvider, TITLES } from "../CodeActionProvider.js"
+import { CodeActionProvider, TITLES } from "../CodeActionProvider"
 
 vi.mock("vscode", () => ({
 	CodeAction: vi.fn().mockImplementation((title, kind) => ({

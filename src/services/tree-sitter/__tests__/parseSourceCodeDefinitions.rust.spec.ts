@@ -1,6 +1,6 @@
-import { testParseSourceCodeDefinitions, debugLog } from "./helpers.js"
-import sampleRustContent from "./fixtures/sample-rust.js"
-import { rustQuery } from "../queries.js"
+import { testParseSourceCodeDefinitions, debugLog } from "./helpers"
+import sampleRustContent from "./fixtures/sample-rust"
+import { rustQuery } from "../queries"
 
 // Rust test options
 const rustOptions = {

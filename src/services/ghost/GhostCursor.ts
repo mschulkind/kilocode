@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { GhostSuggestionsState } from "./GhostSuggestions.js"
+import { GhostSuggestionsState } from "./GhostSuggestions"
 
 export class GhostCursor {
 	public moveToAppliedGroup(suggestions: GhostSuggestionsState) {

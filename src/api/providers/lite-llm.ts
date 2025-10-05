@@ -1,17 +1,17 @@
 import OpenAI from "openai"
-import { Anthropic } from "@anthropic-ai/sdk" // Keep for type usage only
+import { Anthropic } from "@anthropic-ai/sdk.js" // Keep for type usage only
 
 import { litellmDefaultModelId, litellmDefaultModelInfo } from "@roo-code/types"
 
-import { calculateApiCostOpenAI } from "../../shared/cost.js"
+import { calculateApiCostOpenAI } from "../../shared/cost"
 
-import { ApiHandlerOptions } from "../../shared/api.js"
+import { ApiHandlerOptions } from "../../shared/api"
 
-import { ApiStream, ApiStreamUsageChunk } from "../transform/stream.js"
-import { convertToOpenAiMessages } from "../transform/openai-format.js"
+import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
+import { convertToOpenAiMessages } from "../transform/openai-format"
 
-import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index.js"
-import { RouterProvider } from "./router-provider.js"
+import type { SingleCompletionHandler, ApiHandlerCreateMessageMetadata } from "../index"
+import { RouterProvider } from "./router-provider"
 
 /**
  * LiteLLM provider handler

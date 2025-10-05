@@ -1,8 +1,8 @@
 import fs from "fs/promises"
 import path from "path"
 import os from "os"
-import { ClineRulesToggles } from "../../../shared/cline-rules.js"
-import { GlobalFileNames } from "../../../shared/globalFileNames.js"
+import { ClineRulesToggles } from "../../../shared/cline-rules"
+import { GlobalFileNames } from "../../../shared/globalFileNames"
 
 type DirectoryExistsFunction = (dirPath: string) => Promise<boolean>
 type ReadTextFilesFromDirectoryFunction = (dirPath: string) => Promise<Array<{ filename: string; content: string }>>
