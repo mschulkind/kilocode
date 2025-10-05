@@ -7,11 +7,12 @@
 import { promises as fs } from 'fs';
 import { join, resolve, extname } from 'path';
 export class FileIndexBuilder {
+    fileIndex = new Map();
+    cache = new Map();
+    options;
+    defaultIncludePatterns = ['**/*.md', '**/*.markdown'];
+    defaultExcludePatterns = ['**/node_modules/**', '**/dist/**', '**/.git/**'];
     constructor(options = {}) {
-        this.fileIndex = new Map();
-        this.cache = new Map();
-        this.defaultIncludePatterns = ['**/*.md', '**/*.markdown'];
-        this.defaultExcludePatterns = ['**/node_modules/**', '**/dist/**', '**/.git/**'];
         this.options = {
             includePatterns: options.includePatterns || this.defaultIncludePatterns,
             excludePatterns: options.excludePatterns || this.defaultExcludePatterns,
@@ -352,3 +353,4 @@ export class FileIndexBuilder {
         return totalBytes;
     }
 }
+//# sourceMappingURL=FileIndexBuilder.js.map
