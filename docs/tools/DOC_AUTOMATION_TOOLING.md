@@ -419,6 +419,7 @@ module.exports = remarkKiloCodeStandards
 * *Linting and Validation:*\*
 * [remark-lint-no-dead-urls](https://github.com/remarkjs/remark-lint-no-dead-urls) - Check for dead
   URLs
+
 * ##
 
 [remark-lint-no-undefined-references](https://github.com/remarkjs/remark-lint-no-undefined-references)
@@ -1475,7 +1476,7 @@ function validateNavigationFooter(content, filePath) {
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Implementing Documentation Automation:*\*
 

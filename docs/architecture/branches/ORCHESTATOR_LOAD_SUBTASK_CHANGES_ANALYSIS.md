@@ -9,7 +9,7 @@
 * [Research Context](#research-context)
 * [Race Condition Details](#race-condition-details)
 * [Summary of Intent](#summary-of-intent)
-* [Change 1: ](#change-1-orchestrator-load-subtask-changes)
+* [Change 1:](#change-1-orchestrator-load-subtask-changes)
 * [Before](#before)
 * [After](#after)
 * [Motivation](#motivation)
@@ -42,7 +42,7 @@
 * [Research Context](#research-context)
 * [Race Condition Details](#race-condition-details)
 * [Summary of Intent](#summary-of-intent)
-* [Change 1: ](#change-1-orchestrator-load-subtask-changes)
+* [Change 1:](#change-1-orchestrator-load-subtask-changes)
 * [Before](#before)
 * [After](#after)
 * [Motivation](#motivation)
@@ -297,7 +297,7 @@ if (!parentTask.isPaused && parentTask.isInitialized) {
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding Architecture:*\*
 

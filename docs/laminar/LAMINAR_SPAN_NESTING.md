@@ -387,7 +387,7 @@ private validateSpanConfig(options: SpanOptions): boolean {
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding Laminar Observability:*\*
 

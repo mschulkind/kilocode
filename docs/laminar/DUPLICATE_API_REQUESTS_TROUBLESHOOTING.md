@@ -27,10 +27,10 @@ Duplicate API requests can cause performance issues, increased costs, and data i
 
 ### Impact of Duplicate Requests
 
-- **Performance Degradation**: Increased response times and resource usage
-- **Cost Increase**: Higher API costs due to redundant requests
-- **Data Inconsistency**: Conflicting data from multiple requests
-- **Resource Waste**: Unnecessary server load and bandwidth usage
+* **Performance Degradation**: Increased response times and resource usage
+* **Cost Increase**: Higher API costs due to redundant requests
+* **Data Inconsistency**: Conflicting data from multiple requests
+* **Resource Waste**: Unnecessary server load and bandwidth usage
 
 ## Common Causes
 
@@ -283,10 +283,10 @@ class CircuitBreaker {
 
 Use appropriate design patterns:
 
-- **Singleton Pattern**: Ensure single instance of API clients
-- **Factory Pattern**: Centralized request creation
-- **Observer Pattern**: Proper event handling
-- **Command Pattern**: Request queuing and batching
+* **Singleton Pattern**: Ensure single instance of API clients
+* **Factory Pattern**: Centralized request creation
+* **Observer Pattern**: Proper event handling
+* **Command Pattern**: Request queuing and batching
 
 ### 2. Configuration Management
 
@@ -382,14 +382,14 @@ const alerting = {
 
 Create monitoring dashboard:
 
-- **Request Volume**: Track total requests over time
-- **Duplicate Rate**: Monitor duplicate request percentage
-- **Response Times**: Track API response times
-- **Error Rates**: Monitor API error rates
+* **Request Volume**: Track total requests over time
+* **Duplicate Rate**: Monitor duplicate request percentage
+* **Response Times**: Track API response times
+* **Error Rates**: Monitor API error rates
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

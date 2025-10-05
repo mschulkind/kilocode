@@ -164,7 +164,7 @@ and the sophisticated rules loading system.
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding This System:*\*
 

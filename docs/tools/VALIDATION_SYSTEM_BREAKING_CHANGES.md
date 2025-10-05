@@ -112,11 +112,13 @@ The validation system has been significantly simplified to reduce complexity and
 ### Step 1: Update .remarkrc Configuration
 
 1. **Backup current configuration**:
+
    ```bash
    cp .remarkrc .remarkrc.backup
    ```
 
 2. **Replace plugin configuration**:
+
    ```json
    {
      "plugins": [
@@ -151,12 +153,14 @@ The validation system has been significantly simplified to reduce complexity and
 ### Step 2: Update Custom Plugins
 
 1. **Remove old plugins**:
+
    ```bash
    rm plugins/remark-kilocode-standards.js
    rm plugins/remark-kilocode-comprehensive.js
    ```
 
 2. **Ensure new plugin exists**:
+
    ```bash
    ls plugins/remark-kilocode-unified.js
    ```
@@ -164,6 +168,7 @@ The validation system has been significantly simplified to reduce complexity and
 ### Step 3: Test Migration
 
 1. **Run validation**:
+
    ```bash
    pnpm docs:validate
    ```
@@ -208,17 +213,20 @@ The validation system has been significantly simplified to reduce complexity and
 ### Emergency Rollback
 
 1. **Restore backup configuration**:
+
    ```bash
    cp .remarkrc.backup .remarkrc
    ```
 
 2. **Restore old plugins**:
+
    ```bash
    git checkout HEAD~1 -- plugins/remark-kilocode-standards.js
    git checkout HEAD~1 -- plugins/remark-kilocode-comprehensive.js
    ```
 
 3. **Test rollback**:
+
    ```bash
    pnpm docs:validate
    ```

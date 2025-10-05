@@ -7,9 +7,11 @@ This document outlines the design patterns used throughout the KiloCode system t
 ## Creational Patterns
 
 ### Factory Pattern
+
 Used for creating objects without specifying their exact classes.
 
 **Implementation:**
+
 ```typescript
 interface ProviderFactory {
   createProvider(type: string): Provider;
@@ -27,14 +29,17 @@ class ProviderFactoryImpl implements ProviderFactory {
 ```
 
 **Use Cases:**
+
 - Provider creation
 - Service instantiation
 - Component factory methods
 
 ### Builder Pattern
+
 Used for constructing complex objects step by step.
 
 **Implementation:**
+
 ```typescript
 class TaskBuilder {
   private task: Partial<Task> = {};
@@ -56,14 +61,17 @@ class TaskBuilder {
 ```
 
 **Use Cases:**
+
 - Task construction
 - Configuration building
 - Query building
 
 ### Singleton Pattern
+
 Ensures a class has only one instance and provides global access to it.
 
 **Implementation:**
+
 ```typescript
 class ConfigurationManager {
   private static instance: ConfigurationManager;
@@ -83,6 +91,7 @@ class ConfigurationManager {
 ```
 
 **Use Cases:**
+
 - Configuration management
 - Logger instances
 - Database connections
@@ -90,9 +99,11 @@ class ConfigurationManager {
 ## Structural Patterns
 
 ### Adapter Pattern
+
 Allows incompatible interfaces to work together.
 
 **Implementation:**
+
 ```typescript
 interface LegacyAPI {
   oldMethod(data: any): any;
@@ -112,14 +123,17 @@ class APIAdapter implements ModernAPI {
 ```
 
 **Use Cases:**
+
 - Legacy system integration
 - Third-party API adaptation
 - Data format conversion
 
 ### Decorator Pattern
+
 Adds behavior to objects dynamically without altering their structure.
 
 **Implementation:**
+
 ```typescript
 interface Logger {
   log(message: string): void;
@@ -141,14 +155,17 @@ class TimestampLogger implements Logger {
 ```
 
 **Use Cases:**
+
 - Logging enhancements
 - Caching layers
 - Validation wrappers
 
 ### Facade Pattern
+
 Provides a simplified interface to a complex subsystem.
 
 **Implementation:**
+
 ```typescript
 class OrchestrationFacade {
   constructor(
@@ -168,6 +185,7 @@ class OrchestrationFacade {
 ```
 
 **Use Cases:**
+
 - Complex system simplification
 - API aggregation
 - Service orchestration
@@ -175,9 +193,11 @@ class OrchestrationFacade {
 ## Behavioral Patterns
 
 ### Observer Pattern
+
 Defines a one-to-many dependency between objects.
 
 **Implementation:**
+
 ```typescript
 interface Observer {
   update(data: any): void;
@@ -197,14 +217,17 @@ class Subject {
 ```
 
 **Use Cases:**
+
 - Event handling
 - State change notifications
 - UI updates
 
 ### Strategy Pattern
+
 Defines a family of algorithms and makes them interchangeable.
 
 **Implementation:**
+
 ```typescript
 interface ProcessingStrategy {
   process(data: any): any;
@@ -236,14 +259,17 @@ class DataProcessor {
 ```
 
 **Use Cases:**
+
 - Data processing algorithms
 - Validation strategies
 - Compression methods
 
 ### Command Pattern
+
 Encapsulates a request as an object.
 
 **Implementation:**
+
 ```typescript
 interface Command {
   execute(): void;
@@ -283,6 +309,7 @@ class CommandInvoker {
 ```
 
 **Use Cases:**
+
 - Undo/redo functionality
 - Request queuing
 - Macro commands
@@ -290,14 +317,17 @@ class CommandInvoker {
 ## Architectural Patterns
 
 ### MVC Pattern
+
 Separates application logic into three interconnected components.
 
 **Components:**
+
 - **Model**: Data and business logic
 - **View**: User interface
 - **Controller**: Handles user input
 
 **Implementation:**
+
 ```typescript
 class TaskModel {
   private tasks: Task[] = [];
@@ -332,9 +362,11 @@ class TaskController {
 ```
 
 ### Repository Pattern
+
 Encapsulates data access logic.
 
 **Implementation:**
+
 ```typescript
 interface TaskRepository {
   findById(id: string): Promise<Task | null>;
@@ -363,9 +395,11 @@ class DatabaseTaskRepository implements TaskRepository {
 ```
 
 ### Service Layer Pattern
+
 Encapsulates business logic and coordinates between different layers.
 
 **Implementation:**
+
 ```typescript
 class TaskService {
   constructor(
@@ -390,18 +424,21 @@ class TaskService {
 ## Best Practices
 
 ### Pattern Selection
+
 - Choose patterns that solve specific problems
 - Avoid over-engineering
 - Consider maintainability and readability
 - Document pattern usage and rationale
 
 ### Implementation Guidelines
+
 - Follow consistent naming conventions
 - Use TypeScript interfaces for contracts
 - Implement proper error handling
 - Add comprehensive tests
 
 ### Anti-Patterns to Avoid
+
 - God objects (classes with too many responsibilities)
 - Spaghetti code (unclear control flow)
 - Copy-paste programming
@@ -424,6 +461,7 @@ class TaskService {
 ## No Dead Ends Policy
 
 This document ensures no dead ends by providing:
+
 - Clear navigation paths to related documentation
 - Comprehensive cross-references
 - Multiple entry points for different user journeys

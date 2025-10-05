@@ -14,7 +14,7 @@
 * [Stage 5: Completion](#stage-5-completion)
 * [Stage 6: Termination](#stage-6-termination)
 * [State Transitions](#state-transitions)
-* [The Execution Loop: ](#the-execution-loop-)
+* [The Execution Loop:](#the-execution-loop-)
 * [Subtask Lifecycle](#subtask-lifecycle)
 * [Navigation Footer](#navigation-footer)
 * [When You're Here](#when-youre-here)
@@ -42,7 +42,7 @@
 * [Stage 5: Completion](#stage-5-completion)
 * [Stage 6: Termination](#stage-6-termination)
 * [State Transitions](#state-transitions)
-* [The Execution Loop: ](#the-execution-loop-)
+* [The Execution Loop:](#the-execution-loop-)
 * [Subtask Lifecycle](#subtask-lifecycle)
 * [Navigation Footer](#navigation-footer)
 * [Provider network send points, duplicate-causes, and recommended docs-only changes](#provider-network-send-points-duplicate-causes-and-recommended-docs-only-changes)
@@ -341,7 +341,7 @@ document's role or purpose, this section helps orient you.
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding Orchestrator Lifecycle:*\*
 

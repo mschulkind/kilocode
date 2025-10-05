@@ -135,6 +135,7 @@ npx remark docs/README.md
    ```bash
    pnpm install
    ```
+
 2. **Check VS Code Extensions**
 
 * Ensure Markdown All in One is installed
@@ -190,6 +191,7 @@ npx remark --use remark-stringify docs/
    	}
    }
    ```
+
 2. **Check Extension Status**
 
 * Open Extensions panel
@@ -300,6 +302,7 @@ curl -I https://example.com
 
    ls -la docs/relative/path/file.md
    ```
+
 2. **External Links**
 
    ```markdown
@@ -311,7 +314,9 @@ curl -I https://example.com
 
    curl -I https://example.com
    ```
+
 3. **Configure Link Validation**
+
    ```json
    {
    	"remark-validate-links": {
@@ -366,6 +371,7 @@ grep -r "markdown" .vscode/
    	}
    }
    ```
+
 3. **Reset Configuration**
 
    ```bash

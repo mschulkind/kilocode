@@ -30,18 +30,18 @@ The Laminar Deduplication System prevents duplicate spans and optimizes observab
 
 ### Key Features
 
-- **Active Span Deduplication**: Prevents creation of duplicate active spans
-- **Span Name Deduplication**: Optimizes span naming to reduce redundancy
-- **Input Data Deduplication**: Eliminates duplicate input data in spans
-- **System Prompt Optimization**: Reduces system prompt duplication
-- **Performance Monitoring**: Tracks deduplication effectiveness
+* **Active Span Deduplication**: Prevents creation of duplicate active spans
+* **Span Name Deduplication**: Optimizes span naming to reduce redundancy
+* **Input Data Deduplication**: Eliminates duplicate input data in spans
+* **System Prompt Optimization**: Reduces system prompt duplication
+* **Performance Monitoring**: Tracks deduplication effectiveness
 
 ### Benefits
 
-- **Reduced Storage**: Lower storage costs through data deduplication
-- **Improved Performance**: Faster span processing and reduced network overhead
-- **Better Analytics**: Cleaner data for better observability insights
-- **Cost Optimization**: Reduced API costs and resource usage
+* **Reduced Storage**: Lower storage costs through data deduplication
+* **Improved Performance**: Faster span processing and reduced network overhead
+* **Better Analytics**: Cleaner data for better observability insights
+* **Cost Optimization**: Reduced API costs and resource usage
 
 ## System Architecture
 
@@ -64,10 +64,10 @@ graph TD
 
 Span storage is optimized for deduplication:
 
-- **Hash-based Indexing**: Fast lookup using content hashes
-- **Reference Counting**: Track span usage and references
-- **Compression**: Additional compression for duplicate data
-- **Cleanup**: Automatic cleanup of unused spans
+* **Hash-based Indexing**: Fast lookup using content hashes
+* **Reference Counting**: Track span usage and references
+* **Compression**: Additional compression for duplicate data
+* **Cleanup**: Automatic cleanup of unused spans
 
 ### Span Creation Process
 
@@ -106,10 +106,10 @@ const deduplicationConfig: SpanDeduplicationConfig = {
 
 Optimizes span naming to reduce redundancy:
 
-- **Name Normalization**: Standardize span names
-- **Pattern Recognition**: Identify common naming patterns
-- **Template-based Names**: Use templates for similar operations
-- **Dynamic Naming**: Generate names based on context
+* **Name Normalization**: Standardize span names
+* **Pattern Recognition**: Identify common naming patterns
+* **Template-based Names**: Use templates for similar operations
+* **Dynamic Naming**: Generate names based on context
 
 ### 3. Input Data Deduplication
 
@@ -135,10 +135,10 @@ const inputConfig: InputDeduplicationConfig = {
 
 Reduces system prompt duplication:
 
-- **Prompt Templates**: Use templates for common prompts
-- **Variable Substitution**: Replace variables in templates
-- **Prompt Caching**: Cache frequently used prompts
-- **Version Management**: Track prompt versions and changes
+* **Prompt Templates**: Use templates for common prompts
+* **Variable Substitution**: Replace variables in templates
+* **Prompt Caching**: Cache frequently used prompts
+* **Version Management**: Track prompt versions and changes
 
 ## Configuration and Control
 
@@ -195,28 +195,28 @@ const metrics = laminarService.getDeduplicationMetrics();
 
 Deduplication reduces memory usage:
 
-- **Span Storage**: Reduced storage for duplicate spans
-- **Input Data**: Shared references for duplicate input data
-- **System Prompts**: Cached and shared prompt templates
-- **Metadata**: Optimized metadata storage
+* **Span Storage**: Reduced storage for duplicate spans
+* **Input Data**: Shared references for duplicate input data
+* **System Prompts**: Cached and shared prompt templates
+* **Metadata**: Optimized metadata storage
 
 ### Network Bandwidth Reduction
 
 Reduced network overhead:
 
-- **Span Transmission**: Fewer spans transmitted to Laminar
-- **Data Compression**: Additional compression for duplicate data
-- **Batch Optimization**: Optimized batching of spans
-- **Delta Updates**: Only send changes, not full data
+* **Span Transmission**: Fewer spans transmitted to Laminar
+* **Data Compression**: Additional compression for duplicate data
+* **Batch Optimization**: Optimized batching of spans
+* **Delta Updates**: Only send changes, not full data
 
 ### Processing Time Improvement
 
 Faster processing through deduplication:
 
-- **Cache Lookups**: Fast hash-based lookups
-- **Reduced Serialization**: Less data to serialize
-- **Optimized Algorithms**: Efficient deduplication algorithms
-- **Parallel Processing**: Parallel deduplication processing
+* **Cache Lookups**: Fast hash-based lookups
+* **Reduced Serialization**: Less data to serialize
+* **Optimized Algorithms**: Efficient deduplication algorithms
+* **Parallel Processing**: Parallel deduplication processing
 
 ## Common Issues and Solutions
 
@@ -225,6 +225,7 @@ Faster processing through deduplication:
 **Problem**: Multiple spans created for identical operations
 
 **Solution**:
+
 ```typescript
 // Ensure proper span naming
 @LaminarTrace('user-authentication')
@@ -241,6 +242,7 @@ const operationName = `process-${dataType}-${operationType}`;
 **Problem**: System prompts are not being deduplicated
 
 **Solution**:
+
 ```typescript
 // Use prompt templates
 const systemPromptTemplate = `
@@ -261,6 +263,7 @@ const config = {
 **Problem**: Spans not being cleaned up properly
 
 **Solution**:
+
 ```typescript
 // Implement proper span lifecycle
 const span = laminarService.startSpan('operation');
@@ -281,19 +284,19 @@ try {
 
 Deduplication integrates with task execution:
 
-- **Task Spans**: Deduplicate spans for similar tasks
-- **Task Context**: Share context between similar tasks
-- **Task Results**: Deduplicate similar task results
-- **Task Metadata**: Optimize task metadata storage
+* **Task Spans**: Deduplicate spans for similar tasks
+* **Task Context**: Share context between similar tasks
+* **Task Results**: Deduplicate similar task results
+* **Task Metadata**: Optimize task metadata storage
 
 ### Service Layer Integration
 
 Service layer deduplication:
 
-- **API Calls**: Deduplicate similar API calls
-- **Database Queries**: Optimize database query spans
-- **External Services**: Deduplicate external service calls
-- **Internal Services**: Optimize internal service communication
+* **API Calls**: Deduplicate similar API calls
+* **Database Queries**: Optimize database query spans
+* **External Services**: Deduplicate external service calls
+* **Internal Services**: Optimize internal service communication
 
 ## Error Handling
 
@@ -320,10 +323,10 @@ try {
 
 Handle configuration issues:
 
-- **Invalid Configuration**: Validate deduplication settings
-- **Resource Limits**: Handle memory and storage limits
-- **Performance Issues**: Monitor and adjust deduplication settings
-- **Recovery**: Automatic recovery from deduplication failures
+* **Invalid Configuration**: Validate deduplication settings
+* **Resource Limits**: Handle memory and storage limits
+* **Performance Issues**: Monitor and adjust deduplication settings
+* **Recovery**: Automatic recovery from deduplication failures
 
 ## Code Reference Matrix
 
@@ -337,7 +340,7 @@ Handle configuration issues:
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

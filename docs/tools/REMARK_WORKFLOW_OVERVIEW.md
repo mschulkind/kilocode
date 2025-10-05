@@ -214,11 +214,13 @@ Every documentation file must include:
 
    Brief description of the research and context behind this document.
    ```
+
 2. **Navigation Footer**
 
    ```markdown
    **Navigation**: [← Back to Parent] · [📚 Technical Glossary] · [↑ Table of Contents]
    ```
+
 3. **Table of Contents** (for files >500 words)
 
    ```markdown
@@ -227,6 +229,7 @@ Every documentation file must include:
 
 * [Section 1](#section-1)
 * [Section 2](#section-2)
+
   ```
   ```
 

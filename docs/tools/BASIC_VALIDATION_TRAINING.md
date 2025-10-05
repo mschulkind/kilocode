@@ -141,7 +141,7 @@ Brief description of the research and context behind this document.
 
 ### 3. Non-descriptive Link Text
 
-* *Warning*\*: Link text "https://example.com" is not descriptive
+* *Warning*\*: Link text "<https://example.com>" is not descriptive
 * *What it means*\*: Links should have meaningful text, not just URLs
 * *How to fix*\*:
 
@@ -184,6 +184,7 @@ Brief description of the research and context behind this document.
    ```bash
    pnpm docs:validate
    ```
+
 2. **Check Problems panel**:
 
 * Look for validation errors
@@ -194,6 +195,7 @@ Brief description of the research and context behind this document.
    ```bash
    pnpm docs:fix
    ```
+
 4. **Verify fixes**:
 
 * Run validation again
@@ -242,17 +244,21 @@ Some content here.
 
    This document demonstrates common validation errors and how to fix them.
    ```
+
 2. **Fix link text**:
 
    ```markdown
    [Example Website](https://example.com) for more information.
    ```
+
 3. **Fix heading hierarchy**:
 
    ```markdown
    ## Improper Heading
    ```
+
 4. **Add navigation footer**:
+
    ```markdown
    ```
 

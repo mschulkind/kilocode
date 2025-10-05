@@ -32,19 +32,19 @@ The Laminar Decorator System provides automatic instrumentation for TypeScript/J
 
 The decorator system serves as the primary instrumentation mechanism:
 
-- **Automatic Instrumentation**: Decorators automatically add observability to methods and classes
-- **Performance Monitoring**: Built-in performance tracking and resource monitoring
-- **Input/Output Capture**: Automatic capture of method inputs and outputs
-- **Error Tracking**: Comprehensive error handling and propagation
+* **Automatic Instrumentation**: Decorators automatically add observability to methods and classes
+* **Performance Monitoring**: Built-in performance tracking and resource monitoring
+* **Input/Output Capture**: Automatic capture of method inputs and outputs
+* **Error Tracking**: Comprehensive error handling and propagation
 
 ### Integration Scope
 
 The decorator system integrates with:
 
-- **Method Instrumentation**: Individual method tracing
-- **Class Instrumentation**: Class-level observability
-- **Framework Integration**: Integration with popular frameworks
-- **Custom Decorators**: Support for custom decorator implementations
+* **Method Instrumentation**: Individual method tracing
+* **Class Instrumentation**: Class-level observability
+* **Framework Integration**: Integration with popular frameworks
+* **Custom Decorators**: Support for custom decorator implementations
 
 ## Decorator Architecture
 
@@ -112,10 +112,10 @@ The decoration process follows these steps:
 
 Class-level decoration provides:
 
-- **Automatic Method Instrumentation**: All public methods are automatically instrumented
-- **Class Metadata**: Class-level metadata and context
-- **Lifecycle Tracking**: Constructor and destructor tracking
-- **Dependency Injection**: Integration with dependency injection systems
+* **Automatic Method Instrumentation**: All public methods are automatically instrumented
+* **Class Metadata**: Class-level metadata and context
+* **Lifecycle Tracking**: Constructor and destructor tracking
+* **Dependency Injection**: Integration with dependency injection systems
 
 ## Input/Output Capture
 
@@ -163,10 +163,10 @@ async function databaseQuery(query: string) {
 
 Resource usage is monitored automatically:
 
-- **Memory Usage**: Peak memory consumption during execution
-- **CPU Usage**: CPU time spent on the operation
-- **I/O Operations**: Database queries, file operations, network calls
-- **External Dependencies**: Time spent on external service calls
+* **Memory Usage**: Peak memory consumption during execution
+* **CPU Usage**: CPU time spent on the operation
+* **I/O Operations**: Database queries, file operations, network calls
+* **External Dependencies**: Time spent on external service calls
 
 ## Integration Patterns
 
@@ -239,10 +239,10 @@ async function riskyOperation() {
 
 If decorators fail, the system gracefully degrades:
 
-- **Fallback Mode**: Operations continue without tracing
-- **Error Logging**: Decorator failures are logged
-- **Health Checks**: System health is monitored
-- **Recovery**: Automatic recovery from decorator failures
+* **Fallback Mode**: Operations continue without tracing
+* **Error Logging**: Decorator failures are logged
+* **Health Checks**: System health is monitored
+* **Recovery**: Automatic recovery from decorator failures
 
 ## Configuration Options
 
@@ -295,7 +295,7 @@ async function customOperation() {
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

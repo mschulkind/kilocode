@@ -23,6 +23,7 @@ kilocode2/
 ## Applications (`apps/`)
 
 ### Core Applications
+
 - **kilocode-docs/**: Documentation system and viewer
 - **playwright-e2e/**: End-to-end testing framework
 - **storybook/**: Component development and testing
@@ -32,12 +33,14 @@ kilocode2/
 - **web-roo-code/**: Web-based code interface
 
 ### Supporting Applications
+
 - **vscode-nightly/**: Nightly builds and testing
 - **benchmark/**: Performance benchmarking tools
 
 ## Packages (`packages/`)
 
 ### Core Packages
+
 - **build/**: Build system and tooling
 - **cloud/**: Cloud integration services
 - **config-eslint/**: ESLint configuration
@@ -50,6 +53,7 @@ kilocode2/
 ## Source Code (`src/`)
 
 ### Core Systems
+
 - **core/**: Core system components
   - **task/**: Task management system
   - **orchestrator/**: Orchestration layer
@@ -61,6 +65,7 @@ kilocode2/
 ## Documentation (`docs/`)
 
 ### Architecture Documentation
+
 - **architecture/**: System architecture documentation
 - **services/**: Service documentation
 - **standards/**: Coding standards and guidelines
@@ -69,6 +74,7 @@ kilocode2/
 - **templates/**: Documentation templates
 
 ### Specialized Documentation
+
 - **laminar/**: Laminar system documentation
 - **orchestrator/**: Orchestrator documentation
 - **integrations/**: Integration documentation
@@ -77,11 +83,13 @@ kilocode2/
 ## Scripts (`scripts/`)
 
 ### Build Scripts
+
 - **docs/**: Documentation processing scripts
 - **kilocode/**: KiloCode-specific scripts
 - **bootstrap.mjs**: Project bootstrap script
 
 ### Utility Scripts
+
 - **docs-fixer.js**: Documentation fixer
 - **find-missing-i18n-key.js**: Internationalization helper
 - **install-vsix.js**: VSCode extension installer
@@ -89,6 +97,7 @@ kilocode2/
 ## Webview UI (`webview-ui/`)
 
 ### UI Components
+
 - **src/**: Source components
 - **public/**: Static assets
 - **dist/**: Built components
@@ -96,12 +105,14 @@ kilocode2/
 ## Plugins (`plugins/`)
 
 ### Remark Plugins
+
 - **remark-kilocode-comprehensive.js**: Comprehensive validation
 - **remark-kilocode-unified.js**: Unified processing
 
 ## Plans (`plans/`)
 
 ### Project Plans
+
 - **API_DUPLICATION_INVESTIGATION_PLAN.md**
 - **CATEGORY_1_CROSS_REFERENCE_FIXES_PLAN.md**
 - **DOCUMENTATION_AUTOMATION_IMPLEMENTATION_PLAN.md**
@@ -110,12 +121,14 @@ kilocode2/
 ## Context (`context/`)
 
 ### Context Files
+
 - **category-1-cross-reference-fixes/**: Cross-reference fix context
 - **zero-warnings-validation/**: Validation context
 
 ## Reports (`reports/`)
 
 ### Generated Reports
+
 - **compliance-report-*.json**: Compliance reports
 - **notification-*.json**: Notification reports
 - **recommendations-report-*.json**: Recommendation reports
@@ -125,6 +138,7 @@ kilocode2/
 ## Configuration Files
 
 ### Root Configuration
+
 - **package.json**: Project configuration
 - **pnpm-workspace.yaml**: PNPM workspace configuration
 - **turbo.json**: Turbo build configuration
@@ -132,6 +146,7 @@ kilocode2/
 - **knip.json**: Dependency analysis configuration
 
 ### Development Configuration
+
 - **flake.nix**: Nix flake configuration
 - **renovate.json**: Renovate bot configuration
 - **ellipsis.yaml**: Ellipsis configuration
@@ -139,11 +154,13 @@ kilocode2/
 ## Build System
 
 ### Package Management
+
 - **PNPM**: Package manager
 - **Turbo**: Monorepo build system
 - **TypeScript**: Type checking and compilation
 
 ### Development Tools
+
 - **ESLint**: Code linting
 - **Prettier**: Code formatting
 - **Jest**: Testing framework

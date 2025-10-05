@@ -170,11 +170,13 @@ export LMNR_GRPC_PORT=9090
 ### Adding Laminar to Your Project
 
 1. **Install Dependencies**:
+
    ```bash
    npm install @laminar/observability
    ```
 
 2. **Create Configuration File**:
+
    ```typescript
    // config/laminar.ts
    export const laminarConfig = {
@@ -188,6 +190,7 @@ export LMNR_GRPC_PORT=9090
    ```
 
 3. **Initialize Laminar**:
+
    ```typescript
    // src/laminar.ts
    import { LaminarService } from '@laminar/observability';
@@ -229,6 +232,7 @@ const config = {
 **Error**: `LMNR_API_KEY is required`
 
 **Solution**: Set the API key environment variable:
+
 ```bash
 export LMNR_API_KEY="your-api-key-here"
 ```
@@ -238,6 +242,7 @@ export LMNR_API_KEY="your-api-key-here"
 **Error**: `Connection refused to Laminar API`
 
 **Solution**: Check the base URL and network connectivity:
+
 ```bash
 # Verify base URL
 echo $LMNR_BASE_URL
@@ -251,6 +256,7 @@ curl -I $LMNR_BASE_URL/health
 **Error**: `Invalid configuration provided`
 
 **Solution**: Validate all configuration values:
+
 ```typescript
 // Validate configuration
 const isValid = (config) => {
@@ -295,24 +301,24 @@ const testConfig = async () => {
 
 ### API Key Security
 
-- **Never commit API keys** to version control
-- **Use environment variables** for sensitive configuration
-- **Rotate keys regularly** for security
-- **Use different keys** for different environments
+* **Never commit API keys** to version control
+* **Use environment variables** for sensitive configuration
+* **Rotate keys regularly** for security
+* **Use different keys** for different environments
 
 ### Network Security
 
-- **Use HTTPS** for production environments
-- **Validate SSL certificates** for secure connections
-- **Implement rate limiting** to prevent abuse
-- **Monitor API usage** for suspicious activity
+* **Use HTTPS** for production environments
+* **Validate SSL certificates** for secure connections
+* **Implement rate limiting** to prevent abuse
+* **Monitor API usage** for suspicious activity
 
 ### Data Privacy
 
-- **Review I/O recording settings** based on data sensitivity
-- **Implement data filtering** for sensitive information
-- **Follow privacy regulations** (GDPR, CCPA, etc.)
-- **Audit data collection** regularly
+* **Review I/O recording settings** based on data sensitivity
+* **Implement data filtering** for sensitive information
+* **Follow privacy regulations** (GDPR, CCPA, etc.)
+* **Audit data collection** regularly
 
 ## Migration Guide
 
@@ -337,7 +343,7 @@ If you have custom configuration:
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

@@ -53,8 +53,8 @@
 		"docs:fixer:docs": "cd scripts/docs-fixes && npm run docs",
 		"docs:fixer:examples": "cd scripts/docs-fixes && npm run docs:generate",
 		"docs:fixer:update": "cd scripts/docs-fixes && npm run docs:update",
-		"docs:format": "markdownlint --fix '**/*.md' --ignore node_modules --ignore dist --ignore out",
-		"docs:lint": "markdownlint '**/*.md' --ignore node_modules --ignore dist --ignore out && remark --quiet --frail '**/*.md' --ignore node_modules --ignore dist --ignore out",
+		"docs:format": "markdownlint --fix 'docs/**/*.md'",
+		"docs:lint": "markdownlint 'docs/**/*.md' && remark --quiet --frail 'docs/**/*.md'",
 		"docs:validate": "npm run docs:format && npm run docs:lint"
 	},
 	"devDependencies": {

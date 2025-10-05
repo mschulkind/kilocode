@@ -67,30 +67,30 @@ graph TD
 
 Creation process is comprehensively traced:
 
-- **Trigger Events**: What caused the checkpoint creation
-- **State Size**: Amount of data being checkpointed
-- **Serialization Time**: Time taken to serialize state
-- **Storage Duration**: Time to write checkpoint to storage
-- **Validation Results**: Integrity check outcomes
+* **Trigger Events**: What caused the checkpoint creation
+* **State Size**: Amount of data being checkpointed
+* **Serialization Time**: Time taken to serialize state
+* **Storage Duration**: Time to write checkpoint to storage
+* **Validation Results**: Integrity check outcomes
 
 ### Checkpoint Restoration
 
 Restoration process monitoring:
 
-- **Restore Trigger**: What initiated the restoration
-- **Data Loading**: Time to load checkpoint data from storage
-- **Deserialization**: Time to reconstruct state from data
-- **State Validation**: Verification of restored state integrity
-- **Recovery Success**: Whether restoration completed successfully
+* **Restore Trigger**: What initiated the restoration
+* **Data Loading**: Time to load checkpoint data from storage
+* **Deserialization**: Time to reconstruct state from data
+* **State Validation**: Verification of restored state integrity
+* **Recovery Success**: Whether restoration completed successfully
 
 ### Checkpoint Cleanup
 
 Cleanup operations tracking:
 
-- **Cleanup Triggers**: What initiated cleanup (age, space, etc.)
-- **Data Removal**: Time to remove checkpoint data
-- **Storage Reclamation**: Space freed up by cleanup
-- **Cleanup Success**: Whether cleanup completed successfully
+* **Cleanup Triggers**: What initiated cleanup (age, space, etc.)
+* **Data Removal**: Time to remove checkpoint data
+* **Storage Reclamation**: Space freed up by cleanup
+* **Cleanup Success**: Whether cleanup completed successfully
 
 ## Span Metadata
 
@@ -98,22 +98,22 @@ Cleanup operations tracking:
 
 Each checkpoint span includes:
 
-- **Checkpoint ID**: Unique identifier for the checkpoint
-- **Timestamp**: When the checkpoint was created
-- **State Version**: Version of the state being checkpointed
-- **Data Size**: Size of checkpoint data in bytes
-- **Compression Ratio**: If compression was applied
-- **Storage Location**: Where checkpoint is stored
+* **Checkpoint ID**: Unique identifier for the checkpoint
+* **Timestamp**: When the checkpoint was created
+* **State Version**: Version of the state being checkpointed
+* **Data Size**: Size of checkpoint data in bytes
+* **Compression Ratio**: If compression was applied
+* **Storage Location**: Where checkpoint is stored
 
 ### Performance Data
 
 Performance metrics captured:
 
-- **Creation Time**: Total time to create checkpoint
-- **Restoration Time**: Total time to restore from checkpoint
-- **Storage I/O**: Read/write operations and timing
-- **Memory Usage**: Memory consumed during operations
-- **CPU Usage**: CPU time spent on checkpoint operations
+* **Creation Time**: Total time to create checkpoint
+* **Restoration Time**: Total time to restore from checkpoint
+* **Storage I/O**: Read/write operations and timing
+* **Memory Usage**: Memory consumed during operations
+* **CPU Usage**: CPU time spent on checkpoint operations
 
 ## Performance Monitoring
 
@@ -121,31 +121,31 @@ Performance metrics captured:
 
 Detailed timing information:
 
-- **Serialization Time**: Time to convert state to storage format
-- **Storage Write Time**: Time to write data to storage
-- **Validation Time**: Time to verify checkpoint integrity
-- **Total Checkpoint Time**: End-to-end checkpoint creation time
-- **Restoration Time**: Time to restore state from checkpoint
+* **Serialization Time**: Time to convert state to storage format
+* **Storage Write Time**: Time to write data to storage
+* **Validation Time**: Time to verify checkpoint integrity
+* **Total Checkpoint Time**: End-to-end checkpoint creation time
+* **Restoration Time**: Time to restore state from checkpoint
 
 ### Resource Usage
 
 Resource consumption tracking:
 
-- **Memory Usage**: Peak memory during checkpoint operations
-- **Storage Space**: Disk space used by checkpoints
-- **Network I/O**: If using remote storage
-- **CPU Utilization**: CPU time for checkpoint operations
-- **I/O Operations**: Number of read/write operations
+* **Memory Usage**: Peak memory during checkpoint operations
+* **Storage Space**: Disk space used by checkpoints
+* **Network I/O**: If using remote storage
+* **CPU Utilization**: CPU time for checkpoint operations
+* **I/O Operations**: Number of read/write operations
 
 ### Throughput Metrics
 
 System performance indicators:
 
-- **Checkpoints per Second**: Rate of checkpoint creation
-- **Restoration Rate**: How quickly checkpoints can be restored
-- **Storage Efficiency**: Compression and deduplication ratios
-- **Queue Length**: Number of pending checkpoint operations
-- **Error Rate**: Percentage of failed checkpoint operations
+* **Checkpoints per Second**: Rate of checkpoint creation
+* **Restoration Rate**: How quickly checkpoints can be restored
+* **Storage Efficiency**: Compression and deduplication ratios
+* **Queue Length**: Number of pending checkpoint operations
+* **Error Rate**: Percentage of failed checkpoint operations
 
 ## Checkpoint Analytics
 
@@ -153,31 +153,31 @@ System performance indicators:
 
 Quality metrics and corruption detection:
 
-- **Checksum Validation**: Data integrity verification
-- **Version Consistency**: State version tracking
-- **Corruption Detection**: Automatic detection of data corruption
-- **Recovery Success Rate**: Percentage of successful restorations
-- **Data Loss Incidents**: Tracking of any data loss events
+* **Checksum Validation**: Data integrity verification
+* **Version Consistency**: State version tracking
+* **Corruption Detection**: Automatic detection of data corruption
+* **Recovery Success Rate**: Percentage of successful restorations
+* **Data Loss Incidents**: Tracking of any data loss events
 
 ### State Reliability
 
 Reliability tracking:
 
-- **Checkpoint Success Rate**: Percentage of successful checkpoints
-- **Restoration Success Rate**: Percentage of successful restorations
-- **Mean Time to Recovery**: Average time to restore from checkpoint
-- **Checkpoint Age Distribution**: How long checkpoints are kept
-- **Storage Health**: Health of checkpoint storage systems
+* **Checkpoint Success Rate**: Percentage of successful checkpoints
+* **Restoration Success Rate**: Percentage of successful restorations
+* **Mean Time to Recovery**: Average time to restore from checkpoint
+* **Checkpoint Age Distribution**: How long checkpoints are kept
+* **Storage Health**: Health of checkpoint storage systems
 
 ### Usage Patterns
 
 Usage analytics:
 
-- **Checkpoint Frequency**: How often checkpoints are created
-- **Restoration Frequency**: How often checkpoints are used
-- **Peak Usage Times**: When checkpoint activity is highest
-- **Storage Growth**: Rate of checkpoint storage growth
-- **Cleanup Patterns**: When and how often cleanup occurs
+* **Checkpoint Frequency**: How often checkpoints are created
+* **Restoration Frequency**: How often checkpoints are used
+* **Peak Usage Times**: When checkpoint activity is highest
+* **Storage Growth**: Rate of checkpoint storage growth
+* **Cleanup Patterns**: When and how often cleanup occurs
 
 ## Integration Points
 
@@ -185,28 +185,28 @@ Usage analytics:
 
 Checkpoint spans are integrated with task execution:
 
-- Task state changes trigger checkpoint creation
-- Checkpoint restoration includes task context
-- Task execution respects checkpoint boundaries
-- Task failures can trigger checkpoint restoration
+* Task state changes trigger checkpoint creation
+* Checkpoint restoration includes task context
+* Task execution respects checkpoint boundaries
+* Task failures can trigger checkpoint restoration
 
 ### Service Layer Integration
 
 The LaminarService provides checkpoint utilities:
 
-- Checkpoint creation helpers
-- State serialization utilities
-- Storage integration helpers
-- Performance monitoring tools
+* Checkpoint creation helpers
+* State serialization utilities
+* Storage integration helpers
+* Performance monitoring tools
 
 ### Storage Integration
 
 Integration with storage systems:
 
-- Local file system checkpoints
-- Remote storage integration
-- Database checkpoint storage
-- Cloud storage solutions
+* Local file system checkpoints
+* Remote storage integration
+* Database checkpoint storage
+* Cloud storage solutions
 
 ## Error Handling
 
@@ -214,21 +214,21 @@ Integration with storage systems:
 
 Checkpoint failures are categorized:
 
-- **Serialization Errors**: State cannot be serialized
-- **Storage Errors**: Cannot write to storage
-- **Validation Errors**: Checkpoint integrity checks fail
-- **Restoration Errors**: Cannot restore from checkpoint
-- **Cleanup Errors**: Cannot remove old checkpoints
+* **Serialization Errors**: State cannot be serialized
+* **Storage Errors**: Cannot write to storage
+* **Validation Errors**: Checkpoint integrity checks fail
+* **Restoration Errors**: Cannot restore from checkpoint
+* **Cleanup Errors**: Cannot remove old checkpoints
 
 ### Error Context
 
 Comprehensive error information:
 
-- **Error Location**: Where in checkpoint process error occurred
-- **State Information**: What state was being processed
-- **Storage Details**: Storage system status and errors
-- **Recovery Actions**: Steps taken to handle or recover from errors
-- **Impact Assessment**: How error affects system operation
+* **Error Location**: Where in checkpoint process error occurred
+* **State Information**: What state was being processed
+* **Storage Details**: Storage system status and errors
+* **Recovery Actions**: Steps taken to handle or recover from errors
+* **Impact Assessment**: How error affects system operation
 
 ## Code Reference Matrix
 
@@ -242,7 +242,7 @@ Comprehensive error information:
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

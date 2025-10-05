@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Cleanup Proposal: Replace ](#cleanup-proposal-replace-subtask-load-logic)
+* [Cleanup Proposal: Replace](#cleanup-proposal-replace-subtask-load-logic)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
 * [Quick Navigation](#quick-navigation)
@@ -23,7 +23,7 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
 * [No Dead Ends Policy](#no-dead-ends-policy)
-* [Cleanup Proposal: Replace ](#cleanup-proposal-replace-subtask-load-logic)
+* [Cleanup Proposal: Replace](#cleanup-proposal-replace-subtask-load-logic)
 * [Table of Contents](#table-of-contents)
 * [Quick Navigation](#quick-navigation)
 * [Research Context](#research-context)
@@ -300,7 +300,7 @@ Motivation
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding Architecture:*\*
 

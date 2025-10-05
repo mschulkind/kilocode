@@ -259,6 +259,7 @@ if (this.pendingSpanRequests.length > 0) {
    	return
    }
    ```
+
 2. **Backend Connection Failures:**
 
    ```typescript
@@ -270,6 +271,7 @@ if (this.pendingSpanRequests.length > 0) {
        this.isInitialized = true
    }
    ```
+
 3. **Queued Spans Never Processed:**
 
 * Spans added to `pendingSpanRequests` queue
@@ -453,7 +455,7 @@ try {
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding Laminar Observability:*\*
 

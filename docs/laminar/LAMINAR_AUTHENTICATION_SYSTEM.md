@@ -65,21 +65,21 @@ graph TD
 
 All spans include user context for proper attribution:
 
-- **User ID**: Unique identifier for the user
-- **User Type**: Individual user, service account, or anonymous
-- **Organization**: User's organization or team affiliation
-- **Role**: User's role and permission level
-- **Session ID**: Current session identifier
-- **Preferences**: User-specific settings and preferences
+* **User ID**: Unique identifier for the user
+* **User Type**: Individual user, service account, or anonymous
+* **Organization**: User's organization or team affiliation
+* **Role**: User's role and permission level
+* **Session ID**: Current session identifier
+* **Preferences**: User-specific settings and preferences
 
 ### Context Propagation
 
 User context flows through all operations:
 
-- **Task Level**: User context associated with task execution
-- **Tool Level**: User context included in tool operation traces
-- **LLM Level**: User context linked to LLM API calls
-- **Checkpoint Level**: User context preserved in state snapshots
+* **Task Level**: User context associated with task execution
+* **Tool Level**: User context included in tool operation traces
+* **LLM Level**: User context linked to LLM API calls
+* **Checkpoint Level**: User context preserved in state snapshots
 
 ## Session Tracking
 
@@ -87,19 +87,19 @@ User context flows through all operations:
 
 Complete session lifecycle is tracked:
 
-- **Session Creation**: Login events and session initialization
-- **Session Maintenance**: Keep-alive and session refresh operations
-- **Session Termination**: Logout and session expiration events
-- **Session State**: Active, idle, expired, or terminated states
+* **Session Creation**: Login events and session initialization
+* **Session Maintenance**: Keep-alive and session refresh operations
+* **Session Termination**: Logout and session expiration events
+* **Session State**: Active, idle, expired, or terminated states
 
 ### Session Analytics
 
 Detailed session metrics:
 
-- **Session Duration**: Total time from login to logout
-- **Activity Patterns**: User activity frequency and timing
-- **Session Quality**: Successful vs failed operations ratio
-- **Resource Usage**: Session-level resource consumption
+* **Session Duration**: Total time from login to logout
+* **Activity Patterns**: User activity frequency and timing
+* **Session Quality**: Successful vs failed operations ratio
+* **Resource Usage**: Session-level resource consumption
 
 ## Privacy Compliance
 
@@ -107,21 +107,21 @@ Detailed session metrics:
 
 Privacy-compliant data handling:
 
-- **PII Filtering**: Personally identifiable information is masked or removed
-- **Anonymized IDs**: User IDs are hashed or anonymized when possible
-- **Data Minimization**: Only necessary user data is collected
-- **Retention Limits**: User data is retained only as long as necessary
-- **Access Controls**: Strict controls on who can access user data
+* **PII Filtering**: Personally identifiable information is masked or removed
+* **Anonymized IDs**: User IDs are hashed or anonymized when possible
+* **Data Minimization**: Only necessary user data is collected
+* **Retention Limits**: User data is retained only as long as necessary
+* **Access Controls**: Strict controls on who can access user data
 
 ### Compliance Features
 
 Regulatory compliance support:
 
-- **GDPR Compliance**: Data subject rights and processing transparency
-- **CCPA Compliance**: California privacy law requirements
-- **Audit Trails**: Complete audit logs for compliance verification
-- **Data Export**: User data export capabilities for compliance
-- **Deletion**: User data deletion on request
+* **GDPR Compliance**: Data subject rights and processing transparency
+* **CCPA Compliance**: California privacy law requirements
+* **Audit Trails**: Complete audit logs for compliance verification
+* **Data Export**: User data export capabilities for compliance
+* **Deletion**: User data deletion on request
 
 ## Authentication Flow Tracing
 
@@ -129,21 +129,21 @@ Regulatory compliance support:
 
 Login operations are comprehensively traced:
 
-- **Authentication Method**: Password, OAuth, SSO, API key, etc.
-- **Multi-Factor Authentication**: MFA step tracking and success rates
-- **Login Success/Failure**: Authentication outcome with reasons
-- **Session Creation**: New session establishment
-- **Security Events**: Suspicious login attempts and security alerts
+* **Authentication Method**: Password, OAuth, SSO, API key, etc.
+* **Multi-Factor Authentication**: MFA step tracking and success rates
+* **Login Success/Failure**: Authentication outcome with reasons
+* **Session Creation**: New session establishment
+* **Security Events**: Suspicious login attempts and security alerts
 
 ### Authorization Checks
 
 Permission evaluation tracing:
 
-- **Resource Access**: Attempts to access protected resources
-- **Permission Evaluation**: Role-based access control decisions
-- **Policy Application**: Security policy enforcement and outcomes
-- **Access Patterns**: User access patterns and anomaly detection
-- **Audit Trail**: Complete record of access decisions
+* **Resource Access**: Attempts to access protected resources
+* **Permission Evaluation**: Role-based access control decisions
+* **Policy Application**: Security policy enforcement and outcomes
+* **Access Patterns**: User access patterns and anomaly detection
+* **Audit Trail**: Complete record of access decisions
 
 ## Integration Points
 
@@ -151,28 +151,28 @@ Permission evaluation tracing:
 
 Authentication spans are integrated with task execution:
 
-- Task initiation includes user context
-- Task execution respects user permissions
-- Task results are attributed to users
-- Session context maintained across task lifecycle
+* Task initiation includes user context
+* Task execution respects user permissions
+* Task results are attributed to users
+* Session context maintained across task lifecycle
 
 ### Service Layer Integration
 
 The LaminarService provides authentication utilities:
 
-- User context propagation helpers
-- Session state management
-- Privacy-compliant data handling
-- Authentication event tracking
+* User context propagation helpers
+* Session state management
+* Privacy-compliant data handling
+* Authentication event tracking
 
 ### External Systems Integration
 
 Integration with external authentication providers:
 
-- OAuth providers (Google, GitHub, etc.)
-- SSO systems (SAML, OIDC)
-- API key and token management
-- Multi-tenant authentication
+* OAuth providers (Google, GitHub, etc.)
+* SSO systems (SAML, OIDC)
+* API key and token management
+* Multi-tenant authentication
 
 ## Error Handling
 
@@ -180,19 +180,19 @@ Integration with external authentication providers:
 
 Authentication failures are categorized:
 
-- **Credential Errors**: Invalid username/password combinations
-- **Session Errors**: Expired or invalid session tokens
-- **Permission Errors**: Insufficient privileges for operations
-- **Network Errors**: Connectivity issues with auth providers
+* **Credential Errors**: Invalid username/password combinations
+* **Session Errors**: Expired or invalid session tokens
+* **Permission Errors**: Insufficient privileges for operations
+* **Network Errors**: Connectivity issues with auth providers
 
 ### Error Context
 
 Comprehensive error information captured:
 
-- **Error Location**: Where in authentication flow the error occurred
-- **User Impact**: How the error affects user experience
-- **Recovery Actions**: Steps taken to resolve authentication issues
-- **Security Implications**: Potential security concerns from errors
+* **Error Location**: Where in authentication flow the error occurred
+* **User Impact**: How the error affects user experience
+* **Recovery Actions**: Steps taken to resolve authentication issues
+* **Security Implications**: Potential security concerns from errors
 
 ## Code Reference Matrix
 
@@ -207,7 +207,7 @@ Comprehensive error information captured:
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

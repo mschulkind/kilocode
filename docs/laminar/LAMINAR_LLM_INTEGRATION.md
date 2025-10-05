@@ -31,21 +31,21 @@ The Laminar LLM Integration provides comprehensive observability for Large Langu
 
 ### Key Features
 
-- **Cost Attribution**: Track and attribute LLM costs to specific operations
-- **Model Performance**: Monitor model response times and quality
-- **Token Usage**: Track input and output token consumption
-- **Cache Optimization**: Monitor cache hit rates and effectiveness
-- **Error Tracking**: Comprehensive error logging for LLM operations
+* **Cost Attribution**: Track and attribute LLM costs to specific operations
+* **Model Performance**: Monitor model response times and quality
+* **Token Usage**: Track input and output token consumption
+* **Cache Optimization**: Monitor cache hit rates and effectiveness
+* **Error Tracking**: Comprehensive error logging for LLM operations
 
 ### Integration Scope
 
 The LLM integration covers:
 
-- **API Calls**: All LLM API interactions
-- **Model Selection**: Dynamic model selection and routing
-- **Cost Calculation**: Real-time cost calculation and attribution
-- **Performance Monitoring**: Response time and throughput tracking
-- **Quality Metrics**: Response quality and accuracy tracking
+* **API Calls**: All LLM API interactions
+* **Model Selection**: Dynamic model selection and routing
+* **Cost Calculation**: Real-time cost calculation and attribution
+* **Performance Monitoring**: Response time and throughput tracking
+* **Quality Metrics**: Response quality and accuracy tracking
 
 ## Key Integration Points
 
@@ -141,21 +141,21 @@ llm-operation
 
 Each LLM span includes comprehensive request metadata:
 
-- **Model Information**: Model name, version, and capabilities
-- **Provider Details**: API provider and endpoint information
-- **Request Parameters**: Temperature, max tokens, and other parameters
-- **User Context**: User ID and session information
-- **Request ID**: Unique identifier for the request
+* **Model Information**: Model name, version, and capabilities
+* **Provider Details**: API provider and endpoint information
+* **Request Parameters**: Temperature, max tokens, and other parameters
+* **User Context**: User ID and session information
+* **Request ID**: Unique identifier for the request
 
 ### Response Information
 
 Response metadata is captured:
 
-- **Response Quality**: Quality metrics and validation results
-- **Token Usage**: Input and output token counts
-- **Processing Time**: Total processing time and breakdown
-- **Cache Status**: Whether response was served from cache
-- **Error Information**: Any errors or warnings
+* **Response Quality**: Quality metrics and validation results
+* **Token Usage**: Input and output token counts
+* **Processing Time**: Total processing time and breakdown
+* **Cache Status**: Whether response was served from cache
+* **Error Information**: Any errors or warnings
 
 ## Cost Attribution
 
@@ -179,20 +179,20 @@ interface CostCalculation {
 
 Costs are attributed to:
 
-- **User Level**: Individual user cost tracking
-- **Project Level**: Project-based cost allocation
-- **Operation Level**: Specific operation cost tracking
-- **Model Level**: Cost per model usage
-- **Time Level**: Cost trends over time
+* **User Level**: Individual user cost tracking
+* **Project Level**: Project-based cost allocation
+* **Operation Level**: Specific operation cost tracking
+* **Model Level**: Cost per model usage
+* **Time Level**: Cost trends over time
 
 ### Cost Monitoring
 
 Comprehensive cost monitoring:
 
-- **Daily/Weekly/Monthly Costs**: Cost trends and patterns
-- **Cost Alerts**: Alerts for unusual cost spikes
-- **Budget Tracking**: Budget vs actual cost monitoring
-- **Cost Optimization**: Recommendations for cost reduction
+* **Daily/Weekly/Monthly Costs**: Cost trends and patterns
+* **Cost Alerts**: Alerts for unusual cost spikes
+* **Budget Tracking**: Budget vs actual cost monitoring
+* **Cost Optimization**: Recommendations for cost reduction
 
 ## Model Information Capture
 
@@ -200,21 +200,21 @@ Comprehensive cost monitoring:
 
 Detailed model information is captured:
 
-- **Model Name**: Full model identifier
-- **Model Version**: Specific version information
-- **Model Capabilities**: Supported features and limitations
-- **Provider Information**: API provider details
-- **Pricing Information**: Cost per token and usage limits
+* **Model Name**: Full model identifier
+* **Model Version**: Specific version information
+* **Model Capabilities**: Supported features and limitations
+* **Provider Information**: API provider details
+* **Pricing Information**: Cost per token and usage limits
 
 ### Model Performance
 
 Model performance tracking:
 
-- **Response Time**: Average and percentile response times
-- **Throughput**: Requests per second capacity
-- **Error Rate**: Model-specific error rates
-- **Quality Metrics**: Response quality and accuracy
-- **Availability**: Model uptime and availability
+* **Response Time**: Average and percentile response times
+* **Throughput**: Requests per second capacity
+* **Error Rate**: Model-specific error rates
+* **Quality Metrics**: Response quality and accuracy
+* **Availability**: Model uptime and availability
 
 ## Cache Usage Tracking
 
@@ -222,20 +222,20 @@ Model performance tracking:
 
 Cache operations are monitored:
 
-- **Cache Hits**: Successful cache retrievals
-- **Cache Misses**: Failed cache lookups
-- **Cache Writes**: New cache entries
-- **Cache Invalidations**: Cache entry removals
-- **Cache Performance**: Cache response times
+* **Cache Hits**: Successful cache retrievals
+* **Cache Misses**: Failed cache lookups
+* **Cache Writes**: New cache entries
+* **Cache Invalidations**: Cache entry removals
+* **Cache Performance**: Cache response times
 
 ### Cache Optimization
 
 Cache optimization insights:
 
-- **Hit Rate Analysis**: Cache effectiveness metrics
-- **Cache Size**: Memory usage and growth
-- **Eviction Patterns**: Cache eviction frequency
-- **Optimization Opportunities**: Potential improvements
+* **Hit Rate Analysis**: Cache effectiveness metrics
+* **Cache Size**: Memory usage and growth
+* **Eviction Patterns**: Cache eviction frequency
+* **Optimization Opportunities**: Potential improvements
 
 ## Performance Metrics
 
@@ -243,30 +243,30 @@ Cache optimization insights:
 
 Detailed response time tracking:
 
-- **Total Response Time**: End-to-end response time
-- **API Call Time**: Time spent on API calls
-- **Processing Time**: Time spent processing responses
-- **Network Time**: Network latency and transfer time
-- **Queue Time**: Time spent waiting in queues
+* **Total Response Time**: End-to-end response time
+* **API Call Time**: Time spent on API calls
+* **Processing Time**: Time spent processing responses
+* **Network Time**: Network latency and transfer time
+* **Queue Time**: Time spent waiting in queues
 
 ### Throughput Metrics
 
 System throughput monitoring:
 
-- **Requests per Second**: Overall request rate
-- **Tokens per Second**: Token processing rate
-- **Concurrent Requests**: Number of simultaneous requests
-- **Queue Length**: Pending request queue size
-- **Error Rate**: Percentage of failed requests
+* **Requests per Second**: Overall request rate
+* **Tokens per Second**: Token processing rate
+* **Concurrent Requests**: Number of simultaneous requests
+* **Queue Length**: Pending request queue size
+* **Error Rate**: Percentage of failed requests
 
 ### Resource Usage
 
 Resource consumption tracking:
 
-- **Memory Usage**: Peak and average memory consumption
-- **CPU Usage**: CPU time spent on LLM operations
-- **Network Usage**: Bandwidth and data transfer
-- **Storage Usage**: Cache and temporary storage usage
+* **Memory Usage**: Peak and average memory consumption
+* **CPU Usage**: CPU time spent on LLM operations
+* **Network Usage**: Bandwidth and data transfer
+* **Storage Usage**: Cache and temporary storage usage
 
 ## Error Handling
 
@@ -274,21 +274,21 @@ Resource consumption tracking:
 
 LLM operation errors are categorized:
 
-- **API Errors**: Provider API errors and rate limits
-- **Model Errors**: Model-specific errors and limitations
-- **Network Errors**: Connectivity and timeout issues
-- **Validation Errors**: Input/output validation failures
-- **Cost Errors**: Cost calculation and attribution errors
+* **API Errors**: Provider API errors and rate limits
+* **Model Errors**: Model-specific errors and limitations
+* **Network Errors**: Connectivity and timeout issues
+* **Validation Errors**: Input/output validation failures
+* **Cost Errors**: Cost calculation and attribution errors
 
 ### Error Recovery
 
 Error recovery mechanisms:
 
-- **Retry Logic**: Automatic retry with exponential backoff
-- **Fallback Models**: Alternative model selection
-- **Circuit Breaker**: Protection against cascading failures
-- **Graceful Degradation**: Fallback to cached responses
-- **Error Reporting**: Comprehensive error logging and alerting
+* **Retry Logic**: Automatic retry with exponential backoff
+* **Fallback Models**: Alternative model selection
+* **Circuit Breaker**: Protection against cascading failures
+* **Graceful Degradation**: Fallback to cached responses
+* **Error Reporting**: Comprehensive error logging and alerting
 
 ## Code Reference Matrix
 
@@ -302,7 +302,7 @@ Error recovery mechanisms:
 
 ## Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory

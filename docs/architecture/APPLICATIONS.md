@@ -31,17 +31,19 @@ The KiloCode system consists of multiple applications and components that work t
 ## Core Applications
 
 ### Main Applications
-- **Kilocode Docs** - Documentation system and viewer
-- **Playwright E2E** - End-to-end testing framework
-- **Storybook** - Component development and testing
-- **VSCode E2E** - VSCode extension testing
-- **Web Docs** - Web-based documentation
-- **Web Evals** - Evaluation and testing web interface
-- **Web Roo Code** - Web-based code interface
+
+* **Kilocode Docs** - Documentation system and viewer
+* **Playwright E2E** - End-to-end testing framework
+* **Storybook** - Component development and testing
+* **VSCode E2E** - VSCode extension testing
+* **Web Docs** - Web-based documentation
+* **Web Evals** - Evaluation and testing web interface
+* **Web Roo Code** - Web-based code interface
 
 ### Supporting Applications
-- **VSCode Nightly** - Nightly builds and testing
-- **Benchmark** - Performance benchmarking tools
+
+* **VSCode Nightly** - Nightly builds and testing
+* **Benchmark** - Performance benchmarking tools
 
 ## Application Architecture
 
@@ -55,38 +57,41 @@ Each application follows a consistent architecture pattern:
 ## Development Workflow
 
 ### Getting Started
+
 1. Review the [Getting Started Guide](GETTING_STARTED.md)
 2. Set up the development environment
 3. Run the application locally
 4. Follow the testing procedures
 
 ### Building Applications
-- Use the centralized build system
-- Follow the [Build Pipelines](BUILD_PIPELINES.md) documentation
-- Implement proper testing strategies
+
+* Use the centralized build system
+* Follow the [Build Pipelines](BUILD_PIPELINES.md) documentation
+* Implement proper testing strategies
 
 ## Related Documentation
 
-- [Development Tools](DEVELOPMENT_TOOLS.md)
-- [External Integrations](EXTERNAL_INTEGRATIONS.md)
-- [System Overview](SYSTEM_OVERVIEW.md)
-- [Core Systems](CORE_SYSTEMS.md)
+* [Development Tools](DEVELOPMENT_TOOLS.md)
+* [External Integrations](EXTERNAL_INTEGRATIONS.md)
+* [System Overview](SYSTEM_OVERVIEW.md)
+* [Core Systems](CORE_SYSTEMS.md)
 
 ## Navigation Footer
 
-- [Getting Started](GETTING_STARTED.md)
-- [System Overview](SYSTEM_OVERVIEW.md)
-- [Core Systems](CORE_SYSTEMS.md)
-- [Development Tools](DEVELOPMENT_TOOLS.md)
-- [Build Pipelines](BUILD_PIPELINES.md)
+* [Getting Started](GETTING_STARTED.md)
+* [System Overview](SYSTEM_OVERVIEW.md)
+* [Core Systems](CORE_SYSTEMS.md)
+* [Development Tools](DEVELOPMENT_TOOLS.md)
+* [Build Pipelines](BUILD_PIPELINES.md)
 
 ## No Dead Ends Policy
 
 This document ensures no dead ends by providing:
-- Clear navigation paths to related documentation
-- Comprehensive cross-references
-- Multiple entry points for different user journeys
-- Consistent linking patterns throughout
+
+* Clear navigation paths to related documentation
+* Comprehensive cross-references
+* Multiple entry points for different user journeys
+* Consistent linking patterns throughout
 
 ---
 

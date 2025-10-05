@@ -21,32 +21,36 @@ You're exploring the getting started guide for the architecture documentation. T
 This getting started guide was created to help developers quickly understand the architecture documentation structure and find the information they need efficiently.
 
 ## Overview
+
 This document provides a quick introduction to the architecture documentation.
 
 ## Quick Start
-- Review the main architecture overview
-- Explore specific system components
-- Follow the navigation patterns
+
+* Review the main architecture overview
+* Explore specific system components
+* Follow the navigation patterns
 
 ## Related Documentation
-- [Architecture Overview](../ARCHITECTURE_OVERVIEW.md)
-- [System Overview](../SYSTEM_OVERVIEW.md)
-- [Core Systems](../CORE_SYSTEMS.md)
+
+* [Architecture Overview](../ARCHITECTURE_OVERVIEW.md)
+* [System Overview](../SYSTEM_OVERVIEW.md)
+* [Core Systems](../CORE_SYSTEMS.md)
 
 ## Navigation Footer
 
-- [Architecture Overview](../ARCHITECTURE_OVERVIEW.md)
-- [System Overview](../SYSTEM_OVERVIEW.md)
-- [Core Systems](../CORE_SYSTEMS.md)
-- [Applications](../APPLICATIONS.md)
+* [Architecture Overview](../ARCHITECTURE_OVERVIEW.md)
+* [System Overview](../SYSTEM_OVERVIEW.md)
+* [Core Systems](../CORE_SYSTEMS.md)
+* [Applications](../APPLICATIONS.md)
 
 ## No Dead Ends Policy
 
 This document ensures no dead ends by providing:
-- Clear navigation paths to related documentation
-- Comprehensive cross-references
-- Multiple entry points for different user journeys
-- Consistent linking patterns throughout
+
+* Clear navigation paths to related documentation
+* Comprehensive cross-references
+* Multiple entry points for different user journeys
+* Consistent linking patterns throughout
 
 ---
 *This document is part of the KiloCode documentation system.*

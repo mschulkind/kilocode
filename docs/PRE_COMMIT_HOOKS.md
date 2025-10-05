@@ -239,8 +239,10 @@ git commit --no-verify --no-edit
    ```bash
    chmod +x .husky/pre-commit
    ```
+
 2. **Verify Husky installation**: Run `pnpm prepare` to reinstall hooks
 3. **Check Git configuration**: Ensure hooks directory is correct
+
    ```bash
    git config core.hooksPath
    ```
@@ -254,12 +256,15 @@ If validation is slow:
    ```bash
    pnpm docs:validate path/to/file.md
    ```
+
 2. **Use quiet mode**:
 
    ```bash
    pnpm docs:validate --quiet
    ```
+
 3. **Skip maintenance temporarily**:
+
    ```bash
    # Edit .husky/pre-commit to comment out docs:maintain
    ```
@@ -288,12 +293,15 @@ If validation is slow:
    pnpm docs:validate
    pnpm docs:maintain
    ```
+
 2. **Fix issues early**:
 
    ```bash
    pnpm docs:fix
    ```
+
 3. **Review changes**:
+
    ```bash
    git diff
    ```
@@ -331,9 +339,11 @@ The pre-commit hooks complement the CI/CD pipeline:
 
 1. **Edit `.husky/pre-commit`**
 2. **Test changes**:
+
    ```bash
    ./.husky/pre-commit
    ```
+
 3. **Commit changes**
 4. **Update documentation**
 

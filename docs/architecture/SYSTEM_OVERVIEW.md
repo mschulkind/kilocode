@@ -22,7 +22,7 @@
 * [5. Code Index Service (](#5-code-index-service-srcservicescode-index--partially-researched)
 * [6. Tree Sitter Service (](#6-tree-sitter-service-srcservicestree-sitter--partially-researched)
 * [Tool Ecosystem](#tool-ecosystem)
-* [Core AI Tools 🔍 ](#core-ai-tools--partially-researched)
+* [Core AI Tools 🔍](#core-ai-tools--partially-researched)
 * [File Operations](#file-operations)
 * [Code Analysis](#code-analysis)
 * [Command Execution](#command-execution)
@@ -37,13 +37,13 @@
 * [Cloud Integration (](#cloud-integration-componentscloud)
 * [Marketplace (](#marketplace-componentsmarketplace)
 * [Testing & Quality Assurance](#testing-quality-assurance)
-* [Unit Testing 🔍 ](#unit-testing)
-* [Integration Testing 🔍 ](#integration-testing)
-* [End-to-End Testing 🔍 ](#end-to-end-testing--partially-researched)
+* [Unit Testing 🔍](#unit-testing)
+* [Integration Testing 🔍](#integration-testing)
+* [End-to-End Testing 🔍](#end-to-end-testing--partially-researched)
 * [Build & Deployment Systems](#build--deployment-systems)
-* [Build Pipeline 🔍 ](#build-pipeline)
-* [Package Management 🔍 ](#package-management)
-* [CI/CD Pipeline 🔍 ](#cicd-pipeline)
+* [Build Pipeline 🔍](#build-pipeline)
+* [Package Management 🔍](#package-management)
+* [CI/CD Pipeline 🔍](#cicd-pipeline)
 * [External Integrations](#external-integrations)
 * [JetBrains Plugin (](#jetbrains-plugin-jetbrains--partially-researched-jetbrains--partially-researched)
 * [Browser Automation (](#browser-automation-src-services-browser--partially-researched-srcservicesbrowser--partially-researched)
@@ -77,7 +77,7 @@
 * [5. Code Index Service (](#5-code-index-service-srcservicescode-index--partially-researched)
 * [6. Tree Sitter Service (](#6-tree-sitter-service-srcservicestree-sitter--partially-researched)
 * [Tool Ecosystem](#tool-ecosystem)
-* [Core AI Tools 🔍 ](#core-ai-tools--partially-researched)
+* [Core AI Tools 🔍](#core-ai-tools--partially-researched)
 * [File Operations](#file-operations)
 * [Code Analysis](#code-analysis)
 * [Command Execution](#command-execution)
@@ -92,13 +92,13 @@
 * [Cloud Integration (](#cloud-integration-componentscloud)
 * [Marketplace (](#marketplace-componentsmarketplace)
 * [Testing & Quality Assurance](#testing-quality-assurance)
-* [Unit Testing 🔍 ](#unit-testing)
-* [Integration Testing 🔍 ](#integration-testing)
-* [End-to-End Testing 🔍 ](#end-to-end-testing--partially-researched)
+* [Unit Testing 🔍](#unit-testing)
+* [Integration Testing 🔍](#integration-testing)
+* [End-to-End Testing 🔍](#end-to-end-testing--partially-researched)
 * [Build & Deployment Systems](#build--deployment-systems)
-* [Build Pipeline 🔍 ](#build-pipeline)
-* [Package Management 🔍 ](#package-management)
-* [CI/CD Pipeline 🔍 ](#cicd-pipeline)
+* [Build Pipeline 🔍](#build-pipeline)
+* [Package Management 🔍](#package-management)
+* [CI/CD Pipeline 🔍](#cicd-pipeline)
 * [External Integrations](#external-integrations)
 * [JetBrains Plugin (](#jetbrains-plugin-jetbrains--partially-researched-jetbrains--partially-researched)
 * [Browser Automation (](#browser-automation-src-services-browser--partially-researched-srcservicesbrowser--partially-researched)
@@ -991,7 +991,7 @@ patterns              |
 
 ## 🔍 Research Context & Next Steps
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Understanding System Architecture:*\*
 

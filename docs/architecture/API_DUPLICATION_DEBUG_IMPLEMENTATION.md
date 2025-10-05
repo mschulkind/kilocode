@@ -115,7 +115,7 @@ document's role or purpose, this section helps orient you.
 
 * \*\*
 
-### When You're Here, You Can:
+### When You're Here, You Can
 
 * *Implementing Debug Logging:*\*
 

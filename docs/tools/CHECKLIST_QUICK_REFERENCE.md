@@ -188,7 +188,7 @@ Implements: TNNN · [Phase] Task X.Y: Task Name
 
 ## Progress Tracking Rules
 
-### For Each Task:
+### For Each Task
 
 1. Set status to "In Progress"
 2. Add started timestamp (ISO 8601)
