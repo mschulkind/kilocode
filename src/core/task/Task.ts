@@ -1876,15 +1876,20 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			// webview while waiting to actually start the API request (to load
 			// potential details for example), we need to update the text of that
 			// message.
-			const lastApiReqIndex = findLastIndex(this.clineMessages, (m) => m.say === "api_req_started")
+		const lastApiReqIndex = findLastIndex(this.clineMessages, (m) => m.say === "api_req_started")
 
-			this.clineMessages[lastApiReqIndex].text = JSON.stringify({
-				request: finalUserContent.map((block) => formatContentBlockToMarkdown(block)).join("\n\n"),
-				apiProtocol,
-			} satisfies ClineApiReqInfo)
+		if (lastApiReqIndex !== -1) {
+			const lastApiReqMessage = this.clineMessages[lastApiReqIndex]
+			if (lastApiReqMessage) {
+				lastApiReqMessage.text = JSON.stringify({
+					request: finalUserContent.map((block) => formatContentBlockToMarkdown(block)).join("\n\n"),
+					apiProtocol,
+				} satisfies ClineApiReqInfo)
 
-			await this.saveClineMessages()
-			await provider?.postStateToWebview()
+				await this.saveClineMessages()
+			}
+		}
+		await provider?.postStateToWebview()
 
 			try {
 				let cacheWriteTokens = 0
@@ -2279,7 +2284,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 						const streamingFailedMessage = this.abort
 							? undefined
-							: (error.message ?? JSON.stringify(serializeError(error), null, 2))
+							: (error instanceof Error ? error.message : JSON.stringify(serializeError(error), null, 2))
 
 						// Now call abortTask after determining the cancel reason.
 						await this.abortTask()
@@ -2881,8 +2886,8 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 							JSON.stringify({
 								modelId: apiConfiguration.kilocodeModel,
 								error: {
-									status: error.status,
-									message: error.message,
+									status: (error as any)?.status || 500,
+									message: error instanceof Error ? error.message : String(error),
 								},
 							}),
 						))
@@ -2901,9 +2906,9 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			if (autoApprovalEnabled && alwaysApproveResubmit) {
 				let errorMsg
 
-				if (error.error?.metadata?.raw) {
-					errorMsg = JSON.stringify(error.error.metadata.raw, null, 2)
-				} else if (error.message) {
+				if ((error as any)?.error?.metadata?.raw) {
+					errorMsg = JSON.stringify((error as any).error.metadata.raw, null, 2)
+				} else if (error instanceof Error) {
 					errorMsg = error.message
 				} else {
 					errorMsg = "Unknown error"
@@ -2916,8 +2921,8 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 				)
 
 				// If the error is a 429, and the error details contain a retry delay, use that delay instead of exponential backoff
-				if (error.status === 429) {
-					const geminiRetryDetails = error.errorDetails?.find(
+				if ((error as any)?.status === 429) {
+					const geminiRetryDetails = (error as any)?.errorDetails?.find(
 						(detail: any) => detail["@type"] === "type.googleapis.com/google.rpc.RetryInfo",
 					)
 					if (geminiRetryDetails) {
@@ -2957,7 +2962,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			} else {
 				const { response } = await this.ask(
 					"api_req_failed",
-					error.message ?? JSON.stringify(serializeError(error), null, 2),
+					error instanceof Error ? error.message : JSON.stringify(serializeError(error), null, 2),
 				)
 
 				if (response !== "yesButtonClicked") {

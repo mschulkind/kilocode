@@ -11,9 +11,7 @@
   "MD029": {
     "style": "ordered"
   },
-  "MD007": {
-    "indent": 2
-  },
+  "MD007": false,
   "MD012": {
     "maximum": 2
   },
@@ -21,6 +19,7 @@
     "br_spaces": 2
   },
   "MD010": false,
+  "MD026": false,
   "MD022": true,
   "MD032": true,
   "MD031": true,

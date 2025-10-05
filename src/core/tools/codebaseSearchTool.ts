@@ -4,7 +4,7 @@ import { Task } from "../task/Task.js"
 import { CodeIndexManager } from "../../services/code-index/manager.js"
 import { getWorkspacePath } from "../../utils/path.js"
 import { formatResponse } from "../prompts/responses.js"
-import { VectorStoreSearchResult } from "../../services/code-index/interfaces.js"
+import { VectorStoreSearchResult } from "../../services/code-index/interfaces/index.js"
 import { AskApproval, HandleError, PushToolResult, RemoveClosingTag, ToolUse } from "../../shared/tools.js"
 import path from "path"
 

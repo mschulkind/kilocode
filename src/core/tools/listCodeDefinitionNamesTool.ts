@@ -6,7 +6,7 @@ import { Task } from "../task/Task.js"
 import { ClineSayTool } from "../../shared/ExtensionMessage.js"
 import { getReadablePath } from "../../utils/path.js"
 import { isPathOutsideWorkspace } from "../../utils/pathUtils.js"
-import { parseSourceCodeForDefinitionsTopLevel, parseSourceCodeDefinitionsForFile } from "../../services/tree-sitter.js"
+import { parseSourceCodeForDefinitionsTopLevel, parseSourceCodeDefinitionsForFile } from "../../services/tree-sitter/index.js"
 import { RecordSource } from "../context-tracking/FileContextTrackerTypes.js"
 
 export async function listCodeDefinitionNamesTool(

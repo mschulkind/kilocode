@@ -165,7 +165,7 @@ export async function attemptCompletionTool(
 			return
 		}
 	} catch (error) {
-		await handleError("inspecting site", error)
+		await handleError("inspecting site", error instanceof Error ? error : new Error(String(error)))
 		return
 	}
 }

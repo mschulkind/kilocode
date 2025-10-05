@@ -1,7 +1,7 @@
 import { ToolUse, AskApproval, HandleError, PushToolResult, RemoveClosingTag } from "../../shared/tools.js"
 import { Task } from "../task/Task.js"
 import { formatResponse } from "../prompts/responses.js"
-import { summarizeConversation } from "../condense.js" // kilocode_change
+import { summarizeConversation } from "../condense/index.js" // kilocode_change
 
 export const condenseTool = async (
 	cline: Task,
@@ -56,7 +56,7 @@ export const condenseTool = async (
 			return
 		}
 	} catch (error) {
-		await handleError("condensing context window", error)
+		await handleError("condensing context window", error instanceof Error ? error : new Error(String(error)))
 		return
 	}
 }

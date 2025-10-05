@@ -16,7 +16,7 @@ import { ExitCodeDetails, RooTerminalCallbacks, RooTerminalProcess } from "../..
 import { TerminalRegistry } from "../../integrations/terminal/TerminalRegistry.js"
 import { Terminal } from "../../integrations/terminal/Terminal.js"
 import { Package } from "../../shared/package.js"
-import { t } from "../../i18n.js"
+import { t } from "../../i18n/index.js"
 
 class ShellIntegrationError extends Error {}
 
