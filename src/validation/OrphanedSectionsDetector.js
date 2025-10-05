@@ -5,9 +5,6 @@
  * navigation patterns, and document connectivity to avoid false positives.
  */
 export class OrphanedSectionsDetector {
-    config;
-    documentTypeDetector;
-    fileIndexBuilder;
     constructor(options) {
         this.documentTypeDetector = options.documentTypeDetector;
         this.fileIndexBuilder = options.fileIndexBuilder;
@@ -400,4 +397,3 @@ export class OrphanedSectionsDetector {
         }
     }
 }
-//# sourceMappingURL=OrphanedSectionsDetector.js.map

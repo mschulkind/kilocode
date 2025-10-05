@@ -6,9 +6,8 @@
  */
 import { PerformanceMonitor } from "./PerformanceMonitor";
 export class PerformanceOptimizer {
-    monitor;
-    strategies = [];
     constructor(monitor) {
+        this.strategies = [];
         this.monitor = monitor || new PerformanceMonitor();
         this.initializeStrategies();
     }
@@ -341,4 +340,3 @@ export class PerformanceOptimizer {
  * Global performance optimizer instance
  */
 export const globalPerformanceOptimizer = new PerformanceOptimizer();
-//# sourceMappingURL=PerformanceOptimizer.js.map

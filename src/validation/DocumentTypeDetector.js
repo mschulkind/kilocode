@@ -5,7 +5,6 @@
  * to enable context-aware validation rules.
  */
 export class DocumentTypeDetector {
-    config;
     constructor(config) {
         this.config = this.mergeWithDefaults(config || {});
     }
@@ -414,4 +413,3 @@ export class DocumentTypeDetector {
         }
     }
 }
-//# sourceMappingURL=DocumentTypeDetector.js.map

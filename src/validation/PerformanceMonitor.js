@@ -5,12 +5,10 @@
  * for the validation system to ensure <30s validation time requirements.
  */
 export class PerformanceMonitor {
-    metrics = [];
-    isProfiling = false;
-    config;
-    startMemory;
-    peakMemory = 0;
     constructor(config = {}) {
+        this.metrics = [];
+        this.isProfiling = false;
+        this.peakMemory = 0;
         this.config = {
             maxValidationTime: 30000, // 30 seconds
             memoryThreshold: 200, // 200 MB
@@ -259,4 +257,3 @@ export class PerformanceMonitor {
  * Global performance monitor instance
  */
 export const globalPerformanceMonitor = new PerformanceMonitor();
-//# sourceMappingURL=PerformanceMonitor.js.map
