@@ -40,3 +40,4 @@ pnpm docs:validate 2>&1 | grep "research-context" | wc -l
 echo "Total warnings:"
 pnpm docs:validate 2>&1 | grep "⚠" | tail -1
 
+

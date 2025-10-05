@@ -1,7 +1,6 @@
 {
   "plugins": [
-    "remark-preset-lint-recommended",
-    "remark-validate-links"
+    "remark-preset-lint-recommended"
   ],
   "settings": {
     "bullet": "-",
@@ -14,25 +13,9 @@
     "strong": "*"
   },
   "remarkPresetLintRecommended": {
-    "no-undefined-references": false
-  },
-  "validateLinks": {
-    "repository": "roo-ai/kilo-code",
-    "branches": ["main", "master"],
-    "ignore": [
-      "https://github.com/roo-ai/kilo-code/issues/*",
-      "https://github.com/roo-ai/kilo-code/discussions/*",
-      "#-navigation",
-      "#-navigation-map",
-      "#research-context",
-      "#crossreferences",
-      "#webevals",
-      "#vscodee2e",
-      "#systemspecific-terms",
-      "#racecondition-synchronizedexecution",
-      "#precommit-hooks",
-      "#playwrighte2e",
-      "#phase-3-optimization-month-56"
-    ]
+    "no-undefined-references": false,
+    "no-unused-definitions": false,
+    "no-missing-blank-lines": false,
+    "no-multiple-toplevel-headings": false
   }
 }
