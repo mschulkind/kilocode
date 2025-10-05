@@ -15,7 +15,7 @@
 * [Principle Interactions](#principle-interactions)
 * [Implementation Guidelines](#implementation-guidelines)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -31,7 +31,7 @@
 * [Principle Interactions](#principle-interactions)
 * [Implementation Guidelines](#implementation-guidelines)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -400,21 +400,21 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 * **Next**: Check related standards documentation in the same directory
 
-* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
-  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../../../orchestrator/README.md) for integration patterns
 
 * *Applying Standards to Documentation:*\*
 
-* **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
+* **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
   [Architecture Documentation](../../README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+  [Orchestrator Documentation](../../../../orchestrator/README.md)
 
 * **Related**: [Race Condition Analysis](../../README.md) for current
   issues
@@ -436,9 +436,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

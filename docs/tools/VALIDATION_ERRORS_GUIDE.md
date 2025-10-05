@@ -444,7 +444,7 @@ For complex errors:
 1. This validation errors guide
 2. [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 3. [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-4. [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+4. [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 
 ### Support
 
@@ -457,7 +457,7 @@ For complex errors:
 
 * [Remark Workflow Overview](./REMARK_WORKFLOW_OVERVIEW.md)
 * [IDE Integration Guide](./IDE_INTEGRATION_GUIDE.md)
-* [Documentation Guide](../DOCUMENTATION_GUIDE.md)
+* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
 * [Remark Configuration](../../.remarkrc)
 * [Package Scripts](../../package.json)
 

@@ -53,7 +53,7 @@
 * [Custom Rule Examples](#custom-rule-examples)
 * [Future Enhancements](#future-enhancements)
 * [Phase 2+ Features](#phase-2-features)
-* [Research Context & Next Steps](#research-context--next-steps)
+* [Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -108,7 +108,7 @@
 * [Custom Rule Examples](#custom-rule-examples)
 * [Future Enhancements](#future-enhancements)
 * [Phase 2+ Features](#phase-2-features)
-* [Research Context & Next Steps](#research-context--next-steps)
+* [Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -1483,11 +1483,11 @@ function validateNavigationFooter(content, filePath) {
   [Integration Plan](#integration-plan) → [Custom Linter Development](#custom-linter-development)
 
 * **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
-  [Documentation Guide](../DOCUMENTATION_GUIDE.md) for standards
+  [Documentation Guide](../../DOCUMENTATION_GUIDE.md) for standards
 
 * *Understanding Current Documentation Standards:*\*
 
-* **Next**: [Documentation Guide](../DOCUMENTATION_GUIDE.md) →
+* **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
   [Standards Documentation](../standards/README.md) → This automation guide
 
 * **Related**: [Architecture Documentation](../README.md) for context
@@ -1498,7 +1498,7 @@ function validateNavigationFooter(content, filePath) {
   [Concrete Toolset Recommendations](#concrete-toolset-recommendations) →
   [Integration Plan](#integration-plan)
 
-* **Related**: [Repository Development Guide](../GETTING_STARTED.md) for
+* **Related**: [Repository Development Guide](../../GETTING_STARTED.md) for
   technical setup
 
 * *Troubleshooting Automation Issues:*\*
@@ -1525,7 +1525,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 
@@ -1534,4 +1534,4 @@ Every section in this document connects you to your next step:
 * **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Tools Documentation](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

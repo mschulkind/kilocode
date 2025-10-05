@@ -378,7 +378,7 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 ## Navigation
 
 * [← Architecture Documentation](README.md)
-* [← API Duplication Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* [← API Duplication Analysis](../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 * [← Investigation Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)
 * [← Main Documentation](../../README.md)
 * [← Project Root](../../README.md)

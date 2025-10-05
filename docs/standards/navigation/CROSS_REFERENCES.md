@@ -39,7 +39,7 @@
 * [Complete Cross-Reference Example](#complete-cross-reference-example)
 * [Minimal Cross-Reference Example](#minimal-cross-reference-example)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -79,7 +79,7 @@
 * [Complete Cross-Reference Example](#complete-cross-reference-example)
 * [Minimal Cross-Reference Example](#minimal-cross-reference-example)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -173,7 +173,7 @@ The API duplication issue occurs when multiple requests are made simultaneously.
 
 - *Related Concepts**: See
 [Race Condition
-Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
+Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
 for detailed technical explanation.
 
 ## Solution Recommendations
@@ -208,10 +208,10 @@ Follow these steps to implement the solution:
 3. **Test Thoroughly**: Create automated tests for race conditions
 
 - *Prerequisites**: Before starting, ensure you understand
-[Root Cause Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#root-cause-analysis).
+[Root Cause Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#root-cause-analysis).
 
 - *Next Steps**: After implementation, see
-[Testing Strategy](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy) for
+[Testing Strategy](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy) for
 validation.
 ```
 
@@ -389,7 +389,7 @@ requirements
 > **System Fun Fact**: Every complex system is just a collection of simple parts working together -
 documentation helps us understand how! ⚙️
 
-See [Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for detailed
+See [Race Condition Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for detailed
 technical explanation.
 
 # Bad: Generic link text
@@ -397,7 +397,7 @@ technical explanation.
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 behind the "what"! 💻
 
-See [View details](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
+See [View details](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
 ```
 
 ### Functional Links
@@ -414,7 +414,7 @@ See [View details](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for 
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 behind the "what"! 💻
 
-[API Duplication Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+[API Duplication Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 # Bad: Broken link
 
@@ -491,7 +491,7 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 
 ```markdown
 ## See Also
-- [Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) - Detailed
+- [Race Condition Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) - Detailed
   technical analysis
 - [State Machine Design](README.md) - State machine patterns
 - [Orchestrator System](README.md) - Task orchestration details
@@ -510,9 +510,9 @@ See [Old API Documentation](https://old-docs.anthropic.com/api) for specificatio
 ```markdown
 ## Next Steps
 1. **Implement Solution**:
-[Implementation Guide](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
+[Implementation Guide](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
 2. **Test Thoroughly**:
-   [Testing Strategy](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
+   [Testing Strategy](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
 3. **Monitor Performance**: [Performance Monitoring](architecture/PERFORMANCE_MONITORING.md)
 4. **Update Documentation**: [Documentation Standards](README.md)
 ```
@@ -532,7 +532,7 @@ Before implementing this solution, ensure you have:
 
 - **Understanding**:
 [Race Condition
-Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
+Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#race-condition-analysis)
 - **Setup**: [Development Environment](DEVELOPMENT_ENVIRONMENT.md)
 - **Dependencies**: [Required Packages](PACKAGE_DEPENDENCIES.md)
 - **Access**: [API Credentials](API_CREDENTIALS.md)
@@ -553,11 +553,11 @@ The synchronization mechanism uses a mutex to prevent concurrent calls.
 
 - *Example**: See
 [Synchronization
-Example](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-example)
+Example](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-example)
 for complete implementation.
 
 - *Use Cases**:
-[Common Use Cases](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#common-use-cases) shows
+[Common Use Cases](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#common-use-cases) shows
 typical scenarios.
 ```
 
@@ -640,7 +640,7 @@ this documentation provides structured guidance for understanding and implementi
 > **Development Fun Fact**: Documentation is like code comments for humans - it explains the "why"
 behind the "what"! 💻
 
-[API Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) # Correct filename
+[API Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) # Correct filename
 ```
 
 ### Irrelevant Links
@@ -685,14 +685,14 @@ The race condition occurs in the `ask` method. See
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 foundation, clear structure, and intuitive navigation! 🏗️
 
-See [View details](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
+See [View details](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for more information.
 
 # Descriptive link text example
 
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 foundation, clear structure, and intuitive navigation! 🏗️
 
-See [Race Condition Analysis](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for detailed
+See [Race Condition Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) for detailed
 technical explanation.
 ```
 
@@ -787,7 +787,7 @@ Implement a synchronization mechanism to ensure only one recursive call executes
 
 - *Examples**: See
 [Synchronization
-Examples](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-examples)
+Examples](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#synchronization-examples)
 for implementation details.
 
 ## Implementation Guide
@@ -801,7 +801,7 @@ Follow these steps to implement the solution:
 - *Prerequisites**: Before starting, ensure you understand Race Condition Analysis.
 
 - *Next Steps**: After implementation, see
-[Testing Strategy](architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy) for
+[Testing Strategy](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy) for
 validation.
 
 ## Related Documentation
@@ -818,7 +818,7 @@ validation.
 
 <a id="navigation-footer"></a>
 - Back: [`README.md`](../architecture/README.md) · Root: [`README.md`](../README.md) · Source:
-  `/docs/architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
+  `/docs/../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#L1`
 ```
 
 ### Minimal Cross-Reference Example
@@ -884,21 +884,21 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 * **Next**: Check related standards documentation in the same directory
 
-* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
-  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../../../orchestrator/README.md) for integration patterns
 
 * *Applying Standards to Documentation:*\*
 
-* **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
+* **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
   [Architecture Documentation](../../README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+  [Orchestrator Documentation](../../../../orchestrator/README.md)
 
 * **Related**: [Race Condition Analysis](../../README.md) for current
   issues
@@ -920,9 +920,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

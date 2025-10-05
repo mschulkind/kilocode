@@ -200,5 +200,5 @@ For more information, see:
 * [← Back to Technical Documentation](../../docs/technical/)
 * [← Back to Architecture](../architecture/)
 * [→ Related Component](../related-component/)
-* [📚 Technical Glossary](../../../GLOSSARY.md)
+* [📚 Technical Glossary](../../GLOSSARY.md)
 * [↑ Table of Contents](#table-of-contents)

@@ -277,8 +277,8 @@ For issues with IDE integration:
 
 ## Related Documentation
 
-* [Documentation Guide](../DOCUMENTATION_GUIDE.md)
-* [Development Workflow](../GETTING_STARTED.md)
+* [Documentation Guide](../../DOCUMENTATION_GUIDE.md)
+* [Development Workflow](../../GETTING_STARTED.md)
 * [Remark Configuration](../../.remarkrc)
 * [Package Scripts](../../package.json)
 

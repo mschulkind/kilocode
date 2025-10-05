@@ -127,14 +127,14 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 
 * [← Main Documentation](README.md)
 * [← Project Root](README.md)
 * [← Architecture](../README.md)
-* [← Orchestrator](../orchestrator/README.md)
+* [← Orchestrator](../../../orchestrator/README.md)
 * [← Standards](standards/README.md)
 * [← Plans](plans/README.md)
 * [← Tools](tools/README.md)

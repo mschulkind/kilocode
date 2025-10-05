@@ -11,7 +11,7 @@
 * [Compatibility Analysis](#compatibility-analysis)
 * [Risk Mitigation](#risk-mitigation)
 * [Code Reference Matrix](#code-reference-matrix)
-* [Research Context & Next Steps](#research-context--next-steps)
+* [Research Context & Next Steps](#-research-context--next-steps)
 * [Navigation](#navigation)
 
 ## When You're Here
@@ -21,7 +21,7 @@ This document provides comprehensive guidance for managing Laminar observability
 * **Purpose**: Laminar dependency management and integration
 * **Audience**: Developers managing project dependencies
 * **Prerequisites**: Understanding of package management and dependency resolution
-* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../../GLOSSARY.md)
 
 ## Overview
 
@@ -334,11 +334,11 @@ Reduce maintenance risks:
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory
-  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+  * **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
 * **Implementing Observability Features:**
   * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
-  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+  * **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
 
 * **Troubleshooting Observability Issues:**
   * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
@@ -351,4 +351,4 @@ Every page provides clear next steps based on your research goals. If you're uns
 ## Navigation
 
 * **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_DEPENDENCY_MANAGEMENT.md#L1`
-* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)
+* **Technical Glossary**: [GLOSSARY.md](../../GLOSSARY.md) · **Table of Contents**: [#-research-context--next-steps](#-research-context--next-steps)

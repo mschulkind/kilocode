@@ -12,7 +12,7 @@
 * [General Documents](#general-documents)
 * [Section Requirements](#section-requirements)
 * ["When You're Here" Section](#when-youre-here-section)
-* [Research Context Section](#research-context--next-steps-section)
+* [Research Context Section](#-research-context--next-steps-section)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
 * [Validation Implementation](#validation-implementation)
@@ -41,7 +41,7 @@
 * [General Documents](#general-documents)
 * [Section Requirements](#section-requirements)
 * ["When You're Here" Section](#when-youre-here-section)
-* [Research Context Section](#research-context--next-steps-section)
+* [Research Context Section](#-research-context--next-steps-section)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
 * [Validation Implementation](#validation-implementation)
@@ -304,7 +304,7 @@ This document connects to:
 ## Navigation
 - [← Back to Main Documentation](../README.md)
 - [→ Next: Installation Guide](./installation.md)
-- [📚 Technical Glossary](../../../GLOSSARY.md)
+- [📚 Technical Glossary](../../GLOSSARY.md)
 ```
 
 See also: [Validation System Documentation](../tools/VALIDATION_SYSTEM.md), [Best Practices
@@ -360,5 +360,5 @@ Documentation](../tools/VALIDATION_SYSTEM.md).
 
 * [← Back to Documentation Tools](../tools/)
 * [→ Template Examples](./README.md)
-* [📚 Technical Glossary](../../../GLOSSARY.md)
+* [📚 Technical Glossary](../../GLOSSARY.md)
 * [↑ Table of Contents](#document-template-validation-rules)

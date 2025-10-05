@@ -12,7 +12,7 @@
 * [Integration Points](#integration-points)
 * [Error Handling](#error-handling)
 * [Code Reference Matrix](#code-reference-matrix)
-* [Research Context & Next Steps](#research-context--next-steps)
+* [Research Context & Next Steps](#-research-context--next-steps)
 * [Navigation](#navigation)
 
 ## When You're Here
@@ -22,7 +22,7 @@ This document provides comprehensive documentation of the Laminar deduplication 
 * **Purpose**: Laminar deduplication system architecture and implementation
 * **Audience**: Developers implementing deduplication and performance optimization
 * **Prerequisites**: Understanding of Laminar observability and span management
-* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../../GLOSSARY.md)
 
 ## Overview
 
@@ -341,11 +341,11 @@ Handle configuration issues:
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory
-  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+  * **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
 * **Implementing Observability Features:**
   * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
-  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+  * **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
 
 * **Troubleshooting Observability Issues:**
   * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
@@ -358,4 +358,4 @@ Every page provides clear next steps based on your research goals. If you're uns
 ## Navigation
 
 * **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/LAMINAR_DEDUPLICATION_SYSTEM.md#L1`
-* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)
+* **Technical Glossary**: [GLOSSARY.md](../../GLOSSARY.md) · **Table of Contents**: [#-research-context--next-steps](#-research-context--next-steps)

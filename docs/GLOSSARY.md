@@ -306,7 +306,7 @@ Sequential path through documentation designed to build understanding progressiv
 
 ## 🔗 Related Documentation
 
-* [Documentation Standards Guide](../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
+* [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) - Complete guide to documentation
   principles and structure
 * [Architecture Documentation](README.md) - System architecture and design patterns
 * [Orchestrator Documentation](README.md) - Task orchestration and lifecycle management
@@ -315,7 +315,7 @@ Sequential path through documentation designed to build understanding progressiv
 
 * [← Back to Documentation Hub](README.md)
 * [↑ Table of Contents](#core-system-concepts)
-* [→ Documentation Standards Guide](../DOCUMENTATION_GUIDE.md)
+* [→ Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md)
 
 ## Navigation Footer
 
@@ -325,4 +325,4 @@ Sequential path through documentation designed to build understanding progressiv
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

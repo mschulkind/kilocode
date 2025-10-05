@@ -156,7 +156,7 @@ document's role or purpose, this section helps orient you.
 2. **Detailed Analysis**: [State Machines](README.md)
 3. **Related Systems**: [Orchestrator System](README.md)
 4. **Advanced Topics**:
-   [Race Condition Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+   [Race Condition Analysis](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 * *Key Features*\*:
 
@@ -578,4 +578,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

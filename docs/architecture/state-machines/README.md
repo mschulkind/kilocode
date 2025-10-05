@@ -101,7 +101,7 @@ to use them together during design, debugging, and implementation.
 
 * [API Duplication Race Condition Analysis](../API_DUPLICATION_RACE_CONDITION_ANALYSIS.md) Master
   narrative and navigation hub for the duplicate-API-request issue family.
-* [Orchestrator Documentation](../../orchestrator/README.md) Parent/child task orchestration concepts
+* [Orchestrator Documentation](../../../../orchestrator/README.md) Parent/child task orchestration concepts
   and lifecycle.
 * \*\*
 

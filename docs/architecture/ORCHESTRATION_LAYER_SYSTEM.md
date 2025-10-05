@@ -424,6 +424,6 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 * [← Architecture Documentation](README.md)
 * [← System Overview](SYSTEM_OVERVIEW.md)
-* [← Orchestrator Documentation](../orchestrator/README.md)
+* [← Orchestrator Documentation](../../../orchestrator/README.md)
 * [← Main Documentation](../../README.md)
 * [← Project Root](../../README.md)

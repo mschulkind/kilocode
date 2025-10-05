@@ -238,9 +238,9 @@ Our detailed analysis revealed that the 2078 warnings fall into these distinct c
 
 * *Most Common Issues*\*:
 
-* `../GLOSSARY.md` → `../GLOSSARY.md` (standards/ subdirectories)
+* `../../GLOSSARY.md` → `../../GLOSSARY.md` (standards/ subdirectories)
 
-* `../DOCUMENTATION_GUIDE.md` → `../DOCUMENTATION_GUIDE.md`
+* `../../DOCUMENTATION_GUIDE.md` → `../../DOCUMENTATION_GUIDE.md`
 
 * Deep nesting paths requiring additional `../` prefix corrections
 
@@ -665,7 +665,7 @@ Every section in this document connects you to your next step:
 * [← Main Documentation](README.md)
 * [← Project Root](README.md)
 * [← Architecture](../README.md)
-* [← Orchestrator](orchestrator/README.md)
+* [← Orchestrator](../../orchestrator/README.md)
 * [← Standards](standards/README.md)
 * [← Plans](plans/README.md)
 * [← Tools](tools/README.md)

@@ -210,7 +210,7 @@ This section covers another main topic.
 > **Architecture Fun Fact**: Like a well-designed building, good documentation has a solid
 foundation, clear structure, and intuitive navigation! 🏗️
 - Back: [`README.md`](README.md) · Root: [`README.md`](README.md) · Source:
-  `/do../../../DOCUMENTATION_GUIDE.md#L1`
+  `/do../../DOCUMENTATION_GUIDE.md#L1`
 
 # From subdirectory
 
@@ -448,4 +448,4 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

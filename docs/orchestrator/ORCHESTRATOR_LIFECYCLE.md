@@ -24,7 +24,7 @@
 * [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
 * [Docs-only recommendations (no code changes)](#docs-only-recommendations-no-code-changes)
 * [Suggested doc locations & links (insert these pages)](#suggested-doc-locations--links-insert-these-pages)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Next doc-step I will take (if you approve)](#next-doc-step-i-will-take-if-you-approve)
@@ -51,7 +51,7 @@
 * [Likely causes of duplicate requests (doc summary)](#likely-causes-of-duplicate-requests-doc-summary)
 * [Docs-only recommendations (no code changes)](#docs-only-recommendations-no-code-changes)
 * [Suggested doc locations & links (insert these pages)](#suggested-doc-locations--links-insert-these-pages)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Next doc-step I will take (if you approve)](#next-doc-step-i-will-take-if-you-approve)
@@ -349,13 +349,13 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [State Machines](../architecture/README.md) for behavior modeling
 
 * *Investigating Race Conditions:*\*
 
 * **Next**: [Race Condition Analysis](../architecture/README.md) →
-  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
+  [Root Cause Analysis](../../../../../../../../../../../../../../../../../../../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md) →
   [Code Flow Analysis](../architecture/race-condition/CODE_FLOW_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](ORCHESTRATOR_ERROR_HANDLING.md) for common issues
@@ -366,7 +366,7 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Task Delegation](ORCHESTRATOR_TASK_DELEGATION.md) →
   [Solution Recommendations](../architecture/race-condition/SOLUTION_RECOMMENDATIONS.md)
 
-* **Related**: [Repository Development Guide](../../../../GETTING_STARTED.md) for
+* **Related**: [Repository Development Guide](../../GETTING_STARTED.md) for
   codebase patterns
 
 * *Understanding Current Problems:*\*
@@ -398,17 +398,17 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [docs/](../) · [orchestrator/](./) ·
   [↑ Table of Contents](#orchestrator-task-lifecycle)
 
 ## Navigation
 
-* 📚 [Technical Glossary](../../../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)

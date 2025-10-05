@@ -9,7 +9,7 @@
 * [Solutions](#solutions)
 * [Prevention](#prevention)
 * [Monitoring](#monitoring)
-* [Research Context & Next Steps](#research-context--next-steps)
+* [Research Context & Next Steps](#-research-context--next-steps)
 * [Navigation](#navigation)
 
 ## When You're Here
@@ -19,7 +19,7 @@ This document provides comprehensive troubleshooting guidance for duplicate API 
 * **Purpose**: Troubleshooting guide for duplicate API request issues
 * **Audience**: Developers troubleshooting API request problems
 * **Prerequisites**: Understanding of API requests and Laminar observability
-* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../GLOSSARY.md)
+* **Related Documents**: [Laminar Documentation](README.md), [Technical Glossary](../../GLOSSARY.md)
 
 ## Overview
 
@@ -393,11 +393,11 @@ Create monitoring dashboard:
 
 * **Understanding Laminar Observability:**
   * **Next**: Check related Laminar documentation in the same directory
-  * **Related**: [Technical Glossary](../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
+  * **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology, [Laminar Documentation](README.md) for context
 
 * **Implementing Observability Features:**
   * **Next**: [Repository Development Guide](../README.md) → [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
-  * **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+  * **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
 
 * **Troubleshooting Observability Issues:**
   * **Next**: [Race Condition Analysis](../README.md) → [Root Cause Analysis](DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md)
@@ -410,5 +410,5 @@ Every page provides clear next steps based on your research goals. If you're uns
 ## Navigation
 
 * **Back**: [Laminar Subsystems Index](LAMINAR_SUBSYSTEMS_INDEX.md) · **Root**: [Laminar Documentation](README.md) · **Source**: `/docs/laminar/DUPLICATE_API_REQUESTS_TROUBLESHOOTING.md#L1`
-* **Technical Glossary**: [GLOSSARY.md](../GLOSSARY.md) · **Table of Contents**: [#research-context--next-steps](#research-context--next-steps)
+* **Technical Glossary**: [GLOSSARY.md](../../GLOSSARY.md) · **Table of Contents**: [#-research-context--next-steps](#-research-context--next-steps)
 

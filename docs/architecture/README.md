@@ -160,7 +160,7 @@ conditions, state machines, repository structure, and architectural improvements
 * **[API Duplication Investigation
   Summary](API_DUPLICATION_INVESTIGATION_SUMMARY.md)** - Investigation overview
 * **[API Duplication Race Condition
-  Analysis](../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)** - Technical analysis
+  Analysis](../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)** - Technical analysis
 * **[Duplicate API Requests Root Cause Analysis](DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)** -
   Root cause findings
 * **[API Provider Patterns](API_PROVIDER_PATTERNS.md)** - Provider implementation patterns

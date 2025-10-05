@@ -5,7 +5,7 @@
 * [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
 * [Table of Contents](#table-of-contents)
 * [When You're Here](#when-youre-here)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [Research Context](#research-context)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -41,7 +41,7 @@
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [API Duplication Debug Implementation Guide](#api-duplication-debug-implementation-guide)
 * [Table of Contents](#table-of-contents)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [Research Context](#research-context)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -1007,12 +1007,12 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
 * **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Architecture Documentation](../../README.md) ·
   [→ Race Condition Analysis](README.md) ·
-  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 
 * *Last Updated:*\* 2024-12-19 **Status:** Ready for Implementation **Priority:** Critical

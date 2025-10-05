@@ -38,7 +38,7 @@
 * [Common Issues](#common-issues)
 * [Issue Resolution](#issue-resolution)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -77,7 +77,7 @@
 * [Common Issues](#common-issues)
 * [Issue Resolution](#issue-resolution)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -160,12 +160,12 @@ document's role or purpose, this section helps orient you.
 * *Purpose*\*: Quickly identify what's wrong **Time**: 2-5 minutes **Key Documents**:
 
 * [Problem
-  Description](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#problem-description)
+  Description](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#problem-description)
 
 * [Symptoms
-  Checklist](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#symptoms-observed)
+  Checklist](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#symptoms-observed)
 
-* [Quick Reference](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#quick-reference)
+* [Quick Reference](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#quick-reference)
 
 * *Key Questions*\*:
 
@@ -182,12 +182,12 @@ document's role or purpose, this section helps orient you.
 * *Purpose*\*: Understand why the problem is happening **Time**: 5-10 minutes **Key Documents**:
 
 * [Root Cause
-  Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#root-cause-analysis)
+  Analysis](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#root-cause-analysis)
 
 * [Technical
-  Details](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#technical-details)
+  Details](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#technical-details)
 
-* [Code Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#code-analysis)
+* [Code Analysis](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#code-analysis)
 
 * *Key Questions*\*:
 
@@ -207,9 +207,9 @@ document's role or purpose, this section helps orient you.
 Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS.md#solution-recommendations)
 
 * [Implementation
-  Guide](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
+  Guide](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
 
-* [Code Examples](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#code-examples)
+* [Code Examples](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#code-examples)
 
 * *Key Questions*\*:
 
@@ -226,12 +226,12 @@ Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS
 * *Purpose*\*: Ensure the fix works and doesn't break anything **Time**: 5-15 minutes **Key
   Documents**:
 
-* [Testing Strategy](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
+* [Testing Strategy](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
 
 * [Verification
-  Steps](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#verification-steps)
+  Steps](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#verification-steps)
 
-* [Rollback Plan](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#rollback-plan)
+* [Rollback Plan](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#rollback-plan)
 
 * *Key Questions*\*:
 
@@ -283,7 +283,7 @@ Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS
 
 * [Orchestrator System](README.md)
 
-* [API Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* [API Analysis](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 * *Key Questions*\*:
 
@@ -320,7 +320,7 @@ Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS
 * *Purpose*\*: Understand specialized and advanced concepts **Time**: 30-90 minutes **Key
   Documents**:
 
-* [Race Condition Analysis](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
+* [Race Condition Analysis](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md)
 
 * [Performance Optimization](../../architecture/PERFORMANCE_OPTIMIZATION.md)
 
@@ -374,9 +374,9 @@ Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS
 * [Code Documentation](README.md)
 
 * [Implementation
-  Guide](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
+  Guide](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#implementation-guide)
 
-* [Code Examples](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#code-examples)
+* [Code Examples](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#code-examples)
 
 * *Key Questions*\*:
 
@@ -392,7 +392,7 @@ Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS
 
 * *Purpose*\*: Ensure the solution works correctly **Time**: 30-90 minutes **Key Documents**:
 
-* [Testing Strategy](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
+* [Testing Strategy](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#testing-strategy)
 
 * [Test Cases](testing/TEST_CASES.md)
 
@@ -413,7 +413,7 @@ Recommendations]\(../../architecture/API\_DUPLICATION\_RACE\_CONDITION\_ANALYSIS
 * *Purpose*\*: Maintain the solution long-term **Time**: Ongoing **Key Documents**:
 
 * [Maintenance
-  Guide](../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#maintenance-guide)
+  Guide](../../../../architecture/API_DUPLICATION_RACE_CONDITION_ANALYSIS.md#maintenance-guide)
 
 * [Monitoring](../../architecture/MONITORING.md)
 
@@ -759,21 +759,21 @@ layer by layer, with an eye for the unexpected fault lines."\* 🗺️
 
 * **Next**: Check related standards documentation in the same directory
 
-* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
-  [Documentation Standards Guide](../../../DOCUMENTATION_GUIDE.md) for context
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
+  [Documentation Standards Guide](../../DOCUMENTATION_GUIDE.md) for context
 
 * *Implementing Documentation Standards:*\*
 
-* **Next**: [Repository Development Guide](../../../../GETTING_STARTED.md) →
-  [Testing Infrastructure](../../../testing/TESTING_STRATEGY.md)
+* **Next**: [Repository Development Guide](../../GETTING_STARTED.md) →
+  [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../../../orchestrator/README.md) for integration patterns
 
 * *Applying Standards to Documentation:*\*
 
-* **Next**: [Documentation Guide](../../../DOCUMENTATION_GUIDE.md) →
+* **Next**: [Documentation Guide](../../DOCUMENTATION_GUIDE.md) →
   [Architecture Documentation](../../README.md) →
-  [Orchestrator Documentation](../../orchestrator/README.md)
+  [Orchestrator Documentation](../../../../orchestrator/README.md)
 
 * **Related**: [Race Condition Analysis](../../README.md) for current
   issues
@@ -795,9 +795,9 @@ Every section in this document connects you to your next step:
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Standards Documentation](README.md) ·
-  [📚 Technical Glossary](../../../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)

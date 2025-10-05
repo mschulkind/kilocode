@@ -35,7 +35,7 @@
 * [Flaky Test Prevention](#flaky-test-prevention)
 * [Code Reference Matrix](#code-reference-matrix)
 * [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -72,7 +72,7 @@
 * [Flaky Test Prevention](#flaky-test-prevention)
 * [Code Reference Matrix](#code-reference-matrix)
 * [Implementation Timeline](#implementation-timeline)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -624,7 +624,7 @@ npx vitest run __tests__/laminar/ --passWithNoTests=false
 
 * **Next**: Check related Laminar documentation in the same directory
 
-* **Related**: [Technical Glossary](../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [Laminar Documentation](README.md) for context
 
 * *Implementing Observability Features:*\*
@@ -632,12 +632,12 @@ npx vitest run __tests__/laminar/ --passWithNoTests=false
 * **Next**: [Repository Development Guide](../architectu../../GETTING_STARTED.md) →
   [Testing Infrastructure](../../testing/TESTING_STRATEGY.md)
 
-* **Related**: [Orchestrator Documentation](../orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../../orchestrator/README.md) for integration patterns
 
 * *Troubleshooting Observability Issues:*\*
 
 * **Next**: [Race Condition Analysis](../README.md) →
-  [Root Cause Analysis](../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
+  [Root Cause Analysis](../../../../../../../../../../../../../../../../../../../../../../../../../../../architecture/DUPLICATE_API_REQUESTS_ROOT_CAUSE_ANALYSIS.md)
 
 * **Related**: [Orchestrator Error Handling](../orchestrator/ORCHESTRATOR_ERROR_HANDLING.md) for
   common issues
@@ -657,14 +657,14 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 
 * **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Laminar Documentation](README.md) ·
-  [📚 Technical Glossary](../GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](../../GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 

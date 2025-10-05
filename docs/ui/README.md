@@ -147,7 +147,7 @@ For more information, see:
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 

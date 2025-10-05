@@ -38,7 +38,7 @@
 * [Recommended Implementation Order:](#recommended-implementation-order)
 * [Resource Requirements:](#resource-requirements)
 * [Success Metrics:](#success-metrics)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -83,7 +83,7 @@
 * [Recommended Implementation Order:](#recommended-implementation-order)
 * [Resource Requirements:](#resource-requirements)
 * [Success Metrics:](#success-metrics)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [Navigation Footer](#navigation-footer)
@@ -315,7 +315,7 @@ document's role or purpose, this section helps orient you.
 * **Next**: [Repository Development Guide](GETTING_STARTED.md) →
   [Testing Infrastructure](testing/TESTING_STRATEGY.md)
 
-* **Related**: [Orchestrator Documentation](orchestrator/README.md) for integration patterns
+* **Related**: [Orchestrator Documentation](../../orchestrator/README.md) for integration patterns
 
 * *Troubleshooting Issues:*\*
 
@@ -335,7 +335,7 @@ next, return to the appropriate README for guidance.
 * \*\*
 
 * *Navigation*\*: [← Back to Documentation Hub](../README.md) ·
-  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#research-context--next-steps)
+  [📚 Technical Glossary](GLOSSARY.md) · [↑ Table of Contents](#-research-context--next-steps)
 
 ## Recent Documentation Overhaul (Completed)
 
@@ -363,7 +363,7 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 

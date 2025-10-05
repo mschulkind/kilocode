@@ -334,12 +334,12 @@ For more information, see:
 ```markdown
 <!-- ✅ Good - Architecture context -->
 [API Duplication Analysis](../architecture/API_DUPLICATION_ANALYSIS.md)
-[Orchestrator System Overview](orchestrator/README.md)
+[Orchestrator System Overview](../../orchestrator/README.md)
 [Provider Layer Documentation](../architecture/PROVIDER_LAYER.md)
 
 <!-- ❌ Bad -->
 [API_DUPLICATION_ANALYSIS.md](../architecture/API_DUPLICATION_ANALYSIS.md)
-[orchestrator](orchestrator/README.md)
+[orchestrator](../../orchestrator/README.md)
 [provider](../architecture/PROVIDER_LAYER.md)
 ```
 

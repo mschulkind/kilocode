@@ -115,7 +115,7 @@ architecture, development workflows, and troubleshooting guides.
 * **System Architecture**: [Architecture Documentation](../README.md) → [System
   Overview](SYSTEM_OVERVIEW.md) → [Repository
   Overview](REPOSITORY_OVERVIEW.md)
-* **Core Components**: [Orchestrator Documentation](../orchestrator/README.md) → [Communication
+* **Core Components**: [Orchestrator Documentation](../../../orchestrator/README.md) → [Communication
   Layer](COMMUNICATION_LAYER_SYSTEM.md)
 
 ### Implementation Journey (Active Development)
@@ -127,7 +127,7 @@ architecture, development workflows, and troubleshooting guides.
 
 ### New to Codebase
 
-* **Essential Terminology**: [Technical Glossary](../GLOSSARY.md) → [Documentation
+* **Essential Terminology**: [Technical Glossary](../../GLOSSARY.md) → [Documentation
   Standards](tools/DOCUMENTATION_BEST_PRACTICES.md)
 * **System Understanding**: [Repository Overview](REPOSITORY_OVERVIEW.md) → [Core
   Systems](CORE_SYSTEMS.md)
@@ -138,7 +138,7 @@ architecture, development workflows, and troubleshooting guides.
 
 **Step 1: Essential Foundation**
 
-* [Technical Glossary](../GLOSSARY.md) - Essential terminology and concepts
+* [Technical Glossary](../../GLOSSARY.md) - Essential terminology and concepts
 * [Documentation Standards](tools/DOCUMENTATION_BEST_PRACTICES.md) - Documentation principles and
   structure
 
@@ -156,9 +156,9 @@ architecture, development workflows, and troubleshooting guides.
 
 **Step 4: Implementation Details**
 
-* [Orchestrator Documentation](../orchestrator/README.md) - Core execution patterns
+* [Orchestrator Documentation](../../../orchestrator/README.md) - Core execution patterns
 * [Development Guide](GETTING_STARTED.md) - Development workflow
-* [Testing Infrastructure](../testing/TESTING_STRATEGY.md) - Testing strategies
+* [Testing Infrastructure](../../testing/TESTING_STRATEGY.md) - Testing strategies
 
 ## Documentation Structure
 
@@ -174,7 +174,7 @@ architecture, development workflows, and troubleshooting guides.
 
 * **[Architecture Documentation](../README.md)** - System architecture, design
   patterns, and critical analysis
-* **[Orchestrator Documentation](../orchestrator/README.md)** - Task orchestration and coordination
+* **[Orchestrator Documentation](../../../orchestrator/README.md)** - Task orchestration and coordination
   systems
 * **[Services Documentation](services/README.md)** - Service layer architecture and implementations
 
@@ -226,7 +226,7 @@ architecture, development workflows, and troubleshooting guides.
 
 * **[Documentation Tools](tools/README.md)** - Documentation generation and validation tools
 * **[Build System](build/README.md)** - Build pipelines and deployment processes
-* **[Testing Infrastructure](../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
+* **[Testing Infrastructure](../../testing/TESTING_STRATEGY.md)** - Testing frameworks and strategies
 
 ### Integration Resources
 
@@ -252,12 +252,12 @@ This document follows the "No Dead Ends" principle - every path leads to useful 
 
 ## Navigation
 
-* 📚 [Technical Glossary](../GLOSSARY.md)
+* 📚 [Technical Glossary](../../GLOSSARY.md)
 
 ## Navigation
 
 * [← Project Root](../README.md)
 * [← Architecture Documentation](../README.md)
-* [← Orchestrator Documentation](../orchestrator/README.md)
+* [← Orchestrator Documentation](../../../orchestrator/README.md)
 * [← Services Documentation](services/README.md)
 * [← Standards Documentation](standards/README.md)

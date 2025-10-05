@@ -15,7 +15,7 @@
 * [Key Interactions](#key-interactions)
 * [Navigation Footer](#navigation-footer)
 * [When You're Here](#when-youre-here)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 * [No Dead Ends Policy](#no-dead-ends-policy)
@@ -31,7 +31,7 @@
 * [Tool Executor & Library](#tool-executor--library)
 * [Key Interactions](#key-interactions)
 * [Navigation Footer](#navigation-footer)
-* [🔍 Research Context & Next Steps](#research-context--next-steps)
+* [🔍 Research Context & Next Steps](#-research-context--next-steps)
 * [When You're Here, You Can:](#when-youre-here-you-can)
 * [No Dead Ends Policy](#no-dead-ends-policy)
 
@@ -231,7 +231,7 @@ document's role or purpose, this section helps orient you.
   [Orchestrator Tools Reference](ORCHESTRATOR_TOOLS_REFERENCE.md) →
   [Orchestrator Best Practices](ORCHESTRATOR_BEST_PRACTICES.md)
 
-* **Related**: [Technical Glossary](../../../GLOSSARY.md) for terminology,
+* **Related**: [Technical Glossary](../../GLOSSARY.md) for terminology,
   [State Machines](../README.md) for behavior modeling
 
 * *Investigating Race Conditions:*\*
@@ -272,14 +272,14 @@ Every section in this document connects you to your next step:
 
 * **If you're new here**: Start with the [When You're Here](#when-youre-here) section
 
-* **If you need context**: Check the [Research Context](#research-context) section
+* **If you need context**: Check the [Research Context](#-research-context--next-steps) section
 
 * **If you're ready to implement**: Jump to the implementation sections
 
-* **If you're stuck**: Visit our [Troubleshooting Guide](../../../tools/TROUBLESHOOTING_GUIDE.md)
+* **If you're stuck**: Visit our [Troubleshooting Guide](../../tools/TROUBLESHOOTING_GUIDE.md)
 
-* **If you need help**: Check the [Technical Glossary](../../../GLOSSARY.md)
+* **If you need help**: Check the [Technical Glossary](../../GLOSSARY.md)
 
 * *Navigation*\*: [← Back to Orchestrator Documentation](README.md) ·
-  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../../GLOSSARY.md) ·
-  [↑ Table of Contents](#research-context--next-steps)
+  [→ Orchestrator Lifecycle](ORCHESTRATOR_LIFECYCLE.md) · [📚 Technical Glossary](../../GLOSSARY.md) ·
+  [↑ Table of Contents](#-research-context--next-steps)

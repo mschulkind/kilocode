@@ -257,5 +257,5 @@ For more information, see:
 * [← Back to Project Plans](../../plans/)
 * [← Back to Planning Overview](../../docs/planning/)
 * [→ Implementation Checklist](../implementation/)
-* [📚 Technical Glossary](../../../GLOSSARY.md)
+* [📚 Technical Glossary](../../GLOSSARY.md)
 * [↑ Table of Contents](#table-of-contents)
