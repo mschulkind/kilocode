@@ -17,7 +17,7 @@ Example for inserting imports at start of file:
 <line>1</line>
 <content>
 // Add imports at start of file
-import { sum } from './math.js';
+import { sum } from './math';
 </content>
 </insert_content>
 

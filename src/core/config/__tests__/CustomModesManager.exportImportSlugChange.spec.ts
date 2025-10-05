@@ -15,7 +15,7 @@ import { getWorkspacePath, arePathsEqual } from "../../../utils/path"
 import { GlobalFileNames } from "../../../shared/globalFileNames"
 
 import { CustomModesManager } from "../CustomModesManager"
-import { getProjectRooDirectoryForCwd } from "../../../services/roo-config.js" // kilocode_change
+import { getProjectRooDirectoryForCwd } from "../../../services/roo-config" // kilocode_change
 
 vi.mock("vscode", () => ({
 	workspace: {

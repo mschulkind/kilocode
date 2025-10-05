@@ -23,7 +23,7 @@ import { isLanguage } from "@roo-code/types"
 import type { SystemPromptSettings } from "../types"
 
 import { LANGUAGES } from "../../../shared/language"
-import { ClineRulesToggles } from "../../../shared/cline-rules.js" // kilocode_change
+import { ClineRulesToggles } from "../../../shared/cline-rules" // kilocode_change
 import { getRooDirectoriesForCwd } from "../../../services/roo-config/index"
 
 /**

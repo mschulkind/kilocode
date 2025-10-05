@@ -925,14 +925,14 @@ You're still here?
 <<<<<<< SEARCH
 function sum(a, b) {
 =======
-import { a } from "a.js";
+import { a } from "a";
 function sum(a, b) {
 >>>>>>> REPLACE`
 
 			const result = await strategy.applyDiff(originalContent, diffContent)
 			expect(result.success).toBe(true)
 			if (result.success) {
-				expect(result.content).toBe('import { a } from "a.js";\nfunction sum(a, b) {\n\n    return a + b;\n}')
+				expect(result.content).toBe('import { a } from "a";\nfunction sum(a, b) {\n\n    return a + b;\n}')
 			}
 		})
 	})

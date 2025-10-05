@@ -22,4 +22,5 @@ const noopLogger = {
  * Default logger instance
  * Uses CompactLogger for normal operation, switches to noop logger in Jest test environment
  */
-export const logger = process.env.NODE_ENV === "test" ? new CompactLogger() : noopLogger
+const defaultConfig = { level: "info", fileOutput: { enabled: false, path: "" } }
+export const logger = process.env.NODE_ENV === "test" ? new CompactLogger(defaultConfig as any) : noopLogger

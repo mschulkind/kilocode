@@ -20,7 +20,7 @@ import { RooIgnoreController } from "../ignore/RooIgnoreController"
 import { getCommand, type Command } from "../../services/command/commands"
 
 import { t } from "../../i18n/index"
-import { isSupportedImageFormat } from "../tools/helpers/imageHelpers.js" // kilocode_change
+import { isSupportedImageFormat } from "../tools/helpers/imageHelpers" // kilocode_change
 
 function getUrlErrorMessage(error: unknown): string {
 	const errorMessage = error instanceof Error ? error.message : String(error)
@@ -410,9 +410,9 @@ export async function getLatestTerminalOutput(): Promise<string> {
 		if (lastLine) {
 			let i = lines.length - 1
 
-		while (i >= 0 && !lines[i]?.trim().startsWith(lastLine)) {
-			i--
-		}
+			while (i >= 0 && !lines[i]?.trim().startsWith(lastLine)) {
+				i--
+			}
 
 			terminalContents = lines.slice(Math.max(i, 0)).join("\n")
 		}

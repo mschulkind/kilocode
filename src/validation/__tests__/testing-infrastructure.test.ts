@@ -8,7 +8,7 @@ import { FileIndexBuilder } from "../FileIndexBuilder"
 import { DocumentTypeDetector } from "../DocumentTypeDetector"
 import { OrphanedSectionsDetector } from "../OrphanedSectionsDetector"
 import { ValidationRuleConfig } from "../ValidationRuleConfig"
-// import remarkKiloCodeComprehensive from '../../../plugins/remark-kilocode-comprehensive.js.js.js'
+// import remarkKiloCodeComprehensive from '../../../plugins/remark-kilocode-comprehensive.js'
 // import { unified } from 'unified'
 // import remarkParse from 'remark-parse'
 // import remarkStringify from 'remark-stringify'
@@ -143,7 +143,7 @@ You can read this document.
 
 		it("should test cross-component integration", async () => {
 			const fileIndexBuilder = new FileIndexBuilder()
-			const crossReferenceValidator = new CrossReferenceValidator(fileIndexBuilder)
+			const crossReferenceValidator = new CrossReferenceValidator()
 			const documentTypeDetector = new DocumentTypeDetector()
 			const orphanedSectionsDetector = new OrphanedSectionsDetector({
 				fileIndexBuilder,
@@ -372,7 +372,7 @@ You can read this document.
 
 			// Simulate full validation process
 			const fileIndexBuilder = new FileIndexBuilder()
-			const crossReferenceValidator = new CrossReferenceValidator(fileIndexBuilder)
+			const crossReferenceValidator = new CrossReferenceValidator()
 			const documentTypeDetector = new DocumentTypeDetector()
 			const orphanedSectionsDetector = new OrphanedSectionsDetector({
 				fileIndexBuilder,
@@ -415,7 +415,7 @@ You can read this document.
 				const documentTypeDetector = new DocumentTypeDetector()
 				return {
 					fileIndexBuilder,
-					crossReferenceValidator: new CrossReferenceValidator(fileIndexBuilder),
+					crossReferenceValidator: new CrossReferenceValidator(),
 					documentTypeDetector,
 					orphanedSectionsDetector: new OrphanedSectionsDetector({
 						fileIndexBuilder,

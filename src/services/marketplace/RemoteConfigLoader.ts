@@ -1,14 +1,14 @@
 import axios from "axios"
 import * as yaml from "yaml"
 import { z } from "zod"
-import { getKiloBaseUriFromToken } from "../../shared/kilocode/token.js" // kilocode_change
+import { getKiloBaseUriFromToken } from "../../shared/kilocode/token" // kilocode_change
 import {
 	type MarketplaceItem,
 	type MarketplaceItemType,
 	modeMarketplaceItemSchema,
 	mcpMarketplaceItemSchema,
 } from "@roo-code/types"
-//import { getRooCodeApiUrl } from "@roo-code/cloud.js" kilocode_change: use our own api
+//import { getRooCodeApiUrl } from "@roo-code/cloud" kilocode_change: use our own api
 
 const modeMarketplaceResponse = z.object({
 	items: z.array(modeMarketplaceItemSchema),

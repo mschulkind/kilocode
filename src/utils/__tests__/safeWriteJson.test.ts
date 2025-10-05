@@ -43,7 +43,7 @@ vi.mock("fs", async () => {
 	}
 })
 
-import * as fs from "fs/promises.js" // This will now be the mocked version
+import * as fs from "fs/promises" // This will now be the mocked version
 
 describe("safeWriteJson", () => {
 	let originalConsoleError: typeof console.error

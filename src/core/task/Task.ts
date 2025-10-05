@@ -108,12 +108,12 @@ import {
 	checkpointRestore,
 	checkpointDiff,
 } from "../checkpoints/index"
-import { processKiloUserContentMentions } from "../mentions/processKiloUserContentMentions.js" // kilocode_change
-import { refreshWorkflowToggles } from "../context/instructions/workflows.js" // kilocode_change
-import { parseMentions } from "../mentions/index.js" // kilocode_change
-import { parseKiloSlashCommands } from "../slash-commands/kilo.js" // kilocode_change
-import { GlobalFileNames } from "../../shared/globalFileNames.js" // kilocode_change
-import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules.js" // kilocode_change
+import { processKiloUserContentMentions } from "../mentions/processKiloUserContentMentions" // kilocode_change
+import { refreshWorkflowToggles } from "../context/instructions/workflows" // kilocode_change
+import { parseMentions } from "../mentions/index" // kilocode_change
+import { parseKiloSlashCommands } from "../slash-commands/kilo" // kilocode_change
+import { GlobalFileNames } from "../../shared/globalFileNames" // kilocode_change
+import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules" // kilocode_change
 import { getMessagesSinceLastSummary, summarizeConversation } from "../condense/index"
 import { Gpt5Metadata, ClineMessageWithMetadata } from "./types"
 import { MessageQueueService } from "../message-queue/MessageQueueService"
@@ -1876,20 +1876,20 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			// webview while waiting to actually start the API request (to load
 			// potential details for example), we need to update the text of that
 			// message.
-		const lastApiReqIndex = findLastIndex(this.clineMessages, (m) => m.say === "api_req_started")
+			const lastApiReqIndex = findLastIndex(this.clineMessages, (m) => m.say === "api_req_started")
 
-		if (lastApiReqIndex !== -1) {
-			const lastApiReqMessage = this.clineMessages[lastApiReqIndex]
-			if (lastApiReqMessage) {
-				lastApiReqMessage.text = JSON.stringify({
-					request: finalUserContent.map((block) => formatContentBlockToMarkdown(block)).join("\n\n"),
-					apiProtocol,
-				} satisfies ClineApiReqInfo)
+			if (lastApiReqIndex !== -1) {
+				const lastApiReqMessage = this.clineMessages[lastApiReqIndex]
+				if (lastApiReqMessage) {
+					lastApiReqMessage.text = JSON.stringify({
+						request: finalUserContent.map((block) => formatContentBlockToMarkdown(block)).join("\n\n"),
+						apiProtocol,
+					} satisfies ClineApiReqInfo)
 
-				await this.saveClineMessages()
+					await this.saveClineMessages()
+				}
 			}
-		}
-		await provider?.postStateToWebview()
+			await provider?.postStateToWebview()
 
 			try {
 				let cacheWriteTokens = 0
@@ -2284,7 +2284,9 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 
 						const streamingFailedMessage = this.abort
 							? undefined
-							: (error instanceof Error ? error.message : JSON.stringify(serializeError(error), null, 2))
+							: error instanceof Error
+								? error.message
+								: JSON.stringify(serializeError(error), null, 2)
 
 						// Now call abortTask after determining the cancel reason.
 						await this.abortTask()

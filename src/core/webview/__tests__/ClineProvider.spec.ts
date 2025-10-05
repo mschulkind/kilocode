@@ -9,7 +9,7 @@ import {
 	type ClineMessage,
 	openRouterDefaultModelId,
 	ORGANIZATION_ALLOW_ALL,
-} from "@roo-code/types.js" // kilocode_change: openRouterDefaultModelId
+} from "@roo-code/types" // kilocode_change: openRouterDefaultModelId
 import { TelemetryService } from "@roo-code/telemetry"
 
 import { ExtensionMessage, ExtensionState } from "../../../shared/ExtensionMessage"

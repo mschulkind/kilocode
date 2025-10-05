@@ -6,9 +6,9 @@ import { FileContextTracker } from "../context-tracking/FileContextTracker"
 import { GlobalFileNames } from "../../shared/globalFileNames"
 import { ensureLocalKilorulesDirExists } from "../context/instructions/kilo-rules"
 import { parseKiloSlashCommands } from "../slash-commands/kilo"
-import { refreshWorkflowToggles } from "../context/instructions/workflows.js" // kilocode_change
+import { refreshWorkflowToggles } from "../context/instructions/workflows" // kilocode_change
 
-import * as vscode from "vscode.js" // kilocode_change
+import * as vscode from "vscode" // kilocode_change
 
 // This function is a duplicate of processUserContentMentions, but it adds a check for the newrules command
 // and processes Kilo-specific slash commands. It should be merged with processUserContentMentions in the future.

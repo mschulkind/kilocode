@@ -34,7 +34,7 @@ import {
 	addCustomInstructions,
 	markdownFormattingSection,
 } from "./sections/index"
-import { type ClineProviderState } from "../webview/ClineProvider.js" // kilocode_change
+import { type ClineProviderState } from "../webview/ClineProvider" // kilocode_change
 
 // Helper function to get prompt component, filtering out empty objects
 export function getPromptComponent(

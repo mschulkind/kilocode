@@ -6,7 +6,7 @@ import { TelemetryService } from "@roo-code/telemetry"
 
 import { getCommand } from "../utils/commands"
 import { ClineProvider } from "../core/webview/ClineProvider"
-import { exportSettings } from "../core/config/importExport.js" // kilocode_change
+import { exportSettings } from "../core/config/importExport" // kilocode_change
 import { ContextProxy } from "../core/config/ContextProxy"
 import { focusPanel } from "../utils/focusPanel"
 
@@ -16,7 +16,7 @@ import { CodeIndexManager } from "../services/code-index/manager"
 import { importSettingsWithFeedback } from "../core/config/importExport"
 import { MdmService } from "../services/mdm/MdmService"
 import { t } from "../i18n/index"
-import { generateTerminalCommand } from "../utils/terminalCommandGenerator.js" // kilocode_change
+import { generateTerminalCommand } from "../utils/terminalCommandGenerator" // kilocode_change
 
 /**
  * Helper to get the visible ClineProvider instance or log if not found.

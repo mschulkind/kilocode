@@ -1,5 +1,5 @@
 import OpenAI from "openai"
-import { Anthropic } from "@anthropic-ai/sdk.js" // Keep for type usage only
+import { Anthropic } from "@anthropic-ai/sdk" // Keep for type usage only
 
 import { litellmDefaultModelId, litellmDefaultModelInfo } from "@roo-code/types"
 

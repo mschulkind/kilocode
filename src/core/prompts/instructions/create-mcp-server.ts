@@ -91,9 +91,9 @@ weather-server/
 
 \`\`\`typescript
 #!/usr/bin/env node
-import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod.js";
+import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio";
+import { z } from "zod";
 import axios from 'axios';
 
 const API_KEY = process.env.OPENWEATHER_API_KEY; // provided by MCP config

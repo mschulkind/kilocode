@@ -1305,7 +1305,7 @@ describe("importExport", () => {
 			// This test reproduces the bug where model dimension is lost when importing
 			// settings where the current provider is different from the exported provider
 
-			// Step 1: Create exported settings from "provider-a.js" with model dimension
+			// Step 1: Create exported settings from "provider-a" with model dimension
 			const exportedSettings = {
 				providerProfiles: {
 					currentApiConfigName: "provider-a",

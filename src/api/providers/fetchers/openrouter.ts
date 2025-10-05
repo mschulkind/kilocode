@@ -12,7 +12,7 @@ import {
 
 import type { ApiHandlerOptions } from "../../../shared/api"
 import { parseApiPrice } from "../../../shared/cost"
-import { DEFAULT_HEADERS } from "../constants.js" // kilocode_change
+import { DEFAULT_HEADERS } from "../constants" // kilocode_change
 
 /**
  * OpenRouterBaseModel

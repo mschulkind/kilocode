@@ -4,8 +4,8 @@ import { formatResponse } from "../prompts/responses"
 import { ClineAskUseMcpServer } from "../../shared/ExtensionMessage"
 import { McpExecutionStatus } from "@roo-code/types"
 import { t } from "../../i18n"
-import { McpToolCallResponse } from "../../shared/mcp.js" // kilocode_change
-import { summarizeSuccessfulMcpOutputWhenTooLong } from "./kilocode.js" // kilocode_change
+import { McpToolCallResponse } from "../../shared/mcp" // kilocode_change
+import { summarizeSuccessfulMcpOutputWhenTooLong } from "./kilocode" // kilocode_change
 
 interface McpToolParams {
 	server_name?: string

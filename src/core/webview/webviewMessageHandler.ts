@@ -54,8 +54,8 @@ import { discoverChromeHostUrl, tryChromeHostUrl } from "../../services/browser/
 import { searchWorkspaceFiles } from "../../services/search/file-search"
 import { fileExistsAtPath } from "../../utils/fs"
 import { playTts, setTtsEnabled, setTtsSpeed, stopTts } from "../../utils/tts"
-import { showSystemNotification } from "../../integrations/notifications.js" // kilocode_change
-import { singleCompletionHandler } from "../../utils/single-completion-handler.js" // kilocode_change
+import { showSystemNotification } from "../../integrations/notifications" // kilocode_change
+import { singleCompletionHandler } from "../../utils/single-completion-handler" // kilocode_change
 import { searchCommits } from "../../utils/git"
 import { exportSettings, importSettingsWithFeedback } from "../config/importExport"
 import { getOpenAiModels } from "../../api/providers/openai"
@@ -68,16 +68,16 @@ import { GetModelsOptions } from "../../shared/api"
 import { generateSystemPrompt } from "./generateSystemPrompt"
 import { getCommand } from "../../utils/commands"
 import { toggleWorkflow, toggleRule, createRuleFile, deleteRuleFile } from "./kilorules"
-import { mermaidFixPrompt } from "../prompts/utilities/mermaid.js" // kilocode_change
-import { editMessageHandler, fetchKilocodeNotificationsHandler } from "../kilocode/webview/webviewMessageHandlerUtils.js" // kilocode_change
+import { mermaidFixPrompt } from "../prompts/utilities/mermaid" // kilocode_change
+import { editMessageHandler, fetchKilocodeNotificationsHandler } from "../kilocode/webview/webviewMessageHandlerUtils" // kilocode_change
 
 const ALLOWED_VSCODE_SETTINGS = new Set(["terminal.integrated.inheritEnv"])
 
 import { MarketplaceManager, MarketplaceItemType } from "../../services/marketplace"
 import { setPendingTodoList } from "../tools/updateTodoListTool"
 import { UsageTracker } from "../../utils/usage-tracker"
-import { seeNewChanges } from "../checkpoints/kilocode/seeNewChanges.js" // kilocode_change
-import { getTaskHistory } from "../../shared/kilocode/getTaskHistory.js" // kilocode_change
+import { seeNewChanges } from "../checkpoints/kilocode/seeNewChanges" // kilocode_change
+import { getTaskHistory } from "../../shared/kilocode/getTaskHistory" // kilocode_change
 
 export const webviewMessageHandler = async (
 	provider: ClineProvider,

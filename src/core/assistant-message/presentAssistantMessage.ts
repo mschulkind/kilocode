@@ -16,7 +16,7 @@ import { writeToFileTool } from "../tools/writeToFileTool"
 import { applyDiffTool } from "../tools/multiApplyDiffTool"
 import { insertContentTool } from "../tools/insertContentTool"
 import { searchAndReplaceTool } from "../tools/searchAndReplaceTool"
-import { editFileTool } from "../tools/editFileTool.js" // kilocode_change: Morph fast apply
+import { editFileTool } from "../tools/editFileTool" // kilocode_change: Morph fast apply
 import { listCodeDefinitionNamesTool } from "../tools/listCodeDefinitionNamesTool"
 import { searchFilesTool } from "../tools/searchFilesTool"
 import { browserActionTool } from "../tools/browserActionTool"
@@ -35,9 +35,9 @@ import { generateImageTool } from "../tools/generateImageTool"
 import { formatResponse } from "../prompts/responses"
 import { validateToolUse } from "../tools/validateToolUse"
 import { Task } from "../task/Task"
-import { newRuleTool } from "../tools/newRuleTool.js" // kilocode_change
-import { reportBugTool } from "../tools/reportBugTool.js" // kilocode_change
-import { condenseTool } from "../tools/condenseTool.js" // kilocode_change
+import { newRuleTool } from "../tools/newRuleTool" // kilocode_change
+import { reportBugTool } from "../tools/reportBugTool" // kilocode_change
+import { condenseTool } from "../tools/condenseTool" // kilocode_change
 import { codebaseSearchTool } from "../tools/codebaseSearchTool"
 import { experiments, EXPERIMENT_IDS } from "../../shared/experiments"
 import { applyDiffToolLegacy } from "../tools/applyDiffTool"
