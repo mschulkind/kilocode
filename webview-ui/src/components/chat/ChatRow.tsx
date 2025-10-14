@@ -148,9 +148,9 @@ export const ChatRowContent = ({
 	const { t } = useTranslation()
 
 	const { mcpServers, alwaysAllowMcp, currentCheckpoint, showTimestamps } = useExtensionState()
-	const [isDiffErrorExpanded, setIsDiffErrorExpanded] = useState(false)
-	const [showCopySuccess, setShowCopySuccess] = useState(false)
-	const { copyWithFeedback } = useCopyToClipboard()
+	const [_isDiffErrorExpanded, _setIsDiffErrorExpanded] = useState(false)
+	const [_showCopySuccess, _setShowCopySuccess] = useState(false)
+	const { copyWithFeedback: _copyWithFeedback } = useCopyToClipboard()
 
 	// Memoized callback to prevent re-renders caused by inline arrow functions.
 	const handleToggleExpand = useCallback(() => {
